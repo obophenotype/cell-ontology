@@ -43,12 +43,13 @@ synonymtypedef: SMILES "SMILES"
 synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: cell
 idspace: BFO http://purl.obolibrary.org/obo/BFO_
-remark: cvs version: $Revision: 1.65 $
-remark: $Revision: 1.65 $  Drafted by Jonathan Bard, Michael Ashburner, David States, Seung Y. Rhee, and Pascal Gaudet. Incorporating terms and synonyms from the eVOC cell ontology of Janet Kelso, Win Hide et al. http://www.sanbi.ac.za/evoc/ontologies.html. Hematopoietic cell terms revised by Alexander Diehl, MGI, The Jackson Laboratory. Contact Oliver Hofmann, oliver@sanbi.ac.za, at SANBI, University of the Western Cape.
+remark: cvs version: $Revision: 1.68 $
+remark: $Revision: 1.68 $  Drafted by Jonathan Bard, Michael Ashburner, David States, Seung Y. Rhee, and Pascal Gaudet. Incorporating terms and synonyms from the eVOC cell ontology of Janet Kelso, Win Hide et al. http://www.sanbi.ac.za/evoc/ontologies.html. Hematopoietic cell terms revised by Alexander Diehl, MGI, The Jackson Laboratory. Contact Oliver Hofmann, oliver@sanbi.ac.za, at SANBI, University of the Western Cape.
 remark: release: 10.0, version 2
 treat-xrefs-as-equivalent: CARO
-ontology: cl-edit
-ontology: uberon_edit.owl
+treat-xrefs-as-equivalent: GO
+treat-xrefs-as-genus-differentia: FMA part_of NCBITaxon:9606
+ontology: cl
 
 [Term]
 id: CHEBI:23367
@@ -144,6 +145,7 @@ id: CL:0000000
 name: cell
 def: "Anatomical structure that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
 xref: FMA:68646
+xref: GO:0005623 ! cell
 
 [Term]
 id: CL:0000001
@@ -5574,7 +5576,7 @@ relationship: develops_from CL:0000235 ! macrophage
 id: CL:0000648
 name: juxtaglomerular cell
 alt_id: CL:0000461
-def: "A smooth muscle cell that synthesizes, stores, and secretes the enzyme renin. This cell type are located in the wall of the afferent arteriole at the entrance to the glomerulus. While having a different origin than other kidney smooth muscle cells, this cell type expresses smooth muscle actin upon maturation." [GOC:cvs, GOC :tfm, PMID:11457727]
+def: "A smooth muscle cell that synthesizes, stores, and secretes the enzyme renin. This cell type are located in the wall of the afferent arteriole at the entrance to the glomerulus. While having a different origin than other kidney smooth muscle cells, this cell type expresses smooth muscle actin upon maturation." [GOC:cvs, GOC:tfm, PMID:11457727]
 synonym: "JG cell" EXACT []
 synonym: "kidney granular cell" EXACT []
 synonym: "renin secreting cell" EXACT []
@@ -10895,7 +10897,7 @@ synonym: "type 2 pneumocyte" EXACT []
 synonym: "type II alveolar epithelial cells" EXACT []
 synonym: "type II alveolocytes" EXACT []
 xref: BTO:0000538
-xref: FMA: 62501
+xref: FMA:62501
 is_a: CL:0000322 ! pneumocyte
 intersection_of: CL:0000322 ! pneumocyte
 intersection_of: capable_of GO:0032940 ! secretion by cell
@@ -13203,7 +13205,7 @@ name: type X enteroendocrine cell
 def: "An enteroendorcine cell found in the fundus and pylorus, this cell type has dense round secretory granules that contain ghrelin." [GOC:tfm, PMID:20616512]
 synonym: "A-like" EXACT []
 synonym: "X/A-like" EXACT []
-xref: FMA: 63209
+xref: FMA:63209
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0005018 ! ghrelin secreting cell
 created_by: tmeehan
@@ -13426,7 +13428,7 @@ id: CL:0002304
 name: non-pigmented ciliary epithelial cell
 def: "A multi-ciliated cell of the retina that lacks visual pigment and contributes to aqueous humor by secreting chloride ions. This cell type maintains gap junctions with pigmented epithelial cells." [GOC:tfm, PMID:15106942]
 synonym: "NPE" EXACT []
-xref: FMA: 70607
+xref: FMA:70607
 is_a: CL:0000710 ! neurecto-epithelial cell
 is_a: CL:0005012 ! multi-ciliated epithelial cell
 intersection_of: CL:0000710 ! neurecto-epithelial cell
@@ -13530,7 +13532,7 @@ id: CL:0002313
 name: endocrine-paracrine cell of prostate gland
 def: "An ecto-epithelial cell of the prostate gland that secretes hormones." [GOC:tfm]
 synonym: "Neuro-epithelial cell of prostate gland" EXACT []
-xref: FMA: 74390
+xref: FMA:74390
 is_a: CL:0002159 ! general ecto-epithelial cell
 created_by: tmeehan
 creation_date: 2010-09-14T03:01:58Z
@@ -15588,7 +15590,7 @@ creation_date: 2010-12-07T03:42:06Z
 [Term]
 id: CL:0002501
 name: type D1 enteroendocrine cell
-def: "A P/D1 enteroendocrine cell that is argyrophilic and stores vasoactive intestinal polypeptide." [FMA:63207, GOC:tfm, XX:<new dbxref>]
+def: "A P/D1 enteroendocrine cell that is argyrophilic and stores vasoactive intestinal polypeptide." [FMA:63207, GOC:tfm]
 xref: FMA:63207
 is_a: CL:0002268 ! P/D1 enteroendocrine cell
 created_by: tmeehan
@@ -17946,7 +17948,7 @@ id: CL:1000410
 name: myocyte of atrioventricular node
 def: "A muscle cell that is part of the atrioventricular node." [FMA:67106, GOC:tfm]
 synonym: "atrioventricular node myocyte" EXACT [FMA:67106]
-synonym: "av nodal myocyte" EXACT [FMA:67106]
+synonym: "AV nodal myocyte" EXACT [FMA:67106]
 xref: FMA:67106
 is_a: CL:0002072 ! nodal myocyte
 intersection_of: CL:0002072 ! nodal myocyte
@@ -27909,10 +27911,6 @@ def: "A part of a protein that is removed upon maturation." [PR:DAN]
 synonym: "cleaved_peptide_region" EXACT [SO:0100011]
 is_a: snap:FiatObjectPart ! fiat_object_part
 relationship: part_of PR:000000001 ! protein
-part_of: PR:000000001
-part_of: PR:000000001
-part_of: PR:000000001
-part_of: PR:000000001
 
 [Term]
 id: PR:000022003
