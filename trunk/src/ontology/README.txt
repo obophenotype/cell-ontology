@@ -31,3 +31,23 @@ http://purl.obolibrary.org/obo/cl.owl
 http://purl.obolibrary.org/obo/cl.obo
 http://purl.obolibrary.org/obo/cl-basic.owl
 http://purl.obolibrary.org/obo/cl-basic.obo
+
+RUNNING THE RELEASE PIPELINE
+============================
+
+You will need:
+
+* obo-scripts
+  http://github.com/cmungall/obo-scripts
+
+  make sure the directory is in your PATH. E.g. if you cloned the above repo in your home dir, do this:
+
+  export PATH=$HOME/obo-scripts/
+
+* obo2obo
+  available as part of the OboEdit distribution.
+  On OS X this will be in your Applications dir, so you would type:
+
+  export PATH="$PATH:$HOME/Eclipse/workspace/OBO-Edit/launch_scripts"
+
+
