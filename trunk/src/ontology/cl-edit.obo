@@ -55,7 +55,7 @@ idspace: BFO http://purl.obolibrary.org/obo/BFO_
 idspace: PR http://purl.obolibrary.org/obo/PR_
 idspace: NIF_GrossAnatomy http://ontology.neuinfo.org/NIF/BiomaterialEntities/NIF-GrossAnatomy.owl#
 idspace: Wikipedia http://en.wikipedia.org/wiki/
-remark: remark: $Revision: 1.75 $  See PMID:15693950, PMID:12799354, PMID:20123131, Contact Alexander Diehl, addiehl@buffalo.edu, University of Buffalo.
+remark: remark: $Revision: 1.76 $  See PMID:15693950, PMID:12799354, PMID:20123131, Contact Alexander Diehl, addiehl@buffalo.edu, University of Buffalo.
 ontology: cl
 treat-xrefs-as-equivalent: CARO
 treat-xrefs-as-equivalent: GO
@@ -41053,14 +41053,12 @@ name: adjacent_to
 namespace: RO
 alt_id: OBO_REL:0000012
 def: "C adjacent to C' if and only if: given any instance c that instantiates C at a time t, there is some c' such that: c' instantiates C' at time t and c and c' are in spatial proximity" [PMID:15892874]
-comment: Note that adjacent_to as thus defined is not a symmetric relation, in contrast to its instance-level counterpart. For it can be the case that Cs are in general such as to be adjacent to instances of C1 while no analogous statement holds for C1s in general in relation to instances of C. Examples are: nuclear membrane adjacent_to cytoplasm; seminal vesicle adjacent_to urinary bladder; ovary adjacent_to parietal pelvic peritoneum.
 xref: OBO_REL:adjacent_to
 
 [Typedef]
 id: anterior_to
 name: anterior_to
 namespace: RO
-is_transitive: true
 created_by: cjm
 creation_date: 2009-07-31T02:15:46Z
 
@@ -41068,7 +41066,6 @@ creation_date: 2009-07-31T02:15:46Z
 id: attached_to
 name: attached_to
 namespace: RO
-comment: FMA:85882
 xref: :attaches_to
 xref: FMA:85882
 
@@ -41087,34 +41084,22 @@ namespace: RO
 id: branch_of
 name: branch_of
 namespace: RO
-comment: we need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve\nwe need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve\nwe need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve\nwe need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve\nwe need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve
-is_a: part_of ! part_of
 
 [Typedef]
 id: capable_of
 name: capable_of
 namespace: CL
 def: "A relation between a material entity (such as a cell) and a process. This is a shortcut relation, translation rule for which is: capable_of P <-> bearer_of (some realized_by only P). Example: osteoclast capable of bone resorption." [GOC:cjm]
-comment: At the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.\nAt the CL meeting we discussed a separate case, capable_of P <-> bearer_of (some realized_by only (P or part_of some P)). We need to look at specific cases.
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" [GOC:cjm]
-is_class_level: true
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
-is_class_level: true
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
-is_class_level: true
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000053 some (http://purl.obolibrary.org/obo/BFO_0000054 only ?Y)" []
 
 [Typedef]
 id: capable_of_part_of
 name: capable_of_part_of
-holds_over_chain: capable_of part_of
 
 [Typedef]
 id: capable_of_regulation_of
 name: capable_of_regulation_of
 namespace: RO
-holds_over_chain: capable_of regulates
 
 [Typedef]
 id: coincides_with
@@ -41122,10 +41107,6 @@ name: coincides_with
 namespace: RO
 def: "Relation between occurrents, shares start and end boundaries." [Allen:starts, UBERON:cjm]
 synonym: "coincides_with" EXACT []
-is_a: finishes ! finishes
-is_a: starts ! starts
-intersection_of: finishes ! finishes
-intersection_of: starts ! starts
 
 [Typedef]
 id: connects
@@ -41148,36 +41129,28 @@ id: decreased_in_magnitude_relative_to
 name: decreased_in_magnitude_relative_to
 namespace: RO
 def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.\nThis relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.\nThis relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
 
 [Typedef]
 id: deep_to
 name: deep_to
 xref: BSPO:0000107
-is_transitive: true
 
 [Typedef]
 id: derives_from
 name: derives_from
 namespace: RO
-is_transitive: true
 
 [Typedef]
 id: develops_from
 name: develops_from
 namespace: RO
 xref: RO:0002202
-is_transitive: true
-holds_over_chain: part_of develops_from
 transitive_over: part_of ! part_of
 
 [Typedef]
 id: develops_into
 name: develops_into
 namespace: RO
-inverse_of: develops_from ! develops_from
 
 [Typedef]
 id: different_in_magnitude_relative_to
@@ -41190,7 +41163,6 @@ id: directly_associated_with
 name: directly_associated_with
 namespace: quality
 def: "q1 directly_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 increases if the magnitude of q2 is increased, or the magnitude of q1 decreases if the magnitude of q2 is decreased. The relationaship is not necessarily linear. Example: 'Lewy bodies increased number related to dystrophic neurite increased number' (from annotation of PMID:8740227 in http://ccdb.ucsd.edu/1.0/NDPO.owl#ndpo_404). Here the increase in the number of lewy bodies is directly_associated_with the increase in the number of dystrophic neurites." [PATOC:cjm, Wikipedia:Association_(statistics)]
-comment: association is weaker than correlation or proportionality. these relations may be later added to PATO.
 created_by: cjm
 creation_date: 2009-08-26T02:50:08Z
 
@@ -41198,8 +41170,6 @@ creation_date: 2009-08-26T02:50:08Z
 id: directly_preceded_by
 name: directly_preceded_by
 namespace: RO
-holds_over_chain: has_start end_of
-is_a: preceded_by ! preceded_by
 
 [Typedef]
 id: distal_to
@@ -41210,16 +41180,10 @@ namespace: RO
 id: dorsal_to
 name: dorsal_to
 xref: BSPO:0000098
-is_transitive: true
-inverse_of: ventral_to ! ventral_to
 
 [Typedef]
 id: dubious_for_taxon
 name: dubious_for_taxon
-comment: this relation lacks a strong logical interpretation, but can be used in place of never_in_taxon where it is desirable to state that the definition of the class is too strict for the taxon under consideration, but placing a never_in_taxon link would result in a chain of inconsistencies that will take time to resolve. Example: metencephalon in teleost
-is_class_level: true
-is_class_level: true
-is_metadata_tag: true
 
 [Typedef]
 id: encloses
@@ -41243,17 +41207,14 @@ id: existence_ends_before
 name: existence_ends_before
 namespace: RO
 def: "Relation between continuant c and occurrent s, such that every instance of c ceases to exist before s." [UBERON:cjm]
-holds_over_chain: existence_ends_during precedes
 
 [Typedef]
 id: existence_ends_during
 name: existence_ends_during
 namespace: RO
 def: "Relation between continuant c and occurrent s, such that every instance of c ceases to exist during some s, if it does not die prematurely." [UBERON:cjm]
-comment: todo - add full axioms to bfo
 synonym: "ceases_to_exist_during" EXACT []
 xref: BFO:0000069
-is_a: existence_starts_or_ends_during ! existence_starts_or_ends_during
 transitive_over: part_of ! part_of
 
 [Typedef]
@@ -41267,18 +41228,12 @@ id: existence_starts_after
 name: existence_starts_after
 namespace: RO
 def: "Relation between continuant c and occurrent s, such that every instance of c comes into existing after some s has completed." [UBERON:cjm]
-comment: disjoint_from existence_starts_during (but this cannot be expressed in OWL2)
-holds_over_chain: existence_starts_during preceded_by
 disjoint_from: existence_starts_during ! existence_starts_during
 
 [Typedef]
 id: existence_starts_and_ends_during
 name: existence_starts_and_ends_during
 namespace: RO
-is_a: existence_ends_during ! existence_ends_during
-is_a: existence_starts_during ! existence_starts_during
-intersection_of: existence_ends_during ! existence_ends_during
-intersection_of: existence_starts_during ! existence_starts_during
 
 [Typedef]
 id: existence_starts_at
@@ -41293,7 +41248,6 @@ namespace: RO
 def: "Relation between continuant c and occurrent s, such that every instance of c comes into existing during some s." [UBERON:cjm]
 synonym: "begins_to_exist_during" EXACT []
 xref: BFO:0000068
-is_a: existence_starts_or_ends_during ! existence_starts_or_ends_during
 transitive_over: part_of ! part_of
 
 [Typedef]
@@ -41308,7 +41262,6 @@ id: existence_starts_with
 name: existence_starts_with
 namespace: RO
 def: "Relation between continuant and occurrent, such that c comes into existence at the start of p." [UBERON:cjm]
-holds_over_chain: existence_starts_at start_of
 
 [Typedef]
 id: exists_during
@@ -41321,20 +41274,17 @@ name: finishes
 namespace: RO
 def: "Relation between occurrents, shares an end boundary with." [Allen:starts, UBERON:cjm, ZFS:finishes]
 xref: ncithesaurus:Finish
-is_a: part_of ! part_of
 
 [Typedef]
 id: has_completed
 name: has_completed
 namespace: RO
-is_transitive: true
 
 [Typedef]
 id: has_cross_section
 name: has_cross_section
 namespace: RO
 def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." [PATOC:CJM]
-comment: Example: a spherical object has the quality of being spherical, and the spherical quality has_cross_section round.\nExample: a spherical object has the quality of being spherical, and the spherical quality has_cross_section round.
 
 [Typedef]
 id: has_dividend_entity
@@ -41345,7 +41295,6 @@ namespace: quality
 id: has_dividend_quality
 name: has_dividend_quality
 namespace: RO
-is_a: has_ratio_quality ! has_ratio_quality
 
 [Typedef]
 id: has_divisor_entity
@@ -41356,7 +41305,6 @@ namespace: RO
 id: has_divisor_quality
 name: has_divisor_quality
 namespace: quality
-is_a: has_ratio_quality ! has_ratio_quality
 
 [Typedef]
 id: has_end
@@ -41366,7 +41314,6 @@ namespace: RO
 [Typedef]
 id: has_function_in
 name: has_function_in
-comment: todo - replace with capable_of_part_of?
 
 [Typedef]
 id: has_high_plasma_membrane_amount
@@ -41384,14 +41331,11 @@ def: "A relation between a cell and molecule or complex such that every instance
 id: has_modification
 name: has_modification
 namespace: RO
-is_transitive: true
-is_obsolete: true
 
 [Typedef]
 id: has_not_completed
 name: has_not_completed
 namespace: RO
-is_transitive: true
 
 [Typedef]
 id: has_parent_hydride
@@ -41403,11 +41347,8 @@ id: has_part
 name: has part
 namespace: RO
 def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
-comment: We use the has_part relation to relate complex qualities to more primitive ones. A complex quality is a collection of qualities. The complex quality cannot exist without the sub-qualities. For example, the quality 'swollen' necessarily comes with the qualities of 'protruding' and 'increased size'.
 xref: BFO:0000051
 xref: OBO_REL:has_part
-is_transitive: true
-inverse_of: part_of ! part_of
 created_by: midori
 creation_date: 2009-07-30T12:00:35Z
 
@@ -41417,7 +41358,6 @@ name: has_plasma_membrane_part
 namespace: RO
 def: "A relation between a cell and molecule or complex such that every instance of the cell has at least one instance of that molecule expressed on the cell surface. Formally: C has_plasma_membrane_part P if and only if: C has_part P and P part_of plasma_membrane[GO:0005886]. Here has_part and part_of are type-level relations as defined in the OBO Relation Ontology." [PMID:19243617]
 xref: RO:0002104
-is_a: has_part ! has part
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
@@ -41426,7 +41366,6 @@ name: has_quality
 namespace: RO
 alt_id: OBO_REL:0000029
 xref: OBO_REL:has_quality
-is_a: bearer_of ! bearer of
 
 [Typedef]
 id: has_ratio_quality
@@ -41452,20 +41391,17 @@ namespace: RO
 id: homologous_to
 name: homologous_to
 namespace: RO
-is_metadata_tag: true
 
 [Typedef]
 id: immediately_deep_to
 name: immediately_deep_to
 xref: BSPO:0001107
-is_a: deep_to ! deep_to
 
 [Typedef]
 id: in_distal_side_of
 name: in_distal_side_of
 namespace: RO
 def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
-inverse_of: in_proximal_side_of ! in_proximal_side_of
 
 [Typedef]
 id: in_left_side_of
@@ -41473,8 +41409,6 @@ name: in_left_side_of
 namespace: RO
 def: "X left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000120
-is_a: part_of ! part_of
-inverse_of: in_right_side_of ! in_right_side_of
 
 [Typedef]
 id: in_proximal_side_of
@@ -41489,23 +41423,18 @@ name: in_right_side_of
 namespace: RO
 def: "X right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000121
-is_a: part_of ! part_of
 
 [Typedef]
 id: increased_in_magnitude_relative_to
 name: increased_in_magnitude_relative_to
 namespace: RO
 def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'.
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
 
 [Typedef]
 id: induced_by
 name: induced_by
 namespace: RO
 def: "t1 induced_by t2 if there is a process of organ induction (GO:0001759) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor tissue type T to T', where T' develops_from T." [GO:0001759]
-comment: sources for induced_by relationships in Uberon: Developmental Biology, Gilbert, 8th edition, figure 6.5(F)
 
 [Typedef]
 id: inheres_in
@@ -41522,7 +41451,6 @@ id: inversely_associated_with
 name: inversely_associated_with
 namespace: quality
 def: "q1 inversely_associated_with q2 iff q1 is dependent on q2, and the magnitude of q1 decreases if the magnitude of q2 is increased, or the magnitude of q1 increases if the magnitude of q2 is decreased. The relationship is not necessarily linear." [PATOC:cjm, Wikipedia:Association_(statistics)]
-comment: association is weaker than correlation or proportionality. these relations may be later added to PATO
 created_by: cjm
 creation_date: 2009-08-26T02:50:24Z
 
@@ -41530,13 +41458,11 @@ creation_date: 2009-08-26T02:50:24Z
 id: is_conjugate_acid_of
 name: is conjugate acid of
 namespace: RO
-is_cyclic: true
 
 [Typedef]
 id: is_conjugate_base_of
 name: is conjugate base of
 namespace: RO
-is_cyclic: true
 
 [Typedef]
 id: is_magnitude_of
@@ -41562,23 +41488,18 @@ namespace: pato.ontology
 id: lacks_modification
 name: lacks_modification
 namespace: RO
-is_transitive: true
-is_obsolete: true
 
 [Typedef]
 id: lacks_part
 name: lacks_part
 namespace: RO
-is_transitive: true
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 ?Y" []
-is_class_level: true
 
 [Typedef]
 id: lacks_plasma_membrane_part
 name: lacks_plasma_membrane_part
 namespace: RO
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
-is_class_level: true
 
 [Typedef]
 id: located_in
@@ -41586,10 +41507,7 @@ name: located_in
 namespace: RO
 alt_id: OBO_REL:0000008
 def: "C located_in C' if and only if: given any c that instantiates C at a time t, there is some c' such that: c' instantiates C' at time t and c *located_in* c'. (Here *located_in* is the instance-level location relation.)" [PMID:15892874]
-comment: Location as a relation between instances: The primitive instance-level relation c located_in r at t reflects the fact that each continuant is at any given time associated with exactly one spatial region, namely its exact location. Following we can use this relation to define a further instance-level location relation - not between a continuant and the region which it exactly occupies, but rather between one continuant and another. c is located in c1, in this sense, whenever the spatial region occupied by c is part_of the spatial region occupied by c1. Note that this relation comprehends both the relation of exact location between one continuant and another which obtains when r and r1 are identical (for example, when a portion of fluid exactly fills a cavity), as well as those sorts of inexact location relations which obtain, for example, between brain and head or between ovum and uterus.
 xref: OBO_REL:located_in
-is_reflexive: true
-is_transitive: true
 
 [Typedef]
 id: location_of
@@ -41602,33 +41520,20 @@ creation_date: 2009-07-30T10:22:21Z
 id: negatively_regulates
 name: negatively_regulates
 namespace: RO
-is_a: regulates ! regulates
 
 [Typedef]
 id: never_in_taxon
 name: never_in_taxon
 namespace: RO
-is_class_level: true
-is_class_level: true
-is_class_level: true
-is_class_level: true
-is_class_level: true
 
 [Typedef]
 id: only_in_taxon
 name: only_in_taxon
 namespace: RO
 def: "U only_in_taxon T: U is a feature found in only in organisms of species of taxon T. The feature cannot be found in an organism of any species outside of (not subsumed by) that taxon. Down-propagates in U hierarchy, up-propagates in T hierarchy (species taxonomy). Implies applicable_to_taxon" [ROC:Waclaw]
-comment: Down-propagates. The original name for this in the paper is 'specific_to'. Applicable to genes because some genes are lost in sub-species (strains) of a species.
 synonym: "never_outside_taxon" EXACT []
 synonym: "specific_to" EXACT []
 synonym: "specific_to_taxon" EXACT []
-is_class_level: true
-is_metadata: true
-is_class_level: true
-is_class_level: true
-is_class_level: true
-is_class_level: true
 
 [Typedef]
 id: output_of
@@ -41643,10 +41548,6 @@ def: "A overlaps B if they share some part in common." [GOC:cjm]
 xref: ncithesaurus:Overlap
 xref: RO:0002131
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" [GOC:cjm]
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
-expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 created_by: cjm
 creation_date: 2009-04-12T04:08:35Z
 
@@ -41654,11 +41555,8 @@ creation_date: 2009-04-12T04:08:35Z
 id: part_of
 name: part_of
 namespace: RO
-comment: note that all the uses of part_of in this ontology are for proper part of
 xref: :part_of
 xref: BFO:0000050
-is_reflexive: true
-is_transitive: true
 
 [Typedef]
 id: participates_in
@@ -41670,15 +41568,12 @@ xref: BFO:0000056
 id: positively_regulates
 name: positively_regulates
 namespace: RO
-is_a: regulates ! regulates
 
 [Typedef]
 id: preceded_by
 name: preceded_by
 namespace: RO
-comment: disjoint_from part_of, but this cannot be expressed in OWL2
 xref: OBO_REL:preceded_by
-is_transitive: true
 disjoint_from: part_of ! part_of
 
 [Typedef]
@@ -41686,8 +41581,6 @@ id: precedes
 name: precedes
 namespace: RO
 xref: OBO_REL:precedes
-is_transitive: true
-inverse_of: preceded_by ! preceded_by
 
 [Typedef]
 id: proximal_to
@@ -41705,7 +41598,6 @@ id: reciprocal_of
 name: reciprocal_of
 namespace: quality
 def: "q1 reciprocal_of q2 if and only if : q1 and q2 are relational qualities and a phenotype e q1 e2 mutually implies a phenotype e2 q2 e." [PATOC:CJM]
-comment: There are frequently two ways to state the same thing: we can say 'spermatocyte lacks asters' or 'asters absent from spermatocyte'. In this case the quality is 'lacking all parts of type' - it is a (relational) quality of the spermatocyte, and it is with respect to instances of 'aster'. One of the popular requirements of PATO is that it continue to support 'absent', so we need to relate statements which use this quality to the 'lacking all parts of type' quality.
 
 [Typedef]
 id: regulates
@@ -41732,7 +41624,6 @@ namespace: RO
 id: separated_from_by
 name: separated_from_by
 namespace: RO
-comment: "(forall (x y z) (iff (separated_from_by x y z) (and (adjacent_to x z) (adjacent_to y z) (spatially_disjoint_from x y))))" CLIF []
 
 [Typedef]
 id: similar_in_magnitude_relative_to
@@ -41744,7 +41635,6 @@ def: "q1 similar_in_magnitude_relative_to q2 if and only if magnitude(q1) =~ mag
 id: singly_occurring_form_of
 name: singly_occurring_form_of
 namespace: quality
-comment: PATO divides qualities between normal (monadic, singly-occurring) qualities and relational qualities. Relational qualities stand in the 'towards' relation with respect to some additional entity. For example, The sensitivity of an eye towards red light. In some cases we want to represent a quality such as 'protruding' in both monadic and relational branches. We use this relation to link them.
 synonym: "monadic_form_of" EXACT []
 
 [Typedef]
@@ -41758,13 +41648,9 @@ id: spatially_disjoint_from
 name: spatially_disjoint_from
 namespace: RO
 def: "A is spatially_disjoint_from B if they have no parts in common." [SO:cjm]
-comment: TODO owldef
 synonym: "non_overlapping_with" EXACT []
 synonym: "shares_no_parts_with" EXACT []
-is_class_level: true
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
-is_class_level: true
-is_metadata_tag: true
 
 [Typedef]
 id: start_of
@@ -41776,8 +41662,6 @@ id: starts
 name: starts
 namespace: RO
 def: "Relation between occurrents, shares a start boundary with." [Allen:starts, UBERON:cjm, ZFS:starts]
-holds_over_chain: has_start start_of
-is_a: part_of ! part_of
 
 [Typedef]
 id: supplies
@@ -41798,14 +41682,11 @@ xref: ncithesaurus:Surrounding
 id: systemic_part_of
 name: systemic_part_of
 namespace: RO
-comment: we use this in a weaker sense than mereological part_of - e.g. sense organ may be a systemic part of the nervous system, but it does not follow that the epithelium of the nose is part of the nervous system. systemic parts must at least share parts in common
-is_a: overlaps ! overlaps
 
 [Typedef]
 id: towards
 name: towards
 namespace: RO
-comment: relation binding a relational quality or disposition to the relevant type of entity.\nrelation binding a relational quality or disposition to the relevant type of entity\nrelation binding a relational quality or disposition to the relevant type of entity\nrelation binding a relational quality or disposition to the relevant type of entity\nrelation binding a relational quality or disposition to the relevant type of entity
 
 [Typedef]
 id: transports
@@ -41817,4 +41698,3 @@ id: ventral_to
 name: ventral_to
 xref: BSPO:0000102
 is_transitive: true
-
