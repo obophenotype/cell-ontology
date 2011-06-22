@@ -44,7 +44,7 @@ cl.obo: cl-edit-reasoned.obo
 	cp $< $@
 .PRECIOUS: cl.obo
 
-cl-basic.obo: cl-edit-demireot-filtered.obo
+cl-basic.obo: cl-edit-reasoned-demireot-filtered.obo
 	cp $< $@
 .PRECIOUS: cl-basic.obo
 
