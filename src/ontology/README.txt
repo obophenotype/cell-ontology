@@ -42,12 +42,16 @@ You will need:
 
   make sure the directory is in your PATH. E.g. if you cloned the above repo in your home dir, do this:
 
-  export PATH=$HOME/obo-scripts/
+  export PATH="$PATH:$HOME/obo-scripts/"
+
+  or for some shells:
+
+  setenv PATH "$PATH:$HOME/obo-scripts/"
 
 * obo2obo
   available as part of the OboEdit distribution.
   On OS X this will be in your Applications dir, so you would type:
 
-  export PATH="$PATH:$HOME/Eclipse/workspace/OBO-Edit/launch_scripts"
+  export PATH="$PATH:/Applications/OBO-Edit2"
 
 
