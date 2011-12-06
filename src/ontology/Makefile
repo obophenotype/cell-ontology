@@ -1,4 +1,32 @@
 
+# PR mireots CHEBI, but is not always in sync, which causes problems for Oort (e.g. different defs in two version).
+# only use core PR info
+# (todo: make thispart of Oort)
+extsubset/pr-core.obo: extsubset/pr.obo
+	obo-grep.pl  -r 'id: PR:' $< > $@
+extsubset/pr.obo:
+	wget http://purl.obolibrary.org/obo/pr.obo -O $@
+
+oort:
+	ontology-release-runner --allow-overwrite --outdir . --repair-cardinality --reasoner elk --asserted --simple --re-mireot cl-edit.obo http://purl.obolibrary.org/obo/uberon/basic.owl http://purl.obolibrary.org/obo/go.owl http://purl.obolibrary.org/obo/pato.owl extsubset/chebi_lite.obo extsubset/pr-core.obo
+#	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix http://purl.obolibrary.org/obo/CL_ --prefix http://purl.obolibrary.org/obo/CP_ cl-edit.obo http://purl.obolibrary.org/obo/uberon/basic.owl pr-core.obo http://purl.obolibrary.org/obo/go.owl http://purl.obolibrary.org/obo/pato.owl chebi_lite.obo
+
+
+# ----------------------------------------
+# OBO to OWL conversion
+# ----------------------------------------
+# DEPRECATED - done as part of Oort now
+%.owl: %.obo
+	obolib-obo2owl $< -o $@
+
+# ----------------------------------------
+# Legacy copy to cvs
+# ----------------------------------------
+
+CVS_DIR = ../../../obo/ontology/anatomy/cell_type/
+publish_to_cvs: release
+	cp cell.obo $(CVS_DIR) && cd $(CVS_DIR) && cvs commit -m 'new release' cell.obo
+
 # ----------------------------------------
 # Sync with main repo in CVS (temporary)
 # ----------------------------------------
@@ -7,56 +35,4 @@
 # (todo - make this live)
 cl-edit.obo:
 	wget http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/anatomy/cell_type/cell.edit.obo -O $@ && perl -i ../tools/fix-obo-header.pl cl-edit.obo $@
-
-# ----------------------------------------
-# Reasoning
-# ----------------------------------------
-# currently this is done via the OE reasoner, in future it
-# will be via an OWL reasoner and OWLTools
-
-# first classify the ontology
-%-reasoned.obo: %.obo
-	obo2obo -o -saveimpliedlinks $@ $<
-.PRECIOUS: %-reasoned.obo
-
-# ----------------------------------------
-# De-mireoting and filtering dangling links
-# ----------------------------------------
-
-# for the basic built, we want to get rid of all classes that are not CL classes
-%-demireot.obo: %.obo
-	obo-grep.pl -r '(id:\s*CL|Typedef)' $< > $@
-.PRECIOUS: %-demireot.obo
-
-# remove references to non-CL classes
-# also remove all relations - add these later
-%-filtered.obo: %.obo
-	obo-filter-external.pl -v --idspace CL $< > $@.tmp && obo-filter-unused.pl $@.tmp | obo-grep.pl --neg -r Typedef - > $@.tmp2 && obo2obo -o $@ $@.tmp2 cl-basic-relations.obo
-.PRECIOUS: %-filtered.obo
-
-# ----------------------------------------
-# Release
-# ----------------------------------------
-
-release: cl-basic.owl cl.owl
-
-cl.obo: cl-edit-reasoned.obo
-	cp $< $@
-.PRECIOUS: cl.obo
-
-cl-basic.obo: cl-edit-reasoned-demireot-filtered.obo
-	cp $< $@
-.PRECIOUS: cl-basic.obo
-
-CVS_DIR = ../../../obo/ontology/anatomy/cell_type/
-publish_to_cvs: release
-	cp cell.obo $(CVS_DIR) && cd $(CVS_DIR) && cvs commit -m 'new release' cell.obo
-
-# ----------------------------------------
-# OBO to OWL conversion
-# ----------------------------------------
-%.owl: %.obo
-	obolib-obo2owl $< -o $@
-
-%-legacy-owl: %.obo
-	go2owl $< > $@
+#	cp cell.edit.obo $@
