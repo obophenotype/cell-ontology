@@ -8,9 +8,9 @@ subsetdef: abnormal_slim "Abnormal/normal slim"
 subsetdef: absent_slim ""
 subsetdef: absent_slim "Absent/present slim"
 subsetdef: attribute_slim ""
-subsetdef: attribute_slim "Attribute slim"
+subsetdef: attribute_slim ""
 subsetdef: cell_quality ""
-subsetdef: cell_quality "cell_quality"
+subsetdef: cell_quality ""
 subsetdef: defined_by_ordinal_series ""
 subsetdef: defined_by_ordinal_series ""
 subsetdef: developmental_classification ""
@@ -28,13 +28,14 @@ subsetdef: emapa_ehdaa2 "derived from the union of EHDAA2 and EMAPA - still to b
 subsetdef: functional_classification ""
 subsetdef: functional_classification ""
 subsetdef: goslim_aspergillus ""
+subsetdef: goslim_aspergillus ""
 subsetdef: goslim_candida ""
 subsetdef: goslim_candida ""
 subsetdef: goslim_generic ""
 subsetdef: goslim_generic ""
 subsetdef: goslim_goa "GOA and proteome slim"
 subsetdef: goslim_pir ""
-subsetdef: goslim_pir "PIR GO slim"
+subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
 subsetdef: goslim_plant ""
 subsetdef: goslim_pombe ""
@@ -50,37 +51,38 @@ subsetdef: high_level_annotation_qc ""
 subsetdef: inconsistent_with_fma ""
 subsetdef: inconsistent_with_fma ""
 subsetdef: inherited_grouping_class ""
-subsetdef: inherited_grouping_class "A grouping class that originates in two or more separate anatomical ontologies. Includes 'region of X' type terms"
+subsetdef: inherited_grouping_class ""
 subsetdef: major_organ ""
-subsetdef: major_organ "somewhat fuzzy grouping for analysis purposes, currently composed of something like: liver, heart, skeletal, kidney, bladder, brain, skin, mouth, esophagus, stomach, small intestine, large intestines, trachea nose, lungs, brain, spinal cord,  peripheral nerves, kidneys, ureters, bladder, urethra, gonads"
+subsetdef: major_organ ""
 subsetdef: metazoa_core ""
-subsetdef: metazoa_core "core classes typically found across metazoa. one purpose is to create a rough set of terms that could be used to start a new metazoan AO. Note this subset is not yet fully fleshed out"
+subsetdef: metazoa_core ""
+subsetdef: mf_needs_review ""
 subsetdef: mf_needs_review ""
 subsetdef: organ_slim ""
 subsetdef: organ_slim ""
 subsetdef: relational_slim ""
-subsetdef: relational_slim "Relational slim: types of quality that require an additional entity in order to exist"
+subsetdef: relational_slim ""
 subsetdef: scalar_slim ""
 subsetdef: scalar_slim "Scalar slim"
 subsetdef: uberon_slim ""
-subsetdef: uberon_slim "Uberon slim"
+subsetdef: uberon_slim ""
 subsetdef: unvetted ""
 subsetdef: upper_level ""
 subsetdef: upper_level ""
 subsetdef: upper_ontology_conflict ""
-subsetdef: upper_ontology_conflict "Terms in this subset group together terms from different anatomy ontologies that have conflicting upper ontology/CARO assignments. For example, in FMA the naris is immaterial and in ZFA it is an organism subdivision."
+subsetdef: upper_ontology_conflict ""
 subsetdef: value_slim ""
 subsetdef: value_slim "Value slim"
 subsetdef: vertebrate_core ""
-subsetdef: vertebrate_core "core classes typically found across vertebrates. one purpose is to create a rough set of terms that could be used to start a new vertebrate AO"
+subsetdef: vertebrate_core ""
 synonymtypedef: ATTRIBUTION_REQUIRED "" 
 synonymtypedef: ATTRIBUTION_REQUIRED "" 
 synonymtypedef: BRAND_NAME "" 
-synonymtypedef: BRAND_NAME "BRAND NAME" 
+synonymtypedef: BRAND_NAME "" 
 synonymtypedef: DUBIOUS "" 
 synonymtypedef: DUBIOUS "dubious or contested synonym" 
 synonymtypedef: FORMULA "" 
-synonymtypedef: FORMULA "FORMULA" 
+synonymtypedef: FORMULA "" 
 synonymtypedef: HOMOLOGY "" 
 synonymtypedef: HOMOLOGY "" 
 synonymtypedef: InChI "" 
@@ -94,15 +96,17 @@ synonymtypedef: INN "INN"
 synonymtypedef: IUPAC_NAME "" 
 synonymtypedef: IUPAC_NAME "IUPAC NAME" 
 synonymtypedef: PLURAL "" 
-synonymtypedef: PLURAL "plural term" 
+synonymtypedef: PLURAL "" 
 synonymtypedef: PRO-short-label "" 
+synonymtypedef: PRO-short-label "" 
+synonymtypedef: PSI-MOD-label "" 
 synonymtypedef: PSI-MOD-label "" 
 synonymtypedef: SENSU "" 
 synonymtypedef: SENSU "" 
 synonymtypedef: SMILES "" 
-synonymtypedef: SMILES "SMILES" 
+synonymtypedef: SMILES "" 
+synonymtypedef: systematic_synonym "" EXACT
 synonymtypedef: systematic_synonym "" 
-synonymtypedef: systematic_synonym "Systematic synonym" EXACT
 default-namespace: file:/Users/tmeehan/Desktop/z.obo
 treat-xrefs-as-equivalent: BILA
 treat-xrefs-as-equivalent: BSPO
@@ -127,7 +131,7 @@ treat-xrefs-as-genus-differentia: TGMA part_of NCBITaxon:44484
 treat-xrefs-as-genus-differentia: WBbt part_of NCBITaxon:6237
 treat-xrefs-as-genus-differentia: XAO part_of NCBITaxon:8353
 treat-xrefs-as-genus-differentia: ZFA part_of NCBITaxon:7954
-remark: $Revision: 1.104 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
+remark: $Revision: 1.106 $  See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
 treat-xrefs-as-has-subclass: EHDAA
 treat-xrefs-as-has-subclass: EHDAA2
@@ -25075,6 +25079,7 @@ id: GO:0001503
 name: ossification
 namespace: biological_process
 def: "The formation of bone or of a bony substance, or the conversion of fibrous tissue or of cartilage into bone or a bony substance." [GOC:mtg_mpo, PMID:17572649]
+comment: Note that this term does not have a 'developmental process' parent because ossification isn't necessarily developmental, can also occur as part of bone remodeling. Instead use 'ossification involved in bone maturation ; GO:0043931'.
 synonym: "bone biosynthesis" EXACT []
 synonym: "bone formation" EXACT []
 synonym: "osteogenesis" EXACT []
@@ -34918,10 +34923,6 @@ created_by: ebc
 creation_date: 2011-03-22T10:37:06Z
 
 [Term]
-id: MOD:00693
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
-
-[Term]
 id: PATO:0000001
 name: quality
 alt_id: PATO:0000072
@@ -38785,7 +38786,6 @@ def: "A polymer of amino acids linked by peptide bonds." [PRO:DAN]
 synonym: "peptide" NARROW []
 synonym: "polypeptide" NARROW []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
-is_a: snap:Object ! object
 
 [Term]
 id: PR:000018264
@@ -38798,6 +38798,33 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 is_a: PR:000018263 ! amino acid chain
 
 [Term]
+id: PR:000018335
+name: T-cell surface glycoprotein CD8 alpha chain, signal peptide removed form
+namespace: protein
+def: "A T-cell surface glycoprotein CD8 alpha chain that has had the signal peptide removed." [PRO:DNx]
+comment: Category=modification. Flag=automatic.
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_a: PR:000001084 ! T-cell surface glycoprotein CD8 alpha chain
+
+[Term]
+id: PR:000018337
+name: T-cell surface glycoprotein CD8 beta chain, signal peptide removed form
+namespace: protein
+def: "A T-cell surface glycoprotein CD8 beta chain that has had the signal peptide removed." [PRO:DNx]
+comment: Category=modification. Flag=automatic.
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_a: PR:000001085 ! T-cell surface glycoprotein CD8 beta chain
+
+[Term]
+id: PR:000021081
+name: bone marrow proteoglycan, signal peptide removed form
+namespace: protein
+def: "A bone marrow proteoglycan that has had the signal peptide removed." [PRO:DNx]
+comment: Category=modification. Flag=automatic.
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_a: PR:000013206 ! bone marrow proteoglycan
+
+[Term]
 id: PR:000021082
 name: bone marrow proteoglycan proteolytic cleavage product
 namespace: protein
@@ -38805,8 +38832,6 @@ def: "A proteolytic cleavage product that is derived from bone marrow proteoglyc
 comment: Category=modification. Flag=automatic.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 is_a: PR:000018264 ! proteolytic cleavage product
-intersection_of: derives_from PR:000013206 ! bone marrow proteoglycan
-intersection_of: PR:000018264 ! proteolytic cleavage product
 relationship: derives_from PR:000013206 ! bone marrow proteoglycan
 
 [Term]
@@ -38837,7 +38862,6 @@ comment: Category=complex.
 synonym: "CD8alphabeta" EXACT []
 synonym: "TCR co-receptor CD8" EXACT []
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
-is_a: GO:0043234 ! protein complex
 relationship: has_part PR:000025408 ! T-cell surface glycoprotein CD8 alpha chain isoform 1, signal peptide removed glycosylated form
 relationship: has_part PR:000025409 ! T-cell surface glycoprotein CD8 beta chain isoform 1, signal peptide removed glycosylated form
 
@@ -38868,10 +38892,8 @@ namespace: protein
 def: "A T-cell surface glycoprotein CD8 alpha chain isoform 1 that has had the signal peptide removed to yield the mature form." [PRO:DAN]
 comment: Category=modification.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_a: PR:000018335 ! T-cell surface glycoprotein CD8 alpha chain, signal peptide removed form
 is_a: PR:000025403 ! T-cell surface glycoprotein CD8 alpha chain isoform 1
-intersection_of: lacks_part SO:0000418
-intersection_of: PR:000025403 ! T-cell surface glycoprotein CD8 alpha chain isoform 1
-relationship: lacks_part SO:0000418
 
 [Term]
 id: PR:000025407
@@ -38880,10 +38902,8 @@ namespace: protein
 def: "A T-cell surface glycoprotein CD8 beta chain isoform 1 that has had the signal peptide removed to yield the mature form." [PRO:DAN]
 comment: Category=modification.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_a: PR:000018337 ! T-cell surface glycoprotein CD8 beta chain, signal peptide removed form
 is_a: PR:000025405 ! T-cell surface glycoprotein CD8 beta chain isoform 1
-intersection_of: lacks_part SO:0000418
-intersection_of: PR:000025405 ! T-cell surface glycoprotein CD8 beta chain isoform 1
-relationship: lacks_part SO:0000418
 
 [Term]
 id: PR:000025408
@@ -38893,9 +38913,6 @@ def: "A T-cell surface glycoprotein CD8 alpha chain isoform 1, signal peptide re
 comment: Category=modification.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 is_a: PR:000025406 ! T-cell surface glycoprotein CD8 alpha chain isoform 1, signal peptide removed form
-intersection_of: has_part MOD:00693
-intersection_of: PR:000025406 ! T-cell surface glycoprotein CD8 alpha chain isoform 1, signal peptide removed form
-relationship: has_part MOD:00693
 
 [Term]
 id: PR:000025409
@@ -38905,9 +38922,6 @@ def: "A T-cell surface glycoprotein CD8 beta chain isoform 1, signal peptide rem
 comment: Category=modification.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 is_a: PR:000025407 ! T-cell surface glycoprotein CD8 beta chain isoform 1, signal peptide removed form
-intersection_of: has_part MOD:00693
-intersection_of: PR:000025407 ! T-cell surface glycoprotein CD8 beta chain isoform 1, signal peptide removed form
-relationship: has_part MOD:00693
 
 [Term]
 id: PR:000025466
@@ -38916,10 +38930,8 @@ namespace: protein
 def: "A bone marrow proteoglycan isoform 1 that has had the signal peptide removed." [PRO:DAN]
 comment: Category=modification.
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_a: PR:000021081 ! bone marrow proteoglycan, signal peptide removed form
 is_a: PR:000022003 ! bone marrow proteoglycan isoform 1
-intersection_of: lacks_part SO:0000418
-intersection_of: PR:000022003 ! bone marrow proteoglycan isoform 1
-relationship: lacks_part SO:0000418
 
 [Term]
 id: PR:000025796
@@ -38939,10 +38951,6 @@ comment: Category=family.
 xref: PIRSF:PIRSF005666
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 is_a: PR:000025796 ! integrin alpha
-
-[Term]
-id: SO:0000418
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
 
 [Term]
 id: UBERON:0000002
@@ -44440,7 +44448,7 @@ xref: ZFA:0005294
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0004120 ! mesoderm-derived structure
 is_a: UBERON:0006553 ! renal duct
-relationship: part_of UBERON:0001285 {source="GO", notes="checkme"} ! nephron
+relationship: part_of UBERON:0001285 {notes="checkme", source="GO"} ! nephron
 relationship: part_of UBERON:0007684 {source="FMA"} ! uriniferous tubule
 
 [Term]
@@ -47275,7 +47283,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0000058 ! duct
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: part_of UBERON:0001840 {source="MA"} ! semicircular canal
-relationship: part_of UBERON:0001862 {source="MA", source="FMA"} ! vestibular labyrinth
+relationship: part_of UBERON:0001862 {source="FMA", source="MA"} ! vestibular labyrinth
 
 [Term]
 id: UBERON:0001862
@@ -48211,7 +48219,7 @@ xref: TAO:0001155
 xref: ZFA:0001155
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0002410 ! autonomic nervous system
-relationship: develops_from UBERON:0005428 {source="ZFA", source="Wikipedia"} ! vagal neural crest
+relationship: develops_from UBERON:0005428 {source="Wikipedia", source="ZFA"} ! vagal neural crest
 relationship: part_of UBERON:0002410 ! autonomic nervous system
 
 [Term]
@@ -48441,7 +48449,7 @@ xref: ZFA:0000100
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0002680 ! regional part of metencephalon
 relationship: part_of UBERON:0001895 {source="FMA", source="MA"} ! metencephalon
-relationship: part_of UBERON:0002028 {source="ZFA", source="NIF"} ! hindbrain
+relationship: part_of UBERON:0002028 {source="NIF", source="ZFA"} ! hindbrain
 
 [Term]
 id: UBERON:0002038
@@ -49864,7 +49872,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0000064 ! organ part
 is_a: UBERON:0004119 ! endoderm-derived structure
 is_a: UBERON:0004121 ! ectoderm-derived structure
-relationship: develops_from UBERON:0009122 {source="NBK53175", source="ZFA"} ! adenohypophyseal placode
+relationship: develops_from UBERON:0009122 {source="ZFA", source="NBK53175"} ! adenohypophyseal placode
 relationship: part_of UBERON:0000007 ! pituitary gland
 
 [Term]
@@ -52937,7 +52945,7 @@ xref: TAO:0000122
 xref: XAO:0000240
 xref: ZFA:0000122
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
-is_a: UBERON:0002546 {source="NBK53175", note="non-neurogenic"} ! cranial placode
+is_a: UBERON:0002546 {note="non-neurogenic", source="NBK53175"} ! cranial placode
 relationship: part_of UBERON:0000076 ! external ectoderm
 
 [Term]
@@ -54542,7 +54550,7 @@ property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: develops_from UBERON:0001041 {source="Wikipedia:Pancreas#Embryological_development"} ! foregut
 relationship: develops_from UBERON:0001555 ! digestive tract
-relationship: develops_from UBERON:0002114 {exception="zebrafish", source="Wikipedia:Pancreatic_bud"} ! duodenum
+relationship: develops_from UBERON:0002114 {source="Wikipedia:Pancreatic_bud", exception="zebrafish"} ! duodenum
 relationship: develops_from UBERON:0003921 ! pancreas primordium
 relationship: part_of UBERON:0000922 ! embryo
 
@@ -55991,7 +55999,7 @@ xref: NIF_GrossAnatomy:nlx_anat_20090205
 xref: ZFA:0001429
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0002616 ! regional part of brain
-relationship: part_of UBERON:0002275 {source="Wikipedia", source="GO"} ! reticular formation
+relationship: part_of UBERON:0002275 {source="GO", source="Wikipedia"} ! reticular formation
 
 [Term]
 id: UBERON:0004695
@@ -57448,7 +57456,7 @@ xref: KUPO:0001008
 xref: MA:0001648
 property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 is_a: UBERON:0000064 ! organ part
-relationship: part_of UBERON:0001225 {source="KUPO", source="FMA"} ! cortex of kidney
+relationship: part_of UBERON:0001225 {source="FMA", source="KUPO"} ! cortex of kidney
 
 [Term]
 id: UBERON:0005272
@@ -59944,6 +59952,10 @@ name: overlaps
 xref: RO:0002131
 
 [Typedef]
+id: adjacent_to
+name: adjacent_to
+
+[Typedef]
 id: bearer_of
 name: bearer of
 namespace: BFO
@@ -59966,6 +59978,13 @@ domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 is_transitive: true
 is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
+
+[Typedef]
+id: derives_from
+name: derives_from
+namespace: protein
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_transitive: true
 
 [Typedef]
 id: develops_from
@@ -59991,6 +60010,10 @@ domain: PATO:0000001 ! quality
 range: PATO:0000001 ! quality
 created_by: cjm
 creation_date: 2009-08-26T02:50:08Z
+
+[Typedef]
+id: has_completed
+name: has_completed
 
 [Typedef]
 id: has_cross_section
@@ -60038,9 +60061,11 @@ namespace: RO
 [Typedef]
 id: has_part
 name: has part
-namespace: RO
-def: "Q1 has_part Q2 if and only if: every instance of Q1 is a quality_of an entity that has_quality some Q2." [PATOC:CJM]
+name: has_part
+namespace: protein
 xref: BFO:0000051
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_transitive: true
 
 [Typedef]
 id: has_plasma_membrane_part
@@ -60122,7 +60147,11 @@ transitive_over: part_of ! part_of
 [Typedef]
 id: part_of
 name: part_of
+name: part_of
+namespace: protein
 xref: BFO:0000050
+property_value: IAO:0000412 http://purl.obolibrary.org/obo/pr.owl
+is_transitive: true
 
 [Typedef]
 id: participates_in
