@@ -15,7 +15,11 @@ Step 1: Preparing to edit
 
 Step 2: Edit the ontology in oboedit and save
 
-  Open: cl-edit.obo
+  Open: 
+
+     cl-edit.obo
+
+  **do not edit any other files!!!**
 
 Step 3: Commit your changes
 
@@ -29,3 +33,5 @@ Step 4: Make a release (OPTIONAL)
    svn commit
 
  Note this is the responsibility of the release manager
+
+
