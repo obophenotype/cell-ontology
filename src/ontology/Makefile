@@ -1,5 +1,7 @@
 OBO=http://purl.obolibrary.org/obo
 
+release: cl.obo cl.owl cl-basic.obo cl-basic.owl
+
 # PR mireots CHEBI, but is not always in sync, which causes problems for Oort (e.g. different defs in two version).
 # only use core PR info
 # (todo: make thispart of Oort)
@@ -10,25 +12,24 @@ extsubset/pr-simple.obo:
 #	wget $(OBO)/pr.obo -O $@
 
 build/cl.obo: cl-edit.obo
-	ontology-release-runner --outdir build --no-subsets --allow-overwrite --outdir . --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo extsubset/pr-simple.obo
+	ontology-release-runner --outdir build --no-subsets --allow-overwrite --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo extsubset/pr-simple.obo
 #	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix $(OBO)/CL_ --prefix $(OBO)/CP_ cl-edit.obo $(OBO)/uberon/basic.owl pr-core.obo $(OBO)/go.owl $(OBO)/pato.owl chebi_lite.obo
 .PRECIOUS: build/cl.obo
 
 cl.obo: build/cl.obo
 	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
+cl.owl: build/cl.owl
+	cp $< $@
+
 cl-basic.obo: build/cl-simple.obo
 	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
+cl-basic.owl: build/cl-simple.owl
+	cp $< $@
+
 fix-%: %
 	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
-
-# ----------------------------------------
-# OBO to OWL conversion
-# ----------------------------------------
-# DEPRECATED - done as part of Oort now
-%.owl: %.obo
-	obolib-obo2owl $< -o $@
 
 # ----------------------------------------
 # Legacy copy to cvs
@@ -46,7 +47,7 @@ re-sync:
 # ----------------------------------------
 
 # the primary editors version
-# (todo - make this live)
-cl-edit.obo:
-	wget http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/anatomy/cell_type/cell.edit.obo -O $@ && perl -i ../tools/fix-obo-header.pl cl-edit.obo $@
+# (todo - make this live) DONE!!
+#cl-edit.obo:
+#	wget http://obo.cvs.sourceforge.net/viewvc/obo/obo/ontology/anatomy/cell_type/cell.edit.obo -O $@ && perl -i ../tools/fix-obo-header.pl cl-edit.obo $@
 #	cp cell.edit.obo $@
