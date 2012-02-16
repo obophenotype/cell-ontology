@@ -9,10 +9,19 @@ extsubset/pr-simple.obo:
 	cd extsubset && ontology-release-runner --force --no-subsets --reasoner elk --simple  http://purl.obolibrary.org/obo/pr.obo
 #	wget $(OBO)/pr.obo -O $@
 
-oort:
-	ontology-release-runner --no-subsets --allow-overwrite --outdir . --repair-cardinality --reasoner elk --asserted --simple --re-mireot cl-edit.obo http://purl.obolibrary.org/obo/uberon/basic.owl http://purl.obolibrary.org/obo/go.owl http://purl.obolibrary.org/obo/pato.owl extsubset/chebi_lite.obo extsubset/pr-simple.obo
-#	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix http://purl.obolibrary.org/obo/CL_ --prefix http://purl.obolibrary.org/obo/CP_ cl-edit.obo http://purl.obolibrary.org/obo/uberon/basic.owl pr-core.obo http://purl.obolibrary.org/obo/go.owl http://purl.obolibrary.org/obo/pato.owl chebi_lite.obo
+build/cl.obo: cl-edit.obo
+	ontology-release-runner --outdir build --no-subsets --allow-overwrite --outdir . --repair-cardinality --reasoner elk --asserted --simple --re-mireot $< $(OBO)/uberon/basic.owl $(OBO)/go.owl $(OBO)/pato.owl extsubset/chebi_lite.obo extsubset/pr-simple.obo
+#	ontology-release-runner --outdir releases --reasoner elk --asserted --simple --re-mireot --allow-overwrite --prefix $(OBO)/CL_ --prefix $(OBO)/CP_ cl-edit.obo $(OBO)/uberon/basic.owl pr-core.obo $(OBO)/go.owl $(OBO)/pato.owl chebi_lite.obo
+.PRECIOUS: build/cl.obo
 
+cl.obo: build/cl.obo
+	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+
+cl-basic.obo: build/cl-simple.obo
+	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
+
+fix-%: %
+	../tools/fix-synsubsetdef.pl $< > $@.tmp && mv $@.tmp $@
 
 # ----------------------------------------
 # OBO to OWL conversion
