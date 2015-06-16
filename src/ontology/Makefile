@@ -198,5 +198,3 @@ publish_to_cvs: release re-sync
 
 re-sync:
 	cp cl-basic.obo $(CVS_DIR)/cell.obo && cp cl-merged.obo $(CVS_DIR)/cell.edit.obo
-
-
