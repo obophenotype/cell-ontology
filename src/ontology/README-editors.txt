@@ -32,6 +32,9 @@ https://code.google.com/p/cell-ontology/source/checkout
 GETTING STARTED
 ---------------
 
+To see how to use github with sourcetree:
+https://docs.google.com/document/d/1vNcOzDwVcMiiR0maWVutWA6Vtndv0TL2vROkSMfFxeE/edit
+
 Always start by doing:
 
 Email google group at cl_edit@googlegroups.com to lock the files  
