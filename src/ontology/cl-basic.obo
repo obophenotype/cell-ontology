@@ -779,6 +779,7 @@ id: CL:0000072
 name: non-branched duct epithelial cell
 namespace: cell
 is_a: CL:0000068 ! duct epithelial cell
+is_a: CL:0002078 ! meso-epithelial cell
 relationship: develops_from CL:0000222 ! mesodermal cell
 
 [Term]
@@ -819,6 +820,7 @@ synonym: "mesotheliocyte" EXACT []
 xref: FMA:66773
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000213 ! lining cell
+is_a: CL:0002078 ! meso-epithelial cell
 relationship: develops_from CL:0000222 ! mesodermal cell
 
 [Term]
@@ -1889,6 +1891,7 @@ xref: CALOHA:TS-2379
 xref: FMA:67799
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0000183 ! contractile cell
+is_a: CL:0002078 ! meso-epithelial cell
 relationship: develops_from CL:0000222 ! mesodermal cell
 
 [Term]
@@ -3550,7 +3553,7 @@ relationship: develops_from CL:0000385 ! prohemocyte (sensu Nematoda and Protost
 id: CL:0000388
 name: tendon cell
 namespace: cell
-def: "A fibrocyte that is part of a tendon." [GOC:tfm]
+def: "An elongated fibrocyte that is part of a tendon. The cytoplasm is stretched between the collagen fibres of the tendon. They have a central cell nucleus with a prominent nucleolus. Tendon cells have a well-developed rough endoplasmic reticulum and they are responsible for synthesis and turnover of tendon fibres and ground substance." [GOC:NV, GOC:tfm, PMID:957445]
 synonym: "muscle attachment cell" EXACT []
 synonym: "tenocyte" RELATED []
 is_a: CL:0000135 ! fibrocyte
@@ -5689,8 +5692,6 @@ name: supportive cell
 namespace: cell
 def: "A cell whose primary function is to support other cell types." [FB:ma, GOC:tfm]
 xref: BTO:0002315
-xref: FMA:86947
-xref: ZFA:0000688
 is_a: CL:0000003 ! native cell
 
 [Term]
@@ -6190,7 +6191,6 @@ id: CL:0000684
 name: littoral cell of liver
 namespace: cell
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:0000685
@@ -10174,6 +10174,7 @@ name: Kit-positive erythroid progenitor cell
 namespace: cell
 def: "An erythroid progenitor cell is Kit-positive, Ly6A-negative, CD41-negative, CD127-negative, and CD123-negative. This cell type is also described as being lin-negative, Kit-positive, CD150-negative, CD41-negative, CD105-positive, and FcgR-negative." [GOC:ak, GOC:tfm, http://www.immgen.org/index_content.html, PMID:19805084]
 comment: Markers found on mouse cells.
+synonym: "c- Kit-positive erythroid progenitor cell" EXACT []
 is_a: CL:0001066 ! erythroid progenitor cell, mammalian
 relationship: develops_from CL:0002006 ! Kit-positive, CD34-negative megakaryocyte erythroid progenitor cell
 created_by: tmeehan
@@ -17788,6 +17789,7 @@ id: CL:0007006
 name: chordamesodermal cell
 namespace: cell
 def: "Mesodermal cell that is axially located and gives rise to the cells of the notochord." [GO_REF:0000034]
+synonym: "axial mesodermal cell" EXACT []
 is_a: CL:0000222 ! mesodermal cell
 created_by: haendel
 creation_date: 2012-06-27T08:52:41Z
@@ -18354,6 +18356,39 @@ synonym: "Lugaro cell" EXACT []
 is_a: CL:0011005 ! GABAergic interneuron
 
 [Term]
+id: CL:0011007
+name: paraxial cell
+def: "A cell in the area of mesoderm in the neurulating embryo that flanks and forms simultaneously with the neural tube. The cells of this region give rise to somites." [GOC:NV, PMID:11687492]
+synonym: "paraxial mesoderm cell" EXACT []
+synonym: "presomitic mesoderm cell" NARROW []
+synonym: "somitic mesoderm cell" EXACT []
+is_a: CL:0000222 ! mesodermal cell
+
+[Term]
+id: CL:0011008
+name: embryonic hemocyte
+def: "A hemocyte derived from head mesoderm, which enters the hemolymph as acirculating cell." [GOC:NV, PMID:17967061]
+is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+
+[Term]
+id: CL:0011009
+name: embryonic plasmatocyte
+def: "A plasmatocyte derived from head mesoderm." [GOC:NV, PMID:17967061]
+is_a: CL:0000394 ! plasmatocyte
+
+[Term]
+id: CL:0011010
+name: lateral mesodermal cell
+def: "A cell derived from the mesoderm that is found at the periphery of the embryo." [GOC:NV, PMID:9169844]
+is_a: CL:0000222 ! mesodermal cell
+
+[Term]
+id: CL:0011011
+name: intermediate mesodermal cell
+def: "A cell derived from the mesoderm that is located between the paraxial mesoderm and the lateral plate." [GOC:NV, ISBN:978-0-87969-707-5]
+is_a: CL:0000222 ! mesodermal cell
+
+[Term]
 id: CL:0011100
 name: galanergic neuron
 def: "Neuron that secretes the neurotransmitter galanin." [PMID:23159249]
@@ -18368,13 +18403,13 @@ is_a: CL:0000351 ! trophoblast cell
 [Term]
 id: CL:0011102
 name: parasympathetic neuron
-def: "Parasympathetic neurons are part of the parasympathetic nervous sysem and the cell bodies lie in the brain and sacral region of the spinal cord. The neurons are mainly cholinergic." [isbn 0080923437]
+def: "Parasympathetic neurons are part of the parasympathetic nervous sysem and the cell bodies lie in the brain and sacral region of the spinal cord. The neurons are mainly cholinergic." [isbn:0080923437]
 is_a: CL:0000107 ! autonomic neuron
 
 [Term]
 id: CL:0011103
 name: sympathetic neuron
-def: "Sympathetic neurons are part of the sympathetic nervous system and are primarily adrenergic producing the neurotransmitter noradrenalin along with other neuropeptides." [ isbn 0080923437]
+def: "Sympathetic neurons are part of the sympathetic nervous system and are primarily adrenergic producing the neurotransmitter noradrenalin along with other neuropeptides." [isbn:0080923437]
 is_a: CL:0000107 ! autonomic neuron
 
 [Term]
@@ -18806,7 +18841,6 @@ def: "A mesothelial cell that is part of the dura mater." [GOC:tfm]
 synonym: "squamous mesothelial cell of dura mater" EXACT [FMA:256516]
 xref: FMA:256516
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000299
@@ -19867,7 +19901,6 @@ namespace: cell
 def: "A mesothelial cell that is part of the anterior chamber of eyeball." [GOC:tfm]
 xref: FMA:70615
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000445
@@ -19965,7 +19998,6 @@ namespace: cell
 def: "A mesothelial cell that is part of the parietal peritoneum." [GOC:tfm]
 xref: FMA:72142
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000457
@@ -19974,7 +20006,6 @@ namespace: cell
 def: "A mesothelial cell that is part of the visceral peritoneum." [GOC:tfm]
 xref: FMA:72143
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000458
@@ -20179,7 +20210,6 @@ def: "A mesothelial cell that is part of the peritoneum." [GOC:tfm]
 synonym: "peritoneal mesothelial cell" EXACT [FMA:86736]
 xref: FMA:86736
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000491
@@ -20189,7 +20219,6 @@ def: "A mesothelial cell that is part of the pleura." [GOC:tfm]
 synonym: "pleural mesothelial cell" EXACT [FMA:86737]
 xref: FMA:86737
 is_a: CL:0000077 ! mesothelial cell
-is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000492
@@ -21166,6 +21195,8 @@ id: CL:1001505
 name: parvocellular neurosecretory cell
 namespace: cl
 def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
+synonym: "parvocellular neuron" EXACT []
+synonym: "parvocellular neurosecretory neuron" EXACT []
 is_a: CL:0000167 ! peptide hormone secreting cell
 is_a: CL:0000381 ! neurosecretory neuron
 

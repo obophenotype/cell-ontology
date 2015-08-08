@@ -175,6 +175,7 @@ synonym: "ganglion spinale" RELATED []
 synonym: "ganglion spinalis" EXACT []
 synonym: "posterior root ganglion" RELATED []
 synonym: "spinal ganglion" EXACT []
+synonym: "spinal ganglion part of peripheral nervous system" EXACT []
 is_a: UBERON:0001800 ! sensory ganglion
 is_a: UBERON:0010313 ! neural crest-derived structure
 
@@ -183,7 +184,7 @@ id: UBERON:0000045
 name: ganglion
 synonym: "ganglia" RELATED []
 synonym: "neural ganglion" RELATED []
-is_a: UBERON:0034922 ! cell cluster
+is_a: UBERON:0010001 ! cell cluster organ
 
 [Term]
 id: UBERON:0000047
@@ -674,7 +675,10 @@ name: tongue muscle
 synonym: "muscle of tongue" EXACT []
 synonym: "muscle organ of tongue" EXACT []
 synonym: "musculi linguae" RELATED []
-is_a: UBERON:0000078 ! mixed ectoderm/mesoderm/endoderm-derived structure
+synonym: "skeletal muscle tissue of tongue" EXACT []
+synonym: "tongue skeletal muscle" EXACT []
+synonym: "tongue skeletal muscle tissue" EXACT []
+is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010959 ! craniocervical muscle
 is_a: UBERON:0013765 ! digestive system element
 union_of: UBERON:0001575 ! extrinsic muscle of tongue
@@ -752,7 +756,6 @@ id: UBERON:0000412
 name: dermal papilla
 synonym: "dermal papilla cell" RELATED []
 synonym: "dermal papillae" EXACT []
-synonym: "DPC" RELATED []
 synonym: "follicular papilla" EXACT []
 synonym: "hair follicle dermal papilla" RELATED []
 synonym: "hair papilla" RELATED []
@@ -1227,7 +1230,7 @@ is_a: UBERON:0006868 ! seminal fluid secreting gland
 [Term]
 id: UBERON:0001003
 name: skin epidermis
-synonym: "adult epidermis" EXACT []
+synonym: "epidermis" BROAD []
 synonym: "skin" BROAD []
 synonym: "vertebrate epidermis" EXACT []
 is_a: UBERON:0007376 ! outer epithelium
@@ -2378,14 +2381,14 @@ id: UBERON:0001575
 name: extrinsic muscle of tongue
 synonym: "extrinsic lingual muscle" EXACT []
 synonym: "extrinsic tongue muscle" EXACT []
-is_a: UBERON:0001576 ! intrinsic muscle of tongue
-is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
+is_a: UBERON:0000378 ! tongue muscle
 
 [Term]
 id: UBERON:0001576
 name: intrinsic muscle of tongue
 synonym: "intrinsic lingual muscle" EXACT []
 synonym: "intrinsic tongue muscle" EXACT []
+is_a: UBERON:0000078 ! mixed ectoderm/mesoderm/endoderm-derived structure
 is_a: UBERON:0000378 ! tongue muscle
 
 [Term]
@@ -2907,7 +2910,6 @@ synonym: "trachea epithelium" EXACT []
 synonym: "tracheal epithelium" EXACT []
 synonym: "windpipe epithelial tissue" EXACT []
 synonym: "windpipe epithelium" EXACT []
-is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0004815 ! lower respiratory tract epithelium
 
 [Term]
@@ -3053,7 +3055,6 @@ synonym: "nasopharynx epithelial tissue" EXACT []
 synonym: "nasopharynx epithelium" EXACT []
 synonym: "rhinopharynx epithelial tissue" EXACT []
 synonym: "rhinopharynx epithelium" EXACT []
-is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0003351 ! pharyngeal epithelium
 is_a: UBERON:0004814 ! upper respiratory tract epithelium
 
@@ -3260,7 +3261,6 @@ synonym: "pseudostratified main olfactory epithelium" RELATED []
 synonym: "sensory olfactory epithelium" EXACT []
 is_a: UBERON:0005384 ! nasal cavity epithelium
 is_a: UBERON:0006934 ! sensory epithelium
-is_a: UBERON:0010499 ! pseudostratified ciliated columnar epithelium
 
 [Term]
 id: UBERON:0002005
@@ -3397,7 +3397,6 @@ synonym: "epithelial tissue of bronchial trunk" EXACT []
 synonym: "epithelial tissue of bronchus" EXACT []
 synonym: "epithelium of bronchi" EXACT []
 synonym: "epithelium of bronchial trunk" EXACT []
-is_a: UBERON:0000485 ! simple columnar epithelium
 is_a: UBERON:0004815 ! lower respiratory tract epithelium
 
 [Term]
@@ -3543,7 +3542,7 @@ is_a: UBERON:0013754 ! integumentary system layer
 id: UBERON:0002073
 name: hair follicle
 synonym: "folliculus pili" RELATED []
-is_a: UBERON:0000064 ! organ part
+is_a: UBERON:0000063 ! organ subunit
 is_a: UBERON:0004121 ! ectoderm-derived structure
 is_a: UBERON:0010314 ! structure with developmental contribution from neural crest
 
@@ -3567,7 +3566,7 @@ synonym: "right ventricle" EXACT []
 synonym: "right ventricle of heart" EXACT []
 synonym: "ventriculus dexter" RELATED []
 is_a: UBERON:0002082 ! cardiac ventricle
-is_a: UBERON:0015212 ! lateral structure
+is_a: UBERON:0035554 ! right cardiac chamber
 
 [Term]
 id: UBERON:0002081
@@ -3599,7 +3598,7 @@ synonym: "left ventricle" EXACT []
 synonym: "left ventricle of heart" EXACT []
 synonym: "ventriculus sinister cordis" RELATED []
 is_a: UBERON:0002082 ! cardiac ventricle
-is_a: UBERON:0015212 ! lateral structure
+is_a: UBERON:0035553 ! left cardiac chamber
 
 [Term]
 id: UBERON:0002085
@@ -4892,12 +4891,8 @@ is_a: UBERON:0010371 ! ecto-epithelium
 
 [Term]
 id: UBERON:0003273
-name: skeletal muscle tissue of tongue
-synonym: "skeletal muscle tissue of tongue" EXACT []
-synonym: "tongue skeletal muscle" EXACT []
-synonym: "tongue skeletal muscle tissue" EXACT []
-is_a: UBERON:0000078 ! mixed ectoderm/mesoderm/endoderm-derived structure
-is_a: UBERON:0001134 ! skeletal muscle tissue
+name: obsolete skeletal muscle tissue of tongue
+is_obsolete: true
 
 [Term]
 id: UBERON:0003294
@@ -4920,12 +4915,6 @@ synonym: "integumental gland" EXACT []
 synonym: "integumental system gland" EXACT []
 synonym: "integumentary gland" EXACT []
 is_a: UBERON:0002530 ! gland
-
-[Term]
-id: UBERON:0003338
-name: ganglion of peripheral nervous system
-synonym: "peripheral nervous system ganglion" EXACT []
-is_a: UBERON:0000045 ! ganglion
 
 [Term]
 id: UBERON:0003350
@@ -6001,6 +5990,7 @@ synonym: "respiratory epithelium" RELATED []
 synonym: "respiratory tract epithelial tissue" EXACT []
 is_a: UBERON:0004807 ! respiratory system epithelium
 is_a: UBERON:0005911 ! endo-epithelium
+is_a: UBERON:0010499 ! pseudostratified ciliated columnar epithelium
 
 [Term]
 id: UBERON:0004804
@@ -6659,7 +6649,6 @@ is_a: UBERON:0019306 ! nose epithelium
 id: UBERON:0005385
 name: nasal cavity respiratory epithelium
 is_a: UBERON:0005384 ! nasal cavity epithelium
-is_a: UBERON:0010499 ! pseudostratified ciliated columnar epithelium
 
 [Term]
 id: UBERON:0005388
@@ -7287,6 +7276,7 @@ is_a: UBERON:0004119 ! endoderm-derived structure
 id: UBERON:0007376
 name: outer epithelium
 synonym: "epidermis" EXACT []
+synonym: "epidermis (sensu Metazoa)" EXACT []
 synonym: "hypoderm" RELATED []
 synonym: "hypodermis" RELATED []
 synonym: "outer epidermal layer" EXACT []
@@ -7518,12 +7508,12 @@ id: UBERON:0008904
 name: neuromast
 synonym: "cyatocïde@fr" EXACT []
 synonym: "lateral line neuromast" EXACT []
-synonym: "lateral line organ" EXACT []
+synonym: "lateral line organ" BROAD []
 synonym: "neuromast organ" EXACT []
 synonym: "neuromaste superficiel@fr" EXACT []
 synonym: "neuromasts" EXACT []
-is_a: UBERON:0000020 ! sense organ
 is_a: UBERON:0004121 ! ectoderm-derived structure
+is_a: UBERON:0035555 ! lateral line sense organ
 
 [Term]
 id: UBERON:0008906
@@ -7730,7 +7720,8 @@ is_a: UBERON:0006615 ! venous sinus
 
 [Term]
 id: UBERON:0009969
-name: stato-acoustic epithelium
+name: statoacoustic epithelium
+synonym: "stato-acoustic epithelium" EXACT []
 is_a: UBERON:0006934 ! sensory epithelium
 
 [Term]
@@ -7912,6 +7903,13 @@ name: pseudostratified ciliated columnar epithelium
 synonym: "epithelium pseudostratificatum columnare ciliatum (trachea et bronchi)" EXACT []
 is_a: UBERON:0007592 ! ciliated columnar epithelium
 is_a: UBERON:0010498 ! pseudostratified columnar epithelium
+
+[Term]
+id: UBERON:0010521
+name: electroreceptor organ
+synonym: "electric sense organ" EXACT []
+synonym: "electroreception organ" EXACT []
+is_a: UBERON:0000020 ! sense organ
 
 [Term]
 id: UBERON:0010523
@@ -8474,7 +8472,6 @@ is_a: UBERON:0000483 ! epithelium
 [Term]
 id: UBERON:0019306
 name: nose epithelium
-is_a: UBERON:0004807 ! respiratory system epithelium
 is_a: UBERON:0010371 ! ecto-epithelium
 is_a: UBERON:0019304 ! sensory organ epithelium
 
@@ -8577,6 +8574,23 @@ is_a: UBERON:0003929 ! digestive tract epithelium
 is_a: UBERON:0010371 ! ecto-epithelium
 
 [Term]
+id: UBERON:0035553
+name: left cardiac chamber
+is_a: UBERON:0004151 ! cardiac chamber
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0035554
+name: right cardiac chamber
+is_a: UBERON:0004151 ! cardiac chamber
+is_a: UBERON:0015212 ! lateral structure
+
+[Term]
+id: UBERON:0035555
+name: lateral line sense organ
+is_a: UBERON:0010521 ! electroreceptor organ
+
+[Term]
 id: UBERON:1000021
 name: skin of face
 synonym: "face skin" EXACT []
@@ -8598,7 +8612,6 @@ name: lateral line ganglion
 synonym: "lateral line ganglia" EXACT []
 synonym: "LLG" EXACT []
 is_a: UBERON:0001714 ! cranial ganglion
-is_a: UBERON:0003338 ! ganglion of peripheral nervous system
 is_a: UBERON:0004121 ! ectoderm-derived structure
 
 [Term]

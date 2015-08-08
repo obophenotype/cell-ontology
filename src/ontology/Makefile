@@ -1,9 +1,14 @@
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
+RELEASEDIR=../..
 
 all: all_imports release
 
-release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff
+release: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff copy-release
+copy-release:
+	cp cl.{obo,owl} cl-basic.{obo,owl} $(RELEASEDIR)
+	cp imports/*{obo,owl} $(RELEASEDIR)/imports
+
 
 # ----------------------------------------
 # BUILD
