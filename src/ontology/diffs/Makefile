@@ -24,9 +24,9 @@ $(ONT)-combined-diff.txt:  $(TXTS)
 	cat $(TXTS) > $@
 
 $(ONT)-lastbuild.obo: $(SRC)
-	wget $(OBO)/$(ONT)-basic.obo -O $@
+	wget --no-check-certificate $(OBO)/$(ONT)-basic.obo -O $@
 $(ONT)-lastbuild.owl: $(SRC)
-	wget $(OWLLAST) -O $@ && touch $@
+	wget --no-check-certificate $(OWLLAST) -O $@ && touch $@
 
 $(ONT)-diff.md: $(ONT)-lastbuild.owl $(OWLSRC)
 	owljs-diff -C ../catalog-v001.xml -o $@ $< $(OWLSRC) 
