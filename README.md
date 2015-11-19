@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/obophenotype/cell-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/cell-ontology)
+[![DOI](https://zenodo.org/badge/13996/obophenotype/cell-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cell-ontology)
+
 # cell-ontology
 An ontology of cell types
 
