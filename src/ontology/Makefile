@@ -10,6 +10,7 @@ copy-release:
 	cp cl.{obo,owl} cl-basic.{obo,owl} $(RELEASEDIR)
 	cp imports/*{obo,owl} $(RELEASEDIR)/imports
 
+test: all_imports cl.obo
 
 # ----------------------------------------
 # BUILD
