@@ -1,3 +1,4 @@
+SRC=cl-edit.owl
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
 RELEASEDIR=../..
@@ -86,8 +87,15 @@ KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
 # Create an import module using the OWLAPI module extraction code via OWLTools.
 # We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
 # After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
-imports/%_import.owl: cl-edit.owl mirror/%.owl imports/%_seed.owl
-	OWLTOOLS_MEMORY=12G owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties -f $(KEEPRELS)  --remove-annotation-assertions -l -s --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
+#imports/%_import.owl: cl-edit.owl mirror/%.owl imports/%_seed.owl
+#	OWLTOOLS_MEMORY=12G owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties -f $(KEEPRELS)  --remove-annotation-assertions -l -s --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
+
+# File used to seed module extraction
+imports/seed.tsv: cl-edit.owl imports/seed_edit.tsv
+	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp imports/seed_edit.tsv > $@
+
+imports/%_import.owl: $(SRC) mirror/%.owl imports/seed.tsv
+	robot extract -i mirror/$*.owl -T imports/seed.tsv -m BOT -O $(OBO)/cl/$@ -o $@
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
@@ -103,6 +111,8 @@ mirror/pr.owl: mirror/pr.obo
 	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
 mirror/clo.owl:
 	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
+mirror/ro.owl:
+	owltools $(OBO)/ro.owl --merge-imports-closure  --remove-annotation-assertions -r -l -s -d --remove-tbox --set-ontology-id $(OBO)/ro.owl -o $@
 mirror/ncbitaxon.owl:
 	wget $(OBO)/ncbitaxon.owl -O $@
 .PRECIOUS: mirror/%.owl
