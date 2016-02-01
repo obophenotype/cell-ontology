@@ -108,7 +108,7 @@ mirror/uberon.owl: cl-edit.owl
 mirror/pr.obo: cl-edit.owl
 	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
 mirror/pr.owl: mirror/pr.obo
-	owltools $< --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
+	owltools $< --remove-axiom-annotations --remove-annotation-assertions -l -s -d --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
 mirror/clo.owl:
 	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
 mirror/ro.owl:
