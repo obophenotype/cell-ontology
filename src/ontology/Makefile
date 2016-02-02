@@ -5,7 +5,7 @@ RELEASEDIR=../..
 
 all: all_imports stage
 
-stage: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck diff 
+stage: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck 
 release: stage copy-release
 copy-release:
 	cp cl.{obo,owl} cl-basic.{obo,owl} $(RELEASEDIR)
@@ -105,7 +105,7 @@ mirror/%.owl: cl-edit.owl
 	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
 mirror/uberon.owl: cl-edit.owl
 	owltools $(OBO)/uberon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
-mirror/pr.obo: cl-edit.owl
+mirror/pr.obo: 
 	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
 mirror/pr.owl: mirror/pr.obo
 	owltools $< --remove-axiom-annotations --remove-annotation-assertions -l -s -d --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
