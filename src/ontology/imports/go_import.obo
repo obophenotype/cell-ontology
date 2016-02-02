@@ -1,6 +1,5 @@
 format-version: 1.2
 ontology: cl/imports/go_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/go/releases/2015-10-29/go.owl
 
 [Term]
 id: GO:0000018
@@ -72,7 +71,6 @@ is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0010927 ! cellular component assembly involved in morphogenesis
 is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
 is_a: GO:0033363 ! secretory granule organization
-is_a: GO:0044702 ! single organism reproductive process
 is_a: GO:0070925 ! organelle assembly
 is_a: GO:1902589 ! single-organism organelle organization
 
@@ -742,7 +740,7 @@ is_a: GO:0032502 ! developmental process
 [Term]
 id: GO:0003008
 name: system process
-is_a: GO:0044707 ! single-multicellular organism process
+is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0003013
@@ -782,16 +780,6 @@ is_a: GO:0038024 ! cargo receptor activity
 id: GO:0005215
 name: transporter activity
 is_a: GO:0003674 ! molecular_function
-
-[Term]
-id: GO:0005319
-name: lipid transporter activity
-is_a: GO:0022892 ! substrate-specific transporter activity
-
-[Term]
-id: GO:0005342
-name: organic acid transmembrane transporter activity
-is_a: GO:0022891 ! substrate-specific transmembrane transporter activity
 
 [Term]
 id: GO:0005488
@@ -848,7 +836,7 @@ is_a: GO:0044444 ! cytoplasmic part
 [Term]
 id: GO:0005840
 name: ribosome
-is_a: GO:0030529 ! ribonucleoprotein complex
+is_a: GO:0030529 ! intracellular ribonucleoprotein complex
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
 is_a: GO:0044444 ! cytoplasmic part
 
@@ -1136,11 +1124,6 @@ name: female meiosis II
 is_a: GO:0007135 ! meiosis II
 
 [Term]
-id: GO:0007154
-name: cell communication
-is_a: GO:0044763 ! single-organism cellular process
-
-[Term]
 id: GO:0007155
 name: cell adhesion
 is_a: GO:0022610 ! biological adhesion
@@ -1155,12 +1138,6 @@ id: GO:0007162
 name: negative regulation of cell adhesion
 is_a: GO:0030155 ! regulation of cell adhesion
 is_a: GO:0048523 ! negative regulation of cellular process
-
-[Term]
-id: GO:0007267
-name: cell-cell signaling
-is_a: GO:0007154 ! cell communication
-is_a: GO:0044700 ! single organism signaling
 
 [Term]
 id: GO:0007269
@@ -1180,7 +1157,6 @@ id: GO:0007281
 name: germ cell development
 is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
-is_a: GO:0044702 ! single organism reproductive process
 is_a: GO:0048468 ! cell development
 
 [Term]
@@ -1194,7 +1170,6 @@ name: sperm axoneme assembly
 is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
 is_a: GO:0035082 ! axoneme assembly
-is_a: GO:0044702 ! single organism reproductive process
 
 [Term]
 id: GO:0007289
@@ -1234,11 +1209,6 @@ is_a: GO:0050878 ! regulation of body fluid levels
 id: GO:0008015
 name: blood circulation
 is_a: GO:0003013 ! circulatory system process
-
-[Term]
-id: GO:0008028
-name: monocarboxylic acid transmembrane transporter activity
-is_a: GO:0046943 ! carboxylic acid transmembrane transporter activity
 
 [Term]
 id: GO:0008104
@@ -1543,18 +1513,6 @@ is_a: GO:0008514 ! organic anion transmembrane transporter activity
 is_a: GO:0015103 ! inorganic anion transmembrane transporter activity
 
 [Term]
-id: GO:0015125
-name: bile acid transmembrane transporter activity
-is_a: GO:0005319 ! lipid transporter activity
-is_a: GO:0008028 ! monocarboxylic acid transmembrane transporter activity
-is_a: GO:1901618 ! organic hydroxy compound transmembrane transporter activity
-
-[Term]
-id: GO:0015126
-name: canalicular bile acid transmembrane transporter activity
-is_a: GO:0015125 ! bile acid transmembrane transporter activity
-
-[Term]
 id: GO:0015669
 name: gas transport
 is_a: GO:0044765 ! single-organism transport
@@ -1687,7 +1645,7 @@ is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0016023
-name: cytoplasmic membrane-bounded vesicle
+name: cytoplasmic, membrane-bounded vesicle
 is_a: GO:0031410 ! cytoplasmic vesicle
 is_a: GO:0031988 ! membrane-bounded vesicle
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
@@ -1755,11 +1713,6 @@ is_a: GO:0016445 ! somatic diversification of immunoglobulins
 id: GO:0016477
 name: cell migration
 is_a: GO:0048870 ! cell motility
-
-[Term]
-id: GO:0017144
-name: drug metabolic process
-is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0017145
@@ -1858,6 +1811,7 @@ is_a: GO:0045785 ! positive regulation of cell adhesion
 [Term]
 id: GO:0022412
 name: cellular process involved in reproduction in multicellular organism
+is_a: GO:0044702 ! single organism reproductive process
 is_a: GO:0044763 ! single-organism cellular process
 
 [Term]
@@ -1868,7 +1822,7 @@ is_a: GO:0008150 ! biological_process
 [Term]
 id: GO:0022602
 name: ovulation cycle process
-is_a: GO:0044699 ! single-organism process
+is_a: GO:0044702 ! single organism reproductive process
 is_a: GO:0048511 ! rhythmic process
 
 [Term]
@@ -1965,7 +1919,7 @@ is_a: GO:0030072 ! peptide hormone secretion
 [Term]
 id: GO:0030141
 name: secretory granule
-is_a: GO:0016023 ! cytoplasmic membrane-bounded vesicle
+is_a: GO:0099503 ! secretory vesicle
 
 [Term]
 id: GO:0030154
@@ -2104,9 +2058,9 @@ is_a: GO:2000147 ! positive regulation of cell motility
 
 [Term]
 id: GO:0030529
-name: ribonucleoprotein complex
-is_a: GO:0032991 ! macromolecular complex
+name: intracellular ribonucleoprotein complex
 is_a: GO:0044424 ! intracellular part
+is_a: GO:1990904 ! ribonucleoprotein complex
 
 [Term]
 id: GO:0030595
@@ -2351,6 +2305,7 @@ is_a: GO:0051251 ! positive regulation of lymphocyte activation
 id: GO:0032844
 name: regulation of homeostatic process
 is_a: GO:0050789 ! regulation of biological process
+is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
 id: GO:0032879
@@ -2588,11 +2543,6 @@ is_a: GO:0030072 ! peptide hormone secretion
 id: GO:0036321
 name: ghrelin secretion
 is_a: GO:0030072 ! peptide hormone secretion
-
-[Term]
-id: GO:0038001
-name: paracrine signaling
-is_a: GO:0007267 ! cell-cell signaling
 
 [Term]
 id: GO:0038023
@@ -3409,12 +3359,6 @@ is_a: GO:0015711 ! organic anion transport
 is_a: GO:0015849 ! organic acid transport
 
 [Term]
-id: GO:0046943
-name: carboxylic acid transmembrane transporter activity
-is_a: GO:0005342 ! organic acid transmembrane transporter activity
-is_a: GO:0008514 ! organic anion transmembrane transporter activity
-
-[Term]
 id: GO:0048002
 name: antigen processing and presentation of peptide antigen
 is_a: GO:0019882 ! antigen processing and presentation
@@ -3440,7 +3384,6 @@ id: GO:0048240
 name: sperm capacitation
 is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
-is_a: GO:0044702 ! single organism reproductive process
 is_a: GO:0048469 ! cell maturation
 
 [Term]
@@ -3559,7 +3502,7 @@ is_a: GO:0032502 ! developmental process
 [Term]
 id: GO:0048770
 name: pigment granule
-is_a: GO:0016023 ! cytoplasmic membrane-bounded vesicle
+is_a: GO:0016023 ! cytoplasmic, membrane-bounded vesicle
 
 [Term]
 id: GO:0048771
@@ -3764,7 +3707,6 @@ is_a: GO:0003008 ! system process
 [Term]
 id: GO:0050878
 name: regulation of body fluid levels
-is_a: GO:0044707 ! single-multicellular organism process
 is_a: GO:0065008 ! regulation of biological quality
 
 [Term]
@@ -4559,7 +4501,7 @@ is_a: GO:0007155 ! cell adhesion
 [Term]
 id: GO:0098754
 name: detoxification
-is_a: GO:0008152 ! metabolic process
+is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0098796
@@ -4588,6 +4530,11 @@ is_a: GO:0016020 ! membrane
 id: GO:0098858
 name: actin-based cell projection
 is_a: GO:0042995 ! cell projection
+
+[Term]
+id: GO:0099503
+name: secretory vesicle
+is_a: GO:0016023 ! cytoplasmic, membrane-bounded vesicle
 
 [Term]
 id: GO:1901135
@@ -4650,11 +4597,6 @@ id: GO:1901617
 name: organic hydroxy compound biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 is_a: GO:1901615 ! organic hydroxy compound metabolic process
-
-[Term]
-id: GO:1901618
-name: organic hydroxy compound transmembrane transporter activity
-is_a: GO:0022857 ! transmembrane transporter activity
 
 [Term]
 id: GO:1902105
@@ -4730,6 +4672,7 @@ is_a: GO:1903037 ! regulation of leukocyte cell-cell adhesion
 id: GO:1903046
 name: meiotic cell cycle process
 is_a: GO:0022402 ! cell cycle process
+is_a: GO:0044702 ! single organism reproductive process
 
 [Term]
 id: GO:1903047
@@ -4774,6 +4717,11 @@ name: positive regulation of vasculature development
 is_a: GO:0051094 ! positive regulation of developmental process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 is_a: GO:1901342 ! regulation of vasculature development
+
+[Term]
+id: GO:1990904
+name: ribonucleoprotein complex
+is_a: GO:0032991 ! macromolecular complex
 
 [Term]
 id: GO:2000026

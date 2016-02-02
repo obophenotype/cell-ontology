@@ -1,80 +1,461 @@
 format-version: 1.2
 ontology: cl/imports/ro_import
-property_value: http://purl.org/dc/elements/1.1/source http://purl.obolibrary.org/obo/ro/releases/2015-08-27/ro.owl
-
-[Term]
-id: BFO:0000002
-name: continuant
-
-[Term]
-id: BFO:0000003
-name: occurrent
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-is_a: BFO:0000002 ! continuant
-
-[Term]
-id: BFO:0000015
-name: process
-is_a: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000017
-name: realizable entity
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000019
-name: quality
-is_a: BFO:0000020 ! specifically dependent continuant
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-is_a: BFO:0000002 ! continuant
-
-[Term]
-id: CARO:0000003
-name: anatomical structure
-is_a: CARO:0000006 ! material anatomical entity
-
-[Term]
-id: CARO:0000006
-name: material anatomical entity
-
-[Term]
-id: CARO:0000014
-name: cell part
-is_a: CARO:0000003 ! anatomical structure
-
-[Term]
-id: CL:0000000
-name: cell
-is_a: CARO:0000003 ! anatomical structure
-
-[Term]
-id: CL:0000540
-name: neuron
-is_a: CL:0000000 ! cell
-
-[Term]
-id: GO:0005634
-name: nucleus
-is_a: GO:0044464 ! cell part
-
-[Term]
-id: GO:0044464
-name: cell part
-is_a: CARO:0000014 ! cell part
+owl-axioms: Prefix(owl:=<http://www.w3.org/2002/07/owl#>)\nPrefix(rdf:=<http://www.w3.org/1999/02/22-rdf-syntax-ns#>)\nPrefix(xml:=<http://www.w3.org/XML/1998/namespace>)\nPrefix(xsd:=<http://www.w3.org/2001/XMLSchema#>)\nPrefix(rdfs:=<http://www.w3.org/2000/01/rdf-schema#>)\n\n\nOntology(\nObjectPropertyRange(<http://purl.obolibrary.org/obo/RO_0002103> ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/CL_0000540>) <http://purl.obolibrary.org/obo/CL_0000540>))\nObjectPropertyDomain(<http://purl.obolibrary.org/obo/RO_0002120> ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/CL_0000540>) <http://purl.obolibrary.org/obo/CL_0000540>))\nObjectPropertyDomain(<http://purl.obolibrary.org/obo/RO_0002130> ObjectUnionOf(ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/CL_0000540>) <http://purl.obolibrary.org/obo/CL_0000540>))\nSubObjectPropertyOf(ObjectPropertyChain(<http://purl.obolibrary.org/obo/RO_0001025> ObjectInverseOf(<http://purl.obolibrary.org/obo/RO_0001025>)) <http://purl.obolibrary.org/obo/RO_0002379>)\n)
 
 [Typedef]
 id: BFO:0000050
+name: part of
+def: "a core relation that holds between a part and its whole" []
 is_transitive: true
-inverse_of: BFO:0000051
+is_a: RO:0002131 ! overlaps
+inverse_of: BFO:0000051 ! has part
 
 [Typedef]
 id: BFO:0000051
+name: has part
+def: "a core relation that holds between a whole and its part" []
 is_transitive: true
+is_a: RO:0002131 ! overlaps
+
+[Typedef]
+id: BFO:0000066
+name: occurs in
+def: "b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+domain: BFO:0000003
+range: BFO:0000004
+holds_over_chain: BFO:0000050 BFO:0000066
+inverse_of: BFO:0000067 ! contains process
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: BFO:0000067
+name: contains process
+def: "[copied from inverse property 'occurs in'] b occurs_in c =def b is a process and c is a material entity or immaterial entity& there exists a spatiotemporal region r and b occupies_spatiotemporal_region r.& forall(t) if b exists_at t then c exists_at t & there exist spatial regions s and s’ where & b spatially_projects_onto s at t& c is occupies_spatial_region s’ at t& s is a proper_continuant_part_of s’ at t" []
+
+[Typedef]
+id: RO:0000052
+name: inheres in
+def: "a relation between a specifically dependent continuant (the dependent) and an independent continuant (the bearer), in which the dependent specifically depends on the bearer for its existence" []
+is_a: RO:0002314 ! inheres in part of
+
+[Typedef]
+id: RO:0000053
+name: bearer of
+def: "a relation between an independent continuant (the bearer) and a specifically dependent continuant (the dependent), in which the dependent specifically depends on the bearer for its existence" []
+range: BFO:0000020
+inverse_of: RO:0000052 ! inheres in
+
+[Typedef]
+id: RO:0000056
+name: participates in
+def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
+domain: BFO:0000002
+range: BFO:0000003
+
+[Typedef]
+id: RO:0000057
+name: has participant
+def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
+domain: BFO:0000003
+range: BFO:0000002
+holds_over_chain: BFO:0000051 RO:0000057
+inverse_of: RO:0000056 ! participates in
+
+[Typedef]
+id: RO:0000300
+name: in neural circuit with
+def: "A relation that holds between two neurons connected directly via a synapse, or indirectly via a series of synaptically connected neurons." []
+is_transitive: true
+
+[Typedef]
+id: RO:0000301
+name: upstream in neural circuit with
+def: "A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next." []
+is_transitive: true
+is_a: RO:0000300 ! in neural circuit with
+
+[Typedef]
+id: RO:0000302
+name: downstream in neural circuit with
+def: "A relation that holds between a neuron that is synapsed_to another neuron or a neuron that is connected indirectly to another by a chain of neurons, each synapsed_to the next." []
+is_transitive: true
+is_a: RO:0000300 ! in neural circuit with
+
+[Typedef]
+id: RO:0001015
+name: location of
+def: "a relation between two independent continuants, the location and the target, in which the target is entirely within the location" []
+is_transitive: true
+
+[Typedef]
+id: RO:0001018
+name: contained in
+domain: BFO:0000040
+range: BFO:0000004
+holds_over_chain: RO:0001025 BFO:0000050
+inverse_of: RO:0001019 ! contains
+
+[Typedef]
+id: RO:0001019
+name: contains
+
+[Typedef]
+id: RO:0001025
+name: located in
+def: "a relation between two independent continuants, the target and the location, in which the target is entirely within the location" []
+is_transitive: true
+inverse_of: RO:0001015 ! location of
+
+[Typedef]
+id: RO:0002005
+name: innervated_by
+inverse_of: RO:0002134 ! innervates
+
+[Typedef]
+id: RO:0002006
+name: has synaptic terminal of
+is_a: RO:0002131 ! overlaps
+inverse_of: RO:0002130 ! has synaptic terminal in
+
+[Typedef]
+id: RO:0002100
+name: has soma location
+def: "Relation between a neuron and an anatomical structure that its soma is part of." []
+domain: CL:0000540
+is_a: RO:0002131 ! overlaps
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002103
+name: synapsed by
+def: "Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it. " []
+is_a: RO:0000301 ! upstream in neural circuit with
+inverse_of: RO:0002120 ! synapsed to
+
+[Typedef]
+id: RO:0002104
+name: has plasma membrane part
+def: "Holds between a cell c and a protein complex or protein p if and only if that cell has as part a plasma_membrane[GO:0005886], and that plasma membrane has p as part." []
+is_a: BFO:0000051 ! has part
+
+[Typedef]
+id: RO:0002120
+name: synapsed to
+def: " Relation between a neuron and an anatomical structure (including cells) that it chemically synapses to.\n        " []
+is_a: RO:0000302 ! downstream in neural circuit with
+
+[Typedef]
+id: RO:0002130
+name: has synaptic terminal in
+def: "A general relation between a neuron and some structure in which it either chemically synapses to some target or in which it receives (chemical) synaptic input." []
+is_a: RO:0002131 ! overlaps
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002131
+name: overlaps
+def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
+holds_over_chain: BFO:0000050 BFO:0000050
+holds_over_chain: BFO:0000051 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
+holds_over_chain: BFO:0000051 RO:0002131
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: RO:0002134
+name: innervates
+def: "Relation between a 'neuron projection bundle' and a region in which one or more of its component neuron projections either synapses to targets or receives synaptic input.\nT innervates some R\nExpands_to: T has_fasciculating_neuron_projection that synapse_in some R." []
+domain: CARO:0001001
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002163
+name: spatially disjoint from
+def: "A is spatially_disjoint_from B if and only if they have no parts in common" []
+is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: RO:0002202
+name: develops from
+def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
+domain: BFO:0000004
+range: BFO:0000004
+is_transitive: true
+is_a: RO:0002258 ! developmentally preceded by
+
+[Typedef]
+id: RO:0002203
+name: develops into
+is_transitive: true
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002387 ! has potential to develop into
+is_a: RO:0002388 ! has potential to directly develop into
+inverse_of: RO:0002202 ! develops from
+
+[Typedef]
+id: RO:0002211
+name: regulates
+def: "x regulates y if and only if the x is the realization of a function to exert an effect on the frequency, rate or extent of y" []
+domain: BFO:0000015
+range: BFO:0000015
+is_transitive: true
+is_a: RO:0002418 ! causally upstream of or within
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002212
+name: negatively regulates
+def: "x negatively regulates y if and only if the progression of x reduces the frequency, rate or extent of y" []
+is_a: RO:0002211 ! regulates
+
+[Typedef]
+id: RO:0002213
+name: positively regulates
+def: "x positively regulates y if and only if the progression of x increases the frequency, rate or extent of y" []
+holds_over_chain: RO:0002212 RO:0002212
+is_a: RO:0002211 ! regulates
+
+[Typedef]
+id: RO:0002215
+name: capable of
+def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
+domain: BFO:0000004
+range: BFO:0000015
+is_a: RO:0002216 ! capable of part of
+
+[Typedef]
+id: RO:0002216
+name: capable of part of
+def: "c stands in this relationship to p if and only if there exists some p' such that c is capable_of p', and p' is part_of p." []
+holds_over_chain: RO:0002215 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002500 ! causal agent in
+
+[Typedef]
+id: RO:0002220
+name: adjacent to
+def: "x adjacent to y if and only if x and y share a boundary" []
+domain: BFO:0000004
+range: BFO:0000004
+is_a: RO:0002163 ! spatially disjoint from
+
+[Typedef]
+id: RO:0002254
+name: has developmental contribution from
+def: "x has developmental contribution from y iff x has some part z such that z develops from y" []
+domain: CARO:0000003
+range: CARO:0000003
+holds_over_chain: BFO:0000051 RO:0002202
+is_a: RO:0002258 ! developmentally preceded by
+
+[Typedef]
+id: RO:0002255
+name: developmentally contributes to
+holds_over_chain: RO:0002203 BFO:0000050
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002385 ! has potential to developmentally contribute to
+inverse_of: RO:0002254 ! has developmental contribution from
+
+[Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002286
+name: developmentally succeeded by
+def: "Inverse of developmentally preceded by" []
+is_a: RO:0002384 ! has developmental potential involving
+inverse_of: RO:0002258 ! developmentally preceded by
+
+[Typedef]
+id: RO:0002314
+name: inheres in part of
+def: "q inheres in part of w if and only if there exists some p such that q inheres in p and p part of w." []
+holds_over_chain: RO:0000052 BFO:0000050 {http://purl.obolibrary.org/obo/RO_0002582="true"}
+is_a: RO:0002502 ! depends on
+transitive_over: BFO:0000050 ! part of
+
+[Typedef]
+id: RO:0002323
+name: mereotopologically related to
+def: "A mereological relationship or a topological relationship" []
+
+[Typedef]
+id: RO:0002324
+name: developmentally related to
+def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
+
+[Typedef]
+id: RO:0002328
+name: functionally related to
+
+[Typedef]
+id: RO:0002329
+name: part of structure that is capable of
+def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
+holds_over_chain: BFO:0000050 RO:0002215 {http://purl.obolibrary.org/obo/RO_0002581="true"}
+is_a: RO:0002328 ! functionally related to
+
+[Typedef]
+id: RO:0002334
+name: regulated by
+def: "inverse of regulates" []
+domain: BFO:0000015
+range: BFO:0000015
+is_transitive: true
+is_a: RO:0002427 ! causally downstream of or within
+inverse_of: RO:0002211 ! regulates
+
+[Typedef]
+id: RO:0002335
+name: negatively regulated by
+is_a: RO:0002334 ! regulated by
+inverse_of: RO:0002212 ! negatively regulates
+
+[Typedef]
+id: RO:0002336
+name: positively regulated by
+is_a: RO:0002334 ! regulated by
+inverse_of: RO:0002213 ! positively regulates
+
+[Typedef]
+id: RO:0002379
+name: spatially coextensive with
+def: "x spatially_coextensive_with y if and inly if x and y have the same location" []
+is_a: RO:0002131 ! overlaps
+
+[Typedef]
+id: RO:0002384
+name: has developmental potential involving
+def: "x has developmental potential involving y iff x is capable of a developmental process with output y. y may be the successor of x, or may be a different structure in the vicinity (as for example in the case of developmental induction)." []
+is_a: RO:0002324 ! developmentally related to
+
+[Typedef]
+id: RO:0002385
+name: has potential to developmentally contribute to
+def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002387
+name: has potential to develop into
+def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
+is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002388
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+is_a: RO:0002387 ! has potential to develop into
+
+[Typedef]
+id: RO:0002410
+name: causally related to
+def: "This relation groups causal relations between material entities and causal relations between processes" []
+is_a: RO:0002609 ! related via dependence to
+
+[Typedef]
+id: RO:0002418
+name: causally upstream of or within
+def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+is_transitive: true
+is_a: RO:0002501 ! causal relation between processes
+
+[Typedef]
+id: RO:0002427
+name: causally downstream of or within
+is_transitive: true
+is_a: RO:0002501 ! causal relation between processes
+inverse_of: RO:0002418 ! causally upstream of or within
+
+[Typedef]
+id: RO:0002479
+name: has part that occurs in
+def: "p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c." []
+domain: BFO:0000003
+range: BFO:0000004
+holds_over_chain: BFO:0000051 BFO:0000066 {http://purl.obolibrary.org/obo/RO_0002581="true"}
+
+[Typedef]
+id: RO:0002500
+name: causal agent in
+def: "A relationship between a material entity and a process where the material entity has some causal role that influences the process" []
+is_a: RO:0002595 ! causal relation between material entity and a process
+
+[Typedef]
+id: RO:0002501
+name: causal relation between processes
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+domain: BFO:0000003
+range: BFO:0000003
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002502
+name: depends on
+
+[Typedef]
+id: RO:0002584
+name: has part structure that is capable of
+def: "s 'has part structure that is capable of' p if and only if there exists some part x such that s 'has part' x and x 'capable of' p" []
+holds_over_chain: BFO:0000051 RO:0002215
+is_a: RO:0002328 ! functionally related to
+is_a: RO:0002595 ! causal relation between material entity and a process
+
+[Typedef]
+id: RO:0002595
+name: causal relation between material entity and a process
+def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
+domain: BFO:0000040
+range: BFO:0000015
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0002596
+name: capable of regulating
+def: "Holds between c and p if and only if c is capable of some activity a, and a regulates p." []
+holds_over_chain: RO:0002215 RO:0002211
+is_a: RO:0002500 ! causal agent in
+
+[Typedef]
+id: RO:0002597
+name: capable of negatively regulating
+def: "Holds between c and p if and only if c is capable of some activity a, and a negatively regulates p." []
+holds_over_chain: RO:0002215 RO:0002212
+is_a: RO:0002596 ! capable of regulating
+
+[Typedef]
+id: RO:0002598
+name: capable of positively regulating
+def: "Holds between c and p if and only if c is capable of some activity a, and a positively regulates p." []
+holds_over_chain: RO:0002215 RO:0002213
+is_a: RO:0002596 ! capable of regulating
+
+[Typedef]
+id: RO:0002608
+name: has causal agent
+def: "Inverse of 'causal agent in'" []
+is_a: RO:0002410 ! causally related to
+inverse_of: RO:0002500 ! causal agent in
+
+[Typedef]
+id: RO:0002609
+name: related via dependence to
+def: "A relationship that holds between two entities, where the relationship holds based on the presence or absence of statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
+
+[Typedef]
+id: RO:0003000
+name: produces
+def: "a produces b if some process that occurs_in a has_output b, where a and b are material entities. Examples: hybridoma cell line produces monoclonal antibody reagent; chondroblast produces avascular GAG-rich matrix." []
+domain: BFO:0000040
+range: BFO:0000040
+inverse_of: RO:0003001 ! produced by
+
+[Typedef]
+id: RO:0003001
+name: produced by
+def: "a produced_by b iff some process that occurs_in b has_output a." []
+domain: BFO:0000040
+range: BFO:0000040
 
