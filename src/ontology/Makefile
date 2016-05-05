@@ -112,7 +112,7 @@ mirror/pr.owl: mirror/pr.obo
 mirror/clo.owl:
 	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
 mirror/ro.owl:
-	owltools $(OBO)/ro.owl --merge-imports-closure  --remove-annotation-assertions -r -l -s -d --remove-tbox --set-ontology-id $(OBO)/ro.owl -o $@
+	owltools $(OBO)/ro.owl --merge-imports-closure  --remove-annotation-assertions -r -l -s -d --set-ontology-id $(OBO)/ro.owl -o $@
 mirror/ncbitaxon.owl:
 	wget $(OBO)/ncbitaxon.owl -O $@
 .PRECIOUS: mirror/%.owl
