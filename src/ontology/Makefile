@@ -100,10 +100,14 @@ imports/%_import.owl: $(SRC) mirror/%.owl imports/seed.tsv
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
 
+#MIRROR_TRIGGER = cl-edit.owl
+MIRROR_TRIGGER = 
+
 # clone remote ontology locally, perfoming some excision of relations and annotations
-mirror/%.owl: cl-edit.owl
-	owltools $(OBO)/$*.owl --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
-mirror/uberon.owl: cl-edit.owl
+# Note: use .obo for faster download
+mirror/%.owl: $(MIRROR_TRIGGER)
+	owltools $(OBO)/$*.obo --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
+mirror/uberon.owl: $(MIRROR_TRIGGER)
 	owltools $(OBO)/uberon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
 mirror/pr.obo: 
 	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
