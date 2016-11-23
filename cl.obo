@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2016-09-02
+data-version: releases/2016-11-23
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -11,7 +11,7 @@ remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>) VersionIRI(<null>))) [Axioms: 175 Logical Axioms: 61]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>) VersionIRI(<null>))) [Axioms: 2196 Logical Axioms: 219]
 remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/cl/imports/ro_import.owl>) VersionIRI(<null>))) [Axioms: 387 Logical Axioms: 156]
-remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>) VersionIRI(<null>))) [Axioms: 28287 Logical Axioms: 9678]
+remark: Includes Ontology(OntologyID(OntologyIRI(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>) VersionIRI(<null>))) [Axioms: 28302 Logical Axioms: 9682]
 remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
 ontology: cl
 property_value: http://purl.org/dc/elements/1.1/license http://creativecommons.org/licenses/by/4.0/
@@ -1512,7 +1512,6 @@ relationship: capable_of GO:0002536 ! respiratory burst involved in inflammatory
 relationship: capable_of GO:0002690 ! positive regulation of leukocyte chemotaxis
 relationship: capable_of GO:0006909 ! phagocytosis
 relationship: capable_of GO:0032637 ! interleukin-8 production
-relationship: develops_from CL:0000560 ! band form neutrophil
 relationship: has_part CP:0000000 ! neutrophillic cytoplasm
 relationship: has_part CP:0000025 ! lobed nucleus
 relationship: has_part GO:0070820 ! tertiary granule
@@ -2340,7 +2339,7 @@ def: "A cell that stores epinephrine secretory vesicles. During times of stress,
 synonym: "phaeochromocyte" EXACT []
 xref: BTO:0000259
 xref: FMA:69263
-is_a: CL:0000568 ! APUD cell
+is_a: CL:0000568 ! amine precursor uptake and decarboxylation cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -5016,7 +5015,7 @@ relationship: capable_of GO:0035931 ! mineralocorticoid secretion
 id: CL:0000457
 name: biogenic amine secreting cell
 namespace: cell
-is_a: CL:0000163 ! endocrine cell
+is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000458
@@ -5911,7 +5910,6 @@ name: animal cell
 namespace: cell
 subset: ubprop:upper_level
 is_a: CL:0000255 ! eukaryotic cell
-relationship: has_part GO:0005902 ! microvillus
 
 [Term]
 id: CL:0000549
@@ -6293,10 +6291,10 @@ is_a: CL:0000198 ! pain receptor cell
 
 [Term]
 id: CL:0000568
-name: APUD cell
+name: amine precursor uptake and decarboxylation cell
 namespace: cell
 def: "A cell that originates in the neural crest, that has certain cytochemical and ultrastructural characteristics and is found scattered throughout the body; types include melanocytes, the cells of the chromaffin system, and cells in the hypothalamus, hypophysis, thyroid, parathyroids, lungs, gastrointestinal tract, and pancreas. This cell type concentrates the amino acid precursors of certain amines and decarboxylate them, forming amines that function as regulators and neurotransmitters. This cell type produces substances such as epinephrine, norepinephrine, dopamine, serotonin, enkephalin, somatostatin, neurotensin, and substance P, the actions of which may affect contiguous cells, nearby groups of cells, or distant cells, thus functioning as local or systemic hormones. The name is an acronym for amine precursor uptake and decarboxylation cell." [GOC:tfm, ISBN:0721662544, MESH:A11.070]
-synonym: "amine precursor uptake and decarboxylation cell" EXACT []
+synonym: "APUD cell" EXACT []
 xref: BTO:0003866
 xref: FMA:83114
 is_a: CL:0000165 ! neuroendocrine cell
@@ -10161,8 +10159,8 @@ synonym: "5-hydroxytryptamine neuron" EXACT []
 synonym: "serotinergic neuron" RELATED []
 xref: FBbt:00005133
 xref: WBbt:0006837
-is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:0000458 ! serotonin secreting cell
+is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: capable_of GO:0060096 ! serotonin secretion, neurotransmission
 relationship: capable_of GO:0060096 ! serotonin secretion, neurotransmission
@@ -17736,7 +17734,7 @@ id: CL:0002250
 name: intestinal crypt stem cell
 namespace: cell
 def: "A cell that is found in a zone occupying the bottom region of the crypt; provide the source of most of the cell types of the intestinal epithelium; proliferate by mitotic division; differentiates into columnar or goblet cells." [GOC:tfm, ISBN:0517223651]
-synonym: "stem cell of intestinal crypt of lieberkuhn" EXACT []
+synonym: "stem cell of intestinal crypt of Lieberkuhn" EXACT []
 xref: FMA:63379
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002563 ! intestinal epithelial cell
@@ -24085,8 +24083,8 @@ relationship: part_of UBERON:0001264 ! pancreas
 id: CL:0008025
 name: noradrenergic neuron
 def: "A neuron that release noradrenaline (noriphinephrine) as a neurotransmitter." [GOC:dos]
-is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:0000459 ! noradrenergic cell
+is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: capable_of GO:0061533 ! norepinephrine secretion, neurotransmission
 relationship: capable_of GO:0061533 ! norepinephrine secretion, neurotransmission
@@ -24098,8 +24096,8 @@ namespace: cell
 def: "An epithelial cell that is part of the epithelium of a tracheal tube in an open tracheal system, such as that found in insects." [GOC:dos]
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
-intersection_of: part_of UBERON:0003127
-relationship: part_of UBERON:0003127
+intersection_of: part_of UBERON:0003127 ! open tracheal system trachea
+relationship: part_of UBERON:0003127 ! open tracheal system trachea
 
 [Term]
 id: CL:0009000
@@ -24394,9 +24392,8 @@ intersection_of: CL:0000617 ! GABAergic neuron
 
 [Term]
 id: CL:0011006
-name: lugaro cell
+name: Lugaro cell
 def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:nv]
-synonym: "Lugaro cell" EXACT []
 is_a: CL:0000402 ! CNS interneuron
 is_a: CL:0011005 ! GABAergic interneuron
 is_a: CL:1001611 ! cerebellar neuron
@@ -24540,7 +24537,7 @@ relationship: capable_of GO:0061585 ! hypocretin secretion, neurotransmission
 id: CL:0011110
 name: histaminergic neuron
 def: "Neuron that secretes histamine." [PMID:22677810] {editor="GOC:NV"}
-is_a: CL:0000381 ! neurosecretory neuron
+is_a: CL:0000540 ! neuron
 is_a: CL:0002274 ! histamine secreting cell
 intersection_of: CL:0000540 ! neuron
 intersection_of: capable_of GO:0061538 ! histamine secretion, neurotransmission
@@ -25481,7 +25478,7 @@ relationship: part_of UBERON:0001212 ! duodenal gland
 
 [Term]
 id: CL:1000338
-name: enterocyte of epithelium of crypt of lieberkuhn of small intestine
+name: enterocyte of epithelium of crypt of Lieberkuhn of small intestine
 namespace: cell
 def: "An enterocyte that is part of the epithelium of crypt of lieberkuhn of small intestine." [GOC:tfm]
 xref: FMA:263094
@@ -25543,7 +25540,7 @@ is_a: CL:1000343 ! paneth cell of epithelium of small intestine
 
 [Term]
 id: CL:1000345
-name: paneth cell of epithelium of crypt of lieberkuhn of small intestine
+name: paneth cell of epithelium of crypt of Lieberkuhn of small intestine
 namespace: cell
 def: "A Paneth cell that is part of the epithelium of crypt of lieberkuhn of small intestine." [GOC:tfm]
 xref: FMA:263108
@@ -25868,7 +25865,7 @@ relationship: part_of UBERON:0005986 ! left branch of atrioventricular bundle
 
 [Term]
 id: CL:1000376
-name: purkinje myocyte of interventricular septum
+name: Purkinje myocyte of interventricular septum
 namespace: cell
 def: "A Purkinje myocyte that is part of the interventricular septum." [GOC:tfm]
 xref: FMA:263182
@@ -26109,7 +26106,7 @@ relationship: part_of UBERON:0002352 ! atrioventricular node
 
 [Term]
 id: CL:1000411
-name: endothelial cell of peyer's patch
+name: endothelial cell of Peyer's patch
 namespace: cell
 def: "An endothelial cell that is part of the small intestine Peyer's patch." [GOC:tfm]
 xref: FMA:67757
@@ -26507,7 +26504,7 @@ name: epithelial cell of intermediate tubule
 namespace: cell
 def: "An epithelial cell that is part of the intermediate tubule." [GOC:tfm]
 xref: FMA:70980
-is_a: CL:1000909 ! kidney loop of henle epithelial cell
+is_a: CL:1000909 ! kidney loop of Henle epithelial cell
 intersection_of: CL:1000494 ! nephron tubule epithelial cell
 intersection_of: part_of UBERON:0004136 ! intermediate tubule
 relationship: part_of UBERON:0004136 ! intermediate tubule
@@ -26672,7 +26669,7 @@ relationship: part_of UBERON:0002351 ! sinoatrial node
 
 [Term]
 id: CL:1000479
-name: purkinje myocyte of atrioventricular node
+name: Purkinje myocyte of atrioventricular node
 namespace: cell
 def: "A Purkinje myocyte that is part of the atrioventricular node." [GOC:tfm]
 xref: FMA:83386
@@ -26722,7 +26719,7 @@ relationship: part_of UBERON:0002094 ! interventricular septum
 
 [Term]
 id: CL:1000483
-name: purkinje myocyte of internodal tract
+name: Purkinje myocyte of internodal tract
 namespace: cell
 def: "A Purkinje myocyte that is part of the internodal tract." [GOC:tfm]
 xref: FMA:83392
@@ -26734,7 +26731,7 @@ relationship: part_of UBERON:0009966 ! internodal tract
 
 [Term]
 id: CL:1000484
-name: purkinje myocyte of atrioventricular bundle
+name: Purkinje myocyte of atrioventricular bundle
 namespace: cell
 def: "A Purkinje myocyte that is part of the atrioventricular bundle." [GOC:tfm]
 xref: FMA:83393
@@ -27384,7 +27381,7 @@ namespace: cell
 xref: KUPO:0001046
 is_a: CL:0002306 {is_inferred="true"} ! epithelial cell of proximal tubule
 is_a: CL:1000616 {is_inferred="true"} ! kidney outer medulla cell
-is_a: CL:1001021 ! kidney loop of henle descending limb epithelial cell
+is_a: CL:1001021 ! kidney loop of Henle descending limb epithelial cell
 intersection_of: CL:0002306 ! epithelial cell of proximal tubule
 intersection_of: part_of UBERON:0001290 ! proximal straight tubule
 relationship: part_of UBERON:0001290 ! proximal straight tubule
@@ -27455,7 +27452,7 @@ relationship: part_of UBERON:0001140 ! renal vein
 
 [Term]
 id: CL:1000909
-name: kidney loop of henle epithelial cell
+name: kidney loop of Henle epithelial cell
 namespace: cell
 xref: KUPO:0001047
 is_a: CL:1000494 {is_inferred="true"} ! nephron tubule epithelial cell
@@ -27511,22 +27508,22 @@ relationship: part_of UBERON:0004640 ! renal efferent arteriole
 
 [Term]
 id: CL:1001016
-name: kidney loop of henle ascending limb epithelial cell
+name: kidney loop of Henle ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001048
 is_a: CL:0002305 ! epithelial cell of distal tubule
-is_a: CL:1000909 {is_inferred="true"} ! kidney loop of henle epithelial cell
-intersection_of: CL:1000909 ! kidney loop of henle epithelial cell
+is_a: CL:1000909 {is_inferred="true"} ! kidney loop of Henle epithelial cell
+intersection_of: CL:1000909 ! kidney loop of Henle epithelial cell
 intersection_of: part_of UBERON:0005164 ! ascending limb of loop of Henle
 relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
 
 [Term]
 id: CL:1001021
-name: kidney loop of henle descending limb epithelial cell
+name: kidney loop of Henle descending limb epithelial cell
 namespace: cell
 xref: KUPO:0001053
-is_a: CL:1000909 {is_inferred="true"} ! kidney loop of henle epithelial cell
-intersection_of: CL:1000909 ! kidney loop of henle epithelial cell
+is_a: CL:1000909 {is_inferred="true"} ! kidney loop of Henle epithelial cell
+intersection_of: CL:1000909 ! kidney loop of Henle epithelial cell
 intersection_of: part_of UBERON:0001289 ! descending limb of loop of Henle
 relationship: part_of UBERON:0001289 ! descending limb of loop of Henle
 
@@ -27648,56 +27645,56 @@ relationship: part_of UBERON:0004640 ! renal efferent arteriole
 
 [Term]
 id: CL:1001106
-name: kidney loop of henle thick ascending limb epithelial cell
+name: kidney loop of Henle thick ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001049
 is_a: CL:1000504 ! kidney medulla cell
-is_a: CL:1001016 {is_inferred="true"} ! kidney loop of henle ascending limb epithelial cell
-intersection_of: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
+is_a: CL:1001016 {is_inferred="true"} ! kidney loop of Henle ascending limb epithelial cell
+intersection_of: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
 intersection_of: part_of UBERON:0001291 ! thick ascending limb of loop of Henle
 relationship: part_of UBERON:0001291 ! thick ascending limb of loop of Henle
 
 [Term]
 id: CL:1001107
-name: kidney loop of henle thin ascending limb epithelial cell
+name: kidney loop of Henle thin ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001050
 is_a: CL:1000617 ! kidney inner medulla cell
-is_a: CL:1001016 {is_inferred="true"} ! kidney loop of henle ascending limb epithelial cell
-intersection_of: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
+is_a: CL:1001016 {is_inferred="true"} ! kidney loop of Henle ascending limb epithelial cell
+intersection_of: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
 intersection_of: part_of UBERON:0004193 ! loop of Henle ascending limb thin segment
 relationship: part_of UBERON:0004193 ! loop of Henle ascending limb thin segment
 
 [Term]
 id: CL:1001108
-name: kidney loop of henle medullary thick ascending limb epithelial cell
+name: kidney loop of Henle medullary thick ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001051
 is_a: CL:1000616 {is_inferred="true"} ! kidney outer medulla cell
-is_a: CL:1001106 ! kidney loop of henle thick ascending limb epithelial cell
-intersection_of: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
+is_a: CL:1001106 ! kidney loop of Henle thick ascending limb epithelial cell
+intersection_of: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
 intersection_of: part_of UBERON:0006376 ! premacula segment of distal straight tubule
 relationship: part_of UBERON:0006376 ! premacula segment of distal straight tubule
 
 [Term]
 id: CL:1001109
-name: kidney loop of henle cortical thick ascending limb epithelial cell
+name: kidney loop of Henle cortical thick ascending limb epithelial cell
 namespace: cell
 xref: KUPO:0001052
-is_a: CL:1001106 ! kidney loop of henle thick ascending limb epithelial cell
-intersection_of: CL:1001016 ! kidney loop of henle ascending limb epithelial cell
+is_a: CL:1001106 ! kidney loop of Henle thick ascending limb epithelial cell
+intersection_of: CL:1001016 ! kidney loop of Henle ascending limb epithelial cell
 intersection_of: part_of UBERON:0006854 ! distal straight tubule postmacula segment
 relationship: part_of UBERON:0006854 ! distal straight tubule postmacula segment
 
 [Term]
 id: CL:1001111
-name: kidney loop of henle thin descending limb epithelial cell
+name: kidney loop of Henle thin descending limb epithelial cell
 namespace: cell
 xref: KUPO:0001054
 is_a: CL:1000453 ! epithelial cell of intermediate tubule
 is_a: CL:1000616 ! kidney outer medulla cell
-is_a: CL:1001021 {is_inferred="true"} ! kidney loop of henle descending limb epithelial cell
-intersection_of: CL:1001021 ! kidney loop of henle descending limb epithelial cell
+is_a: CL:1001021 {is_inferred="true"} ! kidney loop of Henle descending limb epithelial cell
+intersection_of: CL:1001021 ! kidney loop of Henle descending limb epithelial cell
 intersection_of: part_of UBERON:0005096 ! descending thin limb
 relationship: part_of UBERON:0005096 ! descending thin limb
 
@@ -51585,6 +51582,16 @@ relationship: develops_from UBERON:0008947 ! respiratory primordium
 relationship: part_of UBERON:0007196 ! tracheobronchial tree
 
 [Term]
+id: UBERON:0003127
+name: open tracheal system trachea
+def: "A respiratory airway that is part of an open tracheal system." []
+synonym: "invertebrate trachea" EXACT []
+synonym: "trachea" BROAD []
+is_a: UBERON:0001005 ! respiratory airway
+relationship: has_part UBERON:0003914 ! epithelial tube
+relationship: part_of UBERON:0005155 ! open tracheal system
+
+[Term]
 id: UBERON:0003128
 name: cranium
 def: "Upper portion of the skull that excludes the mandible (when present in the organism)." []
@@ -62306,6 +62313,15 @@ id: UBERON:0005154
 name: epithelial cord
 def: "A cord of epithelial cells without a lumen and usually several cells thick." []
 is_a: UBERON:0000486 ! multilaminar epithelium
+
+[Term]
+id: UBERON:0005155
+name: open tracheal system
+def: "An open tracheal system is a respiratory system, a branched network of epithelial tubes that supplies oxygen to target tissues via spiracles. An example of this is found in Drosophila melanogaster." []
+synonym: "invertebrate tracheal system" EXACT []
+synonym: "open tracheal system" EXACT []
+synonym: "tracheal system" BROAD []
+is_a: UBERON:0001004 ! respiratory system
 
 [Term]
 id: UBERON:0005156
