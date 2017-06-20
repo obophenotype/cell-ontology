@@ -312,7 +312,7 @@ is_a: CL:0000055 ! non-terminally differentiated cell
 id: CL:0000031
 name: neuroblast
 namespace: cell
-def: "A cell that will develop into a neuron often after a migration phase." [http://en.wikipedia.org/wiki/Neuroblast]
+def: "A cell that will develop into a neuron often after a migration phase." [GOC:NV, http://en.wikipedia.org/wiki/Neuroblast]
 xref: BTO:0000930
 xref: FBbt:00005146
 xref: FMA:70563
@@ -1188,7 +1188,7 @@ is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 id: CL:0000119
 name: cerebellar Golgi cell
 namespace: cell
-def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell enters ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [] {comment="NIFSTD:sao1415726815"}
+def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell enters ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [NIFSTD:sao1415726815]
 synonym: "cerebellar Golgi neuron" EXACT []
 synonym: "cerebellum Golgi cell" EXACT []
 synonym: "Golgi cell" EXACT []
@@ -1408,7 +1408,7 @@ synonym: "cartilage cell" EXACT []
 xref: BTO:0000249
 xref: CALOHA:TS-0138
 xref: FMA:66782
-is_a: CL:0000153 ! GAG secreting cell
+is_a: CL:0000153 ! glycosaminoglycan secreting cell
 is_a: CL:0000667 ! collagen secreting cell
 
 [Term]
@@ -1530,10 +1530,11 @@ is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000153
-name: GAG secreting cell
+name: glycosaminoglycan secreting cell
 namespace: cell
 def: "A cell that secretes glycosaminoglycans." [GOC:tfm]
-synonym: "hyaluronic acid secreting cell" EXACT []
+synonym: "GAG secreting cell" EXACT []
+synonym: "hyaluronic acid secreting cell" NARROW []
 is_a: CL:0000327 ! extracellular matrix secreting cell
 is_a: CL:0000447 ! carbohydrate secreting cell
 
@@ -1875,6 +1876,7 @@ id: CL:0000188
 name: cell of skeletal muscle
 namespace: cell
 def: "A somatic cell located in skeletal muscle." [GOC:tfm]
+synonym: "skeletal muscle cell" EXACT []
 xref: BTO:0004392
 xref: CALOHA:TS-2158
 xref: FMA:9727
@@ -1904,7 +1906,7 @@ namespace: cell
 alt_id: CL:0000191
 def: "A non-striated, elongated, spindle-shaped cell found lining the digestive tract, uterus, and blood vessels. They develop from specialized myoblasts (smooth muscle myoblast)." [http://en.wikipedia.org/wiki/Smooth_muscle_cell, MESH:A11.620.520, MESH:D032389, PMID:9315361]
 synonym: "myocytes, smooth muscle" EXACT [MESH:D032389]
-synonym: "non-striated muscle cell" EXACT []
+synonym: "non-striated muscle cell" NARROW []
 synonym: "SMCs" EXACT [PMID:9315361]
 synonym: "smooth muscle fiber" EXACT []
 xref: BTO:0004576
@@ -2085,12 +2087,12 @@ id: CL:0000214
 name: synovial cell
 namespace: cell
 def: "A meso-epithelial cell that lies between the cartilaginous fibers in the synovial membrane of a joint and produces hyaluronic acid." [GOC:tfm, ISBN:0721662544, PMID:17942474]
-synonym: "hyaluronic acid secreting cell" EXACT []
+synonym: "hyaluronic acid secreting cell" NARROW []
 synonym: "synoviocyte" EXACT []
 xref: BTO:0003652
 xref: CALOHA:TS-0995
 xref: FMA:66786
-is_a: CL:0000153 ! GAG secreting cell
+is_a: CL:0000153 ! glycosaminoglycan secreting cell
 is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 ! meso-epithelial cell
 
@@ -3313,9 +3315,10 @@ is_obsolete: true
 
 [Term]
 id: CL:0000365
-name: zygote
+name: animal zygote
 namespace: cell
 def: "Diploid cell produced by the fusion of sperm cell nucleus and egg cell." [ISBN:0471245208]
+synonym: "zygote" BROAD []
 xref: BTO:0000854
 xref: EHDAA2:0004546
 xref: FMA:72395
@@ -5521,7 +5524,7 @@ xref: CALOHA:TS-0664
 xref: FMA:63147
 xref: FMA:83601
 xref: VHOG:0001697
-is_a: CL:0000542 ! lymphocyte
+is_a: CL:0001067 ! group 1 innate lymphoid cell
 
 [Term]
 id: CL:0000624
@@ -5624,7 +5627,7 @@ name: Claudius cell
 namespace: cell
 def: "A cuboidal cell which along with Boettcher's cells form the floor of the external spiral sulcus, external to the organ of Corti." [GOC:tfm, ISBN:0721662544]
 synonym: "cell of Claudius" EXACT []
-synonym: "external supporting cell of Claudius" EXACT []
+synonym: "external supporting cell of Claudius" RELATED []
 synonym: "external supporting cell of vestibular epithelium" EXACT []
 xref: FMA:79802
 is_a: CL:0002315 ! supporting cell of cochlea
@@ -6030,6 +6033,7 @@ is_a: CL:0000540 ! neuron
 id: CL:0000680
 name: muscle precursor cell
 namespace: cell
+def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002371 ! somatic cell
 
@@ -7034,7 +7038,6 @@ synonym: "suppressor T lymphocyte" BROAD []
 synonym: "suppressor T-cell" BROAD []
 synonym: "suppressor T-lymphocyte" BROAD []
 synonym: "Treg" BROAD [PMID:22343568]
-xref: FMA:84070
 is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 is_a: CL:0000815 ! regulatory T cell
 
@@ -7091,7 +7094,6 @@ synonym: "suppressor T cell" BROAD []
 synonym: "suppressor T lymphocyte" BROAD []
 synonym: "suppressor T-cell" BROAD []
 synonym: "suppressor T-lymphocyte" BROAD []
-xref: FMA:84070
 is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
 is_a: CL:0000815 ! regulatory T cell
 
@@ -7641,7 +7643,7 @@ id: CL:0000841
 name: mature conventional dendritic cell
 namespace: cell
 def: "A mature cell of the conventional dendritic cell lineage, characterized by a high capacity for antigen presentation and typically found in a lymph node." [GOC:add, GOC:tfm, PMID:9521319]
-synonym: "mature dendritic cell" BROAD [] {comment="GOC:add"}
+synonym: "mature dendritic cell" BROAD [GOC:add]
 synonym: "mature myeloid dendritic cell" NARROW []
 xref: FMA:83038
 is_a: CL:0000766 ! myeloid leukocyte
@@ -9887,6 +9889,17 @@ created_by: tmeehan
 creation_date: 2010-01-06T03:43:27Z
 
 [Term]
+id: CL:0001061
+name: abnormal cell
+namespace: cell
+def: "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models." [GOC:add, GOC:cg, GOC:wdd]
+comment: https://github.com/obophenotype/cell-ontology/issues/448
+xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12913
+is_a: CL:0000000 ! cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T18:53:32Z xsd:dateTime
+
+[Term]
 id: CL:0001062
 name: effector memory CD8-positive, alpha-beta T cell, terminally differentiated
 namespace: cell
@@ -9894,6 +9907,40 @@ def: "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positiv
 comment: This cell type is seen human but not found in the mouse.
 synonym: "TEMRA" EXACT [PMID:16237082]
 is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001063
+name: neoplastic cell
+namespace: cell
+def: "An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism." [GOC:add, GOC:cg, GOC:wdd]
+comment: https://github.com/obophenotype/cell-ontology/issues/448
+synonym: "tumor cell" RELATED []
+synonym: "tumour cell" RELATED []
+xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12922
+is_a: CL:0001061 ! abnormal cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T19:16:26Z xsd:dateTime
+
+[Term]
+id: CL:0001064
+name: malignant cell
+namespace: cell
+def: "A neoplastic cell that is capable of entering a surrounding tissue" [GOC:add, GOC:cg, GOC:wdd]
+comment: https://github.com/obophenotype/cell-ontology/issues/448
+synonym: "cancer cell" RELATED []
+xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12917
+is_a: CL:0001063 ! neoplastic cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T19:39:12Z xsd:dateTime
+
+[Term]
+id: CL:0001065
+name: innate lymphoid cell
+namespace: cell
+def: "A lymphocyte that lacks characteristic T cell, B cell, myeloid cell, and dendritic cell markers, that functions as part of the innate immune response to produce cytokines and other effector responses." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
+is_a: CL:0000542 ! lymphocyte
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T20:20:48Z xsd:dateTime
 
 [Term]
 id: CL:0001066
@@ -9910,10 +9957,39 @@ xref: BTO:0004911
 is_a: CL:0000038 ! erythroid progenitor cell
 
 [Term]
+id: CL:0001067
+name: group 1 innate lymphoid cell
+namespace: cell
+def: "An innate lymphoid cell that is capable of producing the type 1 cytokine IFN-gamma, but not Th2 or Th17 cell-associated cytokines." [GOC:add, GOC:dsd, PMID:23348417]
+is_a: CL:0001065 ! innate lymphoid cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T20:42:44Z xsd:dateTime
+
+[Term]
+id: CL:0001068
+name: ILC1
+namespace: cell
+def: "A group 1 innate lymphoid cell that is non-cytotoxic." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
+is_a: CL:0001067 ! group 1 innate lymphoid cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T20:54:12Z xsd:dateTime
+
+[Term]
+id: CL:0001069
+name: group 2 innate lymphoid cell
+namespace: cell
+def: "An innate lymphoid cell that is capable of producing T-helper 2-cell associated cytokines upon stimulation." [GOC:add, GOC:dsd, PMID:23292121, PMID:23562755]
+synonym: "ILC2" EXACT []
+synonym: "nuocyte" EXACT []
+is_a: CL:0001065 ! innate lymphoid cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T21:20:08Z xsd:dateTime
+
+[Term]
 id: CL:0001070
 name: beige adipocyte
 namespace: cell
-def: "A fat cell that is beige in color, thermogenic, and which differentiates in white fat tissue from a Myf5-negative progenitor." [] {comment="PMID:22796012", comment="GOC:ymb", comment="GOC:add", comment="GOC:cvs", comment="PMID:25851693"}
+def: "A fat cell that is beige in color, thermogenic, and which differentiates in white fat tissue from a Myf5-negative progenitor." [GOC:add, GOC:cvs, GOC:ymb, PMID:22796012, PMID:25851693]
 synonym: "beige brown adipocyte" EXACT []
 synonym: "beige fat cell" EXACT []
 synonym: "beige/brite adipocyte" EXACT []
@@ -9921,6 +9997,16 @@ synonym: "brite adipocyte" EXACT []
 synonym: "brite cell" EXACT []
 synonym: "brite fat cell" EXACT []
 is_a: CL:0000136 ! fat cell
+
+[Term]
+id: CL:0001071
+name: group 3 innate lymphoid cell
+namespace: An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22. {xref="GOC:add", xref="GOC:dsd", xref="PMID:23348417", xref="PMID:23292121"}
+namespace: cell
+synonym: "ILC3" EXACT []
+is_a: CL:0001065 ! innate lymphoid cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2017-01-31T20:21:26Z xsd:dateTime
 
 [Term]
 id: CL:0001658
@@ -10930,10 +11016,11 @@ creation_date: 2010-07-22T03:26:00Z
 
 [Term]
 id: CL:0002089
-name: nuocyte
+name: group 2 innate lymphoid cell, mouse
 namespace: cell
-def: "A leukocyte cell capable of secreting IL-13 in response to a helminth infection. This cell is lineage-negative, ICOS-positive, IL1RL1-positive, IL7Ralpha-positive, and IL17Br-positive." [GOC:tfm, PMID:20200518]
-is_a: CL:0000738 ! leukocyte
+def: "A group 2 innate lymphoid cell in the mouse capable of secreting IL-13 in response to a helminth infection. This cell is lineage-negative, ICOS-positive, IL1RL1-positive, IL7Ralpha-positive, and IL17Br-positive." [GOC:add, GOC:tfm, PMID:20200518]
+synonym: "nuocyte" BROAD []
+is_a: CL:0001069 ! group 2 innate lymphoid cell
 created_by: tmeehan
 creation_date: 2010-08-12T02:22:19Z
 
@@ -11511,7 +11598,7 @@ name: acinar cell of sebaceous gland
 namespace: cell
 alt_id: CL:0002587
 def: "A sebum secreting cell of the skin that secretes sebum into the hair follicles." [GOC:tfm]
-synonym: "sebocyte" EXACT []
+synonym: "sebocyte" BROAD []
 xref: BTO:0004613
 xref: FMA:70953
 is_a: CL:0000317 ! sebum secreting cell
@@ -17370,7 +17457,7 @@ creation_date: 2012-01-12T05:21:09Z
 [Term]
 id: CL:0005023
 name: branchiomotor neuron
-def: "Cranial motor neuron which innervates muscles derived from the branchial (pharyngeal) arches." []
+def: "Cranial motor neuron which innervates muscles derived from the branchial (pharyngeal) arches." [ZFIN:CVS]
 synonym: "branchi  motor neuron " EXACT []
 synonym: "special visceral motor neuron" EXACT []
 xref: PMID:14699587 
@@ -17379,7 +17466,7 @@ is_a: CL:0015000 ! cranial motor neuron
 [Term]
 id: CL:0005024
 name: somatomotor neuron
-def: "A motor neuron that innervates a skeletal muscle.  These motor neurons are all excitatory and cholinergic." []
+def: "A motor neuron that innervates a skeletal muscle.  These motor neurons are all excitatory and cholinergic." [ZFIN:CVS]
 synonym: "somatic motor neuron" EXACT []
 is_a: CL:0000108 ! cholinergic neuron
 is_a: CL:0008014 ! excitatory motor neuron
@@ -17387,7 +17474,7 @@ is_a: CL:0008014 ! excitatory motor neuron
 [Term]
 id: CL:0005025
 name: visceromotor neuron
-def: "A motor neuron that synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." []
+def: "A motor neuron that synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles and glands of the pulmonary, cardiovascular, and gastrointestinal systems." [ZFIN:CVS]
 comment: Note that these neurons do not synapse directly onto muscles
 synonym: "general visceral motor neuron" EXACT []
 is_a: CL:0000100 ! motor neuron
@@ -17395,7 +17482,7 @@ is_a: CL:0000100 ! motor neuron
 [Term]
 id: CL:0005026
 name: hepatoblast
-def: "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants." [PMID:18356246, PMID:20483998 ]
+def: "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998 ]
 is_a: CL:0000048 ! multi fate stem cell
 
 [Term]
@@ -17667,6 +17754,7 @@ is_a: CL:0008004 ! somatic muscle cell
 [Term]
 id: CL:0008006
 name: muscle founder cell
+namespace: cell
 def: "A myoblast that detemines the properties (size, shape and attachment to the epidermis) of a `somatic muscle myotube` (CL:0008003) .  It develops into a somatic muscle myotube via fusion with `fusion component myoblasts` (CL:0000621)." [PMID:22274696]
 is_a: CL:0008018 ! somatic muscle myoblast
 
@@ -17699,6 +17787,7 @@ is_a: CL:0015000 ! cranial motor neuron
 [Term]
 id: CL:0008011
 name: skeletal muscle satellite stem cell
+namespace: cell
 def: "A skeletal muscle satellite cell that divides by stem cell division.  A proportion of this population undergoes symmetric stem cell division, producing two skeletal muscle satellite stem cells. The rest undergo asymmetric stem cell division - retaining their identity while budding off a daughter cell that differentiates into an adult skeletal muscle myoblast." [PMID:23303905]
 is_a: CL:0000035 ! single fate stem cell
 is_a: CL:0000594 ! skeletal muscle satellite cell
@@ -17706,6 +17795,7 @@ is_a: CL:0000594 ! skeletal muscle satellite cell
 [Term]
 id: CL:0008012
 name: quiescent skeletal muscle satellite cell
+namespace: cell
 def: "A skeletal muscle satellite cell that is mitotically quiescent.  These cells are wedge shaped and have a large nuclear to cytoplasmic ratio with few organelles, a small nucleus and condensed interphase chromatin. Satellite cells typically remain in this state until activated following muscle damage." [PMID:21849021, PMID:23303905]
 is_a: CL:0000594 ! skeletal muscle satellite cell
 
@@ -17733,12 +17823,14 @@ is_a: CL:0000100 ! motor neuron
 [Term]
 id: CL:0008016
 name: activated skeletal muscle satellite cell
+namespace: cell
 def: "A skeletal muscle cell that has become mitotically active - typically following muscle damage." [PMID:21849021, PMID:23303905]
 is_a: CL:0000594 ! skeletal muscle satellite cell
 
 [Term]
 id: CL:0008017
 name: adult skeletal muscle myoblast
+namespace: cell
 def: "A skeletal muscle myoblast that is part of a skeletal mucle.  These cells are formed following acivation and division of skeletal muscle satellite cells. They form a transient population that is lost when they fuse to form skeletal muscle fibers." [PMID:23303905]
 comment: The vast majority of these cells develop from skeletal muscle satellite cells, although there are some reports of other origins.
 synonym: "myogenic precursor cell" BROAD [PMID:23303905]
@@ -17748,6 +17840,7 @@ is_a: CL:0000515 ! skeletal muscle myoblast
 [Term]
 id: CL:0008018
 name: somatic muscle myoblast
+namespace: cell
 def: "A myoblast that is commited to developing into a somatic muscle." []
 is_a: CL:0000056 ! myoblast
 
@@ -17762,6 +17855,7 @@ is_a: CL:0002371 ! somatic cell
 [Term]
 id: CL:0008020
 name: skeletal muscle satellite myogenic cell
+namespace: cell
 def: "A skeletal muscle satellite cell that undergoes symmetric division to produce two adult skeleltal muscle myoblasts." [GOC:dos, PMID:23303905]
 is_a: CL:0000594 ! skeletal muscle satellite cell
 
@@ -17841,8 +17935,8 @@ is_a: CL:0002371 ! somatic cell
 [Term]
 id: CL:0009004
 name: retinal cell
-def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." []
-xref: GOC:pr
+namespace: cell
+def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." [GOC:pr]
 xref: PMID:10702418
 is_a: CL:0002319 ! neural cell
 
@@ -17968,7 +18062,8 @@ is_a: CL:0000066 ! epithelial cell
 [Term]
 id: CL:0010016
 name: collar cell
-def: "a cell with a flagellum surrounded by a collar of microvilli. The motion of the flagellum draws water past the microvilli, serving either a feeding or sensory function. Collar cells are found in multiple animals, including sponges, echinoderms, and cnidarians. They are also found outside animals in the choanoflagellates. Although collar cells are superficially similar, their cytoskeletal structure and functional biology are different in different groups of organisms." [] {comment="http://dx.doi.org/10.1016/j.tree.2015.03.003"}
+namespace: cell
+def: "A cell with a flagellum surrounded by a collar of microvilli. The motion of the flagellum draws water past the microvilli, serving either a feeding or sensory function. Collar cells are found in multiple animals, including sponges, echinoderms, and cnidarians. They are also found outside animals in the choanoflagellates. Although collar cells are superficially similar, their cytoskeletal structure and functional biology are different in different groups of organisms." [PMID:25840473]
 is_a: CL:0000548 ! animal cell
 
 [Term]
@@ -17980,6 +18075,7 @@ is_a: CL:0002494 ! cardiocyte
 [Term]
 id: CL:0010021
 name: cardiac myoblast
+namespace: cell
 is_a: CL:0000056 ! myoblast
 
 [Term]
@@ -18078,14 +18174,14 @@ is_a: CL:0000222 ! mesodermal cell
 id: CL:0011012
 name: neural crest cell
 namespace: cell
-def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [0000-0002-9900-7880, orcid.org/0000-0001-5208-3432]
+def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-9900-7880]
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002321 ! embryonic cell
 
 [Term]
 id: CL:0011100
 name: galanergic neuron
-def: "Neuron that secretes the neurotransmitter galanin." [PMID:23159249]
+def: "Neuron that secretes the neurotransmitter galanin." [GOC:NV, PMID:23159249, ZFIN:CVS, ZFIN:YB]
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -18097,19 +18193,19 @@ is_a: CL:0000351 ! trophoblast cell
 [Term]
 id: CL:0011102
 name: parasympathetic neuron
-def: "Parasympathetic neurons are part of the parasympathetic nervous sysem and the cell bodies lie in the brain and sacral region of the spinal cord. The neurons are mainly cholinergic." [isbn:0080923437]
+def: "Parasympathetic neurons are part of the parasympathetic nervous sysem and the cell bodies lie in the brain and sacral region of the spinal cord. The neurons are mainly cholinergic." [GOC:NV, isbn:0080923437]
 is_a: CL:0000107 ! autonomic neuron
 
 [Term]
 id: CL:0011103
 name: sympathetic neuron
-def: "Sympathetic neurons are part of the sympathetic nervous system and are primarily adrenergic producing the neurotransmitter noradrenalin along with other neuropeptides." [isbn:0080923437]
+def: "Sympathetic neurons are part of the sympathetic nervous system and are primarily adrenergic producing the neurotransmitter noradrenalin along with other neuropeptides." [GOC:NV, isbn:0080923437]
 is_a: CL:0000107 ! autonomic neuron
 
 [Term]
 id: CL:0011104
 name: interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer." [PMID:12771169]
+def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer." [GOC:NV, PMID:12771169]
 comment: Need to MIREOT retinal inner nuclear layer (part of)
 is_a: CL:0000099 ! interneuron
 is_a: CL:0009004 ! retinal cell
@@ -18117,7 +18213,7 @@ is_a: CL:0009004 ! retinal cell
 [Term]
 id: CL:0011105
 name: dopamanergic interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer, using dopamine. " [PMID:12771169]
+def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer, using dopamine. " [GOC:NV, PMID:12771169]
 comment: This type of cell is found in Danio rerio.
 is_a: CL:0000700 ! dopaminergic neuron
 is_a: CL:0011104 ! interplexiform cell
@@ -18125,7 +18221,7 @@ is_a: CL:0011104 ! interplexiform cell
 [Term]
 id: CL:0011106
 name: GABAnergic interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer using GABA. " [PMID:12771169]
+def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer using GABA. " [GOC:NV, PMID:12771169]
 comment: This type of cell is found in many mammals.
 is_a: CL:0011005 ! GABAergic interneuron
 is_a: CL:0011104 ! interplexiform cell
@@ -18133,7 +18229,7 @@ is_a: CL:0011104 ! interplexiform cell
 [Term]
 id: CL:0011107
 name: Muller cell
-def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.\n" [PMID:21911394]
+def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.\n" [GOC:NV, PMID:21911394]
 synonym: "Muller glia " EXACT []
 synonym: "Müller cell" EXACT []
 is_a: CL:0000681 ! radial glial cell
@@ -18142,14 +18238,14 @@ is_a: CL:0009004 ! retinal cell
 [Term]
 id: CL:0011108
 name: colon epithelial cell
-def: "Epithelial cell that is part of the colon epithelium. " []
+def: "Epithelial cell that is part of the colon epithelium. " [GOC:NV]
 synonym: "colonic epithelial cell" EXACT []
 is_a: CL:0002253 ! epithelial cell of large intestine
 
 [Term]
 id: CL:0011109
 name: hypocretin-secreting neuron
-def: "A neuron that releases hypocretin as a neurotransmitter." [PMID:23848055]
+def: "A neuron that releases hypocretin as a neurotransmitter." [GOC:NV, PMID:23848055]
 synonym: "orexin" EXACT []
 is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
@@ -18157,14 +18253,14 @@ is_a: CL:0000540 ! neuron
 [Term]
 id: CL:0011110
 name: histaminergic neuron
-def: "Neuron that secretes histamine." [PMID:22677810]
+def: "Neuron that secretes histamine." [GOC:NV, PMID:22677810]
 is_a: CL:0000540 ! neuron
 is_a: CL:0002274 ! histamine secreting cell
 
 [Term]
 id: CL:0011111
 name: gonadotropin releasing neuron
-def: "Neuroendocrine cells that are born in the nasal placode during embryonic development and migrate through the nose and forebrain to the hypothalamus, where they regulate reproduction." [PMID:21828096]
+def: "Neuroendocrine cells that are born in the nasal placode during embryonic development and migrate through the nose and forebrain to the hypothalamus, where they regulate reproduction." [GOC:NV, PMID:21828096]
 synonym: "GnRH neuron" EXACT []
 synonym: "GnRH-secreting neuron" EXACT []
 is_a: CL:0000163 ! endocrine cell
@@ -18173,14 +18269,14 @@ is_a: CL:0000381 ! neurosecretory neuron
 [Term]
 id: CL:0011112
 name: magnocellular neurosecretory cell
-def: "Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [PMID:10711808]
+def: "Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [GOC:NV, PMID:10711808]
 is_a: CL:0000167 ! peptide hormone secreting cell
 is_a: CL:0000381 ! neurosecretory neuron
 
 [Term]
 id: CL:0011113
 name: spiral ganglion neuron
-def: "Neuron found in the spriral ganglion." []
+def: "Neuron found in the spriral ganglion." [GOC:NV]
 is_a: CL:0000540 ! neuron
 
 [Term]
@@ -18224,7 +18320,7 @@ is_a: CL:0000681 ! radial glial cell
 [Term]
 id: CL:0015000
 name: cranial motor neuron
-def: "Motor neuron that innervate muscles that control eye, jaw, and facial movements of the vertebrate head and parasympathetic neurons that innervate certain glands and organs. " []
+def: "Motor neuron that innervate muscles that control eye, jaw, and facial movements of the vertebrate head and parasympathetic neurons that innervate certain glands and organs. " [ZFIN:CVS\n]
 synonym: "cranial motoneuron" EXACT []
 xref: PMID:14699587 \n
 is_a: CL:0000100 ! motor neuron
@@ -22264,6 +22360,10 @@ is_a: CL:0000700 ! dopaminergic neuron
 is_a: CL:2000029 ! central nervous system neuron
 created_by: TermGenie
 creation_date: 2015-12-03T16:42:40Z
+
+[Typedef]
+id: RO:0002161
+name: never in taxon
 
 [Typedef]
 id: has_completed
