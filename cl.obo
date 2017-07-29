@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2017-04-14
+data-version: releases/2017-07-29
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -2140,13 +2140,10 @@ xref: VHOG:0001679
 is_a: CL:0000147 {is_inferred="true"} ! pigment cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000147 ! pigment cell
-intersection_of: CL:0000147 ! pigment cell
 intersection_of: develops_from CL:0000541 ! melanoblast
 intersection_of: has_part GO:0042470 ! melanosome
-intersection_of: never_in_taxon NCBITaxon:6237 ! Caenorhabditis
 relationship: develops_from CL:0000541 ! melanoblast
 relationship: has_part GO:0042470 ! melanosome
-relationship: never_in_taxon NCBITaxon:6237 ! Caenorhabditis
 
 [Term]
 id: CL:0000149
@@ -5511,6 +5508,8 @@ name: cardiac muscle myoblast
 namespace: cell
 alt_id: CL:0000714
 def: "A precursor cell destined to differentiate into cardiac muscle cell." [GOC:tfm, MESH:A11.635.470]
+synonym: "cardiac muscle progenitor cell" EXACT []
+synonym: "cardiomyocyte progenitor cell" EXACT []
 xref: FMA:84797
 is_a: CL:0002494 ! cardiocyte
 is_a: CL:0010021 ! cardiac myoblast
@@ -13531,11 +13530,11 @@ id: CL:0001044
 name: effector CD4-positive, alpha-beta T cell
 namespace: cell
 def: "A CD4-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive." [GOC:add, PMID:22343568]
+comment: This cell type is compatible with the HIPC Lyoplate markers for 'effector CD4+ T cell'.  The functional characteristics of this cell type currently undefined in CL, which affects its proper placement within the hierarchy.
 synonym: "effector CD4+ T cell" BROAD [PMID:22343568]
 synonym: "effector CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "effector CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "effector CD4-positive, alpha-beta T-lymphocyte" EXACT []
-synonym: "This cell type is compatible with the HIPC Lyoplate markers for 'effector CD4+ T cell'.  The functional characteristics of this cell type currently undefined in CL, which affects its proper placement within the hierarchy." EXACT []
 is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 is_a: CL:0000911 ! effector T cell
 intersection_of: CL:0000911 ! effector T cell
@@ -14021,8 +14020,8 @@ relationship: part_of UBERON:0001347 ! white adipose tissue
 [Term]
 id: CL:0001071
 name: group 3 innate lymphoid cell
-namespace: An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22. {xref="GOC:add", xref="GOC:dsd", xref="PMID:23348417", xref="PMID:23292121"}
 namespace: cell
+def: "An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
 synonym: "ILC3" EXACT []
 is_a: CL:0001065 ! innate lymphoid cell
 intersection_of: CL:0001065 ! innate lymphoid cell
@@ -75680,11 +75679,6 @@ def: "x negatively regulates y if and only if the progression of x reduces the f
 xref: RO:0002212
 is_a: regulates ! regulates
 inverse_of: negatively_regulated_by ! negatively regulated by
-
-[Typedef]
-id: never_in_taxon
-name: never in taxon
-xref: RO:0002161
 
 [Typedef]
 id: occurs_in
