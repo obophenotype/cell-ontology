@@ -95,7 +95,9 @@ Note that this is *different* than making a dbxref. The dbxref field should be u
 
 SEARCHING BY URI
 ----------------
-To view IDs instead of labels:
+Protege 5.1 will search on IRIs or labels. 
+
+If you are using an older version of Protege, to view IDs instead of labels:
 View -> Render by name (rdf: id)
 search for ID
 View -> Render by label
