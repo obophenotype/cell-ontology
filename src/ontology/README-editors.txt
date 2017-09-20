@@ -139,7 +139,7 @@ conform to guidelines and do not introduce any inconsistencies - an
 email will be sent to the curators list.
 
 You can check on the build here:
-  http://build.berkeleybop.org/job/build-cl/
+  https://travis-ci.org/obophenotype/cell-ontology
   
 Check for errors in the report, send an email to curators if you cannot determine what the error is.
 
