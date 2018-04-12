@@ -4,7 +4,7 @@ cl ontology repository
 To find out more, visit
 
  * The website - http://cellontology.org
- * The google code site - http://cell-ontology.googlecode.com
+ * The GitHub site - https://github.com/obophenotype/cell-ontology
 
 ontology/
   cl           Core public ontology release

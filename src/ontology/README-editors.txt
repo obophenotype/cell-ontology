@@ -21,18 +21,15 @@ Get Elk here:
 http://code.google.com/p/elk-reasoner/downloads/list
 perform same operation as above to install.
 
-Setting up: Obtain ontology from svn (one time only):
+Setting up: Obtain ontology from GitHub (one time only):
+https://github.com/obophenotype/cell-ontology
 
-See instructions here:
-https://code.google.com/p/cell-ontology/source/checkout
-
-  svn checkout https://cell-ontology.googlecode.com/svn/trunk/src/ontology 	cell-ontology --username <USERNAME>
-
+Either clone or download the ontology using the command line, or click the green 'clone or download' button and it can be opened with GitHub Desktop, which has a user-friendly interface. Or follow the directions below to use GitHub with Sourcetree.
 
 GETTING STARTED
 ---------------
 
-To see how to use github with sourcetree:
+To see how to use GitHub with Sourcetree:
 https://docs.google.com/document/d/1vNcOzDwVcMiiR0maWVutWA6Vtndv0TL2vROkSMfFxeE/edit
 
 Always start by doing:
@@ -40,7 +37,7 @@ Always start by doing:
 Email google group at cl_edit@googlegroups.com to lock the files  
 Example  “[LOCKING] cl-edit..owl for editing”
 
-svn update
+GitHub update
 
 Then, open the file cl-edit.owl in Protege
 
@@ -98,7 +95,9 @@ Note that this is *different* than making a dbxref. The dbxref field should be u
 
 SEARCHING BY URI
 ----------------
-To view IDs instead of labels:
+Protege 5.1 will search on IRIs or labels. 
+
+If you are using an older version of Protege, to view IDs instead of labels:
 View -> Render by name (rdf: id)
 search for ID
 View -> Render by label
@@ -140,7 +139,7 @@ conform to guidelines and do not introduce any inconsistencies - an
 email will be sent to the curators list.
 
 You can check on the build here:
-  http://build.berkeleybop.org/job/build-cl/
+  https://travis-ci.org/obophenotype/cell-ontology
   
 Check for errors in the report, send an email to curators if you cannot determine what the error is.
 
