@@ -112,7 +112,7 @@ mirror/%.owl: mirror/%.obo
 mirror/uberon.owl: $(MIRROR_TRIGGER)
 	owltools $(OBO)/uberon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
 mirror/pr.obo: 
-	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
+	wget --no-check-certificate $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
 mirror/pr.owl: mirror/pr.obo
 	owltools $< --remove-axiom-annotations --remove-annotation-assertions -l -s -d --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
 mirror/clo.owl:
