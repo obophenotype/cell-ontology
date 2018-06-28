@@ -2,13 +2,14 @@ SRC=cl-edit.owl
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
 RELEASEDIR=../..
+RELEASE_URIBASE= $(OBO)/cl/releases/`date +%Y-%m-%d`
 
 all: all_imports stage
 
-stage: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck 
+stage: bridge-checks cl.obo cl.owl cl-base.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck 
 release: stage copy-release
 copy-release:
-	cp cl.{obo,owl} cl-basic.{obo,owl} $(RELEASEDIR)
+	cp cl.{obo,owl} cl-basic.{obo,owl} cl-base.owl $(RELEASEDIR)
 	cp imports/*{obo,owl} $(RELEASEDIR)/imports
 
 test: all_imports cl.obo
@@ -28,6 +29,8 @@ cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
 	owltools $(USECAT) $< --add-obo-shorthand-to-properties --merge-imports-closure -o -f obo $@
+cl-base.owl: cl-edit.owl
+	owltools $(USECAT) $< --remove-imports-declarations --set-ontology-id -v $(RELEASE_URIBASE)/$@ $(OBO)/cl/$@ -o $@
 cl-basic.owl: build/cl-simple.owl
 	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@
 cl-basic.obo: cl-basic.owl
