@@ -1,0 +1,49 @@
+# options: [min(20),dir(cl),trim(true),base('http://purl.obolibrary.org/obo/cl'),generalize_properties(true),max_and_cardinality(4),max_class_signature(5),annotations([ann(exact_synonym,oio:hasExactSynonym,0.05),ann(related_synonym,oio:hasRelatedSynonym,0.05)])]
+pattern_name: smooth muscle cell part of X
+pattern_iri: http://purl.obolibrary.org/obo/cl/smooth_muscle_cell_part_of_X
+
+description: >-
+  A smooth muscle cell that is part of an anatomical entity, like the uterus.
+
+  Examples: [enteric smooth muscle cell](http://purl.obolibrary.org/obo/CL_0002504), [uterine smooth muscle cell](http://purl.obolibrary.org/obo/CL_0002601), [smooth muscle cell of the esophagus](http://purl.obolibrary.org/obo/CL_0002599) (22 total)
+
+classes: 
+  smooth muscle cell: "CL:0000192"
+  anatomical entity: "UBERON:0001062"
+
+
+relations: 
+  part of: "BFO:0000050"
+
+
+vars:
+  v0: "'anatomical entity'"
+
+name:
+  # Induced, frequency=0.22727272727272727, p=http://www.w3.org/2000/01/rdf-schema#label 
+  text: "smooth muscle cell of %s"
+  vars:
+    - v0
+
+def:
+  # Induced, frequency=0.22727272727272727, p=http://purl.obolibrary.org/obo/IAO_0000115 
+  text: "A smooth muscle cell of the %s."
+  vars:
+    - v0
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    # Induced p=exact_synonym 
+    text: "smooth muscle fiber of %s"
+    vars:
+      - v0
+
+
+equivalentTo:
+  text: "'smooth muscle cell' and ('part of' some %s)"
+  vars:
+    - v0
