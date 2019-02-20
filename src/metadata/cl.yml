@@ -1,0 +1,27 @@
+# PURL configuration for http://purl.obolibrary.org/obo/cl
+
+idspace: CL
+base_url: /obo/cl
+
+products:
+- cl.owl: https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.owl
+- cl.obo: https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.obo
+
+term_browser: ontobee
+example_terms:
+- cl_0000000
+
+entries:
+
+- prefix: /releases/
+  replacement: https://raw.githubusercontent.com/obophenotype/cell-ontology/v
+
+- prefix: /tracker/
+  replacement: https://github.com/obophenotype/cell-ontology/issues
+
+- prefix: /about/
+  replacement: http://www.ontobee.org/ontology/CL?iri=http://purl.obolibrary.org/obo/
+
+## generic fall-through, serve direct from github by default
+- prefix: /
+  replacement: https://raw.githubusercontent.com/obophenotype/cell-ontology/master/
