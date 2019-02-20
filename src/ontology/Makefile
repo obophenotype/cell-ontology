@@ -80,7 +80,7 @@ CL_IMPORTS_BASE_URI = $(OBO)/cl
 
 # Ontology dependencies
 # We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi pr go
+IMPORTS = pato uberon chebi pr go ro
 
 # Make this target to regenerate ALL
 all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
