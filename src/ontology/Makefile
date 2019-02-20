@@ -2,13 +2,14 @@ SRC=cl-edit.owl
 OBO=http://purl.obolibrary.org/obo
 USECAT= --catalog-xml catalog-v001.xml
 RELEASEDIR=../..
+RELEASE_URIBASE= $(OBO)/cl/releases/`date +%Y-%m-%d`
 
 all: all_imports stage
 
-stage: bridge-checks cl.obo cl.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck 
+stage: bridge-checks cl.obo cl.owl cl-base.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck 
 release: stage copy-release
 copy-release:
-	cp cl.{obo,owl} cl-basic.{obo,owl} $(RELEASEDIR)
+	cp cl.{obo,owl} cl-basic.{obo,owl} cl-base.owl $(RELEASEDIR)
 	cp imports/*{obo,owl} $(RELEASEDIR)/imports
 
 test: all_imports cl.obo
@@ -27,11 +28,13 @@ build/%: build/cl.owl
 cl.owl: build/cl.owl
 	cp $< $@
 cl.obo: build/cl.owl
-	owltools $(USECAT) $< --add-obo-shorthand-to-properties --merge-imports-closure -o -f obo $@
+	owltools $(USECAT) $< --add-obo-shorthand-to-properties --merge-imports-closure -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
+cl-base.owl: cl-edit.owl
+	owltools $(USECAT) $< --remove-imports-declarations --set-ontology-id -v $(RELEASE_URIBASE)/$@ $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
 cl-basic.owl: build/cl-simple.owl
-	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@
+	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
 cl-basic.obo: cl-basic.owl
-	owltools $< -o -f obo $@
+	owltools $< -o -f obo $@.tmp && mv $@.tmp $@
 
 %-obocheck: %.obo
 	obo2obo $< -o $@
@@ -95,7 +98,7 @@ imports/seed.tsv: cl-edit.owl imports/seed_edit.tsv
 	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp imports/seed_edit.tsv > $@
 
 imports/%_import.owl: $(SRC) mirror/%.owl imports/seed.tsv
-	robot extract -i mirror/$*.owl -T imports/seed.tsv -m BOT -O $(OBO)/cl/$@ -o $@
+	robot extract -i mirror/$*.owl -T imports/seed.tsv -m BOT -O $(OBO)/cl/$@ -o $@.tmp.owl && owltools $@.tmp.owl --remove-annotation-assertions -r -l -s -d -o $@.tmp && mv $@.tmp $@
 
 imports/%_import.obo: imports/%_import.owl
 	owltools $(USECAT) $< -o -f obo $@
