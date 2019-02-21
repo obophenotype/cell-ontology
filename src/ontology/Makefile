@@ -1,226 +1,424 @@
-SRC=cl-edit.owl
-OBO=http://purl.obolibrary.org/obo
-USECAT= --catalog-xml catalog-v001.xml
-RELEASEDIR=../..
-RELEASE_URIBASE= $(OBO)/cl/releases/`date +%Y-%m-%d`
-
-all: all_imports stage
-
-stage: bridge-checks cl.obo cl.owl cl-base.owl cl-basic.obo cl-basic.owl cl-obocheck cl-basic-obocheck 
-release: stage copy-release
-copy-release:
-	cp cl.{obo,owl} cl-basic.{obo,owl} cl-base.owl $(RELEASEDIR)
-	cp imports/*{obo,owl} $(RELEASEDIR)/imports
-
-test: all_imports cl.obo
+# ----------------------------------------
+# Makefile for cl
+# Generated using ontology-starter-kit
+# ----------------------------------------
+# <do not edit above this line>
 
 # ----------------------------------------
-# BUILD
+# Standard Constants
 # ----------------------------------------
+# these can be overwritten on the command line
 
-# This is a standard OORT build
-# We add a custom step to unfold the import closure in the obo version, because obo does not handle imports well
+URIBASE=                    http://purl.obolibrary.org/obo
+ONT=                        cl
+ONTBASE=                    $(URIBASE)/$(ONT)
+EDIT_FORMAT=                owl
+SRC =                       $(ONT)-edit.$(EDIT_FORMAT)
+ROBOT=                      robot
+RELEASEDIR=                 ../..
+PATTERNDIR=                 ../patterns
+REPORTDIR=                 reports
+SPARQLDIR =                 ../sparql
+REPORT_FAIL_ON =            None
+OBO_FORMAT_OPTIONS =        
+SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
+SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
 
-# TODO: allow-equivalent-pairs is there for the CL:cell vs GO:cell
-build/cl.owl: cl-edit.owl
-	ontology-release-runner $(USECAT) --ignore-selected-equivalent-pairs 'CL:0000000'  --outdir build --no-subsets --allow-overwrite --ignoreLock --reasoner elk --asserted --simple $<
-build/%: build/cl.owl
-cl.owl: build/cl.owl
-	cp $< $@
-cl.obo: build/cl.owl
-	owltools $(USECAT) $< --add-obo-shorthand-to-properties --merge-imports-closure -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
-cl-base.owl: cl-edit.owl
-	owltools $(USECAT) $< --remove-imports-declarations --set-ontology-id -v $(RELEASE_URIBASE)/$@ $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
-cl-basic.owl: build/cl-simple.owl
-	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
-cl-basic.obo: cl-basic.owl
-	owltools $< -o -f obo $@.tmp && mv $@.tmp $@
+TODAY   := $(shell date +%Y-%m-%d)
+DOSDP_SCHEMA=                http:// # change to PURL when ready.
+PATTERN_TESTER=              simple_pattern_tester.py
+DOSDPT=                      dosdp-tools
+PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
 
-%-obocheck: %.obo
-	obo2obo $< -o $@
-
-SSAOS= zfa xao
-#SSAOS= zfa xao fbbt
-#SSAOS= zfa
-#SSAOS= xao fbbt
-bridge-checks: $(patsubst %,cl-bridge-to-%-check.txt,$(SSAOS))
-
-# TIP: to include explanations, do this:
-#    make bridge-checks REASONER_ARGS="-e"
-# WARNING: even with Elk, this can sometimes take an inordinate amount of time.
-#          it is recommended that this is only set in test environments, never in production/Jenkins.
-#          you may want to ctrl-C to quit the process after a while and look at the first few issues with "grep UNSAT"
-REASONER_ARGS =
-
-# do 'grep UNSAT' to check for success
-# use cl-plus-zfa.owl to check for errors
-cl-bridge-to-%-check.txt: cl-edit.owl
-	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u $(REASONER_ARGS) > $@.fail && mv $@.fail $@
-
-cl-bridge-to-%-explanations.txt: cl-edit.owl
-	owltools --use-catalog $< $(OBO)/$*.owl $(OBO)/uberon/bridge/cl-bridge-to-$*.owl --merge-support-ontologies --run-reasoner -r elk -u -e $(REASONER_ARGS) > $@
 
 # ----------------------------------------
-# Regenerate imports
+# Top-level targets
 # ----------------------------------------
-# Uses OWLAPI Module Extraction code
 
-# Type 'make imports/X_import.owl' whenever you wish to refresh the import for an ontology X. This is when:
+all: all_imports patterns all_main all_subsets sparql_test all_reports all_assets
+test: all_reports cl.obo
+
+## -- main targets --
+##
+## By default this is the cross-product of {ont, ont-base} x FORMATS
+
+MAIN_PRODUCTS = $(ONT) $(ONT)-base
+MAIN_FILES = $(foreach n,$(MAIN_PRODUCTS), $(n).owl $(n).obo $(n).json)
+
+all_main: $(MAIN_FILES)
+
+## -- import targets --
+##
+## By default this is the cross-product of IMPORT_MODULES x FORMATS
+
+# ignore for now: pr ncbitaxon clo
+IMPORTS =  go uberon ro chebi pato 
+
+IMPORT_ROOTS = $(patsubst %, imports/%_import, $(IMPORTS))
+IMPORT_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl $(n).obo $(n).json)
+IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
+
+all_imports: $(IMPORT_FILES)
+all_imports_owl: $(foreach n,$(IMPORT_ROOTS), $(n).owl)
+all_imports_obo: $(foreach n,$(IMPORT_ROOTS), $(n).obo)
+
+
+## -- subset targets --
+##
+## By default this is the cross-product of SUBSETS x FORMATS
+## Note we also include TSV as a format
+
+
+SUBSETS = 
+
+SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(n).tsv $(n).owl $(n).obo $(n).json)
+
+all_subsets: $(SUBSET_FILES)
+
+## -- dosdp pattern targets --
+##
+
+
+PATTERNS = 
+
+PATTERN_ROOTS = $(patsubst %, $(PATTERNDIR)/%, $(PATTERNS))
+PATTERN_FILES = $(foreach n,$(PATTERN_ROOTS), $(n).owl)
+
+all_patterns: $(PATTERN_FILES)
+
+## -- dosdp pattern targets --
+##
+
+OBO_REPORT = $(ONT)-obo-report
+REPORTS = $(OBO_REPORT)
+REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
+
+all_reports: all_reports_onestep $(REPORT_FILES)
+
+## -- all files/assets --
+
+ASSETS = \
+  $(IMPORT_FILES) \
+  $(MAIN_FILES) \
+  $(REPORT_FILES) \
+  $(SUBSET_FILES)
+
+all_assets: $(ASSETS)
+
+show_assets:
+	echo $(ASSETS)
+	du -sh $(ASSETS)
+
+
+# ----------------------------------------
+# Release Management
+# ----------------------------------------
+
+# This should be executed by the release manager whenever time comes to make a release.
+# It will ensure that all assets/files are fresh, and will copy to release folder
+prepare_release: $(ASSETS) $(PATTERN_RELEASE_FILES)
+	rsync -R $(ASSETS) $(RELEASEDIR) &&\
+  mkdir -p $(RELEASEDIR)/patterns &&\
+  cp $(PATTERN_RELEASE_FILES) $(RELEASEDIR)/patterns &&\
+  echo "Release files are now in $(RELEASEDIR) - now you should commit, push and make a release on github"
+
+prepare_initial_release: prepare_release
+	cd $(RELEASEDIR) && git add $(ASSETS)
+
+# ----------------------------------------
+# Generic Conversion
+# ----------------------------------------
+# we assume OWL as source
+%.obo: %.owl
+	$(ROBOT) convert --check false -i $< -f obo $(OBO_FORMAT_OPTIONS) -o $*.tmp.obo && grep -v ^owl-axioms $*.tmp.obo > $@
+%.ttl: %.owl
+	$(ROBOT) convert -i $< -f ttl -o $*.tmp.ttl && mv $*.tmp.ttl $@
+%.json: %.owl
+	$(ROBOT) convert -i $< -f json -o $*.tmp.json && mv $*.tmp.json $@
+
+%.gz: %
+	gzip -c $< > $@.tmp && mv $@.tmp $@
+
+# ----------------------------------------
+# Initiating Step: Reason over source
+# ----------------------------------------
+
+ANNOTATE_VERSION_IRI = annotate -V $(ONTBASE)/releases/`date +%Y-%m-%d`/$@.owl
+
+# by default we use ELK to perform a reason-relax-reduce chain
+# after that we annotate the ontology with the release versionInfo
+
+OTHER_SRC = $(PATTERNDIR)/definitions.owl
+
+$(ONT).owl: $(SRC) $(OTHER_SRC)
+	$(ROBOT) reason --input $< --reasoner ELK \
+		 relax \
+		 reduce -r ELK \
+		 remove --select imports \
+	         merge  $(patsubst %, -i %, $(IMPORT_OWL_FILES))  \
+	         annotate --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
+
+# requires robot 1.2. For some reason, the pipe between remove | merge does not work. 
+$(ONT)-base.owl: $(SRC) $(PATTERNDIR)/definitions.owl
+	$(ROBOT) remove --trim false --input $< --select imports --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
+$(ROBOT) merge -i $@ -i $(PATTERNDIR)/definitions.owl --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
+$(ROBOT) annotate -i $@ --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@ &&\
+	echo "$(ONT)-base.owl successfully created."
+
+# ----------------------------------------
+# Import modules
+# ----------------------------------------
+# Most ontologies are modularly constructed using portions of other ontologies
+# These live in the imports/ folder
+
+# seed.txt contains all referenced entities
+
+
+seed.txt: $(SRC) prepare_patterns $(PATTERNDIR)/all_pattern_terms.txt
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@.tmp &&\
+	cat $@.tmp $(PATTERNDIR)/all_pattern_terms.txt | sort | uniq >  $@
+
+
+# Generate terms.txt for each import.  (Assume OBO-style Possibly hacky step?)
+# Should be able to drop this if robot can just take a big messy list of terms as input.
+
+imports/%_terms_combined.txt: seed.txt imports/%_terms.txt
+	cat $^ | grep -v ^# | sort | uniq >  $@
+
+# -- Generate Import Modules --
 #
-#  1. X has changed and we want to include these changes
-#  2. We have added onr or more new IRI from X into cl-edit.owl
-#  3. We have removed references to one or more IRIs in X from cl-edit.owl
-#
-# You should NOT edit these files directly, changes will be overwritten.
-#
-# If you want to add something to these, edit cl-edit.owl and add an axiom with a IRI from X. You don't need to add any information about X.
+# This pattern uses ROBOT to generate an import module
+imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
+	$(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --method BOT \
+		 annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@
+	#echo "Skipping extraction"
+.PRECIOUS: imports/%_import.owl
 
-# Base URI for local subset imports
-CL_IMPORTS_BASE_URI = $(OBO)/cl
-
-# Ontology dependencies
-# We don't include clo, as this is currently not working
-IMPORTS = pato uberon chebi pr go ro
-
-# Make this target to regenerate ALL
-all_imports: $(patsubst %, imports/%_import.owl,$(IMPORTS)) $(patsubst %, imports/%_import.obo,$(IMPORTS))
-
-KEEPRELS = BFO:0000050 BFO:0000051 RO:0002202 immediate_transformation_of
-
-# Create an import module using the OWLAPI module extraction code via OWLTools.
-# We use the standard catalog, but rewrite the import to X to be a local mirror of ALL of X.
-# After extraction, we further reduce the ontology by creating a "mingraph" (removes all annotations except label) and by 
-#imports/%_import.owl: cl-edit.owl mirror/%.owl imports/%_seed.owl
-#	OWLTOOLS_MEMORY=12G owltools  $(USECAT) --map-ontology-iri $(CL_IMPORTS_BASE_URI)/imports/$*_import.owl mirror/$*.owl $< imports/$*_seed.owl --merge-support-ontologies  --extract-module -s $(OBO)/$*.owl -c --remove-axiom-annotations --make-subset-by-properties -f $(KEEPRELS)  --remove-annotation-assertions -l -s --set-ontology-id $(CL_IMPORTS_BASE_URI)/$@ -o $@
-
-# File used to seed module extraction
-imports/seed.tsv: cl-edit.owl imports/seed_edit.tsv
-	owltools $(USECAT) $< --merge-support-ontologies --export-table $@.tmp && cut -f1 $@.tmp imports/seed_edit.tsv > $@
-
-imports/%_import.owl: $(SRC) mirror/%.owl imports/seed.tsv
-	robot extract -i mirror/$*.owl -T imports/seed.tsv -m BOT -O $(OBO)/cl/$@ -o $@.tmp.owl && owltools $@.tmp.owl --remove-annotation-assertions -r -l -s -d -o $@.tmp && mv $@.tmp $@
-
+# convert imports to obo.
+# this can be useful for spot-checks and diffs.
+# we set strict mode to false by default. For discussion see https://github.com/owlcs/owlapi/issues/752
 imports/%_import.obo: imports/%_import.owl
-	owltools $(USECAT) $< -o -f obo $@
+	$(ROBOT) convert --check false -i $< -f obo -o $@.tmp && mv $@.tmp $@
 
-#MIRROR_TRIGGER = cl-edit.owl
-MIRROR_TRIGGER = 
 
-# clone remote ontology locally, perfoming some excision of relations and annotations
-# Note: use .obo for faster download
-mirror/%.obo: $(MIRROR_TRIGGER)
-	wget --no-check-certificate $(OBO)/$*.obo -O $@
-mirror/%.owl: mirror/%.obo
-	owltools $< --remove-annotation-assertions -l --remove-dangling-annotations --make-subset-by-properties -f $(KEEPRELS)  -o $@
-mirror/uberon.owl: $(MIRROR_TRIGGER)
-	owltools $(OBO)/uberon.owl --remove-annotation-assertions -l -s -d --remove-axiom-annotations --remove-dangling-annotations --make-subset-by-properties -n $(KEEPRELS) --set-ontology-id $(OBO)/uberon.owl -o $@
-mirror/pr.obo: 
-	wget $(OBO)/pr.obo -O $@.tmp && ./util/obo-grep.pl -r 'id: PR:' $@.tmp > $@
-mirror/pr.owl: mirror/pr.obo
-	owltools $< --remove-axiom-annotations --remove-annotation-assertions -l -s -d --remove-dangling --set-ontology-id $(OBO)/pr.owl -o $@
-mirror/clo.owl:
-	owltools $(OBO)/clo.owl --remove-imports-declarations --set-ontology-id $(OBO)/clo.owl -o $@
-mirror/ro.owl:
-	owltools $(OBO)/ro.owl --merge-imports-closure  --remove-annotation-assertions -r -l -s -d --set-ontology-id $(OBO)/ro.owl -o $@
-mirror/ncbitaxon.owl:
-	wget $(OBO)/ncbitaxon.owl -O $@
+# ----------------------------------------
+# Mirroring upstream ontologies
+# ----------------------------------------
+#
+
+
+## ONTOLOGY: pr
+## Copy of pr is re-downloaded whenever source changes
+mirror/pr.trigger: $(SRC)
+
+mirror/pr.owl: mirror/pr.trigger
+	echo "MIRROR skipped: Version contained unsatisfiable classes which need to be fixed first"
+	#$(ROBOT) convert -I https://raw.githubusercontent.com/monarch-ebi-dev/ontologies/master/pr.owl.gz -o $@
+
 .PRECIOUS: mirror/%.owl
 
-# ----------------------------------------
-# Diffs
-# ----------------------------------------
 
-# full diff makes RSS as well
-diff: cl-basic.obo
-	cd diffs && rm cl-*diff* && make
+## ONTOLOGY: go
+## Copy of go is re-downloaded whenever source changes
+mirror/go.trigger: $(SRC)
 
-# TESTING: emailing self, will change to list
-minidiff: build/cl.obo
-	cd diffs && rm cl-*diff* && make TGTS='html txt' SRC=../build/cl-simple.obo
+mirror/go.owl: mirror/go.trigger
+	$(ROBOT) convert -I $(URIBASE)/go.owl -o $@
 
-#diffs: cl-obo-diff.html cl-def-diff.html cl-lastbuild.obo
-
-#cl-obo-diff.html: cl-basic.obo
-#	compare-obo-files.pl --config 'html/ontology_name=Cell Ontology' --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text rss -o cl-obo-diff
-#cl-def-diff.html: cl-basic.obo
-#	compare-defs.pl --rss-path ./rss -f1 cl-lastbuild.obo -f2 $< -m html text -o cl-def-diff
-
-#cl-lastbuild.obo: cl-basic.obo
-#	cp $< $@
+.PRECIOUS: mirror/%.owl
 
 
+## ONTOLOGY: uberon
+## Copy of uberon is re-downloaded whenever source changes
+mirror/uberon.trigger: $(SRC)
 
-# ----------------------------------------
-# REPORTING
-# ----------------------------------------
+mirror/uberon.owl: mirror/uberon.trigger
+	$(ROBOT) convert -I $(URIBASE)/uberon.owl -o $@
 
-# TODO: replace with SPARQL
-cl-to-pr.txt: cl.obo
-	blip-findall -i $< "parent(X,R,Y),id_idspace(X,'CL'),id_idspace(Y,'PR')" -select "p(X,R,Y)" -label -no_pred > $@
-
-reports/cl-%.csv: cl.owl sparql/%.sparql
-	arq --data $< --query sparql/$*.sparql --results csv > $@.tmp && mv $@.tmp $@
-
-#reports/part-of-cl-to-ma.csv: cl-plus-ma-merged.owl sparql/multispecies-part-of.sparql
-#	arq --data $< --query $(word 2,$^) --results csv > $@.tmp && mv $@.tmp $@
-
-reports/direct-part-of-cl-to-ma.tsv: cl-plus-ma-merged.obo
-	blip-findall -i $< "parent(C,part_of,U),id_idspace(C,'CL'),genus(A,U),id_idspace(A,'MA')" -select "p(C,U,A)" -label -use_tabs -no_pred > $@.tmp && sort -u $@.tmp > $@ && rm $@.tmp
+.PRECIOUS: mirror/%.owl
 
 
-%-merged.owl: %.owl
-	owltools $(USECAT) $< --merge-imports-closure -o $@
-%-merged.obo: %-merged.owl
-	owltools $< -o -f obo --no-check $@
+## ONTOLOGY: ro
+## Copy of ro is re-downloaded whenever source changes
+mirror/ro.trigger: $(SRC)
 
-# ----------------------------------------
-# EXPERIMENTAL
-# ----------------------------------------
+mirror/ro.owl: mirror/ro.trigger
+	$(ROBOT) convert -I $(URIBASE)/ro.owl -o $@
 
-bridge/cl-bridge-to-uberon.owl: cl.owl
-	owltools $< --extract-bridge-ontologies -d $* -s cl -x -o -f obo $@/no-bridge.obo
-bridge/cl-bridge-to-uberon.obo: bridge/cl-bridge-to-uberon.owl
-	owltools $< -o -f obo $@
+.PRECIOUS: mirror/%.owl
 
-# ----------------------------------------
-# NIF
-# ----------------------------------------
 
-# Note: there is a distinction between NIF_Cell, an OWL Ontology that
-# was part of NIFSTD, and the cell types in Neurolex.  NIF_Cell is no
-# longer maintained; the cell types in Neurolex appear to have been
-# seeded from NIF_Cell, with subsequent edits done on NIF_Cell.
-#
-# For ongoing work in translating Neurolex into OWL, see:
-# https://github.com/cmungall/nlx-pl
+## ONTOLOGY: chebi
+## Copy of chebi is re-downloaded whenever source changes
+mirror/chebi.trigger: $(SRC)
 
-NIF = http://ontology.neuinfo.org/NIF
-NIFBM = $(NIF)/BiomaterialEntities
+mirror/chebi.owl: mirror/chebi.trigger
+	$(ROBOT) convert -I $(URIBASE)/chebi.owl -o $@
 
-## A module that consists of all portions of other NIFSTD ontologies depended on by NIF-Cell
-imports/nif_import.owl:
-	owltools $(NIFBM)/NIF-Cell.owl $(NIF)/nif.owl --extract-module -s $(NIFBM)/NIF-Cell.owl -c --extract-mingraph --set-ontology-id $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
+.PRECIOUS: mirror/%.owl
 
-## A rewritten version of NIF-Cell that uses the importer above
-mirror/NIF-Cell.owl:
-	owltools  $(NIFBM)/NIF-Cell.owl  --remove-imports-declarations --add-imports-declarations $(OBO)/cl/imports/nif_import.owl -o -f ofn $@
 
-mirror/NIF-Cell-Merged.owl: mirror/NIF-Cell.owl
-	owltools --use-catalog $< --merge-imports-closure -o -f ofn $@  
+## ONTOLOGY: clo
+## Copy of clo is re-downloaded whenever source changes
+mirror/clo.trigger: $(SRC)
 
-imports/nif_cell.owl: mirror/NIF-Cell-Merged.owl
-	./util/fix-nif-uris.pl $< > $@.tmp && mv $@.tmp $@
+mirror/clo.owl: mirror/clo.trigger
+	$(ROBOT) convert -I $(URIBASE)/clo.owl -o $@
 
-neuro-cl.owl: cl-plus-nif.owl imports/nif_cell.owl
-	owltools --use-catalog $< --merge-imports-closure --remove-axioms -t DisjointClasses --reasoner elk --merge-equivalence-sets -s UBERON 10 -s GO 9 -s CL 9 -s PR 8 -l UBERON 10 -l GO 9 -l CL 9 -d UBERON 10 -d GO 9 -d CL 9 --set-ontology-id $(OBO)/cl/$@ -o -f ofn $@ >& $@.LOG
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: pato
+## Copy of pato is re-downloaded whenever source changes
+mirror/pato.trigger: $(SRC)
+
+mirror/pato.owl: mirror/pato.trigger
+	$(ROBOT) convert -I $(URIBASE)/pato.owl -o $@
+
+.PRECIOUS: mirror/%.owl
+
+
+## ONTOLOGY: ncbitaxon
+## Copy of ncbitaxon is re-downloaded whenever source changes
+mirror/ncbitaxon.trigger: $(SRC)
+
+mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
+	$(ROBOT) convert -I $(URIBASE)/ncbitaxon.owl -o $@
+
+.PRECIOUS: mirror/%.owl
+
+
 
 # ----------------------------------------
-# Legacy copy to cvs
+# Subsets
+# ----------------------------------------
+subsets/%.tsv: subsets/%.owl
+	$(ROBOT) query -f tsv -i $< -s ../sparql/labels.sparql $@
+subsets/%.owl: $(ONT).owl
+	owltools --use-catalog $< --extract-ontology-subset --fill-gaps --subset $* -o $@.tmp.owl && mv $@.tmp.owl $@
+
+
+# ----------------------------------------
+# Release
+# ----------------------------------------
+# copy from staging area (this directory) to top-level
+release: $(ONT).owl $(ONT).obo
+	cp $^ $(RELEASEDIR) && cp imports/* $(RELEASEDIR)/imports
+
+# ----------------------------------------
+# Sparql queries: Q/C
 # ----------------------------------------
 
-CVS_DIR = ../../../obo/ontology/anatomy/cell_type/
-publish_to_cvs: release re-sync
-	 cd $(CVS_DIR) && cvs commit -m 'new release' cell.obo
+# these live in the ../sparql directory, and have suffix -violation.sparql
+# adding the name here will make the violation check live.
+# NOTE: these will soon be phased out and replaced by robot-report
 
-re-sync:
-	cp cl-basic.obo $(CVS_DIR)/cell.obo && cp cl-merged.obo $(CVS_DIR)/cell.edit.obo
+#  run all violation checks
+SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$V-violation.sparql)
+sparql_test: $(SRC)
+	$(ROBOT) verify  --catalog catalog-v001.xml -i $< --queries $(SPARQL_VALIDATION_QUERIES) -O reports/
+
+# ----------------------------------------
+# ROBOT report
+# ----------------------------------------
+reports/%-obo-report.tsv: %.owl
+	$(ROBOT) report -i $< --fail-on $(REPORT_FAIL_ON) -o $@
+
+# ----------------------------------------
+# Sparql queries: Exports
+# ----------------------------------------
+
+SPARQL_EXPORTS_ARGS = $(foreach V,$(SPARQL_EXPORTS),-s $(SPARQLDIR)/$V.sparql reports/$V.tsv)
+# This combines all into one single command
+all_reports_onestep: $(SRC)
+	$(ROBOT) query -f tsv -i $< $(SPARQL_EXPORTS_ARGS)
+
+
+# ----------------------------------------
+# Docker (experimental)
+# ----------------------------------------
+IM=build-$(ONT)
+build-docker:
+	docker build -t $(ONT) .
+
+
+
+# ----------------------------------------
+# Patterns (experimental)
+# ----------------------------------------
+
+# Test patterns for schema compliance:
+
+.PHONY: .FORCE
+
+.PHONY: patterns
+patterns: all_imports $(PATTERNDIR)/pattern.owl $(PATTERNDIR)/definitions.owl
+
+.PHONY: pattern_clean
+pattern_clean:
+	echo "Not implemented"
+
+pattern_schema_checks: $(PATTERNDIR)/dosdp-patterns
+	simple_pattern_tester.py $(PATTERNDIR)/dosdp-patterns/ # 2>&1 | tee $@
+
+#This command is a workaround for the absence of -N and -i in wget of alpine (the one ODK depend on now). It downloads all patterns specified in external.txt
+$(PATTERNDIR)/dosdp-patterns: .FORCE
+	< $(PATTERNDIR)/dosdp-patterns/external.txt tr '\n' '\0' | sed 's!.*/!!' | xargs -0 -I{} rm -f $(PATTERNDIR)/dosdp-patterns/{} &&\
+	< $(PATTERNDIR)/dosdp-patterns/external.txt tr '\n' '\0' | xargs -0 -I{} wget -q {} -P $(PATTERNDIR)/dosdp-patterns
+
+$(PATTERNDIR)/pattern.owl: $(PATTERNDIR)/dosdp-patterns
+	$(DOSDPT) prototype --obo-prefixes --template=$(PATTERNDIR)/dosdp-patterns --outfile=$@
+
+individual_patterns_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.ofn, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv)))
+pattern_term_lists_default := $(patsubst %.tsv, $(PATTERNDIR)/data/default/%.txt, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv)))
+
+
+
+individual_patterns_clustering := $(patsubst %.tsv, $(PATTERNDIR)/data/clustering/%.ofn, $(notdir $(wildcard $(PATTERNDIR)/data/clustering/*.tsv)))
+pattern_term_lists_clustering := $(patsubst %.tsv, $(PATTERNDIR)/data/clustering/%.txt, $(notdir $(wildcard $(PATTERNDIR)/data/clustering/*.tsv)))
+
+
+
+# Generating the individual pattern modules and merging them into definitions.owl
+$(PATTERNDIR)/definitions.owl: prepare_patterns $(individual_patterns_default)   $(individual_patterns_clustering)
+	$(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   $(addprefix -i , $(individual_patterns_clustering)) annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl -o definitions.ofn &&\
+	mv definitions.ofn $@
+
+$(PATTERNDIR)/data/default/%.ofn: $(PATTERNDIR)/data/default/%.tsv $(PATTERNDIR)/dosdp-patterns/%.yaml $(SRC) all_imports .FORCE
+	dosdp-tools generate --catalog=catalog-v001.xml --infile=$< --template=$(word 2, $^) --ontology=$(word 3, $^) --obo-prefixes=true --outfile=$@
+
+
+
+$(PATTERNDIR)/data/clustering/%.ofn: $(PATTERNDIR)/data/clustering/%.tsv $(PATTERNDIR)/dosdp-patterns/%.yaml $(SRC) all_imports .FORCE
+	dosdp-tools generate --catalog=catalog-v001.xml --infile=$< --template=$(word 2, $^) --ontology=$(word 3, $^) --obo-prefixes=true --outfile=$@
+
+
+
+# Generating the seed file from all the TSVs
+$(PATTERNDIR)/all_pattern_terms.txt: $(pattern_term_lists_default)   $(pattern_term_lists_clustering) $(PATTERNDIR)/pattern_owl_seed.txt
+	cat $^ | sort | uniq > $@
+	
+$(PATTERNDIR)/pattern_owl_seed.txt: $(PATTERNDIR)/pattern.owl
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/terms.sparql $@
+
+$(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/default/%.tsv .FORCE
+	dosdp-tools terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@
+
+.PHONY: prepare_patterns
+prepare_patterns:	
+	touch $(pattern_term_lists_default)   $(pattern_term_lists_clustering) &&\
+  touch $(individual_patterns_default)   $(individual_patterns_clustering)
+
+
+$(PATTERNDIR)/data/clustering/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/clustering/%.tsv .FORCE
+	dosdp-tools terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@
+
+
+
+include cl.Makefile
+
+
+
+
+
