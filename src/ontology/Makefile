@@ -36,7 +36,7 @@ PATTERN_RELEASE_FILES=       $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern
 # ----------------------------------------
 
 all: all_imports patterns all_main all_subsets sparql_test all_reports all_assets
-test: all_reports cl.obo
+test: all_reports cl.owl
 
 ## -- main targets --
 ##
@@ -213,8 +213,7 @@ imports/%_import.obo: imports/%_import.owl
 mirror/pr.trigger: $(SRC)
 
 mirror/pr.owl: mirror/pr.trigger
-	echo "MIRROR skipped: Version contained unsatisfiable classes which need to be fixed first"
-	#$(ROBOT) convert -I https://raw.githubusercontent.com/monarch-ebi-dev/ontologies/master/pr.owl.gz -o $@
+	$(ROBOT) convert -I https://raw.githubusercontent.com/matentzn/large-ontology-dependencies/master/pr.owl.gz -o $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -254,7 +253,7 @@ mirror/ro.owl: mirror/ro.trigger
 mirror/chebi.trigger: $(SRC)
 
 mirror/chebi.owl: mirror/chebi.trigger
-	$(ROBOT) convert -I $(URIBASE)/chebi.owl -o $@
+	$(ROBOT) convert -I https://raw.githubusercontent.com/matentzn/large-ontology-dependencies/master/chebi.owl.gz -o $@
 
 .PRECIOUS: mirror/%.owl
 
@@ -284,7 +283,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/ncbitaxon.trigger: $(SRC)
 
 mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
-	$(ROBOT) convert -I $(URIBASE)/ncbitaxon.owl -o $@
+	$(ROBOT) convert -I https://raw.githubusercontent.com/matentzn/large-ontology-dependencies/master/ncbitaxon.owl.gz -o $@
 
 .PRECIOUS: mirror/%.owl
 

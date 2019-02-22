@@ -1,0 +1,34 @@
+id: cl
+title: "Cell Ontology"
+github_org: obophenotype
+repo: cell-ontology
+#report_fail_on: ERROR
+report_fail_on: None
+use_dosdps: TRUE
+export_formats:
+  - owl
+  - obo
+  - json
+import_group:
+  products:
+    - id: pr
+      mirror_from: https://raw.githubusercontent.com/matentzn/large-ontology-dependencies/master/pr.owl.gz
+      use_base: FALSE
+    - id: go
+    - id: uberon 
+    - id: ro
+    - id: chebi
+      mirror_from: https://raw.githubusercontent.com/matentzn/large-ontology-dependencies/master/chebi.owl.gz
+      use_base: FALSE
+    - id: clo
+    - id: pato
+    - id: ncbitaxon
+      mirror_from: https://raw.githubusercontent.com/matentzn/large-ontology-dependencies/master/ncbitaxon.owl.gz
+      use_base: FALSE
+pattern_pipelines_group:
+  products:
+    - id: clustering
+      dosdp_tools_options: "--obo-prefixes=true"
+
+
+  
