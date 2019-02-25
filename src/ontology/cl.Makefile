@@ -12,8 +12,6 @@ copy-release:
 	cp cl.{obo,owl} cl-basic.{obo,owl} cl-base.owl $(RELEASEDIR)
 	cp imports/*{obo,owl} $(RELEASEDIR)/imports
 
-test: all_imports cl.obo
-
 # ----------------------------------------
 # BUILD
 # ----------------------------------------
@@ -29,8 +27,8 @@ test: all_imports cl.obo
 #	cp $< $@
 #cl.obo: build/cl.owl
 #	owltools $(USECAT) $< --add-obo-shorthand-to-properties --merge-imports-closure -o -f obo --no-check $@.tmp && grep -v ^owl-axioms $@.tmp > $@
-cl-base.owl: cl-edit.owl
-	owltools $(USECAT) $< --remove-imports-declarations --set-ontology-id -v $(RELEASE_URIBASE)/$@ $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
+#cl-base.owl: cl-edit.owl
+#	owltools $(USECAT) $< --remove-imports-declarations --set-ontology-id -v $(RELEASE_URIBASE)/$@ $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
 cl-basic.owl: build/cl-simple.owl
 	owltools $< --remove-axioms -t DisjointClasses --set-ontology-id $(OBO)/cl/$@ -o $@.tmp && mv $@.tmp $@
 cl-basic.obo: cl-basic.owl
