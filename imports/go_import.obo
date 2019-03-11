@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-02-21/imports/go_import.owl
+data-version: cl/releases/2019-03-11/imports/go_import.owl
 ontology: cl/imports/go_import
 
 [Term]
@@ -4120,8 +4120,8 @@ name: ion channel activity
 namespace: molecular_function
 def: "Enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size)." [GOC:cy, GOC:mtg_transport, GOC:pr, ISBN:0815340729]
 is_a: GO:0015075 ! ion transmembrane transporter activity
+is_a: GO:0015267 ! channel activity
 is_a: GO:0015318 ! inorganic molecular entity transmembrane transporter activity
-is_a: GO:0022838 ! substrate-specific channel activity
 
 [Term]
 id: GO:0005244
@@ -6111,6 +6111,7 @@ synonym: "lipid biosynthesis" EXACT []
 synonym: "lipid formation" EXACT []
 synonym: "lipid synthesis" EXACT []
 synonym: "lipogenesis" EXACT [GOC:sl]
+is_a: GO:0006629 ! lipid metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
 [Term]
@@ -6147,6 +6148,7 @@ synonym: "macromolecule breakdown" EXACT []
 synonym: "macromolecule catabolism" EXACT []
 synonym: "macromolecule degradation" EXACT []
 synonym: "multicellular organismal macromolecule catabolic process" NARROW []
+is_a: GO:0043170 ! macromolecule metabolic process
 is_a: GO:1901575 ! organic substance catabolic process
 
 [Term]
@@ -7496,6 +7498,7 @@ name: channel activity
 namespace: molecular_function
 alt_id: GO:0015249
 alt_id: GO:0015268
+alt_id: GO:0022838
 def: "Enables the energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel. Stereospecificity is not exhibited but this transport may be specific for a particular molecular species or class of molecules." [GOC:mtg_transport, ISBN:0815340729, TC:1.-.-.-.-]
 synonym: "alpha-type channel activity" RELATED []
 synonym: "channel-forming toxin activity" RELATED []
@@ -7503,6 +7506,7 @@ synonym: "channel/pore class transporter activity" EXACT []
 synonym: "nonselective channel activity" EXACT []
 synonym: "pore activity" BROAD []
 synonym: "pore class transporter activity" RELATED []
+synonym: "substrate-specific channel activity" RELATED []
 xref: reactome:R-HSA-3779381 "H2O2 diffuses from the mitochondrial matrix to the cytosol"
 xref: reactome:R-HSA-8953430 "PXMP2 trimer transports glycolate from cytosol to peroxisomal matrix"
 xref: TC:1
@@ -7921,11 +7925,7 @@ xref: reactome:R-HSA-2294580 "PLK1 hyperphosphorylates Condensin II complex"
 xref: reactome:R-HSA-2529020 "CK2 phosphorylates condensin I subunits"
 xref: reactome:R-HSA-389762 "Phosphorylation of PD-1"
 xref: reactome:R-HSA-392752 "Phosphorylation of L1 by CK-II"
-xref: reactome:R-HSA-442724 "Phosphorylation of CREB by ribosomal protein S6 kinase"
-xref: reactome:R-HSA-442726 "Raf activation"
-xref: reactome:R-HSA-442737 "Activation of MAPK"
-xref: reactome:R-HSA-442739 "Phosphorylation by PDK1"
-xref: reactome:R-HSA-444253 "Phosphorylation by MAPK/ERK"
+xref: reactome:R-HSA-442724 "Phosphorylation of CREB1 by ribosomal protein S6 kinases (RSKs)"
 xref: reactome:R-HSA-445079 "Phosphorylation of L1 by ERK"
 xref: reactome:R-HSA-5654690 "FGFR1-associated PI3K phosphorylates PIP2 to PIP3"
 xref: reactome:R-HSA-5654692 "FGFR1- and PTPN11- associated PI3K phosphorylates PIP2 to PIP3"
@@ -8539,13 +8539,6 @@ def: "Enables the transmembrane transfer of a solute by a channel that opens in 
 is_a: GO:0015267 ! channel activity
 
 [Term]
-id: GO:0022838
-name: substrate-specific channel activity
-namespace: molecular_function
-def: "Enables the energy-independent facilitated diffusion, mediated by passage of a specific solute through a transmembrane aqueous pore or channel. Stereospecificity is not exhibited but this transport may be specific for a particular molecular species or class of molecules." [GOC:mtg_transport]
-is_a: GO:0015267 ! channel activity
-
-[Term]
 id: GO:0022839
 name: ion gated channel activity
 namespace: molecular_function
@@ -8872,6 +8865,7 @@ synonym: "protein catabolism" EXACT []
 synonym: "protein degradation" EXACT []
 xref: Wikipedia:Protein_catabolism
 is_a: GO:0009057 ! macromolecule catabolic process
+is_a: GO:0019538 ! protein metabolic process
 is_a: GO:1901565 ! organonitrogen compound catabolic process
 
 [Term]
@@ -8988,6 +8982,7 @@ def: "The chemical reactions and pathways involving heparin, any member of a gro
 synonym: "heparan sulfate metabolic process" RELATED []
 synonym: "heparin metabolism" EXACT []
 is_a: GO:0006790 ! sulfur compound metabolic process
+is_a: GO:0043436 ! oxoacid metabolic process
 is_a: GO:1903510 ! mucopolysaccharide metabolic process
 
 [Term]
@@ -9009,6 +9004,7 @@ synonym: "heparin biosynthesis" EXACT []
 synonym: "heparin formation" EXACT []
 synonym: "heparin synthesis" EXACT []
 is_a: GO:0006024 ! glycosaminoglycan biosynthetic process
+is_a: GO:0030202 ! heparin metabolic process
 is_a: GO:0044272 ! sulfur compound biosynthetic process
 
 [Term]
@@ -12676,8 +12672,8 @@ creation_date: 2011-08-01T02:45:27Z
 id: GO:0038024
 name: cargo receptor activity
 namespace: molecular_function
-def: "Combining selectively with an extracellular substance and delivering the substance into the cell via endocytosis." [GOC:bf, GOC:signaling, PMID:15239958]
-comment: Note that this term and its child terms are intended for receptors that bind to and internalize molecules by receptor-mediated endocytosis. For receptors that are coupled to a signal transduction pathway, consider instead the term 'signaling receptor activity ; GO:0038023' and its children.
+def: "Binding specifically to a substance (cargo) to deliver it to a transport vesicle." [PMID:15239958]
+comment: Notes: (1) this term and its child terms are intended for receptors that bind to and internalize molecules by receptor-mediated endocytosis. For receptors that are coupled to a signal transduction pathway, consider instead the term 'signaling receptor activity ; GO:0038023' and its children. (2) Cargo receptors transport substances by vesicular transport, not by transmembrane transport.  For transmembrane transporters, consider instead the term 'transmembrane transporter activity ; GO:0022857.
 synonym: "endocytic receptor activity" EXACT [GOC:signaling, ISBN:0123645387, PMID:12671190]
 synonym: "receptor activity" BROAD []
 synonym: "receptor activity involved in ligand uptake" EXACT [PMID:12671190]
@@ -12944,6 +12940,7 @@ synonym: "regulation of protein breakdown" EXACT []
 synonym: "regulation of protein catabolism" EXACT []
 synonym: "regulation of protein degradation" EXACT []
 is_a: GO:0009894 ! regulation of catabolic process
+is_a: GO:0051246 ! regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0030163 ! protein catabolic process
 relationship: regulates GO:0030163 ! protein catabolic process
@@ -12962,6 +12959,7 @@ synonym: "negative regulation of protein catabolism" EXACT []
 synonym: "negative regulation of protein degradation" EXACT []
 is_a: GO:0009895 ! negative regulation of catabolic process
 is_a: GO:0042176 ! regulation of protein catabolic process
+is_a: GO:0051248 ! negative regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0030163 ! protein catabolic process
 relationship: negatively_regulates GO:0030163 ! protein catabolic process
@@ -14338,6 +14336,7 @@ synonym: "sulfur compound anabolism" EXACT []
 synonym: "sulfur compound biosynthesis" EXACT []
 synonym: "sulfur compound formation" EXACT []
 synonym: "sulfur compound synthesis" EXACT []
+is_a: GO:0006790 ! sulfur compound metabolic process
 is_a: GO:0044249 ! cellular biosynthetic process
 
 [Term]
@@ -15965,6 +15964,7 @@ synonym: "up-regulation of protein catabolic process" EXACT []
 synonym: "upregulation of protein catabolic process" EXACT []
 is_a: GO:0009896 ! positive regulation of catabolic process
 is_a: GO:0042176 ! regulation of protein catabolic process
+is_a: GO:0051247 ! positive regulation of protein metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0030163 ! protein catabolic process
 relationship: positively_regulates GO:0030163 ! protein catabolic process
@@ -20415,6 +20415,7 @@ name: multi-organism process
 namespace: biological_process
 alt_id: GO:0051706
 def: "A biological process which involves another organism of the same or different species." [GOC:jl]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "interaction between organisms" EXACT []
 synonym: "physiological interaction between organisms" EXACT []
@@ -25033,6 +25034,7 @@ def: "The chemical reactions and pathways resulting in the breakdown of organoni
 synonym: "organonitrogen compound breakdown" EXACT [GOC:TermGenie]
 synonym: "organonitrogen compound catabolism" EXACT [GOC:TermGenie]
 synonym: "organonitrogen compound degradation" EXACT [GOC:TermGenie]
+is_a: GO:1901564 ! organonitrogen compound metabolic process
 is_a: GO:1901575 ! organic substance catabolic process
 created_by: pr
 creation_date: 2012-11-04T15:17:56Z
@@ -29784,7 +29786,6 @@ name: negatively regulates
 namespace: external
 xref: RO:0002212
 is_a: regulates ! regulates
-transitive_over: part_of ! part of
 
 [Typedef]
 id: never_in_taxon
@@ -29818,7 +29819,6 @@ namespace: external
 xref: RO:0002213
 holds_over_chain: negatively_regulates negatively_regulates
 is_a: regulates ! regulates
-transitive_over: part_of ! part of
 
 [Typedef]
 id: regulates
@@ -29826,5 +29826,4 @@ name: regulates
 namespace: external
 xref: RO:0002211
 is_transitive: true
-transitive_over: part_of ! part of
 
