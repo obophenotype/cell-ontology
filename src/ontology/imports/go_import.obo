@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-04-05/imports/go_import.owl
+data-version: cl/releases/2019-04-26/imports/go_import.owl
 ontology: cl/imports/go_import
 
 [Term]
@@ -4100,6 +4100,7 @@ namespace: molecular_function
 alt_id: GO:0005478
 def: "Enables the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells." [GOC:ai, GOC:dgf]
 comment: Some transporters, such as certain members of the SLC family, are referred to as 'carriers'; however GO uses carrier with a different meaning: a carrier binds to and transports the substance (see GO:0140104 molecular carrier activity), whereas a transporter forms some pore that allows the passing of molecules.
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
@@ -7459,7 +7460,10 @@ name: protein transport
 namespace: biological_process
 alt_id: GO:0015831
 def: "The directed movement of proteins into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+subset: goslim_chembl
+subset: goslim_generic
 subset: goslim_pir
+subset: goslim_yeast
 synonym: "enzyme transport" NARROW []
 is_a: GO:0015833 ! peptide transport
 is_a: GO:0045184 ! establishment of protein localization
@@ -9231,7 +9235,14 @@ name: receptor regulator activity
 namespace: molecular_function
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is changed." [GOC:ceb]
 is_a: GO:0098772 ! molecular function regulator
-relationship: part_of GO:0010469 ! regulation of signaling receptor activity
+
+[Term]
+id: GO:0030546
+name: signaling receptor activator activity
+namespace: molecular_function
+def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is increased." [GOC:ceb]
+synonym: "receptor activator activity" BROAD []
+is_a: GO:0030545 ! receptor regulator activity
 
 [Term]
 id: GO:0030593
@@ -12672,17 +12683,15 @@ creation_date: 2011-08-01T02:45:27Z
 id: GO:0038024
 name: cargo receptor activity
 namespace: molecular_function
-def: "Binding specifically to a substance (cargo) to deliver it to a transport vesicle." [PMID:15239958]
+def: "Binding specifically to a substance (cargo) to deliver it to a transport vesicle. Cargo receptors span a membrane (either the plasma membrane or a vesicle membrane), binding simultaneously to cargo molecules and coat adaptors, to efficiently recruit soluble proteins to nascent vesicles." [PMID:15239958, PMID:27903609]
 comment: Notes: (1) this term and its child terms are intended for receptors that bind to and internalize molecules by receptor-mediated endocytosis. For receptors that are coupled to a signal transduction pathway, consider instead the term 'signaling receptor activity ; GO:0038023' and its children. (2) Cargo receptors transport substances by vesicular transport, not by transmembrane transport.  For transmembrane transporters, consider instead the term 'transmembrane transporter activity ; GO:0022857.
-synonym: "endocytic receptor activity" EXACT [GOC:signaling, ISBN:0123645387, PMID:12671190]
+synonym: "endocytic receptor activity" NARROW [GOC:signaling, ISBN:0123645387, PMID:12671190]
 synonym: "receptor activity" BROAD []
-synonym: "receptor activity involved in ligand uptake" EXACT [PMID:12671190]
-synonym: "receptor activity involved in receptor-mediated endocytosis" EXACT [GOC:bf]
+synonym: "receptor activity involved in receptor-mediated endocytosis" NARROW [GOC:bf]
 synonym: "transport receptor activity" BROAD [GOC:signaling]
 is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
-intersection_of: part_of GO:0006898 ! receptor-mediated endocytosis
-relationship: part_of GO:0006898 ! receptor-mediated endocytosis
+relationship: has_part GO:0060090 ! molecular adaptor activity
+relationship: part_of GO:0006897 ! endocytosis
 created_by: rfoulger
 creation_date: 2011-08-01T02:50:45Z
 
@@ -17383,9 +17392,11 @@ comment: Definition discussed in https://github.com/geneontology/go-ontology/iss
 subset: goslim_chembl
 synonym: "receptor agonist activity" BROAD [GOC:molecular_function_refactoring]
 synonym: "signaling molecule" EXACT []
+synonym: "signaling receptor ligand activity" EXACT []
 synonym: "vitamin D receptor activator activity" NARROW []
 is_a: GO:0005102 ! signaling receptor binding
-is_a: GO:0030545 ! receptor regulator activity
+is_a: GO:0030546 ! signaling receptor activator activity
+relationship: part_of GO:0007165 ! signal transduction
 created_by: midori
 creation_date: 2010-09-13T04:51:59Z
 
@@ -21102,6 +21113,18 @@ def: "A compound molecular function in which an effector function is controlled 
 subset: gocheck_do_not_manually_annotate
 subset: goslim_pir
 is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0060090
+name: molecular adaptor activity
+namespace: molecular_function
+alt_id: GO:0032947
+def: "The binding activity of a molecule that brings together two or more molecules through a selective, non-covalent, often stoichiometric interaction, permitting those molecules to function in a coordinated way." [GOC:mtg_MIT_16mar07, GOC:vw]
+subset: goslim_pir
+synonym: "binding, bridging" EXACT []
+synonym: "protein complex scaffold activity" RELATED []
+synonym: "protein-containing complex scaffold activity" RELATED []
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0060092

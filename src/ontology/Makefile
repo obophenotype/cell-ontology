@@ -42,6 +42,7 @@ RELEASE_ARTEFACTS = $(sort  base basic simple non-classified full base full)
 
 .PHONY: .FORCE
 all: all_imports patterns all_main all_subsets sparql_test all_reports all_assets
+tmp: all_main all_subsets sparql_test all_reports all_assets
 test: sparql_test all_reports
 	$(ROBOT) reason --input $(SRC) --reasoner ELK --output test.owl && rm test.owl && echo "Success"
 
