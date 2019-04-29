@@ -18,3 +18,5 @@ mirror/ncbitaxon.owl: mirror/pr.trigger
 imports/ncbitaxon_import.owl:
 	pass
 
+object_properties.txt: $(SRC)
+	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
