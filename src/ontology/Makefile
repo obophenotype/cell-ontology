@@ -234,12 +234,13 @@ $(ONT)-non-classified.owl: $(SRC) $(OTHER_SRC)
 # foo-simple: (edit->reason,relax,reduce,drop imports, drop every axiom which contains an entity outside the "namespaces of interest")
 # drop every axiom: filter --term-file keep_terms.txt --trim true
 $(ONT)-simple.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS)
-	$(ROBOT) reason --input $< --reasoner ELK \
-		remove --select imports \
-		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
+	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) --collapse-import-closure false \
+		reason --reasoner ELK \
 		relax \
+		remove --axioms equivalent \
+		relax \
+		filter --term-file $(ONTOLOGYTERMS) --trim true --select "annotations ontology anonymous parents self" --preserve-structure false \
 		reduce -r ELK \
-		filter --select ontology --term-file $(ONTOLOGYTERMS) --trim false \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 # foo-basic: A version of -simple containing only relationships using relations on a configurable whitelist (default = BFO:0000050 (?)). See above (David comment) for explanation.
 # removes any axioms that contains one of the ops that not in the whitelist file
