@@ -1,0 +1,8 @@
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix obo: <http://purl.obolibrary.org/obo/>
+
+SELECT DISTINCT ?term
+WHERE {
+  { ?term a owl:Class . }
+  FILTER(isIRI(?term) && !regex(str(?term), UCASE("cl_")) && !regex(str(?term), "http://purl.obolibrary.org/obo/CL_") && !regex(str(?term), "http://purl.obolibrary.org/obo/CP_"))
+}
