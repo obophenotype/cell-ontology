@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-04-05/imports/go_import.owl
+data-version: cl/releases/2019-06-15/imports/go_import.owl
 ontology: cl/imports/go_import
 
 [Term]
@@ -53,6 +53,7 @@ subset: goslim_pombe
 synonym: "microtubule cytoskeleton organisation" EXACT [GOC:mah]
 synonym: "microtubule cytoskeleton organization and biogenesis" RELATED [GOC:mah]
 synonym: "microtubule dynamics" EXACT [GOC:dph, GOC:tb]
+xref: MIPS_funcat:42.04.05
 is_a: GO:0007010 ! cytoskeleton organization
 is_a: GO:0007017 ! microtubule-based process
 
@@ -93,6 +94,8 @@ subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_yeast
 synonym: "mitosis" RELATED []
+xref: MIPS_funcat:10.03.01
+xref: MIPS_funcat:10.03.01.01
 xref: Wikipedia:Mitosis
 is_a: GO:0007049 ! cell cycle
 intersection_of: GO:0007049 ! cell cycle
@@ -106,6 +109,8 @@ namespace: biological_process
 def: "The division of a cell nucleus into two nuclei, with DNA and other nuclear contents distributed between the daughter nuclei." [GOC:mah]
 subset: goslim_pir
 synonym: "karyokinesis" RELATED []
+xref: MIPS_funcat:10.03.04
+xref: MIPS_funcat:10.03.04.07
 is_a: GO:0048285 ! organelle fission
 
 [Term]
@@ -189,6 +194,7 @@ name: skeletal system development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of the skeleton over time, from its formation to the mature structure. The skeleton is the bony framework of the body in vertebrates (endoskeleton) or the hard outer envelope of insects (exoskeleton or dermoskeleton)." [GOC:dph, GOC:jid, GOC:tb, http://www.stedmans.com/]
 synonym: "skeletal development" EXACT []
+xref: MIPS_funcat:47.03.17
 is_a: GO:0048731 ! system development
 
 [Term]
@@ -200,6 +206,8 @@ comment: Note that this term does not have a 'developmental process' parent beca
 synonym: "bone biosynthesis" EXACT []
 synonym: "bone formation" EXACT []
 synonym: "osteogenesis" EXACT []
+xref: MIPS_funcat:41.05.17
+xref: MIPS_funcat:45.03.05.07
 xref: Wikipedia:Ossification
 is_a: GO:0032501 ! multicellular organismal process
 
@@ -216,6 +224,7 @@ name: action potential
 namespace: biological_process
 def: "A process in which membrane potential cycles through a depolarizing spike, triggered in response to depolarization above some threshold, followed by repolarization. This cycle is driven by the flow of ions through various voltage gated channels with different thresholds and ion specificities." [GOC:dph, GOC:go_curators, GOC:tb, ISBN:978-0-07-139011-8]
 comment: Action potentials typically propagate across excitable membranes. This class covers both action potentials that propagate and those that fail to do so.
+xref: MIPS_funcat:34.03.03
 is_a: GO:0042391 ! regulation of membrane potential
 
 [Term]
@@ -227,6 +236,18 @@ synonym: "blood vessel formation from pre-existing blood vessels" EXACT systemat
 xref: Wikipedia:Angiogenesis
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
 relationship: part_of GO:0048514 ! blood vessel morphogenesis
+
+[Term]
+id: GO:0001539
+name: cilium or flagellum-dependent cell motility
+namespace: biological_process
+def: "Cell motility due to movement of eukaryotic cilia or bacterial-type flagella or archaeal-type flagella." [GOC:cilia, GOC:hjd, GOC:krc]
+comment: Note that we deem eukaryotic cilia and microtubule-based flagella to be equivalent, while the bacterial- and archaeal-type flagella have a different structure. The former are microtubule-based structures that lash back and forth and are present only in eukaryotes, while the latter achieve motility by rotation. Bacterial- and archaeal-type flagella are superficially similar but have a different molecular composition and fine structure. These three structures never co-exist in the same organism. Therefore, GO:0001539 'cilium or flagellum-dependent cell motility' is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term. Direct annotations to GO:0001539 'cilium or flagellum-dependent cell motility' may be amended during annotation QC.
+subset: gocheck_do_not_manually_annotate
+synonym: "ciliary or bacterial-type flagellar motility" RELATED []
+synonym: "ciliary/flagellar motility" EXACT []
+xref: MIPS_funcat:34.05.07
+is_a: GO:0048870 ! cell motility
 
 [Term]
 id: GO:0001553
@@ -451,6 +472,7 @@ synonym: "immune cell mediated cell death" EXACT []
 synonym: "immune cell mediated cell killing" EXACT []
 synonym: "immune cell mediated cytotoxicity" EXACT []
 synonym: "leucocyte mediated cytotoxicity" EXACT []
+xref: MIPS_funcat:36.25.16.01.05
 is_a: GO:0001906 ! cell killing
 
 [Term]
@@ -604,6 +626,8 @@ name: vasculature development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of the vasculature over time, from its formation to the mature structure. The vasculature is an interconnected tubular multi-tissue structure that contains fluid that is actively transported around the organism." [GOC:dph, UBERON:0002409]
 synonym: "vascular system development" RELATED [GOC:curators]
+xref: MIPS_funcat:45.03.05.09
+xref: MIPS_funcat:47.03.03.02
 is_a: GO:0048731 ! system development
 relationship: part_of GO:0072358 ! cardiovascular system development
 
@@ -641,12 +665,13 @@ is_a: GO:0048771 ! tissue remodeling
 
 [Term]
 id: GO:0001976
-name: neurological system process involved in regulation of systemic arterial blood pressure
+name: nervous system process involved in regulation of systemic arterial blood pressure
 namespace: biological_process
 def: "The regulation of blood pressure mediated by detection of stimuli and a neurological response." [GOC:mtg_cardio, ISBN:0721643949]
 synonym: "blood pressure regulation by neurological process" EXACT []
 synonym: "fast control of arterial pressure" RELATED []
 synonym: "neurological process involved in regulation of systemic arterial blood pressure" EXACT [GOC:dph, GOC:tb]
+synonym: "neurological system process involved in regulation of systemic arterial blood pressure" EXACT []
 is_a: GO:0050877 ! nervous system process
 intersection_of: GO:0050877 ! nervous system process
 intersection_of: part_of GO:0003073 ! regulation of systemic arterial blood pressure
@@ -695,14 +720,15 @@ relationship: part_of GO:0001999 ! renal response to blood flow involved in circ
 
 [Term]
 id: GO:0002087
-name: regulation of respiratory gaseous exchange by neurological system process
+name: regulation of respiratory gaseous exchange by nervous system process
 namespace: biological_process
 def: "A process carried out by the nervous system that is required for the proper control of respiratory gaseous exchange. This process occurs in the respiratory center of the brain in vertebrates." [GOC:dph, GOC:tb, PMID:12458206]
 synonym: "neurological control of breathing" EXACT [GOC:dph, GOC:tb]
+synonym: "regulation of respiratory gaseous exchange by neurological system process" EXACT []
 is_a: GO:0044065 ! regulation of respiratory system process
 is_a: GO:0050877 ! nervous system process
 intersection_of: GO:0050877 ! nervous system process
-intersection_of: regulates GO:0007585 ! respiratory gaseous exchange
+intersection_of: regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
 
 [Term]
 id: GO:0002200
@@ -3857,10 +3883,10 @@ id: GO:0003016
 name: respiratory system process
 namespace: biological_process
 alt_id: GO:0010802
-def: "A system process carried out by the organs and tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange." [GOC:dph, GOC:mtg_cardio, GOC:tb]
-synonym: "respiratory gaseous exchange by respiratory system" EXACT []
+def: "A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange." [GOC:dph, GOC:mtg_cardio, GOC:tb]
+synonym: "respiratory gaseous exchange" EXACT []
 is_a: GO:0003008 ! system process
-is_a: GO:0007585 ! respiratory gaseous exchange
+relationship: part_of GO:0007585 ! respiratory gaseous exchange by respiratory system
 
 [Term]
 id: GO:0003044
@@ -3939,6 +3965,75 @@ created_by: dph
 creation_date: 2009-11-02T02:13:49Z
 
 [Term]
+id: GO:0003341
+name: cilium movement
+namespace: biological_process
+alt_id: GO:0036142
+def: "The directed, self-propelled movement of a cilium." [GOC:dph, GOC:jl]
+comment: Note that we deem cilium and microtubule-based flagellum to be equivalent.
+synonym: "ciliary motility" RELATED []
+synonym: "cilium beating" RELATED [GOC:ascb_2009, GOC:dph, GOC:tb]
+synonym: "flagellar motility" RELATED []
+synonym: "flagellar movement" NARROW [GOC:bf]
+synonym: "flagellum movement" NARROW []
+synonym: "microtubule-based flagellum movement" EXACT []
+is_a: GO:0007018 ! microtubule-based movement
+created_by: dph
+creation_date: 2009-11-24T09:56:26Z
+
+[Term]
+id: GO:0003352
+name: regulation of cilium movement
+namespace: biological_process
+alt_id: GO:1900172
+def: "Any process that modulates the rate, frequency, or extent of cilium movement, the directed, self-propelled movement of a cilium." [GOC:dph]
+comment: Note that we deem cilium and microtubule-based flagellum to be equivalent.
+synonym: "regulation of flagellar movement" RELATED [GOC:TermGenie]
+synonym: "regulation of flagellum movement" RELATED []
+synonym: "regulation of microtubule-based flagellum movement" EXACT []
+is_a: GO:0060632 ! regulation of microtubule-based movement
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0003341 ! cilium movement
+relationship: regulates GO:0003341 ! cilium movement
+created_by: dph
+creation_date: 2009-12-03T10:12:00Z
+
+[Term]
+id: GO:0003353
+name: positive regulation of cilium movement
+namespace: biological_process
+alt_id: GO:1900174
+def: "Any process that increases the rate, frequency, or extent of cilium movement, the directed, self-propelled movement of a cilium." [GOC:dph]
+comment: Note that we deem cilium and microtubule-based flagellum to be equivalent.
+synonym: "positive regulation of flagellar movement" RELATED [GOC:TermGenie]
+synonym: "positive regulation of flagellum movement" RELATED []
+synonym: "positive regulation of microtubule-based flagellum movement" EXACT []
+is_a: GO:0003352 ! regulation of cilium movement
+is_a: GO:0051272 ! positive regulation of cellular component movement
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0003341 ! cilium movement
+relationship: positively_regulates GO:0003341 ! cilium movement
+created_by: dph
+creation_date: 2009-12-03T10:16:10Z
+
+[Term]
+id: GO:0003354
+name: negative regulation of cilium movement
+namespace: biological_process
+alt_id: GO:1900173
+def: "Any process that decreases the rate, frequency, or extent of cilium movement, the directed, self-propelled movement of a cilium." [GOC:dph]
+comment: Note that we deem cilium and microtubule-based flagellum to be equivalent.
+synonym: "negative regulation of flagellum movement" RELATED []
+synonym: "negative regulation of microtubule-based flagellum movement" EXACT []
+is_a: GO:0003352 ! regulation of cilium movement
+is_a: GO:0051271 ! negative regulation of cellular component movement
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0003341 ! cilium movement
+relationship: negatively_regulates GO:0003341 ! cilium movement
+created_by: dph
+creation_date: 2009-12-03T10:17:47Z
+
+[Term]
 id: GO:0003674
 name: molecular_function
 namespace: molecular_function
@@ -3966,6 +4061,7 @@ subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
 synonym: "base pairing" NARROW []
+xref: MIPS_funcat:16.03
 is_a: GO:0097159 ! organic cyclic compound binding
 is_a: GO:1901363 ! heterocyclic compound binding
 
@@ -3988,6 +4084,7 @@ synonym: "microtubule/chromatin interaction" RELATED []
 synonym: "plasmid binding" NARROW []
 synonym: "structure specific DNA binding" RELATED []
 synonym: "structure-specific DNA binding" RELATED []
+xref: MIPS_funcat:16.03.01
 is_a: GO:0003676 ! nucleic acid binding
 
 [Term]
@@ -4028,7 +4125,7 @@ def: "Combining with an extracellular or intracellular signal and transmitting t
 comment: This term includes intracellular membrane receptors, e.g. IP3 triggered release of Ca2+ from intracellular stores.
 synonym: "transmembrane receptor activity" BROAD [GOC:bf, GOC:signaling]
 synonym: "transmembrane signalling receptor activity" EXACT [GOC:mah]
-xref: reactome:R-HSA-193672 "Sphingomyelinase is activated by the NGF:p75NTR complex"
+xref: Reactome:R-HSA-193672 "Sphingomyelinase is activated by the NGF:p75NTR complex"
 is_a: GO:0038023 ! signaling receptor activity
 
 [Term]
@@ -4059,9 +4156,9 @@ synonym: "RDC1 receptor activity" NARROW []
 synonym: "receptor activity, G-protein coupled" EXACT [GOC:bf]
 synonym: "SREB receptor" NARROW []
 synonym: "super conserved receptor expressed in brain receptor activity" NARROW []
-xref: reactome:R-HSA-114552 "G12/13 activation by PAR"
-xref: reactome:R-HSA-114558 "Gq activation by PAR"
-xref: reactome:R-HSA-167408 "The high affinity receptor complex binds to G-protein"
+xref: Reactome:R-HSA-114552 "G12/13 activation by PAR"
+xref: Reactome:R-HSA-114558 "Gq activation by PAR"
+xref: Reactome:R-HSA-167408 "The high affinity receptor complex binds to G-protein"
 xref: Wikipedia:GPCR
 is_a: GO:0004888 ! transmembrane signaling receptor activity
 relationship: part_of GO:0007186 ! G protein-coupled receptor signaling pathway
@@ -4100,6 +4197,7 @@ namespace: molecular_function
 alt_id: GO:0005478
 def: "Enables the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells." [GOC:ai, GOC:dgf]
 comment: Some transporters, such as certain members of the SLC family, are referred to as 'carriers'; however GO uses carrier with a different meaning: a carrier binds to and transports the substance (see GO:0140104 molecular carrier activity), whereas a transporter forms some pore that allows the passing of molecules.
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_aspergillus
 subset: goslim_candida
@@ -4110,8 +4208,9 @@ subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
 synonym: "carrier" RELATED []
-xref: reactome:R-HSA-168313 "Virion-associated M2 protein mediated ion infusion"
-xref: reactome:R-HSA-178215 "SMAD7:SMURF1 complex is exported to the cytosol"
+xref: EC:7
+xref: Reactome:R-HSA-168313 "Virion-associated M2 protein mediated ion infusion"
+xref: Reactome:R-HSA-178215 "SMAD7:SMURF1 complex is exported to the cytosol"
 is_a: GO:0003674 ! molecular_function
 
 [Term]
@@ -4119,6 +4218,7 @@ id: GO:0005216
 name: ion channel activity
 namespace: molecular_function
 def: "Enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size)." [GOC:cy, GOC:mtg_transport, GOC:pr, ISBN:0815340729]
+xref: MIPS_funcat:20.03.01.01
 is_a: GO:0015075 ! ion transmembrane transporter activity
 is_a: GO:0015267 ! channel activity
 is_a: GO:0015318 ! inorganic molecular entity transmembrane transporter activity
@@ -4161,12 +4261,10 @@ subset: goslim_pir
 subset: goslim_plant
 synonym: "glycoprotein binding" NARROW []
 synonym: "protein amino acid binding" EXACT []
-xref: reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
-xref: reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
-xref: reactome:R-HSA-3645786 "TGFBR2 mutant dimers recruit TGFBR1"
-xref: reactome:R-HSA-3656484 "TGFBR2 recruits TGFBR1 KD Mutants"
-xref: reactome:R-HSA-3702153 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3 MH2 domain mutants"
-xref: reactome:R-HSA-3713560 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3 phosphorylation motif mutants"
+xref: MIPS_funcat:16.01
+xref: MIPS_funcat:18.01.07
+xref: Reactome:R-HSA-170835 "An anchoring protein, ZFYVE9 (SARA), recruits SMAD2/3"
+xref: Reactome:R-HSA-170846 "TGFBR2 recruits TGFBR1"
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -4208,6 +4306,7 @@ subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
 synonym: "extracellular" EXACT []
+xref: MIPS_funcat:70.27
 xref: Wikipedia:Extracellular
 is_a: GO:0005575 ! cellular_component
 
@@ -4219,7 +4318,6 @@ def: "That part of a multicellular organism outside the cells proper, usually ta
 comment: Note that for multicellular organisms, the extracellular space refers to everything outside a cell, but still within the organism (excluding the extracellular matrix). Gene products from a multi-cellular organism that are secreted from a cell into the interstitial fluid or blood can therefore be annotated to this term.
 subset: goslim_chembl
 subset: goslim_generic
-subset: goslim_plant
 synonym: "intercellular space" RELATED []
 xref: NIF_Subcellular:sao1425028079
 is_a: GO:0044421 ! extracellular region part
@@ -4272,6 +4370,7 @@ subset: goslim_plant
 subset: goslim_yeast
 synonym: "cell nucleus" EXACT []
 synonym: "horsetail nucleus" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]
+xref: MIPS_funcat:70.10
 xref: NIF_Subcellular:sao1702920020
 xref: Wikipedia:Cell_nucleus
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
@@ -4294,6 +4393,7 @@ subset: goslim_yeast
 synonym: "chromatid" RELATED []
 synonym: "interphase chromosome" NARROW []
 synonym: "prophase chromosome" NARROW []
+xref: MIPS_funcat:70.10.03
 xref: Wikipedia:Chromosome
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
 
@@ -4329,6 +4429,7 @@ subset: goslim_generic
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+xref: MIPS_funcat:70.10.07
 xref: NIF_Subcellular:sao1820400233
 xref: Wikipedia:Nucleolus
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
@@ -4347,6 +4448,7 @@ subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+xref: MIPS_funcat:70.03
 xref: Wikipedia:Cytoplasm
 is_a: GO:0044424 ! intracellular part
 
@@ -4358,6 +4460,7 @@ def: "A small lytic vacuole that has cell cycle-independent morphology and is fo
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_plant
+xref: MIPS_funcat:70.25
 xref: NIF_Subcellular:sao585356902
 xref: Wikipedia:Lysosome
 is_a: GO:0000323 ! lytic vacuole
@@ -4386,6 +4489,7 @@ subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
 synonym: "vacuolar carboxypeptidase Y" RELATED []
+xref: MIPS_funcat:70.25
 xref: Wikipedia:Vacuole
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
 is_a: GO:0044444 ! cytoplasmic part
@@ -4418,6 +4522,7 @@ subset: goslim_yeast
 synonym: "Golgi" BROAD []
 synonym: "Golgi complex" EXACT []
 synonym: "Golgi ribbon" NARROW []
+xref: MIPS_funcat:70.08
 xref: NIF_Subcellular:sao451912436
 xref: Wikipedia:Golgi_apparatus
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
@@ -4462,6 +4567,7 @@ subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+xref: MIPS_funcat:70.04
 xref: Wikipedia:Cytoskeleton
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
 
@@ -4521,7 +4627,7 @@ intersection_of: part_of GO:0005886 ! plasma membrane
 id: GO:0005902
 name: microvillus
 namespace: cellular_component
-def: "Thin cylindrical membrane-covered projections on the surface of an animal cell containing a core bundle of actin filaments. Present in especially large numbers on the absorptive surface of intestinal cells." [ISBN:0813516194]
+def: "Thin cylindrical membrane-covered projections on the surface of an animal cell containing a core bundle of actin filaments. Present in especially large numbers on the absorptive surface of intestinal cells." [ISBN:0815316194]
 comment: Note that this term refers to a projection from a single cell, and should not be confused with 'microvillus' as used to refer to a multicellular structure such as that found in the placenta.
 subset: goslim_pir
 synonym: "microvilli" RELATED [NIF_Subcellular:sao671419673]
@@ -4536,6 +4642,7 @@ name: cell-cell junction
 namespace: cellular_component
 def: "A cell junction that forms a connection between two or more cells in a multicellular organism; excludes direct cytoplasmic junctions such as ring canals." [GOC:dgh, GOC:hb, GOC:mah]
 synonym: "intercellular junction" EXACT [NIF_Subcellular:sao1395777368]
+xref: MIPS_funcat:70.06.04
 xref: NIF_Subcellular:sao1922892319
 is_a: GO:0030054 ! cell junction
 
@@ -4643,6 +4750,8 @@ subset: goslim_pir
 subset: goslim_plant
 synonym: "cellular DNA metabolism" EXACT []
 synonym: "DNA metabolism" EXACT []
+xref: MIPS_funcat:10
+xref: MIPS_funcat:10.01
 is_a: GO:0044260 ! cellular macromolecule metabolic process
 is_a: GO:0090304 ! nucleic acid metabolic process
 
@@ -4653,6 +4762,8 @@ namespace: biological_process
 def: "Any process in which a new genotype is formed by reassortment of genes resulting in gene combinations different from those that were present in the parents. In eukaryotes genetic recombination can occur by chromosome assortment, intrachromosomal recombination, or nonreciprocal interchromosomal recombination. Interchromosomal recombination occurs by crossing over. In bacteria it may occur by genetic transformation, conjugation, transduction, or F-duction." [ISBN:0198506732]
 subset: goslim_pombe
 subset: goslim_yeast
+xref: MIPS_funcat:10.01.05
+xref: MIPS_funcat:10.01.05.03
 is_a: GO:0006259 ! DNA metabolic process
 
 [Term]
@@ -4711,6 +4822,7 @@ subset: goslim_plant
 subset: goslim_pombe
 subset: goslim_yeast
 synonym: "lipid metabolism" EXACT []
+xref: MIPS_funcat:01.06
 xref: Wikipedia:Lipid_metabolism
 is_a: GO:0044238 ! primary metabolic process
 is_a: GO:0071704 ! organic substance metabolic process
@@ -4725,6 +4837,7 @@ synonym: "steroid biosynthesis" EXACT []
 synonym: "steroid formation" EXACT []
 synonym: "steroid synthesis" EXACT []
 synonym: "steroidogenesis" EXACT []
+xref: MIPS_funcat:01.06.01.07.11
 xref: Wikipedia:Steroid_metabolisms#Steroid_biosynthesis
 is_a: GO:0008202 ! steroid metabolic process
 is_a: GO:0008610 ! lipid biosynthetic process
@@ -4767,6 +4880,7 @@ subset: goslim_pombe
 synonym: "sulfur metabolism" EXACT []
 synonym: "sulphur metabolic process" EXACT []
 synonym: "sulphur metabolism" EXACT []
+xref: MIPS_funcat:01.02
 xref: Wikipedia:Sulfur_metabolism
 is_a: GO:0044237 ! cellular metabolic process
 
@@ -4786,6 +4900,7 @@ namespace: biological_process
 def: "The chemical reactions and pathways involving the phosphate group, the anion or salt of any phosphoric acid." [GOC:ai]
 synonym: "phosphate metabolic process" RELATED []
 synonym: "phosphate metabolism" EXACT []
+xref: MIPS_funcat:01.04
 is_a: GO:0006793 ! phosphorus metabolic process
 
 [Term]
@@ -4798,6 +4913,7 @@ synonym: "oxygen free radical metabolism" EXACT []
 synonym: "superoxide free radical metabolic process" EXACT []
 synonym: "superoxide free radical metabolism" EXACT []
 synonym: "superoxide metabolism" EXACT []
+xref: MIPS_funcat:32.07.07.07
 is_a: GO:0072593 ! reactive oxygen species metabolic process
 
 [Term]
@@ -4808,6 +4924,7 @@ def: "The chemical reactions and pathways involving organic or inorganic compoun
 subset: goslim_metagenomics
 subset: goslim_pir
 synonym: "nitrogen compound metabolism" EXACT []
+xref: MIPS_funcat:01.02
 is_a: GO:0008152 ! metabolic process
 
 [Term]
@@ -4830,6 +4947,7 @@ subset: goslim_plant
 synonym: "single-organism transport" RELATED []
 synonym: "small molecule transport" NARROW []
 synonym: "solute:solute exchange" NARROW []
+xref: MIPS_funcat:20
 is_a: GO:0051234 ! establishment of localization
 created_by: janelomax
 creation_date: 2012-12-13T16:25:32Z
@@ -4841,6 +4959,7 @@ namespace: biological_process
 def: "The directed movement of charged atoms or small charged molecules into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 subset: goslim_pir
 subset: goslim_yeast
+xref: MIPS_funcat:20.01.01
 is_a: GO:0006810 ! transport
 
 [Term]
@@ -4851,6 +4970,7 @@ alt_id: GO:0006819
 alt_id: GO:0015674
 def: "The directed movement of cations, atoms or small molecules with a net positive charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 synonym: "di-, tri-valent inorganic cation transport" NARROW [GOC:mah]
+xref: MIPS_funcat:20.01.01.01
 is_a: GO:0006811 ! ion transport
 
 [Term]
@@ -4859,6 +4979,7 @@ name: anion transport
 namespace: biological_process
 alt_id: GO:0006822
 def: "The directed movement of anions, atoms or small molecules with a net negative charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+xref: MIPS_funcat:20.01.01.07
 is_a: GO:0006811 ! ion transport
 
 [Term]
@@ -4877,6 +4998,7 @@ namespace: biological_process
 def: "The directed movement of a neurotransmitter into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Neurotransmitters are any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." [GOC:ai]
 subset: goslim_pir
 synonym: "sodium:neurotransmitter transport" NARROW []
+xref: MIPS_funcat:20.01.26
 is_a: GO:0006810 ! transport
 
 [Term]
@@ -4917,6 +5039,7 @@ alt_id: GO:0006866
 def: "The directed movement of amino acids, organic acids containing one or more amino substituents, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 subset: goslim_pir
 subset: goslim_yeast
+xref: MIPS_funcat:20.01.07
 is_a: GO:0046942 ! carboxylic acid transport
 is_a: GO:0071705 ! nitrogen compound transport
 
@@ -4927,6 +5050,7 @@ namespace: biological_process
 def: "The directed movement of lipids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Lipids are compounds soluble in an organic solvent but not, or sparingly, in an aqueous solvent." [ISBN:0198506732]
 subset: goslim_pir
 subset: goslim_yeast
+xref: MIPS_funcat:20.01.13
 is_a: GO:0071702 ! organic substance transport
 relationship: part_of GO:0010876 ! lipid localization
 
@@ -4954,6 +5078,7 @@ synonym: "endocytic import into cell" EXACT []
 synonym: "nonselective vesicle endocytosis" RELATED []
 synonym: "plasma membrane invagination" NARROW []
 synonym: "vesicle endocytosis" EXACT []
+xref: MIPS_funcat:20.09.18.09.01
 xref: Wikipedia:Endocytosis
 is_a: GO:0016192 ! vesicle-mediated transport
 is_a: GO:0098657 ! import into cell
@@ -4966,6 +5091,7 @@ name: receptor-mediated endocytosis
 namespace: biological_process
 def: "An endocytosis process in which cell surface receptors ensure specificity of transport. A specific receptor on the cell surface binds tightly to the extracellular macromolecule (the ligand) that it recognizes; the plasma-membrane region containing the receptor-ligand complex then undergoes endocytosis, forming a transport vesicle containing the receptor-ligand complex and excluding most other plasma-membrane proteins. Receptor-mediated endocytosis generally occurs via clathrin-coated pits and vesicles." [GOC:mah, ISBN:0716731363]
 synonym: "receptor mediated endocytosis" EXACT []
+xref: MIPS_funcat:20.09.18.09.01.01
 xref: Wikipedia:Receptor-mediated_endocytosis
 is_a: GO:0006897 ! endocytosis
 
@@ -4983,6 +5109,7 @@ synonym: "single-organism membrane budding" RELATED []
 synonym: "vesicle biosynthesis" EXACT []
 synonym: "vesicle budding" RELATED []
 synonym: "vesicle formation" EXACT []
+xref: MIPS_funcat:20.09.07.25
 is_a: GO:0016050 ! vesicle organization
 is_a: GO:0061024 ! membrane organization
 relationship: part_of GO:0016192 ! vesicle-mediated transport
@@ -5003,6 +5130,7 @@ id: GO:0006909
 name: phagocytosis
 namespace: biological_process
 def: "A vesicle-mediated transport process that results in the engulfment of external particulate material by phagocytes and their delivery to the lysosome. The particles are initially contained within phagocytic vacuoles (phagosomes), which then fuse with primary lysosomes to effect digestion of the particles." [ISBN:0198506732]
+xref: MIPS_funcat:36.25.16.01.03
 xref: Wikipedia:Phagocytosis
 is_a: GO:0016192 ! vesicle-mediated transport
 
@@ -5030,6 +5158,7 @@ synonym: "induction of apoptosis by p53" RELATED []
 synonym: "programmed cell death by apoptosis" EXACT []
 synonym: "signaling (initiator) caspase activity" RELATED []
 synonym: "type I programmed cell death" NARROW []
+xref: MIPS_funcat:40.10.02
 xref: Wikipedia:Apoptosis
 is_a: GO:0012501 ! programmed cell death
 
@@ -5041,6 +5170,7 @@ def: "The breakdown of structures such as organelles, proteins, or other macromo
 synonym: "cellular component disassembly involved in apoptosis" NARROW []
 synonym: "cellular component disassembly involved in apoptotic process" BROAD []
 synonym: "disassembly of cell structures" BROAD []
+xref: MIPS_funcat:40.10.02.02.03
 is_a: GO:0022411 ! cellular component disassembly
 intersection_of: GO:0022411 ! cellular component disassembly
 intersection_of: part_of GO:0097194 ! execution phase of apoptosis
@@ -5057,6 +5187,8 @@ subset: goslim_pir
 synonym: "cell movement" RELATED []
 synonym: "cellular component motion" EXACT [GOC:dph, GOC:jl]
 synonym: "cellular component movement" EXACT []
+xref: MIPS_funcat:02.45.11
+xref: MIPS_funcat:34.05
 is_a: GO:0009987 ! cellular process
 
 [Term]
@@ -5065,6 +5197,7 @@ name: chemotaxis
 namespace: biological_process
 def: "The directed movement of a motile cell or organism, or the directed growth of a cell guided by a specific chemical concentration gradient. Movement may be towards a higher concentration (positive chemotaxis) or towards a lower concentration (negative chemotaxis)." [ISBN:0198506732]
 synonym: "taxis in response to chemical stimulus" EXACT []
+xref: MIPS_funcat:34.11.03.03
 xref: Wikipedia:Chemotaxis
 is_a: GO:0042330 ! taxis
 relationship: part_of GO:0042221 ! response to chemical
@@ -5075,6 +5208,7 @@ name: muscle contraction
 namespace: biological_process
 def: "A process in which force is generated within muscle tissue, resulting in a change in muscle geometry. Force generation involves a chemo-mechanical energy conversion step that is carried out by the actin/myosin complex activity, which generates force through ATP hydrolysis." [GOC:ef, GOC:mtg_muscle, ISBN:0198506732]
 subset: goslim_pir
+xref: MIPS_funcat:36.25.09
 xref: Wikipedia:Muscle_contraction
 is_a: GO:0003012 ! muscle system process
 
@@ -5083,6 +5217,7 @@ id: GO:0006937
 name: regulation of muscle contraction
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of muscle contraction." [GOC:go_curators]
+xref: MIPS_funcat:36.25.09.05
 is_a: GO:0090257 ! regulation of muscle system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006936 ! muscle contraction
@@ -5094,6 +5229,7 @@ name: smooth muscle contraction
 namespace: biological_process
 def: "A process in which force is generated within smooth muscle tissue, resulting in a change in muscle geometry. Force generation involves a chemo-mechanical energy conversion step that is carried out by the actin/myosin complex activity, which generates force through ATP hydrolysis. Smooth muscle differs from striated muscle in the much higher actin/myosin ratio, the absence of conspicuous sarcomeres and the ability to contract to a much smaller fraction of its resting length." [GOC:ef, GOC:jl, GOC:mtg_muscle, ISBN:0198506732]
 synonym: "visceral muscle contraction" EXACT []
+xref: MIPS_funcat:36.25.09.01
 is_a: GO:0006936 ! muscle contraction
 
 [Term]
@@ -5121,6 +5257,7 @@ subset: goslim_metagenomics
 subset: goslim_plant
 synonym: "response to abiotic stress" RELATED []
 synonym: "response to biotic stress" RELATED []
+xref: MIPS_funcat:32.01
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
@@ -5143,6 +5280,7 @@ namespace: biological_process
 def: "The immediate defensive reaction (by vertebrate tissue) to infection or injury caused by chemical or physical agents. The process is characterized by local vasodilation, extravasation of plasma into intercellular spaces and accumulation of white blood cells and macrophages." [GO_REF:0000022, GOC:mtg_15nov05, ISBN:0198506732]
 comment: This term was improved by GO_REF:0000022. It was moved.
 synonym: "Inflammation" BROAD []
+xref: MIPS_funcat:36.25.16.07
 xref: Wikipedia:Inflammation
 is_a: GO:0006952 ! defense response
 
@@ -5152,6 +5290,7 @@ name: immune response
 namespace: biological_process
 def: "Any immune system process that functions in the calibrated response of an organism to a potential internal or invasive threat." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05]
 comment: This term was improved by GO_REF:0000022. It was redefined and moved.
+xref: MIPS_funcat:36.25.16
 is_a: GO:0002376 ! immune system process
 is_a: GO:0050896 ! response to stimulus
 
@@ -5206,6 +5345,7 @@ synonym: "nuclear organisation" EXACT [GOC:curators]
 synonym: "nuclear organization" EXACT [GOC:curators]
 synonym: "nuclear organization and biogenesis" RELATED [GOC:mah]
 synonym: "nucleus organization and biogenesis" RELATED [GOC:mah]
+xref: MIPS_funcat:42.10
 is_a: GO:0006996 ! organelle organization
 
 [Term]
@@ -5222,6 +5362,7 @@ synonym: "cytoskeletal organization and biogenesis" RELATED [GOC:mah]
 synonym: "cytoskeletal regulator activity" RELATED []
 synonym: "cytoskeleton organisation" EXACT [GOC:curators]
 synonym: "cytoskeleton organization and biogenesis" RELATED [GOC:mah]
+xref: MIPS_funcat:42.04
 is_a: GO:0006996 ! organelle organization
 
 [Term]
@@ -5237,6 +5378,7 @@ id: GO:0007018
 name: microtubule-based movement
 namespace: biological_process
 def: "A microtubule-based process that results in the movement of organelles, other microtubules, or other cellular components.  Examples include motor-driven movement along microtubules and movement driven by polymerization or depolymerization of microtubules." [GOC:cjm, ISBN:0815316194]
+xref: MIPS_funcat:20.09.14.01
 is_a: GO:0006928 ! movement of cell or subcellular component
 is_a: GO:0007017 ! microtubule-based process
 
@@ -5249,6 +5391,8 @@ synonym: "vacuolar protein breakdown" RELATED []
 synonym: "vacuolar protein catabolic process" RELATED []
 synonym: "vacuolar protein catabolism" RELATED []
 synonym: "vacuolar protein degradation" RELATED []
+xref: MIPS_funcat:14.13.04
+xref: MIPS_funcat:14.13.04.02
 is_a: GO:0044257 ! cellular protein catabolic process
 intersection_of: GO:0030163 ! protein catabolic process
 intersection_of: occurs_in GO:0005773 ! vacuole
@@ -5269,6 +5413,8 @@ subset: goslim_generic
 subset: goslim_pir
 subset: goslim_plant
 synonym: "cell-division cycle" EXACT []
+xref: MIPS_funcat:10
+xref: MIPS_funcat:10.03
 xref: Wikipedia:Cell_cycle
 is_a: GO:0009987 ! cellular process
 
@@ -5283,6 +5429,8 @@ subset: goslim_pir
 subset: goslim_yeast
 synonym: "chromosome division" EXACT []
 synonym: "chromosome transmission" RELATED []
+xref: MIPS_funcat:10.03.04
+xref: MIPS_funcat:10.03.04.05
 xref: Wikipedia:Chromosome_segregation
 is_a: GO:0009987 ! cellular process
 
@@ -5326,6 +5474,7 @@ name: meiosis II
 namespace: biological_process
 def: "The second nuclear division of meiosis, in which the two chromatids in each chromosome are separated, resulting in four daughter nuclei from the two nuclei produced in meiosis II." [GOC:dph, GOC:mah, ISBN:0198547684]
 synonym: "meiosis II nuclear division" EXACT []
+xref: MIPS_funcat:10.03.02.03
 xref: Wikipedia:Meiosis#Meiosis_II
 is_a: GO:0061983 ! meiosis II cell cycle process
 is_a: GO:0140013 ! meiotic nuclear division
@@ -5408,6 +5557,7 @@ subset: goslim_pir
 subset: goslim_pombe
 synonym: "cell adhesion molecule activity" RELATED []
 synonym: "single organism cell adhesion" RELATED []
+xref: MIPS_funcat:34.07
 xref: Wikipedia:Cell_adhesion
 is_a: GO:0022610 ! biological adhesion
 created_by: davidos
@@ -5455,6 +5605,7 @@ synonym: "signaling cascade" NARROW []
 synonym: "signaling pathway" RELATED []
 synonym: "signalling cascade" NARROW []
 synonym: "signalling pathway" RELATED [GOC:mah]
+xref: MIPS_funcat:30
 xref: Wikipedia:Signal_transduction
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050794 ! regulation of cellular process
@@ -5470,6 +5621,7 @@ def: "A series of molecular signals initiated by activation of a receptor on the
 synonym: "cell surface receptor linked signal transduction" EXACT []
 synonym: "cell surface receptor linked signaling pathway" EXACT [GOC:bf]
 synonym: "cell surface receptor linked signalling pathway" EXACT [GOC:mah]
+xref: MIPS_funcat:30.05
 is_a: GO:0007165 ! signal transduction
 
 [Term]
@@ -5489,6 +5641,8 @@ synonym: "G-protein coupled receptor signalling pathway" EXACT []
 synonym: "G-protein-coupled receptor protein signalling pathway" EXACT []
 synonym: "GPCR signaling pathway" EXACT []
 synonym: "GPCR signalling pathway" EXACT []
+xref: MIPS_funcat:30.01.05.05
+xref: MIPS_funcat:30.05.02.24
 is_a: GO:0007165 ! signal transduction
 
 [Term]
@@ -5512,6 +5666,7 @@ subset: goslim_synapse
 synonym: "neurotransmission" RELATED [GOC:dph]
 synonym: "signal transmission across a synapse" BROAD []
 synonym: "synaptic transmission" BROAD []
+xref: MIPS_funcat:34.03.01
 xref: Wikipedia:Neurotransmission
 is_a: GO:0098916 ! anterograde trans-synaptic signaling
 
@@ -5547,6 +5702,7 @@ def: "The biological process whose specific outcome is the progression of a mult
 comment: Note that this term was 'developmental process'.
 subset: goslim_chembl
 subset: goslim_plant
+xref: MIPS_funcat:41
 is_a: GO:0032501 ! multicellular organismal process
 is_a: GO:0048856 ! anatomical structure development
 
@@ -5557,6 +5713,7 @@ namespace: biological_process
 alt_id: GO:0009552
 def: "The generation and maintenance of gametes in a multicellular organism. A gamete is a haploid reproductive cell." [GOC:ems, GOC:mtg_sensu]
 synonym: "gametogenesis" RELATED []
+xref: MIPS_funcat:41.05.25
 is_a: GO:0048609 ! multicellular organismal reproductive process
 relationship: part_of GO:0019953 ! sexual reproduction
 
@@ -5567,6 +5724,7 @@ namespace: biological_process
 def: "The process whose specific outcome is the progression of an immature germ cell over time, from its formation to the mature structure (gamete). A germ cell is any reproductive cell in a multicellular organism." [GOC:go_curators]
 synonym: "germ-cell development" EXACT []
 synonym: "primordial germ cell development" NARROW []
+xref: MIPS_funcat:43.03.02
 is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0022412 ! cellular process involved in reproduction in multicellular organism
 is_a: GO:0048468 ! cell development
@@ -5628,6 +5786,7 @@ namespace: biological_process
 def: "The union of male and female gametes to form a zygote." [GOC:ems, GOC:mtg_sensu]
 synonym: "zygote biosynthesis" RELATED []
 synonym: "zygote formation" RELATED []
+xref: MIPS_funcat:41.05.01
 is_a: GO:0009566 ! fertilization
 
 [Term]
@@ -5652,6 +5811,8 @@ name: nervous system development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of nervous tissue over time, from its formation to its mature state." [GOC:dgh]
 synonym: "pan-neural process" RELATED []
+xref: MIPS_funcat:45.03.17
+xref: MIPS_funcat:47.03.01
 is_a: GO:0048731 ! system development
 
 [Term]
@@ -5662,6 +5823,7 @@ alt_id: GO:0007511
 def: "The process whose specific outcome is the progression of the heart over time, from its formation to the mature structure. The heart is a hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood." [GOC:jid, UBERON:0000948]
 synonym: "cardiac development" RELATED []
 synonym: "dorsal vessel development" NARROW []
+xref: MIPS_funcat:47.03.03.01
 xref: Wikipedia:Heart_development
 is_a: GO:0048513 ! animal organ development
 relationship: part_of GO:0072359 ! circulatory system development
@@ -5671,6 +5833,7 @@ id: GO:0007517
 name: muscle organ development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of the muscle over time, from its formation to the mature structure. The muscle is an organ consisting of a tissue made up of various elongated cells that are specialized to contract and thus to produce movement and mechanical work." [GOC:jid, ISBN:0198506732]
+xref: MIPS_funcat:45.03.12
 is_a: GO:0048513 ! animal organ development
 is_a: GO:0061061 ! muscle structure development
 
@@ -5679,6 +5842,7 @@ id: GO:0007548
 name: sex differentiation
 namespace: biological_process
 def: "The establishment of the sex of an organism by physical differentiation." [GOC:ai]
+xref: MIPS_funcat:41.05.23
 xref: Wikipedia:Sexual_differentiation
 is_a: GO:0003006 ! developmental process involved in reproduction
 
@@ -5706,12 +5870,13 @@ relationship: regulates GO:0045443 ! juvenile hormone secretion
 
 [Term]
 id: GO:0007585
-name: respiratory gaseous exchange
+name: respiratory gaseous exchange by respiratory system
 namespace: biological_process
 def: "The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism's cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms." [ISBN:0198506732]
 subset: goslim_chembl
 synonym: "breathing" BROAD []
 synonym: "respiration" BROAD []
+xref: MIPS_funcat:36.07.01
 is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
@@ -5721,6 +5886,7 @@ namespace: biological_process
 def: "The whole of the physical, chemical, and biochemical processes carried out by multicellular organisms to break down ingested nutrients into components that may be easily absorbed and directed into metabolism." [GOC:isa_complete, ISBN:0198506732]
 subset: goslim_chembl
 subset: goslim_pir
+xref: MIPS_funcat:36.03
 xref: Wikipedia:Digestion
 is_a: GO:0032501 ! multicellular organismal process
 
@@ -5738,6 +5904,7 @@ name: blood coagulation
 namespace: biological_process
 def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." [http://www.graylab.ac.uk/omd/, ISBN:0198506732]
 synonym: "blood clotting" EXACT []
+xref: MIPS_funcat:36.25.16.09
 xref: Wikipedia:Coagulation
 is_a: GO:0007599 ! hemostasis
 is_a: GO:0050817 ! coagulation
@@ -5767,6 +5934,8 @@ def: "The series of events required for an organism to receive a visual stimulus
 synonym: "sense of sight" EXACT []
 synonym: "sensory visual perception" EXACT []
 synonym: "vision" EXACT []
+xref: MIPS_funcat:34.11.01.03
+xref: MIPS_funcat:36.25.01.01
 xref: Wikipedia:Visual_perception
 is_a: GO:0050953 ! sensory perception of light stimulus
 
@@ -5777,6 +5946,7 @@ namespace: biological_process
 def: "The series of events required for an organism to receive an auditory stimulus, convert it to a molecular signal, and recognize and characterize the signal. Sonic stimuli are detected in the form of vibrations and are processed to form a sound." [GOC:ai]
 synonym: "hearing" EXACT []
 synonym: "perception of sound" EXACT []
+xref: MIPS_funcat:36.25.01.03
 xref: Wikipedia:Hearing_(sense)
 is_a: GO:0050954 ! sensory perception of mechanical stimulus
 
@@ -5797,6 +5967,7 @@ synonym: "olfaction" EXACT []
 synonym: "scent perception" EXACT []
 synonym: "sense of smell" EXACT []
 synonym: "smell perception" EXACT []
+xref: MIPS_funcat:36.25.01.13
 xref: Wikipedia:Olfaction
 is_a: GO:0007606 ! sensory perception of chemical stimulus
 
@@ -5828,6 +5999,7 @@ alt_id: GO:0070261
 def: "The flow of blood through the body of an animal, enabling the transport of nutrients to the tissues and the removal of waste products." [GOC:mtg_heart, ISBN:0192800825]
 subset: goslim_pir
 synonym: "hemolymph circulation" RELATED []
+xref: MIPS_funcat:36.07.07
 is_a: GO:0003013 ! circulatory system process
 
 [Term]
@@ -5852,6 +6024,7 @@ synonym: "asymmetric protein localization" RELATED []
 synonym: "establishment and maintenance of asymmetric protein localization" RELATED []
 synonym: "establishment and maintenance of protein localization" RELATED []
 synonym: "protein localisation" EXACT [GOC:mah]
+xref: MIPS_funcat:18.01.03
 is_a: GO:0033036 ! macromolecule localization
 
 [Term]
@@ -5898,6 +6071,7 @@ synonym: "metabolism" EXACT []
 synonym: "metabolism resulting in cell growth" NARROW []
 synonym: "multicellular organism metabolic process" NARROW []
 synonym: "single-organism metabolic process" RELATED []
+xref: MIPS_funcat:01
 xref: Wikipedia:Metabolism
 is_a: GO:0008150 ! biological_process
 created_by: janelomax
@@ -5948,6 +6122,7 @@ subset: goslim_mouse
 subset: goslim_plant
 synonym: "accidental cell death" RELATED []
 synonym: "necrosis" RELATED []
+xref: MIPS_funcat:40.10
 is_a: GO:0009987 ! cellular process
 
 [Term]
@@ -6029,6 +6204,7 @@ subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+xref: MIPS_funcat:16.09
 is_a: GO:0005488 ! binding
 
 [Term]
@@ -6077,7 +6253,8 @@ name: anion transmembrane transporter activity
 namespace: molecular_function
 def: "Enables the transfer of a negatively charged ion from one side of a membrane to the other." [GOC:dgf, GOC:mtg_transport, ISBN:0815340729]
 synonym: "anion transporter activity" EXACT []
-xref: reactome:R-HSA-166214 "FA anion flip-flops to the opposite surface"
+xref: MIPS_funcat:20.01.01.07
+xref: Reactome:R-HSA-166214 "FA anion flip-flops to the opposite surface"
 is_a: GO:0015075 ! ion transmembrane transporter activity
 relationship: part_of GO:0098656 ! anion transmembrane transport
 
@@ -6086,7 +6263,7 @@ id: GO:0008514
 name: organic anion transmembrane transporter activity
 namespace: molecular_function
 def: "Enables the transfer of organic anions from one side of a membrane to the other. Organic anions are atoms or small molecules with a negative charge which contain carbon in covalent linkage." [GOC:ai]
-xref: reactome:R-HSA-2142859 "Growing HA is extruded from the cell by ABCC5"
+xref: Reactome:R-HSA-2142859 "Growing HA is extruded from the cell by ABCC5"
 is_a: GO:0008509 ! anion transmembrane transporter activity
 relationship: part_of GO:0015711 ! organic anion transport
 
@@ -6098,6 +6275,7 @@ alt_id: GO:0061039
 def: "The process whose specific outcome is the progression of the female gonad over time, from its formation to the mature structure." [GOC:dph, GOC:jid, GOC:tb]
 synonym: "ovarian development" RELATED [GOC:sl]
 synonym: "ovary development" RELATED [GOC:sl]
+xref: MIPS_funcat:47.03.15.01
 is_a: GO:0008406 ! gonad development
 relationship: part_of GO:0046545 ! development of primary female sexual characteristics
 
@@ -6111,6 +6289,7 @@ synonym: "lipid biosynthesis" EXACT []
 synonym: "lipid formation" EXACT []
 synonym: "lipid synthesis" EXACT []
 synonym: "lipogenesis" EXACT [GOC:sl]
+xref: MIPS_funcat:01.06.01
 is_a: GO:0006629 ! lipid metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 
@@ -6194,6 +6373,7 @@ name: response to temperature stimulus
 namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a temperature stimulus." [GOC:hb]
 synonym: "response to thermal stimulus" EXACT []
+xref: MIPS_funcat:34.11.09
 is_a: GO:0009628 ! response to abiotic stimulus
 
 [Term]
@@ -6209,6 +6389,7 @@ synonym: "protein secretion resulting in cell fate commitment" NARROW []
 is_a: GO:0002790 ! peptide secretion
 is_a: GO:0015031 ! protein transport
 is_a: GO:0032940 ! secretion by cell
+is_a: GO:0035592 ! establishment of protein localization to extracellular region
 
 [Term]
 id: GO:0009314
@@ -6218,6 +6399,7 @@ def: "Any process that results in a change in state or activity of a cell or an 
 comment: Note that 'radiation' refers to electromagnetic radiation of any wavelength.
 synonym: "response to electromagnetic radiation stimulus" EXACT []
 synonym: "response to radiation stimulus" EXACT []
+xref: MIPS_funcat:32.01.13
 is_a: GO:0009628 ! response to abiotic stimulus
 
 [Term]
@@ -6226,6 +6408,7 @@ name: nitrogen fixation
 namespace: biological_process
 def: "The process in which nitrogen is taken from its relatively inert molecular form (N2) in the atmosphere and converted into nitrogen compounds useful for other chemical processes, such as ammonia, nitrate and nitrogen dioxide." [Wikipedia:Nitrogen_fixation]
 xref: MetaCyc:N2FIX-PWY
+xref: MIPS_funcat:01.02.01.01
 xref: Wikipedia:Nitrogen_fixation
 is_a: GO:0071941 ! nitrogen cycle metabolic process
 
@@ -6245,6 +6428,10 @@ id: GO:0009416
 name: response to light stimulus
 namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a light stimulus, electromagnetic radiation of wavelengths classified as infrared, visible or ultraviolet light." [GOC:go_curators, ISBN:0582227089]
+subset: goslim_plant
+xref: MIPS_funcat:34.11.01
+xref: MIPS_funcat:34.11.01.01
+xref: MIPS_funcat:36.20.35.11
 is_a: GO:0009314 ! response to radiation
 
 [Term]
@@ -6282,6 +6469,8 @@ namespace: biological_process
 def: "The series of events in which a light stimulus (in the form of photons) is received and converted into a molecular signal." [GOC:go_curators]
 synonym: "detection of light" EXACT []
 synonym: "perception of light" RELATED []
+xref: MIPS_funcat:34.11.01
+xref: MIPS_funcat:36.20.35.11
 is_a: GO:0009416 ! response to light stimulus
 is_a: GO:0009581 ! detection of external stimulus
 is_a: GO:0009582 ! detection of abiotic stimulus
@@ -6313,6 +6502,8 @@ name: detection of gravity
 namespace: biological_process
 def: "The series of events in which a gravitational stimulus is received and converted into a molecular signal." [GOC:dos, GOC:hb]
 synonym: "perception of gravity" RELATED []
+xref: MIPS_funcat:34.11.07
+xref: MIPS_funcat:36.20.35.13
 is_a: GO:0009581 ! detection of external stimulus
 is_a: GO:0009582 ! detection of abiotic stimulus
 is_a: GO:0009629 ! response to gravity
@@ -6327,6 +6518,7 @@ synonym: "chemoreception" RELATED []
 synonym: "detection of chemical substance" EXACT []
 synonym: "perception of chemical stimulus" RELATED []
 synonym: "perception of chemical substance" RELATED []
+xref: MIPS_funcat:34.11.03
 is_a: GO:0051606 ! detection of stimulus
 relationship: part_of GO:0042221 ! response to chemical
 
@@ -6339,6 +6531,7 @@ comment: Note that this term is in the subset of terms that should not be used f
 subset: gocheck_do_not_manually_annotate
 subset: goslim_plant
 synonym: "response to environmental stimulus" EXACT []
+xref: MIPS_funcat:36.20.35
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
@@ -6369,6 +6562,8 @@ namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a mechanical stimulus." [GOC:hb]
 synonym: "chemi-mechanical coupling" RELATED []
 synonym: "mechanical stimulus response" EXACT []
+xref: MIPS_funcat:34.11.05
+xref: MIPS_funcat:36.20.35.15
 is_a: GO:0009605 ! response to external stimulus
 is_a: GO:0009628 ! response to abiotic stimulus
 
@@ -6400,6 +6595,8 @@ name: response to gravity
 namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a gravitational stimulus." [GOC:hb]
 synonym: "response to gravitational stimulus" EXACT []
+xref: MIPS_funcat:34.11.07
+xref: MIPS_funcat:36.20.35.13
 is_a: GO:0009628 ! response to abiotic stimulus
 
 [Term]
@@ -6418,7 +6615,6 @@ id: GO:0009653
 name: anatomical structure morphogenesis
 namespace: biological_process
 def: "The process in which anatomical structures are generated and organized. Morphogenesis pertains to the creation of form." [GOC:go_curators, ISBN:0521436125]
-subset: goslim_plant
 synonym: "anatomical structure organization" EXACT []
 synonym: "embryogenesis and morphogenesis" BROAD []
 synonym: "morphogenesis" EXACT []
@@ -7312,7 +7508,6 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the regulated release of acetylcholine." [GOC:ef]
 is_a: GO:0032222 ! regulation of synaptic transmission, cholinergic
 is_a: GO:0043269 ! regulation of ion transport
-is_a: GO:0046883 ! regulation of hormone secretion
 is_a: GO:0046928 ! regulation of neurotransmitter secretion
 is_a: GO:0051952 ! regulation of amine transport
 is_a: GO:2001023 ! regulation of response to drug
@@ -7334,7 +7529,6 @@ is_a: GO:0001956 ! positive regulation of neurotransmitter secretion
 is_a: GO:0014056 ! regulation of acetylcholine secretion, neurotransmission
 is_a: GO:0032224 ! positive regulation of synaptic transmission, cholinergic
 is_a: GO:0043270 ! positive regulation of ion transport
-is_a: GO:0046887 ! positive regulation of hormone secretion
 is_a: GO:0051954 ! positive regulation of amine transport
 is_a: GO:2001025 ! positive regulation of response to drug
 intersection_of: GO:0008150 ! biological_process
@@ -7353,7 +7547,6 @@ synonym: "inhibition of acetylcholine secretion" NARROW []
 is_a: GO:0014056 ! regulation of acetylcholine secretion, neurotransmission
 is_a: GO:0032223 ! negative regulation of synaptic transmission, cholinergic
 is_a: GO:0043271 ! negative regulation of ion transport
-is_a: GO:0046888 ! negative regulation of hormone secretion
 is_a: GO:0046929 ! negative regulation of neurotransmitter secretion
 is_a: GO:0051953 ! negative regulation of amine transport
 is_a: GO:2001024 ! negative regulation of response to drug
@@ -7379,7 +7572,6 @@ name: regulation of epinephrine secretion
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the regulated release of epinephrine." [GOC:ef]
 synonym: "regulation of adrenaline secretion" EXACT []
-is_a: GO:0046883 ! regulation of hormone secretion
 is_a: GO:0050433 ! regulation of catecholamine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0048242 ! epinephrine secretion
@@ -7459,8 +7651,14 @@ name: protein transport
 namespace: biological_process
 alt_id: GO:0015831
 def: "The directed movement of proteins into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
+subset: goslim_chembl
+subset: goslim_generic
 subset: goslim_pir
+subset: goslim_yeast
 synonym: "enzyme transport" NARROW []
+xref: MIPS_funcat:14
+xref: MIPS_funcat:14.04
+xref: MIPS_funcat:20.01.10
 is_a: GO:0015833 ! peptide transport
 is_a: GO:0045184 ! establishment of protein localization
 
@@ -7487,7 +7685,7 @@ id: GO:0015106
 name: bicarbonate transmembrane transporter activity
 namespace: molecular_function
 def: "Enables the transfer of bicarbonate from one side of a membrane to the other. Bicarbonate is the hydrogencarbonate ion, HCO3-." [GOC:ai]
-xref: reactome:R-HSA-2752067 "BESTs transport cytosolic HCO3- to extracellular region"
+xref: Reactome:R-HSA-2752067 "BESTs transport cytosolic HCO3- to extracellular region"
 is_a: GO:0008514 ! organic anion transmembrane transporter activity
 is_a: GO:0015318 ! inorganic molecular entity transmembrane transporter activity
 relationship: part_of GO:0015701 ! bicarbonate transport
@@ -7507,8 +7705,9 @@ synonym: "nonselective channel activity" EXACT []
 synonym: "pore activity" BROAD []
 synonym: "pore class transporter activity" RELATED []
 synonym: "substrate-specific channel activity" RELATED []
-xref: reactome:R-HSA-3779381 "H2O2 diffuses from the mitochondrial matrix to the cytosol"
-xref: reactome:R-HSA-8953430 "PXMP2 trimer transports glycolate from cytosol to peroxisomal matrix"
+xref: MIPS_funcat:20.03.01
+xref: Reactome:R-HSA-3779381 "H2O2 diffuses from the mitochondrial matrix to the cytosol"
+xref: Reactome:R-HSA-8953430 "PXMP2 trimer transports glycolate from cytosol to peroxisomal matrix"
 xref: TC:1
 is_a: GO:0022803 ! passive transmembrane transporter activity
 
@@ -7529,6 +7728,7 @@ name: actin cytoskeleton
 namespace: cellular_component
 def: "The part of the cytoskeleton (the internal framework of a cell) composed of actin and associated proteins. Includes actin cytoskeleton-associated complexes." [GOC:jl, ISBN:0395825172, ISBN:0815316194]
 subset: goslim_aspergillus
+xref: MIPS_funcat:70.04.03
 is_a: GO:0005856 ! cytoskeleton
 
 [Term]
@@ -7616,6 +7816,7 @@ id: GO:0015740
 name: C4-dicarboxylate transport
 namespace: biological_process
 def: "The directed movement of a C4-dicarboxylate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A C4-dicarboxylate is the anion of a dicarboxylic acid that contains four carbon atoms." [GOC:krc, GOC:mah]
+xref: MIPS_funcat:20.01.03.03
 is_a: GO:0006835 ! dicarboxylic acid transport
 
 [Term]
@@ -7669,6 +7870,7 @@ name: peptide transport
 namespace: biological_process
 def: "The directed movement of peptides, compounds of two or more amino acids where the alpha carboxyl group of one is bound to the alpha amino group of another, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 subset: goslim_pir
+xref: MIPS_funcat:20.01.09
 is_a: GO:0042886 ! amide transport
 is_a: GO:0071702 ! organic substance transport
 
@@ -7679,6 +7881,7 @@ namespace: biological_process
 def: "The directed movement of amines, including polyamines, organic compounds containing one or more amino groups, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai, ISBN:0198506732]
 subset: goslim_pir
 synonym: "amine/polyamine transport" RELATED []
+xref: MIPS_funcat:20.01.11
 is_a: GO:0071702 ! organic substance transport
 is_a: GO:0071705 ! nitrogen compound transport
 
@@ -7713,7 +7916,6 @@ name: acetylcholine transport
 namespace: biological_process
 def: "The directed movement of acetylcholine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Acetylcholine is an acetic acid ester of the organic base choline and functions as a neurotransmitter, released at the synapses of parasympathetic nerves and at neuromuscular junctions." [GOC:ai]
 is_a: GO:0006836 ! neurotransmitter transport
-is_a: GO:0009914 ! hormone transport
 is_a: GO:0015695 ! organic cation transport
 is_a: GO:0015696 ! ammonium transport
 is_a: GO:0015893 ! drug transport
@@ -7743,6 +7945,7 @@ name: drug transport
 namespace: biological_process
 def: "The directed movement of a drug, a substance used in the diagnosis, treatment or prevention of a disease, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 subset: goslim_pir
+xref: MIPS_funcat:20.01.27
 is_a: GO:0006810 ! transport
 relationship: part_of GO:0042493 ! response to drug
 
@@ -7790,6 +7993,7 @@ synonym: "cellular component organisation at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organisation in other organism" EXACT [GOC:mah]
 synonym: "cellular component organization at cellular level" EXACT []
 synonym: "cellular component organization in other organism" EXACT []
+xref: MIPS_funcat:42
 is_a: GO:0009987 ! cellular process
 is_a: GO:0071840 ! cellular component organization or biogenesis
 
@@ -7801,6 +8005,7 @@ def: "The series of events in which a temperature stimulus (hot or cold) is rece
 synonym: "detection of temperature" EXACT []
 synonym: "detection of thermal stimulus" EXACT []
 synonym: "perception of temperature" RELATED []
+xref: MIPS_funcat:34.11.09
 is_a: GO:0009266 ! response to temperature stimulus
 is_a: GO:0009581 ! detection of external stimulus
 is_a: GO:0009582 ! detection of abiotic stimulus
@@ -7825,6 +8030,7 @@ synonym: "organic acid anabolism" EXACT []
 synonym: "organic acid biosynthesis" EXACT []
 synonym: "organic acid formation" EXACT []
 synonym: "organic acid synthesis" EXACT []
+xref: MIPS_funcat:01.05.01.03.03
 is_a: GO:0006082 ! organic acid metabolic process
 is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:0044283 ! small molecule biosynthetic process
@@ -7837,6 +8043,7 @@ namespace: biological_process
 def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
 comment: This term was improved by GO_REF:0000022. It was renamed and redefined.
 synonym: "antibody-mediated immune response" EXACT []
+xref: MIPS_funcat:36.25.16.03
 is_a: GO:0019724 ! B cell mediated immunity
 
 [Term]
@@ -7856,6 +8063,7 @@ synonym: "protein sorting along secretory pathway" RELATED []
 synonym: "vesicle trafficking" RELATED []
 synonym: "vesicle transport" EXACT []
 synonym: "vesicular transport" EXACT [GOC:mah]
+xref: MIPS_funcat:20.09.07
 is_a: GO:0006810 ! transport
 
 [Term]
@@ -7881,79 +8089,8 @@ subset: goslim_metagenomics
 subset: goslim_plant
 subset: goslim_yeast
 synonym: "phosphokinase activity" EXACT []
-xref: reactome:R-HSA-109822 "MAPK3,(MAPK1) phosphorylates GRB2-1:SOS1:p-Y427-SHC1"
-xref: reactome:R-HSA-109823 "MAPK3,(MAPK1) phosphorylates GRB2-1:SOS1:p-Y-IRS1,p-Y-IRS2"
-xref: reactome:R-HSA-111898 "Phosphorylation of cPLA2 by ERK-2"
-xref: reactome:R-HSA-112381 "Hyperphosphorylation (Ser2) of RNA Pol II CTD by P-TEFb complex"
-xref: reactome:R-HSA-139908 "Phosphorylation of DLC2 by MAPK8"
-xref: reactome:R-HSA-139918 "Phosphorylation of BIM by JNK"
-xref: reactome:R-HSA-165692 "Phosphorylation of 4E-BP1 by activated mTORC1"
-xref: reactome:R-HSA-165718 "mTORC1 phosphorylation of RPS6KB1 (S6K)"
-xref: reactome:R-HSA-165726 "Phosphorylation of Ribosomal protein S6 by activated S6K1"
-xref: reactome:R-HSA-165758 "Phosphorylation and inactivation of eEF2K by activated S6K1"
-xref: reactome:R-HSA-165766 "Phosphorylation and activation of eIF4G by activated S6K1"
-xref: reactome:R-HSA-165777 "Phosphorylation and activation of eIF4B by activated S6K1"
-xref: reactome:R-HSA-167084 "Hyperphosphorylation (Ser2) of RNA Pol II CTD by P-TEFb complex"
-xref: reactome:R-HSA-167098 "Phosphorylation (Ser5) of RNA pol II CTD"
-xref: reactome:R-HSA-167191 "Hyperphosphorylation (Ser2) of RNA Pol II CTD by the P-TEFb(Cyclin T1:Cdk9) complex"
-xref: reactome:R-HSA-170055 "Myt-1 mediated phosphorylation of Cyclin B:Cdc2 complexes"
-xref: reactome:R-HSA-170070 "Wee1-mediated phosphorylation of Cyclin B1:phospho-Cdc2 complexes"
-xref: reactome:R-HSA-170076 "CAK-mediated phosphorylation of Cyclin B1:Cdc2 complexes"
-xref: reactome:R-HSA-170087 "CAK-mediated phosphorylation of Cyclin A:Cdc2 complexes"
-xref: reactome:R-HSA-170116 "Myt-1 mediated phosphorylation of Cyclin A:Cdc2"
-xref: reactome:R-HSA-170126 "Phosphorylation of Cyclin B1 in the CRS domain"
-xref: reactome:R-HSA-170156 "Wee1-mediated phosphorylation of Cyclin A:phospho-Cdc2 complexes"
-xref: reactome:R-HSA-170704 "Phosphorylation of DSIF by the P-TEFb(Cyclin T1:Cdk9) complex"
-xref: reactome:R-HSA-170706 "Phosphorylation of  NEFL by the P-TEFb(Cyclin T1:Cdk9) complex"
-xref: reactome:R-HSA-174164 "Phosphorylation of Cyclin A:Cdk2 at Tyr 15"
-xref: reactome:R-HSA-1839091 "Cytosolic FGFR1 fusion protein-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-1839107 "BCR-FGFR1-associated PI3K phosphorylates PIP2 to PIP3."
-xref: reactome:R-HSA-1839110 "p-BCR-p-FGFR1 phosphorylates GAB2"
-xref: reactome:R-HSA-187949 "CAK-mediated phosphorylation of Cyclin A:Cdk2"
-xref: reactome:R-HSA-188350 "CAK-mediated phosphorylation of Cyclin E:Cdk2"
-xref: reactome:R-HSA-191636 "Phosphorylation of Cx43 by c-src"
-xref: reactome:R-HSA-195275 "Phosphorylation of APC component of the destruction complex"
-xref: reactome:R-HSA-195283 "Phosphorylation of phospho- (Ser45, Thr41) beta-catenin  at Ser37 by GSK-3"
-xref: reactome:R-HSA-195287 "Phosphorylation of phospho-(Ser45 ) at Thr 41 by GSK-3"
-xref: reactome:R-HSA-195300 "Phosphorylation of phospho-(Ser45,Thr41,Ser37) at Ser33 by GSK-3"
-xref: reactome:R-HSA-195318 "Phosphorylation of beta-catenin at Ser45 by CK1 alpha"
-xref: reactome:R-HSA-201717 "CSNK2-mediated phosphorylation of DVL"
-xref: reactome:R-HSA-211583 "Partial autophosphorylation of PAK-2 at  Ser-19, Ser-20, Ser-55, Ser-192, and Ser-197"
-xref: reactome:R-HSA-211650 "Autophosphorylation of PAK-2p34 in the activation loop"
-xref: reactome:R-HSA-2214351 "PLK1 phosphorylates GORASP1"
-xref: reactome:R-HSA-2294580 "PLK1 hyperphosphorylates Condensin II complex"
-xref: reactome:R-HSA-2529020 "CK2 phosphorylates condensin I subunits"
-xref: reactome:R-HSA-389762 "Phosphorylation of PD-1"
-xref: reactome:R-HSA-392752 "Phosphorylation of L1 by CK-II"
-xref: reactome:R-HSA-442724 "Phosphorylation of CREB1 by ribosomal protein S6 kinases (RSKs)"
-xref: reactome:R-HSA-445079 "Phosphorylation of L1 by ERK"
-xref: reactome:R-HSA-5654690 "FGFR1-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654692 "FGFR1- and PTPN11- associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654697 "FGFR2- and PTPN11- associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654701 "FGFR2-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654705 "FGFR3-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654709 "FGFR3- and PTPN11-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654714 "FGFR4- and PTPN11-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5654717 "FGFR4-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655235 "Activated FGFR4 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655289 "Activated FGFR3 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655290 "Activated FGFR1 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5655323 "Activated FGFR2 mutant-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-5668545 "NIK autophosphorylates on T559"
-xref: reactome:R-HSA-6788855 "FN3KRP phosphorylates PsiAm, RibAm"
-xref: reactome:R-HSA-6788867 "FN3K phosphorylates ketosamines"
-xref: reactome:R-HSA-6814409 "CK2 phosphorylates PDCL"
-xref: reactome:R-HSA-68954 "Mcm2-7 is phosphorylated by DDK"
-xref: reactome:R-HSA-69195 "Phosphorylation of Cyclin E:CDK2 complexes by WEE1"
-xref: reactome:R-HSA-69604 "Phosphorylation of Cdc25A at Ser-123 by Chk1"
-xref: reactome:R-HSA-75028 "Phosphorylation of Wee1 kinase by Chk1"
-xref: reactome:R-HSA-75809 "Phosphorylation of Cdc25C at Ser216 by CHEK2"
-xref: reactome:R-HSA-77071 "Phosphorylation (Ser5) of RNA pol II CTD"
-xref: reactome:R-HSA-8853323 "Activated FGFR3 fusion-associated PI3K phosphorylates PIP2 to PIP3"
-xref: reactome:R-HSA-8942836 "CDK4/6:CCND complexes are activated by T-loop phosphorylation of CDK4/6"
-xref: reactome:R-HSA-8948039 "FUNDC1 is phosphorylated by CK2"
-xref: reactome:R-HSA-8948143 "p-S13, FUNDC1 is phosphorylated by CK2 at Tyr18"
-xref: reactome:R-HSA-8948146 "FUNDC1 is phosphorylated by ULK1 at Ser17"
+xref: Reactome:R-HSA-6788855 "FN3KRP phosphorylates PsiAm, RibAm"
+xref: Reactome:R-HSA-6788867 "FN3K phosphorylates ketosamines"
 is_a: GO:0016772 ! transferase activity, transferring phosphorus-containing groups
 relationship: part_of GO:0016310 ! phosphorylation
 
@@ -8017,6 +8154,7 @@ id: GO:0016477
 name: cell migration
 namespace: biological_process
 def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues. Cell migration is a central process in the development and maintenance of multicellular organisms." [GOC:cjm, GOC:dph, GOC:ems, GOC:pf, http://en.wikipedia.org/wiki/Cell_migration]
+xref: MIPS_funcat:34.05.01
 xref: Wikipedia:Cell_migration
 is_a: GO:0048870 ! cell motility
 
@@ -8031,6 +8169,8 @@ synonym: "peptidolysis during protein maturation" RELATED [GOC:mah]
 synonym: "protein maturation by peptide bond cleavage" EXACT [GOC:bf]
 synonym: "protein maturation by peptide bond hydrolysis" EXACT [GOC:mah]
 synonym: "protein maturation by proteolysis" RELATED [GOC:mah]
+xref: MIPS_funcat:14.07.11
+xref: MIPS_funcat:18.01.05
 is_a: GO:0006508 ! proteolysis
 is_a: GO:0051604 ! protein maturation
 
@@ -8064,11 +8204,11 @@ subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
 xref: EC:2
-xref: reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
-xref: reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
-xref: reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
-xref: reactome:R-HSA-6787403 "GTPBP3 and MTO1 transform uridine-34 yielding 5-taurinomethyluridine-34 in tRNA"
-xref: reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
+xref: Reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
+xref: Reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
+xref: Reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
+xref: Reactome:R-HSA-6787403 "GTPBP3 and MTO1 transform uridine-34 yielding 5-taurinomethyluridine-34 in tRNA"
+xref: Reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
 is_a: GO:0003824 ! catalytic activity
 
 [Term]
@@ -8136,6 +8276,7 @@ name: regulation of lipid metabolic process
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving lipids." [GOC:go_curators]
 synonym: "regulation of lipid metabolism" EXACT []
+xref: MIPS_funcat:01.06.10
 is_a: GO:0080090 ! regulation of primary metabolic process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006629 ! lipid metabolic process
@@ -8216,6 +8357,7 @@ synonym: "aromatic compound formation" EXACT []
 synonym: "aromatic compound synthesis" EXACT []
 synonym: "aromatic hydrocarbon biosynthesis" NARROW []
 synonym: "aromatic hydrocarbon biosynthetic process" NARROW []
+xref: MIPS_funcat:01.05.01.03.09
 is_a: GO:0006725 ! cellular aromatic compound metabolic process
 is_a: GO:0044249 ! cellular biosynthetic process
 
@@ -8252,6 +8394,7 @@ synonym: "B-cell mediated immune effector process" EXACT []
 synonym: "B-cell mediated immunity" EXACT []
 synonym: "B-lymphocyte mediated immune effector process" EXACT []
 synonym: "B-lymphocyte mediated immunity" EXACT []
+xref: MIPS_funcat:36.25.16.03.01
 is_a: GO:0002449 ! lymphocyte mediated immunity
 is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 
@@ -8285,6 +8428,7 @@ name: carboxylic acid metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving carboxylic acids, any organic acid containing one or more carboxyl (COOH) groups or anions (COO-)." [ISBN:0198506732]
 synonym: "carboxylic acid metabolism" EXACT []
+xref: MIPS_funcat:01.05.01.01.01
 is_a: GO:0043436 ! oxoacid metabolic process
 
 [Term]
@@ -8323,6 +8467,7 @@ def: "The process in which an antigen-presenting cell expresses antigen (peptide
 comment: This term was improved by GO_REF:0000022. It was renamed and redefined.
 synonym: "antigen presentation" EXACT []
 synonym: "antigen processing" EXACT []
+xref: MIPS_funcat:36.25.16.03.05
 xref: Wikipedia:Antigen_presentation
 is_a: GO:0002376 ! immune system process
 
@@ -8520,7 +8665,7 @@ def: "Enables the transfer of a single solute from one side of a membrane to the
 synonym: "facilitated diffusion" RELATED []
 synonym: "porters" BROAD []
 synonym: "uniporter activity z" NARROW []
-xref: reactome:R-HSA-429767 "Passive I- efflux mediated by SMCT1"
+xref: Reactome:R-HSA-429767 "Passive I- efflux mediated by SMCT1"
 xref: Wikipedia:Facilitated_diffusion
 is_a: GO:0022857 ! transmembrane transporter activity
 
@@ -8563,11 +8708,12 @@ synonym: "substrate-specific transmembrane transporter activity" RELATED []
 synonym: "substrate-specific transporter activity" NARROW []
 synonym: "uptake permease activity" RELATED []
 synonym: "uptake transmembrane transporter activity" RELATED []
-xref: reactome:R-HSA-1236947 "Egress of internalized antigen to the cytosol via sec61"
-xref: reactome:R-HSA-429036 "SLC2A9 transports Fru, Glc, urate"
-xref: reactome:R-HSA-5671707 "Fe3+ dissociates from SLC22A17:LCN2:2,5DHBA"
-xref: reactome:R-HSA-6784434 "An unknown carrier transports cytosolic glyoxylate to the peroxisome"
-xref: reactome:R-HSA-6784436 "An unknown carrier transports mitochondrial glyoxylate to the cytosol"
+xref: Reactome:R-HSA-1236947 "Egress of internalized antigen to the cytosol via sec61"
+xref: Reactome:R-HSA-429036 "SLC2A9 transports Fru, Glc, urate"
+xref: Reactome:R-HSA-5638209 "Defective SLC2A9 does not transport Fru, Glc, urate"
+xref: Reactome:R-HSA-5671707 "Fe3+ dissociates from SLC22A17:LCN2:2,5DHBA"
+xref: Reactome:R-HSA-6784434 "An unknown carrier transports cytosolic glyoxylate to the peroxisome"
+xref: Reactome:R-HSA-6784436 "An unknown carrier transports mitochondrial glyoxylate to the cytosol"
 is_a: GO:0005215 ! transporter activity
 relationship: part_of GO:0055085 ! transmembrane transport
 
@@ -8723,6 +8869,7 @@ namespace: cellular_component
 def: "A cellular component that forms a specialized region of connection between two or more cells or between a cell and the extracellular matrix. At a cell junction, anchoring proteins extend through the plasma membrane to link cytoskeletal proteins in one cell to cytoskeletal proteins in neighboring cells or to proteins in the extracellular matrix." [GOC:mah, http://www.vivo.colostate.edu/hbooks/cmb/cells/pmemb/junctions_a.html, ISBN:0198506732]
 subset: goslim_agr
 subset: goslim_flybase_ribbon
+xref: MIPS_funcat:70.06
 xref: Wikipedia:Cell_junction
 is_a: GO:0005575 ! cellular_component
 
@@ -8791,7 +8938,7 @@ relationship: regulates GO:0006897 ! endocytosis
 id: GO:0030101
 name: natural killer cell activation
 namespace: biological_process
-def: "The change in morphology and behavior of a natural killer cell in response to a cytokine, chemokine, cellular ligand, or soluble factor." [GOC:mgi_curators, ISBN:0781735140]
+def: "The change in morphology and behavior of a natural killer cell in response to a cytokine, chemokine, cellular ligand, or soluble factor." [GOC:mgi_curators, ISBN:0781735149]
 synonym: "NK cell activation" EXACT []
 is_a: GO:0046649 ! lymphocyte activation
 
@@ -8806,7 +8953,7 @@ is_a: GO:0030072 ! peptide hormone secretion
 id: GO:0030141
 name: secretory granule
 namespace: cellular_component
-def: "A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules." [GOC:mah, ISBN:0198596732]
+def: "A small subcellular vesicle, surrounded by a membrane, that is formed from the Golgi apparatus and contains a highly concentrated protein destined for secretion. Secretory granules move towards the periphery of the cell and upon stimulation, their membranes fuse with the cell membrane, and their protein load is exteriorized. Processing of the contained protein may take place in secretory granules." [GOC:mah, ISBN:0198506732]
 comment: Note that the term 'secretory vesicle' is sometimes used in this sense, but can also mean 'transport vesicle ; GO:0030133'.
 synonym: "secretory vesicle" BROAD []
 is_a: GO:0099503 ! secretory vesicle
@@ -8822,6 +8969,7 @@ subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_plant
+xref: MIPS_funcat:40.02
 xref: Wikipedia:Cellular_differentiation
 is_a: GO:0048869 ! cellular developmental process
 
@@ -8863,6 +9011,7 @@ synonym: "pheromone catabolism" RELATED []
 synonym: "protein breakdown" EXACT []
 synonym: "protein catabolism" EXACT []
 synonym: "protein degradation" EXACT []
+xref: MIPS_funcat:14.13
 xref: Wikipedia:Protein_catabolism
 is_a: GO:0009057 ! macromolecule catabolic process
 is_a: GO:0019538 ! protein metabolic process
@@ -8873,6 +9022,7 @@ id: GO:0030182
 name: neuron differentiation
 namespace: biological_process
 def: "The process in which a relatively unspecialized cell acquires specialized features of a neuron." [GOC:mah]
+xref: MIPS_funcat:43.03.13
 is_a: GO:0030154 ! cell differentiation
 relationship: part_of GO:0048699 ! generation of neurons
 
@@ -8887,6 +9037,7 @@ synonym: "B cell development" RELATED [GOC:add]
 synonym: "B lymphocyte differentiation" EXACT []
 synonym: "B-cell differentiation" EXACT []
 synonym: "B-lymphocyte differentiation" EXACT []
+xref: MIPS_funcat:43.03.09.03
 is_a: GO:0030098 ! lymphocyte differentiation
 is_a: GO:0042113 ! B cell activation
 
@@ -8972,6 +9123,7 @@ subset: goslim_chembl
 subset: goslim_generic
 synonym: "extracellular matrix organisation" EXACT [GOC:curators]
 synonym: "extracellular matrix organization and biogenesis" RELATED [GOC:mah]
+xref: MIPS_funcat:42.27.01
 is_a: GO:0043062 ! extracellular structure organization
 
 [Term]
@@ -9019,6 +9171,7 @@ synonym: "T cell development" RELATED [GOC:add]
 synonym: "T lymphocyte differentiation" EXACT []
 synonym: "T-cell differentiation" EXACT []
 synonym: "T-lymphocyte differentiation" EXACT []
+xref: MIPS_funcat:43.03.09.01
 is_a: GO:0030098 ! lymphocyte differentiation
 is_a: GO:0042110 ! T cell activation
 
@@ -9031,6 +9184,7 @@ synonym: "erythrocyte cell differentiation" EXACT []
 synonym: "erythropoiesis" EXACT [GOC:add, GOC:dph]
 synonym: "RBC differentiation" EXACT [CL:0000232]
 synonym: "red blood cell differentiation" EXACT [CL:0000232]
+xref: MIPS_funcat:43.03.07
 xref: Wikipedia:Erythropoiesis
 is_a: GO:0030099 ! myeloid cell differentiation
 relationship: part_of GO:0034101 ! erythrocyte homeostasis
@@ -9088,6 +9242,7 @@ name: macrophage differentiation
 namespace: biological_process
 def: "The process in which a relatively unspecialized monocyte acquires the specialized features of a macrophage." [GOC:add, ISBN:0781735149]
 synonym: "macrophage cell differentiation" EXACT []
+xref: MIPS_funcat:43.03.09.05
 is_a: GO:0002573 ! myeloid leukocyte differentiation
 
 [Term]
@@ -9107,6 +9262,7 @@ def: "The progressive compaction of dispersed interphase chromatin into threadli
 synonym: "DNA condensation" BROAD [Wikipedia:DNA_condensation]
 synonym: "eukaryotic chromosome condensation" EXACT [GOC:bf]
 synonym: "nuclear chromosome condensation" EXACT [GOC:bf]
+xref: MIPS_funcat:10.03.04.03
 is_a: GO:0006323 ! DNA packaging
 
 [Term]
@@ -9173,6 +9329,7 @@ synonym: "flagellated sperm movement" EXACT []
 synonym: "sperm motility" BROAD []
 synonym: "sperm movement" BROAD []
 xref: Wikipedia:Sperm_motility
+is_a: GO:0060285 ! cilium-dependent cell motility
 is_a: GO:0097722 ! sperm motility
 
 [Term]
@@ -9230,8 +9387,16 @@ id: GO:0030545
 name: receptor regulator activity
 namespace: molecular_function
 def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is changed." [GOC:ceb]
+xref: MIPS_funcat:18.02.07
 is_a: GO:0098772 ! molecular function regulator
-relationship: part_of GO:0010469 ! regulation of signaling receptor activity
+
+[Term]
+id: GO:0030546
+name: signaling receptor activator activity
+namespace: molecular_function
+def: "The function of interacting (directly or indirectly) with receptors such that the proportion of receptors in the active form is increased." [GOC:ceb]
+synonym: "receptor activator activity" BROAD []
+is_a: GO:0030545 ! receptor regulator activity
 
 [Term]
 id: GO:0030593
@@ -9277,6 +9442,7 @@ namespace: biological_process
 def: "The directed movement of substances along cytoskeletal fibers such as microfilaments or microtubules within a cell." [GOC:mah]
 subset: goslim_chembl
 subset: goslim_generic
+xref: MIPS_funcat:20.09.14
 is_a: GO:0046907 ! intracellular transport
 
 [Term]
@@ -9823,10 +9989,11 @@ is_a: GO:0008104 ! protein localization
 
 [Term]
 id: GO:0031644
-name: regulation of neurological system process
+name: regulation of nervous system process
 namespace: biological_process
-def: "Any process that modulates the frequency, rate or extent of a neurophysiological process, an organ system process carried out by any of the organs or tissues of neurological system." [GOC:dph, GOC:mah, GOC:tb]
+def: "Any process that modulates the frequency, rate or extent of a neurophysiological process, an organ system process carried out by any of the organs or tissues of the nervous system." [GOC:dph, GOC:mah, GOC:tb]
 synonym: "regulation of neurological process" EXACT [GOC:dph, GOC:tb]
+synonym: "regulation of neurological system process" EXACT []
 synonym: "regulation of neurophysiological process" EXACT []
 is_a: GO:0044057 ! regulation of system process
 intersection_of: GO:0008150 ! biological_process
@@ -9835,7 +10002,7 @@ relationship: regulates GO:0050877 ! nervous system process
 
 [Term]
 id: GO:0031645
-name: negative regulation of neurological system process
+name: negative regulation of nervous system process
 namespace: biological_process
 def: "Any process that stops, prevents, or reduces the frequency, rate or extent of a neurophysiological process." [GOC:dph, GOC:mah, GOC:tb]
 synonym: "down regulation of neurological process" EXACT []
@@ -9843,8 +10010,9 @@ synonym: "down-regulation of neurological process" EXACT []
 synonym: "downregulation of neurological process" EXACT []
 synonym: "inhibition of neurological process" NARROW []
 synonym: "negative regulation of neurological process" EXACT [GOC:dph, GOC:tb]
+synonym: "negative regulation of neurological system process" EXACT []
 synonym: "negative regulation of neurophysiological process" EXACT []
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0050877 ! nervous system process
@@ -9852,17 +10020,18 @@ relationship: negatively_regulates GO:0050877 ! nervous system process
 
 [Term]
 id: GO:0031646
-name: positive regulation of neurological system process
+name: positive regulation of nervous system process
 namespace: biological_process
 def: "Any process that activates or increases the frequency, rate or extent of a neurophysiological process." [GOC:dph, GOC:mah, GOC:tb]
 synonym: "activation of neurological process" NARROW []
 synonym: "positive regulation of neurological process" EXACT [GOC:dph, GOC:tb]
+synonym: "positive regulation of neurological system process" EXACT []
 synonym: "positive regulation of neurophysiological process" EXACT []
 synonym: "stimulation of neurological process" NARROW []
 synonym: "up regulation of neurological process" EXACT []
 synonym: "up-regulation of neurological process" EXACT []
 synonym: "upregulation of neurological process" EXACT []
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0050877 ! nervous system process
@@ -11373,7 +11542,6 @@ synonym: "inhibition of epinephrine secretion" NARROW []
 synonym: "negative regulation of adrenaline secretion" EXACT []
 is_a: GO:0014060 ! regulation of epinephrine secretion
 is_a: GO:0033604 ! negative regulation of catecholamine secretion
-is_a: GO:0046888 ! negative regulation of hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0048242 ! epinephrine secretion
 relationship: negatively_regulates GO:0048242 ! epinephrine secretion
@@ -11391,7 +11559,6 @@ synonym: "up-regulation of epinephrine secretion" EXACT []
 synonym: "upregulation of epinephrine secretion" EXACT []
 is_a: GO:0014060 ! regulation of epinephrine secretion
 is_a: GO:0033605 ! positive regulation of catecholamine secretion
-is_a: GO:0046887 ! positive regulation of hormone secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0048242 ! epinephrine secretion
 relationship: positively_regulates GO:0048242 ! epinephrine secretion
@@ -11575,8 +11742,8 @@ namespace: biological_process
 def: "The controlled release of a substance by a cell." [GOC:mah]
 synonym: "cellular secretion" EXACT []
 xref: Wikipedia:Secretion
-is_a: GO:0009987 ! cellular process
 is_a: GO:0046903 ! secretion
+is_a: GO:0140352 ! export from cell
 
 [Term]
 id: GO:0032941
@@ -12207,8 +12374,10 @@ relationship: positively_regulates GO:0034109 ! homotypic cell-cell adhesion
 id: GO:0034220
 name: ion transmembrane transport
 namespace: biological_process
+alt_id: GO:0099131
 def: "A process in which an ion is transported across a membrane." [GOC:mah]
 comment: Note that this term is not intended for use in annotating lateral movement within membranes.
+synonym: "ATP hydrolysis coupled ion transmembrane transport" NARROW []
 synonym: "ion membrane transport" EXACT []
 synonym: "transmembrane ion transport" EXACT [GOC:dph, GOC:tb]
 is_a: GO:0006811 ! ion transport
@@ -12512,6 +12681,18 @@ created_by: rfoulger
 creation_date: 2010-05-14T01:14:37Z
 
 [Term]
+id: GO:0035592
+name: establishment of protein localization to extracellular region
+namespace: biological_process
+def: "The directed movement of a protein to a specific location within the extracellular region." [GOC:bf, GOC:BHF]
+synonym: "establishment of protein localisation in extracellular region" EXACT [GOC:mah]
+synonym: "establishment of protein localization in extracellular region" EXACT [GOC:curators]
+is_a: GO:0045184 ! establishment of protein localization
+is_a: GO:0071692 ! protein localization to extracellular region
+created_by: rfoulger
+creation_date: 2010-11-09T10:25:08Z
+
+[Term]
 id: GO:0035637
 name: multicellular organismal signaling
 namespace: biological_process
@@ -12552,8 +12733,8 @@ id: GO:0035929
 name: steroid hormone secretion
 namespace: biological_process
 def: "The regulated release of any steroid that acts as a hormone into the circulatory system." [CHEBI:26764, GOC:sl]
-is_a: GO:0006869 ! lipid transport
 is_a: GO:0060986 ! endocrine hormone secretion
+is_a: GO:0140353 ! lipid export from cell
 created_by: rfoulger
 creation_date: 2011-07-20T01:01:00Z
 
@@ -12599,9 +12780,9 @@ id: GO:0035936
 name: testosterone secretion
 namespace: biological_process
 def: "The regulated release of testosterone into the circulatory system. Testosterone is an androgen having 17beta-hydroxy and 3-oxo groups, together with unsaturation at C-4-C-5." [CHEBI:17347, GOC:sl, PMID:12606499]
-is_a: GO:0006869 ! lipid transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 is_a: GO:0046879 ! hormone secretion
+is_a: GO:0140353 ! lipid export from cell
 created_by: rfoulger
 creation_date: 2011-07-20T01:13:13Z
 
@@ -12611,9 +12792,9 @@ name: estradiol secretion
 namespace: biological_process
 def: "The regulated release of estradiol into the circulatory system." [CHEBI:23965, GOC:sl, PMID:21632818]
 synonym: "oestradiol secretion" EXACT [CHEBI:23965]
-is_a: GO:0006869 ! lipid transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 is_a: GO:0046879 ! hormone secretion
+is_a: GO:0140353 ! lipid export from cell
 created_by: rfoulger
 creation_date: 2011-07-20T01:16:45Z
 
@@ -12672,17 +12853,15 @@ creation_date: 2011-08-01T02:45:27Z
 id: GO:0038024
 name: cargo receptor activity
 namespace: molecular_function
-def: "Binding specifically to a substance (cargo) to deliver it to a transport vesicle." [PMID:15239958]
+def: "Binding specifically to a substance (cargo) to deliver it to a transport vesicle. Cargo receptors span a membrane (either the plasma membrane or a vesicle membrane), binding simultaneously to cargo molecules and coat adaptors, to efficiently recruit soluble proteins to nascent vesicles." [PMID:15239958, PMID:27903609]
 comment: Notes: (1) this term and its child terms are intended for receptors that bind to and internalize molecules by receptor-mediated endocytosis. For receptors that are coupled to a signal transduction pathway, consider instead the term 'signaling receptor activity ; GO:0038023' and its children. (2) Cargo receptors transport substances by vesicular transport, not by transmembrane transport.  For transmembrane transporters, consider instead the term 'transmembrane transporter activity ; GO:0022857.
-synonym: "endocytic receptor activity" EXACT [GOC:signaling, ISBN:0123645387, PMID:12671190]
+synonym: "endocytic receptor activity" NARROW [GOC:signaling, ISBN:0123645387, PMID:12671190]
 synonym: "receptor activity" BROAD []
-synonym: "receptor activity involved in ligand uptake" EXACT [PMID:12671190]
-synonym: "receptor activity involved in receptor-mediated endocytosis" EXACT [GOC:bf]
+synonym: "receptor activity involved in receptor-mediated endocytosis" NARROW [GOC:bf]
 synonym: "transport receptor activity" BROAD [GOC:signaling]
 is_a: GO:0003674 ! molecular_function
-intersection_of: GO:0003674 ! molecular_function
-intersection_of: part_of GO:0006898 ! receptor-mediated endocytosis
-relationship: part_of GO:0006898 ! receptor-mediated endocytosis
+relationship: has_part GO:0060090 ! molecular adaptor activity
+relationship: part_of GO:0006897 ! endocytosis
 created_by: rfoulger
 creation_date: 2011-08-01T02:50:45Z
 
@@ -12694,6 +12873,7 @@ def: "Self-propelled movement of a cell or organism from one location to another
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_pir
+xref: MIPS_funcat:02.45.11
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -12871,7 +13051,7 @@ is_a: GO:0042101 ! T cell receptor complex
 id: GO:0042110
 name: T cell activation
 namespace: biological_process
-def: "The change in morphology and behavior of a mature or immature T cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific." [GOC:mgi_curators, ISBN:0781735140]
+def: "The change in morphology and behavior of a mature or immature T cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific." [GOC:mgi_curators, ISBN:0781735149]
 synonym: "T lymphocyte activation" EXACT []
 synonym: "T-cell activation" EXACT []
 synonym: "T-lymphocyte activation" EXACT []
@@ -12881,7 +13061,7 @@ is_a: GO:0046649 ! lymphocyte activation
 id: GO:0042113
 name: B cell activation
 namespace: biological_process
-def: "The change in morphology and behavior of a mature or immature B cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific." [GOC:mgi_curators, ISBN:0781735140]
+def: "The change in morphology and behavior of a mature or immature B cell resulting from exposure to a mitogen, cytokine, chemokine, cellular ligand, or an antigen for which it is specific." [GOC:mgi_curators, ISBN:0781735149]
 synonym: "B lymphocyte activation" EXACT []
 synonym: "B-cell activation" EXACT []
 synonym: "B-lymphocyte activation" EXACT []
@@ -12985,9 +13165,13 @@ subset: gocheck_do_not_manually_annotate
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_metagenomics
+subset: goslim_plant
 subset: goslim_yeast
 synonym: "response to chemical stimulus" EXACT [GOC:dos]
 synonym: "response to chemical substance" EXACT []
+xref: MIPS_funcat:34.11.03
+xref: MIPS_funcat:34.11.03.05
+xref: MIPS_funcat:36.20.35.09
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
@@ -13186,6 +13370,7 @@ synonym: "odontogeny" EXACT []
 synonym: "odontosis" EXACT []
 synonym: "tooth development" RELATED []
 synonym: "tooth morphogenesis" EXACT []
+xref: MIPS_funcat:47.03.11.01
 xref: Wikipedia:Odontogenesis
 is_a: GO:0009887 ! animal organ morphogenesis
 
@@ -13514,6 +13699,7 @@ id: GO:0043011
 name: myeloid dendritic cell differentiation
 namespace: biological_process
 def: "The process in which a monocyte acquires the specialized features of a dendritic cell, an immunocompetent cell of the lymphoid and hemopoietic systems and skin." [CL:0000782, GOC:jl]
+xref: MIPS_funcat:43.03.09.07
 xref: Wikipedia:Dendritic_cell
 is_a: GO:0001773 ! myeloid dendritic cell activation
 is_a: GO:0002573 ! myeloid leukocyte differentiation
@@ -13636,6 +13822,7 @@ synonym: "up-regulation of enzyme activity" EXACT []
 synonym: "up-regulation of metalloenzyme activity" NARROW []
 synonym: "upregulation of enzyme activity" EXACT []
 synonym: "upregulation of metalloenzyme activity" NARROW []
+xref: MIPS_funcat:18.02.01.01
 is_a: GO:0044093 ! positive regulation of molecular function
 is_a: GO:0050790 ! regulation of catalytic activity
 intersection_of: GO:0008150 ! biological_process
@@ -14053,10 +14240,11 @@ id: GO:0043576
 name: regulation of respiratory gaseous exchange
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the process of gaseous exchange between an organism and its environment." [GOC:jl]
+xref: MIPS_funcat:36.07.03
 is_a: GO:0051239 ! regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0007585 ! respiratory gaseous exchange
-relationship: regulates GO:0007585 ! respiratory gaseous exchange
+intersection_of: regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
+relationship: regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
 
 [Term]
 id: GO:0043603
@@ -14719,6 +14907,7 @@ def: "Innate immune responses are defense responses mediated by germline encoded
 comment: This term was improved by GO_REF:0000022. It was moved.
 synonym: "innate immunity" EXACT [GOC:pg]
 synonym: "nonspecific immune response" EXACT []
+xref: MIPS_funcat:36.25.16.01
 xref: Wikipedia:Innate_immune_system
 is_a: GO:0006955 ! immune response
 is_a: GO:0098542 ! defense response to other organism
@@ -14894,6 +15083,7 @@ namespace: biological_process
 def: "The regulated release of juvenile hormones, the three sesquiterpenoid derivatives that function to maintain the larval state of insects at molting and that may be required for other processes, e.g. oogenesis." [GOC:go_curators, ISBN:0198547684]
 is_a: GO:0046865 ! terpenoid transport
 is_a: GO:0060986 ! endocrine hormone secretion
+is_a: GO:0140353 ! lipid export from cell
 
 [Term]
 id: GO:0045444
@@ -17062,7 +17252,7 @@ relationship: positively_regulates GO:0046629 ! gamma-delta T cell activation
 id: GO:0046649
 name: lymphocyte activation
 namespace: biological_process
-def: "A change in morphology and behavior of a lymphocyte resulting from exposure to a specific antigen, mitogen, cytokine, chemokine, cellular ligand, or soluble factor." [GOC:mgi_curators, ISBN:0781735140]
+def: "A change in morphology and behavior of a lymphocyte resulting from exposure to a specific antigen, mitogen, cytokine, chemokine, cellular ligand, or soluble factor." [GOC:mgi_curators, ISBN:0781735149]
 is_a: GO:0045321 ! leukocyte activation
 
 [Term]
@@ -17305,6 +17495,7 @@ name: secretion
 namespace: biological_process
 def: "The controlled release of a substance by a cell or a tissue." [GOC:ai]
 subset: goslim_pir
+xref: MIPS_funcat:20.09.16
 is_a: GO:0006810 ! transport
 
 [Term]
@@ -17383,9 +17574,11 @@ comment: Definition discussed in https://github.com/geneontology/go-ontology/iss
 subset: goslim_chembl
 synonym: "receptor agonist activity" BROAD [GOC:molecular_function_refactoring]
 synonym: "signaling molecule" EXACT []
+synonym: "signaling receptor ligand activity" EXACT []
 synonym: "vitamin D receptor activator activity" NARROW []
 is_a: GO:0005102 ! signaling receptor binding
-is_a: GO:0030545 ! receptor regulator activity
+is_a: GO:0030546 ! signaling receptor activator activity
+relationship: part_of GO:0007165 ! signal transduction
 created_by: midori
 creation_date: 2010-09-13T04:51:59Z
 
@@ -17464,7 +17657,6 @@ name: epinephrine transport
 namespace: biological_process
 def: "The directed movement of epinephrine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:jid]
 synonym: "adrenaline transport" EXACT []
-is_a: GO:0009914 ! hormone transport
 is_a: GO:0051937 ! catecholamine transport
 
 [Term]
@@ -17473,7 +17665,6 @@ name: epinephrine secretion
 namespace: biological_process
 def: "The regulated release of epinephrine by a cell. Epinephrine is a catecholamine hormone secreted by the adrenal medulla and a neurotransmitter, released by certain neurons and active in the central nervous system." [GOC:ef, GOC:jid]
 synonym: "adrenaline secretion" EXACT []
-is_a: GO:0046879 ! hormone secretion
 is_a: GO:0048241 ! epinephrine transport
 is_a: GO:0050432 ! catecholamine secretion
 
@@ -17649,6 +17840,7 @@ namespace: biological_process
 def: "Any process pertinent to the generation and maintenance of rhythms in the physiology of an organism." [GOC:jid]
 subset: goslim_pir
 synonym: "rhythm" RELATED []
+xref: MIPS_funcat:34.11.11
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -17845,6 +18037,7 @@ id: GO:0048608
 name: reproductive structure development
 namespace: biological_process
 def: "The reproductive developmental process whose specific outcome is the progression of structures that will be used in the process of creating new individuals from one or more parents, from their formation to the mature structures." [GOC:dph, GOC:isa_complete, GOC:jid]
+xref: MIPS_funcat:45.03.15
 is_a: GO:0003006 ! developmental process involved in reproduction
 is_a: GO:0048856 ! anatomical structure development
 relationship: part_of GO:0061458 ! reproductive system development
@@ -17920,6 +18113,7 @@ name: generation of neurons
 namespace: biological_process
 def: "The process in which nerve cells are generated. This includes the production of neuroblasts and their differentiation into neurons." [GOC:nln]
 synonym: "neuron generation" EXACT [GOC:curators]
+xref: MIPS_funcat:41.05.13
 is_a: GO:0022008 ! neurogenesis
 
 [Term]
@@ -17937,6 +18131,7 @@ name: cardiac muscle tissue development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of cardiac muscle over time, from its formation to the mature structure." [GOC:dph, GOC:jid, GOC:lm]
 synonym: "heart muscle development" EXACT []
+xref: MIPS_funcat:45.03.12.03
 is_a: GO:0014706 ! striated muscle tissue development
 relationship: part_of GO:0007507 ! heart development
 
@@ -17963,6 +18158,7 @@ def: "The biological process whose specific outcome is the progression of an ana
 comment: This term was added by GO_REF:0000021.
 subset: goslim_chembl
 subset: goslim_generic
+subset: goslim_plant
 synonym: "development of an anatomical structure" EXACT []
 is_a: GO:0032502 ! developmental process
 
@@ -18387,6 +18583,7 @@ def: "Any process that modulates the activity of an enzyme." [GOC:ai, GOC:ebc, G
 subset: goslim_chembl
 synonym: "regulation of enzyme activity" EXACT []
 synonym: "regulation of metalloenzyme activity" NARROW []
+xref: MIPS_funcat:18.02.01
 is_a: GO:0065009 ! regulation of molecular function
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0003824 ! catalytic activity
@@ -18710,6 +18907,7 @@ subset: goslim_pir
 synonym: "neurological system process" EXACT []
 synonym: "neurophysiological process" EXACT []
 synonym: "pan-neural process" RELATED []
+xref: MIPS_funcat:36.25.03
 is_a: GO:0003008 ! system process
 
 [Term]
@@ -18743,6 +18941,7 @@ subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
 synonym: "physiological response to stimulus" EXACT []
+xref: MIPS_funcat:34.11
 is_a: GO:0008150 ! biological_process
 
 [Term]
@@ -18817,6 +19016,7 @@ synonym: "gustation" EXACT []
 synonym: "sense of taste" EXACT []
 synonym: "taste" EXACT []
 synonym: "taste perception" EXACT []
+xref: MIPS_funcat:36.25.01.11
 xref: Wikipedia:Taste
 is_a: GO:0007606 ! sensory perception of chemical stimulus
 
@@ -19042,6 +19242,7 @@ synonym: "perception of touch" EXACT []
 synonym: "tactile sense" EXACT []
 synonym: "taction" EXACT []
 synonym: "tactition" EXACT []
+xref: MIPS_funcat:36.25.01.05
 xref: Wikipedia:Touch
 is_a: GO:0050954 ! sensory perception of mechanical stimulus
 
@@ -19066,6 +19267,7 @@ id: GO:0050982
 name: detection of mechanical stimulus
 namespace: biological_process
 def: "The series of events by which a mechanical stimulus is received and converted into a molecular signal." [GOC:ai, GOC:dos]
+xref: MIPS_funcat:34.11.05
 is_a: GO:0009581 ! detection of external stimulus
 is_a: GO:0009582 ! detection of abiotic stimulus
 is_a: GO:0009612 ! response to mechanical stimulus
@@ -19207,6 +19409,7 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the chemical reactions and pathways involving DNA." [GOC:ai]
 subset: goslim_yeast
 synonym: "regulation of DNA metabolism" EXACT []
+xref: MIPS_funcat:10.01.11
 is_a: GO:0019219 ! regulation of nucleobase-containing compound metabolic process
 is_a: GO:0060255 ! regulation of macromolecule metabolic process
 intersection_of: GO:0008150 ! biological_process
@@ -19692,6 +19895,7 @@ synonym: "cartilage element development" EXACT []
 synonym: "cartilage formation" EXACT []
 synonym: "cartilage organ development" EXACT []
 synonym: "chondrogenesis" EXACT []
+xref: MIPS_funcat:45.03.05.05
 xref: Wikipedia:Chondrogenesis
 is_a: GO:0048513 ! animal organ development
 relationship: part_of GO:0001501 ! skeletal system development
@@ -19961,6 +20165,7 @@ synonym: "chromosome organisation" EXACT []
 synonym: "chromosome organization and biogenesis" RELATED [GOC:mah]
 synonym: "maintenance of genome integrity" RELATED []
 synonym: "nuclear genome maintenance" RELATED []
+xref: MIPS_funcat:42.10.03
 is_a: GO:0006996 ! organelle organization
 
 [Term]
@@ -20307,6 +20512,7 @@ subset: goslim_pir
 synonym: "perception of stimulus" RELATED []
 synonym: "stimulus detection" EXACT []
 synonym: "stimulus sensing" RELATED []
+xref: MIPS_funcat:34.11
 is_a: GO:0050896 ! response to stimulus
 
 [Term]
@@ -20670,7 +20876,7 @@ id: GO:0051931
 name: regulation of sensory perception
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of sensory perception, the series of events required for an organism to receive a sensory stimulus, convert it to a molecular signal, and recognize and characterize the signal." [GOC:ai]
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0007600 ! sensory perception
 relationship: regulates GO:0007600 ! sensory perception
@@ -20875,7 +21081,7 @@ def: "Any process that modulates the frequency, rate or extent of transmission o
 synonym: "regulation of conduction of nerve impulse" EXACT [GOC:dph]
 is_a: GO:0010646 ! regulation of cell communication
 is_a: GO:0023051 ! regulation of signaling
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0019226 ! transmission of nerve impulse
 relationship: regulates GO:0019226 ! transmission of nerve impulse
@@ -20892,7 +21098,7 @@ synonym: "inhibition of transmission of nerve impulse" NARROW []
 synonym: "negative regulation of conduction of nerve impulse" EXACT [GOC:dph]
 is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0023057 ! negative regulation of signaling
-is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0051969 ! regulation of transmission of nerve impulse
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0019226 ! transmission of nerve impulse
@@ -20911,7 +21117,7 @@ synonym: "up-regulation of transmission of nerve impulse" EXACT []
 synonym: "upregulation of transmission of nerve impulse" EXACT []
 is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0023056 ! positive regulation of signaling
-is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0051969 ! regulation of transmission of nerve impulse
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0019226 ! transmission of nerve impulse
@@ -21017,14 +21223,18 @@ relationship: negatively_regulates GO:0048738 ! cardiac muscle tissue developmen
 id: GO:0055085
 name: transmembrane transport
 namespace: biological_process
+alt_id: GO:0090662
 def: "The process in which a solute is transported across a lipid bilayer, from one side of a membrane to the other." [GOC:dph, GOC:jid]
-comment: Transmembrane transport requires transport of a solute across a lipid bilayer. Note that transport through the nuclear pore complex is not transmembrane because the nuclear membrane is a double membrane and is not traversed. For transport through the nuclear pore, consider instead the term 'nucleocytoplasmic transport ; GO:0006913' and its children. Note also that this term is not intended for use in annotating lateral movement within membranes.
+comment: Transmembrane transport is the transport of a solute across a lipid bilayer. Note that transport through the nuclear pore complex is not transmembrane because the nuclear membrane is a double membrane and is not traversed. For transport through the nuclear pore, consider instead the term 'nucleocytoplasmic transport ; GO:0006913' and its children. Note also that this term is not intended for use in annotating lateral movement within membranes.
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_pombe
 subset: goslim_yeast
+synonym: "ATP hydrolysis coupled transmembrane transport" NARROW []
 synonym: "membrane transport" EXACT []
 is_a: GO:0006810 ! transport
+created_by: tanyaberardini
+creation_date: 2015-10-21T13:22:47Z
 
 [Term]
 id: GO:0060012
@@ -21102,6 +21312,18 @@ def: "A compound molecular function in which an effector function is controlled 
 subset: gocheck_do_not_manually_annotate
 subset: goslim_pir
 is_a: GO:0003674 ! molecular_function
+
+[Term]
+id: GO:0060090
+name: molecular adaptor activity
+namespace: molecular_function
+alt_id: GO:0032947
+def: "The binding activity of a molecule that brings together two or more molecules through a selective, non-covalent, often stoichiometric interaction, permitting those molecules to function in a coordinated way." [GOC:mtg_MIT_16mar07, GOC:vw]
+subset: goslim_pir
+synonym: "binding, bridging" EXACT []
+synonym: "protein complex scaffold activity" RELATED []
+synonym: "protein-containing complex scaffold activity" RELATED []
+is_a: GO:0005488 ! binding
 
 [Term]
 id: GO:0060092
@@ -21309,6 +21531,40 @@ is_a: GO:0045595 ! regulation of cell differentiation
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0048468 ! cell development
 relationship: regulates GO:0048468 ! cell development
+
+[Term]
+id: GO:0060285
+name: cilium-dependent cell motility
+namespace: biological_process
+alt_id: GO:0071974
+def: "Cell motility due to the motion of one or more eukaryotic cilia. A eukaryotic cilium is a specialized organelle that consists of a filiform extrusion of the cell surface. Each cilium is bounded by an extrusion of the cytoplasmic (plasma) membrane, and contains a regular longitudinal array of microtubules, anchored basally in a centriole." [GOC:cilia, GOC:dgh, GOC:dph, GOC:krc, GOC:mlg, GOC:mtg_cambridge_2013]
+comment: Note that we deem eukaryotic cilia and microtubule-based flagella to be equivalent.
+synonym: "ciliary cell motility" RELATED []
+synonym: "cilium cell motility" EXACT []
+synonym: "microtubule-based flagellar cell motility" EXACT []
+is_a: GO:0001539 ! cilium or flagellum-dependent cell motility
+relationship: has_part GO:0003341 ! cilium movement
+
+[Term]
+id: GO:0060294
+name: cilium movement involved in cell motility
+namespace: biological_process
+def: "Movement of cilia mediated by motor proteins that contributes to the movement of a cell." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0003341 ! cilium movement
+intersection_of: GO:0003341 ! cilium movement
+intersection_of: part_of GO:0048870 ! cell motility
+relationship: part_of GO:0060285 ! cilium-dependent cell motility
+
+[Term]
+id: GO:0060295
+name: regulation of cilium movement involved in cell motility
+namespace: biological_process
+def: "Any process that modulates the rate frequency or extent of cilium movement involved in ciliary motility." [GOC:BHF, GOC:dph, GOC:tb]
+is_a: GO:0003352 ! regulation of cilium movement
+is_a: GO:1902019 ! regulation of cilium-dependent cell motility
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0060294 ! cilium movement involved in cell motility
+relationship: regulates GO:0060294 ! cilium movement involved in cell motility
 
 [Term]
 id: GO:0060312
@@ -21769,7 +22025,7 @@ name: acetylcholine secretion
 namespace: biological_process
 def: "The regulated release of acetylcholine by a cell." [GOC:dph]
 is_a: GO:0015870 ! acetylcholine transport
-is_a: GO:0046879 ! hormone secretion
+is_a: GO:0032940 ! secretion by cell
 created_by: dph
 creation_date: 2013-06-21T15:40:39Z
 
@@ -22008,6 +22264,7 @@ def: "Any process that modulates the frequency, rate or extent of a molecular fu
 subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_pir
+subset: goslim_plant
 synonym: "regulation of a molecular function" EXACT []
 is_a: GO:0065007 ! biological regulation
 intersection_of: GO:0008150 ! biological_process
@@ -22597,6 +22854,17 @@ intersection_of: positively_regulates GO:0071674 ! mononuclear cell migration
 relationship: positively_regulates GO:0071674 ! mononuclear cell migration
 created_by: midori
 creation_date: 2010-02-16T02:15:29Z
+
+[Term]
+id: GO:0071692
+name: protein localization to extracellular region
+namespace: biological_process
+def: "Any process in which a protein is transported from one specific location in the extracellular region to another, or maintained in a specific extracellular location." [GOC:mah]
+synonym: "protein localisation in extracellular region" EXACT [GOC:mah]
+synonym: "protein localization in extracellular region" EXACT [GOC:curators]
+is_a: GO:0008104 ! protein localization
+created_by: midori
+creation_date: 2010-02-25T04:00:13Z
 
 [Term]
 id: GO:0071702
@@ -23238,7 +23506,7 @@ synonym: "negative regulation of EPSP" RELATED []
 synonym: "negative regulation of excitatory post-synaptic membrane potential" EXACT []
 synonym: "reduction of excitatory postsynaptic membrane potential" EXACT [GOC:bf]
 is_a: GO:0009968 ! negative regulation of signal transduction
-is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0050805 ! negative regulation of synaptic transmission
 is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
 intersection_of: GO:0050789 ! regulation of biological process
@@ -23309,7 +23577,7 @@ def: "Any process that activates or increases the frequency, rate or extent of i
 synonym: "positive regulation of inhibitory post-synaptic membrane potential" EXACT []
 synonym: "positive regulation of IPSP" EXACT []
 is_a: GO:0009967 ! positive regulation of signal transduction
-is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0050806 ! positive regulation of synaptic transmission
 is_a: GO:0098828 ! modulation of inhibitory postsynaptic potential
 intersection_of: GO:0050789 ! regulation of biological process
@@ -23530,7 +23798,9 @@ relationship: part_of GO:0098609 ! cell-cell adhesion
 id: GO:0098656
 name: anion transmembrane transport
 namespace: biological_process
+alt_id: GO:0099133
 def: "The process in which an anion is transported across a membrane." [GOC:dos, GOC:vw]
+synonym: "ATP hydrolysis coupled anion transmembrane transport" NARROW []
 is_a: GO:0006820 ! anion transport
 is_a: GO:0034220 ! ion transmembrane transport
 
@@ -23538,8 +23808,8 @@ is_a: GO:0034220 ! ion transmembrane transport
 id: GO:0098657
 name: import into cell
 namespace: biological_process
-def: "The directed movement of some substance from outside of a cell into the cytoplasmic compartment. This may occur via transport across the plasma membrane or via endocytosis." [GOC:dos]
-synonym: "uptake" EXACT []
+def: "The directed movement of some substance from outside of a cell into a cell. This may occur via transport across the plasma membrane or via endocytosis." [GOC:dos]
+synonym: "uptake" BROAD []
 is_a: GO:0006810 ! transport
 
 [Term]
@@ -23643,7 +23913,7 @@ name: modulation of excitatory postsynaptic potential
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of excitatory postsynaptic potential (EPSP). EPSP is a process that leads to a temporary increase in postsynaptic potential due to the flow of positively charged ions into the postsynaptic cell. The flow of ions that causes an EPSP is an excitatory postsynaptic current (EPSC) and makes it easier for the neuron to fire an action potential." [GOC:dos]
 is_a: GO:0009966 ! regulation of signal transduction
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 is_a: GO:0042391 ! regulation of membrane potential
 is_a: GO:0050804 ! modulation of chemical synaptic transmission
 intersection_of: GO:0050789 ! regulation of biological process
@@ -23657,7 +23927,7 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of inhibitory postsynaptic potential (IPSP). IPSP is a temporary decrease in postsynaptic membrane potential due to the flow of negatively charged ions into the postsynaptic cell. The flow of ions that causes an IPSP is an inhibitory postsynaptic current (IPSC) and makes it more difficult for the neuron to fire an action potential." [GOC:dos]
 synonym: "regulation of inhibitory postsynaptic potential" EXACT []
 is_a: GO:0009966 ! regulation of signal transduction
-is_a: GO:0031644 ! regulation of neurological system process
+is_a: GO:0031644 ! regulation of nervous system process
 is_a: GO:0042391 ! regulation of membrane potential
 is_a: GO:0050804 ! modulation of chemical synaptic transmission
 intersection_of: GO:0050789 ! regulation of biological process
@@ -24347,6 +24617,28 @@ created_by: pg
 creation_date: 2018-07-15T07:38:27Z
 
 [Term]
+id: GO:0140352
+name: export from cell
+namespace: biological_process
+def: "The directed movement of some substance from a cell, into the extracellular region. This may occur via transport across the plasma membrane or via exocytosis." [GOC:pg]
+synonym: "efflux" BROAD []
+is_a: GO:0006810 ! transport
+is_a: GO:0009987 ! cellular process
+created_by: pg
+creation_date: 2019-05-22T11:20:45Z
+
+[Term]
+id: GO:0140353
+name: lipid export from cell
+namespace: biological_process
+def: "The directed movement of a lipid from a cell, into the extracellular region." [GOC:pg]
+synonym: "lipid efflux" BROAD []
+is_a: GO:0006869 ! lipid transport
+is_a: GO:0140352 ! export from cell
+created_by: pg
+creation_date: 2019-05-22T11:33:07Z
+
+[Term]
 id: GO:1900015
 name: regulation of cytokine production involved in inflammatory response
 namespace: biological_process
@@ -24832,7 +25124,7 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of flagellated sperm motility." [GOC:cilia, GOC:krc, GOC:TermGenie]
 synonym: "regulation of sperm motility" BROAD []
 synonym: "regulation of sperm movement" BROAD [GOC:TermGenie]
-is_a: GO:2000145 ! regulation of cell motility
+is_a: GO:1902019 ! regulation of cilium-dependent cell motility
 is_a: GO:2000241 ! regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0030317 ! flagellated sperm motility
@@ -24856,7 +25148,7 @@ synonym: "inhibition of sperm movement" BROAD [GOC:TermGenie]
 synonym: "negative regulation of sperm motility" BROAD []
 synonym: "negative regulation of sperm movement" BROAD [GOC:TermGenie]
 is_a: GO:1901317 ! regulation of flagellated sperm motility
-is_a: GO:2000146 ! negative regulation of cell motility
+is_a: GO:1902020 ! negative regulation of cilium-dependent cell motility
 is_a: GO:2000242 ! negative regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0030317 ! flagellated sperm motility
@@ -25212,6 +25504,39 @@ created_by: dph
 creation_date: 2013-03-26T18:10:56Z
 
 [Term]
+id: GO:1902019
+name: regulation of cilium-dependent cell motility
+namespace: biological_process
+def: "Any process that modulates the frequency, rate or extent of cilium-dependent cell motility." [GOC:cilia, GOC:jl, GOC:TermGenie]
+synonym: "regulation of ciliary cell motility" RELATED []
+synonym: "regulation of cilium cell motility" EXACT []
+is_a: GO:2000145 ! regulation of cell motility
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0060285 ! cilium-dependent cell motility
+relationship: regulates GO:0060285 ! cilium-dependent cell motility
+created_by: jl
+creation_date: 2013-03-27T14:42:38Z
+
+[Term]
+id: GO:1902020
+name: negative regulation of cilium-dependent cell motility
+namespace: biological_process
+def: "Any process that stops, prevents or reduces the frequency, rate or extent of cilium-dependent cell motility." [GOC:cilia, GOC:jl, GOC:TermGenie]
+synonym: "down regulation of ciliary cell motility" EXACT [GOC:TermGenie]
+synonym: "down-regulation of ciliary cell motility" EXACT [GOC:TermGenie]
+synonym: "downregulation of ciliary cell motility" EXACT [GOC:TermGenie]
+synonym: "inhibition of ciliary cell motility" NARROW [GOC:TermGenie]
+synonym: "negative regulation of ciliary cell motility" RELATED []
+synonym: "negative regulation of cilium cell motility" EXACT []
+is_a: GO:1902019 ! regulation of cilium-dependent cell motility
+is_a: GO:2000146 ! negative regulation of cell motility
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0060285 ! cilium-dependent cell motility
+relationship: negatively_regulates GO:0060285 ! cilium-dependent cell motility
+created_by: jl
+creation_date: 2013-03-27T14:42:42Z
+
+[Term]
 id: GO:1902093
 name: positive regulation of flagellated sperm motility
 namespace: biological_process
@@ -25227,7 +25552,7 @@ synonym: "up-regulation of sperm movement" BROAD [GOC:TermGenie]
 synonym: "upregulation of sperm motility" BROAD [GOC:TermGenie]
 synonym: "upregulation of sperm movement" BROAD [GOC:TermGenie]
 is_a: GO:1901317 ! regulation of flagellated sperm motility
-is_a: GO:2000147 ! positive regulation of cell motility
+is_a: GO:2000155 ! positive regulation of cilium-dependent cell motility
 is_a: GO:2000243 ! positive regulation of reproductive process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0030317 ! flagellated sperm motility
@@ -27024,8 +27349,8 @@ synonym: "inhibition of respiratory gaseous exchange" NARROW [GOC:TermGenie]
 is_a: GO:0043576 ! regulation of respiratory gaseous exchange
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0007585 ! respiratory gaseous exchange
-relationship: negatively_regulates GO:0007585 ! respiratory gaseous exchange
+intersection_of: negatively_regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
+relationship: negatively_regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
 created_by: sl
 creation_date: 2015-02-17T20:26:24Z
 
@@ -27041,8 +27366,8 @@ synonym: "upregulation of respiratory gaseous exchange" EXACT [GOC:TermGenie]
 is_a: GO:0043576 ! regulation of respiratory gaseous exchange
 is_a: GO:0051240 ! positive regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0007585 ! respiratory gaseous exchange
-relationship: positively_regulates GO:0007585 ! respiratory gaseous exchange
+intersection_of: positively_regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
+relationship: positively_regulates GO:0007585 ! respiratory gaseous exchange by respiratory system
 created_by: sl
 creation_date: 2015-02-17T20:26:35Z
 
@@ -28399,6 +28724,22 @@ created_by: pr
 creation_date: 2016-08-04T14:49:43Z
 
 [Term]
+id: GO:1905419
+name: sperm flagellum movement involved in flagellated sperm motility
+namespace: biological_process
+alt_id: GO:0097724
+def: "The directed, self-propelled movement of a cilium (aka flagellum) that contributes to the movement of a flagellated sperm." [GO_REF:0000060, GOC:cilia, GOC:krc, GOC:TermGenie, PMID:26680031]
+synonym: "sperm flagellum movement" EXACT [GOC:cilia, GOC:krc]
+synonym: "sperm flagellum movement involved in flagellated sperm movement" EXACT [GOC:TermGenie]
+is_a: GO:0022414 ! reproductive process
+is_a: GO:0060294 ! cilium movement involved in cell motility
+intersection_of: GO:0003341 ! cilium movement
+intersection_of: part_of GO:0030317 ! flagellated sperm motility
+relationship: part_of GO:0030317 ! flagellated sperm motility
+created_by: krc
+creation_date: 2016-09-01T17:52:39Z
+
+[Term]
 id: GO:1905516
 name: positive regulation of fertilization
 namespace: biological_process
@@ -28479,7 +28820,7 @@ synonym: "negative regulation of perception of touch, sensory transduction of me
 synonym: "negative regulation of sensory detection of mechanical stimulus during perception of touch" EXACT [GOC:TermGenie]
 synonym: "negative regulation of sensory transduction of mechanical stimulus during perception of touch" EXACT [GOC:TermGenie]
 synonym: "negative regulation of tactition, sensory detection of mechanical stimulus" EXACT [GOC:TermGenie]
-is_a: GO:0031645 ! negative regulation of neurological system process
+is_a: GO:0031645 ! negative regulation of nervous system process
 is_a: GO:0032102 ! negative regulation of response to external stimulus
 is_a: GO:1905787 ! regulation of detection of mechanical stimulus involved in sensory perception of touch
 intersection_of: GO:0008150 ! biological_process
@@ -28527,7 +28868,7 @@ synonym: "upregulation of perception of touch, sensory transduction of mechanica
 synonym: "upregulation of sensory detection of mechanical stimulus during perception of touch" EXACT [GOC:TermGenie]
 synonym: "upregulation of sensory transduction of mechanical stimulus during perception of touch" EXACT [GOC:TermGenie]
 synonym: "upregulation of tactition, sensory detection of mechanical stimulus" EXACT [GOC:TermGenie]
-is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0032103 ! positive regulation of response to external stimulus
 is_a: GO:1905787 ! regulation of detection of mechanical stimulus involved in sensory perception of touch
 intersection_of: GO:0008150 ! biological_process
@@ -28908,6 +29249,20 @@ created_by: midori
 creation_date: 2010-10-01T09:41:30Z
 
 [Term]
+id: GO:2000155
+name: positive regulation of cilium-dependent cell motility
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of cilium-dependent cell motility." [GOC:cilia, GOC:jl]
+synonym: "positive regulation of ciliary cell motility" RELATED []
+is_a: GO:1902019 ! regulation of cilium-dependent cell motility
+is_a: GO:2000147 ! positive regulation of cell motility
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0060285 ! cilium-dependent cell motility
+relationship: positively_regulates GO:0060285 ! cilium-dependent cell motility
+created_by: midori
+creation_date: 2010-10-04T12:41:05Z
+
+[Term]
 id: GO:2000181
 name: negative regulation of blood vessel morphogenesis
 namespace: biological_process
@@ -29128,7 +29483,7 @@ def: "Any process that enhances the establishment or increases the extent of the
 synonym: "positive regulation of EPSP" RELATED [GOC:bf, GOC:obol]
 synonym: "positive regulation of excitatory post-synaptic membrane potential" EXACT []
 is_a: GO:0009967 ! positive regulation of signal transduction
-is_a: GO:0031646 ! positive regulation of neurological system process
+is_a: GO:0031646 ! positive regulation of nervous system process
 is_a: GO:0050806 ! positive regulation of synaptic transmission
 is_a: GO:0098815 ! modulation of excitatory postsynaptic potential
 intersection_of: GO:0050789 ! regulation of biological process
@@ -29810,7 +30165,6 @@ id: occurs_in
 name: occurs in
 namespace: external
 xref: BFO:0000066
-holds_over_chain: part_of occurs_in
 transitive_over: part_of ! part of
 
 [Typedef]
