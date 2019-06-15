@@ -1,12 +1,18 @@
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix obo: <http://purl.obolibrary.org/obo/>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 
 SELECT DISTINCT ?cls WHERE
 {
-  {?cls a owl:ObjectProperty .}
+	{
+	?x rdf:type owl:Restriction ;
+		owl:onProperty ?cls;
+		owl:someValuesFrom ?y .
+	}
   UNION
   {?x <http://www.geneontology.org/formats/oboInOwl#inSubset> ?cls}
   UNION
   {?x <http://www.geneontology.org/formats/oboInOwl#hasSynonymType> ?cls}
-  FILTER (!isBlank(?cls))
+  FILTER (isIRI(?cls))
 }
