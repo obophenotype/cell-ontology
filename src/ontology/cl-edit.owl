@@ -9,13 +9,13 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
-Import(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>)
-Import(<http://purl.obolibrary.org/obo/cl/imports/ro_import.owl>)
-Import(<http://purl.obolibrary.org/obo/cl/imports/ncbitaxon_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/chebi_import.owl>)
-Import(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>)
-Import(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/go_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/ncbitaxon_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/ro_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>)
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Alexander Diehl")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Ceri van Slyke")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Chris Mungall")
@@ -1386,7 +1386,6 @@ Declaration(Class(obo:CL_0002310))
 Declaration(Class(obo:CL_0002311))
 Declaration(Class(obo:CL_0002312))
 Declaration(Class(obo:CL_0002313))
-Declaration(Class(obo:CL_0002314))
 Declaration(Class(obo:CL_0002315))
 Declaration(Class(obo:CL_0002316))
 Declaration(Class(obo:CL_0002317))
@@ -2353,6 +2352,12 @@ Declaration(Class(obo:CL_2000094))
 Declaration(Class(obo:CL_2000095))
 Declaration(Class(obo:CL_2000096))
 Declaration(Class(obo:CL_2000097))
+Declaration(Class(obo:CL_3000000))
+Declaration(Class(obo:CL_3000001))
+Declaration(Class(obo:CL_3000002))
+Declaration(Class(obo:CL_3000003))
+Declaration(Class(obo:CL_3000004))
+Declaration(Class(obo:CL_3000005))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -2785,7 +2790,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000019 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000019 "sperm"^^xsd:string)
 EquivalentClasses(obo:CL_0000019 ObjectIntersectionOf(obo:CL_0000408 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030317) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0048240)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000019 obo:CL_0000408)
-SubClassOf(obo:CL_0000019 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929))
+SubClassOf(obo:CL_0000019 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 SubClassOf(obo:CL_0000019 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000018))
 
 # Class: obo:CL_0000020 (spermatogonium)
@@ -3313,7 +3318,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000064 "VHOG:0001532"^^xsd:string
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000064 "XAO:0000031"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000064 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000064 "ciliated cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000064 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929)))
+EquivalentClasses(obo:CL_0000064 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929)))
 
 # Class: obo:CL_0000065 (ependymal cell)
 
@@ -3324,7 +3329,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000065 "ependymocyte"^^xsd:
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000065 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000065 "ependymal cell"^^xsd:string)
 SubClassOf(obo:CL_0000065 obo:CL_0000710)
-SubClassOf(obo:CL_0000065 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929))
+SubClassOf(obo:CL_0000065 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 
 # Class: obo:CL_0000066 (epithelial cell)
 
@@ -3344,11 +3349,11 @@ DisjointClasses(obo:CL_0000066 obo:CL_0000738)
 
 # Class: obo:CL_0000067 (ciliated epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CL_0000067 "An epithelial cell that has a cillia."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CL_0000067 "An epithelial cell that has a cilia."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000067 "FMA:70605"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000067 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000067 "ciliated epithelial cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000067 ObjectIntersectionOf(obo:CL_0000075 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929)))
+EquivalentClasses(obo:CL_0000067 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929)))
 
 # Class: obo:CL_0000068 (duct epithelial cell)
 
@@ -3754,8 +3759,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000108 "FMA:84796"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000108 "WBbt:0006840"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000108 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000108 "cholinergic neuron"^^xsd:string)
-EquivalentClasses(obo:CL_0000108 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014055))
-SubClassOf(obo:CL_0000108 obo:CL_0000540)
+EquivalentClasses(obo:CL_0000108 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014055)))
 
 # Class: obo:CL_0000109 (adrenergic neuron)
 
@@ -4255,15 +4259,16 @@ AnnotationAssertion(rdfs:label obo:CL_0000157 "surfactant secreting cell"^^xsd:s
 EquivalentClasses(obo:CL_0000157 ObjectIntersectionOf(obo:CL_0000151 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000157 obo:CL_0000151)
 
-# Class: obo:CL_0000158 (Clara cell)
+# Class: obo:CL_0000158 (club cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:12107102"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:7905712"^^xsd:string) obo:IAO_0000115 obo:CL_0000158 "Epithelial progenitor cell of the lung. Clara cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Clara cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1183/09031936.00146609"^^xsd:string) Annotation(oboInOwl:hasDbXref "DOI:https://doi.org/10.1378/chest.12-2762"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:28128362"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:7905712"^^xsd:string) obo:IAO_0000115 obo:CL_0000158 "Epithelial progenitor cell of the lung. Club cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Club cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000158 "BTO:0004811"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000158 "FMA:14119"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000158 "Clara cell of bronchiole"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000158 "Clara cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000158 "bronchiolar non-ciliated cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000158 "club cell of bronchiole"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000158 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000158 "Clara cell"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000158 "club cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000158 ObjectIntersectionOf(obo:CL_0002328 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001789) ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005902) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000158 obo:CL_0002328)
 
@@ -5055,6 +5060,7 @@ SubClassOf(obo:CL_0000238 obo:CL_0000240)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000239 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000239 "brush border epithelial cell"^^xsd:string)
 SubClassOf(obo:CL_0000239 obo:CL_0000075)
+SubClassOf(obo:CL_0000239 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 
 # Class: obo:CL_0000240 (stratified squamous epithelial cell)
 
@@ -8865,7 +8871,7 @@ SubClassOf(obo:CL_0000679 obo:CL_0000540)
 
 # Class: obo:CL_0000680 (muscle precursor cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000680 "A non-terminally differentiated cell that is capable of developing into a muscle cell.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) obo:IAO_0000115 obo:CL_0000680 "A non-terminally differentiated cell that is capable of developing into a muscle cell.")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000680 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000680 "muscle precursor cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000680 ObjectIntersectionOf(obo:CL_0011115 ObjectSomeValuesFrom(obo:RO_0002203 obo:CL_0000187)))
@@ -10302,8 +10308,8 @@ DisjointClasses(obo:CL_0000817 obo:CL_0000826)
 
 # Class: obo:CL_0000818 (transitional stage B cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781735149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:12810111"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0000818 "An immature B cell of an intermediate stage between the pre-B cell stage and the mature naive stage with the phenotype surface IgM-positive and CD19-positive, and are subject to the process of B cell selection. A transitional B cell migrates from the bone marrow into the peripheral circulation, and then to the spleen."^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0000818 "transitional B cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781735149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:12810111"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0000818 "An immature B cell of an intermediate stage between the pre-B cell stage and the mature naive stage with the phenotype surface IgM-positive and CD19-positive, and are subject to the process of B cell selection. A transitional B cell migrates from the bone marrow into the peripheral circulation, and then to the spleen."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0000818 "transitional B cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000818 "transitional stage B lymphocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000818 "transitional stage B-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000818 "transitional stage B-lymphocyte"^^xsd:string)
@@ -10614,7 +10620,7 @@ SubClassOf(obo:CL_0000840 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0001029))
 # Class: obo:CL_0000841 (mature conventional dendritic cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9521319"^^xsd:string) obo:IAO_0000115 obo:CL_0000841 "A mature cell of the conventional dendritic cell lineage, characterized by a high capacity for antigen presentation and typically found in a lymph node."^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") oboInOwl:hasBroadSynonym obo:CL_0000841 "mature dendritic cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) oboInOwl:hasBroadSynonym obo:CL_0000841 "mature dendritic cell")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000841 "FMA:83038"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CL_0000841 "mature myeloid dendritic cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000841 "cell"^^xsd:string)
@@ -10698,8 +10704,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000847 "ciliated olfactory 
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000847 "ciliated sensory neuron"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000847 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000847 "ciliated olfactory receptor neuron"^^xsd:string)
-SubClassOf(obo:CL_0000847 obo:CL_0000207)
-SubClassOf(obo:CL_0000847 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929))
+EquivalentClasses(obo:CL_0000847 ObjectIntersectionOf(obo:CL_0000207 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929)))
 
 # Class: obo:CL_0000848 (microvillous olfactory receptor neuron)
 
@@ -10806,7 +10811,7 @@ EquivalentClasses(obo:CL_0000858 ObjectIntersectionOf(obo:CL_0000056 ObjectSomeV
 
 # Class: obo:CL_0000860 (classical monocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:16322748"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:18303997"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20870168"^^xsd:string) obo:IAO_0000115 obo:CL_0000860 "A monocyte that responds rapidly to microbial stimuli by secreting cytokines and antimicrobial factors and which is characterized by high expression of CCR2 in both rodents and humans, negative for the lineage markers CD3, CD19, and CD20, and of larger size than non-classical monocytes."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:16322748"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:18303997"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20870168"^^xsd:string) obo:IAO_0000115 obo:CL_0000860 "A monocyte that responds rapidly to microbial stimuli by secreting cytokines and antimicrobial factors and which is characterized by high expression of CCR2 in both rodents and humans, negative for the lineage markers CD3, CD19, and CD20, and of larger size than non-classical monocytes."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000860 "inflammatory monocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000860 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000860 "Markers: CCR2+CXCCR1<low> (human, mouse, rat)."^^xsd:string)
@@ -10949,7 +10954,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000874 ob
 
 # Class: obo:CL_0000875 (non-classical monocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:16322748"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:18303997"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20870168"^^xsd:string) obo:IAO_0000115 obo:CL_0000875 "A type of monocyte characterized by low expression of CCR2, low responsiveness to monocyte chemoattractant CCL2/MCP1, low phagocytic activity, and decrease size relative to classical monocytes, but increased co-stimulatory activity. May also play a role in tissue repair."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:16322748"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:18303997"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20870168"^^xsd:string) obo:IAO_0000115 obo:CL_0000875 "A type of monocyte characterized by low expression of CCR2, low responsiveness to monocyte chemoattractant CCL2/MCP1, low phagocytic activity, and decrease size relative to classical monocytes, but increased co-stimulatory activity. May also play a role in tissue repair."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000875 "patrolling monocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000875 "resident monocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000875 "cell"^^xsd:string)
@@ -11137,7 +11142,7 @@ SubClassOf(obo:CL_0000894 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002425))
 
 # Class: obo:CL_0000895 (naive thymus-derived CD4-positive, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19100699"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) Annotation(oboInOwl:hasDbXref "http://www.immgen.org/index_content.html"^^xsd:string) obo:IAO_0000115 obo:CL_0000895 "An antigen inexperienced CD4-positive, alpha-beta T cell with the phenotype CCR7-positive, CD127-positive and CD62L-positive. This cell type develops in the thymus. This cell type is also described as being CD25-negative, CD62L-high, and CD44-low."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19100699"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") Annotation(oboInOwl:hasDbXref "http://www.immgen.org/index_content.html"^^xsd:string) obo:IAO_0000115 obo:CL_0000895 "An antigen inexperienced CD4-positive, alpha-beta T cell with the phenotype CCR7-positive, CD127-positive and CD62L-positive. This cell type develops in the thymus. This cell type is also described as being CD25-negative, CD62L-high, and CD44-low."^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0000895 "naive CD4+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000895 "T.4Nve.Sp"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0000895 "Th0"^^xsd:string)
@@ -11269,8 +11274,8 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000903 ob
 
 # Class: obo:CL_0000904 (central memory CD4-positive, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:pam"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0000904 "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative."^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasBroadSynonym obo:CL_0000904 "central memory CD4+ T cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:pam"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0000904 "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-positive, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0000904 "central memory CD4+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000904 "central CD4-positive, alpha-beta memory T cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000904 "central CD4-positive, alpha-beta memory T lymphocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000904 "central CD4-positive, alpha-beta memory T-cell"^^xsd:string)
@@ -11286,8 +11291,8 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000904 ob
 
 # Class: obo:CL_0000905 (effector memory CD4-positive, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:pam"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0000905 "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative."^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasBroadSynonym obo:CL_0000905 "effector memory CD4+ T cell"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:pam"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0000905 "CD4-positive, alpha-beta memory T cell with the phenotype CCR7-negative, CD127-positive, CD45RA-negative, CD45RO-positive, and CD25-negative."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0000905 "effector memory CD4+ T cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000905 "effector CD4-positive, alpha-beta memory T cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000905 "effector CD4-positive, alpha-beta memory T lymphocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000905 "effector CD4-positive, alpha-beta memory T-cell"^^xsd:string)
@@ -12123,7 +12128,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000969 ob
 
 # Class: obo:CL_0000970 (unswitched memory B cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:rhs"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781765196"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20933013"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0000970 "An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive, IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:rhs"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781765196"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20933013"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0000970 "An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive, IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative."^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0000970 "IgD+ memory B cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000970 "unswitched memory B lymphocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000970 "unswitched memory B-cell"^^xsd:string)
@@ -12153,7 +12158,7 @@ SubClassOf(obo:CL_0000971 obo:CL_0000787)
 
 # Class: obo:CL_0000972 (class switched memory B cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:rhs"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781765196"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20933013"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9295047") obo:IAO_0000115 obo:CL_0000972 "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are CD27-positive and have either IgG, IgE, or IgA on the cell surface."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:rhs"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000031"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781765196"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20933013"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9295047") obo:IAO_0000115 obo:CL_0000972 "A class switched memory B cell is a memory B cell that has undergone Ig class switching and therefore is IgM-negative on the cell surface. These cells are CD27-positive and have either IgG, IgE, or IgA on the cell surface."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000972 "class switched memory B lymphocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000972 "class switched memory B-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000972 "class switched memory B-lymphocyte"^^xsd:string)
@@ -12863,7 +12868,7 @@ SubClassOf(obo:CL_0001042 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000896))
 
 # Class: obo:CL_0001043 (activated CD4-positive, alpha-beta T cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001043 "A recently activated CD4-positive, alpha-beta T cell with the phenotype HLA-DRA-positive, CD38-positive, CD69-positive, CD62L-negative, CD127-negative, and CD25-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001043 "A recently activated CD4-positive, alpha-beta T cell with the phenotype HLA-DRA-positive, CD38-positive, CD69-positive, CD62L-negative, CD127-negative, and CD25-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001043 "activated CD4+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001043 "activated CD4-positive, alpha-beta T lymphocyte, human")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001043 "activated CD4-positive, alpha-beta T-cell, human")
@@ -12876,8 +12881,8 @@ SubClassOf(obo:CL_0001043 obo:CL_0000896)
 
 # Class: obo:CL_0001044 (effector CD4-positive, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0001044 "A CD4-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive."^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasBroadSynonym obo:CL_0001044 "effector CD4+ T cell"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001044 "A CD4-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001044 "effector CD4+ T cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001044 "effector CD4-positive, alpha-beta T lymphocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001044 "effector CD4-positive, alpha-beta T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001044 "effector CD4-positive, alpha-beta T-lymphocyte"^^xsd:string)
@@ -12889,7 +12894,7 @@ SubClassOf(obo:CL_0001044 obo:CL_0000911)
 
 # Class: obo:CL_0001045 (naive CCR4-positive regulatory T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001045 "A naive regulatory T cell with the phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001045 "A naive regulatory T cell with the phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0001045 "naive CCR4+ Treg")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001045 "naive CCR4-positive regulatory T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001045 "naive CCR4-positive regulatory T-cell")
@@ -12902,7 +12907,7 @@ SubClassOf(obo:CL_0001045 obo:CL_0002677)
 
 # Class: obo:CL_0001046 (memory CCR4-positive regulatory T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001046 "A memory regulatory T cell with phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001046 "A memory regulatory T cell with phenotype CD4-positive, CD25-positive, CD127lo, CCR4-positive, and CD45RO-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0001046 "memory CCR4+ Treg")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001046 "memory CCR4-positive regulatory T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001046 "memory CCR4-positive regulatory T-cell")
@@ -12915,7 +12920,7 @@ SubClassOf(obo:CL_0001046 obo:CL_0002678)
 
 # Class: obo:CL_0001047 (CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001047 "A CD4-positive, CD25-positive, alpha-beta regulatory T cell with the additional phenotype CCR4-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001047 "A CD4-positive, CD25-positive, alpha-beta regulatory T cell with the additional phenotype CCR4-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0001047 "CCR+ Treg")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001047 "CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001047 "CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-cell")
@@ -12928,7 +12933,7 @@ SubClassOf(obo:CL_0001047 obo:CL_0000792)
 
 # Class: obo:CL_0001048 (activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001048 "A CD4-positive, CD25-positive, CCR4-positive, alpha-beta T regulatory cell with the phenotype HLA-DRA-positive, indicating recent activation.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001048 "A CD4-positive, CD25-positive, CCR4-positive, alpha-beta T regulatory cell with the phenotype HLA-DRA-positive, indicating recent activation.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0001048 "activated CCR4+ Treg")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001048 "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001048 "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-cell")
@@ -12941,7 +12946,7 @@ SubClassOf(obo:CL_0001048 obo:CL_0001047)
 
 # Class: obo:CL_0001049 (activated CD8-positive, alpha-beta T cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001049 "A recently activated CD8-positive, alpha-beta T cell with the phenotype HLA-DRA-positive, CD38-positive, CD69-positive, CD62L-negative, CD127-negative, CCR7-negative, and CD25-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001049 "A recently activated CD8-positive, alpha-beta T cell with the phenotype HLA-DRA-positive, CD38-positive, CD69-positive, CD62L-negative, CD127-negative, CCR7-negative, and CD25-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001049 "activated CD8+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001049 "activated CD8-positive, alpha-beta T lymphocyte, human")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001049 "activated CD8-positive, alpha-beta T-cell, human")
@@ -12954,7 +12959,7 @@ SubClassOf(obo:CL_0001049 obo:CL_0000906)
 
 # Class: obo:CL_0001050 (effector CD8-positive, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001050 "A CD8-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001050 "A CD8-positive, alpha-beta T cell with the phenotype CCR7-negative, CD45RA-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001050 "effector CD8+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001050 "effector CD8-positive, alpha-beta T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001050 "effector CD8-positive, alpha-beta T-cell")
@@ -12967,7 +12972,7 @@ SubClassOf(obo:CL_0001050 obo:CL_0000911)
 
 # Class: obo:CL_0001051 (CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001051 "A CD4-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001051 "A CD4-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001051 "non-Th1/Th17 CD4+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001051 "CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001051 "CD4-positive, CXCR3-negative, CCR6-negative, alpha-beta T-cell")
@@ -12980,7 +12985,7 @@ SubClassOf(obo:CL_0001051 obo:CL_0000624)
 
 # Class: obo:CL_0001052 (CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001052 "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001052 "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001052 "non-Tc1/Tc17 CD8+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001052 "CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T lymphocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001052 "CD8-positive, CXCR3-negative, CCR6-negative, alpha-beta T-cell")
@@ -12993,8 +12998,8 @@ SubClassOf(obo:CL_0001052 obo:CL_0000625)
 
 # Class: obo:CL_0001053 (IgD-negative memory B cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0001053 "A memory B cell that lacks expression of surface IgD.")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0001053 "IgD- memory B cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001053 "A memory B cell that lacks expression of surface IgD.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0001053 "IgD- memory B cell")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001053 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001053 "This cell type is compatible with the HIPC Lyoplate markers for 'IgD- memory B cell'.  The majority of these cells are class-switched, though some are IgM-positive.")
 AnnotationAssertion(rdfs:label obo:CL_0001053 "IgD-negative memory B cell")
@@ -13003,8 +13008,8 @@ SubClassOf(obo:CL_0001053 obo:CL_0000787)
 
 # Class: obo:CL_0001054 (CD14-positive monocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0001054 "A monocyte that expresses CD14 and is negative for the lineage markers CD3, CD19, and CD20.")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasNarrowSynonym obo:CL_0001054 "monocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001054 "A monocyte that expresses CD14 and is negative for the lineage markers CD3, CD19, and CD20.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasNarrowSynonym obo:CL_0001054 "monocyte")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001054 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001054 "This cell type is compatible with the HIPC Lyoplate markers for 'monocyte'. Note that while CD14 is considered a reliable marker for human monocytes, it is only expressed on approximately 85% of mouse monocytes.")
 AnnotationAssertion(rdfs:label obo:CL_0001054 "CD14-positive monocyte")
@@ -13013,7 +13018,7 @@ SubClassOf(obo:CL_0001054 obo:CL_0000576)
 
 # Class: obo:CL_0001055 (CD14-positive, CD16-low monocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:20628149") obo:IAO_0000115 obo:CL_0001055 "An intermediate monocyte that is CD14-positive and with low amounts of CD16.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) obo:IAO_0000115 obo:CL_0001055 "An intermediate monocyte that is CD14-positive and with low amounts of CD16.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001055 "intermediate monocyte, human")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001055 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001055 "Definition is valid for human intermediate monocytes.")
@@ -13023,7 +13028,7 @@ SubClassOf(obo:CL_0001055 obo:CL_0002393)
 
 # Class: obo:CL_0001056 (dendritic cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001056 "A dendritic cell with the phenotype HLA-DRA-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001056 "A dendritic cell with the phenotype HLA-DRA-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001056 "dendritic cell")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001056 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001056 "This cell type is compatible with the HIPC Lyoplate markers for 'dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human dendritic cells.")
@@ -13033,7 +13038,7 @@ SubClassOf(obo:CL_0001056 obo:CL_0000451)
 
 # Class: obo:CL_0001057 (myeloid dendritic cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001057 "A myeloid dendritic cell with the phenotype HLA-DRA-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001057 "A myeloid dendritic cell with the phenotype HLA-DRA-positive.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001057 "myeloid dendritic cell")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001057 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001057 "This cell type is compatible with the HIPC Lyoplate markers for 'myeloid dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human myeloid dendritic cells.")
@@ -13043,7 +13048,7 @@ SubClassOf(obo:CL_0001057 obo:CL_0000782)
 
 # Class: obo:CL_0001058 (plasmacytoid dendritic cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001058 "A plasmacytoid dendritic cell with the phenotype HLA-DRA-positive, CD123-positive, and CD11c-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001058 "A plasmacytoid dendritic cell with the phenotype HLA-DRA-positive, CD123-positive, and CD11c-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001058 "plasmacytoid dendritic cell")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001058 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001058 "This cell type is compatible with the HIPC Lyoplate markers for 'plasmacytoid dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human plasmacytoid dendritic cells.")
@@ -13082,7 +13087,7 @@ SubClassOf(obo:CL_0001060 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000837))
 
 # Class: obo:CL_0001061 (abnormal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:cg") Annotation(oboInOwl:hasDbXref "GOC:wdd") obo:IAO_0000115 obo:CL_0001061 "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:cg") Annotation(oboInOwl:hasDbXref "GOC:wdd") obo:IAO_0000115 obo:CL_0001061 "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001061 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001061 "2017-01-30T18:53:32Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0001061 "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12913")
@@ -13094,7 +13099,7 @@ SubClassOf(obo:CL_0001061 obo:GO_0005623)
 
 # Class: obo:CL_0001062 (effector memory CD8-positive, alpha-beta T cell, terminally differentiated)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dos") Annotation(oboInOwl:hasDbXref "PMID:15032595") Annotation(oboInOwl:hasDbXref "PMID:16237082") obo:IAO_0000115 obo:CL_0001062 "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15032595") Annotation(oboInOwl:hasDbXref "PMID:16237082") obo:IAO_0000115 obo:CL_0001062 "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16237082") oboInOwl:hasExactSynonym obo:CL_0001062 "TEMRA")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001062 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001062 "This cell type is seen human but not found in the mouse.")
@@ -13105,7 +13110,7 @@ SubClassOf(obo:CL_0001062 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000913))
 
 # Class: obo:CL_0001063 (neoplastic cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:cg") Annotation(oboInOwl:hasDbXref "GOC:wdd") obo:IAO_0000115 obo:CL_0001063 "An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:cg") Annotation(oboInOwl:hasDbXref "GOC:wdd") obo:IAO_0000115 obo:CL_0001063 "An abnormal cell exhibiting dysregulation of cell proliferation or programmed cell death and capable of forming a neoplasm, an aggregate of cells in the form of a tumor mass or an excess number of abnormal cells (liquid tumor) within an organism.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001063 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001063 "2017-01-30T19:16:26Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0001063 "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12922")
@@ -13119,7 +13124,7 @@ SubClassOf(obo:CL_0001063 obo:CL_0001061)
 
 # Class: obo:CL_0001064 (malignant cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:cg") Annotation(oboInOwl:hasDbXref "GOC:wdd") obo:IAO_0000115 obo:CL_0001064 "A neoplastic cell that is capable of entering a surrounding tissue")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:cg") Annotation(oboInOwl:hasDbXref "GOC:wdd") obo:IAO_0000115 obo:CL_0001064 "A neoplastic cell that is capable of entering a surrounding tissue")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001064 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001064 "2017-01-30T19:39:12Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0001064 "https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12917")
@@ -13132,7 +13137,7 @@ SubClassOf(obo:CL_0001064 obo:CL_0001063)
 
 # Class: obo:CL_0001065 (innate lymphoid cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd") Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001065 "A lymphocyte that lacks characteristic T cell, B cell, myeloid cell, and dendritic cell markers, that functions as part of the innate immune response to produce cytokines and other effector responses.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001065 "A lymphocyte that lacks characteristic T cell, B cell, myeloid cell, and dendritic cell markers, that functions as part of the innate immune response to produce cytokines and other effector responses.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001065 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001065 "2017-01-30T20:20:48Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001065 "cell")
@@ -13157,7 +13162,7 @@ SubClassOf(obo:CL_0001066 obo:CL_0000038)
 
 # Class: obo:CL_0001067 (group 1 innate lymphoid cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001067 "An innate lymphoid cell that is capable of producing the type 1 cytokine IFN-gamma, but not Th2 or Th17 cell-associated cytokines.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001067 "An innate lymphoid cell that is capable of producing the type 1 cytokine IFN-gamma, but not Th2 or Th17 cell-associated cytokines.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001067 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001067 "2017-01-30T20:42:44Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001067 "cell")
@@ -13167,7 +13172,7 @@ SubClassOf(obo:CL_0001067 obo:CL_0001065)
 
 # Class: obo:CL_0001068 (ILC1)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd") Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001068 "A group 1 innate lymphoid cell that is non-cytotoxic.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001068 "A group 1 innate lymphoid cell that is non-cytotoxic.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001068 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001068 "2017-01-30T20:54:12Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001068 "cell")
@@ -13177,7 +13182,7 @@ SubClassOf(obo:CL_0001068 obo:CL_0001067)
 
 # Class: obo:CL_0001069 (group 2 innate lymphoid cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd") Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23562755") obo:IAO_0000115 obo:CL_0001069 "An innate lymphoid cell that is capable of producing T-helper 2-cell associated cytokines upon stimulation.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23562755") obo:IAO_0000115 obo:CL_0001069 "An innate lymphoid cell that is capable of producing T-helper 2-cell associated cytokines upon stimulation.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001069 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001069 "2017-01-30T21:20:08Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001069 "ILC2")
@@ -13203,7 +13208,7 @@ SubClassOf(obo:CL_0001070 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000134
 
 # Class: obo:CL_0001071 (group 3 innate lymphoid cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd") Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001071 "An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23292121") Annotation(oboInOwl:hasDbXref "PMID:23348417") obo:IAO_0000115 obo:CL_0001071 "An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22.")
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001071 <http://orcid.org/0000-0001-9990-8331>)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001071 "2017-01-31T20:21:26Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001071 "ILC3")
@@ -13924,7 +13929,7 @@ SubClassOf(obo:CL_0002056 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002054))
 
 # Class: obo:CL_0002057 (CD14-positive, CD16-negative classical monocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15615263"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:1706877"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19689341"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0002057 "A classical monocyte that is CD14-positive, CD16-negative, CD64-positive, CD163-positive."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15615263"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:1706877"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19689341"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0002057 "A classical monocyte that is CD14-positive, CD16-negative, CD64-positive, CD163-positive."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002057 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002057 "2010-06-05T08:25:41Z"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0002057 "CD16- monocyte")
@@ -14060,14 +14065,14 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002066 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002066 "Feyrter cell"^^xsd:string)
 SubClassOf(obo:CL_0002066 obo:CL_0000165)
 
-# Class: obo:CL_0002067 (type A enterocrine cell)
+# Class: obo:CL_0002067 (type A enteroendocrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0412046911"^^xsd:string) obo:IAO_0000115 obo:CL_0002067 "An enterocrine cell that produces glucagon."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0412046911"^^xsd:string) obo:IAO_0000115 obo:CL_0002067 "An enteroendocrine cell that produces glucagon."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002067 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002067 "2010-09-10T10:48:54Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002067 "FMA:62939"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002067 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0002067 "type A enterocrine cell"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0002067 "type A enteroendocrine cell"^^xsd:string)
 EquivalentClasses(obo:CL_0002067 ObjectIntersectionOf(obo:CL_0000164 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070091)))
 
 # Class: obo:CL_0002068 (Purkinje myocyte)
@@ -14334,7 +14339,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002088 ob
 
 # Class: obo:CL_0002089 (group 2 innate lymphoid cell, mouse)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20200518"^^xsd:string) obo:IAO_0000115 obo:CL_0002089 "A group 2 innate lymphoid cell in the mouse capable of secreting IL-13 in response to a helminth infection. This cell is lineage-negative, ICOS-positive, IL1RL1-positive, IL7Ralpha-positive, and IL17Br-positive."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20200518"^^xsd:string) obo:IAO_0000115 obo:CL_0002089 "A group 2 innate lymphoid cell in the mouse capable of secreting IL-13 in response to a helminth infection. This cell is lineage-negative, ICOS-positive, IL1RL1-positive, IL7Ralpha-positive, and IL17Br-positive."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002089 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002089 "2010-08-12T02:22:19Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002089 "nuocyte")
@@ -14797,7 +14802,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002127 ob
 
 # Class: obo:CL_0002128 (Tc17 cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19201830"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0002128 "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-positive, CCR5-high, CD45RA-negative, and capable of producing IL-17 and some IFNg."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19201830"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0002128 "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-positive, CCR5-high, CD45RA-negative, and capable of producing IL-17 and some IFNg."^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0002128 "Tc17 CD8+ T cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002128 "Tc17 T cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002128 "Tc17 T lymphocyte"^^xsd:string)
@@ -16980,16 +16985,6 @@ AnnotationAssertion(rdfs:label obo:CL_0002313 "endocrine-paracrine cell of prost
 EquivalentClasses(obo:CL_0002313 ObjectIntersectionOf(obo:CL_0002159 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002367) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0002313 obo:CL_0000150)
 
-# Class: obo:CL_0002314 (external supporting cell of vestibular epithelium)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20837532"^^xsd:string) obo:IAO_0000115 obo:CL_0002314 "An auditory epithelial support cell located in the vestibular epithelium that has many hallmarks of glial cells. This cell type express glial markers such as vimentin, S100, glutamate-aspartate transporter, low affinity neurotrophin receptor p75, glial fibrillary acidic protein, and proteolipid protein."^^xsd:string)
-AnnotationAssertion(oboInOwl:created_by obo:CL_0002314 "tmeehan"^^xsd:string)
-AnnotationAssertion(oboInOwl:creation_date obo:CL_0002314 "2010-09-14T03:20:01Z"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002314 "FMA:75809"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002314 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0002314 "external supporting cell of vestibular epithelium"^^xsd:string)
-SubClassOf(obo:CL_0002314 obo:CL_0002316)
-
 # Class: obo:CL_0002315 (supporting cell of cochlea)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CL_0002315 "An epithelial supporting cell located in the cochlea."^^xsd:string)
@@ -17620,7 +17615,7 @@ SubClassOf(obo:CL_0002371 obo:CL_0000003)
 
 # Class: obo:CL_0002372 (myotube)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0323052908"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22274696") obo:IAO_0000115 obo:CL_0002372 "A transversely striated, synctial muscle cell, formed by the fusion of myoblasts."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0323052908"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22274696") obo:IAO_0000115 obo:CL_0002372 "A transversely striated, synctial muscle cell, formed by the fusion of myoblasts."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002372 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002372 "2010-09-24T01:13:01Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0002372 "CL:0000369"^^xsd:string)
@@ -17874,10 +17869,10 @@ SubClassOf(obo:CL_0002396 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002397))
 
 # Class: obo:CL_0002397 (CD14-positive, CD16-positive monocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:21937707"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) obo:IAO_0000115 obo:CL_0002397 "A CD14-positive monocyte that is also CD16-positive and CCR2-negative."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20628149"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:21937707"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0002397 "A CD14-positive monocyte that is also CD16-positive and CCR2-negative."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002397 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002397 "2010-10-04T12:49:47Z"^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002397 "CD16+ monocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasExactSynonym obo:CL_0002397 "CD16+ monocyte")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002397 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0002397 "This cell type is compatible with the HIPC Lyoplate markers for 'CD16+ monocyte'. Markers are associated with human cells. Note that this cell type encompasses both human intermediate monocytes (CD14+, CD16-low), and human non-classical monocytes (CD14-low, CD16+)."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002397 "CD14-positive, CD16-positive monocyte"^^xsd:string)
@@ -20420,7 +20415,7 @@ SubClassOf(obo:CL_0002637 obo:CL_0002634)
 
 # Class: obo:CL_0002638 (bronchioalveolar stem cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15960971"^^xsd:string) obo:IAO_0000115 obo:CL_0002638 "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and Clara cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15960971"^^xsd:string) obo:IAO_0000115 obo:CL_0002638 "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and club cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002638 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002638 "2011-06-21T03:26:08Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002638 "BASC"^^xsd:string)
@@ -20990,7 +20985,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS"^^xsd:string) obo:IAO_
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0005012 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0005012 "multi-ciliated epithelial cell"^^xsd:string)
 SubClassOf(obo:CL_0005012 obo:CL_0000066)
-SubClassOf(obo:CL_0005012 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929))
+SubClassOf(obo:CL_0005012 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 
 # Class: obo:CL_0005013 (single ciliated epithelial cell)
 
@@ -20998,7 +20993,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS"^^xsd:string) obo:IAO_
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0005013 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0005013 "single ciliated epithelial cell"^^xsd:string)
 SubClassOf(obo:CL_0005013 obo:CL_0000066)
-SubClassOf(obo:CL_0005013 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929))
+SubClassOf(obo:CL_0005013 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 
 # Class: obo:CL_0005014 (auditory epithelial support cell)
 
@@ -21320,7 +21315,7 @@ AnnotationAssertion(rdfs:comment obo:CL_0007018 "Taxon specificity not clear -pr
 AnnotationAssertion(rdfs:label obo:CL_0007018 "epidermal ciliary cell"@en)
 SubClassOf(obo:CL_0007018 obo:CL_0002321)
 SubClassOf(obo:CL_0007018 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001003))
-SubClassOf(obo:CL_0007018 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0005929))
+SubClassOf(obo:CL_0007018 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 
 # Class: obo:CL_0007019 (epidermal mucus secreting cell)
 
@@ -21371,7 +21366,7 @@ SubClassOf(obo:CL_0008000 obo:CL_0000187)
 
 # Class: obo:CL_0008001 (hematopoietic precursor cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0008001 "Any hematopoietic cell that is a precursor of some other hematopoietic cell type."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) obo:IAO_0000115 obo:CL_0008001 "Any hematopoietic cell that is a precursor of some other hematopoietic cell type."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0008001 "hematopoietic precursor cell"^^xsd:string)
 SubClassOf(obo:CL_0008001 obo:CL_0000988)
 
@@ -21390,7 +21385,7 @@ EquivalentClasses(obo:CL_0008003 ObjectIntersectionOf(obo:CL_0008004 ObjectSomeV
 
 # Class: obo:CL_0008004 (somatic muscle cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0008004 "A muscle cell that is part of some somatic muscle."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) obo:IAO_0000115 obo:CL_0008004 "A muscle cell that is part of some somatic muscle."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0008004 "somatic muscle cell"@en)
 SubClassOf(obo:CL_0008004 obo:CL_0000187)
 
@@ -21443,7 +21438,7 @@ DisjointClasses(obo:CL_0008011 obo:CL_0008020)
 
 # Class: obo:CL_0008012 (quiescent skeletal muscle satellite cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21849021"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23303905"^^xsd:string) obo:IAO_0000115 obo:CL_0008012 "A skeletal muscle satellite cell that is mitotically quiescent.  These cells are wedge shaped and have a large nuclear to cytoplasmic ratio with few organelles, a small nucleus and condensed interphase chromatin. Satellite cells typically remain in this state until activated following muscle damage.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21849021"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23303905") obo:IAO_0000115 obo:CL_0008012 "A skeletal muscle satellite cell that is mitotically quiescent.  These cells are wedge shaped and have a large nuclear to cytoplasmic ratio with few organelles, a small nucleus and condensed interphase chromatin. Satellite cells typically remain in this state until activated following muscle damage.")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0008012 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0008012 "quiescent skeletal muscle satellite cell")
 SubClassOf(obo:CL_0008012 obo:CL_0000594)
@@ -21472,7 +21467,7 @@ SubClassOf(obo:CL_0008015 obo:CL_0000100)
 
 # Class: obo:CL_0008016 (activated skeletal muscle satellite cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21849021"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23303905"^^xsd:string) obo:IAO_0000115 obo:CL_0008016 "A skeletal muscle cell that has become mitotically active - typically following muscle damage.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21849021"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23303905") obo:IAO_0000115 obo:CL_0008016 "A skeletal muscle cell that has become mitotically active - typically following muscle damage.")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0008016 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0008016 "activated skeletal muscle satellite cell")
 SubClassOf(obo:CL_0008016 obo:CL_0000594)
@@ -21506,7 +21501,7 @@ SubClassOf(obo:CL_0008019 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0016477))
 
 # Class: obo:CL_0008020 (skeletal muscle satellite myogenic cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") Annotation(oboInOwl:hasDbXref "PMID:23303905") obo:IAO_0000115 obo:CL_0008020 "A skeletal muscle satellite cell that undergoes symmetric division to produce two adult skeleltal muscle myoblasts.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:23303905") obo:IAO_0000115 obo:CL_0008020 "A skeletal muscle satellite cell that undergoes symmetric division to produce two adult skeleltal muscle myoblasts.")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0008020 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0008020 "skeletal muscle satellite myogenic cell")
 SubClassOf(obo:CL_0008020 obo:CL_0000594)
@@ -21532,7 +21527,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0008023 "true"^^xsd:boolean)
 
 # Class: obo:CL_0008024 (pancreatic endocrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0008024 "An endocrine cell that is part of the pancreas.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) obo:IAO_0000115 obo:CL_0008024 "An endocrine cell that is part of the pancreas.")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0008024 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0008024 "pancreatic endocrine cell")
 EquivalentClasses(obo:CL_0008024 ObjectIntersectionOf(obo:CL_0000163 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001264)))
@@ -21540,13 +21535,13 @@ SubClassOf(obo:CL_0008024 obo:CL_0000163)
 
 # Class: obo:CL_0008025 (noradrenergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0008025 "A neuron that release noradrenaline (noriphinephrine) as a neurotransmitter.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) obo:IAO_0000115 obo:CL_0008025 "A neuron that release noradrenaline (noriphinephrine) as a neurotransmitter.")
 AnnotationAssertion(rdfs:label obo:CL_0008025 "noradrenergic neuron")
 EquivalentClasses(obo:CL_0008025 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061533)))
 
 # Class: obo:CL_0008026 (open tracheal system tracheocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0008026 "An epithelial cell that is part of the epithelium of a tracheal tube in an open tracheal system, such as that found in insects.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) obo:IAO_0000115 obo:CL_0008026 "An epithelial cell that is part of the epithelium of a tracheal tube in an open tracheal system, such as that found in insects.")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0008026 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0008026 "open tracheal system tracheocyte")
 EquivalentClasses(obo:CL_0008026 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003127)))
@@ -21592,7 +21587,7 @@ EquivalentClasses(obo:CL_0008032 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 
 # Class: obo:CL_0009000 (sensory neuron of spinal nerve)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "GOC:pr") obo:IAO_0000115 obo:CL_0009000 "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "GOC:pr"^^xsd:string) obo:IAO_0000115 obo:CL_0009000 "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009000 "spinal sensory neuron")
 AnnotationAssertion(rdfs:label obo:CL_0009000 "sensory neuron of spinal nerve")
 EquivalentClasses(obo:CL_0009000 ObjectIntersectionOf(obo:CL_0000101 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001780)))
@@ -21625,7 +21620,7 @@ SubClassOf(obo:CL_0009003 obo:CL_0002371)
 
 # Class: obo:CL_0009004 (retinal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:pr") obo:IAO_0000115 obo:CL_0009004 "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:pr"^^xsd:string) obo:IAO_0000115 obo:CL_0009004 "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0009004 "PMID:10702418")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0009004 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0009004 "retinal cell")
@@ -21811,7 +21806,7 @@ SubClassOf(obo:CL_0011004 obo:CL_0002222)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011005 "An interneuron that uses GABA as a vesicular neurotransmitter.")
 AnnotationAssertion(rdfs:label obo:CL_0011005 "GABAergic interneuron")
-EquivalentClasses(obo:CL_0011005 ObjectIntersectionOf(obo:CL_0000099 obo:CL_0000617))
+EquivalentClasses(obo:CL_0011005 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
 SubClassOf(obo:CL_0011005 obo:CL_0000099)
 SubClassOf(obo:CL_0011005 obo:CL_0000617)
 
@@ -21820,7 +21815,7 @@ SubClassOf(obo:CL_0011005 obo:CL_0000617)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011006 "An inhibitory GABAergic interneuron found in the cerebellar cortex.")
 AnnotationAssertion(rdfs:label obo:CL_0011006 "Lugaro cell")
 SubClassOf(obo:CL_0011006 obo:CL_0011005)
-SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002129))
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129))
 
 # Class: obo:CL_0011007 (paraxial cell)
 
@@ -22017,6 +22012,7 @@ EquivalentClasses(obo:CL_0013000 ObjectIntersectionOf(obo:CL_0000681 ObjectSomeV
 SubClassOf(obo:CL_0013000 obo:CL_0000681)
 
 # Class: obo:CL_0015000 (cranial motor neuron)
+
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ZFIN:CVS") obo:IAO_0000115 obo:CL_0015000 "Motor neuron that innervate muscles that control eye, jaw, and facial movements of the vertebrate head and parasympathetic neurons that innervate certain glands and organs. ")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0015000 "PMID:14699587 ")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0015000 "cranial motoneuron")
@@ -25025,7 +25021,7 @@ EquivalentClasses(obo:CL_1001561 ObjectIntersectionOf(obo:CL_0000101 ObjectSomeV
 
 # Class: obo:CL_1001566 (bronchioalveolar stem cells)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0011691"^^xsd:string) obo:IAO_0000115 obo:CL_1001566 "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and Clara cells in response to lung injury."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0011691"^^xsd:string) obo:IAO_0000115 obo:CL_1001566 "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_1001566 "cl"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001566 "bronchioalveolar stem cells"^^xsd:string)
 SubClassOf(obo:CL_1001566 obo:CL_0000034)
@@ -25269,7 +25265,7 @@ SubClassOf(obo:CL_1001592 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000202
 
 # Class: obo:CL_1001593 (parathyroid glandular cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "HPA:HPA") Annotation(oboInOwl:hasDbXref "NPX:PDR"^^xsd:string) obo:IAO_0000115 obo:CL_1001593 "Glandular cell of parathyroid epithelium. Example: Parathyroid chief cell and parathyroid oxyphil cells."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "HPA:HPA"^^xsd:string) Annotation(oboInOwl:hasDbXref "NPX:PDR"^^xsd:string) obo:IAO_0000115 obo:CL_1001593 "Glandular cell of parathyroid epithelium. Example: Parathyroid chief cell and parathyroid oxyphil cells."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001593 "CALOHA:TS-1279"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1279"^^xsd:string) oboInOwl:hasRelatedSynonym obo:CL_1001593 "parathyroid gland glandular cell"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1279"^^xsd:string) oboInOwl:hasRelatedSynonym obo:CL_1001593 "parathyroid gland glandular cells"^^xsd:string)
@@ -26400,6 +26396,68 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000097 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000097 "CL:2000097"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_2000097 "midbrain dopaminergic neuron"^^xsd:string)
 EquivalentClasses(obo:CL_2000097 ObjectIntersectionOf(obo:CL_0000700 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001891)))
+
+# Class: obo:CL_3000000 (ciliated epithelial cell of esophagus)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:29802404"^^xsd:string) obo:IAO_0000115 obo:CL_3000000 "A ciliated epithelial cell of the esophagus."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:CL_3000000 "CellBLAST"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_3000000 "2019-02-09T16:40:30Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000000 "cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:id obo:CL_3000000 "CL:3000000"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_3000000 "ciliated epithelial cell of esophagus"^^xsd:string)
+EquivalentClasses(obo:CL_3000000 ObjectIntersectionOf(obo:CL_0000067 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001976)))
+
+# Class: obo:CL_3000001 (Hofbauer cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30429548"^^xsd:string) obo:IAO_0000115 obo:CL_3000001 "Oval eosinophilic histiocytes with granules and vacuoles found in placenta, which are of mesenchymal origin, in mesoderm of the chorionic villus, particularly numerous in early pregnancy."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:CL_3000001 "CellBLAST"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_3000001 "2019-02-18T19:41:20Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000001 "cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:id obo:CL_3000001 "CL:3000001"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_3000001 "Hofbauer cell"^^xsd:string)
+SubClassOf(obo:CL_3000001 obo:CL_0000235)
+
+# Class: obo:CL_3000002 (sympathetic noradrenergic neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000002 "Sympathetic noradrenergic neuron."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:CL_3000002 "CellBLAST"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_3000002 "2019-02-25T19:30:14Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000002 "cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:id obo:CL_3000002 "CL:3000002"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_3000002 "sympathetic noradrenergic neuron"^^xsd:string)
+EquivalentClasses(obo:CL_3000002 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061533)))
+
+# Class: obo:CL_3000003 (sympathetic cholinergic neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000003 "Sympathetic cholinergic neuron."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:CL_3000003 "CellBLAST"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_3000003 "2019-02-25T19:32:20Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000003 "cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:id obo:CL_3000003 "CL:3000003"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_3000003 "sympathetic cholinergic neuron"^^xsd:string)
+EquivalentClasses(obo:CL_3000003 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014055)))
+
+# Class: obo:CL_3000004 (peripheral sensory neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000004 "Peripheral sensory neuron."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:CL_3000004 "CellBLAST"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_3000004 "2019-02-25T19:34:33Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000004 "cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:id obo:CL_3000004 "CL:3000004"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_3000004 "peripheral sensory neuron"^^xsd:string)
+EquivalentClasses(obo:CL_3000004 ObjectIntersectionOf(obo:CL_0000111 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
+SubClassOf(obo:CL_3000004 obo:CL_0000101)
+SubClassOf(obo:CL_3000004 obo:CL_0000111)
+
+# Class: obo:CL_3000005 (GABAergic inhibitory interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:29724907"^^xsd:string) obo:IAO_0000115 obo:CL_3000005 "GABAergic inhibitory interneuron."^^xsd:string)
+AnnotationAssertion(oboInOwl:created_by obo:CL_3000005 "CellBLAST"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_3000005 "2019-02-26T21:00:50Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000005 "cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:id obo:CL_3000005 "CL:3000005"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_3000005 "GABAergic inhibitory interneuron"^^xsd:string)
+EquivalentClasses(obo:CL_3000005 ObjectIntersectionOf(obo:CL_0000498 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
 
 # Class: obo:CP_0000000 (neutrophillic cytoplasm)
 
