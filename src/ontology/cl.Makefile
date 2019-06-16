@@ -26,7 +26,7 @@ $(ONT)-simple.obo: $(ONT)-simple.owl
 	grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
 	cat $@.tmp | perl -0777 -e '$$_ = <>; s/^name[:].*?\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*?\ndef[:]/def:/g; print' > $@
 	rm -f $@.tmp.obo $@.tmp
-	
+
 simple_seed.txt: $(SRC) #$(ONTOLOGYTERMS) #prepare_patterns
 	$(ROBOT) query --use-graphs false -f csv -i $< --query ../sparql/object-properties.sparql $@.tmp &&\
 	cat $@.tmp $(ONTOLOGYTERMS) | sort | uniq >  $@ &&\
@@ -58,7 +58,7 @@ $(ONT).obo: $(ONT)-basic.owl
 
 $(PATTERNDIR)/dosdp-patterns: .FORCE
 	echo "WARNING WARNING Skipped until fixed: delete from cl.Makefile"
-	
+
 $(ONT)-basic.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS) $(KEEPRELATIONS) simple_seed.txt non_native_classes.txt
 	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) --collapse-import-closure true \
 		reason --reasoner ELK \
@@ -74,20 +74,20 @@ $(ONT)-basic.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS) $(KEEPRELATIONS) simple_s
 oort: $(SRC)
 	ontology-release-runner --reasoner elk $< --no-subsets --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
 
-KEEPRS=part_of develops_from
-	
+KEEPRS= RO:0002202
+
 $(ONT)-basic.owl: $(ONT)-simple.owl
-	owltools $< --make-subset-by-properties $(KEEPRS) -o -f owl $@
-	
+	owltools $< --make-subset-by-properties $(KEEPRS) --remove-axioms -t DisjointClasses -o -f owl $@
+
 $(ONT)-simple.owl: oort
 	cp oort/$@ $@
-	
+
 $(ONT)-basic.obo: $(ONT)-simple.obo
-	owltools $< --make-subset-by-properties $(KEEPRS) -o -f obo $@
-	
+	owltools $< --make-subset-by-properties $(KEEPRS) --remove-axioms -t DisjointClasses -o -f obo $@
+
 $(ONT)-simple.obo: oort
 	cp oort/$@ $@
-	
+
 # TODO add BACK remove --term-file $(KEEPRELATIONS) --select complement --select object-properties --trim true \
 # TODO add BACK remove --term-file non_native_classes.txt \
 
