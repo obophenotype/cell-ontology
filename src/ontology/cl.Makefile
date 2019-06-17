@@ -2,6 +2,8 @@
 ## 
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
+# railing-whitespace  xref-syntax
+SPARQL_VALIDATION_CHECKS =  equivalent-classes towldef-self-reference nolabels
 
 mirror/pr.owl: mirror/pr.trigger
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
