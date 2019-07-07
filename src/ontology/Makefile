@@ -105,7 +105,7 @@ all_patterns: $(PATTERN_FILES)
 ## -- dosdp pattern targets --
 ##
 
-OBO_REPORT = $(ONT)-edit-obo-report
+OBO_REPORT = $(SRC)-obo-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
 
@@ -251,13 +251,14 @@ $(ONT)-simple.owl: $(SRC) simple_seed.txt $(OTHER_SRC)
 # removes any axioms that contains one of the ops that not in the whitelist file
 
 $(ONT)-basic.owl: $(SRC) $(OTHER_SRC) $(ONTOLOGYTERMS) $(KEEPRELATIONS)
-	$(ROBOT) reason --input $< --reasoner ELK \
-		remove --select imports --trim false \
-		merge  $(patsubst %, -i %, $(OTHER_SRC))  \
+	$(ROBOT) merge --input $< $(patsubst %, -i %, $(OTHER_SRC)) \
+		reason --reasoner ELK \
+		relax \
+		remove --axioms equivalent \
 		remove --term-file $(KEEPRELATIONS) --select complement --select object-properties --trim true \
 		relax \
+		filter --term-file simple_seed.txt --select "annotations ontology anonymous object-properties self" --trim true --signature true \
 		reduce -r ELK \
-		filter --term-file $(ONTOLOGYTERMS) --trim true --preserve-structure false \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ --output $@.tmp.owl && mv $@.tmp.owl $@
 # ----------------------------------------
 # Import modules
@@ -438,7 +439,7 @@ sparql_test: $(SRC)
 # ----------------------------------------
 # ROBOT report
 # ----------------------------------------
-reports/%-obo-report.tsv: %.owl
+reports/%-obo-report.tsv: %
 	$(ROBOT) report -i $< --fail-on $(REPORT_FAIL_ON) -o $@
 
 # ----------------------------------------
