@@ -11,7 +11,22 @@ mirror/pr.owl: mirror/pr.trigger
 
 imports/pr_import.owl:
 	echo "skipped pr import"
+	
+mirror/chebi.owl: mirror/chebi.trigger
+#	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/chebi.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	echo "skipped chebi"
 
+tmp/clo_logical.owl: mirror/clo.owl
+	echo "Skipped clo logical" && cp $< $@
+	
+tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
+	echo "Skipped clo logical" && touch $@
+
+tmp/pr_logical.owl: mirror/pr.owl
+	echo "Skipped pr logical" && cp $< $@
+	
+tmp/chebi_logical.owl: mirror/chebi.owl
+	echo "Skipped chebi logical" && cp $< $@
 
 mirror/ncbitaxon.owl: mirror/pr.trigger
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
