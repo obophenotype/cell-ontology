@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-06-15/imports/go_import.owl
+data-version: cl/releases/2019-07-16/imports/go_import.owl
 ontology: cl/imports/go_import
 
 [Term]
@@ -4102,20 +4102,6 @@ xref: Wikipedia:Enzyme
 is_a: GO:0003674 ! molecular_function
 
 [Term]
-id: GO:0004871
-name: obsolete signal transducer activity
-namespace: molecular_function
-alt_id: GO:0005062
-alt_id: GO:0009369
-alt_id: GO:0009370
-def: "OBSOLETE. Conveys a signal across a cell to trigger a change in cell function or state. A signal is a physical entity or change in state that is used to transfer information in order to trigger a response." [GOC:go_curators]
-comment: This term was obsoleted because it was not clearly defined and is not a useful grouping term, see https://github.com/geneontology/go-ontology/issues/14232.
-synonym: "hematopoietin/interferon-class (D200-domain) cytokine receptor signal transducer activity" NARROW []
-synonym: "quorum sensing response regulator activity" NARROW []
-synonym: "quorum sensing signal generator activity" NARROW []
-is_obsolete: true
-
-[Term]
 id: GO:0004888
 name: transmembrane signaling receptor activity
 namespace: molecular_function
@@ -4239,7 +4225,7 @@ name: binding
 namespace: molecular_function
 def: "The selective, non-covalent, often stoichiometric, interaction of a molecule with one or more specific sites on another molecule." [GOC:ceb, GOC:mah, ISBN:0198506732]
 comment: Note that this term is in the subset of terms that should not be used for direct, manual gene product annotation. Please choose a more specific child term, or request a new one if no suitable term is available. For ligands that bind to signal transducing receptors, consider the molecular function term 'receptor binding ; GO:0005102' and its children.
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 subset: goslim_plant
 synonym: "ligand" NARROW []
@@ -4635,16 +4621,6 @@ xref: NIF_Subcellular:sao671419673
 xref: Wikipedia:Microvillus
 is_a: GO:0098858 ! actin-based cell projection
 relationship: has_part GO:0032432 ! actin filament bundle
-
-[Term]
-id: GO:0005911
-name: cell-cell junction
-namespace: cellular_component
-def: "A cell junction that forms a connection between two or more cells in a multicellular organism; excludes direct cytoplasmic junctions such as ring canals." [GOC:dgh, GOC:hb, GOC:mah]
-synonym: "intercellular junction" EXACT [NIF_Subcellular:sao1395777368]
-xref: MIPS_funcat:70.06.04
-xref: NIF_Subcellular:sao1922892319
-is_a: GO:0030054 ! cell junction
 
 [Term]
 id: GO:0005929
@@ -5084,16 +5060,6 @@ is_a: GO:0016192 ! vesicle-mediated transport
 is_a: GO:0098657 ! import into cell
 relationship: has_part GO:0006900 ! vesicle budding from membrane
 relationship: has_part GO:0010324 ! membrane invagination
-
-[Term]
-id: GO:0006898
-name: receptor-mediated endocytosis
-namespace: biological_process
-def: "An endocytosis process in which cell surface receptors ensure specificity of transport. A specific receptor on the cell surface binds tightly to the extracellular macromolecule (the ligand) that it recognizes; the plasma-membrane region containing the receptor-ligand complex then undergoes endocytosis, forming a transport vesicle containing the receptor-ligand complex and excluding most other plasma-membrane proteins. Receptor-mediated endocytosis generally occurs via clathrin-coated pits and vesicles." [GOC:mah, ISBN:0716731363]
-synonym: "receptor mediated endocytosis" EXACT []
-xref: MIPS_funcat:20.09.18.09.01.01
-xref: Wikipedia:Receptor-mediated_endocytosis
-is_a: GO:0006897 ! endocytosis
 
 [Term]
 id: GO:0006900
@@ -7672,15 +7638,6 @@ is_a: GO:0022857 ! transmembrane transporter activity
 relationship: part_of GO:0034220 ! ion transmembrane transport
 
 [Term]
-id: GO:0015103
-name: inorganic anion transmembrane transporter activity
-namespace: molecular_function
-def: "Enables the transfer of inorganic anions from one side of a membrane to the other. Inorganic anions are atoms or small molecules with a negative charge which do not contain carbon in covalent linkage." [GOC:ai]
-is_a: GO:0008509 ! anion transmembrane transporter activity
-is_a: GO:0015318 ! inorganic molecular entity transmembrane transporter activity
-relationship: part_of GO:0015698 ! inorganic anion transport
-
-[Term]
 id: GO:0015106
 name: bicarbonate transmembrane transporter activity
 namespace: molecular_function
@@ -7772,13 +7729,6 @@ is_a: GO:0006812 ! cation transport
 is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
-id: GO:0015698
-name: inorganic anion transport
-namespace: biological_process
-def: "The directed movement of inorganic anions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Inorganic anions are atoms or small molecules with a negative charge which do not contain carbon in covalent linkage." [GOC:krc]
-is_a: GO:0006820 ! anion transport
-
-[Term]
 id: GO:0015701
 name: bicarbonate transport
 namespace: biological_process
@@ -7799,25 +7749,6 @@ name: monocarboxylic acid transport
 namespace: biological_process
 def: "The directed movement of monocarboxylic acids into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:krc]
 is_a: GO:0046942 ! carboxylic acid transport
-
-[Term]
-id: GO:0015721
-name: bile acid and bile salt transport
-namespace: biological_process
-def: "The directed movement of bile acid and bile salts into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:dph, GOC:krc, PMID:12663868, PMID:14699511]
-synonym: "bile acid transport" NARROW []
-synonym: "bile salt transport" NARROW []
-is_a: GO:0006869 ! lipid transport
-is_a: GO:0015718 ! monocarboxylic acid transport
-is_a: GO:0015850 ! organic hydroxy compound transport
-
-[Term]
-id: GO:0015740
-name: C4-dicarboxylate transport
-namespace: biological_process
-def: "The directed movement of a C4-dicarboxylate into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. A C4-dicarboxylate is the anion of a dicarboxylic acid that contains four carbon atoms." [GOC:krc, GOC:mah]
-xref: MIPS_funcat:20.01.03.03
-is_a: GO:0006835 ! dicarboxylic acid transport
 
 [Term]
 id: GO:0015800
@@ -8861,17 +8792,6 @@ synonym: "cell projection biogenesis" RELATED [GOC:mah]
 synonym: "formation of a cell surface projection" EXACT []
 is_a: GO:0022607 ! cellular component assembly
 is_a: GO:0030030 ! cell projection organization
-
-[Term]
-id: GO:0030054
-name: cell junction
-namespace: cellular_component
-def: "A cellular component that forms a specialized region of connection between two or more cells or between a cell and the extracellular matrix. At a cell junction, anchoring proteins extend through the plasma membrane to link cytoskeletal proteins in one cell to cytoskeletal proteins in neighboring cells or to proteins in the extracellular matrix." [GOC:mah, http://www.vivo.colostate.edu/hbooks/cmb/cells/pmemb/junctions_a.html, ISBN:0198506732]
-subset: goslim_agr
-subset: goslim_flybase_ribbon
-xref: MIPS_funcat:70.06
-xref: Wikipedia:Cell_junction
-is_a: GO:0005575 ! cellular_component
 
 [Term]
 id: GO:0030072
@@ -14555,17 +14475,6 @@ created_by: jane
 creation_date: 2010-01-26T12:06:49Z
 
 [Term]
-id: GO:0044291
-name: cell-cell contact zone
-namespace: cellular_component
-def: "Extended zone of intimate apposition between two cells containing one or more types of intercellular junctions, e.g., the intercalated disk of muscle." [NIF_Subcellular:sao1299635018]
-synonym: "cell cell contact zone" EXACT []
-xref: NIF_Subcellular:sao1299635018
-is_a: GO:0005911 ! cell-cell junction
-created_by: jane
-creation_date: 2010-02-04T02:42:54Z
-
-[Term]
 id: GO:0044421
 name: extracellular region part
 namespace: cellular_component
@@ -17676,50 +17585,6 @@ def: "The regulated release of norepinephrine by a cell. Norepinephrine is a cat
 synonym: "noradrenaline secretion" EXACT []
 is_a: GO:0015874 ! norepinephrine transport
 is_a: GO:0050432 ! catecholamine secretion
-
-[Term]
-id: GO:0048259
-name: regulation of receptor-mediated endocytosis
-namespace: biological_process
-def: "Any process that modulates the frequency, rate or extent of receptor mediated endocytosis, the uptake of external materials by cells, utilizing receptors to ensure specificity of transport." [GOC:go_curators, GOC:tb]
-synonym: "regulation of receptor mediated endocytosis" EXACT [GOC:tb]
-is_a: GO:0030100 ! regulation of endocytosis
-intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0006898 ! receptor-mediated endocytosis
-relationship: regulates GO:0006898 ! receptor-mediated endocytosis
-
-[Term]
-id: GO:0048260
-name: positive regulation of receptor-mediated endocytosis
-namespace: biological_process
-def: "Any process that activates or increases the frequency, rate or extent of receptor mediated endocytosis, the uptake of external materials by cells, utilizing receptors to ensure specificity of transport." [GOC:go_curators, GOC:tb]
-synonym: "activation of receptor mediated endocytosis" NARROW []
-synonym: "positive regulation of receptor mediated endocytosis" EXACT [GOC:tb]
-synonym: "stimulation of receptor mediated endocytosis" NARROW []
-synonym: "up regulation of receptor mediated endocytosis" EXACT []
-synonym: "up-regulation of receptor mediated endocytosis" EXACT []
-synonym: "upregulation of receptor mediated endocytosis" EXACT []
-is_a: GO:0045807 ! positive regulation of endocytosis
-is_a: GO:0048259 ! regulation of receptor-mediated endocytosis
-intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0006898 ! receptor-mediated endocytosis
-relationship: positively_regulates GO:0006898 ! receptor-mediated endocytosis
-
-[Term]
-id: GO:0048261
-name: negative regulation of receptor-mediated endocytosis
-namespace: biological_process
-def: "Any process that stops, prevents, or reduces the frequency, rate or extent of receptor mediated endocytosis, the uptake of external materials by cells, utilizing receptors to ensure specificity of transport." [GOC:go_curators]
-synonym: "down regulation of receptor mediated endocytosis" EXACT []
-synonym: "down-regulation of receptor mediated endocytosis" EXACT []
-synonym: "downregulation of receptor mediated endocytosis" EXACT []
-synonym: "inhibition of receptor mediated endocytosis" NARROW []
-synonym: "negative regulation of receptor mediated endocytosis" EXACT []
-is_a: GO:0045806 ! negative regulation of endocytosis
-is_a: GO:0048259 ! regulation of receptor-mediated endocytosis
-intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0006898 ! receptor-mediated endocytosis
-relationship: negatively_regulates GO:0006898 ! receptor-mediated endocytosis
 
 [Term]
 id: GO:0048285
@@ -22041,18 +21906,6 @@ created_by: dph
 creation_date: 2013-06-21T15:43:15Z
 
 [Term]
-id: GO:0061528
-name: aspartate secretion
-namespace: biological_process
-def: "The regulated release of aspartate by a cell." [GOC:dph]
-is_a: GO:0015740 ! C4-dicarboxylate transport
-is_a: GO:0015800 ! acidic amino acid transport
-is_a: GO:0032940 ! secretion by cell
-is_a: GO:0046717 ! acid secretion
-created_by: dph
-creation_date: 2013-06-21T15:45:37Z
-
-[Term]
 id: GO:0061533
 name: norepinephrine secretion, neurotransmission
 namespace: biological_process
@@ -22116,19 +21969,6 @@ is_a: GO:0001821 ! histamine secretion
 is_a: GO:0007269 ! neurotransmitter secretion
 created_by: dph
 creation_date: 2013-06-21T16:21:21Z
-
-[Term]
-id: GO:0061539
-name: octopamine secretion
-namespace: biological_process
-def: "The controlled release of octopamine by a cell." [GOC:dph]
-is_a: GO:0006836 ! neurotransmitter transport
-is_a: GO:0015695 ! organic cation transport
-is_a: GO:0015696 ! ammonium transport
-is_a: GO:0015850 ! organic hydroxy compound transport
-is_a: GO:0032940 ! secretion by cell
-created_by: dph
-creation_date: 2013-06-21T16:24:02Z
 
 [Term]
 id: GO:0061544
@@ -27782,55 +27622,6 @@ intersection_of: positively_regulates GO:0033363 ! secretory granule organizatio
 relationship: positively_regulates GO:0033363 ! secretory granule organization
 created_by: sl
 creation_date: 2015-06-25T19:40:55Z
-
-[Term]
-id: GO:1904448
-name: regulation of aspartate secretion
-namespace: biological_process
-def: "Any process that modulates the frequency, rate or extent of aspartate secretion." [GO_REF:0000058, GOC:TermGenie, PMID:2342602]
-is_a: GO:0051955 ! regulation of amino acid transport
-is_a: GO:1903530 ! regulation of secretion by cell
-intersection_of: GO:0008150 ! biological_process
-intersection_of: regulates GO:0061528 ! aspartate secretion
-relationship: regulates GO:0061528 ! aspartate secretion
-created_by: sl
-creation_date: 2015-07-07T20:56:57Z
-
-[Term]
-id: GO:1904449
-name: negative regulation of aspartate secretion
-namespace: biological_process
-def: "Any process that stops, prevents or reduces the frequency, rate or extent of aspartate secretion." [GO_REF:0000058, GOC:TermGenie, PMID:2342602]
-synonym: "down regulation of aspartate secretion" EXACT [GOC:TermGenie]
-synonym: "down-regulation of aspartate secretion" EXACT [GOC:TermGenie]
-synonym: "downregulation of aspartate secretion" EXACT [GOC:TermGenie]
-synonym: "inhibition of aspartate secretion" NARROW [GOC:TermGenie]
-is_a: GO:0051956 ! negative regulation of amino acid transport
-is_a: GO:1903531 ! negative regulation of secretion by cell
-is_a: GO:1904448 ! regulation of aspartate secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: negatively_regulates GO:0061528 ! aspartate secretion
-relationship: negatively_regulates GO:0061528 ! aspartate secretion
-created_by: sl
-creation_date: 2015-07-07T20:57:04Z
-
-[Term]
-id: GO:1904450
-name: positive regulation of aspartate secretion
-namespace: biological_process
-def: "Any process that activates or increases the frequency, rate or extent of aspartate secretion." [GO_REF:0000058, GOC:TermGenie, PMID:2342602]
-synonym: "activation of aspartate secretion" NARROW [GOC:TermGenie]
-synonym: "up regulation of aspartate secretion" EXACT [GOC:TermGenie]
-synonym: "up-regulation of aspartate secretion" EXACT [GOC:TermGenie]
-synonym: "upregulation of aspartate secretion" EXACT [GOC:TermGenie]
-is_a: GO:0051957 ! positive regulation of amino acid transport
-is_a: GO:1903532 ! positive regulation of secretion by cell
-is_a: GO:1904448 ! regulation of aspartate secretion
-intersection_of: GO:0008150 ! biological_process
-intersection_of: positively_regulates GO:0061528 ! aspartate secretion
-relationship: positively_regulates GO:0061528 ! aspartate secretion
-created_by: sl
-creation_date: 2015-07-07T20:57:10Z
 
 [Term]
 id: GO:1904624
