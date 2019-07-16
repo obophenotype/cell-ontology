@@ -124,6 +124,7 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 		reduce \
 		remove --term-file tmp/cl_signature.txt --select complement --trim false \
 		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
+		remove --axioms disjoint --trim false \
 		convert -o $@
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
@@ -135,6 +136,7 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 		reduce \
 		remove --term-file tmp/cl_signature.txt --select complement --trim false \
 		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
+		remove --axioms disjoint --trim false \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
 		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
 		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
