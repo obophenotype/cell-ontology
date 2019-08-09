@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-07-16/imports/chebi_import.owl
+data-version: cl/releases/2019-08-09/imports/chebi_import.owl
 ontology: cl/imports/chebi_import
 
 [Term]
@@ -211,6 +211,17 @@ property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "28.01010" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "27.99491" xsd:string
+
+[Term]
+id: CHEBI:23357
+name: cofactor
+namespace: chebi_ontology
+def: "An organic molecule or ion (usually a metal ion) that is required by an enzyme for its activity. It may be attached either loosely (coenzyme) or tightly (prosthetic group)." []
+subset: 3_STAR
+synonym: "cofactor" EXACT [IUPAC]
+synonym: "cofactors" EXACT IUPAC_NAME [IUPAC]
+xref: Wikipedia:Cofactor_(biochemistry)
+is_a: CHEBI:52206 ! biochemical role
 
 [Term]
 id: CHEBI:23367
@@ -572,6 +583,7 @@ is_a: CHEBI:35106 ! nitrogen hydride
 is_a: CHEBI:35274 ! ammonium ion
 is_a: CHEBI:50313 ! onium cation
 is_a: CHEBI:60242 ! monovalent inorganic cation
+relationship: has_role CHEBI:23357 ! cofactor
 relationship: has_role CHEBI:75772 ! Saccharomyces cerevisiae metabolite
 relationship: has_role CHEBI:76971 ! Escherichia coli metabolite
 relationship: has_role CHEBI:77746 ! human metabolite
@@ -600,6 +612,7 @@ synonym: "carboxylic anions" RELATED [ChEBI]
 is_a: CHEBI:25696 ! organic anion
 is_a: CHEBI:35406 ! oxoanion
 relationship: is_conjugate_base_of CHEBI:33575 ! carboxylic acid
+property_value: http://purl.obolibrary.org/obo/chebi/charge "-1" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CO2R" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/mass "44.00950" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/monoisotopicmass "43.98983" xsd:string
