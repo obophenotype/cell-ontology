@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-07-16/cl-base.owl
+data-version: cl/releases/2019-08-09/cl-base.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -235,7 +235,7 @@ is_a: CL:0000408 {is_inferred="true"} ! male gamete
 intersection_of: CL:0000408 ! male gamete
 intersection_of: RO:0002215 GO:0030317
 intersection_of: RO:0002215 GO:0048240
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 relationship: RO:0002202 CL:0000018 ! spermatid
 
 [Term]
@@ -824,7 +824,7 @@ def: "A cell that has a filiform extrusion of the cell surface." [GOC:tfm]
 xref: VHOG:0001532
 xref: XAO:0000031
 intersection_of: CL:0000003 ! native cell
-intersection_of: RO:0002104 GO:0005929
+intersection_of: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000065
@@ -835,7 +835,7 @@ synonym: "ependymocyte" EXACT []
 xref: BTO:0001724
 xref: FMA:70550
 is_a: CL:0000710 ! neurecto-epithelial cell
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000066
@@ -858,10 +858,10 @@ disjoint_from: CL:0000738 ! leukocyte
 id: CL:0000067
 name: ciliated epithelial cell
 namespace: cell
-def: "An epithelial cell that has a cillia." [GOC:tfm]
+def: "An epithelial cell that has a cilia." [GOC:tfm]
 xref: FMA:70605
-intersection_of: CL:0000075 ! columnar/cuboidal epithelial cell
-intersection_of: RO:0002104 GO:0005929
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000068
@@ -1330,7 +1330,8 @@ def: "A neuron that uses acetylcholine as a vesicular neurotransmitter." [GOC:tf
 xref: BTO:0004902
 xref: FMA:84796
 xref: WBbt:0006840
-is_a: CL:0000540 ! neuron
+intersection_of: CL:0000540 ! neuron
+intersection_of: RO:0002215 GO:0014055
 
 [Term]
 id: CL:0000109
@@ -1859,11 +1860,12 @@ intersection_of: RO:0002215 GO:0043129
 
 [Term]
 id: CL:0000158
-name: Clara cell
+name: club cell
 namespace: cell
-def: "Epithelial progenitor cell of the lung. Clara cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Clara cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium." [GOC:tfm, PMID:12107102, PMID:7905712]
+def: "Epithelial progenitor cell of the lung. Club cells are dome-shaped with short microvilli but no cilia. They function to protect the bronchiolar epithelium. Club cells also multiply and differentiate into ciliated cells to regenerate the bronchiolar epithelium." [DOI:10.1183/09031936.00146609, DOI:https\://doi.org/10.1378/chest.12-2762, GOC:tfm, PMID:28128362, PMID:7905712]
 synonym: "bronchiolar non-ciliated cell" EXACT []
-synonym: "Clara cell of bronchiole" EXACT []
+synonym: "Clara cell" EXACT []
+synonym: "club cell of bronchiole" EXACT []
 xref: BTO:0004811
 xref: FMA:14119
 is_a: CL:0002328 {is_inferred="true"} ! bronchial epithelial cell
@@ -2017,8 +2019,8 @@ synonym: "alpha cell of iselt of Langerhans" EXACT []
 synonym: "pancreatic alpha cell" EXACT []
 xref: BTO:0000990
 xref: FMA:70585
-is_a: CL:0002067 ! type A enterocrine cell
-intersection_of: CL:0002067 ! type A enterocrine cell
+is_a: CL:0002067 ! type A enteroendocrine cell
+intersection_of: CL:0002067 ! type A enteroendocrine cell
 intersection_of: BFO:0000050 UBERON:0001264
 relationship: BFO:0000050 UBERON:0000006
 relationship: RO:0002202 CL:0002351 ! progenitor cell of endocrine pancreas
@@ -2706,6 +2708,7 @@ id: CL:0000239
 name: brush border epithelial cell
 namespace: cell
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
+relationship: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000240
@@ -8949,8 +8952,8 @@ namespace: cell
 def: "An olfactory receptor cell in which the apical ending of the dendrite is a pronounced ciliated olfactory knob." [PMID:16841163]
 synonym: "ciliated olfactory sensory neuron" EXACT []
 synonym: "ciliated sensory neuron" EXACT []
-is_a: CL:0000207 ! olfactory receptor cell
-relationship: RO:0002104 GO:0005929
+intersection_of: CL:0000207 ! olfactory receptor cell
+intersection_of: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0000848
@@ -13238,9 +13241,9 @@ creation_date: 2010-06-28T08:24:30Z
 
 [Term]
 id: CL:0002067
-name: type A enterocrine cell
+name: type A enteroendocrine cell
 namespace: cell
-def: "An enterocrine cell that produces glucagon." [GOC:tfm, ISBN:0412046911]
+def: "An enteroendocrine cell that produces glucagon." [GOC:tfm, ISBN:0412046911]
 xref: FMA:62939
 intersection_of: CL:0000164 ! enteroendocrine cell
 intersection_of: RO:0002215 GO:0070091
@@ -15679,8 +15682,8 @@ name: type A cell of stomach
 namespace: cell
 def: "A type of enteroendocrine cell found in the stomach that secretes glucagon." [GOC:tfm]
 xref: FMA:83411
-is_a: CL:0002067 ! type A enterocrine cell
-intersection_of: CL:0002067 ! type A enterocrine cell
+is_a: CL:0002067 ! type A enteroendocrine cell
+intersection_of: CL:0002067 ! type A enteroendocrine cell
 intersection_of: BFO:0000050 UBERON:0000945
 created_by: tmeehan
 creation_date: 2010-09-10T10:54:42Z
@@ -16300,16 +16303,6 @@ intersection_of: BFO:0000050 UBERON:0002367
 intersection_of: RO:0002215 GO:0046879
 created_by: tmeehan
 creation_date: 2010-09-14T03:01:58Z
-
-[Term]
-id: CL:0002314
-name: external supporting cell of vestibular epithelium
-namespace: cell
-def: "An auditory epithelial support cell located in the vestibular epithelium that has many hallmarks of glial cells. This cell type express glial markers such as vimentin, S100, glutamate-aspartate transporter, low affinity neurotrophin receptor p75, glial fibrillary acidic protein, and proteolipid protein." [GOC:tfm, PMID:20837532]
-xref: FMA:75809
-is_a: CL:0002316 ! supporting cell of vestibular epithelium
-created_by: tmeehan
-creation_date: 2010-09-14T03:20:01Z
 
 [Term]
 id: CL:0002315
@@ -20129,7 +20122,7 @@ creation_date: 2011-07-08T02:08:40Z
 id: CL:0002638
 name: bronchioalveolar stem cell
 namespace: cell
-def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and Clara cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." [GOC:tfm, PMID:15960971]
+def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and club cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." [GOC:tfm, PMID:15960971]
 synonym: "basal epithelial cell of bronchioalveolar duct junction" EXACT []
 synonym: "BASC" EXACT []
 is_a: CL:0002633 {is_inferred="true"} ! respiratory basal cell
@@ -20719,7 +20712,7 @@ name: multi-ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with many cilium." [CL:CVS]
 is_a: CL:0000066 ! epithelial cell
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0005013
@@ -20727,7 +20720,7 @@ name: single ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with a single cilium." [CL:CVS]
 is_a: CL:0000066 ! epithelial cell
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 
 [Term]
 id: CL:0005014
@@ -21050,7 +21043,7 @@ def: "Ciliated cell of the embryonic epidermis and functions in embryonic moveme
 comment: Taxon specificity not clear -present in embryonic anurans.
 is_a: CL:0002321 ! embryonic cell
 relationship: BFO:0000050 UBERON:0001003
-relationship: RO:0002104 GO:0005929
+relationship: BFO:0000051 GO:0005929
 created_by: haendel
 
 [Term]
@@ -21487,7 +21480,7 @@ intersection_of: BFO:0000050 UBERON:0002037
 [Term]
 id: CL:0010011
 name: cerebral cortex GABAergic interneuron
-def: "a GABAergic interneuron that is part_of a cerebral cortex" []
+def: "A GABAergic interneuron whose soma is located in the cerebral cortex." [GOC:dos]
 intersection_of: CL:0011005 ! GABAergic interneuron
 intersection_of: RO:0002100 UBERON:0000956
 
@@ -21587,18 +21580,19 @@ is_a: CL:0002222 ! vertebrate lens cell
 [Term]
 id: CL:0011005
 name: GABAergic interneuron
-def: "An interneuron that uses GABA as a vesicular neurotransmitter." [GOC:nv]
-is_a: CL:0000099 ! interneuron
-is_a: CL:0000617 ! GABAergic neuron
+def: "An interneuron that uses GABA as a vesicular neurotransmitter.  These interneurons are inhibitory" [GOC:CellBLAST, GOC:nv, PMID:29724907]
+comment: The formal and textual definitions of this term will need to be altered if evidence for non-inhibitory GABA-ergic neurons emerges.
+synonym: "GABAergic inhibitory interneuron" EXACT []
+is_a: CL:0000498 ! inhibitory interneuron
 intersection_of: CL:0000099 ! interneuron
-intersection_of: CL:0000617 ! GABAergic neuron
+intersection_of: RO:0002215 GO:0061534
 
 [Term]
 id: CL:0011006
 name: Lugaro cell
 def: "An inhibitory GABAergic interneuron found in the cerebellar cortex." [GOC:nv]
 is_a: CL:0011005 ! GABAergic interneuron
-relationship: BFO:0000050 UBERON:0002129
+relationship: RO:0002100 UBERON:0002129
 
 [Term]
 id: CL:0011007
@@ -21802,9 +21796,9 @@ intersection_of: BFO:0000050 UBERON:0001890
 [Term]
 id: CL:0015000
 name: cranial motor neuron
-def: "Motor neuron that innervate muscles that control eye, jaw, and facial movements of the vertebrate head and parasympathetic neurons that innervate certain glands and organs. " [ZFIN:CVS]
+def: "Motor neuron that innervate muscles that control eye, jaw, and facial movements of the vertebrate head and parasympathetic neurons that innervate certain glands and organs." [ZFIN:CVS]
 synonym: "cranial motoneuron" EXACT []
-xref: PMID:14699587 
+xref: PMID:14699587
 is_a: CL:0000100 ! motor neuron
 
 [Term]
@@ -25058,7 +25052,7 @@ intersection_of: RO:0002134 UBERON:0003367
 id: CL:1001566
 name: bronchioalveolar stem cells
 namespace: cl
-def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and Clara cells in response to lung injury." [MP:0011691]
+def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." [MP:0011691]
 is_a: CL:0000034 ! stem cell
 relationship: BFO:0000050 UBERON:0000115
 
@@ -26464,6 +26458,57 @@ intersection_of: CL:0000700 ! dopaminergic neuron
 intersection_of: BFO:0000050 UBERON:0001891
 created_by: TermGenie
 creation_date: 2015-12-03T16:42:40Z
+
+[Term]
+id: CL:3000000
+name: ciliated epithelial cell of esophagus
+namespace: cell
+def: "A ciliated epithelial cell of the esophagus." [GOC:CellBLAST, PMID:29802404]
+intersection_of: CL:0000067 ! ciliated epithelial cell
+intersection_of: BFO:0000050 UBERON:0001976
+created_by: CellBLAST
+creation_date: 2019-02-09T16:40:30Z
+
+[Term]
+id: CL:3000001
+name: Hofbauer cell
+namespace: cell
+def: "Oval eosinophilic histiocytes with granules and vacuoles found in placenta, which are of mesenchymal origin, in mesoderm of the chorionic villus, particularly numerous in early pregnancy." [GOC:CellBLAST, PMID:30429548]
+is_a: CL:0000235 ! macrophage
+created_by: CellBLAST
+creation_date: 2019-02-18T19:41:20Z
+
+[Term]
+id: CL:3000002
+name: sympathetic noradrenergic neuron
+namespace: cell
+def: "Sympathetic noradrenergic neuron." [GOC:CellBLAST, PMID:30096314]
+intersection_of: CL:0011103 ! sympathetic neuron
+intersection_of: RO:0002215 GO:0061533
+created_by: CellBLAST
+creation_date: 2019-02-25T19:30:14Z
+
+[Term]
+id: CL:3000003
+name: sympathetic cholinergic neuron
+namespace: cell
+def: "Sympathetic cholinergic neuron." [GOC:CellBLAST, PMID:30096314]
+intersection_of: CL:0011103 ! sympathetic neuron
+intersection_of: RO:0002215 GO:0014055
+created_by: CellBLAST
+creation_date: 2019-02-25T19:32:20Z
+
+[Term]
+id: CL:3000004
+name: peripheral sensory neuron
+namespace: cell
+def: "Peripheral sensory neuron." [GOC:CellBLAST, PMID:30096314]
+is_a: CL:0000101 ! sensory neuron
+is_a: CL:0000111 ! peripheral neuron
+intersection_of: CL:0000111 ! peripheral neuron
+intersection_of: RO:0002215 GO:0050906
+created_by: CellBLAST
+creation_date: 2019-02-25T19:34:33Z
 
 [Term]
 id: CP:0000000
