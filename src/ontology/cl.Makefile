@@ -66,7 +66,9 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 
 # All this terrible OBO file hacking is necessary to make sure downstream tools can actually compile something resembling valid OBO (oort!).
 #http://purl.obolibrary.org/obo/UBERON_0004370 EquivalentTo basement membrane needs fixing
-	
+# Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
+# into existentials on roundtrip
+
 tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 	$(ROBOT) merge --input $< \
 		reason --reasoner ELK \
@@ -75,9 +77,10 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
-		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped.obo &&\
+		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
+		grep -v '^relationship[:][ ]drains[ ]CARO' tmp/source-stripped3.obo > tmp/source-stripped.obo &&\
 		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
-		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo
+		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
 
 oort: tmp/source-merged.obo
 	ontology-release-runner --reasoner elk $< --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
