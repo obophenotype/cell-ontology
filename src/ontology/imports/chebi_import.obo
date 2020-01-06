@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2019-08-09/imports/chebi_import.owl
+data-version: cl/releases/2020-01-06/imports/chebi_import.owl
 ontology: cl/imports/chebi_import
 
 [Term]
@@ -547,7 +547,7 @@ subset: 3_STAR
 synonym: "[NH4](+)" RELATED [MolBase]
 synonym: "ammonium" EXACT IUPAC_NAME [IUPAC]
 synonym: "ammonium" EXACT [ChEBI]
-synonym: "AMMONIUM ION" RELATED [PDBeChem]
+synonym: "ammonium ion" RELATED [PDBeChem]
 synonym: "Ammonium(1+)" RELATED [ChemIDplus]
 synonym: "azanium" EXACT IUPAC_NAME [IUPAC]
 synonym: "NH4(+)" RELATED [UniProt]
@@ -580,7 +580,6 @@ xref: PMID:22631217 "Europe PMC"
 xref: Reaxys:16093784 "Reaxys"
 xref: Wikipedia:Ammonium
 is_a: CHEBI:35106 ! nitrogen hydride
-is_a: CHEBI:35274 ! ammonium ion
 is_a: CHEBI:50313 ! onium cation
 is_a: CHEBI:60242 ! monovalent inorganic cation
 relationship: has_role CHEBI:23357 ! cofactor
@@ -1169,14 +1168,18 @@ is_a: CHEBI:24432 ! biological role
 
 [Term]
 id: CHEBI:35274
-name: ammonium ion
+name: ammonium ion derivative
 namespace: chebi_ontology
-def: "Ammonium, NH4(+), and derivatives formed by substitution by univalent groups." []
+def: "A derivative of ammonium, NH4(+), in which one (or more) of the hydrogens bonded to the nitrogen have been replaced with univalent organyl groups. The substituting carbon of the organyl group must not itself be directly attached to a heteroatom (thereby excluding protonated amides, hemiaminals, etc)." []
 subset: 3_STAR
+synonym: "ammonium ion derivatives" RELATED [ChEBI]
 synonym: "ammonium ions" RELATED [ChEBI]
+synonym: "azanium ion derivative" RELATED [ChEBI]
+synonym: "azanium ion derivatives" RELATED [ChEBI]
 synonym: "azanium ions" RELATED [ChEBI]
 is_a: CHEBI:33702 ! polyatomic cation
 is_a: CHEBI:51143 ! nitrogen molecular entity
+relationship: has_parent_hydride CHEBI:28938 ! ammonium
 
 [Term]
 id: CHEBI:35352
@@ -1496,8 +1499,7 @@ synonym: "HYDROXY GROUP" EXACT [PDBeChem]
 synonym: "hydroxy group" EXACT [UniProt]
 synonym: "hydroxyl" RELATED [ChEBI]
 synonym: "hydroxyl group" RELATED [ChEBI]
-synonym: "oxidanyl" EXACT IUPAC_NAME [IUPAC]
-xref: PDBeChem:HYD
+xref: PDBeChem:OH
 is_a: CHEBI:33246 ! inorganic group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "HO" xsd:string
@@ -1514,7 +1516,7 @@ subset: 3_STAR
 synonym: "=O" RELATED [IUPAC]
 synonym: "oxo" EXACT IUPAC_NAME [IUPAC]
 synonym: "OXO GROUP" EXACT [PDBeChem]
-xref: PDBeChem:OXO
+xref: PDBeChem:O
 is_a: CHEBI:33246 ! inorganic group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "O" xsd:string
@@ -1534,7 +1536,7 @@ synonym: "-COOH" RELATED [IUPAC]
 synonym: "carboxy" EXACT IUPAC_NAME [IUPAC]
 synonym: "CARBOXY GROUP" EXACT [PDBeChem]
 synonym: "carboxyl group" RELATED [ChEBI]
-xref: PDBeChem:CBX
+xref: PDBeChem:FMT
 is_a: CHEBI:33249 ! organyl group
 property_value: http://purl.obolibrary.org/obo/chebi/charge "0" xsd:string
 property_value: http://purl.obolibrary.org/obo/chebi/formula "CHO2" xsd:string
