@@ -14,4 +14,4 @@ Editors: see the README in [src/ontology](src/ontology)
 ## Biweekly calls
 
 Biweekly calls on Wednesdays at 8am PT/11am ET.
-[Agenda](https://docs.google.com/document/d/1XvMbNvr0FEsdqGhg79BYCYEHSqUxRHMcvhbGizEAht8/edit)
+[Agenda here.](https://docs.google.com/document/d/1XvMbNvr0FEsdqGhg79BYCYEHSqUxRHMcvhbGizEAht8/edit)
