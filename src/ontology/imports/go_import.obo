@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2020-01-06/imports/go_import.owl
+data-version: cl/releases/2020-03-02/imports/go_import.owl
 ontology: cl/imports/go_import
 
 [Term]
@@ -227,6 +227,7 @@ def: "A process in which membrane potential cycles through a depolarizing spike,
 comment: Action potentials typically propagate across excitable membranes. This class covers both action potentials that propagate and those that fail to do so.
 xref: MIPS_funcat:34.03.03
 is_a: GO:0042391 ! regulation of membrane potential
+property_value: RO:0002161 NCBITaxon:4895
 
 [Term]
 id: GO:0001525
@@ -435,7 +436,7 @@ synonym: "5-HT secretion" EXACT []
 synonym: "5-hydroxytryptamine secretion" EXACT []
 synonym: "serotonin release" RELATED [GOC:tb]
 is_a: GO:0006837 ! serotonin transport
-is_a: GO:0032940 ! secretion by cell
+is_a: GO:0023061 ! signal release
 
 [Term]
 id: GO:0001821
@@ -467,14 +468,15 @@ is_a: GO:0008150 ! biological_process
 id: GO:0001909
 name: leukocyte mediated cytotoxicity
 namespace: biological_process
-def: "The directed killing of a target cell by a leukocyte." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149, PMID:11911826]
-comment: This term was improved by GO_REF:0000022. It was moved. Note that this term and its children describe contact-dependent killing of target cells by lymphocytes and myeloid cells of the immune system.
+def: "The directed killing of a target cell by a leukocyte." [GO_REF:0000022, GOC:add, ISBN:0781735149, PMID:11911826]
+comment: Note that this term and its children describe contact-dependent killing of target cells by lymphocytes and myeloid cells of the immune system.
 synonym: "immune cell mediated cell death" EXACT []
 synonym: "immune cell mediated cell killing" EXACT []
 synonym: "immune cell mediated cytotoxicity" EXACT []
 synonym: "leucocyte mediated cytotoxicity" EXACT []
 xref: MIPS_funcat:36.25.16.01.05
 is_a: GO:0001906 ! cell killing
+is_a: GO:0002443 ! leukocyte mediated immunity
 
 [Term]
 id: GO:0001910
@@ -485,6 +487,7 @@ synonym: "regulation of immune cell mediated cell death" EXACT []
 synonym: "regulation of immune cell mediated cell killing" EXACT []
 synonym: "regulation of immune cell mediated cytotoxicity" EXACT []
 synonym: "regulation of leucocyte mediated cytotoxicity" EXACT []
+is_a: GO:0002703 ! regulation of leukocyte mediated immunity
 is_a: GO:0031341 ! regulation of cell killing
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0001909 ! leukocyte mediated cytotoxicity
@@ -502,6 +505,7 @@ synonym: "inhibition of leukocyte mediated cytotoxicity" NARROW []
 synonym: "negative regulation of immune cell mediated cytotoxicity" EXACT []
 synonym: "negative regulation of leucocyte mediated cytotoxicity" EXACT []
 is_a: GO:0001910 ! regulation of leukocyte mediated cytotoxicity
+is_a: GO:0002704 ! negative regulation of leukocyte mediated immunity
 is_a: GO:0031342 ! negative regulation of cell killing
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0001909 ! leukocyte mediated cytotoxicity
@@ -520,6 +524,7 @@ synonym: "up regulation of leukocyte mediated cytotoxicity" EXACT []
 synonym: "up-regulation of leukocyte mediated cytotoxicity" EXACT []
 synonym: "upregulation of leukocyte mediated cytotoxicity" EXACT []
 is_a: GO:0001910 ! regulation of leukocyte mediated cytotoxicity
+is_a: GO:0002705 ! positive regulation of leukocyte mediated immunity
 is_a: GO:0031343 ! positive regulation of cell killing
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0001909 ! leukocyte mediated cytotoxicity
@@ -655,6 +660,7 @@ id: GO:0001963
 name: synaptic transmission, dopaminergic
 namespace: biological_process
 def: "The vesicular release of  dopamine. from a presynapse, across a chemical synapse, the subsequent activation of dopamine receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:dos, GOC:dph]
+synonym: "dopaminergic synaptic transmission" EXACT []
 is_a: GO:0007268 ! chemical synaptic transmission
 
 [Term]
@@ -717,6 +723,7 @@ namespace: biological_process
 def: "The regulated release of renin into the blood stream by juxtoglomerular cells." [ISBN:0721643949]
 synonym: "renin release into blood stream" EXACT []
 is_a: GO:0009306 ! protein secretion
+is_a: GO:0023061 ! signal release
 relationship: part_of GO:0001999 ! renal response to blood flow involved in circulatory renin-angiotensin regulation of systemic arterial blood pressure
 
 [Term]
@@ -799,8 +806,7 @@ is_a: GO:0045087 ! innate immune response
 id: GO:0002228
 name: natural killer cell mediated immunity
 namespace: biological_process
-def: "The promotion of an immune response by natural killer cells through direct recognition of target cells or through the release of cytokines." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "The promotion of an immune response by natural killer cells through direct recognition of target cells or through the release of cytokines." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "NK cell mediated immunity" EXACT []
 is_a: GO:0002449 ! lymphocyte mediated immunity
 is_a: GO:0045087 ! innate immune response
@@ -864,8 +870,7 @@ is_a: GO:0002507 ! tolerance induction
 id: GO:0002250
 name: adaptive immune response
 namespace: biological_process
-def: "An immune response mediated by cells expressing specific receptors for antigen produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "An immune response mediated by cells expressing specific receptors for antigen produced through a somatic diversification process, and allowing for an enhanced secondary response to subsequent exposures to the same antigen (immunological memory)." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "acquired immune response" EXACT [ISBN:068340007X]
 synonym: "immune memory response" EXACT [GOC:add]
 xref: Wikipedia:Adaptive_immune_system
@@ -875,8 +880,7 @@ is_a: GO:0006955 ! immune response
 id: GO:0002251
 name: organ or tissue specific immune response
 namespace: biological_process
-def: "An immune response taking place in an organ or tissues such as the liver, brain, mucosa, or nervous system tissues." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05]
-comment: This term was added by GO_REF:0000022.
+def: "An immune response taking place in an organ or tissues such as the liver, brain, mucosa, or nervous system tissues." [GO_REF:0000022, GOC:jal]
 synonym: "immune response in organ or tissue" EXACT []
 is_a: GO:0006955 ! immune response
 
@@ -884,8 +888,7 @@ is_a: GO:0006955 ! immune response
 id: GO:0002252
 name: immune effector process
 namespace: biological_process
-def: "Any process of the immune system that can potentially contribute to an immune response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Any process of the immune system that can potentially contribute to an immune response." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 is_a: GO:0002376 ! immune system process
 
 [Term]
@@ -907,8 +910,7 @@ is_a: GO:0048872 ! homeostasis of number of cells
 id: GO:0002263
 name: cell activation involved in immune response
 namespace: biological_process
-def: "A change in the morphology or behavior of a cell resulting from exposure to an activating factor such as a cellular or soluble ligand, leading to the initiation or perpetuation of an immune response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "A change in the morphology or behavior of a cell resulting from exposure to an activating factor such as a cellular or soluble ligand, leading to the initiation or perpetuation of an immune response." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "cell activation during immune response" RELATED [GOC:tb]
 is_a: GO:0001775 ! cell activation
 is_a: GO:0002252 ! immune effector process
@@ -1208,8 +1210,7 @@ is_a: GO:0002339 ! B cell selection
 id: GO:0002344
 name: B cell affinity maturation
 namespace: biological_process
-def: "The process in which B cells produce antibodies with increased antigen affinity. This is accomplished by somatic hypermutation and selection for B cells which produce higher affinity antibodies to antigen." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "The process in which B cells produce antibodies with increased antigen affinity. This is accomplished by somatic hypermutation and selection for B cells which produce higher affinity antibodies to antigen." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 synonym: "B lymphocyte affinity maturation" EXACT []
 synonym: "B-cell affinity maturation" EXACT []
 synonym: "B-lymphocyte affinity maturation" EXACT []
@@ -1249,8 +1250,8 @@ intersection_of: part_of GO:0006955 ! immune response
 id: GO:0002367
 name: cytokine production involved in immune response
 namespace: biological_process
-def: "The appearance of a cytokine due to biosynthesis or secretion following a cellular stimulus contributing to an immune response, resulting in an increase in its intracellular or extracellular levels." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022. Note that this term is intended for use when a gene product is seen to cause apparent increases in intracellular or extracellular cytokine levels, without specific regard as to whether the increase is due to increased biosynthesis, increased secretion of preexisting cytokine molecules, or increased conversion from precursor molecules.
+def: "The appearance of a cytokine due to biosynthesis or secretion following a cellular stimulus contributing to an immune response, resulting in an increase in its intracellular or extracellular levels." [GO_REF:0000022, GOC:add, ISBN:0781735149]
+comment: Note that this term is intended for use when a gene product is seen to cause apparent increases in intracellular or extracellular cytokine levels, without specific regard as to whether the increase is due to increased biosynthesis, increased secretion of preexisting cytokine molecules, or increased conversion from precursor molecules.
 synonym: "cytokine production during immune response" RELATED [GOC:dph]
 is_a: GO:0001816 ! cytokine production
 is_a: GO:0002440 ! production of molecular mediator of immune response
@@ -1273,8 +1274,8 @@ is_a: GO:0002456 ! T cell mediated immunity
 id: GO:0002376
 name: immune system process
 namespace: biological_process
-def: "Any process involved in the development or functioning of the immune system, an organismal system for calibrated responses to potential internal or invasive threats." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05]
-comment: Note that this term is a direct child of 'biological_process ; GO:0008150' because some immune system processes are types of cellular process (GO:0009987), whereas others are types of multicellular organism process (GO:0032501). This term was added by GO_REF:0000022.
+def: "Any process involved in the development or functioning of the immune system, an organismal system for calibrated responses to potential internal or invasive threats." [GO_REF:0000022, GOC:add]
+comment: Note that this term is a direct child of 'biological_process ; GO:0008150' because some immune system processes are types of cellular process (GO:0009987), whereas others are types of multicellular organism process (GO:0032501).
 subset: goslim_agr
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
@@ -1283,6 +1284,7 @@ subset: goslim_mouse
 subset: goslim_pir
 xref: Wikipedia:Immune_system
 is_a: GO:0008150 ! biological_process
+property_value: RO:0002161 NCBITaxon:4895
 
 [Term]
 id: GO:0002377
@@ -1321,8 +1323,7 @@ relationship: part_of GO:0016064 ! immunoglobulin mediated immune response
 id: GO:0002385
 name: mucosal immune response
 namespace: biological_process
-def: "An immune response taking place in mucosal tissues, including those of the intestinal tract, nasal and upper respiratory tract, and genital tract." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "An immune response taking place in mucosal tissues, including those of the intestinal tract, nasal and upper respiratory tract, and genital tract." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 is_a: GO:0002251 ! organ or tissue specific immune response
 
 [Term]
@@ -1353,8 +1354,7 @@ is_a: GO:0002387 ! immune response in gut-associated lymphoid tissue
 id: GO:0002432
 name: granuloma formation
 namespace: biological_process
-def: "The formation of nodular inflammatory lesions, usually small or granular, firm, persistent, well-structured, and containing compactly grouped T lymphocytes and modified phagocytes such as epithelioid cells, giant cells, and other macrophages. Granuloma formation represents a chronic inflammatory response initiated by various infectious and noninfectious agents. The center of a granuloma consists of fused macrophages, which can become necrotic." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:068340007X, ISBN:0721601464, ISBN:081533642X]
-comment: This term was added by GO_REF:0000022.
+def: "The formation of nodular inflammatory lesions, usually small or granular, firm, persistent, well-structured, and containing compactly grouped T lymphocytes and modified phagocytes such as epithelioid cells, giant cells, and other macrophages. Granuloma formation represents a chronic inflammatory response initiated by various infectious and noninfectious agents. The center of a granuloma consists of fused macrophages, which can become necrotic." [GO_REF:0000022, GOC:add, ISBN:068340007X, ISBN:0721601464, ISBN:081533642X]
 is_a: GO:0002252 ! immune effector process
 relationship: part_of GO:0002544 ! chronic inflammatory response
 
@@ -1362,8 +1362,7 @@ relationship: part_of GO:0002544 ! chronic inflammatory response
 id: GO:0002440
 name: production of molecular mediator of immune response
 namespace: biological_process
-def: "The synthesis or release of any molecular mediator of the immune response, resulting in an increase in its intracellular or extracellular levels." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "The synthesis or release of any molecular mediator of the immune response, resulting in an increase in its intracellular or extracellular levels." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "production of cellular mediator of immune response" RELATED []
 is_a: GO:0002376 ! immune system process
 
@@ -1397,8 +1396,7 @@ name: leukocyte mediated immunity
 namespace: biological_process
 alt_id: GO:0019723
 alt_id: GO:0042087
-def: "Any process involved in the carrying out of an immune response by a leukocyte." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Any process involved in the carrying out of an immune response by a leukocyte." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "cell-mediated immune response" RELATED []
 synonym: "cellular immune response" RELATED []
 synonym: "immune cell effector process" EXACT []
@@ -1412,8 +1410,7 @@ is_a: GO:0002252 ! immune effector process
 id: GO:0002449
 name: lymphocyte mediated immunity
 namespace: biological_process
-def: "Any process involved in the carrying out of an immune response by a lymphocyte." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Any process involved in the carrying out of an immune response by a lymphocyte." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "cell-mediated immunity" BROAD []
 synonym: "cellular immune response" BROAD []
 is_a: GO:0002443 ! leukocyte mediated immunity
@@ -1422,8 +1419,7 @@ is_a: GO:0002443 ! leukocyte mediated immunity
 id: GO:0002456
 name: T cell mediated immunity
 namespace: biological_process
-def: "Any process involved in the carrying out of an immune response by a T cell." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Any process involved in the carrying out of an immune response by a T cell." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "cell-mediated immunity" BROAD []
 synonym: "cellular immune response" BROAD []
 synonym: "T lymphocyte mediated immunity" EXACT []
@@ -1443,8 +1439,7 @@ is_a: GO:0002250 ! adaptive immune response
 id: GO:0002461
 name: tolerance induction dependent upon immune response
 namespace: biological_process
-def: "Tolerance induction dependent upon an immune response, typically a response by a mature T or B cell in the periphery resulting tolerance towards an antigen via induction of anergy, cellular deletion, or regulatory T cell activation." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Tolerance induction dependent upon an immune response, typically a response by a mature T or B cell in the periphery resulting tolerance towards an antigen via induction of anergy, cellular deletion, or regulatory T cell activation." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 synonym: "immune response-dependent tolerance induction" EXACT []
 is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 is_a: GO:0002507 ! tolerance induction
@@ -1453,16 +1448,14 @@ is_a: GO:0002507 ! tolerance induction
 id: GO:0002465
 name: peripheral tolerance induction
 namespace: biological_process
-def: "Tolerance induction in the peripheral lymphoid tissues: blood, lymph nodes, spleen, and mucosal-associated lymphoid tissues." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Tolerance induction in the peripheral lymphoid tissues: blood, lymph nodes, spleen, and mucosal-associated lymphoid tissues." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 is_a: GO:0002461 ! tolerance induction dependent upon immune response
 
 [Term]
 id: GO:0002467
 name: germinal center formation
 namespace: biological_process
-def: "The process in which germinal centers form. A germinal center is a specialized microenvironment formed when activated B cells enter lymphoid follicles. Germinal centers are the foci for B cell proliferation and somatic hypermutation." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:081533642X]
-comment: This term was added by GO_REF:0000022.
+def: "The process in which germinal centers form. A germinal center is a specialized microenvironment formed when activated B cells enter lymphoid follicles. Germinal centers are the foci for B cell proliferation and somatic hypermutation." [GO_REF:0000022, GOC:jal, ISBN:081533642X]
 is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 is_a: GO:0048646 ! anatomical structure formation involved in morphogenesis
 
@@ -1525,8 +1518,7 @@ is_a: GO:0019882 ! antigen processing and presentation
 id: GO:0002507
 name: tolerance induction
 namespace: biological_process
-def: "A process that directly activates any of the steps required for tolerance, a physiologic state in which the immune system does not react destructively against the components of an organism that harbors it or against antigens that are introduced to it." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "A process that directly activates any of the steps required for tolerance, a physiologic state in which the immune system does not react destructively against the components of an organism that harbors it or against antigens that are introduced to it." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 is_a: GO:0002376 ! immune system process
 relationship: part_of GO:0002520 ! immune system development
 
@@ -1620,8 +1612,7 @@ relationship: part_of GO:0006954 ! inflammatory response
 id: GO:0002526
 name: acute inflammatory response
 namespace: biological_process
-def: "Inflammation which comprises a rapid, short-lived, relatively uniform response to acute injury or antigenic challenge and is characterized by accumulations of fluid, plasma proteins, and granulocytic leukocytes. An acute inflammatory response occurs within a matter of minutes or hours, and either resolves within a few days or becomes a chronic inflammatory response." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Inflammation which comprises a rapid, short-lived, relatively uniform response to acute injury or antigenic challenge and is characterized by accumulations of fluid, plasma proteins, and granulocytic leukocytes. An acute inflammatory response occurs within a matter of minutes or hours, and either resolves within a few days or becomes a chronic inflammatory response." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 is_a: GO:0006954 ! inflammatory response
 
 [Term]
@@ -1698,8 +1689,7 @@ is_a: GO:0002538 ! arachidonic acid metabolite production involved in inflammato
 id: GO:0002544
 name: chronic inflammatory response
 namespace: biological_process
-def: "Inflammation of prolonged duration (weeks or months) in which active inflammation, tissue destruction, and attempts at repair are proceeding simultaneously. Although it may follow acute inflammation, chronic inflammation frequently begins insidiously, as a low-grade, smoldering, often asymptomatic response." [GO_REF:0000022, GOC:jal, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was added by GO_REF:0000022.
+def: "Inflammation of prolonged duration (weeks or months) in which active inflammation, tissue destruction, and attempts at repair are proceeding simultaneously. Although it may follow acute inflammation, chronic inflammation frequently begins insidiously, as a low-grade, smoldering, often asymptomatic response." [GO_REF:0000022, GOC:jal, ISBN:0781735149]
 is_a: GO:0006954 ! inflammatory response
 
 [Term]
@@ -3099,7 +3089,6 @@ def: "Any process that modulates the frequency, rate, or extent of an antimicrob
 is_a: GO:0002831 ! regulation of response to biotic stimulus
 is_a: GO:0002920 ! regulation of humoral immune response
 is_a: GO:0032101 ! regulation of response to external stimulus
-is_a: GO:0043900 ! regulation of multi-organism process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0019730 ! antimicrobial humoral response
 relationship: regulates GO:0019730 ! antimicrobial humoral response
@@ -3118,7 +3107,6 @@ is_a: GO:0002759 ! regulation of antimicrobial humoral response
 is_a: GO:0002833 ! positive regulation of response to biotic stimulus
 is_a: GO:0002922 ! positive regulation of humoral immune response
 is_a: GO:0032103 ! positive regulation of response to external stimulus
-is_a: GO:0043902 ! positive regulation of multi-organism process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0019730 ! antimicrobial humoral response
 relationship: positively_regulates GO:0019730 ! antimicrobial humoral response
@@ -3303,18 +3291,6 @@ is_a: GO:0002794 ! regulation of antimicrobial peptide secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0002776 ! antimicrobial peptide secretion
 relationship: positively_regulates GO:0002776 ! antimicrobial peptide secretion
-
-[Term]
-id: GO:0002818
-name: intracellular defense response
-namespace: biological_process
-def: "A physiological defense response which occurs intracellularly." [GOC:add]
-synonym: "intracellular defence response" EXACT []
-is_a: GO:0006968 ! cellular defense response
-is_a: GO:0033554 ! cellular response to stress
-intersection_of: GO:0006952 ! defense response
-intersection_of: occurs_in GO:0005622 ! intracellular
-relationship: occurs_in GO:0005622 ! intracellular
 
 [Term]
 id: GO:0002819
@@ -3980,6 +3956,12 @@ synonym: "flagellar movement" NARROW [GOC:bf]
 synonym: "flagellum movement" NARROW []
 synonym: "microtubule-based flagellum movement" EXACT []
 is_a: GO:0007018 ! microtubule-based movement
+property_value: RO:0002161 NCBITaxon:3176
+property_value: RO:0002161 NCBITaxon:3312
+property_value: RO:0002161 NCBITaxon:3378
+property_value: RO:0002161 NCBITaxon:3398
+property_value: RO:0002161 NCBITaxon:4890
+property_value: RO:0002161 NCBITaxon:5782
 created_by: dph
 creation_date: 2009-11-24T09:56:26Z
 
@@ -4652,6 +4634,12 @@ xref: Wikipedia:Cilium
 is_a: GO:0043226 ! organelle
 is_a: GO:0120025 ! plasma membrane bounded cell projection
 relationship: has_part GO:0030990 ! intraciliary transport particle
+property_value: RO:0002161 NCBITaxon:3176
+property_value: RO:0002161 NCBITaxon:3312
+property_value: RO:0002161 NCBITaxon:3378
+property_value: RO:0002161 NCBITaxon:3398
+property_value: RO:0002161 NCBITaxon:4890
+property_value: RO:0002161 NCBITaxon:5782
 
 [Term]
 id: GO:0005938
@@ -5012,8 +5000,8 @@ id: GO:0006837
 name: serotonin transport
 namespace: biological_process
 def: "The directed movement of serotonin into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Serotonin (5-hydroxytryptamine) is a monoamine neurotransmitter occurring in the peripheral and central nervous systems." [GOC:ai]
+is_a: GO:0006812 ! cation transport
 is_a: GO:0006836 ! neurotransmitter transport
-is_a: GO:0015696 ! ammonium transport
 is_a: GO:0015844 ! monoamine transport
 is_a: GO:0015850 ! organic hydroxy compound transport
 
@@ -5088,7 +5076,6 @@ synonym: "vesicle endocytosis" EXACT []
 xref: MIPS_funcat:20.09.18.09.01
 xref: Wikipedia:Endocytosis
 is_a: GO:0016192 ! vesicle-mediated transport
-is_a: GO:0098657 ! import into cell
 relationship: has_part GO:0006900 ! vesicle budding from membrane
 relationship: has_part GO:0010324 ! membrane invagination
 
@@ -5130,6 +5117,7 @@ def: "A vesicle-mediated transport process that results in the engulfment of ext
 xref: MIPS_funcat:36.25.16.01.03
 xref: Wikipedia:Phagocytosis
 is_a: GO:0016192 ! vesicle-mediated transport
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0006915
@@ -5275,9 +5263,8 @@ is_a: GO:0006950 ! response to stress
 id: GO:0006954
 name: inflammatory response
 namespace: biological_process
-def: "The immediate defensive reaction (by vertebrate tissue) to infection or injury caused by chemical or physical agents. The process is characterized by local vasodilation, extravasation of plasma into intercellular spaces and accumulation of white blood cells and macrophages." [GO_REF:0000022, GOC:mtg_15nov05, ISBN:0198506732]
-comment: This term was improved by GO_REF:0000022. It was moved.
-synonym: "Inflammation" BROAD []
+def: "The immediate defensive reaction (by vertebrate tissue) to infection or injury caused by chemical or physical agents. The process is characterized by local vasodilation, extravasation of plasma into intercellular spaces and accumulation of white blood cells and macrophages." [GO_REF:0000022, ISBN:0198506732]
+synonym: "inflammation" BROAD []
 xref: MIPS_funcat:36.25.16.07
 xref: Wikipedia:Inflammation
 is_a: GO:0006952 ! defense response
@@ -5286,8 +5273,7 @@ is_a: GO:0006952 ! defense response
 id: GO:0006955
 name: immune response
 namespace: biological_process
-def: "Any immune system process that functions in the calibrated response of an organism to a potential internal or invasive threat." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05]
-comment: This term was improved by GO_REF:0000022. It was redefined and moved.
+def: "Any immune system process that functions in the calibrated response of an organism to a potential internal or invasive threat." [GO_REF:0000022, GOC:add]
 subset: goslim_drosophila
 xref: MIPS_funcat:36.25.16
 is_a: GO:0002376 ! immune system process
@@ -5305,11 +5291,14 @@ is_a: GO:0006955 ! immune response
 id: GO:0006968
 name: cellular defense response
 namespace: biological_process
+alt_id: GO:0002818
 alt_id: GO:0016066
 alt_id: GO:0016067
 def: "A defense response that is mediated by cells." [GOC:ebc]
-comment: Note that this term refers to any type of defense response made by any cell, whether only a single-celled organism or part of a multicellular organism; also includes responses that occur in the context of multiorganism processes.
+comment: Merged terms, see https://github.com/geneontology/go-ontology/issues/18111.
 synonym: "cellular defence response" EXACT []
+synonym: "intracellular defence response" NARROW []
+synonym: "intracellular defense response" NARROW []
 is_a: GO:0006952 ! defense response
 
 [Term]
@@ -5492,6 +5481,7 @@ intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0048232 ! male gamete generation
 intersection_of: part_of GO:0051321 ! meiotic cell cycle
 relationship: part_of GO:0048232 ! male gamete generation
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0007142
@@ -5519,6 +5509,7 @@ intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0007292 ! female gamete generation
 intersection_of: part_of GO:0051321 ! meiotic cell cycle
 relationship: part_of GO:0007292 ! female gamete generation
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0007147
@@ -5572,6 +5563,8 @@ def: "The attachment of a leukocyte to another cell via adhesion molecules." [GO
 synonym: "leukocyte adhesion" EXACT []
 synonym: "leukocyte cell adhesion" EXACT []
 is_a: GO:0098609 ! cell-cell adhesion
+property_value: RO:0002161 NCBITaxon:33090
+property_value: RO:0002161 NCBITaxon_Union:0000023
 
 [Term]
 id: GO:0007162
@@ -5694,6 +5687,7 @@ id: GO:0007271
 name: synaptic transmission, cholinergic
 namespace: biological_process
 def: "The vesicular release of acetylcholine from a presynapse, across a chemical synapse, the subsequent activation of dopamine receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:dos, Wikipedia:Cholinergic]
+synonym: "cholinergic synaptic transmission" EXACT []
 is_a: GO:0007268 ! chemical synaptic transmission
 
 [Term]
@@ -5718,6 +5712,7 @@ synonym: "gametogenesis" RELATED []
 xref: MIPS_funcat:41.05.25
 is_a: GO:0048609 ! multicellular organismal reproductive process
 relationship: part_of GO:0019953 ! sexual reproduction
+property_value: RO:0002161 NCBITaxon_Union:0000023
 
 [Term]
 id: GO:0007281
@@ -5791,6 +5786,7 @@ synonym: "zygote biosynthesis" RELATED []
 synonym: "zygote formation" RELATED []
 xref: MIPS_funcat:41.05.01
 is_a: GO:0009566 ! fertilization
+property_value: RO:0002161 NCBITaxon:58024
 
 [Term]
 id: GO:0007346
@@ -5980,7 +5976,9 @@ is_a: GO:0007606 ! sensory perception of chemical stimulus
 id: GO:0007610
 name: behavior
 namespace: biological_process
+alt_id: GO:0023032
 alt_id: GO:0044708
+alt_id: GO:0044709
 def: "The internally coordinated responses (actions or inactions) of animals (individuals or groups) to internal or external stimuli, via a mechanism that involves nervous system activity." [GOC:ems, GOC:jl, ISBN:0395448956, PMID:20160973]
 comment: 1. Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation reviews.\n2. While a broader definition of behavior encompassing plants and single cell organisms would be justified on the basis of some usage (see PMID:20160973 for discussion), GO uses a tight definition that limits behavior to animals and to responses involving the nervous system, excluding plant responses that GO classifies under development, and responses of unicellular organisms that has general classifications for covering the responses of cells in multicellular organisms (e.g. cell chemotaxis).
 subset: gocheck_do_not_manually_annotate
@@ -6163,6 +6161,7 @@ subset: goslim_mouse
 subset: goslim_pir
 synonym: "cell proliferation" RELATED []
 is_a: GO:0008150 ! biological_process
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0008284
@@ -6180,6 +6179,7 @@ is_a: GO:0048522 ! positive regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0008283 ! cell population proliferation
 relationship: positively_regulates GO:0008283 ! cell population proliferation
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0008285
@@ -6196,6 +6196,7 @@ is_a: GO:0048523 ! negative regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0008283 ! cell population proliferation
 relationship: negatively_regulates GO:0008283 ! cell population proliferation
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0008289
@@ -6240,7 +6241,6 @@ is_a: GO:0002759 ! regulation of antimicrobial humoral response
 is_a: GO:0002832 ! negative regulation of response to biotic stimulus
 is_a: GO:0002921 ! negative regulation of humoral immune response
 is_a: GO:0032102 ! negative regulation of response to external stimulus
-is_a: GO:0043901 ! negative regulation of multi-organism process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0019730 ! antimicrobial humoral response
 relationship: negatively_regulates GO:0019730 ! antimicrobial humoral response
@@ -6286,6 +6286,7 @@ synonym: "ovary development" RELATED [GOC:sl]
 xref: MIPS_funcat:47.03.15.01
 is_a: GO:0008406 ! gonad development
 relationship: part_of GO:0046545 ! development of primary female sexual characteristics
+property_value: RO:0002161 NCBITaxon:3398
 
 [Term]
 id: GO:0008610
@@ -6650,6 +6651,11 @@ synonym: "histogenesis" EXACT []
 synonym: "histogenesis and organogenesis" BROAD []
 xref: Wikipedia:Histogenesis
 is_a: GO:0048856 ! anatomical structure development
+property_value: RO:0002161 NCBITaxon:147554
+property_value: RO:0002161 NCBITaxon:33630
+property_value: RO:0002161 NCBITaxon:33682
+property_value: RO:0002161 NCBITaxon:38254
+property_value: RO:0002161 NCBITaxon:4891
 
 [Term]
 id: GO:0009889
@@ -7174,7 +7180,9 @@ id: GO:0010700
 name: negative regulation of norepinephrine secretion
 namespace: biological_process
 def: "Any process that decreases the frequency, rate or extent of the regulated release of norepinephrine." [GOC:dph, GOC:tb]
+is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0014061 ! regulation of norepinephrine secretion
+is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0033604 ! negative regulation of catecholamine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0048243 ! norepinephrine secretion
@@ -7185,7 +7193,9 @@ id: GO:0010701
 name: positive regulation of norepinephrine secretion
 namespace: biological_process
 def: "Any process that increases the frequency, rate or extent of the regulated release of norepinephrine." [GOC:dph, GOC:tb]
+is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0014061 ! regulation of norepinephrine secretion
+is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0033605 ! positive regulation of catecholamine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0048243 ! norepinephrine secretion
@@ -7386,6 +7396,7 @@ name: dopamine secretion
 namespace: biological_process
 def: "The regulated release of dopamine by a cell. Dopamine is a catecholamine and a precursor of adrenaline and noradrenaline. It acts as a neurotransmitter in the central nervous system but it is also produced peripherally and acts as a hormone." [GOC:ef]
 is_a: GO:0015872 ! dopamine transport
+is_a: GO:0023061 ! signal release
 is_a: GO:0050432 ! catecholamine secretion
 
 [Term]
@@ -7570,6 +7581,8 @@ id: GO:0014059
 name: regulation of dopamine secretion
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the regulated release of dopamine." [GOC:ef]
+is_a: GO:0010646 ! regulation of cell communication
+is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0043269 ! regulation of ion transport
 is_a: GO:0050433 ! regulation of catecholamine secretion
 is_a: GO:2001023 ! regulation of response to drug
@@ -7594,6 +7607,8 @@ name: regulation of norepinephrine secretion
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the regulated release of norepinephrine." [GOC:ef]
 synonym: "regulation of noradrenaline secretion" EXACT []
+is_a: GO:0010646 ! regulation of cell communication
+is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0050433 ! regulation of catecholamine secretion
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0048243 ! norepinephrine secretion
@@ -7605,6 +7620,8 @@ name: regulation of serotonin secretion
 namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of the regulated release of serotonin." [GOC:ef]
 synonym: "regulation of serotonin release" RELATED [GOC:tb]
+is_a: GO:0010646 ! regulation of cell communication
+is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0043269 ! regulation of ion transport
 is_a: GO:0051588 ! regulation of neurotransmitter transport
 is_a: GO:1903530 ! regulation of secretion by cell
@@ -7622,7 +7639,9 @@ synonym: "down-regulation of serotonin secretion" EXACT []
 synonym: "downregulation of serotonin secretion" EXACT []
 synonym: "inhibition of serotonin secretion" NARROW []
 synonym: "positive regulation of serotonin release" RELATED [GOC:tb]
+is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0014062 ! regulation of serotonin secretion
+is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0043271 ! negative regulation of ion transport
 is_a: GO:0051589 ! negative regulation of neurotransmitter transport
 is_a: GO:1903531 ! negative regulation of secretion by cell
@@ -7641,7 +7660,9 @@ synonym: "stimulation of serotonin secretion" NARROW []
 synonym: "up regulation of serotonin secretion" EXACT []
 synonym: "up-regulation of serotonin secretion" EXACT []
 synonym: "upregulation of serotonin secretion" EXACT []
+is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0014062 ! regulation of serotonin secretion
+is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0043270 ! positive regulation of ion transport
 is_a: GO:0051590 ! positive regulation of neurotransmitter transport
 is_a: GO:1903532 ! positive regulation of secretion by cell
@@ -7770,7 +7791,7 @@ name: ammonium transport
 namespace: biological_process
 def: "The directed movement of ammonium into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Ammonium is the cation NH4+ which is formed from N2 by root-nodule bacteria in leguminous plants and is an excretory product in ammonotelic animals." [ISBN:0198506732]
 synonym: "ammonia transport" RELATED []
-is_a: GO:0006812 ! cation transport
+is_a: GO:0015672 ! monovalent inorganic cation transport
 is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
@@ -7893,8 +7914,8 @@ namespace: biological_process
 def: "The directed movement of acetylcholine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Acetylcholine is an acetic acid ester of the organic base choline and functions as a neurotransmitter, released at the synapses of parasympathetic nerves and at neuromuscular junctions." [GOC:ai]
 is_a: GO:0006836 ! neurotransmitter transport
 is_a: GO:0015695 ! organic cation transport
-is_a: GO:0015696 ! ammonium transport
 is_a: GO:0015893 ! drug transport
+is_a: GO:0071705 ! nitrogen compound transport
 is_a: GO:1901374 ! acetate ester transport
 
 [Term]
@@ -7902,7 +7923,7 @@ id: GO:0015872
 name: dopamine transport
 namespace: biological_process
 def: "The directed movement of dopamine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Dopamine is a catecholamine neurotransmitter and a metabolic precursor of noradrenaline and adrenaline." [GOC:ai]
-is_a: GO:0015696 ! ammonium transport
+is_a: GO:0006812 ! cation transport
 is_a: GO:0015893 ! drug transport
 is_a: GO:0051937 ! catecholamine transport
 
@@ -8016,10 +8037,8 @@ is_a: GO:1901576 ! organic substance biosynthetic process
 id: GO:0016064
 name: immunoglobulin mediated immune response
 namespace: biological_process
-def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was improved by GO_REF:0000022. It was renamed and redefined.
+def: "An immune response mediated by immunoglobulins, whether cell-bound or in solution." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "antibody-mediated immune response" EXACT []
-xref: MIPS_funcat:36.25.16.03
 is_a: GO:0019724 ! B cell mediated immunity
 
 [Term]
@@ -8131,7 +8150,7 @@ is_a: GO:0016445 ! somatic diversification of immunoglobulins
 id: GO:0016477
 name: cell migration
 namespace: biological_process
-def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues. Cell migration is a central process in the development and maintenance of multicellular organisms." [GOC:cjm, GOC:dph, GOC:ems, GOC:pf, http://en.wikipedia.org/wiki/Cell_migration]
+def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues. Cell migration is a central process in the development and maintenance of multicellular organisms." [GOC:cjm, GOC:dph, GOC:ems, GOC:pf, Wikipedia:Cell_migration]
 xref: MIPS_funcat:34.05.01
 xref: Wikipedia:Cell_migration
 is_a: GO:0048870 ! cell motility
@@ -8364,15 +8383,13 @@ is_a: GO:1901564 ! organonitrogen compound metabolic process
 id: GO:0019724
 name: B cell mediated immunity
 namespace: biological_process
-def: "Any process involved with the carrying out of an immune response by a B cell, through, for instance, the production of antibodies or cytokines, or antigen presentation to T cells." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149]
-comment: This term was improved by GO_REF:0000022. It was moved.
+def: "Any process involved with the carrying out of an immune response by a B cell, through, for instance, the production of antibodies or cytokines, or antigen presentation to T cells." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 synonym: "B lymphocyte mediated immune effector process" EXACT []
 synonym: "B lymphocyte mediated immunity" EXACT []
 synonym: "B-cell mediated immune effector process" EXACT []
 synonym: "B-cell mediated immunity" EXACT []
 synonym: "B-lymphocyte mediated immune effector process" EXACT []
 synonym: "B-lymphocyte mediated immunity" EXACT []
-xref: MIPS_funcat:36.25.16.03.01
 is_a: GO:0002449 ! lymphocyte mediated immunity
 is_a: GO:0002460 ! adaptive immune response based on somatic recombination of immune receptors built from immunoglobulin superfamily domains
 
@@ -8441,11 +8458,9 @@ id: GO:0019882
 name: antigen processing and presentation
 namespace: biological_process
 alt_id: GO:0030333
-def: "The process in which an antigen-presenting cell expresses antigen (peptide or lipid) on its cell surface in association with an MHC protein complex." [GO_REF:0000022, GOC:add, GOC:mtg_15nov05, ISBN:0781735149, PMID:15771591, PMID:15928678]
-comment: This term was improved by GO_REF:0000022. It was renamed and redefined.
+def: "The process in which an antigen-presenting cell expresses antigen (peptide or lipid) on its cell surface in association with an MHC protein complex." [GO_REF:0000022, GOC:add, ISBN:0781735149, PMID:15771591, PMID:15928678]
 synonym: "antigen presentation" EXACT []
 synonym: "antigen processing" EXACT []
-xref: MIPS_funcat:36.25.16.03.05
 xref: Wikipedia:Antigen_presentation
 is_a: GO:0002376 ! immune system process
 
@@ -8461,7 +8476,7 @@ is_a: GO:0019882 ! antigen processing and presentation
 id: GO:0019953
 name: sexual reproduction
 namespace: biological_process
-def: "A reproduction process that creates a new organism by combining the genetic material of two gametes, which may come from two organisms or from a single organism, in the case of self-fertilizing hermaphrodites, e.g. C. elegans, or self-fertilization in plants. It occurs both in eukaryotes and prokaryotes: in multicellular eukaryotic organisms, an individual is created anew; in prokaryotes, the initial cell has additional or transformed genetic material. In a process called genetic recombination, genetic material (DNA) originating from two gametes join up so that homologous sequences are aligned with each other, and this is followed by exchange of genetic information. After the new recombinant chromosome is formed, it is passed on to progeny." [GOC:jl, GOC:kmv, GOC:krc, GOC:tb, http://en.wikipedia.org/wiki/Sexual_reproduction, ISBN:0387520546]
+def: "A reproduction process that creates a new organism by combining the genetic material of two gametes, which may come from two organisms or from a single organism, in the case of self-fertilizing hermaphrodites, e.g. C. elegans, or self-fertilization in plants. It occurs both in eukaryotes and prokaryotes: in multicellular eukaryotic organisms, an individual is created anew; in prokaryotes, the initial cell has additional or transformed genetic material. In a process called genetic recombination, genetic material (DNA) originating from two gametes join up so that homologous sequences are aligned with each other, and this is followed by exchange of genetic information. After the new recombinant chromosome is formed, it is passed on to progeny." [GOC:jl, GOC:kmv, GOC:krc, GOC:tb, ISBN:0387520546, Wikipedia:Sexual_reproduction]
 comment: Sexual reproduction may be seen as the regular alternation, in the life cycle of haplontic, diplontic and diplohaplontic organisms, of meiosis and fertilization which provides for the production offspring. In diplontic organisms there is a life cycle in which the products of meiosis behave directly as gametes, fusing to form a zygote from which the diploid, or sexually reproductive polyploid, adult organism will develop. In diplohaplontic organisms a haploid phase (gametophyte) exists in the life cycle between meiosis and fertilization (e.g. higher plants, many algae and Fungi); the products of meiosis are spores that develop as haploid individuals from which haploid gametes develop to form a diploid zygote; diplohaplontic organisms show an alternation of haploid and diploid generations. In haplontic organisms meiosis occurs in the zygote, giving rise to four haploid cells (e.g. many algae and protozoa), only the zygote is diploid and this may form a resistant spore, tiding organisms over hard times.
 xref: Wikipedia:Sexual_reproduction
 is_a: GO:0000003 ! reproduction
@@ -8471,8 +8486,7 @@ is_a: GO:0044703 ! multi-organism reproductive process
 id: GO:0021700
 name: developmental maturation
 namespace: biological_process
-def: "A developmental process, independent of morphogenetic (shape) change, that is required for an anatomical structure, cell or cellular component to attain its fully functional state." [GO_REF:0000021, GOC:cls, GOC:dgh, GOC:dph, GOC:jid, GOC:mtg_15jun06]
-comment: This term was added by GO_REF:0000021.
+def: "A developmental process, independent of morphogenetic (shape) change, that is required for an anatomical structure, cell or cellular component to attain its fully functional state." [GO_REF:0000021, GOC:cls, GOC:dgh, GOC:dph, GOC:jid]
 subset: goslim_chembl
 subset: goslim_generic
 is_a: GO:0032502 ! developmental process
@@ -8481,8 +8495,7 @@ is_a: GO:0032502 ! developmental process
 id: GO:0022008
 name: neurogenesis
 namespace: biological_process
-def: "Generation of cells within the nervous system." [GO_REF:0000021, GOC:cls, GOC:curators, GOC:dgh, GOC:dph, GOC:jid, GOC:mtg_15jun06]
-comment: This term was added by GO_REF:0000021.
+def: "Generation of cells within the nervous system." [GO_REF:0000021, GOC:cls, GOC:curators, GOC:dgh, GOC:dph, GOC:jid]
 synonym: "nervous system cell generation" EXACT systematic_synonym []
 synonym: "neural cell differentiation" RELATED [GOC:BHF, GOC:dph]
 xref: Wikipedia:Neurogenesis
@@ -8841,6 +8854,19 @@ is_a: GO:0022607 ! cellular component assembly
 is_a: GO:0030030 ! cell projection organization
 
 [Term]
+id: GO:0030054
+name: cell junction
+namespace: cellular_component
+def: "A cellular component that forms a specialized region of connection between two or more cells, or between a cell and the extracellular matrix, or between two membrane-bound components of a cell, such as flagella." [GOC:aruk, GOC:bc, GOC:mah, http://www.vivo.colostate.edu/hbooks/cmb/cells/pmemb/junctions_a.html, ISBN:0198506732, PMID:26820516, PMID:28096264]
+subset: goslim_agr
+subset: goslim_drosophila
+subset: goslim_flybase_ribbon
+xref: MIPS_funcat:70.06
+xref: Wikipedia:Cell_junction
+is_a: GO:0110165 ! cellular anatomical entity
+property_value: RO:0002161 NCBITaxon:4751
+
+[Term]
 id: GO:0030072
 name: peptide hormone secretion
 namespace: biological_process
@@ -8925,6 +8951,7 @@ comment: Note that the term 'secretory vesicle' is sometimes used in this sense,
 synonym: "secretory vesicle" BROAD []
 is_a: GO:0099503 ! secretory vesicle
 relationship: part_of GO:0012505 ! endomembrane system
+property_value: RO:0002161 NCBITaxon:4890
 
 [Term]
 id: GO:0030154
@@ -9000,13 +9027,12 @@ id: GO:0030183
 name: B cell differentiation
 namespace: biological_process
 alt_id: GO:0042115
-def: "The process in which a precursor cell type acquires the specialized features of a B cell. A B cell is a lymphocyte of B lineage with the phenotype CD19-positive and capable of B cell mediated immunity." [GO_REF:0000022, GOC:mah, GOC:mtg_15nov05]
-comment: This term was improved by GO_REF:0000022. It was moved. Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+def: "The process in which a precursor cell type acquires the specialized features of a B cell. A B cell is a lymphocyte of B lineage with the phenotype CD19-positive and capable of B cell mediated immunity." [GO_REF:0000022, GOC:mah]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
 synonym: "B cell development" RELATED [GOC:add]
 synonym: "B lymphocyte differentiation" EXACT []
 synonym: "B-cell differentiation" EXACT []
 synonym: "B-lymphocyte differentiation" EXACT []
-xref: MIPS_funcat:43.03.09.03
 is_a: GO:0030098 ! lymphocyte differentiation
 is_a: GO:0042113 ! B cell activation
 
@@ -9134,13 +9160,12 @@ name: T cell differentiation
 namespace: biological_process
 alt_id: GO:0042112
 alt_id: GO:0046652
-def: "The process in which a precursor cell type acquires characteristics of a more mature T-cell. A T cell is a type of lymphocyte whose definin characteristic is the expression of a T cell receptor complex." [GO_REF:0000022, GOC:jid, GOC:mah, GOC:mtg_15nov05]
-comment: This term was improved by GO_REF:0000022. It was moved. Note that the term 'thymocyte differentiation' was merged into this term because thymocytes are T cells, and thus the term was essentially redundant. Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+def: "The process in which a precursor cell type acquires characteristics of a more mature T-cell. A T cell is a type of lymphocyte whose definin characteristic is the expression of a T cell receptor complex." [GO_REF:0000022, GOC:jid, GOC:mah]
+comment: Note that the term 'thymocyte differentiation' was merged into this term because thymocytes are T cells, and thus the term was essentially redundant. Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
 synonym: "T cell development" RELATED [GOC:add]
 synonym: "T lymphocyte differentiation" EXACT []
 synonym: "T-cell differentiation" EXACT []
 synonym: "T-lymphocyte differentiation" EXACT []
-xref: MIPS_funcat:43.03.09.01
 is_a: GO:0030098 ! lymphocyte differentiation
 is_a: GO:0042110 ! T cell activation
 
@@ -10055,7 +10080,7 @@ relationship: positively_regulates GO:0030073 ! insulin secretion
 id: GO:0032060
 name: bleb assembly
 namespace: biological_process
-def: "The assembly of a bleb, a cell extension caused by localized decoupling of the cytoskeleton from the plasma membrane and characterized by rapid formation, rounded shape, and scarcity of organelles within the protrusion. Plasma membrane blebbing occurs during apoptosis and other cellular processes, including cell locomotion, cell division, and as a result of physical or chemical stresses." [GOC:mah, GOC:mtg_apoptosis, http://en.wikipedia.org/wiki/Bleb_(cell_biology), PMID:12083798, PMID:16624291]
+def: "The assembly of a bleb, a cell extension caused by localized decoupling of the cytoskeleton from the plasma membrane and characterized by rapid formation, rounded shape, and scarcity of organelles within the protrusion. Plasma membrane blebbing occurs during apoptosis and other cellular processes, including cell locomotion, cell division, and as a result of physical or chemical stresses." [GOC:mah, GOC:mtg_apoptosis, PMID:12083798, PMID:16624291, Wikipedia:Bleb_(cell_biology)]
 synonym: "blebbing" BROAD [GOC:pr]
 synonym: "cell blebbing" EXACT []
 synonym: "membrane blebbing" BROAD [GOC:pr]
@@ -10690,6 +10715,8 @@ subset: goslim_pir
 synonym: "organismal physiological process" EXACT []
 synonym: "single-multicellular organism process" RELATED []
 is_a: GO:0008150 ! biological_process
+property_value: RO:0002161 NCBITaxon:4896
+property_value: RO:0002161 NCBITaxon:4932
 created_by: janelomax
 creation_date: 2012-09-19T16:07:47Z
 
@@ -12065,7 +12092,9 @@ synonym: "down regulation of dopamine secretion" EXACT []
 synonym: "down-regulation of dopamine secretion" EXACT []
 synonym: "downregulation of dopamine secretion" EXACT []
 synonym: "inhibition of dopamine secretion" NARROW []
+is_a: GO:0010648 ! negative regulation of cell communication
 is_a: GO:0014059 ! regulation of dopamine secretion
+is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0033604 ! negative regulation of catecholamine secretion
 is_a: GO:0043271 ! negative regulation of ion transport
 is_a: GO:2001024 ! negative regulation of response to drug
@@ -12083,7 +12112,9 @@ synonym: "stimulation of dopamine secretion" NARROW []
 synonym: "up regulation of dopamine secretion" EXACT []
 synonym: "up-regulation of dopamine secretion" EXACT []
 synonym: "upregulation of dopamine secretion" EXACT []
+is_a: GO:0010647 ! positive regulation of cell communication
 is_a: GO:0014059 ! regulation of dopamine secretion
+is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0033605 ! positive regulation of catecholamine secretion
 is_a: GO:0043270 ! positive regulation of ion transport
 is_a: GO:2001025 ! positive regulation of response to drug
@@ -12517,8 +12548,7 @@ relationship: positively_regulates GO:0034220 ! ion transmembrane transport
 id: GO:0035010
 name: encapsulation of foreign target
 namespace: biological_process
-def: "Events resulting in the formation of a multilayered cellular sheath surrounding an invader and thus preventing its development. This defense mechanism is often seen in insects in response to nematodes or parasitoids, which are too large to be phagocytosed by individual hemocytes. In some organisms the capsule is blackened due to melanization." [GO_REF:0000022, GOC:bf, GOC:mtg_15nov05, PMID:11846478, PMID:12225920]
-comment: This term was improved by GO_REF:0000022. It was moved.
+def: "Events resulting in the formation of a multilayered cellular sheath surrounding an invader and thus preventing its development. This defense mechanism is often seen in insects in response to nematodes or parasitoids, which are too large to be phagocytosed by individual hemocytes. In some organisms the capsule is blackened due to melanization." [GO_REF:0000022, GOC:bf, PMID:11846478, PMID:12225920]
 is_a: GO:0002252 ! immune effector process
 
 [Term]
@@ -12562,6 +12592,7 @@ id: GO:0035249
 name: synaptic transmission, glutamatergic
 namespace: biological_process
 def: "The vesicular release of glutamate from a presynapse, across a chemical synapse, the subsequent activation of glutamate receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:dos]
+synonym: "glutamatergic synaptic transmission" EXACT []
 is_a: GO:0007268 ! chemical synaptic transmission
 
 [Term]
@@ -12845,6 +12876,7 @@ subset: goslim_generic
 subset: goslim_pir
 xref: MIPS_funcat:02.45.11
 is_a: GO:0008150 ! biological_process
+property_value: RO:0002161 NCBITaxon:451864
 
 [Term]
 id: GO:0040012
@@ -12924,6 +12956,12 @@ is_a: GO:0031503 ! protein-containing complex localization
 is_a: GO:0098840 ! protein transport along microtubule
 relationship: occurs_in GO:0005929 ! cilium
 relationship: part_of GO:0044782 ! cilium organization
+property_value: RO:0002161 NCBITaxon:3176
+property_value: RO:0002161 NCBITaxon:3312
+property_value: RO:0002161 NCBITaxon:3378
+property_value: RO:0002161 NCBITaxon:3398
+property_value: RO:0002161 NCBITaxon:4890
+property_value: RO:0002161 NCBITaxon:5782
 
 [Term]
 id: GO:0042088
@@ -13047,6 +13085,7 @@ is_a: GO:0050794 ! regulation of cellular process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0008283 ! cell population proliferation
 relationship: regulates GO:0008283 ! cell population proliferation
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0042129
@@ -13296,6 +13335,7 @@ subset: goslim_pir
 synonym: "hormone metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
 is_a: GO:0010817 ! regulation of hormone levels
+property_value: RO:0002161 NCBITaxon:4895
 
 [Term]
 id: GO:0042446
@@ -13316,13 +13356,15 @@ namespace: cellular_component
 def: "A tissue-specific, membrane-bounded cytoplasmic organelle within which melanin pigments are synthesized and stored. Melanosomes are synthesized in melanocyte cells." [GOC:jl, PMID:11584301]
 xref: Wikipedia:Melanosome
 is_a: GO:0048770 ! pigment granule
+property_value: RO:0002161 NCBITaxon:4895
+property_value: RO:0002161 NCBITaxon:6237
 
 [Term]
 id: GO:0042475
 name: odontogenesis of dentin-containing tooth
 namespace: biological_process
 def: "The process whose specific outcome is the progression of a dentin-containing tooth over time, from its formation to the mature structure. A dentin-containing tooth is a hard, bony organ borne on the jaw or other bone of a vertebrate, and is composed mainly of dentin, a dense calcified substance, covered by a layer of enamel." [GOC:cjm, GOC:mah, GOC:mtg_sensu, PMID:10333884, PMID:15355794]
-comment: Note that placoid scales found in the cartilaginous fishes presumably develop through the same processes, but are found on the dermis, rather than in the mouth or pharynx. See http://en.wikipedia.org/wiki/Placoid_scale#Placoid_scales.
+comment: Note that placoid scales found in the cartilaginous fishes presumably develop through the same processes, but are found on the dermis, rather than in the mouth or pharynx. See Wikipedia:Placoid_scale#Placoid_scales.
 synonym: "odontogenesis of dentine-containing teeth" EXACT []
 synonym: "odontogenesis of dentine-containing tooth" EXACT [GOC:mah]
 synonym: "odontogeny" BROAD []
@@ -13344,6 +13386,7 @@ synonym: "tooth morphogenesis" EXACT []
 xref: MIPS_funcat:47.03.11.01
 xref: Wikipedia:Odontogenesis
 is_a: GO:0009887 ! animal organ morphogenesis
+property_value: RO:0002161 NCBITaxon:8782
 
 [Term]
 id: GO:0042481
@@ -13411,7 +13454,7 @@ relationship: regulates GO:0042475 ! odontogenesis of dentin-containing tooth
 id: GO:0042488
 name: positive regulation of odontogenesis of dentin-containing tooth
 namespace: biological_process
-def: "Any process that activates or increases the frequency, rate or extent of the formation and development of teeth, the hard, bony appendages that are borne on the jaws, or on other bones in the walls of the mouth or pharynx of most vertebrates." [dictyBase_REF:2530, GOC:jl, PMID:15355794]
+def: "Any process that activates or increases the frequency, rate or extent of the formation and development of teeth, the hard, bony appendages that are borne on the jaws, or on other bones in the walls of the mouth or pharynx of most vertebrates." [GOC:jl, PMID:15355794]
 synonym: "activation of odontogenesis" BROAD []
 synonym: "positive regulation of odontogenesis of dentine-containing teeth" EXACT []
 synonym: "positive regulation of odontogenesis of dentine-containing tooth" RELATED []
@@ -14127,6 +14170,81 @@ intersection_of: positively_regulates GO:0043367 ! CD4-positive, alpha-beta T ce
 relationship: positively_regulates GO:0043367 ! CD4-positive, alpha-beta T cell differentiation
 
 [Term]
+id: GO:0043379
+name: memory T cell differentiation
+namespace: biological_process
+def: "The process in which a newly activated T cell acquires specialized features of a memory T cell." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "memory T cell development" RELATED [GOC:add]
+synonym: "memory T lymphocyte differentiation" EXACT []
+synonym: "memory T-cell differentiation" EXACT []
+synonym: "memory T-lymphocyte differentiation" EXACT []
+is_a: GO:0002292 ! T cell differentiation involved in immune response
+is_a: GO:0090715 ! immunological memory formation process
+
+[Term]
+id: GO:0043380
+name: regulation of memory T cell differentiation
+namespace: biological_process
+def: "Any process that modulates the frequency, rate, or extent of memory T cell differentiation." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "regulation of memory T cell development" RELATED [GOC:add]
+synonym: "regulation of memory T lymphocyte differentiation" EXACT []
+synonym: "regulation of memory T-cell differentiation" EXACT []
+synonym: "regulation of memory T-lymphocyte differentiation" EXACT []
+is_a: GO:0002697 ! regulation of immune effector process
+is_a: GO:0045580 ! regulation of T cell differentiation
+is_a: GO:0050776 ! regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: regulates GO:0043379 ! memory T cell differentiation
+relationship: regulates GO:0043379 ! memory T cell differentiation
+
+[Term]
+id: GO:0043381
+name: negative regulation of memory T cell differentiation
+namespace: biological_process
+def: "Any process that stops, prevents, or reduces the rate of memory T cell differentiation." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "down regulation of memory T cell differentiation" EXACT []
+synonym: "down-regulation of memory T cell differentiation" EXACT []
+synonym: "downregulation of memory T cell differentiation" EXACT []
+synonym: "inhibition of memory T cell differentiation" NARROW []
+synonym: "negative regulation of memory T cell development" RELATED [GOC:add]
+synonym: "negative regulation of memory T lymphocyte differentiation" EXACT []
+synonym: "negative regulation of memory T-cell differentiation" EXACT []
+synonym: "negative regulation of memory T-lymphocyte differentiation" EXACT []
+is_a: GO:0002698 ! negative regulation of immune effector process
+is_a: GO:0043380 ! regulation of memory T cell differentiation
+is_a: GO:0045581 ! negative regulation of T cell differentiation
+is_a: GO:0050777 ! negative regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: negatively_regulates GO:0043379 ! memory T cell differentiation
+relationship: negatively_regulates GO:0043379 ! memory T cell differentiation
+
+[Term]
+id: GO:0043382
+name: positive regulation of memory T cell differentiation
+namespace: biological_process
+def: "Any process that activates or increases the frequency, rate or extent of memory T cell differentiation." [ISBN:0781735149]
+comment: Note that immunologists typically use the word 'development' to refer to cells of B or T cell lineages undergoing the process that GO describes as 'cell differentiation'.
+synonym: "activation of memory T cell differentiation" NARROW []
+synonym: "positive regulation of memory T cell development" RELATED [GOC:add]
+synonym: "positive regulation of memory T lymphocyte differentiation" EXACT []
+synonym: "positive regulation of memory T-cell differentiation" EXACT []
+synonym: "positive regulation of memory T-lymphocyte differentiation" EXACT []
+synonym: "stimulation of memory T cell differentiation" NARROW []
+synonym: "up regulation of memory T cell differentiation" EXACT []
+synonym: "up-regulation of memory T cell differentiation" EXACT []
+synonym: "upregulation of memory T cell differentiation" EXACT []
+is_a: GO:0002699 ! positive regulation of immune effector process
+is_a: GO:0043380 ! regulation of memory T cell differentiation
+is_a: GO:0045582 ! positive regulation of T cell differentiation
+is_a: GO:0050778 ! positive regulation of immune response
+intersection_of: GO:0008150 ! biological_process
+intersection_of: positively_regulates GO:0043379 ! memory T cell differentiation
+relationship: positively_regulates GO:0043379 ! memory T cell differentiation
+
+[Term]
 id: GO:0043384
 name: pre-T cell receptor complex
 namespace: cellular_component
@@ -14383,6 +14501,24 @@ created_by: jane
 creation_date: 2009-04-21T04:11:06Z
 
 [Term]
+id: GO:0044111
+name: development involved in symbiotic interaction
+namespace: biological_process
+alt_id: GO:0044152
+def: "The progression of an organism from an initial condition to a later condition, occurring when the organism is in a symbiotic interaction." [GO:jl, GOC:pamgo_curators]
+comment: This term partially replaces the obsolete term 'growth or development during symbiotic interaction ; GO:0052171'. See also 'growth during symbiotic interaction ; GO:0044110'.
+synonym: "development during symbiotic interaction" RELATED [gOC:dph]
+synonym: "development on or near surface of other organism during symbiotic interaction" RELATED [GOC:dph]
+synonym: "development on or near surface of other organism involved in symbiotic interaction" NARROW []
+is_a: GO:0032502 ! developmental process
+is_a: GO:0051704 ! multi-organism process
+intersection_of: GO:0032502 ! developmental process
+intersection_of: part_of GO:0044419 ! interspecies interaction between organisms
+relationship: part_of GO:0044419 ! interspecies interaction between organisms
+created_by: jane
+creation_date: 2009-07-30T02:26:46Z
+
+[Term]
 id: GO:0044237
 name: cellular metabolic process
 namespace: biological_process
@@ -14522,6 +14658,19 @@ is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0044281 ! small molecule metabolic process
 created_by: jane
 creation_date: 2010-01-26T12:06:49Z
+
+[Term]
+id: GO:0044419
+name: interspecies interaction between organisms
+namespace: biological_process
+def: "Any process in which an organism has an effect on an organism of a different species." [GOC:cc]
+subset: goslim_candida
+subset: goslim_pir
+synonym: "interaction with another species" EXACT []
+synonym: "interspecies interaction" EXACT []
+synonym: "interspecies interaction with other organisms" EXACT []
+is_a: GO:0008150 ! biological_process
+property_value: RO:0002161 NCBITaxon:4895
 
 [Term]
 id: GO:0044421
@@ -14816,14 +14965,14 @@ id: GO:0045087
 name: innate immune response
 namespace: biological_process
 alt_id: GO:0002226
-def: "Innate immune responses are defense responses mediated by germline encoded components that directly recognize components of potential pathogens." [GO_REF:0000022, GOC:add, GOC:ebc, GOC:mtg_15nov05, GOC:mtg_sensu]
-comment: This term was improved by GO_REF:0000022. It was moved.
+def: "Innate immune responses are defense responses mediated by germline encoded components that directly recognize components of potential pathogens." [GO_REF:0000022, GOC:add, GOC:ebc, GOC:mtg_sensu]
 synonym: "innate immunity" EXACT [GOC:pg]
 synonym: "nonspecific immune response" EXACT []
 xref: MIPS_funcat:36.25.16.01
 xref: Wikipedia:Innate_immune_system
 is_a: GO:0006955 ! immune response
 is_a: GO:0098542 ! defense response to other organism
+property_value: RO:0002161 NCBITaxon_Union:0000023
 
 [Term]
 id: GO:0045088
@@ -14833,7 +14982,6 @@ def: "Any process that modulates the frequency, rate or extent of the innate imm
 is_a: GO:0002831 ! regulation of response to biotic stimulus
 is_a: GO:0031347 ! regulation of defense response
 is_a: GO:0032101 ! regulation of response to external stimulus
-is_a: GO:0043900 ! regulation of multi-organism process
 is_a: GO:0050776 ! regulation of immune response
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0045087 ! innate immune response
@@ -14851,7 +14999,6 @@ synonym: "upregulation of innate immune response" EXACT []
 is_a: GO:0002833 ! positive regulation of response to biotic stimulus
 is_a: GO:0031349 ! positive regulation of defense response
 is_a: GO:0032103 ! positive regulation of response to external stimulus
-is_a: GO:0043902 ! positive regulation of multi-organism process
 is_a: GO:0045088 ! regulation of innate immune response
 is_a: GO:0050778 ! positive regulation of immune response
 intersection_of: GO:0008150 ! biological_process
@@ -14957,7 +15104,7 @@ relationship: regulates GO:0045190 ! isotype switching
 id: GO:0045202
 name: synapse
 namespace: cellular_component
-def: "The junction between a nerve fiber of one neuron and another neuron, muscle fiber or glial cell. As the nerve fiber approaches the synapse it enlarges into a specialized structure, the presynaptic nerve ending, which contains mitochondria and synaptic vesicles. At the tip of the nerve ending is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic nerve ending secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." [ISBN:0198506732]
+def: "The junction between an axon of one neuron and a dendrite of another neuron, a muscle fiber or a glial cell. As the axon approaches the synapse it enlarges into a specialized structure, the presynaptic terminal bouton, which contains mitochondria and synaptic vesicles. At the tip of the terminal bouton is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic terminal bouton secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." [GOC:aruk, ISBN:0198506732, PMID:24619342, PMID:29383328, PMID:31998110]
 subset: goslim_agr
 subset: goslim_drosophila
 subset: goslim_flybase_ribbon
@@ -14969,7 +15116,7 @@ synonym: "mixed synapse" NARROW [NIF_Subcellular:sao1506103497]
 synonym: "synaptic junction" EXACT []
 xref: NIF_Subcellular:sao914572699
 xref: Wikipedia:Chemical_synapse
-is_a: GO:0110165 ! cellular anatomical entity
+is_a: GO:0030054 ! cell junction
 
 [Term]
 id: GO:0045211
@@ -16363,7 +16510,6 @@ synonym: "inhibition of innate immune response" NARROW []
 is_a: GO:0002832 ! negative regulation of response to biotic stimulus
 is_a: GO:0031348 ! negative regulation of defense response
 is_a: GO:0032102 ! negative regulation of response to external stimulus
-is_a: GO:0043901 ! negative regulation of multi-organism process
 is_a: GO:0045088 ! regulation of innate immune response
 is_a: GO:0050777 ! negative regulation of immune response
 intersection_of: GO:0008150 ! biological_process
@@ -17590,6 +17736,7 @@ namespace: biological_process
 def: "The regulated release of norepinephrine by a cell. Norepinephrine is a catecholamine and it acts as a hormone and as a neurotransmitter of most of the sympathetic nervous system." [GOC:ef, GOC:jid]
 synonym: "noradrenaline secretion" EXACT []
 is_a: GO:0015874 ! norepinephrine transport
+is_a: GO:0023061 ! signal release
 is_a: GO:0050432 ! catecholamine secretion
 
 [Term]
@@ -18025,8 +18172,7 @@ is_a: GO:0032501 ! multicellular organismal process
 id: GO:0048856
 name: anatomical structure development
 namespace: biological_process
-def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GO_REF:0000021, GOC:mtg_15jun06]
-comment: This term was added by GO_REF:0000021.
+def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GO_REF:0000021]
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_plant
@@ -18310,6 +18456,7 @@ is_a: GO:0060627 ! regulation of vesicle-mediated transport
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0006909 ! phagocytosis
 relationship: regulates GO:0006909 ! phagocytosis
+property_value: RO:0002161 NCBITaxon:147537
 
 [Term]
 id: GO:0050765
@@ -18598,7 +18745,7 @@ synonym: "down regulation of coagulation" EXACT []
 synonym: "down-regulation of coagulation" EXACT []
 synonym: "downregulation of coagulation" EXACT []
 synonym: "inhibition of coagulation" NARROW []
-synonym: "negative regulation of clotting." EXACT []
+synonym: "negative regulation of clotting" EXACT []
 is_a: GO:0050818 ! regulation of coagulation
 is_a: GO:0051241 ! negative regulation of multicellular organismal process
 intersection_of: GO:0008150 ! biological_process
@@ -19760,7 +19907,7 @@ creation_date: 2013-12-18T13:51:04Z
 id: GO:0051216
 name: cartilage development
 namespace: biological_process
-def: "The process whose specific outcome is the progression of a cartilage element over time, from its formation to the mature structure. Cartilage elements are skeletal elements that consist of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate." [DOI:10.1371/journal.pone.0051070, GOC:cjm, http://www.onelook.com]
+def: "The process whose specific outcome is the progression of a cartilage element over time, from its formation to the mature structure. Cartilage elements are skeletal elements that consist of connective tissue dominated by extracellular matrix containing collagen type II and large amounts of proteoglycan, particularly chondroitin sulfate." [GOC:cjm, PMID:23251424]
 synonym: "cartilage biogenesis" EXACT []
 synonym: "cartilage biosynthesis" EXACT []
 synonym: "cartilage element development" EXACT []
@@ -20385,9 +20532,10 @@ id: GO:0051608
 name: histamine transport
 namespace: biological_process
 def: "The directed movement of histamine into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Histamine is a physiologically active amine, found in plant and animal tissue and released from mast cells as part of an allergic reaction in humans." [GOC:ai]
+is_a: GO:0006812 ! cation transport
 is_a: GO:0006836 ! neurotransmitter transport
-is_a: GO:0015696 ! ammonium transport
 is_a: GO:0071702 ! organic substance transport
+is_a: GO:0071705 ! nitrogen compound transport
 
 [Term]
 id: GO:0051640
@@ -20510,7 +20658,7 @@ alt_id: GO:0009613
 alt_id: GO:0042828
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus from another living organism." [GOC:ai]
 is_a: GO:0043207 ! response to external biotic stimulus
-is_a: GO:0051704 ! multi-organism process
+is_a: GO:0044419 ! interspecies interaction between organisms
 
 [Term]
 id: GO:0051716
@@ -20569,6 +20717,7 @@ synonym: "NOS2 synthase biosynthesis" NARROW []
 synonym: "NOS2 synthase biosynthetic process" NARROW []
 synonym: "NOS3 biosynthesis" NARROW [GOC:bf]
 is_a: GO:0009059 ! macromolecule biosynthetic process
+property_value: RO:0002161 NCBITaxon:4751
 
 [Term]
 id: GO:0051769
@@ -20732,7 +20881,7 @@ relationship: positively_regulates GO:0000280 ! nuclear division
 id: GO:0051861
 name: glycolipid binding
 namespace: molecular_function
-def: "Interacting selectively and non-covalently with a glycolipid, any compound containing one or more monosaccharide residues bound by a glycosidic linkage to a hydrophobic group such as an acylglycerol, a sphingoid, a ceramide (N-acylsphingoid) or a prenyl phosphate." [http://www.chem.qmul.ac.uk/iupac/misc/glylp.html#2.1]
+def: "Interacting selectively and non-covalently with a glycolipid, any compound containing one or more monosaccharide residues bound by a glycosidic linkage to a hydrophobic group such as an acylglycerol, a sphingoid, a ceramide (N-acylsphingoid) or a prenyl phosphate." [PMID:19635802]
 is_a: GO:0008289 ! lipid binding
 is_a: GO:0097367 ! carbohydrate derivative binding
 
@@ -20751,6 +20900,7 @@ id: GO:0051932
 name: synaptic transmission, GABAergic
 namespace: biological_process
 def: "The vesicular release of  gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:dos, ISBN:0126603030]
+synonym: "GABAergic synaptic transmission" EXACT []
 synonym: "synaptic transmission, GABA mediated" EXACT []
 synonym: "synaptic transmission, gamma-aminobutyric acid mediated" EXACT []
 synonym: "synaptic transmission, gamma-aminobutyric acid-ergic" EXACT []
@@ -21387,6 +21537,12 @@ relationship: has_part GO:0035735 ! intraciliary transport involved in cilium as
 relationship: has_part GO:0061512 ! protein localization to cilium
 relationship: has_part GO:0097712 ! vesicle targeting, trans-Golgi to periciliary membrane compartment
 relationship: has_part GO:1905349 ! ciliary transition zone assembly
+property_value: RO:0002161 NCBITaxon:3176
+property_value: RO:0002161 NCBITaxon:3312
+property_value: RO:0002161 NCBITaxon:3378
+property_value: RO:0002161 NCBITaxon:3398
+property_value: RO:0002161 NCBITaxon:4890
+property_value: RO:0002161 NCBITaxon:5782
 
 [Term]
 id: GO:0060284
@@ -21885,6 +22041,12 @@ name: protein localization to cilium
 namespace: biological_process
 def: "A process in which a protein is transported to, or maintained in, a location within a cilium." [GOC:dph]
 is_a: GO:0033365 ! protein localization to organelle
+property_value: RO:0002161 NCBITaxon:3176
+property_value: RO:0002161 NCBITaxon:3312
+property_value: RO:0002161 NCBITaxon:3378
+property_value: RO:0002161 NCBITaxon:3398
+property_value: RO:0002161 NCBITaxon:4890
+property_value: RO:0002161 NCBITaxon:5782
 created_by: dph
 creation_date: 2013-03-22T15:41:44Z
 
@@ -21894,7 +22056,7 @@ name: acetylcholine secretion
 namespace: biological_process
 def: "The regulated release of acetylcholine by a cell." [GOC:dph]
 is_a: GO:0015870 ! acetylcholine transport
-is_a: GO:0032940 ! secretion by cell
+is_a: GO:0023061 ! signal release
 created_by: dph
 creation_date: 2013-06-21T15:40:39Z
 
@@ -22712,7 +22874,7 @@ creation_date: 2010-02-25T04:00:13Z
 id: GO:0071702
 name: organic substance transport
 namespace: biological_process
-def: "The directed movement of organic substances into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore. An organic substance is a molecular entity that contains carbon." [CHEBI:50860, GOC:mah]
+def: "The directed movement of organic substances into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or pore. An organic substance is a molecular entity that contains carbon." [GOC:mah]
 is_a: GO:0006810 ! transport
 created_by: midori
 creation_date: 2010-03-08T02:15:14Z
@@ -22721,7 +22883,7 @@ creation_date: 2010-03-08T02:15:14Z
 id: GO:0071704
 name: organic substance metabolic process
 namespace: biological_process
-def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." [CHEBI:50860, GOC:mah]
+def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." [GOC:mah]
 synonym: "organic molecular entity metabolic process" EXACT []
 synonym: "organic molecular entity metabolism" EXACT []
 synonym: "organic substance metabolism" EXACT []
@@ -22733,7 +22895,7 @@ creation_date: 2010-03-08T03:32:18Z
 id: GO:0071705
 name: nitrogen compound transport
 namespace: biological_process
-def: "The directed movement of nitrogen-containing compounds into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [CHEBI:51143, GOC:mah]
+def: "The directed movement of nitrogen-containing compounds into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:mah]
 is_a: GO:0006810 ! transport
 created_by: midori
 creation_date: 2010-03-08T03:56:28Z
@@ -22966,7 +23128,7 @@ creation_date: 2010-10-18T03:44:18Z
 id: GO:0072330
 name: monocarboxylic acid biosynthetic process
 namespace: biological_process
-def: "The chemical reactions and pathways resulting in the formation of monocarboxylic acids, any organic acid containing one carboxyl (-COOH) group." [CHEBI:25384, GOC:mah]
+def: "The chemical reactions and pathways resulting in the formation of monocarboxylic acids, any organic acid containing one carboxyl (-COOH) group." [GOC:mah]
 synonym: "monocarboxylic acid anabolism" EXACT [GOC:mah]
 synonym: "monocarboxylic acid biosynthesis" EXACT [GOC:mah]
 synonym: "monocarboxylic acid formation" EXACT [GOC:mah]
@@ -22999,7 +23161,7 @@ creation_date: 2010-11-16T11:27:39Z
 id: GO:0072593
 name: reactive oxygen species metabolic process
 namespace: biological_process
-def: "The chemical reactions and pathways involving a reactive oxygen species, any molecules or ions formed by the incomplete one-electron reduction of oxygen. They contribute to the microbicidal activity of phagocytes, regulation of signal transduction and gene expression, and the oxidative damage to biopolymers." [CHEBI:26523, GOC:mah]
+def: "The chemical reactions and pathways involving a reactive oxygen species, any molecules or ions formed by the incomplete one-electron reduction of oxygen. They contribute to the microbicidal activity of phagocytes, regulation of signal transduction and gene expression, and the oxidative damage to biopolymers." [GOC:mah]
 synonym: "reactive oxygen species metabolism" EXACT [GOC:mah]
 synonym: "ROS metabolic process" EXACT [CHEBI:26523, GOC:mah]
 is_a: GO:0044237 ! cellular metabolic process
@@ -23367,6 +23529,25 @@ created_by: tanyaberardini
 creation_date: 2014-08-12T12:13:53Z
 
 [Term]
+id: GO:0090713
+name: immunological memory process
+namespace: biological_process
+def: "Any process of the immune system that can contribute to the formation of immunological memory or an immune response based upon activation of immunological memory." [GOC:add, PMID:26086132, PMID:26831526]
+is_a: GO:0002376 ! immune system process
+relationship: part_of GO:0006955 ! immune response
+created_by: tanyaberardini
+creation_date: 2016-11-11T12:20:30Z
+
+[Term]
+id: GO:0090715
+name: immunological memory formation process
+namespace: biological_process
+def: "Any immunological memory process that can contribute to the formation of immunological memory." [GOC:add, PMID:26086132, PMID:26831526]
+is_a: GO:0090713 ! immunological memory process
+created_by: tanyaberardini
+creation_date: 2016-11-11T12:25:47Z
+
+[Term]
 id: GO:0097014
 name: ciliary plasm
 namespace: cellular_component
@@ -23431,7 +23612,7 @@ creation_date: 2011-08-12T10:07:45Z
 id: GO:0097159
 name: organic cyclic compound binding
 namespace: molecular_function
-def: "Interacting selectively and non-covalently with an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." [CHEBI:33832, GOC:sjw, PMID:7583672]
+def: "Interacting selectively and non-covalently with an organic cyclic compound, any molecular entity that contains carbon arranged in a cyclic molecular structure." [GOC:sjw, PMID:7583672]
 is_a: GO:0005488 ! binding
 created_by: paola
 creation_date: 2011-09-23T02:31:01Z
@@ -23475,7 +23656,7 @@ creation_date: 2012-08-02T13:03:39Z
 id: GO:0097458
 name: obsolete neuron part
 namespace: cellular_component
-def: "OBSOLETE. Any constituent part of a neuron, the basic cellular unit of nervous tissue. A typical neuron consists of a cell body (often called the soma), an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [GOC:pr, http://en.wikipedia.org/wiki/Neuron]
+def: "OBSOLETE. Any constituent part of a neuron, the basic cellular unit of nervous tissue. A typical neuron consists of a cell body (often called the soma), an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [GOC:pr, Wikipedia:Neuron]
 subset: gocheck_do_not_annotate
 subset: goslim_flybase_ribbon
 is_obsolete: true
@@ -24045,6 +24226,7 @@ is_a: GO:0007267 ! cell-cell signaling
 intersection_of: GO:0007267 ! cell-cell signaling
 intersection_of: occurs_in GO:0045202 ! synapse
 relationship: occurs_in GO:0045202 ! synapse
+property_value: RO:0002161 NCBITaxon:4895
 
 [Term]
 id: GO:0099537
@@ -24778,6 +24960,8 @@ namespace: biological_process
 def: "Any process that modulates the frequency, rate or extent of renin secretion into blood stream." [GOC:TermGenie]
 synonym: "regulation of renin release into blood stream" EXACT [GOC:TermGenie]
 is_a: GO:0003073 ! regulation of systemic arterial blood pressure
+is_a: GO:0010646 ! regulation of cell communication
+is_a: GO:0023051 ! regulation of signaling
 is_a: GO:0044060 ! regulation of endocrine process
 is_a: GO:0050708 ! regulation of protein secretion
 is_a: GO:0098801 ! regulation of renal system process
@@ -24802,6 +24986,8 @@ synonym: "downregulation of renin secretion into blood stream" EXACT [GOC:TermGe
 synonym: "inhibition of renin release into blood stream" NARROW [GOC:TermGenie]
 synonym: "inhibition of renin secretion into blood stream" NARROW [GOC:TermGenie]
 synonym: "negative regulation of renin release into blood stream" EXACT [GOC:TermGenie]
+is_a: GO:0010648 ! negative regulation of cell communication
+is_a: GO:0023057 ! negative regulation of signaling
 is_a: GO:0050709 ! negative regulation of protein secretion
 is_a: GO:1900133 ! regulation of renin secretion into blood stream
 is_a: GO:1903523 ! negative regulation of blood circulation
@@ -24825,6 +25011,8 @@ synonym: "up-regulation of renin release into blood stream" EXACT [GOC:TermGenie
 synonym: "up-regulation of renin secretion into blood stream" EXACT [GOC:TermGenie]
 synonym: "upregulation of renin release into blood stream" EXACT [GOC:TermGenie]
 synonym: "upregulation of renin secretion into blood stream" EXACT [GOC:TermGenie]
+is_a: GO:0010647 ! positive regulation of cell communication
+is_a: GO:0023056 ! positive regulation of signaling
 is_a: GO:0050714 ! positive regulation of protein secretion
 is_a: GO:1900133 ! regulation of renin secretion into blood stream
 is_a: GO:1903524 ! positive regulation of blood circulation
@@ -24846,7 +25034,6 @@ synonym: "regulation of defense response to bacteria" EXACT [GOC:TermGenie]
 is_a: GO:0002831 ! regulation of response to biotic stimulus
 is_a: GO:0031347 ! regulation of defense response
 is_a: GO:0032101 ! regulation of response to external stimulus
-is_a: GO:0043900 ! regulation of multi-organism process
 intersection_of: GO:0008150 ! biological_process
 intersection_of: regulates GO:0042742 ! defense response to bacterium
 relationship: regulates GO:0042742 ! defense response to bacterium
@@ -24885,7 +25072,6 @@ synonym: "negative regulation of defense response to bacteria" EXACT [GOC:TermGe
 is_a: GO:0002832 ! negative regulation of response to biotic stimulus
 is_a: GO:0031348 ! negative regulation of defense response
 is_a: GO:0032102 ! negative regulation of response to external stimulus
-is_a: GO:0043901 ! negative regulation of multi-organism process
 is_a: GO:1900424 ! regulation of defense response to bacterium
 intersection_of: GO:0008150 ! biological_process
 intersection_of: negatively_regulates GO:0042742 ! defense response to bacterium
@@ -24925,7 +25111,6 @@ synonym: "upregulation of defense response to bacterium" EXACT [GOC:TermGenie]
 is_a: GO:0002833 ! positive regulation of response to biotic stimulus
 is_a: GO:0031349 ! positive regulation of defense response
 is_a: GO:0032103 ! positive regulation of response to external stimulus
-is_a: GO:0043902 ! positive regulation of multi-organism process
 is_a: GO:1900424 ! regulation of defense response to bacterium
 intersection_of: GO:0008150 ! biological_process
 intersection_of: positively_regulates GO:0042742 ! defense response to bacterium
@@ -29966,15 +30151,6 @@ name: negatively regulates
 namespace: external
 xref: RO:0002212
 is_a: regulates ! regulates
-
-[Typedef]
-id: never_in_taxon
-name: never_in_taxon
-namespace: external
-xref: RO:0002161
-expand_assertion_to: "Class: ?X DisjointWith: RO_0002162 some ?Y" []
-is_metadata_tag: true
-is_class_level: true
 
 [Typedef]
 id: occurs_in
