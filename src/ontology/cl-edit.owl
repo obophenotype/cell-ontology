@@ -1838,6 +1838,7 @@ Declaration(Class(obo:CL_0008029))
 Declaration(Class(obo:CL_0008030))
 Declaration(Class(obo:CL_0008031))
 Declaration(Class(obo:CL_0008032))
+Declaration(Class(obo:CL_0008036))
 Declaration(Class(obo:CL_0008034))
 Declaration(Class(obo:CL_0008035))
 Declaration(Class(obo:CL_0008033))
@@ -2384,6 +2385,7 @@ Declaration(Class(obo:CP_0000043))
 Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
 Declaration(Class(obo:GO_0043379))
 Declaration(Class(obo:PATO_0045026))
+Declaration(Class(obo:UBERON_0010005))
 Declaration(ObjectProperty(obo:RO_0001025))
 Declaration(ObjectProperty(obo:RO_0002102))
 Declaration(ObjectProperty(obo:RO_0002134))
@@ -5943,8 +5945,8 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000351 "FMA:83028"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000351 "trophoblastic cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000351 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000351 "trophoblast cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000351 ObjectIntersectionOf(obo:CL_0000349 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000358)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000351 obo:CL_0000349)
+SubClassOf(obo:CL_0000351 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000358))
 
 # Class: obo:CL_0000352 (epiblast cell)
 
@@ -7339,15 +7341,15 @@ SubClassOf(obo:CL_0000524 obo:CL_0000371)
 
 # Class: obo:CL_0000525 (syncytiotrophoblast cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0323052908"^^xsd:string) obo:IAO_0000115 obo:CL_0000525 "A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo. It It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0323052908"^^xsd:string) obo:IAO_0000115 obo:CL_0000525 "A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo, directly associated with the maternal blood supply. It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000525 "FMA:83043"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000525 "plasmidotrophoblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000525 "syncytial trophoblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000525 "syntrophoblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000525 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000525 "syncytiotrophoblast cell"^^xsd:string)
-SubClassOf(obo:CL_0000525 obo:CL_0000228)
-SubClassOf(obo:CL_0000525 obo:CL_0000351)
+EquivalentClasses(obo:CL_0000525 ObjectIntersectionOf(obo:CL_0000351 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001908)))
+SubClassOf(obo:CL_0000525 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010005))
 
 # Class: obo:CL_0000526 (afferent neuron)
 
@@ -18994,7 +18996,7 @@ SubClassOf(obo:CL_0002487 obo:CL_0000199)
 
 # Class: obo:CL_0002488 (trophoblast giant cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "MP:0001714"^^xsd:string) Annotation(oboInOwl:hasDbXref "MP:19876834"^^xsd:string) obo:IAO_0000115 obo:CL_0002488 "A trophoblast cell that has a large volume of cytoplasm, is polyploidy and is usually mononuclear but is also occasionally multi-nucleate. This cell type is important in establishing maternal physiology and remodeling of the vasculature of the placenta."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "MP:0001714"^^xsd:string) Annotation(oboInOwl:hasDbXref "MP:19876834"^^xsd:string) obo:IAO_0000115 obo:CL_0002488 "A trophoblast cell that has a large volume of cytoplasm, is polyploid and is usually mononuclear but is also occasionally multi-nucleate. This cell type is important in establishing maternal physiology and remodeling of the vasculature of the placenta."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002488 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002488 "2010-12-06T02:55:24Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002488 "giant trophoblast cell"^^xsd:string)
@@ -21711,6 +21713,16 @@ EquivalentClasses(obo:CL_0008031 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 AnnotationAssertion(rdfs:label obo:CL_0008032 "rosehip neuron"@en)
 EquivalentClasses(obo:CL_0008032 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005390) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P05532) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q8R4G0) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q9QZC1)))
 
+# Class: obo:CL_0008036 (extravillous trophoblast)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31049600") obo:IAO_0000115 obo:CL_0008036 "A trophoblast cell that is not part of a placental villous")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008036 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008036 "2020-03-02T08:45:06Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31049600") oboInOwl:hasExactSynonym obo:CL_0008036 "EVT")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008036 "extravillous cytotrophloblast")
+AnnotationAssertion(rdfs:label obo:CL_0008036 "extravillous trophoblast"@en)
+SubClassOf(obo:CL_0008036 obo:CL_0000351)
+
 # Class: obo:CL_0008034 (mural cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wiki:Mural_cell&oldid=930603194") obo:IAO_0000115 obo:CL_0008034 "Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of the microcirculation.")
@@ -21736,6 +21748,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008033 "decidual perivascul
 AnnotationAssertion(rdfs:label obo:CL_0008033 "decidual pericyte"@en)
 EquivalentClasses(obo:CL_0008033 ObjectIntersectionOf(obo:CL_0000669 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002450)))
 SubClassOf(obo:CL_0008033 obo:CL_0000669)
+
 
 # Class: obo:CL_0009000 (sensory neuron of spinal nerve)
 
@@ -26217,14 +26230,19 @@ EquivalentClasses(obo:CL_2000059 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 
 # Class: obo:CL_2000060 (placental villous trophoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie"^^xsd:string) obo:IAO_0000115 obo:CL_2000060 "Any trophoblast cell that is part of a placenta."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31049600") obo:IAO_0000115 obo:CL_2000060 "A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua.")
 AnnotationAssertion(oboInOwl:created_by obo:CL_2000060 "TermGenie"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000060 "2014-10-07T17:48:27Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000060 "BTO:0006119")
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000060 "BTO:0006208")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31049600") oboInOwl:hasExactSynonym obo:CL_2000060 "vCTB")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000060 "villous cytotrophoblast")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000060 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000060 "CL:2000060"^^xsd:string)
+AnnotationAssertion(rdfs:comment obo:CL_2000060 "Same as synctial trophoblast?")
 AnnotationAssertion(rdfs:comment obo:CL_2000060 "http://www.sciencellonline.com/site/productInformation.php?keyword=7120"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_2000060 "placental villous trophoblast"^^xsd:string)
-EquivalentClasses(obo:CL_2000060 ObjectIntersectionOf(obo:CL_0000351 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001987)))
+EquivalentClasses(obo:CL_2000060 ObjectIntersectionOf(obo:CL_0000351 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010005)))
 
 # Class: obo:CL_2000061 (placental amniotic mesenchymal stromal cell)
 
@@ -26246,7 +26264,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000062 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000062 "CL:2000062"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_2000062 "http://www.ncbi.nlm.nih.gov/books/NBK53245/"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_2000062 "placental villus capillary endothelial cell"^^xsd:string)
-EquivalentClasses(obo:CL_2000062 ObjectIntersectionOf(obo:CL_0002144 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001987)))
+EquivalentClasses(obo:CL_2000062 ObjectIntersectionOf(obo:CL_0002144 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010005)))
 
 # Class: obo:CL_2000063 (ovarian fibroblast)
 
