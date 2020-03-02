@@ -358,7 +358,6 @@ Declaration(Class(obo:CL_0000333))
 Declaration(Class(obo:CL_0000334))
 Declaration(Class(obo:CL_0000335))
 Declaration(Class(obo:CL_0000336))
-Declaration(Class(obo:CL_0000337))
 Declaration(Class(obo:CL_0000338))
 Declaration(Class(obo:CL_0000339))
 Declaration(Class(obo:CL_0000340))
@@ -1887,6 +1886,7 @@ Declaration(Class(obo:CL_0011014))
 Declaration(Class(obo:CL_0011015))
 Declaration(Class(obo:CL_0011016))
 Declaration(Class(obo:CL_0011018))
+Declaration(Class(obo:CL_0011020))
 Declaration(Class(obo:CL_0011100))
 Declaration(Class(obo:CL_0011101))
 Declaration(Class(obo:CL_0011102))
@@ -2926,15 +2926,15 @@ AnnotationAssertion(rdfs:label obo:CL_0000030 "glioblast"^^xsd:string)
 SubClassOf(obo:CL_0000030 obo:CL_0000055)
 SubClassOf(obo:CL_0000030 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000133))
 
-# Class: obo:CL_0000031 (neuroblast)
+# Class: obo:CL_0000031 (neuroblast (sensu Vertebrata))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "http://en.wikipedia.org/wiki/Neuroblast") obo:IAO_0000115 obo:CL_0000031 "A cell that will develop into a neuron often after a migration phase.")
+AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000031 "CL:0000337")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000031 "BTO:0000930"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000031 "FBbt:00005146"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000031 "FMA:70563"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000031 "neuroblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000031 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000031 "neuroblast"^^xsd:string)
-SubClassOf(obo:CL_0000031 obo:CL_0000047)
+AnnotationAssertion(rdfs:label obo:CL_0000031 "neuroblast (sensu Vertebrata)"^^xsd:string)
 SubClassOf(obo:CL_0000031 obo:CL_0000055)
 
 # Class: obo:CL_0000032 (neuroplacodal cell)
@@ -3851,7 +3851,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000117 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000117 "CNS neuron (sensu Vertebrata)"^^xsd:string)
 SubClassOf(obo:CL_0000117 obo:CL_0000540)
 SubClassOf(obo:CL_0000117 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017))
-SubClassOf(obo:CL_0000117 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000337))
+SubClassOf(obo:CL_0000117 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000031))
 
 # Class: obo:CL_0000118 (basket cell)
 
@@ -5836,19 +5836,12 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000336 ob
 SubClassOf(obo:CL_0000336 obo:CL_0000457)
 SubClassOf(obo:CL_0000336 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000011))
 
-# Class: obo:CL_0000337 (neuroblast (sensu Vertebrata))
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:70563"^^xsd:string) obo:IAO_0000115 obo:CL_0000337 "An embryonic cell that develops into a nerve cell or neuron."^^xsd:string)
-AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000337 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000337 "neuroblast (sensu Vertebrata)"^^xsd:string)
-SubClassOf(obo:CL_0000337 obo:CL_0000031)
-
 # Class: obo:CL_0000338 (neuroblast (sensu Nematoda and Protostomia))
 
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0000338 "neuroblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000338 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000338 "neuroblast (sensu Nematoda and Protostomia)"^^xsd:string)
-SubClassOf(obo:CL_0000338 obo:CL_0000031)
+SubClassOf(obo:CL_0000338 obo:CL_0000047)
 
 # Class: obo:CL_0000339 (glioblast (sensu Vertebrata))
 
@@ -6861,20 +6854,22 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000467 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000467 "adrenocorticotropic hormone secreting cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000467 ObjectIntersectionOf(obo:CL_0000151 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0051458)))
 
-# Class: obo:CL_0000468 (neuroglioblast)
+# Class: obo:CL_0000468 (neuroglioblast (sensu Nematoda and Protostomia))
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000468 "FBbt:00005147"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000468 "neuroglioblast")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000468 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000468 "neuroglioblast"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000468 "neuroglioblast (sensu Nematoda and Protostomia)"^^xsd:string)
 SubClassOf(obo:CL_0000468 obo:CL_0000047)
-SubClassOf(obo:CL_0000468 obo:CL_0000055)
 
 # Class: obo:CL_0000469 (ganglion mother cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000469 "A neural progenitor cell that is the daughter of a neuroblast (sensu arthopoda).  The progeny of ganglion mother cells develop into neurons, glia and (occasionally) epithelial cells.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000469 "FBbt:00005149"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000469 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000469 "ganglion mother cell"^^xsd:string)
-SubClassOf(obo:CL_0000469 obo:CL_0000468)
+SubClassOf(obo:CL_0000469 obo:CL_0011020)
+SubClassOf(obo:CL_0000469 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000338))
 
 # Class: obo:CL_0000470 (digestive enzyme secreting cell)
 
@@ -8746,6 +8741,7 @@ SubClassOf(obo:CL_0000661 obo:CL_0000422)
 
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000662 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000662 "neuroglioblast (sensu Nematoda)"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_0000662 "false"^^xsd:boolean)
 SubClassOf(obo:CL_0000662 obo:CL_0000468)
 
 # Class: obo:CL_0000663 (valve cell)
@@ -11382,7 +11378,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000909 "cell")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000909 "T.8Mem.Sp")
 AnnotationAssertion(rdfs:label obo:CL_0000909 "CD8-positive, alpha-beta memory T cell")
 EquivalentClasses(obo:CL_0000909 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002286) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379)))
-SubClassOf(obo:CL_0000909 obo:CL_0000625)
+
 
 # Class: obo:CL_0000910 (cytotoxic T cell)
 
@@ -17612,7 +17608,7 @@ AnnotationAssertion(oboInOwl:created_by obo:CL_0002362 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002362 "2010-09-22T01:40:44Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002362 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002362 "granule cell precursor"^^xsd:string)
-SubClassOf(obo:CL_0002362 obo:CL_0000337)
+SubClassOf(obo:CL_0002362 obo:CL_0000031)
 
 # Class: obo:CL_0002363 (keratocyte)
 
@@ -20925,7 +20921,7 @@ AnnotationAssertion(oboInOwl:created_by obo:CL_0002676 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002676 "2011-08-22T09:24:15Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002676 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002676 "neural crest derived neuroblast"^^xsd:string)
-SubClassOf(obo:CL_0002676 obo:CL_0000337)
+SubClassOf(obo:CL_0002676 obo:CL_0000031)
 SubClassOf(obo:CL_0002676 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
 
 # Class: obo:CL_0002677 (naive regulatory T cell)
@@ -22045,6 +22041,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011018 "LTi")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011018 "lymphoid tissue inducer cell")
 AnnotationAssertion(rdfs:label obo:CL_0011018 "lymphoid tissue–inducer cell")
 SubClassOf(obo:CL_0011018 obo:CL_0000988)
+
+# Class: obo:CL_0011020 (neural progenitor cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30574073") obo:IAO_0000115 obo:CL_0011020 "An undifferentiated cell that originates from a neural stem cell and has the capacity to generate multiple types of lineage-restricted progenitors but not to self-renew.")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0011020 <http://orcid.org/0000-0001-5208-3432>)
+AnnotationAssertion(rdfs:label obo:CL_0011020 "neural progenitor cell")
+SubClassOf(obo:CL_0011020 obo:CL_0000055)
 
 # Class: obo:CL_0011100 (galanergic neuron)
 
