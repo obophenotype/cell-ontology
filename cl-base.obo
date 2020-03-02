@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2020-01-06/cl-base.owl
+data-version: cl/releases/2020-03-02/cl-base.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -108,6 +108,7 @@ is_a: CL:0002321 ! embryonic cell
 id: CL:0000008
 name: migratory cranial neural crest cell
 namespace: cell
+def: "Cell that is part of the migratory cranial neural crest population. Migratory cranial neural crest cells develop from premigratory cranial neural crest cells and have undergone epithelial to mesenchymal transition and delamination." [https://orcid.org/0000-0001-5208-3432, ZFA:0007091]
 is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -133,6 +134,7 @@ is_a: CL:0000578 ! experimentally modified cell in vitro
 id: CL:0000011
 name: migratory trunk neural crest cell
 namespace: cell
+def: "Cell that is part of the migratory trunk neural crest population. Migratory trunk neural crest cells develop from premigratory trunk neural crest cells and have undergone epithelial to mesenchymal transition and delamination." [https://orcid.org/0000-0001-5208-3432, ZFA:0007095]
 is_a: CL:0000333 ! migratory neural crest cell
 
 [Term]
@@ -360,13 +362,13 @@ relationship: RO:0002202 CL:0000133 ! neurectodermal cell
 
 [Term]
 id: CL:0000031
-name: neuroblast
+name: neuroblast (sensu Vertebrata)
 namespace: cell
+alt_id: CL:0000337
 def: "A cell that will develop into a neuron often after a migration phase." [GOC:NV, http://en.wikipedia.org/wiki/Neuroblast]
+synonym: "neuroblast" EXACT []
 xref: BTO:0000930
-xref: FBbt:00005146
 xref: FMA:70563
-is_a: CL:0000047 ! neuronal stem cell
 is_a: CL:0000055 ! non-terminally differentiated cell
 
 [Term]
@@ -1404,7 +1406,7 @@ name: CNS neuron (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000540 ! neuron
 relationship: BFO:0000050 UBERON:0001017
-relationship: RO:0002202 CL:0000337 ! neuroblast (sensu Vertebrata)
+relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
 
 [Term]
 id: CL:0000118
@@ -2673,7 +2675,7 @@ relationship: RO:0002202 CL:0000576 ! monocyte
 id: CL:0000236
 name: B cell
 namespace: cell
-def: "A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+def: "A lymphocyte of B lineage that is capable of B cell mediated immunity." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
 synonym: "B lymphocyte" EXACT []
 synonym: "B-cell" EXACT []
 synonym: "B-lymphocyte" EXACT []
@@ -3476,18 +3478,11 @@ intersection_of: BFO:0000050 UBERON:0001236
 relationship: RO:0002202 CL:0000011 ! migratory trunk neural crest cell
 
 [Term]
-id: CL:0000337
-name: neuroblast (sensu Vertebrata)
-namespace: cell
-def: "An embryonic cell that develops into a nerve cell or neuron." [FMA:70563]
-is_a: CL:0000031 ! neuroblast
-
-[Term]
 id: CL:0000338
 name: neuroblast (sensu Nematoda and Protostomia)
 namespace: cell
 synonym: "neuroblast" BROAD []
-is_a: CL:0000031 ! neuroblast
+is_a: CL:0000047 ! neuronal stem cell
 
 [Term]
 id: CL:0000339
@@ -3598,8 +3593,7 @@ def: "A cell lining the outside of the blastocyst. After binding to the endometr
 synonym: "trophoblastic cell" EXACT []
 xref: FMA:83028
 is_a: CL:0000349 {is_inferred="true"} ! extraembryonic cell
-intersection_of: CL:0000349 ! extraembryonic cell
-intersection_of: BFO:0000050 UBERON:0000358
+relationship: BFO:0000050 UBERON:0000358
 
 [Term]
 id: CL:0000352
@@ -4404,6 +4398,7 @@ intersection_of: lacks_plasma_membrane_part PR:000001003
 intersection_of: lacks_plasma_membrane_part PR:000001020
 intersection_of: lacks_plasma_membrane_part PR:000001024
 intersection_of: lacks_plasma_membrane_part PR:000001289
+intersection_of: RO:0000053 PATO:0001407
 intersection_of: RO:0002215 GO:0001816
 intersection_of: RO:0002215 GO:0019882
 intersection_of: RO:0002215 GO:0045580
@@ -4543,18 +4538,20 @@ intersection_of: RO:0002215 GO:0051458
 
 [Term]
 id: CL:0000468
-name: neuroglioblast
+name: neuroglioblast (sensu Nematoda and Protostomia)
 namespace: cell
+synonym: "neuroglioblast" EXACT []
 xref: FBbt:00005147
 is_a: CL:0000047 ! neuronal stem cell
-is_a: CL:0000055 ! non-terminally differentiated cell
 
 [Term]
 id: CL:0000469
 name: ganglion mother cell
 namespace: cell
+def: "A neural progenitor cell that is the daughter of a neuroblast (sensu arthopoda).  The progeny of ganglion mother cells develop into neurons, glia and (occasionally) epithelial cells." []
 xref: FBbt:00005149
-is_a: CL:0000468 ! neuroglioblast
+is_a: CL:0011020 ! neural progenitor cell
+relationship: RO:0002202 CL:0000338 ! neuroblast (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000470
@@ -5039,13 +5036,14 @@ is_a: CL:0000371 ! protoplast
 id: CL:0000525
 name: syncytiotrophoblast cell
 namespace: cell
-def: "A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo. It It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy." [GOC:tfm, ISBN:0323052908]
+def: "A cell from the outer syncytial layer of the trophoblast of an early mammalian embryo, directly associated with the maternal blood supply. It secretes hCG in order to maintain progesterone secretion and sustain a pregnancy." [GOC:tfm, ISBN:0323052908]
 synonym: "plasmidotrophoblast" EXACT []
 synonym: "syncytial trophoblast" EXACT []
 synonym: "syntrophoblast" EXACT []
 xref: FMA:83043
-is_a: CL:0000228 ! multinucleate cell
-is_a: CL:0000351 ! trophoblast cell
+intersection_of: CL:0000351 ! trophoblast cell
+intersection_of: RO:0000053 PATO:0001908
+relationship: BFO:0000050 UBERON:0010005
 
 [Term]
 id: CL:0000526
@@ -5165,7 +5163,7 @@ xref: WBbt:0003679
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
-relationship: RO:0002202 CL:0000031 ! neuroblast
+relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
 relationship: RO:0002215 GO:0019226
 
 [Term]
@@ -5195,7 +5193,7 @@ intersection_of: CL:0000738 ! leukocyte
 intersection_of: BFO:0000051 CP:0000000 ! neutrophillic cytoplasm
 intersection_of: BFO:0000051 CP:0000037 ! increased nucleus size
 intersection_of: BFO:0000051 GO:0000792
-intersection_of: lacks_part GO:0030141
+intersection_of: RO:0000053 PATO:0001407
 disjoint_from: CL:0000766 ! myeloid leukocyte
 relationship: RO:0002202 CL:0000051 ! common lymphoid progenitor
 
@@ -5275,7 +5273,6 @@ is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
 intersection_of: CL:0000764 ! erythroid lineage cell
 intersection_of: BFO:0000051 CP:0000028 ! basophilic cytoplasm
 intersection_of: BFO:0000051 CP:0000037 ! increased nucleus size
-intersection_of: BFO:0000051 GO:0005634
 intersection_of: BFO:0000051 GO:0005730
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001004
@@ -5288,6 +5285,7 @@ intersection_of: lacks_plasma_membrane_part PR:000001289
 intersection_of: lacks_plasma_membrane_part PR:000001839
 intersection_of: lacks_plasma_membrane_part PR:000001889
 intersection_of: lacks_plasma_membrane_part PR:000002978
+intersection_of: RO:0000053 PATO:0002505
 intersection_of: RO:0002104 PR:000001945
 relationship: RO:0002202 CL:0000038 ! erythroid progenitor cell
 
@@ -5538,7 +5536,7 @@ synonym: "RBC" BROAD []
 synonym: "red blood cell" BROAD []
 is_a: CL:0000232 {is_inferred="true"} ! erythrocyte
 intersection_of: CL:0000232 ! erythrocyte
-intersection_of: BFO:0000051 GO:0005634
+intersection_of: RO:0000053 PATO:0002505
 relationship: RO:0002202 CL:0002421 ! nucleated reticulocyte
 
 [Term]
@@ -5692,7 +5690,6 @@ xref: CALOHA:TS-0638
 xref: FMA:62864
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
 intersection_of: CL:0000766 ! myeloid leukocyte
-intersection_of: lacks_part GO:0030141
 intersection_of: RO:0000053 PATO:0001407
 intersection_of: RO:0002215 GO:0030225
 intersection_of: RO:0002215 GO:0030316
@@ -6686,7 +6683,7 @@ is_a: CL:0000422 ! mitogenic signaling cell
 id: CL:0000662
 name: neuroglioblast (sensu Nematoda)
 namespace: cell
-is_a: CL:0000468 ! neuroglioblast
+is_a: CL:0000468 ! neuroglioblast (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000663
@@ -6750,6 +6747,7 @@ xref: FMA:63174
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000630 ! supportive cell
 is_a: CL:0002320 ! connective tissue cell
+is_a: CL:0008034 ! mural cell
 
 [Term]
 id: CL:0000670
@@ -7323,6 +7321,7 @@ xref: CALOHA:TS-0549
 xref: FMA:62852
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
+intersection_of: RO:0000053 PATO:0002505
 intersection_of: RO:0002215 GO:0001667
 relationship: BFO:0000050 UBERON:0002405
 relationship: RO:0002160 NCBITaxon:7742
@@ -7907,8 +7906,8 @@ comment: Mature B cells are also reportedly CD10-negative, CD19-positive, CD22-p
 synonym: "mature B lymphocyte" EXACT []
 synonym: "mature B-cell" EXACT []
 synonym: "mature B-lymphocyte" EXACT []
-is_a: CL:0000236 {is_inferred="true"} ! B cell
-intersection_of: CL:0000236 ! B cell
+is_a: CL:0001201 {is_inferred="true"} ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
 intersection_of: has_completed GO:0002335
 intersection_of: RO:0002215 GO:0042113
 disjoint_from: CL:0000816 ! immature B cell
@@ -8361,15 +8360,16 @@ relationship: RO:0002202 CL:0000809 ! double-positive, alpha-beta thymocyte
 id: CL:0000813
 name: memory T cell
 namespace: cell
-def: "A distinctly differentiated long-lived T cell that has the phenotype CD45RO-positive and CD127-positive." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, ISBN:0781735149]
+def: "A long-lived, antigen-experienced T cell that has acquired a memory phenotype including distinct surface markers and the ability to differentiate into an effector T cell upon antigen reexposure." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, ISBN:0781735149]
 synonym: "memory T lymphocyte" EXACT []
 synonym: "memory T-cell" EXACT []
 synonym: "memory T-lymphocyte" EXACT []
 xref: BTO:0003435
 is_a: CL:0002419 {is_inferred="true"} ! mature T cell
 intersection_of: CL:0002419 ! mature T cell
-intersection_of: RO:0002104 PR:000001017
-intersection_of: RO:0002104 PR:000001869
+intersection_of: has_completed GO:0002286
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: RO:0000053 PATO:0001603
 disjoint_from: CL:0000898 ! naive T cell
 
 [Term]
@@ -8423,7 +8423,8 @@ synonym: "immature B lymphocyte" EXACT []
 synonym: "immature B-cell" EXACT []
 synonym: "immature B-lymphocyte" EXACT []
 synonym: "newly formed B cell" EXACT [ISBN:781735149]
-intersection_of: CL:0000236 ! B cell
+is_a: CL:0001201 ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
 intersection_of: has_not_completed GO:0045190
 intersection_of: lacks_plasma_membrane_part GO:0071738
 intersection_of: RO:0002104 GO:0071753
@@ -8438,8 +8439,8 @@ def: "A precursor B cell is a B cell with the phenotype CD10-positive." [GO_REF:
 synonym: "pre-B cell" RELATED []
 xref: BTO:0001133
 xref: CALOHA:TS-0819
-is_a: CL:0000236 {is_inferred="true"} ! B cell
-intersection_of: CL:0000236 ! B cell
+is_a: CL:0001201 {is_inferred="true"} ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
 intersection_of: lacks_plasma_membrane_part GO:0071753
 intersection_of: RO:0002104 PR:000001898
 disjoint_from: CL:0000826 ! pro-B cell
@@ -8457,8 +8458,8 @@ synonym: "transitional B cell" EXACT [PMID:22343568]
 synonym: "transitional stage B lymphocyte" EXACT []
 synonym: "transitional stage B-cell" EXACT []
 synonym: "transitional stage B-lymphocyte" EXACT []
-is_a: CL:0000236 {is_inferred="true"} ! B cell
-intersection_of: CL:0000236 ! B cell
+is_a: CL:0001201 {is_inferred="true"} ! B cell, CD19-positive
+intersection_of: CL:0001201 ! B cell, CD19-positive
 intersection_of: has_high_plasma_membrane_amount PR:000001408
 intersection_of: has_high_plasma_membrane_amount PR:000001932
 intersection_of: has_not_completed GO:0002335
@@ -8872,7 +8873,6 @@ xref: CALOHA:TS-0768
 xref: FMA:86713
 is_a: CL:0000738 {is_inferred="true"} ! leukocyte
 intersection_of: CL:0000738 ! leukocyte
-intersection_of: lacks_part GO:0030141
 intersection_of: RO:0000053 PATO:0001407
 
 [Term]
@@ -9540,19 +9540,17 @@ relationship: RO:0002202 CL:0000895 ! naive thymus-derived CD4-positive, alpha-b
 id: CL:0000897
 name: CD4-positive, alpha-beta memory T cell
 namespace: cell
-def: "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
+def: "A CD4-positive, alpha-beta T cell that has differentiated into a memory T cell." [GOC:add, http://www.immgen.org/index_content.html, ISBN:0781735149]
 synonym: "CD4-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "CD4-positive, alpha-beta memory T-cell" EXACT []
 synonym: "CD4-positive, alpha-beta memory T-lymphocyte" EXACT []
 synonym: "T4.Mem.Sp" RELATED []
-is_a: CL:0000624 {is_inferred="true"} ! CD4-positive, alpha-beta T cell
+is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
-intersection_of: has_high_plasma_membrane_amount PR:000001307
-intersection_of: has_high_plasma_membrane_amount PR:000001381
-intersection_of: lacks_plasma_membrane_part PR:000001380
-intersection_of: RO:0002104 PR:000001017
-intersection_of: RO:0002104 PR:000001869
-relationship: RO:0002202 CL:0000896 ! activated CD4-positive, alpha-beta T cell
+intersection_of: has_completed GO:0002286
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: RO:0000053 PATO:0001603
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
 
 [Term]
 id: CL:0000898
@@ -9684,8 +9682,8 @@ synonym: "central memory CD4+ T cell" BROAD [PMID:22343568]
 synonym: "central memory CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "central memory CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "central memory CD4-positive, alpha-beta T-lymphocyte" EXACT []
-is_a: CL:0000897 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell
-intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+is_a: CL:0001204 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001204 ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
 intersection_of: lacks_plasma_membrane_part PR:000001015
 intersection_of: lacks_plasma_membrane_part PR:000001380
 intersection_of: RO:0002104 PR:000001203
@@ -9704,8 +9702,8 @@ synonym: "effector memory CD4+ T cell" BROAD [PMID:22343568]
 synonym: "effector memory CD4-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "effector memory CD4-positive, alpha-beta T-cell" EXACT []
 synonym: "effector memory CD4-positive, alpha-beta T-lymphocyte" EXACT []
-is_a: CL:0000897 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell
-intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+is_a: CL:0001204 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001204 ! CD4-positive, alpha-beta memory T cell, CD45RO-positive
 intersection_of: lacks_plasma_membrane_part PR:000001015
 intersection_of: lacks_plasma_membrane_part PR:000001203
 intersection_of: lacks_plasma_membrane_part PR:000001380
@@ -9741,8 +9739,8 @@ synonym: "central memory CD8+ T cell" BROAD [PMID:22343568]
 synonym: "central memory CD8-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "central memory CD8-positive, alpha-beta T-cell" EXACT []
 synonym: "central memory CD8-positive, alpha-beta T-lymphocyte" EXACT []
-is_a: CL:0000909 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell
-intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+is_a: CL:0001203 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001203 ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
 intersection_of: lacks_plasma_membrane_part PR:000001015
 intersection_of: lacks_plasma_membrane_part PR:000001380
 intersection_of: RO:0002104 PR:000001203
@@ -9769,19 +9767,16 @@ relationship: RO:0002202 CL:0000906 ! activated CD8-positive, alpha-beta T cell
 id: CL:0000909
 name: CD8-positive, alpha-beta memory T cell
 namespace: cell
-def: "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:tfm, PMID:20146720]
+def: "A CD8-positive, alpha-beta T cell that has differentiated into a memory T cell." [GOC:add, PMID:20146720]
 synonym: "CD8-positive, alpha-beta memory T lymphocyte" EXACT []
 synonym: "CD8-positive, alpha-beta memory T-cell" EXACT []
 synonym: "CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
-synonym: "T.8Mem.Sp" EXACT []
-is_a: CL:0000625 {is_inferred="true"} ! CD8-positive, alpha-beta T cell
+synonym: "T.8Mem.Sp" RELATED []
 intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
-intersection_of: has_high_plasma_membrane_amount PR:000001307
-intersection_of: has_high_plasma_membrane_amount PR:000001381
-intersection_of: lacks_plasma_membrane_part PR:000001380
-intersection_of: RO:0002104 PR:000001017
-intersection_of: RO:0002104 PR:000001869
-relationship: RO:0002202 CL:0000906 ! activated CD8-positive, alpha-beta T cell
+intersection_of: has_completed GO:0002286
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: RO:0000053 PATO:0001603
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
 
 [Term]
 id: CL:0000910
@@ -9810,6 +9805,7 @@ is_a: CL:0002419 {is_inferred="true"} ! mature T cell
 intersection_of: CL:0002419 ! mature T cell
 intersection_of: has_completed GO:0030217
 intersection_of: has_completed GO:0045058
+intersection_of: RO:0000053 PATO:0045026 ! normal life span
 
 [Term]
 id: CL:0000912
@@ -9839,8 +9835,8 @@ synonym: "effector memory CD8+ T cell" BROAD [PMID:22343568]
 synonym: "effector memory CD8-positive, alpha-beta T lymphocyte" EXACT []
 synonym: "effector memory CD8-positive, alpha-beta T-cell" EXACT []
 synonym: "effector memory CD8-positive, alpha-beta T-lymphocyte" EXACT []
-is_a: CL:0000909 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell
-intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+is_a: CL:0001203 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
+intersection_of: CL:0001203 ! CD8-positive, alpha-beta memory T cell, CD45RO-positive
 intersection_of: lacks_plasma_membrane_part PR:000001015
 intersection_of: lacks_plasma_membrane_part PR:000001203
 intersection_of: lacks_plasma_membrane_part PR:000001380
@@ -9896,12 +9892,15 @@ name: Tc1 cell
 namespace: cell
 def: "A CD8-positive, alpha-beta positive T cell that has the phenotype T-bet-positive, eomesodermin-positive, CXCR3-positive, CCR6-negative, and is capable of producing interferon-gamma." [GO_REF:0000031, GOC:add, GOC:pam, PMID:22343568, PMID:9914231]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'Tc1 CD8+ T cell', but its logical definition includes additional known characteristics of Tc1 T cells.
+synonym: "CD8-positive Th1 cell" EXACT []
 synonym: "T-cytotoxic T cell type 1" EXACT []
 synonym: "Tc1 CD8+ T cell" EXACT [PMID:22343568]
 synonym: "Tc1 T cell" EXACT []
 synonym: "Tc1 T lymphocyte" EXACT []
 synonym: "Tc1 T-cell" EXACT []
 synonym: "Tc1 T-lymphocyte" EXACT []
+synonym: "Th1 CD8-positive T cell" EXACT []
+synonym: "Th1 non-TFH CD8-positive T cell" EXACT []
 xref: BTO:0004793
 xref: BTO:0004888
 xref: FMA:84793
@@ -9919,11 +9918,14 @@ name: Tc2 cell
 namespace: cell
 def: "A CD8-positive, alpha-beta positive T cell expressing GATA-3 and secreting IL-4." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:9914231]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'non-Tc1/Tc17 CD8+ T cell' (see CL:0001052), but includes the additional necessary and sufficient conditions to allow classification as a Tc2 T cell.
+synonym: "CD8-positive Th2 cell" EXACT []
 synonym: "T-cytotoxic T cell type 2" EXACT []
 synonym: "Tc2 T cell" EXACT []
 synonym: "Tc2 T lymphocyte" EXACT []
 synonym: "Tc2 T-cell" EXACT []
 synonym: "Tc2 T-lymphocyte" EXACT []
+synonym: "Th2 CD8-positive T cell" EXACT []
+synonym: "Th2 non-TFH CD8-positive T cell" EXACT []
 xref: BTO:0004794
 xref: FMA:84794
 is_a: CL:0000908 {is_inferred="true"} ! CD8-positive, alpha-beta cytokine secreting effector T cell
@@ -10363,12 +10365,9 @@ intersection_of: RO:0002215 GO:0045630
 id: CL:0000945
 name: lymphocyte of B lineage
 namespace: cell
-def: "A lymphocyte of B lineage is a lymphocyte that expresses CD19 on the cell surface. An additional defining characteristic is the commitment to express an immunoglobulin complex." [GO_REF:0000031, GOC:add, GOC:rhs, GOC:tfm, ISBN:0781735149]
+def: "A lymphocyte of B lineage with the commitment to express an immunoglobulin complex." [GO_REF:0000031, GOC:add, GOC:rhs, GOC:tfm, ISBN:0781735149]
 comment: Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).
 is_a: CL:0000542 {is_inferred="true"} ! lymphocyte
-intersection_of: CL:0000542 ! lymphocyte
-intersection_of: lacks_plasma_membrane_part PR:000001020
-intersection_of: RO:0002104 PR:000001002
 relationship: RO:0002202 CL:0000826 ! pro-B cell
 
 [Term]
@@ -10880,6 +10879,8 @@ name: plasmablast
 namespace: cell
 def: "An activated mature (naive or memory) B cell that is secreting immunoglobulin, typified by being CD27-positive, CD38-positive, CD138-negative." [GO_REF:0000031, GOC:dsd, GOC:msz, GOC:tfm, PMCID:PMC2673126]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'plasmablast'. Plasmablasts are also reportedly CD48-positive, CD63-positive, CD229-positive, CD270-positive, CD319-positive, CD352-positive, CD361-positive, and IgD-negative.
+synonym: "CD20-negative B cell" BROAD []
+synonym: "CD27-positive, CD38-positive, CD20-negative B cell" EXACT []
 xref: FMA:84371
 is_a: CL:0000785 {is_inferred="true"} ! mature B cell
 intersection_of: CL:0000785 ! mature B cell
@@ -11756,6 +11757,7 @@ is_a: CL:0002678 ! memory regulatory T cell
 intersection_of: CL:0002678 ! memory regulatory T cell
 intersection_of: RO:0002104 PR:000001017
 intersection_of: RO:0002104 PR:000001200
+intersection_of: RO:0002160 NCBITaxon:9606
 
 [Term]
 id: CL:0001047
@@ -11989,11 +11991,13 @@ namespace: cell
 def: "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, GOC:dos, PMID:15032595, PMID:16237082]
 comment: This cell type is seen human but not found in the mouse.
 synonym: "TEMRA" EXACT [PMID:16237082]
-is_a: CL:0000625 ! CD8-positive, alpha-beta T cell
-intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
+is_a: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
 intersection_of: lacks_plasma_membrane_part PR:000001017
 intersection_of: lacks_plasma_membrane_part PR:000001203
 intersection_of: RO:0002104 PR:000001015
+intersection_of: RO:0002160 NCBITaxon:9606
 relationship: RO:0002202 CL:0000913 ! effector memory CD8-positive, alpha-beta T cell
 
 [Term]
@@ -12125,6 +12129,86 @@ intersection_of: CL:0001065 ! innate lymphoid cell
 intersection_of: BFO:0000051 PR:000003455
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-31T20:21:26Z xsd:dateTime
+
+[Term]
+id: CL:0001200
+name: lymphocyte of B lineage, CD19-positive
+namespace: cell
+def: "A lymphocyte of B lineage that is CD19-positive." [GOC:add]
+comment: Types of B lineage lymphocytes include B cells and antibody secreting cells (plasmablasts and plasma cells).  Lymphocytes of B cell lineage can be distinguished from those of T cell lineage by their lack of CD3e (as part of the T cell receptor complex).
+is_a: CL:0000945 ! lymphocyte of B lineage
+intersection_of: CL:0000945 ! lymphocyte of B lineage
+intersection_of: lacks_plasma_membrane_part PR:000001020
+intersection_of: RO:0002104 PR:000001002
+intersection_of: RO:0002162 NCBITaxon:40674
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
+
+[Term]
+id: CL:0001201
+name: B cell, CD19-positive
+namespace: cell
+def: "A B cell that is CD19-positive." [GOC:add]
+synonym: "B lymphocyte, CD19-positive" EXACT []
+synonym: "B-cell, CD19-positive" EXACT []
+synonym: "B-lymphocyte, CD19-positive" EXACT []
+synonym: "CD19+ B cell" EXACT []
+synonym: "CD19-positive B cell" EXACT []
+is_a: CL:0000236 ! B cell
+intersection_of: CL:0001200 ! lymphocyte of B lineage, CD19-positive
+intersection_of: RO:0002104 PR:000001002
+intersection_of: RO:0002162 NCBITaxon:40674
+intersection_of: RO:0002215 GO:0019724
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
+
+[Term]
+id: CL:0001202
+name: CD86-positive plasmablast
+namespace: cell
+def: "A plasmablast that is CD86-positive." [GOC:add, PMID:20398308]
+synonym: "CD86+ plasmablast" EXACT []
+synonym: "CD86-positive, CD20-negative plasmablast" BROAD []
+is_a: CL:0000980 ! plasmablast
+intersection_of: CL:0000980 ! plasmablast
+intersection_of: RO:0002104 PR:000001412
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
+
+[Term]
+id: CL:0001203
+name: CD8-positive, alpha-beta memory T cell, CD45RO-positive
+namespace: cell
+def: "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:tfm, PMID:20146720]
+synonym: "CD8-positive, alpha-beta memory T lymphocyte, CD45RO-positive" EXACT []
+synonym: "CD8-positive, alpha-beta memory T-cell, CD45RO-positive" EXACT []
+synonym: "CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive" EXACT []
+is_a: CL:0000909 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell
+intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_high_plasma_membrane_amount PR:000001307
+intersection_of: has_high_plasma_membrane_amount PR:000001381
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: RO:0002104 PR:000001017
+intersection_of: RO:0002104 PR:000001869
+intersection_of: RO:0002160 NCBITaxon:9606
+relationship: RO:0002202 CL:0000906 ! activated CD8-positive, alpha-beta T cell
+
+[Term]
+id: CL:0001204
+name: CD4-positive, alpha-beta memory T cell, CD45RO-positive
+namespace: cell
+def: "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high." [GO_REF:0000031, GOC:add, GOC:tfm, http://www.immgen.org/index_content.html, ISBN:0781735149]
+synonym: "CD4-positive, alpha-beta memory T lymphocyte, CD45RO-positive" EXACT []
+synonym: "CD4-positive, alpha-beta memory T-cell, CD45RO-positive" EXACT []
+synonym: "CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive" EXACT []
+is_a: CL:0000897 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell
+intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_high_plasma_membrane_amount PR:000001307
+intersection_of: has_high_plasma_membrane_amount PR:000001381
+intersection_of: lacks_plasma_membrane_part PR:000001380
+intersection_of: RO:0002104 PR:000001017
+intersection_of: RO:0002104 PR:000001869
+intersection_of: RO:0002160 NCBITaxon:9606
+relationship: RO:0002202 CL:0000896 ! activated CD4-positive, alpha-beta T cell
 
 [Term]
 id: CL:0001658
@@ -14058,11 +14142,14 @@ name: Tc17 cell
 namespace: cell
 def: "A CD8-positive, alpha-beta T cell that has the phenotype CXCR3-negative, CCR6-positive, CCR5-high, CD45RA-negative, and capable of producing IL-17 and some IFNg." [GOC:add, GOC:dsd, GOC:tfm, PMID:19201830, PMID:22343568]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'Tc17 CD8+ T cell', but its logical definition includes additional known characteristics of Tc17 T cells.  Found in the CD27-positive, CD28-positive or CD27-negative, CD28-positive fractions with the phenotype CCR4-negative and CCR7-negative (this sentence not part of definition).
+synonym: "CD8-positive Th17 cell" EXACT []
 synonym: "Tc17 CD8+ T cell" EXACT [PMID:22343568]
 synonym: "Tc17 T cell" EXACT []
 synonym: "Tc17 T lymphocyte" EXACT []
 synonym: "Tc17 T-cell" EXACT []
 synonym: "Tc17 T-lymphocyte" EXACT []
+synonym: "Th17 CD8-positive T cell" EXACT []
+synonym: "Th17 non-TFH CD8-positive T cell" EXACT []
 is_a: CL:0000908 {is_inferred="true"} ! CD8-positive, alpha-beta cytokine secreting effector T cell
 intersection_of: CL:0000908 ! CD8-positive, alpha-beta cytokine secreting effector T cell
 intersection_of: has_high_plasma_membrane_amount PR:000001201
@@ -15412,7 +15499,7 @@ namespace: cell
 def: "A cell containing at least one nucleus." [GOC:tfm]
 xref: FMA:67513
 intersection_of: CL:0000003 ! native cell
-intersection_of: BFO:0000051 GO:0005634
+intersection_of: RO:0000053 PATO:0002505
 created_by: tmeehan
 creation_date: 2010-09-07T03:32:33Z
 
@@ -15569,11 +15656,11 @@ creation_date: 2010-09-08T09:41:46Z
 id: CL:0002255
 name: stromal cell of endometrium
 namespace: cell
-def: "An epithelial cell that regulates growth and differentiation of the overlying epithelium." [GOC:tfm, PMID:11331626]
+def: "Connective tissue cells of the endometrium, these cells are fibroblastic in appearance. During decidualization they tranform into decidual (stromal) cells, swellling up and adopt an epithelial cell-like appearance due to the accumulation of glycogen and lipid droplets." [PMID:11331626, PMID:30013421, Wiki:Decidualization&oldid=908981933#Endometrial_stromal_cells_(ESCs)]
+synonym: "endometrial stromal cell" EXACT []
 xref: CALOHA:TS-1266
 xref: FMA:86490
 is_a: CL:0000499 {is_inferred="true"} ! stromal cell
-is_a: CL:0002149 ! epithelial cell of uterus
 intersection_of: CL:0000499 ! stromal cell
 intersection_of: BFO:0000050 UBERON:0001295
 created_by: tmeehan
@@ -16643,6 +16730,7 @@ intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_high_plasma_membrane_amount PR:000001024
 intersection_of: lacks_plasma_membrane_part PR:000001483
 intersection_of: RO:0002104 PR:000009766
+relationship: RO:0001025 UBERON:0002450
 created_by: tmeehan
 creation_date: 2010-09-20T04:00:02Z
 
@@ -16903,7 +16991,7 @@ id: CL:0002362
 name: granule cell precursor
 namespace: cell
 def: "A cell located in the outermost proliferative zone of the external germinal layer that can differentiate into astroglial cells and granule cells. This cell type is glial fibrillary acidic protein-positive and NK1-positive." [GOC:tfm, PMID:14745007]
-is_a: CL:0000337 ! neuroblast (sensu Vertebrata)
+is_a: CL:0000031 ! neuroblast (sensu Vertebrata)
 created_by: tmeehan
 creation_date: 2010-09-22T01:40:44Z
 
@@ -17590,7 +17678,7 @@ namespace: cell
 def: "A reticulocyte that retains the nucleus and other organelles. Found in birds, fish, amphibians and reptiles." [GOC:tfm, PMID:18182572, PMID:9011180, PMID:9046052]
 is_a: CL:0000558 {is_inferred="true"} ! reticulocyte
 intersection_of: CL:0000558 ! reticulocyte
-intersection_of: BFO:0000051 GO:0005634
+intersection_of: RO:0000053 PATO:0002505
 created_by: tmeehan
 creation_date: 2010-10-15T09:24:05Z
 
@@ -18438,7 +18526,7 @@ creation_date: 2010-12-06T02:53:30Z
 id: CL:0002488
 name: trophoblast giant cell
 namespace: cell
-def: "A trophoblast cell that has a large volume of cytoplasm, is polyploidy and is usually mononuclear but is also occasionally multi-nucleate. This cell type is important in establishing maternal physiology and remodeling of the vasculature of the placenta." [GOC:tfm, MP:0001714, MP:19876834]
+def: "A trophoblast cell that has a large volume of cytoplasm, is polyploid and is usually mononuclear but is also occasionally multi-nucleate. This cell type is important in establishing maternal physiology and remodeling of the vasculature of the placenta." [GOC:tfm, MP:0001714, MP:19876834]
 synonym: "giant trophoblast cell" EXACT []
 is_a: CL:0000351 {is_inferred="true"} ! trophoblast cell
 intersection_of: CL:0000351 ! trophoblast cell
@@ -20422,6 +20510,8 @@ name: cardioblast
 namespace: cell
 def: "A stem cell that can give rise to multiple cell types (i.e. smooth muscle, endothelial) in the developing heart." [GOC:tfm, PMID:19745164]
 comment: Discrepancy in develops from origins prevents me from making the assertion that cardioblasts give rise to all instances of cardiocytes as we state cardiac muscle cells develop from cardiac myoblast, which in turn develop from muscle stem cell.
+synonym: "cardiovascular progenitor cell" EXACT [PMID:17519333, PMID:19745164]
+synonym: "CPC" EXACT [PMID:19745164]
 is_a: CL:0000048 ! multi fate stem cell
 created_by: tmeehan
 creation_date: 2011-07-11T03:15:38Z
@@ -20544,7 +20634,7 @@ id: CL:0002676
 name: neural crest derived neuroblast
 namespace: cell
 def: "A neuroblast derived from a neural crest cell." [GOC:tfm, PMID:17407019]
-is_a: CL:0000337 ! neuroblast (sensu Vertebrata)
+is_a: CL:0000031 ! neuroblast (sensu Vertebrata)
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
 created_by: tmeehan
 creation_date: 2011-08-22T09:24:15Z
@@ -20571,6 +20661,8 @@ def: "A CD4-positive, CD25-positive alpha-beta regulatory T cell that has encoun
 comment: Cell has been described as being CD45RA-positive in human, but this doesn't fit with our current definition memory T cell.
 is_a: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
 is_a: CL:0000813 ! memory T cell
+intersection_of: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
+intersection_of: has_completed GO:0043379 ! memory T cell differentiation
 created_by: tmeehan
 creation_date: 2011-08-25T03:17:34Z
 
@@ -21359,6 +21451,44 @@ intersection_of: RO:0002292 PR:Q8R4G0
 intersection_of: RO:0002292 PR:Q9QZC1
 
 [Term]
+id: CL:0008033
+name: decidual pericyte
+def: "A pericyte of the decidual vasculature." [] {comment="PMID:30429548"}
+synonym: "decidual perivascular cell" EXACT []
+is_a: CL:0000669 ! pericyte cell
+intersection_of: CL:0000669 ! pericyte cell
+intersection_of: BFO:0000050 UBERON:0002450
+created_by: dos
+creation_date: 2020-02-29T11:45:57Z
+
+[Term]
+id: CL:0008034
+name: mural cell
+def: "Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of the microcirculation." [Wiki:Mural_cell&oldid=930603194]
+is_a: CL:0002371 ! somatic cell
+created_by: dos
+creation_date: 2020-02-29T17:33:55Z
+
+[Term]
+id: CL:0008035
+name: microcirculation associated smooth muscle cell
+is_a: CL:0008034 ! mural cell
+intersection_of: CL:0000359 ! vascular associated smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0010523
+created_by: dos
+creation_date: 2020-02-29T17:37:00Z
+
+[Term]
+id: CL:0008036
+name: extravillous trophoblast
+def: "A trophoblast cell that is not part of a placental villous" [PMID:31049600]
+synonym: "EVT" EXACT [PMID:31049600]
+synonym: "extravillous cytotrophloblast" EXACT []
+is_a: CL:0000351 ! trophoblast cell
+created_by: dos
+creation_date: 2020-03-02T08:45:06Z
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -21687,12 +21817,26 @@ intersection_of: RO:0002215 GO:0030317
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
+id: CL:0011017
+name: vagal neural crest cell
+def: "Cell that is part of the vagal neural crest population. The vagal neural crest arises from the axial level of somites 1-7 and has been described as a hybrid between the head and the trunk populations." [PMID:22016183]
+is_a: CL:0011012 ! neural crest cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
 id: CL:0011018
 name: lymphoid tissue–inducer cell
 def: "A hematopoietic cell that express ROR gamma t and IL-7R alpha in the absence of lineage markers (e.g. CD3, CD19, B220, CD11c, Gr-1), with the functional ability to interact with mesenchymal cells through lymphotoxin and tumor necrosis factor. Lymphoid tissue-inducer cells are key to the development of lymph nodes and Peyer’s patches." [PMID:19029905, PMID:21601793, PMID:9354470]
 synonym: "LTi" EXACT []
 synonym: "lymphoid tissue inducer cell" EXACT []
 is_a: CL:0000988 ! hematopoietic cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011020
+name: neural progenitor cell
+def: "An undifferentiated cell that originates from a neural stem cell and has the capacity to generate multiple types of lineage-restricted progenitors but not to self-renew." [PMID:30574073]
+is_a: CL:0000055 ! non-terminally differentiated cell
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -21860,6 +22004,23 @@ xref: PMID:14699587
 is_a: CL:0000100 ! motor neuron
 
 [Term]
+id: CL:0017000
+name: pulmonary ionocyte
+namespace: cell
+def: "An ionocyte that is part of the lung epithelium. The cells from this type are major sources of the CFTR protein in human and mice." [PMID:30069044, PMID:30069046]
+is_a: CL:0000082 ! epithelial cell of lung
+is_a: CL:0005006 ! ionocyte
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0017001
+name: splanchnic mesodermal cell
+def: "A mesodermal cell that is part of the splanchnic layer of lateral plate mesoderm." []
+is_a: CL:0011010 ! lateral mesodermal cell
+relationship: BFO:0000050 UBERON:0004872
+property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-2473-2313
+
+[Term]
 id: CL:1000001
 name: retrotrapezoid nucleus neuron
 intersection_of: CL:0000540 ! neuron
@@ -21874,7 +22035,7 @@ intersection_of: BFO:0000050 UBERON:0005329
 [Term]
 id: CL:1000042
 name: forebrain neuroblast
-intersection_of: CL:0000031 ! neuroblast
+intersection_of: CL:0000031 ! neuroblast (sensu Vertebrata)
 intersection_of: BFO:0000050 UBERON:0001890
 
 [Term]
@@ -23084,6 +23245,9 @@ name: endothelial cell of hepatic sinusoid
 namespace: cell
 def: "An endothelial cell that is part of the hepatic sinusoid." [GOC:tfm]
 synonym: "endotheliocyte of hepatic sinusoid" EXACT [FMA:62911]
+synonym: "liver senusoidal endothelial cell" EXACT [PMID:30348985]
+synonym: "LSEC" EXACT [] {EXACT="PMID:30348985"}
+xref: BTO:000125
 xref: FMA:62911
 is_a: CL:0002262 {is_inferred="true"} ! endothelial cell of sinusoid
 intersection_of: CL:0002262 ! endothelial cell of sinusoid
@@ -25541,12 +25705,17 @@ creation_date: 2014-02-11T17:29:04Z
 
 [Term]
 id: CL:2000002
-name: decidua cell
+name: decidual cell
 namespace: cell
-def: "Any native cell that is part of a decidua." [GOC:TermGenie]
-intersection_of: CL:0000003 ! native cell
-intersection_of: BFO:0000050 UBERON:0002450
-created_by: TermGenie
+def: "A specialized, enlarged, connective tissue cell of the decidua with enlarged nucleus, dense membrane‐bound secretory granules and cytoplasmic accumulation of glycogen and lipid droplets. These cells develop by the transformation of endometrial stromal cells during decidualization." [BTO:0002770, NCIT:C32429, PMID:30013421, PMID:30429548, Wiki:Decidual_cells&oldid=937509751, Wiki:Decidualization&oldid=908981933]
+synonym: "decidua cell" EXACT [BTO:0002770, NCIT:C32429]
+synonym: "decidual stromal cell" EXACT [BTO:0005756, PMID:11719592]
+xref: BTO:0002770
+xref: BTO:0005756
+xref: NCIT:C32429
+is_a: CL:0000499 ! stromal cell
+relationship: BFO:0000050 UBERON:0002450
+relationship: RO:0002202 CL:0002255 ! stromal cell of endometrium
 creation_date: 2014-02-20T23:06:41Z
 
 [Term]
@@ -26120,10 +26289,15 @@ creation_date: 2014-10-07T17:46:27Z
 id: CL:2000060
 name: placental villous trophoblast
 namespace: cell
-def: "Any trophoblast cell that is part of a placenta." [GOC:TermGenie]
+def: "A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua." [PMID:31049600]
 comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7120
+comment: Same as synctial trophoblast?
+synonym: "vCTB" EXACT [PMID:31049600]
+synonym: "villous cytotrophoblast" EXACT []
+xref: BTO:0006119
+xref: BTO:0006208
 intersection_of: CL:0000351 ! trophoblast cell
-intersection_of: BFO:0000050 UBERON:0001987
+intersection_of: BFO:0000050 UBERON:0010005
 created_by: TermGenie
 creation_date: 2014-10-07T17:48:27Z
 
@@ -26145,7 +26319,7 @@ namespace: cell
 def: "Any capillary endothelial cell that is part of a placenta." [GOC:TermGenie]
 comment: http://www.ncbi.nlm.nih.gov/books/NBK53245/
 intersection_of: CL:0002144 ! capillary endothelial cell
-intersection_of: BFO:0000050 UBERON:0001987
+intersection_of: BFO:0000050 UBERON:0010005
 created_by: TermGenie
 creation_date: 2014-10-07T17:55:56Z
 
@@ -26656,6 +26830,16 @@ creation_date: 2009-12-28T04:28:35Z
 id: GO:0032634
 name: interleukin-5 production
 is_a: GO:0001816
+
+[Term]
+id: GO:0043379
+name: memory T cell differentiation
+is_a: GO:0002292
+
+[Term]
+id: PATO:0045026
+name: normal life span
+is_a: PATO:0000050
 
 [Term]
 id: http://purl.obolibrary.org/obo/D96882F1-8709-49AB-BCA9-772A67EA6C33
