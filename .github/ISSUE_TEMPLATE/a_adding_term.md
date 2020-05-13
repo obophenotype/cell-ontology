@@ -14,7 +14,7 @@ labels: 'new term request'
 **Definition (free text, please give PubMed ID)**
 
 
-**Parent term (see [https://www.ebi.ac.uk/ols/ontologies/cl](CL OLS))**
+**Parent term**
 
 
 **Your nano-attribution (ORCID)**
