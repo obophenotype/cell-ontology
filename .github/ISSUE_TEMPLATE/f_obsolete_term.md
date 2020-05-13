@@ -1,11 +1,11 @@
 ---
 name: Obsolete a term
-about: Obsolete or deprecate an existing HPO term
-assignees: pnrobinson, drseb
-labels: obsoletion
+about: Obsolete or deprecate an existing CL term
+assignees: nicolevasilevsky, dosumis, addiehl
+labels: 'obsoletion request'
 ---
 
-**HPO term**
+**CL term**
 
 
 **Reason for deprecation**
