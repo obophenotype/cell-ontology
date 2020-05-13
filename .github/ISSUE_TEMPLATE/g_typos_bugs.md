@@ -8,5 +8,5 @@ labels: typo, bug
 **CL term**
 
 
-**Bug description**
+**Description of typo, bug or error**
 
