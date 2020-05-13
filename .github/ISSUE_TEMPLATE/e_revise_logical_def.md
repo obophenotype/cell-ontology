@@ -1,7 +1,7 @@
 ---
 name: Revise logical definition
 about: Improve the OWL-DL statement of a CL term
-assignees:  
+assignees: nicolevasilevsky, dosumis, addiehl
 labels: 'logical definition'
 ---
 
