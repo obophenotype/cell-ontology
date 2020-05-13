@@ -1,7 +1,7 @@
 ---
 name: Add term
-about: New term suggestion for HPO
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+about: New term suggestion for CL
+assignees: nicolevasilevsky, dosumis, addiehl
 labels: 'new term request'
 ---
 
@@ -14,10 +14,7 @@ labels: 'new term request'
 **Definition (free text, please give PubMed ID)**
 
 
-**Parent term (use hpo.jax.org/app)**
-
-
-**Diseases characterized by this term ? (e.g. Orphanet or OMIM number)**
+**Parent term (see https://www.ebi.ac.uk/ols/ontologies/cl)**
 
 
 **Your nano-attribution (ORCID)**
