@@ -2,6 +2,7 @@
 name: Add term
 about: New term suggestion for CL
 assignees: nicolevasilevsky, dosumis, addiehl
+title: "[NTR]"
 labels: 'new term request'
 ---
 
