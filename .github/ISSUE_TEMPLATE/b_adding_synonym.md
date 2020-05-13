@@ -1,16 +1,16 @@
 ---
 name: Add synonym
-about: New synonym suggestion for an existing HPO term
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+about: New synonym suggestion for an existing CL term
+assignees: nicolevasilevsky
 labels: synonyms
 ---
 
-**HPO term**
+**CL term**
 
 
 **Synonym to be added**
 
 
-**broad/exact/narrow/plural/abbreviation ?**
+**broad/exact/narrow/related ?**
 
 
