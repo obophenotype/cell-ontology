@@ -1,11 +1,11 @@
 ---
 name: Revise textual definition
-about: Change the textual definition of an HPO term
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+about: Change the textual definition of a CL term
+assignees: nicolevasilevsky
 labels: 'textual definition'
 ---
 
-**HPO term**
+**CL term**
 
 
 **Suggested revision of textual definition**
