@@ -1,11 +1,11 @@
 ---
 name: Revise subclass relationship
-about: Revise the subclass structure for HPO terms
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
-labels: hpo-classhierarchy
+about: Revise the subclass structure for CL terms
+assignees: nicolevasilevsky
+labels: CL-classhierarchy
 ---
 
-**HPO term**
+**CL term**
 
 
 **Suggested revision and reasons**
