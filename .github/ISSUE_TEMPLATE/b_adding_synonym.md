@@ -2,7 +2,7 @@
 name: Add synonym
 about: New synonym suggestion for an existing CL term
 assignees: nicolevasilevsky
-labels: synonyms
+labels: synonym
 ---
 
 **CL term**
