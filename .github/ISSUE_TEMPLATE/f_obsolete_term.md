@@ -1,6 +1,6 @@
 ---
 name: Obsolete a term
-about: Obsolete or deprecate an existing CL term
+about: Obsolete or deprecate an existing CL term. Note, please use the 'merge' template if you would like to obsolete one term and merge/replace it with another CL term.
 assignees: nicolevasilevsky, dosumis, addiehl
 labels: 'obsoletion request'
 ---
@@ -11,5 +11,5 @@ labels: 'obsoletion request'
 **Reason for deprecation**
 
 
-**Suggested replacement or term to consider**
+**Suggested replacement to consider**
 
