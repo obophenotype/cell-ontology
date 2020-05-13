@@ -1,11 +1,11 @@
 ---
 name: Revise logical definition
-about: Improve the OWL-DL statement of an HPO term
-assignees: pnrobinson, drseb, nicolevasilevsky, LCCarmody 
+about: Improve the OWL-DL statement of a CL term
+assignees:  
 labels: 'logical definition'
 ---
 
-**HPO term**
+**CL term**
 
 
 **Suggested revision of logical definition**
