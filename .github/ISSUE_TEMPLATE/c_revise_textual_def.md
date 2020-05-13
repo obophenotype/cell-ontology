@@ -2,7 +2,7 @@
 name: Revise textual definition
 about: Change the textual definition of a CL term
 assignees: nicolevasilevsky
-labels: 'textual definition'
+labels: 'text definition'
 ---
 
 **CL term**
