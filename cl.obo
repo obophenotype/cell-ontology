@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/2020-03-02/cl-simple.owl
+data-version: cl/2020-05-20/cl-simple.owl
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: PLURAL "plural term"
 remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
@@ -14,6 +14,7 @@ property_value: http://purl.org/dc/elements/1.1/contributor "Nicole Vasilevsky" 
 property_value: http://purl.org/dc/elements/1.1/contributor "Terry Meehan" xsd:string
 property_value: http://purl.org/dc/elements/1.1/contributor "Yvonne Bradford" xsd:string
 property_value: http://purl.org/dc/elements/1.1/license http://creativecommons.org/licenses/by/4.0/
+property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
 
 [Term]
 id: CL:0000000
@@ -80,6 +81,7 @@ consider: CL:0001034
 id: CL:0000005
 name: fibroblast neural crest derived
 namespace: cell
+def: "Any fibroblast that is deriived from the neural crest." [https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000057 ! fibroblast
 relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
@@ -160,6 +162,7 @@ is_a: CL:0000039 ! germ line cell
 id: CL:0000015
 name: male germ cell
 namespace: cell
+def: "Male germ cell is a germ cell that supports male gamete production." [https://orcid.org/0000-0001-5208-3432]
 xref: FMA:72290
 xref: MA:0002765
 xref: ncithesaurus:Spermatogenic_Cell
@@ -217,7 +220,6 @@ xref: CALOHA:TS-0949
 xref: FBbt:00004954
 xref: FMA:67338
 xref: WBbt:0006798
-is_a: CL:0000064 ! ciliated cell
 is_a: CL:0000408 ! male gamete
 relationship: develops_from CL:0000018 ! spermatid
 
@@ -304,6 +306,7 @@ relationship: develops_from CL:0000722 ! cystoblast
 id: CL:0000027
 name: smooth muscle cell neural crest derived
 namespace: cell
+def: "A smooth muscle cell derived from the neural crest." [https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000192 ! smooth muscle cell
 relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 
@@ -452,8 +455,10 @@ synonym: "mature eosinophil leucocyte" EXACT []
 synonym: "mature eosinophil leukocyte" EXACT []
 synonym: "polymorphonuclear leucocyte" BROAD []
 synonym: "polymorphonuclear leukocyte" BROAD []
+is_a: CL:0000145 ! professional antigen presenting cell
 is_a: CL:0000771 ! eosinophil
 relationship: develops_from CL:0000774 ! band form eosinophil
+property_value: IAO:0000116 "The status of eosinophils as true professional antigen presenting cells is unclear, despite their ability to present exogenous peptides and peptides processed from exogenous proteins (in certain studies) via MHC Class II and activate T cells. Per the equivalence axioms, 'eosinophil' is reasoned to be a subclass of 'professional antigen presenting cell', though the role of eosinophils as such in the body may be limited." xsd:string
 
 [Term]
 id: CL:0000042
@@ -757,6 +762,7 @@ is_a: CL:0000066 ! epithelial cell
 id: CL:0000068
 name: duct epithelial cell
 namespace: cell
+def: "An epithelial cell that is part of a duct." [https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
 
@@ -808,6 +814,7 @@ is_obsolete: true
 id: CL:0000075
 name: columnar/cuboidal epithelial cell
 namespace: cell
+def: "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." [GO:0002065, https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
 
@@ -863,6 +870,7 @@ is_a: CL:0000988 ! hematopoietic cell
 id: CL:0000082
 name: epithelial cell of lung
 namespace: cell
+def: "An epithelial cell of the lung." [https://orcid.org/0000-0001-5208-3432]
 synonym: "lung epithelial cell" EXACT []
 xref: BTO:0004299
 is_a: CL:0000066 ! epithelial cell
@@ -1513,7 +1521,7 @@ namespace: cell
 def: "A cell capable of processing and presenting lipid and protein antigens to T cells in order to initiate an immune response." [GOC:add, ISBN:0781735149]
 comment: Note change of name; nearly all somatic cells can present antigens to T cells via MHC Class I complexes leading to effector responses, but professional antigen presenting cells constitutively express MHC Class II as well as costimulatory molecules, and thus can initiate immune responses via T cells.
 synonym: "APC" BROAD []
-is_a: CL:0000473 ! defensive cell
+is_a: CL:0000738 ! leukocyte
 
 [Term]
 id: CL:0000146
@@ -1856,6 +1864,7 @@ is_a: CL:0000174 ! steroid hormone secreting cell
 id: CL:0000180
 name: estradiol secreting cell
 namespace: cell
+def: "A steroid hormone secreting cell that secretes estradiol." [https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000151 ! secretory cell
 
 [Term]
@@ -2368,6 +2377,7 @@ xref: BTO:0000801
 xref: CALOHA:TS-0587
 xref: FMA:63261
 xref: FMA:83585
+is_a: CL:0000145 ! professional antigen presenting cell
 is_a: CL:0000234 ! phagocyte
 is_a: CL:0000766 ! myeloid leukocyte
 relationship: develops_from CL:0000576 ! monocyte
@@ -2571,7 +2581,7 @@ is_obsolete: true
 
 [Term]
 id: CL:0000261
-name: anterior cell
+name: obsolete anterior cell
 namespace: cell
 comment: Obsoleted becuase this term has an overly general name, no definition, and by it's classification appears to refer to a very specific cell type in dictystelium.  If needed, the term should be in DDANAT - probably as a subclass of http://purl.obolibrary.org/obo/DDANAT_0000002
 is_obsolete: true
@@ -4026,6 +4036,7 @@ synonym: "veiled cell" RELATED []
 xref: BTO:0002042
 xref: CALOHA:TS-0194
 xref: FMA:83036
+is_a: CL:0000145 ! professional antigen presenting cell
 is_a: CL:0000842 ! mononuclear cell
 
 [Term]
@@ -4193,7 +4204,7 @@ is_a: CL:0000003 ! native cell
 id: CL:0000474
 name: pericardial nephrocyte
 namespace: cell
-def: "an insect renal cell that filters hemolymph and is found with other pericardial nephrocytes in two rows flanking the dorsal vessel." [FBbt:00003184, GO:0061320, GOC:tfm, PMID:19783135]
+def: "An insect renal cell that filters hemolymph and is found with other pericardial nephrocytes in two rows flanking the dorsal vessel." [FBbt:00003184, GO:0061320, GOC:tfm, PMID:19783135]
 synonym: "pericardial cell" NARROW [FBbt:00005058, GO:0061320]
 xref: FBbt:00005058
 is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
@@ -4220,12 +4231,13 @@ is_a: CL:0000639 ! basophil cell of pars distalis of adenohypophysis
 
 [Term]
 id: CL:0000477
-name: follicle cell
+name: ovarian follicle cell
 namespace: cell
+def: "A somatic epithelial cell of the ovarian follicle/egg chamber." []
 comment: Editors note: check this. Currently used in goxp
-synonym: "ovarian follicle cell" EXACT [GO:0007297]
+synonym: "follicle cell" BROAD []
 xref: FBbt:00004904
-is_a: CL:0000075 ! columnar/cuboidal epithelial cell
+is_a: CL:2000064 ! ovarian surface epithelial cell
 relationship: develops_from CL:0000441 ! follicle stem cell
 
 [Term]
@@ -4253,7 +4265,7 @@ is_a: CL:0000167 ! peptide hormone secreting cell
 id: CL:0000481
 name: cholecystokin stimulating hormone secreting cell
 namespace: cell
-def: "A peptide hormone secreting cell that secretes cholecystokin stimulating hormone" [GO:tfm]
+def: "A peptide hormone secreting cell that secretes cholecystokin stimulating hormone." [GO:tfm]
 is_a: CL:0000167 ! peptide hormone secreting cell
 
 [Term]
@@ -4267,7 +4279,7 @@ is_a: CL:0000163 ! endocrine cell
 id: CL:0000483
 name: bombesin stimulating hormone secreting cell
 namespace: cell
-def: "A peptide hormone secreting cell that secretes cholecystokin stimulating hormone" [GO:tfm]
+def: "A peptide hormone secreting cell that secretes bombesin stimulating hormone." [GO:tfm, https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000167 ! peptide hormone secreting cell
 
 [Term]
@@ -4444,8 +4456,8 @@ namespace: cell
 def: "A flattened stroma cell forming a sheath or theca outside the basal lamina lining the mature ovarian follicle. Thecal interstitial or stromal cells are steroidogenic, and produce primarily androgens which serve as precusors of estrogens in the granulosa cells." [MESH:A05.360.319.114.630.535.400]
 xref: BTO:0002850
 xref: FMA:18690
-is_a: CL:0000499 ! stromal cell
 is_a: CL:0000593 ! androgen secreting cell
+is_a: CL:0002132 ! stromal cell of ovary
 
 [Term]
 id: CL:0000504
@@ -5196,7 +5208,7 @@ id: CL:0000579
 name: border follicle cell
 namespace: cell
 xref: FBbt:00004905
-is_a: CL:0000477 ! follicle cell
+is_a: CL:0000477 ! ovarian follicle cell
 
 [Term]
 id: CL:0000580
@@ -5317,7 +5329,7 @@ relationship: develops_from CL:0000503 ! theca cell
 id: CL:0000591
 name: warmth sensing thermoreceptor cell
 namespace: cell
-def: "A thermoreceptor cell that detects reduced temperatures." [GOC:tfm]
+def: "A thermoreceptor cell that detects increased temperatures." [GOC:tfm, https://orcid.org/0000-0001-5208-3432]
 is_a: CL:0000205 ! thermoreceptor cell
 
 [Term]
@@ -6075,7 +6087,7 @@ id: CL:0000671
 name: centripetally migrating follicle cell
 namespace: cell
 xref: FBbt:00004906
-is_a: CL:0000477 ! follicle cell
+is_a: CL:0000477 ! ovarian follicle cell
 
 [Term]
 id: CL:0000672
@@ -7069,6 +7081,7 @@ comment: Mature B cells are also reportedly CD10-negative, CD19-positive, CD22-p
 synonym: "mature B lymphocyte" EXACT []
 synonym: "mature B-cell" EXACT []
 synonym: "mature B-lymphocyte" EXACT []
+is_a: CL:0000145 ! professional antigen presenting cell
 is_a: CL:0001201 ! B cell, CD19-positive
 relationship: develops_from CL:0000818 ! transitional stage B cell
 
@@ -9197,6 +9210,7 @@ namespace: cell
 def: "An unswitched memory B cell is a memory B cell that has the phenotype IgM-positive, IgD-positive, CD27-positive, CD138-negative, IgG-negative, IgE-negative, and IgA-negative." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:rhs, ISBN:0781765196, PMID:20933013, PMID:22343568]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'IgD+ memory B cell'. Per DSD: Unswitched memory B cells are also reportedly CD48-positive, CD84-positive, CD229-positive, and CD352-positive.
 synonym: "IgD+ memory B cell" BROAD [PMID:22343568]
+synonym: "non-class-switched memory B cell" EXACT [HP:0032126]
 synonym: "unswitched memory B lymphocyte" EXACT []
 synonym: "unswitched memory B-cell" EXACT []
 synonym: "unswitched memory B-lymphocyte" EXACT []
@@ -10638,7 +10652,7 @@ creation_date: 2010-01-06T03:43:20Z
 id: CL:0002032
 name: hematopoietic oligopotent progenitor cell
 namespace: cell
-def: "A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities. Cell lacks hematopoeitic lineage markers." [GOC:tfm, PMID:19022770]
+def: "A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities." [GOC:tfm, https://orcid.org/0000-0001-5208-3432, PMID:19022770]
 comment: This cell type is intended to be compatible with any vertebrate hematopoietic oligopotent progenitor cell.  For mammalian hematopoietic oligopotent progenitor cells known to be lineage-negative, please use the term 'hematopoietic oligopotent progenitor cell' (CL_0001060).
 is_a: CL:0008001 ! hematopoietic precursor cell
 relationship: develops_from CL:0000837 ! hematopoietic multipotent progenitor cell
@@ -12790,7 +12804,7 @@ creation_date: 2010-09-02T04:04:36Z
 id: CL:0002218
 name: immature dendritic epithelial T cell precursor
 namespace: cell
-def: "A double negative thymocyte that has a T cell receptor consisting of a gamma chain that has as part a Vgamma3 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-positive. This cell-type is found in the fetal thymus with highest numbers occurring at E17-E18." [GOC:tfm, http://www.immgen.org]
+def: "A double negative thymocyte that has a T cell receptor consisting of a gamma chain that has as part a Vgamma3 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-positive. This cell-type is found in the fetal thymus with highest numbers occurring at E17-E18." [GOC:tfm, http://www.immgen.org]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "immature DEC precursor" EXACT []
 synonym: "immature DETC precursor" EXACT []
@@ -14172,7 +14186,7 @@ creation_date: 2010-09-20T03:07:03Z
 id: CL:0002338
 name: CD56-positive, CD161-positive immature natural killer cell
 namespace: cell
-def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-negative, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12457618]
+def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-positive, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, https://orcid.org/0000-0001-5208-3432, ISBN:0781735149, PMID:12457618]
 comment: Human markers; killer cell immunoglobulin-like receptor 2DL1 is used as a representative example (PRO at this time lacks a KIR superfamily).
 synonym: "p-NK" RELATED [PMID:12457618]
 is_a: CL:0000823 ! immature natural killer cell
@@ -14597,7 +14611,7 @@ creation_date: 2010-09-24T02:10:31Z
 id: CL:0002378
 name: immature Vgamma2-positive fetal thymocyte
 namespace: cell
-def: "A double negative thymocyte that has a T cell receptor consisting of a gamma chain containing a Vgamma2 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-positive and is found in the fetal thymus." [GOC:tfm, http://www.immgen.org]
+def: "A double negative thymocyte that has a T cell receptor consisting of a gamma chain containing a Vgamma2 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-positive and is found in the fetal thymus." [GOC:tfm, http://www.immgen.org]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "fetal Vgamma2+ thymocyte" BROAD []
 is_a: CL:0002404 ! fetal thymocyte
@@ -14774,7 +14788,7 @@ def: "A patrolling monocyte that is CD14-low and CD16-positive." [GOC:tfm, PMID:
 comment: Markers are associated with human monocytes.
 synonym: "non-classical monocyte, human" EXACT []
 is_a: CL:0000875 ! non-classical monocyte
-is_a: CL:0002397 ! CD14-positive, CD16-positive monocyte
+is_a: CL:0001054 ! CD14-positive monocyte
 relationship: develops_from CL:0002397 ! CD14-positive, CD16-positive monocyte
 created_by: tmeehan
 creation_date: 2010-10-04T12:25:42Z
@@ -14824,7 +14838,7 @@ creation_date: 2010-10-05T10:11:38Z
 id: CL:0002401
 name: mature dendritic epithelial T cell precursor
 namespace: cell
-def: "A thymocyte that has a T cell receptor consisting of a gamma chain that has as part a Vgamma3 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-negative. This cell-type is found in the fetal thymus with highest numbers occurring at E17-E18." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A thymocyte that has a T cell receptor consisting of a gamma chain that has as part a Vgamma3 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-negative. This cell-type is found in the fetal thymus with highest numbers occurring at E17-E18." [GOC:tfm, http://www.immgen.org/index_content.html]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "mature DEC precursor" EXACT []
 synonym: "mature DETC precursor" EXACT []
@@ -14847,7 +14861,7 @@ creation_date: 2010-10-05T11:18:03Z
 id: CL:0002403
 name: mature Vgamma2-positive fetal thymocyte
 namespace: cell
-def: "A thymocyte that has a T cell receptor consisting of a gamma chain containing Vgamma2 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-negative. This cell-type is found in the fetal thymus." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A thymocyte that has a T cell receptor consisting of a gamma chain containing Vgamma2 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-negative. This cell-type is found in the fetal thymus." [GOC:tfm, http://www.immgen.org/index_content.html]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "fetal Vgamma2-positive" EXACT []
 is_a: CL:0002404 ! fetal thymocyte
@@ -14880,7 +14894,7 @@ creation_date: 2010-10-07T02:33:39Z
 id: CL:0002406
 name: immature Vgamma2-positive thymocyte
 namespace: cell
-def: "A double negative post-natal thymocyte that has a T cell receptor consisting of a gamma chain containing a Vgamma2 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-positive." [GOC:tfm, http://www.immgen.org]
+def: "A double negative post-natal thymocyte that has a T cell receptor consisting of a gamma chain containing a Vgamma2 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-positive." [GOC:tfm, http://www.immgen.org]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "Vgamma2-positive thymocyte" BROAD []
 is_a: CL:0002405 ! gamma-delta thymocyte
@@ -14891,7 +14905,7 @@ creation_date: 2010-10-07T02:53:44Z
 id: CL:0002407
 name: mature Vgamma2-positive thymocyte
 namespace: cell
-def: "A thymocyte that has a T cell receptor consisting of a gamma chain containing Vgamma2 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-negative. This cell-type is found in the fetal thymus." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A thymocyte that has a T cell receptor consisting of a gamma chain containing Vgamma2 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "Vgamma2-positive" EXACT []
 is_a: CL:0002405 ! gamma-delta thymocyte
@@ -14903,7 +14917,7 @@ creation_date: 2010-10-07T02:53:48Z
 id: CL:0002408
 name: immature Vgamma2-negative thymocyte
 namespace: cell
-def: "A double negative post-natal thymocyte that has a T cell receptor consisting of a gamma chain containing a Vgamma2 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-positive." [GOC:tfm, http://www.immgen.org]
+def: "A double negative post-natal thymocyte that has a T cell receptor consisting of a gamma chain that does not contain a Vgamma2 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-positive." [GOC:tfm, http://www.immgen.org]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "Vgamma2-negative thymocyte" BROAD []
 is_a: CL:0002405 ! gamma-delta thymocyte
@@ -14914,7 +14928,7 @@ creation_date: 2010-10-07T02:59:05Z
 id: CL:0002409
 name: mature Vgamma2-negative thymocyte
 namespace: cell
-def: "A thymocyte that has a T cell receptor consisting of a gamma chain containing Vgamma2 segment, and a delta chain. This cell type is CD4- negative, CD8-negative and CD24-negative. This cell-type is found in the fetal thymus." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A thymocyte that has a T cell receptor consisting of a gamma chain that does not contain the Vgamma2 segment, and a delta chain. This cell type is CD4-negative, CD8-negative and CD24-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 comment: NOTE: currently variable immune gene segments are not represented in the OBO Foundry. Cross-product definitions were not made as a result. Also, there are three different nomenclatures for the variable gamma segments.
 synonym: "Vgamma2-negative" EXACT []
 is_a: CL:0002405 ! gamma-delta thymocyte
@@ -15149,7 +15163,7 @@ creation_date: 2010-10-21T02:29:19Z
 id: CL:0002431
 name: CD4-positive, CD8-intermediate double-positive thymocyte
 namespace: cell
-def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD8 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "T.4int8+.th" EXACT []
 is_a: CL:0000809 ! double-positive, alpha-beta thymocyte
 relationship: develops_from CL:0002429 ! CD69-positive double-positive thymocyte
@@ -15198,7 +15212,7 @@ creation_date: 2010-10-21T02:59:10Z
 id: CL:0002435
 name: CD69-positive, CD8-positive single-positive thymocyte
 namespace: cell
-def: "A CD4-positive, CD8-negative thymocyte that expresses high levels of the alpha-beta T cell receptor and is CD69-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A CD8-positive, CD4-negative thymocyte that expresses high levels of the alpha-beta T cell receptor and is CD69-positive." [GOC:tfm, http://www.immgen.org/index_content.html, https://orcid.org/0000-0001-5208-3432]
 synonym: "intermediate CD8-single-positive" EXACT []
 synonym: "T.8SP69+.Th" EXACT []
 is_a: CL:0000811 ! CD8-positive, alpha-beta thymocyte
@@ -15428,7 +15442,7 @@ creation_date: 2010-11-22T03:57:57Z
 id: CL:0002458
 name: langerin-positive dermal dendritic cell
 namespace: cell
-def: "A dermal dendritic cell that is langerin-positive, CD103-positive, and CD11b-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
+def: "A dermal dendritic cell that is langerin-positive and CD103-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 is_a: CL:0001006 ! dermal dendritic cell
 is_a: CL:0002461 ! CD103-positive dendritic cell
 created_by: tmeehan
@@ -15599,7 +15613,6 @@ id: CL:0002475
 name: lymphoid MHC-II-negative non-classical monocyte
 namespace: cell
 def: "A MHC-II-negative classical monocyte located in lymphoid tissue that is F4/80-positive, CD11c-intermediate, and CD11b-high." [GOC:tfm, http://www.immgen.org/index_content.html]
-is_a: CL:0002469 ! MHC-II-negative classical monocyte
 is_a: CL:0002471 ! MHC-II-negative non-classical monocyte
 created_by: tmeehan
 creation_date: 2010-11-23T04:09:09Z
@@ -18262,7 +18275,7 @@ is_a: CL:0002494 ! cardiocyte
 
 [Term]
 id: CL:0008023
-name: cardiac fibroblast
+name: obsolete cardiac fibroblast
 comment: Duplicate term.
 is_obsolete: true
 replaced_by: CL:0002548
@@ -18422,7 +18435,7 @@ is_a: CL:2000092 ! hair follicular keratinocyte
 [Term]
 id: CL:0010001
 name: stromal cell of bone marrow
-def: "a stromal cell that is part_of a bone marrow" []
+def: "A stromal cell that is part_of a bone marrow." []
 synonym: "bone marrow stromal cell" EXACT []
 is_a: CL:0000499 ! stromal cell
 is_a: CL:0002092 ! bone marrow cell
@@ -18431,7 +18444,7 @@ created_by: GOC:cjm
 [Term]
 id: CL:0010002
 name: epithelial cell of umbilical artery
-def: "a epithelial cell that is part_of a umbilical artery" []
+def: "An epithelial cell that is part_of a umbilical artery." []
 synonym: "umbilical artery epithelial cell" EXACT []
 is_a: CL:0000066 ! epithelial cell
 created_by: GOC:cjm
@@ -18439,7 +18452,7 @@ created_by: GOC:cjm
 [Term]
 id: CL:0010003
 name: epithelial cell of alveolus of lung
-def: "a epithelial cell that is part_of a alveolus of lung" []
+def: "An epithelial cell that is part_of a alveolus of lung." []
 comment: May be merged with pneumocyte in future
 synonym: "alveolus of lung epithelial cell" EXACT []
 is_a: CL:0000082 ! epithelial cell of lung
@@ -18448,7 +18461,7 @@ created_by: GOC:cjm
 [Term]
 id: CL:0010004
 name: mononuclear cell of bone marrow
-def: "a mononuclear cell that is part_of a bone marrow" []
+def: "A mononuclear cell that is part_of a bone marrow." []
 synonym: "bone marrow mononuclear cell" EXACT []
 is_a: CL:0000842 ! mononuclear cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
@@ -18500,7 +18513,7 @@ is_a: CL:0011005 ! GABAergic interneuron
 [Term]
 id: CL:0010012
 name: cerebral cortex neuron
-def: "a neuron that is part_of a cerebral cortex" []
+def: "A neuron that is part_of a cerebral cortex." []
 is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
@@ -18688,10 +18701,51 @@ is_a: CL:0000988 ! hematopoietic cell
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
+id: CL:0011019
+name: mesothelial cell of epicardium
+def: "A mesothelial cell that is part of the epicardium." []
+is_a: CL:0000077 ! mesothelial cell
+is_a: CL:0002494 ! cardiocyte
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
 id: CL:0011020
 name: neural progenitor cell
 def: "An undifferentiated cell that originates from a neural stem cell and has the capacity to generate multiple types of lineage-restricted progenitors but not to self-renew." [PMID:30574073]
 is_a: CL:0000055 ! non-terminally differentiated cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011021
+name: fibroblast of upper back skin
+def: "A fibroblast that is part of upper back skin." []
+is_a: CL:0011022 ! fibroblast of skin of back
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011022
+name: fibroblast of skin of back
+def: "A fibroblast that is part of skin of back." []
+is_a: CL:0002620 ! skin fibroblast
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011023
+name: CD25+ mast cell
+def: "A mast cell that is CD25+." []
+comment: Mast cells do not normally express CD25, but neoplastic mast cells may be CD25-positive.
+synonym: "CD25+ neoplastic mast cell" EXACT []
+is_a: CL:0001063 ! neoplastic cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011024
+name: double negative T regulatory cell
+def: "A double negative thymocyte that is CD3-positive, CD4-negative, CD8-negative, that that are present in the periphery in very low numbers and predominantly produce INF-gamma, TNF-alpha, and a low amount of TGF-beta, but not IL-2, IL-4, IL-10 or IL-13 upon activation." [PMID:16285891]
+synonym: "CD4-negative, CD8-negative, alpha-beta regulatory T cells" EXACT []
+synonym: "DN Treg" EXACT []
+synonym: "double-negative alpha-beta regulatory T cell" EXACT []
+is_a: CL:0002489 ! double negative thymocyte
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -18856,6 +18910,34 @@ name: splanchnic mesodermal cell
 def: "A mesodermal cell that is part of the splanchnic layer of lateral plate mesoderm." []
 is_a: CL:0011010 ! lateral mesodermal cell
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0019001
+name: tracheobronchial serous cell
+def: "Any serous secreting cell that is part of the tracheobronchial epithelium." []
+synonym: "serous cell of tracheobronchial tree" EXACT []
+is_a: CL:0000313 ! serous secreting cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T16:03:27Z xsd:dateTime
+
+[Term]
+id: CL:0019002
+name: tracheobronchial chondrocyte
+def: "Any chondrocyte that is part of the tracheobronchial tree." []
+synonym: "chondrocyte of tracheobronchial tree" EXACT []
+is_a: CL:0000138 ! chondrocyte
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T17:29:51Z xsd:dateTime
+
+[Term]
+id: CL:0019003
+name: tracheobronchial goblet cell
+def: "Any goblet cell that is part of the tracheobronchial epithelium." []
+synonym: "goblet cell of tracheobronchial tree" EXACT []
+is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
+is_a: CL:0002370 ! respiratory goblet cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T18:14:52Z xsd:dateTime
 
 [Term]
 id: CL:1000001
@@ -19288,7 +19370,7 @@ def: "A goblet cell that is part of the epithelium of bronchus." [GOC:tfm]
 synonym: "goblet cell of epithelium of bronchus" EXACT [FMA:263032]
 xref: FMA:263032
 is_a: CL:0002328 ! bronchial epithelial cell
-is_a: CL:0002370 ! respiratory goblet cell
+is_a: CL:0019003 ! tracheobronchial goblet cell
 
 [Term]
 id: CL:1000313
@@ -19447,7 +19529,7 @@ def: "A goblet cell that is part of the epithelium of trachea." [GOC:tfm]
 synonym: "goblet cell of epithelium of trachea" EXACT [FMA:263075]
 xref: FMA:263075
 is_a: CL:0000307 ! tracheal epithelial cell
-is_a: CL:0002370 ! respiratory goblet cell
+is_a: CL:0019003 ! tracheobronchial goblet cell
 
 [Term]
 id: CL:1000330
@@ -19455,7 +19537,7 @@ name: serous cell of epithelium of trachea
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of trachea." [GOC:tfm]
 xref: FMA:263078
-is_a: CL:0000313 ! serous secreting cell
+is_a: CL:0019001 ! tracheobronchial serous cell
 
 [Term]
 id: CL:1000331
@@ -19463,7 +19545,7 @@ name: serous cell of epithelium of bronchus
 namespace: cell
 def: "A serous secreting cell that is part of the epithelium of bronchus." [GOC:tfm]
 xref: FMA:263080
-is_a: CL:0000313 ! serous secreting cell
+is_a: CL:0019001 ! tracheobronchial serous cell
 
 [Term]
 id: CL:1000332
@@ -21488,7 +21570,7 @@ is_a: CL:0012001 ! neuron of the forebrain
 id: CL:1001435
 name: periglomerular cell
 namespace: cl
-def: "the small neuron in the glomerular layer of the olfactory bulb whose dendrites arborize within a glomerulus, where it receives synaptic input from olfactory receptor cell axon terminals, and also engages in dendrodendritic interactions with mitral and tufted cell dendrites; uses both GABA and dopamine as a neurotransmitter" [MP:0009943]
+def: "The small neuron in the glomerular layer of the olfactory bulb whose dendrites arborize within a glomerulus, where it receives synaptic input from olfactory receptor cell axon terminals, and also engages in dendrodendritic interactions with mitral and tufted cell dendrites; uses both GABA and dopamine as a neurotransmitter." [MP:0009943]
 synonym: "glomerular layer cell" EXACT [NIFSTD:nifext_122]
 synonym: "olfactory bulb (accessory) glomerular layer cell" EXACT [NIFSTD:nifext_122]
 synonym: "olfactory bulb glomerular layer cell" EXACT [NIFSTD:nifext_122]
@@ -21503,14 +21585,14 @@ is_a: CL:1001434 ! olfactory bulb interneuron
 id: CL:1001436
 name: hair-tylotrich neuron
 namespace: cl
-def: "the subcutaneous mechanoreceptors that innervate tylotrich hair follicles" [MP:0000977]
+def: "The subcutaneous mechanoreceptors that innervate tylotrich hair follicles." [MP:0000977]
 is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
 
 [Term]
 id: CL:1001437
 name: hair-down neuron
 namespace: cl
-def: "the subcutaneous mechanoreceptors that innervate vellus hairs" [MP:0000979]
+def: "The subcutaneous mechanoreceptors that innervate vellus hairs." [MP:0000979]
 is_a: CL:0002487 ! cutaneous/subcutaneous mechanoreceptor cell
 
 [Term]
@@ -21525,7 +21607,7 @@ is_a: CL:0000101 ! sensory neuron
 id: CL:1001474
 name: medium spiny neuron
 namespace: cl
-def: "the inhibitory projection neurons located in the striatum that integrate glutamatergic signals arising from the cerebral cortex and thalamus" [MP:0008462]
+def: "The inhibitory projection neurons located in the striatum that integrate glutamatergic signals arising from the cerebral cortex and thalamus." [MP:0008462]
 synonym: "medium-sized densely spiny neuron" RELATED [BTO:0004778]
 synonym: "striatal medium spiny neuron" EXACT [GO:0021773]
 xref: BTO:0004778
@@ -21535,21 +21617,21 @@ is_a: CL:2000029 ! central nervous system neuron
 id: CL:1001502
 name: mitral cell
 namespace: cl
-def: "the large glutaminergic nerve cells whose dendrites synapse with axons of the olfactory receptor neurons in the glomerular layer of the olfactory bulb, and whose axons pass centrally in the olfactory tract to the olfactory cortex" [MP:0009954]
+def: "The large glutaminergic nerve cells whose dendrites synapse with axons of the olfactory receptor neurons in the glomerular layer of the olfactory bulb, and whose axons pass centrally in the olfactory tract to the olfactory cortex." [MP:0009954]
 is_a: CL:1001434 ! olfactory bulb interneuron
 
 [Term]
 id: CL:1001503
 name: olfactory bulb tufted cell
 namespace: cl
-def: "the principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala" [MP:0009955]
+def: "The principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala." [MP:0009955]
 is_a: CL:2000029 ! central nervous system neuron
 
 [Term]
 id: CL:1001505
 name: parvocellular neurosecretory cell
 namespace: cl
-def: "the secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system" [MP:0010125]
+def: "The secretory neurons of the paraventricular nucleus that synthesize and secrete vasopressin, corticotropin-releasing factor (CRF) and thyrotropin-releasing hormone (TRH) into blood vessels in the hypothalamo-pituitary portal system." [MP:0010125]
 synonym: "parvocellular neuron" EXACT []
 synonym: "parvocellular neurosecretory neuron" EXACT []
 is_a: CL:0000167 ! peptide hormone secreting cell
@@ -21561,7 +21643,7 @@ is_a: CL:2000030 ! hypothalamus native cell
 id: CL:1001509
 name: glycinergic neuron
 namespace: cl
-def: "the neurons that utilize glycine as a neurotransmitter" [MP:0010385]
+def: "The neurons that utilize glycine as a neurotransmitter." [MP:0010385]
 is_a: CL:0000161 ! acid secreting cell
 is_a: CL:0000540 ! neuron
 
@@ -21569,7 +21651,7 @@ is_a: CL:0000540 ! neuron
 id: CL:1001516
 name: intestinal enteroendocrine cell
 namespace: cl
-def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract" [MP:0010802]
+def: "The various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the intestinal tract." [MP:0010802]
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0002563 ! intestinal epithelial cell
 
@@ -21577,7 +21659,7 @@ is_a: CL:0002563 ! intestinal epithelial cell
 id: CL:1001517
 name: stomach enteroendocrine cell
 namespace: cl
-def: "the various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the stomach" [MP:0010803]
+def: "The various hormone- or neurotransmitter-secreting cells present throughout the mucosa of the stomach." [MP:0010803]
 is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0002659 ! glandular cell of stomach
 
@@ -21585,14 +21667,14 @@ is_a: CL:0002659 ! glandular cell of stomach
 id: CL:1001561
 name: vomeronasal sensory neuron
 namespace: cl
-def: "chemosensitive cells that innervate the vomernasal organ epithelium and are responsible for receiving and transmitting pheromone signals" [MP:0011679]
+def: "Chemosensitive cells that innervate the vomernasal organ epithelium and are responsible for receiving and transmitting pheromone signals." [MP:0011679]
 is_a: CL:0000101 ! sensory neuron
 
 [Term]
 id: CL:1001566
 name: bronchioalveolar stem cells
 namespace: cl
-def: "a respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." [MP:0011691]
+def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." [MP:0011691]
 is_a: CL:0000034 ! stem cell
 
 [Term]
@@ -21636,7 +21718,7 @@ is_a: CL:2000056 ! Meynert cell
 [Term]
 id: CL:1001572
 name: colon endothelial cell
-def: "Vascular endothelium found in colon blood vessels." [NPX:PDR]
+def: "A vascular endothelial cell found in colon blood vessels." [https://orcid.org/0000-0001-5208-3432, NPX:PDR]
 synonym: "colon endothelial cells" RELATED PLURAL [CALOHA:TS-2397]
 synonym: "colonic endothelial cell" RELATED [CALOHA:TS-2397]
 xref: CALOHA:TS-2397
@@ -22948,19 +23030,6 @@ is_a: CL:0000101 ! sensory neuron
 is_a: CL:0000111 ! peripheral neuron
 created_by: CellBLAST
 creation_date: 2019-02-25T19:34:33Z
-
-[Typedef]
-id: BFO:0000050
-property_value: RO:0001900 RO:0001901
-property_value: RO:0040042 BFO:0000002
-property_value: RO:0040042 BFO:0000003
-property_value: RO:0040042 BFO:0000004
-property_value: RO:0040042 BFO:0000017
-property_value: RO:0040042 BFO:0000019
-property_value: RO:0040042 BFO:0000020
-property_value: RO:0040042 BFO:0000031
-property_value: seeAlso http://ontologydesignpatterns.org/wiki/Community:Parts_and_Collections
-property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:PartOf
 
 [Typedef]
 id: develops_from
