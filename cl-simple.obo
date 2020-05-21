@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-05-20
+data-version: releases/2020-05-21
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: PLURAL "plural term"
 remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
@@ -1311,6 +1311,7 @@ xref: CALOHA:TS-0415
 xref: FMA:54536
 is_a: CL:0000095 ! neuron associated cell
 relationship: develops_from CL:0000030 {comment="It is unclear that all glial cells develop from a cell type called a glioblast. Radial glial cells develop from neuroepithelial cells and other types of glial cells develop from other precursors. Unless glioblast is meant to describe any cell that can give rise to a glial cell, this relationship needs further investigation."} ! glioblast
+relationship: develops_from CL:0000030 ! glioblast
 
 [Term]
 id: CL:0000126
@@ -18285,6 +18286,7 @@ name: activated skeletal muscle satellite cell
 namespace: cell
 def: "A skeletal muscle cell that has become mitotically active - typically following muscle damage." [PMID:21849021, PMID:23303905]
 is_a: CL:0000594 ! skeletal muscle satellite cell
+relationship: develops_from CL:0008012 ! quiescent skeletal muscle satellite cell
 relationship: develops_from CL:0008012 {comment="More accurately - transformation_of ?"} ! quiescent skeletal muscle satellite cell
 
 [Term]
@@ -18808,6 +18810,14 @@ synonym: "CD4-negative, CD8-negative, alpha-beta regulatory T cells" EXACT []
 synonym: "DN Treg" EXACT []
 synonym: "double-negative alpha-beta regulatory T cell" EXACT []
 is_a: CL:0002489 ! double negative thymocyte
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011025
+name: exhausted T cell
+synonym: "An effector T cell that displays impaired effector functions (e.g., rapid production of effector cytokines, cytotoxicity) and has limited proliferative potential." EXACT [PMID:26544946]
+synonym: "Tex cell" EXACT []
+is_a: CL:0000911 ! effector T cell
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -23099,14 +23109,6 @@ domain: CL:0000540 ! neuron
 range: CL:0000540 ! neuron
 
 [Typedef]
-id: RO:0000301
-is_a: RO:0000300
-
-[Typedef]
-id: RO:0000302
-is_a: RO:0000300
-
-[Typedef]
 id: RO:0002100
 domain: CL:0000540 ! neuron
 
@@ -23147,56 +23149,31 @@ holds_over_chain: develops_from RO:0002162
 [Typedef]
 id: RO:0002210
 is_a: develops_into ! develops_into
-is_a: RO:0002286
 
 [Typedef]
 id: RO:0002225
 holds_over_chain: directly_develops_from BFO:0000050
 is_a: develops_from ! develops_from
-is_a: RO:0002258
 
 [Typedef]
 id: RO:0002226
 holds_over_chain: directly_develops_from RO:0001025
-is_a: RO:0002258
 
 [Typedef]
 id: RO:0002254
 holds_over_chain: BFO:0000051 develops_from
-is_a: RO:0002258
 
 [Typedef]
 id: RO:0002255
 holds_over_chain: develops_into BFO:0000050
-is_a: RO:0002286
-
-[Typedef]
-id: RO:0002258
-is_a: RO:0002254
-
-[Typedef]
-id: RO:0002286
-is_a: RO:0002387
-
-[Typedef]
-id: RO:0002387
-is_a: RO:0002388
-
-[Typedef]
-id: RO:0002388
-is_a: RO:0002387
 
 [Typedef]
 id: RO:0002494
 is_a: develops_from ! develops_from
-is_a: RO:0002254
-is_a: RO:0002258
 
 [Typedef]
 id: RO:0002495
 is_a: directly_develops_from ! directly_develops_from
-is_a: RO:0002258
-is_a: RO:0002494
 
 [Typedef]
 id: derives_from
