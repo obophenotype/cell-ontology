@@ -25,6 +25,7 @@ Annotation(<http://purl.org/dc/elements/1.1/contributor> "Melissa Haendel")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Nicole Vasilevsky")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Terry Meehan")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Yvonne Bradford")
+Annotation(<http://purl.org/dc/elements/1.1/description> "An ontology of cell types.")
 Annotation(<http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by/4.0/>)
 Annotation(<http://purl.org/dc/elements/1.1/title> "Cell Ontology")
 Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo."^^xsd:string)
@@ -1895,6 +1896,7 @@ Declaration(Class(obo:CL_0011022))
 Declaration(Class(obo:CL_0011023))
 Declaration(Class(obo:CL_0011024))
 Declaration(Class(obo:CL_0011025))
+Declaration(Class(obo:CL_0011026))
 Declaration(Class(obo:CL_0011100))
 Declaration(Class(obo:CL_0011101))
 Declaration(Class(obo:CL_0011102))
@@ -2627,7 +2629,6 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000000 "XAO:0003012"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000000 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000000 <http://purl.obolibrary.org/obo/ubprop#_upper_level>)
 AnnotationAssertion(rdfs:comment obo:CL_0000000 "The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one)."^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000000 "cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000000 obo:GO_0005623)
 
 # Class: obo:CL_0000001 (primary cultured cell)
@@ -7489,7 +7490,6 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000540 "WBbt:0003679"^^xsd:string
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000540 "nerve cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000540 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000540 "These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma."^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000540 "neuron"^^xsd:string)
 SubClassOf(obo:CL_0000540 obo:CL_0000393)
 SubClassOf(obo:CL_0000540 obo:CL_0000404)
 SubClassOf(obo:CL_0000540 obo:CL_0002319)
@@ -22135,6 +22135,14 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011025 "Tex cell")
 AnnotationAssertion(rdfs:label obo:CL_0011025 "exhausted T cell")
 SubClassOf(obo:CL_0011025 obo:CL_0000911)
 
+# Class: obo:CL_0011026 (progenitor cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:978-1-62808-994-3") Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/B978-0-12-409503-8.00002-0") obo:IAO_0000115 obo:CL_0011026 "A precursor cell that has a tendency to differentiate into a specific type of cell. They are descendants of stem cells, only they are more constrained in their differentiation potential or capacity for self-renewal, and are often more limited in both senses.")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0011026 <http://orcid.org/0000-0001-5208-3432>)
+AnnotationAssertion(rdfs:label obo:CL_0011026 "progenitor cell")
+EquivalentClasses(obo:CL_0011026 ObjectIntersectionOf(obo:CL_0011115 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000034)))
+SubClassOf(obo:CL_0011026 obo:CL_0011115)
+
 # Class: obo:CL_0011100 (galanergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:23159249") Annotation(oboInOwl:hasDbXref "ZFIN:CVS") Annotation(oboInOwl:hasDbXref "ZFIN:YB") obo:IAO_0000115 obo:CL_0011100 "Neuron that secretes the neurotransmitter galanin.")
@@ -26738,7 +26746,7 @@ EquivalentClasses(obo:CL_2000097 ObjectIntersectionOf(obo:CL_0000700 ObjectSomeV
 
 # Class: obo:CL_3000000 (ciliated epithelial cell of esophagus)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:29802404"^^xsd:string) obo:IAO_0000115 obo:CL_3000000 "A ciliated epithelial cell of the esophagus."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:29802404"^^xsd:string) obo:IAO_0000115 obo:CL_3000000 "A ciliated epithelial cell of the esophagus."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_3000000 "CellBLAST"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000000 "2019-02-09T16:40:30Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000000 "cell"^^xsd:string)
@@ -26748,7 +26756,7 @@ EquivalentClasses(obo:CL_3000000 ObjectIntersectionOf(obo:CL_0000067 ObjectSomeV
 
 # Class: obo:CL_3000001 (Hofbauer cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30429548"^^xsd:string) obo:IAO_0000115 obo:CL_3000001 "Oval eosinophilic histiocytes with granules and vacuoles found in placenta, which are of mesenchymal origin, in mesoderm of the chorionic villus, particularly numerous in early pregnancy."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30429548"^^xsd:string) obo:IAO_0000115 obo:CL_3000001 "Oval eosinophilic histiocytes with granules and vacuoles found in placenta, which are of mesenchymal origin, in mesoderm of the chorionic villus, particularly numerous in early pregnancy."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_3000001 "CellBLAST"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000001 "2019-02-18T19:41:20Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000001 "cell"^^xsd:string)
@@ -26758,7 +26766,7 @@ SubClassOf(obo:CL_3000001 obo:CL_0000235)
 
 # Class: obo:CL_3000002 (sympathetic noradrenergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000002 "Sympathetic noradrenergic neuron."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000002 "Sympathetic noradrenergic neuron."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_3000002 "CellBLAST"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000002 "2019-02-25T19:30:14Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000002 "cell"^^xsd:string)
@@ -26768,7 +26776,7 @@ EquivalentClasses(obo:CL_3000002 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeV
 
 # Class: obo:CL_3000003 (sympathetic cholinergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000003 "Sympathetic cholinergic neuron."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000003 "Sympathetic cholinergic neuron."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_3000003 "CellBLAST"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000003 "2019-02-25T19:32:20Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000003 "cell"^^xsd:string)
@@ -26778,7 +26786,7 @@ EquivalentClasses(obo:CL_3000003 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeV
 
 # Class: obo:CL_3000004 (peripheral sensory neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000004 "Peripheral sensory neuron."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_3000004 "Peripheral sensory neuron."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_3000004 "CellBLAST"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000004 "2019-02-25T19:34:33Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000004 "cell"^^xsd:string)
@@ -26879,6 +26887,10 @@ SubClassOf(obo:CP_0000043 obo:GO_0000792)
 AnnotationAssertion(rdfs:label obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 "alobate nucleus"@en)
 EquivalentClasses(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 ObjectIntersectionOf(obo:GO_0005634 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002506)))
 SubClassOf(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 obo:GO_0005634)
+
+# Class: obo:GO_0005623 (GO:cell)
+
+AnnotationAssertion(rdfs:comment obo:GO_0005623 "GO is planning to obsolete this term in favor of the CL 'cell' term.")
 
 # Class: obo:GO_0032634 (interleukin-5 production)
 
