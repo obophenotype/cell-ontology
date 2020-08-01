@@ -154,3 +154,48 @@ fail_seed_by_entity_type_cl:
 works_seed_by_entity_type_cl:
 	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
+	
+
+TEMPLATESDIR=../templates
+DEPENDENCY_TEMPLATE=$(TEMPLATESDIR)/dependencies_do_no_edit.owl
+TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv))))
+
+p:
+	echo $(TEMPLATES)
+
+templates: prepare_templates components/all_templates.owl
+
+prepare_templates: ../templates/config.txt
+	sh ../scripts/download_templates.sh $<
+
+components/all_templates.owl: $(TEMPLATES)
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+		--output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(DEPENDENCY_TEMPLATE): $(TEMPLATESDIR)/dependencies_do_no_edit.tsv
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(DEPENDENCY_TEMPLATE)
+	$(ROBOT) -vvv merge -i $(SRC) -i $(DEPENDENCY_TEMPLATE) template --template $< --prefix "cov: http://purl.obolibrary.org/obo/covoc/" --prefix "COVOC: http://purl.obolibrary.org/obo/COVOC_" --prefix "dbpedia: http://dbpedia.org/resource/" --prefix "DBPEDIA: http://dbpedia.org/resource/" --prefix "MAXO: http://purl.obolibrary.org/obo/MAXO_" --prefix "BAO: http://purl.obolibrary.org/obo/BAO_" --prefix "EFO: http://www.ebi.ac.uk/efo/EFO_" --output $@ && \
+	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
+
+tmp/src-noimports.owl: $(SRC)
+	$(ROBOT) remove -i $< --select imports -o $@
+
+tmp/src-imports.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+	
+tmp/src-master-noimports.owl:
+	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
+	
+tmp/src-master-imports.owl:
+	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
+
+reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
+	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
+
+branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md
