@@ -169,13 +169,13 @@ $(ONT)-non-classified.json: $(ONT)-non-classified.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 # Main release artefacts
-$(ONT).owl: $(ONT)-full.owl
+$(ONT).owl: $(ONT)-basic.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
 $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-$(ONT).json: $(ONT)-full.owl
+$(ONT).json: $(ONT)-basic.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 # ----------------------------------------
