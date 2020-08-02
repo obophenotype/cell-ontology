@@ -26,7 +26,7 @@ Annotation(<http://purl.org/dc/elements/1.1/contributor> "Nicole Vasilevsky")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Terry Meehan")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Yvonne Bradford")
 Annotation(<http://purl.org/dc/elements/1.1/description> "An ontology of cell types.")
-Annotation(<http://purl.org/dc/elements/1.1/license> <http://creativecommons.org/licenses/by/4.0/>)
+Annotation(<http://purl.org/dc/terms/license> <http://creativecommons.org/licenses/by/4.0/>)
 Annotation(<http://purl.org/dc/elements/1.1/title> "Cell Ontology")
 Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo."^^xsd:string)
 
@@ -2397,9 +2397,7 @@ Declaration(Class(obo:CP_0000039))
 Declaration(Class(obo:CP_0000040))
 Declaration(Class(obo:CP_0000043))
 Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
-Declaration(Class(obo:GO_0043379))
-Declaration(Class(obo:PATO_0045026))
-Declaration(Class(obo:UBERON_0010005))
+
 Declaration(ObjectProperty(obo:RO_0001025))
 Declaration(ObjectProperty(obo:RO_0002102))
 Declaration(ObjectProperty(obo:RO_0002134))
@@ -2628,7 +2626,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000000 "XAO:0003012"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000000 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000000 <http://purl.obolibrary.org/obo/ubprop#_upper_level>)
 AnnotationAssertion(rdfs:comment obo:CL_0000000 "The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one)."^^xsd:string)
-EquivalentClasses(obo:CL_0000000 obo:GO_0005623)
+AnnotationAssertion(rdfs:label obo:CL_0000000 "cell"^^xsd:string)
 
 # Class: obo:CL_0000001 (primary cultured cell)
 
@@ -7489,6 +7487,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000540 "WBbt:0003679"^^xsd:string
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000540 "nerve cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000540 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000540 "These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma."^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000540 "neuron"^^xsd:string)
 SubClassOf(obo:CL_0000540 obo:CL_0000393)
 SubClassOf(obo:CL_0000540 obo:CL_0000404)
 SubClassOf(obo:CL_0000540 obo:CL_0002319)
@@ -13145,8 +13144,8 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0001061 "https://ncit.nci.nih.gov/
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001061 "cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001061 "https://github.com/obophenotype/cell-ontology/issues/448")
 AnnotationAssertion(rdfs:label obo:CL_0001061 "abnormal cell")
-EquivalentClasses(obo:CL_0001061 ObjectIntersectionOf(obo:GO_0005623 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0000460)))
-SubClassOf(obo:CL_0001061 obo:GO_0005623)
+EquivalentClasses(obo:CL_0001061 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0000460)))
+SubClassOf(obo:CL_0001061 obo:CL_0000000)
 
 # Class: obo:CL_0001062 (effector memory CD8-positive, alpha-beta T cell, terminally differentiated)
 
@@ -26787,7 +26786,7 @@ SubClassOf(obo:CL_3000004 obo:CL_0000111)
 
 # Class: obo:CP_0000000 (neutrophillic cytoplasm)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CP_0000000 "Cytoplasm that exhibits molecular interaction for acidic dyes under specific pH conditions."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) obo:IAO_0000115 obo:CP_0000000 "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CP_0000000 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CP_0000000 "2010-05-25T01:36:34Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CP_0000000 "cell"^^xsd:string)
@@ -26806,7 +26805,7 @@ SubClassOf(obo:CP_0000025 obo:GO_0005634)
 
 # Class: obo:CP_0000027 (acidophilic cytoplasm)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CP_0000027 "Cytoplasm that exhibits molecular interaction for acidic dyes under specific pH conditions."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) obo:IAO_0000115 obo:CP_0000027 "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CP_0000027 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CP_0000027 "2009-12-22T04:23:25Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CP_0000027 "eosinophilic"^^xsd:string)
@@ -26876,25 +26875,5 @@ SubClassOf(obo:CP_0000043 obo:GO_0000792)
 AnnotationAssertion(rdfs:label obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 "alobate nucleus"@en)
 EquivalentClasses(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 ObjectIntersectionOf(obo:GO_0005634 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002506)))
 SubClassOf(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 obo:GO_0005634)
-
-# Class: obo:GO_0005623 (GO:cell)
-
-AnnotationAssertion(rdfs:comment obo:GO_0005623 "GO is planning to obsolete this term in favor of the CL 'cell' term.")
-
-# Class: obo:GO_0032634 (interleukin-5 production)
-
-AnnotationAssertion(rdfs:label obo:GO_0032634 "interleukin-5 production")
-SubClassOf(obo:GO_0032634 obo:GO_0001816)
-
-# Class: obo:GO_0043379 (memory T cell differentiation)
-
-AnnotationAssertion(rdfs:label obo:GO_0043379 "memory T cell differentiation")
-SubClassOf(obo:GO_0043379 obo:GO_0002292)
-
-# Class: obo:PATO_0045026 (normal life span)
-
-AnnotationAssertion(rdfs:label obo:PATO_0045026 "normal life span")
-SubClassOf(obo:PATO_0045026 obo:PATO_0000050)
-
 
 )
