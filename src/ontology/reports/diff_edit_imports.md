@@ -308,7 +308,7 @@
 
 - Class: [CL_0001075](http://purl.obolibrary.org/obo/CL_0001075) 
 
-- [CL_0001075](http://purl.obolibrary.org/obo/CL_0001075) EquivalentTo [CL_0001072](http://purl.obolibrary.org/obo/CL_0001072) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [PR_Q96E93](http://purl.obolibrary.org/obo/PR_Q96E93)) 
+- [CL_0001075](http://purl.obolibrary.org/obo/CL_0001075) EquivalentTo [CL_0001072](http://purl.obolibrary.org/obo/CL_0001072) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [killer cell lectin-like receptor subfamily G member 1 (human)](http://purl.obolibrary.org/obo/PR_Q96E93)) 
 
 
 ### CL_0001076 `http://purl.obolibrary.org/obo/CL_0001076`
@@ -380,7 +380,7 @@
 
 - Class: [CL_0001079](http://purl.obolibrary.org/obo/CL_0001079) 
 
-- [CL_0001079](http://purl.obolibrary.org/obo/CL_0001079) EquivalentTo [group 3 innate lymphoid cell](http://purl.obolibrary.org/obo/CL_0001071) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [PR_O95944](http://purl.obolibrary.org/obo/PR_O95944)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-7 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P16871)) 
+- [CL_0001079](http://purl.obolibrary.org/obo/CL_0001079) EquivalentTo [group 3 innate lymphoid cell](http://purl.obolibrary.org/obo/CL_0001071) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [natural cytotoxicity triggering receptor 2 (human)](http://purl.obolibrary.org/obo/PR_O95944)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-7 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P16871)) 
 
 
 ### CL_0001080 `http://purl.obolibrary.org/obo/CL_0001080`
@@ -399,7 +399,7 @@
 
 - Class: [CL_0001080](http://purl.obolibrary.org/obo/CL_0001080) 
 
-- [CL_0001080](http://purl.obolibrary.org/obo/CL_0001080) EquivalentTo [group 3 innate lymphoid cell](http://purl.obolibrary.org/obo/CL_0001071) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-7 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P16871)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part) some [PR_O95944](http://purl.obolibrary.org/obo/PR_O95944)) 
+- [CL_0001080](http://purl.obolibrary.org/obo/CL_0001080) EquivalentTo [group 3 innate lymphoid cell](http://purl.obolibrary.org/obo/CL_0001071) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-7 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P16871)) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part) some [natural cytotoxicity triggering receptor 2 (human)](http://purl.obolibrary.org/obo/PR_O95944)) 
 
 
 ### CL_0001081 `http://purl.obolibrary.org/obo/CL_0001081`
@@ -418,7 +418,7 @@
 
 - Class: [CL_0001081](http://purl.obolibrary.org/obo/CL_0001081) 
 
-- [CL_0001081](http://purl.obolibrary.org/obo/CL_0001081) EquivalentTo [group 2 innate lymphoid cell](http://purl.obolibrary.org/obo/CL_0001069) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [trans-acting T-cell-specific transcription factor GATA-3 (human)](http://purl.obolibrary.org/obo/PR_P23771)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-2 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P01589)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-7 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P16871)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [PR_Q12918](http://purl.obolibrary.org/obo/PR_Q12918)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [PR_Q9Y5Y4](http://purl.obolibrary.org/obo/PR_Q9Y5Y4)) 
+- [CL_0001081](http://purl.obolibrary.org/obo/CL_0001081) EquivalentTo [group 2 innate lymphoid cell](http://purl.obolibrary.org/obo/CL_0001069) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [trans-acting T-cell-specific transcription factor GATA-3 (human)](http://purl.obolibrary.org/obo/PR_P23771)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-2 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P01589)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [interleukin-7 receptor subunit alpha (human)](http://purl.obolibrary.org/obo/PR_P16871)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [killer cell lectin-like receptor subfamily B member 1 (human)](http://purl.obolibrary.org/obo/PR_Q12918)) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [prostaglandin D2 receptor 2 (human)](http://purl.obolibrary.org/obo/PR_Q9Y5Y4)) 
 
 
 ### CL_0001082 `http://purl.obolibrary.org/obo/CL_0001082`
@@ -610,38 +610,6 @@
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#database_cross_reference) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [NKGA2-positive natural killer cell](http://purl.obolibrary.org/obo/CL_0002439) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#has_exact_synonym) "NK.G2A+.SP"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### PR_O95944 `http://purl.obolibrary.org/obo/PR_O95944`
-
-#### Added
-- Class: [PR_O95944](http://purl.obolibrary.org/obo/PR_O95944) 
-
-
-### PR_Q12918 `http://purl.obolibrary.org/obo/PR_Q12918`
-
-#### Added
-- Class: [PR_Q12918](http://purl.obolibrary.org/obo/PR_Q12918) 
-
-
-### PR_Q96E93 `http://purl.obolibrary.org/obo/PR_Q96E93`
-
-#### Added
-- Class: [PR_Q96E93](http://purl.obolibrary.org/obo/PR_Q96E93) 
-
-
-### PR_Q9Y5Y4 `http://purl.obolibrary.org/obo/PR_Q9Y5Y4`
-
-#### Added
-- Class: [PR_Q9Y5Y4](http://purl.obolibrary.org/obo/PR_Q9Y5Y4) 
-
-
-### cell `http://purl.obolibrary.org/obo/GO_0005623`
-#### Removed
-- [cell](http://purl.obolibrary.org/obo/GO_0005623) [label](http://www.w3.org/2000/01/rdf-schema#label) "cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [cell](http://purl.obolibrary.org/obo/GO_0005623) [label](http://www.w3.org/2000/01/rdf-schema#label) "GO:cell" 
 
 
 ### database_cross_reference `http://www.geneontology.org/formats/oboInOwl#database_cross_reference`
