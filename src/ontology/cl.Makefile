@@ -154,6 +154,9 @@ works_seed_by_entity_type_cl:
 	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
 	
+##############################################
+##### CL Template pipeline ###################
+##############################################
 
 TEMPLATESDIR=../templates
 DEPENDENCY_TEMPLATE=$(TEMPLATESDIR)/dependencies_do_no_edit.owl
