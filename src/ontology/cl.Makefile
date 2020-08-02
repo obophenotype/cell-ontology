@@ -5,27 +5,26 @@
 # railing-whitespace  xref-syntax
 SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 
-mirror/pr.owl: mirror/pr.trigger
+#mirror/pr.owl: mirror/pr.trigger
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-	echo "skipped PR mirror"
+#	echo "skipped PR mirror"
 
 imports/pr_import.owl:
 	echo "skipped pr import"
 
-tmp/clo_logical.owl: mirror/clo.owl
-	echo "Skipped clo logical" && cp $< $@
+#tmp/clo_logical.owl: mirror/clo.owl
+#	echo "Skipped clo logical" && cp $< $@
 	
-tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
-	echo "Skipped clo logical" && touch $@
+#tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
+#	echo "Skipped clo logical" && touch $@
 
-tmp/pr_logical.owl: mirror/pr.owl
-	echo "Skipped pr logical" && cp $< $@
+#tmp/pr_logical.owl: mirror/pr.owl
+#	echo "Skipped pr logical" && cp $< $@
 	
-tmp/chebi_logical.owl: mirror/chebi.owl
-	echo "Skipped chebi logical" && cp $< $@
+#tmp/chebi_logical.owl: mirror/chebi.owl
+#	echo "Skipped chebi logical" && cp $< $@
 
 mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
-#	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 	echo "skipped ncbitaxon mirror"
 
 imports/ncbitaxon_import.owl:
