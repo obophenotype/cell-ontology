@@ -9,8 +9,8 @@ SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 #	echo "skipped PR mirror"
 
-imports/pr_import.owl:
-	echo "skipped pr import"
+#imports/pr_import.owl:
+#	echo "skipped pr import"
 
 #tmp/clo_logical.owl: mirror/clo.owl
 #	echo "Skipped clo logical" && cp $< $@
