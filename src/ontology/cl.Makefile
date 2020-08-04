@@ -163,28 +163,42 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 ##############################################
 
 TEMPLATESDIR=../templates
-DEPENDENCY_TEMPLATE=$(TEMPLATESDIR)/dependencies_do_no_edit.owl
-TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv))))
+DEPENDENCY_TEMPLATE=dependencies_do_no_edit.tsv
+TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv)))
+TEMPLATES_OWL=$(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(TEMPLATES))
+TEMPLATES_TSV=$(patsubst %.tsv, $(TEMPLATESDIR)/%.tsv, $(TEMPLATES))
 
 p:
 	echo $(TEMPLATES)
+	echo $(TEMPLATES_TSV)
+	echo $(TEMPLATES_OWL)
 
 templates: prepare_templates components/all_templates.owl
+
+remove_template_classes_from_edit.txt: $(TEMPLATES_TSV)
+	for f in $^; do \
+			cut -f1 $${f} >> tmp.txt; \
+			cat tmp.txt | grep 'CL:' | sort | uniq > $@; \
+	done \
+	rm tmp.txt
+
+remove_template_classes_from_edit: remove_template_classes_from_edit.txt $(SRC)
+	$(ROBOT) remove -i $(SRC) -T $< --preserve-structure false -o $(SRC).ofn && mv $(SRC).ofn $(SRC)
 
 prepare_templates: ../templates/config.txt
 	sh ../scripts/download_templates.sh $<
 
-components/all_templates.owl: $(TEMPLATES)
+components/all_templates.owl: $(TEMPLATES_OWL)
 	$(ROBOT) merge $(patsubst %, -i %, $^) \
 		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
-$(DEPENDENCY_TEMPLATE): $(TEMPLATESDIR)/dependencies_do_no_edit.tsv
+$(TEMPLATESDIR)/dependencies_do_no_edit.owl: $(TEMPLATESDIR)/dependencies_do_no_edit.tsv
 	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
 	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
-$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(DEPENDENCY_TEMPLATE)
-	$(ROBOT) -vvv merge -i $(SRC) -i $(DEPENDENCY_TEMPLATE) template --template $< --prefix "cov: http://purl.obolibrary.org/obo/covoc/" --prefix "COVOC: http://purl.obolibrary.org/obo/COVOC_" --prefix "dbpedia: http://dbpedia.org/resource/" --prefix "DBPEDIA: http://dbpedia.org/resource/" --prefix "MAXO: http://purl.obolibrary.org/obo/MAXO_" --prefix "BAO: http://purl.obolibrary.org/obo/BAO_" --prefix "EFO: http://www.ebi.ac.uk/efo/EFO_" --output $@ && \
+$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies_do_no_edit.owl
+	$(ROBOT) -vvv merge -i $(SRC) -i $(TEMPLATESDIR)/dependencies_do_no_edit.owl template --template $< --output $@ && \
 	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
 CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
