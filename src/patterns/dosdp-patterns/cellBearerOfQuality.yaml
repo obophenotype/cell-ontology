@@ -1,0 +1,49 @@
+pattern_name: cellBearerOfQuality
+pattern_iri: http://purl.obolibrary.org/obo/cl/cellBearerOfQuality
+
+description: A cell that has a specific quality, such as binucleate.
+examples: CL_0000413 haploid cell, CL_0000225 anucleate cell, CL_0000227 binucleate cell, CL_0002032 'hematopoietic oligopotent progenitor cell', CL_0001064 'malignant cell' (25 total)
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+
+classes: 
+  cell: "CL:0000000"
+  quality: "PATO:0000001"
+
+relations: 
+  bearer of: "RO:0000053"
+
+vars:
+  cell: "'cell'"
+  quality: "'quality'"
+
+name:
+  text: "%s %s"
+  vars:
+    - quality
+    - cell
+
+def:
+  text: "Any %s that is %s"
+  vars:
+    - cell
+    - quality
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "%sd %s"
+    vars:
+      - quality
+      - cell
+
+equivalentTo:
+  text: "%s and ('bearer of' some %s)"
+  vars:
+    - cell
+    - quality

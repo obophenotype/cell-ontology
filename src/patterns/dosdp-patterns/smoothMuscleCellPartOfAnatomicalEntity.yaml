@@ -1,0 +1,44 @@
+pattern_name: smoothMuscleCellPartOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity
+
+description: A smooth muscle cell that is part of an anatomical entity, like the uterus.
+examples: CL_0002504 enteric smooth muscle cell, CL_0002601 uterine smooth muscle cell, CL_0002599 smooth muscle cell of the esophagus (22 total)
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+  
+classes: 
+  smooth muscle cell: "CL:0000192"
+  anatomical entity: "UBERON:0001062"
+
+relations: 
+  part of: "BFO:0000050"
+
+vars:
+  anatomical entity: "'anatomical entity'"
+
+name:
+  text: "smooth muscle cell of %s"
+  vars:
+    - anatomical entity
+
+def:
+  text: "A smooth muscle cell of the %s."
+  vars:
+    - anatomical entity
+
+annotationProperties:
+  exact_synonym: "oio:hasExactSynonym"
+  related_synonym: "oio:hasRelatedSynonym"
+
+annotations:
+  - annotationProperty: exact_synonym
+    text: "smooth muscle fiber of %s"
+    vars:
+      - anatomical entity
+
+equivalentTo:
+  text: "'smooth muscle cell' and ('part of' some %s)"
+  vars:
+    - anatomical entity
