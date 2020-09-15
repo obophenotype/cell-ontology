@@ -9,27 +9,26 @@ contributors:
   - https://orcid.org/0000-0002-6601-2165
 
 classes: 
-  anatomical_structure: UBERON:0000061
-  cellular_component: GO:0005575
+  cell: "CL:0000000"
   quality: "PATO:0000001"
 
 relations: 
   bearer of: "RO:0000053"
 
 vars:
-  entity: "'anatomical_structure' or 'cell'"
+  cell: "'cell'"
   quality: "'quality'"
 
 name:
   text: "%s %s"
   vars:
     - quality
-    - entity
+    - cell
 
 def:
   text: "Any %s that is %s"
   vars:
-    - entity
+    - cell
     - quality
 
 annotationProperties:
@@ -41,10 +40,10 @@ annotations:
     text: "%sd %s"
     vars:
       - quality
-      - entity
+      - cell
 
 equivalentTo:
   text: "%s and ('bearer of' some %s)"
   vars:
-    - entity
+    - cell
     - quality
