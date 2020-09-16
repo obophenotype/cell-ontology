@@ -6,7 +6,7 @@ title: "[NTR]"
 labels: 'new term request'
 ---
 
-Note - please check that the term does not already exist (check [OLS](https://www.ebi.ac.uk/ols/ontologies/cl))
+Note - please check that the term does not already exist (check OLS: https://www.ebi.ac.uk/ols/ontologies/cl)
 
 **Preferred term label:**
 
@@ -17,7 +17,10 @@ Note - please check that the term does not already exist (check [OLS](https://ww
 **Definition (free text, please give PubMed ID in format PMID:XXXXXX)**
 
 
-**Parent term (check the hierarchy here [OLS](https://www.ebi.ac.uk/ols/ontologies/cl): **
+**Parent cell type term (check the hierarchy here https://www.ebi.ac.uk/ols/ontologies/cl): **
+
+
+**What is the anatomical structure that the cell is a part of? Please check Uberon: https://www.ebi.ac.uk/ols/ontologies/uberon**
 
 
 **Your nano-attribution (ORCID)**
