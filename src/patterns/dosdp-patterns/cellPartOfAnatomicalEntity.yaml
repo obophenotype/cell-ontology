@@ -1,0 +1,38 @@
+pattern_name: cellPartOfAnatomicalEntity
+pattern_iri: http://purl.obolibrary.org/obo/cl/cellPartOfAnatomicalEntity
+
+description: A cell that is part of an anatomical entity.
+examples: CL_0009001 compound eye retinal cell, CL_2000004 pituitary gland cell (654 total)
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+  
+classes: 
+  cell: "CL_0000000"
+  anatomical entity: "UBERON:0001062"
+
+relations: 
+  part of: "BFO:0000050"
+
+vars:
+  cell: "'cell'"
+  anatomical entity: "'anatomical entity'"
+
+name:
+  text: "%s %s"
+  vars:
+    - cell
+    - anatomical entity
+
+def:
+  text: "Any %s that is part of a %s."
+  vars:
+    - cell
+    - anatomical entity
+
+equivalentTo:
+  text: "%s and ('part of' some %s)"
+  vars:
+    - cell
+    - anatomical entity
