@@ -1844,6 +1844,8 @@ Declaration(Class(obo:CL_0008033))
 Declaration(Class(obo:CL_0008034))
 Declaration(Class(obo:CL_0008035))
 Declaration(Class(obo:CL_0008036))
+Declaration(Class(obo:CL_0008038))
+Declaration(Class(obo:CL_0008039))
 Declaration(Class(obo:CL_0009000))
 Declaration(Class(obo:CL_0009001))
 Declaration(Class(obo:CL_0009002))
@@ -3730,7 +3732,6 @@ AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CL_0000100 "anterior horn cell
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000100 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000100 "motor neuron"^^xsd:string)
 SubClassOf(obo:CL_0000100 obo:CL_0000527)
-SubClassOf(obo:CL_0000100 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0000187))
 
 # Class: obo:CL_0000101 (sensory neuron)
 
@@ -21769,6 +21770,26 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008036 "extravillous cytotr
 AnnotationAssertion(rdfs:label obo:CL_0008036 "extravillous trophoblast"@en)
 SubClassOf(obo:CL_0008036 obo:CL_0000351)
 
+# Class: obo:CL_0008038 (alpha motor neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Alpha_motor_neuron&oldid=957148643") obo:IAO_0000115 obo:CL_0008038 "A large, multipolar lower motor neuron of the brainstem and spinal cord that innervates the extrafusal muscle fibers of skeletal muscle.")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008038 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008038 "2020-09-23T20:16:26Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008038 "alpha motoneuron")
+AnnotationAssertion(rdfs:label obo:CL_0008038 "alpha motor neuron"@en)
+SubClassOf(obo:CL_0008038 obo:CL_0008039)
+
+# Class: obo:CL_0008039 (lower motor neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Lower_motor_neuron&oldid=952547294") obo:IAO_0000115 obo:CL_0008039 "The motor neurons of vertebrates that directly innervate skeletal muscles. They receive input from upper motor neurons.")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008039 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008039 "2020-09-23T20:22:07Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0008039 "FMA:84632")
+AnnotationAssertion(rdfs:label obo:CL_0008039 "lower motor neuron"@en)
+SubClassOf(obo:CL_0008039 obo:CL_0000100)
+SubClassOf(obo:CL_0008039 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0008002))
+SubClassOf(obo:CL_0008039 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_7742))
+
 # Class: obo:CL_0009000 (sensory neuron of spinal nerve)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "GOC:pr"^^xsd:string) obo:IAO_0000115 obo:CL_0009000 "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord.")
@@ -26221,7 +26242,7 @@ EquivalentClasses(obo:CL_2000047 ObjectIntersectionOf(obo:CL_0000100 ObjectSomeV
 
 # Class: obo:CL_2000048 (anterior horn motor neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie"^^xsd:string) obo:IAO_0000115 obo:CL_2000048 "An (alpha) motor neuron whose soma is located in one of the ventral horns of the spinal cord and innervates skeletal muscles of the trunk or head."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-323-37101-8.00140-5") Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-323-42876-7.00030-2"^^xsd:string) Annotation(oboInOwl:hasDbXref "https://www.sciencedirect.com/topics/medicine-and-dentistry/anterior-horn-cell") obo:IAO_0000115 obo:CL_2000048 "An lower motor neuron whose soma is located in one of the ventral horns of the spinal cord and innervates skeletal muscles of the trunk or head."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_2000048 "TermGenie"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000048 "2014-10-03T00:26:27Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000048 "NCIT:C12645")
@@ -26229,8 +26250,9 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000048 "anterior horn cell"
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000048 "ventral horn of spinal cord spinal cord motor neuron"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000048 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000048 "CL:2000048"^^xsd:string)
+AnnotationAssertion(rdfs:comment obo:CL_2000048 "Yang & Connolly (DOI:10.1016/B978-0-323-37101-8.00140-5) classify these as alpha motor neurons.  Consider reflecting this if more references support this.")
 AnnotationAssertion(rdfs:label obo:CL_2000048 "anterior horn motor neuron")
-SubClassOf(obo:CL_2000048 obo:CL_0000100)
+SubClassOf(obo:CL_2000048 obo:CL_0008039)
 SubClassOf(obo:CL_2000048 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002257))
 
 # Class: obo:CL_2000049 (primary motor cortex pyramidal cell)
