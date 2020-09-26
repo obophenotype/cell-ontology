@@ -23,21 +23,35 @@ We also have a dedicated set of relations for recording the location of synaptic
 
 ### Taxon constraints
 
-in_taxon 
+in_taxon some <NCBI_taxon term>
+only_in_taxon some <NCBI_taxon term>
+
+e.g. 
+TBA
+
+The following should be recorded using an annotation_property axiom:
+
+never_in_taxon 
 
 e.g. 
 
-The following should be recorded as annotation_property axioms as they are shortcuts for more this allows are pipelines to safely use them in reasoning.
-
-only_in_taxon  # Not currently true. Obviously cannot be used in nested class expressions if this is true.
-
-never_in_taxon
+TBA
 
 Further reading: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3098089/
+
+Inference of taxon constraints from other ontologies:
+
+Relationships to taxon constrained terms from other ontologies can result in inferred taxon constraints.
+
+Examples: 
+ - Inference of Taxon constraints from taxon constrainted makers: 
+ - Inference of Taxon constraints from taxon constrainted anatomy: 
 
 ### Recording function
 
 We record cellular function by linking to GO biological process terms using the relation (objectProperty) **'capable of'** 
+
+e.g. 'capable of' some 'androgen secretion'
 
 ### Recording developmental lineage
 
@@ -79,7 +93,11 @@ If you choose a cell specific marker
  
 # Recording cell shape or other morphological qualities
 
-'bearer of' some 
+e.g. erythrocyte bearer_of some biconcave
+
+# Recording cellular qualities (eg. ploidy, nuclear number)
+
+e.g. 'enucleate erythrocyte' EquivalentTo erythrocyte and ('bearer of' some anucleate)
 
 
 
