@@ -5,31 +5,30 @@
 # railing-whitespace  xref-syntax
 SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 
-mirror/pr.owl: mirror/pr.trigger
+#mirror/pr.owl: mirror/pr.trigger
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-	echo "skipped PR mirror"
+#	echo "skipped PR mirror"
 
-imports/pr_import.owl:
-	echo "skipped pr import"
+#imports/pr_import.owl:
+#	echo "skipped pr import"
 
-tmp/clo_logical.owl: mirror/clo.owl
-	echo "Skipped clo logical" && cp $< $@
+#tmp/clo_logical.owl: mirror/clo.owl
+#	echo "Skipped clo logical" && cp $< $@
 	
-tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
-	echo "Skipped clo logical" && touch $@
+#tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
+#	echo "Skipped clo logical" && touch $@
 
-tmp/pr_logical.owl: mirror/pr.owl
-	echo "Skipped pr logical" && cp $< $@
+#tmp/pr_logical.owl: mirror/pr.owl
+#	echo "Skipped pr logical" && cp $< $@
 	
-tmp/chebi_logical.owl: mirror/chebi.owl
-	echo "Skipped chebi logical" && cp $< $@
+#tmp/chebi_logical.owl: mirror/chebi.owl
+#	echo "Skipped chebi logical" && cp $< $@
 
-mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
-#	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-	echo "skipped ncbitaxon mirror"
+#mirror/ncbitaxon.owl:
+#	echo "STRONG WARNING: skipped ncbitaxon mirror!"
 
-imports/ncbitaxon_import.owl:
-	echo "skipped ncbitaxon import"
+#imports/ncbitaxon_import.owl:
+#	echo "STRONG WARNING: skipped ncbitaxon import!"
 
 object_properties.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
@@ -42,11 +41,11 @@ non_native_classes.txt: $(SRC)
 # TODO add back: 		remove --term-file non_native_classes.txt \
 
 
-$(ONT).obo: $(ONT)-basic.owl
-	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
+#$(ONT).obo: $(ONT)-basic.owl
+#	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
 
-$(PATTERNDIR)/dosdp-patterns: .FORCE
-	echo "WARNING WARNING Skipped until fixed: delete from cl.Makefile"
+#$(PATTERNDIR)/dosdp-patterns: .FORCE
+#	echo "WARNING WARNING Skipped until fixed: delete from cl.Makefile"
 
 #####################################################################################
 ### Run ontology-release-runner instead of ROBOT as long as ROBOT is broken.      ###
@@ -105,6 +104,7 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
 
 $(ONT)-simple.owl: tmp/cl_signature.txt oort
+	echo "WARNING: $@ is not generated with the default ODK specification."
 	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		reduce \
@@ -112,6 +112,7 @@ $(ONT)-simple.owl: tmp/cl_signature.txt oort
 		convert -o $@
 
 $(ONT)-simple.obo: tmp/cl_signature.txt oort
+	echo "WARNING: $@ is not generated with the default ODK specification."
 	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		reduce \
@@ -122,6 +123,7 @@ $(ONT)-simple.obo: tmp/cl_signature.txt oort
 		rm -f $@.tmp.obo $@.tmp
 		
 $(ONT)-basic.owl: tmp/cl_signature.txt oort
+	echo "WARNING: $@ is not generated with the default ODK specification."
 	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		reduce \
@@ -134,6 +136,7 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 #	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
 
 $(ONT)-basic.obo: tmp/cl_signature.txt oort
+	echo "WARNING: $@ is not generated with the default ODK specification."
 	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		reduce \
@@ -144,13 +147,13 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
 		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
 		rm -f $@.tmp.obo $@.tmp
-#$(ONT)-simple.obo: oort
 
 
-fail_seed_by_entity_type_cl:
-	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
-	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
+#fail_seed_by_entity_type_cl:
+#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
+#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
 
-works_seed_by_entity_type_cl:
-	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
-	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
+#works_seed_by_entity_type_cl:
+#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
+#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
+
