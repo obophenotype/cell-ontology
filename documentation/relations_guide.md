@@ -91,11 +91,11 @@ If you choose a cell specific marker
 
 #### A note on when to record cell markers
  
-# Recording cell shape or other morphological qualities
+### Recording cell shape or other morphological qualities
 
 e.g. erythrocyte bearer_of some biconcave
 
-# Recording cellular qualities (eg. ploidy, nuclear number)
+### Recording cellular qualities (eg. ploidy, nuclear number)
 
 e.g. 'enucleate erythrocyte' EquivalentTo erythrocyte and ('bearer of' some anucleate)
 
