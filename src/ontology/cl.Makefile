@@ -157,3 +157,11 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 #	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
 #	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
 
+
+# This pattern uses ROBOT to generate an import module
+imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt allowed_annotations.txt
+	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
+		query --update ../sparql/inject-subset-declaration.ru \
+		remove -T allowed_annotations.txt --select complement --select annotation-properties \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/%_import.owl
