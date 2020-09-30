@@ -1,0 +1,34 @@
+pattern_name: abnormalCell
+pattern_iri: http://purl.obolibrary.org/obo/cl/abnormalCell
+
+description: A grouping class for a variety of abnormal cell types.
+#examples: CL_0001061 abnormal cell, CL_0001063 neoplastic cell, CL_0001064 malignant
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+
+classes: 
+  quality: "PATO:0000001"
+  abnormal cell: "CL:0001061"
+
+relations: 
+  bearer of: "RO:0000053"
+
+vars:
+  quality: "'quality'"
+
+name:
+  text: "%s cell"
+  vars:
+    - quality
+
+def:
+  text: "An abnormal cell exhibiting %s features."
+  vars:
+    - quality
+
+equivalentTo:
+  text: "'abnormal cell' and ('bearer of' some %s)"
+  vars:
+    - quality

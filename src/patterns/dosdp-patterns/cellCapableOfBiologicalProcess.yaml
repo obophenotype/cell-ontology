@@ -1,0 +1,34 @@
+pattern_name: cellCapableOfBiologicalProcess
+pattern_iri: http://purl.obolibrary.org/obo/cl/cellCapableOfBiologicalProcess
+
+description: Any cell that is involved in/capable of a particular biological process, such as acid secretion.
+#Examples: CL_0000161 'acid secreting cell', CL_0000210 'photoreceptor cell', CL_0000084 'T cell'
+
+classes: 
+  cell: "CL:0000000"
+  biological process: "GO:0008150"
+
+relations: 
+  capable of: "RO:0002215"
+
+vars:
+  cell: "'cell'"
+  biological_process: "'biological process'"
+
+name:
+  text: "%s %s"
+  vars:
+    - biological_process
+    - cell
+
+def:
+  text: "A %s that is capable of %s."
+  vars:
+    - cell
+    - biological_process
+
+equivalentTo:
+  text: "%s and ('capable of' some %s)"
+  vars:
+    - cell
+    - biological_process

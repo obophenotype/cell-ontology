@@ -1,0 +1,38 @@
+pattern_name: taxonSpecific
+pattern_iri: http://purl.obolibrary.org/obo/cl/taxonSpecific
+
+description: A cell that is restricted to a specific taxon, such as CL:0001200 'lymphocyte of B lineage, CD19-positive' are only in mammals. Note - this is not to be used for any cell that is restricted to a taxon, this is for taxon-specific subclasses of existing cell types. This should hardly ever be used.
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+  
+classes: 
+  cell: CL:0000000
+  taxon: NCBITaxon:1
+
+relations:
+  in taxon: RO:0002162
+
+vars: 
+  cell: "'cell'"
+  taxon: "'taxon'"
+
+name: 
+  text: "%s, %s"
+  vars: 
+    - cell
+    - taxon
+
+def: 
+  text: "Any %s that is part of a %s."
+  vars:
+    - cell
+    - taxon
+
+equivalentTo: 
+  text: "%s and ('in taxon' some %s)"
+
+  vars:
+    - cell
+    - taxon

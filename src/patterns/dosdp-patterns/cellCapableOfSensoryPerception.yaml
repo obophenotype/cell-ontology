@@ -1,0 +1,42 @@
+pattern_name: cellCapableOfSensoryPerception
+pattern_iri: http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception
+
+description: A cell type that is capable of detecting a stimulus that is involved in sensory pereception (eg a receptor cell).
+#example: CL_0000006 neuronal receptor cell
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+  
+classes: 
+  native cell: "CL:0000003"
+  detection of stimulus involved in sensory perception: "GO:0050906"
+
+relations: 
+  capable of: "RO:0002215"
+
+vars:
+  cell-1: "'native cell'"
+  cell-2: "'native cell'"
+  sensory perception: "'detection of stimulus involved in sensory perception'"
+
+name:
+  text: "%s %s capable of %s"
+  vars:
+    - cell-1
+    - cell-1
+    - sensory perception
+
+def:
+  text: "Any %s that %s and capable of a %s"
+  vars:
+    - cell-1
+    - cell-2
+    - sensory perception
+
+equivalentTo:
+  text: "%s and %s and ('capable of' some %s)"
+  vars:
+    - cell-1
+    - cell-2
+    - sensory perception

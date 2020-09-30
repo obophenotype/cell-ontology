@@ -24,11 +24,11 @@ SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 #tmp/chebi_logical.owl: mirror/chebi.owl
 #	echo "Skipped chebi logical" && cp $< $@
 
-mirror/ncbitaxon.owl:
-	echo "STRONG WARNING: skipped ncbitaxon mirror!"
+#mirror/ncbitaxon.owl:
+#	echo "STRONG WARNING: skipped ncbitaxon mirror!"
 
-imports/ncbitaxon_import.owl:
-	echo "STRONG WARNING: skipped ncbitaxon import!"
+#imports/ncbitaxon_import.owl:
+#	echo "STRONG WARNING: skipped ncbitaxon import!"
 
 object_properties.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
