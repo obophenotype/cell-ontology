@@ -226,5 +226,8 @@ tmp/src-master-imports.owl:
 reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
 	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
 
-branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md
+reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
+	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -o $@
+
+branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
 
