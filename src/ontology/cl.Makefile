@@ -133,20 +133,20 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 		convert -o $@
 		
 
-$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
-	$(ROBOT) merge $(patsubst %, -i %, $^) \
-		reason \
-		relax \
-		reduce \
-		convert -o $@
+#$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
+#	$(ROBOT) merge $(patsubst %, -i %, $^) \
+#		reason \
+#		relax \
+#		reduce \
+#		convert -o $@
 
-$(RELEASEDIR)/views:
-	mkdir -p $@
+#$(RELEASEDIR)/views:
+#	mkdir -p $@
 
-release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
-	rsync -R $^ $(RELEASEDIR)/views
+#release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
+#	rsync -R $^ $(RELEASEDIR)/views
 	
-prepare_release: release_views
+# prepare_release: release_views
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
 #	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
