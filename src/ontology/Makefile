@@ -187,7 +187,7 @@ $(ONT).json: $(ONT)-basic.owl
 # by default we use ELK to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 
-OTHER_SRC = $(PATTERNDIR)/definitions.owl  components/all_templates.owl
+OTHER_SRC = $(PATTERNDIR)/definitions.owl
 
 
 $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)

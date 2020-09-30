@@ -78,7 +78,7 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
 		grep -v '^relationship[:][ ]drains[ ]CARO' tmp/source-stripped3.obo > tmp/source-stripped.obo &&\
-		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
+		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/created_by[:].*\ncreated_by[:]/created_by:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
 		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
 
 oort: tmp/source-merged.obo
@@ -130,6 +130,14 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 		remove --term-file tmp/cl_signature.txt --select complement --trim false \
 		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
 		remove --axioms disjoint --trim false \
+		convert -o $@
+		
+
+$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
+	$(ROBOT) merge $(patsubst %, -i %, $^) \
+		reason \
+		relax \
+		reduce \
 		convert -o $@
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
