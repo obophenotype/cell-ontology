@@ -194,7 +194,7 @@ components/all_templates.owl: $(TEMPLATES_OWL)
 		--output $@.tmp.owl && mv $@.tmp.owl $@
 
 $(TEMPLATESDIR)/dependencies_do_no_edit.owl: $(TEMPLATESDIR)/dependencies_do_no_edit.tsv
-	$(ROBOT) -vvv merge -i $(SRC) template --template $< --output $@ && \
+	$(ROBOT) -vvv merge -i $(SRC) template --template $< --prefix "CP: http://purl.obolibrary.org/obo/CP_" --output $@ && \
 	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
 $(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies_do_no_edit.owl
