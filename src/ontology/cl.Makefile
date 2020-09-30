@@ -163,7 +163,7 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 ##############################################
 
 TEMPLATESDIR=../templates
-DEPENDENCY_TEMPLATE=dependencies_do_no_edit.tsv
+DEPENDENCY_TEMPLATE=dependencies.tsv
 TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv)))
 TEMPLATES_OWL=$(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(TEMPLATES))
 TEMPLATES_TSV=$(patsubst %.tsv, $(TEMPLATESDIR)/%.tsv, $(TEMPLATES))
@@ -173,7 +173,7 @@ p:
 	echo $(TEMPLATES_TSV)
 	echo $(TEMPLATES_OWL)
 
-templates: prepare_templates components/all_templates.owl
+templates: prepare_templates $(TEMPLATES_OWL)
 
 remove_template_classes_from_edit.txt: $(TEMPLATES_TSV)
 	for f in $^; do \
@@ -188,18 +188,18 @@ remove_template_classes_from_edit: remove_template_classes_from_edit.txt $(SRC)
 prepare_templates: ../templates/config.txt
 	sh ../scripts/download_templates.sh $<
 
-components/all_templates.owl: $(TEMPLATES_OWL)
-	$(ROBOT) merge $(patsubst %, -i %, $^) \
-		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-		--output $@.tmp.owl && mv $@.tmp.owl $@
+#components/all_templates.owl: $(TEMPLATES_OWL)
+#	$(ROBOT) merge $(patsubst %, -i %, $^) \
+#		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+#		--output $@.tmp.owl && mv $@.tmp.owl $@
 
-$(TEMPLATESDIR)/dependencies_do_no_edit.owl: $(TEMPLATESDIR)/dependencies_do_no_edit.tsv
-	$(ROBOT) -vvv merge -i $(SRC) template --template $< --prefix "CP: http://purl.obolibrary.org/obo/CP_" --output $@ && \
-	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+$(TEMPLATESDIR)/dependencies.owl: $(TEMPLATESDIR)/dependencies.tsv
+	$(ROBOT) merge -i $(SRC) template --template $< --prefix "CP: http://purl.obolibrary.org/obo/CP_" --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
-$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies_do_no_edit.owl
-	$(ROBOT) -vvv merge -i $(SRC) -i $(TEMPLATESDIR)/dependencies_do_no_edit.owl template --template $< --output $@ && \
-	$(ROBOT) -vvv annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies.owl
+	$(ROBOT) merge -i $(SRC) -i $(TEMPLATESDIR)/dependencies.owl template --template $< --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
 
 CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
 
@@ -219,3 +219,4 @@ reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
 	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
 
 branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md
+
