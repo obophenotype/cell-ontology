@@ -20,7 +20,7 @@ Some cells, most obviously neurons, only have some parts in the anatomical struc
 
 We also have a dedicated set of relations for recording the location of synaptic terminals and projections of neurons.  See [Relations for neurons](#Relations_for_neurons) for details.
 
-### Taxon constraints
+## Taxon constraints
 
 We can record taxon specificity of terms using
 
@@ -34,13 +34,13 @@ Other relation are available for recording taxon constraints (details TBA)
 Further reading: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3098089/
 
 
-### Recording function
+## Recording function
 
 We record cellular function by linking to GO biological process terms using the relation (objectProperty) **'capable of'** 
 
 e.g. 'hilus cell of ovary' **'capable of'** *some* 'androgen secretion'
 
-### Recording developmental lineage
+## Recording developmental lineage
 
 We record developmental lineage relationships between cell types using **develops from**, or where we are sure there are not intermediates between the related cells, by using **'develops directly from'**
 
@@ -48,9 +48,9 @@ For example:
 
 'leukocyte' **develops from** *some* 'hematopoietuc stem cell'
 
-### Relations for neurons
+## Relations for neurons
 
-#### Synaptic connectivity
+### Synaptic connectivity
 
 To record neuron to neuron or motor neuron -> target cell connectivity use.  Use these relations sparingly where connectivity is key to definition, e.g. motor neuron types defined by the type of muscle cell they synapse to.
 
@@ -62,33 +62,29 @@ To record connection between a neuron and a region it innervates we have a numbe
 
 ![image](https://user-images.githubusercontent.com/112839/94337631-e0a83300-ffe3-11ea-8f13-ac8a484a5fb3.png)
 
-Historically we have used *has synaptic terminal in*
+Historically we have used **has(pre/post)synaptic terminal in** to record this. However, these relations are defined as being true when a single synapse is present in a region.  As these relations are also used with data, this turns out to be too sensitive to biological and experimental noise.  We therefore now prefer the more specific relations for defining classes - defined in terms of functionally significant synaptic inputs/output in a region.
 
 
-### Recording cell markers
+## Recording cell markers
 
-has part
-  . has plasma membrane part
-  
-expresses
-  . has plasma membrane part
+Only markers that are necessary to define a cell type should be recorded.
+
+NOTE: The details of how and when we record cell markers are are in flux.  If in doubt, ask an editor.
+
+The most commonly used relation for recording markers is **'has plasma membrane part'**.  This is used for recording cell surface markers, especially in immune cells.  We also have subproperties **has low plasma membrane amount** and **has low plasma membrane amount'**, used to the same end.  In each case, a term from the protein ontology or a protein complex term from GO is used as the object of the relation:
+
+e.g.  alpha-beta T cell EquiavlentTo 'T cell' *and* **'has plasma membrane part'** *some* 'alpha-beta T cell receptor complex' 
+
+Absence of a marker can be recorded using **lacks_plasma_membrane_part**.
+
  
- Absence of a marker 
- lacks_plasma_membrane_part
- 
-#### A note on cell markers and taxon constraints
+## Recording cell shape or other morphological qualities
 
-If you choose a cell specific marker 
+e.g. erythrocyte subClassOf **bearer of** *some* biconcave
 
-#### A note on when to record cell markers
- 
-### Recording cell shape or other morphological qualities
+## Recording cellular qualities (eg. ploidy, nuclear number)
 
-e.g. erythrocyte bearer_of some biconcave
-
-### Recording cellular qualities (eg. ploidy, nuclear number)
-
-e.g. 'enucleate erythrocyte' EquivalentTo erythrocyte and ('bearer of' some anucleate)
+e.g. 'enucleate erythrocyte' EquivalentTo erythrocyte *and* **'bearer of'** *some* anucleate
 
 
 
