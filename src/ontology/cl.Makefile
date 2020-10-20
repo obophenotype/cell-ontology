@@ -78,7 +78,7 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
 		grep -v '^relationship[:][ ]drains[ ]CARO' tmp/source-stripped3.obo > tmp/source-stripped.obo &&\
-		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
+		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/created_by[:].*\ncreated_by[:]/created_by:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
 		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
 
 oort: tmp/source-merged.obo
@@ -131,6 +131,22 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
 		remove --axioms disjoint --trim false \
 		convert -o $@
+		
+
+#$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
+#	$(ROBOT) merge $(patsubst %, -i %, $^) \
+#		reason \
+#		relax \
+#		reduce \
+#		convert -o $@
+
+#$(RELEASEDIR)/views:
+#	mkdir -p $@
+
+#release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
+#	rsync -R $^ $(RELEASEDIR)/views
+	
+# prepare_release: release_views
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
 #	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
@@ -156,4 +172,70 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 #works_seed_by_entity_type_cl:
 #	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
 #	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
+
+	
+##############################################
+##### CL Template pipeline ###################
+##############################################
+
+TEMPLATESDIR=../templates
+DEPENDENCY_TEMPLATE=dependencies.tsv
+TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv)))
+TEMPLATES_OWL=$(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(TEMPLATES))
+TEMPLATES_TSV=$(patsubst %.tsv, $(TEMPLATESDIR)/%.tsv, $(TEMPLATES))
+
+p:
+	echo $(TEMPLATES)
+	echo $(TEMPLATES_TSV)
+	echo $(TEMPLATES_OWL)
+
+templates: prepare_templates $(TEMPLATES_OWL)
+
+remove_template_classes_from_edit.txt: $(TEMPLATES_TSV)
+	for f in $^; do \
+			cut -f1 $${f} >> tmp.txt; \
+			cat tmp.txt | grep 'CL:' | sort | uniq > $@; \
+	done \
+	rm tmp.txt
+
+remove_template_classes_from_edit: remove_template_classes_from_edit.txt $(SRC)
+	$(ROBOT) remove -i $(SRC) -T $< --preserve-structure false -o $(SRC).ofn && mv $(SRC).ofn $(SRC)
+
+prepare_templates: ../templates/config.txt
+	sh ../scripts/download_templates.sh $<
+
+#components/all_templates.owl: $(TEMPLATES_OWL)
+#	$(ROBOT) merge $(patsubst %, -i %, $^) \
+#		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
+#		--output $@.tmp.owl && mv $@.tmp.owl $@
+
+$(TEMPLATESDIR)/dependencies.owl: $(TEMPLATESDIR)/dependencies.tsv
+	$(ROBOT) merge -i $(SRC) template --template $< --prefix "CP: http://purl.obolibrary.org/obo/CP_" --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies.owl
+	$(ROBOT) merge -i $(SRC) -i $(TEMPLATESDIR)/dependencies.owl template --template $< --output $@ && \
+	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
+
+CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
+
+tmp/src-noimports.owl: $(SRC)
+	$(ROBOT) remove -i $< --select imports -o $@
+
+tmp/src-imports.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+	
+tmp/src-master-noimports.owl:
+	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
+	
+tmp/src-master-imports.owl:
+	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
+
+reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
+	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
+
+reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
+	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -o $@
+
+branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
 
