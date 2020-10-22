@@ -1,5 +1,7 @@
 # Annotation Properties
 
+_Note- this page is currently under development._
+
 The Cell Ontology has the following annotation properties:
 
 Annotation property	| 	Description	|	Example term	|	Example annotation
