@@ -7,8 +7,8 @@ The Cell Ontology has the following annotation properties:
 Annotation property	| 	Description	|	Example term	|	Example annotation | Must have? | Only one use per term is allowed?
 -- | -- | -- | --  | -- | --
 consider	|	To be used on obsoleted classes, to point to a term that should be considered by curators for use in place of the obsoleted term.  Multiple consider terms are allowed.  It can be useful to combine this with a comment to indicate when replacement would be appropriate.	|	CL:0000610 `obsolete plant cell`	|	PO:0009002 | No | No
-created_by	|	Added automatically on term creation with standard Protege settings. Ideally, this should use the "supplied user name" in the Protege User Details preference pane. This has been inconsistently applied in the past.	|	CL:0002518|	tmeehan | Should | Yes
-creation_date	|	dded automatically on term creation with standard Protege settings.	|	Coming soon	|	Coming soon | No | Yes
+created_by	|	Added automatically on term creation with standard Protege settings. Ideally, this should use the "supplied user name" in the Protege User Details preference pane. This has been inconsistently applied in the past.	|	CL:0002518 | tmeehan | Should | Yes
+creation_date	|	Added automatically on term creation with standard Protege settings.	|	CL:0002518 |	2011-02-08T10:46:34Z | Should | Yes
 database_cross_reference	|	Citable references that have helped generate the term and term's definition. Includes PubMed IDs (in the format PMID:XXXXXXXX).	|	CL:0011005 `GABAergic interneuron` | PMID:29724907 | Should | No
 dc:contributor	|	Use this to annotate a whole ontology file with the identifier of a contributor.  ORCID preferred.	|	Coming soon	|	Coming soon | Nice to have if applicable | No
 dc:creator	|	Coming Soon	|	Coming soon	|	Coming soon | No | Yes
