@@ -9,7 +9,7 @@ Annotation property	| 	Description	|	Example term	|	Example annotation
 consider	|	To be used on obsoleted classes, when another term should be considered for use in place of the obsoleted term.	|	CL:0000610 `obsolete plant cell`	|	PO:0009002
 created_by	|	Coming soon	|	Coming soon	|	Coming soon
 creation_date	|	Coming soon	|	Coming soon	|	Coming soon
-database_cross_reference	|	Coming soon	|	Coming soon	|	Coming soon
+database_cross_reference	|	Citable references that have helped generate the term and term's definition. Includes PubMed IDs (in the format PMID:XXXXXXXX).	|	CL:0011005 `GABAergic interneuron` | PMID:29724907
 dc:contributor	|	Coming soon	|	Coming soon	|	Coming soon
 dc:creator	|	Coming soon	|	Coming soon	|	Coming soon
 dc:date	|	Coming soon	|	Coming soon	|	Coming soon
