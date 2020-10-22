@@ -22,16 +22,7 @@ We also have a dedicated set of relations for recording the location of synaptic
 
 ## Taxon constraints
 
-We can record taxon specificity of terms using
-
-**'in taxon'** *some* <NCBI_taxon term>
-
-For example, the term 'alpha motor neuron' refers to a type of motor neuron that innervates skeletal muscle in vertebrates, so we can record
-
-'alpha motor neuron' subClassOf **'in taxon'** *some* 'Vertebrata <Metazoa>'
-
-Other relation are available for recording taxon constraints (details TBA)
-Further reading: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3098089/
+Please see https://ontology-development-kit.readthedocs.io/en/latest/TaxonRestriction.html
 
 
 ## Recording function
