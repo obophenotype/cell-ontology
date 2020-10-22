@@ -20,11 +20,11 @@ definition	|	Coming soon	|	Coming soon	|	Coming soon
 'expand expression to'	|	Coming soon	|	Coming soon	|	Coming soon
 foaf:depicted_by	|	Coming soon	|	Coming soon	|	Coming soon
 has_alternative_id	|	Coming soon	|	Coming soon	|	Coming soon
-has_broad_synonym	|	Coming soon	|	Coming soon	|	Coming soon
-has_exact_synonym	|	Coming soon	|	Coming soon	|	Coming soon
-has_narrow_synonym	|	Coming soon	|	Coming soon	|	Coming soon
+has_broad_synonym	|	Used for synonyms where the primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.	|	Coming soon	|	Coming soon
+has_exact_synonym	|	Used for synonyms where the definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name. 	|	Coming soon	|	Coming soon
+has_narrow_synonym	|	Used for synonyms where the definition of the synonym is the same as the primary definition, but has additional qualifiers. 	|	Coming soon	|	Coming soon
 has_obo_namespace	|	Coming soon	|	Coming soon	|	Coming soon
-has_related_synonym	|	Coming soon	|	Coming soon	|	Coming soon
+has_related_synonym	|	This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included.	|	Coming soon	|	Coming soon
 has_synonym_type	|	Coming soon	|	Coming soon	|	Coming soon
 IAO_0000116	|	Coming soon	|	Coming soon	|	Coming soon
 id	|	Coming soon	|	Coming soon	|	Coming soon
