@@ -7,11 +7,11 @@ The Cell Ontology has the following annotation properties:
 Annotation property	| 	Description	|	Example term	|	Example annotation
 -- | -- | -- | --
 consider	|	To be used on obsoleted classes, to point to a term that should be considered by curators for use in place of the obsoleted term.  Multiple consider terms are allowed.  It can be useful to combine this with a comment to indicate when replacement would be appropriate.	|	CL:0000610 `obsolete plant cell`	|	PO:0009002
-created_by	|	Coming soon	|	Coming soon	|	Coming soon
-creation_date	|	Coming soon	|	Coming soon	|	Coming soon
+created_by	|	Added automatically on term creation with standard Protege settings.	|	Coming soon	|	Coming soon
+creation_date	|	dded automatically on term creation with standard Protege settings.	|	Coming soon	|	Coming soon
 database_cross_reference	|	Citable references that have helped generate the term and term's definition. Includes PubMed IDs (in the format PMID:XXXXXXXX).	|	CL:0011005 `GABAergic interneuron` | PMID:29724907
 dc:contributor	|	Use this to annotate a whole ontology file with the identifier of a contributor.  ORCID preferred.	|	Coming soon	|	Coming soon
-dc:creator	|	Value should be an orcid. Added automatically on term creation with standard Protege settings.	|	Coming soon	|	Coming soon
+dc:creator	|	Coming Soon	|	Coming soon	|	Coming soon
 dc:date	|	Coming soon	|	Coming soon	|	Coming soon
 dc:description	|	Coming soon	|	Coming soon	|	Coming soon
 dc:title	|	Use this to annotate an ontology, giving it a human readable title.	|	Coming soon	|	Coming soon
