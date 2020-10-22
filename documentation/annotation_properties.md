@@ -31,11 +31,11 @@ id	|	Automatically added by some pathways.  Do not add manually.  If duplicating
 in_subset	|	Coming soon	|	Coming soon	|	Coming soon
 is_inferred	|	This annotation property is used in some automated pipelines.  Do not add manually	|	Coming soon	|	Coming soon
 rdfs:comment	|	Use to add a clarifying comment to a term.  This can be useful for adding examples and for clarifying terminological confusions	|	Coming soon	|	Coming soon
-rdfs:isDefinedBy	|	Do not add manually	|	Coming soon	|	Coming soon
+rdfs:isDefinedBy	|	Do not add manually.	|	Coming soon	|	Coming soon
 rdfs:label	|	Primary name - used as a display name by Protege (with standard settings) and most downstream consumers. Add only one of these.  It must be unique within an ontology.	|	Coming soon	|	Coming soon
 RO_0002161	|	Coming soon	|	Coming soon	|	Coming soon
 'see also'	|	Coming soon	|	Coming soon	|	Coming soon
 shorthand	|	Added automatically by some pipelines.  Do not add manually	|	Coming soon	|	Coming soon
 subset_property	|	Coming soon	|	Coming soon	|	Coming soon
 synonym_type_property	| 	|	Coming soon	|	Coming soon
-'term replaced by'	|	To be used on obsolete terms to indicate a term that can be automatically substituted for the obsoleted term 	|	Coming soon	|	Coming soon
+'term replaced by'	|	To be used on obsolete terms to indicate a term that can be automatically substituted for the obsoleted term. 	|	Coming soon	|	Coming soon
