@@ -32,8 +32,8 @@ in_subset	|	Used to add subset tags, used in conjunction with subset_property	|	
 is_inferred	|	This annotation property is used in some automated pipelines.  Do not add manually	|	Coming soon	|	Coming soon | No | No
 rdfs:comment	|	Use to add a clarifying comment to a term.  This can be useful for adding examples and for clarifying terminological confusions	|	Coming soon	|	Coming soon | No | Yes
 rdfs:isDefinedBy	|	Do not add manually.	|	Coming soon	|	Coming soon | No | Yes
-rdfs:label	|	Primary name - used as a display name by Protege (with standard settings) and most downstream consumers. Add only one of these.  It must be unique within an ontology.	|	Coming soon	|	Coming soon | Must | Yes
-RO_0002161	|	Coming soon	|	Coming soon	|	Coming soon | No | No
+rdfs:label	|	Primary name - used as a display name by Protege (with standard settings) and most downstream consumers. Add only one of these.  It must be unique within an ontology.	|	CL:0000418 `arcade cell`	|	arcade cell | Must | Yes
+RO_0002161	|	Coming soon	|	Coming soon	|	 | No | No
 'see also'	|	Used to link to a webpage, such as a GitHub ticket.	|	CL:0000134 `mesenchymal stem cell`	| https://github.com/obophenotype/cell-ontology/issues/474 | No | No
 shorthand	|	Added automatically by some pipelines.  Do not add manually	|	Coming soon	|	Coming soon | No | No
 subset_property	|	A grouping class for subset tags.	| N/A |	N/A | No | No
