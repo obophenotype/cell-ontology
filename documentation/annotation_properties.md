@@ -16,7 +16,7 @@ dc:date	|	Coming soon	|	CL:0001065 `innate lymphoid cell` | 2017-01-30T20:20:48Z
 dc:description	|	Use this to annotate a whole ontology file with a brief description of the ontology.	| N/A |	An ontology of cell types. | No | No
 dc:title	|	Use this to annotate an ontology, giving it a human readable title.	| N/A |	Cell Ontology | No | No
 dcterms:license	|	Use to attach a license to the whole ontology file.	|	N/A | http://creativecommons.org/licenses/by/4.0/ | No | No
-definition	|	Coming soon	|	Coming soon	|	Coming soon | Must | Yes
+definition	|	The textual definition for the ontology class.	|	CL:0000946 `antibody secreting cell`	|	A lymphocyte of B lineage that is devoted to secreting large amounts of immunoglobulin. | Must | Yes
 'expand expression to'	|	Coming soon	|	Coming soon	|	Coming soon | No | No
 foaf:depicted_by	|	Use this to add a link to an image that depicts an example of an entity referred to by the term	|	Coming soon	|	Coming soon | No | No
 has_alternative_id	|	In CL this is a legacy property. Do not use.	|	CL:0000059 `ameloblast`	|	CL:0000053 | No | No
