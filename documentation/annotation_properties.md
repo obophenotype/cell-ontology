@@ -10,10 +10,10 @@ consider	|	To be used on obsoleted classes, to point to a term that should be co
 created_by	|	Added automatically on term creation with standard Protege settings. Ideally, this should use the "supplied user name" in the Protege User Details preference pane. This has been inconsistently applied in the past.	|	CL:0002518 | tmeehan | Should | Yes
 creation_date	|	Added automatically on term creation with standard Protege settings.	|	CL:0002518 |	2011-02-08T10:46:34Z | Should | Yes
 database_cross_reference	|	Citable references that have helped generate the term and term's definition. Includes PubMed IDs (in the format PMID:XXXXXXXX).	|	CL:0011005 `GABAergic interneuron` | PMID:29724907 | Should | No
-dc:contributor	|	Use this to annotate a whole ontology file with the identifier of a contributor.  ORCID preferred.	|	Coming soon	|	Coming soon | Nice to have, if applicable | No
+dc:contributor	|	Use this to annotate a whole ontology file with the identifier of a contributor.  ORCID preferred.	|	N/A	|	https://orcid.org/0000-0001-9990-8331 | Nice to have, if applicable | No
 dc:creator	|	Coming Soon	|	CL:0001201 `B cell, CD19-positive`	|	https://orcid.org/0000-0001-9990-8331 | No | Yes
 dc:date	|	Coming soon	|	CL:0001065 `innate lymphoid cell` | 2017-01-30T20:20:48Z | No | Yes
-dc:description	|	Coming soon	| N/A |	An ontology of cell types. | No | No
+dc:description	|	Use this to annotate a whole ontology file with a brief description of the ontology.	| N/A |	An ontology of cell types. | No | No
 dc:title	|	Use this to annotate an ontology, giving it a human readable title.	| N/A |	Cell Ontology | No | No
 dcterms:license	|	Use to attach a license to an ontology	|	N/A | http://creativecommons.org/licenses/by/4.0/ | No | No
 definition	|	Coming soon	|	Coming soon	|	Coming soon | Must | Yes
