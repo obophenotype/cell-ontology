@@ -30,7 +30,7 @@ IAO_0000116	|	Coming soon	|	Coming soon	|	Coming soon | No | No
 id	|	Automatically added by some pathways.  Do not add manually.  If duplicating a term (with the duplicate getting a new ID), it should be deleted.	|	CL:2000074	`splenocyte` |	CL:2000074 | Yes | Yes
 in_subset	|	Used to add subset tags, used in conjunction with subset_property	|	CL:0000039 `germ line cell`	|	\_upper_level | No | No
 is_inferred	|	This annotation property is used in some automated pipelines.  Do not add manually	|	Coming soon	|	Coming soon | No | No
-rdfs:comment	|	Use to add a clarifying comment to a term.  This can be useful for adding examples and for clarifying terminological confusions	|	Coming soon	|	Coming soon | No | Yes
+rdfs:comment	|	Use to add a clarifying comment to a term.  This can be useful for adding examples and for clarifying terminological confusions.	|	CL:0007016 `adaxial cell`	|	In teleosts, adaxial cells give rise to slow muscle myoblasts. | No | Yes
 rdfs:isDefinedBy	|	Do not add manually.	|	Coming soon	|	Coming soon | No | Yes
 rdfs:label	|	Primary name - used as a display name by Protege (with standard settings) and most downstream consumers. Add only one of these.  It must be unique within an ontology.	|	CL:0000418 `arcade cell`	|	arcade cell | Must | Yes
 RO_0002161	|	Coming soon	|	Coming soon	|	 | No | No
