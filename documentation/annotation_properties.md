@@ -28,7 +28,7 @@ has_related_synonym	|	This scope is applied when a word of phrase has been used 
 has_synonym_type	|	  The target of this relation must be an annotation property of type 'synonym_type_property'.	| Coming soon	 |	Coming sooon | No | No
 IAO_0000116	|	Coming soon	|	Coming soon	|	Coming soon | No | No
 id	|	Automatically added by some pathways.  Do not add manually.  If duplicating a term (with the duplicate getting a new ID), it should be deleted.	|	Coming soon	|	Coming soon | Yes | Yes
-in_subset	|	Used to add subset tags, used in conjunction with subset_property	|	CL:0000039 `germ line cell`	|	_\upper_level | No | No
+in_subset	|	Used to add subset tags, used in conjunction with subset_property	|	CL:0000039 `germ line cell`	|	\_upper_level | No | No
 is_inferred	|	This annotation property is used in some automated pipelines.  Do not add manually	|	Coming soon	|	Coming soon | No | No
 rdfs:comment	|	Use to add a clarifying comment to a term.  This can be useful for adding examples and for clarifying terminological confusions	|	Coming soon	|	Coming soon | No | Yes
 rdfs:isDefinedBy	|	Do not add manually.	|	Coming soon	|	Coming soon | No | Yes
