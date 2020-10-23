@@ -15,7 +15,7 @@ dc:creator	|	Coming Soon	|	CL:0001201 `B cell, CD19-positive`	|	https://orcid.or
 dc:date	|	Coming soon	|	CL:0001065 `innate lymphoid cell` | 2017-01-30T20:20:48Z | No | Yes
 dc:description	|	Use this to annotate a whole ontology file with a brief description of the ontology.	| N/A |	An ontology of cell types. | No | No
 dc:title	|	Use this to annotate an ontology, giving it a human readable title.	| N/A |	Cell Ontology | No | No
-dcterms:license	|	Use to attach a license to an ontology	|	N/A | http://creativecommons.org/licenses/by/4.0/ | No | No
+dcterms:license	|	Use to attach a license to the whole ontology file.	|	N/A | http://creativecommons.org/licenses/by/4.0/ | No | No
 definition	|	Coming soon	|	Coming soon	|	Coming soon | Must | Yes
 'expand expression to'	|	Coming soon	|	Coming soon	|	Coming soon | No | No
 foaf:depicted_by	|	Use this to add a link to an image that depicts an example of an entity referred to by the term	|	Coming soon	|	Coming soon | No | No
