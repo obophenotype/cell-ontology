@@ -25,7 +25,7 @@ has_exact_synonym	|	Used for synonyms where the definition of the synonym is exa
 has_narrow_synonym	|	Used for synonyms where the definition of the synonym is the same as the primary definition, but has additional qualifiers. You are encouraged to add a reference that uses the term in this way.	|	CL:0000362 `epidermal cell`	| epithelial cell of skin | No | No
 has_obo_namespace	|	This is a legacy annotation property.  Do not add this manually.	|	CL:0001061 `abnormal cell`	|	cell | No | No
 has_related_synonym	|	This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included.	|	Coming soon	|	Coming soon | No | No
-has_synonym_type	|	  The target of this relation must be an annotation property of type 'synonym_type_property'.	| Coming soon	 |	Coming sooon | No | No
+has_synonym_type	|	  The target of this relation must be an annotation property of type 'synonym_type_property'.	| CL:0000902 `induced T-regulatory cell`|	adaptive Treg | No | No
 IAO_0000116	|	Coming soon	|	Coming soon	|	Coming soon | No | No
 id	|	Automatically added by some pathways.  Do not add manually.  If duplicating a term (with the duplicate getting a new ID), it should be deleted.	|	CL:2000074	`splenocyte` |	CL:2000074 | Yes | Yes
 in_subset	|	Used to add subset tags, used in conjunction with subset_property	|	CL:0000039 `germ line cell`	|	\_upper_level | No | No
