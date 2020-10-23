@@ -11,18 +11,18 @@ created_by	|	Added automatically on term creation with standard Protege settings
 creation_date	|	Added automatically on term creation with standard Protege settings.	|	CL:0002518 |	2011-02-08T10:46:34Z | Should | Yes
 database_cross_reference	|	Citable references that have helped generate the term and term's definition. Includes PubMed IDs (in the format PMID:XXXXXXXX).	|	CL:0011005 `GABAergic interneuron` | PMID:29724907 | Should | No
 dc:contributor	|	Use this to annotate a whole ontology file with the identifier of a contributor.  ORCID preferred.	|	Coming soon	|	Coming soon | Nice to have if applicable | No
-dc:creator	|	Coming Soon	|	Coming soon	|	Coming soon | No | Yes
-dc:date	|	Coming soon	|	Coming soon	|	Coming soon | No | Yes
-dc:description	|	Coming soon	|	Coming soon	|	Coming soon | No | No
-dc:title	|	Use this to annotate an ontology, giving it a human readable title.	|	Coming soon	|	Coming soon | No | No
-dcterms:license	|	Use to attacha a license to an ontology	|	Coming soon	|	Coming soon | No | No
+dc:creator	|	Coming Soon	|	CL:0001201 `B cell, CD19-positive`	|	https://orcid.org/0000-0001-9990-8331 | No | Yes
+dc:date	|	Coming soon	|	CL:0001065 `innate lymphoid cell` | 2017-01-30T20:20:48Z | No | Yes
+dc:description	|	Coming soon	| N/A |	An ontology of cell types. | No | No
+dc:title	|	Use this to annotate an ontology, giving it a human readable title.	| N/A |	Cell Ontology | No | No
+dcterms:license	|	Use to attach a license to an ontology	|	N/A | http://creativecommons.org/licenses/by/4.0/ | No | No
 definition	|	Coming soon	|	Coming soon	|	Coming soon | Must | Yes
 'expand expression to'	|	Coming soon	|	Coming soon	|	Coming soon | No | No
 foaf:depicted_by	|	Use this to add a link to an image that depicts an example of an entity referred to by the term	|	Coming soon	|	Coming soon | No | No
-has_alternative_id	|	In CL this is a legacy property. Do not use.	|	Coming soon	|	Coming soon | No | No
-has_broad_synonym	|	Used for synonyms where the primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.  You are encouraged to add a reference that uses the term in this way.	|	Coming soon	|	Coming soon | No | No
-has_exact_synonym	|	Used for synonyms where the definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name.  You are encouraged to add a reference that uses the term in this way. |	Coming soon	|	Coming soon | Nice to have if applicable | No
-has_narrow_synonym	|	Used for synonyms where the definition of the synonym is the same as the primary definition, but has additional qualifiers. You are encouraged to add a reference that uses the term in this way.	|	Coming soon	|	Coming soon | No | No
+has_alternative_id	|	In CL this is a legacy property. Do not use.	|	CL:0000059 `ameloblast`	|	CL:0000053 | No | No
+has_broad_synonym	|	Used for synonyms where the primary definition accurately describes the synonym, but the definition of the synonym may encompass other structures as well. In some cases where a broad synonym is given, it will be a broad synonym for more than one ontology term.  You are encouraged to add a reference that uses the term in this way.	|	CL:0000365 `animal zygote`	|	zygote | No | No
+has_exact_synonym	|	Used for synonyms where the definition of the synonym is exactly the same as primary term definition. This is used when the same class can have more than one name.  You are encouraged to add a reference that uses the term in this way. |	CL:0000622	`acinar cell` |	acinic cell | Nice to have if applicable | No
+has_narrow_synonym	|	Used for synonyms where the definition of the synonym is the same as the primary definition, but has additional qualifiers. You are encouraged to add a reference that uses the term in this way.	|	CL:0000362 `epidermal cell`	| epithelial cell of skin | No | No
 has_obo_namespace	|	This is a legacy annotation property.  Do not add this manually.	|	Coming soon	|	Coming soon | No | No
 has_related_synonym	|	This scope is applied when a word of phrase has been used synonymously with the primary term name in the literature, but the usage is not strictly correct. That is, the synonym in fact has a slightly different meaning than the primary term name. Since users may not be aware that the synonym was being used incorrectly when searching for a term, related synonyms are included.	|	Coming soon	|	Coming soon | No | No
 has_synonym_type	|	  The target of this relation must be an annotation property of type 'synonym_type_property'.	|	Coming soon	|	Coming soon | No | No
