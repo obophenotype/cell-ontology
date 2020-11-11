@@ -1,7 +1,7 @@
 # ----------------------------------------
 # Makefile for cl
 # Generated using ontology-starter-kit
-# ODK Version: v1.2.22
+# ODK Version: v1.2.24
 # ----------------------------------------
 # <do not edit above this line>
 
@@ -21,11 +21,14 @@ RELEASEDIR=                 ../..
 REPORTDIR=                  reports
 TMPDIR=                     tmp
 SPARQLDIR =                 ../sparql
+ROBOT_PROFILE =             profile.txt
 REPORT_FAIL_ON =            None
+REPORT_LABEL =              -l true
+REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes trailing-whitespace owldef-self-reference xref-syntax nolabels
 SPARQL_EXPORTS =            basic-report class-count-by-prefix edges xrefs obsoletes synonyms
-ODK_VERSION_MAKEFILE =      v1.2.22
+ODK_VERSION_MAKEFILE =      v1.2.24
 
 TODAY ?= $(shell date +%Y-%m-%d)
 OBODATE ?= $(shell date +'%d:%m:%Y %H:%M')
@@ -100,7 +103,7 @@ SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n
 
 all_subsets: $(SUBSET_FILES)
 
-OBO_REPORT = $(SRC)-obo-report
+OBO_REPORT =  $(SRC)-obo-report $(ONT).owl-obo-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
 
@@ -171,13 +174,13 @@ $(ONT)-non-classified.json: $(ONT)-non-classified.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 # Main release artefacts
-$(ONT).owl: $(ONT)-basic.owl
+$(ONT).owl: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 
 $(ONT).obo: $(ONT).owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-$(ONT).json: $(ONT)-basic.owl
+$(ONT).json: $(ONT)-full.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json && mv $@.tmp.json $@
 # ----------------------------------------
@@ -187,7 +190,7 @@ $(ONT).json: $(ONT)-basic.owl
 # by default we use ELK to perform a reason-relax-reduce chain
 # after that we annotate the ontology with the release versionInfo
 
-OTHER_SRC = $(PATTERNDIR)/definitions.owl
+OTHER_SRC = $(PATTERNDIR)/definitions.owl 
 
 
 $(ONTOLOGYTERMS): $(SRC) $(OTHER_SRC)
@@ -289,7 +292,6 @@ imports/%_terms_combined.txt: $(IMPORTSEED) imports/%_terms.txt
 imports/%_import.owl: mirror/%.owl imports/%_terms_combined.txt
 	@if [ $(IMP) = true ]; then $(ROBOT) extract -i $< -T imports/$*_terms_combined.txt --force true --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru \
-		remove -T allowed_annotations.txt --select "self descendants" --select complement --select annotation-properties \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/%_import.owl
 
@@ -300,20 +302,6 @@ imports/%_import.obo: imports/%_import.owl
 	@if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f obo -o $@.tmp.obo && mv $@.tmp.obo $@; fi
 imports/%_import.json: imports/%_import.owl
 	@if [ $(IMP) = true ]; then $(ROBOT) convert --check false -i $< -f json -o $@.tmp.json && mv $@.tmp.json $@; fi
-
-# ----------------------------------------
-# Components
-# ----------------------------------------
-# Some ontologies contain external and internal components. A component is included in the ontology in its entirety.
-
-components/%: .FORCE
-	touch $@
-.PRECIOUS: components/%
-
-
-
-
-
 
 
 # ----------------------------------------
@@ -439,7 +427,7 @@ sparql_test: $(SRC)
 # ROBOT report
 # ----------------------------------------
 reports/%-obo-report.tsv: %
-	$(ROBOT) report -i $< --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
 
 # ----------------------------------------
 # Sparql queries: Exports
