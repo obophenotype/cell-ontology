@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2020-10-20
+data-version: releases/2020-11-11
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: PLURAL "plural term"
 remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
@@ -1973,7 +1973,7 @@ namespace: cell
 def: "A muscle cell that develops tension more slowly than a fast-twitch fiber." [GOC:tfm, ISBN:0323052908]
 synonym: "slow muscle fiber" RELATED [ISBN:0815316208]
 xref: FMA:84448
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 relationship: RO:0002202 CL:0000857 ! develops_from slow muscle myoblast
 
 [Term]
@@ -1982,7 +1982,7 @@ name: fast muscle cell
 namespace: cell
 def: "A muscle cell that can develop high tension rapidly. It is usually innervated by a single alpha neuron ." [GOC:tfm, ISBN:0323052908]
 synonym: "glycolytic muscle fiber" EXACT []
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 relationship: RO:0002202 CL:0000858 ! develops_from fast muscle myoblast
 
 [Term]
@@ -12757,8 +12757,8 @@ alt_id: CL:1000387
 def: "Brush cell found in the epithelial layer of the colon." [GOC:tfm]
 comment: Brush cells are a distinct cell type from brush border cell-types.
 xref: FMA:263222
-is_a: CL:0002204 ! brush cell
 is_a: CL:0002253 ! epithelial cell of large intestine
+is_a: CL:0019032 ! intestinal tuft cell
 created_by: tmeehan
 creation_date: 2010-09-02T02:20:50Z
 
@@ -12842,7 +12842,7 @@ def: "A slow muscle cell that contains high levels of myoglobin and oxygen stori
 synonym: "oxidative muscle fiber" EXACT []
 synonym: "red muscle fiber" EXACT []
 xref: FMA:84448
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 created_by: tmeehan
 creation_date: 2010-09-02T03:20:03Z
 
@@ -12929,7 +12929,7 @@ name: intermediate muscle cell
 namespace: cell
 def: "An intermediate muscle cell that has characteristics of both fast and slow muscle cells." [GOC:tfm]
 xref: FMA:84450
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 created_by: tmeehan
 creation_date: 2010-09-02T03:51:17Z
 
@@ -17913,6 +17913,10 @@ id: CL:0005012
 name: multi-ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with many cilium." [CL:CVS]
+synonym: "MCC" BROAD []
+synonym: "multi-ciliated cell" BROAD []
+synonym: "multiciliated cell" BROAD []
+synonym: "multiciliated epithelial cell" EXACT []
 is_a: CL:0000067 ! ciliated epithelial cell
 
 [Term]
@@ -18560,6 +18564,28 @@ created_by: dos
 creation_date: 2020-09-23T20:22:07Z
 
 [Term]
+id: CL:0008046
+name: extrafusal muscle fiber
+def: "A skeletal muscle fiber that is innervated by alpha motor neuron and generates tension by contracting, thereby allowing for skeletal movement. These fibers make up the large mass of skeletal muscle tissue and are attached to bones by tendons." [DOI:10.1016/B978-0-443-10321-6.00004-7, Wikipedia:Extrafusal_muscle_fiber&oldid=978415293]
+synonym: "myofibra extrafusalis" EXACT []
+xref: TH:H3.03.00.0.00007
+is_a: CL:0008002 ! skeletal muscle fiber
+disjoint_from: CL:0008047 ! intrafusal muscle fiber
+relationship: RO:0002103 CL:0008038 ! synapsed by alpha motor neuron
+created_by: dos
+creation_date: 2020-09-26T21:06:15Z
+
+[Term]
+id: CL:0008047
+name: intrafusal muscle fiber
+def: "A skeletal muscle fiber that is part of a muscle spindle. These are specialized muscle fibers that serve as proprioceptors, detecting the amount and rate of change in length of a muscle. They are innervated by both sensory neurons and motor neurons (gamma and beta motorneurons, collectively referred to as fusimotor neurons)." [DOI:10.1016/B978-0-443-10321-6.00004-7, Wikipedia:Intrafusal_muscle_fiber&oldid=937508784]
+synonym: "myofibra intrafusalis" EXACT []
+xref: H3.03.00.0.00012
+is_a: CL:0008002 ! skeletal muscle fiber
+created_by: dos
+creation_date: 2020-09-26T21:07:01Z
+
+[Term]
 id: CL:0009000
 name: sensory neuron of spinal nerve
 def: "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord." [GOC:nv, GOC:pr]
@@ -19174,6 +19200,26 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:50:22Z xsd:dateTime
 
 [Term]
+id: CL:0019031
+name: intestine goblet cell
+def: "Goblet cells reside throughout the length of the small and large intestine and are responsible for the production and maintenance of the protective mucus blanket by synthesizing and secreting high-molecular-weight glycoproteins known as mucins. Human intestinal goblet cells secrete the MUC2 mucin, as well as a number of typical mucus components: CLCA1, FCGBP, AGR2, ZG16, and TFF3." [PMID:1996606, PMID:24942678]
+synonym: "intestinal goblet cell" EXACT [PMID:1996606]
+is_a: CL:0000160 ! goblet cell
+is_a: CL:0002563 ! intestinal epithelial cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-14T14:59:07Z xsd:dateTime
+
+[Term]
+id: CL:0019032
+name: intestinal tuft cell
+def: "Any brush cell that is part of the intestinal epithelium." [PMID:22527717]
+synonym: "intestinal brush cell" EXACT [PMID:22527717]
+is_a: CL:0002204 ! brush cell
+is_a: CL:0002563 ! intestinal epithelial cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-15T12:47:46Z xsd:dateTime
+
+[Term]
 id: CL:1000001
 name: retrotrapezoid nucleus neuron
 is_a: CL:2000029 ! central nervous system neuron
@@ -19677,8 +19723,8 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium of large intestine." [GOC:tfm]
 synonym: "goblet cell of epithelium of large intestine" EXACT []
 xref: FMA:263054
-is_a: CL:0000160 ! goblet cell
 is_a: CL:0002658 ! glandular cell of the large intestine
+is_a: CL:0019031 ! intestine goblet cell
 
 [Term]
 id: CL:1000321
@@ -20917,7 +20963,7 @@ synonym: "goblet cell of epithelium of small intestine" EXACT []
 synonym: "goblet cell of small intestine" EXACT []
 synonym: "small intestinal goblet cell" EXACT [FMA:86929]
 xref: FMA:86929
-is_a: CL:0000160 ! goblet cell
+is_a: CL:0019031 ! intestine goblet cell
 is_a: CL:1001598 ! small intestine glandular cell
 
 [Term]
