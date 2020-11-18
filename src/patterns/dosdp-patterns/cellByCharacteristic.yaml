@@ -1,0 +1,37 @@
+pattern_name: cellByCharacteristic
+pattern_iri: http://purl.obolibrary.org/obo/cl/cellByCharacteristic
+
+description: A grouping class for cells defined by a characteristic - abnormality, neoplasticity. E.g abnormal cell, alobate nucleus
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+
+classes: 
+  quality: "PATO:0000001"
+  cell: "CL:0000000"
+
+relations: 
+  bearer of: "RO:0000053"
+
+vars:
+  cell: "'cell'"
+  quality: "'quality'"
+
+name:
+  text: "%s %s"
+  vars:
+    - quality
+    - cell
+
+def:
+  text: "Any %s exhibiting %s features."
+  vars:
+    - cell
+    - quality
+
+equivalentTo:
+  text: "%s and ('bearer of' some %s)"
+  vars:
+    - cell
+    - quality
