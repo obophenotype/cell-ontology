@@ -6,7 +6,7 @@ We record anatomical location by linking to terms from Uberon.
 
 For most purposes we record the anatomical location of cells using **'part of'**. 
 
-e.g. eipthelial cell SubClassOf **'part of'** *some* eipthelium 
+e.g. epithelial cell SubClassOf **'part of'** *some* epithelium 
 
 means that
 
@@ -14,7 +14,7 @@ means that
  1. All parts of an epithelial cell are part of an epithelium.
  1. Epithelial cells are part_of some epithelium at all times.  This last stricture can be hard to apply in the context of development.  Some judgment may be required, e.g. -   (TBA)
 
-Some cells, most obviously neurons, only have some parts in the anatomical structure we want to relate them to. For example, anteriior horn motor neurons have a soma in the anterior (ventral) horn of the spine, but also project out of the spine to innervate muscles.  We have a general relation for this, **'overlap'** (has some part in), but often we want to say something more specific.  For example, neuon types are often referred to in part by the location of their soma. We have a dedicated relation for this: **'has soma location'**, allowing us to record:
+Some cells, most obviously neurons, only have some parts in the anatomical structure we want to relate them to. For example, anteriior horn motor neurons have a soma in the anterior (ventral) horn of the spine, but also project out of the spine to innervate muscles.  We have a general relation for this, **'overlap'** (has some part in), but often we want to say something more specific.  For example, neuron types are often referred to in part by the location of their soma. We have a dedicated relation for this: **'has soma location'**, allowing us to record:
 
 'anterior horn motor neuron' SubClassOf **'has soma location'** *some* 'ventral horn of spinal cord'
 
@@ -22,16 +22,7 @@ We also have a dedicated set of relations for recording the location of synaptic
 
 ## Taxon constraints
 
-We can record taxon specificity of terms using
-
-**'in taxon'** *some* <NCBI_taxon term>
-
-For example, the term 'alpha motor neuron' refers to a type of motor neuron that innervates skeletal muscle in vertebrates, so we can record
-
-'alpha motor neuron' subClassOf **'in taxon'** *some* 'Vertebrata <Metazoa>'
-
-Other relation are available for recording taxon constraints (details TBA)
-Further reading: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3098089/
+Please see https://ontology-development-kit.readthedocs.io/en/latest/TaxonRestriction.html
 
 
 ## Recording function
@@ -46,7 +37,7 @@ We record developmental lineage relationships between cell types using **develop
 
 For example:
 
-'leukocyte' **develops from** *some* 'hematopoietuc stem cell'
+'leukocyte' **develops from** *some* 'hematopoietic stem cell'
 
 ## Relations for neurons
 

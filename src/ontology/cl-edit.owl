@@ -16,6 +16,7 @@ Import(<http://purl.obolibrary.org/obo/cl/imports/pato_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/pr_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/ro_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/uberon_import.owl>)
+Annotation(obo:IAO_0000700 obo:CL_0000000)
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Alexander Diehl")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Ceri van Slyke")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Chris Mungall")
@@ -1857,12 +1858,16 @@ Declaration(Class(obo:CL_0008035))
 Declaration(Class(obo:CL_0008036))
 Declaration(Class(obo:CL_0008038))
 Declaration(Class(obo:CL_0008039))
+Declaration(Class(obo:CL_0008046))
+Declaration(Class(obo:CL_0008047))
 Declaration(Class(obo:CL_0009000))
 Declaration(Class(obo:CL_0009001))
 Declaration(Class(obo:CL_0009002))
 Declaration(Class(obo:CL_0009003))
 Declaration(Class(obo:CL_0009004))
 Declaration(Class(obo:CL_0009005))
+Declaration(Class(obo:CL_0009015))
+Declaration(Class(obo:CL_0009018))
 Declaration(Class(obo:CL_0010000))
 Declaration(Class(obo:CL_0010001))
 Declaration(Class(obo:CL_0010002))
@@ -1880,6 +1885,7 @@ Declaration(Class(obo:CL_0010013))
 Declaration(Class(obo:CL_0010014))
 Declaration(Class(obo:CL_0010015))
 Declaration(Class(obo:CL_0010016))
+Declaration(Class(obo:CL_0010017))
 Declaration(Class(obo:CL_0010020))
 Declaration(Class(obo:CL_0010021))
 Declaration(Class(obo:CL_0010022))
@@ -1910,6 +1916,7 @@ Declaration(Class(obo:CL_0011023))
 Declaration(Class(obo:CL_0011024))
 Declaration(Class(obo:CL_0011025))
 Declaration(Class(obo:CL_0011026))
+Declaration(Class(obo:CL_0011028))
 Declaration(Class(obo:CL_0011100))
 Declaration(Class(obo:CL_0011101))
 Declaration(Class(obo:CL_0011102))
@@ -1939,6 +1946,8 @@ Declaration(Class(obo:CL_0019015))
 Declaration(Class(obo:CL_0019017))
 Declaration(Class(obo:CL_0019018))
 Declaration(Class(obo:CL_0019019))
+Declaration(Class(obo:CL_0019031))
+Declaration(Class(obo:CL_0019032))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
 Declaration(Class(obo:CL_1000042))
@@ -2420,6 +2429,7 @@ Declaration(Class(obo:PR_O95944))
 Declaration(Class(obo:PR_Q12918))
 Declaration(Class(obo:PR_Q96E93))
 Declaration(Class(obo:PR_Q9Y5Y4))
+Declaration(Class(obo:UBERON_0003718))
 Declaration(ObjectProperty(obo:BFO_0000051))
 Declaration(ObjectProperty(obo:RO_0000053))
 Declaration(ObjectProperty(obo:RO_0001025))
@@ -2441,8 +2451,11 @@ Declaration(AnnotationProperty(<http://geneontology.org/formats/oboInOwl#created
 Declaration(AnnotationProperty(obo:IAO_0000115))
 Declaration(AnnotationProperty(obo:IAO_0000116))
 Declaration(AnnotationProperty(obo:IAO_0000424))
+Declaration(AnnotationProperty(obo:IAO_0000700))
 Declaration(AnnotationProperty(obo:IAO_0100001))
 Declaration(AnnotationProperty(obo:RO_0002161))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#added_for_HCA>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/pato#location_grouping>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#LATIN>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#PLURAL>))
@@ -2478,6 +2491,8 @@ Declaration(AnnotationProperty(owl:deprecated))
 #   Annotation Properties
 ############################
 
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInOwl:SubsetProperty)
+
 # Annotation Property: obo:IAO_0000115 (definition)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition"^^xsd:string)
@@ -2486,9 +2501,17 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition"^^xsd:string)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to"^^xsd:string)
 
+# Annotation Property: obo:IAO_0000700 (preferred_root)
+
+AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
+
 # Annotation Property: obo:IAO_0100001 (term replaced by)
 
 AnnotationAssertion(rdfs:label obo:IAO_0100001 "term replaced by"^^xsd:string)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/pato#location_grouping> (<http://purl.obolibrary.org/obo/pato#location_grouping>)
+
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/pato#location_grouping> oboInOwl:SubsetProperty)
 
 # Annotation Property: <http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED> (preferred term when talking about an instance of this class in Homo sapiens)
 
@@ -2608,7 +2631,7 @@ AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl#lacks_plasma_m
 
 AnnotationAssertion(oboInOwl:hasDbXref <http://semanticscience.org/resource/SIO_000658> "http://semanticscience.org/resource/SIO_000658"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0002-6601-2165"^^xsd:string) oboInOwl:hasExactSynonym <http://semanticscience.org/resource/SIO_000658> "direct_transformation_of"^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "SIO:000658"^^xsd:string) oboInOwl:hasExactSynonym <http://semanticscience.org/resource/SIO_000658> "immediately transforms from"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "SIO:000658") oboInOwl:hasExactSynonym <http://semanticscience.org/resource/SIO_000658> "immediately transforms from"^^xsd:string)
 AnnotationAssertion(oboInOwl:shorthand <http://semanticscience.org/resource/SIO_000658> "immediate_transformation_of"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://semanticscience.org/resource/SIO_000658> "immediate_transformation_of"^^xsd:string)
 
@@ -2698,11 +2721,11 @@ AnnotationAssertion(rdfs:label obo:CL_0000006 "neuronal receptor cell"^^xsd:stri
 EquivalentClasses(obo:CL_0000006 ObjectIntersectionOf(obo:CL_0000197 obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
 SubClassOf(obo:CL_0000006 obo:CL_0000197)
 
-# Class: obo:CL_0000007 (early embryonic cell)
+# Class: obo:CL_0000007 (early embryonic cell (metazoa))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0000007 "A cell found in the embryo before the formation of all the gem layers is complete."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000007 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000007 "early embryonic cell"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000007 "early embryonic cell (metazoa)"^^xsd:string)
 SubClassOf(obo:CL_0000007 obo:CL_0002321)
 
 # Class: obo:CL_0000008 (migratory cranial neural crest cell)
@@ -3266,7 +3289,7 @@ SubClassOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000134))
 
 # Class: obo:CL_0000058 (chondroblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0618947256"^^xsd:string) obo:IAO_0000115 obo:CL_0000058 "Skeletogenic cell that is typically non-terminally differentiated, secretes an avascular, GAG rich matrix; is not buried in cartilage tissue matrix, retains the ability to divide, located adjacent to cartilage tissue (including within the perichondrium), and develops from prechondroblast (and thus prechondrogenic) cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "ISBN:0618947256"^^xsd:string) obo:IAO_0000115 obo:CL_0000058 "Skeletogenic cell that is typically non-terminally differentiated, secretes an avascular, GAG rich matrix; is not buried in cartilage tissue matrix, retains the ability to divide, located adjacent to cartilage tissue (including within the perichondrium), and develops from prechondroblast (and thus prechondrogenic) cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000058 "BTO:0003607"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000058 "FMA:66783"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000058 "chrondoplast"^^xsd:string)
@@ -3279,7 +3302,7 @@ SubClassOf(obo:CL_0000058 ObjectSomeValuesFrom(obo:RO_0003000 obo:UBERON_0002418
 
 # Class: obo:CL_0000059 (ameloblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "MESH:A11.436.107"^^xsd:string) obo:IAO_0000115 obo:CL_0000059 "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "MESH:A11.436.107"^^xsd:string) obo:IAO_0000115 obo:CL_0000059 "Skeletogenic cell that produces enamel, overlies the odontogenic papilla, and arises from the differentiation of a preameloblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000059 "CL:0000053"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000059 "CL:0000139"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000059 "BTO:0001663"^^xsd:string)
@@ -3299,7 +3322,7 @@ SubClassOf(obo:CL_0000059 ObjectSomeValuesFrom(obo:RO_0003000 obo:UBERON_0001752
 
 # Class: obo:CL_0000060 (odontoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0618947256"^^xsd:string) obo:IAO_0000115 obo:CL_0000060 "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "ISBN:0618947256"^^xsd:string) obo:IAO_0000115 obo:CL_0000060 "Skeletogenic cell that secretes dentine matrix, is derived from the odontogenic papilla, and develops from a preodontoblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000060 "BTO:0001769"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000060 "CALOHA:TS-0696"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000060 "FMA:62999"^^xsd:string)
@@ -3314,7 +3337,7 @@ SubClassOf(obo:CL_0000060 ObjectSomeValuesFrom(obo:RO_0003000 obo:UBERON_0001751
 
 # Class: obo:CL_0000061 (cementoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0781733901"^^xsd:string) obo:IAO_0000115 obo:CL_0000061 "Skeletogenic cell that produces cementum (a bony substance that covers the root of a tooth), is part of the odontogenic papilla, and develops from a precementoblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "ISBN:0781733901"^^xsd:string) obo:IAO_0000115 obo:CL_0000061 "Skeletogenic cell that produces cementum (a bony substance that covers the root of a tooth), is part of the odontogenic papilla, and develops from a precementoblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000061 "CL:0000859"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000061 "CALOHA:TS-1164"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000061 "FMA:63002"^^xsd:string)
@@ -3330,7 +3353,7 @@ SubClassOf(obo:CL_0000061 ObjectSomeValuesFrom(obo:RO_0003000 obo:UBERON_0001753
 
 # Class: obo:CL_0000062 (osteoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "MESH:A11.329.629"^^xsd:string) obo:IAO_0000115 obo:CL_0000062 "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "MESH:A11.329.629"^^xsd:string) obo:IAO_0000115 obo:CL_0000062 "Skeletogenic cell that secretes osteoid, is capable of producing mineralized (hydroxyapatite) matrix, is located adjacent to or within osteoid tissue, and arises from the transformation of a preosteoblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000062 "BTO:0001593"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000062 "CALOHA:TS-0720"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000062 "FMA:66780"^^xsd:string)
@@ -3685,7 +3708,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0000096 ob
 
 # Class: obo:CL_0000097 (mast cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) Annotation(oboInOwl:hasDbXref "MESH:A11.329.427"^^xsd:string) Annotation(oboInOwl:hasDbXref "MESH:D008407"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMCID:PMC1312421"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMCID:PMC2855166"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15153310"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:16455980"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19671378"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:212366338"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9354811"^^xsd:string) obo:IAO_0000115 obo:CL_0000097 "A cell that is found in almost all tissues containing numerous basophilic granules and capable of releasing large amounts of histamine and heparin upon activation. Progenitors leave bone marrow and mature in connective and mucosal tissue. Mature mast cells are found in all tissues, except the bloodstream. Their phenotype is CD117-high, CD123-negative, CD193-positive, CD200R3-positive, and FceRI-high. Stem-cell factor (KIT-ligand; SCF) is the main controlling signal of their survival and development."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") Annotation(oboInOwl:hasDbXref "MESH:A11.329.427"^^xsd:string) Annotation(oboInOwl:hasDbXref "MESH:D008407"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMCID:PMC1312421"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMCID:PMC2855166"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15153310"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:16455980"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19671378"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:212366338"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9354811"^^xsd:string) obo:IAO_0000115 obo:CL_0000097 "A cell that is found in almost all tissues containing numerous basophilic granules and capable of releasing large amounts of histamine and heparin upon activation. Progenitors leave bone marrow and mature in connective and mucosal tissue. Mature mast cells are found in all tissues, except the bloodstream. Their phenotype is CD117-high, CD123-negative, CD193-positive, CD200R3-positive, and FceRI-high. Stem-cell factor (KIT-ligand; SCF) is the main controlling signal of their survival and development."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000097 "BTO:0000830"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000097 "CALOHA:TS-0603"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000097 "FMA:66784"^^xsd:string)
@@ -3693,7 +3716,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000097 "histaminocyte"^^xsd
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:0721601464"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0000097 "labrocyte"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:0721601464"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0000097 "mastocyte"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000097 "cell"^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) oboInOwl:hasRelatedSynonym obo:CL_0000097 "tissue basophil"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:068340007X") oboInOwl:hasRelatedSynonym obo:CL_0000097 "tissue basophil"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000097 "Mast cells are generally integrin beta-7-negative and positive for TLR2, TLR3, TLR4, TLR5, TLR7, TLR9, C3aR, C5aR, CR3, CR4, VEGF, FGF2, and renin. They can express MHC Class I and II on their surface. Activated murine mast cells (IgE+Antigen) were capable of expressing the following co-stimulatory molecules: CD95 (Fas), CD120b, CD137 (4-1BB), CD153 (CD30L), CD154 (CD40L), GITR, ICOSL, OX40L, PD-L1, and PD-L2. Note that there was some mouse strain variation. Mast cells have also been demonstrated to produce bFGF, CCL2, CCL4, CCL5, CCL11, CCL20, CXCL2, CXCL8, CXCL10, GM-CSF, IFN-gamma, IL-1, IL-2, IL-3, IL-8, IL-10, IL-11, IL-12, IL-13, IL-16, IL-25, IL-18, MIP-1, prostaglandin D2, SCF, TGF-beta, TNF-alpha, TSLP, VEGF, and XCL1. They express the transcription factors Transcription factors AP-1, GATA1, MITF, Notch2, PIAS3, PU.1, and STAT5."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000097 "mast cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000097 ObjectIntersectionOf(obo:CL_0000766 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0030141) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001255) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000006169) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002349) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002539) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002660) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002690) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002830) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030210) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount> obo:PR_000002065) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount> obo:PR_000007431) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001865)))
@@ -4045,7 +4068,7 @@ SubClassOf(obo:CL_0000132 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000133 (neurectodermal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0000133 "Ectoderm destined to be nervous tissue."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0000133 "Ectoderm destined to be nervous tissue."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000133 "neurectoderm cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000133 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000133 "neurectodermal cell"^^xsd:string)
@@ -4120,7 +4143,7 @@ SubClassOf(obo:CL_0000137 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0001040))
 
 # Class: obo:CL_0000138 (chondrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "MESH:A11.329.171"^^xsd:string) obo:IAO_0000115 obo:CL_0000138 "Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "MESH:A11.329.171"^^xsd:string) obo:IAO_0000115 obo:CL_0000138 "Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000138 "BTO:0000249"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000138 "CALOHA:TS-0138"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000138 "FMA:66782"^^xsd:string)
@@ -4135,7 +4158,7 @@ SubClassOf(obo:CL_0000138 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000058))
 
 # Class: obo:CL_0000140 (odontocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0000140 "Skeletogenic cell that secretes dentine matrix, is derived from odontogenic papilla. Embedded in dentine tissue, and is the transformation of a non-terminally differentiated odontoblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0000140 "Skeletogenic cell that secretes dentine matrix, is derived from odontogenic papilla. Embedded in dentine tissue, and is the transformation of a non-terminally differentiated odontoblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000140 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000140 "odontocyte"^^xsd:string)
 SubClassOf(obo:CL_0000140 obo:CL_0002320)
@@ -4641,7 +4664,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000189 "FMA:84448"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000189 "cell"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:0815316208"^^xsd:string) oboInOwl:hasRelatedSynonym obo:CL_0000189 "slow muscle fiber"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000189 "slow muscle cell"^^xsd:string)
-SubClassOf(obo:CL_0000189 obo:CL_0008002)
+SubClassOf(obo:CL_0000189 obo:CL_0008046)
 SubClassOf(obo:CL_0000189 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000857))
 
 # Class: obo:CL_0000190 (fast muscle cell)
@@ -4650,7 +4673,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000190 "glycolytic muscle fiber"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000190 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000190 "fast muscle cell"^^xsd:string)
-SubClassOf(obo:CL_0000190 obo:CL_0008002)
+SubClassOf(obo:CL_0000190 obo:CL_0008046)
 SubClassOf(obo:CL_0000190 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000858))
 
 # Class: obo:CL_0000192 (smooth muscle cell)
@@ -5239,8 +5262,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000254 "true"^^xsd:boolean)
 
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000255 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000255 "eukaryotic cell"^^xsd:string)
-SubClassOf(obo:CL_0000255 obo:CL_0000003)
-SubClassOf(obo:CL_0000255 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_2759))
+EquivalentClasses(obo:CL_0000255 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_2759)))
 DisjointClasses(obo:CL_0000255 obo:CL_0000520)
 
 # Class: obo:CL_0000256 (uric acid accumulating cell)
@@ -5249,10 +5271,11 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000256 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000256 "uric acid accumulating cell"^^xsd:string)
 SubClassOf(obo:CL_0000256 obo:CL_0000325)
 
-# Class: obo:CL_0000257 (Mycetozoan cell)
+# Class: obo:CL_0000257 (Eumycetozoan cell)
 
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000257 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000257 "Mycetozoan cell"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000257 "Eumycetozoan cell"^^xsd:string)
+EquivalentClasses(obo:CL_0000257 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_142796)))
 SubClassOf(obo:CL_0000257 obo:CL_0000255)
 
 # Class: obo:CL_0000258 (obsolete fiber tracheid)
@@ -6109,7 +6132,9 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000365 "EHDAA2:0004546"^^xsd:stri
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000365 "FMA:72395"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000365 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000365 "animal zygote"^^xsd:string)
+EquivalentClasses(obo:CL_0000365 ObjectIntersectionOf(obo:CL_0010017 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208)))
 SubClassOf(obo:CL_0000365 obo:CL_0000007)
+SubClassOf(obo:CL_0000365 obo:CL_0010017)
 
 # Class: obo:CL_0000366 (obsolete sperm cell (sensu Viridiplantae))
 
@@ -6552,11 +6577,13 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000425 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000425 "pore cell"^^xsd:string)
 SubClassOf(obo:CL_0000425 obo:CL_0000658)
 
-# Class: obo:CL_0000426 (scaffold cell)
+# Class: obo:CL_0000426 (obsolete scaffold cell)
 
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000426 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000426 "scaffold cell"^^xsd:string)
-SubClassOf(obo:CL_0000426 obo:CL_0000445)
+AnnotationAssertion(rdfs:comment obo:CL_0000426 "This is a cell used in tissue engineering and is out of scope for CL.")
+AnnotationAssertion(rdfs:label obo:CL_0000426 "obsolete scaffold cell"^^xsd:string)
+AnnotationAssertion(rdfs:seeAlso obo:CL_0000426 "https://github.com/obophenotype/cell-ontology/issues/708")
+AnnotationAssertion(owl:deprecated obo:CL_0000426 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000427 (GLR cell)
 
@@ -6836,7 +6863,7 @@ SubClassOf(obo:CL_0000458 obo:CL_0000457)
 
 # Class: obo:CL_0000459 (noradrenergic cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0000459 "A cell capable of producting norepiniphrine. Norepiniphrine is a catecholamine with multiple roles including as a hormone and a neurotransmitter. In addition, epiniphrine is synthesized from norepiniphrine by the actions of the phenylethanolamine N-methyltransferase enzyme."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0000459 "A cell capable of producting norepiniphrine. Norepiniphrine is a catecholamine with multiple roles including as a hormone and a neurotransmitter. In addition, epiniphrine is synthesized from norepiniphrine by the actions of the phenylethanolamine N-methyltransferase enzyme."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000459 "noradrenaline secreting cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000459 "norepinephrin secreting cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000459 "norepinephrine secreting cell")
@@ -7361,6 +7388,7 @@ SubClassOf(obo:CL_0000520 ObjectAllValuesFrom(obo:RO_0002162 ObjectComplementOf(
 
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000521 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000521 "fungal cell"^^xsd:string)
+EquivalentClasses(obo:CL_0000521 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_4751)))
 SubClassOf(obo:CL_0000521 obo:CL_0000255)
 DisjointClasses(obo:CL_0000521 obo:CL_0000548)
 
@@ -7516,7 +7544,6 @@ AnnotationAssertion(rdfs:label obo:CL_0000540 "neuron"^^xsd:string)
 SubClassOf(obo:CL_0000540 obo:CL_0000393)
 SubClassOf(obo:CL_0000540 obo:CL_0000404)
 SubClassOf(obo:CL_0000540 obo:CL_0002319)
-SubClassOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000031))
 SubClassOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0019226))
 
 # Class: obo:CL_0000541 (melanoblast)
@@ -7619,6 +7646,7 @@ SubClassOf(obo:CL_0000547 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000038))
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000548 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000548 <http://purl.obolibrary.org/obo/ubprop#_upper_level>)
 AnnotationAssertion(rdfs:label obo:CL_0000548 "animal cell"^^xsd:string)
+EquivalentClasses(obo:CL_0000548 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208)))
 SubClassOf(obo:CL_0000548 obo:CL_0000255)
 SubClassOf(obo:CL_0000548 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208))
 
@@ -9451,7 +9479,7 @@ SubClassOf(obo:CL_0000742 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_001099
 
 # Class: obo:CL_0000743 (hypertrophic chondrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15951842"^^xsd:string) obo:IAO_0000115 obo:CL_0000743 "Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification)."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "PMID:15951842"^^xsd:string) obo:IAO_0000115 obo:CL_0000743 "Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification)."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000743 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000743 "is hypertrophic pathological or normal? and can it be described using a pato term?"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000743 "hypertrophic chondrocyte"^^xsd:string)
@@ -12871,7 +12899,7 @@ SubClassOf(obo:CL_0001034 obo:CL_0000000)
 
 # Class: obo:CL_0001035 (bone cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0001035 "A connective tissue cell found in bone."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0001035 "A connective tissue cell found in bone."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0001035 "adiehl"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0001035 "2011-11-16T04:28:16Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001035 "cell"^^xsd:string)
@@ -14467,7 +14495,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002082 ob
 
 # Class: obo:CL_0002083 (type I cell of adrenal medulla)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0002083 "A chromaffin cell of the adrenal medulla that produces norepinephrine."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0002083 "A chromaffin cell of the adrenal medulla that produces norepinephrine."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002083 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002083 "2010-07-14T10:12:24Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002083 "FMA:69321"^^xsd:string)
@@ -14551,7 +14579,7 @@ EquivalentClasses(obo:CL_0002089 ObjectIntersectionOf(obo:CL_0001069 ObjectSomeV
 
 # Class: obo:CL_0002090 (polar body)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) Annotation(oboInOwl:hasDbXref "http://en.wikipedia.org/wiki/Polar_body"^^xsd:string) obo:IAO_0000115 obo:CL_0002090 "One of two small cells formed by the first and second meiotic division of oocytes."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") Annotation(oboInOwl:hasDbXref "http://en.wikipedia.org/wiki/Polar_body"^^xsd:string) obo:IAO_0000115 obo:CL_0002090 "One of two small cells formed by the first and second meiotic division of oocytes."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002090 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002090 "2010-08-23T09:49:53Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002090 "EHDAA2:0004716"^^xsd:string)
@@ -14564,7 +14592,7 @@ SubClassOf(obo:CL_0002090 obo:CL_0000021)
 
 # Class: obo:CL_0002091 (primary polar body)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0002091 "A small cell formed by the first meiotic division of oocytes."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0002091 "A small cell formed by the first meiotic division of oocytes."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002091 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002091 "2010-08-23T09:49:58Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002091 "EHDAA2:0000541"^^xsd:string)
@@ -14592,7 +14620,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002092 ob
 
 # Class: obo:CL_0002093 (secondary polar body)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0002093 "A small cell formed by the second meiotic division of oocytes. In mammals, the second polar body may fail to form unless the ovum has been penetrated by a sperm cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0002093 "A small cell formed by the second meiotic division of oocytes. In mammals, the second polar body may fail to form unless the ovum has been penetrated by a sperm cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002093 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002093 "2010-08-23T09:50:01Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002093 "EHDAA2:0001820"^^xsd:string)
@@ -14617,7 +14645,7 @@ SubClassOf(obo:CL_0002094 obo:CL_0002132)
 
 # Class: obo:CL_0002095 (hilus cell of ovary)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0002095 "A cell in the hilum of the ovary that produces androgens."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0002095 "A cell in the hilum of the ovary that produces androgens."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002095 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002095 "2010-08-23T11:18:18Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002095 "FMA:18710"^^xsd:string)
@@ -15309,7 +15337,7 @@ SubClassOf(obo:CL_0002152 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000045
 
 # Class: obo:CL_0002153 (corneocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0002153 "The dead keratin-filled squamous cell of the stratum corneum. This cell type lacks a nucleus."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0002153 "The dead keratin-filled squamous cell of the stratum corneum. This cell type lacks a nucleus."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002153 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002153 "2010-08-24T10:53:03Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002153 "BTO:0001943"^^xsd:string)
@@ -15938,7 +15966,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002210 "oxidative muscle fi
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002210 "red muscle fiber"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002210 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002210 "red muscle cell"^^xsd:string)
-SubClassOf(obo:CL_0002210 obo:CL_0008002)
+SubClassOf(obo:CL_0002210 obo:CL_0008046)
 
 # Class: obo:CL_0002211 (type I muscle cell)
 
@@ -16025,7 +16053,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002216 "2010-09-02T03:51:17Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002216 "FMA:84450"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002216 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002216 "intermediate muscle cell"^^xsd:string)
-SubClassOf(obo:CL_0002216 obo:CL_0008002)
+SubClassOf(obo:CL_0002216 obo:CL_0008046)
 
 # Class: obo:CL_0002217 (intermediate trophoblast cell)
 
@@ -16352,7 +16380,7 @@ SubClassOf(obo:CL_0002244 obo:CL_0002371)
 
 # Class: obo:CL_0002245 (obsolete null lymphocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) obo:IAO_0000115 obo:CL_0002245 "OBSOLETE: A lymphocyte that lacks T or B cell surface markers."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") obo:IAO_0000115 obo:CL_0002245 "OBSOLETE: A lymphocyte that lacks T or B cell surface markers."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002245 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002245 "2010-09-07T03:43:42Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002245 "FMA:83601"^^xsd:string)
@@ -17267,7 +17295,7 @@ EquivalentClasses(obo:CL_0002320 ObjectIntersectionOf(obo:CL_0002371 ObjectSomeV
 SubClassOf(obo:CL_0002320 obo:CL_0000548)
 SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002320 obo:CL_0002371)
 
-# Class: obo:CL_0002321 (embryonic cell)
+# Class: obo:CL_0002321 (embryonic cell (metazoa))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:0618947256"^^xsd:string) obo:IAO_0000115 obo:CL_0002321 "A cell of the embryo."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002321 "tmeehan"^^xsd:string)
@@ -17277,12 +17305,12 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002321 "FMA:82840"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002321 "FMA:82841"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002321 "WBbt:0007028"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002321 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0002321 "embryonic cell"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0002321 "embryonic cell (metazoa)"^^xsd:string)
 SubClassOf(obo:CL_0002321 obo:CL_0000548)
 
 # Class: obo:CL_0002322 (embryonic stem cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:18179856"^^xsd:string) obo:IAO_0000115 obo:CL_0002322 "A stem cell of embryonic origin."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dsd"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:068340007X") Annotation(oboInOwl:hasDbXref "PMID:18179856"^^xsd:string) obo:IAO_0000115 obo:CL_0002322 "A stem cell of embryonic origin."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002322 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002322 "2010-09-15T03:44:35Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002322 "BTO:0001086"^^xsd:string)
@@ -19045,7 +19073,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002485 ob
 
 # Class: obo:CL_0002486 (strial intermediate cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "MP:0000048"^^xsd:string) obo:IAO_0000115 obo:CL_0002486 "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "MP:0000048") obo:IAO_0000115 obo:CL_0002486 "A melanocyte located between the epithelial marginal cell layer and the mesodermal basal cell layer within the intrastrial space; the predominant cellular component of the electrogenic machinery that generates an endocochlear potential (80-100 mV) ."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002486 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002486 "2010-12-03T03:29:15Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002486 "cell"^^xsd:string)
@@ -21179,6 +21207,10 @@ SubClassOf(obo:CL_0005011 obo:CL_0005010)
 # Class: obo:CL_0005012 (multi-ciliated epithelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS"^^xsd:string) obo:IAO_0000115 obo:CL_0005012 "A ciliated epithelial cell with many cilium."^^xsd:string)
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0005012 "MCC"@en)
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0005012 "multi-ciliated cell"@en)
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0005012 "multiciliated cell"@en)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0005012 "multiciliated epithelial cell"@en)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0005012 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0005012 "multi-ciliated epithelial cell"^^xsd:string)
 SubClassOf(obo:CL_0005012 obo:CL_0000066)
@@ -21301,13 +21333,13 @@ SubClassOf(obo:CL_0005025 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0011102))
 
 # Class: obo:CL_0005026 (hepatoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CVS") Annotation(oboInOwl:hasDbXref "PMID:18356246") Annotation(oboInOwl:hasDbXref "PMID:20483998") obo:IAO_0000115 obo:CL_0005026 "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CVS") Annotation(oboInOwl:hasDbXref "PMID:18356246") Annotation(oboInOwl:hasDbXref "PMID:20483998") obo:IAO_0000115 obo:CL_0005026 "Multi fate stem cell that gives rise to both hepatocytes and cholangiocytes as descendants.")
 AnnotationAssertion(rdfs:label obo:CL_0005026 "hepatoblast"@en)
 SubClassOf(obo:CL_0005026 obo:CL_0000048)
 
 # Class: obo:CL_0007000 (preameloblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMCID:PMC2737325"^^xsd:string) obo:IAO_0000115 obo:CL_0007000 "Skeletogenic cell that has the potential to develop into an ameloblast. Located in the inner enamel epithelium, these cells elongate, their nuclei shift distally (away from the dental papilla), and their cytoplasm becomes filled with organelles needed for synthesis and secretion of enamel proteins."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "PMCID:PMC2737325"^^xsd:string) obo:IAO_0000115 obo:CL_0007000 "Skeletogenic cell that has the potential to develop into an ameloblast. Located in the inner enamel epithelium, these cells elongate, their nuclei shift distally (away from the dental papilla), and their cytoplasm becomes filled with organelles needed for synthesis and secretion of enamel proteins."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007000 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007000 "2012-06-15T01:27:01Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007000 "cell"^^xsd:string)
@@ -21320,10 +21352,10 @@ SubClassOf(obo:CL_0007000 ObjectSomeValuesFrom(obo:RO_0002220 obo:UBERON_0001763
 
 # Class: obo:CL_0007001 (skeletogenic cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007001 "Cell that has the potential to form a skeletal cell type (e.g. cells in periosteum, cells in marrow) and produce extracellular matrix (often mineralized) and skeletal tissue (often mineralized)."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007001 "Cell that has the potential to form a skeletal cell type (e.g. cells in periosteum, cells in marrow) and produce extracellular matrix (often mineralized) and skeletal tissue (often mineralized)."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007001 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007001 "2012-06-15T02:51:27Z"^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0007001 "scleroblast"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") oboInOwl:hasExactSynonym obo:CL_0007001 "scleroblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007001 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0007001 "Needs logical definition. Should be capable_of skeletal system morphogenesis? or skeletal tissue development? needs to be added to GO. NOTES:a cell type of the early embryo (see also: mesenchymal cells) that will give rise to mineralized connective tissue. Scleroblasts can differentiate into osteoblasts (bone-forming cells), chondroblasts (cartilage-forming cells), odontoblasts (dentin-forming cells), ameloblasts (enamel-forming cells). The mesenchymal cells developing into osteoblasts and chondroblasts are derived from the mesoderm. Those developing into odontoblasts are neural crest cells. Those developing into ameloblasts are derived from the ectoderm. (http://www.copewithcytokines.de/cope.cgi?key=scleroblasts)"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0007001 "skeletogenic cell"^^xsd:string)
@@ -21331,7 +21363,7 @@ SubClassOf(obo:CL_0007001 obo:CL_0000003)
 
 # Class: obo:CL_0007002 (precementoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007002 "Skeletogenic cell that has the potential to develop into a cementoblast."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007002 "Skeletogenic cell that has the potential to develop into a cementoblast."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007002 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007002 "2012-06-15T04:37:13Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007002 "cell"^^xsd:string)
@@ -21341,7 +21373,7 @@ SubClassOf(obo:CL_0007002 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000517
 
 # Class: obo:CL_0007003 (preodontoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007003 "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a cranial neural crest cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007003 "Skeletogenic cell that has the potential to form an odontoblast, deposits predentine, and arises from a cranial neural crest cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007003 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007003 "2012-06-15T05:15:11Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007003 "cell"^^xsd:string)
@@ -21363,7 +21395,7 @@ SubClassOf(obo:CL_0007004 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000133))
 
 # Class: obo:CL_0007005 (notochordal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007005 "Cell that is part of the notochord."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007005 "Cell that is part of the notochord."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007005 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007005 "2012-06-27T08:47:31Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007005 "cell"^^xsd:string)
@@ -21375,7 +21407,7 @@ SubClassOf(obo:CL_0007005 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0007006))
 
 # Class: obo:CL_0007006 (chordamesodermal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007006 "Mesodermal cell that is axially located and gives rise to the cells of the notochord."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007006 "Mesodermal cell that is axially located and gives rise to the cells of the notochord."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007006 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007006 "2012-06-27T08:52:41Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0007006 "axial mesodermal cell")
@@ -21398,7 +21430,7 @@ SubClassOf(obo:CL_0007007 obo:CL_0007005)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:MAH"^^xsd:string) obo:IAO_0000115 obo:CL_0007008 "Notochordal cell that is inner portion of the notochord and becomes vacuolated as development proceeds."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007008 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007008 "2012-06-27T09:29:30Z"^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0007008 "chordablast"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") oboInOwl:hasExactSynonym obo:CL_0007008 "chordablast"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:14574572"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0007008 "chordoblast"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007008 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0007008 "notochordal vacuole cell"^^xsd:string)
@@ -21406,7 +21438,7 @@ SubClassOf(obo:CL_0007008 obo:CL_0007005)
 
 # Class: obo:CL_0007009 (prechondroblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007009 "Skeletogenic cell that has the potential to develop into a chondroblast; and arises from neural crest, meseosdermal and notochordal and connective tissue cells."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007009 "Skeletogenic cell that has the potential to develop into a chondroblast; and arises from neural crest, meseosdermal and notochordal and connective tissue cells."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007009 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007009 "2012-06-27T10:44:01Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007009 "cell"^^xsd:string)
@@ -21415,7 +21447,7 @@ SubClassOf(obo:CL_0007009 obo:CL_0000055)
 
 # Class: obo:CL_0007010 (preosteoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007010 "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007010 "Skeletogenic cell that has the potential to transform into an osteoblast, and develops from neural crest or mesodermal cells."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0007010 "haendel"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0007010 "2012-06-27T10:57:21Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0007010 "osteoprogenitor cell"^^xsd:string)
@@ -21440,14 +21472,14 @@ SubClassOf(obo:CL_0007011 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002607))
 
 # Class: obo:CL_0007012 (non-terminally differentiated odontoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) Annotation(oboInOwl:hasDbXref "PSPUB:0000170"^^xsd:string) obo:IAO_0000115 obo:CL_0007012 "Odontoblast that non-terminally differentiated, located in the odontogenic papilla and dentine tissue, and transforms from a odontoblast cell."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "PSPUB:0000170"^^xsd:string) obo:IAO_0000115 obo:CL_0007012 "Odontoblast that non-terminally differentiated, located in the odontogenic papilla and dentine tissue, and transforms from a odontoblast cell."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007012 "cl"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0007012 "non-terminally differentiated odontoblast"^^xsd:string)
 SubClassOf(obo:CL_0007012 obo:CL_0000060)
 
 # Class: obo:CL_0007013 (terminally differentiated odontoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034"^^xsd:string) obo:IAO_0000115 obo:CL_0007013 "Odontoblast that is terminally differentiated and derived from an odontogenic papilla and associated with dentine."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") obo:IAO_0000115 obo:CL_0007013 "Odontoblast that is terminally differentiated and derived from an odontogenic papilla and associated with dentine."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0007013 "cl"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0007013 "terminally differentiated odontoblast"^^xsd:string)
 SubClassOf(obo:CL_0007013 obo:CL_0000060)
@@ -21838,6 +21870,28 @@ SubClassOf(obo:CL_0008039 obo:CL_0000100)
 SubClassOf(obo:CL_0008039 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0008002))
 SubClassOf(obo:CL_0008039 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_7742))
 
+# Class: obo:CL_0008046 (extrafusal muscle fiber)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-443-10321-6.00004-7") Annotation(oboInOwl:hasDbXref "Wikipedia:Extrafusal_muscle_fiber&oldid=978415293") obo:IAO_0000115 obo:CL_0008046 "A skeletal muscle fiber that is innervated by alpha motor neuron and generates tension by contracting, thereby allowing for skeletal movement. These fibers make up the large mass of skeletal muscle tissue and are attached to bones by tendons.")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008046 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008046 "2020-09-26T21:06:15Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0008046 "TH:H3.03.00.0.00007")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008046 "myofibra extrafusalis")
+AnnotationAssertion(rdfs:label obo:CL_0008046 "extrafusal muscle fiber"@en)
+SubClassOf(obo:CL_0008046 obo:CL_0008002)
+SubClassOf(obo:CL_0008046 ObjectSomeValuesFrom(obo:RO_0002103 obo:CL_0008038))
+DisjointClasses(obo:CL_0008046 obo:CL_0008047)
+
+# Class: obo:CL_0008047 (intrafusal muscle fiber)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-443-10321-6.00004-7") Annotation(oboInOwl:hasDbXref "Wikipedia:Intrafusal_muscle_fiber&oldid=937508784") obo:IAO_0000115 obo:CL_0008047 "A skeletal muscle fiber that is part of a muscle spindle. These are specialized muscle fibers that serve as proprioceptors, detecting the amount and rate of change in length of a muscle. They are innervated by both sensory neurons and motor neurons (gamma and beta motorneurons, collectively referred to as fusimotor neurons).")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008047 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008047 "2020-09-26T21:07:01Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0008047 "H3.03.00.0.00012")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008047 "myofibra intrafusalis")
+AnnotationAssertion(rdfs:label obo:CL_0008047 "intrafusal muscle fiber"@en)
+EquivalentClasses(obo:CL_0008047 ObjectIntersectionOf(obo:CL_0008002 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003718)))
+
 # Class: obo:CL_0009000 (sensory neuron of spinal nerve)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "GOC:pr"^^xsd:string) obo:IAO_0000115 obo:CL_0009000 "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord.")
@@ -21888,6 +21942,27 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0009005 "http://en.wikipedia.org/w
 AnnotationAssertion(rdfs:label obo:CL_0009005 "salivary gland cell")
 SubClassOf(obo:CL_0009005 obo:CL_0002371)
 SubClassOf(obo:CL_0009005 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001044))
+
+# Class: obo:CL_0009015 (Peyer's patch follicular dendritic cell)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0009015 "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/pato#location_grouping> obo:CL_0009015 "")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0009015 <http://orcid.org/0000-0002-2825-0621>)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0009015 "PMID:24437401")
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0009015 "https://orcid.org/0000-0003-4183-8865")
+AnnotationAssertion(rdfs:label obo:CL_0009015 "Peyer's patch follicular dendritic cell")
+EquivalentClasses(obo:CL_0009015 ObjectIntersectionOf(obo:CL_0000442 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001211)))
+SubClassOf(obo:CL_0009015 obo:CL_0000442)
+
+# Class: obo:CL_0009018 (lymphocyte of large intestine lamina propria)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0009018 "A lymphocyte that resides in the lamina propria of the large intestine.")
+AnnotationAssertion(<http://purl.obolibrary.org/obo/pato#location_grouping> obo:CL_0009018 "")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0009018 <http://orcid.org/0000-0002-2825-0621>)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0009018 "https://orcid.org/0000-0003-4183-8865")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009018 "lamina propria lymphocyte of large intestine")
+AnnotationAssertion(rdfs:label obo:CL_0009018 "lymphocyte of large intestine lamina propria")
+EquivalentClasses(obo:CL_0009018 ObjectIntersectionOf(obo:CL_0000542 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0011189)))
 
 # Class: obo:CL_0010000 (keratinized cell of hair follicle)
 
@@ -22000,6 +22075,13 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0010016 "cell")
 AnnotationAssertion(rdfs:label obo:CL_0010016 "collar cell")
 SubClassOf(obo:CL_0010016 obo:CL_0000548)
 SubClassOf(obo:CL_0010016 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
+
+# Class: obo:CL_0010017 (zygote)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0010017 "A zygote in a plant or an animal.")
+AnnotationAssertion(rdfs:label obo:CL_0010017 "zygote"@en)
+AnnotationAssertion(rdfs:seeAlso obo:CL_0010017 <https://github.com/obophenotype/cell-ontology/issues/786>)
+SubClassOf(obo:CL_0010017 obo:CL_0000003)
 
 # Class: obo:CL_0010020 (cardiac glial cell)
 
@@ -22227,6 +22309,15 @@ AnnotationAssertion(rdfs:label obo:CL_0011026 "progenitor cell")
 EquivalentClasses(obo:CL_0011026 ObjectIntersectionOf(obo:CL_0011115 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000034)))
 SubClassOf(obo:CL_0011026 obo:CL_0011115)
 
+# Class: obo:CL_0011028 (olfactory ensheathing cell)
+
+AnnotationAssertion(oboInOwl:created_by obo:CL_0011028 <http://orcid.org/0000-0001-5208-3432>)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0011028 "BTO:0002771")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22456085") oboInOwl:hasExactSynonym obo:CL_0011028 "A neural-crest derived glial cell that supports the growth and survival of primary olfactory neuroons from the neuroepithelium in the nasal cavity to the brain by encasing large bundles of numerous unmyelinated axons.")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011028 "OEC")
+AnnotationAssertion(rdfs:label obo:CL_0011028 "olfactory ensheathing cell")
+SubClassOf(obo:CL_0011028 obo:CL_0000125)
+
 # Class: obo:CL_0011100 (galanergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:23159249") Annotation(oboInOwl:hasDbXref "ZFIN:CVS") Annotation(oboInOwl:hasDbXref "ZFIN:YB") obo:IAO_0000115 obo:CL_0011100 "Neuron that secretes the neurotransmitter galanin.")
@@ -22254,8 +22345,8 @@ SubClassOf(obo:CL_0011103 obo:CL_0000107)
 
 # Class: obo:CL_0011104 (interplexiform cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:12771169") obo:IAO_0000115 obo:CL_0011104 "A type of interneuron in the retinal inner nuclear layer which 
-carries information from the inner plexiform layer and the outer 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:12771169") obo:IAO_0000115 obo:CL_0011104 "A type of interneuron in the retinal inner nuclear layer which
+carries information from the inner plexiform layer and the outer
 plexiform layer.")
 AnnotationAssertion(rdfs:comment obo:CL_0011104 "Need to MIREOT retinal inner nuclear layer (part of)")
 AnnotationAssertion(rdfs:label obo:CL_0011104 "interplexiform cell")
@@ -22264,8 +22355,8 @@ SubClassOf(obo:CL_0011104 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000179
 
 # Class: obo:CL_0011105 (dopamanergic interplexiform cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:12771169") obo:IAO_0000115 obo:CL_0011105 "A type of interneuron in the retinal inner nuclear layer which 
-carries information from the inner plexiform layer and the outer 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:12771169") obo:IAO_0000115 obo:CL_0011105 "A type of interneuron in the retinal inner nuclear layer which
+carries information from the inner plexiform layer and the outer
 plexiform layer, using dopamine.")
 AnnotationAssertion(rdfs:comment obo:CL_0011105 "This type of cell is found in Danio rerio.")
 AnnotationAssertion(rdfs:label obo:CL_0011105 "dopamanergic interplexiform cell")
@@ -22273,8 +22364,8 @@ EquivalentClasses(obo:CL_0011105 ObjectIntersectionOf(obo:CL_0011104 ObjectSomeV
 
 # Class: obo:CL_0011106 (GABAnergic interplexiform cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:12771169") obo:IAO_0000115 obo:CL_0011106 "A type of interneuron in the retinal inner nuclear layer which 
-carries information from the inner plexiform layer and the outer 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:12771169") obo:IAO_0000115 obo:CL_0011106 "A type of interneuron in the retinal inner nuclear layer which
+carries information from the inner plexiform layer and the outer
 plexiform layer using GABA.")
 AnnotationAssertion(rdfs:comment obo:CL_0011106 "This type of cell is found in many mammals.")
 AnnotationAssertion(rdfs:label obo:CL_0011106 "GABAnergic interplexiform cell")
@@ -22467,6 +22558,24 @@ AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0019019 "2020-
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0019019 "smooth muscle cell of tracheobronchial tree")
 AnnotationAssertion(rdfs:label obo:CL_0019019 "tracheobronchial smooth muscle cell"@en)
 EquivalentClasses(obo:CL_0019019 ObjectIntersectionOf(obo:CL_0000192 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0007196)))
+
+# Class: obo:CL_0019031 (intestine goblet cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:1996606") Annotation(oboInOwl:hasDbXref "PMID:24942678") obo:IAO_0000115 obo:CL_0019031 "Goblet cells reside throughout the length of the small and large intestine and are responsible for the production and maintenance of the protective mucus blanket by synthesizing and secreting high-molecular-weight glycoproteins known as mucins. Human intestinal goblet cells secrete the MUC2 mucin, as well as a number of typical mucus components: CLCA1, FCGBP, AGR2, ZG16, and TFF3.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0019031 <http://orcid.org/0000-0003-2034-601X>)
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0019031 "2020-10-14T14:59:07Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:1996606") oboInOwl:hasExactSynonym obo:CL_0019031 "intestinal goblet cell")
+AnnotationAssertion(rdfs:label obo:CL_0019031 "intestine goblet cell"@en)
+EquivalentClasses(obo:CL_0019031 ObjectIntersectionOf(obo:CL_0000160 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001277)))
+
+# Class: obo:CL_0019032 (intestinal tuft cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22527717") obo:IAO_0000115 obo:CL_0019032 "Any brush cell that is part of the intestinal epithelium.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0019032 <http://orcid.org/0000-0003-2034-601X>)
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0019032 "2020-10-15T12:47:46Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22527717") oboInOwl:hasExactSynonym obo:CL_0019032 "intestinal brush cell")
+AnnotationAssertion(rdfs:label obo:CL_0019032 "intestinal tuft cell"@en)
+EquivalentClasses(obo:CL_0019032 ObjectIntersectionOf(obo:CL_0002204 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001277)))
 
 # Class: obo:CL_1000001 (retrotrapezoid nucleus neuron)
 
@@ -27021,5 +27130,5 @@ EquivalentClasses(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 ObjectIntersectionOf(
 SubClassOf(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 obo:GO_0005634)
 
 
-SubClassOf(ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectIntersectionOf(ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001345) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001800) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001843) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001649) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0016477) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030182) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030855) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0045444) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0055007) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0060591) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0042613) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001003) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001006)))
+SubClassOf(Annotation(oboInOwl:hasDbXref <https://github.com/obophenotype/cell-ontology/issues/757>) ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_7742)) ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000031))
 )
