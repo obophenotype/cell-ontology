@@ -1089,6 +1089,7 @@ Declaration(Class(obo:CL_0001079))
 Declaration(Class(obo:CL_0001080))
 Declaration(Class(obo:CL_0001081))
 Declaration(Class(obo:CL_0001082))
+Declaration(Class(obo:CL_0001087))
 Declaration(Class(obo:CL_0001200))
 Declaration(Class(obo:CL_0001201))
 Declaration(Class(obo:CL_0001202))
@@ -2514,8 +2515,6 @@ Declaration(AnnotationProperty(owl:deprecated))
 #   Annotation Properties
 ############################
 
-SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInOwl:SubsetProperty)
-
 # Annotation Property: obo:IAO_0000115 (definition)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition"^^xsd:string)
@@ -2531,6 +2530,10 @@ AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 # Annotation Property: obo:IAO_0100001 (term replaced by)
 
 AnnotationAssertion(rdfs:label obo:IAO_0100001 "term replaced by"^^xsd:string)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/cl#added_for_HCA> (<http://purl.obolibrary.org/obo/cl#added_for_HCA>)
+
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInOwl:SubsetProperty)
 
 # Annotation Property: <http://purl.obolibrary.org/obo/pato#location_grouping> (<http://purl.obolibrary.org/obo/pato#location_grouping>)
 
@@ -13217,12 +13220,14 @@ SubClassOf(obo:CL_0001061 obo:CL_0000000)
 
 # Class: obo:CL_0001062 (effector memory CD8-positive, alpha-beta T cell, terminally differentiated)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15032595") Annotation(oboInOwl:hasDbXref "PMID:16237082") obo:IAO_0000115 obo:CL_0001062 "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative.")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16237082") oboInOwl:hasExactSynonym obo:CL_0001062 "TEMRA")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "GOC:dos"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15032595") Annotation(oboInOwl:hasDbXref "PMID:16237082") Annotation(oboInOwl:hasDbXref "PMID:26883338") obo:IAO_0000115 obo:CL_0001062 "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15032595") oboInOwl:hasBroadSynonym obo:CL_0001062 "TEMRA")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15032595") oboInOwl:hasExactSynonym obo:CL_0001062 "CD8+ TEMRA")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15032595") oboInOwl:hasExactSynonym obo:CL_0001062 "CD8-positive TEMRA")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001062 "cell")
-AnnotationAssertion(rdfs:comment obo:CL_0001062 "This cell type is seen human but not found in the mouse.")
+AnnotationAssertion(rdfs:comment obo:CL_0001062 "This cell type is seen in human but not found in the mouse.")
 AnnotationAssertion(rdfs:label obo:CL_0001062 "effector memory CD8-positive, alpha-beta T cell, terminally differentiated")
-EquivalentClasses(obo:CL_0001062 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
+EquivalentClasses(obo:CL_0001062 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
 SubClassOf(obo:CL_0001062 obo:CL_0000909)
 SubClassOf(obo:CL_0001062 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000913))
 
@@ -13410,6 +13415,21 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) obo:IAO
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001082 "immature ILC"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0001082 "immature innate lymphoid cell"^^xsd:string)
 EquivalentClasses(obo:CL_0001082 ObjectIntersectionOf(obo:CL_0001065 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001501)))
+
+# Class: obo:CL_0001087 (effector memory CD4-positive, alpha-beta T cell, terminally differentiated)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:17465678") Annotation(oboInOwl:hasDbXref "PMID:26883338") Annotation(oboInOwl:hasDbXref "PMID:27997758") Annotation(oboInOwl:hasDbXref "PMID:29133794") obo:IAO_0000115 obo:CL_0001087 "A CD4-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0001087 <http://orcid.org/0000-0001-9990-8331>)
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0001087 "2021-01-18T16:32:44Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17465678") oboInOwl:hasBroadSynonym obo:CL_0001087 "TEMRA")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17465678") oboInOwl:hasExactSynonym obo:CL_0001087 "CD4+ TEMRA")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17465678") oboInOwl:hasExactSynonym obo:CL_0001087 "CD4-positive TEMRA")
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0001087 "cell")
+AnnotationAssertion(rdfs:comment obo:CL_0001087 "This cell type is seen in human but not found in the mouse.")
+AnnotationAssertion(rdfs:label obo:CL_0001087 "effector memory CD4-positive, alpha-beta T cell, terminally differentiated")
+EquivalentClasses(obo:CL_0001087 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
+SubClassOf(obo:CL_0001087 obo:CL_0000897)
+SubClassOf(obo:CL_0001087 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000905))
 
 # Class: obo:CL_0001200 (lymphocyte of B lineage, CD19-positive)
 
