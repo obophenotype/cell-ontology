@@ -2428,6 +2428,8 @@ Declaration(Class(obo:CL_3000001))
 Declaration(Class(obo:CL_3000002))
 Declaration(Class(obo:CL_3000003))
 Declaration(Class(obo:CL_3000004))
+Declaration(Class(obo:CL_4006000))
+Declaration(Class(obo:CL_4006001))
 Declaration(Class(obo:CL_4023003))
 Declaration(Class(obo:CL_4023004))
 Declaration(Class(obo:CL_4023005))
@@ -2468,13 +2470,14 @@ Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#has_not_completed>
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#lacks_part>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part>))
 Declaration(ObjectProperty(<http://semanticscience.org/resource/SIO_000658>))
-Declaration(AnnotationProperty(obo:CL_0009008))
+Declaration(AnnotationProperty(<http://geneontology.org/formats/oboInOwl#created_by>))
 Declaration(AnnotationProperty(obo:IAO_0000115))
 Declaration(AnnotationProperty(obo:IAO_0000116))
 Declaration(AnnotationProperty(obo:IAO_0000424))
 Declaration(AnnotationProperty(obo:IAO_0000700))
 Declaration(AnnotationProperty(obo:IAO_0100001))
 Declaration(AnnotationProperty(obo:RO_0002161))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#added_for_HCA>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/pato#location_grouping>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#LATIN>))
@@ -2511,11 +2514,7 @@ Declaration(AnnotationProperty(owl:deprecated))
 #   Annotation Properties
 ############################
 
-# Annotation Property: obo:CL_0009008 (added_for_HCA)
-
-AnnotationAssertion(oboInOwl:created_by obo:CL_0009008 <http://orcid.org/0000-0002-2825-0621>)
-AnnotationAssertion(rdfs:label obo:CL_0009008 "added_for_HCA")
-SubAnnotationPropertyOf(obo:CL_0009008 oboInOwl:SubsetProperty)
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInOwl:SubsetProperty)
 
 # Annotation Property: obo:IAO_0000115 (definition)
 
@@ -27205,6 +27204,24 @@ AnnotationAssertion(rdfs:label obo:CL_3000004 "peripheral sensory neuron"^^xsd:s
 EquivalentClasses(obo:CL_3000004 ObjectIntersectionOf(obo:CL_0000111 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
 SubClassOf(obo:CL_3000004 obo:CL_0000101)
 SubClassOf(obo:CL_3000004 obo:CL_0000111)
+
+# Class: obo:CL_4006000 (fibroblast of breast)
+
+AnnotationAssertion(<http://geneontology.org/formats/oboInOwl#created_by> obo:CL_4006000 <http://orcid.org/0000-0001-9897-3238>)
+AnnotationAssertion(obo:IAO_0000115 obo:CL_4006000 "A fibroblast that is part of the breast.")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4006000 "breast fibroblast")
+AnnotationAssertion(rdfs:label obo:CL_4006000 "fibroblast of breast")
+EquivalentClasses(obo:CL_4006000 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000310)))
+SubClassOf(obo:CL_4006000 obo:CL_0000057)
+
+# Class: obo:CL_4006001 (fibroblast of skin of scalp)
+
+AnnotationAssertion(<http://geneontology.org/formats/oboInOwl#created_by> obo:CL_4006001 <http://orcid.org/0000-0001-9897-3238>)
+AnnotationAssertion(obo:IAO_0000115 obo:CL_4006001 "A fibroblast that is part of the skin of scalp.")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4006001 "skin of scalp fibroblast")
+AnnotationAssertion(rdfs:label obo:CL_4006001 "fibroblast of skin of scalp")
+EquivalentClasses(obo:CL_4006001 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_8300000)))
+SubClassOf(obo:CL_4006001 obo:CL_0000057)
 
 # Class: obo:CL_4023003 (nuclear chain fiber)
 
