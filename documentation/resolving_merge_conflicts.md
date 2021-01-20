@@ -10,7 +10,7 @@ SOP.
 
 1. Reserialise the Master file by opening it in Protege (or using a ROBOT) and saving it. This will fix any odd orderings, that may have been introduced during previous merges.
 2. In GitHub Desktop
-   * Make sure your Master is up to date (may not be necessary?)
+   * Make sure your Master is up to date <may not be necessary?>
    * Switch to the branch for the pull request
    * Choose Branch.update_from_master
    * GitHub desktop should detect the clash and ask you if you want to open in your text editor of choice (Atom is a good choice)
