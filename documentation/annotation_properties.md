@@ -37,5 +37,7 @@ RO_0002161	|	Coming soon	|	Coming soon	|	 | No | No
 'see also'	|	Used to link to a webpage, such as a GitHub ticket.	|	CL:0000134 `mesenchymal stem cell`	| https://github.com/obophenotype/cell-ontology/issues/474 | No | No
 shorthand	|	Added automatically by some pipelines.  Do not add manually	|	Coming soon	|	Coming soon | No | No
 subset_property	|	A grouping class for subset tags.	| N/A |	N/A | No | No
+subset_property: added_for_HCA | A subset tag for terms that were requested by the Human Cell Atlas. | N/A | N/A | No | No 
+subset property: location_grouping | A subset tag for cell types from a particular anatomical location. | N/A | N/A | No | No 
 synonym_type_property	|  A grouping class for synonym tags.	|	N/A	|	N/A | No | No
 'term replaced by'	|	To be used on obsolete terms to indicate a term that can be automatically substituted for the obsoleted term. |	Coming soon	|	Coming soon | No | No
