@@ -239,3 +239,8 @@ reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
 
 branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
 
+tmp/cl-lastbuild.obo: 
+	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
+
+reports/obo-diff.txt: tmp/cl-lastbuild.obo
+	perl ../scripts/obo-simple-diff.pl $< cl.obo > $@.tmp && mv $@.tmp $@
