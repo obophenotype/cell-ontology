@@ -239,8 +239,16 @@ reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
 
 branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
 
-tmp/cl-lastbuild.obo: 
-	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
+tmp/cl-current.owl: $(ONT).owl
+	$(ROBOT) remove -i $< --term rdfs:label --select complement --select annotation-properties \
+		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
 
-reports/obo-diff.txt: tmp/cl-lastbuild.obo
-	perl ../scripts/obo-simple-diff.pl $< cl.obo > $@.tmp && mv $@.tmp $@
+tmp/cl-lastbuild.owl: .FORCE
+	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label --select complement --select annotation-properties \
+		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
+
+reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
+	$(ROBOT) diff --left $< --right tmp/cl-current.owl -f markdown -o $@
+	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
+	
+all_reports: reports/obo-diff.txt
