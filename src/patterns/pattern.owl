@@ -10,31 +10,16 @@ Ontology(<urn:unnamed:ontology#ont1>
 
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000000>))
 Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000003>))
-Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000057>))
-Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000066>))
-Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000150>))
-Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000151>))
-Declaration(Class(<http://purl.obolibrary.org/obo/CL_0000192>))
-Declaration(Class(<http://purl.obolibrary.org/obo/CL_0001061>))
 Declaration(Class(<http://purl.obolibrary.org/obo/GO_0005886>))
 Declaration(Class(<http://purl.obolibrary.org/obo/GO_0008150>))
-Declaration(Class(<http://purl.obolibrary.org/obo/GO_0050906>))
 Declaration(Class(<http://purl.obolibrary.org/obo/NCBITaxon_1>))
 Declaration(Class(<http://purl.obolibrary.org/obo/PATO_0000001>))
 Declaration(Class(<http://purl.obolibrary.org/obo/PATO_0000460>))
 Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0001062>))
-Declaration(Class(<http://purl.obolibrary.org/obo/UBERON_0010000>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/abnormalCell>))
 Declaration(Class(<http://purl.obolibrary.org/obo/cl/cellBearerOfQuality>))
 Declaration(Class(<http://purl.obolibrary.org/obo/cl/cellCapableOfBiologicalProcess>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception>))
 Declaration(Class(<http://purl.obolibrary.org/obo/cl/cellHasPlasmaMembranePartX>))
 Declaration(Class(<http://purl.obolibrary.org/obo/cl/cellPartOfAnatomicalEntity>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/fibroblastPartOfAnatomicalEntity>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/secretoryCellCapableOfBiologicalProcess>))
-Declaration(Class(<http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity>))
 Declaration(Class(<http://purl.obolibrary.org/obo/cl/taxonSpecific>))
 Declaration(Class(<http://purl.obolibrary.org/obo/upheno/patterns/abnormalAnatomicalEntity.yaml>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/BFO_0000050>))
@@ -48,20 +33,12 @@ Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/RO_0002573>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/IAO_0000115>))
 Declaration(AnnotationProperty(<http://purl.org/dc/terms/title>))
 Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>))
-Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>))
 
 
 
 ############################
 #   Classes
 ############################
-
-# Class: <http://purl.obolibrary.org/obo/cl/abnormalCell> ('quality' cell)
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/abnormalCell> "An abnormal cell exhibiting 'quality' features."^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/abnormalCell> "abnormalCell"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/abnormalCell> "'quality' cell"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/abnormalCell> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0001061> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0000053> <http://purl.obolibrary.org/obo/PATO_0000001>)))
 
 # Class: <http://purl.obolibrary.org/obo/cl/cellBearerOfQuality> ('quality' 'cell')
 
@@ -78,13 +55,6 @@ AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/cellCapableOfBiologicalProcess> "'biological process' 'cell'"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/cl/cellCapableOfBiologicalProcess> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000000> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0008150>)))
 
-# Class: <http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception> ('native cell' 'native cell' capable of 'detection of stimulus involved in sensory perception')
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception> "Any 'native cell' that 'native cell' and capable of a 'detection of stimulus involved in sensory perception'"^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception> "cellCapableOfSensoryPerception"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception> "'native cell' 'native cell' capable of 'detection of stimulus involved in sensory perception'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/cellCapableOfSensoryPerception> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000003> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0050906>)))
-
 # Class: <http://purl.obolibrary.org/obo/cl/cellHasPlasmaMembranePartX> ('native cell' 'plasma membrane')
 
 AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/cellHasPlasmaMembranePartX> "A 'native cell' that has a 'plasma membrane'."^^xsd:string)
@@ -99,44 +69,6 @@ AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.ob
 AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/cellPartOfAnatomicalEntity> "cellPartOfAnatomicalEntity"^^xsd:string)
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/cellPartOfAnatomicalEntity> "'cell' 'anatomical entity'"^^xsd:string)
 EquivalentClasses(<http://purl.obolibrary.org/obo/cl/cellPartOfAnatomicalEntity> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000000> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001062>)))
-
-# Class: <http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity> (epithelial cell of 'multicellular anatomical structure')
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity> "An epithelial cell that is part of the 'multicellular anatomical structure'."^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity> "epithelialCellPartOfAnatomicalEntity"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity> "'multicellular anatomical structure' epithelial cell"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity> "epithelial cell of 'multicellular anatomical structure'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/epithelialCellPartOfAnatomicalEntity> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000066> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0010000>)))
-
-# Class: <http://purl.obolibrary.org/obo/cl/fibroblastPartOfAnatomicalEntity> (fibroblast of 'anatomical entity')
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/fibroblastPartOfAnatomicalEntity> "Any fibroblast that is part of a 'anatomical entity'."^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/fibroblastPartOfAnatomicalEntity> "fibroblastPartOfAnatomicalEntity"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/fibroblastPartOfAnatomicalEntity> "fibroblast of 'anatomical entity'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/fibroblastPartOfAnatomicalEntity> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000057> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001062>)))
-
-# Class: <http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity> ('multicellular anatomical structure' glandular cell)
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity> "A glandular epithelial cell of the 'multicellular anatomical structure'."^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity> "glandularEpithelialCellPartOfAnatomicalEntity"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym> <http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity> "'multicellular anatomical structure' glandular cells"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity> "'multicellular anatomical structure' glandular cell"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/glandularEpithelialCellPartOfAnatomicalEntity> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000150> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0010000>)))
-
-# Class: <http://purl.obolibrary.org/obo/cl/secretoryCellCapableOfBiologicalProcess> (secretory cell capable of 'biological_process')
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/secretoryCellCapableOfBiologicalProcess> "Any secretory cell that capable of 'biological_process'"^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/secretoryCellCapableOfBiologicalProcess> "secretoryCellCapableOfBiologicalProcess"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/secretoryCellCapableOfBiologicalProcess> "secretory cell capable of 'biological_process'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/secretoryCellCapableOfBiologicalProcess> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000151> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/RO_0002215> <http://purl.obolibrary.org/obo/GO_0008150>)))
-
-# Class: <http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity> (smooth muscle cell of 'anatomical entity')
-
-AnnotationAssertion(<http://purl.obolibrary.org/obo/IAO_0000115> <http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity> "A smooth muscle cell of the 'anatomical entity'."^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/terms/title> <http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity> "smoothMuscleCellPartOfAnatomicalEntity"^^xsd:string)
-AnnotationAssertion(<http://www.geneontology.org/formats/oboInOwl#hasExactSynonym> <http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity> "smooth muscle fiber of 'anatomical entity'"^^xsd:string)
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity> "smooth muscle cell of 'anatomical entity'"^^xsd:string)
-EquivalentClasses(<http://purl.obolibrary.org/obo/cl/smoothMuscleCellPartOfAnatomicalEntity> ObjectIntersectionOf(<http://purl.obolibrary.org/obo/CL_0000192> ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/BFO_0000050> <http://purl.obolibrary.org/obo/UBERON_0001062>)))
 
 # Class: <http://purl.obolibrary.org/obo/cl/taxonSpecific> ('cell', 'taxon')
 

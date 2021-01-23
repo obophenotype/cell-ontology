@@ -9,8 +9,8 @@
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/pr_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2020-10-19/imports/pr_import.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2020-10-19</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-01-20/imports/pr_import.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-01-20</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -251,14 +251,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/BFO_0000015 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000015">
-        <rdfs:label>process</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/BFO_0000019 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/BFO_0000019">
@@ -390,7 +382,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000236"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A lymphocyte of B lineage with the phenotype CD19-positive, CD20-positive, and capable of B cell mediated immunity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GO_REF:0000031</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781735149</oboInOwl:hasDbXref>
@@ -398,9 +390,27 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/GO_0003674 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
+        <obo:IAO_0000115>A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>molecular function</oboInOwl:hasExactSynonym>
+        <rdfs:comment>Note that, in addition to forming the root of the molecular function ontology, this term is recommended for use for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code &quot;no data&quot; (ND), is used to indicate this. Despite its name, this is not a type of &apos;function&apos; in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex.</rdfs:comment>
+        <rdfs:label>molecular_function</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:pdt</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/GO_0004930 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0004930">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
         <obo:IAO_0000115>Combining with an extracellular signal and transmitting the signal across the membrane by activating an associated G-protein; promotes the exchange of GDP for GTP on the alpha subunit of a heterotrimeric G-protein complex.</obo:IAO_0000115>
         <oboInOwl:hasNarrowSynonym>EBV-induced receptor</oboInOwl:hasNarrowSynonym>
         <rdfs:label>G protein-coupled receptor activity</rdfs:label>
@@ -419,6 +429,7 @@
     <!-- http://purl.obolibrary.org/obo/GO_0005216 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005216">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
         <obo:IAO_0000115>Enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size).</obo:IAO_0000115>
         <rdfs:label>ion channel activity</rdfs:label>
     </owl:Class>
@@ -437,6 +448,7 @@
     <!-- http://purl.obolibrary.org/obo/GO_0005244 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005244">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
         <obo:IAO_0000115>Enables the transmembrane transfer of an ion by a voltage-gated channel. An ion is an atom or group of atoms carrying an electric charge by virtue of having gained or lost one or more electrons. A voltage-gated channel is a channel whose open state is dependent on the voltage across the membrane in which it is embedded.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>voltage gated ion channel activity</oboInOwl:hasExactSynonym>
         <rdfs:label>voltage-gated ion channel activity</rdfs:label>
@@ -455,8 +467,8 @@
     <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000030"/>
         <obo:IAO_0000115>The part of a cell or its extracellular environment in which a gene product is located. A gene product may be located in one or more parts of a cell and its location may be as specific as a particular macromolecular complex, that is, a stable, persistent association of macromolecules that function together.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>cell or subcellular entity</oboInOwl:hasExactSynonym>
         <rdfs:comment>Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. Note that when this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code ND, no data, is used to indicate this.</rdfs:comment>
         <rdfs:label>cellular_component</rdfs:label>
     </owl:Class>
@@ -506,15 +518,24 @@
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000015"/>
+        <obo:IAO_0000115>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</obo:IAO_0000115>
+        <oboInOwl:hasExactSynonym>biological process</oboInOwl:hasExactSynonym>
+        <rdfs:comment>Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code &quot;no data&quot; (ND), is used to indicate this.</rdfs:comment>
         <rdfs:label>biological_process</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:pdt</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
     <!-- http://purl.obolibrary.org/obo/GO_0015267 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0015267">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
         <obo:IAO_0000115>Enables the energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel. Stereospecificity is not exhibited but this transport may be specific for a particular molecular species or class of molecules.</obo:IAO_0000115>
         <oboInOwl:hasRelatedSynonym>alpha-type channel activity</oboInOwl:hasRelatedSynonym>
         <rdfs:label>channel activity</rdfs:label>
@@ -543,7 +564,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0019814"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein complex that in its canonical form is composed of two identical immunoglobulin heavy chains and two identical immunoglobulin light chains, held together by disulfide bonds and sometimes complexed with additional proteins. An immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -580,14 +601,14 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071735"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein complex composed of two identical immunoglobulin heavy chains of an IgG isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgG immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071735"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>IgG1</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -604,7 +625,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071738"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein complex composed of two identical immunoglobulin heavy chains of the IgD isotype and two identical immunoglobulin light chains, held together by disulfide bonds. An IgD immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11282392</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -624,7 +645,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071739"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein complex composed of two identical immunoglobulin heavy chains of the IgD isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11282392</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -632,7 +653,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071739"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IgD antibody</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -650,7 +671,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071745"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein complex composed of two identical immunoglobulin heavy chains of the IgA isotype and two identical immunoglobulin light chains, held together by disulfide bonds, and sometimes complexed with J chain or J chain and secretory component. An IgA immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16362985</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -658,7 +679,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071745"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>IgA1 antibody</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -676,7 +697,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071746"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein complex composed of two identical immunoglobulin heavy chains of an IgA isotype and two identical immunoglobulin light chains, held together by disulfide bonds, sometimes complexed with J chain or J chain and secretory component, and present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:16362985</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -684,7 +705,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071746"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IgA antibody</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -749,6 +770,15 @@
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_40674">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
         <rdfs:label>Mammalia</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_4751 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_4751">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <rdfs:label>Fungi</rdfs:label>
     </owl:Class>
     
 
@@ -1154,8 +1184,8 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000001017"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD45RO</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -1458,7 +1488,7 @@
         <owl:annotatedTarget>A rhodopsin-like G-protein coupled receptor that in active form binds to one or more chemokines.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:12037138</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2621,7 +2651,7 @@
         <oboInOwl:hasDbXref>InterPro:IPR000826</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000001431"/>
@@ -2892,7 +2922,7 @@
         <owl:annotatedTarget>A rhodopsin-like G-protein coupled receptor that is a translation product of the human PTGDR, PTGDR2, PTGER1 to PTGER4, PTGFR, PTGIR, or TBXA2R genes, 1:1 orthologs thereof, or a semi-ortholog thereof. The active form binds prostanoids (prostaglandins and thromboxanes).</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:7938166</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -2982,27 +3012,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A prominin that is a translation product of the human PROM1 gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:CNA</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/PR_000001800 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000001800">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <obo:IAO_0000115>A protein that is a translation product of the human NT5E gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym>5&apos;-NT</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasBroadSynonym>ecto-5&apos;-nucleotidase</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref>IUPHARobj:1232</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD73</oboInOwl:hasExactSynonym>
-        <rdfs:comment>Category=gene. Requested by=CL.</rdfs:comment>
-        <rdfs:label>5&apos;-nucleotidase</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000001800"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein that is a translation product of the human NT5E gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -5338,15 +5347,15 @@
     <!-- http://purl.obolibrary.org/obo/PR_000008457 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000008457">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <obo:IAO_0000115>A protein that is a translation product of the human HBB gene, a 1:1 ortholog thereof, or pro-orthologs thereof.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000050467"/>
+        <obo:IAO_0000115>A hemoglobin subunit that is a translation product of the human HBB gene, a 1:1 ortholog thereof, or pro-orthologs thereof.</obo:IAO_0000115>
         <rdfs:comment>Category=gene.</rdfs:comment>
         <rdfs:label>beta-globin</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000008457"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein that is a translation product of the human HBB gene, a 1:1 ortholog thereof, or pro-orthologs thereof.</owl:annotatedTarget>
+        <owl:annotatedTarget>A hemoglobin subunit that is a translation product of the human HBB gene, a 1:1 ortholog thereof, or pro-orthologs thereof.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -5355,8 +5364,8 @@
     <!-- http://purl.obolibrary.org/obo/PR_000008467 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000008467">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <obo:IAO_0000115>A protein that is a translation product of the human HBZ gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000050467"/>
+        <obo:IAO_0000115>A hemoglobin subunit that is a translation product of the human HBZ gene or a 1:1 ortholog thereof.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>HBAZ</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>alpha-like embryonic globin chain x</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>hemoglobin zeta chain</oboInOwl:hasExactSynonym>
@@ -5367,7 +5376,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000008467"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein that is a translation product of the human HBZ gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
+        <owl:annotatedTarget>A hemoglobin subunit that is a translation product of the human HBZ gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6947,40 +6956,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PR_000018523 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018523">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000001800"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#lacks_part"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000418"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001800"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#lacks_part"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/SO_0000418"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A 5&apos;-nucleotidase that has had the signal peptide removed.</obo:IAO_0000115>
-        <rdfs:comment>Category=modification.</rdfs:comment>
-        <rdfs:label>5&apos;-nucleotidase, signal peptide removed form</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018523"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A 5&apos;-nucleotidase that has had the signal peptide removed.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PR_000018537 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018537">
@@ -8344,7 +8319,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000025409"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A protein complex that is a membrane-bound heterodimeric co-receptor for MHC class-I antigen/T-cell receptor interaction.</obo:IAO_0000115>
+        <obo:IAO_0000115>A protein-containing complex that is a membrane-bound heterodimeric co-receptor for MHC class-I antigen/T-cell receptor interaction.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>CD8alphabeta</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TCR co-receptor CD8</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=complex. Requested by=CL.</rdfs:comment>
@@ -8353,7 +8328,7 @@
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000025402"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein complex that is a membrane-bound heterodimeric co-receptor for MHC class-I antigen/T-cell receptor interaction.</owl:annotatedTarget>
+        <owl:annotatedTarget>A protein-containing complex that is a membrane-bound heterodimeric co-receptor for MHC class-I antigen/T-cell receptor interaction.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:18275828</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:3264320</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
@@ -9396,43 +9371,43 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A lymphocyte antigen 75 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000034294"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>C-type lectin domain family 13 member B (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000034294"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD205 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000034294"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CLEC13B (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000034294"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>DEC-205 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000034294"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>gp200-MR6 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000034294"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>ly-75 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:O60449</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O60449</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9629,7 +9604,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An ion channel protein that has voltage-gated ion channel activity. A voltage-gated ion channel enables the transmembrane transfer of a solute by a channel whose open state is dependent on the voltage across the membrane in which it is embedded.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GO:0022832</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9647,7 +9622,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000044657"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A voltage-gated ion channel protein that is a translation product of the human TRPC1, TRPM1, TRPV1, TRPA1, TRPP1 or TRPML1 gene, paralogs thereof, 1:1 orthologs thereof, a semi-ortholog thereof, or pro-orthologs thereof.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9687,37 +9662,37 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein that has channel activity. Channel proteins enable energy-independent facilitated diffusion, mediated by passage of a solute through a transmembrane aqueous pore or channel.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GO:0015267</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000044676"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>channel-forming toxin protein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000044676"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>channel/pore class transporter protein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000044676"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>nonselective channel protein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000044676"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>pore class transporter protein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000044676"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>pore protein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10311,6 +10286,12 @@
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000046634"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+        <owl:annotatedTarget>Reactome:R-HSA-6800959</owl:annotatedTarget>
+        <rdfs:label>PR:000046634 located_in GO:0070821</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000046634"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A myeloid cell surface antigen CD33 (human) that has had the signal peptide removed. UniProtKB:P20138, 18-364.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
@@ -10327,12 +10308,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>Reactome:R-HSA-6799615</owl:annotatedTarget>
         <rdfs:label>PR:000046634 located_in GO:0035579</rdfs:label>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000046634"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-        <owl:annotatedTarget>Reactome:R-HSA-6800959</owl:annotatedTarget>
-        <rdfs:label>PR:000046634 located_in GO:0070821</rdfs:label>
     </owl:Axiom>
     
 
@@ -12696,7 +12671,7 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A channel protein that has ion channel activity. An ion channel enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>IUPHARfam:689</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:XQ</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:XQ</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12778,10 +12753,10 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050170"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An IgD immunoglobulin complex whose components are encoded in the genome of human. IgD is composed of two identical immunoglobulin heavy chains of the IgD isotype and two identical immunoglobulin light chains (kappa or lambda), held together by disulfide bonds. An IgD immunoglobulin complex may be embedded in the plasma membrane or present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11282392</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12830,17 +12805,17 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050171"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An IgD immunoglobulin complex, circulating in human. Circulating IgD is composed of two identical immunoglobulin heavy chains of the IgD isotype and two identical immunoglobulin light chains (kappa or lambda), held together by disulfide bonds, and present in the extracellular space, in mucosal areas or other tissues, or circulating in the blood or lymph.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0781765196</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:11282392</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050171"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>IgD antibody (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12857,8 +12832,8 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050174"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein that is a translation product of some mRNA produced by a somatically recombined immunoglobulin heavy chain locus.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12875,8 +12850,8 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050175"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein that is a translation product of some mRNA produced by a somatically recombined immunoglobulin light chain locus.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13124,8 +13099,8 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050216"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A receptor-type tyrosine-protein phosphatase C that is a translation product of a mature transcript of the PTPRC gene, that minimally includes the region encoded by the variable exon 4(A).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -13167,6 +13142,23 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050370"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An MHC class II histocompatibility antigen alpha chain DRA that is encoded in the genome of mouse.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000050467 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000050467">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <obo:IAO_0000115>A protein that is a translation product of the human HBA1, HBA2, HBB, HBD, HBE1, HBG1, HBG2, HBM, HBQ1, or HBZ genes, 1:1 orthologs thereof, or semi-orthologs thereof.</obo:IAO_0000115>
+        <rdfs:comment>Category=family.</rdfs:comment>
+        <rdfs:label>hemoglobin subunit</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000050467"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A protein that is a translation product of the human HBA1, HBA2, HBB, HBD, HBE1, HBG1, HBG2, HBM, HBQ1, or HBZ genes, 1:1 orthologs thereof, or semi-orthologs thereof.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -13906,7 +13898,7 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A natural cytotoxicity triggering receptor 1 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>NK cell-activating receptor (human)</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD335 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NK-p46 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NKp46 (human)</oboInOwl:hasExactSynonym>
@@ -13921,49 +13913,49 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A natural cytotoxicity triggering receptor 1 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>NK cell-activating receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD335 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>NK-p46 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>NKp46 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>hNKp46</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>lymphocyte antigen 94 homolog (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_O76036"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>natural killer cell p46-related protein (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:O76036</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:O76036</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -14723,7 +14715,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD4 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P01730</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD4 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell surface antigen T4/Leu-3 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>T-cell surface glycoprotein CD4 (human)</rdfs:label>
@@ -14733,12 +14724,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD4 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P01730</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P01730"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD4 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P01730</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -15712,7 +15697,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A myeloperoxidase that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P05164</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>MPO (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>myeloperoxidase (human)</rdfs:label>
     </owl:Class>
@@ -15721,12 +15705,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A myeloperoxidase that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P05164</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P05164"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>MPO (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P05164</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -16061,7 +16039,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A T-cell surface glycoprotein CD5 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P06127</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD5 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymphocyte antigen T1/Leu-1 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>T-cell surface glycoprotein CD5 (human)</rdfs:label>
@@ -16071,12 +16048,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A T-cell surface glycoprotein CD5 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P06127</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P06127"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD5 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P06127</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -16246,7 +16217,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD2 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P06729</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LFA-2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LFA-3 receptor (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell surface antigen T11/Leu-5 (human)</oboInOwl:hasExactSynonym>
@@ -16260,12 +16230,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD2 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:CNA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P06729</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P06729"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD2 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P06729</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -16814,7 +16778,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A low affinity immunoglobulin gamma Fc region receptor II that is encoded in the genome of mouse.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD32 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Fc gamma receptor IIB (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Fc-gamma RII (mouse)</oboInOwl:hasExactSynonym>
@@ -16830,49 +16794,49 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A low affinity immunoglobulin gamma Fc region receptor II that is encoded in the genome of mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:CNA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD32 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Fc gamma receptor IIB (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Fc-gamma RII (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Fc-gamma-RIIB (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>FcRII (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IgG Fc receptor II beta (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08101"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>lymphocyte antigen 17 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08101</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08101</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -17233,7 +17197,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD14 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P08571</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD14 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>myeloid cell-specific leucine-rich glycoprotein (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>monocyte differentiation antigen CD14 (human)</rdfs:label>
@@ -17243,12 +17206,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD14 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P08571</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08571"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD14 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P08571</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -17289,8 +17246,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A receptor-type tyrosine-protein phosphatase C that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08575</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD45 (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasDbXref>UniProtKB:P08575</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>L-CA (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T200 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leukocyte common antigen (human)</oboInOwl:hasExactSynonym>
@@ -17302,31 +17258,25 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A receptor-type tyrosine-protein phosphatase C that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:CNA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08575</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD45 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08575</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08575</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>L-CA (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08575</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08575</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>T200 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08575</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08575</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>leukocyte common antigen (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P08575</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P08575</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -17399,16 +17349,16 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575-4"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A receptor-type tyrosine-protein phosphatase C isoform CD45RO that is encoded in the genome of human.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575-4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD45RO (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -17445,8 +17395,8 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08575-8"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A receptor-type tyrosine-protein phosphatase C isoform CD45RA that is encoded in the genome of human.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:add</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:ADD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>GOC:add</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:ADD</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -17485,7 +17435,6 @@
         <oboInOwl:hasExactSynonym>CD2 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LFA-2 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LFA-3 receptor (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Ly-37 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell surface antigen T11/Leu-5 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymphocyte antigen 37 (mouse)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -17514,12 +17463,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08920"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>LFA-3 receptor (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P08920</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P08920"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Ly-37 (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P08920</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -17569,7 +17512,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P09326</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B-lymphocyte activation marker BLAST-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>BCM1 surface antigen (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD48 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>SLAM family member 2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>SLAMF2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TCT.1 (human)</oboInOwl:hasExactSynonym>
@@ -17595,12 +17537,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P09326"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>BCM1 surface antigen (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P09326</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P09326"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD48 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P09326</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -17793,7 +17729,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD7 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P09564</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD7 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GP40 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell leukemia antigen (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell surface antigen Leu-9 (human)</oboInOwl:hasExactSynonym>
@@ -17806,12 +17741,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD7 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P09564</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P09564"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD7 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P09564</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -18555,7 +18484,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P10721</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD117 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>PBT (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>SCFR (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>p145 c-kit (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>piebald trait protein (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>proto-oncogene c-Kit (human)</oboInOwl:hasExactSynonym>
@@ -18581,12 +18509,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P10721"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>PBT (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P10721</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P10721"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>SCFR (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P10721</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -18652,7 +18574,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A T-cell-specific surface glycoprotein CD28 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P10747</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD28 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TP44 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>T-cell-specific surface glycoprotein CD28 (human)</rdfs:label>
@@ -18662,12 +18583,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A T-cell-specific surface glycoprotein CD28 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P10747</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P10747"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD28 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P10747</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -19284,7 +19199,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>An eosinophil peroxidase that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P11678</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>EPO (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>eosinophil peroxidase (human)</rdfs:label>
     </owl:Class>
@@ -19293,12 +19207,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An eosinophil peroxidase that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P11678</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P11678"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>EPO (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P11678</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -19336,7 +19244,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P11836</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B-lymphocyte surface antigen B1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Bp35 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD20 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leukocyte surface antigen Leu-16 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>membrane-spanning 4-domains subfamily A member 1 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -19359,12 +19266,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P11836"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Bp35 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P11836</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P11836"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD20 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P11836</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -19775,7 +19676,6 @@
         <obo:IAO_0000115>A T-cell surface glycoprotein CD5 that is encoded in the genome of mouse.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P13379</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD5 (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Ly-1 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Lyt-1 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymphocyte antigen 1 (mouse)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -19792,12 +19692,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P13379"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD5 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P13379</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P13379"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Ly-1 (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P13379</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -20203,7 +20097,6 @@
         <oboInOwl:hasDbXref>Reactome:R-HSA-1253311</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-9625195</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UniProtKB:P14136</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>GFAP (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>glial fibrillary acidic protein (human)</rdfs:label>
     </owl:Class>
@@ -20225,12 +20118,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>Reactome:R-HSA-9625195</owl:annotatedTarget>
         <rdfs:label>PR:P14136 located_in GO:0005765</rdfs:label>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P14136"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>GFAP (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P14136</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -20379,7 +20266,6 @@
         <obo:IAO_0000115>A perforin-1 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>P1 (human)</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>UniProtKB:P14222</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>PFP (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cytolysin (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymphocyte pore-forming protein (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -20396,12 +20282,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P14222"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>P1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P14222</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P14222"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>PFP (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P14222</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -20786,7 +20666,6 @@
         <oboInOwl:hasExactSynonym>ECMR-III (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GP90 lymphocyte homing/adhesion receptor (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>HUTCH-I (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Ly-24 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>PGP-1 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>PGP-I (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>extracellular matrix receptor III (mouse)</oboInOwl:hasExactSynonym>
@@ -20827,12 +20706,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15379"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>HUTCH-I (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P15379</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15379"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Ly-24 (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P15379</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -20917,7 +20790,6 @@
         <obo:IAO_0000115>A CD19 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P15391</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B-lymphocyte surface antigen B4 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD19 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell surface antigen Leu-12 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>differentiation antigen CD19 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -20927,12 +20799,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15391"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>B-lymphocyte surface antigen B4 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P15391</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15391"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD19 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P15391</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -21323,7 +21189,7 @@
         <obo:IAO_0000115>An erythroid transcription factor that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>GF-1 (human)</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>Reactome:R-HSA-996772</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P15976</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P15976</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>GATA-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GATA-binding factor 1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NF-E1 DNA-binding protein (human)</oboInOwl:hasExactSynonym>
@@ -21335,13 +21201,13 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An erythroid transcription factor that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P15976</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P15976</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15976"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>GF-1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P15976</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P15976</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15976"/>
@@ -21353,19 +21219,19 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15976"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>GATA-1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P15976</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P15976</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15976"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>GATA-binding factor 1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P15976</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P15976</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P15976"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>NF-E1 DNA-binding protein (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P15976</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P15976</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21492,8 +21358,7 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD44 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>PGP-I (human)</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD44 (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CDw44 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>ECMR-III (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GP90 lymphocyte homing/adhesion receptor (human)</oboInOwl:hasExactSynonym>
@@ -21514,91 +21379,85 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD44 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>PGP-I (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD44 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CDw44 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>ECMR-III (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>GP90 lymphocyte homing/adhesion receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>HUTCH-I (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>PGP-1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>epican (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>extracellular matrix receptor III (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>heparan sulfate proteoglycan (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>hermes antigen (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>hyaluronate receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>phagocytic glycoprotein 1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>phagocytic glycoprotein I (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16070</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16070</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -21633,7 +21492,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A leukosialin that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P16150</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD43 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GALGP (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GPL115 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>galactoglycoprotein (human)</oboInOwl:hasExactSynonym>
@@ -21647,12 +21505,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A leukosialin that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P16150</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16150"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD43 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P16150</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -21881,7 +21733,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cytotoxic T-lymphocyte protein 4 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P16410</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD152 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CTLA-4 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cytotoxic T-lymphocyte-associated antigen 4 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -21892,12 +21743,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cytotoxic T-lymphocyte protein 4 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P16410</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16410"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD152 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P16410</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -21944,8 +21789,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A platelet glycoprotein 4 that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym>CD36 (human)</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>FAT (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GPIIIB (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GPIV (human)</oboInOwl:hasExactSynonym>
@@ -21965,79 +21809,73 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A platelet glycoprotein 4 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
-        <owl:annotatedTarget>CD36 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>FAT (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>GPIIIB (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>GPIV (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>PAS IV (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>PAS-4 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>fatty acid translocase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>glycoprotein IIIb (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>leukocyte differentiation antigen CD36 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>platelet collagen receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>platelet glycoprotein IV (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16671"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>thrombospondin receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16671</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16671</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -22071,7 +21909,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An interleukin-7 receptor subunit alpha that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD127 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CDw127 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>IL-7 receptor subunit alpha (human)</oboInOwl:hasExactSynonym>
@@ -22086,43 +21924,43 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An interleukin-7 receptor subunit alpha that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD127 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CDw127 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-7 receptor subunit alpha (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-7R subunit alpha (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-7R-alpha (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P16871"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-7RA (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:P16871</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:P16871</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -22800,7 +22638,6 @@
         <oboInOwl:hasExactSynonym>CD62L (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LAM-1 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LECAM1 (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Ly-22 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leukocyte adhesion molecule 1 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leukocyte-endothelial cell adhesion molecule 1 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>lymph node homing receptor (mouse)</oboInOwl:hasExactSynonym>
@@ -22838,12 +22675,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P18337"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>LECAM1 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P18337</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P18337"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Ly-22 (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P18337</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -23025,7 +22856,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P19070</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD21 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>complement C3d receptor (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>Cr2 (mouse)</oboInOwl:hasRelatedSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>complement receptor type 2 (mouse)</rdfs:label>
     </owl:Class>
@@ -23045,12 +22875,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P19070"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>complement C3d receptor (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P19070</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P19070"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Cr2 (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P19070</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -23235,7 +23059,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD33 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P20138</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD33 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>gp67 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>sialic acid-binding Ig-like lectin 3 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>siglec-3 (human)</oboInOwl:hasExactSynonym>
@@ -23247,12 +23070,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD33 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P20138</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P20138"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD33 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P20138</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -23308,7 +23125,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P20273</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B-lymphocyte cell adhesion molecule (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>BL-CAM (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD22 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell surface antigen Leu-14 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>sialic acid-binding Ig-like lectin 2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>siglec-2 (human)</oboInOwl:hasExactSynonym>
@@ -23332,12 +23148,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P20273"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>BL-CAM (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P20273</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P20273"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD22 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P20273</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -23788,70 +23598,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PR_P21589 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P21589">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000001800"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001800"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029067"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
-                <owl:someValuesFrom rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=8021"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A 5&apos;-nucleotidase that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym>5&apos;-NT (human)</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasBroadSynonym>ecto-5&apos;-nucleotidase (human)</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasDbXref>UniProtKB:P21589</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD73 (human)</oboInOwl:hasExactSynonym>
-        <rdfs:comment>Category=organism-gene.</rdfs:comment>
-        <rdfs:label>5&apos;-nucleotidase (human)</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P21589"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A 5&apos;-nucleotidase that is encoded in the genome of human.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P21589</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P21589"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
-        <owl:annotatedTarget>5&apos;-NT (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P21589</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P21589"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
-        <owl:annotatedTarget>ecto-5&apos;-nucleotidase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P21589</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P21589"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD73 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P21589</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PR_P21757 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_P21757">
@@ -23998,7 +23744,6 @@
         <oboInOwl:hasBroadSynonym>p24 (human)</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>UniProtKB:P21926</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>5H9 antigen (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD9 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>MRP-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cell growth-inhibiting gene 2 protein (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leukocyte antigen MIC3 (human)</oboInOwl:hasExactSynonym>
@@ -24025,12 +23770,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P21926"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>5H9 antigen (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P21926</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P21926"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD9 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P21926</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -24877,7 +24616,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A signal transducer CD24 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P25063</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD24 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>small cell lung carcinoma cluster 4 antigen (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>signal transducer CD24 (human)</rdfs:label>
@@ -24887,12 +24625,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A signal transducer CD24 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P25063</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P25063"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD24 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P25063</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -25247,7 +24979,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD27 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P26842</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD27 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD27L receptor (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T-cell activation antigen CD27 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T14 (human)</oboInOwl:hasExactSynonym>
@@ -25260,12 +24991,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A CD27 molecule that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:P26842</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P26842"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD27 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P26842</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -25679,16 +25404,9 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD34 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:P28906</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD34 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>hematopoietic progenitor cell antigen CD34 (human)</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P28906"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD34 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P28906</oboInOwl:hasDbXref>
-    </owl:Axiom>
     
 
 
@@ -25728,7 +25446,6 @@
         <oboInOwl:hasExactSynonym>2&apos;-phospho-cyclic-ADP-ribose transferase (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>ADP-ribosyl cyclase 1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>ADPRC 1 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD38 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>T10 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cADPr hydrolase 1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cyclic ADP-ribose hydrolase 1 (human)</oboInOwl:hasExactSynonym>
@@ -25770,12 +25487,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P28907"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>ADPRC 1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P28907</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P28907"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD38 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P28907</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -25893,7 +25604,6 @@
         <oboInOwl:hasExactSynonym>T-cell antigen Gp39 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TNF-related activation protein (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>tumor necrosis factor ligand superfamily member 5 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>TRAP (human)</oboInOwl:hasRelatedSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>CD40 ligand (human)</rdfs:label>
     </owl:Class>
@@ -25938,12 +25648,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P29965"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>tumor necrosis factor ligand superfamily member 5 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P29965</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P29965"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>TRAP (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P29965</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -26311,7 +26015,6 @@
         <oboInOwl:hasExactSynonym>C-C CKR-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CC-CKR-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CCR-1 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CCR1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD191 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>HM145 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>LD78 receptor (human)</oboInOwl:hasExactSynonym>
@@ -26350,12 +26053,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P32246"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CCR-1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P32246</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P32246"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CCR1 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P32246</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -26700,7 +26397,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P33681</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B7 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>BB1 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD80 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CTLA-4 counter-receptor B7.1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>activation B7-1 antigen (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -26723,12 +26419,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P33681"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>BB1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P33681</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P33681"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD80 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P33681</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -26848,7 +26538,6 @@
         <obo:IAO_0000115>A macrosialin that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>gp110 (human)</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>UniProtKB:P34810</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD68 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>macrosialin (human)</rdfs:label>
     </owl:Class>
@@ -26863,12 +26552,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P34810"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>gp110 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P34810</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P34810"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD68 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P34810</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -27281,7 +26964,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P35968</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD309 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>FLK-1 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>KDR (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>VEGFR-2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>fetal liver kinase 1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>kinase insert domain receptor (human)</oboInOwl:hasExactSynonym>
@@ -27306,12 +26988,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P35968"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>FLK-1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P35968</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P35968"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>KDR (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P35968</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -27846,7 +27522,6 @@
         <oboInOwl:hasExactSynonym>C-C CKR-2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CC-CKR-2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CCR-2 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CCR2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD192 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>MCP-1-R (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>monocyte chemoattractant protein 1 receptor (human)</oboInOwl:hasExactSynonym>
@@ -27882,12 +27557,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P41597"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CCR-2 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P41597</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P41597"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CCR2 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P41597</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -27943,7 +27612,6 @@
         <oboInOwl:hasDbXref>UniProtKB:P42081</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B70 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>BU63 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD86 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CTLA-4 counter-receptor B7.2 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>FUN-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>activation B7-2 antigen (human)</oboInOwl:hasExactSynonym>
@@ -27967,12 +27635,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P42081"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>BU63 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P42081</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P42081"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD86 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P42081</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -28265,7 +27927,6 @@
         <oboInOwl:hasExactSynonym>C-X3-C CKR-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CMK-BRL-1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CMK-BRL1 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CX3CR1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>G-protein coupled receptor 13 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>V28 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>beta chemokine receptor-like 1 (human)</oboInOwl:hasExactSynonym>
@@ -28302,12 +27963,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P49238"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CMK-BRL1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P49238</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P49238"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CX3CR1 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P49238</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -29000,7 +28655,6 @@
         <oboInOwl:hasExactSynonym>C-C CKR-3 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CC-CKR-3 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CCR-3 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CCR3 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD193 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CKR 3 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CKR3 (human)</oboInOwl:hasExactSynonym>
@@ -29043,12 +28697,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P51677"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CCR-3 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P51677</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P51677"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CCR3 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P51677</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -29212,7 +28860,6 @@
         <oboInOwl:hasExactSynonym>C-C CKR-4 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CC-CKR-4 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CCR-4 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CCR4 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD194 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>K5-5 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -29247,12 +28894,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P51679"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CCR-4 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P51679</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P51679"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CCR4 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P51679</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -29383,7 +29024,6 @@
         <oboInOwl:hasExactSynonym>C-C CKR-5 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CC-CKR-5 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CCR-5 (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CCR5 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD195 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CHEMR13 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>HIV-1 fusion coreceptor (human)</oboInOwl:hasExactSynonym>
@@ -29419,12 +29059,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P51681"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CCR-5 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P51681</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P51681"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CCR5 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P51681</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -30826,7 +30460,6 @@
         <obo:IAO_0000115>A tyrosine-protein phosphatase non-receptor type substrate 1 that is encoded in the genome of mouse.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>p84 (mouse)</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>UniProtKB:P97797</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>Bit (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD172 antigen-like family member A (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD172a (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>MyD-1 antigen (mouse)</oboInOwl:hasExactSynonym>
@@ -30850,12 +30483,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P97797"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>p84 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:P97797</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_P97797"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Bit (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:P97797</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -31043,7 +30670,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A CD80 molecule that is encoded in the genome of mouse.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:Q00609</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>B7 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CD80 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>activation B7-1 antigen (mouse)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
@@ -31055,12 +30681,6 @@
         <owl:annotatedTarget>A CD80 molecule that is encoded in the genome of mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>OMA:Q00609</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q00609"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>B7 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q00609</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q00609"/>
@@ -31278,7 +30898,6 @@
         <obo:IAO_0000115>A CD83 molecule that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:Q01151</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>B-cell activation protein (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD83 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cell surface protein HB15 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>CD83 antigen (human)</rdfs:label>
@@ -31294,12 +30913,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q01151"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>B-cell activation protein (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q01151</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q01151"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD83 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q01151</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -31359,7 +30972,7 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q01196"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A runt-related transcription factor 1 that is encoded in the genome of human.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:PD</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:PD</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q01196"/>
@@ -32180,7 +31793,6 @@
         <oboInOwl:hasExactSynonym>AIM (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>BL-AC/P26 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>C-type lectin domain family 2 member C (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD69 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>EA1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>GP32/28 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>MLR-3 (human)</oboInOwl:hasExactSynonym>
@@ -32213,12 +31825,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q07108"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>C-type lectin domain family 2 member C (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q07108</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q07108"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD69 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q07108</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -32766,7 +32372,6 @@
         <obo:IAO_0000115>A killer cell lectin-like receptor subfamily D member 1 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>Reactome:R-HSA-2326854</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UniProtKB:Q13241</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD94 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>KP43 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NK cell receptor (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>killer cell lectin-like receptor subfamily D member 1 (human)</oboInOwl:hasExactSynonym>
@@ -32785,12 +32390,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>Reactome:R-HSA-2326854</owl:annotatedTarget>
         <rdfs:label>PR:Q13241 located_in GO:0005886</rdfs:label>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q13241"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD94 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q13241</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q13241"/>
@@ -33981,70 +33580,6 @@
     
 
 
-    <!-- http://purl.obolibrary.org/obo/PR_Q61503 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q61503">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/PR_000001800"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000001800"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000029032"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/pr#has_gene_template"/>
-                <owl:someValuesFrom rdf:resource="http://www.informatics.jax.org/marker/MGI:99782"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A 5&apos;-nucleotidase that is encoded in the genome of mouse.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>UniProtKB:Q61503</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD73 (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasRelatedSynonym>5&apos;-NT (mouse)</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>ecto-5&apos;-nucleotidase (mouse)</oboInOwl:hasRelatedSynonym>
-        <rdfs:comment>Category=organism-gene.</rdfs:comment>
-        <rdfs:label>5&apos;-nucleotidase (mouse)</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61503"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A 5&apos;-nucleotidase that is encoded in the genome of mouse.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>OMA:Q61503</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61503"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD73 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q61503</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61503"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>5&apos;-NT (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q61503</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q61503"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>ecto-5&apos;-nucleotidase (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q61503</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/PR_Q61549 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_Q61549">
@@ -34376,7 +33911,6 @@
         <oboInOwl:hasExactSynonym>CD71 (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TfR (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>TfR1 (mouse)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>Trfr (mouse)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>TR (mouse)</oboInOwl:hasRelatedSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>transferrin receptor protein 1 (mouse)</rdfs:label>
@@ -34404,12 +33938,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62351"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>TfR1 (mouse)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q62351</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q62351"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>Trfr (mouse)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q62351</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -35155,7 +34683,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A scavenger receptor cysteine-rich type 1 protein M130 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:Q86VB7</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD163 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>hemoglobin scavenger receptor (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>scavenger receptor cysteine-rich type 1 protein M130 (human)</rdfs:label>
@@ -35165,12 +34692,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A scavenger receptor cysteine-rich type 1 protein M130 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:Q86VB7</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q86VB7"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD163 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q86VB7</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -35544,7 +35065,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A neuropilin and tolloid-like protein 1 that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q8TDF5</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:Q8TDF5</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>brain-specific transmembrane protein containing 2 CUB and 1 LDL-receptor class A domains protein 1 (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>neuropilin and tolloid-like protein 1 (human)</rdfs:label>
@@ -35554,13 +35075,13 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A neuropilin and tolloid-like protein 1 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q8TDF5</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:Q8TDF5</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q8TDF5"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>brain-specific transmembrane protein containing 2 CUB and 1 LDL-receptor class A domains protein 1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q8TDF5</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>UniProtKB:Q8TDF5</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -36035,7 +35556,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A natural killer cell receptor 2B4 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:Q9BZW8</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD244 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NAIL (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NK cell activation-inducing ligand (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>NK cell type I receptor protein 2B4 (human)</oboInOwl:hasExactSynonym>
@@ -36052,12 +35572,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A natural killer cell receptor 2B4 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:Q9BZW8</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9BZW8"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD244 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q9BZW8</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -36498,7 +36012,6 @@
         <oboInOwl:hasDbXref>Reactome:R-HSA-2079928</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UniProtKB:Q9NNX6</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>C-type lectin domain family 4 member L (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD209 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>DC-SIGN (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>DC-SIGN1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>dendritic cell-specific ICAM-3-grabbing non-integrin 1 (human)</oboInOwl:hasExactSynonym>
@@ -36522,12 +36035,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NNX6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>C-type lectin domain family 4 member L (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NNX6</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NNX6"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD209 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q9NNX6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -36580,7 +36087,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A lactosylceramide 4-alpha-galactosyltransferase that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>CD77 synthase (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Gb3 synthase (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>P1/Pk synthase (human)</oboInOwl:hasExactSynonym>
@@ -36597,55 +36104,55 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A lactosylceramide 4-alpha-galactosyltransferase that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>CD77 synthase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Gb3 synthase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>P1/Pk synthase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>UDP-galactose:beta-D-galactosyl-beta1-R 4-alpha-D-galactosyltransferase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>alpha-1,4-galactosyltransferase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>alpha4Gal-T1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>globotriaosylceramide synthase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPC4"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>alpha-1,4-N-acetylglucosaminyltransferase (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NPC4</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -36684,7 +36191,6 @@
         <oboInOwl:hasExactSynonym>C1qR (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>C1qR(p) (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>C1qRp (human)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>CD93 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>CDw93 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>complement component 1 q subcomponent receptor 1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>matrix-remodeling-associated protein 4 (human)</oboInOwl:hasExactSynonym>
@@ -36720,12 +36226,6 @@
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPY3"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>C1qRp (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NPY3</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NPY3"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD93 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q9NPY3</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -36778,7 +36278,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An interleukin-17 receptor B that is encoded in the genome of human.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>IL-17 receptor B (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>IL-17 receptor homolog 1 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>IL-17B receptor (human)</oboInOwl:hasExactSynonym>
@@ -36795,55 +36295,55 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An interleukin-17 receptor B that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-17 receptor B (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-17 receptor homolog 1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-17B receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-17RB (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL-17Rh1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>IL17Rh1 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>cytokine receptor-like 4 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9NRM6"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>interleukin-17B receptor (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">UniProtKB:Q9NRM6</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -37276,7 +36776,6 @@
         </rdfs:subClassOf>
         <obo:IAO_0000115>A SLAM family member 5 that is encoded in the genome of human.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>UniProtKB:Q9UIB8</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD84 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>Hly9-beta (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>cell surface antigen MAX.3 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leukocyte differentiation antigen CD84 (human)</oboInOwl:hasExactSynonym>
@@ -37289,12 +36788,6 @@
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A SLAM family member 5 that is encoded in the genome of human.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:WCB</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UniProtKB:Q9UIB8</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9UIB8"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD84 (human)</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UniProtKB:Q9UIB8</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -37357,7 +36850,6 @@
         <oboInOwl:hasDbXref>Reactome:R-HSA-1236762</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-1236852</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UniProtKB:Q9UJ71</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>CD207 (human)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>langerin (human)</oboInOwl:hasExactSynonym>
         <rdfs:comment>Category=organism-gene.</rdfs:comment>
         <rdfs:label>C-type lectin domain family 4 member K (human)</rdfs:label>
@@ -37386,12 +36878,6 @@
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>Reactome:R-HSA-1236852</owl:annotatedTarget>
         <rdfs:label>PR:Q9UJ71 located_in GO:0031901</rdfs:label>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9UJ71"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>CD207 (human)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>UniProtKB:Q9UJ71</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_Q9UJ71"/>
@@ -41684,29 +41170,6 @@
     
 
 
-    <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=8021 -->
-
-    <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=8021">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A protein coding gene NT5E in human.</obo:IAO_0000115>
-        <rdfs:comment>Category=external.</rdfs:comment>
-        <rdfs:label>NT5E (human)</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=8021"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein coding gene NT5E in human.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=8619 -->
 
     <owl:Class rdf:about="http://www.genenames.org/cgi-bin/gene_symbol_report?hgnc_id=8619">
@@ -45612,29 +45075,6 @@
         <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:99668"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein coding gene Siglec1 in mouse.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://www.informatics.jax.org/marker/MGI:99782 -->
-
-    <owl:Class rdf:about="http://www.informatics.jax.org/marker/MGI:99782">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/SO_0001217"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A protein coding gene Nt5e in mouse.</obo:IAO_0000115>
-        <rdfs:comment>Category=external.</rdfs:comment>
-        <rdfs:label>Nt5e (mouse)</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://www.informatics.jax.org/marker/MGI:99782"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A protein coding gene Nt5e in mouse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
     </owl:Axiom>
     
