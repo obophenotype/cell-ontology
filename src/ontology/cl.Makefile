@@ -30,6 +30,16 @@ SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 #imports/ncbitaxon_import.owl:
 #	echo "STRONG WARNING: skipped ncbitaxon import!"
 
+ENSMUSG_TEMPLATE="https://raw.githubusercontent.com/obophenotype/brain_data_standards_ontologies/master/src/templates/ensmusg.tsv"
+tmp/ensmusg.tsv:
+	wget $(ENSMUSG_TEMPLATE) -O $@
+
+mirror/ensembl.owl: $(SRC) tmp/ensmusg.tsv
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) template --input $(SRC) --template tmp/ensmusg.tsv \
+      --add-prefix "ensembl: https://identifiers.org/ensembl:" \
+      annotate --ontology-iri $(ONTBASE)/$@ \
+      convert --format ofn --output $@; fi
+
 object_properties.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
 
