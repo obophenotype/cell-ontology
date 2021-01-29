@@ -1,6 +1,6 @@
 ### Keeping cell ontology annotation up to date
 
-Cell ontology identifiers (IRIs) are never lost, but they are occasionally obsoleted.  On the rare occasions that this happens the term is tagged with the annotation `owl:deprecated True` and either a single `term_replaced_by` axiom with value = ID of a term it is safe to auto-migrate annotations too, or, more rarely, multiple `consider` tags, each with value = ID of a potential replacement terms requiring human consideration to map.  In these cases, a comment should provide guidance for mapping.
+Cell ontology identifiers (IRIs) are never lost, but they are occasionally obsoleted.  On the rare occasions that this happens the term is tagged with the annotation `owl:deprecated True` and either a single `term_replaced_by` axiom with value = ID of a term it is safe to auto-migrate annotations too.  More rarely,  `consider` is ued to record multiple potential replacement terms requiring human consideration to map.  In these cases, a comment should provide guidance for mapping.
 
 The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for obsoleted terms & find replacements
 
