@@ -1,10 +1,10 @@
-### Keeping cell ontology annotation up to date
+## Keeping cell ontology annotation up to date
 
-Cell ontology identifiers (IRIs) are never lost, but they are occasionally obsoleted.  On the rare occasions that this happens the term is tagged with the annotation `owl:deprecated True` and either a single `term_replaced_by` axiom with value = ID of a term it is safe to auto-migrate annotations too.  More rarely,  `consider` is ued to record multiple potential replacement terms requiring human consideration to map.  In these cases, a comment should provide guidance for mapping.
+Cell ontology identifiers (IRIs) are never lost, but they are occasionally deprecated. On the rare occasions that this happens, all logical links to other ontology terms (e.g. recording classification or partonomy) are removed and term is tagged with the annotation `owl:deprecated True`.  To aid migration of annotations to the latest standard,  these terms are also annotated with either a `term_replaced_by` or a `consider` tag.  A `term_replaced_by` annotation is used to record the ID of a term it is safe to auto-migrate annotations to.  More rarely,  `consider` is used to record multiple potential replacement terms requiring human consideration to map.  In these cases, a comment will be present to provide guidance for mapping.
 
-The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for obsoleted terms & find replacements
+The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for deprecated terms & find replacements:
 
-**For example:**
+**term_replaced_by**
 
 A query for this term via the API http://purl.obolibrary.org/obo/CL_0000375:
 
@@ -51,7 +51,9 @@ Returns:
 
 The term_replaced_by key points to the ID of a safe replacement term: CL:0007010.  This is a CURIE for http://purl.obolibrary.org/obo/CL_0007010 *
 
-Here is an example of a consider tag, pointing to multiple possible replacement terms:
+**consider**
+
+Here is an example of a consider tag, pointing to multiple possible replacement terms, along with a comment for guidance.
 
 https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000144
 
