@@ -2,11 +2,11 @@
 
 Cell ontology identifiers (IRIs) are never lost, but they are occasionally deprecated. On the rare occasions that this happens, all logical links to other ontology terms (e.g. recording classification or partonomy) are removed and term is tagged with the annotation `owl:deprecated True`.  To aid migration of annotations to the latest standard,  these terms are also annotated with either a `term_replaced_by` or a `consider` tag.  A `term_replaced_by` annotation is used to record the ID of a term it is safe to auto-migrate annotations to.  More rarely,  `consider` is used to record multiple potential replacement terms requiring human consideration to map.  In these cases, a comment will be present to provide guidance for mapping.
 
-The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for deprecated terms & find replacements:
+The [Ontology Lookup Service API](https://www.ebi.ac.uk/ols/docs/api#Term) provides a convenient way to check for deprecated terms & find replacements.
 
-**term_replaced_by**
+The term http://purl.obolibrary.org/obo/CL_0000375 has been deprecated and has that tag **term_replaced_by**
 
-A query for this term via the API http://purl.obolibrary.org/obo/CL_0000375:
+Querying the OLS API for this:
 
 https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000375. (Note the query IRI must be double encoded)
 
@@ -53,10 +53,11 @@ The term_replaced_by key points to the ID of a safe replacement term: CL:0007010
 
 **consider**
 
-Here is an example of a consider tag, pointing to multiple possible replacement terms, along with a comment for guidance.
+The term http://purl.obolibrary.org/obo/CL_0000144 has been deprecated and has a **consider** tag pointing to multiple possible replacement terms, along with a comment for guidance.
 
-https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000144
+Querying the OLS API for this: https://www.ebi.ac.uk/ols/api/ontologies/cl/terms/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FCL_0000144
 
+Returns
 
 ```json
 {
