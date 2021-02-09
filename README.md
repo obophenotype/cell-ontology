@@ -1,7 +1,10 @@
+[![Build Status](https://github.com/obophenotype/cell-ontology/workflows/CI/badge.svg
+)
+[![DOI](https://zenodo.org/badge/13996/obophenotype/cell-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cell-ontology)
+
+
 <img src="https://user-images.githubusercontent.com/112839/107354015-9375bb00-6ac5-11eb-9394-7318df343ec2.png" width=30% height=30%>
 
-[![Build Status](https://travis-ci.org/obophenotype/cell-ontology.svg?branch=master)](https://travis-ci.org/obophenotype/cell-ontology)
-[![DOI](https://zenodo.org/badge/13996/obophenotype/cell-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cell-ontology)
 
 # Cell Ontology 
 
