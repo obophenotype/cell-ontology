@@ -23,16 +23,21 @@ release_artefacts:
 import_group:
   products:
     - id: pr
+      use_gzipped: TRUE
+      is_large: TRUE
     - id: go
     - id: uberon 
     - id: ro
     - id: chebi
+      use_gzipped: TRUE
+      is_large: TRUE
     - id: clo
     - id: pato
     - id: ncbitaxon
+      is_large: TRUE
 pattern_pipelines_group:
   products:
     - id: clustering
       dosdp_tools_options: "--obo-prefixes=true"
-robot_java_args: '-Xmx8G'
+robot_java_args: '-Xmx16G'
 allow_equivalents: asserted-only
