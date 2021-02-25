@@ -35,9 +35,23 @@ import_group:
     - id: pato
     - id: ncbitaxon
       is_large: TRUE
+      use_gzipped: TRUE
 pattern_pipelines_group:
   products:
     - id: clustering
       dosdp_tools_options: "--obo-prefixes=true"
 robot_java_args: '-Xmx16G'
 allow_equivalents: asserted-only
+robot_report:
+  release_reports: False
+  fail_on : ERROR
+  use_labels : False
+  custom_profile : False
+  report_on :
+    - edit
+  custom_sparql_checks :
+    - equivalent-classes
+    - owldef-self-reference
+    - nolabels
+  custom_sparql_exports :
+    - basic-report
