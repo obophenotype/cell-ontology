@@ -19,7 +19,7 @@ http://obofoundry.org/ontology/cl.html
 Editors: see the README in [src/ontology](src/ontology)
 
 ## Twice monthly calls
-
-Third Monday of month, 10am PT/1pm ET (CL & Uberon)  
+  
 Third Wednesday of month, 8am PT/11 am ET (CL)  
+Fourth Monday of month, 10am PT/1pm ET (CL & Uberon)  
 [Agenda here.](https://docs.google.com/document/d/1XvMbNvr0FEsdqGhg79BYCYEHSqUxRHMcvhbGizEAht8/edit)  
