@@ -9,4 +9,4 @@
 # we therefore map the whole repo (../..) to a docker volume.
 #
 # See README-editors.md for more details.
-docker run -v $PWD/../../:/work -w /work/src/ontology --memory=13g -e ROBOT_JAVA_ARGS='-Xmx13G' -e JAVA_OPTS='-Xmx13G' --rm -ti obolibrary/odkfull "$@"
+docker run -v $PWD/../../:/work -w /work/src/ontology -e ROBOT_JAVA_ARGS='-Xmx16G' -e JAVA_OPTS='-Xmx16G' --rm -ti obolibrary/odkfull "$@"
