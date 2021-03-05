@@ -435,7 +435,7 @@ pattern_term_lists_clustering := $(patsubst %.tsv, $(PATTERNDIR)/data/clustering
 
 # Generating the individual pattern modules and merging them into definitions.owl
 $(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns dosdp_patterns_default   dosdp_patterns_clustering
-	if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]   || [ "${individual_patterns_names_clustering}" ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   $(addprefix -i , $(individual_patterns_clustering)) annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
+	if [ $(PAT) = true ] [ "${individual_patterns_names_default}" ]   || [ "${individual_patterns_names_clustering}" ] && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   $(addprefix -i , $(individual_patterns_clustering)) annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
 
 individual_patterns_names_default := $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv))))
 dosdp_patterns_default: $(SRC) all_imports .FORCE
