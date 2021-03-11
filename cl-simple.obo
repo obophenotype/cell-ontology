@@ -1,5 +1,8 @@
 format-version: 1.2
-data-version: releases/2021-02-01
+data-version: releases/2021-03-05
+subsetdef: added_for_HCA ""
+subsetdef: BDS_subset ""
+subsetdef: location_grouping ""
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: PLURAL "plural term"
 remark: See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.
@@ -8108,7 +8111,10 @@ is_a: CL:0000235 ! macrophage
 id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
-def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." [GO_REF:0000031, GOC:ana, GOC:tfm]
+def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." [GO_REF:0000031, GOC:ana, GOC:tfm, https://orcid.org/0000-0002-2825-0621]
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 is_a: CL:0000885 ! gut-associated lymphoid tissue macrophage
 
 [Term]
@@ -18545,6 +18551,7 @@ is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 id: CL:0008033
 name: decidual pericyte
 def: "A pericyte of the decidual vasculature." [] {comment="PMID:30429548"}
+subset: added_for_HCA
 synonym: "decidual perivascular cell" EXACT []
 is_a: CL:0000349 ! extraembryonic cell
 is_a: CL:2000078 ! placental pericyte
@@ -18555,6 +18562,7 @@ creation_date: 2020-02-29T11:45:57Z
 id: CL:0008034
 name: mural cell
 def: "Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of the microcirculation." [Wiki:Mural_cell&oldid=930603194]
+subset: added_for_HCA
 is_a: CL:0002371 ! somatic cell
 created_by: dos
 creation_date: 2020-02-29T17:33:55Z
@@ -18570,7 +18578,8 @@ creation_date: 2020-02-29T17:37:00Z
 [Term]
 id: CL:0008036
 name: extravillous trophoblast
-def: "A trophoblast cell that is not part of a placental villous" [PMID:31049600]
+def: "A trophoblast cell that is not part of a placental villous." [PMID:31049600]
+subset: added_for_HCA
 synonym: "EVT" EXACT [PMID:31049600]
 synonym: "extravillous cytotrophloblast" EXACT []
 is_a: CL:0000351 ! trophoblast cell
@@ -18678,25 +18687,43 @@ xref: http://en.wikipedia.org/wiki/Salivary_gland
 is_a: CL:0002371 ! somatic cell
 
 [Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+is_a: CL:0000865 ! gastrointestinal tract (lamina propria) macrophage
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009009
 name: paneth cell of epithelium of large intestine
-def: "A paneth cell that is located in the epithelium of the large intestine." [PMID:31753849]
+def: "A paneth cell that is located in the epithelium of the large intestine." [http://orcid.org/0000-0003-4183-8865, PMID:31753849]
+subset: location_grouping
 synonym: "paneth-like cell" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 is_a: CL:0000510 ! paneth cell
 is_a: CL:0002658 ! glandular cell of the large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009010
 name: transit amplifying cell
-def: "Transit-amplifying cells (TACs) are an undifferentiated population in transition between stem cells and differentiated cells." [PMID:24813615, PMID:28835754]
+def: "Transit-amplifying cells (TACs) are an undifferentiated population in transition between stem cells and differentiated cells." [http://orcid.org/0000-0003-4183-8865, PMID:24813615, PMID:28835754]
 synonym: "TAC" RELATED []
 synonym: "TACs" RELATED []
 synonym: "transient amplifying cell" EXACT []
 synonym: "transit-amplifying cell" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 is_a: CL:0000003 ! native cell
 relationship: develops_from CL:0000034 ! stem cell
 created_by: http://orcid.org/0000-0002-2825-0621
@@ -18704,97 +18731,133 @@ created_by: http://orcid.org/0000-0002-2825-0621
 [Term]
 id: CL:0009011
 name: transit amplifying cell of large intestine
-def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the large intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [PMID:20801415]
+def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the large intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [http://orcid.org/0000-0003-4183-8865, PMID:20801415]
+subset: location_grouping
 synonym: "large intestine transit amplifying cell" EXACT []
 synonym: "transient amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
 synonym: "transient amplifying cell of large intestine" EXACT []
 synonym: "transit amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
 synonym: "transit-amplifying cell of large intestine" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 is_a: CL:0009010 ! transit amplifying cell
 relationship: derives_from CL:0002250 ! intestinal crypt stem cell
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009012
 name: transit amplifying cell of small intestine
-def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the small intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [PMID:20801415]
+def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the small intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [http://orcid.org/0000-0003-4183-8865, PMID:20801415]
+subset: location_grouping
 synonym: "small intestine transit amplifying cell" EXACT []
 synonym: "transient amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
 synonym: "transient amplifying cell of small intestine" EXACT []
 synonym: "transit amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
 synonym: "transit-amplifying cell of small intestine" EXACT []
-xref: http://orcid.org/0000-0003-4183-8865
 is_a: CL:0009010 ! transit amplifying cell
 relationship: derives_from CL:0002250 ! intestinal crypt stem cell
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009014
 name: Peyer's patch lymphocyte
-def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." [PMID:23525039, PMID:9252325]
+def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." [https://orcid.org/0000-0003-4183-8865, PMID:23525039, PMID:9252325]
+subset: location_grouping
 synonym: "Peyer's patch resident lymphocyte" EXACT []
 synonym: "small intestine Peyer's patch lymphocyte" NARROW []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009015
 name: Peyer's patch follicular dendritic cell
-def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." []
-xref: https://orcid.org/0000-0003-4183-8865
-xref: PMID:24437401
+def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." [https://orcid.org/0000-0003-4183-8865, PMID:24437401]
+subset: location_grouping
 is_a: CL:0000442 ! follicular dendritic cell
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009016
 name: intestinal crypt stem cell of large intestine
-def: "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." [PMID:20683682]
+def: "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." [https://orcid.org/0000-0003-4183-8865, PMID:20683682]
+subset: location_grouping
 synonym: "crypt stem cell of large intestine" BROAD []
 synonym: "stem cell of large intestine crypt of Lieberkuhn" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0002250 ! intestinal crypt stem cell
 is_a: CL:0002253 ! epithelial cell of large intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009017
 name: intestinal crypt stem cell of small intestine
-def: "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." [PMID:20683682]
+def: "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." [https://orcid.org/0000-0003-4183-8865, PMID:20683682]
+subset: location_grouping
 synonym: "crypt stem cell of small intestine" BROAD []
 synonym: "stem cell of small intestine crypt of Lieberkuhn" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0002250 ! intestinal crypt stem cell
 is_a: CL:0002254 ! epithelial cell of small intestine
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009018
 name: lymphocyte of large intestine lamina propria
-def: "A lymphocyte that resides in the lamina propria of the large intestine." []
+def: "A lymphocyte that resides in the lamina propria of the large intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
 synonym: "lamina propria lymphocyte of large intestine" EXACT []
-xref: https://orcid.org/0000-0003-4183-8865
 is_a: CL:0000542 ! lymphocyte
-property_value: location_grouping "" xsd:string
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009019
 name: nephrogenic zone cell
-def: "A kidney cortical cell that is part of the nephrogenic zone." []
+def: "A kidney cortical cell that is part of the nephrogenic zone." [https://orcid.org/0000-0002-3163-0115, PMID:29449449]
+subset: added_for_HCA
 synonym: "cortical nephrogenic niche cell" EXACT []
 synonym: "cortical nephrogenic zone cell" EXACT []
-xref: https://orcid.org/0000-0002-3163-0115
-xref: PMID:29449449
 is_a: CL:0002681 ! kidney cortical cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009021
+name: stromal cell of lamina propria of large intestine
+def: "A stromal cell found in the lamina propria of the large intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+is_a: CL:0000499 ! stromal cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009022
+name: stromal cell of lamina propria of small intestine
+def: "A stromal cell found in the lamina propria of the small intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+is_a: CL:0000499 ! stromal cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+is_a: CL:0002419 ! mature T cell
+is_a: CL:0009014 ! Peyer's patch lymphocyte
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009024
+name: mesothelial cell of small intestine
+def: "A mesothelial cell that is part of the small intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+is_a: CL:0000077 ! mesothelial cell
+is_a: CL:0002254 ! epithelial cell of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009025
+name: mesothelial cell of large intestine
+def: "A mesothelial cell that is part of the large intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+is_a: CL:0000077 ! mesothelial cell
+is_a: CL:0002253 ! epithelial cell of large intestine
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -19327,6 +19390,7 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 id: CL:0019001
 name: tracheobronchial serous cell
 def: "Any serous secreting cell that is part of the tracheobronchial epithelium." []
+subset: added_for_HCA
 synonym: "serous cell of tracheobronchial tree" EXACT []
 is_a: CL:0000313 ! serous secreting cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
@@ -19336,6 +19400,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T16:03:27Z xsd:da
 id: CL:0019002
 name: tracheobronchial chondrocyte
 def: "Any chondrocyte that is part of the tracheobronchial tree." []
+subset: added_for_HCA
 synonym: "chondrocyte of tracheobronchial tree" EXACT []
 is_a: CL:0000138 ! chondrocyte
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
@@ -19345,6 +19410,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T17:29:51Z xsd:da
 id: CL:0019003
 name: tracheobronchial goblet cell
 def: "Any goblet cell that is part of the tracheobronchial epithelium." []
+subset: added_for_HCA
 synonym: "goblet cell of tracheobronchial tree" EXACT []
 is_a: CL:0002202 ! epithelial cell of tracheobronchial tree
 is_a: CL:0002370 ! respiratory goblet cell
@@ -23630,9 +23696,39 @@ is_a: CL:4023004 ! nuclear bag fiber
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023007
+name: L2/3 bipolar Vip expressing GABAergic cortical interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron with bipolar morphology, found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." [PMID:26420784]
+subset: BDS_subset
+synonym: "L2/3 bipolar Vip (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023008
+name: intratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures of telencephalic origins." [DOI:10.1101/2020.10.19.343129]
+subset: BDS_subset
+synonym: "IT projecting neuron" EXACT []
+xref: ILX:0770100
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023009
+name: extratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures not derived from telencephalon." [DOI:10.1101/2020.10.19.343129]
+synonym: "ET projecting neuron" EXACT []
+xref: ILX:0770101
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023010
-name: alpha7 Lamp5 GABAergic interneuron of primary motor cortex (Mus musculus)
-def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells are located in L1 of the primary motor cortex and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." [PMID:30413647, PMID:33184512]
+name: alpha7 Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells are located in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." [PMID:30413647, PMID:33184512]
+subset: BDS_subset
+synonym: "A7 Lamp5 (Mus)" EXACT []
 is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -23640,14 +23736,43 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023011
 name: Lamp5 GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses Lamp5" [PMID:30382198]
-xref: xref (ILX:0770149)
+subset: BDS_subset
+xref: ILX:0770149
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023012
+name: near-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects axons locally rather than distantly." [DOI:10.1101/2020.10.19.343129]
+synonym: "NP neuron" EXACT []
+xref: ILX:0770103
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023013
+name: corticothalamic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to the thalamus." [DOI:10.1101/2020.10.19.343129]
+synonym: "CT projecting neuron" EXACT []
+is_a: CL:0000679 ! glutamatergic neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023014
+name: L5 Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential." [PMID:26420784, PMID:26612957]
+subset: BDS_subset
+synonym: "L5 VIP (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023015
 name: sncg GABAergic cortical interneuron
-def: "xref:(ILX:0770150)" []
+def: "A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein" [PMID:33186530]
+subset: BDS_subset
+xref: ILX:0770150
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -23655,7 +23780,8 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023016
 name: Vip GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide" [PMID:33186530]
-xref: xref:(ILX\:0770151)
+subset: BDS_subset
+xref: ILX:0770151
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -23663,7 +23789,8 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023017
 name: sst GABAergic cortical interneuron
 def: "A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)" [PMID:27477017]
-xref: xref:(ILX\:0770152)
+subset: BDS_subset
+xref: ILX:0770152
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -23671,8 +23798,108 @@ created_by: http://orcid.org/0000-0001-7258-9596
 id: CL:4023018
 name: pvalb GABAergic cortical interneuron
 def: "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin." [] {def="PMID:27477017"}
-xref: xref:(ILX\:0770154)
+subset: BDS_subset
+xref: ILX:0770154
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023019
+name: L5/6 CCK and Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells are found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
+subset: BDS_subset
+synonym: "L5/6 CCK Vip (Mus)" EXACT []
+is_a: CL:4023016 ! Vip GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023022
+name: canopy Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that has extended axons in the surface of L1. Canopy Lamp5 cells resemble neurogliaform cells in having elongated horizontal axonal arbors largely confined to L1; but the dendritic arbors are wider and have fewer branches, while the axon is less tortuous and extends further from the soma" [PMID:30413647]
+subset: BDS_subset
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023023
+name: L5,6 Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp 5 GABAergic cortical interneuron with neurogliaform morphology located in L5,6. L5,6 NGC Lamp5 have deep afterhyperpolarization (AHP) but narrow action potentials (APs). Unlike other deep neurogliaform cells (which are caudal ganglionic eminence (CGE) derived), L5,6 NGC Lamp5 cells are medial ganglionic eminence (MGE)-derived" [PMID:26727548]
+subset: BDS_subset
+synonym: "L5,6 NGC Lamp5 (mus)" EXACT []
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023024
+name: Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron with layer-adapting morphology. NGC Lamp5 cells have a small round soma, short dendrites, and a wide dense axonal arbor that tends to establish a dense axonal mesh with high connection probability both to themselves and L2 pyramidal cells. NGC Lamp5 cells have unique synaptic properties that distinguish them from other GABAergic interneurons, including the release of GABA to the extracellular space via volume transmission, and the ability to produce GABA-B responses in connected postsynaptic targets." [PMID:27477017]
+subset: BDS_subset
+synonym: "NGC Lamp5 (mus)" EXACT []
+is_a: CL:4023011 ! Lamp5 GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023025
+name: Long-range projecting Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant." [PMID:26727548]
+subset: BDS_subset
+synonym: "LP SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023027
+name: L5 ‘T-shaped’ Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
+subset: BDS_subset
+synonym: "L5 T Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023028
+name: L5 Non-martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 Non-martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 Non-martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering." [PMID:28254942, PMID:29326172]
+subset: BDS_subset
+synonym: "L5 Non-martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023030
+name: L2/3/4 Fan martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that has \"Fanning-out' Martinotti morphology with local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1. They have an adapting firing pattern and non-zero afterdepolarization (ADP)." [PMID:27225074, PMID:27477017, PMID:28254942, PMID:29326172]
+subset: BDS_subset
+synonym: "L2/3/5 Fan Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023031
+name: L4 Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in lower L2/3 and upper 5, L4 Sst cells have martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP)." [PMID:33184512]
+subset: BDS_subset
+synonym: "L4 SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023034
+name: L2/3 Pvalb like Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron transcriptomically between the Sst and the Pvalb families and found in L2/3. Some L2/3 PV-like SST cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like SST cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like SST cells have high maximum firing rate variability, with many classified as belonging to the Pvalb subclass on the basis of electrophysiology." [PMID:33184512]
+subset: BDS_subset
+synonym: "L2/3 PV-like SST Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023036
+name: Chandelier Pvalb GABAergic cortical interneuron (Mus musculus)
+def: "A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells are mostly found in upper L2/3, with some in deep L5. Chandelier PV cells exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." [PMID:27477017]
+subset: BDS_subset
+synonym: "Chandelier PV (Mus)" EXACT []
+xref: ILX:0107356
+is_a: CL:4023018 ! pvalb GABAergic cortical interneuron
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Typedef]
