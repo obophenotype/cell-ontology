@@ -8,13 +8,18 @@ Occassionally non-trivial clashes will happen when two pull requests include edi
 
 SOP.
 
-1. Reserialise the Master file by opening it in Protege (or using a ROBOT) and saving it. This will fix any odd orderings, that may have been introduced during previous merges.
-2. In GitHub Desktop
-   * Make sure your Master is up to date <may not be necessary?>
-   * Switch to the branch for the pull request
-   * Choose Branch.update_from_master
+1. Reserialise the Master file using ROBOT. This will fix any odd orderings, that may have been introduced during previous merges.
+    ```sh
+    sh ./run.sh ROBOT convert --input cl-edit.owl -f ofn --output cl-edit.owl
+   ```
+4. In GitHub Desktop:
+
+   * Checkout Master and pull to make sure your Master is up to date.
+   * Checkout the branch for the pull request & make sure it is up to date.
+   * Choose Branch.update_from_master: ![image](https://user-images.githubusercontent.com/112839/112127621-89af9f00-8bbd-11eb-8613-f3a2b8166085.png)
+
    * GitHub desktop should detect the clash and ask you if you want to open in your text editor of choice (Atom is a good choice)
-   * Delete conflict marks, commit and push back to GitHub.
+   * If clashes are due to trivial ordering problems, delete conflict marks, commit and push back to GitHub.
    * Check the resulting diffs on the Pull Request on GitHub
    * Once tests have run, if successful you can merge and delete the branch.
   
