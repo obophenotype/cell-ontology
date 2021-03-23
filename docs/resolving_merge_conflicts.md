@@ -6,7 +6,7 @@ The majority of the time, the conflict is trivial - due to addition of new terms
 
 Occassionally non-trivial clashes will happen when two pull requests include edits to the same term or even the same axiom.  Ask an editor for help if you don't feel confident resolving these.  
 
-SOP.
+### SOP.
 
 1. Reserialise the Master file using ROBOT. This will fix any odd orderings, that may have been introduced during previous merges.
     ```sh
