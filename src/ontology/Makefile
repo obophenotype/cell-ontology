@@ -111,7 +111,8 @@ all_imports: $(IMPORT_FILES)
 SUBSETS =  BDS_subset
 
 SUBSET_ROOTS = $(patsubst %, subsets/%, $(SUBSETS))
-SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
+SUBSET_FORMATS = $(sort tsv owl)
+SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(SUBSET_FORMATS), $(n).$(f)))
 
 .PHONY: all_subsets
 all_subsets: $(SUBSET_FILES)
@@ -119,6 +120,9 @@ all_subsets: $(SUBSET_FILES)
 OBO_REPORT =  $(SRC)-obo-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
+
+.PHONY: robot_reports
+robot_reports: $(REPORT_FILES)
 
 .PHONY: all_reports
 all_reports: all_reports_onestep $(REPORT_FILES)
@@ -435,7 +439,7 @@ pattern_term_lists_clustering := $(patsubst %.tsv, $(PATTERNDIR)/data/clustering
 
 # Generating the individual pattern modules and merging them into definitions.owl
 $(PATTERNDIR)/definitions.owl: prepare_patterns update_patterns dosdp_patterns_default   dosdp_patterns_clustering
-	if [ $(PAT) = true ] [ "${individual_patterns_names_default}" ]   || [ "${individual_patterns_names_clustering}" ] && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   $(addprefix -i , $(individual_patterns_clustering)) annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
+	if [ $(PAT) = true ] && [ "${individual_patterns_names_default}" ]   || [ "${individual_patterns_names_clustering}" ] && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $(individual_patterns_default))   $(addprefix -i , $(individual_patterns_clustering)) annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
 
 individual_patterns_names_default := $(strip $(patsubst %.tsv,%, $(notdir $(wildcard $(PATTERNDIR)/data/default/*.tsv))))
 dosdp_patterns_default: $(SRC) all_imports .FORCE
