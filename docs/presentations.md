@@ -1,3 +1,7 @@
 # Presentations
 
-[Cell Ontology](https://docs.google.com/presentation/d/1rucdclRB3V4JFJWPpy-2XO0soNKHr2j2erHFkrvkz6g/edit#slide=id.p1) by Nicole Vasilevsky. Presented on 2021-02-09.
+
+Cell Ontology (Genentech presentation) by Nicole Vasilevsky.
+Presented on 2021-02-09.
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTk_hrOQRYx1DuNUckoMGVrjqR34uqgQfc1bGzFDB-MpIxJSvOkmRSxsVdp1VzjMgZwY2E0eTPGarXD/embed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
