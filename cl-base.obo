@@ -1,5 +1,8 @@
 format-version: 1.2
-data-version: cl/releases/2020-05-21/cl-base.owl
+data-version: cl/releases/2021-03-05/cl-base.owl
+subsetdef: added_for_HCA ""
+subsetdef: BDS_subset ""
+subsetdef: location_grouping ""
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: LATIN "latin term"
@@ -15,8 +18,12 @@ property_value: http://purl.org/dc/elements/1.1/contributor "Melissa Haendel" xs
 property_value: http://purl.org/dc/elements/1.1/contributor "Nicole Vasilevsky" xsd:string
 property_value: http://purl.org/dc/elements/1.1/contributor "Terry Meehan" xsd:string
 property_value: http://purl.org/dc/elements/1.1/contributor "Yvonne Bradford" xsd:string
-property_value: http://purl.org/dc/elements/1.1/license http://creativecommons.org/licenses/by/4.0/
+property_value: http://purl.org/dc/elements/1.1/description "An ontology of cell types." xsd:string
 property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
+property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
+property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
+property_value: IAO:0000700 CL:0000000
+property_value: owl:versionInfo "2021-03-05" xsd:string
 
 [Term]
 id: CL:0000000
@@ -32,7 +39,7 @@ xref: KUPO:0000002
 xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
-equivalent_to: GO:0005623
+relationship: RO:0002160 NCBITaxon:131567
 
 [Term]
 id: CL:0000001
@@ -94,17 +101,17 @@ id: CL:0000006
 name: neuronal receptor cell
 namespace: cell
 synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
-is_a: CL:0000197 ! receptor cell
-intersection_of: CL:0000197 ! receptor cell
+is_a: CL:0000197 ! sensory receptor cell
+intersection_of: CL:0000197 ! sensory receptor cell
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002215 GO:0050906
 
 [Term]
 id: CL:0000007
-name: early embryonic cell
+name: early embryonic cell (metazoa)
 namespace: cell
 def: "A cell found in the embryo before the formation of all the gem layers is complete." [GOC:tfm]
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 
 [Term]
 id: CL:0000008
@@ -287,6 +294,7 @@ xref: FMA:18644
 xref: WBbt:0006797
 is_a: CL:0000021 {is_inferred="true"} ! female germ cell
 relationship: RO:0000056 GO:0007143
+relationship: RO:0002160 NCBITaxon:33208
 
 [Term]
 id: CL:0000024
@@ -373,6 +381,7 @@ synonym: "neuroblast" EXACT []
 xref: BTO:0000930
 xref: FMA:70563
 is_a: CL:0000055 ! non-terminally differentiated cell
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000032
@@ -380,7 +389,7 @@ name: neuroplacodal cell
 namespace: cell
 def: "A cell of a platelike structure, especially a thickened plate of ectoderm in the early embryo, from which a sense organ develops." [GOC:tfm, ISBN:0618947256]
 synonym: "neural placode cell" EXACT []
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: RO:0002202 CL:0000114 ! surface ectodermal cell
 
 [Term]
@@ -515,7 +524,7 @@ synonym: "polymorphonuclear leucocyte" BROAD []
 synonym: "polymorphonuclear leukocyte" BROAD []
 is_a: CL:0000771 {is_inferred="true"} ! eosinophil
 intersection_of: CL:0000771 ! eosinophil
-intersection_of: BFO:0000051 CP:0000025 ! lobed nucleus
+intersection_of: BFO:0000051 GO:0098537
 intersection_of: BFO:0000051 PR:000007152
 intersection_of: BFO:0000051 PR:000007857
 intersection_of: BFO:0000051 PR:000007858
@@ -562,7 +571,7 @@ xref: CALOHA:TS-0688
 is_a: CL:0000767 {is_inferred="true"} ! basophil
 is_a: CL:0002274 ! histamine secreting cell
 intersection_of: CL:0000767 ! basophil
-intersection_of: BFO:0000051 CP:0000025 ! lobed nucleus
+intersection_of: BFO:0000051 GO:0098537
 intersection_of: RO:0002215 GO:0002349
 intersection_of: RO:0002215 GO:0002351
 intersection_of: RO:0002215 GO:0002830
@@ -1026,7 +1035,6 @@ xref: VHOG:0001479
 is_a: CL:0000542 {is_inferred="true"} ! lymphocyte
 intersection_of: CL:0000542 ! lymphocyte
 intersection_of: RO:0002215 GO:0002456
-disjoint_from: CL:0000623 ! natural killer cell
 disjoint_from: CL:0000945 ! lymphocyte of B lineage
 relationship: RO:0002202 CL:0000827 ! pro-T cell
 
@@ -1035,6 +1043,7 @@ id: CL:0000085
 name: germ line stem cell (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000014 ! germ line stem cell
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000086
@@ -1182,8 +1191,8 @@ xref: BTO:0003473
 is_a: CL:0000775 {is_inferred="true"} ! neutrophil
 intersection_of: CL:0000775 ! neutrophil
 intersection_of: BFO:0000051 CP:0000000 ! neutrophillic cytoplasm
-intersection_of: BFO:0000051 CP:0000025 ! lobed nucleus
 intersection_of: BFO:0000051 GO:0070820
+intersection_of: BFO:0000051 GO:0098537
 intersection_of: lacks_part PR:000009978
 intersection_of: lacks_part PR:000010543
 intersection_of: lacks_part PR:000010799
@@ -1238,7 +1247,7 @@ comment: The term "neuroepithelial cell" is used to describe both this cell type
 synonym: "neuroepithelial cell" BROAD []
 xref: BTO:0004301
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0000197 ! receptor cell
+is_a: CL:0000197 ! sensory receptor cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: RO:0002215 GO:0050906
@@ -1259,13 +1268,11 @@ id: CL:0000100
 name: motor neuron
 namespace: cell
 def: "An efferent neuron that passes from the central nervous system or a ganglion toward or to a muscle and conducts an impulse that causes or inhibits movement." [MESH:A08.663.655.500, PMID:16875686]
-synonym: "anterior horn cell" NARROW []
 synonym: "motoneuron" EXACT []
 xref: BTO:0000312
 xref: FMA:83617
 xref: WBbt:0005409
 is_a: CL:0000527 ! efferent neuron
-relationship: RO:0002120 CL:0000187 ! muscle cell
 
 [Term]
 id: CL:0000101
@@ -1468,15 +1475,17 @@ id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
 namespace: cell
 is_a: CL:0000095 ! neuron associated cell
+relationship: RO:0002160 NCBITaxon:7742
 relationship: RO:0002202 CL:0000333 ! migratory neural crest cell
 
 [Term]
 id: CL:0000124
-name: glial cell (sensu Nematoda and Protostomia)
+name: obsolete glial cell (sensu Nematoda and Protostomia)
 namespace: cell
+comment: This is a grouping class that is no longer needed or wanted.
 xref: FBbt:00005144
-is_a: CL:0000125 ! glial cell
-relationship: RO:0002202 CL:0000340 ! glioblast (sensu Nematoda and Protostomia)
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/715 xsd:string
+is_obsolete: true
 
 [Term]
 id: CL:0000125
@@ -1500,7 +1509,7 @@ synonym: "macrogliocyte" EXACT []
 xref: BTO:0000771
 xref: CALOHA:TS-2027
 xref: FMA:54538
-is_a: CL:0000243 ! glial cell (sensu Vertebrata)
+is_a: CL:0000125 ! glial cell
 relationship: RO:0002202 CL:0000339 ! glioblast (sensu Vertebrata)
 
 [Term]
@@ -1546,9 +1555,8 @@ xref: BTO:0000078
 xref: BTO:0000962
 xref: FMA:54539
 xref: FMA:54540
-is_a: CL:0000243 {is_inferred="true"} ! glial cell (sensu Vertebrata)
 is_a: CL:0000878 ! central nervous system macrophage
-intersection_of: CL:0000243 ! glial cell (sensu Vertebrata)
+intersection_of: CL:0000125 ! glial cell
 intersection_of: BFO:0000050 UBERON:0001017
 intersection_of: RO:0002104 PR:000001012
 intersection_of: RO:0002104 PR:000001813
@@ -1594,7 +1602,7 @@ id: CL:0000134
 name: mesenchymal stem cell
 namespace: cell
 alt_id: CL:0002452
-def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. This cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
+def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. In humans, this cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814j, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
 synonym: "BMSC" NARROW []
 synonym: "bone marrow stromal cells" NARROW []
@@ -1613,20 +1621,7 @@ xref: BTO:0003298
 xref: FMA:70546
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002320 {is_inferred="true"} ! connective tissue cell
-intersection_of: CL:0002320 ! connective tissue cell
-intersection_of: lacks_plasma_membrane_part GO:0042613
-intersection_of: lacks_plasma_membrane_part PR:000001003
-intersection_of: lacks_plasma_membrane_part PR:000001006
-intersection_of: RO:0002104 PR:000001345
-intersection_of: RO:0002104 PR:000001800
-intersection_of: RO:0002104 PR:000001843
-intersection_of: RO:0002215 GO:0001649
-intersection_of: RO:0002215 GO:0016477
-intersection_of: RO:0002215 GO:0030182
-intersection_of: RO:0002215 GO:0030855
-intersection_of: RO:0002215 GO:0045444
-intersection_of: RO:0002215 GO:0055007
-intersection_of: RO:0002215 GO:0060591
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/474 xsd:string
 
 [Term]
 id: CL:0000135
@@ -2125,10 +2120,12 @@ intersection_of: RO:0002215 GO:0035938
 
 [Term]
 id: CL:0000181
-name: metabolising cell
+name: obsolete metabolising cell
 namespace: cell
 def: "A cell whose primary function is intermediary metabolism." [FB:ma]
-is_a: CL:0000003 ! native cell
+comment: Removing this grouping class, because the groupings are incomplete and too hard to maintain.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/720 xsd:string
+is_obsolete: true
 
 [Term]
 id: CL:0000182
@@ -2140,7 +2137,6 @@ xref: BTO:0000575
 xref: CALOHA:TS-0454
 xref: FMA:14515
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0000181 ! metabolising cell
 is_a: CL:0000417 ! endopolyploid cell
 is_a: CL:0002371 ! somatic cell
 relationship: BFO:0000050 UBERON:0002107
@@ -2220,7 +2216,7 @@ namespace: cell
 def: "A muscle cell that develops tension more slowly than a fast-twitch fiber." [GOC:tfm, ISBN:0323052908]
 synonym: "slow muscle fiber" RELATED [ISBN:0815316208]
 xref: FMA:84448
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 relationship: RO:0002202 CL:0000857 ! slow muscle myoblast
 
 [Term]
@@ -2229,7 +2225,7 @@ name: fast muscle cell
 namespace: cell
 def: "A muscle cell that can develop high tension rapidly. It is usually innervated by a single alpha neuron ." [GOC:tfm, ISBN:0323052908]
 synonym: "glycolytic muscle fiber" EXACT []
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 relationship: RO:0002202 CL:0000858 ! fast muscle myoblast
 
 [Term]
@@ -2282,9 +2278,14 @@ relationship: RO:0000053 PATO:0002478
 
 [Term]
 id: CL:0000197
-name: receptor cell
+name: sensory receptor cell
 namespace: cell
+def: "A cell that is capable of detection of a stimulus involved in sensory perception." []
+synonym: "receptor cell" EXACT []
 is_a: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
+intersection_of: BFO:0000050 UBERON:0001032
+intersection_of: RO:0002215 GO:0050906
 
 [Term]
 id: CL:0000198
@@ -2512,7 +2513,7 @@ namespace: cell
 def: "A cell of the outer of the three germ layers of the embryo." [MESH:A16.254.425.273]
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000924
 
 [Term]
@@ -2523,7 +2524,7 @@ def: "A cell of the middle germ layer of the embryo." [MESH:A16.254.425.660]
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000926
 
 [Term]
@@ -2533,7 +2534,7 @@ namespace: cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:A16.254.425.407]
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000925
 
 [Term]
@@ -2740,16 +2741,17 @@ def: "A modified epidermal cell located in the stratum basale. They are found mo
 synonym: "Merkel's cell" EXACT []
 xref: FMA:70548
 is_a: CL:0000123 ! neuron associated cell (sensu Vertebrata)
-is_a: CL:0000312 {source="PMID:19782676"} ! keratinocyte
+is_a: CL:0000312 {xref="PMID:19782676"} ! keratinocyte
 relationship: BFO:0000050 UBERON:0002025
 
 [Term]
 id: CL:0000243
-name: glial cell (sensu Vertebrata)
+name: obsolete glial cell (sensu Vertebrata)
 namespace: cell
 def: "A non-neuronal cell of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu. Form the myelin insulation of nervous pathways, guide neuronal migration during development, and exchange metabolites with neurons. Neuroglia have high-affinity transmitter uptake systems, voltage-dependent and transmitter-gated ion channels, and can release transmitters, but their role in signaling (as in many other functions) is unclear." [MESH:A08.637]
-is_a: CL:0000125 ! glial cell
-relationship: RO:0002202 CL:0000339 ! glioblast (sensu Vertebrata)
+comment: This is a grouping class that is no longer needed or wanted.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/715 xsd:string
+is_obsolete: true
 
 [Term]
 id: CL:0000244
@@ -2844,7 +2846,8 @@ is_obsolete: true
 id: CL:0000255
 name: eukaryotic cell
 namespace: cell
-is_a: CL:0000003 ! native cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002160 NCBITaxon:2759
 disjoint_from: CL:0000520 ! prokaryotic cell
 
 [Term]
@@ -2855,9 +2858,11 @@ is_a: CL:0000325 ! stuff accumulating cell
 
 [Term]
 id: CL:0000257
-name: Mycetozoan cell
+name: Eumycetozoan cell
 namespace: cell
 is_a: CL:0000255 ! eukaryotic cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002160 NCBITaxon:142796
 
 [Term]
 id: CL:0000258
@@ -3503,6 +3508,7 @@ synonym: "spongioblast" EXACT []
 xref: FMA:70564
 is_a: CL:0000030 ! glioblast
 is_a: CL:0000123 ! neuron associated cell (sensu Vertebrata)
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000340
@@ -3523,6 +3529,7 @@ name: pigment cell (sensu Vertebrata)
 namespace: cell
 def: "Any animal cell containing pigment granules." [GOC:tfm, ISBN:0721662544]
 is_a: CL:0000147 ! pigment cell
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000343
@@ -3620,7 +3627,7 @@ def: "An undifferentiated cell produced by early cleavages of the fertilized egg
 synonym: "blastomere" EXACT []
 xref: BTO:0001473
 xref: FMA:72551
-is_a: CL:0000007 ! early embryonic cell
+is_a: CL:0000007 ! early embryonic cell (metazoa)
 
 [Term]
 id: CL:0000354
@@ -3678,7 +3685,7 @@ id: CL:0000360
 name: morula cell
 namespace: cell
 def: "A cell of the early embryo at the developmental stage in which the blastomeres, resulting from repeated mitotic divisions of the fertilized ovum (zygote), form a compact cell mass." [MESH:A16.254.270.550]
-is_a: CL:0000007 ! early embryonic cell
+is_a: CL:0000007 ! early embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0000085
 
 [Term]
@@ -3686,7 +3693,7 @@ id: CL:0000361
 name: gastrula cell
 namespace: cell
 def: "A cell of the embryo in the early stage following the blastula, characterized by morphogenetic cell movements, cell differentiation, and the formation of the three germ layers." [MESH:A16.254.412]
-is_a: CL:0000007 ! early embryonic cell
+is_a: CL:0000007 ! early embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0004734
 
 [Term]
@@ -3729,7 +3736,10 @@ synonym: "zygote" BROAD []
 xref: BTO:0000854
 xref: EHDAA2:0004546
 xref: FMA:72395
-is_a: CL:0000007 ! early embryonic cell
+is_a: CL:0000007 ! early embryonic cell (metazoa)
+is_a: CL:0010017 ! zygote
+intersection_of: CL:0010017 ! zygote
+intersection_of: RO:0002160 NCBITaxon:33208
 
 [Term]
 id: CL:0000366
@@ -3883,12 +3893,13 @@ is_a: CL:0000630 ! supportive cell
 
 [Term]
 id: CL:0000387
-name: hemocyte (sensu Nematoda and Protostomia)
+name: hemocyte (sensu Arthropoda)
 namespace: cell
 xref: FBbt:00005063
 is_a: CL:0000519 ! phagocyte (sensu Nematoda and Protostomia)
+relationship: RO:0002160 NCBITaxon:6656
 relationship: RO:0002202 CL:0000385 ! prohemocyte (sensu Nematoda and Protostomia)
-relationship: RO:0002215 GO:0035010 {source="PMID:18025161"}
+relationship: RO:0002215 GO:0035010 {xref="PMID:18025161"}
 
 [Term]
 id: CL:0000388
@@ -3921,7 +3932,7 @@ name: podocyte (sensu Diptera)
 namespace: cell
 def: "An insect immune cell that develops from plasmatocyte." [PMID:12930778]
 xref: FBbt:00001688
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 relationship: RO:0002202 CL:0000394 ! plasmatocyte
 
 [Term]
@@ -3943,14 +3954,14 @@ id: CL:0000394
 name: plasmatocyte
 namespace: cell
 xref: FBbt:00001685
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 
 [Term]
 id: CL:0000395
 name: procrystal cell
 namespace: cell
 xref: FBbt:00001689
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 
 [Term]
 id: CL:0000396
@@ -3972,7 +3983,7 @@ id: CL:0000398
 name: polygonal cell
 namespace: cell
 xref: FBbt:00001691
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 
 [Term]
 id: CL:0000399
@@ -4142,7 +4153,6 @@ is_a: CL:0002371 ! somatic cell
 [Term]
 id: CL:0000421
 name: coelomocyte
-namespace: cell
 def: "A free floating cell, including amebocytes and eleocytes, in the coelom of certain animals, especially annelids." [GOC:tfm, ISBN:0721662544]
 xref: BTO:0002856
 xref: WBbt:0005751
@@ -4179,9 +4189,11 @@ is_a: CL:0000658 ! cuticle secreting cell
 
 [Term]
 id: CL:0000426
-name: scaffold cell
+name: obsolete scaffold cell
 namespace: cell
-is_a: CL:0000445 ! apoptosis fated cell
+comment: This is a cell used in tissue engineering and is out of scope for CL.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/708 xsd:string
+is_obsolete: true
 
 [Term]
 id: CL:0000427
@@ -4984,7 +4996,6 @@ synonym: "perineuronal satellite oligodendroglial cell" EXACT []
 synonym: "satellite oligodendrocyte" EXACT []
 xref: FMA:54550
 is_a: CL:0000123 ! neuron associated cell (sensu Vertebrata)
-is_a: CL:0000243 ! glial cell (sensu Vertebrata)
 relationship: RO:0002202 CL:0000339 ! glioblast (sensu Vertebrata)
 
 [Term]
@@ -5001,6 +5012,7 @@ name: phagocyte (sensu Vertebrata)
 namespace: cell
 def: "A phagocyte in vertebrates that is able to phagocytosis." [GOC:tfm]
 is_a: CL:0000234 ! phagocyte
+relationship: RO:0002160 NCBITaxon:7742
 
 [Term]
 id: CL:0000519
@@ -5020,6 +5032,8 @@ id: CL:0000521
 name: fungal cell
 namespace: cell
 is_a: CL:0000255 ! eukaryotic cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002160 NCBITaxon:4751
 disjoint_from: CL:0000548 ! animal cell
 
 [Term]
@@ -5177,7 +5191,7 @@ xref: WBbt:0003679
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
-relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
+relationship: RO:0002202 CL:0000031 {gci_filler="NCBITaxon:7742", gci_relation="RO:0002162", xref="https://github.com/obophenotype/cell-ontology/issues/757"} ! neuroblast (sensu Vertebrata)
 relationship: RO:0002215 GO:0019226
 
 [Term]
@@ -5309,6 +5323,9 @@ name: animal cell
 namespace: cell
 subset: ubprop:upper_level
 is_a: CL:0000255 ! eukaryotic cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: RO:0002160 NCBITaxon:33208
+relationship: RO:0002160 NCBITaxon:33208
 
 [Term]
 id: CL:0000549
@@ -5587,7 +5604,7 @@ id: CL:0000565
 name: fat body cell
 namespace: cell
 def: "A cell found in fat bodies whose primary function is intermediary metabolism." [FB:ma]
-is_a: CL:0000181 ! metabolising cell
+is_a: CL:0000325 ! stuff accumulating cell
 
 [Term]
 id: CL:0000566
@@ -6244,7 +6261,6 @@ is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 id: CL:0000619
 name: support cell (sensu Nematoda)
 namespace: cell
-is_a: CL:0000124 ! glial cell (sensu Nematoda and Protostomia)
 is_a: CL:0000378 ! support cell (sensu Nematoda and Protostomia)
 
 [Term]
@@ -6289,7 +6305,6 @@ xref: CALOHA:TS-0664
 xref: FMA:63147
 xref: FMA:83601
 xref: VHOG:0001697
-is_a: CL:0001067 {is_inferred="true"} ! group 1 innate lymphoid cell
 intersection_of: CL:0001067 ! group 1 innate lymphoid cell
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001020
@@ -6349,6 +6364,7 @@ namespace: cell
 def: "A cell that can perform photosynthesis, in which carbohydrates are synthesized from carbon dioxide and water, using light as the energy source." [TAIR:sr]
 comment: see PMID:21177950, The making of a photosynthetic animal.
 is_a: CL:0000003 ! native cell
+relationship: RO:0002215 GO:0015979
 
 [Term]
 id: CL:0000629
@@ -6861,7 +6877,7 @@ namespace: cell
 def: "A cell present in the developing CNS. Functions as both a precursor cell and as a scaffold to support neuronal migration." [GOC:dph]
 comment: Unlike that of mammals, the brain of adult teleost fish exhibits an intense and widespread neurogenic activity as a result of the persistence of\nradial glial cells acting as neural progenitors throughout life.
 synonym: "forebrain radial glial cell" NARROW []
-is_a: CL:0000243 ! glial cell (sensu Vertebrata)
+is_a: CL:0000125 ! glial cell
 relationship: RO:0002202 CL:0000710 ! neurecto-epithelial cell
 
 [Term]
@@ -6921,8 +6937,8 @@ id: CL:0000687
 name: R1 photoreceptor cell
 namespace: cell
 synonym: "R1 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000688
@@ -6944,8 +6960,8 @@ id: CL:0000690
 name: R2 photoreceptor cell
 namespace: cell
 synonym: "R2 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000691
@@ -6976,8 +6992,8 @@ id: CL:0000694
 name: R3 photoreceptor cell
 namespace: cell
 synonym: "R3 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000695
@@ -7002,8 +7018,8 @@ id: CL:0000697
 name: R4 photoreceptor cell
 namespace: cell
 synonym: "R4 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000698
@@ -7043,8 +7059,8 @@ id: CL:0000702
 name: R5 photoreceptor cell
 namespace: cell
 synonym: "R5 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000703
@@ -7066,8 +7082,8 @@ id: CL:0000705
 name: R6 photoreceptor cell
 namespace: cell
 synonym: "R6 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000706
@@ -7105,8 +7121,8 @@ id: CL:0000709
 name: R8 photoreceptor cell
 namespace: cell
 synonym: "R8 cell" EXACT []
-is_a: CL:0000287 ! eye photoreceptor cell
 is_a: CL:0000488 ! visible light photoreceptor cell
+relationship: BFO:0000050 UBERON:0000971
 
 [Term]
 id: CL:0000710
@@ -7198,6 +7214,7 @@ id: CL:0000722
 name: cystoblast
 namespace: cell
 is_a: CL:0000586 ! germ cell
+relationship: RO:0002160 NCBITaxon:6656
 
 [Term]
 id: CL:0000723
@@ -7300,13 +7317,13 @@ is_a: CL:0000736 ! embryonic gland hemocyte
 id: CL:0000735
 name: lymph gland hemocyte
 namespace: cell
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 
 [Term]
 id: CL:0000736
 name: embryonic gland hemocyte
 namespace: cell
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 
 [Term]
 id: CL:0000737
@@ -7360,7 +7377,7 @@ name: spinal accessory motor neuron
 namespace: cell
 def: "A motor neuron that is located in the cervical region of the spinal cord and selectively innervates the sternocleidmastoid or trapezius muscle. Unlike other motor neurons, they extend axons dorsally along lateral margins of the spinal cord." [PMID:16267219]
 synonym: "SACMN" EXACT []
-is_a: CL:0000100 ! motor neuron
+is_a: CL:0008039 ! lower motor neuron
 
 [Term]
 id: CL:0000742
@@ -7762,7 +7779,7 @@ relationship: RO:0002202 CL:0000612 ! eosinophilic myelocyte
 id: CL:0000774
 name: band form eosinophil
 namespace: cell
-def: "A late eosinophilic metamyelocyte in which the nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature basophil." [GOC:add, GOC:tfm, http://www.cap.org, ISBN:0721601464, PMID:19622087]
+def: "A late eosinophilic metamyelocyte in which the nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature eosinophil." [GOC:add, GOC:tfm, http://www.cap.org, ISBN:0721601464, PMID:19622087]
 is_a: CL:0000772 {is_inferred="true"} ! immature eosinophil
 intersection_of: CL:0000772 ! immature eosinophil
 intersection_of: BFO:0000051 CP:0000039 ! banded nucleus
@@ -8381,7 +8398,7 @@ xref: BTO:0003435
 is_a: CL:0002419 {is_inferred="true"} ! mature T cell
 intersection_of: CL:0002419 ! mature T cell
 intersection_of: has_completed GO:0002286
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 intersection_of: RO:0000053 PATO:0001603
 disjoint_from: CL:0000898 ! naive T cell
 
@@ -8568,7 +8585,6 @@ def: "A natural killer cell that is developmentally immature and expresses natur
 comment: In mouse the NKR are Ly49 molecules and in human these cells express KIR molecules.
 synonym: "immature NK cell" EXACT []
 synonym: "p-NK" RELATED [PMID:12457618]
-is_a: CL:0000623 {is_inferred="true"} ! natural killer cell
 intersection_of: CL:0000623 ! natural killer cell
 intersection_of: RO:0000053 PATO:0001501
 disjoint_from: CL:0000824 ! mature natural killer cell
@@ -8584,8 +8600,6 @@ synonym: "LAK cell" BROAD [PMID:14685782]
 synonym: "lymphokine activated killer cell" BROAD [PMID:14685782]
 synonym: "mature NK cell" EXACT []
 is_a: CL:0000623 ! natural killer cell
-disjoint_from: CL:0002338 ! CD56-positive, CD161-positive immature natural killer cell
-disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
 relationship: RO:0002202 CL:0000823 ! immature natural killer cell
 
 [Term]
@@ -9157,10 +9171,12 @@ intersection_of: BFO:0000050 UBERON:0000479
 id: CL:0000865
 name: gastrointestinal tract (lamina propria) macrophage
 namespace: cell
-def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." [GO_REF:0000031, GOC:ana, GOC:tfm]
-is_a: CL:0000885 {is_inferred="true"} ! gut-associated lymphoid tissue macrophage
+def: "A gut-associated lymphoid tissue macrophage found in lamina propria of the gut." [GO_REF:0000031, GOC:ana, GOC:tfm, https://orcid.org/0000-0002-2825-0621]
+synonym: "gastrointestinal system (lamina propria) macrophage" EXACT []
+synonym: "macrophage of gastrointestinal system (lamina propria)" EXACT []
+synonym: "macrophage of gastrointestinal tract (lamina propria)" EXACT []
 intersection_of: CL:0000885 ! gut-associated lymphoid tissue macrophage
-intersection_of: BFO:0000050 UBERON:0001238
+intersection_of: BFO:0000050 UBERON:0004780
 
 [Term]
 id: CL:0000866
@@ -9559,7 +9575,7 @@ synonym: "T4.Mem.Sp" RELATED []
 is_a: CL:0000624 ! CD4-positive, alpha-beta T cell
 intersection_of: CL:0000624 ! CD4-positive, alpha-beta T cell
 intersection_of: has_completed GO:0002286
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 intersection_of: RO:0000053 PATO:0001603
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
 
@@ -9785,7 +9801,7 @@ synonym: "CD8-positive, alpha-beta memory T-lymphocyte" EXACT []
 synonym: "T.8Mem.Sp" RELATED []
 intersection_of: CL:0000625 ! CD8-positive, alpha-beta T cell
 intersection_of: has_completed GO:0002286
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 intersection_of: RO:0000053 PATO:0001603
 property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0001-9990-8331 xsd:string
 
@@ -9816,7 +9832,7 @@ is_a: CL:0002419 {is_inferred="true"} ! mature T cell
 intersection_of: CL:0002419 ! mature T cell
 intersection_of: has_completed GO:0030217
 intersection_of: has_completed GO:0045058
-intersection_of: RO:0000053 PATO:0045026 ! normal life span
+intersection_of: RO:0000053 PATO:0045026
 
 [Term]
 id: CL:0000912
@@ -10252,17 +10268,14 @@ namespace: cell
 def: "Cell committed to natural killer cell lineage that has the phenotype CD122-positive, CD34-positive, and CD117-positive. This cell type lacks expression of natural killer receptor proteins." [GO_REF:0000031, GOC:add, GOC:dsd, GOC:pam, GOC:tfm, PMID:16551251, PMID:17100874]
 comment: These cells are also reportedly CD7-low, CD10-negative, CD45RA-positive, alpha-4-beta-7 integrin-high.
 synonym: "pre-NK cell" EXACT []
-is_a: CL:0000623 {is_inferred="true"} ! natural killer cell
 intersection_of: CL:0000623 ! natural killer cell
 intersection_of: RO:0002104 PR:000001003
 intersection_of: RO:0002104 PR:000001381
 intersection_of: RO:0002104 PR:000002065
-disjoint_from: CL:0002338 ! CD56-positive, CD161-positive immature natural killer cell
-disjoint_from: CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
 
 [Term]
 id: CL:0000938
-name: CD16-negative, CD56-bright natural killer cell
+name: CD16-negative, CD56-bright natural killer cell, human
 namespace: cell
 def: "NK cell that has the phenotype CD56-bright, CD16-negative, and CD84-positive with the function to secrete interferon-gamma but is not cytotoxic." [GO_REF:0000031, GOC:add, GOC:pam, GOC:tfm, PMID:19796267, PMID:22343568]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'CD16-CD56bright NK cell'. Markers are associated with human cell types.
@@ -10270,18 +10283,17 @@ synonym: "CD16-CD56bright NK cell" EXACT [PMID:22343568]
 synonym: "CD16-negative, CD56-bright NK cell" EXACT []
 synonym: "CD56-bright cytokine secreting natural killer cell" EXACT []
 synonym: "CD56-bright cytokine secreting NK cell" EXACT []
-is_a: CL:0000824 {is_inferred="true"} ! mature natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_high_plasma_membrane_amount PR:000001024
 intersection_of: lacks_plasma_membrane_part PR:000001483
 intersection_of: lacks_plasma_membrane_part PR:000002015
 intersection_of: RO:0002104 PR:000001319
+intersection_of: RO:0002162 NCBITaxon:9606
 intersection_of: RO:0002215 GO:0032609
-disjoint_from: CL:0000939 ! CD16-positive, CD56-dim natural killer cell
 
 [Term]
 id: CL:0000939
-name: CD16-positive, CD56-dim natural killer cell
+name: CD16-positive, CD56-dim natural killer cell, human
 namespace: cell
 def: "A mature natural killer cell that has the phenotype CD56-low, CD16-positive and which is capable of cytotoxicity and cytokine production." [GO_REF:0000031, GOC:add, GOC:pam, PMID:19796267, PMID:22343568]
 comment: This cell type is compatible with the HIPC Lyoplate markers for 'CD16+CD56+ NK cell'. Markers are associated with human cell types.
@@ -10293,11 +10305,11 @@ synonym: "CD16-positive, CD56-positive natural killer cell" EXACT []
 synonym: "CD16-positive, CD56-positive NK cell" EXACT []
 synonym: "cytotoxic CD56-dim natural killer cell" EXACT []
 synonym: "cytotoxic CD56-dim NK cell" EXACT []
-is_a: CL:0000824 {is_inferred="true"} ! mature natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_low_plasma_membrane_amount PR:000001024
 intersection_of: lacks_plasma_membrane_part PR:000002015
 intersection_of: RO:0002104 PR:000001483
+intersection_of: RO:0002162 NCBITaxon:9606
 intersection_of: RO:0002215 GO:0001816
 intersection_of: RO:0002215 GO:0042267
 
@@ -11990,8 +12002,8 @@ namespace: cell
 def: "A cell found in an organism or derived from an organism exhibiting a phenotype that deviates from the expected phenotype of any native cell type of that organism. Abnormal cells are typically found in disease states or disease models." [GOC:add, GOC:cg, GOC:wdd]
 comment: https://github.com/obophenotype/cell-ontology/issues/448
 xref: https://ncit.nci.nih.gov/ncitbrowser/ConceptReport.jsp?dictionary=NCI_Thesaurus&code=C12913
-is_a: GO:0005623
-intersection_of: GO:0005623
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: RO:0000053 PATO:0000460
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T18:53:32Z xsd:dateTime
@@ -12000,16 +12012,18 @@ property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T18:53:32Z xsd:da
 id: CL:0001062
 name: effector memory CD8-positive, alpha-beta T cell, terminally differentiated
 namespace: cell
-def: "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, GOC:dos, PMID:15032595, PMID:16237082]
-comment: This cell type is seen human but not found in the mouse.
-synonym: "TEMRA" EXACT [PMID:16237082]
+def: "A CD8-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, GOC:dos, PMID:15032595, PMID:16237082, PMID:26883338]
+comment: This cell type is seen in human but not found in the mouse.
+synonym: "CD8+ TEMRA" EXACT [PMID:15032595]
+synonym: "CD8-positive TEMRA" EXACT [PMID:15032595]
+synonym: "TEMRA" BROAD [PMID:15032595]
 is_a: CL:0000909 ! CD8-positive, alpha-beta memory T cell
 intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 intersection_of: lacks_plasma_membrane_part PR:000001017
 intersection_of: lacks_plasma_membrane_part PR:000001203
 intersection_of: RO:0002104 PR:000001015
-intersection_of: RO:0002160 NCBITaxon:9606
+intersection_of: RO:0002162 NCBITaxon:9606
 relationship: RO:0002202 CL:0000913 ! effector memory CD8-positive, alpha-beta T cell
 
 [Term]
@@ -12046,7 +12060,6 @@ id: CL:0001065
 name: innate lymphoid cell
 namespace: cell
 def: "A lymphocyte that lacks characteristic T cell, B cell, myeloid cell, and dendritic cell markers, that functions as part of the innate immune response to produce cytokines and other effector responses." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
-is_a: CL:0000542 ! lymphocyte
 intersection_of: CL:0000542 ! lymphocyte
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001020
@@ -12088,7 +12101,6 @@ id: CL:0001067
 name: group 1 innate lymphoid cell
 namespace: cell
 def: "An innate lymphoid cell that is capable of producing the type 1 cytokine IFN-gamma, but not Th2 or Th17 cell-associated cytokines." [GOC:add, GOC:dsd, PMID:23348417]
-is_a: CL:0001065 ! innate lymphoid cell
 intersection_of: CL:0001065 ! innate lymphoid cell
 intersection_of: RO:0002215 GO:0032609
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
@@ -12099,7 +12111,6 @@ id: CL:0001068
 name: ILC1
 namespace: cell
 def: "A group 1 innate lymphoid cell that is non-cytotoxic." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
-is_a: CL:0001067 ! group 1 innate lymphoid cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T20:54:12Z xsd:dateTime
 
@@ -12109,10 +12120,10 @@ name: group 2 innate lymphoid cell
 namespace: cell
 def: "An innate lymphoid cell that is capable of producing T-helper 2-cell associated cytokines upon stimulation." [GOC:add, GOC:dsd, PMID:23292121, PMID:23562755]
 synonym: "ILC2" EXACT []
+synonym: "natural helper cell" EXACT []
 synonym: "nuocyte" EXACT []
-is_a: CL:0001065 ! innate lymphoid cell
 intersection_of: CL:0001065 ! innate lymphoid cell
-intersection_of: RO:0002215 GO:0032634 ! interleukin-5 production
+intersection_of: RO:0002215 GO:0032634
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-30T21:20:08Z xsd:dateTime
 
@@ -12136,11 +12147,144 @@ name: group 3 innate lymphoid cell
 namespace: cell
 def: "An innate lymphoid cell that constituitively expresses RORgt and is capable of expressing IL17A and/or IL-22." [GOC:add, GOC:dsd, PMID:23292121, PMID:23348417]
 synonym: "ILC3" EXACT []
-is_a: CL:0001065 ! innate lymphoid cell
 intersection_of: CL:0001065 ! innate lymphoid cell
 intersection_of: BFO:0000051 PR:000003455
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/elements/1.1/date 2017-01-31T20:21:26Z xsd:dateTime
+
+[Term]
+id: CL:0001072
+name: CD34-negative, CD117-positive innate lymphoid cell, human
+def: "An innate lymphoid cell in the human with the phenotype CD34-negative, CD117-positive, and a precusor to NK cells, ILC2 cells, and ILC3 cells." [GOC:add, PMID:30193847, PMID:31201208]
+synonym: "CD34-negative, CD117-positive ILC" EXACT []
+synonym: "CD34-negative, CD117-positive ILCP" EXACT []
+synonym: "CD34-negative, CD117-positive innate lymphoid cell precusor" EXACT []
+intersection_of: CL:0001065 ! innate lymphoid cell
+intersection_of: lacks_plasma_membrane_part PR:P28906
+intersection_of: RO:0000053 PATO:0001501
+intersection_of: RO:0002104 PR:P10721
+intersection_of: RO:0002162 NCBITaxon:9606
+relationship: RO:0002202 CL:0001074 ! CD34-positive, CD56-positive, CD117-positive common innate lymphoid precursor, human
+
+[Term]
+id: CL:0001073
+name: CD34-negative, CD56-positive, CD117-positive innate lymphoid cell, human
+def: "An innate lymphoid cell in the human with the phenotype CD34-negative, CD56-positive, CD117-positive.Thie cell type may include precusors to NK cells and ILC3 cells." [GOC:add, PMID:30193847, PMID:31201208]
+synonym: "CD34-negative, CD56-positive, CD117-positive ILC" EXACT []
+synonym: "CD34-negative, CD56-positive, CD117-positive ILCP" EXACT []
+synonym: "CD34-negative, CD56-positive, CD117-positive innate lymphoid cell precursor" EXACT []
+intersection_of: CL:0001072 ! CD34-negative, CD117-positive innate lymphoid cell, human
+intersection_of: RO:0002104 PR:P10721
+intersection_of: RO:0002104 PR:P13591
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001074
+name: CD34-positive, CD56-positive, CD117-positive common innate lymphoid precursor, human
+def: "An innate lymphoid cell precursor in the human with the phenotype CD34-positive, CD56-positive, CD117-positive.Thie cell type may include precusors to NK cells and ILC3 cells." [GOC:add, PMID:30193847]
+synonym: "CD34-positive, CD56-positive, CD117-positive CILP" EXACT []
+intersection_of: CL:0001065 ! innate lymphoid cell
+intersection_of: RO:0000053 PATO:0001501
+intersection_of: RO:0002104 PR:P10721
+intersection_of: RO:0002104 PR:P13591
+intersection_of: RO:0002104 PR:P28906
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001075
+name: KLRG1-positive innate lymphoid cell, human
+def: "An innate lymphoid cell in the human with the phenotype KLRG1-positive that is a precusor for ILC2 cells." [GOC:add, PMID:31201208]
+synonym: "KLRG1-positive ILC" EXACT []
+intersection_of: CL:0001072 ! CD34-negative, CD117-positive innate lymphoid cell, human
+intersection_of: RO:0002104 PR:Q96E93
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001076
+name: NKp46-positive innate lymphoid cell, human
+def: "An innate lymphoid cell in the human with the phenotype NKp46-positive that is a precusor for NK cells and ILC3 cells." [GOC:add, PMID:31201208, PMID:31337734]
+synonym: "NKp46-positive ILC" EXACT []
+intersection_of: CL:0001074 ! CD34-positive, CD56-positive, CD117-positive common innate lymphoid precursor, human
+intersection_of: RO:0002104 PR:O76036
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001077
+name: ILC1, human
+def: "An ILC1 cell in the human with the phenotype CD56-negative, IL-7Ralpha-positive, T-bet-positive." [GOC:add, PMID:31500958]
+synonym: "innate lymphoid cell 1, human" EXACT []
+intersection_of: CL:0001068 ! ILC1
+intersection_of: BFO:0000051 PR:Q9UL17
+intersection_of: RO:0002104 PR:P16871
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001078
+name: group 3 innate lymphoid cell, human
+def: "A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive." [GOC:add, PMID:31500958]
+synonym: "ILC3, human" EXACT []
+intersection_of: CL:0001071 ! group 3 innate lymphoid cell
+intersection_of: RO:0002104 PR:P16871
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001079
+name: NKp44-positive group 3 innate lymphoid cell, human
+def: "A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive, and NKp44-positive." [GOC:add, PMID:24778151, PMID:31500958]
+intersection_of: CL:0001071 ! group 3 innate lymphoid cell
+intersection_of: RO:0002104 PR:O95944
+intersection_of: RO:0002104 PR:P16871
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001080
+name: NKp44-negative group 3 innate lymphoid cell, human
+def: "A group 3 innate lymphoid cell in the human with the phenotype IL-7Ralpha-positive, and NKp44-negative." [GOC:add, PMID:24778151, PMID:31500958]
+intersection_of: CL:0001071 ! group 3 innate lymphoid cell
+intersection_of: lacks_plasma_membrane_part PR:O95944
+intersection_of: RO:0002104 PR:P16871
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001081
+name: group 2 innate lymphoid cell, human
+def: "A group 2 innate lymphoid cell in the human with the phenotype CD25-positive, CD127-positive, CD161-positive, and GATA-3-positive." [GOC:add, PMID:24778151, PMID:26844414]
+synonym: "ILC2, human" EXACT []
+intersection_of: CL:0001069 ! group 2 innate lymphoid cell
+intersection_of: BFO:0000051 PR:P23771
+intersection_of: RO:0002104 PR:P01589
+intersection_of: RO:0002104 PR:P16871
+intersection_of: RO:0002104 PR:Q12918
+intersection_of: RO:0002104 PR:Q9Y5Y4
+intersection_of: RO:0002162 NCBITaxon:9606
+
+[Term]
+id: CL:0001082
+name: immature innate lymphoid cell
+def: "An innate lyphoid cell with an immature phenotype." [GOC:add]
+synonym: "immature ILC" EXACT []
+intersection_of: CL:0001065 ! innate lymphoid cell
+intersection_of: RO:0000053 PATO:0001501
+
+[Term]
+id: CL:0001087
+name: effector memory CD4-positive, alpha-beta T cell, terminally differentiated
+namespace: cell
+def: "A CD4-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, PMID:17465678, PMID:26883338, PMID:27997758, PMID:29133794]
+comment: This cell type is seen in human but not found in the mouse.
+synonym: "CD4+ TEMRA" EXACT [PMID:17465678]
+synonym: "CD4-positive TEMRA" EXACT [PMID:17465678]
+synonym: "TEMRA" BROAD [PMID:17465678]
+is_a: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+intersection_of: has_completed GO:0043379
+intersection_of: lacks_plasma_membrane_part PR:000001017
+intersection_of: lacks_plasma_membrane_part PR:000001203
+intersection_of: RO:0002104 PR:000001015
+intersection_of: RO:0002162 NCBITaxon:9606
+relationship: RO:0002202 CL:0000905 ! effector memory CD4-positive, alpha-beta T cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-9990-8331
+property_value: http://purl.org/dc/elements/1.1/date 2021-01-18T16:32:44Z xsd:dateTime
 
 [Term]
 id: CL:0001200
@@ -12194,7 +12338,7 @@ synonym: "CD8-positive, alpha-beta memory T-cell, CD45RO-positive" EXACT []
 synonym: "CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive" EXACT []
 is_a: CL:0000909 {is_inferred="true"} ! CD8-positive, alpha-beta memory T cell
 intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 intersection_of: has_high_plasma_membrane_amount PR:000001307
 intersection_of: has_high_plasma_membrane_amount PR:000001381
 intersection_of: lacks_plasma_membrane_part PR:000001380
@@ -12213,7 +12357,7 @@ synonym: "CD4-positive, alpha-beta memory T-cell, CD45RO-positive" EXACT []
 synonym: "CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive" EXACT []
 is_a: CL:0000897 {is_inferred="true"} ! CD4-positive, alpha-beta memory T cell
 intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 intersection_of: has_high_plasma_membrane_amount PR:000001307
 intersection_of: has_high_plasma_membrane_amount PR:000001381
 intersection_of: lacks_plasma_membrane_part PR:000001380
@@ -13629,7 +13773,6 @@ name: group 2 innate lymphoid cell, mouse
 namespace: cell
 def: "A group 2 innate lymphoid cell in the mouse capable of secreting IL-13 in response to a helminth infection. This cell is lineage-negative, ICOS-positive, IL1RL1-positive, IL7Ralpha-positive, and IL17Br-positive." [GOC:add, GOC:tfm, PMID:20200518]
 synonym: "nuocyte" BROAD []
-is_a: CL:0001069 {is_inferred="true"} ! group 2 innate lymphoid cell
 intersection_of: CL:0001069 ! group 2 innate lymphoid cell
 intersection_of: lacks_plasma_membrane_part PR:000001002
 intersection_of: lacks_plasma_membrane_part PR:000001004
@@ -13646,6 +13789,7 @@ intersection_of: RO:0002104 PR:000001860
 intersection_of: RO:0002104 PR:000001869
 intersection_of: RO:0002104 PR:000008982
 intersection_of: RO:0002104 PR:000008994
+intersection_of: RO:0002162 NCBITaxon:10090
 intersection_of: RO:0002215 GO:0002830
 intersection_of: RO:0002215 GO:0032616
 created_by: tmeehan
@@ -15115,7 +15259,7 @@ def: "A slow muscle cell that contains high levels of myoglobin and oxygen stori
 synonym: "oxidative muscle fiber" EXACT []
 synonym: "red muscle fiber" EXACT []
 xref: FMA:84448
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 created_by: tmeehan
 creation_date: 2010-09-02T03:20:03Z
 
@@ -15202,7 +15346,7 @@ name: intermediate muscle cell
 namespace: cell
 def: "An intermediate muscle cell that has characteristics of both fast and slow muscle cells." [GOC:tfm]
 xref: FMA:84450
-is_a: CL:0008002 ! skeletal muscle fiber
+is_a: CL:0008046 ! extrafusal muscle fiber
 created_by: tmeehan
 creation_date: 2010-09-02T03:51:17Z
 
@@ -15761,7 +15905,6 @@ namespace: cell
 alt_id: CL:1000403
 def: "An endothelial cell that lines any of the venous cavities through which blood passes in various glands and organs such as the spleen and liver." [GOC:tfm, ISBN:0618947256]
 xref: FMA:63134
-is_a: CL:0000115 {is_inferred="true"} ! endothelial cell
 intersection_of: CL:0000115 ! endothelial cell
 intersection_of: BFO:0000050 UBERON:0003909
 created_by: tmeehan
@@ -16489,7 +16632,7 @@ creation_date: 2010-09-15T03:01:54Z
 
 [Term]
 id: CL:0002321
-name: embryonic cell
+name: embryonic cell (metazoa)
 namespace: cell
 def: "A cell of the embryo." [FMA:0618947256]
 xref: CALOHA:TS-0263
@@ -16511,7 +16654,7 @@ xref: BTO:0001086
 xref: CALOHA:TS-0263
 xref: FMA:82841
 is_a: CL:0000034 ! stem cell
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 created_by: tmeehan
 creation_date: 2010-09-15T03:44:35Z
 
@@ -16673,19 +16816,19 @@ creation_date: 2010-09-20T03:07:03Z
 
 [Term]
 id: CL:0002338
-name: CD56-positive, CD161-positive immature natural killer cell
+name: CD56-positive, CD161-positive immature natural killer cell, human
 namespace: cell
-def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-positive, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, https://orcid.org/0000-0001-5208-3432, ISBN:0781735149, PMID:12457618]
+def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-positive, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12457618]
 comment: Human markers; killer cell immunoglobulin-like receptor 2DL1 is used as a representative example (PRO at this time lacks a KIR superfamily).
 synonym: "p-NK" RELATED [PMID:12457618]
-is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
 intersection_of: CL:0000823 ! immature natural killer cell
 intersection_of: lacks_plasma_membrane_part PR:000001003
 intersection_of: RO:0002104 PR:000001024
 intersection_of: RO:0002104 PR:000001381
 intersection_of: RO:0002104 PR:000001874
 intersection_of: RO:0002104 PR:000002065
-relationship: RO:0002202 CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell
+intersection_of: RO:0002162 NCBITaxon:9606
+relationship: RO:0002202 CL:0002344 ! CD56-negative, CD161-positive immature natural killer cell, human
 created_by: tmeehan
 creation_date: 2010-09-21T10:06:53Z
 
@@ -16731,104 +16874,103 @@ creation_date: 2010-09-20T03:49:58Z
 
 [Term]
 id: CL:0002343
-name: decidual natural killer cell
+name: decidual natural killer cell, human
 namespace: cell
 def: "A natural killer cell subset that is found in the decidual of the uterus and is CD56-high, Galectin-1-positive and CD16-negative. This cell type represents the most abundant immune cell type in the decidual during the first trimester of pregnancy." [PMID:14568979, PMID:19800965]
 synonym: "decidual NK cell" EXACT []
 synonym: "dNK cell" EXACT []
-is_a: CL:0000824 {is_inferred="true"} ! mature natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_high_plasma_membrane_amount PR:000001024
 intersection_of: lacks_plasma_membrane_part PR:000001483
 intersection_of: RO:0002104 PR:000009766
-relationship: RO:0001025 UBERON:0002450
+intersection_of: RO:0002162 NCBITaxon:9606
 created_by: tmeehan
 creation_date: 2010-09-20T04:00:02Z
 
 [Term]
 id: CL:0002344
-name: CD56-negative, CD161-positive immature natural killer cell
+name: CD56-negative, CD161-positive immature natural killer cell, human
 namespace: cell
 def: "A natural killer cell that is developmentally immature, has the phenotype CD34-negative, CD56-negative, CD117-positive, CD122-positive,and CD161-positive." [GO_REF:0000031, GOC:add, ISBN:0781735149, PMID:12457618]
 comment: Human markers; killer cell immunoglobulin-like receptor 2DL1 is used as a representative example (PRO at this time lacks a KIR superfamily).
 synonym: "p-NK" RELATED [PMID:12457618]
-is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
 intersection_of: CL:0000823 ! immature natural killer cell
 intersection_of: lacks_plasma_membrane_part PR:000001003
 intersection_of: lacks_plasma_membrane_part PR:000001024
 intersection_of: RO:0002104 PR:000001381
 intersection_of: RO:0002104 PR:000001874
 intersection_of: RO:0002104 PR:000002065
+intersection_of: RO:0002162 NCBITaxon:9606
 created_by: tmeehan
 creation_date: 2010-09-20T04:33:11Z
 
 [Term]
 id: CL:0002345
-name: CD27-low, CD11b-low immature natural killer cell
+name: CD27-low, CD11b-low immature natural killer cell, mouse
 namespace: cell
 def: "An immature natural killer cell that is NK1.1-positive, DX5-positive, Ly49-positive, CD27-low and CD11b-low. This cell type is found in high numbers in the liver." [GOC:tfm, http:www.immgen.org/index_content.html, PMID:19949422]
 comment: Markers are associated with mouse cells.
 synonym: "preNK.BM" BROAD []
-is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
 intersection_of: CL:0000823 ! immature natural killer cell
 intersection_of: has_low_plasma_membrane_amount PR:000001012
 intersection_of: has_low_plasma_membrane_amount PR:000001963
 intersection_of: RO:0002104 PR:000001008
 intersection_of: RO:0002104 PR:000002977
 intersection_of: RO:0002104 PR:000009616
-relationship: RO:0002202 CL:0002346 ! Dx5-negative, NK1.1-positive immature natural killer cell
+intersection_of: RO:0002162 NCBITaxon:10090
+relationship: RO:0002202 CL:0002346 ! Dx5-negative, NK1.1-positive immature natural killer cell, mouse
 created_by: tmeehan
 creation_date: 2010-09-20T04:41:01Z
 
 [Term]
 id: CL:0002346
-name: Dx5-negative, NK1.1-positive immature natural killer cell
+name: Dx5-negative, NK1.1-positive immature natural killer cell, mouse
 namespace: cell
 def: "An immature natural killer cell that is NK1.1-positive and DX-5 negative." [GOC:tfm, PMID:12766763]
-is_a: CL:0000823 {is_inferred="true"} ! immature natural killer cell
 intersection_of: CL:0000823 ! immature natural killer cell
 intersection_of: lacks_plasma_membrane_part PR:000001008
 intersection_of: RO:0002104 PR:000002977
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-09-21T10:11:44Z
 
 [Term]
 id: CL:0002347
-name: CD27-high, CD11b-high natural killer cell
+name: CD27-high, CD11b-high natural killer cell, mouse
 namespace: cell
 def: "A mature natural killer cell that is CD27-high and CD11b-high. This cell type is capable of interferon-gamma secretion." [GOC:tfm, PMID:19949422]
-is_a: CL:0002426 ! CD11b-positive, CD27-positive natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_high_plasma_membrane_amount PR:000001012
 intersection_of: has_high_plasma_membrane_amount PR:000001963
+intersection_of: RO:0002162 NCBITaxon:10090
 intersection_of: RO:0002215 GO:0032609
-relationship: RO:0002202 CL:0002349 ! CD27-high, CD11b-low natural killer cell
+relationship: RO:0002202 CL:0002349 ! CD27-high, CD11b-low natural killer cell, mouse
 created_by: tmeehan
 creation_date: 2010-09-21T10:19:49Z
 
 [Term]
 id: CL:0002348
-name: CD27-low, CD11b-high natural killer cell
+name: CD27-low, CD11b-high natural killer cell, mouse
 namespace: cell
 def: "A CD27-low, CD11b-high natural killer cell that has a higher threshold of activation due to higher expression of inhibitory receptors." [GOC:tfm, PMID:1994922]
-is_a: CL:0002426 ! CD11b-positive, CD27-positive natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_high_plasma_membrane_amount PR:000001012
 intersection_of: has_low_plasma_membrane_amount PR:000001963
-relationship: RO:0002202 CL:0002347 ! CD27-high, CD11b-high natural killer cell
+intersection_of: RO:0002162 NCBITaxon:10090
+relationship: RO:0002202 CL:0002347 ! CD27-high, CD11b-high natural killer cell, mouse
 created_by: tmeehan
 creation_date: 2010-09-21T10:19:54Z
 
 [Term]
 id: CL:0002349
-name: CD27-high, CD11b-low natural killer cell
+name: CD27-high, CD11b-low natural killer cell, mouse
 namespace: cell
 def: "A natural killer cell that is CD27-high and CD11b-low." [GOC:tfm, PMID:1994922]
-is_a: CL:0002426 ! CD11b-positive, CD27-positive natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: has_high_plasma_membrane_amount PR:000001963
 intersection_of: has_low_plasma_membrane_amount PR:000001012
-relationship: RO:0002202 CL:0002345 ! CD27-low, CD11b-low immature natural killer cell
+intersection_of: RO:0002162 NCBITaxon:10090
+relationship: RO:0002202 CL:0002345 ! CD27-low, CD11b-low immature natural killer cell, mouse
 created_by: tmeehan
 creation_date: 2010-09-21T10:20:00Z
 
@@ -17751,14 +17893,14 @@ creation_date: 2010-10-21T01:16:24Z
 
 [Term]
 id: CL:0002426
-name: CD11b-positive, CD27-positive natural killer cell
+name: CD11b-positive, CD27-positive natural killer cell, mouse
 namespace: cell
 def: "A mature natural killer cell that is CD11b-positive and CD27-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 comment: A natural killer cell that is NK1.1-positive, CD11b-positive, and CD27-positive.
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000001012
 intersection_of: RO:0002104 PR:000001963
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:07:59Z
 
@@ -17928,152 +18070,152 @@ creation_date: 2010-10-21T03:51:50Z
 
 [Term]
 id: CL:0002438
-name: NK1.1-positive natural killer cell
+name: NK1.1-positive natural killer cell, mouse
 namespace: cell
 def: "A mature NK cell that is NK1.1-positive." [GOC:tfm]
 comment: Note: Nk1.1 expression is restricted to C57BL strains of laboratory mice.
 synonym: "NK.sp" EXACT []
 synonym: "NK1.1-positive NK cell" EXACT []
-is_a: CL:0000824 {is_inferred="true"} ! mature natural killer cell
 intersection_of: CL:0000824 ! mature natural killer cell
 intersection_of: RO:0002104 PR:000002977
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:18:04Z
 
 [Term]
 id: CL:0002439
-name: NKGA2-positive natural killer cell
+name: NKGA2-positive natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is NKGA2-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "NK.G2A+.SP" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000002023
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:31:09Z
 
 [Term]
 id: CL:0002440
-name: Ly49D-positive natural killer cell
+name: Ly49D-positive natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is Ly49D-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "NK.49D+.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000009619
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:36:19Z
 
 [Term]
 id: CL:0002441
-name: CD94-positive natural killer cell
+name: CD94-positive natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is CD94-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "NK.94+.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000001402
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:36:28Z
 
 [Term]
 id: CL:0002442
-name: CD94-negative, Ly49CI-negative natural killer cell
+name: CD94-negative, Ly49CI-negative natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is CD94-negative and Ly49Cl-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "CD94- Ly49I-negative NK cell" EXACT []
 synonym: "NK.49Cl-94-.Sp" EXACT []
-is_a: CL:0002438 ! NK1.1-positive natural killer cell
 intersection_of: CL:0000623 ! natural killer cell
 intersection_of: lacks_plasma_membrane_part PR:000001402
 intersection_of: lacks_plasma_membrane_part PR:000009618
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:56:21Z
 
 [Term]
 id: CL:0002443
-name: Ly49CI-positive natural killer cell
+name: Ly49CI-positive natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is Ly49Cl-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "Ly49I-positive NK cell" EXACT []
 synonym: "NK.49Cl+.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000009618
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:36:38Z
 
 [Term]
 id: CL:0002444
-name: Ly49H-positive natural killer cell
+name: Ly49H-positive natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is Ly49H-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "LyH49H-positive" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000009623
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:36:43Z
 
 [Term]
 id: CL:0002445
-name: Ly49D-negative natural killer cell
+name: Ly49D-negative natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is Ly49D-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "NK.49D-.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: lacks_plasma_membrane_part PR:000009619
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:39:02Z
 
 [Term]
 id: CL:0002446
-name: Ly49CI-negative natural killer cell
+name: Ly49CI-negative natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is Ly49Cl-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "Ly49I-negative NK cell" EXACT []
 synonym: "NK.49Cl-.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: lacks_plasma_membrane_part PR:000009618
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:52:04Z
 
 [Term]
 id: CL:0002447
-name: CD94-negative natural killer cell
+name: CD94-negative natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is CD94-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "NK.94-.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: lacks_plasma_membrane_part PR:000001402
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:54:18Z
 
 [Term]
 id: CL:0002448
-name: Ly49H-negative natural killer cell
+name: Ly49H-negative natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is Ly49H-negative." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "LyH49H-negative" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: lacks_plasma_membrane_part PR:000009623
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:42:42Z
 
 [Term]
 id: CL:0002449
-name: CD94-positive Ly49CI-positive natural killer cell
+name: CD94-positive Ly49CI-positive natural killer cell, mouse
 namespace: cell
 def: "A NK1.1-positive T cell that is CD94-positive and Ly49Cl-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "NK.49Cl+94+.Sp" EXACT []
-is_a: CL:0002438 {is_inferred="true"} ! NK1.1-positive natural killer cell
-intersection_of: CL:0002438 ! NK1.1-positive natural killer cell
+intersection_of: CL:0002438 ! NK1.1-positive natural killer cell, mouse
 intersection_of: RO:0002104 PR:000001402
 intersection_of: RO:0002104 PR:000009618
+intersection_of: RO:0002162 NCBITaxon:10090
 created_by: tmeehan
 creation_date: 2010-10-25T03:56:27Z
 
@@ -19136,11 +19278,12 @@ creation_date: 2011-02-28T12:44:24Z
 
 [Term]
 id: CL:0002538
-name: intrahepatic bile duct epithelial cell
+name: intrahepatic cholangiocyte
 namespace: cell
-def: "An epithelial cell of the intrahepatic portion of the bile duct." [GOC:tfm]
-is_a: CL:0000069 {is_inferred="true"} ! branched duct epithelial cell
-intersection_of: CL:0000069 ! branched duct epithelial cell
+def: "An epithelial cell of the intrahepatic portion of the bile duct. These cells are flattened or cuboidal in shape, and have a small nuclear-to-cytoplasmic ratio relative to large/extrahepatic cholangiocytes." [GOC:tfm, PMID:23720296]
+synonym: "small bile duct cholangiocyte" EXACT [PMID:23720296]
+is_a: CL:1000488 {is_inferred="true"} ! cholangiocyte
+intersection_of: CL:1000488 ! cholangiocyte
 intersection_of: BFO:0000050 UBERON:0004823
 created_by: tmeehan
 creation_date: 2011-02-28T01:20:20Z
@@ -19519,8 +19662,7 @@ namespace: cell
 def: "A glial cell that ensheathes axons of neuron in the peripheral nervous system and are necessary for their maintainance and function." [GOC:tfm]
 xref: BTO:0001220
 xref: CALOHA:TS-0898
-is_a: CL:0000243 {is_inferred="true"} ! glial cell (sensu Vertebrata)
-intersection_of: CL:0000243 ! glial cell (sensu Vertebrata)
+intersection_of: CL:0000125 ! glial cell
 intersection_of: BFO:0000050 UBERON:0000010
 created_by: tmeehan
 creation_date: 2011-03-02T01:19:27Z
@@ -20672,7 +20814,7 @@ comment: Cell has been described as being CD45RA-positive in human, but this doe
 is_a: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
 is_a: CL:0000813 ! memory T cell
 intersection_of: CL:0000792 ! CD4-positive, CD25-positive, alpha-beta regulatory T cell
-intersection_of: has_completed GO:0043379 ! memory T cell differentiation
+intersection_of: has_completed GO:0043379
 created_by: tmeehan
 creation_date: 2011-08-25T03:17:34Z
 
@@ -20828,6 +20970,10 @@ id: CL:0005012
 name: multi-ciliated epithelial cell
 namespace: cell
 def: "A ciliated epithelial cell with many cilium." [CL:CVS]
+synonym: "MCC" BROAD []
+synonym: "multi-ciliated cell" BROAD []
+synonym: "multiciliated cell" BROAD []
+synonym: "multiciliated epithelial cell" EXACT []
 is_a: CL:0000066 ! epithelial cell
 relationship: BFO:0000051 GO:0005929
 
@@ -20930,8 +21076,7 @@ def: "Cranial motor neuron which innervates muscles derived from the branchial (
 synonym: "branchi motor neuron" EXACT []
 synonym: "special visceral motor neuron" EXACT []
 xref: PMID:14699587
-is_a: CL:0015000 ! cranial motor neuron
-intersection_of: CL:0000100 ! motor neuron
+intersection_of: CL:0015000 ! cranial motor neuron
 intersection_of: RO:0002130 UBERON:0004164
 
 [Term]
@@ -20939,9 +21084,8 @@ id: CL:0005024
 name: somatomotor neuron
 def: "A motor neuron that innervates a skeletal muscle.  These motor neurons are all excitatory and cholinergic." [ZFIN:CVS]
 synonym: "somatic motor neuron" EXACT []
-is_a: CL:0008014 ! excitatory motor neuron
 intersection_of: CL:0000100 ! motor neuron
-intersection_of: RO:0002130 UBERON:0014892
+intersection_of: RO:0002120 CL:0008002 ! skeletal muscle fiber
 relationship: RO:0002215 GO:0014055
 
 [Term]
@@ -20956,7 +21100,7 @@ relationship: RO:0002120 CL:0011102 ! parasympathetic neuron
 [Term]
 id: CL:0005026
 name: hepatoblast
-def: "Multi fate stem cell that gives rise to to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998]
+def: "Multi fate stem cell that gives rise to both hepatocytes and cholangiocytes as descendants." [GOC:CVS, PMID:18356246, PMID:20483998]
 is_a: CL:0000048 ! multi fate stem cell
 
 [Term]
@@ -21158,7 +21302,7 @@ id: CL:0007018
 name: epidermal ciliary cell
 def: "Ciliated cell of the embryonic epidermis and functions in embryonic movements." [PMCID:PMC3046089]
 comment: Taxon specificity not clear -present in embryonic anurans.
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: BFO:0000050 UBERON:0001003
 relationship: BFO:0000051 GO:0005929
 created_by: haendel
@@ -21174,7 +21318,7 @@ created_by: haendel
 id: CL:0007020
 name: bottle cell
 def: "Characteristic early embryonic cell with a bottle or flask shape that is first to migrate inwards at the blastopore during gastrulation in amphibians." [PMID:3197630]
-is_a: CL:0000007 ! early embryonic cell
+is_a: CL:0000007 ! early embryonic cell (metazoa)
 created_by: haendel
 
 [Term]
@@ -21286,7 +21430,7 @@ id: CL:0008010
 name: cranial somatomotor neuron
 def: "A cranial motor neuron whose soma is located in the midbrain andor hindbrain and which innervates the skeletal muscles of the eye or tongue." [PMID:14699587]
 intersection_of: CL:0015000 ! cranial motor neuron
-intersection_of: RO:0002130 UBERON:0014892
+intersection_of: RO:0002120 CL:0008002 ! skeletal muscle fiber
 
 [Term]
 id: CL:0008011
@@ -21309,16 +21453,17 @@ is_a: CL:0000594 ! skeletal muscle satellite cell
 id: CL:0008013
 name: cranial visceromotor neuron
 def: "A visceromotor motor neuron whose soma is located in the hindbrain, and which synapses to parasympathetic neurons that innervate tear glands, sweat glands, and the smooth muscles of the head." [PMID:14699587]
-is_a: CL:0005025 ! visceromotor neuron
 is_a: CL:0015000 ! cranial motor neuron
-relationship: RO:0002100 UBERON:0002028
+intersection_of: CL:0005025 ! visceromotor neuron
+intersection_of: RO:0002100 UBERON:0002028
 
 [Term]
 id: CL:0008014
-name: excitatory motor neuron
+name: obsolete excitatory motor neuron
 def: "A motor neuron that is capable of directly inducing muscle contraction." []
+comment: false
 comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
-is_a: CL:0000100 ! motor neuron
+is_obsolete: true
 
 [Term]
 id: CL:0008015
@@ -21326,6 +21471,7 @@ name: inhibitory motor neuron
 def: "A motor neuron that is capable of directly inhibiting muscle contraction." []
 comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
 is_a: CL:0000100 ! motor neuron
+property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: CL:0008016
@@ -21464,6 +21610,7 @@ intersection_of: RO:0002292 PR:Q9QZC1
 id: CL:0008033
 name: decidual pericyte
 def: "A pericyte of the decidual vasculature." [] {comment="PMID:30429548"}
+subset: added_for_HCA
 synonym: "decidual perivascular cell" EXACT []
 is_a: CL:0000669 ! pericyte cell
 intersection_of: CL:0000669 ! pericyte cell
@@ -21475,6 +21622,7 @@ creation_date: 2020-02-29T11:45:57Z
 id: CL:0008034
 name: mural cell
 def: "Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of the microcirculation." [Wiki:Mural_cell&oldid=930603194]
+subset: added_for_HCA
 is_a: CL:0002371 ! somatic cell
 created_by: dos
 creation_date: 2020-02-29T17:33:55Z
@@ -21491,12 +21639,67 @@ creation_date: 2020-02-29T17:37:00Z
 [Term]
 id: CL:0008036
 name: extravillous trophoblast
-def: "A trophoblast cell that is not part of a placental villous" [PMID:31049600]
+def: "A trophoblast cell that is not part of a placental villous." [PMID:31049600]
+subset: added_for_HCA
 synonym: "EVT" EXACT [PMID:31049600]
 synonym: "extravillous cytotrophloblast" EXACT []
 is_a: CL:0000351 ! trophoblast cell
 created_by: dos
 creation_date: 2020-03-02T08:45:06Z
+
+[Term]
+id: CL:0008037
+name: gamma motor neuron
+def: "A lower motor neuron that innervates only intrafusal muscle fibers. Unlike the alpha motor neurons, gamma motor neurons do not directly adjust the lengthening or shortening of muscles but function in adjusting the sensitivity of muscle spindles and in keeping muscle spindles taut, thereby allowing the continued firing of alpha neurons." [DOI:10.1093/acprof\:oso/9780195159561.001.1, WikipediaVersion:Gamma_motor_neuron&oldid=906640465]
+xref: FMA:83660
+xref: MESH:D009047
+xref: SAO:143800623
+is_a: CL:0008039 ! lower motor neuron
+relationship: RO:0002120 CL:0008047 ! intrafusal muscle fiber
+
+[Term]
+id: CL:0008038
+name: alpha motor neuron
+def: "A large, multipolar lower motor neuron of the brainstem and spinal cord that innervates the extrafusal muscle fibers of skeletal muscle and are directly responsible for initiating their contraction. While their cell bodies are in the CNS (in the anterior gray horn of the spinal cord), they are part of the somatic nervous system - a branch of the PNS." [DOI:10.1016/B978-0-12-801238-3.05364-2, Wikipedia:Alpha_motor_neuron&oldid=957148643]
+synonym: "alpha motoneuron" EXACT []
+is_a: CL:0008039 ! lower motor neuron
+relationship: RO:0002120 CL:0008046 ! extrafusal muscle fiber
+created_by: dos
+creation_date: 2020-09-23T20:16:26Z
+
+[Term]
+id: CL:0008039
+name: lower motor neuron
+def: "The motor neurons of vertebrates that directly innervate skeletal muscles. They receive input from upper motor neurons." [Wikipedia:Lower_motor_neuron&oldid=952547294]
+xref: FMA:84632
+is_a: CL:0000100 ! motor neuron
+relationship: RO:0002120 CL:0008002 ! skeletal muscle fiber
+relationship: RO:0002162 NCBITaxon:7742
+created_by: dos
+creation_date: 2020-09-23T20:22:07Z
+
+[Term]
+id: CL:0008046
+name: extrafusal muscle fiber
+def: "A skeletal muscle fiber that is innervated by alpha motor neuron and generates tension by contracting, thereby allowing for skeletal movement. These fibers make up the large mass of skeletal muscle tissue and are attached to bones by tendons." [DOI:10.1016/B978-0-443-10321-6.00004-7, Wikipedia:Extrafusal_muscle_fiber&oldid=978415293]
+synonym: "myofibra extrafusalis" EXACT []
+xref: TH:H3.03.00.0.00007
+is_a: CL:0008002 ! skeletal muscle fiber
+disjoint_from: CL:0008047 ! intrafusal muscle fiber
+relationship: RO:0002103 CL:0008038 ! alpha motor neuron
+created_by: dos
+creation_date: 2020-09-26T21:06:15Z
+
+[Term]
+id: CL:0008047
+name: intrafusal muscle fiber
+def: "A skeletal muscle fiber that is part of a muscle spindle. These are specialized muscle fibers that serve as proprioceptors, detecting the amount and rate of change in length of a muscle. They are innervated by both sensory neurons and motor neurons (gamma and beta motorneurons, collectively referred to as fusimotor neurons)." [DOI:10.1016/B978-0-443-10321-6.00004-7, Wikipedia:Intrafusal_muscle_fiber&oldid=937508784]
+synonym: "myofibra intrafusalis" EXACT []
+xref: H3.03.00.0.00012
+intersection_of: CL:0008002 ! skeletal muscle fiber
+intersection_of: BFO:0000050 UBERON:0003718
+created_by: dos
+creation_date: 2020-09-26T21:07:01Z
 
 [Term]
 id: CL:0009000
@@ -21549,6 +21752,191 @@ xref: GOC:pr
 xref: http://en.wikipedia.org/wiki/Salivary_gland
 is_a: CL:0002371 ! somatic cell
 relationship: BFO:0000050 UBERON:0001044
+
+[Term]
+id: CL:0009007
+name: gastrointestinal tract (lamina propria) macrophage of small intestine
+def: "A macrophage which is resident in the lamina propria of the small intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "macrophage of small intestine" BROAD []
+synonym: "small intestine lamina propria resident macrophage" EXACT []
+intersection_of: CL:0000885 ! gut-associated lymphoid tissue macrophage
+intersection_of: BFO:0000050 UBERON:0001238
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009008
+name: gastrointestinal tract (lamina propria) macrophage of large intestine
+def: "A macrophage which is resident in the lamina propria of the large intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "large intestine lamina propria resident macrophage" EXACT []
+synonym: "macrophage of large intestine" BROAD []
+intersection_of: CL:0000885 ! gut-associated lymphoid tissue macrophage
+intersection_of: BFO:0000050 UBERON:0011189
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009009
+name: paneth cell of epithelium of large intestine
+def: "A paneth cell that is located in the epithelium of the large intestine." [http://orcid.org/0000-0003-4183-8865, PMID:31753849]
+subset: location_grouping
+synonym: "paneth-like cell" EXACT []
+is_a: CL:0002253 ! epithelial cell of large intestine
+intersection_of: CL:0000510 ! paneth cell
+intersection_of: BFO:0000050 UBERON:0001278
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009010
+name: transit amplifying cell
+def: "Transit-amplifying cells (TACs) are an undifferentiated population in transition between stem cells and differentiated cells." [http://orcid.org/0000-0003-4183-8865, PMID:24813615, PMID:28835754]
+synonym: "TAC" RELATED []
+synonym: "TACs" RELATED []
+synonym: "transient amplifying cell" EXACT []
+synonym: "transit-amplifying cell" EXACT []
+is_a: CL:0000003 ! native cell
+relationship: RO:0002202 CL:0000034 ! stem cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009011
+name: transit amplifying cell of large intestine
+def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the large intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [http://orcid.org/0000-0003-4183-8865, PMID:20801415]
+subset: location_grouping
+synonym: "large intestine transit amplifying cell" EXACT []
+synonym: "transient amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
+synonym: "transient amplifying cell of large intestine" EXACT []
+synonym: "transit amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
+synonym: "transit-amplifying cell of large intestine" EXACT []
+intersection_of: CL:0009010 ! transit amplifying cell
+intersection_of: BFO:0000050 UBERON:0001984
+relationship: RO:0001000 CL:0002250 ! intestinal crypt stem cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009012
+name: transit amplifying cell of small intestine
+def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the small intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [http://orcid.org/0000-0003-4183-8865, PMID:20801415]
+subset: location_grouping
+synonym: "small intestine transit amplifying cell" EXACT []
+synonym: "transient amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
+synonym: "transient amplifying cell of small intestine" EXACT []
+synonym: "transit amplifying cell of crypt of Lieberkuhn of small intestine" EXACT []
+synonym: "transit-amplifying cell of small intestine" EXACT []
+intersection_of: CL:0009010 ! transit amplifying cell
+intersection_of: BFO:0000050 UBERON:0001241
+relationship: RO:0001000 CL:0002250 ! intestinal crypt stem cell
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009014
+name: Peyer's patch lymphocyte
+def: "A lymphocyte that is part of a Peyer's patch. These cells have a major role in driving the immune response to antigens sampled from the intestinal lumen, and in regulating the formation of follicle-associated epithelium and M cells in Peyer's patches by converting intestitial enterocytes into M cells." [https://orcid.org/0000-0003-4183-8865, PMID:23525039, PMID:9252325]
+subset: location_grouping
+synonym: "Peyer's patch resident lymphocyte" EXACT []
+synonym: "small intestine Peyer's patch lymphocyte" NARROW []
+intersection_of: CL:0000542 ! lymphocyte
+intersection_of: BFO:0000050 UBERON:0001211
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009015
+name: Peyer's patch follicular dendritic cell
+def: "A follicular dendritic cell located in the Peyer's patch. These cells from a meshwork in which Peyer's patch B cells reside." [https://orcid.org/0000-0003-4183-8865, PMID:24437401]
+subset: location_grouping
+intersection_of: CL:0000442 ! follicular dendritic cell
+intersection_of: BFO:0000050 UBERON:0001211
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009016
+name: intestinal crypt stem cell of large intestine
+def: "An intestinal stem cell that is located in the large intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the large intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." [https://orcid.org/0000-0003-4183-8865, PMID:20683682]
+subset: location_grouping
+synonym: "crypt stem cell of large intestine" BROAD []
+synonym: "stem cell of large intestine crypt of Lieberkuhn" EXACT []
+intersection_of: CL:0002250 ! intestinal crypt stem cell
+intersection_of: BFO:0000050 UBERON:0001984
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009017
+name: intestinal crypt stem cell of small intestine
+def: "An intestinal stem cell that is located in the small intestine crypt of Liberkuhn. These stem cells reside at the bottom of crypts in the small intestine and are highly proliferative. They either differentiate into transit amplifying cells or self-renew to form new stem cells." [https://orcid.org/0000-0003-4183-8865, PMID:20683682]
+subset: location_grouping
+synonym: "crypt stem cell of small intestine" BROAD []
+synonym: "stem cell of small intestine crypt of Lieberkuhn" EXACT []
+intersection_of: CL:0002250 ! intestinal crypt stem cell
+intersection_of: BFO:0000050 UBERON:0001241
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009018
+name: lymphocyte of large intestine lamina propria
+def: "A lymphocyte that resides in the lamina propria of the large intestine." [https://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "lamina propria lymphocyte of large intestine" EXACT []
+intersection_of: CL:0000542 ! lymphocyte
+intersection_of: BFO:0000050 UBERON:0011189
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009019
+name: nephrogenic zone cell
+def: "A kidney cortical cell that is part of the nephrogenic zone." [https://orcid.org/0000-0002-3163-0115, PMID:29449449]
+subset: added_for_HCA
+synonym: "cortical nephrogenic niche cell" EXACT []
+synonym: "cortical nephrogenic zone cell" EXACT []
+intersection_of: CL:0002681 ! kidney cortical cell
+intersection_of: BFO:0000050 UBERON:0009871
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009021
+name: stromal cell of lamina propria of large intestine
+def: "A stromal cell found in the lamina propria of the large intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: BFO:0000050 UBERON:0011189
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009022
+name: stromal cell of lamina propria of small intestine
+def: "A stromal cell found in the lamina propria of the small intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: BFO:0000050 UBERON:0001238
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009023
+name: small intestine Peyer's patch T cell
+def: "A T cell which resides in the Peyer's patch of the small intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "T cell of Peyer's patch of small intestine" EXACT []
+synonym: "T cell of small intestine Peyer's patch" EXACT []
+intersection_of: CL:0002419 ! mature T cell
+intersection_of: BFO:0000050 UBERON:0003454
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009024
+name: mesothelial cell of small intestine
+def: "A mesothelial cell that is part of the small intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+intersection_of: CL:0000077 ! mesothelial cell
+intersection_of: BFO:0000050 UBERON:0002108
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009025
+name: mesothelial cell of large intestine
+def: "A mesothelial cell that is part of the large intestine." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+intersection_of: CL:0000077 ! mesothelial cell
+intersection_of: BFO:0000050 UBERON:0000059
+created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0010000
@@ -21626,7 +22014,6 @@ name: camera-type eye photoreceptor cell
 synonym: "camera type eye photoreceptor cell" EXACT []
 intersection_of: CL:0000210 ! photoreceptor cell
 intersection_of: BFO:0000050 UBERON:0000019
-relationship: BFO:0000050 UBERON:0000966 {editor="GOC:cjm"}
 
 [Term]
 id: CL:0010010
@@ -21676,6 +22063,13 @@ is_a: CL:0000548 ! animal cell
 relationship: BFO:0000051 GO:0005929
 
 [Term]
+id: CL:0010017
+name: zygote
+def: "A zygote in a plant or an animal." []
+is_a: CL:0000003 ! native cell
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/786
+
+[Term]
 id: CL:0010020
 name: cardiac glial cell
 intersection_of: CL:0000125 ! glial cell
@@ -21709,7 +22103,7 @@ name: spinal cord motor neuron
 def: "A motor neuron that passes from the spinal cord toward or to a muscle and conducts an impulse that causes movement." [GOC:nv]
 is_a: CL:0000100 {is_inferred="true"} ! motor neuron
 intersection_of: CL:0000100 ! motor neuron
-intersection_of: BFO:0000050 UBERON:0002240
+intersection_of: RO:0002100 UBERON:0002240
 
 [Term]
 id: CL:0011002
@@ -21766,7 +22160,7 @@ intersection_of: BFO:0000050 UBERON:0003059
 id: CL:0011008
 name: embryonic hemocyte
 def: "A hemocyte derived from head mesoderm, which enters the hemolymph as acirculating cell." [GOC:NV, PMID:17967061]
-is_a: CL:0000387 ! hemocyte (sensu Nematoda and Protostomia)
+is_a: CL:0000387 ! hemocyte (sensu Arthropoda)
 
 [Term]
 id: CL:0011009
@@ -21792,7 +22186,7 @@ name: neural crest cell
 namespace: cell
 def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-9900-7880]
 is_a: CL:0000048 ! multi fate stem cell
-is_a: CL:0002321 ! embryonic cell
+is_a: CL:0002321 ! embryonic cell (metazoa)
 
 [Term]
 id: CL:0011013
@@ -21909,6 +22303,34 @@ is_a: CL:0000911 ! effector T cell
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
+id: CL:0011026
+name: progenitor cell
+def: "A precursor cell that has a tendency to differentiate into a specific type of cell. They are descendants of stem cells, only they are more constrained in their differentiation potential or capacity for self-renewal, and are often more limited in both senses." [https://doi.org/10.1016/B978-0-12-409503-8.00002-0, ISBN:978-1-62808-994-3]
+is_a: CL:0011115 ! precursor cell
+intersection_of: CL:0011115 ! precursor cell
+intersection_of: RO:0002202 CL:0000034 ! stem cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011027
+name: skeletal muscle fibroblast
+def: "Any fibroblast that is part of skeletal muscle tissue." [https://orcid.org/0000-0001-6164-0667, PMID:28369879]
+synonym: "skeleton muscle fibroblast" EXACT []
+is_a: CL:0000057 ! fibroblast
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: BFO:0000050 UBERON:0001134
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011028
+name: olfactory ensheathing cell
+synonym: "A neural-crest derived glial cell that supports the growth and survival of primary olfactory neuroons from the neuroepithelium in the nasal cavity to the brain by encasing large bundles of numerous unmyelinated axons." EXACT [PMID:22456085]
+synonym: "OEC" EXACT []
+xref: BTO:0002771
+is_a: CL:0000125 ! glial cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
 id: CL:0011100
 name: galanergic neuron
 def: "Neuron that secretes the neurotransmitter galanin." [GOC:NV, PMID:23159249, ZFIN:CVS, ZFIN:YB]
@@ -21937,7 +22359,7 @@ is_a: CL:0000107 ! autonomic neuron
 [Term]
 id: CL:0011104
 name: interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer." [GOC:NV, PMID:12771169]
+def: "A type of interneuron in the retinal inner nuclear layer which\ncarries information from the inner plexiform layer and the outer\nplexiform layer." [GOC:NV, PMID:12771169]
 comment: Need to MIREOT retinal inner nuclear layer (part of)
 is_a: CL:0000099 ! interneuron
 relationship: BFO:0000050 UBERON:0001791
@@ -21945,7 +22367,7 @@ relationship: BFO:0000050 UBERON:0001791
 [Term]
 id: CL:0011105
 name: dopamanergic interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer, using dopamine." [GOC:NV, PMID:12771169]
+def: "A type of interneuron in the retinal inner nuclear layer which\ncarries information from the inner plexiform layer and the outer\nplexiform layer, using dopamine." [GOC:NV, PMID:12771169]
 comment: This type of cell is found in Danio rerio.
 intersection_of: CL:0011104 ! interplexiform cell
 intersection_of: RO:0002215 GO:0061527
@@ -21953,7 +22375,7 @@ intersection_of: RO:0002215 GO:0061527
 [Term]
 id: CL:0011106
 name: GABAnergic interplexiform cell
-def: "A type of interneuron in the retinal inner nuclear layer which \ncarries information from the inner plexiform layer and the outer \nplexiform layer using GABA." [GOC:NV, PMID:12771169]
+def: "A type of interneuron in the retinal inner nuclear layer which\ncarries information from the inner plexiform layer and the outer\nplexiform layer using GABA." [GOC:NV, PMID:12771169]
 comment: This type of cell is found in many mammals.
 intersection_of: CL:0011104 ! interplexiform cell
 intersection_of: RO:0002215 GO:0061534
@@ -22093,6 +22515,7 @@ property_value: http://purl.org/dc/elements/1.1/creator https://orcid.org/0000-0
 id: CL:0019001
 name: tracheobronchial serous cell
 def: "Any serous secreting cell that is part of the tracheobronchial epithelium." []
+subset: added_for_HCA
 synonym: "serous cell of tracheobronchial tree" EXACT []
 intersection_of: CL:0000313 ! serous secreting cell
 intersection_of: BFO:0000050 UBERON:0007196
@@ -22103,6 +22526,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T16:03:27Z xsd:da
 id: CL:0019002
 name: tracheobronchial chondrocyte
 def: "Any chondrocyte that is part of the tracheobronchial tree." []
+subset: added_for_HCA
 synonym: "chondrocyte of tracheobronchial tree" EXACT []
 intersection_of: CL:0000138 ! chondrocyte
 intersection_of: BFO:0000050 UBERON:0007196
@@ -22113,11 +22537,133 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T17:29:51Z xsd:da
 id: CL:0019003
 name: tracheobronchial goblet cell
 def: "Any goblet cell that is part of the tracheobronchial epithelium." []
+subset: added_for_HCA
 synonym: "goblet cell of tracheobronchial tree" EXACT []
 intersection_of: CL:0000160 ! goblet cell
 intersection_of: BFO:0000050 UBERON:0007196
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
 property_value: http://purl.org/dc/elements/1.1/date 2020-05-07T18:14:52Z xsd:dateTime
+
+[Term]
+id: CL:0019015
+name: lung parenchyma resident eosinophil
+def: "An eosinophil with a ring-shaped nucleus that is resident in the lung parenchyma. In mouse, lung parenchyma resident eosinophils are IL-5-independent Siglec-F(intermediate) CD62L+ CD101(low). In human, they are Siglec-8+ CD62L+ IL-3R(low)." [PMID:27548519]
+synonym: "lung-resident eosinophil" EXACT [PMID:27548519]
+synonym: "rEos" EXACT [PMID:27548519]
+intersection_of: CL:0000774 ! band form eosinophil
+intersection_of: BFO:0000050 UBERON:0008946
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-05-26T09:42:19Z xsd:dateTime
+
+[Term]
+id: CL:0019017
+name: lymphatic vessel smooth muscle cell
+def: "A smooth muscle cell that is part of any lymphatic vessel." [PMID:15109561]
+synonym: "smooth muscle cell of lymphatic vessel" EXACT []
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0001473
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:29:51Z xsd:dateTime
+
+[Term]
+id: CL:0019018
+name: blood vessel smooth muscle cell
+def: "A smooth muscle cell that is part of any blood vessel." [PMID:9108778]
+synonym: "smooth muscle cell of blood vessel" EXACT []
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0001981
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:42:48Z xsd:dateTime
+
+[Term]
+id: CL:0019019
+name: tracheobronchial smooth muscle cell
+def: "A smooth muscle cell that is part of the tracheobronchial tree." [PMID:10853867]
+synonym: "smooth muscle cell of tracheobronchial tree" EXACT []
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:0007196
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-07-21T12:50:22Z xsd:dateTime
+
+[Term]
+id: CL:0019020
+name: extrahepatic cholangiocyte
+def: "An epithelial cell of the extrahepatic bile ducts, including the left and right hepatic duct, common hepatic duct, and common bile duct. They are columnar in shape, and have a large nuclear-to-cytoplasmic ratio relative to small/intrahepatic cholangiocytes." [PMID:23720296]
+synonym: "large bile duct cholangiocyte" EXACT [PMID:23720296]
+intersection_of: CL:1000488 ! cholangiocyte
+intersection_of: BFO:0000050 UBERON:0004822
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-03T12:24:24Z xsd:dateTime
+
+[Term]
+id: CL:0019021
+name: endothelial cell of periportal hepatic sinusoid
+def: "An endothelial cell found in the periportal region hepatic sinusoid, near the portal triad. The fenestrae of these cells are larger but fewer in number compared with those of endothelial cells near the centrilobular region of the hepatic sinusoid." [PMID:27423426]
+synonym: "periportal LSEC" EXACT [PMID:28287163]
+intersection_of: CL:1000398 ! endothelial cell of hepatic sinusoid
+intersection_of: RO:0002220 UBERON:0001279
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-09T13:56:47Z xsd:dateTime
+
+[Term]
+id: CL:0019022
+name: endothelial cell of pericentral hepatic sinusoid
+def: "An endothelial cell found in the centrilobular region hepatic sinusoid, near the central vein. The fenestrae of these cells are smaller but more numerous compared with those of endothelial cells near the periportal region of the hepatic sinusoid." [PMID:27423426]
+synonym: "pericentral LSEC" EXACT [] {comment="PMID:28287163"}
+intersection_of: CL:1000398 ! endothelial cell of hepatic sinusoid
+intersection_of: RO:0002220 UBERON:0006841
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-09-10T12:38:29Z xsd:dateTime
+
+[Term]
+id: CL:0019026
+name: periportal region hepatocyte
+def: "Any hepatocyte that is part of the liver lobule periportal region. These cells are primarily involved in oxidative energy metabolism." [PMID:29763190]
+synonym: "periportal hepatocyte" EXACT [PMID:29763190]
+intersection_of: CL:0000182 ! hepatocyte
+intersection_of: BFO:0000050 UBERON:8400006
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-12T10:29:31Z xsd:dateTime
+
+[Term]
+id: CL:0019028
+name: midzonal region hepatocyte
+def: "Any hepatocyte that is part of the liver lobule midzonal region. These cells have mixed functionality in comparison with those in the other two regions of the liver lobule." [PMID:29763190]
+synonym: "midzonal hepatocyte" EXACT [PMID:29763190]
+intersection_of: CL:0000182 ! hepatocyte
+intersection_of: BFO:0000050 UBERON:8400007
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-12T10:57:40Z xsd:dateTime
+
+[Term]
+id: CL:0019029
+name: centrilobular region hepatocyte
+def: "Any hepatocyte that is part of the liver lobule centrilobular region. These cells are the primary location for the biotransformation of drugs." [PMID:29763190]
+synonym: "centrilobular hepatocyte" EXACT [PMID:29763190]
+intersection_of: CL:0000182 ! hepatocyte
+intersection_of: BFO:0000050 UBERON:8400008
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-12T11:03:51Z xsd:dateTime
+
+[Term]
+id: CL:0019031
+name: intestine goblet cell
+def: "Goblet cells reside throughout the length of the small and large intestine and are responsible for the production and maintenance of the protective mucus blanket by synthesizing and secreting high-molecular-weight glycoproteins known as mucins. Human intestinal goblet cells secrete the MUC2 mucin, as well as a number of typical mucus components: CLCA1, FCGBP, AGR2, ZG16, and TFF3." [PMID:1996606, PMID:24942678]
+synonym: "intestinal goblet cell" EXACT [PMID:1996606]
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0001277
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-14T14:59:07Z xsd:dateTime
+
+[Term]
+id: CL:0019032
+name: intestinal tuft cell
+def: "Any brush cell that is part of the intestinal epithelium." [PMID:22527717]
+synonym: "intestinal brush cell" EXACT [PMID:22527717]
+intersection_of: CL:0002204 ! brush cell
+intersection_of: BFO:0000050 UBERON:0001277
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0003-2034-601X
+property_value: http://purl.org/dc/elements/1.1/date 2020-10-15T12:47:46Z xsd:dateTime
 
 [Term]
 id: CL:1000001
@@ -23342,14 +23888,13 @@ intersection_of: BFO:0000050 UBERON:0009967
 id: CL:1000398
 name: endothelial cell of hepatic sinusoid
 namespace: cell
-def: "An endothelial cell that is part of the hepatic sinusoid." [GOC:tfm]
+def: "An endothelial cell that is part of the hepatic sinusoid. These cells possess flattened areas containing perforations about 0.1 micrometers in diameter, known as fenestrae. The fenestrae are arranged in groups known as sieve plates." [GOC:tfm, PMID:3926620]
 synonym: "endotheliocyte of hepatic sinusoid" EXACT [FMA:62911]
-synonym: "liver senusoidal endothelial cell" EXACT [PMID:30348985]
+synonym: "liver sinusoidal endothelial cell" EXACT [PMID:30348985]
 synonym: "LSEC" EXACT [] {EXACT="PMID:30348985"}
 xref: BTO:000125
 xref: FMA:62911
-is_a: CL:0002262 {is_inferred="true"} ! endothelial cell of sinusoid
-intersection_of: CL:0002262 ! endothelial cell of sinusoid
+intersection_of: CL:0000115 ! endothelial cell
 intersection_of: BFO:0000050 UBERON:0001281
 
 [Term]
@@ -25979,7 +26524,7 @@ creation_date: 2014-06-24T23:16:45Z
 
 [Term]
 id: CL:2000020
-name: inner cell mass native cell
+name: inner cell mass cell
 namespace: cell
 def: "Any native cell that is part of a inner cell mass." [GOC:TermGenie]
 intersection_of: CL:0000003 ! native cell
@@ -25989,7 +26534,7 @@ creation_date: 2014-06-24T23:16:53Z
 
 [Term]
 id: CL:2000021
-name: sebaceous gland native cell
+name: sebaceous gland cell
 namespace: cell
 def: "Any native cell that is part of a sebaceous gland." [GOC:TermGenie]
 intersection_of: CL:0000003 ! native cell
@@ -25999,7 +26544,7 @@ creation_date: 2014-06-24T23:17:00Z
 
 [Term]
 id: CL:2000022
-name: cardiac septum native cell
+name: cardiac septum cell
 namespace: cell
 def: "Any native cell that is part of a cardiac septum." [GOC:TermGenie]
 intersection_of: CL:0000003 ! native cell
@@ -26078,7 +26623,7 @@ creation_date: 2014-06-25T01:17:43Z
 
 [Term]
 id: CL:2000030
-name: hypothalamus native cell
+name: hypothalamus cell
 namespace: cell
 def: "Any native cell that is part of a hypothalamus." [GOC:TermGenie]
 intersection_of: CL:0000003 ! native cell
@@ -26252,17 +26797,21 @@ name: brainstem motor neuron
 namespace: cell
 def: "Any motor neuron that is part of a brainstem." [GOC:TermGenie]
 intersection_of: CL:0000100 ! motor neuron
-intersection_of: BFO:0000050 UBERON:0002298
+intersection_of: RO:0002100 UBERON:0002298
 created_by: TermGenie
 creation_date: 2014-10-02T23:52:53Z
 
 [Term]
 id: CL:2000048
-name: ventral horn of spinal cord spinal cord motor neuron
+name: anterior horn motor neuron
 namespace: cell
-def: "Any spinal cord motor neuron that is part of a ventral horn of spinal cord." [GOC:TermGenie]
-intersection_of: CL:0011001 ! spinal cord motor neuron
-intersection_of: BFO:0000050 UBERON:0002257
+def: "An lower motor neuron whose soma is located in one of the ventral horns of the spinal cord and innervates skeletal muscles of the trunk or head." [DOI:10.1016/B978-0-323-37101-8.00140-5, DOI:10.1016/B978-0-323-42876-7.00030-2, https://www.sciencedirect.com/topics/medicine-and-dentistry/anterior-horn-cell]
+comment: Yang & Connolly (DOI:10.1016/B978-0-323-37101-8.00140-5) classify these as alpha motor neurons.  Consider reflecting this if more references support this.
+synonym: "anterior horn cell" EXACT []
+synonym: "ventral horn of spinal cord spinal cord motor neuron" EXACT []
+xref: NCIT:C12645
+is_a: CL:0008039 ! lower motor neuron
+relationship: RO:0002100 UBERON:0002257
 created_by: TermGenie
 creation_date: 2014-10-03T00:26:27Z
 
@@ -26326,9 +26875,7 @@ namespace: cell
 def: "A large, granular, liver specific natural killer cell that adheres to the endothelial cells of the hepatic sinusoid." [GOC:dos, PMID:9408963]
 comment: Pit cells are named for the presence of large cytoplasmic granules that resemble pits (pips) of fruit.
 is_a: CL:0000623 ! natural killer cell
-relationship: BFO:0000051 GO:0030141
 relationship: RO:0001025 UBERON:0001281
-creation_date: 2014-10-06T19:08:51Z
 
 [Term]
 id: CL:2000055
@@ -26336,6 +26883,7 @@ name: liver dendritic cell
 namespace: cell
 def: "Any dendritic cell that is part of a liver." [GOC:TermGenie]
 comment: http://www.jleukbio.org/content/66/2/322.abstract
+synonym: "hepatic dendritic cell" EXACT []
 intersection_of: CL:0000451 ! dendritic cell
 intersection_of: BFO:0000050 UBERON:0002107
 created_by: TermGenie
@@ -26836,22 +27384,382 @@ created_by: CellBLAST
 creation_date: 2019-02-25T19:34:33Z
 
 [Term]
+id: CL:4006000
+name: fibroblast of breast
+def: "A fibroblast that is part of the breast." []
+synonym: "breast fibroblast" EXACT []
+is_a: CL:0000057 ! fibroblast
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: BFO:0000050 UBERON:0000310
+property_value: created_by http://orcid.org/0000-0001-9897-3238
+
+[Term]
+id: CL:4006001
+name: fibroblast of skin of scalp
+def: "A fibroblast that is part of the skin of scalp." []
+synonym: "skin of scalp fibroblast" EXACT []
+is_a: CL:0000057 ! fibroblast
+intersection_of: CL:0000057 ! fibroblast
+intersection_of: BFO:0000050 UBERON:8300000
+property_value: created_by http://orcid.org/0000-0001-9897-3238
+
+[Term]
+id: CL:4023000
+name: beta motor neuron
+def: "A motor neuron that innervates both intrafusal and extrafusal muscle fibers. Low abundancy. They control both muscle contraction and responsiveness of the sensory feedback from muscle spindles." [PMID:25346659]
+is_a: CL:0008039 ! lower motor neuron
+relationship: RO:0002120 CL:0008046 ! extrafusal muscle fiber
+relationship: RO:0002120 CL:0008047 ! intrafusal muscle fiber
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023001
+name: static beta motor neuron
+def: "A beta motor neuron that innervates nuclear chain fibers." [PMID:25346659]
+is_a: CL:4023000 ! beta motor neuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023002
+name: dynamic beta motor neuron
+def: "A beta motor neuron that innervates the nuclear bag fibers of muscle spindles." [PMID:25346659]
+is_a: CL:4023000 ! beta motor neuron
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023003
+name: nuclear chain fiber
+def: "A type of intrafusal muscle fiber that has nuclei arranged in a linear row. Unlike nuclear bag fibers, the equatorial region of these fibers (in the centre of the spindle) is not expanded. These fibers are responsible for the detection of changes in muscle length. They are innervated by static gamma motor neurons and are principally associated with type II sensory fibers." [DOI:10.1016/B978-0-323-39632-5.00024-4, PMID:139469]
+is_a: CL:0008047 ! intrafusal muscle fiber
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023004
+name: nuclear bag fiber
+def: "A type of intrafusal muscle fiber that lies in the center of a muscle spindle. Nuclei are clustered centrally and give the equatorial region a swollen appearance. They are associated with associated with dynamic gamma motor neurons, and the stretching of the equatorial region of the nuclear bag fibers results in an increase in the firing rate of type Ia sensory fibers." [DOI:10.1016/B978-0-323-39632-5.00024-4, PMID:139469]
+is_a: CL:0008047 ! intrafusal muscle fiber
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023005
+name: dynamic nuclear bag fiber
+def: "A nuclear bag fiber that is sensitive mainly to the rate of change in muscle length." [DOI:10.1016/B978-0-323-39632-5.00024-4]
+synonym: "bag1 fiber" EXACT []
+synonym: "nuclear bag1 intrafusal fiber" EXACT []
+is_a: CL:4023004 ! nuclear bag fiber
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023006
+name: static nuclear bag fiber
+def: "A nuclear bag fiber that is sensitive only changes in muscle length but not the rate of that change." [DOI:10.1016/B978-0-323-39632-5.00024-4]
+synonym: "bag2 fiber" EXACT []
+synonym: "nuclear bag2 intrafusal fiber" EXACT []
+is_a: CL:4023004 ! nuclear bag fiber
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023007
+name: L2/3 bipolar Vip expressing GABAergic cortical interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron with bipolar morphology, found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." [PMID:26420784]
+subset: BDS_subset
+synonym: "L2/3 bipolar Vip (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P32648
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023008
+name: intratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures of telencephalic origins." [DOI:10.1101/2020.10.19.343129]
+subset: BDS_subset
+synonym: "IT projecting neuron" EXACT []
+xref: ILX:0770100
+is_a: CL:0000679 ! glutamatergic neuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0013001 UBERON:0001893
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023009
+name: extratelencephalic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to structures not derived from telencephalon." [DOI:10.1101/2020.10.19.343129]
+synonym: "ET projecting neuron" EXACT []
+xref: ILX:0770101
+is_a: CL:0000679 ! glutamatergic neuron
+relationship: RO:0002100 UBERON:0000956
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023010
+name: alpha7 Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells are located in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." [PMID:30413647, PMID:33184512]
+subset: BDS_subset
+synonym: "A7 Lamp5 (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:Q9D387
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023011
+name: Lamp5 GABAergic cortical interneuron
+def: "A GABAergic neuron located in the cerebral cortex that expresses Lamp5" [PMID:30382198]
+subset: BDS_subset
+xref: ILX:0770149
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002215 GO:0061534
+intersection_of: RO:0002292 PR:000032148 ! Lamp5
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023012
+name: near-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects axons locally rather than distantly." [DOI:10.1101/2020.10.19.343129]
+synonym: "NP neuron" EXACT []
+xref: ILX:0770103
+is_a: CL:0000679 ! glutamatergic neuron
+relationship: RO:0002100 UBERON:0000956
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023013
+name: corticothalamic-projecting glutamatergic cortical neuron
+def: "A glutamatergic neuron located in the cerebral cortex that projects to the thalamus." [DOI:10.1101/2020.10.19.343129]
+synonym: "CT projecting neuron" EXACT []
+is_a: CL:0000679 ! glutamatergic neuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0013001 UBERON:0010225
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023014
+name: L5 Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential." [PMID:26420784, PMID:26612957]
+subset: BDS_subset
+synonym: "L5 VIP (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P32648
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023015
+name: sncg GABAergic cortical interneuron
+def: "A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein" [PMID:33186530]
+subset: BDS_subset
+xref: ILX:0770150
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002215 GO:0061534
+intersection_of: RO:0002292 PR:000015325 ! sncg
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023016
+name: Vip GABAergic cortical interneuron
+def: "A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide" [PMID:33186530]
+subset: BDS_subset
+xref: ILX:0770151
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002215 GO:0061534
+intersection_of: RO:0002292 PR:000017299 ! vip
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023017
+name: sst GABAergic cortical interneuron
+def: "A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)" [PMID:27477017]
+subset: BDS_subset
+xref: ILX:0770152
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002215 GO:0061534
+intersection_of: RO:0002292 PR:000015665 ! sst
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023018
+name: pvalb GABAergic cortical interneuron
+def: "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin." [] {def="PMID:27477017"}
+subset: BDS_subset
+xref: ILX:0770154
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002215 GO:0061534
+intersection_of: RO:0002292 PR:000013502 ! pvalb
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023019
+name: L5/6 CCK and Vip expressing cortical GABAergic interneuron (Mus musculus)
+def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells are found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
+subset: BDS_subset
+synonym: "L5/6 CCK Vip (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P32648
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023022
+name: canopy Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron that has extended axons in the surface of L1. Canopy Lamp5 cells resemble neurogliaform cells in having elongated horizontal axonal arbors largely confined to L1; but the dendritic arbors are wider and have fewer branches, while the axon is less tortuous and extends further from the soma" [PMID:30413647]
+subset: BDS_subset
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:Q9D387
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023023
+name: L5,6 Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp 5 GABAergic cortical interneuron with neurogliaform morphology located in L5,6. L5,6 NGC Lamp5 have deep afterhyperpolarization (AHP) but narrow action potentials (APs). Unlike other deep neurogliaform cells (which are caudal ganglionic eminence (CGE) derived), L5,6 NGC Lamp5 cells are medial ganglionic eminence (MGE)-derived" [PMID:26727548]
+subset: BDS_subset
+synonym: "L5,6 NGC Lamp5 (mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:Q9D387
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023024
+name: Neurogliaform Lamp5 GABAergic cortical interneuron (Mus musculus)
+def: "A Lamp5 GABAergic cortical interneuron with layer-adapting morphology. NGC Lamp5 cells have a small round soma, short dendrites, and a wide dense axonal arbor that tends to establish a dense axonal mesh with high connection probability both to themselves and L2 pyramidal cells. NGC Lamp5 cells have unique synaptic properties that distinguish them from other GABAergic interneurons, including the release of GABA to the extracellular space via volume transmission, and the ability to produce GABA-B responses in connected postsynaptic targets." [PMID:27477017]
+subset: BDS_subset
+synonym: "NGC Lamp5 (mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:Q9D387
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023025
+name: Long-range projecting Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant." [PMID:26727548]
+subset: BDS_subset
+synonym: "LP SST (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023027
+name: L5 ‘T-shaped’ Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
+subset: BDS_subset
+synonym: "L5 T Martinotti SST (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023028
+name: L5 Non-martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 Non-martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 Non-martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering." [PMID:28254942, PMID:29326172]
+subset: BDS_subset
+synonym: "L5 Non-martinotti SST (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023030
+name: L2/3/4 Fan martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that has \"Fanning-out' Martinotti morphology with local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1. They have an adapting firing pattern and non-zero afterdepolarization (ADP)." [PMID:27225074, PMID:27477017, PMID:28254942, PMID:29326172]
+subset: BDS_subset
+synonym: "L2/3/5 Fan Martinotti SST (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023031
+name: L4 Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that is found in lower L2/3 and upper 5, L4 Sst cells have martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP)." [PMID:33184512]
+subset: BDS_subset
+synonym: "L4 SST (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023034
+name: L2/3 Pvalb like Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron transcriptomically between the Sst and the Pvalb families and found in L2/3. Some L2/3 PV-like SST cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like SST cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like SST cells have high maximum firing rate variability, with many classified as belonging to the Pvalb subclass on the basis of electrophysiology." [PMID:33184512]
+subset: BDS_subset
+synonym: "L2/3 PV-like SST Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023036
+name: Chandelier Pvalb GABAergic cortical interneuron (Mus musculus)
+def: "A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells are mostly found in upper L2/3, with some in deep L5. Chandelier PV cells exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." [PMID:27477017]
+subset: BDS_subset
+synonym: "Chandelier PV (Mus)" EXACT []
+xref: ILX:0107356
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P32848
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CP:0000000
 name: neutrophillic cytoplasm
 namespace: cell
-def: "Cytoplasm that exhibits molecular interaction for acidic dyes under specific pH conditions." [GOC:tfm]
+def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." [GOC:add]
 is_a: GO:0005737
 created_by: tmeehan
 creation_date: 2010-05-25T01:36:34Z
 
 [Term]
 id: CP:0000025
-name: lobed nucleus
+name: obsolete lobed nucleus
 namespace: cell
 def: "Nucleus with two or more lobes connected by a thin filament that contains no internal chromatin." [GOC:tfm]
-is_a: GO:0005634
-intersection_of: GO:0005634
-intersection_of: RO:0000053 PATO:0001979
+comment: Obsoleted because duplicate with GO term.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/734 xsd:string
+is_obsolete: true
+replaced_by: http://purl.obolibrary.org/obo/GO_0098537
 created_by: tmeehan
 creation_date: 2009-12-22T03:54:43Z
 
@@ -26859,7 +27767,7 @@ creation_date: 2009-12-22T03:54:43Z
 id: CP:0000027
 name: acidophilic cytoplasm
 namespace: cell
-def: "Cytoplasm that exhibits molecular interaction for acidic dyes under specific pH conditions." [GOC:tfm]
+def: "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain." [GOC:add]
 synonym: "eosinophilic" NARROW []
 is_a: GO:0005737
 created_by: tmeehan
@@ -26926,19 +27834,24 @@ created_by: tmeehan
 creation_date: 2009-12-28T04:28:35Z
 
 [Term]
-id: GO:0032634
-name: interleukin-5 production
-is_a: GO:0001816
+id: PR:000013502
+name: pvalb
 
 [Term]
-id: GO:0043379
-name: memory T cell differentiation
-is_a: GO:0002292
+id: PR:000015325
+name: sncg
 
 [Term]
-id: PATO:0045026
-name: normal life span
-is_a: PATO:0000050
+id: PR:000015665
+name: sst
+
+[Term]
+id: PR:000017299
+name: vip
+
+[Term]
+id: PR:000032148
+name: Lamp5
 
 [Term]
 id: http://purl.obolibrary.org/obo/D96882F1-8709-49AB-BCA9-772A67EA6C33
@@ -26968,20 +27881,11 @@ id: has_not_completed
 name: has_not_completed
 
 [Typedef]
-id: has_relational_adjective
-name: has_relational_adjective
-namespace: uberon
-comment: Used to connect a class to an adjectival form of its label. For example, a class with label 'intestine' may have a relational adjective 'intestinal'.
-xref: UBPROP:0000007
-is_metadata_tag: true
-
-[Typedef]
 id: immediate_transformation_of
 name: immediate_transformation_of
 synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
 synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: http://semanticscience.org/resource/SIO_000658
-property_value: IAO:0000412 http://purl.obolibrary.org/obo/uberon.owl
 
 [Typedef]
 id: lacks_part
@@ -26992,11 +27896,4 @@ expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 ?Y" 
 id: lacks_plasma_membrane_part
 name: lacks_plasma_membrane_part
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
-
-[Typedef]
-id: seeAlso
-name: see also
-namespace: uberon
-xref: http://www.w3.org/2000/01/rdf-schema#seeAlso
-is_metadata_tag: true
 

@@ -13,26 +13,48 @@ namespaces:
   - http://purl.obolibrary.org/obo/CP_
   - http://purl.obolibrary.org/obo/CL_
   - http://purl.obolibrary.org/obo/cl_
-primary_release: basic
+primary_release: full
 release_artefacts: 
   - base
   - full
   - simple
   - basic
   - non-classified
+subset_group:
+  products:
+    - id: BDS_subset
 import_group:
   products:
     - id: pr
+      use_gzipped: TRUE
+      is_large: TRUE
     - id: go
     - id: uberon 
     - id: ro
     - id: chebi
+      use_gzipped: TRUE
+      is_large: TRUE
     - id: clo
     - id: pato
     - id: ncbitaxon
+      is_large: TRUE
+      use_gzipped: TRUE
 pattern_pipelines_group:
   products:
     - id: clustering
       dosdp_tools_options: "--obo-prefixes=true"
-robot_java_args: '-Xmx8G'
-
+robot_java_args: '-Xmx16G'
+allow_equivalents: asserted-only
+robot_report:
+  release_reports: False
+  fail_on : ERROR
+  use_labels : False
+  custom_profile : False
+  report_on :
+    - edit
+  custom_sparql_checks :
+    - equivalent-classes
+    - owldef-self-reference
+    - nolabels
+  custom_sparql_exports :
+    - basic-report
