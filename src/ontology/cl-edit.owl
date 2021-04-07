@@ -1862,6 +1862,8 @@ Declaration(Class(obo:CL_0008038))
 Declaration(Class(obo:CL_0008039))
 Declaration(Class(obo:CL_0008046))
 Declaration(Class(obo:CL_0008047))
+Declaration(Class(obo:CL_0008048))
+Declaration(Class(obo:CL_0008049))
 Declaration(Class(obo:CL_0009000))
 Declaration(Class(obo:CL_0009001))
 Declaration(Class(obo:CL_0009002))
@@ -2481,8 +2483,13 @@ Declaration(Class(obo:CL_4023047))
 Declaration(Class(obo:CL_4023048))
 Declaration(Class(obo:CL_4023049))
 Declaration(Class(obo:CL_4023050))
+
 Declaration(Class(obo:CL_4023051))
 Declaration(Class(obo:CL_4023054))
+
+Declaration(Class(obo:CL_4023052))
+Declaration(Class(obo:CL_4023053))
+
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -2493,6 +2500,7 @@ Declaration(Class(obo:CP_0000039))
 Declaration(Class(obo:CP_0000040))
 Declaration(Class(obo:CP_0000043))
 Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
+
 Declaration(Class(obo:PR_000002030))
 Declaration(Class(obo:PR_000003264))
 Declaration(Class(obo:PR_000009981))
@@ -2517,7 +2525,11 @@ Declaration(Class(obo:UBERON_8400007))
 Declaration(Class(obo:UBERON_8400008))
 Declaration(ObjectProperty(obo:BFO_0000051))
 Declaration(ObjectProperty(obo:RO_0000053))
+
+Declaration(Class(obo:UBERON_0002707))
+
 Declaration(ObjectProperty(obo:RO_0001025))
+Declaration(ObjectProperty(obo:RO_0002101))
 Declaration(ObjectProperty(obo:RO_0002102))
 Declaration(ObjectProperty(obo:RO_0002104))
 Declaration(ObjectProperty(obo:RO_0002134))
@@ -2551,6 +2563,7 @@ Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/contributor>))
 Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/creator>))
 Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/date>))
 Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/description>))
+Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/license>))
 Declaration(AnnotationProperty(<http://purl.org/dc/elements/1.1/title>))
 Declaration(AnnotationProperty(<http://purl.org/dc/terms/license>))
 Declaration(AnnotationProperty(oboInOwl:SubsetProperty))
@@ -9371,7 +9384,7 @@ SubClassOf(obo:CL_0000716 obo:CL_0000735)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15582775"^^xsd:string) obo:IAO_0000115 obo:CL_0000717 "A subset of motor neurons that innervates intrafusal muscle fibers and has small diameter axons."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000717 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000717 "fusimotor neuron"^^xsd:string)
-SubClassOf(obo:CL_0000717 obo:CL_0000100)
+SubClassOf(obo:CL_0000717 obo:CL_0008039)
 
 # Class: obo:CL_0000718 (compound eye cone cell)
 
@@ -22019,6 +22032,30 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008047 "myofibra intrafusal
 AnnotationAssertion(rdfs:label obo:CL_0008047 "intrafusal muscle fiber"@en)
 EquivalentClasses(obo:CL_0008047 ObjectIntersectionOf(obo:CL_0008002 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003718)))
 
+# Class: obo:CL_0008048 (upper motor neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Upper_motor_neuron&oldid=943248837") obo:IAO_0000115 obo:CL_0008048 "A glutamatergic motor neuron with a soma in the brainstem or cerebral cortex.  They do not synapse directly to muscles but rather to lower motor neurons, which do.  They are the main controllers of voluntary movement.")
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008048 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008048 "2020-09-28T09:41:48Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_0008048 "upper motor neuron"@en)
+SubClassOf(obo:CL_0008048 obo:CL_0000100)
+SubClassOf(obo:CL_0008048 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0008039))
+SubClassOf(obo:CL_0008048 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_33208))
+SubClassOf(obo:CL_0008048 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535))
+
+# Class: obo:CL_0008049 (Betz cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.03.31.016972") Annotation(oboInOwl:hasDbXref "Wikipedia:Betz_cell&oldid=977472330") obo:IAO_0000115 obo:CL_0008049 "A giant pyramidal neuron with a soma in layer Vb of the primary motor cortex that sends its axons down the spinal cord via the corticospinal tract, either synapsing directly with alpha motor neurons, or targeting interneurons in the spinal cord. In humans, Betz cells are the largest known in the central nervous system.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_0008049 obo:NCBITaxon_9443)
+AnnotationAssertion(oboInOwl:created_by obo:CL_0008049 "dos"^^xsd:string)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0008049 "2020-09-28T09:52:58Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008049 "pyramidal cell of Betz")
+AnnotationAssertion(rdfs:label obo:CL_0008049 "Betz cell"@en)
+AnnotationAssertion(<http://xmlns.com/foaf/0.1/depicted_by> obo:CL_0008049 "https://en.wikipedia.org/w/index.php?title=Betz_cell&oldid=977472330#/media/File:GolgiStainedPyramidalCell.jpg")
+SubClassOf(obo:CL_0008049 obo:CL_0000598)
+SubClassOf(obo:CL_0008049 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0022315))
+SubClassOf(obo:CL_0008049 ObjectSomeValuesFrom(obo:RO_0002101 obo:UBERON_0002707))
+
 # Class: obo:CL_0009000 (sensory neuron of spinal nerve)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "GOC:pr"^^xsd:string) obo:IAO_0000115 obo:CL_0009000 "A sensory neuron of the spinal nerve that senses body position and sends information about how much the muscle is stretched to the spinal cord.")
@@ -26798,7 +26835,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000049 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000049 "CL:2000049"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_2000049 "http://www.ncbi.nlm.nih.gov/pubmed/12524689"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_2000049 "primary motor cortex pyramidal cell"^^xsd:string)
-EquivalentClasses(obo:CL_2000049 ObjectIntersectionOf(obo:CL_0000598 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001384)))
+EquivalentClasses(obo:CL_2000049 ObjectIntersectionOf(obo:CL_0000598 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384)))
 
 # Class: obo:CL_2000050 (obsolete retina retinal ganglion cell)
 
@@ -26872,7 +26909,8 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_2000056 "2014-10-06T19:20:41Z"
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000056 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000056 "CL:2000056"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_2000056 "Meynert cell"^^xsd:string)
-EquivalentClasses(obo:CL_2000056 ObjectIntersectionOf(obo:CL_0000598 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000956)))
+SubClassOf(obo:CL_2000056 obo:CL_0000598)
+SubClassOf(obo:CL_2000056 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384))
 
 # Class: obo:CL_2000057 (femural osteoblast)
 
@@ -27842,6 +27880,7 @@ SubClassOf(obo:CL_4023050 obo:CL_4023040)
 SubClassOf(obo:CL_4023050 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384))
 SubClassOf(obo:CL_4023050 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090))
 
+
 # Class: obo:CL_4023051 (vascular leptomeningeal like cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30096314"^^xsd:string) obo:IAO_0000115 obo:CL_4023051 "A type of mesothelial fibroblast that is derived from the neural crest and is a key component of the pia and arachnoid membranes surrounding the brain.")
@@ -27864,6 +27903,26 @@ AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023054 <ht
 AnnotationAssertion(rdfs:label obo:CL_4023054 "mesothelial fibroblast")
 SubClassOf(obo:CL_4023054 obo:CL_0000057)
 SubClassOf(obo:CL_4023054 obo:CL_0000077)
+
+# Class: obo:CL_4023052 (Betz upper motor neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.03.31.016972") Annotation(oboInOwl:hasDbXref "PMID:18558853") Annotation(oboInOwl:hasDbXref "PMID:28751609") obo:IAO_0000115 obo:CL_4023052 "A Betz cell that synapses with lower motor neurons directly.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4023052 obo:NCBITaxon_9606)
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023052 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(rdfs:label obo:CL_4023052 "Betz upper motor neuron")
+SubClassOf(obo:CL_4023052 obo:CL_0008049)
+SubClassOf(obo:CL_4023052 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0008039))
+
+# Class: obo:CL_4023053 (spinal interneuron syanpsing Betz cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.03.31.016972") Annotation(oboInOwl:hasDbXref "PMID:18558853") obo:IAO_0000115 obo:CL_4023053 "A Betz cell that syanpses with spinal interneurons.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4023053 obo:NCBITaxon_9685)
+AnnotationAssertion(obo:RO_0002175 obo:CL_4023053 obo:NCBITaxon_9989)
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023053 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(rdfs:label obo:CL_4023053 "spinal interneuron syanpsing Betz cell")
+SubClassOf(obo:CL_4023053 obo:CL_0008049)
+SubClassOf(obo:CL_4023053 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0005000))
+
 
 # Class: obo:CP_0000000 (neutrophillic cytoplasm)
 
