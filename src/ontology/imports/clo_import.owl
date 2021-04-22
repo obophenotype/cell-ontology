@@ -29,8 +29,8 @@
      xmlns:subsets6="http://purl.oboInOwllibrary.org/oboInOwl/ro/subsets#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/clo_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-03-05/imports/clo_import.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-03-05</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-04-22/imports/clo_import.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-04-22</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -623,7 +623,30 @@ We also have the outstanding issue of how to aim different definitions to differ
 
     <!-- http://purl.obolibrary.org/obo/RO_0002175 -->
 
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002175"/>
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002175">
+        <obo:hasDbXref>RO:0002175</obo:hasDbXref>
+        <obo:hasDbXref xml:lang="en">RO:0002175</obo:hasDbXref>
+        <obo:hasExactSynonym>applicable for taxon</obo:hasExactSynonym>
+        <obo:hasExactSynonym xml:lang="en">applicable for taxon</obo:hasExactSynonym>
+        <obo:hasExactSynonym xml:lang="zh">适用于分类单元</obo:hasExactSynonym>
+        <obo:hasOBONamespace>uberon</obo:hasOBONamespace>
+        <obo:hasOBONamespace xml:lang="en">uberon</obo:hasOBONamespace>
+        <obo:id>present_in_taxon</obo:id>
+        <obo:id xml:lang="en">present_in_taxon</obo:id>
+        <obo:id xml:lang="zh">存在_于_分类</obo:id>
+        <obo:is_class_level rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:is_class_level>
+        <obo:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:is_metadata_tag>
+        <obo:shorthand>present_in_taxon</obo:shorthand>
+        <obo:shorthand xml:lang="en">present_in_taxon</obo:shorthand>
+        <obo:shorthand xml:lang="zh">存在_于_分类</obo:shorthand>
+        <rdfs:label>present_in_taxon</rdfs:label>
+        <rdfs:label xml:lang="en">present_in_taxon</rdfs:label>
+        <rdfs:label>存在_于_分类</rdfs:label>
+        <rdfs:label xml:lang="zh">存在_于_分类</rdfs:label>
+        <foaf:IAO_0000115>S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S</foaf:IAO_0000115>
+        <foaf:IAO_0000115 xml:lang="en">S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S</foaf:IAO_0000115>
+        <foaf:IAO_0000115 xml:lang="zh">S存在_于_分类 T如果T的某个实例有一些S，这并不意味着T的所有实例都有S - 它可能只是某些生命阶段或者性别具有S</foaf:IAO_0000115>
+    </owl:AnnotationProperty>
     
 
 
@@ -756,6 +779,12 @@ We also have the outstanding issue of how to aim different definitions to differ
     <!-- http://purl.obolibrary.org/obo/inSubset -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/inSubset"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/is_class_level -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/is_class_level"/>
     
 
 
@@ -1090,6 +1119,12 @@ We also have the outstanding issue of how to aim different definitions to differ
     
 
 
+    <!-- http://purl.org/dc/elements/1.1/license -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/license"/>
+    
+
+
     <!-- http://purl.org/dc/elements/1.1/source -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/source"/>
@@ -1317,9 +1352,19 @@ We also have the outstanding issue of how to aim different definitions to differ
     
 
 
+    <!-- http://xmlns.com/foaf/0.1/IAO_0000115 -->
+
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/IAO_0000115"/>
+    
+
+
     <!-- http://xmlns.com/foaf/0.1/depicted_by -->
 
-    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/depicted_by"/>
+    <owl:AnnotationProperty rdf:about="http://xmlns.com/foaf/0.1/depicted_by">
+        <rdfs:label>depicted_by</rdfs:label>
+        <rdfs:label xml:lang="en">depicted_by</rdfs:label>
+        <rdfs:label>由_描述</rdfs:label>
+    </owl:AnnotationProperty>
     
 
 
@@ -3313,6 +3358,28 @@ Some currently missing phenomena that should be considered &quot;about&quot; are
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CLO_0000021 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CLO_0000021">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9685"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CLO_0000019"/>
+        <obo:IAO_0000115>An immortal skin-derived cell line cell that derives from cat.</obo:IAO_0000115>
+        <obo:IAO_0000117>Yongqun He</obo:IAO_0000117>
+        <rdfs:label xml:lang="en">immortal cat cell line cell</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CLO_0000025 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CLO_0000025">
@@ -3490,6 +3557,44 @@ The definition provided here establishes the &apos;scale&apos; of cell populatio
         <obo:IAO_0000117>YH</obo:IAO_0000117>
         <obo:IAO_0000117>a immortal cell line that is dervied from mouse macrophage.</obo:IAO_0000117>
         <rdfs:label xml:lang="en">immortal mouse macrophage cell line</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CLO_0000457 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CLO_0000457">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9685"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CLO_0000019"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001000"/>
+                <owl:someValuesFrom>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9685"/>
+                    </owl:Restriction>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An immortal cell line cell that derives from cat.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="en">An immortal cell line cell that derives from cat.</obo:IAO_0000115>
+        <obo:IAO_0000115 xml:lang="zh">源自猫的永生细胞系细胞。</obo:IAO_0000115>
+        <obo:IAO_0000117>Yue Liu, Yongqun He</obo:IAO_0000117>
+        <obo:IAO_0000117 xml:lang="en">Yue Liu, Yongqun He</obo:IAO_0000117>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
+        <rdfs:label>immortal cat cell line cell</rdfs:label>
+        <rdfs:label xml:lang="zh">永生的猫细胞系细胞</rdfs:label>
     </owl:Class>
     
 
@@ -21713,6 +21818,22 @@ IAO澄清这些或改变定义不使用它们的要求</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314145 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314145">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9347"/>
+        <obo:IAO_0000111>Laurasiatheria</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">Laurasiatheria</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="zh">劳亚兽总目</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label>Laurasiatheria</rdfs:label>
+        <rdfs:label xml:lang="en">Laurasiatheria</rdfs:label>
+        <rdfs:label xml:lang="zh">劳亚兽总目</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_314146 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314146">
@@ -22013,6 +22134,37 @@ IAO澄清这些或改变定义不使用它们的要求</rdfs:comment>
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_33554 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_33554">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314145"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_40674"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <obo:IAO_0000111>Carnivora</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">Carnivora</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="zh">食肉目</obo:IAO_0000111>
+        <obo:IAO_0000118>&quot;carnivores&quot; EXACT genbank_common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;carnivores&quot; EXACT genbank_common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118>&quot;carnivores&quot; RELATED blast_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;carnivores&quot; RELATED blast_name []</obo:IAO_0000118>
+        <obo:IAO_0000118>carnivores</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">carnivores</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“食肉动物(carnivores)” EXACT genbank_common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“食肉动物(carnivores)” RELATED blast_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">食肉动物(carnivores)</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label>Carnivora</rdfs:label>
+        <rdfs:label xml:lang="en">Carnivora</rdfs:label>
+        <rdfs:label xml:lang="zh">食肉目</rdfs:label>
+        <rdfs:seeAlso>GC_ID:1</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">GC_ID:1</rdfs:seeAlso>
+        <rdfs:seeAlso>URI: http://www.ebi.ac.uk/cellline#Carnivora</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">URI: http://www.ebi.ac.uk/cellline#Carnivora</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_337687 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_337687">
@@ -22025,6 +22177,22 @@ IAO澄清这些或改变定义不使用它们的要求</rdfs:comment>
         <rdfs:label>Muroidea</rdfs:label>
         <rdfs:label xml:lang="en">Muroidea</rdfs:label>
         <rdfs:label xml:lang="zh">鼠总科</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_379583 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_379583">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33554"/>
+        <obo:IAO_0000111>Feliformia</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">Feliformia</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="zh">猫型亚目</obo:IAO_0000111>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label>Feliformia</rdfs:label>
+        <rdfs:label xml:lang="en">Feliformia</rdfs:label>
+        <rdfs:label xml:lang="zh">猫型亚目</rdfs:label>
     </owl:Class>
     
 
@@ -22337,6 +22505,51 @@ IAO澄清这些或改变定义不使用它们的要求</rdfs:comment>
         <rdfs:seeAlso xml:lang="en">GC_ID:1</rdfs:seeAlso>
         <rdfs:seeAlso>URI: http://www.ebi.ac.uk/cellline#Homo_sapiens</rdfs:seeAlso>
         <rdfs:seeAlso xml:lang="en">URI: http://www.ebi.ac.uk/cellline#Homo_sapiens</rdfs:seeAlso>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9685 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9685">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33554"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_379583"/>
+        <obo:IAO_0000111>Felis catus</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="en">Felis catus</obo:IAO_0000111>
+        <obo:IAO_0000111 xml:lang="zh">家猫</obo:IAO_0000111>
+        <obo:IAO_0000118>&quot;Felis domesticus&quot; RELATED synonym []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;Felis domesticus&quot; RELATED synonym []</obo:IAO_0000118>
+        <obo:IAO_0000118>&quot;Felis silvestris catus&quot; RELATED synonym []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;Felis silvestris catus&quot; RELATED synonym []</obo:IAO_0000118>
+        <obo:IAO_0000118>&quot;cat&quot; EXACT common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;cat&quot; EXACT common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118>&quot;cats&quot; EXACT common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;cats&quot; EXACT common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118>&quot;domestic cat&quot; EXACT genbank_common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">&quot;domestic cat&quot; EXACT genbank_common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118>cat</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">cat</obo:IAO_0000118>
+        <obo:IAO_0000118>cats</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">cats</obo:IAO_0000118>
+        <obo:IAO_0000118>domestic cat</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="en">domestic cat</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“家猫(Felis domesticus)” RELATED synonym []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“家猫(domestic cat)” EXACT genbank_common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“猫(Felis silvestris catus)” RELATED synonym []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“猫(cat)” EXACT common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">“猫(cats)” EXACT common_name []</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">家猫(domestic cat)</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">猫(cat)</obo:IAO_0000118>
+        <obo:IAO_0000118 xml:lang="zh">猫(cats)</obo:IAO_0000118>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon.owl"/>
+        <rdfs:label>Felis catus</rdfs:label>
+        <rdfs:label xml:lang="en">Felis catus</rdfs:label>
+        <rdfs:label xml:lang="zh">家猫</rdfs:label>
+        <rdfs:seeAlso>GC_ID:1</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">GC_ID:1</rdfs:seeAlso>
+        <rdfs:seeAlso>URI: http://www.ebi.ac.uk/cellline#Felis_catus</rdfs:seeAlso>
+        <rdfs:seeAlso xml:lang="en">URI: http://www.ebi.ac.uk/cellline#Felis_catus</rdfs:seeAlso>
     </owl:Class>
     
 
@@ -52892,24 +53105,24 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:hasDbXref xml:lang="en">CALOHA:TS-0579</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">EV:0100050</obo:hasDbXref>
         <obo:UBPROP_0000003 xml:lang="en">Lymph nodes that are associated with the lymphatic system have evolved in mammals.[well established][VHOG]</obo:UBPROP_0000003>
-        <obo:id>UBERON:0000029</obo:id>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
+        <obo:id>UBERON:0000029</obo:id>
         <obo:hasDbXref>UMLS:C0024204</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">MA:0000139</obo:hasDbXref>
-        <rdfs:label xml:lang="zh">淋巴结</rdfs:label>
         <obo:hasDbXref>GAID:947</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">ZFA_RETIRED:0005318</obo:hasDbXref>
+        <rdfs:label xml:lang="zh">淋巴结</rdfs:label>
         <obo:hasDbXref xml:lang="en">UMLS:C0024204</obo:hasDbXref>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
         <obo:hasDbXref>ZFA_RETIRED:0005318</obo:hasDbXref>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <obo:hasDbXref>OpenCyc:Mx4rwLPqLpwpEbGdrcN5Y29ycA</obo:hasDbXref>
         <obo:hasRelatedSynonym xml:lang="zh">结节淋巴瘤</obo:hasRelatedSynonym>
         <obo:hasDbXref>EV:0100050</obo:hasDbXref>
-        <obo:hasDbXref xml:lang="en">galen:Lymphnode</obo:hasDbXref>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_8570"/>
-        <obo:IAO_0000115 xml:lang="en">Any of the rounded masses of lymphoid tissue that are surrounded by a capsule of connective tissue, are distributed along the lymphatic vessels, and contain numerous lymphocytes which filter the flow of lymph.</obo:IAO_0000115>
+        <obo:hasDbXref xml:lang="en">galen:Lymphnode</obo:hasDbXref>
         <obo:hasRelatedSynonym xml:lang="en">lymph gland</obo:hasRelatedSynonym>
+        <obo:IAO_0000115 xml:lang="en">Any of the rounded masses of lymphoid tissue that are surrounded by a capsule of connective tissue, are distributed along the lymphatic vessels, and contain numerous lymphocytes which filter the flow of lymph.</obo:IAO_0000115>
         <obo:hasDbXref>EFO:0000872</obo:hasDbXref>
         <rdfs:label>lymph node</rdfs:label>
         <obo:hasDbXref xml:lang="en">BTO:0000784</obo:hasDbXref>
@@ -52918,14 +53131,14 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:hasDbXref rdf:resource="http://linkedlifedata.com/resource/umls/id/C0024204"/>
         <obo:hasDbXref>BTO:0000784</obo:hasDbXref>
         <obo:hasDbXref>MAT:0000442</obo:hasDbXref>
-        <obo:hasDbXref>FMA:5034</obo:hasDbXref>
         <obo:hasOBONamespace>uberon</obo:hasOBONamespace>
+        <obo:hasDbXref>FMA:5034</obo:hasDbXref>
         <obo:hasDbXref>VHOG:0001273</obo:hasDbXref>
         <rdfs:label xml:lang="en">lymph node</rdfs:label>
         <obo:hasRelatedSynonym xml:lang="en">nodus lymphaticus</obo:hasRelatedSynonym>
-        <obo:hasRelatedSynonym>nodus lymphaticus</obo:hasRelatedSynonym>
         <obo:hasDbXref xml:lang="en">VHOG:0001273</obo:hasDbXref>
         <obo:hasDbXref>EMAPA:35523</obo:hasDbXref>
+        <obo:hasRelatedSynonym>nodus lymphaticus</obo:hasRelatedSynonym>
         <obo:hasOBONamespace xml:lang="en">uberon</obo:hasOBONamespace>
         <obo:hasDbXref>TAO_RETIRED:0005318</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">OpenCyc:Mx4rwLPqLpwpEbGdrcN5Y29ycA</obo:hasDbXref>
@@ -52933,10 +53146,10 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:IAO_0000115 xml:lang="zh">任何由一个结缔组织性被膜包围的淋巴组织团，沿着淋巴管分布，并含有许多淋巴细胞，而这些淋巴细胞可以过滤淋巴液。</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#vertebrate_core"/>
         <foaf:depicted_by rdf:resource="http://upload.wikimedia.org/wikipedia/commons/b/b8/Illu_lymph_node_structure.png"/>
-        <obo:hasDbXref xml:lang="en">EMAPA:35523</obo:hasDbXref>
         <uberon3:dubious_for_taxon rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_32443"/>
-        <obo:hasDbXref>MA:0000139</obo:hasDbXref>
         <obo:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Lymph_node"/>
+        <obo:hasDbXref>MA:0000139</obo:hasDbXref>
+        <obo:hasDbXref xml:lang="en">EMAPA:35523</obo:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#vertebrate_core"/>
         <obo:hasRelatedSynonym xml:lang="zh">淋巴腺</obo:hasRelatedSynonym>
         <obo:hasDbXref xml:lang="en">EFO:0000872</obo:hasDbXref>
@@ -52953,8 +53166,8 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#uberon_slim"/>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <obo:hasDbXref>CALOHA:TS-0579</obo:hasDbXref>
-        <obo:hasDbXref xml:lang="en">TAO_RETIRED:0005318</obo:hasDbXref>
         <obo:UBPROP_0000003 xml:lang="zh">与淋巴系统有关的淋巴结已经在哺乳动物中进化。[well established][VHOG]</obo:UBPROP_0000003>
+        <obo:hasDbXref xml:lang="en">TAO_RETIRED:0005318</obo:hasDbXref>
         <obo:id xml:lang="en">UBERON:0000029</obo:id>
         <obo:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <obo:hasDbXref>galen:Lymphnode</obo:hasDbXref>
@@ -52962,24 +53175,24 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000926">
         <oboInOwl:hasRelatedSynonym xml:lang="en">mesodermal mantle</oboInOwl:hasRelatedSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
-        <oboInOwl:hasRelatedSynonym xml:lang="en">entire mesoderm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym xml:lang="zh">中胚层套膜</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym xml:lang="en">entire mesoderm</oboInOwl:hasRelatedSynonym>
         <obo:IAO_0000115 xml:lang="en">The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
-        <oboInOwl:hasRelatedSynonym>entire mesoderm</oboInOwl:hasRelatedSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
+        <oboInOwl:hasRelatedSynonym>entire mesoderm</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym xml:lang="zh">整个中胚层</oboInOwl:hasRelatedSynonym>
         <rdfs:label xml:lang="zh">中胚层</rdfs:label>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#vertebrate_core"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#uberon_slim"/>
         <oboInOwl:hasRelatedSynonym>mesodermal mantle</oboInOwl:hasRelatedSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#uberon_slim"/>
-        <oboInOwl:hasRelatedSynonym>embryonic mesoderm</oboInOwl:hasRelatedSynonym>
         <obo:IAO_0000115 xml:lang="zh">胚胎的中间胚层，在内胚层和外胚层之间。</obo:IAO_0000115>
+        <oboInOwl:hasRelatedSynonym>embryonic mesoderm</oboInOwl:hasRelatedSynonym>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <oboInOwl:hasRelatedSynonym xml:lang="zh">胚胎中胚层</oboInOwl:hasRelatedSynonym>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <oboInOwl:hasRelatedSynonym xml:lang="en">embryonic mesoderm</oboInOwl:hasRelatedSynonym>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <rdfs:label>mesoderm</rdfs:label>
         <rdfs:label xml:lang="en">mesoderm</rdfs:label>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#vertebrate_core"/>
@@ -52990,10 +53203,10 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:IAO_0000115 xml:lang="zh">由呼吸相关结构组成的功能系统。</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#functional_classification"/>
         <oboInOwl:hasExactSynonym xml:lang="en">apparatus respiratorius</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#functional_classification"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#uberon_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#vertebrate_core"/>
         <obo:IAO_0000115 xml:lang="en">Functional system which consists of structures involved in respiration.</obo:IAO_0000115>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#uberon_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#functional_classification"/>
         <oboInOwl:hasRelatedSynonym xml:lang="en">systema respiratorium</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasExactSynonym>apparatus respiratorius</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#uberon_slim"/>
@@ -53014,15 +53227,15 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <oboInOwl:hasRelatedSynonym xml:lang="zh">系统呼吸器</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasExactSynonym xml:lang="zh">呼吸系统(respiratory system)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym xml:lang="en">Atmungssystem</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>systema respiratorium</oboInOwl:hasRelatedSynonym>
         <rdfs:label>respiratory system</rdfs:label>
+        <oboInOwl:hasRelatedSynonym>systema respiratorium</oboInOwl:hasRelatedSynonym>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001017">
         <obo:hasDbXref rdf:resource="http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=854"/>
         <oboInOwl:hasExactSynonym xml:lang="en">systema nervosum centrale</oboInOwl:hasExactSynonym>
         <obo:hasDbXref>EHDAA2:0000225</obo:hasDbXref>
-        <obo:hasDbXref xml:lang="en">UMLS:C0927232</obo:hasDbXref>
         <obo:hasDbXref>BILA:0000080</obo:hasDbXref>
+        <obo:hasDbXref xml:lang="en">UMLS:C0927232</obo:hasDbXref>
         <obo:hasRelatedSynonym xml:lang="en">neuraxis</obo:hasRelatedSynonym>
         <oboInOwl:hasExactSynonym>systema nervosum centrale</oboInOwl:hasExactSynonym>
         <obo:hasDbXref>EMAPA:16754</obo:hasDbXref>
@@ -53038,8 +53251,8 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <rdfs:label xml:lang="en">central nervous system</rdfs:label>
         <obo:hasDbXref>MA:0000167</obo:hasDbXref>
         <obo:hasDbXref>CALOHA:TS-0150</obo:hasDbXref>
-        <oboInOwl:hasExactSynonym>CNS</oboInOwl:hasExactSynonym>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <oboInOwl:hasExactSynonym>CNS</oboInOwl:hasExactSynonym>
         <obo:hasDbXref xml:lang="en">FBbt:00005094</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">XAO:0000215</obo:hasDbXref>
         <obo:IAO_0000115 xml:lang="en">The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
@@ -53052,8 +53265,8 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:UBPROP_0000001 xml:lang="en">The brain and spinal cord. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:hasRelatedSynonym>neuraxis</obo:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym xml:lang="zh">神经轴</oboInOwl:hasRelatedSynonym>
-        <obo:hasDbXref xml:lang="en">EHDAA:828</obo:hasDbXref>
         <obo:hasDbXref>FMA:55675</obo:hasDbXref>
+        <obo:hasDbXref xml:lang="en">EHDAA:828</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">BAMS:CNS</obo:hasDbXref>
         <obo:UBPROP_0000001 xml:lang="zh">中枢神经系统(CNS)是神经系统的一部分，其包括视网膜的脑、脊髓和神经细胞层 (CUMBO)。</obo:UBPROP_0000001>
         <oboInOwl:hasRelatedSynonym xml:lang="en">neuraxis</oboInOwl:hasRelatedSynonym>
@@ -53064,8 +53277,8 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <oboInOwl:hasRelatedSynonym>neuraxis</oboInOwl:hasRelatedSynonym>
         <obo:hasDbXref>EFO:0000908</obo:hasDbXref>
         <obo:UBPROP_0000001>The brain and spinal cord. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
-        <obo:hasDbXref>MESH:D002490</obo:hasDbXref>
         <obo:hasOBONamespace xml:lang="en">uberon</obo:hasOBONamespace>
+        <obo:hasDbXref>MESH:D002490</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">EHDAA2:0000225</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">BTO:0000227</obo:hasDbXref>
         <obo:hasDbXref xml:lang="en">EMAPA:16754</obo:hasDbXref>
@@ -53102,8 +53315,8 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:hasDbXref rdf:resource="http://uri.neuinfo.org/nif/nifstd/birnlex_1099"/>
         <obo:hasDbXref xml:lang="en">EMAPA:16470</obo:hasDbXref>
         <obo:UBPROP_0000001 xml:lang="zh">大脑和脊髓。Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
-        <obo:hasDbXref xml:lang="en">TAO:0000012</obo:hasDbXref>
         <obo:hasDbXref rdf:resource="http://linkedlifedata.com/resource/umls/id/C0927232"/>
+        <obo:hasDbXref xml:lang="en">TAO:0000012</obo:hasDbXref>
         <obo:UBPROP_0000001 xml:lang="en">The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO).</obo:UBPROP_0000001>
         <obo:hasDbXref>GAID:570</obo:hasDbXref>
         <obo:hasExactSynonym>systema nervosum centrale</obo:hasExactSynonym>
@@ -53118,23 +53331,23 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <obo:hasDbXref xml:lang="en">ZFA:0000012</obo:hasDbXref>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <obo:hasExactSynonym>CNS</obo:hasExactSynonym>
-        <obo:hasDbXref xml:lang="en">FMA:55675</obo:hasDbXref>
         <obo:hasExactSynonym xml:lang="en">CNS</obo:hasExactSynonym>
+        <obo:hasDbXref xml:lang="en">FMA:55675</obo:hasDbXref>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
-        <obo:hasDbXref xml:lang="en">EFO:0000908</obo:hasDbXref>
         <obo:hasDbXref>EV:0100163</obo:hasDbXref>
+        <obo:hasDbXref xml:lang="en">EFO:0000908</obo:hasDbXref>
         <obo:hasDbXref>MAT:0000457</obo:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#vertebrate_core"/>
         <obo:hasExactSynonym xml:lang="en">systema nervosum centrale</obo:hasExactSynonym>
         <obo:hasNarrowSynonym xml:lang="zh">脑脊髓轴</obo:hasNarrowSynonym>
     </rdf:Description>
     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0001555">
-        <oboInOwl:hasRelatedSynonym>gut tube</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym xml:lang="zh">消化道(digestive canal)</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym xml:lang="en">digestive canal</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>gut tube</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasExactSynonym xml:lang="zh">肠道</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>digestive tube</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym xml:lang="en">alimentary canal</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasExactSynonym>digestive tube</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon#vertebrate_core"/>
         <oboInOwl:hasNarrowSynonym xml:lang="en">alimentary tract</oboInOwl:hasNarrowSynonym>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
@@ -53143,11 +53356,11 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <oboInOwl:hasExactSynonym xml:lang="en">digestive tube</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>alimentary canal</oboInOwl:hasNarrowSynonym>
         <rdfs:label xml:lang="zh">消化道</rdfs:label>
-        <rdfs:label>digestive tract</rdfs:label>
         <obo:IAO_0000115 xml:lang="zh">从口腔延伸到肛门的管</obo:IAO_0000115>
+        <rdfs:label>digestive tract</rdfs:label>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/clo.owl"/>
-        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <oboInOwl:hasBroadSynonym xml:lang="en">gut</oboInOwl:hasBroadSynonym>
+        <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/uberon.owl"/>
         <oboInOwl:hasNarrowSynonym xml:lang="zh">消化道(alimentary canal)</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>alimentary tract</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasBroadSynonym>gut</oboInOwl:hasBroadSynonym>
@@ -53158,8 +53371,8 @@ pulmonary arterial and venous trees. Examples: There is only one heart.</rdfs:co
         <oboInOwl:hasExactSynonym>enteric tract</oboInOwl:hasExactSynonym>
         <obo:IAO_0000412 rdf:resource="http://purl.obolibrary.org/obo/cl.owl"/>
         <oboInOwl:hasRelatedSynonym>digestive canal</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasNarrowSynonym xml:lang="zh">消化道(alimentary tract)</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasExactSynonym xml:lang="zh">消化管(digestive tube)</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym xml:lang="zh">消化道(alimentary tract)</oboInOwl:hasNarrowSynonym>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.oboInOwllibrary.org/oboInOwl/uberon#uberon_slim"/>
         <obo:IAO_0000115 xml:lang="en">A tube extending from the mouth to the anus.</obo:IAO_0000115>
