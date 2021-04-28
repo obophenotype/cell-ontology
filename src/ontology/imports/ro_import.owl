@@ -17,9 +17,9 @@
      xmlns:subsets="http://purl.obolibrary.org/obo/ro/subsets#"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/imports/ro_import.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-03-22/imports/ro_import.owl"/>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-04-22/imports/ro_import.owl"/>
         <dc:source rdf:resource="http://purl.obolibrary.org/obo/ro/releases/2021-03-08/ro.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-03-22</owl:versionInfo>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-04-22</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -112,6 +112,12 @@
     <!-- http://purl.obolibrary.org/obo/IAO_0000425 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000425"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/IAO_0000426 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000426"/>
     
 
 
@@ -1010,6 +1016,45 @@ range: spatial region or site (immaterial continuant)
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002101 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002101">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002132"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/CARO_0001001"/>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">relationship between a neuron and a neuron projection bundle (e.g.- tract or nerve bundle) that one or more of its projections travels through.
+</obo:IAO_0000115>
+        <obo:IAO_0000117>David Osumi-Sutherland</obo:IAO_0000117>
+        <obo:IAO_0000118>fasciculates with</obo:IAO_0000118>
+        <obo:IAO_0000426>(forall (?x ?y) 
+	(iff 
+		(fasciculates_with ?x ?y)
+		(exists (?nps ?npbs)
+			(and 
+				(&quot;neuron ; CL_0000540&quot; ?x)
+				(&quot;neuron projection bundle ; CARO_0001001&quot; ?y) 
+				(&quot;neuron projection segment ; CARO_0001502&quot; ?nps)
+				(&quot;neuron projection bundle segment ; CARO_0001500&apos; &quot; ?npbs)
+				(part_of ?npbs ?y) 			
+				(part_of ?nps ?x)
+				(part_of ?nps ?npbs)
+				(forall (?npbss)
+					(if
+						(and 
+							(&quot;neuron projection bundle subsegment ; CARO_0001501&quot; ?npbss)
+							(part_of ?npbss ?npbs) 
+						)
+						(overlaps ?nps ?npbss)
+					))))))</obo:IAO_0000426>
+        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
+        <cito:citesAsAuthority rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22402613"/>
+        <rdfs:label xml:lang="en">fasciculates with</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002102 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002102">
@@ -1222,6 +1267,56 @@ N1 SubclassOf (
         </owl:annotatedTarget>
         <obo:RO_0002582 rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</obo:RO_0002582>
     </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002132 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002132">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/CARO_0001001"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000540"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
+        <obo:IAO_0000115 xml:lang="en">The relation between a neuron projection bundle and a neuron projection that is fasciculated with it.</obo:IAO_0000115>
+        <obo:IAO_0000117 xml:lang="en">David Osumi-Sutherland</obo:IAO_0000117>
+        <obo:IAO_0000118 xml:lang="en">has fasciculating component</obo:IAO_0000118>
+        <obo:IAO_0000426>(forall (?x ?y) 
+	(iff 
+		(has_fasciculating_neuron_projection ?x ?y)
+		(exists (?nps ?npbs)		
+			(and 
+				(&quot;neuron projection bundle ; CARO_0001001&quot; ?x)
+				(&quot;neuron projection ; GO0043005&quot; ?y)
+				(&quot;neuron projection segment ; CARO_0001502&quot; ?nps)
+				(&quot;neuron projection bundle segment ; CARO_0001500&quot; ?npbs)
+				(part_of ?nps ?y)
+				(part_of ?npbs ?x)
+				(part_of ?nps ?npbs)
+				(forall (?npbss)
+					(if
+						(and 
+							(&quot;neuron projection bundle subsegment ; CARO_0001501&quot; ?npbss)
+							(part_of ?npbss ?npbs) 
+						)
+						(overlaps ?nps ?npbss)
+					))))))
+
+
+</obo:IAO_0000426>
+        <obo:RO_0001900 rdf:resource="http://purl.obolibrary.org/obo/RO_0001901"/>
+        <cito:citesAsAuthority rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/22402613"/>
+        <rdfs:label xml:lang="en">has fasciculating neuron projection</rdfs:label>
+    </owl:ObjectProperty>
     
 
 
