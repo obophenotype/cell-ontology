@@ -2504,6 +2504,7 @@ Declaration(Class(obo:CL_4023055))
 Declaration(Class(obo:CL_4023056))
 Declaration(Class(obo:CL_4023058))
 Declaration(Class(obo:CL_4023065))
+Declaration(Class(obo:CL_4023066))
 Declaration(Class(obo:CL_4023071))
 Declaration(Class(obo:CL_4023076))
 Declaration(Class(obo:CL_4023077))
@@ -8314,7 +8315,7 @@ SubClassOf(obo:CL_0000597 obo:CL_0002381)
 
 # Class: obo:CL_0000598 (pyramidal neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "MESH:A08.186.211.577.405.700"^^xsd:string) obo:IAO_0000115 obo:CL_0000598 "Pyramidal neurons have a pyramid-shaped soma with the apex and an apical dendrite pointed toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their  region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "MESH:A08.186.211.577.405.700"^^xsd:string) obo:IAO_0000115 obo:CL_0000598 "Pyramidal neurons have a pyramid-shaped soma with a single axon, a large apical dendrite and multiple basal dendrites. The apex and an apical dendrite typically point toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000598 "BTO:0003102"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000598 "FMA:67310"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000598 "FMA:86775"^^xsd:string)
@@ -8324,7 +8325,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000598 "pyramidal cell"^^xs
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000598 "pyramidal neuron"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000598 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000598 "pyramidal neuron"^^xsd:string)
-SubClassOf(obo:CL_0000598 obo:CL_0000117)
+EquivalentClasses(obo:CL_0000598 ObjectIntersectionOf(obo:CL_0000117 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070015)))
 
 # Class: obo:CL_0000599 (conidium)
 
@@ -22073,7 +22074,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0008049 "2020-09-28T09:52:58Z"
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008049 "pyramidal cell of Betz")
 AnnotationAssertion(rdfs:label obo:CL_0008049 "Betz cell"@en)
 AnnotationAssertion(<http://xmlns.com/foaf/0.1/depicted_by> obo:CL_0008049 "https://en.wikipedia.org/w/index.php?title=Betz_cell&oldid=977472330#/media/File:GolgiStainedPyramidalCell.jpg")
-SubClassOf(obo:CL_0008049 obo:CL_0000598)
+SubClassOf(obo:CL_0008049 obo:CL_0000117)
 SubClassOf(obo:CL_0008049 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070017))
 SubClassOf(obo:CL_0008049 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0022315))
 SubClassOf(obo:CL_0008049 ObjectSomeValuesFrom(obo:RO_0002101 obo:UBERON_0002707))
@@ -28135,6 +28136,14 @@ SubClassOf(obo:CL_4023065 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956
 SubClassOf(obo:CL_4023065 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090))
 SubClassOf(obo:CL_4023065 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P97367))
 
+
+# Class: obo:CL_4023066 (horizontal pyramidal neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30715238") obo:IAO_0000115 obo:CL_4023066 "A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023066 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(rdfs:label obo:CL_4023066 "horizontal pyramidal neuron")
+EquivalentClasses(obo:CL_4023066 ObjectIntersectionOf(obo:CL_0000598 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070016)))
+
 # Class: obo:CL_4023071 (L5/6 CCK expressing cortical GABAergic interneuron (Mus musculus))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33184512") obo:IAO_0000115 obo:CL_4023071 "A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization.")
@@ -28147,6 +28156,7 @@ SubClassOf(obo:CL_4023071 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956
 SubClassOf(obo:CL_4023071 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090))
 SubClassOf(obo:CL_4023071 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 SubClassOf(obo:CL_4023071 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P09240))
+
 
 # Class: obo:CL_4023076 (Martinotti neuron)
 
@@ -28164,6 +28174,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18568015") oboInOwl:hasD
 AnnotationAssertion(Annotation(obo:IAO_0000116 "Interlex cross reference refers specifically to Markram 2015 rat bitufted cell.") oboInOwl:hasDbXref obo:CL_4023077 "ILX:0777212")
 AnnotationAssertion(rdfs:label obo:CL_4023077 "bitufted neuron")
 EquivalentClasses(obo:CL_4023077 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070012)))
+
 
 # Class: obo:CP_0000000 (neutrophillic cytoplasm)
 
