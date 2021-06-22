@@ -251,3 +251,8 @@ reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
 	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
 	
 all_reports: reports/obo-diff.txt
+
+test_obsolete: cl.obo
+	! grep "! obsolete" cl.obo
+
+test: test_obsolete
