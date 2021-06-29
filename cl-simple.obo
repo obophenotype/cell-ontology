@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2021-06-21
+data-version: releases/2021-06-29
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -1124,6 +1124,7 @@ id: CL:0000103
 name: bipolar neuron
 namespace: cell
 def: "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body." [GOC:tfm, ISBN:0444009442]
+subset: BDS_subset
 xref: FMA:67282
 is_a: CL:0000099 ! interneuron
 
@@ -1132,6 +1133,7 @@ id: CL:0000104
 name: multipolar neuron
 namespace: cell
 def: "Neuron with an axon and two or more dendrites." [FMA:67287, GOC:tfm]
+subset: BDS_subset
 xref: FMA:67287
 is_a: CL:0000540 ! neuron
 
@@ -1148,6 +1150,7 @@ id: CL:0000106
 name: unipolar neuron
 namespace: cell
 def: "Neuron with one neurite that extends from the cell body." [FMA:67278, GOC:nv]
+subset: BDS_subset
 xref: FMA:67278
 is_a: CL:0000540 ! neuron
 
@@ -1248,6 +1251,7 @@ id: CL:0000118
 name: basket cell
 namespace: cell
 def: "Basket cells are inhibitory GABAergic interneurons of the brain. In general, dendrites of basket cells are free branching and contain smooth spines. Axons are highly branched. The branched axonal arborizations give rise to basket-like structures that surround the soma of the target cell. Basket cells form axo-somatic synapses, meaning their synapses target somas of other cells." [WikipediaVersioned:Basket_cell&oldid=951703880]
+subset: BDS_subset
 is_a: CL:0000104 ! multipolar neuron
 is_a: CL:0011005 ! GABAergic interneuron
 property_value: created_by https://orcid.org/0000-0002-2825-0621 xsd:string
@@ -1291,6 +1295,7 @@ id: CL:0000122
 name: stellate neuron
 namespace: cell
 def: "A neuron that has dendritic processes radiating from the cell body forming a star-like shape." [ISBN:9780123973481]
+subset: BDS_subset
 xref: BTO:0002316
 is_a: CL:0000104 ! multipolar neuron
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
@@ -3023,7 +3028,7 @@ id: CL:0000315
 name: tears secreting cell
 namespace: cell
 def: "A cell secreting tears, the fluid secreted by the lacrimal glands. This fluid moistens the conjunctiva and cornea." [MESH:A12.200.882]
-is_a: CL:0000151 ! secretory cell
+is_a: CL:0000152 ! exocrine cell
 
 [Term]
 id: CL:0000316
@@ -3744,9 +3749,11 @@ is_a: CL:0000402 ! CNS interneuron
 
 [Term]
 id: CL:0000411
-name: flatworm hypodermal cell
+name: Caenorhabditis hypodermal cell
 namespace: cell
-def: "An epithelial cell of the hypodermis of flatworms." [GOC:tfm, http://www.wormatlas.org/hermaphrodite/hypodermis/mainframe.htm]
+def: "An epithelial cell of the hypodermis of Caenorhabditis." [GOC:tfm, http://www.wormatlas.org/hermaphrodite/hypodermis/mainframe.htm]
+comment: This term was originally added to CL for parity with the Worm anatomy ontology, which is dedicated to C elegans. It is not clear if it makes sense to try and generalize the concept and include in CL, and this term may be obsoleted in future. Note there is no similarity to the hypodermis in vertebrates.
+synonym: "roundworm hypodermal cell" BROAD []
 xref: WBbt:0007846
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000228 ! multinucleate cell
@@ -5446,6 +5453,7 @@ id: CL:0000598
 name: pyramidal neuron
 namespace: cell
 def: "Pyramidal neurons have a pyramid-shaped soma with a single axon, a large apical dendrite and multiple basal dendrites. The apex and an apical dendrite typically point toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala." [GOC:tfm, MESH:A08.186.211.577.405.700]
+subset: BDS_subset
 synonym: "projection neuron" EXACT []
 synonym: "pyramidal cell" EXACT []
 synonym: "pyramidal neuron" EXACT []
@@ -6301,6 +6309,7 @@ is_a: CL:2000019 ! compound eye photoreceptor cell
 id: CL:0000691
 name: stellate interneuron
 namespace: cell
+subset: BDS_subset
 is_a: CL:0000099 ! interneuron
 is_a: CL:0000104 ! multipolar neuron
 
@@ -6318,6 +6327,7 @@ id: CL:0000693
 name: neurogliaform cell
 namespace: cell
 def: "An interneuron that has spider-like appearance with a small round soma, a large number (7-10) of short, smooth, or slightly beaded primary dendrites that give rise to only a few secondary branches, and a branched axon that establishes a dense axonal mesh with thin shafts." [JB:jb, PMID:17122314]
+subset: BDS_subset
 synonym: "neuroglioform cell" EXACT [PMID:3235828]
 synonym: "NGF cell" EXACT [PMID:18568015]
 synonym: "spiderweb cell" EXACT []
@@ -23867,7 +23877,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023007
-name: L2/3 bipolar Vip expressing GABAergic cortical interneuron (Mus musculus)
+name: L2/3 bipolar Vip GABAergic cortical interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." [PMID:26420784]
 subset: BDS_subset
 synonym: "L2/3 bipolar Vip (Mus)" EXACT []
@@ -23939,7 +23949,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023014
-name: L5 Vip expressing cortical GABAergic interneuron (Mus musculus)
+name: L5 Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron with a soma found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential." [PMID:26420784, PMID:26612957]
 subset: BDS_subset
 synonym: "L5 VIP (Mus)" EXACT []
@@ -23984,12 +23994,12 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023019
-name: L5/6 CCK and Vip expressing cortical GABAergic interneuron (Mus musculus)
+name: L5/6 CCK, Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK Vip (Mus)" EXACT []
 is_a: CL:4023016 ! Vip GABAergic cortical interneuron
-is_a: CL:4023071 ! L5/6 CCK expressing cortical GABAergic interneuron (Mus musculus)
+is_a: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24031,7 +24041,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023027
-name: L5 ‘T-shaped’ Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+name: L5 T-Martinotti Sst GABAergic cortical interneuron (Mus musculus)
 def: "A Sst GABAergic cortical interneuron with a soma found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
 subset: BDS_subset
 synonym: "L5 T Martinotti SST (Mus)" EXACT []
@@ -24118,6 +24128,7 @@ synonym: "L5b neuron" EXACT []
 synonym: "pyramidal tract (PT) neuron" EXACT []
 synonym: "subcerebral projection (SCPN) neuron" EXACT []
 synonym: "thick-tufted layer 5 pyramidal neuron" EXACT []
+is_a: CL:0000104 ! multipolar neuron
 is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24142,7 +24153,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023044
-name: non-medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: non-medulla, extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that does not project to the medulla. Non-MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. Non-MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
 synonym: "non-MY ET MOp (Mus)" EXACT []
@@ -24151,9 +24162,10 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023045
-name: medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: medulla-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that projects to the medulla. MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
+synonym: "medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)" EXACT []
 synonym: "MY ET MOp (Mus)" EXACT []
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
@@ -24247,7 +24259,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 [Term]
 id: CL:4023055
 name: corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
-def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." [PMID:20556241, PMID:9236245]
+def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM (ventroanterior-ventrolateral complex/ventromedial nucleus) cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." [PMID:20556241, PMID:9236245]
 subset: BDS_subset
 synonym: "CT VAL/VM MOp (Mus)" EXACT []
 is_a: CL:0000104 ! multipolar neuron
@@ -24284,6 +24296,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023066
 name: horizontal pyramidal neuron
 def: "A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically." [PMID:30715238]
+subset: BDS_subset
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24315,7 +24328,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023071
-name: L5/6 CCK expressing cortical GABAergic interneuron (Mus musculus)
+name: L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 def: "A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK (Mus)" EXACT []
@@ -24326,6 +24339,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023076
 name: Martinotti neuron
 def: "An interneuron that has Martinotti morphology. These interneurons are scattered throughout various layers of the cerebral cortex, sending their axons up to the cortical layer I where they form axonal arborization." [WikipediaVersioned:Martinotti_cell&oldid=9947732]
+subset: BDS_subset
 xref: ILX:0107375
 xref: nifext_55
 is_a: CL:0000104 ! multipolar neuron
@@ -24335,6 +24349,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 [Term]
 id: CL:4023077
 name: bitufted neuron
+subset: BDS_subset
 xref: A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons\, bitufted neurons have branching that occur close to the soma. {xref="PMID:18568015"}
 xref: ILX:0777212
 is_a: CL:0000099 ! interneuron
@@ -24372,6 +24387,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023083
 name: chandelier cell
 def: "An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted." [PMID:15378039] {def="PMID:27199673"}
+subset: BDS_subset
 synonym: "ChC" EXACT [PMID:15378039]
 xref: ILX:0777213
 is_a: CL:0000099 ! interneuron
@@ -24423,6 +24439,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023092
 name: inverted pyramidal neuron
 def: "A pyramidal neuron which has an apical tree which is oriented towards the white matter." [PMID:30715238]
+subset: BDS_subset
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24430,6 +24447,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023093
 name: stellate pyramidal neuron
 def: "A pyramidal neuron which lacks a tuft formation but extends small radial distances forming a star-like shape." [PMID:30715238]
+subset: BDS_subset
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24437,6 +24455,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023094
 name: tufted pyramidal neuron
 def: "A pyramidal neuron which has a distinctive tuft formation, distal from the soma." [PMID:30715238]
+subset: BDS_subset
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24444,6 +24463,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023095
 name: untufted pyramidal neuron
 def: "A pyramidal neuron which lacks a clear tuft formation but extends to large radial distances." [PMID:30715238]
+subset: BDS_subset
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
