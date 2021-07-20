@@ -255,3 +255,15 @@ all_reports: reports/obo-diff.txt
 
 normalise_xsd_string: $(SRC)
 	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+
+ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
+DOSDPT=dosdp-tools
+
+tmp/edit-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+.PHONY: matches
+matches: tmp/edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+
+	
