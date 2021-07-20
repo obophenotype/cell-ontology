@@ -266,4 +266,10 @@ tmp/edit-merged.owl: $(SRC)
 matches: tmp/edit-merged.owl
 	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
 
-	
+.PHONY: install_dosdp
+install_dosdp:
+	pip install -i https://test.pypi.org/simple/ dosdp==0.1.7.dev1
+
+.PHONY: pattern_docs
+pattern_docs:
+	dosdp document -i ../patterns/dosdp-patterns/ -o ../../docs/patterns/ -d ../patterns/data/matches/
