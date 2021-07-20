@@ -251,3 +251,7 @@ reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
 	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
 	
 all_reports: reports/obo-diff.txt
+
+
+normalise_xsd_string: $(SRC)
+	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
