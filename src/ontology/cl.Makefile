@@ -276,7 +276,7 @@ pattern_docs:
 
 .PHONY: obocheck
 obocheck:
-	$(ROBOT) merge -i cl-edit.owl convert -f obo --check false -o cl-check.obo
+	$(ROBOT) merge -i cl-edit.owl remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external --trim false convert -f obo --check false -o cl-check.obo
 	fastobo-validator cl-check.obo
 	
 test: obocheck
