@@ -3,7 +3,6 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 
 #mirror/pr.owl: mirror/pr.trigger
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
@@ -262,3 +261,25 @@ reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
 	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
 	
 all_reports: reports/obo-diff.txt
+
+
+normalise_xsd_string: $(SRC)
+	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+
+ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
+DOSDPT=dosdp-tools
+
+tmp/edit-merged.owl: $(SRC)
+	$(ROBOT) merge -i $< -o $@
+
+.PHONY: matches
+matches: tmp/edit-merged.owl
+	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
+
+.PHONY: install_dosdp
+install_dosdp:
+	pip install -i https://test.pypi.org/simple/ dosdp==0.1.7.dev1
+
+.PHONY: pattern_docs
+pattern_docs:
+	dosdp document -i ../patterns/dosdp-patterns/ -o ../../docs/patterns/ -d ../patterns/data/matches/
