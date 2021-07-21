@@ -10,6 +10,7 @@ When you make edits, sometimes there will be large amounts of unintended differe
 ```cd .../GitHub/cell-ontology/src/ontology```
 
 3. Run the normaliser in terminal
+
 If you have docker installed:
 
 ```sh run.sh make normalise_xsd_string```
