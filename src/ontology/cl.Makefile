@@ -3,7 +3,6 @@
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels
 
 #mirror/pr.owl: mirror/pr.trigger
 #	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
@@ -239,3 +238,20 @@ reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
 
 branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
 
+tmp/cl-current.owl: $(ONT).owl
+	$(ROBOT) remove -i $< --term rdfs:label --select complement --select annotation-properties \
+		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
+
+tmp/cl-lastbuild.owl: .FORCE
+	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label --select complement --select annotation-properties \
+		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
+
+reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
+	$(ROBOT) diff --left $< --right tmp/cl-current.owl -f markdown -o $@
+	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
+	
+all_reports: reports/obo-diff.txt
+
+
+normalise_xsd_string: $(SRC)
+	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
