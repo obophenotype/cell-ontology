@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-04-22/cl-base.owl
+data-version: cl/releases/2021-06-29/cl-base.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -23,7 +23,7 @@ property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2021-04-22" xsd:string
+property_value: owl:versionInfo "2021-06-29" xsd:string
 
 [Term]
 id: CL:0000000
@@ -523,18 +523,6 @@ synonym: "mature eosinophil leukocyte" EXACT []
 synonym: "polymorphonuclear leucocyte" BROAD []
 synonym: "polymorphonuclear leukocyte" BROAD []
 is_a: CL:0000771 {is_inferred="true"} ! eosinophil
-intersection_of: CL:0000771 ! eosinophil
-intersection_of: BFO:0000051 GO:0098537
-intersection_of: BFO:0000051 PR:000007152
-intersection_of: BFO:0000051 PR:000007857
-intersection_of: BFO:0000051 PR:000007858
-intersection_of: BFO:0000051 PR:000014046
-intersection_of: BFO:0000051 PR:000014047
-intersection_of: BFO:0000051 PR:000022006
-intersection_of: RO:0002104 PR:000009129
-intersection_of: RO:0002215 GO:0002495
-intersection_of: RO:0002215 GO:0002540
-intersection_of: RO:0002215 GO:0045730
 relationship: RO:0002202 CL:0000774 ! band form eosinophil
 property_value: IAO:0000116 "The status of eosinophils as true professional antigen presenting cells is unclear, despite their ability to present exogenous peptides and peptides processed from exogenous proteins (in certain studies) via MHC Class II and activate T cells. Per the equivalence axioms, 'eosinophil' is reasoned to be a subclass of 'professional antigen presenting cell', though the role of eosinophils as such in the body may be limited." xsd:string
 
@@ -570,15 +558,6 @@ xref: BTO:0001026
 xref: CALOHA:TS-0688
 is_a: CL:0000767 {is_inferred="true"} ! basophil
 is_a: CL:0002274 ! histamine secreting cell
-intersection_of: CL:0000767 ! basophil
-intersection_of: BFO:0000051 GO:0098537
-intersection_of: RO:0002215 GO:0002349
-intersection_of: RO:0002215 GO:0002351
-intersection_of: RO:0002215 GO:0002830
-intersection_of: RO:0002215 GO:0008015
-intersection_of: RO:0002215 GO:0032616
-intersection_of: RO:0002215 GO:0032633
-intersection_of: RO:0002215 GO:0048295
 relationship: RO:0002202 CL:0000770 ! band form basophil
 
 [Term]
@@ -1189,24 +1168,6 @@ synonym: "polynuclear neutrophilic leucocyte" EXACT []
 synonym: "polynuclear neutrophilic leukocyte" EXACT []
 xref: BTO:0003473
 is_a: CL:0000775 {is_inferred="true"} ! neutrophil
-intersection_of: CL:0000775 ! neutrophil
-intersection_of: BFO:0000051 CP:0000000 ! neutrophillic cytoplasm
-intersection_of: BFO:0000051 GO:0070820
-intersection_of: BFO:0000051 GO:0098537
-intersection_of: lacks_part PR:000009978
-intersection_of: lacks_part PR:000010543
-intersection_of: lacks_part PR:000010799
-intersection_of: RO:0002104 PR:000001256
-intersection_of: RO:0002104 PR:000001257
-intersection_of: RO:0002104 PR:000001456
-intersection_of: RO:0002104 PR:000001483
-intersection_of: RO:0002104 PR:000001879
-intersection_of: RO:0002104 PR:000001944
-intersection_of: RO:0002104 PR:000007597
-intersection_of: RO:0002215 GO:0002536
-intersection_of: RO:0002215 GO:0002690
-intersection_of: RO:0002215 GO:0006909
-intersection_of: RO:0002215 GO:0032637
 
 [Term]
 id: CL:0000097
@@ -1298,16 +1259,20 @@ id: CL:0000103
 name: bipolar neuron
 namespace: cell
 def: "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body." [GOC:tfm, ISBN:0444009442]
+subset: BDS_subset
 xref: FMA:67282
-is_a: CL:0000099 ! interneuron
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070006
 
 [Term]
 id: CL:0000104
 name: multipolar neuron
 namespace: cell
 def: "Neuron with an axon and two or more dendrites." [FMA:67287, GOC:tfm]
+subset: BDS_subset
 xref: FMA:67287
-is_a: CL:0000540 ! neuron
+intersection_of: CL:0000540 ! neuron
+intersection_of: RO:0000053 PATO:0070026
 
 [Term]
 id: CL:0000105
@@ -1322,6 +1287,7 @@ id: CL:0000106
 name: unipolar neuron
 namespace: cell
 def: "Neuron with one neurite that extends from the cell body." [FMA:67278, GOC:nv]
+subset: BDS_subset
 xref: FMA:67278
 is_a: CL:0000540 ! neuron
 
@@ -1333,7 +1299,7 @@ def: "A neruon whose cell body is within an autonomic ganglion." [GOC:tfm]
 xref: FMA:80121
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0002410
+intersection_of: RO:0002100 UBERON:0002410
 
 [Term]
 id: CL:0000108
@@ -1426,7 +1392,12 @@ relationship: RO:0002202 CL:0000031 ! neuroblast (sensu Vertebrata)
 id: CL:0000118
 name: basket cell
 namespace: cell
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+def: "Basket cells are inhibitory GABAergic interneurons of the brain. In general, dendrites of basket cells are free branching and contain smooth spines. Axons are highly branched. The branched axonal arborizations give rise to basket-like structures that surround the soma of the target cell. Basket cells form axo-somatic synapses, meaning their synapses target somas of other cells." [WikipediaVersioned:Basket_cell&oldid=951703880]
+subset: BDS_subset
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070002
+intersection_of: RO:0002215 GO:0061534
+property_value: created_by https://orcid.org/0000-0002-2825-0621 xsd:string
 
 [Term]
 id: CL:0000119
@@ -1461,14 +1432,17 @@ xref: CALOHA:TS-0845
 xref: FMA:67969
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000527 ! efferent neuron
-relationship: BFO:0000050 UBERON:0002129
+relationship: RO:0002100 UBERON:0002129
 
 [Term]
 id: CL:0000122
 name: stellate neuron
 namespace: cell
+def: "A neuron that has dendritic processes radiating from the cell body forming a star-like shape." [ISBN:9780123973481]
+subset: BDS_subset
 xref: BTO:0002316
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070010
 
 [Term]
 id: CL:0000123
@@ -3310,6 +3284,7 @@ name: tears secreting cell
 namespace: cell
 def: "A cell secreting tears, the fluid secreted by the lacrimal glands. This fluid moistens the conjunctiva and cornea." [MESH:A12.200.882]
 is_a: CL:0000151 ! secretory cell
+relationship: BFO:0000050 UBERON:0001817
 
 [Term]
 id: CL:0000316
@@ -3976,7 +3951,7 @@ name: ganglion interneuron
 namespace: cell
 is_a: CL:0000099 {is_inferred="true"} ! interneuron
 intersection_of: CL:0000099 ! interneuron
-intersection_of: BFO:0000050 UBERON:0000045
+intersection_of: RO:0002100 UBERON:0000045
 
 [Term]
 id: CL:0000398
@@ -4014,7 +3989,7 @@ namespace: cell
 is_a: CL:0000099 {is_inferred="true"} ! interneuron
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000099 ! interneuron
-intersection_of: BFO:0000050 UBERON:0001017
+intersection_of: RO:0002100 UBERON:0001017
 
 [Term]
 id: CL:0000404
@@ -4070,13 +4045,16 @@ is_a: CL:0000402 ! CNS interneuron
 
 [Term]
 id: CL:0000411
-name: flatworm hypodermal cell
+name: Caenorhabditis hypodermal cell
 namespace: cell
-def: "An epithelial cell of the hypodermis of flatworms." [GOC:tfm, http://www.wormatlas.org/hermaphrodite/hypodermis/mainframe.htm]
+def: "An epithelial cell of the hypodermis of Caenorhabditis." [GOC:tfm, http://www.wormatlas.org/hermaphrodite/hypodermis/mainframe.htm]
+comment: This term was originally added to CL for parity with the Worm anatomy ontology, which is dedicated to C elegans. It is not clear if it makes sense to try and generalize the concept and include in CL, and this term may be obsoleted in future. Note there is no similarity to the hypodermis in vertebrates.
+synonym: "roundworm hypodermal cell" BROAD []
 xref: WBbt:0007846
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000228 ! multinucleate cell
 is_a: CL:0002371 ! somatic cell
+relationship: RO:0002162 NCBITaxon:6237
 
 [Term]
 id: CL:0000412
@@ -4133,6 +4111,7 @@ def: "An epithelial cell found in C. elegans that firmly hold the outer body wal
 xref: WBbt:0005793
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
+relationship: RO:0002162 NCBITaxon:6237
 
 [Term]
 id: CL:0000419
@@ -4728,6 +4707,7 @@ namespace: cell
 def: "A large secretory cell found in clusters underlying the epidermis of the abdominal segments of larval abdominal segments." [GOC:bf, PMID:11171397]
 xref: FBbt:00004995
 is_a: CL:0000151 ! secretory cell
+relationship: RO:0002162 NCBITaxon:6656
 
 [Term]
 id: CL:0000488
@@ -6003,7 +5983,8 @@ is_a: CL:0002381 ! uninucleate conidium
 id: CL:0000598
 name: pyramidal neuron
 namespace: cell
-def: "Pyramidal neurons have a pyramid-shaped soma with the apex and an apical dendrite pointed toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their  region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala." [GOC:tfm, MESH:A08.186.211.577.405.700]
+def: "Pyramidal neurons have a pyramid-shaped soma with a single axon, a large apical dendrite and multiple basal dendrites. The apex and an apical dendrite typically point toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala." [GOC:tfm, MESH:A08.186.211.577.405.700]
+subset: BDS_subset
 synonym: "projection neuron" EXACT []
 synonym: "pyramidal cell" EXACT []
 synonym: "pyramidal neuron" EXACT []
@@ -6011,7 +5992,8 @@ xref: BTO:0003102
 xref: FMA:67310
 xref: FMA:86775
 xref: NIFSTD:sao862606388
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070015
 
 [Term]
 id: CL:0000599
@@ -6843,6 +6825,7 @@ name: gut absorptive cell
 namespace: cell
 def: "Cell of the intestinal epithelium with a brush border made up of many parallel packed microvilli; associated with absorption, particularly of macromolecules." [JB:jb]
 is_a: CL:0000212 ! absorptive cell
+relationship: BFO:0000050 UBERON:0001277
 
 [Term]
 id: CL:0000678
@@ -6967,8 +6950,9 @@ relationship: BFO:0000050 UBERON:0000971
 id: CL:0000691
 name: stellate interneuron
 namespace: cell
-is_a: CL:0000099 ! interneuron
-is_a: CL:0000122 ! stellate neuron
+subset: BDS_subset
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070010
 
 [Term]
 id: CL:0000692
@@ -6981,11 +6965,15 @@ is_a: CL:0002376 ! non-myelinating Schwann cell
 
 [Term]
 id: CL:0000693
-name: neuroglioform cell
+name: neurogliaform cell
 namespace: cell
-def: "A stellate interneuron having 7-10 dendrites that may branch." [JB:jb]
+def: "An interneuron that has spider-like appearance with a small round soma, a large number (7-10) of short, smooth, or slightly beaded primary dendrites that give rise to only a few secondary branches, and a branched axon that establishes a dense axonal mesh with thin shafts." [JB:jb, PMID:17122314]
+subset: BDS_subset
+synonym: "neuroglioform cell" EXACT [PMID:3235828]
+synonym: "NGF cell" EXACT [PMID:18568015]
 synonym: "spiderweb cell" EXACT []
-is_a: CL:0000691 ! stellate interneuron
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070001
 
 [Term]
 id: CL:0000694
@@ -7369,7 +7357,7 @@ synonym: "RGC" EXACT []
 xref: BTO:0001800
 xref: FMA:67765
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
-relationship: BFO:0000050 UBERON:0000966
+relationship: RO:0002100 UBERON:0000966
 
 [Term]
 id: CL:0000741
@@ -15164,6 +15152,9 @@ namespace: cell
 alt_id: CL:1000387
 def: "Brush cell found in the epithelial layer of the colon." [GOC:tfm]
 comment: Brush cells are a distinct cell type from brush border cell-types.
+synonym: "brush cell of large intestine" EXACT [http://orcid.org/0000-0003-4183-8865]
+synonym: "tuft cell of epithelium of large intestine" EXACT [http://orcid.org/0000-0003-4183-8865]
+synonym: "tuft cell of large intestine" EXACT [http://orcid.org/0000-0003-4183-8865]
 xref: FMA:263222
 is_a: CL:0002204 ! brush cell
 is_a: CL:0002253 ! epithelial cell of large intestine
@@ -16009,6 +16000,7 @@ namespace: cell
 def: "A type EC enteroendocrine cell in the duodenum and jejunum that stores and secretes motilin and 5-hydroxytryptamine." [GOC:tfm, ISBN:0517223651, PMID:15153415]
 synonym: "Mo enteroendocrine cell" BROAD []
 xref: FMA:62941
+is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000577 ! type EC enteroendocrine cell
 is_a: CL:0002272 ! motilin secreting cell
 created_by: tmeehan
@@ -16040,6 +16032,7 @@ name: type ECL enteroendocrine cell
 namespace: cell
 def: "A type EC enteroendocrine cell type that is numerous in the fundus of the stomach; stores 5-hydroxytryptamine and histamine." [GOC:tfm, ISBN:0517223651, PMID:15153415]
 xref: FMA:63208
+is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000577 ! type EC enteroendocrine cell
 is_a: CL:0002274 ! histamine secreting cell
 created_by: tmeehan
@@ -19556,7 +19549,6 @@ id: CL:0002563
 name: intestinal epithelial cell
 namespace: cell
 def: "An epithelial cell of the intestine." [GOC:tfm]
-is_a: CL:0002251 {is_inferred="true"} ! epithelial cell of alimentary canal
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: BFO:0000050 UBERON:0000160
 relationship: BFO:0000050 UBERON:0001277
@@ -20052,7 +20044,7 @@ xref: BTO:0004102
 xref: FMA:84104
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0000956
+intersection_of: RO:0002100 UBERON:0000956
 created_by: tmeehan
 creation_date: 2011-03-06T07:37:08Z
 
@@ -20063,7 +20055,7 @@ namespace: cell
 def: "A neuron of the raphe nuclei." [GOC:tfm]
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0004684
+intersection_of: RO:0002100 UBERON:0004684
 created_by: tmeehan
 creation_date: 2011-03-06T07:42:06Z
 
@@ -20074,7 +20066,7 @@ namespace: cell
 def: "A CNS neuron of the dorsal spinal cord." [GOC:tfm]
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0002256
+intersection_of: RO:0002100 UBERON:0002256
 created_by: tmeehan
 creation_date: 2011-03-06T07:43:34Z
 
@@ -20085,7 +20077,7 @@ namespace: cell
 def: "A neuron of the ventral spinal cord." [GOC:tfm]
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0002257
+intersection_of: RO:0002100 UBERON:0002257
 created_by: tmeehan
 creation_date: 2011-03-06T07:46:03Z
 
@@ -20096,7 +20088,7 @@ namespace: cell
 def: "A neuron of the striatum." [GOC:tfm]
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0002435
+intersection_of: RO:0002100 UBERON:0002435
 created_by: tmeehan
 creation_date: 2011-03-06T07:47:12Z
 
@@ -20107,7 +20099,7 @@ namespace: cell
 def: "A neuron of the substantia nigra." [GOC:tfm]
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0002038
+intersection_of: RO:0002100 UBERON:0002038
 created_by: tmeehan
 creation_date: 2011-03-06T07:48:42Z
 
@@ -20771,6 +20763,7 @@ namespace: cell
 def: "A S. pombe mating type determined by the mat1-Mc and mat1-Mi on the mat1 locus." [GOC:tfm]
 synonym: "H- cell" EXACT []
 is_a: CL:0000521 ! fungal cell
+relationship: RO:0002162 NCBITaxon:4896
 created_by: tmeehan
 creation_date: 2011-08-16T03:20:53Z
 
@@ -20780,6 +20773,7 @@ name: H plus
 namespace: cell
 def: "A S. pombe cell type determined by mat1-Pc and mat1-Pi on the mat1 locus." [GOC:tfm]
 is_a: CL:0000521 ! fungal cell
+relationship: RO:0002162 NCBITaxon:4896
 created_by: tmeehan
 creation_date: 2011-08-16T03:20:58Z
 
@@ -20869,7 +20863,7 @@ def: "A CNS interneuron located in the spinal cord." [CL:CVS]
 comment: Is_a interneuron, part_of UBERON:0002240.
 is_a: CL:0000402 {is_inferred="true"} ! CNS interneuron
 intersection_of: CL:0000099 ! interneuron
-intersection_of: BFO:0000050 UBERON:0002240
+intersection_of: RO:0002100 UBERON:0002240
 
 [Term]
 id: CL:0005001
@@ -21233,7 +21227,7 @@ namespace: cell
 def: "Neuron that is part of the enteric nervous system." [CL:MAH]
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0002005
+intersection_of: RO:0002100 UBERON:0002005
 relationship: BFO:0000050 UBERON:0002005
 relationship: RO:0002202 CL:0002607 ! migratory enteric neural crest cell
 created_by: haendel
@@ -21524,7 +21518,7 @@ relationship: RO:0002203 CL:0008017 ! adult skeletal muscle myoblast
 id: CL:0008021
 name: anterior lateral line ganglion neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:2001391
+intersection_of: RO:0002100 UBERON:2001391
 
 [Term]
 id: CL:0008022
@@ -21719,7 +21713,7 @@ id: CL:0008049
 name: Betz cell
 def: "A giant pyramidal neuron with a soma in layer Vb of the primary motor cortex that sends its axons down the spinal cord via the corticospinal tract, either synapsing directly with alpha motor neurons, or targeting interneurons in the spinal cord. In humans, Betz cells are the largest known in the central nervous system." [DOI:10.1101/2020.03.31.016972, Wikipedia:Betz_cell&oldid=977472330]
 synonym: "pyramidal cell of Betz" EXACT []
-is_a: CL:0000598 ! pyramidal neuron
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 relationship: RO:0000053 PATO:0070017
 relationship: RO:0002100 UBERON:0022315
 relationship: RO:0002101 UBERON:0002707
@@ -21752,6 +21746,7 @@ def: "Any cell participating in the inflammatory response to a foreign substance
 xref: GOC:pr
 xref: http://en.wikipedia.org/wiki/Inflammatory_response
 is_a: CL:0002371 ! somatic cell
+relationship: RO:0002216 GO:0006954
 
 [Term]
 id: CL:0009003
@@ -21760,6 +21755,8 @@ def: "Any cell in the midgut (middle subdivision of a digestive tract) of a larv
 xref: GOC:pr
 xref: http://en.wikipedia.org/wiki/Insect#Midgut
 is_a: CL:0002371 ! somatic cell
+relationship: BFO:0000050 UBERON:0001555
+relationship: BFO:0000050 UBERON:0002548
 
 [Term]
 id: CL:0009004
@@ -22100,6 +22097,30 @@ intersection_of: BFO:0000050 UBERON:0001154
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: CL:0009035
+name: stromal cell of lamina propria of vermiform appendix
+def: "A stromal cell found in the lamina propria of the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "stromal cell of appendix lamina propria" EXACT []
+synonym: "stromal cell of lamina propria of appendix vermiformis" EXACT []
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: BFO:0000050 UBERON:0001154
+intersection_of: BFO:0000050 UBERON:0011189
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009036
+name: appendix macrophage
+def: "A macrophage located in the vermiform appendix." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "macrophage of appendix" EXACT []
+synonym: "macrophage of appendix vermiformis" EXACT []
+synonym: "macrophage of vermiform appendix" EXACT []
+intersection_of: CL:0000235 ! macrophage
+intersection_of: BFO:0000050 UBERON:0001154
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0010000
 name: keratinized cell of hair follicle
 def: "A hair follicle matrix region cell which synthesizes keratin and undergoes a characteristic change as it moves upward from the hair bulb to become the hair medulla cortex and hair root sheath." [https://github.com/obophenotype/cell-ontology/issues/417]
@@ -22194,7 +22215,7 @@ id: CL:0010012
 name: cerebral cortex neuron
 def: "A neuron that is part_of a cerebral cortex." []
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0000956
+intersection_of: RO:0002100 UBERON:0000956
 
 [Term]
 id: CL:0010013
@@ -22256,7 +22277,7 @@ def: "A CNS interneuron located in the dorsal horn of the spinal cord." [GOC:nv]
 synonym: "dorsal spinal cord interneuron" RELATED []
 is_a: CL:0005000 {is_inferred="true"} ! spinal cord interneuron
 intersection_of: CL:0000099 ! interneuron
-intersection_of: BFO:0000050 UBERON:0002256
+intersection_of: RO:0002100 UBERON:0002256
 
 [Term]
 id: CL:0011001
@@ -22391,10 +22412,11 @@ created_by: http://orcid.org/0000-0001-5208-3432
 [Term]
 id: CL:0011018
 name: lymphoid tissue–inducer cell
-def: "A hematopoietic cell that express ROR gamma t and IL-7R alpha in the absence of lineage markers (e.g. CD3, CD19, B220, CD11c, Gr-1), with the functional ability to interact with mesenchymal cells through lymphotoxin and tumor necrosis factor. Lymphoid tissue-inducer cells are key to the development of lymph nodes and Peyer’s patches." [PMID:19029905, PMID:21601793, PMID:9354470]
+def: "A group 3 innate lymphoid cell that express ROR gamma t and IL-7R alpha in the absence of lineage markers (e.g. CD3, CD19, B220, CD11c, Gr-1), with the functional ability to interact with mesenchymal cells through lymphotoxin and tumor necrosis factor. Lymphoid tissue-inducer cells are key to the development of lymph nodes and Peyer’s patches." [GOC:add, PMID:19029905, PMID:21601793, PMID:27935637, PMID:29454785, PMID:9354470]
 synonym: "LTi" EXACT []
 synonym: "lymphoid tissue inducer cell" EXACT []
-is_a: CL:0000988 ! hematopoietic cell
+is_a: CL:0001071 ! group 3 innate lymphoid cell
+relationship: RO:0002104 PR:000001869
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -22598,7 +22620,7 @@ name: spiral ganglion neuron
 def: "Neuron found in the spriral ganglion." [GOC:NV]
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0000395
+intersection_of: RO:0002100 UBERON:0000395
 
 [Term]
 id: CL:0011114
@@ -22637,7 +22659,7 @@ def: "A CNS neuron of the forebrain." []
 synonym: "forebrain neuron" EXACT []
 is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0001890
+intersection_of: RO:0002100 UBERON:0001890
 created_by: tberardini
 
 [Term]
@@ -22830,7 +22852,7 @@ property_value: http://purl.org/dc/elements/1.1/date 2020-10-15T12:47:46Z xsd:da
 id: CL:1000001
 name: retrotrapezoid nucleus neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0009918
+intersection_of: RO:0002100 UBERON:0009918
 
 [Term]
 id: CL:1000022
@@ -22959,7 +22981,7 @@ intersection_of: BFO:0000050 UBERON:2000425
 id: CL:1000245
 name: posterior lateral line ganglion neuron
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:2001314
+intersection_of: RO:0002100 UBERON:2001314
 
 [Term]
 id: CL:1000271
@@ -24955,7 +24977,7 @@ namespace: cell
 xref: KUPO:0001015
 is_a: CL:1000500 ! kidney interstitial cell
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0002113
+intersection_of: RO:0002100 UBERON:0002113
 
 [Term]
 id: CL:1000612
@@ -25953,7 +25975,7 @@ namespace: cl
 def: "A neuron residing in the olfactory bulb that serve to process and refine signals arising from olfactory sensory neurons" [PMID:18603310]
 is_a: CL:0000101 ! sensory neuron
 intersection_of: CL:0000099 ! interneuron
-intersection_of: BFO:0000050 UBERON:0002264
+intersection_of: RO:0002100 UBERON:0002264
 relationship: BFO:0000050 UBERON:0002264
 
 [Term]
@@ -26233,7 +26255,7 @@ synonym: "lateral ventricle neuronal cell" RELATED [CALOHA:TS-1261]
 synonym: "lateral ventricle neuronal cells" RELATED [CALOHA:TS-1261]
 xref: CALOHA:TS-1261
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0002285
+intersection_of: RO:0002100 UBERON:0002285
 
 [Term]
 id: CL:1001583
@@ -26485,7 +26507,7 @@ synonym: "cerebellum neuron" RELATED [CALOHA:TS-2359]
 xref: CALOHA:TS-2359
 xref: FMA:84665
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0002037
+intersection_of: RO:0002100 UBERON:0002037
 
 [Term]
 id: CL:2000000
@@ -26719,7 +26741,7 @@ name: spinal cord ventral column interneuron
 namespace: cell
 def: "Any interneuron that is part of a spinal cord ventral column." [GOC:TermGenie]
 intersection_of: CL:0000099 ! interneuron
-intersection_of: BFO:0000050 UBERON:0005375
+intersection_of: RO:0002100 UBERON:0005375
 created_by: TermGenie
 creation_date: 2014-06-25T00:23:36Z
 
@@ -26729,7 +26751,7 @@ name: spinal cord medial motor column neuron
 namespace: cell
 def: "Any neuron that is part of a spinal cord medial motor column." [GOC:TermGenie]
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0004059
+intersection_of: RO:0002100 UBERON:0004059
 created_by: TermGenie
 creation_date: 2014-06-25T00:23:43Z
 
@@ -26778,7 +26800,7 @@ name: central nervous system neuron
 namespace: cell
 def: "Any neuron that is part of a central nervous system." [GOC:TermGenie]
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0001017
+intersection_of: RO:0002100 UBERON:0001017
 created_by: TermGenie
 creation_date: 2014-06-25T01:17:43Z
 
@@ -26798,7 +26820,7 @@ name: lateral line ganglion neuron
 namespace: cell
 def: "Any neuron that is part of a lateral line ganglion." [GOC:TermGenie]
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:2000120
+intersection_of: RO:0002100 UBERON:2000120
 created_by: TermGenie
 creation_date: 2014-06-25T01:17:57Z
 
@@ -26808,7 +26830,7 @@ name: peripheral nervous system neuron
 namespace: cell
 def: "Any neuron that is part of a peripheral nervous system." [GOC:TermGenie]
 intersection_of: CL:0000540 ! neuron
-intersection_of: BFO:0000050 UBERON:0000010
+intersection_of: RO:0002100 UBERON:0000010
 created_by: TermGenie
 creation_date: 2014-06-25T02:28:17Z
 
@@ -27621,11 +27643,12 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023007
-name: L2/3 bipolar Vip expressing GABAergic cortical interneuron (Mus musculus)
+name: L2/3 bipolar Vip GABAergic cortical interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." [PMID:26420784]
 subset: BDS_subset
 synonym: "L2/3 bipolar Vip (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
+relationship: RO:0000053 PATO:0070006
 relationship: RO:0002100 UBERON:0000956
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
@@ -27639,9 +27662,9 @@ def: "A glutamatergic neuron located in the cerebral cortex that projects to str
 subset: BDS_subset
 synonym: "IT projecting neuron" EXACT []
 xref: ILX:0770100
-is_a: CL:0000679 ! glutamatergic neuron
-relationship: RO:0002100 UBERON:0000956
-relationship: RO:0013001 UBERON:0001893
+intersection_of: CL:0000679 ! glutamatergic neuron
+intersection_of: RO:0000053 PATO:0070034
+intersection_of: RO:0002100 UBERON:0000956
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -27651,21 +27674,24 @@ def: "A glutamatergic neuron located in the cerebral cortex that projects to str
 subset: BDS_subset
 synonym: "ET projecting neuron" EXACT []
 xref: ILX:0770101
-is_a: CL:0000679 ! glutamatergic neuron
-relationship: RO:0002100 UBERON:0000956
+intersection_of: CL:0000679 ! glutamatergic neuron
+intersection_of: RO:0000053 PATO:0070028
+intersection_of: RO:0002100 UBERON:0000956
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023010
-name: alpha7 Lamp5 GABAergic cortical interneuron (Mus musculus)
-def: "A Lamp5 GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells have soma found in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A. Unlike typical Lamp5 electrophysiology, they have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing." [PMID:30413647, PMID:33184512]
+name: alpha7 GABAergic cortical interneuron (Mus musculus)
+def: "A GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells have soma found in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A." [PMID:30413647, PMID:33184512]
+comment: A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron. {xref="DOI:10.1101/2020.10.19.343129"}
+comment: Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing. {xref="PMID:33184512", xref="PMID:30413647"}
 subset: BDS_subset
-synonym: "A7 Lamp5 (Mus)" EXACT []
+synonym: "A7 cell (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0002100 UBERON:0000956
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
-relationship: RO:0002292 PR:Q9D387
+relationship: RO:0002292 PR:000005460
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -27687,8 +27713,9 @@ def: "A glutamatergic neuron located in the cerebral cortex that projects axons 
 subset: BDS_subset
 synonym: "NP neuron" EXACT []
 xref: ILX:0770103
-is_a: CL:0000679 ! glutamatergic neuron
-relationship: RO:0002100 UBERON:0000956
+intersection_of: CL:0000679 ! glutamatergic neuron
+intersection_of: RO:0000053 PATO:0070030
+intersection_of: RO:0002100 UBERON:0000956
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -27697,14 +27724,14 @@ name: corticothalamic-projecting glutamatergic cortical neuron
 def: "A glutamatergic neuron located in the cerebral cortex that projects to the thalamus." [DOI:10.1101/2020.10.19.343129]
 subset: BDS_subset
 synonym: "CT projecting neuron" EXACT []
-is_a: CL:0000679 ! glutamatergic neuron
-relationship: RO:0002100 UBERON:0000956
-relationship: RO:0013001 UBERON:0010225
+intersection_of: CL:0000679 ! glutamatergic neuron
+intersection_of: RO:0000053 PATO:0070029
+intersection_of: RO:0002100 UBERON:0000956
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023014
-name: L5 Vip expressing cortical GABAergic interneuron (Mus musculus)
+name: L5 Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron with a soma found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential." [PMID:26420784, PMID:26612957]
 subset: BDS_subset
 synonym: "L5 VIP (Mus)" EXACT []
@@ -27765,14 +27792,15 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023019
-name: L5/6 CCK and Vip expressing cortical GABAergic interneuron (Mus musculus)
+name: L5/6 CCK, Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK Vip (Mus)" EXACT []
-is_a: CL:0000099 ! interneuron
+is_a: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 relationship: RO:0002100 UBERON:0000956
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P09240
 relationship: RO:0002292 PR:P32648
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -27831,7 +27859,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023027
-name: L5 ‘T-shaped’ Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+name: L5 T-Martinotti Sst GABAergic cortical interneuron (Mus musculus)
 def: "A Sst GABAergic cortical interneuron with a soma found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
 subset: BDS_subset
 synonym: "L5 T Martinotti SST (Mus)" EXACT []
@@ -27845,10 +27873,10 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023028
-name: L5 Non-martinotti Sst GABAergic cortical interneuron (Mus musculus)
-def: "A Sst GABAergic cortical interneuron with a soma found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 Non-martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 Non-martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering." [PMID:28254942, PMID:29326172]
+name: L5 non-Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron with a soma found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 non-Martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 non-Martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering." [PMID:28254942, PMID:29326172]
 subset: BDS_subset
-synonym: "L5 Non-martinotti SST (Mus)" EXACT []
+synonym: "L5 non-Martinotti SST (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0002100 UBERON:0000956
 relationship: RO:0002162 NCBITaxon:10090
@@ -27858,10 +27886,11 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023030
-name: L2/3/4 Fan martinotti Sst GABAergic cortical interneuron (Mus musculus)
-def: "A Sst GABAergic cortical interneuron that has \"Fanning-out' Martinotti morphology with local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1. They have an adapting firing pattern and non-zero afterdepolarization (ADP)." [PMID:27225074, PMID:27477017, PMID:28254942, PMID:29326172]
+name: L2/3/5 fan Martinotti Sst GABAergic cortical interneuron (Mus musculus)
+def: "A Sst GABAergic cortical interneuron that has \"fanning-out' Martinotti morphology that is found in layer 2/3/5 of the cerebral cortex. They have local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1." [PMID:27225074, PMID:27477017, PMID:28254942, PMID:29326172]
+comment: L2/3/5 fan Martionotti SST cells have an adapting firing pattern and non-zero afterdepolarization (ADP). {xref="PMID:33184512"}
 subset: BDS_subset
-synonym: "L2/3/5 Fan Martinotti SST (Mus)" EXACT []
+synonym: "L2/3/5 fan Martinotti SST (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0000053 PATO:0070009
 relationship: RO:0002100 UBERON:0000956
@@ -27886,7 +27915,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023034
-name: L2/3 Pvalb like Sst GABAergic cortical interneuron (Mus musculus)
+name: L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus)
 def: "A Sst GABAergic cortical interneuron transcriptomically between the Sst and the Pvalb families with a soma found in L2/3. Some L2/3 PV-like SST cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like SST cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like SST cells have high maximum firing rate variability, with many classified as belonging to the Pvalb subclass on the basis of electrophysiology." [PMID:33184512]
 subset: BDS_subset
 synonym: "L2/3 PV-like SST Mus)" EXACT []
@@ -27942,6 +27971,7 @@ synonym: "pyramidal tract (PT) neuron" EXACT []
 synonym: "subcerebral projection (SCPN) neuron" EXACT []
 synonym: "thick-tufted layer 5 pyramidal neuron" EXACT []
 is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
+relationship: RO:0000053 PATO:0070015
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -27968,7 +27998,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023044
-name: non-medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: non-medulla, extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that does not project to the medulla. Non-MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. Non-MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
 synonym: "non-MY ET MOp (Mus)" EXACT []
@@ -27979,11 +28009,13 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023045
-name: medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: medulla-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that projects to the medulla. MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
+synonym: "medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)" EXACT []
 synonym: "MY ET MOp (Mus)" EXACT []
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0000053 PATO:0070031
 relationship: RO:0002100 UBERON:0001384
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0013001 UBERON:0001896
@@ -28089,7 +28121,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 [Term]
 id: CL:4023055
 name: corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
-def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." [PMID:20556241, PMID:9236245]
+def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM (ventroanterior-ventrolateral complex/ventromedial nucleus) cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." [PMID:20556241, PMID:9236245]
 subset: BDS_subset
 synonym: "CT VAL/VM MOp (Mus)" EXACT []
 is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
@@ -28121,13 +28153,218 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023065
-name: meis2 expressing cortial GABAergic cell (Mus musculus)
+name: meis2 expressing cortical GABAergic cell (Mus musculus)
 def: "A mouse GABAergic cell located in the cerebral cortex that expresses meis2." [PMID:33372656]
 subset: BDS_subset
 is_a: CL:0000617 ! GABAergic neuron
 relationship: RO:0002100 UBERON:0000956
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002292 PR:P97367
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023066
+name: horizontal pyramidal neuron
+def: "A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically." [PMID:30715238]
+subset: BDS_subset
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070016
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023067
+name: Martinotti morphology L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus)
+def: "A L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus) that has Martinotti morphology." [PMID:33184512]
+subset: BDS_subset
+synonym: "Martinotti L2/3 PV-like SST (Mus)" EXACT []
+is_a: CL:4023034 ! L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus)
+relationship: RO:0000053 PATO:0070007
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023069
+name: medial ganglionic eminence derived GABAergic cortical interneuron
+def: "A GABAergic cortical interneuron that develops from the medial ganglionic eminence and has migrated to the cerebral cortex." [PMID:12637172]
+synonym: "MGE cortical interneuron" EXACT []
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002202 UBERON:0004024
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023070
+name: caudal ganglionic eminence derived GABAergic cortical interneuron
+def: "A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex." [PMID:20130169]
+synonym: "CGE cortical interneuron" EXACT []
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0002100 UBERON:0000956
+intersection_of: RO:0002202 UBERON:0004026
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023071
+name: L5/6 CCK cortical GABAergic interneuron (Mus musculus)
+def: "A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
+subset: BDS_subset
+synonym: "L5/6 CCK (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P09240
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023076
+name: Martinotti neuron
+def: "An interneuron that has Martinotti morphology. These interneurons are scattered throughout various layers of the cerebral cortex, sending their axons up to the cortical layer I where they form axonal arborization." [WikipediaVersioned:Martinotti_cell&oldid=9947732]
+subset: BDS_subset
+xref: ILX:0107375
+xref: nifext_55
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070007
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023077
+name: bitufted neuron
+subset: BDS_subset
+xref: A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons\, bitufted neurons have branching that occur close to the soma. {xref="PMID:18568015"}
+xref: ILX:0777212 {http://purl.obolibrary.org/obo/IAO_0000116="Interlex cross reference refers specifically to Markram 2015 rat bitufted cell."}
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070012
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023078
+name: basket morphology L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus)
+def: "A L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus) that has basket morphology." [PMID:33184512]
+subset: BDS_subset
+synonym: "basket L2/3 PV-like SST (Mus)" EXACT []
+is_a: CL:4023034 ! L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus)
+relationship: RO:0000053 PATO:0070002
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023080
+name: stellate L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has stellate pyramidal morphology." [PMID:9236245]
+subset: BDS_subset
+synonym: "stellate L6 IT MOp (Mus)" EXACT []
+is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+relationship: RO:0000053 PATO:0070020
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023081
+name: inverted L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has inverted pyramidal morphology." [PMID:9236245]
+subset: BDS_subset
+synonym: "inverted L6 IT MOp (Mus)" EXACT []
+is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+relationship: RO:0000053 PATO:0070021
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023083
+name: chandelier cell
+def: "An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted." [PMID:15378039] {def="PMID:27199673"}
+subset: BDS_subset
+synonym: "ChC" EXACT [PMID:15378039]
+xref: ILX:0777213 {http://purl.obolibrary.org/obo/IAO_0000116="Interlex cross reference refers specifically to Markram 2015 rat chandelier cell."}
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070011
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023086
+name: T Martinotti neuron
+def: "A Martinotti neuron that has axons that form a horizontal ramification, making it T-shaped." [doi:10.1016/b978-0-12-369497-3.10004-4]
+subset: BDS_subset
+synonym: "'T-shaped' Martinotti neuron" EXACT []
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070008
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023087
+name: fan Martinotti neuron
+def: "A Martinotti neuron that has axons that form a fan-like plexus." [doi:10.1016/b978-0-12-369497-3.10004-4]
+subset: BDS_subset
+synonym: "'fanning-out' Martinotti neuron" EXACT []
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070009
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023088
+name: large basket cell
+def: "A basket cell that is large, and typically ascends to give rise to many long horizontally and vertically projecting axon collaterals that traverse neighboring columns and can extend through all cortical layers." [PMID:11884355]
+subset: BDS_subset
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070004
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023089
+name: nest basket cell
+def: "A basket cell which has simpler dendritic arbors (compared to small or large basket cells), and an axonal plexus of intermediate density, composed of a few long, smooth axonal branches." [PMID:11884355]
+subset: BDS_subset
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070005
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023090
+name: small basket cell
+def: "A basket cell with axonal arbors composed of frequent, short, curvy axonal branches that tend to be near their somata and within the same layer." [PMID:11884355]
+subset: BDS_subset
+intersection_of: CL:0000099 ! interneuron
+intersection_of: RO:0000053 PATO:0070003
+intersection_of: RO:0002215 GO:0061534
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023092
+name: inverted pyramidal neuron
+def: "A pyramidal neuron which has an apical tree which is oriented towards the white matter." [PMID:30715238]
+subset: BDS_subset
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070021
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023093
+name: stellate pyramidal neuron
+def: "A pyramidal neuron which lacks a tuft formation but extends small radial distances forming a star-like shape." [PMID:30715238]
+subset: BDS_subset
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070020
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023094
+name: tufted pyramidal neuron
+def: "A pyramidal neuron which has a distinctive tuft formation, distal from the soma." [PMID:30715238]
+subset: BDS_subset
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070018
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023095
+name: untufted pyramidal neuron
+def: "A pyramidal neuron which lacks a clear tuft formation but extends to large radial distances." [PMID:30715238]
+subset: BDS_subset
+intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: RO:0000053 PATO:0070019
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
