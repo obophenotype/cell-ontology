@@ -17,22 +17,28 @@ relations:
 
 vars:
   cell: "'cell'"
-  anatomical entity: "'anatomical entity'"
+  anatomical_entity: "'anatomical entity'"
+  
+#data_list_vars:
+#  pubs: "xsd:string"
+  # Use this for recording reference using PMID/DOIS
 
 name:
-  text: "%s %s"
+  text: "%s of %s"
   vars:
     - cell
-    - anatomical entity
+    - anatomical_entity
 
 def:
-  text: "Any %s that is part of a %s."
+  text: "Any %s that is part of a(n) %s."
   vars:
     - cell
-    - anatomical entity
+    - anatomical_entity
+#  xrefs:
+#    value: pubs
 
 equivalentTo:
   text: "%s and ('part of' some %s)"
   vars:
     - cell
-    - anatomical entity
+    - anatomical_entity
