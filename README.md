@@ -1,5 +1,4 @@
-[![Build Status](https://github.com/obophenotype/cell-ontology/workflows/CI/badge.svg
-)
+![Build Status](https://github.com/obophenotype/cell-ontology/workflows/CI/badge.svg)
 [![DOI](https://zenodo.org/badge/13996/obophenotype/cell-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cell-ontology)
 
 
