@@ -5,23 +5,31 @@ echo "(2) and add missing files, if any."
 set -e
 
 OID=cl
-ROOTDIR=../../
-SRCDIR=../
+ROOTDIR=../..
+SRCDIR=..
 CONFIG=$OID"-odk.yaml"
 
 rm -rf target
 mkdir target
 /tools/odk.py seed -c -g False -C $CONFIG
 ls -l target/$OID/src
-ls -l $SRCDIR
-rsync -r -u --ignore-existing --exclude 'patterns/data/default/example.tsv' --exclude 'patterns/dosdp-patterns/example.yaml' target/$OID/src/ $SRCDIR
+ls -l $SRCDIR/
 cp target/$OID/src/scripts/update_repo.sh $SRCDIR/scripts/
+rsync -r -u --ignore-existing --exclude 'patterns/data/default/example.tsv' --exclude 'patterns/dosdp-patterns/example.yaml' target/$OID/src/ $SRCDIR/
+
+rsync -r -u --ignore-existing target/$OID/docs/ $ROOTDIR/docs
+mkdir -p $ROOTDIR/docs/odk-workflows
+rm -rf $ROOTDIR/docs/odk-workflows/*
+cp -r target/$OID/docs/odk-workflows/* $ROOTDIR/docs/odk-workflows
 cp target/$OID/src/ontology/Makefile $SRCDIR/ontology/
 cp target/$OID/src/ontology/run.sh $SRCDIR/ontology/
 cp -r target/$OID/src/sparql/* $SRCDIR/sparql/
-cp -n target/$OID/.travis.yml $ROOTDIR
 mkdir -p $ROOTDIR/.github
 mkdir -p $ROOTDIR/.github/workflows
 cp -n target/$OID/.github/workflows/qc.yml $ROOTDIR/.github/workflows/qc.yml
-echo "WARNING: These files should be manually migrated: .gitignore, src/ontology/catalog.xml (if you added a new import or component)"
+
+
+cp -n target/$OID/mkdocs.yaml $ROOTDIR/
+
+echo "WARNING: These files should be manually migrated: mkdocs.yaml, .gitignore, src/ontology/catalog.xml (if you added a new import or component)"
 echo "Update successfully completed."
