@@ -281,3 +281,8 @@ obocheck:
 	fastobo-validator cl-check.obo
 	
 test: obocheck
+
+test_obsolete: cl.obo
+	! grep "! obsolete" cl.obo
+
+test: test_obsolete
