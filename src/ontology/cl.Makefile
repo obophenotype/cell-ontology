@@ -286,3 +286,32 @@ test_obsolete: cl.obo
 	! grep "! obsolete" cl.obo
 
 test: test_obsolete
+
+
+imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/uberon_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: imports/uberon_import.owl
+
+imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/pato_import.owl
+
+imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/pr_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/pr_import.owl
