@@ -30,8 +30,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:oboInOwl2="http://geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/BDS_subset.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-06-29/subsets/BDS_subset.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-06-29</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2021-08-10/subsets/BDS_subset.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2021-08-10</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -331,6 +331,12 @@
     <!-- http://purl.obolibrary.org/obo/UBPROP_0000003 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000003"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/UBPROP_0000004 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/UBPROP_0000004"/>
     
 
 
@@ -853,6 +859,14 @@
     
 
 
+    <!-- http://purl.obolibrary.org/obo/uberon/core#location_grouping -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#location_grouping">
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/uberon/core#major_organ -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#major_organ">
@@ -1317,6 +1331,12 @@
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#possible_exception -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#possible_exception"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#reference -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#reference"/>
@@ -1337,12 +1357,6 @@
     
 
 
-    <!-- http://www.geneontology.org/formats/oboInOwl#souce -->
-
-    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#souce"/>
-    
-
-
     <!-- http://www.geneontology.org/formats/oboInOwl#source -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#source"/>
@@ -1352,6 +1366,12 @@
     <!-- http://www.geneontology.org/formats/oboInOwl#specialization_within -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#specialization_within"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#submitter -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#submitter"/>
     
 
 
@@ -6584,8 +6604,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000031"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell that will develop into a neuron often after a migration phase.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:NV</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://en.wikipedia.org/wiki/Neuroblast</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:NV</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Neuroblast</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6621,7 +6641,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000034"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.872</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6726,17 +6746,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     <!-- http://purl.obolibrary.org/obo/CL_0000066 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000066">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000548"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000483"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000548"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -6760,7 +6769,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FB:ma</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A11.436</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6793,7 +6802,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000077"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A flattened epithelial cell of mesenchymal origin that lines the serous cavity.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721662544</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6815,7 +6824,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000099"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Most generally any neuron which is not motor or sensory. Interneurons may also refer to neurons whose axons remain within a particular brain region as contrasted with projection neurons which have axons projecting to other brain regions.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A08.663.358</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6852,7 +6861,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000103"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0444009442</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -6890,7 +6899,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neuron with an axon and two or more dendrites.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67287</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6910,7 +6919,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Neuron with one neurite that extends from the cell body.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:67278</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:nv</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:nv</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -6973,7 +6982,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000118"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Basket cells are inhibitory GABAergic interneurons of the brain. In general, dendrites of basket cells are free branching and contain smooth spines. Axons are highly branched. The branched axonal arborizations give rise to basket-like structures that surround the soma of the target cell. Basket cells form axo-somatic synapses, meaning their synapses target somas of other cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>WikipediaVersioned:Basket_cell&amp;oldid=951703880</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WikipediaVersioned:Basket_cell&amp;oldid=951703880</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7010,7 +7019,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000122"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A neuron that has dendritic processes radiating from the cell body forming a star-like shape.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:9780123973481</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:9780123973481</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7128,7 +7137,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000151"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell that specializes in controlled release of one or more substances.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721662544</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7348,7 +7357,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000498"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An interneuron (also called relay neuron, association neuron or local circuit neuron) is a multipolar neuron which connects afferent neurons and efferent neurons in neural pathways. Like motor neurons, interneuron cell bodies are always located in the central nervous system (CNS).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://en.wikipedia.org/wiki/Interneuron</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7457,7 +7466,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000598"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pyramidal neurons have a pyramid-shaped soma with a single axon, a large apical dendrite and multiple basal dendrites. The apex and an apical dendrite typically point toward the pial surface and other dendrites and an axon emerging from the base. The axons may have local collaterals but also project outside their region. Pyramidal neurons are found in the cerebral cortex, the hippocampus, and the amygdala.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MESH:A08.186.211.577.405.700</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7496,7 +7505,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000617"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A neuron that uses GABA as a vesicular neurotransmitter</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7594,7 +7603,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An interneuron that has spider-like appearance with a small round soma, a large number (7-10) of short, smooth, or slightly beaded primary dendrites that give rise to only a few secondary branches, and a branched axon that establishes a dense axonal mesh with thin shafts.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JB:jb</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:17122314</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17122314</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000693"/>
@@ -7606,7 +7615,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000693"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>neuroglioform cell</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:3235828</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:3235828</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7646,7 +7655,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Epithelial cell derived from mesoderm or mesenchyme.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:69076</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7685,7 +7694,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002319"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell that is part of the nervous system.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0618947256</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7732,7 +7741,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002320"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0618947256</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7779,7 +7788,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002371"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A cell of an organism that does not pass on its genetic material to the organism&apos;s offspring (i.e. a non-germ line cell).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0721662544</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -7814,7 +7823,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002609"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A CNS neuron of the cerebral cortex.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:tfm</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7900,9 +7909,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0011005"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An interneuron that uses GABA as a vesicular neurotransmitter.  These interneurons are inhibitory</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:CellBLAST</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:nv</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:29724907</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:CellBLAST</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOC:nv</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29724907</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -7920,8 +7929,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0011012"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0002-9900-7880</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0001-5208-3432</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">https://orcid.org/0000-0002-9900-7880</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8061,7 +8070,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023007"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Vip GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:26420784</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26420784</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8170,29 +8179,23 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:created_by rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasExactSynonym>A7 cell (Mus)</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
-        <rdfs:comment>A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron.</rdfs:comment>
-        <rdfs:comment>Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing.</rdfs:comment>
+        <rdfs:comment>Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing. A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron.</rdfs:comment>
         <rdfs:label>alpha7 GABAergic cortical interneuron (Mus musculus)</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023010"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells have soma found in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30413647</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30413647</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023010"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron.</owl:annotatedTarget>
+        <owl:annotatedTarget>Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing. A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.10.19.343129</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023010"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
-        <owl:annotatedTarget>Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30413647</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30413647</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8236,7 +8239,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023011"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A GABAergic neuron located in the cerebral cortex that expresses Lamp5</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30382198</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30382198</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8350,8 +8353,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023014"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Vip GABAergic cortical interneuron with a soma found in L5. L5 Vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of Sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 Vip cells show particularly low resting membrane potential.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:26420784</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:26612957</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26420784</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26612957</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8395,7 +8398,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023015"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33186530</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33186530</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8439,7 +8442,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023016"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33186530</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33186530</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8483,7 +8486,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023017"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:27477017</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27477017</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8553,7 +8556,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023019"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8583,7 +8586,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023022"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Lamp5 GABAergic cortical interneuron that has extended axons in the surface of L1. Canopy Lamp5 cells resemble neurogliaform cells in having elongated horizontal axonal arbors largely confined to L1; but the dendritic arbors are wider and have fewer branches, while the axon is less tortuous and extends further from the soma</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30413647</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30413647</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8615,7 +8618,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023023"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Lamp 5 GABAergic cortical interneuron with neurogliaform morphology with a soma found in L5,6. L5,6 NGC Lamp5 have deep afterhyperpolarization (AHP) but narrow action potentials (APs). Unlike other deep neurogliaform cells (which are caudal ganglionic eminence (CGE) derived), L5,6 NGC Lamp5 cells are medial ganglionic eminence (MGE)-derived</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:26727548</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26727548</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8647,7 +8650,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023024"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Lamp5 GABAergic cortical interneuron with layer-adapting morphology. NGC Lamp5 cells have a small round soma, short dendrites, and a wide dense axonal arbor that tends to establish a dense axonal mesh with high connection probability both to themselves and L2 pyramidal cells. NGC Lamp5 cells have unique synaptic properties that distinguish them from other GABAergic interneurons, including the release of GABA to the extracellular space via volume transmission, and the ability to produce GABA-B responses in connected postsynaptic targets.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:27477017</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27477017</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8678,7 +8681,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023025"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:26727548</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26727548</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8710,8 +8713,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023027"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Sst GABAergic cortical interneuron with a soma found in L5 and possesses &apos;T-shaped&apos; martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:28254942</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:29326172</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28254942</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29326172</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8742,8 +8745,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023028"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Sst GABAergic cortical interneuron with a soma found in lower L5 with mostly local axonal arborization but with some sparse ascending axons. L5 non-Martinotti Sst cells show somatic localization and local axon plexus in L5b and L5b/6 and substantial innervation of L3 and L4, and receive thalamic input from the ventral posteromedial nucleus and specifically target L4 neurons, avoiding L5 pyramidal cells. L5 non-Martinotti Sst cells tend to show a higher input resistance and seem to be less stuttering.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:28254942</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:29326172</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28254942</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29326172</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8776,16 +8779,16 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023030"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Sst GABAergic cortical interneuron that has &quot;fanning-out&apos; Martinotti morphology that is found in layer 2/3/5 of the cerebral cortex. They have local axon arbor and long ascending axons that spreads horizontally and arborizes significantly in L1.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:27225074</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:27477017</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:28254942</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:29326172</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27225074</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27477017</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:28254942</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29326172</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023030"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
         <owl:annotatedTarget>L2/3/5 fan Martionotti SST cells have an adapting firing pattern and non-zero afterdepolarization (ADP).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8817,7 +8820,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023031"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Sst GABAergic cortical interneuron with a soma found in lower L2/3 and upper 5, L4 Sst cells have martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP).</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8848,7 +8851,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023034"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Sst GABAergic cortical interneuron transcriptomically between the Sst and the Pvalb families with a soma found in L2/3. Some L2/3 PV-like SST cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like SST cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like SST cells have high maximum firing rate variability, with many classified as belonging to the Pvalb subclass on the basis of electrophysiology.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8881,7 +8884,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023036"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal &apos;cartridges&apos; of vertically oriented strings of synaptic boutons. Chandelier PV cells have soma found in in upper L2/3, with some in deep L5. Chandelier PV cells exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. Chandelier PV cells&apos; boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:27477017</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27477017</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8901,8 +8904,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023038"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A glutamatergic neuron with a soma found in cortical layer 6b. They are transcriptomically related to corticothalamic-projecting neurons but have differential projections to the thalamus or anterior cingulate.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>DOI:10.1101/2020.10.19.34312</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:30382198</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.10.19.34312</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30382198</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -8939,11 +8942,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         </rdfs:subClassOf>
         <obo:IAO_0000115>A glutamatergic neuron, with a soma found in the deeper portion of L5, that has long-range axonal projections including deep subcortical targets outside of the telencephalon and, in some cases, the spinal cord. While the L5 ET neuron projections are not limited to ET targets, they are clearly differentiated from the neuron subclasses whose projections are constrained to intratelencephalic (IT) targets.  L5 ET neurons are generally the largest excitatory cortical neurons, typically having a thick apical dendrite with a prominent dendritic tuft in layer 1 and displaying burst-firing physiological characteristics.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
-        <oboInOwl:hasExactSynonym>L5b neuron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasBroadSynonym>L5b neuron</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasBroadSynonym>subcerebral projection (SCPN) neuron</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasExactSynonym>Pyramidal tract-like (PT-l)</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>burst-firing layer 5 neuron</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>pyramidal tract (PT) neuron</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>subcerebral projection (SCPN) neuron</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>thick-tufted layer 5 pyramidal neuron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>thick-tufted layer 5 (TTL5) pyramidal neuron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>pyramidal tract (PT) neuron</oboInOwl:hasNarrowSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
         <rdfs:label>L5 extratelencephalic projecting glutamatergic cortical neuron</rdfs:label>
     </owl:Class>
@@ -8952,6 +8956,43 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A glutamatergic neuron, with a soma found in the deeper portion of L5, that has long-range axonal projections including deep subcortical targets outside of the telencephalon and, in some cases, the spinal cord. While the L5 ET neuron projections are not limited to ET targets, they are clearly differentiated from the neuron subclasses whose projections are constrained to intratelencephalic (IT) targets.  L5 ET neurons are generally the largest excitatory cortical neurons, typically having a thick apical dendrite with a prominent dendritic tuft in layer 1 and displaying burst-firing physiological characteristics.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.10.19.343129</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+        <owl:annotatedTarget>L5b neuron</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1016/j.neuron.2011.07.029</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
+        <owl:annotatedTarget>subcerebral projection (SCPN) neuron</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1016/j.neuron.2005.08.030</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>Pyramidal tract-like (PT-l)</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1016/j.cell.2019.09.023</oboInOwl:hasDbXref>
+        <rdfs:comment>pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord.</rdfs:comment>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>burst-firing layer 5 neuron</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.3389/fncel.2011.00001</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>thick-tufted layer 5 (TTL5) pyramidal neuron</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.3389/fncel.2015.00233</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023041"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>pyramidal tract (PT) neuron</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1038/nrn3469</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9000,7 +9041,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <oboInOwl:hasDbXref>ILX:0770161</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>L5/6 NP</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>L5/6 NP (Mus)</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
         <rdfs:label>L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)</rdfs:label>
     </owl:Class>
@@ -9009,7 +9050,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.10.19.343129</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:31209381</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:31209381</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9041,8 +9082,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that does not project to the medulla. Non-MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. Non-MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.10.19.343129</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:24137110</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9236245</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24137110</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9236245</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9087,8 +9128,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that projects to the medulla. MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.10.19.343129</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:24137110</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9236245</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:24137110</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9236245</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9118,7 +9159,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023046"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An excitatory glutamatergic neuron transcriptomically related to the CT subclass, with a soma preferentially located in the bottom of L6 of the primary motor cortex.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9181,7 +9222,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023048"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An intratelencephalic-projecting glutamatergic with a soma located in upper L5 of the primary motor cortex. These cells have thin untufted apical dendrites.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9213,7 +9254,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023049"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An intratelencephalic-projecting glutamatergic neuron with a soma found in L5 of the primary motor cortex.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9252,7 +9293,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023050"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:9236245</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9236245</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9278,8 +9319,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023051"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A type of mesothelial fibroblast that is derived from the neural crest, is localized on blood vessels, and is a key component of the pia and arachnoid membranes surrounding the brain.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:27284195</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:29443965</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27284195</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:29443965</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30096314</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -9289,7 +9330,12 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023054">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000057"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000077"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000077"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A mesothelial cell that has undergone mesothelial-to-mesenchymal transition (MMT) to become a fibroblast cell.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
         <rdfs:label>mesothelial fibroblast</rdfs:label>
@@ -9298,7 +9344,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023054"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A mesothelial cell that has undergone mesothelial-to-mesenchymal transition (MMT) to become a fibroblast cell.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:26106328</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:26106328</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9336,8 +9382,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023055"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM (ventroanterior-ventrolateral complex/ventromedial nucleus) cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:20556241</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:9236245</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:20556241</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9236245</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9473,7 +9519,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023065"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A mouse GABAergic cell located in the cerebral cortex that expresses meis2.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33372656</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33372656</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9508,7 +9554,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023066"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9528,7 +9574,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023067"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus) that has Martinotti morphology.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9559,7 +9605,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023071"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9601,7 +9647,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023076"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An interneuron that has Martinotti morphology. These interneurons are scattered throughout various layers of the cerebral cortex, sending their axons up to the cortical layer I where they form axonal arborization.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>WikipediaVersioned:Martinotti_cell&amp;oldid=9947732</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WikipediaVersioned:Martinotti_cell&amp;oldid=9947732</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9627,17 +9673,17 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0070012"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <obo:IAO_0000115>A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons, bitufted neurons have branching that occur close to the soma.</obo:IAO_0000115>
         <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
-        <oboInOwl:hasDbXref>A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons, bitufted neurons have branching that occur close to the soma.</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ILX:0777212</oboInOwl:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
         <rdfs:label>bitufted neuron</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023077"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons, bitufted neurons have branching that occur close to the soma.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18568015</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023077"/>
@@ -9663,7 +9709,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023078"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A L2/3 Pvalb-like Sst GABAergic cortical interneuron (Mus musculus) that has basket morphology.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:33184512</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:33184512</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9688,7 +9734,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023080"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has stellate pyramidal morphology.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:9236245</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9236245</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9713,7 +9759,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023081"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has inverted pyramidal morphology.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:9236245</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:9236245</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9751,7 +9797,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted.</owl:annotatedTarget>
         <obo:IAO_0000115>PMID:27199673</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>PMID:15378039</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15378039</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023083"/>
@@ -9763,7 +9809,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023083"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>ChC</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:15378039</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15378039</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9882,7 +9928,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023088"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A basket cell that is large, and typically ascends to give rise to many long horizontally and vertically projecting axon collaterals that traverse neighboring columns and can extend through all cortical layers.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:11884355</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11884355</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9921,7 +9967,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023089"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A basket cell which has simpler dendritic arbors (compared to small or large basket cells), and an axonal plexus of intermediate density, composed of a few long, smooth axonal branches.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:11884355</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11884355</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9960,7 +10006,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023090"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A basket cell with axonal arbors composed of frequent, short, curvy axonal branches that tend to be near their somata and within the same layer.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:11884355</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11884355</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -9995,7 +10041,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023092"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal neuron which has an apical tree which is oriented towards the white matter.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10030,7 +10076,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023093"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal neuron which lacks a tuft formation but extends small radial distances forming a star-like shape.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10065,7 +10111,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023094"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal neuron which has a distinctive tuft formation, distal from the soma.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -10100,7 +10146,134 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023095"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal neuron which lacks a clear tuft formation but extends to large radial distances.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4023098 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023098">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023040"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002100"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001384"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the human primary motor cortex.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasExactSynonym>L2/3 IT MOp (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
+        <rdfs:label>L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023098"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the human primary motor cortex.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.03.31.016972</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4023099 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023099">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023040"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002100"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001384"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the human primary motor cortex.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasDbXref>ILX:0770157</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>L5 IT MOp (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
+        <rdfs:label>L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023099"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the human primary motor cortex.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.03.31.016972</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4023100 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023100">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023040"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002100"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001384"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the human primary motor cortex.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasDbXref>ILX:0770158</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>L6 IT MOp (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
+        <rdfs:label>L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023100"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the human primary motor cortex.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.03.31.016972</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CL_4023101 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_4023101">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_4023012"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002100"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001384"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the human primary motor cortex.</obo:IAO_0000115>
+        <dc:creator rdf:resource="http://orcid.org/0000-0001-7258-9596"/>
+        <oboInOwl:hasDbXref>ILX:0770161</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>L5/6 NP (human)</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
+        <rdfs:label>L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023101"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the human primary motor cortex.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1101/2020.03.31.016972</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12025,6 +12198,26 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_207598 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_207598">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9604"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_subfamily"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Homo/Pan/Gorilla group</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:207598</oboInOwl:id>
+        <rdfs:label>Homininae</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_207598"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Homo/Pan/Gorilla group</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#synonym"/>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_2759 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_2759">
@@ -12132,6 +12325,53 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314147"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>Rodents and rabbits</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#genbank_common_name"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314293 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314293">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_376913"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_infraorder"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Anthropoidea</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:314293</oboInOwl:id>
+        <rdfs:label>Simiiformes</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314293"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Anthropoidea</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#synonym"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_314295 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314295">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9526"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_superfamily"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>ape</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>apes</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:314295</oboInOwl:id>
+        <rdfs:label>Hominoidea</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314295"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>ape</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314295"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>apes</owl:annotatedTarget>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#genbank_common_name"/>
     </owl:Axiom>
     
@@ -12310,6 +12550,19 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
         <oboInOwl:id>NCBITaxon:337687</oboInOwl:id>
         <rdfs:label>Muroidea</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_376913 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_376913">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9443"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_suborder"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:376913</oboInOwl:id>
+        <rdfs:label>Haplorrhini</rdfs:label>
     </owl:Class>
     
 
@@ -12568,6 +12821,143 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9443 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9443">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314146"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_order"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>primate</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Primata</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>primates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:9443</oboInOwl:id>
+        <rdfs:label>Primates</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9443"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>primate</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#equivalent_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9443"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Primata</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9443"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>primates</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#blast_name"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9526 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9526">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314293"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_parvorder"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:9526</oboInOwl:id>
+        <rdfs:label>Catarrhini</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9604 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9604">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_314295"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_family"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>great apes</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Pongidae</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:9604</oboInOwl:id>
+        <rdfs:label>Hominidae</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9604"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>great apes</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#genbank_common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9604"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Pongidae</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#synonym"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9605 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9605">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_207598"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_genus"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>humans</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>NCBITaxon:9605</oboInOwl:id>
+        <rdfs:label>Homo</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9605"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>humans</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#common_name"/>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_9606 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9606">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9605"/>
+        <taxslim:has_rank rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_species"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>human</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>man</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>h</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>human</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:9606</oboInOwl:id>
+        <rdfs:label>Homo sapiens</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>human</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#genbank_common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>man</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim#common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>h</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>human</owl:annotatedTarget>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-common-name"/>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_9989 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_9989">
@@ -12822,7 +13212,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070002"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell morphology that inheres in multipolar neurons with densely branched terminal axonal arborizations that form basket-like structures surrounding and synapsing to the somas of target cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>WikipediaVersioned:Basket_cell&amp;oldid=951703880</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WikipediaVersioned:Basket_cell&amp;oldid=951703880</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doi:10.1016/b978-0-12-369497-3.10004-4</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -12843,7 +13233,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070003"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A basket cell morphology that inheres in neurons with axonal arbors composed of frequent, short, curvy axonal branches that tend to be near their somata and within the same layer.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:11884355</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11884355</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12863,7 +13253,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070004"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A basket cell morphology that inheres in neurons that are large, and typically ascend to give rise to many long horizontally and vertically projecting axon collaterals that traverse neighboring columns and can extend through all cortical layers.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:11884355</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11884355</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12883,7 +13273,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070005"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A basket cell morphology that inheres in neurons which have simpler dendritic arbors (compared to small or large basket cell morphology), and an axonal plexus of intermediate density, composed of a few long, smooth axonal branches.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:11884355</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:11884355</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -12985,7 +13375,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070010"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell morphology that inheres in neurons that have dendritic processes radiating from the cell body forming a star-like shape.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:9780123973481</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:9780123973481</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13034,7 +13424,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070012"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell morphology that inheres in neurons which have two clusters of primary dendrites that originate directly and extend from opposite ends of the soma, and axons that form a plexus which spreads widely. Compared to the narrow vertical axonal projection of bipolar morphology, and the &apos;horse-tail&apos; axonal cluster of double boquet cells, bitufted morphology has wide horizontal axonal spans, and branching that occur close to the soma. Their vertical projection is also less extensive and crosses mostly to neighboring layers.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:15378039</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15378039</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">doi:10.1016/b978-0-12-369497-3.10004-4</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -13078,7 +13468,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070016"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal family morphology that inheres in neurons which have an apical tree which is oriented parallel to the pia.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13120,7 +13510,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070018"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal cell morphology that inheres in neurons which have a distinct tuft formation, distal from the soma.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13140,7 +13530,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070019"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal cell morphology that inheres in neurons which lack a clear tuft formation but extend to large radial distances.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13160,7 +13550,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070020"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal cell morphology that inheres in neurons which lack a tuft formation but extend to small radial distances forming a star-like shape.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13180,7 +13570,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070021"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A pyramidal cell morphology that inheres in neurons which have an apical tree which is oriented towards the white matter.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:30715238</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:30715238</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13349,6 +13739,12 @@ For example, A and B may be gene products and binding of B by A positively regul
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>native protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IEDB:BP</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
@@ -13359,12 +13755,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>natural protein</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DAN</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
-        <owl:annotatedTarget>native protein</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IEDB:BP</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -13691,12 +14081,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000013502"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Pva</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000013502"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A protein that is a translation product of the human PVALB gene or a 1:1 ortholog thereof.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
@@ -13707,6 +14091,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedTarget>PVALB</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRO:DNx</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#PRO-short-label"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000013502"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Pva</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/pr#Gene-based"/>
     </owl:Axiom>
     
 
@@ -15242,6 +15632,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034921"/>
         <obo:IAO_0000115>Anatomical structure that performs a specific function or group of functions [WP].</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_110815"/>
         <obo:UBPROP_0000001>Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions.</obo:UBPROP_0000001>
         <obo:UBPROP_0000012>CARO v1 does not include a generic &apos;organ&apos; class, only simple and compound organ. CARO v2 may include organ, see https://github.com/obophenotype/caro/issues/4</obo:UBPROP_0000012>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Organ_(anatomy)"/>
@@ -15272,6 +15663,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Anatomical structure that performs a specific function or group of functions [WP].</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Organ_(anatomy)"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_110815"/>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
@@ -16652,7 +17049,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000203"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000008"/>
         <owl:annotatedTarget>In humans the cerebrum has three parts: the archipallium, the paleopallium and the neopallium. The developing telencephalon or forebrain is divided into pallium and subpallium. In amphibians, the cerebrum includes archipallium, paleopallium and some of the basal nuclei. Reptiles first developed a neopallium, which continued to develop in the brains of more recent species to become the neocortex of humans and Old World monkeys. In fish, the archipallium is the largest part of the cerebrum. Some researchers suggest the early archipallium gave rise to the human hippocampus</owl:annotatedTarget>
-        <oboInOwl:source>WP</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WP</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000203"/>
@@ -16778,6 +17175,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         </rdfs:subClassOf>
         <obo:IAO_0000115>The subdivision of the musculoskeletal system that consists of all the muscles of the body[VSAO, modified].</obo:IAO_0000115>
         <obo:IAO_0000116>consider whether this should be restricted to skeletal musculature. See https://github.com/obophenotype/uberon/issues/77</obo:IAO_0000116>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <obo:UBPROP_0000001>Anatomical system that consists of the muscles of the body.[VSAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000012>we place the MA term musculature here, rather than under uberon:musculature, as this seems more appropriate given the structure of MA</obo:UBPROP_0000012>
         <oboInOwl:hasDbXref>AAO:0000307</oboInOwl:hasDbXref>
@@ -17792,6 +18190,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
+        <rdfs:comment>Editor note: surface epithelium may contain non-epithelial cells, such as melanocytes, lymphocytes and dendritic cells, within the sheet of epithelial cells. Do we consider these part of the epithelium, or located-in it?</rdfs:comment>
         <rdfs:label>epithelium</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">Tkanka:nablonkowa.png</foaf:depicted_by>
     </owl:Class>
@@ -18378,6 +18777,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <obo:UBPROP_0000001>Primary germ layer that is the middle of the embryonic germ layers.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000007>mesodermal</obo:UBPROP_0000007>
@@ -18948,7 +19348,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Restriction>
         </owl:annotatedTarget>
         <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GO</oboInOwl:source>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0471888893</oboInOwl:source>
+        <oboInOwl:source>ISBN:0471888893</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000956"/>
@@ -19185,6 +19585,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002416"/>
         <obo:IAO_0000115>Functional system which consists of structures involved in respiration.</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:UBPROP_0000001>The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]</obo:UBPROP_0000003>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Respiratory_system"/>
@@ -19232,6 +19633,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedTarget>Functional system which consists of structures involved in respiration.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Respiratory_system"/>
         <oboInOwl:hasDbXref rdf:resource="http://orcid.org/0000-0002-6601-2165"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <oboInOwl:source rdf:resource="http://en.wikipedia.org/wiki/Acoelomorpha"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
@@ -19375,6 +19782,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002416"/>
         <obo:IAO_0000115>organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP].</obo:IAO_0000115>
         <obo:IAO_0000232>the cardiovascular system and the lymphatic system are parts of the circulatory system</obo:IAO_0000232>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6073"/>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6157"/>
         <obo:RO_0002174 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6231"/>
         <obo:UBPROP_0000001>Anatomical system of ion binding, a pumping mechanism, and an efficient vascular system; consisting of the blood, heart, and blood and lymph vessels, respectively.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>We should divest ourselves of the view that earlier vertebrate groups were &apos;on their way&apos; to becoming mammals, as clearly they were not such visionaries. Neither were their systems &apos;imperfect&apos; as earlier anatomists thought. Instead, their circulatory systems served them well to address the ecological demands arising from their lifestyles.[well established][VHOG]</obo:UBPROP_0000003>
@@ -19396,6 +19806,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP].</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Circulatory_system"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001009"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <oboInOwl:source rdf:resource="http://en.wikipedia.org/wiki/Acoelomorpha"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001009"/>
@@ -19554,6 +19970,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002416"/>
         <obo:IAO_0000115>The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO].</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <obo:UBPROP_0000001>A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001>Anatomical system consisting of nerve bodies and nerve fibers which regulate the response of the body to external and internal stimuli.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>Nervous systems evolved in the ancestor of Eumetazoa.[well established][VHOG]</obo:UBPROP_0000003>
@@ -19705,6 +20122,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:UBPROP_0000001>Part of the nervous system which includes the brain and spinal cord.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001>The brain and spinal cord. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001>The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO).</obo:UBPROP_0000001>
@@ -19755,7 +20173,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FBbt</oboInOwl:source>
+        <oboInOwl:source>FBbt</oboInOwl:source>
         <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -19776,6 +20194,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:hasDbXref rdf:resource="http://www.frontiersinzoology.com/content/7/1/29"/>
         <oboInOwl:hasDbXref rdf:resource="https://sourceforge.net/p/geneontology/ontology-requests/11422/"/>
         <oboInOwl:hasDbXref>GO:0021551</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <oboInOwl:source rdf:resource="http://en.wikipedia.org/wiki/Acoelomorpha"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
@@ -20414,6 +20838,8 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
         <obo:UBPROP_0000001>The alimentary or digestive tract, and associated organs.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The bilaterian gut is typically a complete tube that opens to the exterior at both ends. It consists of mouth, foregut, midgut, hindgut, and anus (reference 1); Although all vertebrates have a digestive tract and accessory glands, various parts of this system are not necessarily homologous, analogous, or even present in all species. Therefore, broad comparisons can be best made under the listings of headgut, foregut, midgut, pancreas and biliary system, hindgut (reference 2).[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000012>FMA also has a term &apos;gastrointestinal tract&apos;, but this includes the liver.</obo:UBPROP_0000012>
@@ -20469,6 +20895,18 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedTarget>A tube extending from the mouth to the anus.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Talk:Human_gastrointestinal_tract"/>
         <oboInOwl:hasDbXref rdf:resource="https://github.com/geneontology/go-ontology/issues/7549"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
+        <oboInOwl:source rdf:resource="http://en.wikipedia.org/wiki/Acoelomorpha"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
+        <oboInOwl:source rdf:resource="https://doi.org/10.1371/journal.pone.0016309"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
@@ -21193,7 +21631,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>FB</owl:annotatedTarget>
         <oboInOwl:hasDbXref>BIRNLEX:1509</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -21364,7 +21802,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>MB</owl:annotatedTarget>
         <oboInOwl:hasDbXref>BIRNLEX:1667</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -21783,7 +22221,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>DiE</owl:annotatedTarget>
         <oboInOwl:hasDbXref>BIRNLEX:1503</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -22070,7 +22508,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010285"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001943"/>
@@ -22095,7 +22533,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym"/>
         <owl:annotatedTarget>MTg</owl:annotatedTarget>
         <oboInOwl:hasDbXref>BIRNLEX:1200</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NIFSTD:NeuroNames_abbrevSource</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION"/>
     </owl:Axiom>
     <owl:Axiom>
@@ -23395,7 +23833,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004880"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
@@ -23499,6 +23937,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         </rdfs:subClassOf>
         <obo:IAO_0000115>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</obo:IAO_0000115>
         <obo:IAO_0000116>currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making &apos;somitic mesoderm&apos; a separate term and correlate with regionalization processes. Consider moving ZFA term to &apos;trunk somite&apos; as it is part of the trunk</obo:IAO_0000116>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
         <obo:UBPROP_0000001>Post-cranial axial segments which form sclerotome and dermomyotome.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001>Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000002>relationship loss: develops_from paraxial mesenchyme (TAO:0000942)[TAO]</obo:UBPROP_0000002>
@@ -23557,7 +23996,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
@@ -23565,6 +24004,12 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedTarget>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:resource="http://en.wikipedia.org/wiki/Somite"/>
         <oboInOwl:hasDbXref rdf:resource="https://doi.org/10.1111/j.1439-0426.2012.01987.x"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
+        <oboInOwl:source rdf:resource="http://www.ncbi.nlm.nih.gov/pubmed/17237766"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
@@ -23749,7 +24194,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BTO</oboInOwl:source>
+        <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
@@ -23904,7 +24349,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:external_class>VHOG:0000150</oboInOwl:external_class>
         <oboInOwl:ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">VHOG</oboInOwl:ontology>
         <oboInOwl:source rdf:resource="http://bgee.unil.ch/"/>
-        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DOI:10.1046/j.1469-7580.2001.19910133.x Graham A. The development and evolution of the pharyngeal arches. J Anat (2001)</oboInOwl:source>
+        <oboInOwl:source>DOI:10.1046/j.1469-7580.2001.19910133.x Graham A. The development and evolution of the pharyngeal arches. J Anat (2001)</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
@@ -25440,7 +25885,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
@@ -25473,7 +25918,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000012"/>
         <owl:annotatedTarget>part_of somite in XAO</owl:annotatedTarget>
-        <oboInOwl:external_ontology>XAO</oboInOwl:external_ontology>
+        <oboInOwl:external_ontology rdf:datatype="http://www.w3.org/2001/XMLSchema#string">XAO</oboInOwl:external_ontology>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
@@ -26090,7 +26535,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003849"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003099"/>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003849"/>
@@ -26317,7 +26762,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003852"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003099"/>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003852"/>
@@ -26588,7 +27033,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004035"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000011"/>
         <owl:annotatedTarget>The transient fetal subplate zone, together with the marginal zone and the cortical plate, represents the developmental anlage of the mammalian cerebral cortex. It serves as a waiting compartment for growing cortical afferents; its cells are involved in the establishment of pioneering cortical efferent projections and transient fetal circuitry, and apparently have a number of other developmental roles. The subplate zone is a phylogenetically recent structure and it is most developed in the human brain. Subplate neurons are among the first generated neurons in the mammalian cerebral cortex [1]. These neurons disappear during postnatal development and are important in establishing the correct wiring [2][3] and functional maturation [4] of the cerebral cortex. Subplate neurons appear to be selectively sensitive to injury (such as hypoxia) which in humans are associated with motor and cognitive defects</owl:annotatedTarget>
-        <oboInOwl:source>WP</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WP</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004035"/>
@@ -29663,7 +30108,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007213"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005253"/>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007213"/>
@@ -29888,7 +30333,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006238"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007281"/>
@@ -30778,7 +31223,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009615"/>
@@ -30873,7 +31318,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006238"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009616"/>
@@ -30884,7 +31329,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010286"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009616"/>
@@ -30930,6 +31375,12 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <oboInOwl:hasDbXref>EHDAA2:0002094</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>trunk and cervical paraxial mesenchyme</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -30937,6 +31388,17 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0009618</oboInOwl:id>
         <rdfs:label>trunk paraxial mesoderm</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EHDAA2</oboInOwl:source>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
@@ -31131,7 +31593,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010286"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010285"/>
@@ -31182,7 +31644,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003080"/>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <oboInOwl:source>ZFA</oboInOwl:source>
+        <oboInOwl:source rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010286"/>
