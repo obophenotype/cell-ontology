@@ -2561,6 +2561,8 @@ Declaration(Class(obo:CL_4023103))
 Declaration(Class(obo:CL_4023104))
 Declaration(Class(obo:CL_4023105))
 Declaration(Class(obo:CL_4023106))
+Declaration(Class(obo:CL_4023108))
+Declaration(Class(obo:CL_4023109))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -22928,14 +22930,18 @@ AnnotationAssertion(rdfs:comment obo:CL_0011002 "Need to MIREOT in 'spinal cord 
 AnnotationAssertion(rdfs:label obo:CL_0011002 "lateral motor column neuron")
 SubClassOf(obo:CL_0011002 obo:CL_0011001)
 
-# Class: obo:CL_0011003 (magnocellular neurosecretory cell (duplicate class))
+# Class: obo:CL_0011003 (magnocellular neurosecretory cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv"^^xsd:string) Annotation(oboInOwl:hasDbXref "MP:0009467"^^xsd:string) obo:IAO_0000115 obo:CL_0011003 "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that secretes the hormones oxytocin and vasopressin.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv"^^xsd:string) Annotation(oboInOwl:hasDbXref "MP:0009467"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:10711808"^^xsd:string) obo:IAO_0000115 obo:CL_0011003 "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that is capable of secreting the hormones oxytocin or vasopressin, and sometimes both, into the systemic circulation.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/contributor> obo:CL_0011003 "https://orcid.org/0000-0001-7258-9596")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_0011003 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0011003 "ILX:0107463")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011003 "magnocellular neuron")
-AnnotationAssertion(rdfs:label obo:CL_0011003 "magnocellular neurosecretory cell (duplicate class)")
+AnnotationAssertion(rdfs:label obo:CL_0011003 "magnocellular neurosecretory cell")
 SubClassOf(obo:CL_0011003 obo:CL_0000381)
-SubClassOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001930))
-SubClassOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006568))
+SubClassOf(obo:CL_0011003 obo:CL_0000540)
+SubClassOf(obo:CL_0011003 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
+SubClassOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001898))
 
 # Class: obo:CL_0011004 (lens fiber cell)
 
@@ -23229,13 +23235,13 @@ AnnotationAssertion(rdfs:label obo:CL_0011111 "gonadotropin releasing neuron")
 EquivalentClasses(obo:CL_0011111 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032274)))
 SubClassOf(obo:CL_0011111 obo:CL_0000540)
 
-# Class: obo:CL_0011112 (magnocellular neurosecretory cell)
+# Class: obo:CL_0011112 (obsolete magnocellular neurosecretory cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:10711808"^^xsd:string) obo:IAO_0000115 obo:CL_0011112 "Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland.")
-AnnotationAssertion(rdfs:label obo:CL_0011112 "magnocellular neurosecretory cell")
-SubClassOf(obo:CL_0011112 obo:CL_0000540)
-SubClassOf(obo:CL_0011112 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030103)))
-SubClassOf(obo:CL_0011112 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:10711808"^^xsd:string) obo:IAO_0000115 obo:CL_0011112 "OBSOLETE: Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland.")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0011112 "CL:0011003")
+AnnotationAssertion(rdfs:comment obo:CL_0011112 "Duplicated term, please see CL:0011003 instead")
+AnnotationAssertion(rdfs:label obo:CL_0011112 "obsolete magnocellular neurosecretory cell")
+AnnotationAssertion(owl:deprecated obo:CL_0011112 "true"^^xsd:boolean)
 
 # Class: obo:CL_0011113 (spiral ganglion neuron)
 
@@ -28769,6 +28775,20 @@ SubClassOf(obo:CL_4023106 obo:CL_0000617)
 SubClassOf(obo:CL_4023106 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956))
 SubClassOf(obo:CL_4023106 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9483))
 SubClassOf(obo:CL_4023106 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000010317))
+
+# Class: obo:CL_4023108 (oxytocin-secreting magnocellular cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Magnocellular_neurosecretory_cell&oldid=1021059931"^^xsd:string) obo:IAO_0000115 obo:CL_4023108 "A magnocellular neurosecretory cell that is capable of producing and secreting oxytocin.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023108 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(rdfs:label obo:CL_4023108 "oxytocin-secreting magnocellular cell")
+EquivalentClasses(obo:CL_4023108 ObjectIntersectionOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0036162)))
+
+# Class: obo:CL_4023109 (vasopressin-secreting magnocellular cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Magnocellular_neurosecretory_cell&oldid=1021059931"^^xsd:string) obo:IAO_0000115 obo:CL_4023109 "A magnocellular neurosecretory cell that is capable of producing and secreting vasopressin.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023109 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(rdfs:label obo:CL_4023109 "vasopressin-secreting magnocellular cell")
+EquivalentClasses(obo:CL_4023109 ObjectIntersectionOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030103)))
 
 # Class: obo:CP_0000000 (neutrophillic cytoplasm)
 
