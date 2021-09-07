@@ -1,5 +1,5 @@
 ## Customize Makefile settings for cl
-##
+## 
 ## If you need to customize your Makefile, make
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
@@ -13,13 +13,13 @@
 
 #tmp/clo_logical.owl: mirror/clo.owl
 #	echo "Skipped clo logical" && cp $< $@
-
+	
 #tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
 #	echo "Skipped clo logical" && touch $@
 
 #tmp/pr_logical.owl: mirror/pr.owl
 #	echo "Skipped pr logical" && cp $< $@
-
+	
 #tmp/chebi_logical.owl: mirror/chebi.owl
 #	echo "Skipped chebi logical" && cp $< $@
 
@@ -51,7 +51,7 @@ non_native_classes.txt: $(SRC)
 #####################################################################################
 
 # The reason command (and the reduce command) removed some of the very crucial asserted axioms at this point.
-# That is why we first need to extract all logical axioms (i.e. subsumptions) and merge them back in after
+# That is why we first need to extract all logical axioms (i.e. subsumptions) and merge them back in after 
 # The reasoning step is completed. This will be a big problem when we switch to ROBOT completely..
 
 tmp/cl_terms.txt: $(SRC)
@@ -83,8 +83,6 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 oort: tmp/source-merged.obo
 	ontology-release-runner --reasoner elk $< --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
 
-test: oort
-
 tmp/$(ONT)-stripped.owl: oort
 	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
 		convert -o $@
@@ -97,7 +95,7 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 	rm $@_prop.tmp
 
 # The standard simple artefacts keeps a bunch of irrelevant Typedefs which are a result of the merge. The following steps takes the result
-# of the oort simple version, and then removes them. A second problem is that oort does not deal well with cycles and removes some of the
+# of the oort simple version, and then removes them. A second problem is that oort does not deal well with cycles and removes some of the 
 # asserted CL subsumptions. This can hopefully be solved once we can move all the way to ROBOT, but for now, it requires merging in
 # the asserted hierarchy and reducing again.
 
@@ -122,7 +120,7 @@ $(ONT)-simple.obo: tmp/cl_signature.txt oort
 		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
 		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
 		rm -f $@.tmp.obo $@.tmp
-
+		
 $(ONT)-basic.owl: tmp/cl_signature.txt oort
 	echo "WARNING: $@ is not generated with the default ODK specification."
 	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
@@ -132,7 +130,7 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
 		remove --axioms disjoint --trim false \
 		convert -o $@
-
+		
 
 #$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
 #	$(ROBOT) merge $(patsubst %, -i %, $^) \
@@ -146,7 +144,7 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 
 #release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
 #	rsync -R $^ $(RELEASEDIR)/views
-
+	
 # prepare_release: release_views
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
@@ -168,13 +166,13 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 
 #fail_seed_by_entity_type_cl:
 #	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
+#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
 
 #works_seed_by_entity_type_cl:
 #	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
+#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp 
 
-
+	
 ##############################################
 ##### CL Template pipeline ###################
 ##############################################
@@ -225,10 +223,10 @@ tmp/src-noimports.owl: $(SRC)
 
 tmp/src-imports.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
-
+	
 tmp/src-master-noimports.owl:
 	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
-
+	
 tmp/src-master-imports.owl:
 	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
 
@@ -251,13 +249,12 @@ tmp/cl-lastbuild.owl: .FORCE
 reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
 	$(ROBOT) diff --left $< --right tmp/cl-current.owl -f markdown -o $@
 	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
-
+	
 all_reports: reports/obo-diff.txt
 
 
 normalise_xsd_string: $(SRC)
-	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
-	rm $<.bak
+	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
 
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
@@ -276,44 +273,3 @@ install_dosdp:
 .PHONY: pattern_docs
 pattern_docs:
 	dosdp document -i ../patterns/dosdp-patterns/ -o ../../docs/patterns/ -d ../patterns/data/matches/
-
-.PHONY: obocheck
-obocheck:
-	$(ROBOT) merge -i cl-edit.owl remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external --trim false convert -f obo --check false -o cl-check.obo
-	fastobo-validator cl-check.obo
-	
-test: obocheck
-
-test_obsolete: cl.obo
-	! grep "! obsolete" cl.obo
-
-test: test_obsolete
-
-
-imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/uberon_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-.PRECIOUS: imports/uberon_import.owl
-
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pato_import.owl
-
-imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/pr_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pr_import.owl

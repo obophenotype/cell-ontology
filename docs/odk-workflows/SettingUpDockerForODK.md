@@ -8,5 +8,6 @@ but more often than not it will appear as something like an `Error 137`. There a
 2. Set your docker memory. By default, it should be about 10-20% more than your `robot_java_args` variable. You can manage your memory settings
 by right-clicking on the docker whale in your system bar-->Preferences-->Resources-->Advanced, see picture below.
 
-![dockermemory](https://github.com/INCATools/ontology-development-kit/raw/master/docs/img/docker_memory.png)
+<img href="https://raw.githubusercontent.com/INCATools/ontology-development-kit/master/docs/img/docker_memory.png" alt="Docker Memory Config" /> 
 
+etc
