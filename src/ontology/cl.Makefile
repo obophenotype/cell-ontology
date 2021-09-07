@@ -83,6 +83,8 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 oort: tmp/source-merged.obo
 	ontology-release-runner --reasoner elk $< --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
 
+test: oort
+
 tmp/$(ONT)-stripped.owl: oort
 	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
 		convert -o $@
