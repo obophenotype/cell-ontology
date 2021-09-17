@@ -241,6 +241,10 @@ imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
+## Module for ontology: go
+
+imports/go_import.owl: mirror/go.owl
+	echo "ERROR: You have configured your default module type to be custom; this behavior needs to be overwritten in cl.Makefile!" && false
 ## Module for ontology: chebi
 
 imports/chebi_import.owl: mirror/chebi.owl imports/chebi_terms_combined.txt

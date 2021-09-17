@@ -17,7 +17,7 @@ These are the current imports in CL
 | Import | URL | Type |
 | ------ | --- | ---- |
 | pr | http://purl.obolibrary.org/obo/pr.owl | None |
-| go | http://purl.obolibrary.org/obo/go/extensions/go-plus.owl | None |
+| go | http://purl.obolibrary.org/obo/go/extensions/go-plus.owl | custom |
 | uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
