@@ -67,7 +67,7 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
 # into existentials on roundtrip
 
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
+tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
 	$(ROBOT) merge --input $< \
 		reason --reasoner ELK \
 		relax \
