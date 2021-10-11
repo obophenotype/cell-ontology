@@ -1,0 +1,18 @@
+name: 'Mark and close stale issues'
+
+on:
+  schedule:
+    - cron: '0 1 * * *'
+
+jobs:
+  stale:
+    runs-ons: ubuntu-latest
+    steps:
+      - uses: actions/stale@v4
+        with:
+          days-before-issue-stale: 180
+          days-before-pr-stale: -1
+          days-before-issue-close: 365
+          close-issue-label: 'autoclosed-unfixed'
+          close-issue-message: 'This issue has been closed automatically because it has not been updated in 6 months. Please re-open if you still need this to be addressed.'
+          start-date: '2021-04-01T00:00:00Z'
