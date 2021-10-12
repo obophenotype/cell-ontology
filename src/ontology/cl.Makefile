@@ -67,12 +67,13 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
 # into existentials on roundtrip
 
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
+tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
 	$(ROBOT) merge --input $< \
 		reason --reasoner ELK \
 		relax \
 		remove --axioms equivalent \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
+		remove -T config/remove_annotations.txt --axioms annotation \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
@@ -317,3 +318,14 @@ imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/pr_import.owl
+
+
+## DOSDP on Google Sheets
+
+DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
+
+.PRECIOUS: dosdp_%
+dosdp_%:
+	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
+
+gs_dosdp: dosdp_cellPartOfAnatomicalEntity

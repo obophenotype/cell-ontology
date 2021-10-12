@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-08-10/subsets/BDS_subset.owl
+data-version: cl/releases/2021-09-09/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 3_STAR ""
 subsetdef: abnormal_slim ""
@@ -60,7 +60,7 @@ synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance o
 synonymtypedef: LATIN "latin term"
 synonymtypedef: PLURAL "plural term"
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2021-08-10" xsd:string
+property_value: owl:versionInfo "2021-09-09" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -1109,7 +1109,7 @@ xref: FMA:86775
 xref: NIFSTD:sao862606388
 is_a: CL:0000104 ! multipolar neuron
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: CL:0000540 ! neuron
 intersection_of: bearer_of PATO:0070015 ! pyramidal family morphology
 relationship: bearer_of PATO:0070015 ! pyramidal family morphology
 
@@ -1406,6 +1406,20 @@ created_by: TermGenie
 creation_date: 2014-06-25T01:17:43Z
 
 [Term]
+id: CL:2000049
+name: primary motor cortex pyramidal cell
+namespace: cell
+def: "Any pyramidal cell that is part of a primary motor cortex." [GOC:TermGenie]
+comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
+is_a: CL:0000598 ! pyramidal neuron
+is_a: CL:0002609 ! neuron of cerebral cortex
+intersection_of: CL:0000598 ! pyramidal neuron
+intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+created_by: TermGenie
+creation_date: 2014-10-06T17:39:04Z
+
+[Term]
 id: CL:4023007
 name: L2/3 bipolar Vip GABAergic cortical interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar Vip Cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 Bipolar Vip Cells have great variability in firing patterns, though most are continuous adapting. L2/3 Bipolar Vip Cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper Vip cells." [PMID:26420784]
@@ -1577,6 +1591,8 @@ subset: BDS_subset
 synonym: "L5/6 CCK Vip (Mus)" EXACT []
 is_a: CL:4023016 ! Vip GABAergic cortical interneuron
 is_a: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
+intersection_of: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
+intersection_of: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
 
@@ -1727,9 +1743,9 @@ synonym: "pyramidal tract (PT) neuron" NARROW [DOI:10.1038/nrn3469]
 synonym: "Pyramidal tract-like (PT-l)" EXACT [DOI:10.1016/j.cell.2019.09.023] {comment="pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord."}
 synonym: "subcerebral projection (SCPN) neuron" BROAD [DOI:10.1016/j.neuron.2005.08.030]
 synonym: "thick-tufted layer 5 (TTL5) pyramidal neuron" EXACT [DOI:10.3389/fncel.2015.00233]
-is_a: CL:0000104 ! multipolar neuron
+is_a: CL:0000598 ! pyramidal neuron
+is_a: CL:0002609 ! neuron of cerebral cortex
 is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
-relationship: bearer_of PATO:0070015 ! pyramidal family morphology
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -1747,7 +1763,7 @@ id: CL:4023043
 name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
 def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex." [DOI:10.1101/2020.10.19.343129, PMID:31209381]
 subset: BDS_subset
-synonym: "L5/6 NP (Mus)" EXACT []
+synonym: "L5/6 NP MOp (Mus)" EXACT []
 xref: ILX:0770161
 is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
@@ -1760,10 +1776,10 @@ name: non-medulla, extratelencephalic-projecting glutamatergic neuron of the pri
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that does not project to the medulla. Non-MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. Non-MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
 synonym: "non-MY ET MOp (Mus)" EXACT []
+is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
-relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 
 [Term]
 id: CL:4023045
@@ -1772,11 +1788,11 @@ def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b 
 subset: BDS_subset
 synonym: "medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)" EXACT []
 synonym: "MY ET MOp (Mus)" EXACT []
+is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
 relationship: bearer_of PATO:0070031 ! corticomedulla projecting
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
-relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 relationship: RO:0013001 UBERON:0001896 ! has synaptic IO in region medulla oblongata
 
 [Term]
@@ -1831,12 +1847,11 @@ def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in
 subset: BDS_subset
 synonym: "L6 IT MOp (Mus)" EXACT []
 xref: ILX:0770158
-is_a: CL:0000104 ! multipolar neuron
+is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
-relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
+is_a: CL:4023095 ! untufted pyramidal neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
-relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 
 [Term]
 id: CL:4023051
@@ -1864,12 +1879,11 @@ name: corticothalamic VAL/VM projecting glutamatergic neuron of the primary moto
 def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM (ventroanterior-ventrolateral complex/ventromedial nucleus) cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." [PMID:20556241, PMID:9236245]
 subset: BDS_subset
 synonym: "CT VAL/VM MOp (Mus)" EXACT []
-is_a: CL:0000104 ! multipolar neuron
+is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
-relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
+is_a: CL:4023095 ! untufted pyramidal neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
-relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 
 [Term]
 id: CL:4023056
@@ -1982,7 +1996,7 @@ def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary mot
 subset: BDS_subset
 synonym: "stellate L6 IT MOp (Mus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
-relationship: bearer_of PATO:0070020 ! stellate pyramidal morphology
+is_a: CL:4023093 ! stellate pyramidal neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -1992,7 +2006,7 @@ def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary mot
 subset: BDS_subset
 synonym: "inverted L6 IT MOp (Mus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
-relationship: bearer_of PATO:0070021 ! inverted pyramidal morphology
+is_a: CL:4023092 ! inverted pyramidal neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -2154,12 +2168,83 @@ id: CL:4023101
 name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
 def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
 subset: BDS_subset
-synonym: "L5/6 NP (human)" EXACT []
+synonym: "L5/6 NP MOp (human)" EXACT []
 xref: ILX:0770161
 is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:9606 ! Homo sapiens
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+
+[Term]
+id: CL:4023102
+name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L5/6 NP MOp (marmoset)" EXACT []
+xref: ILX:0770161
+is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:9483 ! Callithrix jacchus
+relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+
+[Term]
+id: CL:4023103
+name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L2/3 IT MOp (marmoset)" EXACT []
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:9483 ! Callithrix jacchus
+relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+
+[Term]
+id: CL:4023104
+name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L5 IT MOp (marmoset)" EXACT []
+xref: ILX:0770157
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:9483 ! Callithrix jacchus
+relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+
+[Term]
+id: CL:4023105
+name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L6 IT MOp (marmoset)" EXACT []
+xref: ILX:0770158
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:9483 ! Callithrix jacchus
+relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+
+[Term]
+id: CL:4023106
+name: meis2 expressing cortical GABAergic cell (Callithrix jacchus)
+def: "A mouse GABAergic cell located in the marmoset cerebral cortex that expresses meis2." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "Meis2 (Marmoset)" EXACT []
+is_a: CL:0000617 ! GABAergic neuron
+is_a: CL:0010012 ! cerebral cortex neuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:9483 ! Callithrix jacchus
+relationship: RO:0002292 PR:000010317 ! expresses homeobox protein Meis2
+
+[Term]
+id: CL:4023118
+name: L5/6 non-Martinotti morphology sst expressing GABAergic cortical internueron (Mus musculus)
+def: "A sst GABAergic interneuron does not have Martinotti morphology with a soma found in L5/6 of the cerebral cortex." [PMID:27477017]
+comment: L5/6 non-Martinotti SST cells have strongly facilitating excitatory inputs and moderately depressing outputs. They have faster action potential than Martinotti morphology SST cells and slightly slower than PV basket cells. {xref="PMID:27477017"}
+subset: BDS_subset
+synonym: "L5/6 non-Martinotti SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 
 [Term]
 id: GO:0001505
@@ -2865,6 +2950,7 @@ namespace: biological_process
 alt_id: GO:0044707
 alt_id: GO:0050874
 def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." [GOC:curators, GOC:dph, GOC:isa_complete, GOC:tb]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "organismal physiological process" EXACT []
 synonym: "single-multicellular organism process" RELATED []
@@ -3041,11 +3127,6 @@ relationship: regulates GO:0022600 ! digestive system process
 id: GO:0044297
 name: cell body
 is_a: GO:0110165 ! cellular anatomical entity
-
-[Term]
-id: GO:0044464
-name: cell part
-is_a: CARO:0000003 ! connected anatomical structure
 
 [Term]
 id: GO:0045202
@@ -3693,6 +3774,15 @@ relationship: in_taxon NCBITaxon:1963758 ! Myomorpha
 property_value: has_rank NCBITaxon:suborder
 
 [Term]
+id: NCBITaxon:1965096
+name: Callithrix <subgenus>
+namespace: ncbi_taxonomy
+synonym: "Callithrix" EXACT scientific_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9481 ! Callithrix <genus>
+property_value: has_rank NCBITaxon:subgenus
+
+[Term]
 id: NCBITaxon:207598
 name: Homininae
 namespace: ncbi_taxonomy
@@ -3984,6 +4074,59 @@ xref: GC_ID:1
 is_a: NCBITaxon:314146 ! Euarchontoglires
 relationship: in_taxon NCBITaxon:9443 ! Primates
 property_value: has_rank NCBITaxon:order
+
+[Term]
+id: NCBITaxon:9479
+name: Platyrrhini
+namespace: ncbi_taxonomy
+synonym: "monkey" EXACT common_name []
+synonym: "monkeys" EXACT common_name []
+synonym: "New World monkeys" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:314293 ! Simiiformes
+property_value: has_rank NCBITaxon:parvorder
+
+[Term]
+id: NCBITaxon:9480
+name: Callitrichinae
+namespace: ncbi_taxonomy
+synonym: "Callithricidae" RELATED synonym []
+synonym: "Callitrichidae" RELATED synonym []
+synonym: "marmosets and tamarins" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9498 ! Cebidae
+property_value: has_rank NCBITaxon:subfamily
+
+[Term]
+id: NCBITaxon:9481
+name: Callithrix <genus>
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:9492
+synonym: "Callithrix" EXACT scientific_name []
+xref: GC_ID:1
+is_a: NCBITaxon:9480 ! Callitrichinae
+property_value: has_rank NCBITaxon:genus
+
+[Term]
+id: NCBITaxon:9483
+name: Callithrix jacchus
+namespace: ncbi_taxonomy
+alt_id: NCBITaxon:9484
+synonym: "Callithrix jacchus jacchus" RELATED synonym []
+synonym: "common marmoset" EXACT common_name []
+synonym: "white ear-tufted marmoset" EXACT common_name []
+synonym: "white-tufted-ear marmoset" EXACT genbank_common_name []
+xref: GC_ID:1
+is_a: NCBITaxon:1965096 ! Callithrix <subgenus>
+property_value: has_rank NCBITaxon:species
+
+[Term]
+id: NCBITaxon:9498
+name: Cebidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:9479 ! Platyrrhini
+property_value: has_rank NCBITaxon:family
 
 [Term]
 id: NCBITaxon:9526
@@ -9597,7 +9740,6 @@ xref: FMA:83115
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000477 {source="FMA"} ! anatomical cluster
 relationship: composed_primarily_of GO:0005575 ! cellular_component
-relationship: has_component GO:0044464 {minCardinality="2"} ! cell part
 property_value: UBPROP:0000012 "we go with the FMA classification rather than the CARO one. FMA def: 'Anatomical cluster which has as direct parts cell parts from two or more cells.'" xsd:string {external_ontology="CARO", external_ontology="FMA"}
 
 [Term]
@@ -11836,7 +11978,7 @@ property_value: IAO:0000118 "actively involved in" xsd:string
 property_value: IAO:0000118 "enables part of" xsd:string
 property_value: seeAlso Involved:in
 holds_over_chain: RO:0002327 part_of
-is_a: participates_in ! participates in
+is_a: participates_in ! participates_in
 is_a: RO:0002431 ! involved in or involved in regulation of
 transitive_over: part_of ! part_of
 
@@ -13568,7 +13710,7 @@ subset: RO:0002259
 xref: RO:0002352
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: functionally_related_to ! functionally related to
-is_a: participates_in ! participates in
+is_a: participates_in ! participates_in
 
 [Typedef]
 id: intersects_midsagittal_plane_of
@@ -13747,13 +13889,12 @@ def: "inverse of has output" []
 xref: RO:0002353
 is_transitive: false
 is_a: functionally_related_to ! functionally related to
-is_a: participates_in ! participates in
+is_a: participates_in ! participates_in
 
 [Typedef]
 id: overlaps
 name: overlaps
 namespace: uberon
-def: "x overlaps y iff they have some part in common." [BSPO:cjm]
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 subset: ro-eco
