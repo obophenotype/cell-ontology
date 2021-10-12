@@ -10,3 +10,4 @@ by right-clicking on the docker whale in your system bar-->Preferences-->Resourc
 
 ![dockermemory](https://github.com/INCATools/ontology-development-kit/raw/master/docs/img/docker_memory.png)
 
+
