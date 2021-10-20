@@ -67,12 +67,13 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
 # into existentials on roundtrip
 
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
+tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
 	$(ROBOT) merge --input $< \
 		reason --reasoner ELK \
 		relax \
 		remove --axioms equivalent \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
+		remove -T config/remove_annotations.txt --axioms annotation \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
@@ -82,6 +83,8 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 
 oort: tmp/source-merged.obo
 	ontology-release-runner --reasoner elk $< --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
+
+test: oort
 
 tmp/$(ONT)-stripped.owl: oort
 	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
@@ -254,7 +257,8 @@ all_reports: reports/obo-diff.txt
 
 
 normalise_xsd_string: $(SRC)
-	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+	rm $<.bak
 
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
@@ -280,3 +284,48 @@ obocheck:
 	fastobo-validator cl-check.obo
 	
 test: obocheck
+
+test_obsolete: cl.obo
+	! grep "! obsolete" cl.obo
+
+test: test_obsolete
+
+
+imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/uberon_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+
+.PRECIOUS: imports/uberon_import.owl
+
+imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/pato_import.owl
+
+imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
+		extract -T imports/pr_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: imports/pr_import.owl
+
+
+## DOSDP on Google Sheets
+
+DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
+
+.PRECIOUS: dosdp_%
+dosdp_%:
+	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
+
+gs_dosdp: dosdp_cellPartOfAnatomicalEntity

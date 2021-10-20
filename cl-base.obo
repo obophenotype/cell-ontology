@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-06-29/cl-base.owl
+data-version: cl/releases/2021-09-09/cl-base.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -23,7 +23,7 @@ property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2021-06-29" xsd:string
+property_value: owl:versionInfo "2021-09-09" xsd:string
 
 [Term]
 id: CL:0000000
@@ -251,6 +251,7 @@ id: CL:0000020
 name: spermatogonium
 namespace: cell
 def: "An euploid male germ cell of an early stage of spermatogenesis." [MESH:A05.360.490.890.900]
+synonym: "spermatogonial cell" EXACT []
 xref: BTO:0000958
 xref: CALOHA:TS-2193
 xref: EMAPA:31482
@@ -356,8 +357,9 @@ relationship: RO:0002202 CL:0000338 ! neuroblast (sensu Nematoda and Protostomia
 
 [Term]
 id: CL:0000029
-name: neuron neural crest derived
+name: neural crest derived neuron
 namespace: cell
+synonym: "neuron neural crest derived" EXACT []
 is_a: CL:0000540 {is_inferred="true"} ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002202 CL:0000333 ! migratory neural crest cell
@@ -841,9 +843,8 @@ xref: FBbt:00000124
 xref: FMA:66768
 xref: WBbt:0003672
 is_a: CL:0000548 ! animal cell
-intersection_of: CL:0000548 ! animal cell
-intersection_of: BFO:0000050 UBERON:0000483
 disjoint_from: CL:0000738 ! leukocyte
+relationship: BFO:0000050 UBERON:0000483
 
 [Term]
 id: CL:0000067
@@ -1295,7 +1296,7 @@ is_a: CL:0000540 ! neuron
 id: CL:0000107
 name: autonomic neuron
 namespace: cell
-def: "A neruon whose cell body is within an autonomic ganglion." [GOC:tfm]
+def: "A neuron whose cell body is within an autonomic ganglion." [GOC:tfm]
 xref: FMA:80121
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
@@ -1403,7 +1404,7 @@ property_value: created_by https://orcid.org/0000-0002-2825-0621 xsd:string
 id: CL:0000119
 name: cerebellar Golgi cell
 namespace: cell
-def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell enters ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [NIFSTD:sao1415726815]
+def: "Large intrinsic neuron located in the granule layer of the cerebellar cortex that extends its dendrites into the molecular layer where they receive contact from parallel fibers. The axon of the Golgi cell ramifies densely in the granule layer and enters into a complex arrangement with mossy fiber terminals and granule cell dendrites to form the cerebellar glomerulus. Llinas, Walton and Lang. In The Synaptic Organization of the Brain. 5th ed. 2004." [NIFSTD:sao1415726815]
 synonym: "cerebellar Golgi neuron" EXACT []
 synonym: "cerebellum Golgi cell" EXACT []
 synonym: "Golgi cell" EXACT []
@@ -5992,7 +5993,7 @@ xref: BTO:0003102
 xref: FMA:67310
 xref: FMA:86775
 xref: NIFSTD:sao862606388
-intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
+intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0000053 PATO:0070015
 
 [Term]
@@ -6428,8 +6429,13 @@ is_a: CL:0002165 ! phalangeal cell
 id: CL:0000636
 name: Mueller cell
 namespace: cell
+def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
+synonym: "Muller glia" EXACT []
+synonym: "Müller cell" EXACT []
 xref: BTO:0003064
-is_a: CL:0000127 ! astrocyte
+is_a: CL:0000681 ! radial glial cell
+is_a: CL:0009004 ! retinal cell
+relationship: BFO:0000050 UBERON:0000966
 
 [Term]
 id: CL:0000637
@@ -8933,17 +8939,20 @@ relationship: RO:0002202 CL:0000843 ! follicular B cell
 
 [Term]
 id: CL:0000845
-name: marginal zone B cell
+name: marginal zone B cell of spleen
 namespace: cell
 def: "A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD35-high." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Marginal-zone_B_cell, ISBN:0781735149, PMID:10933592, PMID:20933013]
 comment: MZ B cells are reportedly CD1-positive (mice), CD20-positive, CD48-positive, CD84-positive, CD150-positive, CD229-positive, and CD352-positive.
-synonym: "marginal zone B lymphocyte" EXACT []
-synonym: "marginal zone B-cell" EXACT []
-synonym: "marginal zone B-lymphocyte" EXACT []
-synonym: "MZ B cell" EXACT []
-synonym: "MZ B lymphocyte" EXACT []
-synonym: "MZ B-cell" EXACT []
-synonym: "MZ B-lymphocyte" EXACT []
+synonym: "B cell of marginal zone of spleen" EXACT []
+synonym: "marginal zone B cell" BROAD []
+synonym: "marginal zone B lymphocyte" BROAD []
+synonym: "marginal zone B-cell" BROAD []
+synonym: "marginal zone B-lymphocyte" BROAD []
+synonym: "marginal zone of spleen B cell" EXACT []
+synonym: "MZ B cell" BROAD []
+synonym: "MZ B lymphocyte" BROAD []
+synonym: "MZ B-cell" BROAD []
+synonym: "MZ B-lymphocyte" BROAD []
 is_a: CL:0000785 {is_inferred="true"} ! mature B cell
 intersection_of: CL:0000785 ! mature B cell
 intersection_of: BFO:0000050 UBERON:0001251
@@ -12973,7 +12982,7 @@ creation_date: 2009-10-20T02:20:43Z
 id: CL:0002038
 name: T follicular helper cell
 namespace: cell
-def: "A CD4-positive, CXCR5-positive, CCR7-negative alpha-beta T cell located in follicles of secondary lymph nodes that expresses is BCL6-high, ICOS-high and PD1-high, and stimulates follicular B cells to undergo class-switching and antibody production." [GOC:tfm, PMID:19855402, PMID:20107805, PMID:22043829]
+def: "A CD4-positive, CXCR5-positive, CCR7-negative alpha-beta T cell located in follicles of secondary lymph nodes that is BCL6-high, ICOS-high and PD1-high, and stimulates follicular B cells to undergo class-switching and antibody production." [GOC:tfm, PMID:19855402, PMID:20107805, PMID:22043829]
 synonym: "follicular B helper T cell" RELATED [PMID:22043829]
 synonym: "follicular helper T cell" RELATED [PMID:22649468]
 synonym: "follicular helper T-cell" RELATED [PMID:22508770]
@@ -21457,7 +21466,6 @@ intersection_of: RO:0002100 UBERON:0002028
 id: CL:0008014
 name: obsolete excitatory motor neuron
 def: "A motor neuron that is capable of directly inducing muscle contraction." []
-comment: false
 comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
 is_obsolete: true
 
@@ -21778,6 +21786,16 @@ is_a: CL:0002371 ! somatic cell
 relationship: BFO:0000050 UBERON:0001044
 
 [Term]
+id: CL:0009006
+name: enteroendocrine cell of small intestine
+def: "An enteroendocrine cell that is located in the small intestine." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "small intestine enteroendocrine cell" EXACT []
+intersection_of: CL:0000164 ! enteroendocrine cell
+intersection_of: BFO:0000050 UBERON:0002108
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0009007
 name: gastrointestinal tract (lamina propria) macrophage of small intestine
 def: "A macrophage which is resident in the lamina propria of the small intestine." [https://orcid.org/0000-0003-4183-8865]
@@ -21801,13 +21819,15 @@ created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009009
-name: paneth cell of epithelium of large intestine
-def: "A paneth cell that is located in the epithelium of the large intestine." [http://orcid.org/0000-0003-4183-8865, PMID:31753849]
+name: paneth cell of colon
+def: "A paneth cell that is located in the epithelium of the colon." [http://orcid.org/0000-0003-4183-8865, PMID:31753849]
 subset: location_grouping
+synonym: "paneth cell of epithelium of colon" EXACT []
+synonym: "paneth cell of epithelium of large intestine" BROAD []
 synonym: "paneth-like cell" EXACT []
 is_a: CL:0002253 ! epithelial cell of large intestine
 intersection_of: CL:0000510 ! paneth cell
-intersection_of: BFO:0000050 UBERON:0001278
+intersection_of: BFO:0000050 UBERON:0000397
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -21824,16 +21844,17 @@ created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009011
-name: transit amplifying cell of large intestine
-def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the large intestine. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [http://orcid.org/0000-0003-4183-8865, PMID:20801415]
+name: transit amplifying cell of colon
+def: "A rapidly proliferating population of cells that differentiate from stem cells of the intestinal crypt of the colon. Stem cells located in the crypts of Lieberkühn give rise to proliferating progenitor or transit amplifying cells that differentiate into the four major epithelial cell types. These include columnar absorptive cells or enterocytes, mucous secreting goblet cells, enteroendocrine cells and paneth cells." [http://orcid.org/0000-0003-4183-8865, PMID:20801415]
 subset: location_grouping
-synonym: "large intestine transit amplifying cell" EXACT []
-synonym: "transient amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
-synonym: "transient amplifying cell of large intestine" EXACT []
-synonym: "transit amplifying cell of crypt of Lieberkuhn of large intestine" EXACT []
-synonym: "transit-amplifying cell of large intestine" EXACT []
+synonym: "colon transit amplifying cell" EXACT []
+synonym: "transient amplifying cell of colon" EXACT []
+synonym: "transient amplifying cell of crypt of Lieberkuhn of colon" EXACT []
+synonym: "transit amplifying cell of crypt of Lieberkuhn of colon" EXACT []
+synonym: "transit amplifying cell of large intestine" BROAD []
+synonym: "transit-amplifying cell of colon" EXACT []
 intersection_of: CL:0009010 ! transit amplifying cell
-intersection_of: BFO:0000050 UBERON:0001984
+intersection_of: BFO:0000050 UBERON:0013485
 relationship: RO:0001000 CL:0002250 ! intestinal crypt stem cell
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -21978,11 +21999,12 @@ created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0009025
-name: mesothelial cell of large intestine
-def: "A mesothelial cell that is part of the large intestine." [http://orcid.org/0000-0003-4183-8865]
+name: mesothelial cell of colon
+def: "A mesothelial cell that is part of the colon." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865]
 subset: location_grouping
+synonym: "mesothelial cell of large intestine" BROAD []
 intersection_of: CL:0000077 ! mesothelial cell
-intersection_of: BFO:0000050 UBERON:0000059
+intersection_of: BFO:0000050 UBERON:0001155
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -22118,6 +22140,312 @@ synonym: "macrophage of appendix vermiformis" EXACT []
 synonym: "macrophage of vermiform appendix" EXACT []
 intersection_of: CL:0000235 ! macrophage
 intersection_of: BFO:0000050 UBERON:0001154
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009037
+name: lymph node mantle zone B cell
+def: "A B lymphocyte that resides in the mantle zone of the lymph node germinal center. These are generally IgM and IgD positive activated B cells that form a 'corona' around the germinal center and are part of the establishment of a secondary lymphatic follicule." [http://orcid.org/0000-0003-4183-8865/, https://www.arppress.org/v/vspfiles/assets/images/Chapter1T25LymphNodes.pdf, PMID:8011279]
+synonym: "mantle zone B cell" BROAD []
+synonym: "mantle zone B cell of lymph node" EXACT []
+intersection_of: CL:0000236 ! B cell
+intersection_of: BFO:0000050 UBERON:0010420
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009038
+name: colon macrophage
+def: "A macrophage that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "macrophage of colon" EXACT []
+intersection_of: CL:0000235 ! macrophage
+intersection_of: BFO:0000050 UBERON:0001155
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009039
+name: colon goblet cell
+def: "A goblet cell that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "goblet cell of colon" EXACT []
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:0001155
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009040
+name: stromal cell of lamina propria of colon
+def: "A stromal cell found in the lamina propria of the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "stromal cell of colon lamina propria" EXACT []
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: BFO:0000050 UBERON:0007177
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009041
+name: tuft cell of colon
+def: "A tuft cell that is a part of the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "colon tuft cell" EXACT []
+intersection_of: CL:0019032 ! intestinal tuft cell
+intersection_of: BFO:0000050 UBERON:0001155
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009042
+name: enteroendocrine cell of colon
+def: "An enteroendocrine cell that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "colon enteroendocrine cell" EXACT []
+intersection_of: CL:0000164 ! enteroendocrine cell
+intersection_of: BFO:0000050 UBERON:0001155
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009043
+name: intestinal crypt stem cell of colon
+def: "An intestinal crypt stem cell that is located in the colon." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+intersection_of: CL:0002250 ! intestinal crypt stem cell
+intersection_of: BFO:0000050 UBERON:0001155
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009044
+name: lymphocyte of small intestine lamina propria
+def: "A lymphocyte that resides in the lamina propria of the small intestine. Lamina propria leukocytes and intraepithelial lymphocytes are the effector compartments of the gut mucosal immune system. Lymphocytes circulate through gut associated lymphoid tissues until recruitment by intestinal antigens. They are involved in the gut immune response." [https://orcid.org/0000-0003-4183-8865, PMID:26551552]
+synonym: "gastrointestinal tract (lamina propria) lymphocyte of small intestine" EXACT []
+synonym: "gastrointestinal tract small intestine (lamina propria) leukocyte" BROAD []
+synonym: "lamina propria lymphocyte of small intestine" EXACT []
+synonym: "small intestine lamina propria leukocyte" BROAD []
+synonym: "small intestine lamina propria leukocyte (LPL)" BROAD []
+synonym: "small intestine lamina propria lymphocyte" EXACT []
+intersection_of: CL:0000542 ! lymphocyte
+intersection_of: BFO:0000050 UBERON:0001238
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009045
+name: B cell of medullary sinus of lymph node
+def: "A B cell found in the lymph node medullary sinus." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+intersection_of: CL:0000236 ! B cell
+intersection_of: BFO:0000050 UBERON:0009744
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009046
+name: T cell of medullary sinus of lymph node
+def: "A T cell found in the lymph node medullary sinus." [http://orcid.org/0000-0003-4183-8865]
+intersection_of: CL:0000084 ! T cell
+intersection_of: BFO:0000050 UBERON:0009744
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009047
+name: macrophage of medullary sinus of lymph node
+def: "A macrophage found in the medullary sinus of the lymph node." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "lymph node medullary sinus macrophage" EXACT []
+synonym: "medullary sinus macrophage" BROAD []
+intersection_of: CL:0000235 ! macrophage
+intersection_of: BFO:0000050 UBERON:0009744
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009048
+name: anorectum macrophage
+def: "A macrophage that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "macrophage of anorectum" EXACT []
+intersection_of: CL:0000235 ! macrophage
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009049
+name: smooth muscle cell of high endothelial venule of lymph node
+def: "A layer of smooth muscle cells that forms the outer layer of the high endothelial venule of lymph node and pumps to allow flow of lymph fluid carrying lymphocytes." [http://orcid.org/0000-0003-4183-8865, PMID:27881983]
+synonym: "high endothelial venule of lymph node smooth muscle cell" EXACT []
+synonym: "high endothelial venule smooth muscle cell" BROAD []
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:8410038
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009050
+name: B cell of anorectum
+def: "A B cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+intersection_of: CL:0000236 ! B cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009051
+name: T cell of anorectum
+def: "A T cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+intersection_of: CL:0000084 ! T cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009052
+name: smooth muscle cell of anorectum
+def: "A smooth muscle cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum smooth muscle cell" EXACT []
+intersection_of: CL:0000192 ! smooth muscle cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009053
+name: stromal cell of anorectum lamina propria
+def: "A stromal cell found in the lamina propria of the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: BFO:0000050 UBERON:0011189
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009054
+name: microfold cell of epithelium proper of anorectum
+def: "A microfold cell (M cell) that is part of the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "M cell of anorectum" EXACT []
+intersection_of: CL:0000682 ! M cell of gut
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009055
+name: paneth cell of anorectum
+def: "A paneth cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum paneth cell" EXACT []
+intersection_of: CL:0000510 ! paneth cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009056
+name: transit amplifying cell of anorectum
+def: "A transit amplifying cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum transit amplifying cell" EXACT []
+intersection_of: CL:0009010 ! transit amplifying cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009057
+name: anorectum goblet cell
+def: "A goblet cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "goblet cell of anorectum" EXACT []
+intersection_of: CL:0000160 ! goblet cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009058
+name: enterocyte of anorectum
+def: "An enterocyte that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum enterocyte" EXACT []
+intersection_of: CL:0000584 ! enterocyte
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009059
+name: plasma cell of medullary sinus of lymph node
+def: "A plasma cell that is located in the medullary sinus of the lymph node." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "medullary plasma cell" BROAD []
+synonym: "medullary sinus plasma cell" BROAD []
+synonym: "plasma cell of medullary sinus" BROAD []
+intersection_of: CL:0000786 ! plasma cell
+intersection_of: BFO:0000050 UBERON:0009744
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009060
+name: marginal zone B cell of lymph node
+def: "A mature B cell located in the marginal zone of the lymph node." [http://orcid.org/0000-0003-4183-8865, WikipediaVersioned:Marginal_zone_B-cell&oldid=1032071222]
+subset: location_grouping
+synonym: "lymph node marginal zone B cell" EXACT []
+synonym: "marginal zone B cell" BROAD []
+intersection_of: CL:0000785 ! mature B cell
+intersection_of: BFO:0000050 UBERON:8410065
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009061
+name: intestinal crypt stem cell of anorectum
+def: "An intestinal crypt stem cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum intestinal crypt stem cell" EXACT []
+intersection_of: CL:0002250 ! intestinal crypt stem cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009062
+name: germinal center T cell
+def: "A specialized type of CD4 positive T cell, the follicular helper T cell (TFH cell), that upregulates CXCR5 expression to enable its follicular localization. These specialised T cells reside in the germinal center of the lymph node." [http://orcid.org/0000-0003-4183-8865, PMID:21739669]
+subset: location_grouping
+synonym: "lymph node germinal center T follicular helper cell" EXACT []
+synonym: "T follicular helper cell of germinal center of lymph node" EXACT []
+synonym: "T follicular helper cell of lymph node germinal center" EXACT []
+intersection_of: CL:0002038 ! T follicular helper cell
+intersection_of: BFO:0000050 UBERON:0009039
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009063
+name: enteroendocrine cell of anorectum
+def: "An enteroendocrine cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum enteroendocrine cell" EXACT []
+intersection_of: CL:0000164 ! enteroendocrine cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009064
+name: lymph node paracortex T cell
+def: "A T cell located in the lymph node paracortex, where macrophages and dendritic cells present antigenic peptides to these naïve T cells, stimulating them to become activated helper T cells or cytotoxic T lymphocytes." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
+synonym: "paracortex T cell" BROAD []
+synonym: "paracortical T cell" BROAD []
+synonym: "T cell of lymph node paracortex" EXACT []
+intersection_of: CL:0000084 ! T cell
+intersection_of: BFO:0000050 UBERON:8410066
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009065
+name: tuft cell of anorectum
+def: "An intestinal tuft cell that is located in the anorectum." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anorectum tuft cell" EXACT []
+intersection_of: CL:0019032 ! intestinal tuft cell
+intersection_of: BFO:0000050 UBERON:8410050
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009066
+name: stratified squamous epithelial cell of anal canal
+def: "A stratified squamous epithelial cell that is part of the anal canal." [http://orcid.org/0000-0003-3440-1876]
+subset: location_grouping
+synonym: "anal canal stratified squamous epithelial cell" EXACT []
+intersection_of: CL:0000240 ! stratified squamous epithelial cell
+intersection_of: BFO:0000050 UBERON:0000159
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -22296,12 +22624,15 @@ is_a: CL:0011001 ! spinal cord motor neuron
 
 [Term]
 id: CL:0011003
-name: magnocellular neurosecretory cell (duplicate class)
-def: "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that secretes the hormones oxytocin and vasopressin." [GOC:nv, MP:0009467]
+name: magnocellular neurosecretory cell
+def: "A neurosecretory neuron residing mainly in the hypothalamic supraoptic and paraventricular nuclei and in a number of smaller accessory cell groups between these two nuclei, that is capable of secreting the hormones oxytocin or vasopressin, and sometimes both, into the systemic circulation." [GOC:nv, MP:0009467, PMID:10711808]
 synonym: "magnocellular neuron" EXACT []
+xref: ILX:0107463
 is_a: CL:0000381 ! neurosecretory neuron
-relationship: BFO:0000050 UBERON:0001930
-relationship: BFO:0000050 UBERON:0006568
+is_a: CL:0000540 ! neuron
+relationship: RO:0002100 UBERON:0001898
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:0011004
@@ -22565,12 +22896,13 @@ intersection_of: RO:0002215 GO:0061534
 
 [Term]
 id: CL:0011107
-name: Muller cell
-def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
+name: obsolete Muller cell
+def: "OBSOLETE: Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
+comment: Term was duplicated, use CL:0000636 instead
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
-is_a: CL:0000681 ! radial glial cell
-relationship: BFO:0000050 UBERON:0000966
+is_obsolete: true
+replaced_by: CL:0000636
 
 [Term]
 id: CL:0011108
@@ -22610,14 +22942,16 @@ intersection_of: RO:0002215 GO:0032274
 
 [Term]
 id: CL:0011112
-name: magnocellular neurosecretory cell
-def: "Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [GOC:NV, PMID:10711808]
-is_a: CL:0000540 ! neuron
+name: obsolete magnocellular neurosecretory cell
+def: "OBSOLETE: Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [GOC:NV, PMID:10711808]
+comment: Duplicated term, please see CL:0011003 instead
+is_obsolete: true
+replaced_by: CL:0011003
 
 [Term]
 id: CL:0011113
 name: spiral ganglion neuron
-def: "Neuron found in the spriral ganglion." [GOC:NV]
+def: "Neuron found in the spiral ganglion." [GOC:NV]
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002100 UBERON:0000395
@@ -23427,7 +23761,7 @@ relationship: BFO:0000050 UBERON:0001278
 id: CL:1000321
 name: large intestine crypt goblet cell
 namespace: cell
-def: "A goblet cell that is part of the epithelium of crypt of lieberkuhn of large intestine." [GOC:tfm]
+def: "A goblet cell that is part of the epithelium of crypt of Lieberkuhn of large intestine." [GOC:tfm]
 xref: FMA:263056
 
 [Term]
@@ -23583,7 +23917,7 @@ intersection_of: BFO:0000050 UBERON:0001212
 id: CL:1000338
 name: enterocyte of epithelium of crypt of Lieberkuhn of small intestine
 namespace: cell
-def: "An enterocyte that is part of the epithelium of crypt of lieberkuhn of small intestine." [GOC:tfm]
+def: "An enterocyte that is part of the epithelium of crypt of Lieberkuhn of small intestine." [GOC:tfm]
 xref: FMA:263094
 is_a: CL:1000334 ! enterocyte of epithelium of small intestine
 relationship: BFO:0000050 UBERON:0001983
@@ -23644,7 +23978,7 @@ is_a: CL:1000343 ! paneth cell of epithelium of small intestine
 id: CL:1000345
 name: paneth cell of epithelium of crypt of Lieberkuhn of small intestine
 namespace: cell
-def: "A Paneth cell that is part of the epithelium of crypt of lieberkuhn of small intestine." [GOC:tfm]
+def: "A paneth cell that is part of the epithelium of crypt of Lieberkuhn of small intestine." [GOC:tfm]
 xref: FMA:263108
 is_a: CL:1000343 ! paneth cell of epithelium of small intestine
 relationship: BFO:0000050 UBERON:0001983
@@ -27120,7 +27454,6 @@ id: CL:2000060
 name: placental villous trophoblast
 namespace: cell
 def: "A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua." [PMID:31049600]
-comment: http://www.sciencellonline.com/site/productInformation.php?keyword=7120
 comment: Same as synctial trophoblast?
 synonym: "vCTB" EXACT [PMID:31049600]
 synonym: "villous cytotrophoblast" EXACT []
@@ -27128,6 +27461,7 @@ xref: BTO:0006119
 xref: BTO:0006208
 intersection_of: CL:0000351 ! trophoblast cell
 intersection_of: BFO:0000050 UBERON:0010005
+property_value: seeAlso http://www.sciencellonline.com/site/productInformation.php?keyword=7120 xsd:string
 created_by: TermGenie
 creation_date: 2014-10-07T17:48:27Z
 
@@ -27497,7 +27831,7 @@ creation_date: 2015-05-26T18:58:34Z
 
 [Term]
 id: CL:2000096
-name: reticular layer of dermis fibroblast
+name: fibroblast of the reticular layer of dermis
 namespace: cell
 def: "Any fibroblast that is part of a reticular layer of dermis." [GOC:TermGenie]
 intersection_of: CL:0000057 ! fibroblast
@@ -27683,8 +28017,7 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 id: CL:4023010
 name: alpha7 GABAergic cortical interneuron (Mus musculus)
 def: "A GABAergic cortical interneuron that is strongly labelled for α7 nAChRs. These cells have soma found in L1 and have multipolar dendrites with vertically descending axonal collaterals that project deep into the column, usually branching and terminating in L5A." [PMID:30413647, PMID:33184512]
-comment: A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron. {xref="DOI:10.1101/2020.10.19.343129"}
-comment: Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing. {xref="PMID:33184512", xref="PMID:30413647"}
+comment: Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like firing properties, with active depolarizing hump at near-threshold membrane potentials, and  larger hyperpolarization sag, stronger burst, and rebound firing. A7 cells have a transcriptomics signature that looks like Lamp5 GABAergic interneuron. {xref="PMID:33184512", xref="PMID:30413647", xref="DOI:10.1101/2020.10.19.343129"}
 subset: BDS_subset
 synonym: "A7 cell (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
@@ -27796,13 +28129,25 @@ name: L5/6 CCK, Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK Vip (Mus)" EXACT []
-is_a: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
-relationship: RO:0002100 UBERON:0000956
-relationship: RO:0002162 NCBITaxon:10090
-relationship: RO:0002215 GO:0061534
-relationship: RO:0002292 PR:P09240
-relationship: RO:0002292 PR:P32648
+intersection_of: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
+intersection_of: RO:0002292 PR:P32648
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023020
+name: dynamic gamma motor neuron
+def: "A gamma motor neuron that innervates dynamic nuclear bag fibers (bag1 fibers) and enhances the sensitivities of Ia sensory neurons. They alter muscle spindle sensitivity and increases its discharge in response to velocity of muscle length (rather than just magnitude)." [PMID:13933877, PMID:139469, WikipediaVersion:Gamma_motor_neuron&oldid=906640465]
+is_a: CL:0008037 ! gamma motor neuron
+relationship: RO:0002120 CL:4023005 ! dynamic nuclear bag fiber
+created_by: http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023021
+name: static gamma motor neuron
+def: "A gamma motor neuron that innervates static nuclear bag fibers (bag2 fibers) and increases their firing, in response to an increase in the magnitude of change in length, and controls the static sensitivity of the stretch reflex." [PMID:139469] {comment="WikipediaVersion:Gamma_motor_neuron&oldid=906640465", comment="PMID:13933877"}
+is_a: CL:0008037 ! gamma motor neuron
+relationship: RO:0002120 CL:4023006 ! static nuclear bag fiber
+created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023022
@@ -27965,11 +28310,12 @@ id: CL:4023041
 name: L5 extratelencephalic projecting glutamatergic cortical neuron
 def: "A glutamatergic neuron, with a soma found in the deeper portion of L5, that has long-range axonal projections including deep subcortical targets outside of the telencephalon and, in some cases, the spinal cord. While the L5 ET neuron projections are not limited to ET targets, they are clearly differentiated from the neuron subclasses whose projections are constrained to intratelencephalic (IT) targets.  L5 ET neurons are generally the largest excitatory cortical neurons, typically having a thick apical dendrite with a prominent dendritic tuft in layer 1 and displaying burst-firing physiological characteristics." [DOI:10.1101/2020.10.19.343129]
 subset: BDS_subset
-synonym: "burst-firing layer 5 neuron" EXACT []
-synonym: "L5b neuron" EXACT []
-synonym: "pyramidal tract (PT) neuron" EXACT []
-synonym: "subcerebral projection (SCPN) neuron" EXACT []
-synonym: "thick-tufted layer 5 pyramidal neuron" EXACT []
+synonym: "burst-firing layer 5 neuron" EXACT [DOI:10.3389/fncel.2011.00001]
+synonym: "L5b neuron" BROAD [DOI:10.1016/j.neuron.2011.07.029]
+synonym: "pyramidal tract (PT) neuron" NARROW [DOI:10.1038/nrn3469]
+synonym: "Pyramidal tract-like (PT-l)" EXACT [DOI:10.1016/j.cell.2019.09.023] {comment="pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord."}
+synonym: "subcerebral projection (SCPN) neuron" BROAD [DOI:10.1016/j.neuron.2005.08.030]
+synonym: "thick-tufted layer 5 (TTL5) pyramidal neuron" EXACT [DOI:10.3389/fncel.2015.00233]
 is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
 relationship: RO:0000053 PATO:0070015
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
@@ -27989,7 +28335,7 @@ id: CL:4023043
 name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
 def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex." [DOI:10.1101/2020.10.19.343129, PMID:31209381]
 subset: BDS_subset
-synonym: "L5/6 NP" EXACT []
+synonym: "L5/6 NP MOp (Mus)" EXACT []
 xref: ILX:0770161
 is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 relationship: RO:0002100 UBERON:0001384
@@ -28115,7 +28461,7 @@ id: CL:4023054
 name: mesothelial fibroblast
 def: "A mesothelial cell that has undergone mesothelial-to-mesenchymal transition (MMT) to become a fibroblast cell." [PMID:26106328]
 is_a: CL:0000057 ! fibroblast
-is_a: CL:0000077 ! mesothelial cell
+relationship: RO:0002202 CL:0000077 ! mesothelial cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28231,8 +28577,8 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 [Term]
 id: CL:4023077
 name: bitufted neuron
+def: "A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons, bitufted neurons have branching that occur close to the soma." [PMID:18568015]
 subset: BDS_subset
-xref: A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons\, bitufted neurons have branching that occur close to the soma. {xref="PMID:18568015"}
 xref: ILX:0777212 {http://purl.obolibrary.org/obo/IAO_0000116="Interlex cross reference refers specifically to Markram 2015 rat bitufted cell."}
 intersection_of: CL:0000099 ! interneuron
 intersection_of: RO:0000053 PATO:0070012
@@ -28365,6 +28711,162 @@ def: "A pyramidal neuron which lacks a clear tuft formation but extends to large
 subset: BDS_subset
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: RO:0000053 PATO:0070019
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023097
+name: arachnoid barrier cell
+def: "A mesothelial fibroblast of the arachnoid barrier layer. Arachnoid barrier cells make up the tight-junctioned layer in the leptomeninx that functions as the physiologic barrier between the cerebrospinal fluid in the subarachnoid space and the fenestrated capillaries in the dura." [PMID:23298861]
+synonym: "AB cell" EXACT [PMID:23298861]
+synonym: "ABC" EXACT [PMID:30096314]
+is_a: CL:4023054 ! mesothelial fibroblast
+relationship: BFO:0000050 UBERON:0000437
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023098
+name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L2/3 IT MOp (human)" EXACT []
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9606
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023099
+name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L5 IT MOp (human)" EXACT []
+xref: ILX:0770157
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9606
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023100
+name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L6 IT MOp (human)" EXACT []
+xref: ILX:0770158
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9606
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023101
+name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L5/6 NP MOp (human)" EXACT []
+xref: ILX:0770161
+is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9606
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023102
+name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L5/6 NP MOp (marmoset)" EXACT []
+xref: ILX:0770161
+is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9483
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023103
+name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L2/3 IT MOp (marmoset)" EXACT []
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9483
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023104
+name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L5 IT MOp (marmoset)" EXACT []
+xref: ILX:0770157
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9483
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023105
+name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "L6 IT MOp (marmoset)" EXACT []
+xref: ILX:0770158
+is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+relationship: RO:0002100 UBERON:0001384
+relationship: RO:0002162 NCBITaxon:9483
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023106
+name: meis2 expressing cortical GABAergic cell (Callithrix jacchus)
+def: "A mouse GABAergic cell located in the marmoset cerebral cortex that expresses meis2." [DOI:10.1101/2020.03.31.016972]
+subset: BDS_subset
+synonym: "Meis2 (Marmoset)" EXACT []
+is_a: CL:0000617 ! GABAergic neuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:9483
+relationship: RO:0002292 PR:000010317
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023107
+name: reticulospinal neuron
+def: "A neuron with soma location in the reticular formation with axons that extend into the spinal cord such. Reticulospinal neuron activity can lead to a variety of motor behaviors." [PMID:29720934]
+synonym: "RSN" EXACT [PMID:29720934]
+intersection_of: CL:0000540 ! neuron
+intersection_of: RO:0002100 UBERON:0002275
+intersection_of: RO:0013001 UBERON:0002240
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023108
+name: oxytocin-secreting magnocellular cell
+def: "A magnocellular neurosecretory cell that is capable of producing and secreting oxytocin." [WikipediaVersioned:Magnocellular_neurosecretory_cell&oldid=1021059931]
+intersection_of: CL:0011003 ! magnocellular neurosecretory cell
+intersection_of: RO:0002215 GO:0036162
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023109
+name: vasopressin-secreting magnocellular cell
+def: "A magnocellular neurosecretory cell that is capable of producing and secreting vasopressin." [WikipediaVersioned:Magnocellular_neurosecretory_cell&oldid=1021059931]
+intersection_of: CL:0011003 ! magnocellular neurosecretory cell
+intersection_of: RO:0002215 GO:0030103
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023118
+name: L5/6 non-Martinotti morphology sst expressing GABAergic cortical internueron (Mus musculus)
+def: "A sst GABAergic interneuron does not have Martinotti morphology with a soma found in L5/6 of the cerebral cortex." [PMID:27477017]
+comment: L5/6 non-Martinotti SST cells have strongly facilitating excitatory inputs and moderately depressing outputs. They have faster action potential than Martinotti morphology SST cells and slightly slower than PV basket cells. {xref="PMID:27477017"}
+subset: BDS_subset
+synonym: "L5/6 non-Martinotti SST (Mus)" EXACT []
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002162 NCBITaxon:10090
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:P60041
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
