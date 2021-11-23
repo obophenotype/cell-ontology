@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2021-09-09
+data-version: releases/2021-11-23
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -13656,8 +13656,8 @@ namespace: cell
 def: "An enteroendocrine cell of duodenum and jejunum that produces gastric inhibitory peptide." [GOC:tfm]
 synonym: "type K enteroendocrine cell" EXACT []
 xref: FMA:62942
-is_a: CL:0000164 ! enteroendocrine cell
 is_a: CL:0000167 ! peptide hormone secreting cell
+is_a: CL:0009006 ! enteroendocrine cell of small intestine
 created_by: tmeehan
 creation_date: 2010-09-10T03:51:47Z
 
@@ -13676,7 +13676,7 @@ creation_date: 2010-09-10T03:59:09Z
 id: CL:0002280
 name: type N enteroendocrine cell
 namespace: cell
-def: "An enteroendorcine cell found in the ileum and jejunum that produces neurotensin." [GOC:tfm]
+def: "An enteroendocrine cell found in the ileum and jejunum that produces neurotensin." [GOC:tfm]
 synonym: "N cell" EXACT []
 xref: FMA:62943
 is_a: CL:0000164 ! enteroendocrine cell
@@ -13722,7 +13722,7 @@ creation_date: 2010-09-14T11:04:02Z
 id: CL:0002284
 name: type X enteroendocrine cell
 namespace: cell
-def: "An enteroendorcine cell found in the fundus and pylorus, this cell type has dense round secretory granules that contain ghrelin." [GOC:tfm, PMID:20616512]
+def: "An enteroendocrine cell found in the fundus and pylorus; this cell type has dense round secretory granules that contain ghrelin." [GOC:tfm, PMID:20616512]
 synonym: "A-like" EXACT []
 synonym: "X/A-like" EXACT []
 xref: FMA:63209
@@ -14482,10 +14482,11 @@ creation_date: 2010-09-21T04:33:05Z
 id: CL:0002351
 name: progenitor cell of endocrine pancreas
 namespace: cell
-def: "A multi-fate stem cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 and Isl-1." [GOC:tfm, PMID:20025937, PMID:20217494]
+def: "A progenitor cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 and Isl-1." [GOC:tfm, PMID:20025937, PMID:20217494, PMID:22728667]
 synonym: "pancreatic endocrine progenitor" EXACT []
 synonym: "pancreatic islet progenitor cell" EXACT []
 is_a: CL:0000048 ! multi fate stem cell
+is_a: CL:0011026 ! progenitor cell
 created_by: tmeehan
 creation_date: 2010-09-21T04:41:06Z
 
@@ -15571,7 +15572,7 @@ creation_date: 2010-11-22T01:10:28Z
 
 [Term]
 id: CL:0002455
-name: CD8_alpha-negative plasmactyoid dendritic cell
+name: CD8_alpha-negative plasmacytoid dendritic cell
 namespace: cell
 def: "A CD11c-low plasmacytoid dendritic cell that is CD8alpha-negative and CD4-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "DC.pDC.8-" EXACT []
@@ -15581,7 +15582,7 @@ creation_date: 2010-11-22T01:27:37Z
 
 [Term]
 id: CL:0002456
-name: CD8_alpha-positive plasmactyoid dendritic cell
+name: CD8_alpha-positive plasmacytoid dendritic cell
 namespace: cell
 def: "A CD11c-low plasmacytoid dendritic cell that is CD8alpha-positive and CD4-positive." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "DC.pDC.8+" EXACT []
@@ -17989,10 +17990,11 @@ is_a: CL:0000167 ! peptide hormone secreting cell
 id: CL:0005019
 name: pancreatic epsilon cell
 namespace: cell
-def: "Ghrelin secreting cells found in the exocrine pancreas." [PMID:14970313]
+def: "Ghrelin secreting cells found in the endocrine pancreas." [PMID:14970313]
 comment: In mammals the endocrine pancreas is called the Islets of Langerhans.
 synonym: "pancreatic E cell" EXACT []
 is_a: CL:0005018 ! ghrelin secreting cell
+is_a: CL:0008024 ! pancreatic endocrine cell
 
 [Term]
 id: CL:0005020
@@ -18400,7 +18402,6 @@ name: inhibitory motor neuron
 def: "A motor neuron that is capable of directly inhibiting muscle contraction." []
 comment: In vertebrates, all motor neurons are excitatory, but various types of inhibitory motor neurons exist in invertebrates.
 is_a: CL:0000100 ! motor neuron
-property_value: RO:0002161 NCBITaxon:7742
 
 [Term]
 id: CL:0008016
@@ -18626,6 +18627,7 @@ name: Betz cell
 def: "A giant pyramidal neuron with a soma in layer Vb of the primary motor cortex that sends its axons down the spinal cord via the corticospinal tract, either synapsing directly with alpha motor neurons, or targeting interneurons in the spinal cord. In humans, Betz cells are the largest known in the central nervous system." [DOI:10.1101/2020.03.31.016972, Wikipedia:Betz_cell&oldid=977472330]
 synonym: "pyramidal cell of Betz" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
+is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
 property_value: depicted:by https://en.wikipedia.org/w/index.php?title=Betz_cell&oldid=977472330#/media/File:GolgiStainedPyramidalCell.jpg xsd:string
 property_value: RO:0002175 NCBITaxon:9443
 created_by: dos
@@ -18727,6 +18729,7 @@ def: "Transit-amplifying cells (TACs) are an undifferentiated population in tran
 synonym: "TAC" RELATED []
 synonym: "TACs" RELATED []
 synonym: "transient amplifying cell" EXACT []
+synonym: "transit amplifying progenitor cell" EXACT [PMID:30827895]
 synonym: "transit-amplifying cell" EXACT []
 is_a: CL:0000003 ! native cell
 relationship: develops_from CL:0000034 ! stem cell
@@ -18894,7 +18897,7 @@ subset: location_grouping
 synonym: "appendix enterocyte" EXACT []
 synonym: "enterocyte of appendix vermiformis" EXACT []
 synonym: "enterocyte of vermiform appendix" EXACT []
-is_a: CL:1000347 ! vacuolar absorptive cell of epithelium of colon
+is_a: CL:1000347 ! enterocyte of colon
 is_a: CL:1000405 ! epithelial cell of appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -19018,6 +19021,7 @@ created_by: http://orcid.org/0000-0002-2825-0621
 id: CL:0009037
 name: lymph node mantle zone B cell
 def: "A B lymphocyte that resides in the mantle zone of the lymph node germinal center. These are generally IgM and IgD positive activated B cells that form a 'corona' around the germinal center and are part of the establishment of a secondary lymphatic follicule." [http://orcid.org/0000-0003-4183-8865/, https://www.arppress.org/v/vspfiles/assets/images/Chapter1T25LymphNodes.pdf, PMID:8011279]
+subset: location_grouping
 synonym: "mantle zone B cell" BROAD []
 synonym: "mantle zone B cell of lymph node" EXACT []
 is_a: CL:0000236 ! B cell
@@ -19084,6 +19088,7 @@ created_by: http://orcid.org/0000-0002-2825-0621
 id: CL:0009044
 name: lymphocyte of small intestine lamina propria
 def: "A lymphocyte that resides in the lamina propria of the small intestine. Lamina propria leukocytes and intraepithelial lymphocytes are the effector compartments of the gut mucosal immune system. Lymphocytes circulate through gut associated lymphoid tissues until recruitment by intestinal antigens. They are involved in the gut immune response." [https://orcid.org/0000-0003-4183-8865, PMID:26551552]
+subset: location_grouping
 synonym: "gastrointestinal tract (lamina propria) lymphocyte of small intestine" EXACT []
 synonym: "gastrointestinal tract small intestine (lamina propria) leukocyte" BROAD []
 synonym: "lamina propria lymphocyte of small intestine" EXACT []
@@ -19105,6 +19110,7 @@ created_by: http://orcid.org/0000-0002-2825-0621
 id: CL:0009046
 name: T cell of medullary sinus of lymph node
 def: "A T cell found in the lymph node medullary sinus." [http://orcid.org/0000-0003-4183-8865]
+subset: location_grouping
 is_a: CL:0000084 ! T cell
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -19131,6 +19137,7 @@ created_by: http://orcid.org/0000-0002-2825-0621
 id: CL:0009049
 name: smooth muscle cell of high endothelial venule of lymph node
 def: "A layer of smooth muscle cells that forms the outer layer of the high endothelial venule of lymph node and pumps to allow flow of lymph fluid carrying lymphocytes." [http://orcid.org/0000-0003-4183-8865, PMID:27881983]
+subset: location_grouping
 synonym: "high endothelial venule of lymph node smooth muscle cell" EXACT []
 synonym: "high endothelial venule smooth muscle cell" BROAD []
 is_a: CL:0019018 ! blood vessel smooth muscle cell
@@ -19296,6 +19303,126 @@ subset: location_grouping
 synonym: "anal canal stratified squamous epithelial cell" EXACT []
 is_a: CL:0000240 ! stratified squamous epithelial cell
 is_a: CL:0002253 ! epithelial cell of large intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009067
+name: vacuolated fetal-type enterocyte
+def: "An enterocyte found in the small intestine of newborn mammals and characterized by the presence of an apical canalicular system (ACS) leading to production of large vacuoles, important for colostral macromolecule uptake. After birth, the vacuolated fetal-type enterocytes are replaced with enterocytes lacking an ACS." [http://orcid.org/0000-0002-7073-9172, PMID:17901585]
+synonym: "vacuolated enterocyte" BROAD []
+is_a: CL:0000584 ! enterocyte
+is_a: CL:0002254 ! epithelial cell of small intestine
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009068
+name: CD8aa(I) thymocyte
+def: "An unconventional T lymphocyte population within the thymic medulla that is potentially a thymic resident population." [PMID:32079746]
+is_a: CL:0000893 ! thymocyte
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009069
+name: CD8aa(II) thymocyte
+def: "An unconventional T lymphocyte population within the thymic medulla that expresses both alpha/beta and gamma/delta T cell signatures." [PMID:32079746]
+is_a: CL:0000893 ! thymocyte
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009070
+name: corticomedullary thymic epithelial cell
+def: "A thymic epithelial cell located at the corticomedullary junction." [PMID:32079746, PMID:33597545]
+is_a: CL:0002293 ! epithelial cell of thymus
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009071
+name: medullary thymic epithelial cell type 1
+def: "A thymic medullary epithelial cell considered to be a pre-AIRE mTEC population." [PMID:24084687, PMID:32079746, PMID:33597545]
+is_a: CL:0002365 ! medullary thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009072
+name: medullary thymic epithelial cell type 2
+def: "A thymic medullary epithelial cell that expresses AIRE or other canonical markers of mature mTECs like Fezf2." [PMID:17067941, PMID:24084687, PMID:32079746, PMID:33597545]
+is_a: CL:0002365 ! medullary thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009073
+name: medullary thymic epithelial cell type 3
+def: "A thymic medullary epithelial cell considered to be a post-AIRE cell. This group of AIRE-mTECs is heterogeneous and also includes mTECs within Hassall's Corpuscles." [PMID:16121185, PMID:17067941, PMID:20861360, PMID:24084687, PMID:32079746, PMID:33597545]
+is_a: CL:0002365 ! medullary thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009074
+name: medullary thymic epithelial cell type 4
+def: "A thymic medullary epithelial cell that expresses typical tuft cell markers instead of classical mTEC or cTEC markers. This population has a bulbous-like structure." [PMID:30022164, PMID:32079746]
+synonym: "thymic tuft cell" BROAD []
+is_a: CL:0002365 ! medullary thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009075
+name: myo-medullary thymic epithelial cell
+def: "A thymic medullary epithelial cell that expresses muscle-specific biomarkers." [PMID:32079746, PMID:33597545]
+is_a: CL:0002365 ! medullary thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009076
+name: neuro-medullary thymic epithelial cell
+def: "A thymic medullary epithelial cell that expresses neuroendocrine biomarkers." [PMID:32079746, PMID:33597545]
+is_a: CL:0002365 ! medullary thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009077
+name: subcapsular thymic epithelial cell
+def: "A thymic epithelial cell located within the subcapsular region of the thymus." [PMID:6209968]
+is_a: CL:0002364 ! cortical thymic epithelial cell
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009078
+name: thymic fibroblast type 1
+def: "A fibroblast located in the thymic capsule." [PMID:32079746]
+synonym: "thymic capsular fibroblast" EXACT []
+is_a: CL:0000057 ! fibroblast
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009079
+name: thymic fibroblast type 2
+def: "A fibroblast located between thymic lobules." [PMID:32079746]
+synonym: "thymic interlobular fibroblast" EXACT []
+is_a: CL:0000057 ! fibroblast
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009080
+name: tuft cell of small intestine
+def: "A tuft cell located in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865]
+synonym: "brush cell of epithelium of small intestine" EXACT []
+synonym: "brush cell of epithelium proper of small intestine" EXACT []
+synonym: "brush cell of small intestine" EXACT []
+synonym: "tuft cell of epithelium of small intestine" EXACT []
+is_a: CL:0002254 ! epithelial cell of small intestine
+is_a: CL:0019032 ! intestinal tuft cell
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
@@ -19664,6 +19791,24 @@ synonym: "A neural-crest derived glial cell that supports the growth and surviva
 synonym: "OEC" EXACT []
 xref: BTO:0002771
 is_a: CL:0000125 ! glial cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011029
+name: cnidocyte
+def: "An explosive cell containing one giant secretory organelle called a cnidocyst (also known as a cnida (plural cnidae) or nematocyst) that contains a toxin responsible for the stings delivered by a cnidarian to other organisms. Cnidae are used to capture prey and as a defense against predators. The presence of cnidocytes defines the phylum Cnidaria (corals, sea anemones, hydrae, jellyfish, etc.)." [https://en.wikipedia.org/wiki/Cnidocyte, https://orcid.org/0000-0002-2825-0621]
+synonym: "cnidoblast" EXACT []
+synonym: "nematocyte" EXACT []
+is_a: CL:0000151 ! secretory cell
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011032
+name: lysosome-rich enterocyte
+def: "An enterocyte that possesses a large supranuclear vacuolar system that preferentially internalizes dietary protein via receptor-mediated and fluid-phase endocytosis for intracellular digestion and trans-cellular transport. In zebrafish these cells are located in the posterior region of the mid intestine throughout life. In mammals they are found in the ileum pre-weaning and later are replaced by mature enterocytes." [https://orcid.org/0000-0002-1009-339X, https://orcid.org/0000-0002-2244-7917, PMID:31474562]
+synonym: "LRE" EXACT []
+synonym: "vacuolated enterocyte" BROAD []
+is_a: CL:0000584 ! enterocyte
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -20697,20 +20842,21 @@ is_a: CL:1000343 ! paneth cell of epithelium of small intestine
 
 [Term]
 id: CL:1000346
-name: vacuolar absorptive cell of epithelium proper of large intestine
+name: enterocyte of epithelium proper of large intestine
 namespace: cell
 alt_id: CL:1000336
-def: "MERGED DEFINITION: TARGET DEFINITION: A columnar cell of the colon that is part of the epithelium proper of large intestine. SOURCE DEFINITION: An enterocyte that is part of the epithelium proper of large intestine." [GOC:tfm]
-synonym: "enterocyte of epithelium proper of large intestine" EXACT []
+def: "An enterocyte that is part of the epithelium proper of large intestine." [GOC:tfm]
+synonym: "vacuolar absorptive cell of epithelium proper of large intestine" NARROW []
 xref: FMA:263090
 xref: FMA:263112
 is_a: CL:0002071 ! enterocyte of epithelium of large intestine
 
 [Term]
 id: CL:1000347
-name: vacuolar absorptive cell of epithelium of colon
+name: enterocyte of colon
 namespace: cell
 def: "A columnar cell of the colon that is part of the colonic epithelium." [GOC:tfm]
+synonym: "vacuolar absorptive cell of epithelium of colon" NARROW []
 xref: FMA:263114
 is_a: CL:0002071 ! enterocyte of epithelium of large intestine
 is_a: CL:0011108 ! colon epithelial cell
@@ -23534,8 +23680,7 @@ name: primary motor cortex pyramidal cell
 namespace: cell
 def: "Any pyramidal cell that is part of a primary motor cortex." [GOC:TermGenie]
 comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
-is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:4023111 ! cerebral cortex pyramidal neuron
 created_by: TermGenie
 creation_date: 2014-10-06T17:39:04Z
 
@@ -24310,7 +24455,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 [Term]
 id: CL:4023027
 name: L5 T-Martinotti Sst GABAergic cortical interneuron (Mus musculus)
-def: "A Sst GABAergic cortical interneuron with a soma found in L5 and possesses 'T-shaped' martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
+def: "A Sst GABAergic cortical interneuron with a soma found in L5 and possesses 'T-shaped' Martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
 subset: BDS_subset
 synonym: "L5 T Martinotti SST (Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
@@ -24340,7 +24485,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 [Term]
 id: CL:4023031
 name: L4 Sst GABAergic cortical interneuron (Mus musculus)
-def: "A Sst GABAergic cortical interneuron with a soma found in lower L2/3 and upper 5, L4 Sst cells have martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP)." [PMID:33184512]
+def: "A Sst GABAergic cortical interneuron with a soma found in lower L2/3 and upper 5, L4 Sst cells have Martinotti morphology with ascending axons but denser local axons and sparser ‘fanning-out’ projections to L1. L4 Sst cells have smaller membrane time constant to calb2 (L2/3/5 Fan Martinotti Cell) and non-zero afterdepolarization (ADP)." [PMID:33184512]
 subset: BDS_subset
 synonym: "L4 SST (Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
@@ -24358,10 +24503,11 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023036
-name: Chandelier Pvalb GABAergic cortical interneuron (Mus musculus)
-def: "A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells have soma found in in upper L2/3, with some in deep L5. Chandelier PV cells exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." [PMID:27477017]
+name: Chandelier Pvalb GABAergic cortical interneuron
+def: "A Pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." [PMID:27477017]
+comment: In mice, Chandelier PV cells have soma found in in upper L2/3, with some in deep L5 and exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag. {xref="PMID:27477017"}
 subset: BDS_subset
-synonym: "Chandelier PV (Mus)" EXACT []
+synonym: "Chandelier PV" EXACT []
 xref: ILX:0107356
 is_a: CL:4023018 ! pvalb GABAergic cortical interneuron
 is_a: CL:4023083 ! chandelier cell
@@ -24397,9 +24543,8 @@ synonym: "pyramidal tract (PT) neuron" NARROW [DOI:10.1038/nrn3469]
 synonym: "Pyramidal tract-like (PT-l)" EXACT [DOI:10.1016/j.cell.2019.09.023] {comment="pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord."}
 synonym: "subcerebral projection (SCPN) neuron" BROAD [DOI:10.1016/j.neuron.2005.08.030]
 synonym: "thick-tufted layer 5 (TTL5) pyramidal neuron" EXACT [DOI:10.3389/fncel.2015.00233]
-is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0002609 ! neuron of cerebral cortex
 is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
+is_a: CL:4023111 ! cerebral cortex pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24413,19 +24558,21 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023043
-name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex
 def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex." [DOI:10.1101/2020.10.19.343129, PMID:31209381]
 subset: BDS_subset
-synonym: "L5/6 NP MOp (Mus)" EXACT []
+synonym: "L5/6 NP M1" EXACT []
+synonym: "L5/6 NP MOp" EXACT []
 xref: ILX:0770161
 is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023044
-name: non-medulla, extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: non-medulla, extratelencephalic-projecting glutamatergic neuron of the primary motor cortex
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that does not project to the medulla. Non-MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. Non-MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
+synonym: "non-MY ET M1" EXACT []
 synonym: "non-MY ET MOp (Mus)" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
@@ -24433,18 +24580,19 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023045
-name: medulla-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: medulla-projecting glutamatergic neuron of the primary motor cortex
 def: "An extratelencephalic-projecting glutamatergic neuron located in layer 5b of the primary motor cortex that projects to the medulla. MY ET cells are large, big-tufted cells with the apical dendrite often bifurcating close to the soma, suggesting they are corticospinal cells. MY ET cells have bigger hyperpolarization sag, lower input resistance, and smaller AP width, compared to L5 IT neurons." [DOI:10.1101/2020.10.19.343129, PMID:24137110, PMID:9236245]
 subset: BDS_subset
-synonym: "medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex (Mus musculus)" EXACT []
-synonym: "MY ET MOp (Mus)" EXACT []
+synonym: "medulla-projecting extratelencephalic-projecting glutamatergic neuron of the primary motor cortex" EXACT []
+synonym: "MY ET M1" EXACT []
+synonym: "MY ET MOp" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023046
-name: L6b subplate glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: L6b subplate glutamatergic neuron of the primary motor cortex
 def: "An excitatory glutamatergic neuron transcriptomically related to the CT subclass, with a soma preferentially located in the bottom of L6 of the primary motor cortex." [PMID:33184512]
 subset: BDS_subset
 is_a: CL:4023038 ! L6b glutamatergic cortical neuron
@@ -24452,39 +24600,43 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023047
-name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3." [DOI:10.1101/2020.10.19.343129]
 subset: BDS_subset
-synonym: "L2/3 IT MOp (Mus)" EXACT []
+synonym: "L2/3 IT M1" EXACT []
+synonym: "L2/3 IT MOp" EXACT []
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023048
-name: L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 def: "An intratelencephalic-projecting glutamatergic with a soma located in upper L5 of the primary motor cortex. These cells have thin untufted apical dendrites." [PMID:33184512]
 subset: BDS_subset
-synonym: "L4/5 IT MOp (Mus)" EXACT []
+synonym: "L4/5 IT M1" EXACT []
+synonym: "L4/5 IT MOp" EXACT []
 xref: ILX:0770174
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023049
-name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in L5 of the primary motor cortex." [PMID:33184512]
 subset: BDS_subset
-synonym: "L5 IT MOp (Mus)" EXACT []
+synonym: "L5 IT M1" EXACT []
+synonym: "L5 IT MOp" EXACT []
 xref: ILX:0770157
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023050
-name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted." [PMID:9236245]
 subset: BDS_subset
-synonym: "L6 IT MOp (Mus)" EXACT []
+synonym: "L6 IT M1" EXACT []
+synonym: "L6 IT MOp" EXACT []
 xref: ILX:0770158
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
@@ -24530,10 +24682,11 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023055
-name: corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+name: corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex
 def: "A corticothalamic-projecting glutamatergic neuron that is located in L6 and lower L5 of the primary motor cortex, with a pyramidal morphology and mostly untufted apical dendrites terminating in midcortical layers. CT VAL/VM (ventroanterior-ventrolateral complex/ventromedial nucleus) cells have a near tonic firing pattern and are distinguished from L6 IT neurons by a lower inter-spike interval adaptation index." [PMID:20556241, PMID:9236245]
 subset: BDS_subset
-synonym: "CT VAL/VM MOp (Mus)" EXACT []
+synonym: "CT VAL/VM M1" EXACT []
+synonym: "CT VAL/VM MOp" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
 is_a: CL:4023095 ! untufted pyramidal neuron
@@ -24558,8 +24711,8 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023065
-name: meis2 expressing cortical GABAergic cell (Mus musculus)
-def: "A mouse GABAergic cell located in the cerebral cortex that expresses meis2." [PMID:33372656]
+name: meis2 expressing cortical GABAergic cell
+def: "A GABAergic cell located in the cerebral cortex that expresses meis2." [PMID:33372656]
 subset: BDS_subset
 is_a: CL:0000617 ! GABAergic neuron
 is_a: CL:0010012 ! cerebral cortex neuron
@@ -24644,7 +24797,7 @@ name: stellate L6 intratelencephalic projecting glutamatergic neuron of the prim
 def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has stellate pyramidal morphology." [PMID:9236245]
 subset: BDS_subset
 synonym: "stellate L6 IT MOp (Mus)" EXACT []
-is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 is_a: CL:4023093 ! stellate pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24654,7 +24807,7 @@ name: inverted L6 intratelencephalic projecting glutamatergic neuron of the prim
 def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex that has inverted pyramidal morphology." [PMID:9236245]
 subset: BDS_subset
 synonym: "inverted L6 IT MOp (Mus)" EXACT []
-is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mus musculus)
+is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 is_a: CL:4023092 ! inverted pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24753,91 +24906,100 @@ property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-00
 
 [Term]
 id: CL:4023098
-name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
-def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "OBSOLETE An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023047 instead.
 synonym: "L2/3 IT MOp (human)" EXACT []
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023047
 
 [Term]
 id: CL:4023099
-name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
-def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "OBSOLETE. An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023049 instead.
 synonym: "L5 IT MOp (human)" EXACT []
 xref: ILX:0770157
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023049
 
 [Term]
 id: CL:4023100
-name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
-def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "OBSOLETE. An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023050 instead.
 synonym: "L6 IT MOp (human)" EXACT []
 xref: ILX:0770158
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023050
 
 [Term]
 id: CL:4023101
-name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
-def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Homo sapiens)
+def: "OBSOLETE. A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the human primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023043 instead.
 synonym: "L5/6 NP MOp (human)" EXACT []
 xref: ILX:0770161
-is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023043
 
 [Term]
 id: CL:4023102
-name: L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
-def: "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L5/6 near-projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "OBSOLETE. A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023043 instead.
 synonym: "L5/6 NP MOp (marmoset)" EXACT []
 xref: ILX:0770161
-is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023043
 
 [Term]
 id: CL:4023103
-name: L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
-def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "OBSOLETE. An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 2/3 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023047 instead.
 synonym: "L2/3 IT MOp (marmoset)" EXACT []
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023047
 
 [Term]
 id: CL:4023104
-name: L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
-def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "OBSOLETE An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 5 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023049 instead.
 synonym: "L5 IT MOp (marmoset)" EXACT []
 xref: ILX:0770157
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023049
 
 [Term]
 id: CL:4023105
-name: L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
-def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+name: obsolete L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Callithrix jacchus)
+def: "OBSOLETE. An intratelencephalic-projecting glutamatergic neuron with a soma found in layer 6 of the marmoset primary motor cortex." [DOI:10.1101/2020.03.31.016972]
+comment: Made terms species agnostic, use CL:4023050 instead.
 subset: BDS_subset
 synonym: "L6 IT MOp (marmoset)" EXACT []
 xref: ILX:0770158
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023050
 
 [Term]
 id: CL:4023106
-name: meis2 expressing cortical GABAergic cell (Callithrix jacchus)
-def: "A mouse GABAergic cell located in the marmoset cerebral cortex that expresses meis2." [DOI:10.1101/2020.03.31.016972]
-subset: BDS_subset
+name: obsolete meis2 expressing cortical GABAergic cell (Callithrix jacchus)
+def: "OBSOLETE. A mouse GABAergic cell located in the marmoset cerebral cortex that expresses meis2." [DOI:10.1101/2020.03.31.016972]
+comment: false
 synonym: "Meis2 (Marmoset)" EXACT []
-is_a: CL:0000617 ! GABAergic neuron
-is_a: CL:0010012 ! cerebral cortex neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: CL:4023065
 
 [Term]
 id: CL:4023107
@@ -24863,6 +25025,43 @@ is_a: CL:0011003 ! magnocellular neurosecretory cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023110
+name: amygdala pyramidal neuron
+def: "A pyramidal neuron with soma located in the amygdala." [PMID:1375860]
+is_a: CL:0000598 ! pyramidal neuron
+is_a: CL:0012001 ! neuron of the forebrain
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023111
+name: cerebral cortex pyramidal neuron
+def: "A pyramidal neuron with soma located in the cerebral cortex." [PMID:30715238]
+is_a: CL:0000598 ! pyramidal neuron
+is_a: CL:0002609 ! neuron of cerebral cortex
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023112
+name: vestibular afferent neuron
+def: "An afferent neuron of the vestibular system that innervate the base of the hair cell and increase or decrease their neural firing rate as the receptor cell is excited or inhibited." [PMID:2585041]
+is_a: CL:0000101 ! sensory neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023113
+name: bouton vestibular afferent neuron
+def: "A vestibular afferent neuron that makes bouton synapses to type II hair cells." [PMID:10706428]
+is_a: CL:4023112 ! vestibular afferent neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023114
+name: calyx vestibular afferent neuron
+def: "A vestibular afferent neuron which posseses a unique postsynaptic terminal, the calyx, which completely covers the basolateral walls of type I hair cells and receives input from multiple ribbon synapses." [PMID:25355208]
+is_a: CL:4023112 ! vestibular afferent neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023118
 name: L5/6 non-Martinotti morphology sst expressing GABAergic cortical internueron (Mus musculus)
 def: "A sst GABAergic interneuron does not have Martinotti morphology with a soma found in L5/6 of the cerebral cortex." [PMID:27477017]
@@ -24870,6 +25069,16 @@ comment: L5/6 non-Martinotti SST cells have strongly facilitating excitatory inp
 subset: BDS_subset
 synonym: "L5/6 non-Martinotti SST (Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023119
+name: displaced amacrine cell
+def: "A subpopulation of amacrine cell that migrate further than other amacrine cells, and come to lie basal to the inner plexiform layer (IPL) in the ganglion cell layer. Displaced amacrine cells still have their neurites extending apically into the IPL, and therefore exhibit an inverted polarity with respect to the other amacrine cells." [PMID:21557506, PMID:67960]
+comment: Displaced amacrine cells are a subset of Sox2 expressing amacrine cells. {xref="PMID:18719084"}
+synonym: "dACs" EXACT []
+synonym: "inverted amacrine cell" EXACT []
+is_a: CL:0000561 ! amacrine cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Typedef]
