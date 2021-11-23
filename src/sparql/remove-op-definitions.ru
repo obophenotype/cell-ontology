@@ -1,24 +1,19 @@
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX description: <http://purl.obolibrary.org/obo/IAO_0000115>
 PREFIX owl: <http://www.w3.org/2002/07/owl#>
-
-
+PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
 DELETE {
-  ?sub description: ?obj .
-  ?relax a owl:Axiom ;
-         owl:annotatedSource ?sub ;
-         owl:annotatedProperty description: ;
-         owl:annotatedTarget ?obj ;
-         ?a ?b .
+   ?term definition: ?def .
+   ?ax a owl:Axiom ;
+          owl:annotatedSource ?term ;
+          owl:annotatedProperty definition: ;
+   	 	  owl:annotatedTarget ?def .
 }
 WHERE {
-  {
-    ?sub description: ?obj .
-    ?relax a owl:Axiom ;
-           owl:annotatedSource ?sub ;
-           owl:annotatedProperty description: ;
-           owl:annotatedTarget ?obj ;
-           ?a ?b .
-    FILTER (ISIRI(?sub) && STRSTARTS(STR(?sub), "http://purl.obolibrary.org/obo/RO_"))
-  }
+    ?term definition: ?def .
+    OPTIONAL {
+    	?ax a owl:Axiom ;
+        owl:annotatedSource ?term ;
+        owl:annotatedProperty definition: ;
+   	 	  owl:annotatedTarget ?def .
+    }
+    FILTER (ISIRI(?term) && (STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/RO_") || STRSTARTS(STR(?term), "http://purl.obolibrary.org/obo/BFO_")))
 }
