@@ -68,12 +68,13 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # into existentials on roundtrip
 
 tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
-	$(ROBOT) merge --input $< \
+	$(ROBOT) merge --input $(SRC) \
 		reason --reasoner ELK \
 		relax \
 		remove --axioms equivalent \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		remove -T config/remove_annotations.txt --axioms annotation \
+		query --update ../sparql/remove-op-definitions.ru \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
