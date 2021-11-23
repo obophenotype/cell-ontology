@@ -2584,10 +2584,6 @@ Declaration(Class(obo:CL_4023103))
 Declaration(Class(obo:CL_4023104))
 Declaration(Class(obo:CL_4023105))
 Declaration(Class(obo:CL_4023106))
-
-Declaration(Class(obo:CL_4023115))
-Declaration(Class(obo:CL_4023116))
-
 Declaration(Class(obo:CL_4023107))
 Declaration(Class(obo:CL_4023108))
 Declaration(Class(obo:CL_4023109))
@@ -2596,6 +2592,8 @@ Declaration(Class(obo:CL_4023111))
 Declaration(Class(obo:CL_4023112))
 Declaration(Class(obo:CL_4023113))
 Declaration(Class(obo:CL_4023114))
+Declaration(Class(obo:CL_4023115))
+Declaration(Class(obo:CL_4023116))
 Declaration(Class(obo:CL_4023118))
 Declaration(Class(obo:CL_4023119))
 Declaration(Class(obo:CL_4023120))
@@ -17629,10 +17627,14 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_0002323 ob
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:11250738"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:19022771"^^xsd:string) obo:IAO_0000115 obo:CL_0002324 "A myoepithelial cell that surrounds milk-secreting luminal epithelial cells. This cell type contracts under the stimulation of oxytocin and is attached to the basement membrane by hemidesmosomes and to the adjacent luminal cells by desmosomes. This cell type expresses high level of keratin-14 and is estrogen receptor alpha negative."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_0002324 "tmeehan"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002324 "2010-09-20T11:42:14Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002324 "CALOHA:TS-2378"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002324 "FMA:67800"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:67800"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002324 "basal cell of lactiferous duct"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002324 "myoepithelial cell of lactiferous gland")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0002324 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002324 "myoepithelial cell of mammary gland"^^xsd:string)
+EquivalentClasses(obo:CL_0002324 ObjectIntersectionOf(obo:CL_0000185 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001911)))
 SubClassOf(obo:CL_0002324 obo:CL_0000185)
-SubClassOf(obo:CL_0002324 obo:CL_0002327)
 
 # Class: obo:CL_0002325 (mammary alveolar cell)
 
@@ -24975,16 +24977,14 @@ EquivalentClasses(obo:CL_1000415 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeV
 SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_1000415 obo:CL_0000066)
 SubClassOf(obo:CL_1000415 obo:CL_0002371)
 
-# Class: obo:CL_1000416 (myoepithelial cell of lactiferous gland)
+# Class: obo:CL_1000416 (obsolete myoepithelial cell of lactiferous gland)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CL_1000416 "A myoepithelial cell that is part of the mammary gland."^^xsd:string)
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000416 "CALOHA:TS-2378"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000416 "FMA:67800"^^xsd:string)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:67800"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_1000416 "basal cell of lactiferous duct"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) obo:IAO_0000115 obo:CL_1000416 "OBSOLETE. A myoepithelial cell that is part of the mammary gland."^^xsd:string)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_1000416 "CL:0002324")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_1000416 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_1000416 "myoepithelial cell of lactiferous gland"^^xsd:string)
-EquivalentClasses(obo:CL_1000416 ObjectIntersectionOf(obo:CL_0000185 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001911)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true"^^xsd:string) obo:CL_1000416 obo:CL_0000185)
+AnnotationAssertion(rdfs:comment obo:CL_1000416 "Term merged into CL:0002324 (myoepithelial cell of mammary gland)")
+AnnotationAssertion(rdfs:label obo:CL_1000416 "obsolete myoepithelial cell of lactiferous gland"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_1000416 "true"^^xsd:boolean)
 
 # Class: obo:CL_1000417 (myoepithelial cell of sweat gland)
 
@@ -29042,27 +29042,6 @@ AnnotationAssertion(rdfs:comment obo:CL_4023106 "false"^^xsd:boolean)
 AnnotationAssertion(rdfs:label obo:CL_4023106 "obsolete meis2 expressing cortical GABAergic cell (Callithrix jacchus)")
 AnnotationAssertion(owl:deprecated obo:CL_4023106 "true"^^xsd:boolean)
 
-
-# Class: obo:CL_4023115 (type 1 spiral ganglion neuron)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) obo:IAO_0000115 obo:CL_4023115 "A spiral ganglion neuron that innervates inner hair cells. Type 1 spiral ganglion neurons are myelinated and bipolar.")
-AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023115 <http://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023115 "type I spiral ganglion cell")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) rdfs:comment obo:CL_4023115 "Type 1 spiral ganglion neurons comprise the vast majority of spiral ganglion cells.")
-AnnotationAssertion(rdfs:label obo:CL_4023115 "type 1 spiral ganglion neuron")
-SubClassOf(obo:CL_4023115 obo:CL_0011113)
-SubClassOf(obo:CL_4023115 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070006))
-
-# Class: obo:CL_4023116 (type 2 spiral ganglion neuron)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) obo:IAO_0000115 obo:CL_4023116 "A spiral ganglion neuron that innervates outer hair cells. Type 1 spiral ganglion neurons are unmyelinated and unipolar.")
-AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023116 <http://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023116 "type II spiral ganglion cell")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) rdfs:comment obo:CL_4023116 "Outer hair cells form reciprocal synapses onto type 2 spiral ganglion cells, suggesting that the type 2 cells have both afferent and efferent roles.")
-AnnotationAssertion(rdfs:label obo:CL_4023116 "type 2 spiral ganglion neuron")
-SubClassOf(obo:CL_4023116 obo:CL_0011113)
-SubClassOf(obo:CL_4023116 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070025))
-
 # Class: obo:CL_4023107 (reticulospinal neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29720934"^^xsd:string) obo:IAO_0000115 obo:CL_4023107 "A neuron with soma location in the reticular formation with axons that extend into the spinal cord such. Reticulospinal neuron activity can lead to a variety of motor behaviors.")
@@ -29124,6 +29103,26 @@ AnnotationAssertion(rdfs:label obo:CL_4023114 "calyx vestibular afferent neuron"
 SubClassOf(obo:CL_4023114 obo:CL_4023112)
 SubClassOf(obo:CL_4023114 ObjectSomeValuesFrom(obo:RO_0000053 obo:GO_0099096))
 SubClassOf(obo:CL_4023114 ObjectSomeValuesFrom(obo:RO_0002130 obo:CL_0002070))
+
+# Class: obo:CL_4023115 (type 1 spiral ganglion neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) obo:IAO_0000115 obo:CL_4023115 "A spiral ganglion neuron that innervates inner hair cells. Type 1 spiral ganglion neurons are myelinated and bipolar.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023115 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023115 "type I spiral ganglion cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) rdfs:comment obo:CL_4023115 "Type 1 spiral ganglion neurons comprise the vast majority of spiral ganglion cells.")
+AnnotationAssertion(rdfs:label obo:CL_4023115 "type 1 spiral ganglion neuron")
+SubClassOf(obo:CL_4023115 obo:CL_0011113)
+SubClassOf(obo:CL_4023115 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070006))
+
+# Class: obo:CL_4023116 (type 2 spiral ganglion neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) obo:IAO_0000115 obo:CL_4023116 "A spiral ganglion neuron that innervates outer hair cells. Type 1 spiral ganglion neurons are unmyelinated and unipolar.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/creator> obo:CL_4023116 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023116 "type II spiral ganglion cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Spiral_ganglion&oldid=994446209"^^xsd:string) rdfs:comment obo:CL_4023116 "Outer hair cells form reciprocal synapses onto type 2 spiral ganglion cells, suggesting that the type 2 cells have both afferent and efferent roles.")
+AnnotationAssertion(rdfs:label obo:CL_4023116 "type 2 spiral ganglion neuron")
+SubClassOf(obo:CL_4023116 obo:CL_0011113)
+SubClassOf(obo:CL_4023116 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070025))
 
 # Class: obo:CL_4023118 (L5/6 non-Martinotti morphology sst expressing GABAergic cortical internueron (Mus musculus))
 
