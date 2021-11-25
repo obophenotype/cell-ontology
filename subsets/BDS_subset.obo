@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-11-23/subsets/BDS_subset.owl
+data-version: cl/releases/2021-11-25/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 3_STAR ""
 subsetdef: abnormal_slim ""
@@ -60,7 +60,7 @@ synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance o
 synonymtypedef: LATIN "latin term"
 synonymtypedef: PLURAL "plural term"
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2021-11-23" xsd:string
+property_value: owl:versionInfo "2021-11-25" xsd:string
 
 [Term]
 id: BFO:0000001
@@ -210,21 +210,6 @@ synonym: "biological function" RELATED [ChEBI]
 is_a: CHEBI:50906 ! role
 
 [Term]
-id: CHEBI:24433
-name: group
-namespace: chebi_ontology
-def: "A defined linked collection of atoms or a single atom within a molecular entity." []
-subset: 3_STAR
-synonym: "group" EXACT IUPAC_NAME [IUPAC]
-synonym: "groupe" RELATED [IUPAC]
-synonym: "grupo" RELATED [IUPAC]
-synonym: "grupos" RELATED [IUPAC]
-synonym: "Gruppe" RELATED [ChEBI]
-synonym: "Rest" RELATED [ChEBI]
-is_a: CHEBI:24431 ! chemical entity
-relationship: has_part CHEBI:33250 ! atom
-
-[Term]
 id: CHEBI:25555
 name: nitrogen atom
 is_a: CHEBI:25585 ! nonmetal atom
@@ -294,7 +279,6 @@ name: organic group
 namespace: chebi_ontology
 def: "Any substituent group or skeleton containing carbon." []
 is_a: CHEBI:23367 ! molecular entity
-is_a: CHEBI:24433 ! group
 
 [Term]
 id: CHEBI:33250
@@ -1108,7 +1092,6 @@ xref: FMA:67310
 xref: FMA:86775
 xref: NIFSTD:sao862606388
 is_a: CL:0000104 ! multipolar neuron
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: CL:0000540 ! neuron
 intersection_of: bearer_of PATO:0070015 ! pyramidal family morphology
 relationship: bearer_of PATO:0070015 ! pyramidal family morphology
@@ -1428,6 +1411,7 @@ is_a: CL:0000103 ! bipolar neuron
 is_a: CL:4023016 ! Vip GABAergic cortical interneuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
 relationship: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
 
 [Term]
@@ -1524,6 +1508,7 @@ synonym: "L5 VIP (Mus)" EXACT []
 is_a: CL:4023016 ! Vip GABAergic cortical interneuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
 
 [Term]
@@ -1588,7 +1573,6 @@ name: L5/6 CCK, Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK Vip (Mus)" EXACT []
-is_a: CL:4023016 ! Vip GABAergic cortical interneuron
 is_a: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 intersection_of: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 intersection_of: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
@@ -1649,6 +1633,7 @@ synonym: "L5 T Martinotti SST (Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 is_a: CL:4023086 ! T Martinotti neuron
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -1660,6 +1645,7 @@ subset: BDS_subset
 synonym: "L5 non-Martinotti SST (Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -1685,6 +1671,7 @@ synonym: "L4 SST (Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 is_a: CL:4023076 ! Martinotti neuron
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:0005393 ! has soma location cortical layer IV
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -1696,6 +1683,7 @@ subset: BDS_subset
 synonym: "L2/3 PV-like SST Mus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 created_by: http://orcid.org/0000-0001-7258-9596
 
@@ -1719,7 +1707,10 @@ subset: BDS_subset
 xref: ILX:0770163
 is_a: CL:0000679 ! glutamatergic neuron
 is_a: CL:0010012 ! cerebral cortex neuron
+intersection_of: CL:0000679 ! glutamatergic neuron
+intersection_of: RO:0002100 UBERON:8440003 ! has soma location cortical layer VIb
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: RO:0002100 UBERON:8440003 ! has soma location cortical layer VIb
 
 [Term]
 id: CL:4023040
@@ -1743,7 +1734,10 @@ synonym: "subcerebral projection (SCPN) neuron" BROAD [DOI:10.1016/j.neuron.2005
 synonym: "thick-tufted layer 5 (TTL5) pyramidal neuron" EXACT [DOI:10.3389/fncel.2015.00233]
 is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
 is_a: CL:4023111 ! cerebral cortex pyramidal neuron
+intersection_of: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 
 [Term]
 id: CL:4023042
@@ -1752,7 +1746,10 @@ def: "A corticothalamic-projecting neuron with a soma found in cortical layer 6.
 subset: BDS_subset
 synonym: "L6 CT" EXACT []
 is_a: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
+intersection_of: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 relationship: RO:0013001 UBERON:0010225 ! has synaptic IO in region thalamic complex
 
 [Term]
@@ -1764,8 +1761,12 @@ synonym: "L5/6 NP M1" EXACT []
 synonym: "L5/6 NP MOp" EXACT []
 xref: ILX:0770161
 is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
+intersection_of: CL:4023012 ! near-projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+intersection_of: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 
 [Term]
 id: CL:4023044
@@ -1799,7 +1800,6 @@ def: "An excitatory glutamatergic neuron transcriptomically related to the CT su
 subset: BDS_subset
 is_a: CL:4023038 ! L6b glutamatergic cortical neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
-relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 
 [Term]
@@ -1810,8 +1810,12 @@ subset: BDS_subset
 synonym: "L2/3 IT M1" EXACT []
 synonym: "L2/3 IT MOp" EXACT []
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+intersection_of: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+relationship: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
 
 [Term]
 id: CL:4023048
@@ -1822,8 +1826,12 @@ synonym: "L4/5 IT M1" EXACT []
 synonym: "L4/5 IT MOp" EXACT []
 xref: ILX:0770174
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+intersection_of: RO:0002100 UBERON:8440001 ! has soma location cortical layer IV/V
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+relationship: RO:0002100 UBERON:8440001 ! has soma location cortical layer IV/V
 
 [Term]
 id: CL:4023049
@@ -1834,8 +1842,12 @@ synonym: "L5 IT M1" EXACT []
 synonym: "L5 IT MOp" EXACT []
 xref: ILX:0770157
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+intersection_of: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 
 [Term]
 id: CL:4023050
@@ -1847,8 +1859,12 @@ synonym: "L6 IT MOp" EXACT []
 xref: ILX:0770158
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
-is_a: CL:4023095 ! untufted pyramidal neuron
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+intersection_of: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
+relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 
 [Term]
 id: CL:4023051
@@ -1866,7 +1882,6 @@ id: CL:4023054
 name: mesothelial fibroblast
 def: "A mesothelial cell that has undergone mesothelial-to-mesenchymal transition (MMT) to become a fibroblast cell." [PMID:26106328]
 is_a: CL:0000057 ! fibroblast
-is_a: CL:0000077 ! mesothelial cell
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: develops_from CL:0000077 ! mesothelial cell
 
@@ -1879,7 +1894,7 @@ synonym: "CT VAL/VM M1" EXACT []
 synonym: "CT VAL/VM MOp" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
-is_a: CL:4023095 ! untufted pyramidal neuron
+relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -1921,6 +1936,7 @@ id: CL:4023066
 name: horizontal pyramidal neuron
 def: "A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070016 ! horizontal pyramidal morphology
@@ -1943,9 +1959,11 @@ name: L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 def: "A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK (Mus)" EXACT []
-is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0011005 ! GABAergic interneuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: RO:0002292 PR:P09240 ! expresses cholecystokinin (mouse)
 
 [Term]
@@ -1992,7 +2010,7 @@ def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary mot
 subset: BDS_subset
 synonym: "stellate L6 IT MOp (Mus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
-is_a: CL:4023093 ! stellate pyramidal neuron
+relationship: bearer_of PATO:0070020 ! stellate pyramidal morphology
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -2002,7 +2020,7 @@ def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary mot
 subset: BDS_subset
 synonym: "inverted L6 IT MOp (Mus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
-is_a: CL:4023092 ! inverted pyramidal neuron
+relationship: bearer_of PATO:0070021 ! inverted pyramidal morphology
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -2085,6 +2103,7 @@ id: CL:4023092
 name: inverted pyramidal neuron
 def: "A pyramidal neuron which has an apical tree which is oriented towards the white matter." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070021 ! inverted pyramidal morphology
@@ -2096,6 +2115,7 @@ id: CL:4023093
 name: stellate pyramidal neuron
 def: "A pyramidal neuron which lacks a tuft formation but extends small radial distances forming a star-like shape." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070020 ! stellate pyramidal morphology
@@ -2107,6 +2127,7 @@ id: CL:4023094
 name: tufted pyramidal neuron
 def: "A pyramidal neuron which has a distinctive tuft formation, distal from the soma." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070018 ! tufted pyramidal morphology
@@ -2118,6 +2139,7 @@ id: CL:4023095
 name: untufted pyramidal neuron
 def: "A pyramidal neuron which lacks a clear tuft formation but extends to large radial distances." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070019 ! untufted pyramidal morphology
@@ -2141,7 +2163,7 @@ id: CL:4023111
 name: cerebral cortex pyramidal neuron
 def: "A pyramidal neuron with soma located in the cerebral cortex." [PMID:30715238]
 is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0010012 ! cerebral cortex neuron
 intersection_of: CL:0000598 ! pyramidal neuron
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
@@ -2153,9 +2175,11 @@ def: "A sst GABAergic interneuron does not have Martinotti morphology with a som
 comment: L5/6 non-Martinotti SST cells have strongly facilitating excitatory inputs and moderately depressing outputs. They have faster action potential than Martinotti morphology SST cells and slightly slower than PV basket cells. {xref="PMID:27477017"}
 subset: BDS_subset
 synonym: "L5/6 non-Martinotti SST (Mus)" EXACT []
-is_a: CL:4023017 ! sst GABAergic cortical interneuron
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0011005 ! GABAergic interneuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 
 [Term]
@@ -3596,7 +3620,6 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 xref: PMID:15371245
 is_a: NCBITaxon:337687 ! Muroidea
-relationship: in_taxon NCBITaxon:10066 ! Muridae
 property_value: has_rank NCBITaxon:family
 
 [Term]
@@ -3608,7 +3631,6 @@ synonym: "mouse" EXACT common_name []
 synonym: "Mus" EXACT scientific_name []
 xref: GC_ID:1
 is_a: NCBITaxon:39107 ! Murinae
-relationship: in_taxon NCBITaxon:10088 ! Mus <genus>
 property_value: has_rank NCBITaxon:genus
 
 [Term]
@@ -3622,7 +3644,6 @@ synonym: "mouse" EXACT common_name []
 synonym: "mouse" RELATED PRO-common-name []
 xref: GC_ID:1
 is_a: NCBITaxon:862507 ! Mus <subgenus>
-relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 property_value: has_rank NCBITaxon:species
 
 [Term]
@@ -3671,7 +3692,6 @@ xref: GC_ID:1
 xref: PMID:11743200
 xref: PMID:11791233
 is_a: NCBITaxon:9347 ! Eutheria
-relationship: in_taxon NCBITaxon:1437010 ! Boreoeutheria
 property_value: has_rank NCBITaxon:clade
 
 [Term]
@@ -3682,7 +3702,6 @@ synonym: "mice and others" EXACT genbank_common_name []
 synonym: "Sciurognathi" RELATED in_part []
 xref: GC_ID:1
 is_a: NCBITaxon:9989 ! Rodentia
-relationship: in_taxon NCBITaxon:1963758 ! Myomorpha
 property_value: has_rank NCBITaxon:suborder
 
 [Term]
@@ -3715,7 +3734,6 @@ xref: PMID:12082125
 xref: PMID:12878460
 xref: PMID:15522813
 is_a: NCBITaxon:1437010 ! Boreoeutheria
-relationship: in_taxon NCBITaxon:314146 ! Euarchontoglires
 property_value: has_rank NCBITaxon:superorder
 
 [Term]
@@ -3728,7 +3746,6 @@ xref: PMID:11214319
 xref: PMID:12082125
 xref: PMID:15522813
 is_a: NCBITaxon:314146 ! Euarchontoglires
-relationship: in_taxon NCBITaxon:314147 ! Glires
 property_value: has_rank NCBITaxon:clade
 
 [Term]
@@ -3758,7 +3775,6 @@ namespace: ncbi_taxonomy
 synonym: "Theria" EXACT scientific_name []
 xref: GC_ID:1
 is_a: NCBITaxon:40674 ! Mammalia
-relationship: in_taxon NCBITaxon:32525 ! Theria <mammals>
 property_value: has_rank NCBITaxon:clade
 
 [Term]
@@ -3813,7 +3829,6 @@ xref: GC_ID:1
 xref: PMID:15019624
 xref: PMID:15371245
 is_a: NCBITaxon:1963758 ! Myomorpha
-relationship: in_taxon NCBITaxon:337687 ! Muroidea
 property_value: has_rank NCBITaxon:clade
 
 [Term]
@@ -3823,7 +3838,6 @@ namespace: ncbi_taxonomy
 alt_id: NCBITaxon:109679
 xref: GC_ID:1
 is_a: NCBITaxon:10066 ! Muridae
-relationship: in_taxon NCBITaxon:39107 ! Murinae
 property_value: has_rank NCBITaxon:subfamily
 
 [Term]
@@ -3898,7 +3912,6 @@ namespace: ncbi_taxonomy
 synonym: "Mus" EXACT scientific_name []
 xref: GC_ID:1
 is_a: NCBITaxon:10088 ! Mus <genus>
-relationship: in_taxon NCBITaxon:862507 ! Mus <subgenus>
 property_value: has_rank NCBITaxon:subgenus
 
 [Term]
@@ -3922,7 +3935,6 @@ synonym: "placentals" EXACT genbank_common_name []
 synonym: "placentals" RELATED blast_name []
 xref: GC_ID:1
 is_a: NCBITaxon:32525 ! Theria <mammals>
-relationship: in_taxon NCBITaxon:9347 ! Eutheria
 property_value: has_rank NCBITaxon:clade
 
 [Term]
@@ -3934,7 +3946,6 @@ synonym: "rodent" EXACT PRO-common-name []
 synonym: "rodents" RELATED blast_name []
 xref: GC_ID:1
 is_a: NCBITaxon:314147 ! Glires
-relationship: in_taxon NCBITaxon:9989 ! Rodentia
 property_value: has_rank NCBITaxon:order
 
 [Term]
@@ -6726,7 +6737,6 @@ disjoint_from: UBERON:0002416 ! integumental system
 relationship: capable_of GO:0003016 ! respiratory system process
 relationship: capable_of GO:0007585 ! respiratory gaseous exchange by respiratory system
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
-relationship: never_in_taxon NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg xsd:anyURI
@@ -6810,7 +6820,6 @@ disjoint_from: UBERON:0002416 ! integumental system
 relationship: capable_of GO:0003013 ! circulatory system process
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
-relationship: never_in_taxon NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 relationship: never_in_taxon NCBITaxon:6073
 relationship: never_in_taxon NCBITaxon:6157
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
@@ -6984,7 +6993,6 @@ is_a: UBERON:0011216 {source="FBbt", source="cjm"} ! organ system subdivision
 relationship: develops_from UBERON:0016879 ! future central nervous system
 relationship: immediate_transformation_of UBERON:0016879 {source="Bgee:AN"} ! future central nervous system
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
-relationship: never_in_taxon NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: part_of UBERON:0001016 ! nervous system
 property_value: UBPROP:0000001 "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
@@ -7237,9 +7245,7 @@ relationship: connects UBERON:0000165 ! mouth
 relationship: develops_from UBERON:0007026 ! presumptive gut
 relationship: immediate_transformation_of UBERON:0007026 {source="NCBIBook:NBK10107"} ! presumptive gut
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
-relationship: never_in_taxon NCBITaxon:147099 {source="http://en.wikipedia.org/wiki/Acoelomorpha"}
 relationship: never_in_taxon NCBITaxon:41324 {source="DOI:10.1371/journal.pone.0016309"}
-relationship: never_in_taxon NCBITaxon:41324 {source="https://doi.org/10.1371/journal.pone.0016309"}
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: part_of UBERON:0001007 ! digestive system
 property_value: UBPROP:0000001 "The alimentary or digestive tract, and associated organs.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000112", ontology="TAO", source="ZFIN:curator"}
@@ -8242,6 +8248,27 @@ property_value: UBPROP:0000001 "Multi-tissue structure that has as its parts the
 property_value: UBPROP:0000001 "the stalk-like part of the brain that comprises the midbrain (aka mesencephalon), the pons (aka pons Varolii), and the medulla oblongata, and connects the cerebral hemispheres with the cervical spinal cord[MP]" xsd:string {source="MP:0005277"}
 
 [Term]
+id: UBERON:0002301
+name: layer of neocortex
+namespace: uberon
+def: "One of the layers of the neocortex." [http://orcid.org/0000-0002-6601-2165]
+def: "One of the layers of the neocortex. These layers are defined by distinctive populations of cells based on somata size, shape, or density, that are aligned into sheets." [http://orcid.org/0000-0002-6601-2165, http://www.ncbi.nlm.nih.gov/pubmed/29081739, ISBN-10:0-87893-742-0]
+synonym: "cerebral cortex layer" RELATED [MA:0000186]
+synonym: "cortical layer" BROAD []
+synonym: "lamina of neocortex" RELATED [FMA:83138]
+synonym: "layer of neocortex" EXACT [FMA:83138]
+synonym: "neocortex layer" EXACT [MA:0000186]
+xref: ABA:CTX1-6b
+xref: EMAPA:35588
+xref: FMA:83138
+xref: MA:0000186
+is_a: UBERON:0022303 ! nervous system cell part layer
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+intersection_of: UBERON:0022303 ! nervous system cell part layer
+intersection_of: part_of UBERON:0001950 ! neocortex
+relationship: part_of UBERON:0001950 ! neocortex
+
+[Term]
 id: UBERON:0002328
 name: notochord
 namespace: uberon
@@ -8347,7 +8374,6 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005423 ! developing anatomical structure
 is_a: UBERON:0007503 {source="EHDAA2"} ! epithelial vesicle
 relationship: develops_from UBERON:0003059 {source="ZFA"} ! presomitic mesoderm
-relationship: never_in_taxon NCBITaxon:7712 {source="http://www.ncbi.nlm.nih.gov/pubmed/17237766"}
 relationship: never_in_taxon NCBITaxon:7712 {source="PMID:17237766"}
 relationship: only_in_taxon NCBITaxon:7711 {source="GOTAX:0000352"} ! Chordata
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png xsd:anyURI
@@ -9989,6 +10015,216 @@ property_value: UBPROP:0000011 "A single stem cell in the ventricular layer can 
 property_value: UBPROP:0000011 "in humans develops into cortical layers II-VI" xsd:string
 
 [Term]
+id: UBERON:0005390
+name: cortical layer I
+namespace: uberon
+def: "The most superficial layer of the neocortex characterized by a paucity of cell bodies." [NLXANAT:090807]
+synonym: "cerebral cortex, layer 1" EXACT [ABA:CTX1]
+synonym: "lamina molecularis isocorticis [lamina I]" EXACT LATIN [FMA:83900, FMA:TA]
+synonym: "layer 1 of neocortex" EXACT [NLXANAT:090807]
+synonym: "layer I of neocortex" EXACT [NLXANAT:090807]
+synonym: "molecular layer" RELATED []
+synonym: "molecular layer of cerebral cortex" EXACT [ncithesaurus:Molecular_layer]
+synonym: "molecular layer of isocortex [layer i]" EXACT [FMA:83900]
+synonym: "molecular layer of neocortex" EXACT [NLXANAT:090807]
+synonym: "molecular layer of neocortex" EXACT [FMA:83900]
+synonym: "neocortex layer 1" EXACT [NLXANAT:090807]
+synonym: "neocortex layer I" EXACT [NLXANAT:090807]
+synonym: "neocortex molecular layer" EXACT [NLXANAT:090807]
+synonym: "neocortex plexiform layer" EXACT [NLXANAT:090807]
+synonym: "plexiform layer" RELATED []
+synonym: "plexiform layer of neocortex" EXACT [NLXANAT:090807]
+xref: ABA:CTX1
+xref: BTO:0004906
+xref: EMAPA:35255
+xref: FMA:83900
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2444
+xref: http://linkedlifedata.com/resource/umls/id/C1709063
+xref: MA:0000897
+xref: NCIT:C33137
+xref: NLXANAT:090807
+xref: PBA:294021786
+xref: UMLS:C1709063 {source="ncithesaurus:Molecular_Layer"}
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: develops_from UBERON:0014935 {source="NBK10047"} ! cerebral cortex marginal layer
+
+[Term]
+id: UBERON:0005391
+name: cortical layer II
+namespace: uberon
+def: "Layer of neocortex lying just deep to molecular layer characterized by numerous small cell bodies." [NLXANAT:090808]
+synonym: "cerebral cortex, layer 2" EXACT [ABA:CTX2]
+synonym: "EGL" RELATED ABBREVIATION []
+synonym: "external granular cell layer" RELATED []
+synonym: "external granular layer" RELATED []
+synonym: "external granular layer of cerebral cortex" RELATED []
+synonym: "external granular layer of isocortex [layer II]" EXACT [FMA:77804]
+synonym: "external granular layer of neocortex" EXACT [FMA:77804]
+synonym: "external granule cell layer" RELATED []
+synonym: "external granule cell layer of neocortex" EXACT [NLXANAT:090808]
+synonym: "granule cell layer of cerebral cortex" RELATED []
+synonym: "lamina granularis externa isocorticis [lamina ii]" EXACT LATIN [FMA:77804, FMA:TA]
+synonym: "layer II of neocortex" EXACT [NLXANAT:090808]
+synonym: "neocortex layer 2" EXACT [NLXANAT:090808]
+synonym: "neocortex layer II" EXACT [NLXANAT:090808]
+xref: ABA:CTX2
+xref: EMAPA:35256
+xref: FMA:77804
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2446
+xref: http://linkedlifedata.com/resource/umls/id/C1517039
+xref: MA:0000898
+xref: NCIT:C32557
+xref: NLXANAT:090808
+xref: PBA:294021800
+xref: UMLS:C1517039 {source="ncithesaurus:External_Granular_Layer"}
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: develops_from UBERON:0005343 {source="BRAINSPAN"} ! cortical plate
+relationship: immediately_deep_to UBERON:0005390 ! cortical layer I
+
+[Term]
+id: UBERON:0005392
+name: cortical layer III
+namespace: uberon
+def: "Layer of neocortex lying deep to the external granule cell layer defined cytoarchitecturally by numerous small pyramidal neurons." [NLXANAT:090809]
+synonym: "cerebral cortex, layer 3" EXACT [ABA:CTX3]
+synonym: "external pyramidal cell layer" EXACT [FMA:77810]
+synonym: "external pyramidal cell layer of neocortex" EXACT [NLXANAT:090809]
+synonym: "external pyramidal layer of cerebral cortex" RELATED [ncithesaurus:External_Pyramidal_Cell_Layer]
+synonym: "external pyramidal layer of isocortex [layer iii]" EXACT [FMA:77810]
+synonym: "external pyramidal layer of neocortex" EXACT [FMA:77810]
+synonym: "isocortex, deep supragranular pyramidal layer" RELATED [NeuroNames:2448]
+synonym: "lamina pyramidalis externa" RELATED LATIN [NeuroNames:2448]
+synonym: "lamina pyramidalis externa isocorticis [lamina iii]" EXACT LATIN [FMA:77810, FMA:TA]
+synonym: "layer 3 of neocortex" EXACT [NLXANAT:090809]
+synonym: "layer III of neocortex" EXACT [NLXANAT:090809]
+synonym: "layer of medium-sized and large pyramidal cells" RELATED [NeuroNames:2448]
+synonym: "neocortex external pyramidal cell layer" EXACT [NLXANAT:090809]
+synonym: "neocortex layer 3" EXACT [NLXANAT:090809]
+synonym: "neocortex layer III" EXACT [NLXANAT:090809]
+synonym: "pyramidal layer" RELATED []
+xref: ABA:CTX3
+xref: EMAPA:35257
+xref: FMA:77810
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2448
+xref: http://linkedlifedata.com/resource/umls/id/C1517046
+xref: MA:0000899
+xref: NCIT:C32571
+xref: NLXANAT:090809
+xref: PBA:294021824
+xref: UMLS:C1517046 {source="ncithesaurus:External_Pyramidal_Cell_Layer"}
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: develops_from UBERON:0005343 {source="BRAINSPAN"} ! cortical plate
+relationship: has_part CL:0000598 ! pyramidal neuron
+relationship: immediately_deep_to UBERON:0005391 ! cortical layer II
+
+[Term]
+id: UBERON:0005393
+name: cortical layer IV
+namespace: uberon
+def: "Layer of neocortex lying deep to the external pyramidal cell layer defined cytoarchitecturally by the presence of numerous small cells." [NLXANAT:090810]
+synonym: "cerebral cortex, layer 4" EXACT [ABA:CTX4]
+synonym: "internal granular layer" RELATED []
+synonym: "internal granular layer of isocortex [layer iv]" EXACT [FMA:77811]
+synonym: "internal granular layer of neocortex" EXACT [FMA:77811]
+synonym: "internal granule cell layer of neocortex" EXACT [NLXANAT:090810]
+synonym: "lamina granularis interna isocorticis [lamina iv]" EXACT LATIN [FMA:77811, FMA:TA]
+synonym: "layer 4 of neocortex" EXACT [NLXANAT:090810]
+synonym: "layer IV of neocortex" EXACT [NLXANAT:090810]
+synonym: "neocortex internal granule cell layer" EXACT [NLXANAT:090810]
+synonym: "neocortex layer 4" EXACT [NLXANAT:090810]
+synonym: "neocortex layer IV" EXACT [NLXANAT:090810]
+synonym: "neocortical internal granule cell layer" EXACT [NLXANAT:090810]
+synonym: "neocortical layer IV" EXACT [NLXANAT:090810]
+xref: ABA:CTX4
+xref: EMAPA:35258
+xref: FMA:77811
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2449
+xref: http://linkedlifedata.com/resource/umls/id/C1512872
+xref: MA:0000900
+xref: NCIT:C32844
+xref: NLXANAT:090810
+xref: PBA:294021852
+xref: UMLS:C1512872 {source="ncithesaurus:Internal_Granular_Layer"}
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: develops_from UBERON:0005343 {source="BRAINSPAN"} ! cortical plate
+relationship: immediately_deep_to UBERON:0005392 ! cortical layer III
+property_value: UBPROP:0000003 "..." xsd:string {source="http://www.ncbi.nlm.nih.gov/pubmed/23027930"}
+property_value: UBPROP:0000003 "Relatively undeveloped in some mammals such as the tenrec." xsd:string {source="ISBN:0471888893"}
+
+[Term]
+id: UBERON:0005394
+name: cortical layer V
+namespace: uberon
+def: "Layer of neocortex lying deep to the internal granule cell layer (layer 4) defined cytoarchitecturally by the predominance of large pyramidal cell bodies." [NLXANAT:090811]
+synonym: "betz' cells" EXACT [FMA:77812]
+synonym: "cerebral cortex, layer 5" EXACT [ABA:CTX5]
+synonym: "deep layer of large pyramidal cells" RELATED [NeuroNames:2450]
+synonym: "ganglionic layer" RELATED []
+synonym: "ganglionic layer of cerebral cortex" RELATED []
+synonym: "inner layer of large pyramidal cells" RELATED [NeuroNames:2450]
+synonym: "internal pyramidal cell layer of neocortex" EXACT [NLXANAT:090811]
+synonym: "internal pyramidal layer" RELATED [NeuroNames:2450]
+synonym: "internal pyramidal layer of isocortex [layer v]" EXACT [FMA:77812]
+synonym: "internal pyramidal layer of neocortex" EXACT [FMA:77812]
+synonym: "isocortex, infragranular pyramidal layer" RELATED [NeuroNames:2450]
+synonym: "lamina ganglionaris" RELATED LATIN [NeuroNames:2450]
+synonym: "lamina pyramidalis interna" RELATED LATIN [NeuroNames:2450]
+synonym: "lamina pyramidalis interna isocorticis [lamina v]" EXACT LATIN [FMA:77812, FMA:TA]
+synonym: "layer 5 of neocortex" EXACT [NLXANAT:090811]
+synonym: "layer V of neocortex" EXACT [NLXANAT:090811]
+synonym: "neocortex internal pyramidal cell layer" EXACT [NLXANAT:090811]
+synonym: "neocortex layer 5" EXACT [NLXANAT:090811]
+synonym: "neocortex layer V" EXACT [NLXANAT:090811]
+synonym: "neocortical layer 5" EXACT [NLXANAT:090811]
+synonym: "neocortical layer V" EXACT [NLXANAT:090811]
+xref: ABA:CTX5
+xref: EMAPA:35259
+xref: FMA:77812
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2450
+xref: http://linkedlifedata.com/resource/umls/id/C1517447
+xref: MA:0000901
+xref: NCIT:C32653
+xref: NLXANAT:090811
+xref: PBA:294021878
+xref: UMLS:C1517447 {source="ncithesaurus:Ganglionic_Layer"}
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: develops_from UBERON:0005343 {source="BRAINSPAN"} ! cortical plate
+relationship: has_part CL:0000598 ! pyramidal neuron
+relationship: immediately_deep_to UBERON:0005393 ! cortical layer IV
+
+[Term]
+id: UBERON:0005395
+name: cortical layer VI
+namespace: uberon
+def: "Innermost layer of neocortex lying deep to the internal pyramidal cell layer defined cytoarchitecturally by cells of varying size." [NLXANAT:090812]
+synonym: "cerebral cortex, layer 6" EXACT [ABA:CTX6]
+synonym: "fusiform layer" RELATED [NeuroNames:2451]
+synonym: "isocortex, polymorph layer" RELATED [NeuroNames:2451]
+synonym: "lamina multiformis" RELATED LATIN [NeuroNames:2451]
+synonym: "lamina multiformis isocorticis [lamina vi]" EXACT LATIN [FMA:77805, FMA:TA]
+synonym: "layer VI of neocortex" EXACT [NLXANAT:090812]
+synonym: "multiform layer" RELATED [NeuroNames:2451]
+synonym: "multiform layer of isocortex [layer vi]" EXACT [FMA:77805]
+synonym: "multiform layer of neocortex" EXACT [NLXANAT:090812]
+synonym: "multiform layer of neocortex" EXACT [FMA:77805]
+synonym: "neocortex layer 6" EXACT [NLXANAT:090812]
+synonym: "neocortex layer VI" EXACT [NLXANAT:090812]
+synonym: "neocortex multiform layer" EXACT [NLXANAT:090812]
+synonym: "neocortical layer 6" EXACT [NLXANAT:090812]
+synonym: "neocortical layer VI" EXACT [NLXANAT:090812]
+synonym: "pleiomorphic layer of neocortex" EXACT [NLXANAT:090812]
+synonym: "spindle cell layer" RELATED [NeuroNames:2451]
+xref: ABA:CTX6
+xref: EMAPA:35260
+xref: FMA:77805
+xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2451
+xref: MA:0000902
+xref: NLXANAT:090812
+xref: PBA:294021896
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: immediately_deep_to UBERON:0005394 ! cortical layer V
+
+[Term]
 id: UBERON:0005401
 name: cerebral hemisphere gray matter
 namespace: uberon
@@ -10939,6 +11175,22 @@ intersection_of: develops_from UBERON:0000924 ! ectoderm
 relationship: composed_primarily_of CL:0002077 ! ecto-epithelial cell
 
 [Term]
+id: UBERON:0010403
+name: brain marginal zone
+namespace: uberon
+def: "The part of the future brain that is derived from the mantle layer of the neural tube." [http://orcid.org/0000-0002-6601-2165]
+subset: pheno_slim
+synonym: "brain marginal zone" BROAD [MA:0000812]
+xref: DHBA:10508
+xref: EMAPA:32680
+xref: MA:0000812
+is_a: CARO:0000000 ! anatomical entity
+is_a: UBERON:0005423 ! developing anatomical structure
+relationship: develops_from UBERON:0004062 ! neural tube marginal layer
+relationship: part_of UBERON:0000955 ! brain
+property_value: UBPROP:0000012 "not clear if the MA/EMAPA classes refer specifically to the cortical subset. DHBA class incldues non-neocortex derivatives so it belongs here" xsd:string {external_ontology="MA"}
+
+[Term]
 id: UBERON:0010743
 name: meningeal cluster
 namespace: uberon
@@ -11184,6 +11436,27 @@ is_a: UBERON:0003104 ! mesenchyme
 is_a: UBERON:0010313 ! neural crest-derived structure
 intersection_of: UBERON:0003104 ! mesenchyme
 intersection_of: develops_from UBERON:0002342 ! neural crest
+
+[Term]
+id: UBERON:0014935
+name: cerebral cortex marginal layer
+namespace: uberon
+def: "Developing superficial cortical layer located just under the pia matter, develops from the marginal layer of the neural tube and becomes cortical layer I." [http://orcid.org/0000-0002-6601-2165, MP:0000792]
+synonym: "cerebral cortex marginal zone" RELATED [EMAPA:32713]
+synonym: "cortical marginal layer" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "cortical marginal zone" EXACT [MP:0000792]
+synonym: "future cortical layer I" EXACT [http://orcid.org/0000-0002-6601-2165]
+synonym: "marginal zone" BROAD [PBA:294021774]
+synonym: "MZ" BROAD ABBREVIATION [BRAINSPAN:BRAINSPAN]
+synonym: "MZ" BROAD ABBREVIATION [MP:0000792]
+xref: EMAPA:17546
+xref: EMAPA:32713
+xref: PBA:294021774
+is_a: UBERON:0014950 ! layer of developing cerebral cortex
+relationship: develops_from UBERON:0004062 ! neural tube marginal layer
+relationship: part_of UBERON:0010403 ! brain marginal zone
+property_value: UBPROP:0000011 "in humans develops into cortical layer I" xsd:string
+property_value: UBPROP:0000012 "EMAPA temporally divides this into zone and layer. TODO - unify this with marginal layers in EHDAA2" xsd:string {external_ontology="EMAPA"}
 
 [Term]
 id: UBERON:0014950
@@ -11452,6 +11725,51 @@ is_a: UBERON:0013522 ! subdivision of tube
 relationship: has_part UBERON:0000925 ! endoderm
 relationship: has_part UBERON:0000930 ! stomodeum
 relationship: part_of UBERON:0007026 ! presumptive gut
+
+[Term]
+id: UBERON:8440000
+name: cortical layer II/III
+namespace: uberon
+def: "A laminar subdivision of the neocortex that is comprised of both layers II & III." [http://www.ncbi.nlm.nih.gov/pubmed/34616063]
+synonym: "cerebral cortex layer 2/3" EXACT []
+synonym: "neocortex layer 2/3" EXACT []
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+
+[Term]
+id: UBERON:8440001
+name: cortical layer IV/V
+namespace: uberon
+def: "A laminar subdivision of the neocortex that is comprised of both layers IV & V." [http://www.ncbi.nlm.nih.gov/pubmed/34616063]
+synonym: "cerebral cortex layer 4/5" EXACT []
+synonym: "neocortex layer 4/5" EXACT []
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+
+[Term]
+id: UBERON:8440002
+name: cortical layer V/VI
+namespace: uberon
+def: "A laminar subdivision of the neocortex that is comprised of both layers V & VI." [http://www.ncbi.nlm.nih.gov/pubmed/34616063]
+synonym: "cerebral cortex layer 5/6" EXACT []
+synonym: "neocortex layer 5/6" EXACT []
+is_a: UBERON:8440004 ! laminar subdivision of the cortex
+
+[Term]
+id: UBERON:8440003
+name: cortical layer VIb
+namespace: uberon
+def: "The deepest layer of the neocortex. While layer 6b is considered part of layer 6, it is distinct morphologically, genetically, and developmentally from the rest of layer 6. Neurons in L6b project to cortical targets and higher-order thalamus and develop from a precursor population that arises from the subplate." [http://www.ncbi.nlm.nih.gov/pubmed/32160552]
+synonym: "cerebral cortex layer 6b" EXACT []
+synonym: "neocortex layer 6b" EXACT []
+is_a: UBERON:0002301 ! layer of neocortex
+relationship: develops_from UBERON:0004035 ! cortical subplate
+relationship: part_of UBERON:0005395 ! cortical layer VI
+
+[Term]
+id: UBERON:8440004
+name: laminar subdivision of the cortex
+namespace: uberon
+def: "One or a subset of adjacent layers of the neocortex." [ISBN-10:0-87893-742-0]
+is_a: UBERON:0011215 ! central nervous system cell part cluster
 
 [Term]
 id: http://www.informatics.jax.org/marker/MGI:109347
@@ -12219,6 +12537,7 @@ inverse_of: RO:0002412 ! immediately causally upstream of
 id: RO:0002410
 name: causally related to
 def: "This relation groups causal relations between material entities and causal relations between processes" []
+property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate?\n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -12368,6 +12687,7 @@ is_a: RO:0011002 ! regulates activity of
 [Typedef]
 id: RO:0002449
 name: directly negatively regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that negatively regulates an activity performed by B.\nFor example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
 def: "The entity A, immediately upstream of the entity B, has an activity that negatively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
 synonym: "molecularly decreases activity of" EXACT []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -12380,6 +12700,7 @@ is_a: RO:0002448 ! directly regulates activity of
 [Typedef]
 id: RO:0002450
 name: directly positively regulates activity of
+def: "The entity A, immediately upstream of the entity B, has an activity that positively regulates an activity performed by B.\nFor example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
 def: "The entity A, immediately upstream of the entity B, has an activity that positively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
 synonym: "molecularly increases activity of" EXACT []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -12897,7 +13218,6 @@ def: "x is a conduit for y iff y passes through the lumen of x." []
 
 [Typedef]
 id: confers_advantage_in
-name: confers advantage in
 namespace: uberon
 synonym: "adapted_for" NARROW []
 xref: RO:0002322
@@ -13449,13 +13769,10 @@ is_a: has_part ! has_part
 
 [Typedef]
 id: has_muscle_antagonist
-name: has muscle antagonist
 namespace: uberon
 def: "m1 has_muscle_antagonist m2 iff m1 acts in opposition to m2, and m2 is responsible for returning the structure to its initial position." [http://en.wikipedia.org/wiki/Antagonist_(muscle)]
-def: "m1 has_muscle_antagonist m2 iff m1 has_muscle_insertion s, m2 has_muscle_insection s, m1 acts in opposition to m2, and m2 is responsible for returning the structure to its initial position." []
 xref: RO:0002568
 property_value: seeAlso dbpprop:antagonist
-is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
 id: has_muscle_insertion
@@ -13473,16 +13790,12 @@ is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
 id: has_muscle_origin
-name: has muscle origin
 namespace: uberon
-def: "m has_muscle_origin s iff m is attached_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to." []
 def: "m has_muscle_origin s iff m is attaches_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to." [http://en.wikipedia.org/wiki/Insertion_(anatomy)#Muscles]
 comment: The origin is the end of a muscle that attaches to the more fixed part of the skeleton, which is the proximal end in limb muscles
 xref: RO:0002372
 property_value: seeAlso dbpprop:origin
-domain: CARO:0000003 {comment="We need to import uberon muscle to create a stricter domain constraint"} ! connected anatomical structure
 is_a: attaches_to ! attaches_to
-is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
 id: has_not_completed
@@ -13553,7 +13866,6 @@ id: has_potential_to_directly_develop_into
 name: has potential to directly develop into
 namespace: uberon
 def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
-def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y." []
 xref: RO:0002388
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -13684,10 +13996,8 @@ is_a: part_of ! part_of
 
 [Typedef]
 id: in_deep_part_of
-name: in deep part of
 name: in_deep_part_of
 namespace: uberon
-def: "X superficial part of Y <=> if Y is subdivided into two superficial and deep portions, X is part of the deep portion." [BSPO:cjm]
 def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the deep portion." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001101
 is_a: part_of ! part_of
@@ -13984,12 +14294,10 @@ id: never_in_taxon
 name: never in taxon
 name: never_in_taxon
 namespace: uberon
-def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T" []
 def: "S never_in_taxon T iff: S SubClassOf in_taxon only not T." [http://www.ncbi.nlm.nih.gov/pubmed/20973947]
 def: "x never in taxon T if and only if T is a class, and x does not instantiate the class expression \"in taxon some T\". Note that this is a shortcut relation, and should be used as a hasValue restriction in OWL." []
 xref: RO:0002161
 property_value: IAO:0000112 "tooth SubClassOf 'never in taxon' value 'Aves'" xsd:string
-property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
@@ -14052,7 +14360,6 @@ is_a: participates_in ! participates_in
 id: overlaps
 name: overlaps
 namespace: uberon
-def: "x overlaps y if and only if there exists some z such that x has part z and z part of y" []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 subset: ro-eco
@@ -14164,7 +14471,6 @@ inverse_of: RO:0002336 ! positively regulated by
 
 [Typedef]
 id: postaxialmost_part_of
-name: postaxialmost part of
 name: postaxialmost_part_of
 namespace: uberon
 xref: BSPO:0001115
@@ -14191,7 +14497,6 @@ is_a: connected_to ! connected to
 
 [Typedef]
 id: preaxialmost_part_of
-name: preaxialmost part of
 name: preaxialmost_part_of
 namespace: uberon
 xref: BSPO:0001113

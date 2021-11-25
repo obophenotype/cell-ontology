@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-11-23/cl-base.owl
+data-version: cl/releases/2021-11-25/cl-base.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -23,7 +23,7 @@ property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2021-11-23" xsd:string
+property_value: owl:versionInfo "2021-11-25" xsd:string
 
 [Term]
 id: CL:0000000
@@ -2293,16 +2293,11 @@ id: CL:0000202
 name: auditory hair cell
 namespace: cell
 alt_id: CL:0000201
-def: "A mechanoreceptor cell located in the inner ear that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system." [MESH:A08.663.650.250]
+def: "A mechanoreceptor cell of the auditory or vestibular system that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system." [MESH:A08.663.650.250, WikipediaVersioned:Hair_cell&oldid=1045345915]
 comment: In mammals these cells are located in the organ of Corti.
-synonym: "auditory receptor cell" EXACT []
-synonym: "cochlear hair cell" EXACT []
-synonym: "inner ear hair cell" RELATED [GO:0060119]
-synonym: "inner ear receptor cell" RELATED [GO:0060119]
+synonym: "auditory receptor cell" RELATED []
 xref: FMA:62364
-is_a: CL:0002374 ! ear hair cell
-is_a: CL:0002491 ! auditory epithelial cell
-relationship: BFO:0000050 UBERON:0002227
+is_a: CL:0000855 ! sensory hair cell
 relationship: RO:0002215 GO:0050910
 
 [Term]
@@ -5900,7 +5895,7 @@ def: "A bulbous cell that is medially placed in one row in the organ of Corti. I
 synonym: "inner hair cell" BROAD []
 xref: BTO:0003667
 xref: FMA:62365
-is_a: CL:0000202 ! auditory hair cell
+is_a: CL:4023120 ! cochlea auditory hair cell
 
 [Term]
 id: CL:0000590
@@ -6015,10 +6010,9 @@ is_a: CL:0000521 ! fungal cell
 
 [Term]
 id: CL:0000601
-name: outer hair cell
+name: cochlear outer hair cell
 namespace: cell
 def: "A mechanoreceptor in the organ of Corti. In mammals the outer hair cells are arranged in three rows which are further from the modiolus than the single row of inner hair cells. The motile properties of the outer hair cells may contribute actively to tuning the sensitivity and frequency selectivity of the cochlea." [MESH:A08.663.650.250.315]
-synonym: "cochlear outer hair cell" EXACT []
 xref: BTO:0003666
 xref: FMA:62366
 is_a: CL:0000202 ! auditory hair cell
@@ -6993,8 +6987,14 @@ relationship: BFO:0000050 UBERON:0000971
 id: CL:0000695
 name: Cajal-Retzius cell
 namespace: cell
-def: "One of a transient population of pioneering neurons in the cerebral cortex. These cells are slender bipolar cells of the developing marginal zone. One feature of these cells in mammals is that they express the Reelin gene." [PMID:10600995, PMID:9728912]
+def: "A neuron of the human embryonic marginal zone which display, as a salient feature, radial ascending processes that contact the pial surface, and a horizontal axon plexus located in the deep marginal zone. One feature of these cells in mammals is that they express the Reelin gene." [PMID:10600995, PMID:9728912]
+comment: While previously called 'pioneer neurons' of the marginal zone, Cajal-Retzius cells are differentiated from pioneer neurons (which are Reln-negative) by their Reln-immunoreactivity. {xref="PMID:10600995"}
+synonym: "CR cells" EXACT [WikipediaVersioned:Cajal–Retzius_cell&oldid=1032081753]
+synonym: "Horizontal cells of Cajal" EXACT [WikipediaVersioned:Cajal–Retzius_cell&oldid=1032081753]
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+relationship: RO:0000053 PATO:0070006
+relationship: RO:0002100 UBERON:0010403
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0001-7258-9596 xsd:string
 
 [Term]
 id: CL:0000696
@@ -7891,7 +7891,6 @@ is_a: CL:0000990 {is_inferred="true"} ! conventional dendritic cell
 intersection_of: CL:0000990 ! conventional dendritic cell
 intersection_of: lacks_plasma_membrane_part PR:000001865
 intersection_of: RO:0002202 CL:0000763 ! myeloid cell
-relationship: RO:0002202 CL:0000576 ! monocyte
 
 [Term]
 id: CL:0000783
@@ -8265,7 +8264,7 @@ id: CL:0000806
 name: DN2 thymocyte
 namespace: cell
 def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-positive, and CD25-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
-comment: Note that this type of thymocyte is at the earliest stage of T cell receptor rearrangement of the beta, gamma, and delta T cell receptor chains.
+comment: Note that this type of thymocyte is at the earliest stage of T cell receptor rearrangement of the beta, gamma, and delta T cell receptor chains. Also, there is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 synonym: "DN2 alpha-beta immature T lymphocyte" EXACT []
 synonym: "DN2 alpha-beta immature T-cell" EXACT []
 synonym: "DN2 alpha-beta immature T-lymphocyte" EXACT []
@@ -8275,7 +8274,6 @@ synonym: "double negative 2" EXACT []
 synonym: "preT.DN2.Th" EXACT []
 synonym: "TN2 cell" EXACT []
 synonym: "TN2 thymocyte" EXACT []
-is_a: CL:0000893 {is_inferred="true"} ! thymocyte
 intersection_of: CL:0000893 ! thymocyte
 intersection_of: lacks_plasma_membrane_part PR:000001004
 intersection_of: lacks_plasma_membrane_part PR:000025402
@@ -8288,6 +8286,7 @@ id: CL:0000807
 name: DN3 thymocyte
 namespace: cell
 def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-negative, and CD25-positive and expressing the T cell receptor beta-chain in complex with the pre-T cell receptor alpha chain." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 synonym: "DN3 alpha-beta immature T lymphocyte" EXACT []
 synonym: "DN3 alpha-beta immature T-cell" EXACT []
 synonym: "DN3 alpha-beta immature T-lymphocyte" EXACT []
@@ -8298,7 +8297,6 @@ synonym: "early cortical thymocyte" BROAD []
 synonym: "preT.DN3.Th" EXACT []
 synonym: "TN3 cell" EXACT []
 synonym: "TN3 thymocyte" EXACT []
-is_a: CL:0000893 {is_inferred="true"} ! thymocyte
 intersection_of: CL:0000893 ! thymocyte
 intersection_of: lacks_plasma_membrane_part PR:000001004
 intersection_of: lacks_plasma_membrane_part PR:000001307
@@ -8312,7 +8310,7 @@ id: CL:0000808
 name: DN4 thymocyte
 namespace: cell
 def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-negative, CD25-negative, and pre-TCR-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
-comment: Note that this type of thymocyte has passed the beta-selection checkpoint and is rapidly proliferating and beginning to rearrange the T cell receptor alpha chain.
+comment: Note that this type of thymocyte has passed the beta-selection checkpoint and is rapidly proliferating and beginning to rearrange the T cell receptor alpha chain. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 synonym: "DN4 alpha-beta immature T lymphocyte" EXACT []
 synonym: "DN4 alpha-beta immature T-lymphocyte" EXACT []
 synonym: "DN4 cell" EXACT []
@@ -8321,7 +8319,6 @@ synonym: "DN4 immature T-cell" EXACT []
 synonym: "double negative 4" EXACT []
 synonym: "early cortical thymocyte" BROAD []
 synonym: "T.DN4.th" EXACT []
-is_a: CL:0000893 {is_inferred="true"} ! thymocyte
 intersection_of: CL:0000893 ! thymocyte
 intersection_of: lacks_plasma_membrane_part PR:000001004
 intersection_of: lacks_plasma_membrane_part PR:000001307
@@ -16678,8 +16675,13 @@ id: CL:0002324
 name: myoepithelial cell of mammary gland
 namespace: cell
 def: "A myoepithelial cell that surrounds milk-secreting luminal epithelial cells. This cell type contracts under the stimulation of oxytocin and is attached to the basement membrane by hemidesmosomes and to the adjacent luminal cells by desmosomes. This cell type expresses high level of keratin-14 and is estrogen receptor alpha negative." [GOC:tfm, PMID:11250738, PMID:19022771]
+synonym: "basal cell of lactiferous duct" EXACT [FMA:67800]
+synonym: "myoepithelial cell of lactiferous gland" EXACT []
+xref: CALOHA:TS-2378
+xref: FMA:67800
 is_a: CL:0000185 ! myoepithelial cell
-is_a: CL:0002327 ! mammary gland epithelial cell
+intersection_of: CL:0000185 ! myoepithelial cell
+intersection_of: BFO:0000050 UBERON:0001911
 created_by: tmeehan
 creation_date: 2010-09-20T11:42:14Z
 
@@ -17294,7 +17296,8 @@ name: ear hair cell
 namespace: cell
 def: "A hair cell of the ear that contains the organs of balance and hearing." [GOC:dph, GOC:tfm, ISBN:0192801023]
 synonym: "ear receptor cell" EXACT []
-is_a: CL:0000855 ! sensory hair cell
+intersection_of: CL:0000855 ! sensory hair cell
+intersection_of: BFO:0000050 UBERON:0001690
 created_by: tmeehan
 creation_date: 2010-09-24T01:49:31Z
 
@@ -17857,7 +17860,7 @@ id: CL:0002423
 name: DN2a thymocyte
 namespace: cell
 def: "A DN2 thymocyte that is Kit-hi." [GOC:tfm, PMID:20595614]
-comment: Observed in mice.
+comment: Observed in mice. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 is_a: CL:0000806 {is_inferred="true"} ! DN2 thymocyte
 intersection_of: CL:0000806 ! DN2 thymocyte
 intersection_of: has_high_plasma_membrane_amount PR:000002065
@@ -17869,7 +17872,7 @@ id: CL:0002424
 name: DN2b thymocyte
 namespace: cell
 def: "A DN2 thymocyte that is Kit-low." [GOC:tfm, PMID:20595614]
-comment: Observed in mice.
+comment: Observed in mice. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 is_a: CL:0000806 {is_inferred="true"} ! DN2 thymocyte
 intersection_of: CL:0000806 ! DN2 thymocyte
 intersection_of: has_low_plasma_membrane_amount PR:000002065
@@ -18698,7 +18701,6 @@ def: "A thymocyte that lacks expression of CD4 and CD8." [GOC:tfm, MP:0002407]
 comment: These are precursors to mature T cells; normally, they do not circulate, but are found in the thymus and they have not undergone rearrangement of the alpha and beta T cell receptor genes.
 synonym: "CD4-CD8- T cell" EXACT [MP:0002407]
 synonym: "double negative T cell" EXACT []
-is_a: CL:0000893 {is_inferred="true"} ! thymocyte
 intersection_of: CL:0000893 ! thymocyte
 intersection_of: lacks_plasma_membrane_part PR:000001004
 intersection_of: lacks_plasma_membrane_part PR:000025402
@@ -22591,6 +22593,36 @@ intersection_of: BFO:0000050 UBERON:0002108
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: CL:0009081
+name: specified double negative thymocyte (Homo sapiens)
+def: "The human equivalent of a DN2 thymocyte; typically contains two phases, in the latter of which these thymocytes begin the process of beta selection." [PMID:32304633]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.
+is_a: CL:0002489 ! double negative thymocyte
+property_value: http://purl.org/dc/elements/1.1/date 2021-11-25T09:26:32Z xsd:dateTime
+property_value: RO:0002175 "‘Homo sapiens’" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009082
+name: committed double negative thymocyte (Homo sapiens)
+def: "The human equivalent of a DN3 thymocyte; these thymocytes finish the process of beta selection." [PMID:32304633]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.
+is_a: CL:0002489 ! double negative thymocyte
+property_value: http://purl.org/dc/elements/1.1/date 2021-11-25T09:30:45Z xsd:dateTime
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009083
+name: rearranging double negative thymocyte (Homo sapiens)
+def: "The human equivalent of a DN4 thymocyte." [PMID:32304633]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.
+is_a: CL:0002489 ! double negative thymocyte
+property_value: http://purl.org/dc/elements/1.1/date 2021-11-25T09:32:13Z xsd:dateTime
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0010000
 name: keratinized cell of hair follicle
 def: "A hair follicle matrix region cell which synthesizes keratin and undergoes a characteristic change as it moves upward from the hair bulb to become the hair medulla cortex and hair root sheath." [https://github.com/obophenotype/cell-ontology/issues/417]
@@ -22995,6 +23027,15 @@ synonym: "nematocyte" EXACT []
 is_a: CL:0000151 ! secretory cell
 relationship: BFO:0000051 GO:0042151
 relationship: RO:0002162 NCBITaxon:6073
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
+id: CL:0011031
+name: monocyte-derived dendritic cell
+def: "A dendritic cell that develops from a monocyte." [BTO:0002900, PMID:30719026, PMID:32733468]
+synonym: "MDDC cell" EXACT []
+is_a: CL:0000782 ! myeloid dendritic cell
+relationship: RO:0002202 CL:0000576 ! monocyte
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
@@ -24680,15 +24721,12 @@ intersection_of: BFO:0000050 UBERON:0002110
 
 [Term]
 id: CL:1000416
-name: myoepithelial cell of lactiferous gland
+name: obsolete myoepithelial cell of lactiferous gland
 namespace: cell
-def: "A myoepithelial cell that is part of the mammary gland." [GOC:tfm]
-synonym: "basal cell of lactiferous duct" EXACT [FMA:67800]
-xref: CALOHA:TS-2378
-xref: FMA:67800
-is_a: CL:0000185 {is_inferred="true"} ! myoepithelial cell
-intersection_of: CL:0000185 ! myoepithelial cell
-intersection_of: BFO:0000050 UBERON:0001911
+def: "OBSOLETE. A myoepithelial cell that is part of the mammary gland." [GOC:tfm]
+comment: Term merged into CL:0002324 (myoepithelial cell of mammary gland)
+is_obsolete: true
+replaced_by: CL:0002324
 
 [Term]
 id: CL:1000417
@@ -28147,6 +28185,7 @@ synonym: "L2/3 bipolar Vip (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0000053 PATO:0070006
 relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:8440000
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P32648
@@ -28232,7 +28271,7 @@ def: "A Vip GABAergic cortical interneuron with a soma found in L5. L5 Vip cells
 subset: BDS_subset
 synonym: "L5 VIP (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
-relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:0005394
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P32648
@@ -28374,6 +28413,7 @@ synonym: "L5 T Martinotti SST (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0000053 PATO:0070008
 relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:0005394
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P60041
@@ -28386,7 +28426,7 @@ def: "A Sst GABAergic cortical interneuron with a soma found in lower L5 with mo
 subset: BDS_subset
 synonym: "L5 non-Martinotti SST (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
-relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:0005394
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P60041
@@ -28415,7 +28455,7 @@ subset: BDS_subset
 synonym: "L4 SST (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0000053 PATO:0070007
-relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:0005393
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P60041
@@ -28429,6 +28469,7 @@ subset: BDS_subset
 synonym: "L2/3 PV-like SST Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
 relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:8440000
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P60041
@@ -28455,8 +28496,8 @@ name: L6b glutamatergic cortical neuron
 def: "A glutamatergic neuron with a soma found in cortical layer 6b. They are transcriptomically related to corticothalamic-projecting neurons but have differential projections to the thalamus or anterior cingulate." [DOI:10.1101/2020.10.19.34312, PMID:30382198]
 subset: BDS_subset
 xref: ILX:0770163
-is_a: CL:0000679 ! glutamatergic neuron
-relationship: RO:0002100 UBERON:0000956
+intersection_of: CL:0000679 ! glutamatergic neuron
+intersection_of: RO:0002100 UBERON:8440003
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28479,7 +28520,8 @@ synonym: "pyramidal tract (PT) neuron" NARROW [DOI:10.1038/nrn3469]
 synonym: "Pyramidal tract-like (PT-l)" EXACT [DOI:10.1016/j.cell.2019.09.023] {comment="pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord."}
 synonym: "subcerebral projection (SCPN) neuron" BROAD [DOI:10.1016/j.neuron.2005.08.030]
 synonym: "thick-tufted layer 5 (TTL5) pyramidal neuron" EXACT [DOI:10.3389/fncel.2015.00233]
-is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
+intersection_of: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0005394
 relationship: RO:0000053 PATO:0070015
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -28489,7 +28531,8 @@ name: L6 corticothalamic-projecting glutamatergic cortical neuron
 def: "A corticothalamic-projecting neuron with a soma found in cortical layer 6." [DOI:10.1101/2020.10.19.343129]
 subset: BDS_subset
 synonym: "L6 CT" EXACT []
-is_a: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
+intersection_of: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0005395
 relationship: RO:0013001 UBERON:0010225
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -28501,8 +28544,9 @@ subset: BDS_subset
 synonym: "L5/6 NP M1" EXACT []
 synonym: "L5/6 NP MOp" EXACT []
 xref: ILX:0770161
-is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
-relationship: RO:0002100 UBERON:0001384
+intersection_of: CL:4023012 ! near-projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384
+intersection_of: RO:0002100 UBERON:8440002
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28537,7 +28581,6 @@ def: "An excitatory glutamatergic neuron transcriptomically related to the CT su
 subset: BDS_subset
 is_a: CL:4023038 ! L6b glutamatergic cortical neuron
 relationship: RO:0002100 UBERON:0001384
-relationship: RO:0002162 NCBITaxon:10090
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28547,8 +28590,9 @@ def: "An intratelencephalic-projecting glutamatergic neuron with a soma found in
 subset: BDS_subset
 synonym: "L2/3 IT M1" EXACT []
 synonym: "L2/3 IT MOp" EXACT []
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
-relationship: RO:0002100 UBERON:0001384
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384
+intersection_of: RO:0002100 UBERON:8440000
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28559,8 +28603,9 @@ subset: BDS_subset
 synonym: "L4/5 IT M1" EXACT []
 synonym: "L4/5 IT MOp" EXACT []
 xref: ILX:0770174
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
-relationship: RO:0002100 UBERON:0001384
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384
+intersection_of: RO:0002100 UBERON:8440001
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28571,8 +28616,9 @@ subset: BDS_subset
 synonym: "L5 IT M1" EXACT []
 synonym: "L5 IT MOp" EXACT []
 xref: ILX:0770157
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
-relationship: RO:0002100 UBERON:0001384
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384
+intersection_of: RO:0002100 UBERON:0005394
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28583,9 +28629,10 @@ subset: BDS_subset
 synonym: "L6 IT M1" EXACT []
 synonym: "L6 IT MOp" EXACT []
 xref: ILX:0770158
-is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
+intersection_of: RO:0002100 UBERON:0001384
+intersection_of: RO:0002100 UBERON:0005395
 relationship: RO:0000053 PATO:0070019
-relationship: RO:0002100 UBERON:0001384
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -28718,7 +28765,7 @@ def: "A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have s
 subset: BDS_subset
 synonym: "L5/6 CCK (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
-relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:8440002
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P09240
@@ -29051,6 +29098,26 @@ relationship: RO:0002130 CL:0002070 ! type I vestibular sensory cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023115
+name: type 1 spiral ganglion neuron
+def: "A spiral ganglion neuron that innervates inner hair cells. Type 1 spiral ganglion neurons are myelinated and bipolar." [WikipediaVersioned:Spiral_ganglion&oldid=994446209]
+comment: Type 1 spiral ganglion neurons comprise the vast majority of spiral ganglion cells. {xref="WikipediaVersioned:Spiral_ganglion&oldid=994446209"}
+synonym: "type I spiral ganglion cell" EXACT []
+is_a: CL:0011113 ! spiral ganglion neuron
+relationship: RO:0000053 PATO:0070006
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023116
+name: type 2 spiral ganglion neuron
+def: "A spiral ganglion neuron that innervates outer hair cells. Type 1 spiral ganglion neurons are unmyelinated and unipolar." [WikipediaVersioned:Spiral_ganglion&oldid=994446209]
+comment: Outer hair cells form reciprocal synapses onto type 2 spiral ganglion cells, suggesting that the type 2 cells have both afferent and efferent roles. {xref="WikipediaVersioned:Spiral_ganglion&oldid=994446209"}
+synonym: "type II spiral ganglion cell" EXACT []
+is_a: CL:0011113 ! spiral ganglion neuron
+relationship: RO:0000053 PATO:0070025
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023118
 name: L5/6 non-Martinotti morphology sst expressing GABAergic cortical internueron (Mus musculus)
 def: "A sst GABAergic interneuron does not have Martinotti morphology with a soma found in L5/6 of the cerebral cortex." [PMID:27477017]
@@ -29058,7 +29125,7 @@ comment: L5/6 non-Martinotti SST cells have strongly facilitating excitatory inp
 subset: BDS_subset
 synonym: "L5/6 non-Martinotti SST (Mus)" EXACT []
 is_a: CL:0000099 ! interneuron
-relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002100 UBERON:8440002
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
 relationship: RO:0002292 PR:P60041
@@ -29073,6 +29140,16 @@ synonym: "dACs" EXACT []
 synonym: "inverted amacrine cell" EXACT []
 is_a: CL:0000561 ! amacrine cell
 relationship: RO:0002292 PR:000015426
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023120
+name: cochlea auditory hair cell
+def: "An auditory hair cell found in the cochlea." [Wikipedia:Hair_cell]
+synonym: "cochlear hair cell" EXACT []
+xref: FMA:62364
+intersection_of: CL:0000202 ! auditory hair cell
+intersection_of: BFO:0000050 UBERON:0002227
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
