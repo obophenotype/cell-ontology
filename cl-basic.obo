@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: releases/2021-11-23
+data-version: releases/2021-11-25
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -2077,16 +2077,11 @@ id: CL:0000202
 name: auditory hair cell
 namespace: cell
 alt_id: CL:0000201
-def: "A mechanoreceptor cell located in the inner ear that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system." [MESH:A08.663.650.250]
+def: "A mechanoreceptor cell of the auditory or vestibular system that is sensitive to auditory stimuli. The accessory sensory structures are arranged so that appropriate stimuli cause movement of the hair-like projections (stereocilia and kinocilia) which relay the information centrally in the nervous system." [MESH:A08.663.650.250, WikipediaVersioned:Hair_cell&oldid=1045345915]
 comment: In mammals these cells are located in the organ of Corti.
-synonym: "auditory receptor cell" EXACT []
-synonym: "cochlear hair cell" EXACT []
-synonym: "inner ear hair cell" RELATED [GO:0060119]
-synonym: "inner ear receptor cell" RELATED [GO:0060119]
+synonym: "auditory receptor cell" RELATED []
 xref: FMA:62364
-is_a: CL:0000006 ! neuronal receptor cell
-is_a: CL:0002374 ! ear hair cell
-is_a: CL:0002491 ! auditory epithelial cell
+is_a: CL:0000855 ! sensory hair cell
 
 [Term]
 id: CL:0000203
@@ -5355,7 +5350,7 @@ def: "A bulbous cell that is medially placed in one row in the organ of Corti. I
 synonym: "inner hair cell" BROAD []
 xref: BTO:0003667
 xref: FMA:62365
-is_a: CL:0000202 ! auditory hair cell
+is_a: CL:4023120 ! cochlea auditory hair cell
 
 [Term]
 id: CL:0000590
@@ -5446,7 +5441,6 @@ xref: FMA:67310
 xref: FMA:86775
 xref: NIFSTD:sao862606388
 is_a: CL:0000104 ! multipolar neuron
-is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 
 [Term]
 id: CL:0000599
@@ -5467,13 +5461,12 @@ is_a: CL:0000521 ! fungal cell
 
 [Term]
 id: CL:0000601
-name: outer hair cell
+name: cochlear outer hair cell
 namespace: cell
 def: "A mechanoreceptor in the organ of Corti. In mammals the outer hair cells are arranged in three rows which are further from the modiolus than the single row of inner hair cells. The motile properties of the outer hair cells may contribute actively to tuning the sensitivity and frequency selectivity of the cochlea." [MESH:A08.663.650.250.315]
-synonym: "cochlear outer hair cell" EXACT []
 xref: BTO:0003666
 xref: FMA:62366
-is_a: CL:0000202 ! auditory hair cell
+is_a: CL:4023120 ! cochlea auditory hair cell
 
 [Term]
 id: CL:0000602
@@ -5804,7 +5797,6 @@ def: "Astrocyte-like radial glial cell that extends vertically throughout the re
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
 xref: BTO:0003064
-is_a: CL:0000127 ! astrocyte
 is_a: CL:0000681 ! radial glial cell
 is_a: CL:0009004 ! retinal cell
 
@@ -6333,8 +6325,13 @@ is_a: CL:2000019 ! compound eye photoreceptor cell
 id: CL:0000695
 name: Cajal-Retzius cell
 namespace: cell
-def: "One of a transient population of pioneering neurons in the cerebral cortex. These cells are slender bipolar cells of the developing marginal zone. One feature of these cells in mammals is that they express the Reelin gene." [PMID:10600995, PMID:9728912]
+def: "A neuron of the human embryonic marginal zone which display, as a salient feature, radial ascending processes that contact the pial surface, and a horizontal axon plexus located in the deep marginal zone. One feature of these cells in mammals is that they express the Reelin gene." [PMID:10600995, PMID:9728912]
+comment: While previously called 'pioneer neurons' of the marginal zone, Cajal-Retzius cells are differentiated from pioneer neurons (which are Reln-negative) by their Reln-immunoreactivity. {xref="PMID:10600995"}
+synonym: "CR cells" EXACT [WikipediaVersioned:Cajal–Retzius_cell&oldid=1032081753]
+synonym: "Horizontal cells of Cajal" EXACT [WikipediaVersioned:Cajal–Retzius_cell&oldid=1032081753]
 is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
+is_a: CL:2000029 ! central nervous system neuron
+property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0001-7258-9596 xsd:string
 
 [Term]
 id: CL:0000696
@@ -7099,7 +7096,7 @@ synonym: "veiled cell" BROAD []
 xref: BTO:0004721
 is_a: CL:0000766 ! myeloid leukocyte
 is_a: CL:0000990 ! conventional dendritic cell
-relationship: develops_from CL:0000576 ! monocyte
+relationship: develops_from CL:0000763 ! myeloid cell
 
 [Term]
 id: CL:0000783
@@ -7404,7 +7401,7 @@ id: CL:0000806
 name: DN2 thymocyte
 namespace: cell
 def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-positive, and CD25-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
-comment: Note that this type of thymocyte is at the earliest stage of T cell receptor rearrangement of the beta, gamma, and delta T cell receptor chains.
+comment: Note that this type of thymocyte is at the earliest stage of T cell receptor rearrangement of the beta, gamma, and delta T cell receptor chains. Also, there is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 synonym: "DN2 alpha-beta immature T lymphocyte" EXACT []
 synonym: "DN2 alpha-beta immature T-cell" EXACT []
 synonym: "DN2 alpha-beta immature T-lymphocyte" EXACT []
@@ -7422,6 +7419,7 @@ id: CL:0000807
 name: DN3 thymocyte
 namespace: cell
 def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-negative, and CD25-positive and expressing the T cell receptor beta-chain in complex with the pre-T cell receptor alpha chain." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 synonym: "DN3 alpha-beta immature T lymphocyte" EXACT []
 synonym: "DN3 alpha-beta immature T-cell" EXACT []
 synonym: "DN3 alpha-beta immature T-lymphocyte" EXACT []
@@ -7440,7 +7438,7 @@ id: CL:0000808
 name: DN4 thymocyte
 namespace: cell
 def: "A thymocyte that has the phenotype CD4-negative, CD8-negative, CD44-negative, CD25-negative, and pre-TCR-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149]
-comment: Note that this type of thymocyte has passed the beta-selection checkpoint and is rapidly proliferating and beginning to rearrange the T cell receptor alpha chain.
+comment: Note that this type of thymocyte has passed the beta-selection checkpoint and is rapidly proliferating and beginning to rearrange the T cell receptor alpha chain. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 synonym: "DN4 alpha-beta immature T lymphocyte" EXACT []
 synonym: "DN4 alpha-beta immature T-lymphocyte" EXACT []
 synonym: "DN4 cell" EXACT []
@@ -14209,7 +14207,12 @@ id: CL:0002324
 name: myoepithelial cell of mammary gland
 namespace: cell
 def: "A myoepithelial cell that surrounds milk-secreting luminal epithelial cells. This cell type contracts under the stimulation of oxytocin and is attached to the basement membrane by hemidesmosomes and to the adjacent luminal cells by desmosomes. This cell type expresses high level of keratin-14 and is estrogen receptor alpha negative." [GOC:tfm, PMID:11250738, PMID:19022771]
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+synonym: "basal cell of lactiferous duct" EXACT [FMA:67800]
+synonym: "myoepithelial cell of lactiferous gland" EXACT []
+xref: CALOHA:TS-2378
+xref: FMA:67800
+is_a: CL:0000185 ! myoepithelial cell
+is_a: CL:0002327 ! mammary gland epithelial cell
 created_by: tmeehan
 creation_date: 2010-09-20T11:42:14Z
 
@@ -14485,7 +14488,6 @@ namespace: cell
 def: "A progenitor cell that is able to differentiate into the pancreas alpha, beta and delta endocrine cells. This cell type expresses neurogenin-3 and Isl-1." [GOC:tfm, PMID:20025937, PMID:20217494, PMID:22728667]
 synonym: "pancreatic endocrine progenitor" EXACT []
 synonym: "pancreatic islet progenitor cell" EXACT []
-is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0011026 ! progenitor cell
 created_by: tmeehan
 creation_date: 2010-09-21T04:41:06Z
@@ -14730,6 +14732,7 @@ name: ear hair cell
 namespace: cell
 def: "A hair cell of the ear that contains the organs of balance and hearing." [GOC:dph, GOC:tfm, ISBN:0192801023]
 synonym: "ear receptor cell" EXACT []
+is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000855 ! sensory hair cell
 created_by: tmeehan
 creation_date: 2010-09-24T01:49:31Z
@@ -15240,7 +15243,7 @@ id: CL:0002423
 name: DN2a thymocyte
 namespace: cell
 def: "A DN2 thymocyte that is Kit-hi." [GOC:tfm, PMID:20595614]
-comment: Observed in mice.
+comment: Observed in mice. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 is_a: CL:0000806 ! DN2 thymocyte
 created_by: tmeehan
 creation_date: 2010-10-21T10:12:05Z
@@ -15250,7 +15253,7 @@ id: CL:0002424
 name: DN2b thymocyte
 namespace: cell
 def: "A DN2 thymocyte that is Kit-low." [GOC:tfm, PMID:20595614]
-comment: Observed in mice.
+comment: Observed in mice. There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in mouse versus human thymus. If in doubt, please consider using CL:0002489 'double negative thymocyte'.
 is_a: CL:0000806 ! DN2 thymocyte
 relationship: develops_from CL:0002423 ! DN2a thymocyte
 created_by: tmeehan
@@ -17229,7 +17232,7 @@ id: CL:0002624
 name: paneth cell of the appendix
 namespace: cell
 def: "A paneth cell of the appendix." [GOC:tfm]
-is_a: CL:0009009 ! paneth cell of colon
+is_a: CL:0000510 ! paneth cell
 is_a: CL:1001585 ! appendix glandular cell
 created_by: tmeehan
 creation_date: 2011-03-15T09:38:18Z
@@ -17901,6 +17904,7 @@ name: macular hair cell
 namespace: cell
 def: "An auditory hair cell located in the macula that is sensitive to auditory stimuli." [GO:cvs]
 is_a: CL:0000202 ! auditory hair cell
+is_a: CL:0002374 ! ear hair cell
 
 [Term]
 id: CL:0005009
@@ -18839,7 +18843,7 @@ subset: location_grouping
 synonym: "appendix tuft cell" EXACT []
 synonym: "tuft cell of appendix vermiformis" EXACT []
 synonym: "tuft cell of vermiform appendix" EXACT []
-is_a: CL:0009041 ! tuft cell of colon
+is_a: CL:0002203 ! brush cell of epithelium proper of large intestine
 is_a: CL:1000405 ! epithelial cell of appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -18897,7 +18901,7 @@ subset: location_grouping
 synonym: "appendix enterocyte" EXACT []
 synonym: "enterocyte of appendix vermiformis" EXACT []
 synonym: "enterocyte of vermiform appendix" EXACT []
-is_a: CL:1000347 ! enterocyte of colon
+is_a: CL:0000584 ! enterocyte
 is_a: CL:1000405 ! epithelial cell of appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -18909,7 +18913,7 @@ subset: location_grouping
 synonym: "appendix transit amplifying cell" EXACT []
 synonym: "transit amplifying cell of appendix vermiformis" EXACT []
 synonym: "transit amplifying cell of vermiform appendix" EXACT []
-is_a: CL:0009011 ! transit amplifying cell of colon
+is_a: CL:0009010 ! transit amplifying cell
 relationship: develops_from CL:0009028 ! intestinal crypt stem cell of appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -18924,7 +18928,6 @@ synonym: "intestinal crypt stem cell of vermiform appendix" EXACT []
 synonym: "stem cell of intestinal crypt of Lieberkuhn of appendix" EXACT []
 synonym: "stem cell of intestinal crypt of Lieberkuhn of appendix vermiformis" EXACT []
 is_a: CL:0009016 ! intestinal crypt stem cell of large intestine
-is_a: CL:0009043 ! intestinal crypt stem cell of colon
 is_a: CL:1000405 ! epithelial cell of appendix
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -18948,7 +18951,7 @@ subset: location_grouping
 synonym: "appendix enteroendocrine cell" EXACT []
 synonym: "enteroendocrine cell of appendix vermiformis" EXACT []
 synonym: "enteroendocrine cell of vermiform appendix" EXACT []
-is_a: CL:0009042 ! enteroendocrine cell of colon
+is_a: CL:1001516 ! intestinal enteroendocrine cell
 is_a: CL:1001585 ! appendix glandular cell
 created_by: http://orcid.org/0000-0002-2825-0621
 
@@ -19426,6 +19429,36 @@ is_a: CL:0019032 ! intestinal tuft cell
 created_by: http://orcid.org/0000-0002-2825-0621
 
 [Term]
+id: CL:0009081
+name: specified double negative thymocyte (Homo sapiens)
+def: "The human equivalent of a DN2 thymocyte; typically contains two phases, in the latter of which these thymocytes begin the process of beta selection." [PMID:32304633]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.
+is_a: CL:0002489 ! double negative thymocyte
+property_value: http://purl.org/dc/elements/1.1/date 2021-11-25T09:26:32Z xsd:dateTime
+property_value: RO:0002175 "‘Homo sapiens’" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009082
+name: committed double negative thymocyte (Homo sapiens)
+def: "The human equivalent of a DN3 thymocyte; these thymocytes finish the process of beta selection." [PMID:32304633]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.
+is_a: CL:0002489 ! double negative thymocyte
+property_value: http://purl.org/dc/elements/1.1/date 2021-11-25T09:30:45Z xsd:dateTime
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
+id: CL:0009083
+name: rearranging double negative thymocyte (Homo sapiens)
+def: "The human equivalent of a DN4 thymocyte." [PMID:32304633]
+comment: There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.
+is_a: CL:0002489 ! double negative thymocyte
+property_value: http://purl.org/dc/elements/1.1/date 2021-11-25T09:32:13Z xsd:dateTime
+property_value: RO:0002175 "'Homo sapiens'" xsd:string
+created_by: http://orcid.org/0000-0002-2825-0621
+
+[Term]
 id: CL:0010000
 name: keratinized cell of hair follicle
 def: "A hair follicle matrix region cell which synthesizes keratin and undergoes a characteristic change as it moves upward from the hair bulb to become the hair medulla cortex and hair root sheath." [https://github.com/obophenotype/cell-ontology/issues/417]
@@ -19597,7 +19630,6 @@ synonym: "magnocellular neuron" EXACT []
 xref: ILX:0107463
 is_a: CL:0000381 ! neurosecretory neuron
 is_a: CL:2000029 ! central nervous system neuron
-is_a: CL:2000030 ! hypothalamus cell
 property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0001-7258-9596 xsd:string
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -19803,6 +19835,15 @@ is_a: CL:0000151 ! secretory cell
 created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
+id: CL:0011031
+name: monocyte-derived dendritic cell
+def: "A dendritic cell that develops from a monocyte." [BTO:0002900, PMID:30719026, PMID:32733468]
+synonym: "MDDC cell" EXACT []
+is_a: CL:0000782 ! myeloid dendritic cell
+relationship: develops_from CL:0000576 ! monocyte
+created_by: http://orcid.org/0000-0001-5208-3432
+
+[Term]
 id: CL:0011032
 name: lysosome-rich enterocyte
 def: "An enterocyte that possesses a large supranuclear vacuolar system that preferentially internalizes dietary protein via receptor-mediated and fluid-phase endocytosis for intracellular digestion and trans-cellular transport. In zebrafish these cells are located in the posterior region of the mid intestine throughout life. In mammals they are found in the ileum pre-weaning and later are replaced by mature enterocytes." [https://orcid.org/0000-0002-1009-339X, https://orcid.org/0000-0002-2244-7917, PMID:31474562]
@@ -19866,8 +19907,6 @@ def: "OBSOLETE: Astrocyte-like radial glial cell that extends vertically through
 comment: Term was duplicated, use CL:0000636 instead
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
-is_a: CL:0000681 ! radial glial cell
-is_a: CL:0009004 ! retinal cell
 is_obsolete: true
 replaced_by: CL:0000636
 
@@ -19907,8 +19946,6 @@ id: CL:0011112
 name: obsolete magnocellular neurosecretory cell
 def: "OBSOLETE: Neurons part of the hypothalamic supraoptic and paraventricular nuclei that secrete the hormones, oxytocin and vasopressin into the systemic circulation from the posterior pituitary gland." [GOC:NV, PMID:10711808]
 comment: Duplicated term, please see CL:0011003 instead
-is_a: CL:0000167 ! peptide hormone secreting cell
-is_a: CL:0000381 ! neurosecretory neuron
 is_obsolete: true
 replaced_by: CL:0011003
 
@@ -20695,7 +20732,7 @@ namespace: cell
 def: "A goblet cell that is part of the epithelium proper of appendix." [GOC:tfm]
 synonym: "goblet cell of epithelium proper of appendix" EXACT []
 xref: FMA:263069
-is_a: CL:0009039 ! colon goblet cell
+is_a: CL:1000320 ! large intestine goblet cell
 is_a: CL:1001585 ! appendix glandular cell
 
 [Term]
@@ -21122,7 +21159,6 @@ name: type 1 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263186
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 
@@ -21132,7 +21168,6 @@ name: type 1 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263188
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 
@@ -21142,7 +21177,6 @@ name: type 1 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263190
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 
@@ -21152,7 +21186,6 @@ name: type 1 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type I vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263192
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002070 ! type I vestibular sensory cell
 
@@ -21162,7 +21195,6 @@ name: type 2 vestibular sensory cell of stato-acoustic epithelium
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the stato-acoustic epithelium." [GOC:tfm]
 xref: FMA:263194
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 
@@ -21172,7 +21204,6 @@ name: type 2 vestibular sensory cell of epithelium of macula of utricle of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of utricle of membranous labyrinth." [GOC:tfm]
 xref: FMA:263196
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 
@@ -21182,7 +21213,6 @@ name: type 2 vestibular sensory cell of epithelium of macula of saccule of membr
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of macula of saccule of membranous labyrinth." [GOC:tfm]
 xref: FMA:263198
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 
@@ -21192,7 +21222,6 @@ name: type 2 vestibular sensory cell of epithelium of crista of ampulla of semic
 namespace: cell
 def: "A type II vestibular sensory cell that is part of the epithelium of crista of ampulla of semicircular duct of membranous labyrinth." [GOC:tfm]
 xref: FMA:263200
-is_a: CL:0000006 ! neuronal receptor cell
 is_a: CL:0000098 ! sensory epithelial cell
 is_a: CL:0002069 ! type II vestibular sensory cell
 
@@ -21244,7 +21273,7 @@ def: "An epithelial cell that is part of the appendix." [GOC:tfm]
 synonym: "columnar epitheliocyte of appendix" EXACT [FMA:63602]
 synonym: "epithelial cell of vermiform appendix" EXACT [FMA:63602]
 xref: FMA:63602
-is_a: CL:0011108 ! colon epithelial cell
+is_a: CL:0002253 ! epithelial cell of large intestine
 
 [Term]
 id: CL:1000409
@@ -21323,14 +21352,12 @@ is_a: CL:0002371 ! somatic cell
 
 [Term]
 id: CL:1000416
-name: myoepithelial cell of lactiferous gland
+name: obsolete myoepithelial cell of lactiferous gland
 namespace: cell
-def: "A myoepithelial cell that is part of the mammary gland." [GOC:tfm]
-synonym: "basal cell of lactiferous duct" EXACT [FMA:67800]
-xref: CALOHA:TS-2378
-xref: FMA:67800
-is_a: CL:0000185 ! myoepithelial cell
-is_a: CL:0002327 ! mammary gland epithelial cell
+def: "OBSOLETE. A myoepithelial cell that is part of the mammary gland." [GOC:tfm]
+comment: Term merged into CL:0002324 (myoepithelial cell of mammary gland)
+is_obsolete: true
+replaced_by: CL:0002324
 
 [Term]
 id: CL:1000417
@@ -21349,7 +21376,7 @@ def: "A myoepithelial cell that is part of the mammary gland alveolus." [GOC:tfm
 synonym: "basal cell of alveolus of lactiferous gland" EXACT [FMA:67802]
 synonym: "myoepithelial cell of mammary alveolus" EXACT [FMA:67802]
 xref: FMA:67802
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+is_a: CL:0002324 ! myoepithelial cell of mammary gland
 
 [Term]
 id: CL:1000419
@@ -21358,7 +21385,7 @@ namespace: cell
 def: "A myoepithelial cell that is part of the lactiferous duct." [GOC:tfm]
 xref: FMA:67803
 is_a: CL:0000068 ! duct epithelial cell
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+is_a: CL:0002324 ! myoepithelial cell of mammary gland
 
 [Term]
 id: CL:1000420
@@ -21650,7 +21677,7 @@ namespace: cell
 def: "A myoepithelial cell that is part of the acinus of lactiferous gland." [GOC:tfm]
 synonym: "basal cell of acinus of lactiferous gland" EXACT [FMA:74469]
 xref: FMA:74469
-is_a: CL:1000416 ! myoepithelial cell of lactiferous gland
+is_a: CL:0002324 ! myoepithelial cell of mammary gland
 
 [Term]
 id: CL:1000469
@@ -22888,7 +22915,6 @@ synonym: "hippocampus (CA) pyramidal neuron" EXACT [NIFSTD:sao131261273]
 xref: NIFSTD:sao131261273
 xref: SAO:sao131261273
 is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0002608 ! hippocampal neuron
 
 [Term]
 id: CL:1001572
@@ -23012,8 +23038,8 @@ synonym: "caecal appendix glandular cell" RELATED [CALOHA:TS-1271]
 synonym: "cecal appendix glandular cell" RELATED [CALOHA:TS-1271]
 synonym: "vermiform appendix glandular cell" RELATED [CALOHA:TS-1271]
 xref: CALOHA:TS-1271
+is_a: CL:0002658 ! glandular cell of the large intestine
 is_a: CL:1000405 ! epithelial cell of appendix
-is_a: CL:1001588 ! colon glandular cell
 
 [Term]
 id: CL:1001586
@@ -24397,7 +24423,6 @@ name: L5/6 CCK, Vip cortical GABAergic interneuron (Mus musculus)
 def: "A Vip GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK Vip (Mus)" EXACT []
-is_a: CL:4023016 ! Vip GABAergic cortical interneuron
 is_a: CL:4023071 ! L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24640,7 +24665,6 @@ synonym: "L6 IT MOp" EXACT []
 xref: ILX:0770158
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
-is_a: CL:4023095 ! untufted pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24676,7 +24700,6 @@ id: CL:4023054
 name: mesothelial fibroblast
 def: "A mesothelial cell that has undergone mesothelial-to-mesenchymal transition (MMT) to become a fibroblast cell." [PMID:26106328]
 is_a: CL:0000057 ! fibroblast
-is_a: CL:0000077 ! mesothelial cell
 relationship: develops_from CL:0000077 ! mesothelial cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24689,7 +24712,6 @@ synonym: "CT VAL/VM M1" EXACT []
 synonym: "CT VAL/VM MOp" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
-is_a: CL:4023095 ! untufted pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24723,6 +24745,7 @@ id: CL:4023066
 name: horizontal pyramidal neuron
 def: "A pyramidal neuron which has an apical tree which is oriented parallel to the pia. This is unlike typical pyramidal neurons which have its apical dendrite aligned vertically." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24758,7 +24781,8 @@ name: L5/6 CCK cortical GABAergic interneuron (Mus musculus)
 def: "A GABAergic cortical interneuron that expresses CCK. L5/6 CCK cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
 subset: BDS_subset
 synonym: "L5/6 CCK (Mus)" EXACT []
-is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0011005 ! GABAergic interneuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24798,7 +24822,6 @@ def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary mot
 subset: BDS_subset
 synonym: "stellate L6 IT MOp (Mus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
-is_a: CL:4023093 ! stellate pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24808,7 +24831,6 @@ def: "a L6 intratelencephalic projecting glutamatergic neuron of the primary mot
 subset: BDS_subset
 synonym: "inverted L6 IT MOp (Mus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
-is_a: CL:4023092 ! inverted pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24868,6 +24890,7 @@ id: CL:4023092
 name: inverted pyramidal neuron
 def: "A pyramidal neuron which has an apical tree which is oriented towards the white matter." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24876,6 +24899,7 @@ id: CL:4023093
 name: stellate pyramidal neuron
 def: "A pyramidal neuron which lacks a tuft formation but extends small radial distances forming a star-like shape." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24884,6 +24908,7 @@ id: CL:4023094
 name: tufted pyramidal neuron
 def: "A pyramidal neuron which has a distinctive tuft formation, distal from the soma." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24892,6 +24917,7 @@ id: CL:4023095
 name: untufted pyramidal neuron
 def: "A pyramidal neuron which lacks a clear tuft formation but extends to large radial distances." [PMID:30715238]
 subset: BDS_subset
+is_a: CL:0000117 ! CNS neuron (sensu Vertebrata)
 is_a: CL:0000598 ! pyramidal neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -24901,6 +24927,7 @@ name: arachnoid barrier cell
 def: "A mesothelial fibroblast of the arachnoid barrier layer. Arachnoid barrier cells make up the tight-junctioned layer in the leptomeninx that functions as the physiologic barrier between the cerebrospinal fluid in the subarachnoid space and the fenestrated capillaries in the dura." [PMID:23298861]
 synonym: "AB cell" EXACT [PMID:23298861]
 synonym: "ABC" EXACT [PMID:30096314]
+is_a: CL:0002078 ! meso-epithelial cell
 is_a: CL:4023058 ! mesothelial fibroblast of the leptomeninx
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
@@ -25029,7 +25056,7 @@ id: CL:4023110
 name: amygdala pyramidal neuron
 def: "A pyramidal neuron with soma located in the amygdala." [PMID:1375860]
 is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0012001 ! neuron of the forebrain
+is_a: CL:2000029 ! central nervous system neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -25037,7 +25064,7 @@ id: CL:4023111
 name: cerebral cortex pyramidal neuron
 def: "A pyramidal neuron with soma located in the cerebral cortex." [PMID:30715238]
 is_a: CL:0000598 ! pyramidal neuron
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0010012 ! cerebral cortex neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -25062,13 +25089,32 @@ is_a: CL:4023112 ! vestibular afferent neuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023115
+name: type 1 spiral ganglion neuron
+def: "A spiral ganglion neuron that innervates inner hair cells. Type 1 spiral ganglion neurons are myelinated and bipolar." [WikipediaVersioned:Spiral_ganglion&oldid=994446209]
+comment: Type 1 spiral ganglion neurons comprise the vast majority of spiral ganglion cells. {xref="WikipediaVersioned:Spiral_ganglion&oldid=994446209"}
+synonym: "type I spiral ganglion cell" EXACT []
+is_a: CL:0011113 ! spiral ganglion neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023116
+name: type 2 spiral ganglion neuron
+def: "A spiral ganglion neuron that innervates outer hair cells. Type 1 spiral ganglion neurons are unmyelinated and unipolar." [WikipediaVersioned:Spiral_ganglion&oldid=994446209]
+comment: Outer hair cells form reciprocal synapses onto type 2 spiral ganglion cells, suggesting that the type 2 cells have both afferent and efferent roles. {xref="WikipediaVersioned:Spiral_ganglion&oldid=994446209"}
+synonym: "type II spiral ganglion cell" EXACT []
+is_a: CL:0011113 ! spiral ganglion neuron
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023118
 name: L5/6 non-Martinotti morphology sst expressing GABAergic cortical internueron (Mus musculus)
 def: "A sst GABAergic interneuron does not have Martinotti morphology with a soma found in L5/6 of the cerebral cortex." [PMID:27477017]
 comment: L5/6 non-Martinotti SST cells have strongly facilitating excitatory inputs and moderately depressing outputs. They have faster action potential than Martinotti morphology SST cells and slightly slower than PV basket cells. {xref="PMID:27477017"}
 subset: BDS_subset
 synonym: "L5/6 non-Martinotti SST (Mus)" EXACT []
-is_a: CL:4023017 ! sst GABAergic cortical interneuron
+is_a: CL:0000402 ! CNS interneuron
+is_a: CL:0011005 ! GABAergic interneuron
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -25081,11 +25127,20 @@ synonym: "inverted amacrine cell" EXACT []
 is_a: CL:0000561 ! amacrine cell
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
+[Term]
+id: CL:4023120
+name: cochlea auditory hair cell
+def: "An auditory hair cell found in the cochlea." [Wikipedia:Hair_cell]
+synonym: "cochlear hair cell" EXACT []
+xref: FMA:62364
+is_a: CL:0000202 ! auditory hair cell
+is_a: CL:0002374 ! ear hair cell
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+
 [Typedef]
 id: develops_from
 name: develops_from
 namespace: uberon
-def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
 comment: This is the transitive form of the develops from relation
 xref: RO:0002202
 property_value: IAO:0000114 IAO:0000125
