@@ -67,12 +67,14 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
 # into existentials on roundtrip
 
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
-	$(ROBOT) merge --input $< \
+tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
+	$(ROBOT) merge --input $(SRC) \
 		reason --reasoner ELK \
 		relax \
 		remove --axioms equivalent \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
+		remove -T config/remove_annotations.txt --axioms annotation \
+		query --update ../sparql/remove-op-definitions.ru \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
@@ -310,8 +312,7 @@ imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
 .PRECIOUS: imports/pato_import.owl
 
 imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/pr_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --individuals include --method BOT \
 		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
 		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
