@@ -369,7 +369,7 @@ mirror/pato.owl: mirror/pato.trigger
 mirror/ncbitaxon.trigger: $(SRC)
 
 mirror/ncbitaxon.owl: mirror/ncbitaxon.trigger
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.obo -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/ncbitaxon.owl
 
 ALL_MIRRORS = $(patsubst %, mirror/%.owl, $(IMPORTS))
