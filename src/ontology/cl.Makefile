@@ -25,8 +25,14 @@ mirror/clo.owl: mirror/clo.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/clo.owl --create-dirs -o mirror/clo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/clo.owl -o $@.tmp.owl && \
 		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/CLO --axioms external --preserve-structure false --trim false \
 			remove --term "CLO:0000021" --axioms logical --preserve-structure false \
+			remove --term "CL:0000243" --preserve-structure false \
 			remove --term "CLO:0000031" --term "CLO:0000001" --term "rdfs:comment" --term "IAO:0000115" --signature true --trim false -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/clo.owl
+
+mirror/go.owl: mirror/go.trigger
+	echo "WARNING OVERWRITING GO MIRROR BECAUSE OF OBSOLETE CL TERM"
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o mirror/go.owl --retry 4 --max-time 200 && $(ROBOT) remove -i mirror/go.owl --term "CL:0000243" --preserve-structure false convert -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/go.owl
 
 #tmp/chebi_logical.owl: mirror/chebi.owl
 #	echo "Skipped chebi logical" && cp $< $@
