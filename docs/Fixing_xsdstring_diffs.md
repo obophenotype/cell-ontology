@@ -15,7 +15,7 @@ When you make edits, sometimes there will be large amounts of unintended differe
 
   If **make** is not installed, on MAC:
 ``` sh
-sed -i '' -E "s/Annotation[(]\(oboInOwl[:]hasDbXref [\"][^\"]*[\"]\)[)]/Annotation(\1^^xsd:string)/" cl-edit.owl
+sed -i '' -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" cl-edit.owl
 ```
 
 
