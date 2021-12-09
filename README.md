@@ -1,5 +1,4 @@
-[![Build Status](https://github.com/obophenotype/cell-ontology/workflows/CI/badge.svg
-)
+![Build Status](https://github.com/obophenotype/cell-ontology/workflows/CI/badge.svg)
 [![DOI](https://zenodo.org/badge/13996/obophenotype/cell-ontology.svg)](https://zenodo.org/badge/latestdoi/13996/obophenotype/cell-ontology)
 
 
@@ -16,7 +15,12 @@ This is the repository that contains the source for the cell ontology. Most user
 For more details on CL see:
 http://obofoundry.org/ontology/cl.html
 
+Documentation for the Cell Ontology is also available at https://obophenotype.github.io/cell-ontology/.
+
 Editors: see the README in [src/ontology](src/ontology)
+
+Training materials from the 2020 CL Training Workshop are available at https://github.com/obophenotype/cell-ontology-training.
+
 
 ## Twice monthly calls
   
