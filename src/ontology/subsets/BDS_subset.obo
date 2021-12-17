@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-12-07/subsets/BDS_subset.owl
+data-version: cl/releases/2021-12-16/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -61,7 +61,7 @@ synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance o
 synonymtypedef: LATIN "latin term"
 synonymtypedef: PLURAL "plural term"
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2021-12-07" xsd:string
+property_value: owl:versionInfo "2021-12-16" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -3575,21 +3575,6 @@ created_by: tmeehan
 creation_date: 2010-09-24T09:44:42Z
 
 [Term]
-id: CL:0002609
-name: neuron of cerebral cortex
-namespace: cell
-def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
-synonym: "cortical neuron" EXACT []
-xref: BTO:0004102
-xref: FMA:84104
-is_a: CL:0010012 ! cerebral cortex neuron
-is_a: CL:0012001 ! neuron of the forebrain
-intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
-intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
-created_by: tmeehan
-creation_date: 2011-03-06T07:37:08Z
-
-[Term]
 id: CL:0005000
 name: spinal cord interneuron
 namespace: cell
@@ -3626,18 +3611,24 @@ id: CL:0010011
 name: cerebral cortex GABAergic interneuron
 def: "A GABAergic interneuron whose soma is located in the cerebral cortex." [GOC:dos]
 is_a: CL:0000402 ! CNS interneuron
-is_a: CL:0002609 ! neuron of cerebral cortex
+is_a: CL:0010012 ! cerebral cortex neuron
 is_a: CL:0011005 ! GABAergic interneuron
+is_a: CL:0012001 ! neuron of the forebrain
 intersection_of: CL:0011005 ! GABAergic interneuron
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 
 [Term]
 id: CL:0010012
 name: cerebral cortex neuron
-def: "A neuron that is part_of a cerebral cortex." []
+namespace: cell
+def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
+synonym: "cortical neuron" EXACT []
+xref: BTO:0004102
+xref: FMA:84104
 is_a: CL:2000029 ! central nervous system neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 
 [Term]
@@ -3873,7 +3864,7 @@ created_by: http://orcid.org/0000-0001-7258-9596
 [Term]
 id: CL:4023018
 name: pvalb GABAergic cortical interneuron
-def: "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin." [] {def="PMID:27477017"}
+def: "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin." [PMID:27477017]
 subset: BDS_subset
 xref: ILX:0770154
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
@@ -4343,7 +4334,7 @@ relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 [Term]
 id: CL:4023083
 name: chandelier cell
-def: "An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted." [PMID:15378039] {def="PMID:27199673"}
+def: "An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted." [PMID:15378039, PMID:27199673]
 subset: BDS_subset
 synonym: "ChC" EXACT [PMID:15378039]
 xref: ILX:0777213 {http://purl.obolibrary.org/obo/IAO_0000116="Interlex cross reference refers specifically to Markram 2015 rat chandelier cell."}
