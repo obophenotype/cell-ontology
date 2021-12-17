@@ -120,36 +120,6 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
 
-$(ONT)-simple.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert -o $@
-
-$(ONT)-simple.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
-$(ONT)-basic.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert -o $@
-
-
 #$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
 #	$(ROBOT) merge $(patsubst %, -i %, $^) \
 #		reason \
@@ -167,20 +137,6 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
 #	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
-
-$(ONT)-basic.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
 
 #fail_seed_by_entity_type_cl:
 #	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
