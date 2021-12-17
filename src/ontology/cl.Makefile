@@ -4,22 +4,6 @@
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
 
-#mirror/pr.owl: mirror/pr.trigger
-#	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-#	echo "skipped PR mirror"
-
-#imports/pr_import.owl:
-#	echo "skipped pr import"
-
-#tmp/clo_logical.owl: mirror/clo.owl
-#	echo "Skipped clo logical" && cp $< $@
-
-#tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
-#	echo "Skipped clo logical" && touch $@
-
-#tmp/pr_logical.owl: mirror/pr.owl
-#	echo "Skipped pr logical" && cp $< $@
-
 mirror/clo.owl: mirror/clo.trigger
 	echo "WARNING OVERWRITING CLO MIRROR BECAUSE OF EQUIVALENT TERM"
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/clo.owl --create-dirs -o mirror/clo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/clo.owl -o $@.tmp.owl && \
@@ -34,31 +18,12 @@ mirror/go.owl: mirror/go.trigger
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o mirror/go.owl --retry 4 --max-time 200 && $(ROBOT) remove -i mirror/go.owl --term "CL:0000243" --preserve-structure false convert -o $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: mirror/go.owl
 
-#tmp/chebi_logical.owl: mirror/chebi.owl
-#	echo "Skipped chebi logical" && cp $< $@
-
-#mirror/ncbitaxon.owl:
-#	echo "STRONG WARNING: skipped ncbitaxon mirror!"
-
-#imports/ncbitaxon_import.owl:
-#	echo "STRONG WARNING: skipped ncbitaxon import!"
-
-object_properties.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
-
 non_native_classes.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/non-native-classes.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@
 	rm -f $@.tmp
 
 # TODO add back: 		remove --term-file non_native_classes.txt \
-
-
-#$(ONT).obo: $(ONT)-basic.owl
-#	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-
-#$(PATTERNDIR)/dosdp-patterns: .FORCE
-#	echo "WARNING WARNING Skipped until fixed: delete from cl.Makefile"
 
 #####################################################################################
 ### Run ontology-release-runner instead of ROBOT as long as ROBOT is broken.      ###
@@ -150,24 +115,6 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 		convert -o $@
 
 
-#$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
-#	$(ROBOT) merge $(patsubst %, -i %, $^) \
-#		reason \
-#		relax \
-#		reduce \
-#		convert -o $@
-
-#$(RELEASEDIR)/views:
-#	mkdir -p $@
-
-#release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
-#	rsync -R $^ $(RELEASEDIR)/views
-
-# prepare_release: release_views
-
-#diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
-#	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
-
 $(ONT)-basic.obo: tmp/cl_signature.txt oort
 	echo "WARNING: $@ is not generated with the default ODK specification."
 	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
@@ -180,15 +127,6 @@ $(ONT)-basic.obo: tmp/cl_signature.txt oort
 		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
 		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
 		rm -f $@.tmp.obo $@.tmp
-
-
-#fail_seed_by_entity_type_cl:
-#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
-
-#works_seed_by_entity_type_cl:
-#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
 
 
 ##############################################
@@ -304,35 +242,6 @@ test_obsolete: cl.obo
 	! grep "! obsolete" cl.obo
 
 test: test_obsolete
-
-
-imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/uberon_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-.PRECIOUS: imports/uberon_import.owl
-
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pato_import.owl
-
-imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pr_import.owl
-
 
 imports/merged_import.owl: mirror/merged.owl imports/merged_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
