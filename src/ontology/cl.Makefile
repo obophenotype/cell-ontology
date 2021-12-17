@@ -20,6 +20,20 @@
 #tmp/pr_logical.owl: mirror/pr.owl
 #	echo "Skipped pr logical" && cp $< $@
 
+mirror/clo.owl: mirror/clo.trigger
+	echo "WARNING OVERWRITING CLO MIRROR BECAUSE OF EQUIVALENT TERM"
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/clo.owl --create-dirs -o mirror/clo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/clo.owl -o $@.tmp.owl && \
+		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/CLO --axioms external --preserve-structure false --trim false \
+			remove --term "CLO:0000021" --axioms logical --preserve-structure false \
+			remove --term "CL:0000243" --preserve-structure false \
+			remove --term "CLO:0000031" --term "CLO:0000001" --term "rdfs:comment" --term "IAO:0000115" --signature true --trim false -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/clo.owl
+
+mirror/go.owl: mirror/go.trigger
+	echo "WARNING OVERWRITING GO MIRROR BECAUSE OF OBSOLETE CL TERM"
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o mirror/go.owl --retry 4 --max-time 200 && $(ROBOT) remove -i mirror/go.owl --term "CL:0000243" --preserve-structure false convert -o $@.tmp.owl && mv $@.tmp.owl $@; fi
+.PRECIOUS: mirror/go.owl
+
 #tmp/chebi_logical.owl: mirror/chebi.owl
 #	echo "Skipped chebi logical" && cp $< $@
 
@@ -68,12 +82,13 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # into existentials on roundtrip
 
 tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
-	$(ROBOT) merge --input $< \
+	$(ROBOT) merge --input $(SRC) \
 		reason --reasoner ELK \
 		relax \
 		remove --axioms equivalent \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
 		remove -T config/remove_annotations.txt --axioms annotation \
+		query --update ../sparql/remove-op-definitions.ru \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
@@ -82,7 +97,7 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_
 		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
 
 oort: tmp/source-merged.obo
-	ontology-release-runner --reasoner elk $< --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
+	ontology-release-runner --reasoner elk tmp/source-merged.obo --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
 
 test: oort
 
@@ -257,7 +272,7 @@ all_reports: reports/obo-diff.txt
 
 
 normalise_xsd_string: $(SRC)
-	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
 	rm $<.bak
 
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
@@ -319,6 +334,15 @@ imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/pr_import.owl
+
+
+imports/merged_import.owl: mirror/merged.owl imports/merged_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBA_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://www.genenames.org/cgi-bin/gene_symbol_report*>"  \
+		extract -T imports/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		unmerge -i components/unmerge.owl \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 
 ## DOSDP on Google Sheets
