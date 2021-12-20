@@ -120,36 +120,6 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
 
-$(ONT)-simple.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert -o $@
-
-$(ONT)-simple.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
-$(ONT)-basic.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert -o $@
-
-
 #$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
 #	$(ROBOT) merge $(patsubst %, -i %, $^) \
 #		reason \
@@ -167,20 +137,6 @@ $(ONT)-basic.owl: tmp/cl_signature.txt oort
 
 #diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
 #	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
-
-$(ONT)-basic.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
 
 #fail_seed_by_entity_type_cl:
 #	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
@@ -272,7 +228,7 @@ all_reports: reports/obo-diff.txt
 
 
 normalise_xsd_string: $(SRC)
-	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
 	rm $<.bak
 
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
@@ -310,7 +266,8 @@ imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T imports/uberon_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
 		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/RO_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
@@ -320,7 +277,8 @@ imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
 	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
 		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
 		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/RO_*>" --axioms annotation --signature true \
+		remove --select "<http://purl.obolibrary.org/obo/CP_*>" \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/pato_import.owl
@@ -332,6 +290,15 @@ imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 .PRECIOUS: imports/pr_import.owl
+
+
+imports/merged_import.owl: mirror/merged.owl imports/merged_terms_combined.txt
+	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
+		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBA_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://www.genenames.org/cgi-bin/gene_symbol_report*>"  \
+		extract -T imports/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
+		unmerge -i components/unmerge.owl \
+		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
+		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 
 ## DOSDP on Google Sheets

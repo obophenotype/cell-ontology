@@ -3567,11 +3567,6 @@
           "sub": "http://purl.obolibrary.org/obo/CL_0008019"
         },
         {
-          "obj": "http://purl.obolibrary.org/obo/CL_0002609",
-          "pred": "is_a",
-          "sub": "http://purl.obolibrary.org/obo/CL_0010011"
-        },
-        {
           "obj": "http://purl.obolibrary.org/obo/CL_0005000",
           "pred": "http://purl.obolibrary.org/obo/BFO_0000051",
           "sub": "http://purl.obolibrary.org/obo/UBERON_0002240"
@@ -3624,7 +3619,7 @@
         {
           "obj": "http://purl.obolibrary.org/obo/CL_0010012",
           "pred": "is_a",
-          "sub": "http://purl.obolibrary.org/obo/CL_0002609"
+          "sub": "http://purl.obolibrary.org/obo/CL_0010011"
         },
         {
           "obj": "http://purl.obolibrary.org/obo/CL_0010012",
@@ -3724,7 +3719,7 @@
         {
           "obj": "http://purl.obolibrary.org/obo/CL_0012001",
           "pred": "is_a",
-          "sub": "http://purl.obolibrary.org/obo/CL_0002609"
+          "sub": "http://purl.obolibrary.org/obo/CL_0010011"
         },
         {
           "obj": "http://purl.obolibrary.org/obo/CL_2000029",
@@ -12443,18 +12438,6 @@
           ]
         },
         {
-          "definedClassId": "http://purl.obolibrary.org/obo/CL_0002609",
-          "genusIds": [
-            "http://purl.obolibrary.org/obo/CL_0000117"
-          ],
-          "restrictions": [
-            {
-              "fillerId": "http://purl.obolibrary.org/obo/UBERON_0000956",
-              "propertyId": "http://purl.obolibrary.org/obo/RO_0002100"
-            }
-          ]
-        },
-        {
           "definedClassId": "http://purl.obolibrary.org/obo/CL_0005000",
           "genusIds": [
             "http://purl.obolibrary.org/obo/CL_0000099"
@@ -15095,11 +15078,11 @@
         "basicPropertyValues": [
           {
             "pred": "http://www.w3.org/2002/07/owl#versionInfo",
-            "val": "2021-12-07"
+            "val": "2021-12-16"
           }
         ],
         "subsets": [],
-        "version": "http://purl.obolibrary.org/obo/cl/releases/2021-12-07/subsets/BDS_subset.owl",
+        "version": "http://purl.obolibrary.org/obo/cl/releases/2021-12-16/subsets/BDS_subset.owl",
         "xrefs": []
       },
       "nodes": [
@@ -28935,48 +28918,6 @@
           "type": "CLASS"
         },
         {
-          "id": "http://purl.obolibrary.org/obo/CL_0002609",
-          "lbl": "neuron of cerebral cortex",
-          "meta": {
-            "basicPropertyValues": [
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#created_by",
-                "val": "tmeehan"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#creation_date",
-                "val": "2011-03-06T07:37:08Z"
-              },
-              {
-                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-                "val": "cell"
-              }
-            ],
-            "definition": {
-              "val": "A CNS neuron of the cerebral cortex.",
-              "xrefs": [
-                "GOC:tfm"
-              ]
-            },
-            "synonyms": [
-              {
-                "pred": "hasExactSynonym",
-                "val": "cortical neuron",
-                "xrefs": []
-              }
-            ],
-            "xrefs": [
-              {
-                "val": "BTO:0004102"
-              },
-              {
-                "val": "FMA:84104"
-              }
-            ]
-          },
-          "type": "CLASS"
-        },
-        {
           "id": "http://purl.obolibrary.org/obo/CL_0005000",
           "lbl": "spinal cord interneuron",
           "meta": {
@@ -29060,10 +29001,37 @@
           "id": "http://purl.obolibrary.org/obo/CL_0010012",
           "lbl": "cerebral cortex neuron",
           "meta": {
+            "basicPropertyValues": [
+              {
+                "pred": "http://purl.org/dc/elements/1.1/creator",
+                "val": "http://orcid.org/0000-0001-7258-9596"
+              },
+              {
+                "pred": "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+                "val": "cell"
+              }
+            ],
             "definition": {
-              "val": "A neuron that is part_of a cerebral cortex.",
-              "xrefs": []
-            }
+              "val": "A CNS neuron of the cerebral cortex.",
+              "xrefs": [
+                "GOC:tfm"
+              ]
+            },
+            "synonyms": [
+              {
+                "pred": "hasExactSynonym",
+                "val": "cortical neuron",
+                "xrefs": []
+              }
+            ],
+            "xrefs": [
+              {
+                "val": "BTO:0004102"
+              },
+              {
+                "val": "FMA:84104"
+              }
+            ]
           },
           "type": "CLASS"
         },
@@ -29576,7 +29544,9 @@
             ],
             "definition": {
               "val": "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin.",
-              "xrefs": []
+              "xrefs": [
+                "PMID:27477017"
+              ]
             },
             "subsets": [
               "http://purl.obolibrary.org/obo/cl#BDS_subset"
@@ -30754,7 +30724,8 @@
             "definition": {
               "val": "An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted.",
               "xrefs": [
-                "PMID:15378039"
+                "PMID:15378039",
+                "PMID:27199673"
               ]
             },
             "subsets": [
