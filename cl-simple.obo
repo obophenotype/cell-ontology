@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-12-16/cl-simple.owl
+data-version: cl/releases/2022-01-05/cl-simple.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
@@ -28,7 +28,7 @@ property_value: dc-description "An ontology of cell types." xsd:string
 property_value: dc-title "Cell Ontology" xsd:string
 property_value: dcterms-license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2021-12-16" xsd:string
+property_value: owl:versionInfo "2022-01-05" xsd:string
 
 [Term]
 id: CL:0000000
@@ -381,6 +381,8 @@ id: CL:0000034
 name: stem cell
 namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A11.872]
+comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
 is_a: CL:0011115 ! precursor cell
@@ -462,7 +464,7 @@ xref: FMA:83553
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002194 {is_inferred="true"} ! monopoietic cell
 relationship: develops_from CL:0002009 ! macrophage dendritic cell progenitor
-relationship: has_part CP:0000028 ! basophilic cytoplasm
+relationship: has_part CL:0017503 ! basophilic cytoplasm
 
 [Term]
 id: CL:0000041
@@ -1061,7 +1063,7 @@ synonym: "polynuclear neutrophilic leukocyte" EXACT []
 xref: BTO:0003473
 is_a: CL:0000234 ! phagocyte
 is_a: CL:0000775 {is_inferred="true"} ! neutrophil
-relationship: has_part CP:0000000 ! neutrophillic cytoplasm
+relationship: has_part CL:0017500 ! neutrophillic cytoplasm
 
 [Term]
 id: CL:0000097
@@ -3031,9 +3033,10 @@ is_a: CL:0000151 ! secretory cell
 
 [Term]
 id: CL:0000315
-name: tears secreting cell
+name: tear secreting cell
 namespace: cell
 def: "A cell secreting tears, the fluid secreted by the lacrimal glands. This fluid moistens the conjunctiva and cornea." [MESH:A12.200.882]
+synonym: "tears secreting cell" EXACT []
 is_a: CL:0000152 ! exocrine cell
 
 [Term]
@@ -3375,7 +3378,7 @@ is_a: CL:0000192 {is_inferred="true"} ! smooth muscle cell
 id: CL:0000359
 name: vascular associated smooth muscle cell
 namespace: cell
-def: "A smooth muscle cell assocatiated with the vasculature." [GOC:dsd, GOC:tfm]
+def: "A smooth muscle cell associated with the vasculature." [GOC:dsd, GOC:tfm]
 synonym: "vascular smooth muscle cell" EXACT []
 synonym: "VSMC" EXACT []
 is_a: CL:0000192 {is_inferred="true"} ! smooth muscle cell
@@ -4855,8 +4858,8 @@ xref: VHOG:0001535
 is_a: CL:0000842 ! mononuclear cell
 disjoint_from: CL:0000766 ! myeloid leukocyte
 relationship: develops_from CL:0000051 ! common lymphoid progenitor
-relationship: has_part CP:0000000 ! neutrophillic cytoplasm
-relationship: has_part CP:0000037 ! increased nucleus size
+relationship: has_part CL:0017500 ! neutrophillic cytoplasm
+relationship: has_part CL:0017505 ! increased nucleus size
 
 [Term]
 id: CL:0000543
@@ -4922,8 +4925,8 @@ xref: FMA:83518
 is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
 is_a: CL:0002242 ! nucleate cell
 relationship: develops_from CL:0000038 ! erythroid progenitor cell
-relationship: has_part CP:0000028 ! basophilic cytoplasm
-relationship: has_part CP:0000037 ! increased nucleus size
+relationship: has_part CL:0017503 ! basophilic cytoplasm
+relationship: has_part CL:0017505 ! increased nucleus size
 
 [Term]
 id: CL:0000548
@@ -4943,7 +4946,7 @@ synonym: "early normoblast" EXACT [ISBN:0721601464]
 synonym: "prorubricyte" EXACT [ISBN:0721601464]
 xref: FMA:83505
 is_a: CL:0000765 {is_inferred="true"} ! erythroblast
-relationship: has_part CP:0000028 ! basophilic cytoplasm
+relationship: has_part CL:0017503 ! basophilic cytoplasm
 
 [Term]
 id: CL:0000550
@@ -4959,7 +4962,7 @@ synonym: "rubricyte" EXACT [ISBN:0721601464]
 xref: FMA:83506
 is_a: CL:0000765 {is_inferred="true"} ! erythroblast
 relationship: develops_from CL:0000549 ! basophilic erythroblast
-relationship: has_part CP:0000035 ! polychromatophilic cytoplasm
+relationship: has_part CL:0017504 ! polychromatophilic cytoplasm
 
 [Term]
 id: CL:0000551
@@ -4980,7 +4983,7 @@ synonym: "pyknotic eto enrythroblast" EXACT [ISBN:0721601464]
 xref: FMA:84646
 is_a: CL:0000765 {is_inferred="true"} ! erythroblast
 relationship: develops_from CL:0000550 ! polychromatophilic erythroblast
-relationship: has_part CP:0000027 ! acidophilic cytoplasm
+relationship: has_part CL:0017502 ! acidophilic cytoplasm
 
 [Term]
 id: CL:0000553
@@ -5088,7 +5091,7 @@ synonym: "rod neutrophil" EXACT []
 synonym: "stab cell" BROAD []
 is_a: CL:0000096 {is_inferred="true"} ! mature neutrophil
 relationship: develops_from CL:0000582 ! neutrophilic metamyelocyte
-relationship: has_part CP:0000039 ! banded nucleus
+relationship: has_part CL:0017506 ! banded nucleus
 
 [Term]
 id: CL:0000561
@@ -5292,7 +5295,7 @@ xref: FMA:83540
 is_a: CL:0000776 {is_inferred="true"} ! immature neutrophil
 is_a: CL:0002087 ! nongranular leukocyte
 is_a: CL:0002193 ! myelocyte
-relationship: has_part CP:0000027 ! acidophilic cytoplasm
+relationship: has_part CL:0017502 ! acidophilic cytoplasm
 
 [Term]
 id: CL:0000581
@@ -5315,8 +5318,8 @@ xref: FMA:84197
 is_a: CL:0000776 {is_inferred="true"} ! immature neutrophil
 is_a: CL:0002192 ! metamyelocyte
 relationship: develops_from CL:0000580 ! neutrophilic myelocyte
-relationship: has_part CP:0000027 ! acidophilic cytoplasm
-relationship: has_part CP:0000040 ! reniform nucleus
+relationship: has_part CL:0017502 ! acidophilic cytoplasm
+relationship: has_part CL:0017507 ! reniform nucleus
 
 [Term]
 id: CL:0000583
@@ -5737,6 +5740,7 @@ name: olfactory granule cell
 namespace: cell
 def: "Granule cell that is part of the olfactory bulb." [GOC:mah]
 is_a: CL:0000120 ! granule cell
+is_a: CL:0012001 ! neuron of the forebrain
 
 [Term]
 id: CL:0000627
@@ -6982,6 +6986,7 @@ synonym: "immature basophilic leucocyte" EXACT []
 synonym: "immature basophilic leukocyte" EXACT []
 is_a: CL:0000767 {is_inferred="true"} ! basophil
 relationship: develops_from CL:0000830 ! basophilic promyelocyte
+relationship: has_part CL:0017509 ! alobate nucleus
 
 [Term]
 id: CL:0000769
@@ -6992,7 +6997,7 @@ xref: FMA:84198
 is_a: CL:0000768 {is_inferred="true"} ! immature basophil
 is_a: CL:0002192 ! metamyelocyte
 relationship: develops_from CL:0000614 ! basophilic myelocyte
-relationship: has_part CP:0000040 ! reniform nucleus
+relationship: has_part CL:0017507 ! reniform nucleus
 
 [Term]
 id: CL:0000770
@@ -7001,7 +7006,7 @@ namespace: cell
 def: "A late basophilic metamyelocyte in which the nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature basophil." [GOC:add, http://www.cap.org, ISBN:0721601464, PMID:18466030]
 is_a: CL:0000768 {is_inferred="true"} ! immature basophil
 relationship: develops_from CL:0000769 ! basophilic metamyelocyte
-relationship: has_part CP:0000039 ! banded nucleus
+relationship: has_part CL:0017506 ! banded nucleus
 
 [Term]
 id: CL:0000771
@@ -7030,6 +7035,7 @@ synonym: "immature eosinophilic leucocyte" EXACT []
 synonym: "immature eosinophilic leukocyte" EXACT []
 is_a: CL:0000771 {is_inferred="true"} ! eosinophil
 relationship: develops_from CL:0000833 ! eosinophilic promyelocyte
+relationship: has_part CL:0017509 ! alobate nucleus
 
 [Term]
 id: CL:0000773
@@ -7039,8 +7045,8 @@ def: "A eosinophil precursor in the granulocytic series, being a cell intermedia
 is_a: CL:0000772 {is_inferred="true"} ! immature eosinophil
 is_a: CL:0002192 ! metamyelocyte
 relationship: develops_from CL:0000612 ! eosinophilic myelocyte
-relationship: has_part CP:0000027 ! acidophilic cytoplasm
-relationship: has_part CP:0000040 ! reniform nucleus
+relationship: has_part CL:0017502 ! acidophilic cytoplasm
+relationship: has_part CL:0017507 ! reniform nucleus
 
 [Term]
 id: CL:0000774
@@ -7049,7 +7055,7 @@ namespace: cell
 def: "A late eosinophilic metamyelocyte in which the nucleus is in the form of a curved or coiled band, not having acquired the typical multilobar shape of the mature eosinophil." [GOC:add, GOC:tfm, http://www.cap.org, ISBN:0721601464, PMID:19622087]
 is_a: CL:0000772 {is_inferred="true"} ! immature eosinophil
 relationship: develops_from CL:0000773 ! eosinophilic metamyelocyte
-relationship: has_part CP:0000039 ! banded nucleus
+relationship: has_part CL:0017506 ! banded nucleus
 
 [Term]
 id: CL:0000775
@@ -7085,6 +7091,7 @@ synonym: "immature neutrophil leukocyte" EXACT []
 synonym: "immature neutrophilic leucocyte" EXACT []
 is_a: CL:0000775 {is_inferred="true"} ! neutrophil
 relationship: develops_from CL:0000564 ! neutrophilic promyelocyte
+relationship: has_part CL:0017509 ! alobate nucleus
 
 [Term]
 id: CL:0000777
@@ -7206,7 +7213,7 @@ xref: BTO:0000392
 xref: FMA:70574
 is_a: CL:0000946 {is_inferred="true"} ! antibody secreting cell
 relationship: develops_from CL:0000980 ! plasmablast
-relationship: has_part CP:0000043 ! cartwheel heterochromatin
+relationship: has_part CL:0017508 ! cartwheel heterochromatin
 
 [Term]
 id: CL:0000787
@@ -7850,8 +7857,8 @@ xref: FMA:83524
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 {is_inferred="true"} ! granulocytopoietic cell
 relationship: develops_from CL:0000557 ! granulocyte monocyte progenitor cell
-relationship: has_part CP:0000028 ! basophilic cytoplasm
-relationship: has_part CP:0000037 ! increased nucleus size
+relationship: has_part CL:0017503 ! basophilic cytoplasm
+relationship: has_part CL:0017505 ! increased nucleus size
 
 [Term]
 id: CL:0000836
@@ -7863,8 +7870,8 @@ xref: FMA:83530
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002191 ! granulocytopoietic cell
 relationship: develops_from CL:0000835 ! myeloblast
-relationship: has_part CP:0000028 ! basophilic cytoplasm
-relationship: has_part CP:0000037 ! increased nucleus size
+relationship: has_part CL:0017503 ! basophilic cytoplasm
+relationship: has_part CL:0017505 ! increased nucleus size
 
 [Term]
 id: CL:0000837
@@ -9957,6 +9964,8 @@ name: cortical granule cell
 namespace: cell
 def: "Granule cell that is part of the cerebral cortex." [GOC:mah]
 is_a: CL:0000120 ! granule cell
+is_a: CL:0010012 ! cerebral cortex neuron
+is_a: CL:0012001 ! neuron of the forebrain
 
 [Term]
 id: CL:0001033
@@ -9964,7 +9973,6 @@ name: hippocampal granule cell
 namespace: cell
 def: "Granule cell that is part of the hippocampus." [GOC:mah]
 is_a: CL:0001032 ! cortical granule cell
-is_a: CL:0002608 ! hippocampal neuron
 
 [Term]
 id: CL:0001034
@@ -18356,6 +18364,7 @@ created_by: haendel
 id: CL:0007021
 name: alarm substance cell
 def: "Secretory cell that produces a chemical mixture that triggers antipredator behavior. The substance is released only upon disruption of the epidermis. [Behavior of teleost fishes, second edition, edited by Pitcher, 1992]" [ISBN-10:0412429403]
+synonym: "alarm substance secreting cell" EXACT []
 synonym: "club cell" RELATED [https://github.com/obophenotype/cell-ontology/issues/583, ISBN-10:0412429403]
 synonym: "club cell (zebrafish)" EXACT [https://github.com/obophenotype/cell-ontology/issues/583]
 is_a: CL:0000151 ! secretory cell
@@ -19713,6 +19722,7 @@ is_a: CL:0000287 ! eye photoreceptor cell
 id: CL:0010010
 name: cerebellar stellate cell
 is_a: CL:0000122 ! stellate neuron
+is_a: CL:1001611 ! cerebellar neuron
 
 [Term]
 id: CL:0010011
@@ -20215,6 +20225,87 @@ name: splanchnic mesodermal cell
 def: "A mesodermal cell that is part of the splanchnic layer of lateral plate mesoderm." []
 is_a: CL:0011010 ! lateral mesodermal cell
 relationship: dc-creator https://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0017500
+name: neutrophillic cytoplasm
+namespace: cell
+def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." [GOC:add]
+created_by: tmeehan
+creation_date: 2010-05-25T01:36:34Z
+
+[Term]
+id: CL:0017501
+name: obsolete lobed nucleus
+namespace: cell
+def: "Nucleus with two or more lobes connected by a thin filament that contains no internal chromatin." [GOC:tfm]
+comment: Obsoleted because duplicate with GO term.
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/734 xsd:string
+is_obsolete: true
+replaced_by: http://purl.obolibrary.org/obo/GO_0098537
+created_by: tmeehan
+creation_date: 2009-12-22T03:54:43Z
+
+[Term]
+id: CL:0017502
+name: acidophilic cytoplasm
+namespace: cell
+def: "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain." [GOC:add]
+synonym: "eosinophilic" NARROW []
+created_by: tmeehan
+creation_date: 2009-12-22T04:23:25Z
+
+[Term]
+id: CL:0017503
+name: basophilic cytoplasm
+namespace: cell
+def: "Cytoplasm that exhibits molecular interaction for basic dyes under specific pH conditions." [GOC:tfm]
+created_by: tmeehan
+creation_date: 2009-12-22T04:24:54Z
+
+[Term]
+id: CL:0017504
+name: polychromatophilic cytoplasm
+namespace: cell
+def: "Cytoplasm that exhibits affinity for both basic and acid stains under specific pH conditions." [GOC:tfm]
+created_by: tmeehan
+creation_date: 2009-12-28T04:25:23Z
+
+[Term]
+id: CL:0017505
+name: increased nucleus size
+namespace: cell
+def: "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell." [GOC:tfm]
+created_by: tmeehan
+creation_date: 2009-12-23T10:53:24Z
+
+[Term]
+id: CL:0017506
+name: banded nucleus
+namespace: cell
+def: "A concave nuclear shape where the nucleus is indented to more than half the distance to the farthest nuclear margin, but in no area is the chromatin condensed to a single filament." [GOC:tfm]
+created_by: tmeehan
+creation_date: 2009-12-23T02:18:43Z
+
+[Term]
+id: CL:0017507
+name: reniform nucleus
+namespace: cell
+def: "A concave nucleus shape where the indentation is smaller than half of the distance to the farthest nuclear margin." [GOC:tfm]
+created_by: tmeehan
+creation_date: 2009-12-23T02:31:25Z
+
+[Term]
+id: CL:0017508
+name: cartwheel heterochromatin
+namespace: cell
+def: "Heterochromatin that is arranged in a carthwheel pattern." [GOC:tfm]
+created_by: tmeehan
+creation_date: 2009-12-28T04:28:35Z
+
+[Term]
+id: CL:0017509
+name: alobate nucleus
 
 [Term]
 id: CL:0019001
@@ -24320,6 +24411,8 @@ name: dentate gyrus of hippocampal formation stellate cell
 namespace: cell
 def: "Any stellate cell that is part of a dentate gyrus of hippocampal formation." [GOC:TermGenie]
 is_a: CL:0000122 ! stellate neuron
+is_a: CL:0010012 ! cerebral cortex neuron
+is_a: CL:0012001 ! neuron of the forebrain
 created_by: TermGenie
 creation_date: 2015-02-23T05:48:40Z
 
@@ -24730,11 +24823,12 @@ created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023034
-name: L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-def: "A sst GABAergic cortical interneuron transcriptomically between the sst and the pvalb families with a soma found in L2/3. Some L2/3 PV-like sst cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like sst cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like sst cells have high maximum firing rate variability, with many classified as belonging to the pvalb subclass on the basis of electrophysiology." [PMID:33184512]
-subset: BDS_subset
+name: obsolete L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
+def: "OBSOLETE A sst GABAergic cortical interneuron transcriptomically between the sst and the pvalb families with a soma found in L2/3. Some L2/3 PV-like sst cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like sst cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like sst cells have high maximum firing rate variability, with many classified as belonging to the pvalb subclass on the basis of electrophysiology." [PMID:33184512]
+comment: Moved to PCL - see https://github.com/obophenotype/brain_data_standards_ontologies/issues/231. Use PCL:1000002 instead.
 synonym: "L2/3 PV-like SST Mus)" EXACT []
-is_a: CL:4023017 ! sst GABAergic cortical interneuron
+is_obsolete: true
+replaced_by: PCL:1000002
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -24964,13 +25058,13 @@ relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023067
-name: Martinotti morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-def: "A L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus) that has Martinotti morphology." [PMID:33184512]
-subset: BDS_subset
+name: obsolete Martinotti morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
+def: "OBSOLETE A L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus) that has Martinotti morphology." [PMID:33184512]
+comment: Moved to PCL - see https://github.com/obophenotype/brain_data_standards_ontologies/issues/231. Use PCL:1000004 instead.
 synonym: "Martinotti L2/3 PV-like SST (Mus)" EXACT []
-is_a: CL:4023034 ! L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-is_a: CL:4023076 ! Martinotti neuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: PCL:1000004
 
 [Term]
 id: CL:4023069
@@ -24999,6 +25093,15 @@ is_a: CL:0011005 ! GABAergic interneuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023075
+name: L6 tyrosine hydroxylase positive sst expressing GABAergic cortical interneuron (Mus musculus)
+def: "A sst GABAergic cortical interneuron found in L6 that expresses tyrosine hydroxylase. L6 Th+ SST cells have mostly local axonal arborization within L6." [PMID:22357664]
+subset: BDS_subset
+synonym: "L6 Th+ SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023076
 name: Martinotti neuron
 def: "An interneuron that has Martinotti morphology. These interneurons are scattered throughout various layers of the cerebral cortex, sending their axons up to the cortical layer I where they form axonal arborization." [WikipediaVersioned:Martinotti_cell&oldid=9947732]
@@ -25020,13 +25123,13 @@ relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023078
-name: basket morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-def: "A L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus) that has basket morphology." [PMID:33184512]
-subset: BDS_subset
+name: obsolete basket morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
+def: "OBSOLETE A L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus) that has basket morphology." [PMID:33184512]
+comment: Moved to PCL - see https://github.com/obophenotype/brain_data_standards_ontologies/issues/231. Use PCL:1000003 instead.
 synonym: "basket L2/3 PV-like SST (Mus)" EXACT []
-is_a: CL:0000118 ! basket cell
-is_a: CL:4023034 ! L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+is_obsolete: true
+replaced_by: PCL:1000003
 
 [Term]
 id: CL:4023080
@@ -25353,6 +25456,14 @@ is_a: CL:0002374 ! ear hair cell
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023121
+name: sst chodl GABAergic cortical interneuron
+def: "A sst GABAergic cortical interneuron that also expresses Chodl. These neurons are rare and correspond to the only known cortical interneurons with long-range projection." [PMID:15845086, PMID:31209381, PMID:33372656]
+synonym: "long-range GABAergic interneuron" BROAD []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4028001
 name: pulmonary capillary endothelial cell
 def: "Any capillary endothelial cell that is part of a lung." []
@@ -25427,80 +25538,66 @@ creation_date: 2021-12-09T15:53:21Z
 
 [Term]
 id: CP:0000000
-name: neutrophillic cytoplasm
-namespace: cell
-def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." [GOC:add]
-created_by: tmeehan
-creation_date: 2010-05-25T01:36:34Z
+name: obsolete CP:0000000
+comment: ID was moved to the CL namespace. Use CL:0017500.
+is_obsolete: true
+replaced_by: CL:0017500
 
 [Term]
 id: CP:0000025
-name: obsolete lobed nucleus
-namespace: cell
-def: "Nucleus with two or more lobes connected by a thin filament that contains no internal chromatin." [GOC:tfm]
-comment: Obsoleted because duplicate with GO term.
-property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/734 xsd:string
+name: obsolete CP:0000025
+comment: ID was moved to the CL namespace. Use CL:0017501.
 is_obsolete: true
-replaced_by: http://purl.obolibrary.org/obo/GO_0098537
-created_by: tmeehan
-creation_date: 2009-12-22T03:54:43Z
+replaced_by: CL:0017501
 
 [Term]
 id: CP:0000027
-name: acidophilic cytoplasm
-namespace: cell
-def: "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain." [GOC:add]
-synonym: "eosinophilic" NARROW []
-created_by: tmeehan
-creation_date: 2009-12-22T04:23:25Z
+name: obsolete CP:0000027
+comment: ID was moved to the CL namespace. Use CL:0017502.
+is_obsolete: true
+replaced_by: CL:0017502
 
 [Term]
 id: CP:0000028
-name: basophilic cytoplasm
-namespace: cell
-def: "Cytoplasm that exhibits molecular interaction for basic dyes under specific pH conditions." [GOC:tfm]
-created_by: tmeehan
-creation_date: 2009-12-22T04:24:54Z
+name: obsolete CP:0000028
+comment: ID was moved to the CL namespace. Use CL:0017503.
+is_obsolete: true
+replaced_by: CL:0017503
 
 [Term]
 id: CP:0000035
-name: polychromatophilic cytoplasm
-namespace: cell
-def: "Cytoplasm that exhibits affinity for both basic and acid stains under specific pH conditions." [GOC:tfm]
-created_by: tmeehan
-creation_date: 2009-12-28T04:25:23Z
+name: obsolete CP:0000035
+comment: ID was moved to the CL namespace. Use CL:0017504.
+is_obsolete: true
+replaced_by: CL:0017504
 
 [Term]
 id: CP:0000037
-name: increased nucleus size
-namespace: cell
-def: "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell." [GOC:tfm]
-created_by: tmeehan
-creation_date: 2009-12-23T10:53:24Z
+name: obsolete CP:0000037
+comment: ID was moved to the CL namespace. Use CL:0017505.
+is_obsolete: true
+replaced_by: CL:0017505
 
 [Term]
 id: CP:0000039
-name: banded nucleus
-namespace: cell
-def: "A concave nuclear shape where the nucleus is indented to more than half the distance to the farthest nuclear margin, but in no area is the chromatin condensed to a single filament." [GOC:tfm]
-created_by: tmeehan
-creation_date: 2009-12-23T02:18:43Z
+name: obsolete CP:0000039
+comment: ID was moved to the CL namespace. Use CL:0017506.
+is_obsolete: true
+replaced_by: CL:0017506
 
 [Term]
 id: CP:0000040
-name: reniform nucleus
-namespace: cell
-def: "A concave nucleus shape where the indentation is smaller than half of the distance to the farthest nuclear margin." [GOC:tfm]
-created_by: tmeehan
-creation_date: 2009-12-23T02:31:25Z
+name: obsolete CP:0000040
+comment: ID was moved to the CL namespace. Use CL:0017507.
+is_obsolete: true
+replaced_by: CL:0017507
 
 [Term]
 id: CP:0000043
-name: cartwheel heterochromatin
-namespace: cell
-def: "Heterochromatin that is arranged in a carthwheel pattern." [GOC:tfm]
-created_by: tmeehan
-creation_date: 2009-12-28T04:28:35Z
+name: obsolete CP:0000043
+comment: ID was moved to the CL namespace. Use CL:0017508.
+is_obsolete: true
+replaced_by: CL:0017508
 
 [Typedef]
 id: RO:0001000
