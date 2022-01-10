@@ -16,14 +16,14 @@ These are the current imports in CL
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | http://purl.obolibrary.org/obo/pr.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
 | go | http://purl.obolibrary.org/obo/go.owl | None |
 | uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
 | clo | http://purl.obolibrary.org/obo/clo.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon.owl | None |
+| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:

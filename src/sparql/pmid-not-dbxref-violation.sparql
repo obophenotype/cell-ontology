@@ -1,0 +1,7 @@
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+SELECT ?annotation ?pmid
+WHERE {
+	?subject ?annotation ?pmid .
+  FILTER (STRSTARTS(str(?pmid), "PMID:"))
+  MINUS {?subject oboInOwl:hasDbXref ?pmid}
+}

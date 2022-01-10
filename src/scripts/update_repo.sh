@@ -11,7 +11,7 @@ CONFIG=$OID"-odk.yaml"
 
 rm -rf target
 mkdir target
-/tools/odk.py seed -c -g False -C $CONFIG
+/tools/odk.py seed -c -g -C $CONFIG
 ls -l target/$OID/src
 ls -l $SRCDIR/
 cp target/$OID/src/scripts/update_repo.sh $SRCDIR/scripts/
@@ -27,6 +27,8 @@ cp -r target/$OID/src/sparql/* $SRCDIR/sparql/
 mkdir -p $ROOTDIR/.github
 mkdir -p $ROOTDIR/.github/workflows
 cp -n target/$OID/.github/workflows/qc.yml $ROOTDIR/.github/workflows/qc.yml
+
+cp -n target/$OID/.github/workflows/docs.yml $ROOTDIR/.github/workflows/docs.yml
 
 
 cp -n target/$OID/mkdocs.yaml $ROOTDIR/
