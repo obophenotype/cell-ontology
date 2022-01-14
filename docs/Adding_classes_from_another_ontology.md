@@ -1,4 +1,4 @@
-# How to add (import) a class to the Cell Ontology (CL) from another ontology
+# How to add (import) classes to the Cell Ontology (CL) from another ontology
 
 ## 1. Follow steps 1 - 5 under the heading [Protege-based declaration.](https://obophenotype.github.io/cell-ontology/odk-workflows/UpdateImports/#protege-based-declaration)
 
