@@ -20,6 +20,11 @@
 #tmp/pr_logical.owl: mirror/pr.owl
 #	echo "Skipped pr logical" && cp $< $@
 
+.PHONY: rdiff
+rdiff: 
+	curl https://raw.githubusercontent.com/shawntanzk/cell-ontology/master/src/ontology/cl-edit.owl -o tmp.owl
+	$(ROBOT) diff -labels True -left tmp.owl --right cl-edit.owl -format markdown --output diff.md
+
 mirror/clo.owl: mirror/clo.trigger
 	echo "WARNING OVERWRITING CLO MIRROR BECAUSE OF EQUIVALENT TERM"
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/clo.owl --create-dirs -o mirror/clo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/clo.owl -o $@.tmp.owl && \

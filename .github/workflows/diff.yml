@@ -1,0 +1,25 @@
+name: 'Create ROBOT diffs on Pull requests'
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  ROBOT_Diff:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.2.26
+      
+    steps:
+      
+      - uses: actions/checkout@v2
+      
+      - name: Run ROBOT diff
+        run: |
+          cd src/ontology && make rdiff
+          
+      - name: comment with diff
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: "../../src/ontology/diff.md"
