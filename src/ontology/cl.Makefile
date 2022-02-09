@@ -22,8 +22,8 @@
 
 .PHONY: rdiff
 rdiff: 
-	curl https://raw.githubusercontent.com/shawntanzk/cell-ontology/master/src/ontology/cl-edit.owl -o tmp.owl
-	$(ROBOT) diff -labels True -left tmp.owl --right cl-edit.owl -format markdown --output diff.md
+	curl https://raw.githubusercontent.com/shawntanzk/cell-ontology/master/src/ontology/cl-edit.owl -o rdifftmp.owl
+	$(ROBOT) diff -labels True -left rdifftmp.owl --right cl-edit.owl -format markdown --output diff.md
 
 mirror/clo.owl: mirror/clo.trigger
 	echo "WARNING OVERWRITING CLO MIRROR BECAUSE OF EQUIVALENT TERM"
