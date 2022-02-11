@@ -18,10 +18,10 @@ jobs:
       # Checks-out main branch under "main" directory
       - uses: actions/checkout@v2
         with:
-          ref: main
-          path: main
+          ref: master
+          path: master
       - name: Diff classification
-        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --left main/src/ontology/cl-edit.owl --right src/ontology/cl-edit.owl -f markdown -o classification-diff.md
+        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --left master/src/ontology/cl-edit.owl --right src/ontology/cl-edit.owl -f markdown -o classification-diff.md
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
