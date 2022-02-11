@@ -21,7 +21,7 @@ jobs:
           ref: master
           path: master
       - name: Diff classification
-        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --left master/src/ontology/cl-edit.owl --right src/ontology/cl-edit.owl -f markdown -o classification-diff.md
+        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --left master/src/ontology/cl-edit.owl --left-catalog master/src/ontology/catalog-v001.xml --right src/ontology/cl-edit.owl --right-catalog src/ontology/catalog-v001.xml -f markdown -o classification-diff.md
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
