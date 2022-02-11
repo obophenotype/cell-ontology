@@ -1,25 +1,50 @@
 name: 'Create ROBOT diffs on Pull requests'
 
 on:
+  # Triggers the workflow on pull request events for the master branch
   pull_request:
     branches: [ master ]
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  ROBOT_Diff:
+  classify_pr:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.2.26
-      
+    container: obolibrary/odklite:v1.2.32
     steps:
-      
       - uses: actions/checkout@v2
-      
-      - name: Run ROBOT diff
-        run: |
-          cd src/ontology && make rdiff
-          
-      - name: comment with diff
-        env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
-        uses: NejcZdovc/comment-pr@v1.1.1
+      - name: Upload PR reasoned.owl
+        uses: actions/upload-artifact@v2
+      # Checks-out main branch under "main" directory
+      - uses: actions/checkout@v2
         with:
-          file: "../../src/ontology/diff.md"
+          ref: main
+          path: main
+      - name: Diff classification
+        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --left main/src/ontology/cl-edit.owl --right src/ontology/cl-edit.owl -f markdown -o classification-diff.md
+      - name: Upload diff
+        uses: actions/upload-artifact@v2
+        with:
+          name: classification-diff.md
+          path: classification-diff.md
+      
+
+  post_comment:
+    needs: classify_pr
+    runs-on: ubuntu-latest
+    container: docker://dvcorg/cml-py3:latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download diff
+        uses: actions/download-artifact@v2
+        with:
+          name: classification-diff.md
+          path: classification-diff.md
+      - name: Prepare comment
+        run: "echo \"Here's a diff of how these changes impact the classified ontology: \n\" >comment.md; cat classification-diff.md/classification-diff.md >>comment.md"
+      - name: Post comment
+        env:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+        run: cml-send-comment comment.md
