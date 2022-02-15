@@ -29,7 +29,7 @@ jobs:
           path: edit-diff.md
   classify_branch:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.2.32
+    container: obolibrary/odklite:v1.2.32
     steps:
       - uses: actions/checkout@v2
       - name: Classify ontology
@@ -42,7 +42,7 @@ jobs:
           retention-days: 1
   classify_main:
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.2.32
+    container: obolibrary/odklite:v1.2.32
     steps:
       - uses: actions/checkout@v2
         with:
@@ -60,7 +60,7 @@ jobs:
       - classify_branch
       - classify_main
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.2.32
+    container: obolibrary/odklite:v1.2.32
     steps:
       - uses: actions/checkout@v2
       - name: Download master classification
