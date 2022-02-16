@@ -68,14 +68,32 @@ e.g.  alpha-beta T cell EquiavlentTo 'T cell' *and* **'has plasma membrane part'
 
 Absence of a marker can be recorded using **lacks_plasma_membrane_part**.
 
+## Recording qualities of cells:
+
+Use **has characteristic**
  
-## Recording cell shape or other morphological qualities
+### Recording cell shape or other morphological qualities
 
-e.g. erythrocyte subClassOf **bearer of** *some* biconcave
+e.g. erythrocyte subClassOf **has characteristic** *some* biconcave
 
-## Recording cellular qualities (eg. ploidy, nuclear number)
+### Recording cellular qualities (eg. ploidy, nuclear number)
 
-e.g. 'enucleate erythrocyte' EquivalentTo erythrocyte *and* **'bearer of'** *some* anucleate
+#### nuclear number
+
+Use subproperty of PATO: nuclate auality 
+
+![image](https://user-images.githubusercontent.com/112839/147105229-685b5cdf-8b09-4a36-b826-41ad405886b6.png)
+
+e.g. 
+
+'enucleate erythrocyte' EquivalentTo erythrocyte *and* **'has characteristic'** *some* anucleate
+
+Note that 'anucleate cell' and 'multinucleate cell' are disjoint.
+
+
+
+
+
 
 
 

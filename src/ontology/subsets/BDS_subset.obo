@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2021-12-16/subsets/BDS_subset.owl
+data-version: cl/releases/2022-01-05/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -61,7 +61,7 @@ synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance o
 synonymtypedef: LATIN "latin term"
 synonymtypedef: PLURAL "plural term"
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2021-12-16" xsd:string
+property_value: owl:versionInfo "2022-01-05" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -2939,12 +2939,15 @@ id: CL:0000034
 name: stem cell
 namespace: cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:A11.872]
+comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0017145 ! stem cell division
 relationship: capable_of GO:0017145 ! stem cell division
+relationship: in_taxon NCBITaxon:33208 ! Metazoa
 
 [Term]
 id: CL:0000048
@@ -3984,18 +3987,6 @@ relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
-id: CL:4023034
-name: L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-def: "A sst GABAergic cortical interneuron transcriptomically between the sst and the pvalb families with a soma found in L2/3. Some L2/3 PV-like sst cells have Martinotti morphology while some have basket cell morphology. L2/3 PV-like sst cells have lower AP width and higher firing rate than typical Sst subclass cells. L2/3 PV-like sst cells have high maximum firing rate variability, with many classified as belonging to the pvalb subclass on the basis of electrophysiology." [PMID:33184512]
-subset: BDS_subset
-synonym: "L2/3 PV-like SST Mus)" EXACT []
-is_a: CL:4023017 ! sst GABAergic cortical interneuron
-relationship: in_taxon NCBITaxon:10090 ! Mus musculus
-relationship: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
-relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
-
-[Term]
 id: CL:4023036
 name: chandelier pvalb GABAergic cortical interneuron
 def: "A pvalb GABAergic cortical interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner." [PMID:27477017]
@@ -4252,16 +4243,6 @@ relationship: bearer_of PATO:0070016 ! horizontal pyramidal morphology
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
-id: CL:4023067
-name: Martinotti morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-def: "A L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus) that has Martinotti morphology." [PMID:33184512]
-subset: BDS_subset
-synonym: "Martinotti L2/3 PV-like SST (Mus)" EXACT []
-is_a: CL:4023034 ! L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-is_a: CL:4023076 ! Martinotti neuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
-
-[Term]
 id: CL:4023071
 name: L5/6 cck cortical GABAergic interneuron (Mus musculus)
 def: "A GABAergic cortical interneuron that expresses cck. L5/6 cck cells have soma found mainly in L5 and L6 and have large axonal arborization." [PMID:33184512]
@@ -4273,6 +4254,18 @@ relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: RO:0002292 PR:P09240 ! expresses cholecystokinin (mouse)
+
+[Term]
+id: CL:4023075
+name: L6 tyrosine hydroxylase positive sst expressing GABAergic cortical interneuron (Mus musculus)
+def: "A sst GABAergic cortical interneuron found in L6 that expresses tyrosine hydroxylase. L6 Th+ SST cells have mostly local axonal arborization within L6." [PMID:22357664]
+subset: BDS_subset
+synonym: "L6 Th+ SST (Mus)" EXACT []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: in_taxon NCBITaxon:10090 ! Mus musculus
+relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
+relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 
 [Term]
 id: CL:4023076
@@ -4299,16 +4292,6 @@ is_a: CL:0000099 ! interneuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070012 ! bitufted cell morphology
 relationship: bearer_of PATO:0070012 ! bitufted cell morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
-
-[Term]
-id: CL:4023078
-name: basket morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
-def: "A L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus) that has basket morphology." [PMID:33184512]
-subset: BDS_subset
-synonym: "basket L2/3 PV-like SST (Mus)" EXACT []
-is_a: CL:0000118 ! basket cell
-is_a: CL:4023034 ! L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus)
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -4610,6 +4593,7 @@ id: GO:0003012
 name: muscle system process
 namespace: biological_process
 def: "A organ system process carried out at the level of a muscle. Muscle tissue is composed of contractile cells or fibers." [GOC:mtg_cardio]
+subset: goslim_drosophila
 subset: goslim_generic
 synonym: "muscle physiological process" RELATED []
 is_a: GO:0003008 ! system process
@@ -4653,7 +4637,6 @@ comment: Note that, in addition to forming the root of the molecular function on
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
-subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
@@ -4676,6 +4659,7 @@ subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
+subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_pir
@@ -4708,7 +4692,6 @@ comment: Note that, in addition to forming the root of the cellular component on
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
-subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
@@ -5016,6 +4999,7 @@ id: GO:0007498
 name: mesoderm development
 namespace: biological_process
 def: "The process whose specific outcome is the progression of the mesoderm over time, from its formation to the mature structure. The mesoderm is the middle germ layer that develops into muscle, bone, cartilage, blood and connective tissue." [GOC:dph, GOC:tb]
+subset: goslim_drosophila
 is_a: GO:0009888 ! tissue development
 intersection_of: GO:0048856 ! anatomical structure development
 intersection_of: results_in_development_of UBERON:0000926 ! mesoderm
@@ -5115,7 +5099,6 @@ comment: Note that, in addition to forming the root of the biological process on
 subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
-subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
@@ -5472,7 +5455,6 @@ alt_id: GO:0022892
 def: "Enables the transfer of a substance, usually a specific substance or a group of related substances, from one side of a membrane to the other." [GOC:jid, GOC:mtg_transport, ISBN:0815340729]
 subset: goslim_chembl
 subset: goslim_drosophila
-subset: goslim_generic
 subset: goslim_yeast
 synonym: "substrate-specific transmembrane transporter activity" RELATED []
 synonym: "substrate-specific transporter activity" RELATED []
@@ -6159,6 +6141,7 @@ alt_id: GO:0090662
 def: "The process in which a solute is transported across a lipid bilayer, from one side of a membrane to the other." [GOC:dph, GOC:jid]
 comment: Transmembrane transport is the transport of a solute across a lipid bilayer. Note that transport through the nuclear pore complex is not transmembrane because the nuclear membrane is a double membrane and is not traversed. For transport through the nuclear pore, consider instead the term 'nucleocytoplasmic transport ; GO:0006913' and its children. Note also that this term is not intended for use in annotating lateral movement within membranes.
 subset: goslim_chembl
+subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_pombe
 subset: goslim_yeast
@@ -6430,6 +6413,7 @@ id: GO:0099536
 name: synaptic signaling
 namespace: biological_process
 def: "Cell-cell signaling to, from or within a synapse." [GOC:dos]
+subset: goslim_drosophila
 subset: goslim_synapse
 is_a: GO:0007267 ! cell-cell signaling
 intersection_of: GO:0007267 ! cell-cell signaling
@@ -14675,7 +14659,6 @@ property_value: IAO:0000118 "has" xsd:string
 property_value: IAO:0000118 "is catalyzing" xsd:string
 property_value: IAO:0000118 "is executing" xsd:string
 property_value: IAO:0000232 "This relation differs from the parent relation 'capable of' in that the parent is weaker and only expresses a capability that may not be actually realized, whereas this relation is always realized." xsd:string
-property_value: IAO:0000232 "This relation is currently used experimentally by the Gene Ontology Consortium. It may not be stable and may be obsoleted at some future time." xsd:string
 is_a: capable_of ! capable of
 inverse_of: RO:0002333 ! enabled by
 transitive_over: has_part ! has part
@@ -15245,8 +15228,20 @@ created_by: http://orcid.org/0000-0002-1373-1705
 creation_date: 2020-07-17T09:26:52Z
 
 [Typedef]
+id: RO:0017001
+name: utilizes
+def: "X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y." []
+property_value: IAO:0000112 "A diagnostic testing device utilizes a specimen." xsd:string
+property_value: IAO:0000117 "Asiyah Lin" xsd:string
+property_value: IAO:0000117 "Bill Duncan (https://orcid.org/0000-0001-9625-1899)" xsd:string
+property_value: IAO:0000232 "A diagnostic testing device utilizes a specimen means that the diagnostic testing device is capable of an assay, and this assay a specimen as its input." xsd:string
+property_value: IAO:0000232 "See github ticket https://github.com/oborel/obo-relations/issues/497" xsd:string
+holds_over_chain: capable_of has_input
+creation_date: 2021-11-08
+
+[Typedef]
 id: RO:0040036
-name: has anatomical participant
+name: results in changes to anatomical or cellular structure
 def: "p has anatomical participant c iff p has participant c, and c is an anatomical entity" []
 is_a: has_participant ! has participant
 created_by: cjm
@@ -15353,7 +15348,6 @@ property_value: IAO:0000112 "this vase is bearer of this fragility" xsd:string
 property_value: IAO:0000118 "bearer_of" xsd:string
 property_value: IAO:0000118 "is bearer of" xsd:string
 property_value: RO:0001900 RO:0001901
-range: BFO:0000020 ! specifically dependent continuant
 is_inverse_functional: true
 
 [Typedef]
@@ -16235,7 +16229,7 @@ name: has_not_completed
 id: has_output
 name: has output
 namespace: external
-def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present at the beginning of p." []
+def: "p has output c iff c is a participant in p, c is present at the end of p, and c is not present in the same state at the beginning of p." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -16286,7 +16280,6 @@ property_value: IAO:0000112 "this investigation has participant this investigato
 property_value: IAO:0000112 "this process has participant this input material (or this output material)" xsd:string
 property_value: IAO:0000118 "has_participant" xsd:string
 domain: BFO:0000003 ! occurrent
-range: BFO:0000002 ! continuant
 holds_over_chain: has_part has_participant
 
 [Typedef]
@@ -17263,7 +17256,7 @@ property_value: IAO:0000112 "an annotation of gene X to cell differentiation wit
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_assembly_of
@@ -17291,7 +17284,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.geneontology.org/GO.doc.development.shtml xsd:anyURI
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_developmental_progression_of
@@ -17365,7 +17358,7 @@ xref: RO:0002343
 property_value: IAO:0000112 "'pollen tube growth' results_in growth_of some 'pollen tube'" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_maturation_of
@@ -17382,7 +17375,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_morphogenesis_of
@@ -17399,7 +17392,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_movement_of
@@ -17412,7 +17405,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002565
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "" xsd:string
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_organization_of
@@ -17421,7 +17414,7 @@ namespace: external
 def: "p results in organization of c iff p results in the assembly, arrangement of constituent parts, or disassembly of c" []
 xref: RO:0002592
 is_a: has_participant ! has participant
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_transport_across
@@ -17640,7 +17633,7 @@ xref: RO:0002313
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "regulates localization of" xsd:string
 is_a: RO:0002337 ! related via localization to
-is_a: RO:0040036 ! has anatomical participant
+is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: tributary_of
