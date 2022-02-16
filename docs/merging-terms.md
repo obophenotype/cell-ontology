@@ -2,6 +2,7 @@
 
 ## How to merge terms
 For general instructions on how to merge terms, please see this [How-to Guide](https://oboacademy.github.io/obook/howto/merge-terms/)
+In addition to the above, please add the annotation `has_alternative_id` on the winning term with the ID of the losing term.
 
 ## Considerations on which should be the winning term
 1. Check Usage by GO - This can be done by using [AmiGO 2](http://amigo.geneontology.org/amigo)
