@@ -3178,6 +3178,28 @@ is_a: CL:0002320 {is_inferred="true"} ! connective tissue cell
 property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/474 xsd:string
 
 [Term]
+id: CL:0000151
+name: secretory cell
+namespace: cell
+def: "A cell that specializes in controlled release of one or more substances." [GOC:tfm, ISBN:0721662544]
+xref: BTO:0003659
+xref: FMA:86916
+is_a: BFO:0000040 ! material entity
+is_a: CL:0000003 ! native cell
+intersection_of: CL:0000003 ! native cell
+intersection_of: capable_of GO:0032940 ! secretion by cell
+relationship: capable_of GO:0032940 ! secretion by cell
+
+[Term]
+id: CL:0000161
+name: acid secreting cell
+namespace: cell
+is_a: CL:0000151 {is_inferred="true"} ! secretory cell
+intersection_of: CL:0000151 ! secretory cell
+intersection_of: capable_of GO:0046717 ! acid secretion
+relationship: capable_of GO:0046717 ! acid secretion
+
+[Term]
 id: CL:0000183
 name: contractile cell
 namespace: cell
@@ -3398,6 +3420,7 @@ def: "A neuron that uses GABA as a vesicular neurotransmitter" [GOC:tfm]
 synonym: "GABA-ergic neuron" EXACT []
 xref: FMA:84788
 xref: WBbt:0005190
+is_a: CL:0000161 ! acid secreting cell
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
@@ -3408,6 +3431,7 @@ id: CL:0000679
 name: glutamatergic neuron
 namespace: cell
 xref: WBbt:0006829
+is_a: CL:0000151 ! secretory cell
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: capable_of GO:0061535 ! glutamate secretion, neurotransmission
