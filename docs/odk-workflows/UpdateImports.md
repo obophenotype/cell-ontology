@@ -4,7 +4,9 @@ This page discusses how to update the contents of your imports, like adding or r
 
 ## Importing a new term
 
-Importing a new term is split into to sub-phases:
+Note: some ontologies now use a merged-import system to manage dynamic imports, for these please follow instructions in the section title "Using the Base Module approach".
+
+Importing a new term is split into two sub-phases:
 
 1. Declaring the terms to be imported
 2. Refreshing imports dynamically
@@ -18,7 +20,8 @@ There are three ways to declare terms that are to be imported from an external o
 
 #### Protege-based declaration
 
-This workflow is to be avoided, but may be appropriate if the editor _does not have access to the ODK docker container_.
+This workflow is to be avoided, but may be appropriate if the editor _does not have access to the ODK docker container_. 
+This approach also applies to ontologies that use base module import approach.
 
 1. Open your ontology (edit file) in Protege (5.5+).
 1. Select 'owl:Thing'
@@ -149,5 +152,25 @@ When we use the base pipelines, we
 
 The first implementation of this pipeline is PATO, see https://github.com/pato-ontology/pato/blob/master/src/ontology/pato-odk.yaml.
 
-As we will test and roll out this feature more widely, we will also expand the documentation.
+To check if your ontology uses this method, check src/ontology/cl-odk.yaml to see if `use_base_merging: TRUE` is declared under `import_group`
+
+If your ontology uses Base Module approach, please use the following steps: 
+
+First, add the term to be imported to the term file associated with it (see above "Using term files" section if this is not clear to you)
+
+Next, you navigate in your terminal to the ontology directory (underneath src in your hpo root directory). 
+```
+cd src/ontology
+```
+
+Then refresh imports by running
+
+```
+sh run.sh make imports/merged_import.owl
+```
+Note: if your mirrors are updated, you can run `sh run.sh make no-mirror-refresh-merged`
+
+This requires quite a bit of memory on your local machine, so if you encounter an error, it might be a lack of memory on your computer. A solution would be to create a ticket in an issue tracker requesting for the term to be imported, and your one of the local devs should pick this up and run the import for you.
+
+Lastly, restart Protege, and the term should be imported in ready to be used.
 
