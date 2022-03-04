@@ -8,31 +8,34 @@ Occassionally non-trivial clashes will happen when two pull requests include edi
 
 ### SOP.
 
-1. Reserialise the Master file using the ODK commands normalize_src or normalize_obo_src. These commands require installation of ROBOT. If not already installed, follow [the instructions here](http://robot.obolibrary.org).
+1. Reserialise the Master file using the Ontology Development Kit (ODK). This requires setting up Docker and ODK. If not already set up, follow [the instructions here](https://oboacademy.github.io/obook/howto/odk-setup/).
 
-2. At the line command (PC) or Terminal (Mac), use the cd (change directory) command to navigate to the repository's src/ontology/ directory.
-For example,
+2. Open Docker.
 
-'''
-cd PATH_TO_ONTOLOGY/src/ontology/
-'''
+3. At the line command (PC) or Terminal (Mac), use the cd (change directory) command to navigate to the repository's src/ontology/ directory.
+ For example,
 
-Replace "PATH_TO_ONTOLOGY" with the actual file path to the ontology. If you need to orient yourself, use the '''pwd''' (present working directory) or '''ls''' (list) line commands.
+ '''
+ cd PATH_TO_ONTOLOGY/src/ontology/
+ '''
 
-3. If you are resolving a conflict in an .owl file, run:
+ Replace "PATH_TO_ONTOLOGY" with the actual file path to the ontology. If you need to orient yourself, use the '''pwd''' (present working directory) or '''ls''' (list) line commands.
 
-'''
-make normalize_src
-'''
+ 3. If you are resolving a conflict in an .owl file, run:
 
-If you are resolving a conflict in an .obo file, run:
+ '''
+sh run.sh make normalize_src
+ '''
 
-'''
-make normalize_obo_src
-'''
+ If you are resolving a conflict in an .obo file, run:
 
+ '''
+sh run.sh make normalize_obo_src
+ '''
 
-4. In GitHub Desktop:
+4. In CL, edits sometimes result in creating a large amount of uninteded differences involving ^^xsd:string. If you see these differences after running the command above, they can be resolved by following [the instructions here](https://obophenotype.github.io/cell-ontology/Fixing_xsdstring_diffs/).
+
+5. In GitHub Desktop:
 
    * Checkout Master and pull to make sure your Master branch is up to date.
    * Checkout the branch for the pull request and make sure it is up to date.
