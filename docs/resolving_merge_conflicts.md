@@ -10,11 +10,14 @@ Occassionally non-trivial clashes will happen when two pull requests include edi
 
 1. Reserialise the Master file using the ODK commands normalize_src or normalize_obo_src. These commands require installation of ROBOT. If not already installed, follow [the instructions here](http://robot.obolibrary.org).
 
-2. At the line command (PC) or Terminal (Mac), use the cd (change directory) command to navigate to the repository's src/ontology directory.
+2. At the line command (PC) or Terminal (Mac), use the cd (change directory) command to navigate to the repository's src/ontology/ directory.
 For example,
+
 '''
-cd obophenotype/cell-ontology/src/ontology
+cd PATH_TO_ONTOLOGY/src/ontology/
 '''
+
+Replace "PATH_TO_ONTOLOGY" with the actual file path to the ontology. If you need to orient yourself, use the '''pwd''' (present working directory) or '''ls''' (list) line commands.
 
 3. If you are resolving a conflict in an .owl file, run:
 
