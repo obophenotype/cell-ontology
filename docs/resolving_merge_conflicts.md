@@ -8,19 +8,36 @@ Occassionally non-trivial clashes will happen when two pull requests include edi
 
 ### SOP.
 
-1. Reserialise the Master file using ROBOT. This will fix any odd orderings that may have been introduced during previous merges.
-    ```sh
-    sh ./run.sh ROBOT convert --input cl-edit.owl -f ofn --output cl-edit.owl
-   ```
+1. Reserialise the Master file using the ODK commands normalize_src or normalize_obo_src. These commands require installation of ROBOT. If not already installed, follow [the instructions here](http://robot.obolibrary.org).
+
+2. At the line command (PC) or Terminal (Mac), use the cd (change directory) command to navigate to the repository's src/ontology directory.
+For example,
+'''
+cd obophenotype/cell-ontology/src/ontology
+'''
+
+3. If you are resolving a conflict in an .owl file, run:
+
+'''
+make normalize_src
+'''
+
+If you are resolving a conflict in an .obo file, run:
+
+'''
+make normalize_obo_src
+'''
+
+
 4. In GitHub Desktop:
 
-   * Checkout Master and pull to make sure your Master is up to date.
-   * Checkout the branch for the pull request & make sure it is up to date.
+   * Checkout Master and pull to make sure your Master branch is up to date.
+   * Checkout the branch for the pull request and make sure it is up to date.
    * Choose Branch > Update from master: ![image](https://user-images.githubusercontent.com/112839/112127621-89af9f00-8bbd-11eb-8613-f3a2b8166085.png)
 
-   * GitHub desktop should detect the clash and ask you if you want to open in your text editor of choice (Atom is a good choice)
-   * If clashes are due to trivial ordering problems, delete conflict marks, commit and push back to GitHub.
-   * Check the resulting diffs on the Pull Request on GitHub
-   * Once tests have run, if successful you can merge and delete the branch.
+   * GitHub desktop should detect the clash and ask you if you want to open in your text editor of choice (e.g., Atom).
+   * If clashes are due to trivial ordering problems, delete the conflict marks (<<<<<<<, =======, >>>>>>>), commit and push back to GitHub.
+   * Check the resulting diffs on the Pull Request on GitHub.
+   * Once the checks have run and are successful, merge and delete the branch.
   
   
