@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-01-05/subsets/BDS_subset.owl
+data-version: cl/releases/2022-02-16/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -47,7 +47,6 @@ subsetdef: non_informative ""
 subsetdef: organ_slim ""
 subsetdef: pheno_slim ""
 subsetdef: phenotype_rcn ""
-subsetdef: relational_slim ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 subsetdef: scalar_slim ""
@@ -61,7 +60,7 @@ synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance o
 synonymtypedef: LATIN "latin term"
 synonymtypedef: PLURAL "plural term"
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2022-01-05" xsd:string
+property_value: owl:versionInfo "2022-02-16" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -3079,7 +3078,7 @@ relationship: bearer_of PATO:0070006 ! cortical bipolar morphology
 id: CL:0000104
 name: multipolar neuron
 namespace: cell
-def: "Neuron with an axon and two or more dendrites." [FMA:67287, GOC:tfm]
+def: "A neuron with three or more neurites, usually an axon and multiple dendrites." [FMA:67287, GOC:tfm]
 subset: BDS_subset
 xref: FMA:67287
 is_a: CL:0000540 ! neuron
@@ -3624,8 +3623,10 @@ intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 id: CL:0010012
 name: cerebral cortex neuron
 namespace: cell
+alt_id: CL:0002609
 def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
 synonym: "cortical neuron" EXACT []
+synonym: "neuron of cerebral cortex" EXACT []
 xref: BTO:0004102
 xref: FMA:84104
 is_a: CL:2000029 ! central nervous system neuron
@@ -3633,6 +3634,7 @@ intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/1359 xsd:string
 
 [Term]
 id: CL:0011005
@@ -3930,7 +3932,7 @@ name: long-range projecting sst GABAergic cortical interneuron (Mus musculus)
 def: "A sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant." [PMID:26727548]
 subset: BDS_subset
 synonym: "LP SST (Mus)" EXACT []
-is_a: CL:4023017 ! sst GABAergic cortical interneuron
+is_a: CL:4023121 ! sst chodl GABAergic cortical interneuron
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 created_by: http://orcid.org/0000-0001-7258-9596
@@ -4265,6 +4267,7 @@ is_a: CL:4023017 ! sst GABAergic cortical interneuron
 relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
+relationship: RO:0002292 PR:P24529 ! expresses tyrosine 3-monooxygenase (mouse)
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
 
 [Term]
@@ -4472,6 +4475,15 @@ relationship: dc-creator http://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
+
+[Term]
+id: CL:4023121
+name: sst chodl GABAergic cortical interneuron
+def: "A sst GABAergic cortical interneuron that also expresses Chodl. These neurons are rare and correspond to the only known cortical interneurons with long-range projection." [PMID:15845086, PMID:31209381, PMID:33372656]
+synonym: "long-range GABAergic interneuron" BROAD []
+is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: RO:0002292 PR:000005444 ! expresses chondrolectin
 
 [Term]
 id: GO:0001505
@@ -6898,7 +6910,7 @@ id: PATO:0001396
 name: cellular quality
 namespace: quality
 def: "A monadic quality of continuant that exists at the cellular level of organisation." [PATOC:GVG]
-is_a: PATO:0001241 ! physical object quality
+is_a: PATO:0070044 ! anatomical structure quality
 
 [Term]
 id: PATO:0001397
@@ -6931,7 +6943,6 @@ synonym: "rod-like" EXACT []
 synonym: "rod-shaped" EXACT []
 synonym: "tubulate" NARROW []
 is_a: PATO:0002007 ! convex 3-D shape
-relationship: has_cross_section PATO:0000411 ! circular
 
 [Term]
 id: PATO:0001992
@@ -6976,7 +6987,6 @@ comment: Use this term or an is_a child of this term when the entire shape of th
 subset: attribute_slim
 xref: Image:http\://upload.wikimedia.org/wikipedia/commons/0/06/Convex_polygon_illustration1.png
 is_a: PATO:0002266 ! 3-D shape
-relationship: has_cross_section PATO:0002006 ! 2-D shape
 property_value: RO:0002604 PATO:0002008
 
 [Term]
@@ -6994,7 +7004,7 @@ namespace: quality
 def: "A quality inhering in a bearer by virtue of the bearer's having an empty space or cavity within." [url:http\://www.merriam-webster.com/dictionary/hollow]
 subset: value_slim
 is_a: PATO:0002014 ! structure, cavities
-created_by: George Gkoutos
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2009-09-18T02:19:20Z
 
 [Term]
@@ -7005,7 +7015,7 @@ def: "A quality inhering in a bearer by virtue of the bearer's processing the fo
 subset: mpath_slim
 subset: value_slim
 is_a: PATO:0000141 ! structure
-created_by: george
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2009-10-06T04:37:14Z
 
 [Term]
@@ -7015,7 +7025,7 @@ namespace: quality
 def: "A quality inhering in a bearer by virtue of its constitution." [PATOC:GVG]
 subset: attribute_slim
 is_a: PATO:0001018 ! physical quality
-created_by: George Gkoutos
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2010-03-15T04:35:27Z
 
 [Term]
@@ -7025,7 +7035,7 @@ namespace: quality
 def: "A cylindrical shape quality inhering in a bearer by virtue of the bearer's being imperfectly cylindrical or approximately cylindrical." [url:http\://www.thefreedictionary.com/Subcylindrical]
 subset: value_slim
 is_a: PATO:0001873 ! cylindrical
-created_by: george
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2010-07-13T04:22:30Z
 
 [Term]
@@ -7034,7 +7044,7 @@ name: 3-D shape
 namespace: quality
 def: "A shape that inheres in a 3 dimensional entity." [PATOC:OREGON]
 is_a: PATO:0000052 ! shape
-created_by: george
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2010-10-05T12:31:16Z
 
 [Term]
@@ -7047,7 +7057,7 @@ synonym: "tube-shaped" EXACT []
 synonym: "tubulate" EXACT []
 is_a: PATO:0001873 ! cylindrical
 is_a: PATO:0002078 ! hollow
-created_by: George Gkoutos
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2011-06-08T06:33:50Z
 
 [Term]
@@ -7058,7 +7068,7 @@ def: "A convex 3-D shape quality inhering in a bearer by virtue of the bearer's 
 comment: Note that a fiber shaped object may take any circuitous or straight path through space (think of a length of string or rope).
 subset: value_slim
 is_a: PATO:0002226 ! subcylindrical
-created_by: George Gkoutos
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2011-09-09T04:50:10Z
 
 [Term]
@@ -7068,7 +7078,7 @@ namespace: quality
 def: "A shape constituting a transition between a rectangle and a circle; a closed curve, of which the circle and ellipse are special cases, whose parametric equation is x = a.cos2/rt, y = b.cos2/rt" [wiktionary:superellipse]
 synonym: "Lamé curve" EXACT []
 is_a: PATO:0002006 ! 2-D shape
-created_by: George Gkoutos
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2011-10-12T12:45:16Z
 
 [Term]
@@ -7078,7 +7088,7 @@ namespace: quality
 def: "A quality of a single cell inhering in the bearer by virtue of the bearer's size or shape or structure." [ORCID:0000-0002-7073-9172]
 comment: Use this term for morphologies that can *only* inhere in a cell, e.g. morphological qualities inhering in a cell by virtue of the presence, location or shape of one or more cell parts.
 is_a: PATO:0000051 ! morphology
-created_by: http://orcid.org/0000-0002-7073-9172
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-7073-9172
 creation_date: 2021-01-23T11:31:53Z
 
 [Term]
@@ -7097,7 +7107,7 @@ namespace: quality
 def: "A cell morphology that inheres in neurons which have a small round soma, a large number of short, smooth, or slightly beaded primary dendrites that give rise to only a few secondary branches, and a branched axon that establishes a dense axonal mesh with thin shafts." [PMID:17122314]
 xref: ilxtr:NeurogliaformPhenotype
 is_a: PATO:0070026 ! multipolar neuron morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070002
@@ -7108,7 +7118,7 @@ xref: ILX:0101123
 xref: ilxtr:BasketPhenotype
 xref: nifext:3
 is_a: PATO:0070026 ! multipolar neuron morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070003
@@ -7117,7 +7127,7 @@ namespace: quality
 def: "A basket cell morphology that inheres in neurons with axonal arbors composed of frequent, short, curvy axonal branches that tend to be near their somata and within the same layer." [PMID:11884355]
 xref: ilxtr:SmallBasketPhenotype
 is_a: PATO:0070002 ! basket cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070004
@@ -7126,7 +7136,7 @@ namespace: quality
 def: "A basket cell morphology that inheres in neurons that are large, and typically ascend to give rise to many long horizontally and vertically projecting axon collaterals that traverse neighboring columns and can extend through all cortical layers." [PMID:11884355]
 xref: ilxtr:LargeBasketPhenotype
 is_a: PATO:0070002 ! basket cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070005
@@ -7135,7 +7145,7 @@ namespace: quality
 def: "A basket cell morphology that inheres in neurons which have simpler dendritic arbors (compared to small or large basket cell morphology), and an axonal plexus of intermediate density, composed of a few long, smooth axonal branches." [PMID:11884355]
 xref: ilxtr:NestBasketPhenotype
 is_a: PATO:0070002 ! basket cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070006
@@ -7147,7 +7157,7 @@ xref: ILX:0101312
 xref: ilxtr:BipolarPhenotype
 xref: nifext:2
 is_a: PATO:0070027 ! bitufted dendrite cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070007
@@ -7156,7 +7166,7 @@ namespace: quality
 def: "A cell morphology that inheres in neurons which are large and non-spiny, with dendrites radiating in a multipolar or bitufted pattern, often favouring the descending side, and axons that ascend directly from the superficial side of the soma, and travel upward without branching." [doi:10.1016/b978-0-12-369497-3.10004-4]
 xref: ilxtr:MartinottiPhenotype
 is_a: PATO:0070026 ! multipolar neuron morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070008
@@ -7165,7 +7175,7 @@ namespace: quality
 def: "A Martinotti cell morphology that inheres in neurons which have axons that form a horizontal ramification, making it T-shaped." [doi:10.1016/b978-0-12-369497-3.10004-4]
 synonym: "'T-shaped' Martinotti morphology" EXACT []
 is_a: PATO:0070007 ! Martinotti morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070009
@@ -7174,7 +7184,7 @@ namespace: quality
 def: "A Martinotti cell morphology that inheres in neurons which have axons that form a fan-like plexus." [doi:10.1016/b978-0-12-369497-3.10004-4]
 synonym: "'fanning-out' Martinotti morphology" EXACT []
 is_a: PATO:0070007 ! Martinotti morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070010
@@ -7184,7 +7194,7 @@ def: "A cell morphology that inheres in neurons that have dendritic processes ra
 xref: ILX:0111036
 xref: SAO:9271919883
 is_a: PATO:0070026 ! multipolar neuron morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070011
@@ -7196,7 +7206,7 @@ xref: ILX:0102028
 xref: ilxtr:ChandelierPhenotype
 xref: nifext:4
 is_a: PATO:0010006 ! cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070012
@@ -7205,7 +7215,7 @@ namespace: quality
 def: "A cell morphology that inheres in neurons which have two clusters of primary dendrites that originate directly and extend from opposite ends of the soma, and axons that form a plexus which spreads widely. Compared to the narrow vertical axonal projection of bipolar morphology, and the 'horse-tail' axonal cluster of double boquet cells, bitufted morphology has wide horizontal axonal spans, and branching that occur close to the soma. Their vertical projection is also less extensive and crosses mostly to neighboring layers." [doi:10.1016/b978-0-12-369497-3.10004-4, PMID:15378039, PMID:18568015]
 xref: ilxtr:BituftedPhenotype
 is_a: PATO:0070027 ! bitufted dendrite cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070015
@@ -7215,7 +7225,7 @@ def: "A cell morphology that inheres in neurons which have a pyramidal shaped so
 xref: ILX:0109553
 xref: SAO:1465673360
 is_a: PATO:0070026 ! multipolar neuron morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070016
@@ -7225,7 +7235,7 @@ def: "A pyramidal family morphology that inheres in neurons which have an apical
 xref: ilxtr:HorizontalPyramidalPhenotype
 is_a: PATO:0070015 ! pyramidal family morphology
 disjoint_from: PATO:0070017 ! standard pyramidal morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070017
@@ -7236,7 +7246,7 @@ synonym: "pyramidal cell morphology" EXACT []
 synonym: "vertical pyramidal morphology" EXACT []
 xref: ilxtr:PyramidalPhenotype
 is_a: PATO:0070015 ! pyramidal family morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070018
@@ -7245,7 +7255,7 @@ namespace: quality
 def: "A pyramidal cell morphology that inheres in neurons which have a distinct tuft formation, distal from the soma." [PMID:30715238]
 xref: ilxtr:TuftedPyramidalPhenotype
 is_a: PATO:0070017 ! standard pyramidal morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070019
@@ -7254,7 +7264,7 @@ namespace: quality
 def: "A pyramidal cell morphology that inheres in neurons which lack a clear tuft formation but extend to large radial distances." [PMID:30715238]
 xref: ilxtr:UntuftedPyramidalPhenotype
 is_a: PATO:0070017 ! standard pyramidal morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070020
@@ -7263,7 +7273,7 @@ namespace: quality
 def: "A pyramidal cell morphology that inheres in neurons which lack a tuft formation but extend to small radial distances forming a star-like shape." [PMID:30715238]
 xref: ilxtr:StarPyramidalPhenotype
 is_a: PATO:0070017 ! standard pyramidal morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070021
@@ -7272,17 +7282,17 @@ namespace: quality
 def: "A pyramidal cell morphology that inheres in neurons which have an apical tree which is oriented towards the white matter." [PMID:30715238]
 xref: ilxtr:InvertedPyramidalPhenotype
 is_a: PATO:0070017 ! standard pyramidal morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070026
 name: multipolar neuron morphology
 namespace: quality
-def: "A cell morphology that inheres in neurons which possess a single axon and many dendrites and dendritic branches." [WikipediaVersioned:Multipolar_neuron&oldid=1022942606]
+def: "A cell morphology that inheres in neurons which possess three or more neurites, usually a single axon and many dendrites and dendritic branches." [WikipediaVersioned:Multipolar_neuron&oldid=1022942606]
 xref: ILX:0107196
 xref: NLX:378
 is_a: PATO:0010006 ! cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070027
@@ -7291,7 +7301,7 @@ namespace: quality
 def: "A cell morphology that inheres in neurons with dendrites that are bidirectional, emerging from opposite ends of the soma, with the two arbors extending in radial or tangential directions." [PMID:18568015]
 comment: This morphology type is distinct from bitufted cell morphology in that it refers to bitufted dendrite morphology rather than bitufted cell morphology.
 is_a: PATO:0010006 ! cell morphology
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070028
@@ -7301,7 +7311,7 @@ def: "A neuron projection quality that is a characteristic of neurons whose soma
 synonym: "ET projecting" EXACT []
 xref: ILX:0770101
 is_a: PATO:0070033 ! neuron projection quality
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070029
@@ -7311,7 +7321,7 @@ def: "A neuron projection quality that is a characteristic of neurons with soma 
 synonym: "CT projecting" EXACT []
 xref: ILX:0770102
 is_a: PATO:0070033 ! neuron projection quality
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070030
@@ -7321,7 +7331,7 @@ def: "A neuron projection quality that is a characteristic of neurons with proje
 synonym: "NP" EXACT []
 xref: ILX:0770103
 is_a: PATO:0070033 ! neuron projection quality
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070031
@@ -7330,7 +7340,7 @@ namespace: quality
 def: "A neuron projection quality that is a characteristic of neurons that project to the medulla oblongata from other brain regions." [DOI:10.1101/2020.10.19.343129]
 synonym: "MY projecting" EXACT []
 is_a: PATO:0070033 ! neuron projection quality
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070033
@@ -7338,7 +7348,7 @@ name: neuron projection quality
 namespace: quality
 def: "A physical quality inhering in a neuron by virtue of the relative location of its soma and the regions to which it projects and makes synaptic contacts in." [DOI:10.1101/2020.10.19.343129]
 is_a: PATO:0001018 ! physical quality
-created_by: http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: PATO:0070034
@@ -7348,6 +7358,14 @@ def: "A neuron projection quality that is a characteristic of neurons with both 
 synonym: "IT projecting" EXACT []
 xref: ILX:0770100
 is_a: PATO:0070033 ! neuron projection quality
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: PATO:0070044
+name: anatomical structure quality
+namespace: quality
+def: "A quality of continuant that exist at the anatomical level of organisation and anything under it. This includes, but is not limited to, cells , tissues, and components." []
+is_a: PATO:0001241 ! physical object quality
 created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -7426,6 +7444,20 @@ namespace: protein
 def: "A protein that is a translation product of the human CCK gene or a 1:1 ortholog thereof." [PRO:DNx]
 comment: Category=gene.
 synonym: "CCK" EXACT PRO-short-label [PRO:DNx]
+is_a: CHEBI:36080 ! protein
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000005444
+name: chondrolectin
+namespace: protein
+def: "A protein that is a translation product of the human CHODL gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "C21orf68" RELATED Gene-based []
+synonym: "CHODL" EXACT PRO-short-label [PRO:DNx]
+synonym: "PRED12" RELATED Gene-based []
+synonym: "transmembrane protein MT75" EXACT []
+synonym: "UNQ872/PRO1890" RELATED Gene-based []
 is_a: CHEBI:36080 ! protein
 is_a: PR:000000001 ! protein
 
@@ -7520,6 +7552,19 @@ comment: Category=gene.
 synonym: "growth hormone release-inhibiting factor" EXACT []
 synonym: "Smst" RELATED Gene-based []
 synonym: "SST" EXACT PRO-short-label [PRO:DNx]
+is_a: CHEBI:36080 ! protein
+is_a: PR:000000001 ! protein
+
+[Term]
+id: PR:000016301
+name: tyrosine 3-monooxygenase
+namespace: protein
+def: "A protein that is a translation product of the human TH gene or a 1:1 ortholog thereof." [PRO:DNx]
+comment: Category=gene.
+synonym: "TH" EXACT PRO-short-label [PRO:DNx]
+synonym: "TYH" RELATED Gene-based []
+synonym: "tyrosine 3-hydroxylase" EXACT []
+xref: IUPHARobj:1243
 is_a: CHEBI:36080 ! protein
 is_a: PR:000000001 ! protein
 
@@ -7657,6 +7702,22 @@ xref: UniProtKB:P11087
 is_a: PR:000003264 ! collagen alpha-1(I) chain
 is_a: PR:000029032 ! Mus musculus protein
 intersection_of: PR:000003264 ! collagen alpha-1(I) chain
+intersection_of: only_in_taxon NCBITaxon:10090 ! Mus musculus
+
+[Term]
+id: PR:P24529
+name: tyrosine 3-monooxygenase (mouse)
+namespace: protein
+def: "A tyrosine 3-monooxygenase that is encoded in the genome of mouse." [OMA:P24529, PRO:DNx]
+comment: Category=organism-gene.
+synonym: "mTH" EXACT PRO-short-label [PRO:DNx]
+synonym: "Th" RELATED Gene-based [UniProtKB:P24529]
+synonym: "TH (mouse)" EXACT [UniProtKB:P24529]
+synonym: "tyrosine 3-hydroxylase (mouse)" EXACT [UniProtKB:P24529]
+xref: UniProtKB:P24529
+is_a: PR:000016301 ! tyrosine 3-monooxygenase
+is_a: PR:000029032 ! Mus musculus protein
+intersection_of: PR:000016301 ! tyrosine 3-monooxygenase
 intersection_of: only_in_taxon NCBITaxon:10090 ! Mus musculus
 
 [Term]
@@ -14718,11 +14779,11 @@ property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for a diverse set of relations, all involving branching relationships" xsd:string
 property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (plant branches and roots, leaf veins, animal veins, arteries, nerves)" xsd:string
+property_value: RO:0004036 BFO:0000050
 property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/branching_part_of.png
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/170 xsd:anyURI
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
-is_a: part_of ! part_of
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
@@ -15233,11 +15294,38 @@ name: utilizes
 def: "X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y." []
 property_value: IAO:0000112 "A diagnostic testing device utilizes a specimen." xsd:string
 property_value: IAO:0000117 "Asiyah Lin" xsd:string
-property_value: IAO:0000117 "Bill Duncan (https://orcid.org/0000-0001-9625-1899)" xsd:string
+property_value: IAO:0000117 "https://orcid.org/0000-0001-9625-1899 Bill Duncan" xsd:string
 property_value: IAO:0000232 "A diagnostic testing device utilizes a specimen means that the diagnostic testing device is capable of an assay, and this assay a specimen as its input." xsd:string
 property_value: IAO:0000232 "See github ticket https://github.com/oborel/obo-relations/issues/497" xsd:string
 holds_over_chain: capable_of has_input
 creation_date: 2021-11-08
+
+[Typedef]
+id: RO:0019000
+name: regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C." []
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
+domain: BFO:0000015 ! process
+range: PATO:0000001 ! quality
+holds_over_chain: regulates RO:0019000
+is_a: RO:0002410 ! causally related to
+
+[Typedef]
+id: RO:0019001
+name: positively regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C." []
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
+holds_over_chain: positively_regulates RO:0019001
+is_a: RO:0019000 ! regulates characteristic
+
+[Typedef]
+id: RO:0019002
+name: negatively regulates characteristic
+def: "A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C." []
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
+holds_over_chain: negatively_regulates RO:0019001
+holds_over_chain: positively_regulates RO:0019002
+is_a: RO:0019000 ! regulates characteristic
 
 [Typedef]
 id: RO:0040036
@@ -15391,10 +15479,11 @@ def: "x is a branching part of y if and only if x is part of y and x is connecte
 subset: ro-eco
 xref: RO:0002380
 property_value: editor_note "we need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve" xsd:string
-property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000112 "In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is a (direct) branching part of T. B1-1, B1-2, and B1-3 are also branching parts of T, but these are considered indirect branching parts as they do not directly connect to the main stem S" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: seeAlso FMA:85994 xsd:string
 property_value: seeAlso FMA:85994
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/2212
 is_a: part_of ! part_of
 is_a: RO:0002375 ! in branching relationship with
 inverse_of: has_branching_part ! has branching part
@@ -15665,17 +15754,6 @@ xref: http://purl.org/dc/terms/license
 is_metadata_tag: true
 
 [Typedef]
-id: decreased_in_magnitude_relative_to
-name: decreased_in_magnitude_relative_to
-namespace: quality
-def: "q1 decreased_in_magnitude_relative_to q2 if and only if magnitude(q1) < magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'decreased strength', relative to the parent type, 'strength'.
-domain: PATO:0000001 ! quality
-range: PATO:0000001 ! quality
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
-
-[Typedef]
 id: deep_to
 name: deep_to
 namespace: uberon
@@ -15816,14 +15894,6 @@ is_transitive: true
 is_a: has_potential_to_develop_into ! has potential to develop into
 is_a: has_potential_to_directly_develop_into ! has potential to directly develop into
 is_a: RO:0002286 ! developmentally succeeded by
-
-[Typedef]
-id: different_in_magnitude_relative_to
-name: different_in_magnitude_relative_to
-namespace: quality
-def: "q1 different_in_magnitude_relative_to q2 if and only if magnitude(q1) NOT =~ magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-domain: PATO:0000001 ! quality
-range: PATO:0000001 ! quality
 
 [Typedef]
 id: directly_develops_from
@@ -16067,6 +16137,7 @@ subset: RO:0002259
 xref: RO:0002569
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_transitive: true
+is_a: has_part ! has part
 is_a: RO:0002375 ! in branching relationship with
 
 [Typedef]
@@ -16087,13 +16158,6 @@ property_value: IAO:0000232 "For use in recording has_part with a cardinality co
 property_value: RO:0001900 RO:0001901
 property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:Componency
 is_a: has_part ! has part
-
-[Typedef]
-id: has_cross_section
-name: has_cross_section
-namespace: quality
-def: "s3 has_cross_section s3 if and only if : there exists some 2d plane that intersects the bearer of s3, and the impression of s3 upon that plane has shape quality s2." [PATOC:CJM]
-comment: Example: a spherical object has the quality of being spherical, and the spherical quality has_cross_section round.
 
 [Typedef]
 id: has_developmental_contribution_from
@@ -16371,11 +16435,6 @@ is_a: regulated_by ! regulated by
 is_a: RO:0002017 ! has component activity
 created_by: dos
 creation_date: 2017-05-24T09:30:46Z
-
-[Typedef]
-id: has_relative_magnitude
-name: has_relative_magnitude
-namespace: quality
 
 [Typedef]
 id: has_skeleton
@@ -16665,17 +16724,6 @@ holds_over_chain: supplies in_taxon
 is_a: RO:0002320 ! evolutionarily related to
 
 [Typedef]
-id: increased_in_magnitude_relative_to
-name: increased_in_magnitude_relative_to
-namespace: quality
-def: "q1 increased_in_magnitude_relative_to q2 if and only if magnitude(q1) > magnitude(q2). Here, magnitude(q) is a function that maps a quality to a unit-invariant scale." [PATOC:CJM]
-comment: This relation is used to determine the 'directionality' of relative qualities such as 'increased strength', relative to the parent type, 'strength'.
-domain: PATO:0000001 ! quality
-range: PATO:0000001 ! quality
-is_transitive: true
-is_a: different_in_magnitude_relative_to ! different_in_magnitude_relative_to
-
-[Typedef]
 id: indirectly_supplies
 name: indirectly_supplies
 namespace: uberon
@@ -16865,8 +16913,8 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constraints
-expand_assertion_to: "?X DisjointWith RO_0002162 some ?Y " []
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
+expand_assertion_to: "Class: ?X DisjointWith: RO_0002162 some ?Y " []
 is_metadata_tag: true
 is_class_level: true
 
@@ -17656,6 +17704,7 @@ property_value: IAO:0000119 http://www.medindia.net/glossary/venous_tributary.ht
 property_value: IAO:0000232 "This relation can be used for geographic features (e.g. rivers) as well as anatomical structures (veins, arteries)" xsd:anyURI
 property_value: seeAlso http://dbpedia.org/ontology/drainsTo
 property_value: seeAlso http://en.wikipedia.org/wiki/Tributary xsd:anyURI
+is_a: connected_to ! connected to
 is_a: RO:0002375 ! in branching relationship with
 
 [Typedef]
