@@ -12,7 +12,7 @@ The Cell Ontology also has a [Slack Channel](https://anatomy-and-cell-onto.slack
 If you want to join the channel or talk about any other topics related to the Cell Ontology, you may reach out to one of the active CL editors. 
 The official contact for CL listed at the OBO Foundry is [Alexander Diehl](mailto:addiehl@buffalo.edu), but feel free to contact any other individual. A list of active CL editors can be found [here](http://obophenotype.github.io/uberon/team/).
 
-Note that requests on the [GitHub issue tracker](https://github.com/obophenotype/cell-ontology/issues/) are might be picked up quicker, as individuals are often busy.
+Note that requests on the [GitHub issue tracker](https://github.com/obophenotype/cell-ontology/issues/) will probably be picked up quicker, as individuals are often busy.
 
 For other details on CL, you may see [http://obofoundry.org/ontology/cl.html](http://obofoundry.org/ontology/cl.html). 
 
