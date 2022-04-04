@@ -1,0 +1,67 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+SELECT DISTINCT ?entity ?property ?value ?replaced_by WHERE {
+  {
+   VALUES ?property {
+     rdfs:subClassOf
+   }
+   ?entity a owl:Class;
+           owl:deprecated true ;
+           ?property ?value .
+   OPTIONAL { ?entity replaced_by: ?replaced_by }
+   FILTER ( ?value NOT IN (oboInOwl:ObsoleteClass, owl:Thing) )
+  }
+  UNION
+  {
+   VALUES ?property {
+     owl:equivalentClass
+     owl:disjointWith
+   }
+   ?entity a owl:Class;
+           owl:deprecated true ;
+           ?property ?value .
+    OPTIONAL { ?entity replaced_by: ?replaced_by }
+  }
+  UNION
+  {
+     VALUES ?property {
+       rdfs:subClassOf
+       owl:equivalentClass
+       owl:disjointWith
+     }
+     ?entity a owl:Class;
+             owl:deprecated true .
+     ?value ?property ?entity .
+     OPTIONAL { ?entity replaced_by: ?replaced_by }
+  }
+  UNION
+  {
+   VALUES ?property {
+     owl:ObjectProperty
+     owl:DataProperty
+   }
+   ?entity a owl:Class ;
+           owl:deprecated true ;
+           ?property ?value .
+    OPTIONAL { ?entity replaced_by: ?replaced_by }
+  }
+  UNION
+  {
+   VALUES ?property {
+     owl:someValuesFrom
+     owl:allValuesFrom
+   }
+   ?value a owl:Class ;
+          owl:deprecated true .
+   ?rest a owl:Restriction ;
+         ?property ?value .
+   OPTIONAL { ?value replaced_by: ?replaced_by }
+   BIND("blank node" as ?entity)
+  }
+}
+ORDER BY ?entity
