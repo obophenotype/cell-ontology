@@ -4145,13 +4145,15 @@ AnnotationAssertion(rdfs:label obo:CL_0000110 "peptidergic neuron"^^xsd:string)
 SubClassOf(obo:CL_0000110 obo:CL_0000540)
 SubClassOf(obo:CL_0000110 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002790))
 
-# Class: obo:CL_0000111 (peripheral neuron)
+# Class: obo:CL_0000111 (obsolete peripheral neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:0721662544"^^xsd:string) obo:IAO_0000115 obo:CL_0000111 "A neuron that is part of nerve found outside the central nervous system."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ISBN:0721662544"^^xsd:string) obo:IAO_0000115 obo:CL_0000111 "OBSOLETE A neuron that is part of nerve found outside the central nervous system."^^xsd:string)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000111 obo:CL_2000032)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000111 "FMA:84664"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000111 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000111 "peripheral neuron"^^xsd:string)
-SubClassOf(obo:CL_0000111 obo:CL_0000540)
+AnnotationAssertion(rdfs:comment obo:CL_0000111 "Merging into CL:2000032, see https://github.com/obophenotype/cell-ontology/issues/1069"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000111 "obsolete peripheral neuron"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_0000111 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000112 (columnar neuron)
 
@@ -28067,9 +28069,13 @@ EquivalentClasses(obo:CL_2000031 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 
 # Class: obo:CL_2000032 (peripheral nervous system neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie"^^xsd:string) obo:IAO_0000115 obo:CL_2000032 "Any neuron that is part of a peripheral nervous system."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0721662544"^^xsd:string) obo:IAO_0000115 obo:CL_2000032 "A neuron that is part of a peripheral nervous system."^^xsd:string)
 AnnotationAssertion(oboInOwl:created_by obo:CL_2000032 "TermGenie"^^xsd:string)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000032 "2014-06-25T02:28:17Z"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_2000032 "CL:0000111")
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000032 "FMA:84664")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000032 "PNS neuron")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000032 "peripheral neuron")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_2000032 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000032 "CL:2000032"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_2000032 "peripheral nervous system neuron"^^xsd:string)
@@ -28810,9 +28816,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_3000004 "2019-02-25T19:34:33Z"
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_3000004 "cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_3000004 "CL:3000004"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_3000004 "peripheral sensory neuron"^^xsd:string)
-EquivalentClasses(obo:CL_3000004 ObjectIntersectionOf(obo:CL_0000111 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
-SubClassOf(obo:CL_3000004 obo:CL_0000101)
-SubClassOf(obo:CL_3000004 obo:CL_0000111)
+EquivalentClasses(obo:CL_3000004 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
 
 # Class: obo:CL_4006000 (fibroblast of breast)
 
