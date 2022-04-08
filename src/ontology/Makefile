@@ -38,7 +38,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by 
 SPARQL_EXPORTS =            basic-report 
 ODK_VERSION_MAKEFILE =      v1.3.0
 
