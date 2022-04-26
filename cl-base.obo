@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-01-05/cl-base.owl
+data-version: cl/releases/2022-02-16/cl-base.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -23,7 +23,7 @@ property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2022-01-05" xsd:string
+property_value: owl:versionInfo "2022-02-16" xsd:string
 
 [Term]
 id: CL:0000000
@@ -432,6 +432,7 @@ intersection_of: RO:0002215 GO:0017145
 id: CL:0000036
 name: epithelial fate stem cell
 namespace: cell
+synonym: "epithelial stem cell" EXACT []
 is_a: CL:0000035 ! single fate stem cell
 
 [Term]
@@ -1272,7 +1273,7 @@ intersection_of: RO:0000053 PATO:0070006
 id: CL:0000104
 name: multipolar neuron
 namespace: cell
-def: "Neuron with an axon and two or more dendrites." [FMA:67287, GOC:tfm]
+def: "A neuron with three or more neurites, usually an axon and multiple dendrites." [FMA:67287, GOC:tfm]
 subset: BDS_subset
 xref: FMA:67287
 intersection_of: CL:0000540 ! neuron
@@ -2201,7 +2202,7 @@ relationship: RO:0002202 CL:0000857 ! slow muscle myoblast
 id: CL:0000190
 name: fast muscle cell
 namespace: cell
-def: "A muscle cell that can develop high tension rapidly. It is usually innervated by a single alpha neuron ." [GOC:tfm, ISBN:0323052908]
+def: "A muscle cell that can develop high tension rapidly. It is usually innervated by a single alpha neuron." [GOC:tfm, ISBN:0323052908]
 synonym: "glycolytic muscle fiber" EXACT []
 is_a: CL:0008046 ! extrafusal muscle fiber
 relationship: RO:0002202 CL:0000858 ! fast muscle myoblast
@@ -2405,17 +2406,12 @@ is_a: CL:0000215 ! barrier cell
 id: CL:0000214
 name: synovial cell
 namespace: cell
-def: "A meso-epithelial cell that lies between the cartilaginous fibers in the synovial membrane of a joint and produces hyaluronic acid." [GOC:tfm, ISBN:0721662544, PMID:17942474]
-synonym: "hyaluronic acid secreting cell" NARROW []
+def: "A cell located in the synovial joint." []
 synonym: "synoviocyte" EXACT []
-xref: BTO:0003652
 xref: CALOHA:TS-0995
-xref: FMA:66786
-is_a: CL:0000153 ! glycosaminoglycan secreting cell
 is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 {is_inferred="true"} ! meso-epithelial cell
-intersection_of: CL:0002078 ! meso-epithelial cell
-intersection_of: BFO:0000050 UBERON:0002018
+relationship: BFO:0000050 UBERON:0002217
 
 [Term]
 id: CL:0000215
@@ -3385,8 +3381,6 @@ id: CL:0000327
 name: extracellular matrix secreting cell
 namespace: cell
 is_a: CL:0000499 ! stromal cell
-intersection_of: CL:0000151 ! secretory cell
-intersection_of: RO:0002215 GO:0070278
 
 [Term]
 id: CL:0000328
@@ -12024,6 +12018,7 @@ synonym: "CD8+ TEMRA" EXACT [PMID:15032595]
 synonym: "CD8-positive TEMRA" EXACT [PMID:15032595]
 synonym: "TEMRA" BROAD [PMID:15032595]
 is_a: CL:0000909 ! CD8-positive, alpha-beta memory T cell
+is_a: CL:4030002 ! effector memory CD45RA-positive, alpha-beta T cell, terminally differentiated
 intersection_of: CL:0000909 ! CD8-positive, alpha-beta memory T cell
 intersection_of: has_completed GO:0043379
 intersection_of: lacks_plasma_membrane_part PR:000001017
@@ -12282,6 +12277,7 @@ synonym: "CD4+ TEMRA" EXACT [PMID:17465678]
 synonym: "CD4-positive TEMRA" EXACT [PMID:17465678]
 synonym: "TEMRA" BROAD [PMID:17465678]
 is_a: CL:0000897 ! CD4-positive, alpha-beta memory T cell
+is_a: CL:4030002 ! effector memory CD45RA-positive, alpha-beta T cell, terminally differentiated
 intersection_of: CL:0000897 ! CD4-positive, alpha-beta memory T cell
 intersection_of: has_completed GO:0043379
 intersection_of: lacks_plasma_membrane_part PR:000001017
@@ -15146,8 +15142,12 @@ creation_date: 2010-09-02T11:33:26Z
 id: CL:0002201
 name: renal beta-intercalated cell
 namespace: cell
-def: "A renal intercalated cell that secretes base and reabsorbs acid in the coritcal collecting duct to mantain acid/base balance." [GOC:tfm, PMID:11781354]
+def: "A renal intercalated cell that secretes base and reabsorbs acid in the distal segments of the kidney tubule to maintain acid/base balance." [GOC:tfm, PMID:11781354, PMID:25632105]
+synonym: "type B intercalated cell" EXACT [PMID:25632105]
+synonym: "type B-IC" EXACT [PMID:25632105]
 is_a: CL:0005010 ! renal intercalated cell
+relationship: BFO:0000050 UBERON:0001232
+relationship: BFO:0000050 UBERON:0005097
 created_by: tmeehan
 creation_date: 2010-09-02T01:43:55Z
 
@@ -16392,9 +16392,18 @@ creation_date: 2010-09-13T03:23:25Z
 id: CL:0002301
 name: type B synovial cell
 namespace: cell
-def: "A synovial cell type that resembles fibroblasts, has abundant granular endoplasmic reticulum but contains fewer vacuoles and vesicles. This cell type secretes glycoproteins and hyaluronic acid." [GOC:tfm, ISBN:0517223651]
+def: "A resident stromal cell located in the synovial membrane and responsible for the production of immune-related cytokines and chemokines. This cell type secretes glycoproteins and hyaluronic acid, has abundant granular endoplasmic reticulum, but contains fewer vacuoles and vesicles." [GOC:tfm, ISBN:0517223651, PMID:34433485, PMID:34772990] {http://purl.org/dc/terms/contributor="http://orcid.org/0000-0002-0819-0473"}
+comment: Type B synovial cells play a key role in the pathogenesis of chronic inflammatory diseases, such as rheumatoid arthritis, and are essential for the maintenance of normal joint functions. Fibroblast-like synoviocytes from different joints have different properties, which may contribute to the characteristic pattern of joint involvement in different types of arthritis. {xref="https://en.wikipedia.org/wiki/Fibroblast-like_synoviocyte", xref="PMID:34433485"}
+synonym: "fibroblast-like synoviocyte" EXACT []
+synonym: "synovial fibroblast" EXACT [PMID:23147896]
+xref: BTO:0003652
 xref: FMA:66788
 is_a: CL:0000214 ! synovial cell
+is_a: CL:0000499 ! stromal cell
+intersection_of: CL:0000499 ! stromal cell
+intersection_of: BFO:0000050 UBERON:0002018
+relationship: RO:0002215 GO:0030213
+relationship: RO:0003000 UBERON:0001090
 created_by: tmeehan
 creation_date: 2010-09-13T03:39:14Z
 
@@ -16403,9 +16412,13 @@ id: CL:0002302
 name: type A synovial cell
 namespace: cell
 def: "A synovial cell that is macrophage-like, characterized by surface ruffles or lamellipodia, plasma membrane invaginations and associated micropinocytotic vesicles, Golgi apparatus and little granular endoplasmic reticulum." [GOC:tfm, ISBN:0517223651]
+comment: Type A cells are usually round and located in the upper part of the synovial intima. {xref="PMID:10770586"}
 synonym: "type A synoviocyte" EXACT []
 xref: FMA:66787
 is_a: CL:0000214 ! synovial cell
+relationship: BFO:0000050 UBERON:0002018
+relationship: RO:0001000 CL:0000842 {xref="PMID:10770586"} ! mononuclear cell
+relationship: RO:0002215 GO:0006909
 created_by: tmeehan
 creation_date: 2010-09-13T03:39:17Z
 
@@ -16707,6 +16720,8 @@ alt_id: CL:1000476
 def: "The milk-producing cell of the alveolar unit that emerges during pregnancy." [GOC:tfm, PMID:19022771]
 synonym: "epithelial cell of lactiferous gland" EXACT []
 synonym: "luminal cell of alveolus of lactiferous gland" EXACT []
+synonym: "mammary alveolar epithelial cell" EXACT []
+synonym: "mammary gland alveolar epithelial cell" EXACT []
 xref: FMA:74506
 xref: FMA:79866
 is_a: CL:0000314 ! milk secreting cell
@@ -17971,6 +17986,7 @@ name: CD4-intermediate, CD8-positive double-positive thymocyte
 namespace: cell
 def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD4 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
 synonym: "T.4int8+.Th" EXACT []
+synonym: "T_4int8+_Th" EXACT []
 is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
 intersection_of: has_high_plasma_membrane_amount GO:0042105
@@ -17986,7 +18002,8 @@ id: CL:0002431
 name: CD4-positive, CD8-intermediate double-positive thymocyte
 namespace: cell
 def: "A double-positive thymocyte that is undergoing positive selection, has high expression of the alpha-beta T cell receptor, is CD69-positive, and is in the process of down regulating the CD8 co-receptor." [GOC:tfm, http://www.immgen.org/index_content.html]
-synonym: "T.4int8+.th" EXACT []
+synonym: "T.4+8int.Th" EXACT []
+synonym: "T_4+8int_Th" EXACT []
 is_a: CL:0000809 {is_inferred="true"} ! double-positive, alpha-beta thymocyte
 intersection_of: CL:0000809 ! double-positive, alpha-beta thymocyte
 intersection_of: has_high_plasma_membrane_amount GO:0042105
@@ -18260,11 +18277,14 @@ creation_date: 2010-11-10T01:46:51Z
 id: CL:0002453
 name: oligodendrocyte precursor cell
 namespace: cell
-def: "The cell type from which oligodendrocytes develop. This cell originates from multiple structures within the developing brain including the medial ganglion eminence and the lateral ganglionic eminence. These cells migrate throughout the central nervous system and persist into adulthood where they play an important role in remyelination of injured neurons." [GOC:tfm, PMID:20142420]
-is_a: CL:0000123 {is_inferred="true"} ! neuron associated cell (sensu Vertebrata)
-intersection_of: CL:0000123 ! neuron associated cell (sensu Vertebrata)
-intersection_of: BFO:0000050 UBERON:0001017
+def: "A progenitor cell of the central nervous system that can differentiate into oligodendrocytes or type-2 astrocytes. This cell originates from multiple structures within the developing brain including the medial ganglion eminence and the lateral ganglionic eminence. These cells migrate throughout the central nervous system and persist into adulthood where they play an important role in remyelination of injured neurons." [GOC:tfm, PMID:10704434, PMID:11756508, PMID:20142420, PMID:2182078, PMID:24133281, PMID:9826671]
+comment: This cell type can be purified from optic nerves and other regions of the embryonic, postnatal and adult rat CNS and can be differentiated in vitro to oligodendrocytes and type-2 astrocytes. Some references use the terms 'oligodendrocyte precursor cell' and 'oligodendrocyte type-2 astrocyte (O-2A) progenitor' to refer to the same entity (e.g., PMID:10704434), while others describe an oligodendrocyte type-2 astrocyte (O-2A) progenitor cell as the precurosr to oligodendrocyte- and type-2 astrocyte- progenitor cells (e.g, ISBN:9780702028991). {xref="PMID:10704434", xref="ISBN:9780702028991", xref="PMID:2182078"}
+synonym: "O-2A/OPC" BROAD [PMID:24133281]
+synonym: "O2A/OPC" BROAD [PMID:11756508]
+synonym: "oligodendrocyte-type 2 astrocyte (O-2A) progenitor cell" BROAD [PMID:2253328]
+synonym: "oligodendrocyte/type-2 astrocyte progenitor cell" BROAD [PMID:24133281] {http://purl.org/dc/terms/contributor="http://orcid.org/0000-0002-0819-0473"}
 relationship: RO:0002202 CL:0000339 ! glioblast (sensu Vertebrata)
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-1773-2692 xsd:string
 created_by: tmeehan
 creation_date: 2010-11-10T02:51:34Z
 
@@ -19609,6 +19629,8 @@ id: CL:0002566
 name: dark melanocyte
 namespace: cell
 def: "A melanocyte that appears darker due to content or amount of melanin granules." [GOC:tfm]
+synonym: "melanotic melanocyte" EXACT [PMID:10985850]
+synonym: "melanotic melanophore" EXACT [PMID:10985850]
 is_a: CL:0000148 ! melanocyte
 created_by: tmeehan
 creation_date: 2011-03-01T05:57:11Z
@@ -19618,6 +19640,8 @@ id: CL:0002567
 name: light melanocyte
 namespace: cell
 def: "A melanocyte that appears lighter in color." [GOC:tfm]
+synonym: "amelanotic melanocyte" EXACT [PMID:10985850]
+synonym: "amelanotic melanophore" EXACT [PMID:10985850]
 is_a: CL:0000148 ! melanocyte
 created_by: tmeehan
 creation_date: 2011-03-01T05:58:23Z
@@ -20544,11 +20568,13 @@ name: endothelial cell of high endothelial venule
 namespace: cell
 def: "A venule endothelial cell that is cubodial, expresses leukocyte-specific receptors, and allows for passage of lymphocytes into bloodstream." [GOC:tfm, PMID:20726857]
 comment: Markers expressed on HEV include: MAdCAM-1,PNAd (sulfated and glycosylated molecules, i.e. GlyCAM-1, CD34, endomucin, nepmucin), ICAM-1, ICAM-2,Fuc-TVII, beta 3GlcNAcT-3, GlcNAc6ST2,CCL21, CCL19, CXCL13, CXCL12, Autotaxin, DARC, angiomodulin, LRHG.
-synonym: "endothelial cell of postcapillary venule of lymph node" EXACT []
+synonym: "endothelial cell of postcapillary venule of lymph node" BROAD []
 synonym: "HEV cell" EXACT []
 xref: FMA:67759
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:1000414 ! endothelial cell of venule
+intersection_of: CL:0000115 ! endothelial cell
+intersection_of: BFO:0000050 UBERON:8410037
 created_by: tmeehan
 creation_date: 2011-07-08T03:14:10Z
 
@@ -20974,18 +21000,26 @@ id: CL:0005010
 name: renal intercalated cell
 namespace: cell
 def: "A cuboidal epithelial cell of the kidney that regulates acid/base balance." [CL:CVS]
+comment: Intercalated cells are also called “mitochondria-rich cells”, reflecting the high levels of round mitochondria at their apical pole, or in their cytoplasm, a distribution that is quite different from that of other kidney tubule cells, which accumulated mitochondria around the basolateral membrane. These cells also have numerous irregular apical microvilli compared with the surrounding segment-specific cells. Intercalated cells lack a central cilium, at least in the cortex, which also differentiates them from the adjacent principal cells. {xref="PMID:25632105"}
 synonym: "intercalated cell" EXACT []
 xref: FMA:86560
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0002078 ! meso-epithelial cell
 is_a: CL:0002518 ! kidney epithelial cell
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-1773-2692 xsd:string
 
 [Term]
 id: CL:0005011
 name: renal alpha-intercalated cell
 namespace: cell
 def: "A cuboidal epithelial cell of the kidney which secretes acid and reabsorbs base to regulate acid/base balance." [CL:CVS]
+comment: Type A intercalated cells are the more abundant type of intercalated cell in the outer stripe of the outer medulla in most mammalian species. {xref="PMID:25632105"}
+synonym: "type A intercalated cell" EXACT [PMID:25632105]
+synonym: "type A-IC" EXACT [PMID:25632105]
 is_a: CL:0005010 ! renal intercalated cell
+relationship: BFO:0000050 UBERON:0001232
+relationship: BFO:0000050 UBERON:0001292
+relationship: BFO:0000050 UBERON:0005097
 
 [Term]
 id: CL:0005012
@@ -22827,13 +22861,16 @@ intersection_of: RO:0002100 UBERON:0000956
 id: CL:0010012
 name: cerebral cortex neuron
 namespace: cell
+alt_id: CL:0002609
 def: "A CNS neuron of the cerebral cortex." [GOC:tfm]
 synonym: "cortical neuron" EXACT []
+synonym: "neuron of cerebral cortex" EXACT []
 xref: BTO:0004102
 xref: FMA:84104
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002100 UBERON:0000956
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/1359 xsd:string
 
 [Term]
 id: CL:0010013
@@ -23362,7 +23399,8 @@ id: CL:0017500
 name: neutrophillic cytoplasm
 namespace: cell
 def: "Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain." [GOC:add]
-is_a: GO:0005737
+intersection_of: GO:0005737
+intersection_of: RO:0000053 PATO:0070046
 created_by: tmeehan
 creation_date: 2010-05-25T01:36:34Z
 
@@ -23384,7 +23422,8 @@ name: acidophilic cytoplasm
 namespace: cell
 def: "Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain." [GOC:add]
 synonym: "eosinophilic" NARROW []
-is_a: GO:0005737
+intersection_of: GO:0005737
+intersection_of: RO:0000053 PATO:0002418
 created_by: tmeehan
 creation_date: 2009-12-22T04:23:25Z
 
@@ -23404,7 +23443,8 @@ id: CL:0017504
 name: polychromatophilic cytoplasm
 namespace: cell
 def: "Cytoplasm that exhibits affinity for both basic and acid stains under specific pH conditions." [GOC:tfm]
-is_a: GO:0005737
+intersection_of: GO:0005737
+intersection_of: RO:0000053 PATO:0070047
 created_by: tmeehan
 creation_date: 2009-12-28T04:25:23Z
 
@@ -28629,7 +28669,7 @@ name: long-range projecting sst GABAergic cortical interneuron (Mus musculus)
 def: "A sst GABAergic cortical interneuron that is both an interneuron and a projecting neuron. They are found in all layers from upper L2/3 down to the bottom of L6. They have long-range projections, some with axons fading into white matter. These cells have low rebound potential, low hyperpolarization sag, and high variability in membrane time constant." [PMID:26727548]
 subset: BDS_subset
 synonym: "LP SST (Mus)" EXACT []
-is_a: CL:0000099 ! interneuron
+is_a: CL:4023121 ! sst chodl GABAergic cortical interneuron
 relationship: RO:0002100 UBERON:0000956
 relationship: RO:0002162 NCBITaxon:10090
 relationship: RO:0002215 GO:0061534
@@ -29407,6 +29447,31 @@ relationship: RO:0002292 PR:000015665
 property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023122
+name: oxytocin receptor sst GABAergic cortical interneuron
+def: "An interneuron located in the cerebral cortex that expresses the oxytocin receptor. These interneurons also express somatostatin." [PMID:25303526]
+comment: These cells were first identified in mouse. {xref="PMID:25303526"}
+synonym: "OxtrINs" BROAD [PMID:25303526]
+is_a: CL:0000099 ! interneuron
+relationship: RO:0002100 UBERON:0000956
+relationship: RO:0002215 GO:0004990
+relationship: RO:0002215 GO:0061534
+relationship: RO:0002292 PR:000001635
+relationship: RO:0002292 PR:000015665
+property_value: http://purl.org/dc/elements/1.1/creator http://orcid.org/0000-0001-7258-9596
+property_value: RO:0002175 NCBITaxon:10090 {xref="PMID:25303526"}
+
+[Term]
+id: CL:4023129
+name: retinoblast
+def: "A retinal cell that is immature or undifferentiated." [PMID:17565741]
+synonym: "retinal stem cell" EXACT [PMID:17565741]
+is_a: CL:0009004 ! retinal cell
+relationship: BFO:0000050 UBERON:0000966
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0001-7258-9596
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-0819-0473
+
+[Term]
 id: CL:4028001
 name: pulmonary capillary endothelial cell
 def: "Any capillary endothelial cell that is part of a lung." []
@@ -29479,6 +29544,31 @@ is_a: CL:0002241 ! pulmonary interstitial fibroblast
 relationship: BFO:0000050 UBERON:0002299
 created_by: http://orcid.org/0000-0002-3293-5463
 creation_date: 2021-12-09T15:53:21Z
+
+[Term]
+id: CL:4030000
+name: choroidal melanocyte
+def: "A melanocyte located in the vascular uvea and involved in photoprotection, regulation of oxidative damage and immune responses." [http://orcid.org/0000-0002-0819-0473, PMID:31819095]
+comment: Cellular functions and extracellular interactions of choroidal melanocytes are distinct to skin melanocytes. They might have both neuroectodermal as well as mesectodermal origins. {xref="PMID:34082079", xref="PMID:31819095"}
+synonym: "uveal melanocyte" EXACT []
+is_a: CL:0000148 ! melanocyte
+intersection_of: CL:0000148 ! melanocyte
+intersection_of: BFO:0000050 UBERON:0001768
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-1773-2692 xsd:string
+creation_date: 2022-01-20T12:59:06Z
+
+[Term]
+id: CL:4030002
+name: effector memory CD45RA-positive, alpha-beta T cell, terminally differentiated
+def: "An alpha-beta memory T cell with the phenotype CD45RA-positive." [https://orcid.org/0000-0002-2825-0621]
+synonym: "effector memory RA T cell" BROAD [PMID:16237082]
+synonym: "TEMRA" BROAD [PMID:16237082]
+synonym: "TEMRA cell" EXACT [PMID:25104859]
+synonym: "terminally differentiated effector memory CD45RA+ T cells" EXACT [PMID:25104859]
+synonym: "terminally differentiated effector memory cells re-expressing CD45RA" EXACT [https://en.wikipedia.org/wiki/T_cell#Memory_T_cells]
+is_a: CL:0000791 ! mature alpha-beta T cell
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-1773-2692
+creation_date: 2022-02-01T13:04:46Z
 
 [Term]
 id: CP:0000000
