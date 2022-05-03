@@ -2646,6 +2646,7 @@ Declaration(Class(obo:CL_4023127))
 Declaration(Class(obo:CL_4023128))
 Declaration(Class(obo:CL_4023129))
 Declaration(Class(obo:CL_4023130))
+Declaration(Class(obo:CL_4023154))
 Declaration(Class(obo:CL_4028001))
 Declaration(Class(obo:CL_4028002))
 Declaration(Class(obo:CL_4028003))
@@ -4337,6 +4338,7 @@ AnnotationAssertion(rdfs:comment obo:CL_0000128 "Oligodendrocytes are reportedly
 AnnotationAssertion(rdfs:label obo:CL_0000128 "oligodendrocyte"^^xsd:string)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000128 obo:CL_0000126)
 SubClassOf(obo:CL_0000128 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017))
+SubClassOf(obo:CL_0000128 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0043209))
 SubClassOf(obo:CL_0000128 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002453))
 
 # Class: obo:CL_0000129 (microglial cell)
@@ -5231,8 +5233,8 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000218 "neurilemmal cell"^^
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000218 "cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000218 "myelinating Schwann cell"^^xsd:string)
 SubClassOf(obo:CL_0000218 obo:CL_0000217)
-SubClassOf(obo:CL_0000218 obo:CL_0000328)
 SubClassOf(obo:CL_0000218 obo:CL_0002573)
+SubClassOf(obo:CL_0000218 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0043209))
 SubClassOf(obo:CL_0000218 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002377))
 
 # Class: obo:CL_0000219 (motile cell)
@@ -6133,9 +6135,11 @@ SubClassOf(obo:CL_0000327 obo:CL_0000499)
 
 # Class: obo:CL_0000328 (myelin accumulating cell)
 
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000328 obo:CL_4023154)
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0000328 "cell"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0000328 "myelin accumulating cell"^^xsd:string)
-SubClassOf(obo:CL_0000328 obo:CL_0000325)
+AnnotationAssertion(rdfs:comment obo:CL_0000328 "see: https://github.com/obophenotype/cell-ontology/issues/161"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000328 "obsolete myelin accumulating cell"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_0000328 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000329 (oxygen accumulating cell)
 
@@ -29922,6 +29926,14 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023130 "http:
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30042117"^^xsd:string) rdfs:comment obo:CL_4023130 "Gonadal sex steroids stimulate kisspeptin neurons in the RP3V, but inhibit kisspeptin neurons in the ARC.")
 AnnotationAssertion(rdfs:label obo:CL_4023130 "kisspeptin neuron")
 EquivalentClasses(obo:CL_4023130 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000009344)))
+
+# Class: obo:CL_4023154 (myelinating glial cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1007/3-540-29623-9_3240"^^xsd:string) obo:IAO_0000115 obo:CL_4023154 "A glial cell that myelinate axonal processes.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023154 <http://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_4023154 "CL:0000328")
+AnnotationAssertion(rdfs:label obo:CL_4023154 "myelinating glial cell")
+EquivalentClasses(obo:CL_4023154 ObjectIntersectionOf(obo:CL_0000125 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0043209)))
 
 # Class: obo:CL_4028001 (pulmonary capillary endothelial cell)
 
