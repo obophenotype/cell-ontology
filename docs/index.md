@@ -1,6 +1,8 @@
 ## The Cell Ontology
 
-The Cell Ontology (CL) is an OBO Foundry ontology covering the domain of canonical, natural biological cell types.
+![logo](/CL-logo.jpeg)
+
+The Cell Ontology (CL) is an [OBO Foundry ontology](https://obofoundry.org/ontology/cl.html) covering the domain of canonical, natural biological cell types.
 
 ### OLS 
 
@@ -21,5 +23,7 @@ To see how you can contribute to the cell ontology, please visit our [Contributi
 The documentations here is intended for maintainers and editors of the cell ontology.
 
 For general guidance on editing OBO-(ish) ontologies, please see the [obook](https://oboacademy.github.io/obook/).
+
+
 
 
