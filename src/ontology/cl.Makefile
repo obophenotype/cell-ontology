@@ -284,3 +284,20 @@ dosdp_%:
 	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
 
 gs_dosdp: dosdp_cellPartOfAnatomicalEntity
+
+
+## FBbt mappings component
+
+# Download the FBbt mapping file
+.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
+$(TMPDIR)/fbbt-mappings.sssom.tsv:
+	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
+
+# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
+# (no update if the downloaded file is absent or identical to the one we already have)
+mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
+	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
+
+# Generate cross-reference component from the FBbt mapping file
+$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+	awk -f ../scripts/sssom2xrefs.awk $< > $@
