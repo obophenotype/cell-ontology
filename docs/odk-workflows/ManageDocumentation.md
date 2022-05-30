@@ -15,7 +15,7 @@ All the documentation is contained in the `docs` directory, and is managed in _M
 1. Open the `.md` file you want to change in an editor of choice (a simple text editor is often best). _IMPORTANT_: Do not edit any files in the `docs/odk-workflows/` directory. These files are managed by the ODK system and will be overwritten when the repository is upgraded! If you wish to change these files, make an issue on the [ODK issue tracker](https://github.com/INCATools/ontology-development-kit/issues).
 2. Perform the edit and save the file
 3. Commit the file to a branch, and create a pull request as usual. 
-4. If your development team likes your changes, merge the docs into master.
+4. If your development team likes your changes, merge the docs into master branch.
 5. Deploy the documentation (see below)
 
 ## Deploy the documentation
@@ -38,8 +38,8 @@ The documentation is _not_ automatically updated from the Markdown, and needs to
    If everything was successful, you will see a message similar to this one:
 
    ```
-   INFO    -  Your documentation should shortly be available at: https://obophenotype.github.io/False/ 
+   INFO    -  Your documentation should shortly be available at: https://obophenotype.github.io/cell-ontology/ 
    ```
-3. Just to double check, you can now navigate to your documentation pages (usually https://obophenotype.github.io/False/). 
+3. Just to double check, you can now navigate to your documentation pages (usually https://obophenotype.github.io/cell-ontology/). 
    Just make sure you give GitHub 2-5 minutes to build the pages!
 

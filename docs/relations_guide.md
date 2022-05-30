@@ -14,6 +14,8 @@ means that
  1. All parts of an epithelial cell are part of an epithelium.
  1. Epithelial cells are part_of some epithelium at all times.  This last stricture can be hard to apply in the context of development.  Some judgment may be required, e.g. -   (TBA)
 
+Related Equivalence patterns: [cellPartOfAnatomicalEntity](https://github.com/obophenotype/cell-ontology/blob/master/src/patterns/dosdp-patterns/cellPartOfAnatomicalEntity.yaml).  Use this as a guide for creating simple grouping classes for cells of type X in structures of type Y.
+
 Some cells, most obviously neurons, only have some parts in the anatomical structure we want to relate them to. For example, anteriior horn motor neurons have a soma in the anterior (ventral) horn of the spine, but also project out of the spine to innervate muscles.  We have a general relation for this, **'overlap'** (has some part in), but often we want to say something more specific.  For example, neuron types are often referred to in part by the location of their soma. We have a dedicated relation for this: **'has soma location'**, allowing us to record:
 
 'anterior horn motor neuron' SubClassOf **'has soma location'** *some* 'ventral horn of spinal cord'
@@ -68,14 +70,32 @@ e.g.  alpha-beta T cell EquiavlentTo 'T cell' *and* **'has plasma membrane part'
 
 Absence of a marker can be recorded using **lacks_plasma_membrane_part**.
 
+## Recording qualities of cells:
+
+Use **has characteristic**
  
-## Recording cell shape or other morphological qualities
+### Recording cell shape or other morphological qualities
 
-e.g. erythrocyte subClassOf **bearer of** *some* biconcave
+e.g. erythrocyte subClassOf **has characteristic** *some* biconcave
 
-## Recording cellular qualities (eg. ploidy, nuclear number)
+### Recording cellular qualities (eg. ploidy, nuclear number)
 
-e.g. 'enucleate erythrocyte' EquivalentTo erythrocyte *and* **'bearer of'** *some* anucleate
+#### nuclear number
+
+Use subproperty of PATO: nuclate auality 
+
+![image](https://user-images.githubusercontent.com/112839/147105229-685b5cdf-8b09-4a36-b826-41ad405886b6.png)
+
+e.g. 
+
+'enucleate erythrocyte' EquivalentTo erythrocyte *and* **'has characteristic'** *some* anucleate
+
+Note that 'anucleate cell' and 'multinucleate cell' are disjoint.
+
+
+
+
+
 
 
 
