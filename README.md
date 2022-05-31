@@ -4,7 +4,7 @@
 [![Powered by the ROBOT](https://img.shields.io/static/v1?label=Powered%20by&message=ROBOT&color=green&style=flat)](http://robot.obolibrary.org/)
 <a href="http://dashboard.obofoundry.org/dashboard/cl/dashboard.html"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FOBOFoundry%2Fobo-dash.github.io%2Fgh-pages%2Fdashboard%2Fcl%2Fdashboard-qc-badge.json" /></a>
 <a href="http://dashboard.obofoundry.org/dashboard/cl/dashboard.html"><img src="https://img.shields.io/endpoint?url=https%3A%2F%2Fraw.githubusercontent.com%2FOBOFoundry%2Fobo-dash.github.io%2Fgh-pages%2Fdashboard%2Fcl%2Fdashboard-score-badge.json" /></a>
-<a href="https://cthoyt.com/obo-community-health/"><img src="https://bioregistry.io/health/cl"/></a>
+<!--<a href="https://cthoyt.com/obo-community-health/"><img src="https://bioregistry.io/health/cl"/></a>-->
 
 <img src="https://user-images.githubusercontent.com/112839/107354015-9375bb00-6ac5-11eb-9394-7318df343ec2.png" width=30% height=30%>
 
