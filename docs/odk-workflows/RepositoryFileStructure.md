@@ -18,6 +18,7 @@ These are the current imports in CL
 | ------ | --- | ---- |
 | pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
 | go | http://purl.obolibrary.org/obo/go.owl | None |
+| caro | http://purl.obolibrary.org/obo/caro.owl | None |
 | uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |

@@ -38,7 +38,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by 
 SPARQL_EXPORTS =            basic-report 
 ODK_VERSION_MAKEFILE =      v1.3.1
 
@@ -46,7 +46,7 @@ TODAY ?=                    $(shell date +%Y-%m-%d)
 OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/hra_subset.owl
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 PATTERNDIR=                 ../patterns
 PATTERN_TESTER=              dosdp validate -i
@@ -100,7 +100,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  pr go uberon ro chebi pato ncbitaxon
+IMPORTS =  pr go caro uberon ro chebi pato ncbitaxon
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -278,7 +278,7 @@ $(IMPORTDIR)/merged_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/merged_term
 	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
 		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBA_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://purl.obolibrary.org/obo/CLO_*>" remove  --select "<http://www.genenames.org/cgi-bin/gene_symbol_report*>"  \
 		extract -T $(IMPORTDIR)/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
+		query --update ../sparql/inject-subset-declaration.ru ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 
@@ -295,14 +295,14 @@ $(IMPORTDIR)/%_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/%_terms_combined
 ## Module for ontology: pr
 
 $(IMPORTDIR)/pr_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/pr_terms_combined.txt
-	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/pr_terms_combined.txt --force true  --copy-ontology-annotations true --individuals exclude --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/pr_terms_combined.txt --force true --individuals exclude --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
 ## Module for ontology: chebi
 
 $(IMPORTDIR)/chebi_import.owl: $(MIRRORDIR)/merged.owl $(IMPORTDIR)/chebi_terms_combined.txt
-	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/chebi_terms_combined.txt --force true  --copy-ontology-annotations true --individuals exclude --method BOT \
+	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T $(IMPORTDIR)/chebi_terms_combined.txt --force true --individuals exclude --method BOT \
 		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/inject-synonymtype-declaration.ru --update ../sparql/postprocess-module.ru \
 		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
 
@@ -377,6 +377,13 @@ mirror-pr: | $(TMPDIR)
 .PRECIOUS: $(MIRRORDIR)/go.owl
 mirror-go: | $(TMPDIR)
 	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o $(MIRRORDIR)/go.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/go.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
+
+
+## ONTOLOGY: caro
+.PHONY: mirror-caro
+.PRECIOUS: $(MIRRORDIR)/caro.owl
+mirror-caro:
+	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/caro/caro-base.owl --create-dirs -o $(MIRRORDIR)/caro.owl --retry 4 --max-time 200 && $(ROBOT) convert -i $(MIRRORDIR)/caro.owl -o $@.tmp.owl && mv $@.tmp.owl $(TMPDIR)/$@.owl; fi
 
 
 ## ONTOLOGY: uberon
