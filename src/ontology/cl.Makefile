@@ -279,11 +279,11 @@ imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 
 DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
 
-.PRECIOUS: dosdp_%
-dosdp_%:
+.PHONY: gs_dosdp_%
+gs_dosdp_%:
 	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
 
-gs_dosdp: dosdp_cellPartOfAnatomicalEntity
+gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
 
 
 ## FBbt mappings component
