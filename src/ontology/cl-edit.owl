@@ -9,9 +9,9 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
+Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/mappings.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/merged_import.owl>)
-Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
 Annotation(obo:IAO_0000700 obo:CL_0000000)
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Alexander Diehl")
 Annotation(<http://purl.org/dc/elements/1.1/contributor> "Ceri van Slyke")
@@ -2836,10 +2836,6 @@ SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInO
 
 SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/pato#location_grouping> oboInOwl:SubsetProperty)
 
-# Annotation Property: <http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas> (<http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas>)
-
-SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas> oboInOwl:SubsetProperty)
-
 # Annotation Property: <http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED> (preferred term when talking about an instance of this class in Homo sapiens)
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED> "preferred term when talking about an instance of this class in Homo sapiens"^^xsd:string)
@@ -2854,6 +2850,10 @@ SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/uberon#LATIN> oboInOwl:S
 
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/uberon#PLURAL> "plural term"^^xsd:string)
 SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/uberon#PLURAL> oboInOwl:SynonymTypeProperty)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas> (<http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas>)
+
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas> oboInOwl:SubsetProperty)
 
 # Annotation Property: <http://purl.obolibrary.org/obo/ubprop#_upper_level> (<http://purl.obolibrary.org/obo/ubprop#_upper_level>)
 
@@ -27824,13 +27824,14 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11976365"^^xsd:string) A
 AnnotationAssertion(rdfs:label obo:CL_4023158 "octopus cell of the mammalian cochlear nucleus")
 SubClassOf(obo:CL_4023158 obo:CL_0000540)
 SubClassOf(obo:CL_4023158 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002831))
+SubClassOf(obo:CL_4023158 ObjectSomeValuesFrom(obo:RO_0013001 obo:UBERON_8440043))
 
 # Class: obo:CL_4023159 (double bouquet cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15378039"^^xsd:string) obo:IAO_0000115 obo:CL_4023159 "An interneuron that has double bouquet morphology.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023159 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(rdfs:label obo:CL_4023159 "double bouquet cell")
-SubClassOf(obo:CL_4023159 obo:CL_0000099)
+EquivalentClasses(obo:CL_4023159 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070061)))
 
 # Class: obo:CL_4023160 (cartwheel cell)
 
