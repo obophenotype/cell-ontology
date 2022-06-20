@@ -279,11 +279,11 @@ imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
 
 DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
 
-.PRECIOUS: dosdp_%
-dosdp_%:
+.PHONY: gs_dosdp_%
+gs_dosdp_%:
 	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
 
-gs_dosdp: dosdp_cellPartOfAnatomicalEntity
+gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
 
 
 ## FBbt mappings component
@@ -301,3 +301,12 @@ mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
 # Generate cross-reference component from the FBbt mapping file
 $(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
 	awk -f ../scripts/sssom2xrefs.awk $< > $@
+
+## Download human reference atlas subset
+
+HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
+$(TMPDIR)/hra_subset.owl:
+	wget $(HRA_SUBSET_URL) -O $@
+
+$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
