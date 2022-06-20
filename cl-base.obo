@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-06-15/cl-base.owl
+data-version: cl/releases/2022-06-18/cl-base.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: location_grouping ""
@@ -24,7 +24,7 @@ property_value: http://purl.org/dc/elements/1.1/title "Cell Ontology" xsd:string
 property_value: http://purl.org/dc/elements/1.1/type IAO:8000001
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2022-06-15" xsd:string
+property_value: owl:versionInfo "2022-06-18" xsd:string
 
 [Term]
 id: CL:0000000
@@ -13944,9 +13944,13 @@ name: hepatic oval stem cell
 alt_id: CL:1000036
 def: "A transient hepatic stem cell observed after liver injury with a high nuclear to cytoplasm ratio that can differentiate into mature hepatocytes and bile duct cells. Arises from more than one tissue." [PMID:17901986]
 synonym: "hepatic oval cell" EXACT []
+synonym: "hepatic progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0] {http://purl.org/dc/elements/1.1/contributor="http://orcid.org/000-0003-1940-6740"}
+synonym: "liver progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0]
 xref: BTO:0004270
 xref: FMA:86576
-is_a: CL:0002195 ! hepatic stem cell
+is_a: CL:0011026 ! progenitor cell
+relationship: BFO:0000050 UBERON:0002107
+property_value: RO:0004050 "Liver progenitor cells have been variously named in rodent and human studies as oval cells, hepatic progenitor cells, liver stem cells, ductular reactions, or atypical ductular cells. They were first described as oval cells in rats due to their large nuclear-to-cytoplasm ratio and oval-shaped nuclei. On the difference between 'hepatic liver stem cells' (HLSC) and 'oval cells':  \"... unlike a well-known hepatic progenitor cell population, known as oval cells in rodents, HLSCs do not express CK-7, CK-19, c-kit, CD133 and alpha-smooth muscle actin (α-SMA) (Gaudio et al., 2009)\"." xsd:string {xref="https://doi.org/10.1038/s12276-020-0483-0", xref="https://doi.org/10.3389/fcell.2021.644088"}
 created_by: tmeehan
 creation_date: 2010-08-30T02:01:49Z
 
@@ -21269,7 +21273,7 @@ name: lymph node marginal reticular cell
 def: "A fibroblastic reticular cell found in the lymph node subcapsular sinus." [https://orcid.org/0000-0001-7655-4833, PMID:21435450, PMID:22566825, PMID:25998961, PMID:28262465, PMID:29752062, PMID:34256989]
 synonym: "marginal reticular cell" BROAD []
 is_a: CL:0009102 ! lymph node fibroblastic reticular cell
-relationship: BFO:0000050 UBERON:0005463
+relationship: RO:0001025 UBERON:0005463
 property_value: http://purl.org/dc/elements/1.1/date 2022-03-21T15:59:56Z xsd:dateTime
 property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-2825-0621
 property_value: RO:0002175 NCBITaxon:9606

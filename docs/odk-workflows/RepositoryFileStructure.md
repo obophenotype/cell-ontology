@@ -36,4 +36,5 @@ These are the components in CL
 
 | Filename | URL |
 | -------- | --- |
+| hra_subset.owl | None |
 | mappings.owl | None |

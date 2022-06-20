@@ -301,3 +301,12 @@ mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
 # Generate cross-reference component from the FBbt mapping file
 $(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
 	awk -f ../scripts/sssom2xrefs.awk $< > $@
+
+## Download human reference atlas subset
+
+HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
+$(TMPDIR)/hra_subset.owl:
+	wget $(HRA_SUBSET_URL) -O $@
+
+$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
