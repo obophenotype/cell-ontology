@@ -11,7 +11,7 @@
 # See README-editors.md for more details.
 
 IMAGE=${IMAGE:-odkfull}
-ODK_JAVA_OPTS=${ODK_JAVA_OPTS:--Xmx16G}
+ODK_JAVA_OPTS=-Xmx16G
 ODK_DEBUG=${ODK_DEBUG:-no}
 
 TIMECMD=
