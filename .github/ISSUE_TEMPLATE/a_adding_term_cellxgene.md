@@ -3,7 +3,7 @@ name: Add term (cellxgene)
 about: New term suggestion for CL via cellxgene
 title: "[NTR-cxg]"
 assignees: bvarner-ebi
-labels: 'new term request', 'cellxgene'
+labels: new term request, cellxgene
 ---
 
 Note - please check that the term does not already exist (check OLS: https://www.ebi.ac.uk/ols/ontologies/cl)
