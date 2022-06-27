@@ -32,4 +32,9 @@ Components, in contrast to imports, are considered full members of the ontology.
 2. A part of the ontology is managed in ROBOT templates
 3. The expressivity of the component is higher than the format of the edit file. For example, people still choose to manage their ontology in OBO format (they should not) missing out on a lot of owl features. They may chose to manage logic that is beyond OBO in a specific OWL component.
 
+These are the components in CL
 
+| Filename | URL |
+| -------- | --- |
+| hra_subset.owl | None |
+| mappings.owl | None |
