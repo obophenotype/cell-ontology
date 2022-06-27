@@ -1,0 +1,10 @@
+PREFIX dcterms: <http://purl.org/dc/terms/>
+
+SELECT ?subject ?orcid
+WHERE {
+  ?subject dcterms:contributor ?orcid .
+  FILTER(!regex(str(?orcid), "^https://github.com/orgs/[a-z-_]+/teams/") &&
+         !regex(str(?orcid), "^(https?://orcid.org/)[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)") && 
+         !regex(str(?orcid), "^(https://www.wikidata.org/entity/Q)[0-9]+") &&
+         !regex(str(?orcid), "^(https://ror.org/)[0-9a-z]{9}") )
+}
