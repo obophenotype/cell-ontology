@@ -26,10 +26,10 @@ cp target/$OID/src/ontology/run.sh $SRCDIR/ontology/
 cp -r target/$OID/src/sparql/* $SRCDIR/sparql/
 mkdir -p $ROOTDIR/.github
 mkdir -p $ROOTDIR/.github/workflows
+cp -n target/$OID/.github/workflows/qc.yml $ROOTDIR/.github/workflows/qc.yml
 
 
-
-cp -n target/$OID/.github/workflows/docs.yml $ROOTDIR/.github/workflows/docs.yml
+cp target/$OID/.github/workflows/docs.yml $ROOTDIR/.github/workflows/docs.yml
 
 
 cp -n target/$OID/mkdocs.yaml $ROOTDIR/

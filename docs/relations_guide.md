@@ -22,6 +22,8 @@ Some cells, most obviously neurons, only have some parts in the anatomical struc
 
 We also have a dedicated set of relations for recording the location of synaptic terminals and projections of neurons.  See [Relations for neurons](#Relations_for_neurons) for details.
 
+To record the location of a cell in an anatomical space (e.g. a sinus), use **'located in'**, for an example of this, see 'Kupffer cell'.
+
 ## Taxon constraints
 
 Please see https://ontology-development-kit.readthedocs.io/en/latest/TaxonRestriction.html
