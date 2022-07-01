@@ -2678,10 +2678,10 @@ Declaration(Class(obo:CL_4030014))
 Declaration(Class(obo:CL_4030015))
 Declaration(Class(obo:CL_4030016))
 Declaration(Class(obo:CL_4030017))
+Declaration(Class(obo:CL_4030018))
 Declaration(Class(obo:CL_4030019))
 Declaration(Class(obo:CL_4030020))
 Declaration(Class(obo:CL_4030021))
-Declaration(Class(obo:CL_4030018))
 Declaration(Class(obo:CL_4030023))
 Declaration(Class(obo:CL_4030024))
 Declaration(Class(obo:CP_0000000))
@@ -19957,6 +19957,7 @@ AnnotationAssertion(rdfs:label obo:CL_0005010 "renal intercalated cell"^^xsd:str
 SubClassOf(obo:CL_0005010 obo:CL_0000075)
 SubClassOf(obo:CL_0005010 obo:CL_0002078)
 SubClassOf(obo:CL_0005010 obo:CL_0002518)
+SubClassOf(obo:CL_0005010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001285))
 
 # Class: obo:CL_0005011 (renal alpha-intercalated cell)
 
@@ -19966,6 +19967,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25632105"^^xsd:string) o
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25632105"^^xsd:string) rdfs:comment obo:CL_0005011 "Type A intercalated cells are the more abundant type of intercalated cell in the outer stripe of the outer medulla in most mammalian species.")
 AnnotationAssertion(rdfs:label obo:CL_0005011 "renal alpha-intercalated cell"^^xsd:string)
 SubClassOf(obo:CL_0005011 obo:CL_0005010)
+SubClassOf(obo:CL_0005011 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046717))
 
 # Class: obo:CL_0005012 (multi-ciliated epithelial cell)
 
@@ -28103,6 +28105,14 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24855283"^^xsd:string) r
 AnnotationAssertion(rdfs:label obo:CL_4030017 "epithelial cell of late distal convoluted tubule")
 EquivalentClasses(obo:CL_4030017 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005102)))
 
+# Class: obo:CL_4030018 (kidney connecting tubule principal cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref <http://orcid.org/0000-0003-2804-127X>) Annotation(oboInOwl:hasDbXref "PMID:27582101"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:31249312"^^xsd:string) obo:IAO_0000115 obo:CL_4030018 "A renal principal cell located in the connecting tubule."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/contributor> obo:CL_4030018 <https://orcid.org/0000-0002-1773-2692>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030018 "2022-06-27T15:25:10Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4030018 "kidney connecting tubule principal cell")
+EquivalentClasses(obo:CL_4030018 ObjectIntersectionOf(obo:CL_0005009 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005097)))
+
 # Class: obo:CL_4030019 (kidney connecting tubule intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:9890303"^^xsd:string) obo:IAO_0000115 obo:CL_4030019 "An epithelial cell that is part of the connecting tubule with important roles in the regulation of acid-base homeostasis."^^xsd:string)
@@ -28114,7 +28124,7 @@ SubClassOf(obo:CL_4030019 obo:CL_1000768)
 
 # Class: obo:CL_4030020 (kidney connecting tubule alpha-intercalated cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:2254448"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:24937428"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9890303"^^xsd:string) obo:IAO_0000115 obo:CL_4030020 "A kidney connecting tubule intercalated cell that secretes protons via an apical H+-ATPase and H+/K+ exchanger and reabsorbs bicarbonate by a Cl-/HCO3- exchanger (AE1) located in the basolateral plasma membrane."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:2254448"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:24937428"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9890303"^^xsd:string) obo:IAO_0000115 obo:CL_4030020 "A renal alpha-intercalated cell that is part of the renal connecting tubule."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/contributor> obo:CL_4030020 <https://orcid.org/0000-0002-1773-2692>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030020 "2022-06-29T12:48:43Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24937428"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_4030020 "connecting tubule A-IC"^^xsd:string)
@@ -28124,22 +28134,13 @@ EquivalentClasses(obo:CL_4030020 ObjectIntersectionOf(obo:CL_0005011 ObjectSomeV
 
 # Class: obo:CL_4030021 (kidney connecting tubule beta-intercalated cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:2254448"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9890303"^^xsd:string) obo:IAO_0000115 obo:CL_4030021 "A kidney connecting tubule intercalated cell that secretes bicarbonate by an apical Cl-/HCO3- exchanger (pendrin)."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:2254448"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:9890303"^^xsd:string) obo:IAO_0000115 obo:CL_4030021 "A renal beta-intercalated cell that is part of the renal connecting tubule"^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/elements/1.1/contributor> obo:CL_4030021 <https://orcid.org/0000-0002-1773-2692>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030021 "2022-06-29T14:31:18Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32065116"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_4030021 "connecting tubule B-IC"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:9890303"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_4030021 "kidney connecting tubule intercalated cell type B"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_4030021 "kidney connecting tubule beta-intercalated cell"^^xsd:string)
 EquivalentClasses(obo:CL_4030021 ObjectIntersectionOf(obo:CL_0002201 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005097)))
-
-# Class: obo:CL_4030018 (kidney connecting tubule principal cell)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref <http://orcid.org/0000-0003-2804-127X>) Annotation(oboInOwl:hasDbXref "PMID:27582101"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:31249312"^^xsd:string) obo:IAO_0000115 obo:CL_4030018 "A renal principal cell located in the connecting tubule."^^xsd:string)
-AnnotationAssertion(<http://purl.org/dc/elements/1.1/contributor> obo:CL_4030018 <https://orcid.org/0000-0002-1773-2692>)
-AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030018 "2022-06-27T15:25:10Z"^^xsd:dateTime)
-AnnotationAssertion(rdfs:label obo:CL_4030018 "kidney connecting tubule principal cell")
-EquivalentClasses(obo:CL_4030018 ObjectIntersectionOf(obo:CL_0005009 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005097)))
-
 
 # Class: obo:CL_4030023 (respiratory hillock cell)
 
