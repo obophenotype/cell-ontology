@@ -4,20 +4,6 @@
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
 
-mirror/clo.owl: mirror/clo.trigger
-	echo "WARNING OVERWRITING CLO MIRROR BECAUSE OF EQUIVALENT TERM"
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/clo.owl --create-dirs -o mirror/clo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/clo.owl -o $@.tmp.owl && \
-		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/CLO --axioms external --preserve-structure false --trim false \
-			remove --term "CLO:0000021" --axioms logical --preserve-structure false \
-			remove --term "CL:0000243" --preserve-structure false \
-			remove --term "CLO:0000031" --term "CLO:0000001" --term "rdfs:comment" --term "IAO:0000115" --signature true --trim false -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: mirror/clo.owl
-
-mirror/go.owl: mirror/go.trigger
-	echo "WARNING OVERWRITING GO MIRROR BECAUSE OF OBSOLETE CL TERM"
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o mirror/go.owl --retry 4 --max-time 200 && $(ROBOT) remove -i mirror/go.owl --term "CL:0000243" --preserve-structure false convert -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: mirror/go.owl
-
 non_native_classes.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/non-native-classes.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@
@@ -84,49 +70,6 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 
 
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
-
-$(ONT)-simple.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert -o $@
-
-$(ONT)-simple.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
-$(ONT)-basic.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert -o $@
-
-
-$(ONT)-basic.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
 
 
 ##############################################
@@ -243,21 +186,38 @@ test_obsolete: cl.obo
 
 test: test_obsolete
 
-imports/merged_import.owl: mirror/merged.owl imports/merged_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBA_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://www.genenames.org/cgi-bin/gene_symbol_report*>"  \
-		extract -T imports/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
-		unmerge -i components/unmerge.owl \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-
 ## DOSDP on Google Sheets
 
 DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
 
-.PRECIOUS: dosdp_%
-dosdp_%:
+.PHONY: gs_dosdp_%
+gs_dosdp_%:
 	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
 
-gs_dosdp: dosdp_cellPartOfAnatomicalEntity
+gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
+
+
+## FBbt mappings component
+
+# Download the FBbt mapping file
+.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
+$(TMPDIR)/fbbt-mappings.sssom.tsv:
+	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
+
+# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
+# (no update if the downloaded file is absent or identical to the one we already have)
+mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
+	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
+
+# Generate cross-reference component from the FBbt mapping file
+$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+	awk -f ../scripts/sssom2xrefs.awk $< > $@
+
+## Download human reference atlas subset
+
+HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
+$(TMPDIR)/hra_subset.owl:
+	wget $(HRA_SUBSET_URL) -O $@
+
+$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@

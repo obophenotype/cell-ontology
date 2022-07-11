@@ -35,6 +35,7 @@ import_group:
     - <http://purl.obolibrary.org/obo/ENVO_*>
     - <http://purl.obolibrary.org/obo/OBI_*>
     - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://purl.obolibrary.org/obo/CLO_*>
     - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
   products:
     - id: pr
@@ -47,6 +48,8 @@ import_group:
         - http://purl.obolibrary.org/obo/GO_
         - http://purl.obolibrary.org/obo/GOREL_
         - http://purl.obolibrary.org/obo/GOCHE_
+    - id: caro
+      use_base: TRUE
     - id: uberon 
       use_base: TRUE
     - id: ro
@@ -55,8 +58,6 @@ import_group:
       make_base: TRUE
       use_gzipped: TRUE
       is_large: TRUE
-    - id: clo
-      make_base: TRUE
     - id: pato
       use_base: TRUE
     - id: ncbitaxon
@@ -79,5 +80,12 @@ robot_report:
     - owldef-self-reference
     - nolabels
     - pmid-not-dbxref
+    - obsolete-replaced_by
+    - orcid-contributor
   custom_sparql_exports :
     - basic-report
+components:
+  products:
+    - filename: hra_subset.owl
+    - filename: mappings.owl
+robot_java_args: '-Xmx8G'

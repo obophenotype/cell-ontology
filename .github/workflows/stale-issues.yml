@@ -11,9 +11,14 @@ jobs:
       - uses: actions/stale@v4
         with:
           days-before-issue-stale: 180
-          days-before-pr-stale: -1
           days-before-issue-close: 365
           close-issue-label: 'autoclosed-unfixed'
           stale-issue-message: 'This issue has not seen any activity in the past 6 months; it will be closed automatically in one year from now if no action is taken.'
           close-issue-message: 'This issue has been closed automatically because it has not been updated in 18 months. Please re-open if you still need this to be addressed.'
           start-date: '2021-04-01T00:00:00Z'
+          days-before-pr-stale: 30
+          days-before-pr-close: -1
+          stale-pr-message: 'This PR has not seen any activity in the past month; if nobody comments or reviews it in the next week, the PR editor will be allowed to proceed with merging without explicit approval, should they wish to do so.'
+          stale-pr-label: 'unreviewed'
+          exempt-pr-labels: 'approval required'
+          exempt-draft-pr: true
