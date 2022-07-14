@@ -1,0 +1,51 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+SELECT DISTINCT ?annotation WHERE {
+  ?annotation a owl:AnnotationProperty .
+  ?subj ?annotation ?o .
+  FILTER (?annotation NOT IN (
+    <http://purl.obolibrary.org/obo/IAO_0000115>,
+    <http://purl.obolibrary.org/obo/IAO_0000116>,
+    <http://purl.obolibrary.org/obo/IAO_0000231>,
+    <http://purl.obolibrary.org/obo/IAO_0000232>,
+    <http://purl.obolibrary.org/obo/IAO_0000412>,
+    <http://purl.obolibrary.org/obo/IAO_0000589>,
+    <http://purl.obolibrary.org/obo/IAO_0100001>,
+    <http://purl.obolibrary.org/obo/RO_0002161>,
+    <http://purl.obolibrary.org/obo/RO_0002171>,
+    <http://purl.obolibrary.org/obo/RO_0002173>,
+    <http://purl.obolibrary.org/obo/RO_0002174>,
+    <http://purl.obolibrary.org/obo/RO_0002175>,
+    <http://purl.obolibrary.org/obo/RO_0002423>,
+    <http://purl.obolibrary.org/obo/RO_0002475>,
+    <http://purl.obolibrary.org/obo/RO_0002575>,
+    <http://purl.obolibrary.org/obo/RO_0002579>,
+    <http://purl.obolibrary.org/obo/RO_0002604>,
+    <http://purl.obolibrary.org/obo/RO_0004049>,
+    <http://purl.obolibrary.org/obo/RO_0004050>,
+    <http://purl.obolibrary.org/obo/RO_0040042>,
+    <http://purl.obolibrary.org/obo/term_editor>,
+    <http://purl.org/dc/terms/date>,
+    <http://purl.org/dc/elements/1.1/description>,
+    <http://purl.org/dc/terms/source>,
+    <http://purl.org/dc/terms/contributor>,
+    <http://purl.org/spar/cito/citesAsAuthority>,
+    <http://www.geneontology.org/formats/oboInOwl#consider>,
+    <http://www.geneontology.org/formats/oboInOwl#creation_date>,
+    <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>,
+    <http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#hasDbXref>,
+    <http://www.geneontology.org/formats/oboInOwl#hasExactSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#hasOBONamespace>,
+    <http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym>,
+    <http://www.geneontology.org/formats/oboInOwl#id>,
+    <http://www.geneontology.org/formats/oboInOwl#inSubset>,
+    <http://www.w3.org/2000/01/rdf-schema#comment>,
+    <http://www.w3.org/2000/01/rdf-schema#label>,
+    <http://www.w3.org/2000/01/rdf-schema#seeAlso>,
+    <http://www.w3.org/2004/02/skos/core#closeMatch>,
+    <http://www.w3.org/2002/07/owl#deprecated>,
+    <http://xmlns.com/foaf/0.1/depicted_by>
+  ))
+  FILTER (isIRI(?subj) && STRSTARTS(str(?subj), "http://purl.obolibrary.org/obo/CL_"))
+} 
