@@ -1,0 +1,18 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX alt_id: <http://www.geneontology.org/formats/oboInOwl#hasAlternativeId>
+PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
+
+CONSTRUCT {
+	?id rdf:type owl:Class; owl:deprecated true ;
+     obo:IAO_0000231 obo:IAO_0000227 ;
+     replaced_by: ?cls
+}
+WHERE 
+{
+  ?cls a owl:Class; alt_id: ?value .
+  FILTER (!isBlank(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_"))
+  BIND (URI(REPLACE(?value, "CL:", "http://purl.obolibrary.org/obo/CL_")) as ?id)
+  FILTER (STRSTARTS(str(?id), "http://purl.obolibrary.org/obo/CL_"))
+}
