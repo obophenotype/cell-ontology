@@ -1,5 +1,5 @@
-# Fixing ^^xsd:string Diffs
-When you make edits, sometimes there will be large amounts of unintended differences that show up that involves the removal of ^^xsd:string. If so, you can resolve them by following normalising your cl-edit.owl file.
+# Fixing `^^xsd:string` Diffs
+When you make edits, sometimes there will be large amounts of unintended differences that show up that involves the removal of `^^xsd:string`. If so, you can resolve them by following normalising your **cl-edit.owl** file.
 
 ## SOP
 
@@ -9,11 +9,14 @@ When you make edits, sometimes there will be large amounts of unintended differe
 
 3. Run the normaliser in terminal:
 
-  If you have docker installed: ```sh run.sh make normalise_xsd_string```
+  If you have **docker** installed: ```sh run.sh make normalise_xsd_string```
 
-  If you do not have docker installed: ```make normalise_xsd_string```
+  If you do not have **docker** installed: ```make normalise_xsd_string```
 
-  If "make" is not installed, on MAC: ``` sed -i '' "s/Annotation[(]\(oboInOwl[:]hasDbXref [\"][^\"]*[\"]\)[)]/Annotation(\1^^xsd:string)/g" cl-edit.owl ```
+  If **make** is not installed, on MAC:
+``` sh
+sed -i '' -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" cl-edit.owl
+```
 
 
-This should resolve your ^^xsd:string issue, after which, you can handle your pull request as per usual.
+This should resolve your `^^xsd:string` issue, after which, you can handle your pull request as per usual.

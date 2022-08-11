@@ -4,61 +4,12 @@
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
 
-#mirror/pr.owl: mirror/pr.trigger
-#	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-#	echo "skipped PR mirror"
-
-#imports/pr_import.owl:
-#	echo "skipped pr import"
-
-#tmp/clo_logical.owl: mirror/clo.owl
-#	echo "Skipped clo logical" && cp $< $@
-
-#tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
-#	echo "Skipped clo logical" && touch $@
-
-#tmp/pr_logical.owl: mirror/pr.owl
-#	echo "Skipped pr logical" && cp $< $@
-
-mirror/clo.owl: mirror/clo.trigger
-	echo "WARNING OVERWRITING CLO MIRROR BECAUSE OF EQUIVALENT TERM"
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/clo.owl --create-dirs -o mirror/clo.owl --retry 4 --max-time 200 && $(ROBOT) convert -i mirror/clo.owl -o $@.tmp.owl && \
-		$(ROBOT) remove -i $@.tmp.owl --base-iri $(URIBASE)/CLO --axioms external --preserve-structure false --trim false \
-			remove --term "CLO:0000021" --axioms logical --preserve-structure false \
-			remove --term "CL:0000243" --preserve-structure false \
-			remove --term "CLO:0000031" --term "CLO:0000001" --term "rdfs:comment" --term "IAO:0000115" --signature true --trim false -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: mirror/clo.owl
-
-mirror/go.owl: mirror/go.trigger
-	echo "WARNING OVERWRITING GO MIRROR BECAUSE OF OBSOLETE CL TERM"
-	if [ $(MIR) = true ] && [ $(IMP) = true ]; then curl -L $(URIBASE)/go/go-base.owl --create-dirs -o mirror/go.owl --retry 4 --max-time 200 && $(ROBOT) remove -i mirror/go.owl --term "CL:0000243" --preserve-structure false convert -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: mirror/go.owl
-
-#tmp/chebi_logical.owl: mirror/chebi.owl
-#	echo "Skipped chebi logical" && cp $< $@
-
-#mirror/ncbitaxon.owl:
-#	echo "STRONG WARNING: skipped ncbitaxon mirror!"
-
-#imports/ncbitaxon_import.owl:
-#	echo "STRONG WARNING: skipped ncbitaxon import!"
-
-object_properties.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
-
 non_native_classes.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/non-native-classes.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@
 	rm -f $@.tmp
 
 # TODO add back: 		remove --term-file non_native_classes.txt \
-
-
-#$(ONT).obo: $(ONT)-basic.owl
-#	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-
-#$(PATTERNDIR)/dosdp-patterns: .FORCE
-#	echo "WARNING WARNING Skipped until fixed: delete from cl.Makefile"
 
 #####################################################################################
 ### Run ontology-release-runner instead of ROBOT as long as ROBOT is broken.      ###
@@ -119,32 +70,6 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 
 
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
-
-#$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
-#	$(ROBOT) merge $(patsubst %, -i %, $^) \
-#		reason \
-#		relax \
-#		reduce \
-#		convert -o $@
-
-#$(RELEASEDIR)/views:
-#	mkdir -p $@
-
-#release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
-#	rsync -R $^ $(RELEASEDIR)/views
-
-# prepare_release: release_views
-
-#diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
-#	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
-
-#fail_seed_by_entity_type_cl:
-#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
-
-#works_seed_by_entity_type_cl:
-#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
 
 
 ##############################################
@@ -261,52 +186,38 @@ test_obsolete: cl.obo
 
 test: test_obsolete
 
-
-imports/uberon_import.owl: mirror/uberon.owl imports/uberon_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/uberon_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/RO_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-.PRECIOUS: imports/uberon_import.owl
-
-imports/pato_import.owl: mirror/pato.owl imports/pato_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) query -i $< --update ../sparql/preprocess-module.ru \
-		extract -T imports/pato_terms_combined.txt --force true --copy-ontology-annotations true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/RO_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pato_import.owl
-
-imports/pr_import.owl: mirror/pr.owl imports/pr_terms_combined.txt
-	if [ $(IMP) = true ] && [ $(IMP_LARGE) = true ]; then $(ROBOT) extract -i $< -T imports/pr_terms_combined.txt --force true --individuals include --method BOT \
-		remove --select "<http://purl.obolibrary.org/obo/CL_*>" --axioms annotation --signature true \
-		remove --select "<http://purl.obolibrary.org/obo/CP_*>" --axioms annotation --signature true \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-.PRECIOUS: imports/pr_import.owl
-
-
-imports/merged_import.owl: mirror/merged.owl imports/merged_terms_combined.txt
-	if [ $(IMP) = true ]; then $(ROBOT) merge -i $< \
-		remove  --select "<http://www.informatics.jax.org/marker/MGI:*>" remove  --select "<http://purl.obolibrary.org/obo/OBA_*>" remove  --select "<http://purl.obolibrary.org/obo/ENVO_*>" remove  --select "<http://purl.obolibrary.org/obo/OBI_*>" remove  --select "<http://purl.obolibrary.org/obo/GOCHE_*>" remove  --select "<http://www.genenames.org/cgi-bin/gene_symbol_report*>"  \
-		extract -T imports/merged_terms_combined.txt --force true --copy-ontology-annotations true --individuals exclude --method BOT \
-		unmerge -i components/unmerge.owl \
-		query --update ../sparql/inject-subset-declaration.ru --update ../sparql/postprocess-module.ru \
-		annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@; fi
-
-
 ## DOSDP on Google Sheets
 
 DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
 
-.PRECIOUS: dosdp_%
-dosdp_%:
+.PHONY: gs_dosdp_%
+gs_dosdp_%:
 	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
 
-gs_dosdp: dosdp_cellPartOfAnatomicalEntity
+gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
+
+
+## FBbt mappings component
+
+# Download the FBbt mapping file
+.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
+$(TMPDIR)/fbbt-mappings.sssom.tsv:
+	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
+
+# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
+# (no update if the downloaded file is absent or identical to the one we already have)
+mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
+	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
+
+# Generate cross-reference component from the FBbt mapping file
+$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+	awk -f ../scripts/sssom2xrefs.awk $< > $@
+
+## Download human reference atlas subset
+
+HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
+$(TMPDIR)/hra_subset.owl:
+	wget $(HRA_SUBSET_URL) -O $@
+
+$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@

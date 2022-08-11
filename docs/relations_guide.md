@@ -14,11 +14,15 @@ means that
  1. All parts of an epithelial cell are part of an epithelium.
  1. Epithelial cells are part_of some epithelium at all times.  This last stricture can be hard to apply in the context of development.  Some judgment may be required, e.g. -   (TBA)
 
+Related Equivalence patterns: [cellPartOfAnatomicalEntity](https://github.com/obophenotype/cell-ontology/blob/master/src/patterns/dosdp-patterns/cellPartOfAnatomicalEntity.yaml).  Use this as a guide for creating simple grouping classes for cells of type X in structures of type Y.
+
 Some cells, most obviously neurons, only have some parts in the anatomical structure we want to relate them to. For example, anteriior horn motor neurons have a soma in the anterior (ventral) horn of the spine, but also project out of the spine to innervate muscles.  We have a general relation for this, **'overlap'** (has some part in), but often we want to say something more specific.  For example, neuron types are often referred to in part by the location of their soma. We have a dedicated relation for this: **'has soma location'**, allowing us to record:
 
 'anterior horn motor neuron' SubClassOf **'has soma location'** *some* 'ventral horn of spinal cord'
 
 We also have a dedicated set of relations for recording the location of synaptic terminals and projections of neurons.  See [Relations for neurons](#Relations_for_neurons) for details.
+
+To record the location of a cell in an anatomical space (e.g. a sinus), use **'located in'**, for an example of this, see 'Kupffer cell'.
 
 ## Taxon constraints
 
