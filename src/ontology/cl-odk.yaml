@@ -1,10 +1,12 @@
 id: cl
 title: "Cell Ontology"
 github_org: obophenotype
+git_main_branch: master
 repo: cell-ontology
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+use_edit_file_imports: FALSE
 export_formats:
   - owl
   - obo
@@ -12,7 +14,7 @@ export_formats:
 namespaces: 
   - http://purl.obolibrary.org/obo/CP_
   - http://purl.obolibrary.org/obo/CL_
-  - http://purl.obolibrary.org/obo/cl_
+  - "http://purl.obolibrary.org/obo/cl#"
 primary_release: full
 release_artefacts: 
   - base
@@ -26,21 +28,41 @@ subset_group:
   products:
     - id: BDS_subset
 import_group:
+  use_base_merging: TRUE
+  slme_individuals: exclude
+  exclude_iri_patterns:
+    - <http://www.informatics.jax.org/marker/MGI:*>
+    - <http://purl.obolibrary.org/obo/OBA_*>
+    - <http://purl.obolibrary.org/obo/ENVO_*>
+    - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/GOCHE_*>
+    - <http://purl.obolibrary.org/obo/CLO_*>
+    - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
   products:
     - id: pr
-      use_gzipped: TRUE
+      make_base: TRUE
+      mirror_from: https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl
       is_large: TRUE
     - id: go
+      use_base: TRUE
+      base_iris:
+        - http://purl.obolibrary.org/obo/GO_
+        - http://purl.obolibrary.org/obo/GOREL_
+        - http://purl.obolibrary.org/obo/GOCHE_
+    - id: caro
+      use_base: TRUE
     - id: uberon 
+      use_base: TRUE
     - id: ro
+      use_base: TRUE
     - id: chebi
+      make_base: TRUE
       use_gzipped: TRUE
       is_large: TRUE
-    - id: clo
     - id: pato
+      use_base: TRUE
     - id: ncbitaxon
-      is_large: TRUE
-      use_gzipped: TRUE
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
 pattern_pipelines_group:
   products:
     - id: clustering
@@ -58,5 +80,14 @@ robot_report:
     - equivalent-classes
     - owldef-self-reference
     - nolabels
+    - pmid-not-dbxref
+    - obsolete-replaced_by
+    - orcid-contributor
+    - illegal-annotation-property
   custom_sparql_exports :
     - basic-report
+components:
+  products:
+    - filename: hra_subset.owl
+    - filename: mappings.owl
+robot_java_args: '-Xmx8G'

@@ -7,24 +7,24 @@ labels: 'new term request'
 
 Note - please check that the term does not already exist (check OLS: https://www.ebi.ac.uk/ols/ontologies/cl)
 
-**Preferred term label:**
+**Preferred term label**
 
 
-**Synonyms**
+**Synonyms** (add reference(s), please)
 
 
-**Definition (free text, please give PubMed ID in format PMID:XXXXXX)**
+**Definition** (free text, with reference(s), please. PubMed ID format is PMID:XXXXXX)
 
 
-**Parent cell type term (check the hierarchy here https://www.ebi.ac.uk/ols/ontologies/cl):**
+**Parent cell type term** (check the hierarchy here https://www.ebi.ac.uk/ols/ontologies/cl)
 
 
-**What is the anatomical structure that the cell is a part of? Please check Uberon: https://www.ebi.ac.uk/ols/ontologies/uberon**
+**What is the anatomical structure that the cell is a part of?** (check Uberon: https://www.ebi.ac.uk/ols/ontologies/uberon)
 
 
-**Your nano-attribution (ORCID)**
+**Your ORCID**
 
 
-**Any additional notes or concerns**
+**Additional notes or concerns**
 
 

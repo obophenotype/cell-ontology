@@ -4,47 +4,12 @@
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
 
-#mirror/pr.owl: mirror/pr.trigger
-#	@if [ $(MIR) = true ] && [ $(IMP) = true ]; then $(ROBOT) convert -I $(URIBASE)/pr.owl -o $@.tmp.owl && mv $@.tmp.owl $@; fi
-#	echo "skipped PR mirror"
-
-#imports/pr_import.owl:
-#	echo "skipped pr import"
-
-#tmp/clo_logical.owl: mirror/clo.owl
-#	echo "Skipped clo logical" && cp $< $@
-
-#tmp/ncbitaxon_logical.owl: mirror/ncbitaxon.owl
-#	echo "Skipped clo logical" && touch $@
-
-#tmp/pr_logical.owl: mirror/pr.owl
-#	echo "Skipped pr logical" && cp $< $@
-
-#tmp/chebi_logical.owl: mirror/chebi.owl
-#	echo "Skipped chebi logical" && cp $< $@
-
-#mirror/ncbitaxon.owl:
-#	echo "STRONG WARNING: skipped ncbitaxon mirror!"
-
-#imports/ncbitaxon_import.owl:
-#	echo "STRONG WARNING: skipped ncbitaxon import!"
-
-object_properties.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/object-properties-in-signature.sparql $@
-
 non_native_classes.txt: $(SRC)
 	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/non-native-classes.sparql $@.tmp &&\
 	cat $@.tmp | sort | uniq >  $@
 	rm -f $@.tmp
 
 # TODO add back: 		remove --term-file non_native_classes.txt \
-
-
-#$(ONT).obo: $(ONT)-basic.owl
-#	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $@ && rm $@.tmp.obo
-
-#$(PATTERNDIR)/dosdp-patterns: .FORCE
-#	echo "WARNING WARNING Skipped until fixed: delete from cl.Makefile"
 
 #####################################################################################
 ### Run ontology-release-runner instead of ROBOT as long as ROBOT is broken.      ###
@@ -67,12 +32,14 @@ tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
 # Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
 # into existentials on roundtrip
 
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
-	$(ROBOT) merge --input $< \
+tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
+	$(ROBOT) merge --input $(SRC) \
 		reason --reasoner ELK \
 		relax \
 		remove --axioms equivalent \
 		merge -i tmp/asserted-subclass-of-axioms.obo \
+		remove -T config/remove_annotations.txt --axioms annotation \
+		query --update ../sparql/remove-op-definitions.ru \
 		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
 		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
 		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
@@ -81,7 +48,9 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo
 		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
 
 oort: tmp/source-merged.obo
-	ontology-release-runner --reasoner elk $< --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
+	ontology-release-runner --reasoner elk tmp/source-merged.obo --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
+
+test: oort
 
 tmp/$(ONT)-stripped.owl: oort
 	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
@@ -101,76 +70,6 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 
 
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
-
-$(ONT)-simple.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert -o $@
-
-$(ONT)-simple.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
-$(ONT)-basic.owl: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.owl \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert -o $@
-
-
-#$(ONT)-hipc.owl: $(ONT).owl ../templates/mouse_specific_groupings.owl ../templates/human_specific_groupings.owl
-#	$(ROBOT) merge $(patsubst %, -i %, $^) \
-#		reason \
-#		relax \
-#		reduce \
-#		convert -o $@
-
-#$(RELEASEDIR)/views:
-#	mkdir -p $@
-
-#release_views: $(ONT)-hipc.owl | $(RELEASEDIR)/views
-#	rsync -R $^ $(RELEASEDIR)/views
-
-# prepare_release: release_views
-
-#diff_basic: $(ONT)-basic2.owl $(ONT)-basic3.owl
-#	$(ROBOT) diff --left cl-basic2.owl --right cl-basic3.owl -o tmp/diffrel.txt
-
-$(ONT)-basic.obo: tmp/cl_signature.txt oort
-	echo "WARNING: $@ is not generated with the default ODK specification."
-	$(ROBOT) merge --input oort/$(ONT)-simple.obo \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		reduce \
-		remove --term-file tmp/cl_signature.txt --select complement --trim false \
-		remove --term-file keeprelations.txt --select complement --select object-properties --trim true \
-		remove --axioms disjoint --trim false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo &&\
-		grep -v ^owl-axioms $@.tmp.obo > $@.tmp &&\
-		cat $@.tmp | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\nname[:]/def:/g; print' > $@
-		rm -f $@.tmp.obo $@.tmp
-
-
-#fail_seed_by_entity_type_cl:
-#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
-
-#works_seed_by_entity_type_cl:
-#	robot query --use-graphs false -f csv -i cl-edit.owl --query ../sparql/object-properties-in-signature.sparql $@.tmp &&\
-#	cat $@.tmp | sort | uniq >  $@.txt && rm -f $@.tmp
 
 
 ##############################################
@@ -254,7 +153,8 @@ all_reports: reports/obo-diff.txt
 
 
 normalise_xsd_string: $(SRC)
-	sed -i -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/" $<
+	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
+	rm $<.bak
 
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
@@ -280,3 +180,44 @@ obocheck:
 	fastobo-validator cl-check.obo
 	
 test: obocheck
+
+test_obsolete: cl.obo
+	! grep "! obsolete" cl.obo
+
+test: test_obsolete
+
+## DOSDP on Google Sheets
+
+DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
+
+.PHONY: gs_dosdp_%
+gs_dosdp_%:
+	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
+
+gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
+
+
+## FBbt mappings component
+
+# Download the FBbt mapping file
+.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
+$(TMPDIR)/fbbt-mappings.sssom.tsv:
+	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
+
+# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
+# (no update if the downloaded file is absent or identical to the one we already have)
+mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
+	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
+
+# Generate cross-reference component from the FBbt mapping file
+$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
+	awk -f ../scripts/sssom2xrefs.awk $< > $@
+
+## Download human reference atlas subset
+
+HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
+$(TMPDIR)/hra_subset.owl:
+	wget $(HRA_SUBSET_URL) -O $@
+
+$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@

@@ -1,3 +1,3 @@
 # A brief history of CL
 
-The following page gives an overview of the history of CL.
+The Cell Ontology (CL) represents canonical, natural biological cell types in a variety of animal species, with a focus on vertebrates. It works in concert with the Uberon anatomy ontology, and integrates seamlessly with the Gene Ontology (GO). It is part of the Open Biological and Biomedical Ontology (OBO) Foundry. As of April 2022, CL consists of over 2400 classes, and is used by key projects that involve single-cell transcriptomics, such as HuBMAP (HuBMAP Consortium 2019), the Human Cell Atlas (Regev et al. 2017), the EBI Single Cell Expression Atlas (Papatheodorou et al. 2020), and the Brain Data Standards Ontology (Tan et al. 2021).
