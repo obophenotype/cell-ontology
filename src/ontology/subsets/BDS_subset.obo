@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-06-18/subsets/BDS_subset.owl
+data-version: cl/releases/2022-08-16/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -21,7 +21,6 @@ subsetdef: functional_classification ""
 subsetdef: gocheck_do_not_annotate ""
 subsetdef: gocheck_do_not_manually_annotate ""
 subsetdef: goslim_agr ""
-subsetdef: goslim_aspergillus ""
 subsetdef: goslim_candida ""
 subsetdef: goslim_chembl ""
 subsetdef: goslim_drosophila ""
@@ -40,6 +39,7 @@ subsetdef: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_gp2term ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
+subsetdef: human_reference_atlas ""
 subsetdef: inconsistent_with_fma ""
 subsetdef: location_grouping ""
 subsetdef: major_organ ""
@@ -49,6 +49,7 @@ subsetdef: organ_slim ""
 subsetdef: pheno_slim ""
 subsetdef: phenotype_rcn ""
 subsetdef: plus ""
+subsetdef: prokaryote_subset ""
 subsetdef: relational_slim ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
@@ -59,12 +60,46 @@ subsetdef: unverified_taxonomic_grouping ""
 subsetdef: upper_level ""
 subsetdef: value_slim ""
 subsetdef: vertebrate_core ""
+synonymtypedef: ABBREVIATION ""
 synonymtypedef: abbreviation "abbreviation"
+synonymtypedef: blast_name ""
+synonymtypedef: BRAND_NAME ""
+synonymtypedef: common_name ""
+synonymtypedef: COMPARATIVE_PREFERRED ""
+synonymtypedef: DEPRECATED ""
+synonymtypedef: DUBIOUS ""
+synonymtypedef: equivalent_name ""
+synonymtypedef: FORMULA ""
+synonymtypedef: genbank_common_name ""
+synonymtypedef: Gene-based ""
+synonymtypedef: HOMOLOGY ""
+synonymtypedef: HUMAN_PREFERRED ""
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
+synonymtypedef: in_part ""
+synonymtypedef: InChI ""
+synonymtypedef: InChIKey ""
+synonymtypedef: INCONSISTENT ""
+synonymtypedef: INN ""
+synonymtypedef: IUPAC_NAME ""
+synonymtypedef: LATIN ""
 synonymtypedef: LATIN "latin term"
+synonymtypedef: MISSPELLING ""
+synonymtypedef: NON_MAMMAL ""
+synonymtypedef: PENDING_REVIEW ""
+synonymtypedef: PLURAL ""
 synonymtypedef: PLURAL "plural term"
+synonymtypedef: PRO-proteoform-ftid ""
+synonymtypedef: PRO-proteoform-std ""
+synonymtypedef: PRO-short-label ""
+synonymtypedef: scientific_name ""
+synonymtypedef: SENSU ""
+synonymtypedef: SMILES ""
+synonymtypedef: syngo_official_label ""
+synonymtypedef: synonym ""
+synonymtypedef: SYSTEMATIC ""
+synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2022-06-18" xsd:string
+property_value: owl:versionInfo "2022-08-16" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -438,7 +473,8 @@ synonym: "GAMMA-AMINO-BUTANOIC ACID" RELATED [PDBeChem]
 synonym: "GAMMA-AMINO-BUTANOIC ACID" RELATED [PDBeChem:]
 synonym: "gamma-amino-n-butyric acid" RELATED [NIST_Chemistry_WebBook]
 synonym: "gamma-amino-n-butyric acid" RELATED [NIST Chemistry WebBook:]
-synonym: "gamma-aminobutanoic acid" RELATED []
+synonym: "gamma-aminobutanoic acid" RELATED [NIST_Chemistry_WebBook]
+synonym: "gamma-aminobutanoic acid" RELATED [NIST Chemistry WebBook:]
 synonym: "gamma-Aminobuttersaeure" RELATED [NIST Chemistry WebBook:]
 synonym: "gamma-Aminobuttersaeure" RELATED [NIST_Chemistry_WebBook]
 synonym: "gamma-Aminobutyric acid" EXACT [KEGG COMPOUND:]
@@ -448,9 +484,12 @@ synonym: "gamma-aminobutyric acid" EXACT [NIST Chemistry WebBook:]
 synonym: "InChI=1S/C4H9NO2/c5-3-1-2-4(6)7/h1-3,5H2,(H,6,7)" RELATED InChI [ChEBI:]
 synonym: "InChIKey=BTCSSZJGUNDROE-UHFFFAOYSA-N" RELATED InChIKey [ChEBI:]
 synonym: "NCCCC(O)=O" RELATED SMILES [ChEBI:]
-synonym: "omega-aminobutyric acid" RELATED []
-synonym: "piperidic acid" RELATED []
-synonym: "piperidinic acid" RELATED []
+synonym: "omega-aminobutyric acid" RELATED [NIST_Chemistry_WebBook]
+synonym: "omega-aminobutyric acid" RELATED [NIST Chemistry WebBook:]
+synonym: "piperidic acid" RELATED [ChemIDplus:]
+synonym: "piperidic acid" RELATED [ChemIDplus]
+synonym: "piperidinic acid" RELATED [ChemIDplus:]
+synonym: "piperidinic acid" RELATED [ChemIDplus]
 xref: Beilstein:906818 {source="Beilstein"}
 xref: BPDB:2298
 xref: CAS:56-12-2 {source="ChemIDplus"}
@@ -3227,6 +3266,7 @@ id: CL:0000057
 name: fibroblast
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." [http://en.wikipedia.org/wiki/Fibroblast, ISBN:0517223651, MESH:D005347]
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
+subset: human_reference_atlas
 xref: BTO:0000452
 xref: CALOHA:TS-0362
 xref: FMA:63877
@@ -3234,11 +3274,13 @@ xref: VHOG:0001482
 is_a: CARO:0000000 ! anatomical entity
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000134 ! mesenchymal stem cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000066
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:D004847]
+subset: human_reference_atlas
 synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
 xref: CALOHA:TS-2026
@@ -3249,6 +3291,7 @@ xref: WBbt:0003672
 is_a: BFO:0000004 ! independent continuant
 is_a: CL:0000548 ! animal cell
 relationship: part_of UBERON:0000483 ! epithelium
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000076
@@ -3260,11 +3303,13 @@ is_a: CL:0000066 ! epithelial cell
 id: CL:0000077
 name: mesothelial cell
 def: "A flattened epithelial cell of mesenchymal origin that lines the serous cavity." [GOC:tfm, ISBN:0721662544]
+subset: human_reference_atlas
 synonym: "mesotheliocyte" EXACT []
 xref: FMA:66773
 is_a: CL:0000076 ! squamous epithelial cell
 is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 ! meso-epithelial cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000095
@@ -3277,11 +3322,13 @@ relationship: develops_from CL:0000133 ! neurectodermal cell
 id: CL:0000099
 name: interneuron
 def: "Most generally any neuron which is not motor or sensory. Interneurons may also refer to neurons whose axons remain within a particular brain region as contrasted with projection neurons which have axons projecting to other brain regions." [GOC:tfm, MESH:D007395]
+subset: human_reference_atlas
 xref: BTO:0003811
 xref: FBbt:00005125
 xref: FMA:67313
 xref: WBbt:0005113
 is_a: CL:0000540 ! neuron
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000103
@@ -3332,7 +3379,7 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070002 ! basket cell morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 relationship: bearer_of PATO:0070002 ! basket cell morphology
-property_value: created_by https://orcid.org/0000-0002-2825-0621 xsd:string
+relationship: dc-contributor https://orcid.org/0000-0002-2825-0621
 
 [Term]
 id: CL:0000122
@@ -3395,6 +3442,7 @@ property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/474
 id: CL:0000151
 name: secretory cell
 def: "A cell that specializes in controlled release of one or more substances." [GOC:tfm, ISBN:0721662544]
+subset: human_reference_atlas
 xref: BTO:0003659
 xref: FMA:86916
 is_a: BFO:0000040 ! material entity
@@ -3402,6 +3450,7 @@ is_a: CL:0000003 ! native cell
 intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0032940 ! secretion by cell
 relationship: capable_of GO:0032940 ! secretion by cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000161
@@ -3565,6 +3614,7 @@ id: CL:0000540
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [http://en.wikipedia.org/wiki/Neuron, MESH:D009474]
 comment: These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.
+subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
 xref: BTO:0000938
 xref: CALOHA:TS-0683
@@ -3577,6 +3627,7 @@ is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
 relationship: capable_of GO:0019226 ! transmission of nerve impulse
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000548
@@ -3636,9 +3687,9 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: CL:0000055 ! non-terminally differentiated cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0011115 ! precursor cell
-intersection_of: develops_into CL:0000187 ! muscle cell
+intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
 relationship: develops_from CL:0000222 ! mesodermal cell
-relationship: develops_into CL:0000187 ! muscle cell
+relationship: RO:0002203 CL:0000187 ! develops into muscle cell
 
 [Term]
 id: CL:0000691
@@ -3687,8 +3738,8 @@ is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: develops_from CL:0000221 ! ectodermal cell
+relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: develops_from CL:0000221 ! ectodermal cell
-created_by: tmeehan
 creation_date: 2010-06-29T03:38:22Z
 
 [Term]
@@ -3702,8 +3753,8 @@ is_a: CL:0000066 ! epithelial cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: develops_from CL:0000222 ! mesodermal cell
+relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: develops_from CL:0000222 ! mesodermal cell
-created_by: tmeehan
 creation_date: 2010-06-29T03:49:14Z
 
 [Term]
@@ -3717,8 +3768,8 @@ is_a: CL:0000548 ! animal cell
 is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000548 ! animal cell
 intersection_of: part_of UBERON:0001016 ! nervous system
+relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0001016 ! nervous system
-created_by: tmeehan
 creation_date: 2010-09-15T01:34:57Z
 
 [Term]
@@ -3734,8 +3785,8 @@ is_a: CL:0000548 ! animal cell
 is_a: CL:0002371 {is_inferred="true"} ! somatic cell
 intersection_of: CL:0002371 ! somatic cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
+relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0002384 ! connective tissue
-created_by: tmeehan
 creation_date: 2010-09-15T03:01:54Z
 
 [Term]
@@ -3747,7 +3798,7 @@ xref: FMA:82840
 xref: FMA:82841
 xref: WBbt:0007028
 is_a: CL:0000548 ! animal cell
-created_by: tmeehan
+relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-15T03:39:21Z
 
 [Term]
@@ -3759,7 +3810,7 @@ xref: BTO:0001268
 xref: FMA:72300
 xref: WBbt:0008378
 is_a: CL:0000003 ! native cell
-created_by: tmeehan
+relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-24T09:44:42Z
 
 [Term]
@@ -3778,9 +3829,9 @@ name: premigratory neural crest cell
 def: "Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells." [UBERONREF:0000002]
 is_a: CARO:0000000 ! anatomical entity
 is_a: CL:0011012 ! neural crest cell
+relationship: dc-contributor https://orcid.org/0000-0001-9114-8737
 relationship: develops_from CL:0000133 ! neurectodermal cell
 relationship: part_of UBERON:0002342 ! neural crest
-created_by: haendel
 creation_date: 2012-06-27T08:27:35Z
 
 [Term]
@@ -3826,7 +3877,7 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: CL:2000029 ! central nervous system neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/1359 xsd:string
 
@@ -3835,11 +3886,13 @@ id: CL:0011005
 name: GABAergic interneuron
 def: "An interneuron that uses GABA as a vesicular neurotransmitter.  These interneurons are inhibitory" [GOC:CellBLAST, GOC:nv, PMID:29724907]
 comment: The formal and textual definitions of this term will need to be altered if evidence for non-inhibitory GABA-ergic neurons emerges.
+subset: human_reference_atlas
 synonym: "GABAergic inhibitory interneuron" EXACT []
 is_a: CL:0000498 ! inhibitory interneuron
 is_a: CL:0000617 ! GABAergic neuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0011012
@@ -3856,8 +3909,8 @@ is_a: CARO:0000000 ! anatomical entity
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: develops_from CL:0000034 ! stem cell
+relationship: dc-contributor https://orcid.org/0000-0001-5208-3432
 relationship: develops_from CL:0000034 ! stem cell
-created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: CL:0011115
@@ -3879,8 +3932,8 @@ is_a: CL:0000117 {is_inferred="true"} ! CNS neuron (sensu Vertebrata)
 is_a: CL:2000029 ! central nervous system neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: RO:0002100 UBERON:0001890 ! has soma location forebrain
+relationship: dc-contributor https://orcid.org/0000-0002-3837-8864
 relationship: RO:0002100 UBERON:0001890 ! has soma location forebrain
-created_by: tberardini
 
 [Term]
 id: CL:2000029
@@ -3889,8 +3942,8 @@ def: "Any neuron that is part of a central nervous system." [GOC:TermGenie]
 is_a: CL:0000540 ! neuron
 intersection_of: CL:0000540 ! neuron
 intersection_of: RO:0002100 UBERON:0001017 ! has soma location central nervous system
+relationship: dc-contributor https://www.wikidata.org/entity/Q35563349
 relationship: RO:0002100 UBERON:0001017 ! has soma location central nervous system
-created_by: TermGenie
 creation_date: 2014-06-25T01:17:43Z
 
 [Term]
@@ -3901,8 +3954,8 @@ comment: http://www.ncbi.nlm.nih.gov/pubmed/12524689
 is_a: CL:4023111 ! cerebral cortex pyramidal neuron
 intersection_of: CL:0000598 ! pyramidal neuron
 intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
+relationship: dc-contributor https://www.wikidata.org/entity/Q35563349
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
-created_by: TermGenie
 creation_date: 2014-10-06T17:39:04Z
 
 [Term]
@@ -3913,8 +3966,8 @@ is_a: CL:0000118 ! basket cell
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
 intersection_of: CL:0000118 ! basket cell
 intersection_of: RO:0002100 UBERON:0001950 ! has soma location neocortex
+relationship: dc-contributor https://www.wikidata.org/entity/Q35563349
 relationship: RO:0002100 UBERON:0001950 ! has soma location neocortex
-created_by: TermGenie
 creation_date: 2014-12-24T00:37:19Z
 
 [Term]
@@ -3925,7 +3978,7 @@ subset: BDS_subset
 synonym: "L2/3 bipolar Vip (Mus musculus)" EXACT []
 is_a: CL:0000103 ! bipolar neuron
 is_a: CL:4023016 ! vip GABAergic cortical interneuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
 relationship: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
@@ -3943,7 +3996,7 @@ intersection_of: CL:0000679 ! glutamatergic neuron
 intersection_of: bearer_of PATO:0070034 ! intratelencephalic projecting
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 relationship: bearer_of PATO:0070034 ! intratelencephalic projecting
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023009
@@ -3958,7 +4011,7 @@ intersection_of: CL:0000679 ! glutamatergic neuron
 intersection_of: bearer_of PATO:0070028 ! extratelencephalic projecting
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 relationship: bearer_of PATO:0070028 ! extratelencephalic projecting
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023010
@@ -3968,9 +4021,9 @@ comment: Unlike typical Lamp5 electrophysiology, A7 cells have Vip- and Sst-like
 subset: BDS_subset
 synonym: "A7 cell (Mus musculus)" EXACT []
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:000005460 ! expresses neuronal acetylcholine receptor subunit alpha-7
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023011
@@ -3983,8 +4036,8 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 intersection_of: RO:0002292 PR:000032148 ! expresses lysosome-associated membrane glycoprotein 5
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000032148 ! expresses lysosome-associated membrane glycoprotein 5
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023012
@@ -3999,7 +4052,7 @@ intersection_of: CL:0000679 ! glutamatergic neuron
 intersection_of: bearer_of PATO:0070030 ! near projecting
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 relationship: bearer_of PATO:0070030 ! near projecting
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023013
@@ -4013,7 +4066,7 @@ intersection_of: CL:0000679 ! glutamatergic neuron
 intersection_of: bearer_of PATO:0070029 ! corticothalamic projecting
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 relationship: bearer_of PATO:0070029 ! corticothalamic projecting
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023014
@@ -4022,7 +4075,7 @@ def: "A vip GABAergic cortical interneuron with a soma found in L5. L5 vip cells
 subset: BDS_subset
 synonym: "L5 VIP (Mus musculus)" EXACT []
 is_a: CL:4023016 ! vip GABAergic cortical interneuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
@@ -4038,8 +4091,8 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 intersection_of: RO:0002292 PR:000015325 ! expresses gamma-synuclein
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000015325 ! expresses gamma-synuclein
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023016
@@ -4052,8 +4105,8 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 intersection_of: RO:0002292 PR:000017299 ! expresses VIP peptides
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000017299 ! expresses VIP peptides
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023017
@@ -4066,8 +4119,8 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 intersection_of: RO:0002292 PR:000015665 ! expresses somatostatin
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000015665 ! expresses somatostatin
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023018
@@ -4080,8 +4133,8 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
 intersection_of: RO:0002292 PR:000013502 ! expresses parvalbumin alpha
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000013502 ! expresses parvalbumin alpha
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023019
@@ -4093,7 +4146,7 @@ is_a: CL:4023016 ! vip GABAergic cortical interneuron
 is_a: CL:4023071 ! L5/6 cck cortical GABAergic interneuron (Mmus)
 intersection_of: CL:4023071 ! L5/6 cck cortical GABAergic interneuron (Mmus)
 intersection_of: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:P32648 ! expresses VIP peptides (mouse)
 
 [Term]
@@ -4102,9 +4155,9 @@ name: canopy lamp5 GABAergic cortical interneuron (Mmus)
 def: "A Lamp5 GABAergic cortical interneuron that has extended axons in the surface of L1. Canopy Lamp5 cells resemble neurogliaform cells in having elongated horizontal axonal arbors largely confined to L1; but the dendritic arbors are wider and have fewer branches, while the axon is less tortuous and extends further from the soma" [PMID:30413647]
 subset: BDS_subset
 is_a: CL:4023011 ! lamp5 GABAergic cortical interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:Q9D387 ! expresses lysosome-associated membrane glycoprotein 5 (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023023
@@ -4114,9 +4167,9 @@ subset: BDS_subset
 synonym: "L5,6 NGC Lamp5 (Mus musculus)" EXACT []
 is_a: CL:0000693 ! neurogliaform cell
 is_a: CL:4023011 ! lamp5 GABAergic cortical interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:Q9D387 ! expresses lysosome-associated membrane glycoprotein 5 (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023024
@@ -4126,9 +4179,9 @@ subset: BDS_subset
 synonym: "NGC Lamp5 (Mus musculus)" EXACT []
 is_a: CL:0000693 ! neurogliaform cell
 is_a: CL:4023011 ! lamp5 GABAergic cortical interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:Q9D387 ! expresses lysosome-associated membrane glycoprotein 5 (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023025
@@ -4137,9 +4190,9 @@ def: "A sst GABAergic cortical interneuron that is both an interneuron and a pro
 subset: BDS_subset
 synonym: "LP SST (Mus musculus)" EXACT []
 is_a: CL:4023121 ! sst chodl GABAergic cortical interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023027
@@ -4149,10 +4202,10 @@ subset: BDS_subset
 synonym: "L5 T Martinotti SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 is_a: CL:4023086 ! T Martinotti neuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023028
@@ -4161,10 +4214,10 @@ def: "A sst GABAergic cortical interneuron with a soma found in lower L5 with mo
 subset: BDS_subset
 synonym: "L5 non-Martinotti SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023030
@@ -4175,9 +4228,9 @@ subset: BDS_subset
 synonym: "L2/3/5 fan Martinotti SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 is_a: CL:4023087 ! fan Martinotti neuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023031
@@ -4187,10 +4240,10 @@ subset: BDS_subset
 synonym: "L4 SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 is_a: CL:4023076 ! Martinotti neuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0005393 ! has soma location cortical layer IV
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
-created_by: http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023036
@@ -4202,7 +4255,7 @@ synonym: "Chandelier PV" EXACT []
 xref: ILX:0107356
 is_a: CL:4023018 ! pvalb GABAergic cortical interneuron
 is_a: CL:4023083 ! chandelier cell
-created_by: http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023038
@@ -4214,7 +4267,7 @@ is_a: CL:0000679 ! glutamatergic neuron
 is_a: CL:0010012 ! cerebral cortex neuron
 intersection_of: CL:0000679 ! glutamatergic neuron
 intersection_of: RO:0002100 UBERON:8440003 ! has soma location cortical layer VIb
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:8440003 ! has soma location cortical layer VIb
 
 [Term]
@@ -4224,7 +4277,7 @@ def: "A intratelencephalic-projecting glutamatergic neuron with a soma found in 
 subset: BDS_subset
 synonym: "L2/3-6 IT projecting neuron" EXACT []
 is_a: CL:4023008 ! intratelencephalic-projecting glutamatergic cortical neuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023041
@@ -4241,7 +4294,7 @@ is_a: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
 is_a: CL:4023111 ! cerebral cortex pyramidal neuron
 intersection_of: CL:4023009 ! extratelencephalic-projecting glutamatergic cortical neuron
 intersection_of: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 
 [Term]
@@ -4253,7 +4306,7 @@ synonym: "L6 CT" EXACT []
 is_a: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
 intersection_of: CL:4023013 ! corticothalamic-projecting glutamatergic cortical neuron
 intersection_of: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 relationship: RO:0013001 UBERON:0010225 ! has synaptic IO in region thalamic complex
 
@@ -4269,7 +4322,7 @@ is_a: CL:4023012 ! near-projecting glutamatergic cortical neuron
 intersection_of: CL:4023012 ! near-projecting glutamatergic cortical neuron
 intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 intersection_of: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 
@@ -4282,7 +4335,7 @@ synonym: "non-MY ET M1" EXACT []
 synonym: "non-MY ET MOp (Mus)" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023045
@@ -4295,7 +4348,7 @@ synonym: "MY ET MOp" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023041 ! L5 extratelencephalic projecting glutamatergic cortical neuron
 relationship: bearer_of PATO:0070031 ! corticomedulla projecting
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0013001 UBERON:0001896 ! has synaptic IO in region medulla oblongata
 
 [Term]
@@ -4304,7 +4357,7 @@ name: L6b subplate glutamatergic neuron of the primary motor cortex
 def: "An excitatory glutamatergic neuron transcriptomically related to the CT subclass, with a soma preferentially located in the bottom of L6 of the primary motor cortex." [PMID:33184512]
 subset: BDS_subset
 is_a: CL:4023038 ! L6b glutamatergic cortical neuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 
 [Term]
@@ -4318,7 +4371,7 @@ is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical n
 intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 intersection_of: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 relationship: RO:0002100 UBERON:8440000 ! has soma location cortical layer II/III
 
@@ -4334,7 +4387,7 @@ is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical n
 intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 intersection_of: RO:0002100 UBERON:8440001 ! has soma location cortical layer IV/V
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 relationship: RO:0002100 UBERON:8440001 ! has soma location cortical layer IV/V
 
@@ -4350,7 +4403,7 @@ is_a: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical n
 intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic cortical neuron
 intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 intersection_of: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 relationship: RO:0002100 UBERON:0005394 ! has soma location cortical layer V
 
@@ -4368,7 +4421,7 @@ intersection_of: CL:4023040 ! L2/3-6 intratelencephalic projecting glutamatergic
 intersection_of: RO:0002100 UBERON:0001384 ! has soma location primary motor cortex
 intersection_of: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 
 [Term]
@@ -4379,7 +4432,7 @@ subset: BDS_subset
 synonym: "VLMC" EXACT []
 xref: ILX:0770143
 is_a: CL:4023058 ! mesothelial fibroblast of the leptomeninx
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: develops_from CL:0011012 ! neural crest cell
 
 [Term]
@@ -4387,7 +4440,7 @@ id: CL:4023054
 name: mesothelial fibroblast
 def: "A mesothelial cell that has undergone mesothelial-to-mesenchymal transition (MMT) to become a fibroblast cell." [PMID:26106328]
 is_a: CL:0000057 ! fibroblast
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: develops_from CL:0000077 ! mesothelial cell
 
 [Term]
@@ -4400,7 +4453,7 @@ synonym: "CT VAL/VM MOp" EXACT []
 is_a: CL:2000049 ! primary motor cortex pyramidal cell
 is_a: CL:4023042 ! L6 corticothalamic-projecting glutamatergic cortical neuron
 relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023056
@@ -4409,7 +4462,7 @@ def: "A type of mouse mesothelial fibroblast that is derived from the neural cre
 subset: BDS_subset
 synonym: "VLMC (Mus musculus)" EXACT []
 is_a: CL:4023051 ! vascular leptomeningeal cell
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002292 PR:P11087 {xref="PMID:30096314"} ! expresses collagen alpha-1(I) chain (mouse)
 relationship: RO:0002292 PR:P26618 {xref="PMID:30096314"} ! expresses platelet-derived growth factor receptor alpha (mouse)
@@ -4423,7 +4476,7 @@ is_a: CL:0002319 ! neural cell
 is_a: CL:4023054 ! mesothelial fibroblast
 intersection_of: CL:4023054 ! mesothelial fibroblast
 intersection_of: part_of UBERON:0000391 ! leptomeninx
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: part_of UBERON:0000391 ! leptomeninx
 
 [Term]
@@ -4433,7 +4486,7 @@ def: "A GABAergic cell located in the cerebral cortex that expresses meis2." [PM
 subset: BDS_subset
 is_a: CL:0000617 ! GABAergic neuron
 is_a: CL:0010012 ! cerebral cortex neuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000010317 ! expresses homeobox protein Meis2
 
 [Term]
@@ -4446,7 +4499,7 @@ is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070016 ! horizontal pyramidal morphology
 relationship: bearer_of PATO:0070016 ! horizontal pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023071
@@ -4455,7 +4508,7 @@ def: "A GABAergic cortical interneuron that expresses cck. L5/6 cck cells have s
 subset: BDS_subset
 synonym: "L5/6 CCK (Mus musculus)" EXACT []
 is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: RO:0002292 PR:P09240 ! expresses cholecystokinin (mouse)
@@ -4468,7 +4521,7 @@ subset: BDS_subset
 synonym: "L6 Th+ SST (Mus musculus)" EXACT []
 synonym: "L6 tyrosine hydroxylase positive sst expressing GABAergic cortical interneuron (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:0005395 ! has soma location cortical layer VI
 relationship: RO:0002292 PR:P24529 ! expresses tyrosine 3-monooxygenase (mouse)
@@ -4487,7 +4540,7 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070007 ! Martinotti morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 relationship: bearer_of PATO:0070007 ! Martinotti morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023077
@@ -4499,7 +4552,7 @@ is_a: CL:0000099 ! interneuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070012 ! bitufted cell morphology
 relationship: bearer_of PATO:0070012 ! bitufted cell morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023080
@@ -4509,7 +4562,7 @@ subset: BDS_subset
 synonym: "stellate L6 IT MOp (Mus musculus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 relationship: bearer_of PATO:0070020 ! stellate pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023081
@@ -4519,7 +4572,7 @@ subset: BDS_subset
 synonym: "inverted L6 IT MOp (Mus musculus)" EXACT []
 is_a: CL:4023050 ! L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex
 relationship: bearer_of PATO:0070021 ! inverted pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023083
@@ -4532,7 +4585,7 @@ is_a: CL:0000099 ! interneuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070011 ! chandelier cell morphology
 relationship: bearer_of PATO:0070011 ! chandelier cell morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023086
@@ -4545,7 +4598,7 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070008 ! T Martinotti morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 relationship: bearer_of PATO:0070008 ! T Martinotti morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023087
@@ -4558,7 +4611,7 @@ intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070009 ! fan Martinotti morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 relationship: bearer_of PATO:0070009 ! fan Martinotti morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023088
@@ -4571,7 +4624,7 @@ intersection_of: bearer_of PATO:0070004 ! large basket cell morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0001950 ! has soma location neocortex
 relationship: bearer_of PATO:0070004 ! large basket cell morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023089
@@ -4584,7 +4637,7 @@ intersection_of: bearer_of PATO:0070005 ! nest basket cell morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0001950 ! has soma location neocortex
 relationship: bearer_of PATO:0070005 ! nest basket cell morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023090
@@ -4597,7 +4650,7 @@ intersection_of: bearer_of PATO:0070003 ! small basket cell morphology
 intersection_of: capable_of GO:0061534 ! gamma-aminobutyric acid secretion, neurotransmission
 intersection_of: RO:0002100 UBERON:0001950 ! has soma location neocortex
 relationship: bearer_of PATO:0070003 ! small basket cell morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023092
@@ -4609,7 +4662,7 @@ is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070021 ! inverted pyramidal morphology
 relationship: bearer_of PATO:0070021 ! inverted pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023093
@@ -4621,7 +4674,7 @@ is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070020 ! stellate pyramidal morphology
 relationship: bearer_of PATO:0070020 ! stellate pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023094
@@ -4633,7 +4686,7 @@ is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070018 ! tufted pyramidal morphology
 relationship: bearer_of PATO:0070018 ! tufted pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023095
@@ -4645,7 +4698,7 @@ is_a: CL:0000598 ! pyramidal neuron
 intersection_of: CL:0000117 ! CNS neuron (sensu Vertebrata)
 intersection_of: bearer_of PATO:0070019 ! untufted pyramidal morphology
 relationship: bearer_of PATO:0070019 ! untufted pyramidal morphology
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023105
@@ -4655,7 +4708,7 @@ comment: Made terms species agnostic, use CL:4023050 instead.
 subset: BDS_subset
 synonym: "L6 IT MOp (marmoset)" EXACT []
 xref: ILX:0770158
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 is_obsolete: true
 replaced_by: CL:4023050
 
@@ -4667,7 +4720,7 @@ is_a: CL:0000598 ! pyramidal neuron
 is_a: CL:0010012 ! cerebral cortex neuron
 intersection_of: CL:0000598 ! pyramidal neuron
 intersection_of: RO:0002100 UBERON:0000956 ! has soma location cerebral cortex
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023118
@@ -4678,7 +4731,7 @@ subset: BDS_subset
 synonym: "L5/6 non-Martinotti morphology sst expressing GABAergic cortical interneuron (Mus musculus)" EXACT []
 synonym: "L5/6 non-Martinotti SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: in_taxon NCBITaxon:10090 ! Mus musculus
 relationship: RO:0002100 UBERON:8440002 ! has soma location cortical layer V/VI
 relationship: RO:0002292 PR:P60041 ! expresses somatostatin (mouse)
@@ -4689,7 +4742,7 @@ name: sst chodl GABAergic cortical interneuron
 def: "A sst GABAergic cortical interneuron that also expresses Chodl. These neurons are rare and correspond to the only known cortical interneurons with long-range projection." [PMID:15845086, PMID:31209381, PMID:33372656]
 synonym: "long-range GABAergic interneuron" BROAD []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
-relationship: dc-creator http://orcid.org/0000-0001-7258-9596
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 relationship: RO:0002292 PR:000005444 ! expresses chondrolectin
 
 [Term]
@@ -4851,7 +4904,6 @@ namespace: molecular_function
 alt_id: GO:0005554
 def: "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs. These actions are described from two distinct but related perspectives: (1) biochemical activity, and (2) role as a component in a larger system/process." [GOC:pdt]
 comment: Note that, in addition to forming the root of the molecular function ontology, this term is recommended for use for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this. Despite its name, this is not a type of 'function' in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex.
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -4872,7 +4924,6 @@ def: "Enables the directed movement of substances (such as macromolecules, small
 comment: Some transporters, such as certain members of the SLC family, are referred to as 'carriers'; however GO uses carrier with a different meaning: a carrier binds to and transports the substance (see GO:0140104 molecular carrier activity), whereas a transporter forms some pore that allows the passing of molecules.
 subset: gocheck_do_not_annotate
 subset: goslim_agr
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
@@ -4881,6 +4932,7 @@ subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: prokaryote_subset
 synonym: "carrier" RELATED []
 xref: EC:7.-.-.-
 xref: Reactome:R-HSA-168313 "Virion-associated M2 protein mediated ion infusion"
@@ -4906,7 +4958,6 @@ namespace: cellular_component
 alt_id: GO:0008372
 def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
 comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -4927,7 +4978,6 @@ namespace: cellular_component
 def: "The space external to the outermost structure of a cell. For cells without external protective or external encapsulating structures this refers to space outside of the plasma membrane. This term covers the host cell environment outside an intracellular parasite." [GOC:go_curators]
 comment: Note that this term is intended to annotate gene products that are not attached to the cell surface. For gene products from multicellular organisms which are secreted from a cell but retained within the organism (i.e. released into the interstitial fluid or blood), consider the cellular component term 'extracellular space ; GO:0005615'.
 subset: goslim_agr
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
@@ -4937,6 +4987,7 @@ subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+subset: prokaryote_subset
 synonym: "extracellular" EXACT []
 xref: Wikipedia:Extracellular
 is_a: GO:0110165 ! cellular anatomical entity
@@ -5012,17 +5063,18 @@ namespace: biological_process
 alt_id: GO:0015457
 alt_id: GO:0015460
 alt_id: GO:0044765
-def: "The directed movement of substances (such as macromolecules, small molecules, ions) or cellular components (such as complexes and organelles) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter, pore or motor protein." [GOC:dos, GOC:dph, GOC:jl, GOC:mah]
+def: "The directed movement of substances (such as macromolecules, small molecules, ions) or cellular components (such as complexes and organelles) into, out of or within a cell, or between cells, or within a multicellular organism by means of some agent such as a transporter or a transporter complex, a pore or a motor protein." [GOC:dos, GOC:dph, GOC:jl, GOC:mah]
 comment: Note that this term should not be used for direct annotation. It should be possible to make a more specific annotation to one of the children of this term, for e.g. to transmembrane transport, to microtubule-based transport or to vesicle-mediated transport.
 subset: gocheck_do_not_annotate
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: prokaryote_subset
 synonym: "single-organism transport" RELATED []
 is_a: GO:0051234 ! establishment of localization
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/20292 xsd:anyURI
 created_by: jl
 creation_date: 2012-12-13T16:25:32Z
 
@@ -5074,19 +5126,6 @@ is_a: GO:0071705 ! nitrogen compound transport
 intersection_of: GO:0006810 ! transport
 intersection_of: has_primary_input CHEBI:33709 ! amino acid
 relationship: has_primary_input CHEBI:33709 ! amino acid
-
-[Term]
-id: GO:0006928
-name: movement of cell or subcellular component
-namespace: biological_process
-def: "The directed, self-propelled movement of a cell or subcellular component without the involvement of an external agent such as a transporter or a pore." [GOC:dgh, GOC:dph, GOC:jl, GOC:mlg]
-comment: Note that in GO cellular components include whole cells (cell is_a cellular component).
-subset: gocheck_do_not_annotate
-subset: goslim_pir
-synonym: "cell movement" RELATED []
-synonym: "cellular component motion" EXACT [GOC:dph, GOC:jl]
-synonym: "cellular component movement" EXACT []
-is_a: GO:0009987 ! cellular process
 
 [Term]
 id: GO:0006936
@@ -5310,7 +5349,6 @@ alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process represents a specific objective that the organism is genetically programmed to achieve. Biological processes are often described by their outcome or ending state, e.g., the biological process of cell division results in the creation of two daughter cells (a divided cell) from a single parent cell. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
 comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -5550,7 +5588,6 @@ namespace: cellular_component
 alt_id: GO:0098589
 alt_id: GO:0098805
 def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
@@ -5700,6 +5737,7 @@ subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pombe
 subset: goslim_yeast
+subset: prokaryote_subset
 synonym: "biological signaling" EXACT []
 synonym: "signaling process" EXACT []
 synonym: "signalling" EXACT []
@@ -5775,6 +5813,7 @@ subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_pir
+subset: prokaryote_subset
 synonym: "matrisome" NARROW []
 synonym: "proteinaceous extracellular matrix" EXACT []
 xref: NIF_Subcellular:nlx_subcell_20090513
@@ -5808,7 +5847,6 @@ namespace: biological_process
 alt_id: GO:0044767
 def: "A biological process whose specific outcome is the progression of an integrated living unit: an anatomical structure (which may be a subcellular structure, cell, tissue, or organ), or organism over time from an initial condition to a later condition." [GOC:isa_complete]
 subset: goslim_agr
-subset: goslim_aspergillus
 subset: goslim_flybase_ribbon
 subset: goslim_pir
 synonym: "development" NARROW []
@@ -6179,12 +6217,12 @@ def: "Any process involved in the controlled self-propelled movement of a cell t
 subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
+subset: prokaryote_subset
 synonym: "cell locomotion" EXACT []
 synonym: "cell movement" RELATED []
 synonym: "movement of a cell" EXACT []
-is_a: GO:0006928 ! movement of cell or subcellular component
-is_a: GO:0040011 ! locomotion
-relationship: part_of GO:0051674 ! localization of cell
+is_a: GO:0009987 ! cellular process
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/19809 xsd:anyURI
 
 [Term]
 id: GO:0050789
@@ -6193,7 +6231,6 @@ namespace: biological_process
 alt_id: GO:0050791
 def: "Any process that modulates the frequency, rate or extent of a biological process. Biological processes are regulated by many means; examples include the control of gene expression, protein modification or interaction with a protein or substrate molecule." [GOC:ai, GOC:go_curators]
 subset: gocheck_do_not_annotate
-subset: goslim_aspergillus
 subset: goslim_candida
 subset: goslim_pir
 synonym: "regulation of physiological process" EXACT []
@@ -6321,21 +6358,6 @@ relationship: in_taxon NCBITaxon:131567 ! cellular organisms
 relationship: occurs_in CL:0000000 ! cell
 relationship: only_in_taxon NCBITaxon:131567 ! cellular organisms
 relationship: part_of GO:0051641 ! cellular localization
-
-[Term]
-id: GO:0051674
-name: localization of cell
-namespace: biological_process
-def: "Any process in which a cell is transported to, and/or maintained in, a specific location." [GOC:ai]
-synonym: "cell localization" EXACT []
-synonym: "establishment and maintenance of cell localization" EXACT []
-synonym: "establishment and maintenance of localization of cell" EXACT []
-synonym: "localisation of cell" EXACT [GOC:mah]
-is_a: GO:0009987 ! cellular process
-is_a: GO:0051179 ! localization
-intersection_of: GO:0051179 ! localization
-intersection_of: has_primary_input CL:0000000 ! cell
-relationship: has_primary_input CL:0000000 ! cell
 
 [Term]
 id: GO:0051932
@@ -6502,6 +6524,7 @@ intersection_of: GO:0035148 ! tube formation
 intersection_of: results_in_formation_of UBERON:0003914 ! epithelial tube
 relationship: part_of GO:0060562 ! epithelial tube morphogenesis
 relationship: results_in_formation_of UBERON:0003914 ! epithelial tube
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/22302 xsd:anyURI
 created_by: mah
 creation_date: 2010-02-26T02:15:40Z
 
@@ -8154,7 +8177,6 @@ xref: ZFA:0000037
 is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000465 ! material anatomical entity
 relationship: existence_ends_during_or_before UBERON:0000071 ! death stage
-relationship: existence_starts_during_or_after UBERON:0000106 ! zygote stage
 
 [Term]
 id: UBERON:0000062
@@ -8184,7 +8206,6 @@ is_a: CARO:0010000 ! multicellular anatomical structure
 is_a: UBERON:0010000 ! multicellular anatomical structure
 disjoint_from: UBERON:0034921 ! multi organ part structure
 relationship: capable_of GO:0008150 ! biological_process
-relationship: existence_starts_during_or_after UBERON:0000111 ! organogenesis stage
 relationship: has_boundary UBERON:0006984 ! anatomical surface
 relationship: never_in_taxon NCBITaxon:110815 {source="Wikipedia"}
 relationship: part_of UBERON:0000467 ! anatomical system
@@ -8328,34 +8349,6 @@ relationship: only_in_taxon NCBITaxon:7711 ! Chordata
 relationship: part_of UBERON:0001434 ! skeletal system
 
 [Term]
-id: UBERON:0000076
-name: external ectoderm
-namespace: uberon
-def: "The surface (external) layer of ectoderm which begins to proliferate shortly after separation from the neuroectoderm." [MGI:anna, MP:0012532]
-subset: pheno_slim
-synonym: "surface (external) ectoderm" EXACT []
-synonym: "surface ectoderm" EXACT [MP:0012532]
-xref: EHDAA2:0001968
-xref: EHDAA:1494
-xref: EHDAA:350
-xref: EHDAA:4784
-xref: EHDAA:4790
-xref: EHDAA:4796
-xref: EHDAA:7860
-xref: EMAPA:16096
-xref: FMA:87656
-xref: NCIT:C34309
-xref: UMLS:C1515087 {source="ncithesaurus:Surface_Ectoderm"}
-xref: Wikipedia:External_ectoderm
-is_a: UBERON:0000490 {source="EHDAA2"} ! unilaminar epithelium
-is_a: UBERON:0005291 ! embryonic tissue
-relationship: part_of UBERON:0000924 {source="EHDAA2"} ! ectoderm
-property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/1/1d/Ectoderm.png xsd:anyURI
-property_value: editor_note "merge with non-neural. In vertebrates, the ectoderm has three parts: external ectoderm (also known as surface ectoderm), the neurectoderm (neural crest, and neural tube)" xsd:string
-property_value: RO:0002171 UBERON:0002346
-property_value: UBPROP:0000011 "(or external ectoderm) forms the following structures: Skin Epithelium of the mouth and nasal cavity saliavary glands, and glands of mouth and nasal cavity Enamel - as a side note dentin and dental pulp are formed from ectomesenchyme which is derived from ectoderm Epithelium of pineal and pituitary glands Lens and cornea of the eye Apical ectodermal ridge inducing development of the limb buds of the embryo. Sensory receptors in epidermis" xsd:string
-
-[Term]
 id: UBERON:0000092
 name: post-embryonic stage
 namespace: uberon
@@ -8426,6 +8419,7 @@ xref: EFO:0000399
 xref: FBdv:00007012
 xref: FMA:24120
 xref: HsapDv:0000000
+xref: MESH:D008018
 xref: MmusDv:0000000
 xref: ncithesaurus:Developmental_Stage
 xref: OlatDv:0000010
@@ -8481,7 +8475,7 @@ xref: BilaDO:0000006
 xref: BILS:0000107
 xref: EFO:0001290
 xref: FBdv:00000054
-xref: MESH:A16.254.270
+xref: MESH:D002970
 xref: MmusDv:0000004
 xref: OGES:000015
 xref: OGES:000020
@@ -8718,7 +8712,7 @@ synonym: "dorsal telencephalon" EXACT [ZFA:0000505]
 xref: BTO:0003399
 xref: DMBA:15903
 xref: EFO:0003534
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3240
+xref: neuronames:3240
 xref: SCTID:369224000
 xref: TAO:0000505
 xref: TAO:0007007
@@ -8746,7 +8740,7 @@ synonym: "blastula embryo" EXACT [BILA:0000059]
 xref: BILA:0000059
 xref: BTO:0000128
 xref: GAID:1294
-xref: MESH:A16.254.270.274
+xref: MESH:D036703
 xref: OGEM:000006
 xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
 xref: Wikipedia:Blastula
@@ -8814,8 +8808,8 @@ synonym: "pia-arachnoid of neuraxis" RELATED [FMA:231515]
 xref: BTO:0001634
 xref: CALOHA:TS-0546
 xref: FMA:231515
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2347
 xref: NCIT:C32979
+xref: neuronames:2347
 xref: NLXANAT:090207
 xref: SCTID:362303006
 xref: UMLS:C0228126 {source="ncithesaurus:Leptomeninges"}
@@ -8972,7 +8966,6 @@ xref: XAO:0003002
 xref: ZFA:0001439
 is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000061 ! anatomical structure
-relationship: existence_starts_during_or_after UBERON:0000111 ! organogenesis stage
 relationship: has_part UBERON:0000062 ! organ
 relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: seeAlso EHDAA2:0001330
@@ -9064,11 +9057,6 @@ xref: Wikipedia:Body_part
 xref: XAO:0003013
 xref: ZFA:0001308
 is_a: UBERON:0010000 {source="CARO"} ! multicellular anatomical structure
-relationship: overlaps UBERON:0001009 ! circulatory system
-relationship: overlaps UBERON:0001015 ! musculature
-relationship: overlaps UBERON:0001016 ! nervous system
-relationship: overlaps UBERON:0001434 ! skeletal system
-relationship: overlaps UBERON:0002416 ! integumental system
 relationship: part_of UBERON:0000468 ! multicellular organism
 property_value: editor_note "Reflects CARO2. todo - check the inclusion of FMA 'cardinal body part here', and check child terms for consistency" xsd:string
 
@@ -9176,7 +9164,6 @@ xref: XAO:0003037
 xref: ZFA:0001488
 is_a: UBERON:0010000 {source="CARO"} ! multicellular anatomical structure
 relationship: has_part UBERON:0000479 ! tissue
-relationship: part_of NCBITaxon:6072 ! Eumetazoa
 
 [Term]
 id: UBERON:0000483
@@ -9347,7 +9334,7 @@ xref: EMAPA:36033
 xref: FBbt:00000110
 xref: FMA:69069
 xref: GAID:1303
-xref: MESH:A16.254.425
+xref: MESH:D005855
 xref: NCIT:C12950
 xref: NCIT:C54105
 xref: TAO:0001122
@@ -9384,7 +9371,7 @@ xref: FMA:69070
 xref: GAID:1304
 xref: MAT:0000155
 xref: MAT:0000173
-xref: MESH:A16.254.425.273
+xref: MESH:D004475
 xref: MIAA:0000173
 xref: NCIT:C12703
 xref: SCTID:362851007
@@ -9424,7 +9411,7 @@ xref: FBbt:00000125
 xref: FMA:69071
 xref: GAID:1305
 xref: MAT:0000175
-xref: MESH:A16.254.425.407
+xref: MESH:D004707
 xref: MIAA:0000175
 xref: NCIT:C12706
 xref: SCTID:362855003
@@ -9470,7 +9457,7 @@ xref: FBbt:00000126
 xref: FMA:69072
 xref: GAID:522
 xref: MAT:0000174
-xref: MESH:A16.254.425.660
+xref: MESH:D008648
 xref: MIAA:0000174
 xref: NCIT:C12750
 xref: SCTID:362854004
@@ -9537,6 +9524,7 @@ namespace: uberon
 def: "The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP]." [https://github.com/obophenotype/uberon/issues/300, Wikipedia:Brain]
 subset: cumbo
 subset: efo_slim
+subset: human_reference_atlas
 subset: major_organ
 subset: pheno_slim
 subset: uberon_slim
@@ -9566,7 +9554,6 @@ xref: FMA:50801
 xref: GAID:571
 xref: galen:Brain
 xref: HBA:4005
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=21 {source="BIRNLEX:796"}
 xref: MA:0000168
 xref: MAT:0000098
 xref: MBA:8
@@ -9574,6 +9561,7 @@ xref: MBA:997
 xref: MESH:D001921
 xref: MIAA:0000098
 xref: NCIT:C12439
+xref: neuronames:21 {source="BIRNLEX:796"}
 xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
 xref: PBA:3999
 xref: SCTID:258335003
@@ -9593,6 +9581,7 @@ relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: immediate_transformation_of UBERON:0006238 {source="Bgee:AN"} ! future brain
 relationship: in_anterior_side_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0001017 {source="FMA"} ! central nervous system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "requires review for applicability to invertebrate structures, e.g. synganglion" xsd:string
 property_value: UBPROP:0000001 "Cavitated compound organ which is comprised of gray and white matter and surrounds the cerebral ventricular system.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000008", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Part of the central nervous system situated within the cranium and composed of both nerve cell bodies and nerve fibers.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010478", ontology="AAO", source="AAO:BJB"}
@@ -9605,6 +9594,7 @@ name: cerebral cortex
 namespace: uberon
 def: "The thin layer of gray matter on the surface of the cerebral hemisphere that develops from the telencephalon. It consists of the neocortex (6 layered cortex or isocortex), the hippocampal formation and the olfactory cortex." [BIRNLEX:1494]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 synonym: "brain cortex" RELATED [BTO:0000233]
@@ -9631,13 +9621,13 @@ xref: EV:0100166
 xref: FMA:61830
 xref: GAID:629
 xref: HBA:4008
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=39 {source="BIRNLEX:1494"}
 xref: MA:0000185
 xref: MAT:0000108
 xref: MBA:688
-xref: MESH:A08.186.211.730.885.213
+xref: MESH:D002540
 xref: MIAA:0000108
 xref: NCIT:C12443
+xref: neuronames:39 {source="BIRNLEX:1494"}
 xref: PBA:128011354
 xref: SCTID:362880003
 xref: UMLS:C0007776 {source="BIRNLEX:1494"}
@@ -9654,6 +9644,7 @@ relationship: has_developmental_contribution_from UBERON:0005343 ! cortical plat
 relationship: part_of UBERON:0000203 {source="GO", source="ISBN:0471888893"} ! pallium
 relationship: part_of UBERON:0005401 {source="FMA", source="MA"} ! cerebral hemisphere gray matter
 relationship: present_in_taxon NCBITaxon:117569
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/7/7b/Cerebral_Cortex_location.jpg xsd:anyURI
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/9/9a/Brainmaps-macaque-hippocampus.jpg xsd:anyURI
 property_value: IAO:0000232 "We follow NIFSTD in defining cerebral cortex and including both neocortex and hippocampal formation (DG+hippocampus)." xsd:string
@@ -9711,6 +9702,7 @@ namespace: uberon
 def: "Functional system which consists of structures involved in respiration." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Respiratory_system]
 subset: efo_slim
 subset: functional_classification
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -9746,16 +9738,15 @@ is_a: UBERON:0000467 ! anatomical system
 intersection_of: UBERON:0000467 ! anatomical system
 intersection_of: capable_of GO:0007585 ! respiratory gaseous exchange by respiratory system
 disjoint_from: UBERON:0001007 ! digestive system
-disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002416 ! integumental system
 relationship: capable_of GO:0003016 ! respiratory system process
 relationship: capable_of GO:0007585 ! respiratory gaseous exchange by respiratory system
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg xsd:anyURI
 property_value: UBPROP:0000001 "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000541", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000202", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23", source="http://bgee.unil.ch/"}
@@ -9798,45 +9789,14 @@ xref: ZFA:0000339
 is_a: UBERON:0000467 ! anatomical system
 intersection_of: UBERON:0000467 ! anatomical system
 intersection_of: capable_of GO:0022600 ! digestive system process
-disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002416 ! integumental system
 relationship: capable_of GO:0022600 ! digestive system process
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 property_value: UBPROP:0000001 "An anatomical system consisting of the alimentary canal and digestive glands responsible for intake, absorption, digestion and excretion of food.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000129", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000007 "digestive" xsd:string
 property_value: UBPROP:0000012 "many anatomy ontologies consider gastrointestinal system synonymous with digestive system. here we follow MA in dividing digestive system into gastrointestinal and hepatobiliary. hepatobiliary includes the liver and biliary tract. species-specific AO classes are categorized according to whether liver is included. For example, XAO includes liver as part of XAO:0000125 alimentary system, so we assume this class is the more generic class" xsd:string {external_ontology="MA"}
-
-[Term]
-id: UBERON:0001009
-name: circulatory system
-namespace: uberon
-def: "Organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP]." [Wikipedia:Circulatory_system]
-subset: uberon_slim
-synonym: "systema cardiovasculare" RELATED LATIN [Wikipedia:Circulatory_system]
-xref: AAO:0000959
-xref: CALOHA:TS-2103
-xref: OpenCyc:Mx4rvVjzG5wpEbGdrcN5Y29ycA
-xref: VHOG:0001248
-xref: Wikipedia:Circulatory_system
-is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0001016 ! nervous system
-disjoint_from: UBERON:0001434 ! skeletal system
-disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002416 ! integumental system
-relationship: capable_of GO:0003013 ! circulatory system process
-relationship: existence_ends_during UBERON:0000066 ! fully formed stage
-relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
-relationship: never_in_taxon NCBITaxon:6073
-relationship: never_in_taxon NCBITaxon:6157
-relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg xsd:anyURI
-property_value: IAO:0000232 "the cardiovascular system and the lymphatic system are parts of the circulatory system" xsd:string
-property_value: RO:0002174 NCBITaxon:6231 {notes="WBbt coelomocyte currently classified as circulating cell"}
-property_value: UBPROP:0000001 "Anatomical system of ion binding, a pumping mechanism, and an efficient vascular system; consisting of the blood, heart, and blood and lymph vessels, respectively.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000959", ontology="AAO", source="AAO:BJB"}
-property_value: UBPROP:0000003 "We should divest ourselves of the view that earlier vertebrate groups were 'on their way' to becoming mammals, as clearly they were not such visionaries. Neither were their systems 'imperfect' as earlier anatomists thought. Instead, their circulatory systems served them well to address the ecological demands arising from their lifestyles.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001248", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.493", source="http://bgee.unil.ch/"}
 
 [Term]
 id: UBERON:0001015
@@ -9906,12 +9866,12 @@ xref: EV:0100162
 xref: FBbt:00005093
 xref: FMA:7157
 xref: GAID:466
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3236
 xref: MA:0000016
 xref: MAT:0000026
 xref: MESH:D009420
 xref: MIAA:0000026
 xref: NCIT:C12755
+xref: neuronames:3236
 xref: OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA
 xref: SCTID:278196006
 xref: TAO:0000396
@@ -9925,7 +9885,6 @@ is_a: CARO:0000006 ! material anatomical entity
 is_a: UBERON:0000467 ! anatomical system
 disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002416 ! integumental system
 relationship: capable_of GO:0050877 ! nervous system process
 relationship: composed_primarily_of CL:0002319 ! neural cell
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
@@ -9970,11 +9929,11 @@ xref: EV:0100163
 xref: FBbt:00005094
 xref: FMA:55675
 xref: GAID:570
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=854
 xref: MA:0000167
 xref: MAT:0000457
 xref: MESH:D002490
 xref: NCIT:C12438
+xref: neuronames:854
 xref: OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA
 xref: SCTID:278199004
 xref: TAO:0000012
@@ -10016,10 +9975,11 @@ xref: EHDAA:908
 xref: EMAPA:16164
 xref: EMAPA:16757
 xref: FMA:293882
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1365
 xref: MAT:0000069
+xref: MESH:D054259
 xref: MIAA:0000069
 xref: NCIT:C34226
+xref: neuronames:1365
 xref: SCTID:362852000
 xref: TAO:0001135
 xref: UMLS:C0231024 {source="ncithesaurus:Neural_Tube"}
@@ -10078,7 +10038,7 @@ xref: EFO:0001405
 xref: FMA:14181
 xref: GAID:30
 xref: galen:Back
-xref: MESH:A01.176
+xref: MESH:D001415
 xref: NCIT:C13062
 xref: OpenCyc:Mx4rvVkEU5wpEbGdrcN5Y29ycA
 xref: SCTID:123961009
@@ -10096,6 +10056,7 @@ name: primary motor cortex
 namespace: uberon
 def: "The part of the cerebral cortex that receives projections from the motor thalamus and which projects to motor neurons in the brainstem and spinal cord. The motor cortex corresponds to Brodmann's area 4 (MM). The primary motor cortex, or M1, is located on the precentral gyrus and on the anterior paracentral lobule on the medial surface of the brain. Of the three motor cortex areas, stimulation of the primary motor cortex requires the least amount of electrical current to elicit a movement. http://neuroscience.uth.tmc.edu/s3/chapter03.html." [NLX:143555]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 synonym: "excitable area" RELATED [BTO:0004348]
@@ -10116,11 +10077,11 @@ xref: DHBA:10162
 xref: EFO:0002472
 xref: EMAPA:35704
 xref: FMA:224854
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1910
 xref: MA:0000907
 xref: MBA:985
-xref: MESH:A08.186.211.730.885.213.270.548
+xref: MESH:D009044
 xref: NCIT:C97339
+xref: neuronames:1910
 xref: NLX:143555
 xref: SCTID:11931008
 xref: UMLS:C0026607 {source="ncithesaurus:Primary_Motor_Cortex"}
@@ -10129,6 +10090,7 @@ is_a: UBERON:0002616 ! regional part of brain
 relationship: contributes_to_morphology_of UBERON:0000956 ! cerebral cortex
 relationship: contributes_to_morphology_of UBERON:0001870 ! frontal cortex
 relationship: part_of UBERON:0001870 {source="MA", source="Wikipedia"} ! frontal cortex
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/e/eb/Ba4.png xsd:anyURI
 property_value: editor_note "TODO - in MA this is asserted to be part_of BOTH frontal and parietal cortex. in ABA these are disjoint. FMA makes no commitment beyond cerebral cortex. Wikipedia says frontal lobe. Check if species difference or difference in definition. Removed relationship: part_of UBERON:0001872 parietal lobe" xsd:string
 property_value: UBPROP:0000001 "the area of the frontal lobe that is involved with integration of voluntary movements and with speech.[MP]" xsd:string {date_retrieved="2012-08-31", external_class="MP:0000800", ontology="MP", source="MGI:csmith"}
@@ -10168,7 +10130,6 @@ intersection_of: UBERON:0011216 ! organ system subdivision
 intersection_of: has_part UBERON:0004288 ! skeleton
 intersection_of: has_part UBERON:0004770 ! articular system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002416 ! integumental system
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: has_part UBERON:0004288 ! skeleton
 relationship: has_part UBERON:0004770 ! articular system
@@ -10288,10 +10249,10 @@ xref: EFO:0002521
 xref: EMAPA:16653
 xref: FMA:61817
 xref: galen:CerebralHemisphere
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=241 {source="BIRNLEX:1042"}
 xref: MA:0000133
 xref: MBA:403
 xref: NCIT:C12351
+xref: neuronames:241 {source="BIRNLEX:1042"}
 xref: OpenCyc:Mx4rvigx5ZwpEbGdrcN5Y29ycA
 xref: SCTID:278251007
 xref: UMLS:C0228174 {source="ncithesaurus:Cerebral_Hemisphere"}
@@ -10343,6 +10304,7 @@ namespace: uberon
 def: "Lower lateral part of the cerebral hemisphere. (MSH)." [BIRNLEX:1160]
 comment: Boundary notes: It is bounded dorsally by the lateral fissure and posteriorly by an arbitrary border shared with the occipital lobe. [Wikipedia:Temporal_lobe]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 synonym: "lobus temporalis" EXACT LATIN [Wikipedia:Temporal_lobe]
@@ -10359,10 +10321,10 @@ xref: EV:0100169
 xref: FMA:61825
 xref: GAID:635
 xref: HBA:4132
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=125 {source="BIRNLEX:1160"}
 xref: MAT:0000508
-xref: MESH:A08.186.211.730.885.213.863
+xref: MESH:D013702
 xref: NCIT:C12353
+xref: neuronames:125 {source="BIRNLEX:1160"}
 xref: OpenCyc:Mx4rwQLi-ZwpEbGdrcN5Y29ycA
 xref: SCTID:180921000
 xref: UMLS:C0039485 {source="ncithesaurus:Temporal_Lobe"}
@@ -10371,6 +10333,7 @@ xref: UMLS:C1268978 {source="BIRNLEX:1160"}
 xref: Wikipedia:Temporal_lobe
 is_a: UBERON:0016526 {source="FMA"} ! lobe of cerebral hemisphere
 relationship: contributes_to_morphology_of UBERON:0001893 ! telencephalon
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/9/91/Gray730.png xsd:anyURI
 
 [Term]
@@ -10379,6 +10342,7 @@ name: parietal lobe
 namespace: uberon
 def: "Upper central part of the cerebral hemisphere. (MSH)." [BIRNLEX:1148]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 synonym: "lobus parietalis" RELATED LATIN [Wikipedia:Parietal_lobe]
@@ -10394,10 +10358,10 @@ xref: EV:0100168
 xref: FMA:61826
 xref: GAID:680
 xref: HBA:4084
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=95 {source="BIRNLEX:1148"}
 xref: MAT:0000506
-xref: MESH:A08.186.211.730.885.213.670
+xref: MESH:D010296
 xref: NCIT:C12354
+xref: neuronames:95 {source="BIRNLEX:1148"}
 xref: OpenCyc:Mx4rvg-typwpEbGdrcN5Y29ycA
 xref: SCTID:180922007
 xref: UMLS:C0030560 {source="BIRNLEX:1148"}
@@ -10406,6 +10370,7 @@ xref: Wikipedia:Parietal_lobe
 is_a: UBERON:0016526 {source="FMA"} ! lobe of cerebral hemisphere
 relationship: adjacent_to UBERON:0001871 ! temporal lobe
 relationship: contributes_to_morphology_of UBERON:0001893 ! telencephalon
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/b2/Gray726_parietal_lobe.png xsd:anyURI
 
 [Term]
@@ -10414,6 +10379,7 @@ name: forebrain
 namespace: uberon
 def: "The most anterior region of the brain including both the telencephalon and diencephalon." [Wikipedia:Forebrain, ZFIN:ZDB-PUB-961014-576]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -10432,12 +10398,12 @@ xref: EHDAA2:0000556
 xref: EHDAA:3470
 xref: EMAPA:16895
 xref: FMA:61992
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=27 {source="BIRNLEX:1509"}
 xref: MA:0000170
 xref: MAT:0000105
 xref: MESH:D016548
 xref: MIAA:0000105
 xref: NCIT:C40185
+xref: neuronames:27 {source="BIRNLEX:1509"}
 xref: SCTID:362291003
 xref: TAO:0000109
 xref: UMLS:C0085140 {source="ncithesaurus:Fore-Brain"}
@@ -10452,6 +10418,7 @@ disjoint_from: UBERON:0002298 ! brainstem
 relationship: contributes_to_morphology_of UBERON:0000955 ! brain
 relationship: develops_from UBERON:0003080 ! anterior neural tube
 relationship: immediate_transformation_of UBERON:0006240 {evidence="definitional"} ! future forebrain
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg xsd:anyURI
 property_value: UBPROP:0000001 "Most anterior of the three regions of the brain consisting of the telencephalon and diencephalon.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010147", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "The most anterior region the brain including both the telencephalon and diencephalon. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000109", ontology="TAO", source="ZFIN:curator"}
@@ -10465,6 +10432,7 @@ name: midbrain
 namespace: uberon
 def: "The midbrain is the middle division of the three primary divisions of the developing chordate brain or the corresponding part of the adult brain (in vertebrates, includes a ventral part containing the cerebral peduncles and a dorsal tectum containing the corpora quadrigemina and that surrounds the aqueduct of Sylvius connecting the third and fourth ventricles)[GO]." [GO:0030901]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -10485,13 +10453,13 @@ xref: EMAPA:16974
 xref: EV:0100242
 xref: FMA:61993
 xref: HBA:9001
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=462 {source="BIRNLEX:1667"}
 xref: MA:0000207
 xref: MAT:0000106
 xref: MBA:313
 xref: MESH:D008636
 xref: MIAA:0000106
 xref: NCIT:C12510
+xref: neuronames:462 {source="BIRNLEX:1667"}
 xref: OpenCyc:Mx4rvsBUqpwpEbGdrcN5Y29ycA
 xref: RETIRED_EHDAA2:0001104
 xref: SCTID:279099009
@@ -10508,6 +10476,7 @@ is_a: UBERON:0010314 ! structure with developmental contribution from neural cre
 relationship: contributes_to_morphology_of UBERON:0000955 ! brain
 relationship: has_developmental_contribution_from UBERON:0003849 {evidence="definitional"} ! mesencephalic neural crest
 relationship: immediate_transformation_of UBERON:0009616 {source="Bgee:AN"} ! presumptive midbrain
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/f/f9/Human_brain_inferior_view_description.JPG xsd:anyURI
 property_value: editor_note "developmental relationships need revised" xsd:string
 property_value: RO:0002171 UBERON:0001894 {exceptions="ZFA", exceptions_url="https://github.com/obophenotype/uberon/issues/378", source="ABA", status="pending"}
@@ -10528,7 +10497,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cerebrum" EXACT [BTO:0000239, EMAPA:16910, FMA:62000, https://github.com/obophenotype/uberon/issues/1208, Wikipedia:Talk\:Cerebrum/Archive_1]
-synonym: "endbrain" EXACT [http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=31, Swanson:2004]
+synonym: "endbrain" EXACT [neuronames:31, Swanson:2004]
 synonym: "supratentorial region" BROAD [Wikipedia:Tentorium_cerebelli]
 xref: AAO:0010479
 xref: BAMS:CB
@@ -10547,12 +10516,12 @@ xref: EV:0100165
 xref: FMA:62000
 xref: GAID:621
 xref: HBA:4007
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=31 {source="BIRNLEX:1115"}
 xref: MA:0000183
 xref: MAT:0000421
 xref: MBA:567
 xref: MESH:D013687
 xref: MIAA:0000421
+xref: neuronames:31 {source="BIRNLEX:1115"}
 xref: PBA:128011350
 xref: SCTID:263353005
 xref: TAO:0000079
@@ -10621,13 +10590,13 @@ xref: EV:0100194
 xref: FMA:62001
 xref: GAID:618
 xref: HBA:4391
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=288 {source="BIRNLEX:1503"}
 xref: MA:0000171
 xref: MAT:0000420
 xref: MBA:1129
-xref: MESH:A08.186.211.730.385
+xref: MESH:D004027
 xref: MIAA:0000420
 xref: NCIT:C12456
+xref: neuronames:288 {source="BIRNLEX:1503"}
 xref: OpenCyc:Mx4rwC-V0JwpEbGdrcN5Y29ycA
 xref: PBA:128013010
 xref: SCTID:279328001
@@ -10661,6 +10630,7 @@ name: medulla oblongata
 namespace: uberon
 def: "Organ component of neuraxis that has as its parts the medullary reticular formation, inferior olivary complex and cochlear nuclear complex, among other structures[FMA]. The medulla oblongata lies directly above the spinal cord and controls vital autonomic functions such as digestion, breathing and the control of heart rate[GO]." [FMA:62004, GO:0021550, Wikipedia:Bone_marrow_of_ovary_oblongata]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -10684,7 +10654,6 @@ xref: EMAPA:17550
 xref: EV:0100275
 xref: FMA:62004
 xref: GAID:590
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=698 {source="BIRNLEX:957"}
 xref: MA:0000206
 xref: MAT:0000111
 xref: MAT:0000367
@@ -10692,6 +10661,7 @@ xref: MBA:354
 xref: MESH:D008526
 xref: MIAA:0000111
 xref: NCIT:C12442
+xref: neuronames:698 {source="BIRNLEX:957"}
 xref: OpenCyc:Mx4rvVjxSJwpEbGdrcN5Y29ycA
 xref: OpenCyc:Mx4rwCqnXJwpEbGdrcN5Y29ycA
 xref: SCTID:279104005
@@ -10710,6 +10680,7 @@ relationship: capable_of GO:0043576 ! regulation of respiratory gaseous exchange
 relationship: capable_of GO:0044058 ! regulation of digestive system process
 relationship: part_of UBERON:0002298 ! brainstem
 relationship: part_of UBERON:0005290 ! myelencephalon
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/6/6b/Illu_pituitary_pineal_glands.jpg xsd:anyURI
 property_value: UBPROP:0000001 "Posterior portion of the hindbrain which controls respiration, heartbeat, digestion, and swallowing as well as some locomotor responses.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010486", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "The posterior region of the brain that is continuous with the spinal cord. [Bemis_WE, Functional_Anatomy_of_the_Vertebrates:_An_Evolutionary_Perspective, Glossary_G-17, Grande_L, Liem_KF, Third_Edition_(2001)_Orlando_Fla.:_Harcourt_College_Publishers, Walker_WF][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000181", ontology="VHOG", source="http://bgee.unil.ch/"}
@@ -10722,6 +10693,7 @@ namespace: uberon
 def: "Ventral part of the midbrain, separated from the hindbrain by the isthmus[ISBN:0471888893]. Subdivision of the midbrain lying anterior to the tectum and posterior to the substantia nigra and cerebral peduncle[FMA] The part of the midbrain extending from the substantia nigra to the cerebral aqueduct in a horizontal section of the midbrain. It forms the floor of the midbrain that surrounds the cerebral aqueduct[WP]." [FMA:FMA, ISBN:0471888893, Wikipedia:Midbrain_tegmentum]
 comment: 'tegmentum' is used generically for the ventral part of the brainstem (ISBN:0471888893). We use the label 'midbrain tegmentum' to denote the midbrain structure. In NIFSTD tegmentum is a composite structure and there is a separate class for midbrain tegmentum and pontine tegmentum
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -10740,9 +10712,9 @@ xref: EHDAA2:0004475
 xref: EMAPA:18215
 xref: FMA:62393
 xref: HBA:9002
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=491 {source="BIRNLEX:1200"}
 xref: MA:0000212
 xref: MAT:0000452
+xref: neuronames:491 {source="BIRNLEX:1200"}
 xref: SCTID:362392007
 xref: TAO:0000160
 xref: UMLS:C0039441 {source="BIRNLEX:1200"}
@@ -10754,6 +10726,7 @@ is_a: UBERON:0002616 ! regional part of brain
 relationship: develops_from UBERON:0010285 {source="ZFA"} ! midbrain basal plate
 relationship: part_of UBERON:0001891 ! midbrain
 relationship: part_of UBERON:0002298 ! brainstem
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/b/b6/Gray712.png xsd:anyURI
 property_value: UBPROP:0000003 "Together, our results reveal a shared basic organization in the tegmental domains of the diencephalon and midbrain of developing lamprey, indicating early appearance of the domain in vertebrate phylogeny.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001367", ontology="VHOG", source="DOI:10.1016/j.brainresbull.2005.05.001 Villar-Cheda B, Abalo XM, Anadon R, Rodicio MC, The tegmental proliferation region in the sea lamprey. Brain Research Bulletin (2005)", source="http://bgee.unil.ch/"}
 
@@ -10786,10 +10759,10 @@ xref: EMAPA:32842
 xref: EMAPA:35589
 xref: FMA:62429
 xref: GAID:677
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=757 {source="BIRNLEX:2547"}
 xref: MA:0002754
 xref: MBA:315
-xref: MESH:A08.186.211.730.885.213.420
+xref: MESH:D019579
+xref: neuronames:757 {source="BIRNLEX:2547"}
 xref: PBA:294021746
 xref: UMLS:C0175173 {source="BIRNLEX:2547"}
 xref: Wikipedia:Neocortex
@@ -10824,9 +10797,10 @@ xref: EHDAA2_RETIRED:0004658
 xref: EMAPA:37596 {source="MA:th"}
 xref: FMA:67242
 xref: HBA:4006
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2869
 xref: MA:0001112
+xref: MESH:D066128
 xref: NCIT:C32695
+xref: neuronames:2869
 xref: OpenCyc:Mx4rwDdKMpwpEbGdrcN5Y29ycA
 xref: TAO:0002197
 xref: UMLS:C0018220 {source="ncithesaurus:Gray_Matter"}
@@ -10844,6 +10818,7 @@ name: hindbrain
 namespace: uberon
 def: "The most posterior of the three principal regions of the brain. In mammals and birds the hindbrain is divided into a rostral metencephalon and a caudal myelencephalon. In zebrafish, with the exception of the cerebellum, the ventral remainder of the metencephalon can be separated only arbitrarily from the more caudal myelencephalic portion of the medulla oblongata (From: Neuroanatomy of the Zebrafish Brain)[ZFA]. Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata[FMA]." [Wikipedia:Rhombencephalon, ZFA:0000029, ZFIN:curator]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -10861,13 +10836,13 @@ xref: EHDAA:3514
 xref: EHDAA:6487
 xref: EMAPA:16916
 xref: FMA:67687
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=540 {source="BIRNLEX:942"}
 xref: MA:0000195
 xref: MAT:0000107
 xref: MBA:1065
 xref: MESH:D012249
 xref: MIAA:0000107
 xref: NCIT:C40336
+xref: neuronames:540 {source="BIRNLEX:942"}
 xref: SCTID:303456008
 xref: TAO:0000029
 xref: UMLS:C0035507 {source="ncithesaurus:Hind-Brain"}
@@ -10885,6 +10860,7 @@ relationship: immediate_transformation_of UBERON:0007277 {source="Bgee:AN"} ! pr
 relationship: only_in_taxon NCBITaxon:89593 ! Craniata <chordates>
 relationship: overlaps UBERON:0002298 {notes="modified-source-relation", source="ABA"} ! brainstem
 relationship: present_in_taxon NCBITaxon:7762 {source="PMID:8932866"}
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg xsd:anyURI
 property_value: RO:0002171 UBERON:0001891 {exceptions="ZFA", source="ABA", source="https://github.com/obophenotype/uberon/issues/378", status="pending"}
 property_value: RO:0002171 UBERON:0001894 {source="ABA"}
@@ -10999,7 +10975,6 @@ xref: Wikipedia:Musculoskeletal_system
 xref: XAO:0000168
 is_a: CARO:0000006 ! material anatomical entity
 is_a: UBERON:0000467 ! anatomical system
-disjoint_from: UBERON:0002416 ! integumental system
 relationship: capable_of_part_of GO:0040011 ! locomotion
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: has_developmental_contribution_from UBERON:0000926 {notes="check ctenophore"} ! mesoderm
@@ -11046,12 +11021,12 @@ xref: EMAPA:17577
 xref: EV:0100316
 xref: FMA:7647
 xref: GAID:695
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=22 {source="BIRNLEX:1709"}
 xref: MA:0000216
 xref: MAT:0000183
 xref: MESH:D013116
 xref: MIAA:0000183
 xref: NCIT:C12464
+xref: neuronames:22 {source="BIRNLEX:1709"}
 xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
 xref: SCTID:180959008
 xref: TAO:0000075
@@ -11102,11 +11077,11 @@ xref: EFO:0001962
 xref: EMAPA:32678
 xref: EV:0100241
 xref: FMA:79876
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=236 {source="BIRNLEX:1565"}
 xref: MA:0000169
 xref: MBA:343
 xref: MESH:D001933
 xref: NCIT:C12441
+xref: neuronames:236 {source="BIRNLEX:1565"}
 xref: SCTID:180925009
 xref: TAO:0002156
 xref: UMLS:C0006121 {source="BIRNLEX:1565"}
@@ -11170,7 +11145,7 @@ xref: FMA:85521
 xref: GAID:1311
 xref: http://evolution.berkeley.edu/evolibrary/images/history/notochords.jpg
 xref: MAT:0000281
-xref: MESH:A16.254.610
+xref: MESH:D009672
 xref: NCIT:C12463
 xref: SCTID:308820002
 xref: TAO:0000135
@@ -11226,7 +11201,7 @@ xref: EMAPA:31169
 xref: FMA:85522
 xref: GAID:1306
 xref: MAT:0000068
-xref: MESH:A16.254.425.660.750
+xref: MESH:D019170
 xref: MIAA:0000068
 xref: NCIT:C34302
 xref: TAO:0000155
@@ -11270,11 +11245,11 @@ xref: EHDAA2:0004419
 xref: EMAPA:32737
 xref: FMA:86666
 xref: GAID:1310
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1366
 xref: MAT:0000066
-xref: MESH:A16.254.600
+xref: MESH:D009432
 xref: MIAA:0000066
 xref: NCIT:C34222
+xref: neuronames:1366
 xref: SCTID:361462002
 xref: TAO:0000045
 xref: UMLS:C0027789 {source="ncithesaurus:Neural_Crest"}
@@ -11387,6 +11362,7 @@ id: UBERON:0002384
 name: connective tissue
 namespace: uberon
 def: "Tissue with cells that deposit non-polarized extracellular matrix including connective tissue fibers and ground substance." [GO_REF:0000034, http://dx.plos.org/10.1371/journal.pone.0051070, https://github.com/obophenotype/uberon/issues/23, PSPUB:0000170, VSAO:0000017]
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -11415,6 +11391,7 @@ xref: XAO:0001017
 xref: ZFA:0001632
 is_a: UBERON:0000479 ! tissue
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
+relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "One of the four types of tissue in traditional classifications. It is largely a category of exclusion rather than one with a precise definition, but there are certain characteristics shared by all or most tissues in this category, such as involvement in structure and support, derived from mesoderm, and characterized largely by the traits of non-living tissue.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000098", ontology="AAO", source="AAO:LAP"}
 property_value: UBPROP:0000001 "Portion of tissue that consists of mesodermally derived cells and intercellular matrix comprised of protein fibers and carbohydrates, which supports, ensheathes and binds together other tissues.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001641", ontology="TAO", source="TAO:wd"}
 property_value: UBPROP:0000001 "Tissue with cells that deposit non-polarized extracellular matrix including connective tissue fibers and ground substance.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000017", ontology="VSAO", source="GO_REF:0000034, http://dx.plos.org/10.1371/journal.pone.0051070", source="PSPUB:0000170"}
@@ -11455,55 +11432,6 @@ relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: part_of UBERON:0001015 ! musculature
 property_value: RO:0002171 UBERON:0003714
 property_value: UBPROP:0000001 "One of the four types of tissue in traditional classifications. Tissue that contains cells with contractile filaments that move past each other and change the size of the cell. Muscle tissue also is separated into three distinct categories.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000306", ontology="AAO", source="AAO:LAP"}
-
-[Term]
-id: UBERON:0002416
-name: integumental system
-namespace: uberon
-alt_id: UBERON:0007029
-def: "Connected anatomical system that forms a barrier between an animal and its environment. In vertebrates, the integumental system consists of the epidermis, dermis plus associated glands and adnexa such as hair and scales. In invertebrates, the integumental system may include cuticle." [CARO:0002001, http://orcid.org/0000-0002-6601-2165, https://github.com/obophenotype/uberon/issues/29]
-subset: efo_slim
-subset: grouping_class
-subset: pheno_slim
-synonym: "body surface" RELATED []
-synonym: "dermal system" RELATED [MIAA:0000033]
-synonym: "external covering of organism" RELATED []
-synonym: "integumentary system" EXACT [FMA:72979]
-synonym: "integumentum commune" RELATED LATIN [Wikipedia:Integumentary_system]
-synonym: "organism surface" RELATED [EHDAA2:0003154]
-synonym: "surface" RELATED [BILA:0000118]
-xref: AEO:0000154
-xref: BILA:0000118
-xref: CALOHA:TS-1299
-xref: CARO:0002001
-xref: EFO:0000807
-xref: EHDAA2:0000836
-xref: EHDAA2_RETIRED:0003154
-xref: EHDAA:6520
-xref: EMAPA:17524
-xref: EV:0100151
-xref: FBbt:00004969
-xref: FMA:72979
-xref: galen:Surface
-xref: HAO:0000421
-xref: MA:0000014
-xref: MAT:0000033
-xref: MESH:D034582
-xref: MIAA:0000033
-xref: NCIT:C12907
-xref: SCTID:361692004
-xref: TADS:0000108
-xref: UMLS:C0037267 {source="ncithesaurus:Integumentary_System"}
-xref: VHOG:0000403
-xref: Wikipedia:Integumentary_system
-xref: XAO:0000176
-is_a: CARO:0000006 ! material anatomical entity
-is_a: UBERON:0000467 ! anatomical system
-relationship: bounding_layer_of UBERON:0000468 ! multicellular organism
-relationship: existence_ends_during UBERON:0000066 ! fully formed stage
-relationship: has_part UBERON:0007376 ! outer epithelium
-relationship: surrounded_by UBERON:0013514 ! space surrounding organism
-property_value: UBPROP:0000003 "(...) the integument of many tetrapods is reinforced by a morphologically and structurally diverse assemblage of skeletal elements. These elements are widely understood to be derivatives of the once all-encompassing dermal skeleton of stem-gnathostomes (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000403", ontology="VHOG", source="DOI:10.1111/j.1469-7580.2008.01043.x Vickaryous MK, Sire JY, The integumentary skeleton of tetrapods: origin, evolution, and development. J Anat (2009)", source="http://bgee.unil.ch/"}
 
 [Term]
 id: UBERON:0002532
@@ -11595,8 +11523,8 @@ xref: DMBA:16810
 xref: EHDAA2:0004395
 xref: EHDAA:5789
 xref: EMAPA:32857
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2076
 xref: NCIT:C93172
+xref: neuronames:2076
 xref: TAO:0000042
 xref: VHOG:0000649
 xref: XAO:0000016
@@ -11717,8 +11645,9 @@ xref: EHDAA:346
 xref: EHDAA:902
 xref: EMAPA:35593
 xref: FMA:293879
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1362
+xref: MESH:D054258
 xref: NCIT:C34225
+xref: neuronames:1362
 xref: RETIRED_EHDAA2:0001252
 xref: TAO:0000132
 xref: UMLS:C0920623 {source="ncithesaurus:Neural_Plate"}
@@ -11869,30 +11798,6 @@ property_value: UBPROP:0000001 "Neural crest that is part of the head.[TAO]" xsd
 property_value: UBPROP:0000003 "We conclude this section by listing some of the many synapomorphies of craniates, including (1) the neural crest (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000063", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.43", source="http://bgee.unil.ch/"}
 
 [Term]
-id: UBERON:0003102
-name: surface structure
-namespace: uberon
-def: "Anatomical structure that overlaps the outer epithelial layer and is adjacent to the space surrounding the organism." [http://orcid.org/0000-0002-6601-2165, https://github.com/obophenotype/uberon/issues/24]
-subset: upper_level
-synonym: "anatomical surface feature" EXACT [EHDAA2:0003010]
-synonym: "surface feature" RELATED []
-synonym: "surface region" RELATED []
-synonym: "surface structures" RELATED PLURAL [ZFA:0000292]
-xref: AAO:0010337
-xref: AEO_RETIRED:0000010
-xref: EHDAA2_RETIRED:0003010
-xref: galen:SurfaceRegion
-xref: TAO:0000292
-xref: VSAO:0000001
-xref: Wikipedia:Surface_structure
-xref: XAO:0003028
-xref: ZFA:0000292
-is_a: UBERON:0000061 ! anatomical structure
-relationship: adjacent_to UBERON:0013514 ! space surrounding organism
-property_value: editor_note "consider obsoleting. See issue/1305" xsd:string
-property_value: UBPROP:0000001 "Organism subdivision which is the collection of anatomical structures on the body surface.[ZFA]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000292", ontology="TAO", source="ZFIN:curator"}
-
-[Term]
 id: UBERON:0003103
 name: compound organ
 namespace: uberon
@@ -11913,7 +11818,6 @@ xref: VHOG:0001723
 xref: XAO:0003041
 xref: ZFA:0000496
 is_a: UBERON:0000062 ! organ
-relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 property_value: IAO:0000232 "this class was introduced for consistency with CARO. However, in this ontology we typically classify organs directly under 'organ' rather than subdividing into compound and simple organs" xsd:string
 
 [Term]
@@ -12179,8 +12083,8 @@ synonym: "subplate" EXACT []
 synonym: "subplate zone" EXACT [DHBA:10522]
 xref: DHBA:10522
 xref: EMAPA:32703
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=3233
 xref: https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Corticogenesis_in_a_wild-type_mouse_with_captions_in_english_copy.png/360px-Corticogenesis_in_a_wild-type_mouse_with_captions_in_english_copy.png
+xref: neuronames:3233
 xref: PBA:294021932
 xref: Wikipedia:Subplate
 is_a: CARO:0000000 ! anatomical entity
@@ -12244,7 +12148,7 @@ synonym: "future brain marginal layer" RELATED [EMAPA:35360]
 synonym: "neural tube intermediate zone" EXACT [http://www.ncbi.nlm.nih.gov/books/NBK10047, MP:0009690]
 xref: EMAPA:17148
 xref: EMAPA:35360
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1367
+xref: neuronames:1367
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0034707 {source="NCBIBook:NBK10047"} ! differentiating neuroepithelium
@@ -12262,7 +12166,7 @@ subset: pheno_slim
 synonym: "brain marginal zone" RELATED []
 synonym: "neural tube marginal zone" EXACT [MP:0009691]
 xref: EMAPA:17151
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1368
+xref: neuronames:1368
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005162 ! multi cell part structure
 relationship: adjacent_to UBERON:0004061 ! neural tube mantle layer
@@ -12300,7 +12204,6 @@ namespace: uberon
 def: "An anatomical structure that develops (entirely or partially) from the mesoderm." [https://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "mesodermal derivative" EXACT [FBbt:00025998]
-xref: FBbt:00025998
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
@@ -12315,7 +12218,6 @@ namespace: uberon
 def: "An anatomical structure that develops (entirely or partially) from the ectoderm." [https://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "ectodermal deriviative" EXACT [FBbt:00025990]
-xref: FBbt:00025990
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
@@ -12407,7 +12309,7 @@ xref: BTO:0001403
 xref: FBbt:00005317
 xref: FMA:293108
 xref: GAID:1302
-xref: MESH:A16.254.412
+xref: MESH:D005775
 xref: MIAA:0000179
 xref: NCIT:C34057
 xref: NCIT:C34058
@@ -12535,8 +12437,8 @@ def: "The median dorsal longitudinal groove formed in the embryo by the neural p
 xref: AAO:0011071
 xref: EMAPA:35594
 xref: FMA:295624
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1363
 xref: NCIT:C34224
+xref: neuronames:1363
 xref: SCTID:361463007
 xref: UMLS:C0814992 {source="ncithesaurus:Neural_Groove"}
 xref: Wikipedia:Neural_groove
@@ -12554,8 +12456,8 @@ subset: pheno_slim
 synonym: "medullary fold" EXACT [MP:0011256]
 xref: EHDAA2:0001249
 xref: FMA:295618
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1364
 xref: NCIT:C34223
+xref: neuronames:1364
 xref: SCTID:361461009
 xref: UMLS:C0814993 {source="ncithesaurus:Neural_Fold"}
 xref: Wikipedia:Neural_fold
@@ -12705,6 +12607,7 @@ xref: EHDAA:5526
 xref: EMAPA:17082
 xref: HBA:9512
 xref: MA:0000205
+xref: MESH:D054024
 xref: VHOG:0000456
 xref: Wikipedia:Myelencephalon
 is_a: UBERON:0004121 ! ectoderm-derived structure
@@ -12747,8 +12650,8 @@ synonym: "neocortex cortical plate" EXACT []
 xref: BAMS:CTXpl
 xref: DHBA:10515
 xref: EMAPA:32711
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2702
 xref: MBA:695
+xref: neuronames:2702
 xref: PBA:294021914
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0014950 ! layer of developing cerebral cortex
@@ -12780,9 +12683,9 @@ xref: ABA:CTX1
 xref: BTO:0004906
 xref: EMAPA:35255
 xref: FMA:83900
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2444
 xref: MA:0000897
 xref: NCIT:C33137
+xref: neuronames:2444
 xref: NLXANAT:090807
 xref: PBA:294021786
 xref: UMLS:C1709063 {source="ncithesaurus:Molecular_Layer"}
@@ -12812,9 +12715,9 @@ synonym: "neocortex layer II" EXACT [NLXANAT:090808]
 xref: ABA:CTX2
 xref: EMAPA:35256
 xref: FMA:77804
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2446
 xref: MA:0000898
 xref: NCIT:C32557
+xref: neuronames:2446
 xref: NLXANAT:090808
 xref: PBA:294021800
 xref: UMLS:C1517039 {source="ncithesaurus:External_Granular_Layer"}
@@ -12847,9 +12750,9 @@ synonym: "pyramidal layer" RELATED []
 xref: ABA:CTX3
 xref: EMAPA:35257
 xref: FMA:77810
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2448
 xref: MA:0000899
 xref: NCIT:C32571
+xref: neuronames:2448
 xref: NLXANAT:090809
 xref: PBA:294021824
 xref: UMLS:C1517046 {source="ncithesaurus:External_Pyramidal_Cell_Layer"}
@@ -12880,9 +12783,9 @@ synonym: "neocortical layer IV" EXACT [NLXANAT:090810]
 xref: ABA:CTX4
 xref: EMAPA:35258
 xref: FMA:77811
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2449
 xref: MA:0000900
 xref: NCIT:C32844
+xref: neuronames:2449
 xref: NLXANAT:090810
 xref: PBA:294021852
 xref: UMLS:C1512872 {source="ncithesaurus:Internal_Granular_Layer"}
@@ -12922,9 +12825,9 @@ synonym: "neocortical layer V" EXACT [NLXANAT:090811]
 xref: ABA:CTX5
 xref: EMAPA:35259
 xref: FMA:77812
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2450
 xref: MA:0000901
 xref: NCIT:C32653
+xref: neuronames:2450
 xref: NLXANAT:090811
 xref: PBA:294021878
 xref: UMLS:C1517447 {source="ncithesaurus:Ganglionic_Layer"}
@@ -12959,8 +12862,8 @@ synonym: "spindle cell layer" RELATED [NeuroNames:2451]
 xref: ABA:CTX6
 xref: EMAPA:35260
 xref: FMA:77805
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=2451
 xref: MA:0000902
+xref: neuronames:2451
 xref: NLXANAT:090812
 xref: PBA:294021896
 is_a: UBERON:0002301 ! layer of neocortex
@@ -13229,6 +13132,7 @@ synonym: "anterior part of foregut" RELATED []
 synonym: "pharyngeal tube" RELATED []
 xref: FBbt:00005380
 xref: MAT:0000049
+xref: MESH:D010614
 xref: MIAA:0000049
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
@@ -13516,59 +13420,9 @@ relationship: has_potential_to_develop_into UBERON:0003077 ! paraxial mesoderm
 relationship: part_of UBERON:0000307 ! blastula
 
 [Term]
-id: UBERON:0007376
-name: outer epithelium
-namespace: uberon
-def: "The epidermis is the entire outer epithelial layer of an animal, it may be a single layer that produces an extracellular material (e.g. the cuticle of arthropods) or a complex stratified squamous epithelium, as in the case of many vertebrate species[GO]." [GO:0008544]
-subset: grouping_class
-synonym: "epidermis" EXACT [GO:0008544]
-synonym: "epidermis (sensu Metazoa)" EXACT []
-synonym: "hypoderm" RELATED INCONSISTENT [BTO:0000313]
-synonym: "hypodermis" RELATED INCONSISTENT [GO:0008544, WBbt:0005733]
-synonym: "outer epidermal layer" EXACT []
-synonym: "outer epithelial layer" EXACT []
-xref: BSA:0000073
-xref: BTO:0000313
-xref: FBbt:00004993
-xref: HAO:0000298
-xref: TADS:0000109
-xref: WBbt:0005733
-xref: Wikipedia:Epidermis_(zoology)
-is_a: CARO:0000000 ! anatomical entity
-is_a: UBERON:0000483 ! epithelium
-is_a: UBERON:0003102 ! surface structure
-intersection_of: UBERON:0000483 ! epithelium
-intersection_of: bounding_layer_of UBERON:0000468 ! multicellular organism
-intersection_of: develops_from UBERON:0007383 ! enveloping layer of ectoderm
-relationship: bounding_layer_of UBERON:0000468 ! multicellular organism
-relationship: develops_from UBERON:0007383 ! enveloping layer of ectoderm
-property_value: editor_note "this grouping class exists primarily to align with GO - see GO:0008544." xsd:string
-
-[Term]
-id: UBERON:0007383
-name: enveloping layer of ectoderm
-namespace: uberon
-def: "Outermost layer of cells surrounding the embryo." [http://orcid.org/0000-0002-6601-2165]
-subset: efo_slim
-synonym: "enveloping layer" EXACT [ZFIN:ZDB-PUB-961014-576]
-synonym: "EVL" EXACT [ZFA:0000086]
-xref: EFO:0003425
-xref: TAO:0000086
-xref: ZFA:0000086
-is_a: CARO:0000000 ! anatomical entity
-is_a: UBERON:0000490 ! unilaminar epithelium
-is_a: UBERON:0005291 ! embryonic tissue
-relationship: bounding_layer_of UBERON:0000922 ! embryo
-relationship: develops_from UBERON:0000076 ! external ectoderm
-property_value: UBPROP:0000001 "Outermost monolayer of cells surrounding the embryo that become very flattened in the blastula and give rise to the periderm. Sometimes used synonymously with periderm. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000086", ontology="TAO", source="ZFIN:curator"}
-property_value: UBPROP:0000002 "relationship loss: develops_from superficial blastomere (TAO:0001484)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000086", ontology="TAO"}
-property_value: UBPROP:0000008 "Originally this tissue is one cell layer thick but in most vertebrates it soon becomes a two layered structure. The outer layer gives rise to the periderm." xsd:string
-
-[Term]
 id: UBERON:0007503
 name: epithelial vesicle
 namespace: uberon
-alt_id: EHDAA2:0003119
 def: "A closed epithelium with a lumen." [AEO:JB]
 xref: AEO:0000119
 xref: EHDAA2:0003119
@@ -13578,7 +13432,6 @@ is_a: UBERON:0000483 {source="AEO"} ! epithelium
 id: UBERON:0007524
 name: dense mesenchyme tissue
 namespace: uberon
-alt_id: EHDAA2:0003146
 def: "Mesenchyme with little extracellular matrix." [AEO:JB]
 xref: AEO:0000146
 xref: EHDAA2:0003146
@@ -13590,7 +13443,6 @@ relationship: has_part CL:0000057 {source="AEO"} ! fibroblast
 id: UBERON:0007530
 name: migrating mesenchyme population
 namespace: uberon
-alt_id: EHDAA2:0003152
 def: "Mesenchymal cells that are migrating." [AEO:JB]
 xref: AEO:0000152
 xref: EHDAA2:0003152
@@ -13893,8 +13745,8 @@ synonym: "meninges" EXACT [FMA:231572]
 xref: EHDAA2:0004661
 xref: EMAPA:32660
 xref: FMA:231572
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1465
 xref: NCIT:C12349
+xref: neuronames:1465
 xref: SCTID:362879001
 xref: UMLS:C0228116
 xref: Wikipedia:Meninges
@@ -14034,18 +13886,6 @@ relationship: seeAlso UBERON:0007377
 property_value: UBPROP:0000012 "the FMA class specifically refers to ureter" xsd:string {external_ontology="FMA"}
 
 [Term]
-id: UBERON:0013514
-name: space surrounding organism
-namespace: uberon
-def: "The space that surrounds an organism." [https://orcid.org/0000-0002-6601-2165]
-synonym: "external to organism" EXACT []
-synonym: "outside of body" EXACT []
-is_a: UBERON:0000464 ! anatomical space
-intersection_of: UBERON:0000464 ! anatomical space
-intersection_of: surrounds UBERON:0000468 ! multicellular organism
-relationship: surrounds UBERON:0000468 ! multicellular organism
-
-[Term]
 id: UBERON:0013522
 name: subdivision of tube
 namespace: uberon
@@ -14160,6 +14000,7 @@ name: frontal lobe
 namespace: uberon
 def: "Frontal lobe is the anterior-most of five lobes of the cerebral hemisphere. It is bounded by the central sulcus on its posterior border and by the longitudinal cerebral fissure on its medial border." [FMA:61824]
 subset: efo_slim
+subset: human_reference_atlas
 synonym: "frontal cortex" NARROW [FMA:61824]
 synonym: "frontal region" BROAD [FMA:61824]
 synonym: "lobi frontales" EXACT LATIN [NeuroNames:56]
@@ -14175,10 +14016,10 @@ xref: EFO:0000913
 xref: EV:0100167
 xref: FMA:61824
 xref: HBA:4009
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=56 {source="BIRNLEX:928"}
 xref: MAT:0000505
-xref: MESH:A08.186.211.730.885.213.270
+xref: MESH:D005625
 xref: NCIT:C12352
+xref: neuronames:56 {source="BIRNLEX:928"}
 xref: OpenCyc:Mx4rv3OJ8JwpEbGdrcN5Y29ycA
 xref: SCTID:180920004
 xref: UMLS:C0016733 {source="BIRNLEX:928"}
@@ -14188,6 +14029,7 @@ is_a: UBERON:0016526 {source="FMA"} ! lobe of cerebral hemisphere
 relationship: adjacent_to UBERON:0001871 ! temporal lobe
 relationship: adjacent_to UBERON:0001872 ! parietal lobe
 relationship: contributes_to_morphology_of UBERON:0001893 ! telencephalon
+relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "Many species don't have lobes but they do have frontal cortex. Lobe isn't a really well defined term though" xsd:string {source="MM"}
 
 [Term]
@@ -14209,7 +14051,7 @@ synonym: "segment of cerebral cortex" RELATED [BIRNLEX:922]
 xref: BIRNLEX:922
 xref: BTO:0000445
 xref: FMA:61823
-xref: http://braininfo.rprc.washington.edu/centraldirectory.aspx?ID=1210
+xref: neuronames:1210
 xref: SCTID:272632001
 is_a: UBERON:0000064 ! organ part
 relationship: part_of UBERON:0001869 ! cerebral hemisphere
@@ -14281,12 +14123,14 @@ relationship: has_potential_to_develop_into UBERON:0001016 ! nervous system
 id: UBERON:0019264
 name: gray matter of forebrain
 namespace: uberon
+subset: human_reference_atlas
 xref: DHBA:10157
 xref: FMA:268608
 is_a: UBERON:0003528 ! brain gray matter
 intersection_of: UBERON:0002020 ! gray matter
 intersection_of: part_of UBERON:0001890 ! forebrain
 relationship: part_of UBERON:0001890 ! forebrain
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: UBERON:0019269
@@ -14562,6 +14406,23 @@ domain: BFO:0000040 ! material entity
 range: BFO:0000004 ! independent continuant
 holds_over_chain: located_in part_of
 inverse_of: contains ! contains
+
+[Typedef]
+id: RO:0002000
+name: 2D boundary of
+name: boundary_of
+def: "a relation between a 2D immaterial entity (the boundary) and a material entity, in which the boundary delimits the material entity" []
+property_value: editor_note "A 2D boundary may have holes and gaps, but it must be a single connected entity, not an aggregate of several disconnected parts." xsd:string
+property_value: editor_note "Although the boundary is two-dimensional, it exists in three-dimensional space and thus has a 3D shape." xsd:string
+property_value: IAO:0000112 "the surface of my skin is a 2D boundary of my body" xsd:string
+property_value: IAO:0000118 "2D_boundary_of" xsd:string
+property_value: IAO:0000118 "boundary of" xsd:string
+property_value: IAO:0000118 "is 2D boundary of" xsd:string
+property_value: IAO:0000118 "is boundary of" xsd:string
+property_value: IAO:0000118 "surface of" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: RO:0002323 ! mereotopologically related to
+inverse_of: has_boundary ! has_boundary
 
 [Typedef]
 id: RO:0002006
@@ -14844,6 +14705,20 @@ is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
 
 [Typedef]
+id: RO:0002203
+name: develops into
+def: "inverse of develops from" []
+subset: RO:0002259
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
+property_value: IAO:0000117 "Terry Meehan" xsd:string
+is_transitive: true
+is_a: has_potential_to_develop_into ! has potential to develop into
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002388 ! has potential to directly develop into
+
+[Typedef]
 id: RO:0002206
 name: expressed in
 def: "x expressed in y if and only if there is a gene expression process (GO:0010467) that occurs in y, and one of the following holds: (i) x is a gene, and x is transcribed into a transcript as part of the gene expression process (ii) x is a transcript, and the transcription of x is part of the gene expression process (iii) x is a mature gene product such as a protein, and x was translated or otherwise processes from a transcript that was transcribed as part of this gene expression process" []
@@ -14863,7 +14738,7 @@ def: "inverse of directly develops from" []
 subset: RO:0002259
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000118 "developmental precursor of" xsd:string
-is_a: develops_into ! develops_into
+is_a: RO:0002203 ! develops into
 
 [Typedef]
 id: RO:0002222
@@ -14879,6 +14754,17 @@ domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
 
 [Typedef]
+id: RO:0002255
+name: developmentally contributes to
+def: "inverse of has developmental contribution from" []
+subset: RO:0002259
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+holds_over_chain: RO:0002203 part_of
+is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
+is_a: RO:0002286 ! developmentally succeeded by
+
+[Typedef]
 id: RO:0002257
 name: developmentally induces
 def: "Inverse of developmentally induced by" []
@@ -14886,6 +14772,20 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002286 ! developmentally succeeded by
 is_a: RO:0002386 ! has potential to developmentally induce
+
+[Typedef]
+id: RO:0002258
+name: developmentally preceded by
+def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
+comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
+property_value: editor_note "false" xsd:boolean
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
+domain: BFO:0000002 ! continuant
+range: BFO:0000002 ! continuant
+is_a: RO:0002324 ! developmentally related to
+inverse_of: RO:0002286 ! developmentally succeeded by
 
 [Typedef]
 id: RO:0002263
@@ -14987,6 +14887,15 @@ transitive_over: has_part ! has part
 transitive_over: RO:0002017 ! has component activity
 
 [Typedef]
+id: RO:0002329
+name: part of structure that is capable of
+def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "false" xsd:boolean
+holds_over_chain: part_of capable_of {http://purl.obolibrary.org/obo/RO_0002581="true"}
+is_a: functionally_related_to ! functionally related to
+
+[Typedef]
 id: RO:0002330
 name: genomically related to
 def: "holds between two entities when some genome-level process such as gene expression is involved. This includes transcriptional, spliceosomal events. These relations can be used between either macromolecule entities (such as regions of nucleic acid) or between their abstract informational counterparts." []
@@ -15025,6 +14934,18 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is a grouping relation." xsd:string
 domain: BFO:0000015 ! process
 range: BFO:0000002 ! continuant
+
+[Typedef]
+id: RO:0002350
+name: member of
+def: "is member of is a mereological relation between a item and a collection." []
+property_value: IAO:0000112 "An organism that is a member of a population of organisms" xsd:string
+property_value: IAO:0000118 "is member of" xsd:string
+property_value: IAO:0000118 "member part of" xsd:string
+property_value: IAO:0000119 "SIO" xsd:string
+property_value: RO:0001900 RO:0001901
+is_a: part_of ! part_of
+inverse_of: has_member ! has member
 
 [Typedef]
 id: RO:0002354
@@ -15080,6 +15001,14 @@ def: "x has potential to developmentally induce y iff x developmentally induces 
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002384 ! has developmental potential involving
+
+[Typedef]
+id: RO:0002388
+name: has potential to directly develop into
+def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
+property_value: IAO:0000114 IAO:0000428
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
 id: RO:0002410
@@ -15602,11 +15531,12 @@ is_a: RO:0002104 ! has plasma membrane part
 
 [Typedef]
 id: RO:0017001
-name: utilizes
-def: "X utilizes Y means X and Y are material entities, and X is capable of some process P that has input Y." []
+name: device utilizes material
+def: "X device utilizes material Y means X and Y are material entities, and X is capable of some process P that has input Y." []
+synonym: "utilizes" BROAD []
 property_value: IAO:0000112 "A diagnostic testing device utilizes a specimen." xsd:string
-property_value: IAO:0000117 "Asiyah Lin" xsd:string
-property_value: IAO:0000117 "https://orcid.org/0000-0001-9625-1899 Bill Duncan" xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0001-9625-1899 xsd:string
+property_value: IAO:0000117 https://orcid.org/0000-0003-2620-0345 xsd:string
 property_value: IAO:0000232 "A diagnostic testing device utilizes a specimen means that the diagnostic testing device is capable of an assay, and this assay a specimen as its input." xsd:string
 property_value: IAO:0000232 "See github ticket https://github.com/oborel/obo-relations/issues/497" xsd:string
 holds_over_chain: capable_of has_input
@@ -15636,11 +15566,9 @@ creation_date: 2020-06-08T17:21:33Z
 [Typedef]
 id: adjacent_to
 name: adjacent to
-name: adjacent_to
 namespace: external
 namespace: uberon
 def: "x adjacent to y if and only if x and y share a boundary." []
-def: "x adjacent_to y iff: x and y share a boundary." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15655,18 +15583,13 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0001900 RO:0001901
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
-is_symmetric: true
 is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
 id: anterior_to
-name: anterior_to
+name: anterior to
 namespace: uberon
-def: "x anterior_to y iff x is further along the antero-posterior axis than y, towards the head. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail: bearer." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000096
-property_value: dc-contributor https://orcid.org/0000-0002-6601-2165
-is_transitive: true
-creation_date: 2009-07-31T02:15:46Z
 
 [Typedef]
 id: anteriorly_connected_to
@@ -15674,29 +15597,25 @@ name: anteriorly connected to
 namespace: uberon
 def: "x anteriorly_connected_to y iff the anterior part of x is connected to y. i.e. x connected_to y and x posterior_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 is_a: connected_to ! connected to
-is_a: posterior_to ! posterior_to
+is_a: posterior_to ! posterior to
 is_a: transitively_anteriorly_connected_to ! transitively anteriorly connected to
 
 [Typedef]
 id: attaches_to
 name: attached to
-name: attaches_to
 namespace: uberon
 def: "a is attached to b if and only if a and b are discrete objects or object parts, and there are physical connections between a and b such that a force pulling a will move b, or a force pulling b will move a" []
 subset: ro-eco
 xref: RO:0002371
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000589 "attached to (anatomical structure to anatomical structure)" xsd:string
-property_value: seeAlso FMA:85990
 is_symmetric: true
 is_a: attaches_to_part_of ! attached to part of
 is_a: connected_to ! connected to
-is_a: connects ! connects
 
 [Typedef]
 id: attaches_to_part_of
 name: attached to part of
-name: attaches_to_part_of
 namespace: uberon
 def: "a is attached to part of b if a is attached to b, or a is attached to some p, where p is part of b." []
 xref: RO:0002177
@@ -15706,14 +15625,12 @@ range: CARO:0000003 ! connected anatomical structure
 holds_over_chain: attaches_to part_of {http://purl.obolibrary.org/obo/RO_0002582="true"}
 is_a: RO:0002323 ! mereotopologically related to
 is_a: RO:0002567 ! biomechanically related to
-equivalent_to_chain: attaches_to part_of ! part_of
 
 [Typedef]
 id: bearer_of
 name: bearer of
 name: has characteristic
 namespace: external
-namespace: uberon
 def: "Inverse of characteristic_of" []
 xref: RO:0000053
 property_value: editor_note "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist." xsd:string
@@ -15727,32 +15644,12 @@ range: BFO:0000020 ! specifically dependent continuant
 is_inverse_functional: true
 
 [Typedef]
-id: boundary_of
-name: 2D boundary of
-name: boundary of
-name: boundary_of
-namespace: uberon
-def: "a relation between a 2D immaterial entity (the boundary) and a material entity, in which the boundary delimits the material entity" []
-xref: RO:0002000
-property_value: editor_note "A 2D boundary may have holes and gaps, but it must be a single connected entity, not an aggregate of several disconnected parts." xsd:string
-property_value: editor_note "Although the boundary is two-dimensional, it exists in three-dimensional space and thus has a 3D shape." xsd:string
-property_value: IAO:0000112 "the surface of my skin is a 2D boundary of my body" xsd:string
-property_value: IAO:0000118 "2D_boundary_of" xsd:string
-property_value: IAO:0000118 "boundary of" xsd:string
-property_value: IAO:0000118 "is 2D boundary of" xsd:string
-property_value: IAO:0000118 "is boundary of" xsd:string
-property_value: RO:0001900 RO:0001901
-is_a: RO:0002323 ! mereotopologically related to
-inverse_of: has_boundary ! has_boundary
-
-[Typedef]
 id: bounding_layer_of
 name: bounding layer of
 namespace: external
 namespace: uberon
 def: "X outer_layer_of Y iff:\n. X :continuant that bearer_of some PATO:laminar\n. X part_of Y\n. exists Z :surface\n. X has_boundary Z\n. Z boundary_of Y\n\nhas_boundary: http://purl.obolibrary.org/obo/RO_0002002\nboundary_of: http://purl.obolibrary.org/obo/RO_0002000" []
 comment: A relationship that applies between a continuant and its outer, bounding layer.  Examples include the relationship between a multicellular organism and its integument, between an animal cell and its plasma membrane, and between a membrane bound organelle and its outer/bounding membrane.
-comment: A relationship that applies between a continuant and its outer, bounding layer. Examples include the relationship between a multicellular organism and its integument, between an animal cell and its plasma membrane, and between a membrane bound organelle and its outer/bounding membrane.
 subset: ro-eco
 xref: RO:0002007
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
@@ -15762,16 +15659,13 @@ is_a: part_of ! part_of
 [Typedef]
 id: branching_part_of
 name: branching part of
-name: branching_part_of
 namespace: uberon
 def: "x is a branching part of y if and only if x is part of y and x is connected directly or indirectly to the main stem of y" []
 subset: ro-eco
 xref: RO:0002380
-property_value: editor_note "we need to check if FMA branch_of implies part_of. the relation we intend to use here should - for example, see vestibulocochlear nerve" xsd:string
 property_value: IAO:0000112 "In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is a (direct) branching part of T. B1-1, B1-2, and B1-3 are also branching parts of T, but these are considered indirect branching parts as they do not directly connect to the main stem S" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: seeAlso FMA:85994 xsd:string
-property_value: seeAlso FMA:85994
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/2212
 is_a: part_of ! part_of
 is_a: RO:0002375 ! in branching relationship with
@@ -15820,7 +15714,7 @@ xref: RO:0002404
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: causally_downstream_of_or_within ! causally downstream of or within
-is_a: preceded_by ! preceded_by
+is_a: preceded_by ! preceded by
 inverse_of: causally_upstream_of ! causally upstream of
 
 [Typedef]
@@ -15912,7 +15806,6 @@ id: composed_primarily_of
 name: composed primarily of
 namespace: uberon
 def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
-def: "x composed_primarily_of y iff: more than half of the mass of x is made from parts of y." []
 subset: ro-eco
 xref: RO:0002473
 property_value: IAO:0000112 "'otolith organ' SubClassOf 'composed primarily of' some 'calcium carbonate'" xsd:string
@@ -15934,14 +15827,11 @@ id: connected_to
 name: connected to
 namespace: uberon
 def: "a is connected to b if and only if a and b are discrete structure, and there exists some connecting structure c, such that c connects a and b" []
-def: "Binary relationship: x connected_to y if and only if there exists some z such that z connects x and y in a ternary connected_to(x,y,z) relationship." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
-comment: Connection does not imply overlaps.
 xref: RO:0002170
 property_value: IAO:0000112 "a 'toe distal phalanx bone' that is connected to a 'toe medial phalanx bone' (an interphalangeal joint *connects* these two bones)." xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern xsd:anyURI
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern xsd:anyURI
-property_value: seeAlso SIO:000652
 is_a: RO:0002323 ! mereotopologically related to
 is_a: transitively_connected_to ! transitively_connected to
 
@@ -15949,10 +15839,8 @@ is_a: transitively_connected_to ! transitively_connected to
 id: connects
 name: connects
 namespace: uberon
-def: "Binary relationship: z connects x if and only if there exists some y such that z connects x and y in a ternary connected_to(x,y,z) relationship." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 def: "c connects a if and only if there exist some b such that a and b are similar parts of the same system, and c connects b, specifically, c connects a with b. When one structure connects two others it unites some aspect of the function or role they play within the system." []
 xref: RO:0002176
-property_value: editor_note "this is currently used for both structural relationships (such as between a valve and the chamber it connects) and abstract relationships (anatomical lines and the entities they connect)" xsd:string
 property_value: IAO:0000112 "a 'toe distal phalanx bone' that is connected to a 'toe medial phalanx bone' (an interphalangeal joint *connects* these two bones)." xsd:string
 property_value: IAO:0000112 "The M8 connects Glasgow and Edinburgh" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
@@ -15983,7 +15871,6 @@ property_value: isDefinedBy http://purl.obolibrary.org/obo/bfo.owl
 [Typedef]
 id: continuous_with
 name: continuous with
-name: continuous_with
 namespace: uberon
 def: "X continuous_with Y if and only if X and Y share a fiat boundary." []
 xref: RO:0002150
@@ -16015,13 +15902,6 @@ xref: http://purl.org/dc/terms/contributor
 is_metadata_tag: true
 
 [Typedef]
-id: dc-creator
-name: creator
-namespace: uberon
-xref: http://purl.org/dc/elements/1.1/creator
-is_metadata_tag: true
-
-[Typedef]
 id: dc-description
 name: description
 namespace: uberon
@@ -16036,6 +15916,13 @@ xref: http://purl.org/dc/elements/1.1/title
 is_metadata_tag: true
 
 [Typedef]
+id: dcterms-date
+name: date
+namespace: uberon
+xref: http://purl.org/dc/terms/date
+is_metadata_tag: true
+
+[Typedef]
 id: dcterms-license
 name: license
 namespace: uberon
@@ -16044,10 +15931,9 @@ is_metadata_tag: true
 
 [Typedef]
 id: deep_to
-name: deep_to
+name: deep to
 namespace: uberon
 xref: BSPO:0000107
-is_transitive: true
 
 [Typedef]
 id: depicted_by
@@ -16057,27 +15943,10 @@ xref: http://xmlns.com/foaf/0.1/depicted_by
 is_metadata_tag: true
 
 [Typedef]
-id: developmentally_contributes_to
-name: developmentally contributes to
-name: developmentally_contributes_to
-namespace: uberon
-def: "inverse of has developmental contribution from" []
-subset: RO:0002259
-xref: RO:0002255
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-holds_over_chain: develops_into part_of
-is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
-is_a: RO:0002286 ! developmentally succeeded by
-
-[Typedef]
 id: developmentally_induced_by
 name: developmentally induced by
-name: developmentally_induced_by
 namespace: uberon
-def: "t1 developmentally_induced_by t2 if there is a process of organ induction (GO:0001759) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor tissue type T to T', where T' develops_from T." [GO:0001759]
 def: "t1 induced_by t2 if there is a process of developmental induction (GO:0031128) with t1 and t2 as interacting participants. t2 causes t1 to change its fate from a precursor anatomical structure type T to T', where T' develops_from T" []
-comment: sources for developmentally_induced_by relationships in Uberon: Developmental Biology, Gilbert, 8th edition, figure 6.5(F)
 xref: RO:0002256
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -16090,29 +15959,12 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
 property_value: IAO:0000232 "We place this under 'developmentally preceded by'. This placement should be examined in the context of reciprocal inductions[cjm]" xsd:string
 domain: CARO:0000003 ! connected anatomical structure
 range: CARO:0000003 ! connected anatomical structure
-is_a: developmentally_preceded_by ! developmentally preceded by
+is_a: RO:0002258 ! developmentally preceded by
 inverse_of: RO:0002257 ! developmentally induces
-
-[Typedef]
-id: developmentally_preceded_by
-name: developmentally preceded by
-namespace: uberon
-def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
-comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
-xref: RO:0002258
-property_value: editor_note "false" xsd:boolean
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000232 "In general you should not use this relation to make assertions - use one of the more specific relations below this one" xsd:string
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
-is_a: RO:0002324 ! developmentally related to
-inverse_of: RO:0002286 ! developmentally succeeded by
 
 [Typedef]
 id: developmentally_replaces
 name: developmentally replaces
-name: developmentally_replaces
 namespace: uberon
 def: "x developmentally replaces y if and only if there is some developmental process that causes x to move or to cease to exist, and for the site that was occupied by x to become occupied by y, where y either comes into existence in this site or moves to this site from somewhere else" []
 xref: RO:0002285
@@ -16120,12 +15972,11 @@ property_value: editor_note "This relation is intended for cases such as when we
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000118 "replaces" xsd:string
-is_a: developmentally_preceded_by ! developmentally preceded by
+is_a: RO:0002258 ! developmentally preceded by
 
 [Typedef]
 id: develops_from
 name: develops from
-name: develops_from
 namespace: uberon
 def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
 comment: This is the transitive form of the develops from relation
@@ -16138,14 +15989,13 @@ property_value: IAO:0000117 "Terry Meehan" xsd:string
 domain: BFO:0000004 ! independent continuant
 range: BFO:0000004 ! independent continuant
 is_transitive: true
-is_a: developmentally_preceded_by ! developmentally preceded by
 is_a: has_developmental_contribution_from ! has developmental contribution from
-inverse_of: develops_into ! develops_into
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002203 ! develops into
 
 [Typedef]
 id: develops_from_part_of
 name: develops from part of
-name: develops_from_part_of
 namespace: uberon
 def: "x develops from part of y if and only if there exists some z such that x develops from z and z is part of y" []
 xref: RO:0002225
@@ -16157,10 +16007,8 @@ is_a: develops_from ! develops from
 [Typedef]
 id: develops_in
 name: develops in
-name: develops_in
 namespace: uberon
 def: "x develops_in y if x is located in y whilst x is developing" []
-comment: This relation take from EHDAA2 - precise semantics yet to be defined
 xref: RO:0002226
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -16168,29 +16016,11 @@ property_value: IAO:0000119 "EHDAA2" xsd:string
 property_value: IAO:0000119 "Jonathan Bard, EHDAA2" xsd:string
 domain: CARO:0000000 ! anatomical entity
 holds_over_chain: directly_develops_from located_in
-is_a: developmentally_preceded_by ! developmentally preceded by
-
-[Typedef]
-id: develops_into
-name: develops into
-name: develops_into
-namespace: uberon
-def: "inverse of develops from" []
-subset: RO:0002259
-xref: RO:0002203
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: IAO:0000117 "Terry Meehan" xsd:string
-is_transitive: true
-is_a: has_potential_to_develop_into ! has potential to develop into
-is_a: has_potential_to_directly_develop_into ! has potential to directly develop into
-is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002258 ! developmentally preceded by
 
 [Typedef]
 id: directly_develops_from
 name: directly develops from
-name: directly_develops_from
 namespace: uberon
 def: "Candidate definition: x directly_develops from y if and only if there exists some developmental process (GO:0032502) p such that x and y both participate in p, and x is the output of p and y is the input of p, and a substantial portion of the matter of x comes from y, and the start of x is coincident with or after the end of y." []
 comment: TODO - add child relations from DOS
@@ -16206,9 +16036,8 @@ inverse_of: RO:0002210 ! directly develops into
 
 [Typedef]
 id: distal_to
-name: distal_to
+name: distal to
 namespace: uberon
-def: "x distal_to y iff x is further along the proximo-distal axis than y, towards the appendage tip. A proximo-distal axis extends from tip of an appendage (distal) to where it joins the body (proximal)." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000097
 
 [Typedef]
@@ -16217,35 +16046,27 @@ name: distally connected to
 namespace: uberon
 def: "x distally_connected_to y iff the distal part of x is connected to y. i.e. x connected_to y and x proximal_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 is_a: connected_to ! connected to
-is_a: proximal_to ! proximal_to
+is_a: proximal_to ! proximal to
 is_a: transitively_distally_connected_to ! transitively distally connected to
 inverse_of: proximally_connected_to ! proximally connected to
 
 [Typedef]
 id: distalmost_part_of
-name: distalmost_part_of
+name: distalmost part of
 namespace: uberon
-def: "X distalmost_part_of Y <=> X is part_of Y and X is adjacent_to the distal boundary of Y." [https://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001108
-is_a: in_distal_side_of ! in_distal_side_of
 
 [Typedef]
 id: dorsal_to
-name: dorsal_to
+name: dorsal to
 namespace: uberon
-def: "x dorsal_to y iff x is further along the dorso-ventral axis than y, towards the back. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly)." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000098
-is_transitive: true
-inverse_of: ventral_to ! ventral_to
 
 [Typedef]
 id: drains
 name: drains
 namespace: uberon
 def: "Relation between an collecting structure and another structure, where the collecting structure acts as a conduit channeling fluid, substance or energy away from the other structure." []
-comment: source: Wikipedia
-synonym: "drains blood from" EXACT []
-synonym: "drains from" EXACT []
 xref: RO:0002179
 property_value: editor_note "Individual ontologies should provide their own constraints on this abstract relation. For example, in the realm of anatomy this should hold between a vein and an anatomical structure" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
@@ -16263,9 +16084,7 @@ id: ends
 name: ends
 namespace: uberon
 def: "inverse of ends with" []
-def: "Relation between occurrents, shares an end boundary with." [Allen:starts, https://orcid.org/0000-0002-6601-2165, ZFS:finishes]
 subset: ro-eco
-synonym: "finishes" EXACT []
 xref: RO:0002229
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -16321,7 +16140,6 @@ transitive_over: simultaneous_with ! simultaneous with
 id: existence_ends_with
 name: existence ends with
 namespace: uberon
-def: "Relation between continuant and occurrent, such that c ceases to exist at the end of p." [https://orcid.org/0000-0002-6601-2165]
 def: "x existence ends with y if and only if the time point at which x ends is equivalent to the time point at which y ends. Formally: x existence ends with y iff ω(x) = ω(y)." []
 comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
 xref: RO:0002493
@@ -16344,9 +16162,7 @@ is_a: existence_starts_during ! existence starts during
 id: existence_starts_during
 name: existence starts during
 namespace: uberon
-def: "Relation between continuant c and occurrent s, such that every instance of c comes into existing during some s." [https://orcid.org/0000-0002-6601-2165]
 def: "x existence starts during y if and only if the time point at which x starts is after or equivalent to the time point at which y starts and before or equivalent to the time point at which y ends. Formally: x existence starts during y iff α(x) >= α(y) & α(x) <= ω(y)." []
-synonym: "begins_to_exist_during" EXACT []
 xref: RO:0002488
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: existence_starts_during_or_after ! existence starts during or after
@@ -16361,18 +16177,17 @@ def: "x existence starts during or after y if and only if the time point at whic
 comment: The relations here were created based on work originally by Fabian Neuhaus and David Osumi-Sutherland. The work has not yet been vetted and errors in definitions may have occurred during transcription.
 xref: RO:0002496
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-holds_over_chain: developmentally_preceded_by existence_starts_during_or_after
 holds_over_chain: part_of existence_starts_during_or_after
+holds_over_chain: RO:0002258 existence_starts_during_or_after
 is_a: RO:0002487 ! relation between physical entity and a process or stage
 transitive_over: part_of ! part_of
-transitive_over: preceded_by ! preceded_by
+transitive_over: preceded_by ! preceded by
 transitive_over: simultaneous_with ! simultaneous with
 
 [Typedef]
 id: existence_starts_with
 name: existence starts with
 namespace: uberon
-def: "Relation between continuant and occurrent, such that c comes into existence at the start of p." [https://orcid.org/0000-0002-6601-2165]
 def: "x starts ends with y if and only if the time point at which x starts is equivalent to the time point at which y starts. Formally: x existence starts with y iff α(x) = α(y)." []
 xref: RO:0002489
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -16404,7 +16219,6 @@ property_value: IAO:0000232 "This is a grouping relation that collects relations
 [Typedef]
 id: has_boundary
 name: has 2D boundary
-name: has boundary
 name: has_boundary
 namespace: uberon
 def: "a relation between a material entity and a 2D immaterial entity (the boundary), in which the boundary delimits the material entity" []
@@ -16466,8 +16280,8 @@ domain: CARO:0000000 ! anatomical entity
 range: CARO:0000000 ! anatomical entity
 holds_over_chain: has_part develops_from
 is_transitive: true
-is_a: developmentally_preceded_by ! developmentally preceded by
-inverse_of: developmentally_contributes_to ! developmentally contributes to
+is_a: RO:0002258 ! developmentally preceded by
+inverse_of: RO:0002255 ! developmentally contributes to
 
 [Typedef]
 id: has_end_location
@@ -16531,48 +16345,37 @@ is_a: has_part ! has part
 [Typedef]
 id: has_muscle_antagonist
 name: has muscle antagonist
-name: has_muscle_antagonist
 namespace: uberon
-def: "m1 has_muscle_antagonist m2 iff m1 acts in opposition to m2, and m2 is responsible for returning the structure to its initial position." [Wikipedia:Antagonist_(muscle)]
 def: "m1 has_muscle_antagonist m2 iff m1 has_muscle_insertion s, m2 has_muscle_insection s, m1 acts in opposition to m2, and m2 is responsible for returning the structure to its initial position." []
 xref: RO:0002568
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 Wikipedia:Antagonist_(muscle) xsd:string
-property_value: seeAlso dbpprop:antagonist
 is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
 id: has_muscle_insertion
 name: has muscle insertion
-name: has_muscle_insertion
 namespace: uberon
 def: "m has_muscle_insertion s iff m is attaches_to s, and it is the case that when m contracts, s moves. Insertions are usually connections of muscle via tendon to bone." []
-def: "m has_muscle_insertion s iff m is attaches_to s, and it is the case that when m contracts, s moves. Insertions are usually connections of muscle via tendon to bone." [Wikipedia:Insertion_(anatomy)]
-comment: The insertion is the point of attachment of a muscle that moves the most when the muscle shortens, or the most distal end of limb muscles
 xref: RO:0002373
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 Wikipedia:Insertion_(anatomy) xsd:string
-property_value: seeAlso dbpprop:insertion
 property_value: seeAlso http://dbpedia.org/property/insertion
 domain: CARO:0000003 {http://purl.obolibrary.org/obo/IAO_0000116="We need to import uberon muscle into RO to use as a stricter domain constraint"} ! connected anatomical structure
-is_a: attaches_to ! attaches_to
+is_a: attaches_to ! attached to
 is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
 id: has_muscle_origin
 name: has muscle origin
-name: has_muscle_origin
 namespace: uberon
 def: "m has_muscle_origin s iff m is attached_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to." []
-def: "m has_muscle_origin s iff m is attaches_to s, and it is the case that when m contracts, s does not move. The site of the origin tends to be more proximal and have greater mass than what the other end attaches to." [Wikipedia:Insertion_(anatomy)#Muscles]
-comment: The origin is the end of a muscle that attaches to the more fixed part of the skeleton, which is the proximal end in limb muscles
 xref: RO:0002372
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 Wikipedia:Insertion_(anatomy) xsd:string
-property_value: seeAlso dbpprop:origin
 property_value: seeAlso http://dbpedia.org/property/origin
 domain: CARO:0000003 {comment="We need to import uberon muscle to create a stricter domain constraint"} ! connected anatomical structure
-is_a: attaches_to ! attaches_to
+is_a: attaches_to ! attached to
 is_a: RO:0002567 ! biomechanically related to
 
 [Typedef]
@@ -16662,7 +16465,6 @@ id: has_potential_to_develop_into
 name: has potential to develop into
 namespace: uberon
 def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y" []
-def: "x has the potential to develop into y iff x develops into y or if x is capable of developing into y." []
 xref: RO:0002387
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -16673,22 +16475,10 @@ id: has_potential_to_developmentally_contribute_to
 name: has potential to developmentally contribute to
 namespace: uberon
 def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y" []
-def: "x has potential to developmentrally contribute to y iff x developmentally contributes to y or x is capable of developmentally contributing to y." []
 xref: RO:0002385
 property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: RO:0002384 ! has developmental potential involving
-
-[Typedef]
-id: has_potential_to_directly_develop_into
-name: has potential to directly develop into
-namespace: uberon
-def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y" []
-def: "x has potential to directly develop into y iff x directly develops into y or x is capable of directly developing into y." []
-xref: RO:0002388
-property_value: IAO:0000114 IAO:0000428
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
 id: has_primary_input
@@ -16752,9 +16542,6 @@ id: has_skeleton
 name: has skeleton
 namespace: uberon
 def: "A relation between a segment or subdivision of an organism and the maximal subdivision of material entities that provides structural support for that segment or subdivision." []
-def: "A relation between a subdivision of an organism and the single subdivision of skeleton that provides structural support for that subdivision." [http://orcid.org/0000-0002-6601-2165]
-synonym: "has sekeletal support" RELATED []
-synonym: "has supporting framework" RELATED []
 xref: RO:0002551
 property_value: IAO:0000112 "Forelimb SubClassOf has_skeleton some 'Forelimb skeleton'" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -16811,7 +16598,6 @@ transitive_over: part_of ! part_of
 
 [Typedef]
 id: homologous_to
-name: homologous_to
 name: shares ancestor with
 namespace: uberon
 def: "two individual entities d1 and d2 stand in a shares_ancestor_with relation if and only if there exists some a such that d1 derived_by_descent_from a and d2 derived_by_descent_from a." []
@@ -16828,13 +16614,10 @@ id: immediate_transformation_of
 name: immediate transformation of
 namespace: uberon
 def: "x immediate transformation of y iff x immediately succeeds y temporally at a time boundary t, and all of the matter present in x at t is present in y at t, and all the matter in y at t is present in x at t" []
-synonym: "direct_transformation_of" EXACT [https://orcid.org/0000-0002-6601-2165]
-synonym: "immediately transforms from" EXACT [SIO:000658]
 xref: RO:0002495
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0002575 RO:0002494
-property_value: seeAlso SIO:000658
-is_a: directly_develops_from ! directly_develops_from
+is_a: directly_develops_from ! directly develops from
 is_a: transformation_of ! transformation of
 
 [Typedef]
@@ -16862,12 +16645,9 @@ is_a: immediately_precedes ! immediately_precedes
 
 [Typedef]
 id: immediately_deep_to
-name: immediately_deep_to
+name: immediately deep to
 namespace: uberon
-def: "This relation holds when both the deep_to and ajdacent_to relationship similarly hold." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001107
-is_a: adjacent_to ! adjacent_to
-is_a: deep_to ! deep_to
 
 [Typedef]
 id: immediately_preceded_by
@@ -16875,19 +16655,12 @@ name: immediately preceded by
 name: immediately_preceded_by
 namespace: external
 namespace: uberon
-def: "X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)." []
 comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
-synonym: "directly preceded by" EXACT []
-synonym: "is directly preceded by" EXACT []
-synonym: "is immediately preceded by" EXACT [SIO:000251]
-synonym: "starts_at_end_of" EXACT []
 xref: RO:0002087
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "starts_at_end_of" xsd:string
-property_value: seeAlso SIO:000251
-property_value: UBPROP:0000001 "A non-transitive temporal relation in which one process immediately precedes another process, such that there is no interval of time between the two processes[SIO:000251]." xsd:string {source="SIO:000251"}
 holds_over_chain: starts_with ends_with
-is_a: preceded_by ! preceded_by
+is_a: preceded_by ! preceded by
 inverse_of: immediately_precedes ! immediately_precedes
 
 [Typedef]
@@ -16907,94 +16680,63 @@ is_a: precedes ! precedes
 
 [Typedef]
 id: immediately_superficial_to
-name: immediately_superficial_to
+name: immediately superficial to
 namespace: uberon
 xref: BSPO:0015014
-is_a: adjacent_to ! adjacent_to
-is_a: superficial_to ! superficial_to
 
 [Typedef]
 id: in_anterior_side_of
-name: in_anterior_side_of
+name: in anterior side of
 namespace: uberon
-def: "X anterior_side_of Y <=> if Y is subdivided into two anterior and posterior portions, X is part_of the anterior portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000123
-is_a: part_of ! part_of
 
 [Typedef]
 id: in_deep_part_of
-name: in_deep_part_of
+name: in deep part of
 namespace: uberon
-def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the deep portion." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001101
-is_a: part_of ! part_of
-
-[Typedef]
-id: in_distal_side_of
-name: in_distal_side_of
-namespace: uberon
-def: "X distal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the distal portion." [BSPO:PATO_mtg_2009]
-xref: BSPO:0000125
-is_a: part_of ! part_of
 
 [Typedef]
 id: in_dorsal_side_of
-name: in_dorsal_side_of
+name: in dorsal side of
 namespace: uberon
 xref: BSPO:0015101
-is_a: part_of ! part_of
 
 [Typedef]
 id: in_lateral_side_of
-name: in_lateral_side_of
+name: in lateral side of
 namespace: uberon
-def: "X in_lateral_side_of Y <=> if X is in_left_side_of Y or X is in_right_side_of Y. X is often, but not always a paired structure." [https://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000126
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
-is_a: part_of ! part_of
 
 [Typedef]
 id: in_left_side_of
-name: in_left_side_of
+name: in left side of
 namespace: uberon
-def: "X in_left_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the left portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000120
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
-is_a: in_lateral_side_of ! in_lateral_side_of
 
 [Typedef]
 id: in_posterior_side_of
-name: in_posterior_side_of
+name: in posterior side of
 namespace: uberon
-def: "X posterior_side_of Y <=> if Y is subdivided into two anterior and posterior portions, X is part_of the posterior portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000122
-is_a: part_of ! part_of
 
 [Typedef]
 id: in_proximal_side_of
-name: in_proximal_side_of
+name: in proximal side of
 namespace: uberon
-def: "X proximal_side_of Y <=> if Y is subdivided into distal and proximal portions, X is part_of the proximal portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000124
-is_a: part_of ! part_of
-inverse_of: in_distal_side_of ! in_distal_side_of
 
 [Typedef]
 id: in_right_side_of
-name: in_right_side_of
+name: in right side of
 namespace: uberon
-def: "X in_right_side_of Y <=> if Y is subdivided into left and right portions, X is part_of the right portion." [BSPO:PATO_mtg_2009]
 xref: BSPO:0000121
-property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Modeling-paired-structures-Design-Pattern xsd:anyURI
-is_a: in_lateral_side_of ! in_lateral_side_of
 
 [Typedef]
 id: in_superficial_part_of
-name: in_superficial_part_of
+name: in superficial part of
 namespace: uberon
-def: "X superficial_part_of Y <=> if Y is subdivided into two superficial and deep portions, X is part_of the superficial portion." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001100
-is_a: part_of ! part_of
 
 [Typedef]
 id: in_taxon
@@ -17049,16 +16791,12 @@ is_transitive: true
 id: innervated_by
 name: innervated_by
 namespace: uberon
-comment: http://code.google.com/p/obo-relations/issues/detail?id=6
-synonym: "nerve supply" EXACT [FMA:85999]
 xref: RO:0002005
 property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613 xsd:anyURI
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
-property_value: seeAlso dbprop:nerve
-property_value: seeAlso FMA:85999
 domain: CARO:0000003 ! connected anatomical structure
 inverse_of: innervates ! innervates
-transitive_over: branching_part_of ! branching_part_of
+transitive_over: branching_part_of ! branching part of
 
 [Typedef]
 id: innervates
@@ -17067,7 +16805,6 @@ namespace: fly_anatomy.ontology
 namespace: uberon
 def: "Relation between a 'neuron projection bundle' and a region in which one or more of its component neuron projections either synapses to targets or receives synaptic input.\nT innervates some R\nExpands_to: T has_fasciculating_neuron_projection that synapse_in some R." []
 def: "Relation between a 'neuron projection bundle' and a region in which one or more of its component neuron projections either synapses to targets or receives synaptic input. T innervates some R Expands_to: T has_fasciculating_neuron_projection that synapse_in some R." [FBC:DOS]
-comment: http://code.google.com/p/obo-relations/issues/detail?id=6
 xref: RO:0002134
 property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613
 property_value: IAO:0000114 IAO:0000125
@@ -17091,11 +16828,9 @@ is_a: participates_in ! participates in
 
 [Typedef]
 id: intersects_midsagittal_plane_of
-name: intersects_midsagittal_plane_of
+name: intersects midsagittal plane of
 namespace: uberon
-def: "X intersects_median_plane of iff X crosses the midine plane of Y." []
 xref: BSPO:0005001
-is_a: part_of ! part_of
 
 [Typedef]
 id: lacks_part
@@ -17116,7 +16851,6 @@ is_a: part_of ! part_of
 [Typedef]
 id: located_in
 name: located in
-name: located_in
 namespace: uberon
 def: "a relation between two independent continuants, the target and the location, in which the target is entirely within the location" []
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
@@ -17137,7 +16871,6 @@ transitive_over: part_of ! part_of
 [Typedef]
 id: location_of
 name: location of
-name: location_of
 namespace: uberon
 def: "a relation between two independent continuants, the location and the target, in which the target is entirely within the location" []
 xref: RO:0001015
@@ -17172,21 +16905,6 @@ xref: RO:0002572
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 domain: BFO:0000141 ! immaterial entity
 is_a: lumen_of ! lumen of
-is_a: part_of ! part_of
-
-[Typedef]
-id: member_of
-name: member of
-namespace: uberon
-def: "is member of is a mereological relation between a item and a collection." []
-xref: RO:0002350
-property_value: IAO:0000112 "An organism that is a member of a population of organisms" xsd:string
-property_value: IAO:0000118 "is member of" xsd:string
-property_value: IAO:0000118 "member part of" xsd:string
-property_value: IAO:0000119 "SIO" xsd:string
-property_value: RO:0001900 RO:0001901
-is_a: part_of ! part_of
-inverse_of: has_member ! has member
 
 [Typedef]
 id: negatively_regulated_by
@@ -17240,6 +16958,7 @@ property_value: IAO:0000112 "tooth SubClassOf 'never in taxon' value 'Aves'" xsd
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/17921072
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20973947
+property_value: OMO:0002000 "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX in_taxon: <http://purl.obolibrary.org/obo/RO_0002162>\nPREFIX never_in_taxon: <http://purl.obolibrary.org/obo/RO_0002161>\nCONSTRUCT {\n  in_taxon: a owl:ObjectProperty .\n  ?x owl:disjointWith [\n    a owl:Restriction ;\n    owl:onProperty in_taxon: ;\n    owl:someValuesFrom ?taxon\n  ] .\n  ?x rdfs:subClassOf [\n    a owl:Restriction ;\n    owl:onProperty in_taxon: ;\n    owl:someValuesFrom [\n      a owl:Class ;\n      owl:complementOf ?taxon\n    ]\n  ] .\n}\nWHERE {\n  ?x never_in_taxon: ?taxon .\n}" xsd:string
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constraints
 expand_assertion_to: "Class: <http://www.w3.org/2002/07/owl#Nothing> EquivalentTo: ?X and (RO_0002162 some ?Y)" []
 expand_assertion_to: "Class: ?X DisjointWith: RO_0002162 some ?Y " []
@@ -17271,9 +16990,7 @@ transitive_over: part_of ! part_of
 [Typedef]
 id: only_in_taxon
 name: only in taxon
-name: only_in_taxon
 namespace: uberon
-def: "S only_in_taxon T iff: S SubClassOf in_taxon only T." [PMID:20973947]
 def: "x only in taxon y if and only if x is in taxon y, and there is no other organism z such that y!=z a and x is in taxon z." []
 xref: RO:0002160
 property_value: editor_note "The original intent was to treat this as a macro that expands to 'in taxon' only ?Y - however, this is not necessary if we instead have supplemental axioms that state that each pair of sibling tax have a disjointness axiom using the 'in taxon' property - e.g.\n\n 'in taxon' some Eukaryota DisjointWith 'in taxon' some Eubacteria" xsd:string
@@ -17316,7 +17033,6 @@ holds_over_chain: part_of part_of
 is_symmetric: true
 is_a: RO:0002323 ! mereotopologically related to
 transitive_over: part_of ! part_of
-expand_expression_to: "BFO_0000051 some (BFO_0000050 some ?Y)" []
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.obolibrary.org/obo/BFO_0000050 some ?Y)" []
 
 [Typedef]
@@ -17354,17 +17070,6 @@ property_value: seeAlso http://www.obofoundry.org/ro/#OBO_REL:part_of xsd:string
 is_transitive: true
 is_a: overlaps ! overlaps
 inverse_of: has_part ! has part
-
-[Typedef]
-id: part_of_structure_that_is_capable_of
-name: part of structure that is capable of
-namespace: uberon
-def: "this relation holds between c and p when c is part of some c', and c' is capable of p." []
-xref: RO:0002329
-property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: IAO:0000118 "false" xsd:boolean
-holds_over_chain: part_of capable_of {http://purl.obolibrary.org/obo/RO_0002581="true"}
-is_a: functionally_related_to ! functionally related to
 
 [Typedef]
 id: participates_in
@@ -17426,46 +17131,37 @@ is_a: regulates_characteristic ! regulates characteristic
 
 [Typedef]
 id: postaxialmost_part_of
-name: postaxialmost_part_of
+name: postaxialmost part of
 namespace: uberon
 xref: BSPO:0001115
-is_a: part_of ! part_of
 
 [Typedef]
 id: posterior_to
-name: posterior_to
+name: posterior to
 namespace: uberon
-def: "x posterior_to y iff x is further along the antero-posterior axis than y, towards the body/tail. An antero-posterior axis is an axis that bisects an organism from head end to opposite end of body or tail." [http://orcid.org/0000-0002-6601-2165]
-synonym: "caudal_to" NARROW []
 xref: BSPO:0000099
-is_transitive: true
 
 [Typedef]
 id: posteriorly_connected_to
 name: posteriorly connected to
 namespace: uberon
 def: "x posteriorly_connected_to y iff the posterior part of x is connected to y. i.e. x connected_to y and x anterior_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
-is_a: anterior_to ! anterior_to
+is_a: anterior_to ! anterior to
 is_a: connected_to ! connected to
 
 [Typedef]
 id: preaxialmost_part_of
-name: preaxialmost_part_of
+name: preaxialmost part of
 namespace: uberon
 xref: BSPO:0001113
-is_a: part_of ! part_of
 
 [Typedef]
 id: preceded_by
 name: preceded by
-name: preceded_by
 namespace: external
 namespace: uberon
 def: "x is preceded by y if and only if the time point at which y ends is before or equivalent to the time point at which x starts. Formally: x preceded by y iff ω(y) <= α(x), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
-def: "X preceded_by Y iff: end(Y) before_or_simultaneous_with start(X)." []
 subset: ro-eco
-synonym: "is preceded by" EXACT [SIO:000249]
-synonym: "takes place after" EXACT [Allen:precedes]
 xref: BFO:0000062
 property_value: editor_note "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
 property_value: http://purl.org/dc/elements/1.1/source http://www.obofoundry.org/ro/#OBO_REL:preceded_by xsd:string
@@ -17501,10 +17197,12 @@ name: present_in_taxon
 namespace: uberon
 def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S" []
 def: "S present_in_taxon T if some instance of T has some S. This does not means that all instances of T have an S - it may only be certain life stages or sexes that have S." [https://orcid.org/0000-0002-6601-2165]
+comment: The SPARQL expansion for this relation introduces new named classes into the ontology. For this reason it is likely that the expansion should only be performed during a QC pipeline; the expanded output should usually not be included in a published version of the ontology.
 synonym: "applicable for taxon" EXACT []
 xref: RO:0002175
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165 xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
+property_value: OMO:0002000 "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\nPREFIX owl: <http://www.w3.org/2002/07/owl#>\nPREFIX in_taxon: <http://purl.obolibrary.org/obo/RO_0002162>\nPREFIX present_in_taxon: <http://purl.obolibrary.org/obo/RO_0002175>\nCONSTRUCT {\n  in_taxon: a owl:ObjectProperty .\n  ?witness rdfs:label ?label .\n  ?witness rdfs:subClassOf ?x .\n  ?witness rdfs:subClassOf [\n    a owl:Restriction ;\n    owl:onProperty in_taxon: ;\n    owl:someValuesFrom ?taxon\n  ] .\n}\nWHERE {\n  ?x present_in_taxon: ?taxon .\n  BIND(IRI(CONCAT(\n    \"http://purl.obolibrary.org/obo/RO_0002175#\",\n    MD5(STR(?x)),\n    \"-\",\n    MD5(STR(?taxon))\n  )) as ?witness)\n  BIND(CONCAT(STR(?x), \" in taxon \", STR(?taxon)) AS ?label)\n}" xsd:string
 property_value: seeAlso https://github.com/obophenotype/uberon/wiki/Taxon-constraints
 is_metadata_tag: true
 is_class_level: true
@@ -17521,7 +17219,6 @@ is_a: RO:0002410 ! causally related to
 [Typedef]
 id: produced_by
 name: produced by
-name: produced_by
 namespace: external
 namespace: uberon
 def: "a produced_by b iff some process that occurs_in b has_output a." []
@@ -17545,7 +17242,7 @@ property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Melissa Haendel" xsd:string
 domain: BFO:0000040 ! material entity
 range: BFO:0000040 ! material entity
-inverse_of: produced_by ! produced_by
+inverse_of: produced_by ! produced by
 
 [Typedef]
 id: protects
@@ -17554,9 +17251,8 @@ namespace: uberon
 
 [Typedef]
 id: proximal_to
-name: proximal_to
+name: proximal to
 namespace: uberon
-def: "x proximal_to y iff x is closer to the point of attachment with the body than y." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000100
 
 [Typedef]
@@ -17565,16 +17261,14 @@ name: proximally connected to
 namespace: uberon
 def: "x proximally_connected_to y iff the proximal part of x is connected to y. i.e. x connected_to y and x distal_to y." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
 is_a: connected_to ! connected to
-is_a: distal_to ! distal_to
+is_a: distal_to ! distal to
 is_a: transitively_proximally_connected_to ! transitively proximally connected to
 
 [Typedef]
 id: proximalmost_part_of
-name: proximalmost_part_of
+name: proximalmost part of
 namespace: uberon
-def: "X proximalmost_part_of Y <=> X is part_of Y and X is adjacent_to the proximal boundary of Y." [https://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0001106
-is_a: in_proximal_side_of ! in_proximal_side_of
 
 [Typedef]
 id: regulated_by
@@ -17860,18 +17554,14 @@ is_metadata_tag: true
 id: sexually_homologous_to
 name: sexually_homologous_to
 namespace: uberon
-is_a: homologous_to ! homologous_to
+is_a: homologous_to ! shares ancestor with
 
 [Typedef]
 id: simultaneous_with
 name: simultaneous with
-name: simultaneous_with
 namespace: uberon
-def: "Relation between occurrents, shares start and end boundaries." [Allen:is_equal_to, https://orcid.org/0000-0002-6601-2165]
 comment: t1 simultaneous_with t2 iff:=  t1 before_or_simultaneous_with t2  and not (t1 before t2)
 subset: ro-eco
-synonym: "coincides_with" EXACT []
-synonym: "is_equal_to" EXACT []
 xref: RO:0002082
 property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 is_transitive: true
@@ -17903,7 +17593,6 @@ id: starts
 name: starts
 namespace: uberon
 def: "inverse of starts with" []
-def: "Relation between occurrents, shares a start boundary with." [Allen:starts, https://orcid.org/0000-0002-6601-2165]
 subset: ro-eco
 xref: RO:0002223
 property_value: IAO:0000114 IAO:0000125
@@ -17937,7 +17626,7 @@ comment: placeholder relation. X = 'subdivision of A' and subdivision_of some B 
 
 [Typedef]
 id: superficial_to
-name: superficial_to
+name: superficial to
 namespace: uberon
 xref: BSPO:0000108
 
@@ -17946,27 +17635,21 @@ id: supplies
 name: supplies
 namespace: uberon
 def: "Relation between an arterial structure and another structure, where the arterial structure acts as a conduit channeling fluid, substance or energy." []
-def: "relation between an artery and the structure is supplies with blood." []
-comment: source: FMA
-synonym: "arterial supply of" EXACT [FMA:86003]
 xref: RO:0002178
 property_value: editor_note "Individual ontologies should provide their own constraints on this abstract relation. For example, in the realm of anatomy this should hold between an artery and an anatomical structure" xsd:string
 property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/20064205
-property_value: seeAlso FMA:86003
 is_a: connected_to ! connected to
 
 [Typedef]
 id: surrounded_by
 name: surrounded by
-name: surrounded_by
 namespace: uberon
 def: "x surrounded_by y if and only if (1) x is adjacent to y and for every region r that is adjacent to x, r overlaps y (2) the shared boundary between x and y occupies the majority of the outermost boundary of x" []
-def: "x surrounded_by y iff: x is adjacent to y and for every region r adjacent to x, r overlaps y." [https://orcid.org/0000-0002-6601-2165]
 xref: RO:0002219
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0001900 RO:0001901
-is_a: adjacent_to ! adjacent_to
+is_a: adjacent_to ! adjacent to
 inverse_of: surrounds ! surrounds
 
 [Typedef]
@@ -17974,13 +17657,12 @@ id: surrounds
 name: surrounds
 namespace: uberon
 def: "inverse of surrounded by" []
-def: "inverse of surrounded_by." [https://orcid.org/0000-0002-6601-2165]
 subset: RO:0002259
 xref: RO:0002221
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0001900 RO:0001901
-is_a: adjacent_to ! adjacent_to
+is_a: adjacent_to ! adjacent to
 
 [Typedef]
 id: synapsed_by
@@ -17993,10 +17675,8 @@ id: transformation_of
 name: transformation of
 namespace: uberon
 def: "x transformation of y if x is the immediate transformation of y, or is linked to y through a chain of transformation relationships" []
-synonym: "transforms from" EXACT [SIO:000657]
 xref: RO:0002494
 property_value: IAO:0000117 "Chris Mungall" xsd:string
-property_value: seeAlso SIO:000657
 is_transitive: true
 is_a: develops_from ! develops from
 
@@ -18030,11 +17710,9 @@ is_transitive: true
 [Typedef]
 id: tributary_of
 name: tributary of
-name: tributary_of
 namespace: uberon
 def: "x tributary_of y if and only if x a channel for the flow of a substance into y, where y is larger than x. If x and y are hydrographic features, then y is the main stem of a river, or a lake or bay, but not the sea or ocean. If x and y are anatomical, then y is a vein." []
 subset: ro-eco
-synonym: "drains into" RELATED [dbpowl:drainsTo]
 xref: RO:0002376
 property_value: IAO:0000112 "Deschutes River tributary_of Columbia River" xsd:string
 property_value: IAO:0000112 "inferior epigastric vein tributary_of external iliac vein" xsd:string
@@ -18059,9 +17737,7 @@ is_a: part_of ! part_of
 
 [Typedef]
 id: ventral_to
-name: ventral_to
+name: ventral to
 namespace: uberon
-def: "x ventral_to y iff x is further along the dorso-ventral axis than y, towards the front. A dorso-ventral axis is an axis that bisects an organism from back (e.g. spinal column) to front (e.g. belly)." [http://orcid.org/0000-0002-6601-2165]
 xref: BSPO:0000102
-is_transitive: true
 
