@@ -225,7 +225,7 @@ $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 ## Make combined CL and PCL product
 	
 # Release additional artifacts
-$(ONT).owl: $(ONT)-full.owl $(ONT)-PCL-combined.owl $(ONT)-PCL-combined.obo $(ONT)-PCL-combined.json
+$(ONT).owl: $(ONT)-full.owl $(RELEASEDIR)/$(ONT)-pcl-combined.owl $(RELEASEDIR)/$(ONT)-pcl-combined.obo $(RELEASEDIR)/$(ONT)-pcl-combined.json
 	$(ROBOT) annotate --input $< --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert -o $@.tmp.owl && mv $@.tmp.owl $@
 	
@@ -235,13 +235,13 @@ $(TMPDIR)/pcl-full.owl: $(SRC)
 	$(ROBOT) annotate -I $(PCL-FULL_URL) --ontology-iri $(ONTBASE)/$@ -o $@
 
 # Merge CL with PCL
-$(RELEASEDIR)/$(ONT)-PCL-combined.owl: $(TMPDIR)/pcl-full.owl $(ONT)-full.owl 
+$(RELEASEDIR)/$(ONT)-pcl-combined.owl: $(TMPDIR)/pcl-full.owl $(ONT)-full.owl 
 	$(ROBOT) merge -i $(TMPDIR)/pcl-full.owl -i $(ONT)-full.owl annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
 # Create other formats
-$(ONT)-pcl-combined.obo: $(RELEASEDIR)/$(ONT)-pcl-combined.owl
+$(RELEASEDIR)/$(ONT)-pcl-combined.obo: $(RELEASEDIR)/$(ONT)-pcl-combined.owl
 	$(ROBOT) convert --input $< --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && grep -v ^owl-axioms $@.tmp.obo > $(RELEASEDIR)/$@ && rm $@.tmp.obo
-$(ONT)-pcl-combined.json: $(RELEASEDIR)/$(ONT)-pcl-combined.owl
+$(RELEASEDIR)/$(ONT)-pcl-combined.json: $(RELEASEDIR)/$(ONT)-pcl-combined.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 	jq -S 'walk(if type == "array" then sort else . end)' $@.tmp.json > $(RELEASEDIR)/$@ && rm $@.tmp.json
