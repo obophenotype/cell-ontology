@@ -225,7 +225,7 @@ $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 ## Make combined CL and PCL product
 	
 # Download PCL-full
-PCL-FULL_URL = "https://raw.githubusercontent.com/obophenotype/brain_data_standards_ontologies/master/bdso-pcl-comp.owl"
+PCL-FULL_URL = "https://raw.githubusercontent.com/obophenotype/provisional_cell_ontology/master/pcl-full.owl"
 $(TMPDIR)/pcl-full.owl: $(SRC)
 	$(ROBOT) annotate -I $(PCL-FULL_URL) --ontology-iri $(ONTBASE)/$@ -o $@
 
