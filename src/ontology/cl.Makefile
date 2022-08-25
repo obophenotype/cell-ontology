@@ -230,5 +230,5 @@ $(TMPDIR)/pcl-full.owl: $(SRC)
 	$(ROBOT) annotate -I $(PCL-FULL_URL) --ontology-iri $(ONTBASE)/$@ -o $@
 
 # Merge CL with PCL
-cl-pcl-combined.owl: $(TMPDIR)/pcl-full.owl $(ONT)-full.owl 
-	$(ROBOT) merge -i $(TMPDIR)/pcl-full.owl -i $(ONT)-full.owl annotate --ontology-iri $(ONTBASE)/$@ --output $@
+cl-pcl-combined.owl: $(TMPDIR)/pcl-full.owl $(ONT)-base.owl 
+	$(ROBOT) merge -i $(TMPDIR)/pcl-full.owl -i $(ONT)-base.owl annotate --ontology-iri $(ONTBASE)/$@ --output $@
