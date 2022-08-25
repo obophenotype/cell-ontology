@@ -16,14 +16,14 @@ These are the current imports in CL
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | http://purl.obolibrary.org/obo/pr.owl | None |
-| go | http://purl.obolibrary.org/obo/go/extensions/go-plus.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
+| go | http://purl.obolibrary.org/obo/go.owl | None |
+| caro | http://purl.obolibrary.org/obo/caro.owl | None |
 | uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
-| clo | http://purl.obolibrary.org/obo/clo.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon.owl | None |
+| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:
@@ -32,4 +32,9 @@ Components, in contrast to imports, are considered full members of the ontology.
 2. A part of the ontology is managed in ROBOT templates
 3. The expressivity of the component is higher than the format of the edit file. For example, people still choose to manage their ontology in OBO format (they should not) missing out on a lot of owl features. They may chose to manage logic that is beyond OBO in a specific OWL component.
 
+These are the components in CL
 
+| Filename | URL |
+| -------- | --- |
+| hra_subset.owl | None |
+| mappings.owl | None |
