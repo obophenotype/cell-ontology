@@ -2,25 +2,30 @@ pattern_name: cellPartOfAnatomicalEntity
 pattern_iri: http://purl.obolibrary.org/obo/cl/cellPartOfAnatomicalEntity
 
 description: A cell that is part of an anatomical entity.
-#examples: CL_0009001 compound eye retinal cell, CL_2000004 pituitary gland cell (654 total)
+# examples:
+# CL_0009001 compound eye retinal cell,
+# CL_2000004 pituitary gland cell (654 total)
 
 contributors:
   - https://orcid.org/0000-0001-5208-3432
   - https://orcid.org/0000-0002-6601-2165
-  
-classes: 
+
+classes:
   cell: "CL:0000000"
   anatomical entity: "UBERON:0001062"
 
-relations: 
+relations:
   part of: "BFO:0000050"
+
+annotationProperties:
+  xref: oio:hasDbXref
 
 vars:
   cell: "'cell'"
   anatomical_entity: "'anatomical entity'"
-  
+
 data_list_vars:
-  pubs: "xsd:string"
+  pubs: "'xref'"
   # Use this for recording reference using PMID/DOIS
 
 name:
@@ -34,8 +39,9 @@ def:
   vars:
     - cell
     - anatomical_entity
-  xrefs:
-    value: pubs
+  annotations:
+    - annotationProperty: xref
+      value: pubs
 
 equivalentTo:
   text: "%s and ('part of' some %s)"
