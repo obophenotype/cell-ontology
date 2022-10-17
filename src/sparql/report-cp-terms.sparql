@@ -1,0 +1,21 @@
+PREFIX label: <http://www.w3.org/2000/01/rdf-schema#label>
+prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+prefix definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+
+# select unique instances of the variable
+SELECT DISTINCT ?term ?label ?def
+	WHERE {
+		VALUES ?defproperty {
+ 		definition:
+		}
+		VALUES ?labelproperty {
+ 		label:
+		}	
+  	 ?term ?defproperty ?def .
+     ?term ?labelproperty ?label .
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CP_")))
+}
+
+# arrange report by entity variable
+ORDER BY ?entity
