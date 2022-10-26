@@ -14,9 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       # Checks-out main branch under "main" directory
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: master
           path: master
@@ -31,7 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Classify ontology
         run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE cl-simple.owl
       - name: Upload PR cl-simple.owl
@@ -44,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
         with:
           ref: master
       - name: Classify ontology
@@ -62,7 +62,7 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Download master classification
         uses: actions/download-artifact@v2
         with:
@@ -84,7 +84,7 @@ jobs:
     needs: [diff_classification, edit_file]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Download reasoned diff
         uses: actions/download-artifact@v2
         with:
@@ -99,7 +99,7 @@ jobs:
         with:
           file: "../../comment.md"
           identifier: "REASONED"
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - name: Download edit diff
         uses: actions/download-artifact@v2
         with:
