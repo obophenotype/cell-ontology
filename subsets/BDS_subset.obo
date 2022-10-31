@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-09-15/subsets/BDS_subset.owl
+data-version: cl/releases/2022-10-28/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -99,7 +99,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2022-09-15" xsd:string
+property_value: owl:versionInfo "2022-10-28" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -4933,7 +4933,6 @@ subset: goslim_pir
 subset: goslim_plant
 subset: prokaryote_subset
 synonym: "carrier" RELATED []
-xref: EC:7.-.-.-
 xref: Reactome:R-HSA-168313 "Virion-associated M2 protein mediated ion infusion"
 xref: Reactome:R-HSA-178215 "SMAD7:SMURF1 complex is exported to the cytosol"
 is_a: GO:0003674 ! molecular_function
@@ -5584,6 +5583,7 @@ relationship: has_primary_input CHEBI:64709 ! organic acid
 id: GO:0016020
 name: membrane
 namespace: cellular_component
+alt_id: GO:0016021
 alt_id: GO:0098589
 alt_id: GO:0098805
 def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
@@ -5594,10 +5594,14 @@ subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+synonym: "integral component of membrane" NARROW []
+synonym: "integral to membrane" NARROW []
 synonym: "membrane region" NARROW []
 synonym: "region of membrane" NARROW []
+synonym: "transmembrane" RELATED [GOC:mah]
 synonym: "whole membrane" NARROW []
 xref: Wikipedia:Biological_membrane
+xref: Wikipedia:Transmembrane_protein
 is_a: GO:0110165 ! cellular anatomical entity
 disjoint_from: GO:0031012 ! extracellular matrix
 creation_date: 2014-03-06T11:37:54Z
@@ -5636,7 +5640,6 @@ namespace: biological_process
 def: "The neurological system process in which a signal is transmitted through the nervous system by a combination of action potential propagation and synaptic transmission." [GOC:curators, ISBN:0815316194]
 synonym: "conduction of nerve impulse" EXACT [GOC:dph]
 synonym: "signal transmission along a neuron" EXACT []
-is_a: GO:0035637 ! multicellular organismal signaling
 is_a: GO:0050877 ! nervous system process
 relationship: has_part GO:0001508 ! action potential
 relationship: has_part GO:0007268 ! chemical synaptic transmission
@@ -5943,17 +5946,6 @@ intersection_of: GO:0048856 ! anatomical structure development
 intersection_of: results_in_development_of UBERON:0000025 ! tube
 relationship: part_of GO:0007275 ! multicellular organism development
 relationship: results_in_development_of UBERON:0000025 ! tube
-
-[Term]
-id: GO:0035637
-name: multicellular organismal signaling
-namespace: biological_process
-def: "The transfer of information occurring at the level of a multicellular organism." [GOC:go_curators]
-synonym: "multicellular organismal signalling" EXACT [GOC:bf]
-is_a: GO:0023052 ! signaling
-is_a: GO:0032501 ! multicellular organismal process
-created_by: bf
-creation_date: 2011-01-14T10:13:50Z
 
 [Term]
 id: GO:0036477
@@ -8386,7 +8378,7 @@ creation_date: 2009-07-30T05:19:13Z
 id: UBERON:0000104
 name: life cycle
 namespace: uberon
-def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [https://orcid.org/0000-0002-6601-2165]
+def: "An entire span of an organism's life. In metazoans, commences with the zygote stage and ends with the death of the organism." [https://orcid.org/0000-0002-6601-2165]
 subset: upper_level
 synonym: "entire life cycle" EXACT []
 synonym: "entire lifespan" EXACT []
@@ -14871,6 +14863,7 @@ property_value: IAO:0000232 "Do not use this relation directly. It is ended as a
 [Typedef]
 id: RO:0002327
 name: enables
+def: "c enables p iff c is capable of p and c acts to execute p." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: IAO:0000112 "a particular instances of akt-2 enables some instance of protein kinase activity" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -15010,11 +15003,39 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
+id: RO:0002407
+name: indirectly positively regulates
+def: "p indirectly positively regulates q iff p is indirectly causally upstream of q and p positively regulates q." []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "indirectly activates" xsd:string
+property_value: RO:0002579 RO:0002213
+holds_over_chain: RO:0002409 RO:0002409
+holds_over_chain: RO:0002629 RO:0002407
+holds_over_chain: RO:0002629 RO:0002629
+is_transitive: true
+is_a: positively_regulates ! positively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002629 ! directly positively regulates
+
+[Typedef]
+id: RO:0002409
+name: indirectly negatively regulates
+def: "p indirectly negatively regulates q iff p is indirectly causally upstream of q and p negatively regulates q." []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "indirectly inhibits" xsd:string
+property_value: RO:0002579 RO:0002212
+holds_over_chain: RO:0002630 RO:0002409
+holds_over_chain: RO:0002630 RO:0002630
+is_transitive: true
+is_a: negatively_regulates ! negatively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002630 ! directly negatively regulates
+
+[Typedef]
 id: RO:0002410
 name: causally related to
-def: "This relation groups causal relations between material entities and causal relations between processes" []
-property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
-property_value: IAO:0000114 IAO:0000428
+def: "relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause." [https://en.wikipedia.org/wiki/Causality]
+property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative?\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 
@@ -15207,7 +15228,7 @@ inverse_of: process_has_causal_agent ! process has causal agent
 [Typedef]
 id: RO:0002501
 name: causal relation between processes
-def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one where the execution of p influences the execution of q. p may be upstream, downstream, part of, or a container of q." []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
@@ -15280,7 +15301,7 @@ is_a: functionally_related_to ! functionally related to
 [Typedef]
 id: RO:0002578
 name: directly regulates
-def: "Process(P1) directly regulates process(P2) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2." []
+def: "p directly regulates q iff p is immediately causally upstream of q and p regulates q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15347,7 +15368,7 @@ is_a: RO:0002596 ! capable of regulating
 [Typedef]
 id: RO:0002629
 name: directly positively regulates
-def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
+def: "p directly positively regulates q iff p is immediately causally upstream of q, and p positively regulates q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15360,7 +15381,7 @@ is_a: RO:0002578 ! directly regulates
 [Typedef]
 id: RO:0002630
 name: directly negatively regulates
-def: "Process(P1) directly negatively regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2." []
+def: "p directly negatively regulates q iff p is immediately causally upstream of q, and p negatively regulates q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15452,6 +15473,23 @@ range: BFO:0000040 ! material entity
 is_a: RO:0002566 ! causally influences
 
 [Typedef]
+id: RO:0012011
+name: indirectly causally upstream of
+def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
+is_a: causally_upstream_of ! causally upstream of
+created_by: pg
+creation_date: 2022-09-26T06:07:17Z
+
+[Typedef]
+id: RO:0012012
+name: indirectly regulates
+def: "p indirectly regulates q iff p is indirectly causally upstream of q and p regulates q." []
+is_a: regulates ! regulates
+is_a: RO:0012011 ! indirectly causally upstream of
+created_by: pg
+creation_date: 2022-09-26T06:08:01Z
+
+[Typedef]
 id: RO:0013001
 name: has synaptic IO in region
 def: "A relationship between a neuron and a region, where the neuron has a functionally relevant number of input and/or output synapses in that region." []
@@ -15540,14 +15578,6 @@ property_value: IAO:0000232 "A diagnostic testing device utilizes a specimen mea
 property_value: IAO:0000232 "See github ticket https://github.com/oborel/obo-relations/issues/497" xsd:string
 holds_over_chain: capable_of has_input
 creation_date: 2021-11-08T12:00:00Z
-
-[Typedef]
-id: RO:0040036
-name: results in changes to anatomical or cellular structure
-def: "p has anatomical participant c iff p has participant c, and c is an anatomical entity" []
-is_a: has_participant ! has participant
-created_by: cjm
-creation_date: 2018-09-26T01:08:58Z
 
 [Typedef]
 id: acts_on_population_of
@@ -15732,11 +15762,10 @@ is_a: RO:0002501 ! causal relation between processes
 id: causally_upstream_of
 name: causally upstream of
 namespace: external
-def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+def: "p is causally upstream of q iff p is causally related to q, the end of p precedes the end of q, and p is not an occurrent part of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002411
-property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_transitive: true
 is_a: causally_upstream_of_or_within ! causally upstream of or within
@@ -15746,7 +15775,9 @@ is_a: precedes ! precedes
 id: causally_upstream_of,_negative_effect
 name: causally upstream of, negative effect
 namespace: external
-comment: holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y
+def: "p is causally upstream of, negative effect q iff p is casually upstream of q, and the execution of p decreases the execution of q." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002305
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004050 RO:0002411
@@ -15757,6 +15788,7 @@ is_a: RO:0004046 ! causally upstream of or within, negative effect
 id: causally_upstream_of,_positive_effect
 name: causally upstream of, positive effect
 namespace: external
+def: "p is causally upstream of, positive effect q iff p is casually upstream of q, and the execution of p is required for the execution of q." []
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15770,7 +15802,7 @@ is_a: RO:0004047 ! causally upstream of or within, positive effect
 id: causally_upstream_of_or_within
 name: causally upstream of or within
 namespace: external
-def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+def: "p is 'causally upstream or within' q iff p is causally related to q, and the end of p precedes, or is coincident with, the end of q." []
 synonym: "affects" RELATED []
 xref: RO:0002418
 property_value: editor_note "We would like to make this disjoint with 'preceded by', but this is prohibited in OWL2" xsd:string
@@ -16634,13 +16666,12 @@ inverse_of: immediately_causally_upstream_of ! immediately causally upstream of
 id: immediately_causally_upstream_of
 name: immediately causally upstream of
 namespace: external
-def: "p is immediately causally upstream of q iff both (a) p immediately precedes q and (b) p is causally upstream of q. In addition, the output of p  must be an input of q." []
+def: "p is immediately causally upstream of q iff p is causally upstream of q, and the end of p is coincident with the beginning of q." []
 xref: RO:0002412
-property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0002575 RO:0002411
 is_a: causally_upstream_of ! causally upstream of
-is_a: immediately_precedes ! immediately_precedes
+is_a: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_deep_to
@@ -16651,7 +16682,6 @@ xref: BSPO:0001107
 [Typedef]
 id: immediately_preceded_by
 name: immediately preceded by
-name: immediately_preceded_by
 namespace: external
 namespace: uberon
 comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
@@ -16660,12 +16690,11 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "starts_at_end_of" xsd:string
 holds_over_chain: starts_with ends_with
 is_a: preceded_by ! preceded by
-inverse_of: immediately_precedes ! immediately_precedes
+inverse_of: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_precedes
 name: immediately precedes
-name: immediately_precedes
 namespace: external
 comment: X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)
 subset: ro-eco
@@ -16920,7 +16949,7 @@ id: negatively_regulates
 name: negatively regulates
 namespace: external
 namespace: gene_ontology
-def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "p negatively regulates q iff p regulates q, and p decreases the rate or magnitude of execution of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -17073,7 +17102,6 @@ inverse_of: has_part ! has part
 [Typedef]
 id: participates_in
 name: participates in
-name: participates_in
 namespace: external
 namespace: uberon
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
@@ -17102,7 +17130,7 @@ id: positively_regulates
 name: positively regulates
 namespace: external
 namespace: gene_ontology
-def: "Process(P1) postively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "p positively regulates q iff p regulates q, and p increases the rate or magnitude of execution of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -17288,13 +17316,11 @@ id: regulates
 name: regulates
 namespace: external
 namespace: gene_ontology
-def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+def: "p regulates q iff p is causally upstream of q, the execution of p is not constant and varies according to specific conditions, and p influences the rate or magnitude of execution of q due to an effect either on some enabler of q or some enabler of a part of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002211
-property_value: editor_note "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
-property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000117 "David Hill" xsd:string
 property_value: IAO:0000117 "Tanya Berardini" xsd:string
@@ -17351,13 +17377,12 @@ property_value: IAO:0000112 "an annotation of gene X to cell differentiation wit
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
 range: CARO:0000003 ! connected anatomical structure
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_assembly_of
 name: results in assembly of
-name: results_in_assembly_of
 namespace: external
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
@@ -17365,6 +17390,16 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002588
 is_a: results_in_formation_of ! results in formation of
 is_a: results_in_organization_of ! results in organization of
+
+[Typedef]
+id: results_in_changes_to_anatomical_or_cellular_structure
+name: results in changes to anatomical or cellular structure
+namespace: external
+def: "p has anatomical participant c iff p has participant c, and c is an anatomical entity" []
+xref: RO:0040036
+is_a: has_participant ! has participant
+created_by: cjm
+creation_date: 2018-09-26T01:08:58Z
 
 [Typedef]
 id: results_in_development_of
@@ -17379,8 +17414,8 @@ property_value: IAO:0000112 "every flower development (GO:0009908) results in de
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.geneontology.org/GO.doc.development.shtml xsd:anyURI
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_developmental_progression_of
@@ -17399,7 +17434,6 @@ is_a: RO:0002324 ! developmentally related to
 [Typedef]
 id: results_in_disassembly_of
 name: results in disassembly of
-name: results_in_disassembly_of
 namespace: external
 xref: RO:0002590
 is_a: results_in_organization_of ! results in organization of
@@ -17407,12 +17441,14 @@ is_a: RO:0002586 ! results in breakdown of
 
 [Typedef]
 id: results_in_distribution_of
+name: results in distribution of
 name: results_in_distribution_of
 namespace: external
 xref: GOREL:0002003
 
 [Typedef]
 id: results_in_fission_of
+name: results in fission of
 name: results_in_fission_of
 namespace: external
 xref: GOREL:0002004
@@ -17454,8 +17490,8 @@ namespace: external
 xref: RO:0002343
 property_value: IAO:0000112 "'pollen tube growth' results_in growth_of some 'pollen tube'" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_maturation_of
@@ -17471,8 +17507,8 @@ property_value: IAO:0000112 "bone maturation (GO:0070977) results_in_maturation_
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_morphogenesis_of
@@ -17488,8 +17524,8 @@ property_value: IAO:0000112 "tongue morphogenesis (GO:0043587) results in morpho
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_movement_of
@@ -17502,7 +17538,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002565
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "" xsd:string
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_organization_of
@@ -17511,7 +17547,7 @@ namespace: external
 def: "p results in organization of c iff p results in the assembly, arrangement of constituent parts, or disassembly of c" []
 xref: RO:0002592
 is_a: has_participant ! has participant
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_transport_across
