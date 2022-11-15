@@ -10,8 +10,9 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  check_pr:
+  release_file:
     runs-on: ubuntu-latest
+    container: obolibrary/odklite:v1.3.0
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
@@ -19,22 +20,12 @@ jobs:
           trigger: '#pleaserunreleasebot'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - run: release_file
-        if: steps.check.outputs.triggered == 'true'
-
-  release_file:
-    if: steps.check.outputs.triggered == 'true'
-    runs-on: ubuntu-latest
-    container: obolibrary/odklite:v1.3.0
-    steps:
-      - uses: actions/checkout@v3
-      # Checks-out main branch under "main" directory
       - uses: actions/checkout@v3
         with:
           ref: master
           path: master
-      - name: Diff classification
-        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/cl.owl --right cl.owl -f markdown -o release-diff.md
+      - run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/cl.owl --right cl.owl -f markdown -o release-diff.md
+        if: steps.check.outputs.triggered == 'true' 
       - name: Upload diff
         uses: actions/upload-artifact@v2
         with:
