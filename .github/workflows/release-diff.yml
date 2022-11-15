@@ -13,13 +13,14 @@ jobs:
   check_pr:
     runs-on: ubuntu-latest
     steps:
-    - name: Check PR
-      uses: JJ/github-pr-contains-action@releases/v5
-      with:
-        github-token: ${{secrets.GITHUB_TOKEN}}
-        bodyContains: 'go go release bot'
-        filesChanged: 1
-        linesChanged: 1
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#runreleasebot'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - run: 'echo Found it!'
+        if: steps.check.outputs.triggered == 'true'
   release_file:
     needs: check_pr
     runs-on: ubuntu-latest
