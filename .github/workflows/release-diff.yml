@@ -38,6 +38,12 @@ jobs:
     needs: release_file
     runs-on: ubuntu-latest
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#runreleasebot'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
       - name: Download release diff
         uses: actions/download-artifact@v2
@@ -46,6 +52,7 @@ jobs:
           path: release-diff.md
       - name: Prepare release comment
         run: "echo \"<details>\n <summary> Here's a diff of how these changes impact cl.owl: </summary> \n\" >comment.md; cat release-diff.md/release-diff.md >>comment.md"
+        if: steps.check.outputs.triggered == 'true' 
       - name: Post reasoned comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
