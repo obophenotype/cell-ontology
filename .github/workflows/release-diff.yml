@@ -46,6 +46,7 @@ jobs:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
       - name: Download release diff
+        if: steps.check.outputs.triggered == 'true' 
         uses: actions/download-artifact@v2
         with:
           name: release-diff.md
@@ -54,6 +55,7 @@ jobs:
         run: "echo \"<details>\n <summary> Here's a diff of how these changes impact cl.owl: </summary> \n\" >comment.md; cat release-diff.md/release-diff.md >>comment.md"
         if: steps.check.outputs.triggered == 'true' 
       - name: Post reasoned comment
+        if: steps.check.outputs.triggered == 'true' 
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
