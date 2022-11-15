@@ -21,10 +21,12 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
+      # Checks-out main branch under "main" directory
+      - uses: actions/checkout@v3
         with:
           ref: master
           path: master
-      - run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/src/ontology/cl-edit.owl --right src/ontology/cl-edit.owl -f markdown -o release-diff.md
+      - run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/cl.owl --right cl.owl -f markdown -o release-diff.md
         if: steps.check.outputs.triggered == 'true' 
       - name: Upload diff
         uses: actions/upload-artifact@v2
