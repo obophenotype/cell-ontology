@@ -23,7 +23,7 @@ jobs:
         if: steps.check.outputs.triggered == 'true'
 
   release_file:
-    needs: check_pr steps.check.outputs.triggered == 'true'
+    if: steps.check.outputs.triggered == 'true'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
