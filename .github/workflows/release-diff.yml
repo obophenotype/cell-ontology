@@ -1,4 +1,4 @@
-name: 'Create ROBOT diff on release file'
+name: 'Go Go Release Diff'
 
 on:
   # Triggers the workflow on pull request events for the master branch
@@ -52,7 +52,7 @@ jobs:
           name: release-diff.md
           path: release-diff.md
       - name: Prepare release comment
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact cl.owl: </summary> \n\" >comment.md; cat release-diff.md/release-diff.md >>comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of how this release impacts cl.owl: </summary> \n\" >comment.md; cat release-diff.md/release-diff.md >>comment.md"
         if: steps.check.outputs.triggered == 'true' 
       - name: Post reasoned comment
         if: steps.check.outputs.triggered == 'true' 
