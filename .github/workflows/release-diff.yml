@@ -51,7 +51,7 @@ jobs:
           name: release-diff.md
           path: release-diff.md
       - name: Prepare release comment
-        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact cl.owl: </summary> \n\" >comment.md; cat classification-diff.md/classification-diff.md >>comment.md"
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact cl.owl: </summary> \n\" >comment.md; cat release-diff.md/release-diff.md >>comment.md"
       - name: Post reasoned comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
