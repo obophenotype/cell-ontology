@@ -19,8 +19,9 @@ jobs:
           trigger: '#pleaserunreleasebot'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - run: 'echo Found it!'
+      - run: release_file
         if: steps.check.outputs.triggered == 'true'
+
   release_file:
     needs: check_pr
     runs-on: ubuntu-latest
