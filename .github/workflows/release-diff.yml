@@ -1,0 +1,59 @@
+name: 'Create ROBOT diff on release file'
+
+on:
+  # Triggers the workflow on pull request events for the master branch
+  pull_request:
+    branches: [ master ]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+
+  check_pr:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check PR
+      uses: JJ/github-pr-contains-action@releases/v0
+      with:
+        github-token: ${{github.token}}
+        bodyContains: 'go go release bot'
+        
+  release_file:
+    runs-on: ubuntu-latest
+    container: obolibrary/odklite:v1.3.0
+    steps:
+      - uses: actions/checkout@v3
+      # Checks-out main branch under "main" directory
+      - uses: actions/checkout@v3
+        with:
+          ref: master
+          path: master
+      - name: Diff classification
+        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/cl.owl --right cl.owl -f markdown -o release-diff.md
+      - name: Upload diff
+        uses: actions/upload-artifact@v2
+        with:
+          name: release-diff.md
+          path: release-diff.md
+
+  post_comment:
+    needs: release_file
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Download release diff
+        uses: actions/download-artifact@v2
+        with:
+          name: release-diff.md
+          path: release-diff.md
+      - name: Prepare release comment
+        run: "echo \"<details>\n <summary> Here's a diff of how these changes impact cl.owl: </summary> \n\" >comment.md; cat classification-diff.md/classification-diff.md >>comment.md"
+      - name: Post reasoned comment
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: "../../comment.md"
+          identifier: "RELEASE"
