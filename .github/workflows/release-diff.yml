@@ -10,17 +10,18 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-
   check_pr:
     runs-on: ubuntu-latest
     steps:
     - name: Check PR
-      uses: JJ/github-pr-contains-action@releases/v0
+      uses: JJ/github-pr-contains-action@releases/v5
       with:
-        github-token: ${{github.token}}
+        github-token: ${{secrets.GITHUB_TOKEN}}
         bodyContains: 'go go release bot'
-        
+        filesChanged: 1
+        linesChanged: 1
   release_file:
+    needs: check_pr
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
