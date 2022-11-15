@@ -35,6 +35,7 @@ jobs:
   post_comment:
     needs: release_file
     runs-on: ubuntu-latest
+    if: jobs.release_file.steps.check.outputs.triggered == 'true' 
     steps:
       - uses: actions/checkout@v3
       - name: Download release diff
