@@ -27,7 +27,7 @@ jobs:
         $diff = git diff --name-only HEAD^ HEAD
 
         # Check if releasediff.md is changed
-        $SourceDiff = $diff | Where-Object { $_ -match 'src/ontology/diffs/cl-diff.md' }
+        $SourceDiff = $diff | Where-Object { $_ -match '^src/ontology/diffs/cl-diff.md' }
         $HasDiff = $SourceDiff.Length -gt 0
 
         # Set the output named "docs_changed"
