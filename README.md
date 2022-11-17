@@ -40,6 +40,10 @@ Fourth Monday of month, 10am PT/1pm ET (CL & Uberon)
 
 Diehl,A.D., Meehan,T.F., Bradford,Y.M., Brush,M.H., Dahdul,W.M., Dougall,D.S., He,Y., Osumi-Sutherland,D., Ruttenberg,A., Sarntivijai,S., et al. (2016) The Cell Ontology 2016: enhanced content, modularization, and ontology interoperability. J. Biomed. Semantics, 7, 44.
 
+## GitHub Actions Triggers
+
+To trigger an automated human readable diff, add the following tag to a comment in your pull request: #gogoeditdiff
+
 ## Applications
 
 CL is used in a number of applications including: 
