@@ -16,11 +16,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: Download release diff
-        uses: actions/download-artifact@v2
+      - name: Upload release diff
+        uses: actions/upload-artifact@v2
         with:
             name: cl-diff.md
             path: src/ontology/diffs/cl-diff.md
+      - name: Download release diff
+        uses: actions/download-artifact@v3
+        with:
+            name: cl-diff.md
+            path: cl-diff.md
       - name: Prepare release comment
         run: "echo \"<details>\n <summary> Here's a diff of how this release impacts cl.owl: </summary> \n\" >comment.md; cat cl-diff.md/cl-diff.md >>comment.md"
       - name: Post reasoned comment
