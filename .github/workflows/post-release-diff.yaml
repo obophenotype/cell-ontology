@@ -10,34 +10,24 @@ on:
 
 
 jobs:
-  conditional_job_check_files:
+  changes:
     runs-on: ubuntu-latest
-    # Declare outputs for next jobs
     outputs:
-      diff_changed: ${{ steps.check_file_changed.outputs.diff_changed }}
+      output1: ${{ steps.filter.outputs.cl-diff }}
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
+    - uses: dorny/paths-filter@v2
+      id: filter
       with:
-        # Checkout as many commits as needed for the diff
-        fetch-depth: 2
-    - shell: pwsh
-      id: check_file_changed
-      run: |
-        # Diff HEAD with the previous commit
-        $diff = git diff --name-only HEAD^ HEAD
-
-        # Check if releasediff.md is changed
-        $SourceDiff = $diff | Where-Object { $_ -match '^src/ontology/diffs/cl-diff.md' }
-        $HasDiff = $SourceDiff.Length -gt 0
-
-        # Set the output named "docs_changed"
-        Write-Host "::set-output name=docs_changed::$HasDiff"
+        filters: |
+          cl-diff:
+            - 'src/ontology/diffs/cl-diff.md'
 
   # Run the job only with "docs_changed" equals "True"
   conditional_job:
     runs-on: ubuntu-latest
     needs: [ conditional_job_check_files ]
-    if: needs.conditional_job_check_files.outputs.docs_changed == 'True'
+    if: ${{ needs.changes.outputs.cl-diff == 'true' }}
     steps:
       - name: Download release diff
         uses: actions/download-artifact@v2
