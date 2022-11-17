@@ -7,10 +7,8 @@ on:
     paths:
       - 'src/ontology/diffs/cl-diff.md'
 
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
-
 
 jobs:
 
@@ -21,7 +19,7 @@ jobs:
         uses: actions/download-artifact@v2
         with:
             name: cl-diff.md
-            path: src/ontology/diffs/cl-diff.md
+            path: ~/src/ontology/diffs/cl-diff.md
       - name: Prepare release comment
         run: "echo \"<details>\n <summary> Here's a diff of how this release impacts cl.owl: </summary> \n\" >comment.md; cat cl-diff.md/cl-diff.md >>comment.md"
       - name: Post reasoned comment
