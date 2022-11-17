@@ -15,9 +15,16 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoreleasediff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
       - name: Classify ontology
-        run: cd src/ontology; make IMP=false MIR=false COMP=false cl.owl 
+        run: cd src/ontology; make IMP=false MIR=false COMP=false cl.owl
+        if: steps.check.outputs.triggered == 'true'  
       - name: Upload cl.owl
         uses: actions/upload-artifact@v2
         with:
