@@ -48,7 +48,7 @@ jobs:
         with:
           name: cl-branch.owl
           path: src/ontology/cl-branch.owl
-      - run: export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology; robot diff --labels True --left-iri http://purl.obolibrary.org/obo/cl.owl --right cl-branch.owl/cl-branch.owl -f markdown -o release-diff.md
+      - run: export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology; robot diff --labels True --left-iri http://purl.obolibrary.org/obo/cl.owl --right cl-branch.owl/cl.owl -f markdown -o release-diff.md
         if: steps.check.outputs.triggered == 'true' 
       - name: Upload diff
         uses: actions/upload-artifact@v2
