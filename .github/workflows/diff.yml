@@ -13,11 +13,18 @@ jobs:
   check_branch:
     runs-on: ubuntu-latest
     steps:
+      - name: Check out master
+        uses: actions/checkout@v3
+        with:
+          ref: master
+          path: master
+      - name: tag
+          run: git describe --tags
       - name: Check branch up to date
         uses: Automattic/action-pr-is-up-to-date@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tags: master
+          tags: steps.tag.outputs.pr-tags
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
