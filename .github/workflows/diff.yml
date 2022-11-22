@@ -19,7 +19,9 @@ jobs:
           ref: master
           path: master
       - name: tag
-        run: git describe --tags
+        run: |
+        cd master
+        git describe --tags
       - name: Check branch up to date
         uses: Automattic/action-pr-is-up-to-date@v2
         with:
