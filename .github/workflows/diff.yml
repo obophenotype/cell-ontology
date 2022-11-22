@@ -10,6 +10,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  check_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check branch up to date
+        uses: Automattic/action-pr-is-up-to-date@v2
+        with:
+          token: ${{ secrets.API_TOKEN_GITHUB }}
+          tags: latest
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
