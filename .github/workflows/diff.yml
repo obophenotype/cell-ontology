@@ -18,13 +18,12 @@ jobs:
         with:
           fetch-depth: '0'
       - name: tag
-        run: |
-        git describe --tags
+        uses: ypicard/get-branch-name-github-action@v1
       - name: Check branch up to date
         uses: Automattic/action-pr-is-up-to-date@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tags: steps.tag.outputs.pr-tags
+          tags: steps.tag.outputs
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
