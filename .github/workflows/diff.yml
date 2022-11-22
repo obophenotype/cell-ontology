@@ -16,11 +16,9 @@ jobs:
       - name: Check out master
         uses: actions/checkout@v3
         with:
-          ref: master
-          path: master
+          fetch-depth: '0'
       - name: tag
         run: |
-        cd master
         git describe --tags
       - name: Check branch up to date
         uses: Automattic/action-pr-is-up-to-date@v2
