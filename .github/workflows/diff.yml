@@ -16,14 +16,13 @@ jobs:
       - name: Check out master
         uses: actions/checkout@v3
         with:
-          fetch-depth: '0'
-      - name: tag
-        uses: ypicard/get-branch-name-github-action@v1
+          ref: master
+        run: git tag latest
       - name: Check branch up to date
         uses: Automattic/action-pr-is-up-to-date@v2
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          tags: steps.tag.outputs
+          tags: latest
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
