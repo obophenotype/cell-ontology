@@ -30,7 +30,7 @@ jobs:
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
-    needs: Check_branch_up_to_date
+    needs: check_branch
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
@@ -58,6 +58,7 @@ jobs:
   classify_branch:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
+    needs: check_branch
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
@@ -80,6 +81,7 @@ jobs:
   classify_main:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
+    needs: check_branch
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
