@@ -18,7 +18,9 @@ jobs:
         with:
           ref: master
       - name: tag master
-        run: git tag latest
+        run: |
+          git checkout master
+          git tag --force latest
       - name: Check branch up to date
         uses: Automattic/action-pr-is-up-to-date@v2
         with:
