@@ -30,8 +30,7 @@ jobs:
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
-    needs: check_branch
-    if: jobs.check_branch.steps.Check_branch_up_to_date.output.state !== 'failure'
+    needs: Check_branch_up_to_date
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
