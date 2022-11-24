@@ -25,10 +25,14 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tags: latest
+      - name: check output
+        run: |
+          echo ${{ steps.Check_branch_up_to_date.output }} 
   edit_file:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     needs: check_branch
+    if: jobs.check_branch.output
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
