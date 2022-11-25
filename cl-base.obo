@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-10-28/cl-base.owl
+data-version: cl/releases/2022-11-25/cl-base.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: human_reference_atlas ""
@@ -25,7 +25,7 @@ property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
 property_value: http://purl.org/dc/terms/license http://creativecommons.org/licenses/by/4.0/
 property_value: IAO:0000700 CL:0000000
-property_value: owl:versionInfo "2022-10-28" xsd:string
+property_value: owl:versionInfo "2022-11-25" xsd:string
 
 [Term]
 id: CL:0000000
@@ -382,6 +382,7 @@ id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
@@ -390,6 +391,7 @@ intersection_of: CL:0000003 ! native cell
 intersection_of: RO:0002215 GO:0017145
 relationship: RO:0002162 NCBITaxon:33208
 relationship: RO:0002215 GO:0030154
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000035
@@ -406,8 +408,10 @@ intersection_of: RO:0002215 GO:0017145
 [Term]
 id: CL:0000036
 name: epithelial fate stem cell
+subset: human_reference_atlas
 synonym: "epithelial stem cell" EXACT []
 is_a: CL:0000035 ! single fate stem cell
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000037
@@ -1808,11 +1812,13 @@ is_a: CL:0002178 ! epithelial cell of stomach
 id: CL:0000163
 name: endocrine cell
 def: "A cell of an endocrine gland, ductless glands that secrete substances which are released directly into the circulation and which influence metabolism and other body functions." [MESH:D055098]
+subset: human_reference_atlas
 synonym: "endocrinocyte" EXACT []
 xref: FMA:83809
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: RO:0002215 GO:0060986
 relationship: BFO:0000050 UBERON:0002368
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000164
@@ -2280,7 +2286,9 @@ is_a: CL:0000003 ! native cell
 id: CL:0000212
 name: absorptive cell
 def: "A cell that takes up and metabolizes substances." [CL:CVS]
+subset: human_reference_atlas
 is_a: CL:0000003 ! native cell
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000213
@@ -4481,10 +4489,12 @@ is_a: CL:0000099 ! interneuron
 id: CL:0000499
 name: stromal cell
 def: "A connective tissue cell of an organ found in the loose connective tissue. These are most often associated with the uterine mucosa and the ovary as well as the hematopoietic system and elsewhere." [GOC:tfm, MESH:D017154]
+subset: human_reference_atlas
 xref: BTO:0002064
 xref: FMA:83624
 is_a: CL:0002320 ! connective tissue cell
 relationship: RO:0002202 CL:0000134 ! mesenchymal stem cell
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000500
@@ -5087,6 +5097,7 @@ id: CL:0000557
 name: granulocyte monocyte progenitor cell
 def: "A hematopoietic progenitor cell that is committed to the granulocyte and monocyte lineages. These cells are CD123-positive, and do not express Gata1 or Gata2 but do express C/EBPa, and Pu.1." [GO_REF:0000031, GOC:amm, GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/CFU-GM, http://www.copewithcytokines.de, ISBN:0721601464, MESH:D055014, PMCID:PMC2213186, PMCID:PMC548021, PMID:16551251, PMID:16647566]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000042)(PMID:19243617). GMPs are reportedly CD16-positive, CD32-positive, CD34-positive, CD38-positive, CD45RA-positive, CD110-negative, CD117-positive, CD123-positive, and SCA1-negative.
+subset: human_reference_atlas
 synonym: "CFU-C , Colony forming unit in culture" BROAD [http://www.copewithcytokines.de]
 synonym: "CFU-GM" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "colony forming unit granulocyte macrophage" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
@@ -5105,6 +5116,7 @@ intersection_of: RO:0002104 PR:000001865
 intersection_of: RO:0002215 GO:0030225
 intersection_of: RO:0002215 GO:0030851
 relationship: RO:0002202 CL:0000049 ! common myeloid progenitor
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000558
@@ -5483,6 +5495,7 @@ property_value: RO:0002175 NCBITaxon:9606
 id: CL:0000584
 name: enterocyte
 def: "An epithelial cell that has its apical plasma membrane folded into microvilli to provide ample surface for the absorption of nutrients from the intestinal lumen." [SANBI:mhl]
+subset: human_reference_atlas
 synonym: "differentiated enterocyte" NARROW [https://orcid.org/0000-0001-9610-7627, PMID:33290721]
 synonym: "mature enterocyte" NARROW [https://orcid.org/0000-0001-9610-7627, PMID:33290721]
 xref: BTO:0000398
@@ -5491,6 +5504,7 @@ xref: MESH:D020895
 is_a: CL:0000239 ! brush border epithelial cell
 is_a: CL:0000677 ! gut absorptive cell
 is_a: CL:0002563 ! intestinal epithelial cell
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000585
@@ -6028,12 +6042,14 @@ is_a: CL:0002165 ! phalangeal cell
 id: CL:0000636
 name: Mueller cell
 def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
+subset: human_reference_atlas
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
 xref: BTO:0003064
 is_a: CL:0000681 ! radial glial cell
 is_a: CL:0009004 ! retinal cell
 relationship: BFO:0000050 UBERON:0000966
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000637
@@ -6060,7 +6076,7 @@ relationship: BFO:0000050 UBERON:0006964
 [Term]
 id: CL:0000639
 name: basophil cell of pars distalis of adenohypophysis
-def: "A basophillic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
+def: "A basophilic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
 synonym: "basophil cell of anterior lobe of hypophysis" EXACT []
 synonym: "beta cell" RELATED []
 synonym: "pituitary beta cell" RELATED []
@@ -7746,6 +7762,7 @@ intersection_of: RO:0002215 GO:0002385
 id: CL:0000802
 name: CD8-alpha alpha positive, gamma-delta intraepithelial T cell
 def: "A gamma-delta intraepithelial T cell that has the phenotype CD8-alpha alpha-positive." [GOC:add, GOC:tfm, ISBN:0781735149]
+subset: human_reference_atlas
 synonym: "CD8-positive, gamma-delta intraepithelial T lymphocyte" EXACT []
 synonym: "CD8-positive, gamma-delta intraepithelial T-cell" EXACT []
 synonym: "CD8-positive, gamma-delta intraepithelial T-lymphocyte" EXACT []
@@ -7754,6 +7771,7 @@ synonym: "intraepithelial lymphocyte" BROAD []
 is_a: CL:0000801 {is_inferred="true"} ! gamma-delta intraepithelial T cell
 intersection_of: CL:0000801 ! gamma-delta intraepithelial T cell
 intersection_of: RO:0002104 PR:000001084
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000803
@@ -8456,6 +8474,7 @@ id: CL:0000845
 name: marginal zone B cell of spleen
 def: "A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD35-high." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Marginal-zone_B_cell, ISBN:0781735149, PMID:10933592, PMID:20933013]
 comment: MZ B cells are reportedly CD1-positive (mice), CD20-positive, CD48-positive, CD84-positive, CD150-positive, CD229-positive, and CD352-positive.
+subset: human_reference_atlas
 synonym: "B cell of marginal zone of spleen" EXACT []
 synonym: "marginal zone B cell" BROAD []
 synonym: "marginal zone B lymphocyte" BROAD []
@@ -8475,6 +8494,7 @@ intersection_of: RO:0002104 PR:000001289
 intersection_of: RO:0002104 PR:000001338
 intersection_of: RO:0002215 GO:0042742
 intersection_of: RO:0015015 GO:0071753
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0000846
@@ -11659,6 +11679,7 @@ id: CL:0001087
 name: effector memory CD4-positive, alpha-beta T cell, terminally differentiated
 def: "A CD4-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, PMID:17465678, PMID:26883338, PMID:27997758, PMID:29133794]
 comment: This cell type is seen in human but not found in the mouse.
+subset: human_reference_atlas
 synonym: "CD4+ TEMRA" EXACT [PMID:17465678]
 synonym: "CD4-positive TEMRA" EXACT [PMID:17465678]
 synonym: "TEMRA" BROAD [PMID:17465678]
@@ -11673,6 +11694,7 @@ intersection_of: RO:0002162 NCBITaxon:9606
 relationship: RO:0002202 CL:0000905 ! effector memory CD4-positive, alpha-beta T cell
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9990-8331
 property_value: http://purl.org/dc/terms/date 2021-01-18T16:32:44Z xsd:dateTime
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0001200
@@ -11970,7 +11992,7 @@ creation_date: 2010-04-26T10:31:56Z
 
 [Term]
 id: CL:0002013
-name: GlyA-positive basophillic erythroblast
+name: GlyA-positive basophilic erythroblast
 def: "A basophilic erythroblast that is GlyA-positive." [GOC:ak, GOC:tfm, PMID:1638021]
 comment: Markers are associated with human cells.
 is_a: CL:0000549 {is_inferred="true"} ! basophilic erythroblast
@@ -12020,7 +12042,7 @@ is_a: CL:0000550 {is_inferred="true"} ! polychromatophilic erythroblast
 intersection_of: CL:0000550 ! polychromatophilic erythroblast
 intersection_of: RO:0002104 PR:000001460
 intersection_of: RO:0015016 PR:000001945
-relationship: RO:0002202 CL:0002013 ! GlyA-positive basophillic erythroblast
+relationship: RO:0002202 CL:0002013 ! GlyA-positive basophilic erythroblast
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-04-26T10:53:16Z
 
@@ -12823,6 +12845,7 @@ creation_date: 2010-09-10T10:48:54Z
 id: CL:0002068
 name: Purkinje myocyte
 def: "Specialized cardiac myocyte that is subendocardially interspersed with the regular cardiac muscle cell. They are uninucleate cylindrical cells, associated end-to-end in long rows, continue from the node to the atrioventricular bundle; relatively short compared to ordinary myocytes but are nearly twice their diameter." [FMA:0412046911, GOC:tfm, PMID:19939742]
+subset: human_reference_atlas
 synonym: "myocytus conducens cardiacus" EXACT []
 synonym: "Purkinje cell fiber" EXACT []
 synonym: "Purkinje muscle cell" EXACT []
@@ -12830,6 +12853,7 @@ xref: BTO:0001032
 xref: FMA:14146
 is_a: CL:0002086 ! specialized cardiac myocyte
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+property_value: RO:0002175 NCBITaxon:9606
 creation_date: 2010-06-28T08:36:15Z
 
 [Term]
@@ -13070,6 +13094,7 @@ id: CL:0002088
 name: interstitial cell of Cajal
 def: "This is a cell found in the gastrointestinal tract of mammals and serves as a pacemaker that triggers gut contraction. ICCs mediate inputs from the enteric nervous system to smooth muscle cells and are thought to be the cells from which gastrointestinal stromal tumors (GISTs) arise." [GOC:tfm, PMID:16460275, PMID:19520112]
 comment: Some argue this cell type is of mesenchymal origin.
+subset: human_reference_atlas
 synonym: "ICC" EXACT []
 synonym: "intestinal pacemaker cell" EXACT [GOC:pr]
 xref: BTO:0003914
@@ -13078,6 +13103,7 @@ is_a: CL:0000710 {is_inferred="true"} ! neurecto-epithelial cell
 intersection_of: CL:0000710 ! neurecto-epithelial cell
 intersection_of: RO:0002215 GO:0043134
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
+property_value: RO:0002175 NCBITaxon:9606
 creation_date: 2010-07-22T03:26:00Z
 
 [Term]
@@ -14313,7 +14339,7 @@ alt_id: CL:1000036
 def: "A transient hepatic stem cell observed after liver injury with a high nuclear to cytoplasm ratio that can differentiate into mature hepatocytes and bile duct cells. Arises from more than one tissue." [PMID:17901986]
 subset: human_reference_atlas
 synonym: "hepatic oval cell" EXACT []
-synonym: "hepatic progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0] {http://purl.org/dc/elements/1.1/contributor="http://orcid.org/000-0003-1940-6740"}
+synonym: "hepatic progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0] {http://purl.org/dc/terms/contributor="http://orcid.org/0000-0003-1940-6740"}
 synonym: "liver progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0]
 xref: BTO:0004270
 xref: FMA:86576
@@ -15663,7 +15689,7 @@ creation_date: 2010-09-14T02:08:23Z
 [Term]
 id: CL:0002310
 name: mammosomatotroph
-def: "An acidophil cell of the anterior pitiuatry gland that produces both prolactin and growth hormone." [GOC:tfm]
+def: "An acidophil cell of the anterior pituitary gland that produces both prolactin and growth hormone." [GOC:tfm]
 xref: FMA:83097
 is_a: CL:0000295 ! somatotropin secreting cell
 is_a: CL:0000439 ! prolactin secreting cell
@@ -21501,6 +21527,7 @@ property_value: RO:0002175 NCBITaxon:9606
 id: CL:0009080
 name: tuft cell of small intestine
 def: "A tuft cell located in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865]
+subset: human_reference_atlas
 synonym: "brush cell of epithelium of small intestine" EXACT []
 synonym: "brush cell of epithelium proper of small intestine" EXACT []
 synonym: "brush cell of small intestine" EXACT []
@@ -21508,6 +21535,7 @@ synonym: "tuft cell of epithelium of small intestine" EXACT []
 intersection_of: CL:0019032 ! intestinal tuft cell
 intersection_of: BFO:0000050 UBERON:0002108
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-2825-0621
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0009081
@@ -22366,10 +22394,12 @@ property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001
 id: CL:0011031
 name: monocyte-derived dendritic cell
 def: "A dendritic cell that develops from a monocyte." [BTO:0002900, PMID:30719026, PMID:32733468]
+subset: human_reference_atlas
 synonym: "MDDC cell" EXACT []
 is_a: CL:0000782 ! myeloid dendritic cell
 relationship: RO:0002202 CL:0000576 ! monocyte
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-5208-3432
+property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:0011032
@@ -22439,10 +22469,8 @@ id: CL:0011107
 name: obsolete Muller cell
 def: "OBSOLETE: Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
 comment: Term was duplicated, use CL:0000636 instead
-subset: human_reference_atlas
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
-property_value: RO:0002175 NCBITaxon:9606
 is_obsolete: true
 replaced_by: CL:0000636
 
@@ -22590,11 +22618,13 @@ created_by: http://orcid.org/0000-0003-2473-2313
 [Term]
 id: CL:0017004
 name: telocyte
-comment: A supportive cell with a small, oval-shaped body and one to five telopodes. Telopodes are cytoplasmic protrusions from tens to hundreds of micrometers long and mostly below 0.2 microns of caliber. {xref="PMID:20367664", xref="MESH:D000067170", xref="https://en.wikipedia.org/wiki/Telocyte"}
+def: "A supportive cell with a small, oval-shaped body and one to five telopodes. Telopodes are cytoplasmic protrusions from tens to hundreds of micrometers long and mostly below 0.2 microns of caliber." [https://en.wikipedia.org/wiki/Telocyte, MESH:D000067170, PMID:20367664, PMID:28714595, PMID:31311805]
+comment: Telocytes manage to develop complex networks in almost all organs of the human body. Although staining positively for vimentin antibody, some uncertainty still persists over the mesenchymal origin of these cells. {xref="https://doi.org/10.1016/B978-0-12-818561-2.00001-1"}
 subset: human_reference_atlas
-synonym: "ICLC" EXACT [PMID:20367664]
-synonym: "interstitial Cajal cell-like cell" EXACT [PMID:20367664]
-synonym: "interstitial Cajal-like cell" EXACT [PMID:20367664]
+synonym: "ICLC" RELATED [PMID:20367664]
+synonym: "interstitial Cajal cell-like cell" NARROW [PMID:20367664]
+synonym: "interstitial Cajal-like cell" NARROW [PMID:20367664]
+synonym: "interstitial neuron" RELATED [PMID:31311805]
 property_value: RO:0002175 NCBITaxon:9606
 created_by: http://orcid.org/0000-0003-2473-2313
 
@@ -22914,7 +22944,7 @@ def: "OBSOLETE. A renal beta-intercalated cell that is part of the cortical coll
 comment: Created with IRI in incorrect ID range
 synonym: "B-IC" EXACT [PMID:32016094]
 synonym: "kidney collecting duct intercalated cell type B" EXACT [PMID:31300091]
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-08-26T10:31:29Z xsd:dateTime
 is_obsolete: true
 replaced_by: CL:4030005
@@ -22987,10 +23017,8 @@ property_value: RO:0002175 NCBITaxon:9606
 [Term]
 id: CL:1000147
 name: heart valve cell
-subset: human_reference_atlas
 intersection_of: CL:0000663 ! valve cell
 intersection_of: BFO:0000050 UBERON:0000948
-property_value: RO:0002175 NCBITaxon:9606
 
 [Term]
 id: CL:1000155
@@ -28820,7 +28848,7 @@ def: "A stromal cell that is part of the thymus." [https://www.nature.com/articl
 synonym: "thymic stromal cell" EXACT []
 intersection_of: CL:0000499 ! stromal cell
 intersection_of: BFO:0000050 UBERON:0002370
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-07-08T11:39:38Z xsd:dateTime
 
 [Term]
@@ -28842,7 +28870,7 @@ name: interstitial cell of thymus
 def: "A cell that makes up the loose connective tissue of the thymus." [https://www.nature.com/articles/s41467-020-20082-7]
 synonym: "thymic interstitial cell" EXACT []
 is_a: CL:4030001 ! stromal cell of thymus
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-07-08T11:48:36Z xsd:dateTime
 
 [Term]
@@ -28861,7 +28889,7 @@ synonym: "B-IC" EXACT [PMID:32016094]
 synonym: "kidney collecting duct intercalated cell type B" EXACT [PMID:31300091]
 intersection_of: CL:0002201 ! renal beta-intercalated cell
 intersection_of: BFO:0000050 UBERON:0004203
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-09-14T16:19:11Z xsd:dateTime
 
 [Term]
@@ -29013,7 +29041,7 @@ def: "A renal principal cell located in the connecting tubule." [http://orcid.or
 subset: human_reference_atlas
 intersection_of: CL:0005009 ! renal principal cell
 intersection_of: BFO:0000050 UBERON:0005097
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-06-27T15:25:10Z xsd:dateTime
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -29025,7 +29053,7 @@ subset: human_reference_atlas
 is_a: CL:1000768 ! kidney connecting tubule epithelial cell
 intersection_of: CL:0005010 ! renal intercalated cell
 intersection_of: BFO:0000050 UBERON:0005097
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-06-29T11:25:22Z xsd:dateTime
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -29038,7 +29066,7 @@ synonym: "connecting tubule A-IC" EXACT [PMID:24937428]
 synonym: "kidney connecting tubule intercalated cell type A" EXACT [PMID:9890303]
 intersection_of: CL:0005011 ! renal alpha-intercalated cell
 intersection_of: BFO:0000050 UBERON:0005097
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-06-29T12:48:43Z xsd:dateTime
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -29051,7 +29079,7 @@ synonym: "connecting tubule B-IC" EXACT [PMID:32065116]
 synonym: "kidney connecting tubule intercalated cell type B" EXACT [PMID:9890303]
 intersection_of: CL:0002201 ! renal beta-intercalated cell
 intersection_of: BFO:0000050 UBERON:0005097
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-06-29T14:31:18Z xsd:dateTime
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -29064,7 +29092,7 @@ subset: human_reference_atlas
 synonym: "kidney medullary fibroblast" EXACT []
 intersection_of: CL:0000057 ! fibroblast
 intersection_of: BFO:0000050 UBERON:0005211
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-07-05T12:13:40Z xsd:dateTime
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -29076,7 +29104,7 @@ synonym: "hillock cell of respiratory tract" NARROW []
 is_a: CL:0002368 ! respiratory epithelial cell
 intersection_of: CL:4030024 ! hillock cell
 intersection_of: BFO:0000050 UBERON:0000065
-property_value: http://purl.org/dc/elements/1.1/contributor http://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-06-06T08:31:09Z xsd:dateTime
 
 [Term]
@@ -29084,7 +29112,7 @@ id: CL:4030024
 name: hillock cell
 def: "An epithelial, transitional cell type between basal and secretory; located in stratified, non-ciliated structures (called hillocks) with high cell turnover in epithelium. In some mammalian species, this cell type has been noted to express KRT13 and is postulated to play a role in squamous barrier function and immunomodulation." [PMID:30069044]
 is_a: CL:0000066 ! epithelial cell
-property_value: http://purl.org/dc/elements/1.1/contributor http://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor http://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-06-24T14:52:24Z xsd:dateTime
 
 [Term]
@@ -29095,7 +29123,7 @@ comment: Renal cortical fibroblasts have key roles in mediating intercellular co
 synonym: "kidney cortical fibroblast" EXACT []
 intersection_of: CL:0000057 ! fibroblast
 intersection_of: BFO:0000050 UBERON:0005270
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-07-05T15:50:17Z xsd:dateTime
 
 [Term]
@@ -29127,6 +29155,26 @@ intersection_of: CL:0000561 ! amacrine cell
 intersection_of: RO:0002215 GO:0061537
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
 property_value: http://purl.org/dc/terms/date 2022-10-17T12:40:06Z xsd:dateTime
+
+[Term]
+id: CL:4030029
+name: blood lymphocyte
+def: "A lymphocyte located in blood." [https://orcid.org/0000-0001-9990-8331]
+intersection_of: CL:0000542 ! lymphocyte
+intersection_of: BFO:0000050 UBERON:0000178
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/date 2022-11-04T14:40:00Z xsd:dateTime
+
+[Term]
+id: CL:4030030
+name: peripheral blood lymphocyte
+def: "A blood lymphocyte located in the flowing, circulating blood of the body." [https://orcid.org/0000-0001-9990-8331, https://orcid.org/0000-0003-2534-198X, https://sciencing.com/what-peripheral-blood-4672930.html, PMID:31092833]
+is_a: CL:4030029 ! blood lymphocyte
+relationship: RO:0001025 UBERON:0013755
+relationship: RO:0001025 UBERON:0013756
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-1773-2692
+property_value: http://purl.org/dc/terms/date 2022-11-14T10:08:14Z xsd:dateTime
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/pull/1725
 
 [Term]
 id: CL:4032000
