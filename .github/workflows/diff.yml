@@ -14,15 +14,25 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
       # Checks-out main branch under "main" directory
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
         with:
           ref: master
           path: master
       - name: Diff classification
+        if: steps.check.outputs.triggered == 'true'
         run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/src/ontology/cl-edit.owl --left-catalog master/src/ontology/catalog-v001.xml --right src/ontology/cl-edit.owl --right-catalog src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
       - name: Upload diff
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: edit-diff.md
@@ -31,10 +41,19 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
       - name: Classify ontology
+        if: steps.check.outputs.triggered == 'true'
         run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE cl-simple.owl
       - name: Upload PR cl-simple.owl
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: cl-simple-pr.owl
@@ -44,12 +63,21 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
         with:
           ref: master
       - name: Classify ontology
+        if: steps.check.outputs.triggered == 'true'
         run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE cl-simple.owl
       - name: Upload master cl-simple.owl
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: cl-simple-master.owl
@@ -62,20 +90,31 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
       - name: Download master classification
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: cl-simple-master.owl
           path: src/ontology/cl-simple-master.owl
       - name: Download PR classification
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: cl-simple-pr.owl
           path: src/ontology/cl-simple-pr.owl
       - name: Diff classification
+        if: steps.check.outputs.triggered == 'true'
         run: export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology; robot diff --labels True --left cl-simple-master.owl/cl-simple.owl --left-catalog catalog-v001.xml --right cl-simple-pr.owl/cl-simple.owl --right-catalog catalog-v001.xml -f markdown -o classification-diff.md
       - name: Upload diff
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: classification-diff.md
@@ -84,15 +123,25 @@ jobs:
     needs: [diff_classification, edit_file]
     runs-on: ubuntu-latest
     steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
       - name: Download reasoned diff
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: classification-diff.md
           path: classification-diff.md
       - name: Prepare reasoned comment
+        if: steps.check.outputs.triggered == 'true'
         run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" >comment.md; cat classification-diff.md/classification-diff.md >>comment.md"
       - name: Post reasoned comment
+        if: steps.check.outputs.triggered == 'true'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
@@ -100,14 +149,18 @@ jobs:
           file: "../../comment.md"
           identifier: "REASONED"
       - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
       - name: Download edit diff
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: edit-diff.md
           path: edit-diff.md
       - name: Prepare edit file comment
+        if: steps.check.outputs.triggered == 'true'
         run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" >edit-comment.md; cat edit-diff.md/edit-diff.md >>edit-comment.md"
       - name: Post comment
+        if: steps.check.outputs.triggered == 'true'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
