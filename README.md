@@ -20,7 +20,7 @@ To browse the ontology, we recommend using OLS:
 https://www.ebi.ac.uk/ols/ontologies/cl
 
 For more details on CL see:
-- [https://cell-ontology.github.io/](CL Website)
+- [CL Website](https://cell-ontology.github.io/)
 - [CL on the OBO Foundry](http://obofoundry.org/ontology/cl.html)
 
 
