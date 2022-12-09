@@ -221,3 +221,13 @@ $(TMPDIR)/hra_subset.owl:
 
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+	
+
+# Make CL-plus (CL + PCL product)
+
+cl-plus.owl: $(ONT)-full.owl
+	$(ROBOT) merge --input-iri http://purl.obolibrary.org/obo/pcl/pcl-base.owl --input $(ONT)-full.owl \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
+		relax \
+		reduce -r ELK \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
