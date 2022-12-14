@@ -8,6 +8,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   edit_file:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -40,6 +41,7 @@ jobs:
           name: edit-diff.md
           path: edit-diff.md
   classify_branch:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -66,6 +68,7 @@ jobs:
           path: src/ontology/cl-simple.owl
           retention-days: 1
   classify_main:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
