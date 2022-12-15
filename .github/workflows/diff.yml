@@ -7,6 +7,14 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  check_branch:
+    runs-on: ubuntu-latest
+    steps: 
+      - uses: actions/checkout@v3
+      - name: git_check
+        run: |
+            git branch incoming
+            git branch --contains master | grep incoming 
   edit_file:
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
