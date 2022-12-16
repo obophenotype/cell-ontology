@@ -10,6 +10,12 @@ jobs:
   check_branch:
     runs-on: ubuntu-latest
     steps: 
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
       - name: git_check
@@ -35,7 +41,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: shawntanzk/pull-request-comment-branch@v1
+      - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
@@ -75,7 +81,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: shawntanzk/pull-request-comment-branch@v1
+      - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
