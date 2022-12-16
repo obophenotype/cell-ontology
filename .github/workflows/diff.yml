@@ -10,21 +10,14 @@ jobs:
   check_branch:
     runs-on: ubuntu-latest
     steps: 
-      - uses: khan/pull-request-comment-trigger@v1.1.0
-        id: check
-        with:
-          trigger: '#gogoeditdiff'
-        env:
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
-        if: steps.check.outputs.triggered == 'true'
       - name: git_check
         run: |
             git branch incoming
             git branch --contains master | grep incoming | wc -l 
         id: git_check
       - name: fail if not up to date
-        if: check_branch.steps.git_check.outputs == '0'
+        if: steps.git_check.outputs == '0'
         run: |
           echo "your branch is not up to date, please update from master."
           exit 1
@@ -41,7 +34,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: shawntanzk/pull-request-comment-branch@v1
+      - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
@@ -76,7 +69,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: shawntanzk/pull-request-comment-branch@v1
+      - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
@@ -203,4 +196,3 @@ jobs:
         with:
           file: "../../edit-comment.md"
           identifier: "UNREASONED"
-
