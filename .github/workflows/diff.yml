@@ -21,10 +21,15 @@ jobs:
   edit_file:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && needs.check_branch.outputs.up_to_date !== '0'
+    if: ${{ github.event.issue.pull_request }} && check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - name: fail if not up to date
+        if: needs.check_branch.outputs.up_to_date == '0'
+        run: |
+          echo "your branch is not up to date, please update from master."
+          exit 1
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
@@ -56,10 +61,15 @@ jobs:
   classify_branch:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && needs.check_branch.outputs.up_to_date !== '0'
+    if: ${{ github.event.issue.pull_request }} && check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - name: fail if not up to date
+        if: needs.check_branch.outputs.up_to_date == '0'
+        run: |
+          echo "your branch is not up to date, please update from master."
+          exit 1
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
@@ -85,10 +95,15 @@ jobs:
   classify_main:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && needs.check_branch.outputs.up_to_date !== '0'
+    if: ${{ github.event.issue.pull_request }} && check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - name: fail if not up to date
+        if: needs.check_branch.outputs.up_to_date == '0'
+        run: |
+          echo "your branch is not up to date, please update from master."
+          exit 1
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
