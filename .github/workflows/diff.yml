@@ -46,7 +46,7 @@ jobs:
       - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
-        if: steps.check.outputs.triggered == 'true' && steps.check.check_up_to_date.success()
+        if: steps.check.outputs.triggered == 'true' && steps.check_up_to_date.success()
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
           path: branch
