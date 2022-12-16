@@ -31,7 +31,7 @@ jobs:
     container: obolibrary/odklite:v1.3.0
     steps:
       - name: fail if not up to date
-        if: check_branch.git_check.outputs == '0'
+        if: check_branch.steps.git_check.outputs == '0'
         run: |
           echo "your branch is not up to date, please update from master."
           exit 1
@@ -71,7 +71,7 @@ jobs:
     container: obolibrary/odklite:v1.3.0
     steps:
       - name: fail if not up to date
-        if: check_branch.git_check.outputs == '0'
+        if: check_branch.steps.git_check.outputs == '0'
         run: |
           echo "your branch is not up to date, please update from master."
           exit 1
@@ -105,7 +105,7 @@ jobs:
     container: obolibrary/odklite:v1.3.0
     steps:
       - name: fail if not up to date
-        if: check_branch.git_check.outputs == '0'
+        if: check_branch.steps.git_check.outputs == '0'
         run: |
           echo "your branch is not up to date, please update from master."
           exit 1
