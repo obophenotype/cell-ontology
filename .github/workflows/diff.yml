@@ -10,11 +10,11 @@ jobs:
   check_branch:
     runs-on: ubuntu-latest
     steps: 
-      - uses: actions/checkout@v3
+      - uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
       - name: git_check
         run: |
-            git branch incoming
-            git branch --contains master | grep incoming | wc -l 
+            git branch --contains master | grep comment-branch | wc -l 
         id: git_check
   edit_file:
     needs: 
