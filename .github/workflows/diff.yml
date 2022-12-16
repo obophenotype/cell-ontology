@@ -34,7 +34,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: shawntanzk/pull-request-comment-branch@v1
+      - uses: shawntanzk/pull-request-comment-branch
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
@@ -69,7 +69,7 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
-      - uses: shawntanzk/pull-request-comment-branch@v1
+      - uses: shawntanzk/pull-request-comment-branch
         id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
