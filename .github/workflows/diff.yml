@@ -21,7 +21,7 @@ jobs:
   edit_file:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }}
+    if: ${{ github.event.issue.pull_request }} && jobs.check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -39,21 +39,21 @@ jobs:
       - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
           path: branch
       # Checks-out main branch under "main" directory
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         with:
           ref: master
           path: master
       - name: Diff classification
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/src/ontology/cl-edit.owl --left-catalog master/src/ontology/catalog-v001.xml --right branch/src/ontology/cl-edit.owl --right-catalog branch/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
       - name: Upload diff
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: edit-diff.md
@@ -61,7 +61,7 @@ jobs:
   classify_branch:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }}
+    if: ${{ github.event.issue.pull_request }} && jobs.check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -79,14 +79,14 @@ jobs:
       - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
       - name: Classify ontology
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE cl-simple.owl
       - name: Upload PR cl-simple.owl
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: cl-simple-pr.owl
@@ -95,7 +95,7 @@ jobs:
   classify_main:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }}
+    if: ${{ github.event.issue.pull_request }} && jobs.check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -111,14 +111,14 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         with:
           ref: master
       - name: Classify ontology
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE cl-simple.owl
       - name: Upload master cl-simple.owl
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: cl-simple-master.owl
@@ -138,24 +138,24 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
       - name: Download master classification
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: cl-simple-master.owl
           path: src/ontology/cl-simple-master.owl
       - name: Download PR classification
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: cl-simple-pr.owl
           path: src/ontology/cl-simple-pr.owl
       - name: Diff classification
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         run: export ROBOT_JAVA_ARGS=-Xmx6G; cd src/ontology; robot diff --labels True --left cl-simple-master.owl/cl-simple.owl --left-catalog catalog-v001.xml --right cl-simple-pr.owl/cl-simple.owl --right-catalog catalog-v001.xml -f markdown -o classification-diff.md
       - name: Upload diff
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
         with:
           name: classification-diff.md
@@ -171,18 +171,18 @@ jobs:
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
       - name: Download reasoned diff
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: classification-diff.md
           path: classification-diff.md
       - name: Prepare reasoned comment
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         run: "echo \"<details>\n <summary> Here's a diff of how these changes impact the classified ontology (on -simple file): </summary> \n\" >comment.md; cat classification-diff.md/classification-diff.md >>comment.md"
       - name: Post reasoned comment
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
@@ -190,18 +190,18 @@ jobs:
           file: "../../comment.md"
           identifier: "REASONED"
       - uses: actions/checkout@v3
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
       - name: Download edit diff
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         uses: actions/download-artifact@v2
         with:
           name: edit-diff.md
           path: edit-diff.md
       - name: Prepare edit file comment
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         run: "echo \"<details>\n <summary> Here's a diff of your edit file (unreasoned) </summary> \n\" >edit-comment.md; cat edit-diff.md/edit-diff.md >>edit-comment.md"
       - name: Post comment
-        steps.check.outputs.triggered == 'true' && needs.check_branch.outputs.up_to_date == '0'
+        if: steps.check.outputs.triggered == 'true'
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         uses: NejcZdovc/comment-pr@v1.1.1
