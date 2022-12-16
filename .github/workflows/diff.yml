@@ -9,21 +9,27 @@ on:
 jobs:
   check_branch:
     runs-on: ubuntu-latest
+    outputs:
+      up_to_date: steps.git_check.outputs
     steps: 
       - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
-      - name: git_check
+      - id: git_check
         run: |
-            git branch --contains master | grep comment-branch | wc -l 
-        id: git_check
+            git branch --contains master | grep comment-branch | wc -l >> $GITHUB_OUTPUT
   edit_file:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && git_check.steps.git_check.outputs !== 0
+    if: ${{ github.event.issue.pull_request }} 
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - name: fail if not up to date
+        if: needs.check_branch.outputs.up_to_date == '0'
+        run: |
+          echo "your branch is not up to date, please update from master."
+          exit 1
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
@@ -55,10 +61,15 @@ jobs:
   classify_branch:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && git_check.steps.git_check.outputs !== 0
+    if: ${{ github.event.issue.pull_request }} 
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - name: fail if not up to date
+        if: needs.check_branch.outputs.up_to_date == '0'
+        run: |
+          echo "your branch is not up to date, please update from master."
+          exit 1
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
@@ -84,10 +95,15 @@ jobs:
   classify_main:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && git_check.steps.git_check.outputs !== 0
+    if: ${{ github.event.issue.pull_request }} 
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
+      - name: fail if not up to date
+        if: needs.check_branch.outputs.up_to_date == '0'
+        run: |
+          echo "your branch is not up to date, please update from master."
+          exit 1
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
         with:
