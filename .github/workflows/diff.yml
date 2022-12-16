@@ -21,7 +21,7 @@ jobs:
   edit_file:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && check_branch.outputs.up_to_date !== '0'
+    if: ${{ github.event.issue.pull_request }} && jobs.check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -61,7 +61,7 @@ jobs:
   classify_branch:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && check_branch.outputs.up_to_date !== '0'
+    if: ${{ github.event.issue.pull_request }} && jobs.check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -95,7 +95,7 @@ jobs:
   classify_main:
     needs: 
       - check_branch
-    if: ${{ github.event.issue.pull_request }} && check_branch.outputs.up_to_date !== '0'
+    if: ${{ github.event.issue.pull_request }} && jobs.check_branch.outputs.up_to_date !== '0'
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
