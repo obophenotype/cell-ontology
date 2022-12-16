@@ -32,7 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
-      - name: check_up_to_date
+      - id: check_up_to_date
         if: needs.check_branch.outputs.up_to_date == '0'
         run: |
           echo "your branch is not up to date, please update from master."
@@ -46,7 +46,7 @@ jobs:
       - uses: xt0rted/pull-request-comment-branch@v1
         id: comment-branch
       - uses: actions/checkout@v3
-        if: steps.check.outputs.triggered == 'true' && steps.check_up_to_date.success()
+        if: steps.check.outputs.triggered == 'true' && steps.check_up_to_date.outcome == 'success'
         with:
           ref: ${{ steps.comment-branch.outputs.head_ref }}
           path: branch
