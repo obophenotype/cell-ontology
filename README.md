@@ -20,12 +20,14 @@ To browse the ontology, we recommend using OLS:
 https://www.ebi.ac.uk/ols/ontologies/cl
 
 For more details on CL see:
-- https://cell-ontology.github.io/
-- [OBO Foundry](http://obofoundry.org/ontology/cl.html)
+- [CL Website](https://cell-ontology.github.io/)
+- [CL on the OBO Foundry](http://obofoundry.org/ontology/cl.html)
 
-Documentation for the Cell Ontology is also available at https://obophenotype.github.io/cell-ontology/.
 
-Editors: see the README in [src/ontology](src/ontology)
+Editors documentation: 
+* [CL Editor doc](https://obophenotype.github.io/cell-ontology/)
+* [Generic ODK workflows](src/ontology/README-editors.md)
+* [OBO Academy oBook](https://oboacademy.github.io/obook/getting-started/) - General ontology editor and developer documentation and tutorials.
 
 Training materials from the 2020 CL Training Workshop are available at https://github.com/obophenotype/cell-ontology-training.
 
@@ -39,6 +41,10 @@ Fourth Monday of month, 10am PT/1pm ET (CL & Uberon)
 ## Cite
 
 Diehl,A.D., Meehan,T.F., Bradford,Y.M., Brush,M.H., Dahdul,W.M., Dougall,D.S., He,Y., Osumi-Sutherland,D., Ruttenberg,A., Sarntivijai,S., et al. (2016) The Cell Ontology 2016: enhanced content, modularization, and ontology interoperability. J. Biomed. Semantics, 7, 44.
+
+## GitHub Actions Triggers
+
+To trigger an automated human readable diff, add the following tag to a comment in your pull request: #gogoeditdiff
 
 ## Applications
 
