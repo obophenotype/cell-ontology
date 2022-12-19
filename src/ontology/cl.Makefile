@@ -246,7 +246,7 @@ cl:
 
 .PHONY: release-diff
 release-diff:
-	$(ROBOT) diff --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
+	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(ASSETS)), ../../$(n))
