@@ -1,16 +1,14 @@
 name: 'Create ROBOT diffs on Pull requests'
 
-on:
-  # Triggers the workflow on pull request events for the master branch
-  pull_request:
-    branches: [ master ]
+on: 
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+  issue_comment:
+        types: [created]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   edit_file:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -20,8 +18,13 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+          path: branch
       # Checks-out main branch under "main" directory
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
@@ -30,7 +33,7 @@ jobs:
           path: master
       - name: Diff classification
         if: steps.check.outputs.triggered == 'true'
-        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/src/ontology/cl-edit.owl --left-catalog master/src/ontology/catalog-v001.xml --right src/ontology/cl-edit.owl --right-catalog src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
+        run: export ROBOT_JAVA_ARGS=-Xmx6G; robot diff --labels True --left master/src/ontology/cl-edit.owl --left-catalog master/src/ontology/catalog-v001.xml --right branch/src/ontology/cl-edit.owl --right-catalog branch/src/ontology/catalog-v001.xml -f markdown -o edit-diff.md
       - name: Upload diff
         if: steps.check.outputs.triggered == 'true'
         uses: actions/upload-artifact@v2
@@ -38,6 +41,7 @@ jobs:
           name: edit-diff.md
           path: edit-diff.md
   classify_branch:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -47,8 +51,12 @@ jobs:
           trigger: '#gogoeditdiff'
         env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
       - uses: actions/checkout@v3
         if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
       - name: Classify ontology
         if: steps.check.outputs.triggered == 'true'
         run: cd src/ontology; make IMP=FALSE PAT=FALSE MIR=FALSE cl-simple.owl
@@ -60,6 +68,7 @@ jobs:
           path: src/ontology/cl-simple.owl
           retention-days: 1
   classify_main:
+    if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
