@@ -36,8 +36,8 @@
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#"
      xmlns:oboInOwl1="ttp://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/BDS_subset.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2022-08-16/subsets/BDS_subset.owl"/>
-        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-08-16</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2022-12-15/subsets/BDS_subset.owl"/>
+        <owl:versionInfo rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2022-12-15</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -340,6 +340,12 @@ WHERE {
     <!-- http://purl.obolibrary.org/obo/RO_0002575 -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002575"/>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002579 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002579"/>
     
 
 
@@ -1854,6 +1860,12 @@ WHERE {
     
 
 
+    <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000232 -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000232"/>
+    
+
+
     <!-- http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000233 -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#http://purl.obolibrary.org/obo/IAO_0000233"/>
@@ -2413,6 +2425,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
         <oboInOwl:id>results_in_distribution_of</oboInOwl:id>
         <oboInOwl:shorthand>results_in_distribution_of</oboInOwl:shorthand>
+        <rdfs:label>results in distribution of</rdfs:label>
         <rdfs:label>results_in_distribution_of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2426,6 +2439,7 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
         <oboInOwl:id>results_in_fission_of</oboInOwl:id>
         <oboInOwl:shorthand>results_in_fission_of</oboInOwl:shorthand>
+        <rdfs:label>results in fission of</rdfs:label>
         <rdfs:label>results_in_fission_of</rdfs:label>
     </owl:ObjectProperty>
     
@@ -2491,7 +2505,6 @@ A continuant cannot have an occurrent as part: use &apos;participates in&apos;. 
         <oboInOwl:shorthand>participates_in</oboInOwl:shorthand>
         <rdfs:label>participates in</rdfs:label>
         <rdfs:label xml:lang="en">participates in</rdfs:label>
-        <rdfs:label>participates_in</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3127,7 +3140,6 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <rdfs:comment xml:lang="en">X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)</rdfs:comment>
         <rdfs:label>immediately preceded by</rdfs:label>
         <rdfs:label xml:lang="en">immediately preceded by</rdfs:label>
-        <rdfs:label>immediately_preceded_by</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -3150,8 +3162,8 @@ boundary_of: http://purl.obolibrary.org/obo/RO_0002000</obo:IAO_0000115>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/ro/subsets#ro-eco"/>
         <oboInOwl:shorthand>immediately_precedes</oboInOwl:shorthand>
         <rdfs:comment xml:lang="en">X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)</rdfs:comment>
+        <rdfs:label>immediately precedes</rdfs:label>
         <rdfs:label xml:lang="en">immediately precedes</rdfs:label>
-        <rdfs:label>immediately_precedes</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -4051,9 +4063,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002578"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002578"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000125"/>
-        <obo:IAO_0000115>process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2.</obo:IAO_0000115>
-        <obo:IAO_0000116>We use &apos;regulates&apos; here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of &apos;causally upstream of or within&apos; (aka influences). Consider relabeling to make things more explicit</obo:IAO_0000116>
+        <obo:IAO_0000115>p regulates q iff p is causally upstream of q, the execution of p is not constant and varies according to specific conditions, and p influences the rate or magnitude of execution of q due to an effect either on some enabler of q or some enabler of a part of q.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000117>David Hill</obo:IAO_0000117>
         <obo:IAO_0000117>Tanya Berardini</obo:IAO_0000117>
@@ -4086,7 +4096,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002212"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2.</obo:IAO_0000115>
+        <obo:IAO_0000115>p negatively regulates q iff p regulates q, and p decreases the rate or magnitude of execution of q.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>negatively regulates (process to process)</obo:IAO_0000589>
@@ -4120,7 +4130,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002230"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002213"/>
         </owl:propertyChainAxiom>
-        <obo:IAO_0000115>Process(P1) postively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2.</obo:IAO_0000115>
+        <obo:IAO_0000115>p positively regulates q iff p regulates q, and p increases the rate or magnitude of execution of q.</obo:IAO_0000115>
         <obo:IAO_0000117 xml:lang="en">Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>positively regulates (process to process)</obo:IAO_0000589>
@@ -4842,6 +4852,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002304">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004047"/>
+        <obo:IAO_0000115>p is causally upstream of, positive effect q iff p is casually upstream of q, and the execution of p is required for the execution of q.</obo:IAO_0000115>
         <obo:RO_0004049 rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <terms:creator>cjm</terms:creator>
         <oboInOwl:hasDbXref>RO:0002304</oboInOwl:hasDbXref>
@@ -4861,13 +4872,15 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002305">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0004046"/>
+        <obo:IAO_0000115>p is causally upstream of, negative effect q iff p is casually upstream of q, and the execution of p decreases the execution of q.</obo:IAO_0000115>
         <obo:RO_0004050 rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <terms:creator>cjm</terms:creator>
         <oboInOwl:hasDbXref>RO:0002305</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
         <oboInOwl:id>causally_upstream_of,_negative_effect</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_go_annotation_extension"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand>causally_upstream_of,_negative_effect</oboInOwl:shorthand>
-        <rdfs:comment>holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y</rdfs:comment>
         <rdfs:label>causally upstream of, negative effect</rdfs:label>
     </owl:ObjectProperty>
     
@@ -4977,6 +4990,7 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002017"/>
         </owl:propertyChainAxiom>
         <obo:IAO_0000112>a particular instances of akt-2 enables some instance of protein kinase activity</obo:IAO_0000112>
+        <obo:IAO_0000115>c enables p iff c is capable of p and c acts to execute p.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>catalyzes</obo:IAO_0000118>
         <obo:IAO_0000118>executes</obo:IAO_0000118>
@@ -5646,18 +5660,75 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0002407 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002407">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0012012"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002407"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002629"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002409"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002409"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002629"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002407"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002629"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002629"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>p indirectly positively regulates q iff p is indirectly causally upstream of q and p positively regulates q.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
+        <obo:IAO_0000118>indirectly activates</obo:IAO_0000118>
+        <obo:RO_0002579 rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
+        <rdfs:label xml:lang="en">indirectly positively regulates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002409 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002409">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0012012"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002409"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002630"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002630"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002409"/>
+        </owl:propertyChainAxiom>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002630"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002630"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>p indirectly negatively regulates q iff p is indirectly causally upstream of q and p negatively regulates q.</obo:IAO_0000115>
+        <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
+        <obo:IAO_0000118>indirectly inhibits</obo:IAO_0000118>
+        <obo:RO_0002579 rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
+        <rdfs:label xml:lang="en">indirectly negatively regulates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0002410 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002410">
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115>This relation groups causal relations between material entities and causal relations between processes</obo:IAO_0000115>
+        <obo:IAO_0000115>relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause.</obo:IAO_0000115>
         <obo:IAO_0000116>This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an &apos;activity flow-centric approach&apos;, with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.
 
 To define causal relations in an activity-flow type network, we make use of 3 primitives:
 
  * Temporal: how do the intervals of the two occurrents relate? 
  * Is the causal relation regulatory?
- * Is the influence positive or negative
+ * Is the influence positive or negative?
 
 The first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are &apos;direct&apos;, &apos;indirect&apos; or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under &apos;temporally related to&apos;). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.
 
@@ -5670,6 +5741,12 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000232>Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect.</obo:IAO_0000232>
         <rdfs:label xml:lang="en">causally related to</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://en.wikipedia.org/wiki/Causality</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -5679,8 +5756,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000063"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002418"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115>p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain</obo:IAO_0000115>
+        <obo:IAO_0000115>p is causally upstream of q iff p is causally related to q, the end of p precedes the end of q, and p is not an occurrent part of q.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <oboInOwl:hasDbXref>RO:0002411</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
@@ -5699,8 +5775,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002412">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002090"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
-        <obo:IAO_0000114 rdf:resource="http://purl.obolibrary.org/obo/IAO_0000428"/>
-        <obo:IAO_0000115>p is immediately causally upstream of q iff both (a) p immediately precedes q and (b) p is causally upstream of q. In addition, the output of p  must be an input of q.</obo:IAO_0000115>
+        <obo:IAO_0000115>p is immediately causally upstream of q iff p is causally upstream of q, and the end of p is coincident with the beginning of q.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:RO_0002575 rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
         <oboInOwl:hasDbXref>RO:0002412</oboInOwl:hasDbXref>
@@ -5719,7 +5794,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002501"/>
         <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002427"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
-        <obo:IAO_0000115>p &apos;causally upstream or within&apos; q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q.</obo:IAO_0000115>
+        <obo:IAO_0000115>p is &apos;causally upstream or within&apos; q iff p is causally related to q, and the end of p precedes, or is coincident with, the end of q.</obo:IAO_0000115>
         <obo:IAO_0000116>We would like to make this disjoint with &apos;preceded by&apos;, but this is prohibited in OWL2</obo:IAO_0000116>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000118>influences (processual)</obo:IAO_0000118>
@@ -6327,7 +6402,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002410"/>
         <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
         <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/BFO_0000003"/>
-        <obo:IAO_0000115>p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q.</obo:IAO_0000115>
+        <obo:IAO_0000115>p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one where the execution of p influences the execution of q. p may be upstream, downstream, part of, or a container of q.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000232>Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect.</obo:IAO_0000232>
@@ -6579,7 +6654,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002578">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002412"/>
-        <obo:IAO_0000115>Process(P1) directly regulates process(P2) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2.</obo:IAO_0000115>
+        <obo:IAO_0000115>p directly regulates q iff p is immediately causally upstream of q and p regulates q.</obo:IAO_0000115>
         <obo:IAO_0000117>Chris Mungall</obo:IAO_0000117>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>directly regulates (processual)</obo:IAO_0000589>
@@ -6632,7 +6707,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/valid_for_gocam"/>
         <oboInOwl:shorthand>results_in_assembly_of</oboInOwl:shorthand>
         <rdfs:label>results in assembly of</rdfs:label>
-        <rdfs:label>results_in_assembly_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -6647,7 +6721,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>results_in_disassembly_of</oboInOwl:id>
         <oboInOwl:shorthand>results_in_disassembly_of</oboInOwl:shorthand>
         <rdfs:label>results in disassembly of</rdfs:label>
-        <rdfs:label>results_in_disassembly_of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -6749,7 +6822,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002629">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002213"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
-        <obo:IAO_0000115>Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2.</obo:IAO_0000115>
+        <obo:IAO_0000115>p directly positively regulates q iff p is immediately causally upstream of q, and p positively regulates q.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>directly positively regulates (process to process)</obo:IAO_0000589>
         <obo:RO_0004049 rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
@@ -6766,7 +6839,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002630">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
-        <obo:IAO_0000115>Process(P1) directly negatively regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2.</obo:IAO_0000115>
+        <obo:IAO_0000115>p directly negatively regulates q iff p is immediately causally upstream of q, and p negatively regulates q.</obo:IAO_0000115>
         <obo:IAO_0000119 rdf:resource="http://purl.obolibrary.org/obo/ro/docs/causal-relations"/>
         <obo:IAO_0000589>directly negatively regulates (process to process)</obo:IAO_0000589>
         <obo:RO_0004050 rdf:resource="http://purl.obolibrary.org/obo/RO_0002578"/>
@@ -7066,6 +7139,31 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
+    <!-- http://purl.obolibrary.org/obo/RO_0012011 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0012011">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
+        <obo:IAO_0000115>p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q.</obo:IAO_0000115>
+        <oboInOwl:created_by>pg</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-09-26T06:07:17Z</oboInOwl:creation_date>
+        <rdfs:label xml:lang="en">indirectly causally upstream of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0012012 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0012012">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0012011"/>
+        <obo:IAO_0000115>p indirectly regulates q iff p is indirectly causally upstream of q and p regulates q.</obo:IAO_0000115>
+        <oboInOwl:created_by>pg</oboInOwl:created_by>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2022-09-26T06:08:01Z</oboInOwl:creation_date>
+        <rdfs:label xml:lang="en">indirectly regulates</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/RO_0013001 -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0013001">
@@ -7311,6 +7409,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:IAO_0000115>p has anatomical participant c iff p has participant c, and c is an anatomical entity</obo:IAO_0000115>
         <oboInOwl:created_by>cjm</oboInOwl:created_by>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2018-09-26T01:08:58Z</oboInOwl:creation_date>
+        <oboInOwl:hasDbXref>RO:0040036</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>results_in_changes_to_anatomical_or_cellular_structure</oboInOwl:id>
+        <oboInOwl:shorthand>results_in_changes_to_anatomical_or_cellular_structure</oboInOwl:shorthand>
         <rdfs:label>results in changes to anatomical or cellular structure</rdfs:label>
     </owl:ObjectProperty>
     
@@ -7478,10 +7580,21 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002100"/>
+            <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0013001"/>
+        </owl:propertyChainAxiom>
+        <obo:IAO_0000115>X extends_fibers into Y iff there exists some neuron (N) and N has_soma_location X and N &apos;has synaptic IO in region&apos; some Y</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>extends_fibers_into</oboInOwl:id>
         <rdfs:label>extends_fibers_into</rdfs:label>
     </owl:ObjectProperty>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>X extends_fibers into Y iff there exists some neuron (N) and N has_soma_location X and N &apos;has synaptic IO in region&apos; some Y</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>https://orcid.org/0000-0002-7073-9172</oboInOwl:hasDbXref>
+    </owl:Axiom>
     
 
 
@@ -7916,12 +8029,6 @@ For example, A and B may be gene products and binding of B by A positively regul
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002179"/>
-                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CARO_0000003"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>An anatomical entity that has mass.</obo:IAO_0000115>
@@ -10442,6 +10549,26 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_24867 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24867">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24870"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33238"/>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>monoatomic ions</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>CHEBI:24867</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/chebi#3_STAR"/>
+        <rdfs:label>monoatomic ion</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>monoatomic ions</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_24870 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_24870">
@@ -12642,6 +12769,33 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33238 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33238">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33259"/>
+        <obo:IAO_0000115>A monoatomic entity is a molecular entity consisting of a single atom.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>atomic entity</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>monoatomic entities</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>CHEBI:33238</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/chebi#3_STAR"/>
+        <rdfs:label>monoatomic entity</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33238"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>atomic entity</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33238"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>monoatomic entities</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/CHEBI_33242 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33242">
@@ -12956,6 +13110,40 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33253"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>nucleons</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/CHEBI_33259 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CHEBI_33259">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CHEBI_23367"/>
+        <obo:IAO_0000115>A molecular entity all atoms of which have the same atomic number.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>chebi_ontology</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>homoatomic entity</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>homoatomic molecular entities</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>homoatomic molecular entity</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>CHEBI:33259</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/chebi#3_STAR"/>
+        <rdfs:label>elemental molecular entity</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33259"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>homoatomic entity</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33259"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>homoatomic molecular entities</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33259"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>homoatomic molecular entity</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ChEBI</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -13579,6 +13767,48 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acide carboxylique</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acides carboxyliques</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acides carboxyliques</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acido carboxilico</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acido carboxilico</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acidos carboxilicos</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>acidos carboxilicos</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An oxoacid acid carrying at least one -C(=O)OH group and having the structure RC(=O)OH, where R is any any monovalent functional group. Carboxylic acids are the most common type of organic acid.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ANON:ANON</oboInOwl:hasDbXref>
@@ -13690,48 +13920,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
         <owl:annotatedTarget>acide carboxylique</owl:annotatedTarget>
         <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acide carboxylique</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acides carboxyliques</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acides carboxyliques</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acido carboxilico</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acido carboxilico</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acidos carboxilicos</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CHEBI_33575"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>acidos carboxilicos</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>IUPAC:</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -18259,9 +18447,11 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CALOHA:TS-2086</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FMA:63368</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>animal stem cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.</rdfs:comment>
         <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">stem cell</rdfs:label>
     </owl:Class>
@@ -18667,7 +18857,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000118"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Basket cells are inhibitory GABAergic interneurons of the brain. In general, dendrites of basket cells are free branching and contain smooth spines. Axons are highly branched. The branched axonal arborizations give rise to basket-like structures that surround the soma of the target cell. Basket cells form axo-somatic synapses, meaning their synapses target somas of other cells.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>WikipediaVersioned:Basket_cell&amp;oldid=951703880</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WikipediaVersioned:Basket_cell&amp;oldid=951703880</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -18703,7 +18893,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000122"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A neuron that has dendritic processes radiating from the cell body forming a star-like shape.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:9780123973481</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:9780123973481</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -19557,13 +19747,13 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An interneuron that has spider-like appearance with a small round soma, a large number (7-10) of short, smooth, or slightly beaded primary dendrites that give rise to only a few secondary branches, and a branched axon that establishes a dense axonal mesh with thin shafts.</owl:annotatedTarget>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JB:jb</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:17122314</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:17122314</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000693"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>NGF cell</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18568015</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000693"/>
@@ -22038,7 +22228,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023077"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A type of interneuron that has two clusters of dendritic branches that originate directly from the soma and extend in opposite directions and axons that form a plexus which spreads widely. Compared to bipolar neurons, bitufted neurons have branching that occur close to the soma.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18568015</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023077"/>
@@ -22131,7 +22321,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023083"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:15378039</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15378039</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:27199673</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
@@ -22144,7 +22334,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_4023083"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>ChC</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:15378039</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15378039</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -22176,7 +22366,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         </rdfs:subClassOf>
         <obo:IAO_0000115>A Martinotti neuron that has axons that form a horizontal ramification, making it T-shaped.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-7258-9596"/>
-        <oboInOwl:hasExactSynonym>&apos;T-shaped&apos; Martinotti neuron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>T-shaped Martinotti neuron</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
         <rdfs:label>T Martinotti neuron</rdfs:label>
     </owl:Class>
@@ -22216,7 +22406,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         </rdfs:subClassOf>
         <obo:IAO_0000115>A Martinotti neuron that has axons that form a fan-like plexus.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-7258-9596"/>
-        <oboInOwl:hasExactSynonym>&apos;fanning-out&apos; Martinotti neuron</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fanning-out Martinotti neuron</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#BDS_subset"/>
         <rdfs:label>fan Martinotti neuron</rdfs:label>
     </owl:Class>
@@ -23133,7 +23323,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
         <obo:IAO_0000115>Enables the directed movement of substances (such as macromolecules, small molecules, ions) into, out of or within a cell, or between cells.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>GO:0005478</oboInOwl:hasAlternativeId>
-        <oboInOwl:hasDbXref>EC:7.-.-.-</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-168313</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-178215</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
@@ -23184,24 +23373,19 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0015267"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36914"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0015075"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0015267"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0015318"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36914"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size).</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24479</obo:IAO_0000233>
+        <oboInOwl:hasBroadSynonym>ion channel activity</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0005216</oboInOwl:id>
-        <rdfs:label>ion channel activity</rdfs:label>
+        <rdfs:label>monoatomic ion channel activity</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005216"/>
@@ -23517,7 +23701,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0006810"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24870"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -23526,57 +23710,22 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24870"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The directed movement of charged atoms or small charged molecules into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>ion transport</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0006811</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_drosophila"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_pir"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_yeast"/>
-        <rdfs:label>ion transport</rdfs:label>
+        <rdfs:label>monoatomic ion transport</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0006811"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The directed movement of charged atoms or small charged molecules into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:ai</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0006820 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0006820">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0006810"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22563"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0006811"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_22563"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The directed movement of anions, atoms or small molecules with a net negative charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore.</obo:IAO_0000115>
-        <oboInOwl:hasAlternativeId>GO:0006822</oboInOwl:hasAlternativeId>
-        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:0006820</oboInOwl:id>
-        <rdfs:label>anion transport</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0006820"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The directed movement of anions, atoms or small molecules with a net negative charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:ai</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -23707,7 +23856,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007267">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0007154"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0023052"/>
-        <obo:IAO_0000115>Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell.  Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell. Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>cell-cell signalling</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0007267</oboInOwl:id>
@@ -23718,7 +23867,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0007267"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell.  Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions.</owl:annotatedTarget>
+        <owl:annotatedTarget>Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell. Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:dos</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -24439,7 +24588,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0009888"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The process whose specific outcome is the progression of a tissue over time, from its formation to the mature structure.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ISBN:0471245208</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>ISBN:0471245208</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -24551,7 +24700,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0022857"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24870"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -24566,14 +24715,16 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24870"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Enables the transfer of an ion from one side of a membrane to the other.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24479</obo:IAO_0000233>
+        <oboInOwl:hasBroadSynonym>ion transmembrane transporter activity</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>ion transporter activity</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0015075</oboInOwl:id>
-        <rdfs:label>ion transmembrane transporter activity</rdfs:label>
+        <rdfs:label>monoatomic ion transmembrane transporter activity</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0015075"/>
@@ -24650,14 +24801,15 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0022834"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_36914"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005216"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0022834"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0022839"/>
         <obo:IAO_0000115>Enables the transmembrane transfer of an ion by a channel that opens when a specific ligand has been bound by the channel complex or one of its constituent parts.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>ligand-gated ion channel activity</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>Reactome:R-HSA-451310</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-451311</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-622325</oboInOwl:hasDbXref>
@@ -24666,7 +24818,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasNarrowSynonym>ionotropic receptor activity</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0015276</oboInOwl:id>
-        <rdfs:label>ligand-gated ion channel activity</rdfs:label>
+        <rdfs:label>ligand-gated monoatomic ion channel activity</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0015276"/>
@@ -24715,46 +24867,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0015318 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0015318">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0022857"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24835"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0022857"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24835"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Enables the transfer of an inorganic molecular entity from the outside of a cell to the inside of the cell across a membrane. An inorganic molecular entity is a molecular entity that contains no carbon.</obo:IAO_0000115>
-        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/14372</obo:IAO_0000233>
-        <oboInOwl:hasExactSynonym>inorganic solute uptake transmembrane transporter activity</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>inorganic uptake permease activity</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:0015318</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
-        <rdfs:label>inorganic molecular entity transmembrane transporter activity</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0015318"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Enables the transfer of an inorganic molecular entity from the outside of a cell to the inside of the cell across a membrane. An inorganic molecular entity is a molecular entity that contains no carbon.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:mtg_transport</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:0815340729</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0015711 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0015711">
@@ -24769,7 +24881,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0006820"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0071702"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -24891,15 +25002,20 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016020">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0031012"/>
-        <obo:IAO_0000115>A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it.</obo:IAO_0000115>
+        <obo:IAO_0000115>A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it.</obo:IAO_0000115>
         <oboInOwl:creation_date>2014-03-06T11:37:54Z</oboInOwl:creation_date>
+        <oboInOwl:hasAlternativeId>GO:0016021</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>GO:0098589</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>GO:0098805</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>Wikipedia:Biological_membrane</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>Wikipedia:Transmembrane_protein</oboInOwl:hasDbXref>
+        <oboInOwl:hasNarrowSynonym>integral component of membrane</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>integral to membrane</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>membrane region</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>region of membrane</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>whole membrane</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>transmembrane</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>GO:0016020</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_candida"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_chembl"/>
@@ -24913,10 +25029,16 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it.</owl:annotatedTarget>
+        <owl:annotatedTarget>A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:dos</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0815316194</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0016020"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>transmembrane</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -24985,6 +25107,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>The self-renewing division of a stem cell. A stem cell is an undifferentiated cell, in the embryo or adult, that can undergo unlimited division and give rise to one or several different cell types.</obo:IAO_0000115>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_Union_0000023"/>
         <oboInOwl:hasExactSynonym>stem cell renewal</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0017145</oboInOwl:id>
@@ -25003,7 +25126,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/GO_0019226 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0019226">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0035637"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0050877"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -25199,6 +25321,37 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0022836"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Enables the transmembrane transfer of a solute by a channel that opens in response to a specific stimulus.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:mtg_transport</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/GO_0022839 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0022839">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0022836"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005216"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0022836"/>
+        <obo:IAO_0000115>Enables the transmembrane transfer of a solute by a channel that opens in response to a specific ion stimulus.</obo:IAO_0000115>
+        <oboInOwl:hasBroadSynonym>ion gated channel activity</oboInOwl:hasBroadSynonym>
+        <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>GO:0022839</oboInOwl:id>
+        <rdfs:label>monoatomic ion gated channel activity</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0022839"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Enables the transmembrane transfer of a solute by a channel that opens in response to a specific ion stimulus.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:mtg_transport</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -25659,7 +25812,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                     </owl:Restriction>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0004009"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24870"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CHEBI_24867"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
@@ -25668,13 +25821,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0055085"/>
         <obo:IAO_0000115>A process in which an ion is transported across a membrane.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>GO:0099131</oboInOwl:hasAlternativeId>
+        <oboInOwl:hasBroadSynonym>ion transmembrane transport</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>ion membrane transport</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>transmembrane ion transport</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>ATP hydrolysis coupled ion transmembrane transport</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0034220</oboInOwl:id>
         <rdfs:comment>Note that this term is not intended for use in annotating lateral movement within membranes.</rdfs:comment>
-        <rdfs:label>ion transmembrane transport</rdfs:label>
+        <rdfs:label>monoatomic ion transmembrane transport</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0034220"/>
@@ -25847,34 +26001,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The process whose specific outcome is the progression of a tube over time, from its initial formation to a mature structure. Epithelial and endothelial tubes transport gases, liquids and cells from one site to another and form the basic structure of many organs and tissues including lung and trachea, kidney, the mammary gland, the vascular system and the gastrointestinal and urinary-genital tracts.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:12526790</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0035637 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0035637">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0023052"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032501"/>
-        <obo:IAO_0000115>The transfer of information occurring at the level of a multicellular organism.</obo:IAO_0000115>
-        <oboInOwl:created_by>bf</oboInOwl:created_by>
-        <oboInOwl:creation_date>2011-01-14T10:13:50Z</oboInOwl:creation_date>
-        <oboInOwl:hasExactSynonym>multicellular organismal signalling</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:0035637</oboInOwl:id>
-        <rdfs:label>multicellular organismal signaling</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0035637"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The transfer of information occurring at the level of a multicellular organism.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:go_curators</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0035637"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>multicellular organismal signalling</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:bf</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -27061,7 +27187,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000617"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>The vesicular release of  gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse.</obo:IAO_0000115>
+        <obo:IAO_0000115>The vesicular release of gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>GABAergic synaptic transmission</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>synaptic transmission, GABA mediated</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>synaptic transmission, gamma-aminobutyric acid mediated</oboInOwl:hasExactSynonym>
@@ -27073,7 +27199,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0051932"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The vesicular release of  gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse.</owl:annotatedTarget>
+        <owl:annotatedTarget>The vesicular release of gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:dos</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0126603030</oboInOwl:hasDbXref>
     </owl:Axiom>
@@ -29478,6 +29604,26 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0010001 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0010001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000141"/>
+        <obo:IAO_0000115>A structural quality inhering in the bearer by virtue of the bearer consisting of multiple structures lacking any physical connection to each other.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-7073-9172"/>
+        <oboInOwl:creation_date>2014-12-12T08:43:17Z</oboInOwl:creation_date>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PATO:0010001</oboInOwl:id>
+        <rdfs:label>disconnected</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0010001"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A structural quality inhering in the bearer by virtue of the bearer consisting of multiple structures lacking any physical connection to each other.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>GOC:dos</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0010006 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0010006">
@@ -29641,7 +29787,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070006"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell morphology that inheres in neurons which have two principal dendrites that emerge from the soma and begin to branch some distance from it, have few spines, and branch in narrow fields. This is in contrast to bitufted morphology where branching occurs close to the soma.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18568015</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>doi:10.1016/b978-0-12-369497-3.10004-4</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -29772,8 +29918,8 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070012"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell morphology that inheres in neurons which have two clusters of primary dendrites that originate directly and extend from opposite ends of the soma, and axons that form a plexus which spreads widely. Compared to the narrow vertical axonal projection of bipolar morphology, and the &apos;horse-tail&apos; axonal cluster of double boquet cells, bitufted morphology has wide horizontal axonal spans, and branching that occur close to the soma. Their vertical projection is also less extensive and crosses mostly to neighboring layers.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:15378039</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:15378039</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18568015</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>doi:10.1016/b978-0-12-369497-3.10004-4</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -29959,7 +30105,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0070027"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A cell morphology that inheres in neurons with dendrites that are bidirectional, emerging from opposite ends of the soma, with the two arbors extending in radial or tangential directions.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>PMID:18568015</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:18568015</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -31711,8 +31857,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D006257</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000294</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12419</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rEOLm4rgPEdmAAAACs6hRjg</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVi6YJwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:302548004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SPD:0000016</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001114</oboInOwl:hasDbXref>
@@ -31857,7 +32001,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000061 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000061">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -31911,7 +32054,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000062 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000062">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0010000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
         <rdfs:subClassOf>
@@ -31945,8 +32087,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:67498</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0003001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C13018</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rv5XMb5wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwP3iWpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:272625005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0178784</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBbt:0003760</oboInOwl:hasDbXref>
@@ -32293,7 +32433,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000075 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000075">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -32451,17 +32590,11 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002224"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000106"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002230"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000071"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>An entire span of an organism&apos;s life, commencing with the zygote stage and ending in the death of the organism.</obo:IAO_0000115>
+        <obo:IAO_0000115>An entire span of an organism&apos;s life. In metazoans, commences with the zygote stage and ends with the death of the organism.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FBdv:00000000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>HsapDv:0000001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MmusDv:0000001</oboInOwl:hasDbXref>
@@ -32480,7 +32613,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000104"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>An entire span of an organism&apos;s life, commencing with the zygote stage and ending in the death of the organism.</owl:annotatedTarget>
+        <owl:annotatedTarget>An entire span of an organism&apos;s life. In metazoans, commences with the zygote stage and ends with the death of the organism.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -32707,7 +32840,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>OGES:000003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000016</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGES:000021</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBls:0000005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Wikipedia:Blastula</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>XAO:1000003</oboInOwl:hasDbXref>
@@ -33136,7 +33268,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000038</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D009055</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000038</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVidh5wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:21082005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TADS:0000040</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000547</oboInOwl:hasDbXref>
@@ -33437,7 +33568,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>GAID:1294</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D036703</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGEM:000006</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Wikipedia:Blastula</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>blastula embryo</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -33482,7 +33612,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
         <rdfs:subClassOf>
@@ -33514,7 +33643,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>BTO:0001485</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0000801</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EMAPA:35578</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FBbt:00005069</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:72954</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0002888</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MAT:0000025</oboInOwl:hasDbXref>
@@ -33683,7 +33811,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000463 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000463">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -33781,7 +33908,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000464 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000464">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000466"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -33839,7 +33965,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000465 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000465">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000466"/>
         <obo:IAO_0000115>Anatomical entity that has mass.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010264</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>AEO:0000006</oboInOwl:hasDbXref>
@@ -33869,6 +33997,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000466 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000466">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
         <obo:IAO_0000115>Anatomical entity that has no mass.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010265</oboInOwl:hasDbXref>
@@ -33906,7 +34035,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000467 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000467">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -33938,7 +34066,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>HAO:0000011</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0000003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12919</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rCWM0QCtDEdyAAADggVbxzQ</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:278195005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001439</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TGMA:0001831</oboInOwl:hasDbXref>
@@ -34132,7 +34259,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D001829</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000293</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C32221</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvViAHJwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001308</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TGMA:0001840</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0229962</oboInOwl:hasDbXref>
@@ -34243,7 +34369,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0000477 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000477">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001062"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034923"/>
         <obo:IAO_0000115>Anatomical group that has its parts adjacent to one another.</obo:IAO_0000115>
         <obo:IAO_0000116>Will be obsoleted in CARO v2 [https://github.com/obophenotype/caro/issues/3]</obo:IAO_0000116>
         <oboInOwl:hasDbXref>AAO:0010009</oboInOwl:hasDbXref>
@@ -34423,7 +34549,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -34703,7 +34828,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MIAA:0000019</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C28147</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>OGEM:000001</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwP1ceZwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:57991002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0013935</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001766</oboInOwl:hasDbXref>
@@ -35389,7 +35513,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D001921</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000098</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12439</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PBA:3999</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:258335003</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000008</oboInOwl:hasDbXref>
@@ -35794,7 +35917,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D007596</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000188</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C13044</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVjjdpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>RETIRED_EHDAA2:0003182</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:302536002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000367</oboInOwl:hasDbXref>
@@ -35941,7 +36063,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D012137</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000030</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12779</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVjzFJwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:278197002</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000272</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0035237</oboInOwl:hasDbXref>
@@ -36122,7 +36243,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0001015 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001015">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
         <rdfs:subClassOf>
@@ -36148,7 +36268,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:32558</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0000165</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C13056</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVjmr5wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000548</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0026845</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VSAO:0005038</oboInOwl:hasDbXref>
@@ -36283,7 +36402,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D009420</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000026</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12755</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:278196006</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000396</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0027763</oboInOwl:hasDbXref>
@@ -36434,7 +36552,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000457</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D002490</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12438</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:278199004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000012</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0927232</oboInOwl:hasDbXref>
@@ -36739,7 +36856,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>GAID:30</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D001415</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C13062</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVkEU5wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:123961009</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0004600</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Wikipedia:Dorsum_(anatomy)</oboInOwl:hasDbXref>
@@ -36962,7 +37078,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -37006,7 +37121,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:23881</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0000018</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12788</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVi1rpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000434</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0037253</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001254</oboInOwl:hasDbXref>
@@ -37147,7 +37261,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:45615</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0000917</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C34082</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000112</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TGMA:0001819</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0017189</oboInOwl:hasDbXref>
@@ -37289,7 +37402,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:5022</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GAID:131</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MA:0000015</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rv2kf-5wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:71616004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0005145</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001245</oboInOwl:hasDbXref>
@@ -37382,7 +37494,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MA:0000133</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MBA:403</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12351</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvigx5ZwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:278251007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0228174</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0242202</oboInOwl:hasDbXref>
@@ -37621,7 +37732,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000508</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D013702</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12353</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwQLi-ZwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:180921000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0039485</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C1268978</oboInOwl:hasDbXref>
@@ -37717,7 +37827,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000506</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D010296</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12354</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvg-typwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:180922007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0030560</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Wikipedia:Parietal_lobe</oboInOwl:hasDbXref>
@@ -37989,7 +38098,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D008636</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000106</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12510</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvsBUqpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>RETIRED_EHDAA2:0001104</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:279099009</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000128</oboInOwl:hasDbXref>
@@ -38410,7 +38518,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D004027</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000420</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12456</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwC-V0JwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PBA:128013010</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:279328001</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000101</oboInOwl:hasDbXref>
@@ -38582,7 +38689,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0001896 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001896">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000064"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -38643,8 +38749,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D008526</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000111</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12442</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVjxSJwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwCqnXJwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:279104005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000545</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0025148</oboInOwl:hasDbXref>
@@ -39073,7 +39177,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MA:0001112</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D066128</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C32695</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwDdKMpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0002197</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0018220</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001768</oboInOwl:hasDbXref>
@@ -39516,7 +39619,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000296</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000296</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C33816</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVkJjpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:262225004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001115</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0460005</oboInOwl:hasDbXref>
@@ -39640,7 +39742,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MA:0002418</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D009141</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12754</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rQRpVNgAKEdyHxgDggVfs8g</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:278858007</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0026860</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001275</oboInOwl:hasDbXref>
@@ -39763,7 +39864,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D013116</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000183</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12464</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:180959008</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0000075</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0037925</oboInOwl:hasDbXref>
@@ -40202,7 +40302,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0002328 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002328">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000481"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf>
@@ -40295,6 +40395,12 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>notochord</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
+        <oboInOwl:source>PMID:15890825</oboInOwl:source>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
@@ -40968,7 +41074,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D008578</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12348</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NLXANAT:090204</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rwDOl8JwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001355</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0025285</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001295</oboInOwl:hasDbXref>
@@ -41082,7 +41187,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D003238</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000301</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12374</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rv-aBgZwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:361919005</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001641</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0009780</oboInOwl:hasDbXref>
@@ -41180,7 +41284,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf>
@@ -41401,7 +41504,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000073"/>
         <rdfs:subClassOf>
@@ -42396,7 +42498,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0003099 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003099">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf>
@@ -42543,7 +42644,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -42734,7 +42834,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000479"/>
         <rdfs:subClassOf>
@@ -42765,7 +42864,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>GAID:609</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D009417</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C13052</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rVmfYCsQ_QdeM_bFAeS8NRQ</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:91728009</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0027757</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>nerve tissue</oboInOwl:hasExactSynonym>
@@ -42837,7 +42935,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000464"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -43985,7 +44082,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0004288 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004288">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -44014,7 +44110,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000032</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D012863</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MIAA:0000032</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rvVi1rpwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:361378004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VSAO:0000026</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Wikipedia:Skeleton</oboInOwl:hasDbXref>
@@ -44361,7 +44456,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -44853,8 +44947,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0005162 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005162">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -44875,12 +44968,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#upper_level"/>
         <rdfs:label>multi cell part structure</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005162"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
-        <oboInOwl:source>FMA</oboInOwl:source>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005162"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -46373,7 +46460,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0005423 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005423">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -46417,7 +46503,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000476"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -48468,7 +48553,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0009142 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009142">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000477"/>
         <rdfs:subClassOf>
@@ -49214,7 +49298,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
         <rdfs:subClassOf>
@@ -49605,7 +49688,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002384"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -49650,7 +49732,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0011860 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011860">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000476"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -49727,7 +49808,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0013686 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0013686">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000141"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000464"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -50122,7 +50202,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MAT:0000505</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D005625</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12352</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>OpenCyc:Mx4rv3OJ8JwpEbGdrcN5Y29ycA</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:180920004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C0016733</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>UMLS:C1268977</oboInOwl:hasDbXref>
@@ -50785,7 +50864,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0034921 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034921">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -50821,6 +50899,51 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
+    <!-- http://purl.obolibrary.org/obo/UBERON_0034923 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034923">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0010001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002180"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>Material anatomical entity consisting of multiple anatomical structures that are not connected to each other.</obo:IAO_0000115>
+        <oboInOwl:hasDbXref>CARO:0020000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>FBbt:00007276</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>UBERON:0034923</oboInOwl:id>
+        <rdfs:label>disconnected anatomical group</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034923"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
+        <oboInOwl:source>CARO</oboInOwl:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034923"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>Material anatomical entity consisting of multiple anatomical structures that are not connected to each other.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>CARO:0020000</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/UBERON_0034925 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0034925">
@@ -50849,7 +50972,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0035804 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0035804">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000040"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0013522"/>
         <rdfs:subClassOf>
@@ -50897,18 +51019,25 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8440000">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440004"/>
-        <obo:IAO_0000115>A laminar subdivision of the neocortex that is comprised of both layers II &amp; III.</obo:IAO_0000115>
+        <obo:IAO_0000115>A laminar subdivision of the neocortex that is comprised of a part of layer II and a part of layer III.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>cerebral cortex layer 2/3</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>neocortex layer 2/3</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:8440000</oboInOwl:id>
+        <rdfs:comment>In rodents, layer II/III refers to a mereological sum of layers II and III as there is no clear architectonic boundary between them.</rdfs:comment>
         <rdfs:label>cortical layer II/III</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440000"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A laminar subdivision of the neocortex that is comprised of both layers II &amp; III.</owl:annotatedTarget>
+        <owl:annotatedTarget>A laminar subdivision of the neocortex that is comprised of a part of layer II and a part of layer III.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:34616063</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440000"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#comment"/>
+        <owl:annotatedTarget>In rodents, layer II/III refers to a mereological sum of layers II and III as there is no clear architectonic boundary between them.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:29311847</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -50917,7 +51046,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8440001">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440004"/>
-        <obo:IAO_0000115>A laminar subdivision of the neocortex that is comprised of both layers IV &amp; V.</obo:IAO_0000115>
+        <obo:IAO_0000115>A laminar subdivision of the neocortex that is comprised of a part of layer IV and a part of layer V.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>cerebral cortex layer 4/5</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>neocortex layer 4/5</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -50927,7 +51056,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440001"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A laminar subdivision of the neocortex that is comprised of both layers IV &amp; V.</owl:annotatedTarget>
+        <owl:annotatedTarget>A laminar subdivision of the neocortex that is comprised of a part of layer IV and a part of layer V.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:34616063</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -50937,7 +51066,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_8440002">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440004"/>
-        <obo:IAO_0000115>A laminar subdivision of the neocortex that is comprised of both layers V &amp; VI.</obo:IAO_0000115>
+        <obo:IAO_0000115>A laminar subdivision of the neocortex that is comprised of a part of layer V and a part of layer VI.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>cerebral cortex layer 5/6</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>neocortex layer 5/6</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -50947,7 +51076,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_8440002"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A laminar subdivision of the neocortex that is comprised of both layers V &amp; VI.</owl:annotatedTarget>
+        <owl:annotatedTarget>A laminar subdivision of the neocortex that is comprised of a part of layer V and a part of layer VI.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PMID:34616063</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -51076,6 +51205,16 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Restriction>
         </owl:disjointWith>
     </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0010000"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0010001"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Restriction>
     
 
 
@@ -51141,6 +51280,12 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <rdf:Description rdf:about="urn:swrl#mf2">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#p">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#q">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
     <rdf:Description rdf:about="urn:swrl:var#x">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
@@ -51148,6 +51293,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description rdf:about="urn:swrl:var#z">
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
+    </rdf:Description>
+    <rdf:Description rdf:about="urn:swrl:var#u">
         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Variable"/>
     </rdf:Description>
     <rdf:Description>
@@ -51845,6 +51993,50 @@ e.g.  if GP X enables ATPase coupled transporter activity&apos; and &apos;ATPase
                 <rdf:first>
                     <rdf:Description>
                         <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002211"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#q"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0012011"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#q"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0012012"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#q"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
                         <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002212"/>
                         <swrl:argument1 rdf:resource="urn:swrl#x"/>
                         <swrl:argument2 rdf:resource="urn:swrl#y"/>
@@ -52007,6 +52199,50 @@ e.g.  if GP X enables ATPase coupled transporter activity&apos; and &apos;ATPase
                         <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002263"/>
                         <swrl:argument1 rdf:resource="urn:swrl:var#x"/>
                         <swrl:argument2 rdf:resource="urn:swrl:var#z"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+            </rdf:Description>
+        </swrl:head>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#Imp"/>
+        <swrl:body>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#q"/>
+                    </rdf:Description>
+                </rdf:first>
+                <rdf:rest>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                        <rdf:first>
+                            <rdf:Description>
+                                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                                <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0002411"/>
+                                <swrl:argument1 rdf:resource="urn:swrl:var#q"/>
+                                <swrl:argument2 rdf:resource="urn:swrl:var#u"/>
+                            </rdf:Description>
+                        </rdf:first>
+                        <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                    </rdf:Description>
+                </rdf:rest>
+            </rdf:Description>
+        </swrl:body>
+        <swrl:head>
+            <rdf:Description>
+                <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#AtomList"/>
+                <rdf:first>
+                    <rdf:Description>
+                        <rdf:type rdf:resource="http://www.w3.org/2003/11/swrl#IndividualPropertyAtom"/>
+                        <swrl:propertyPredicate rdf:resource="http://purl.obolibrary.org/obo/RO_0012011"/>
+                        <swrl:argument1 rdf:resource="urn:swrl:var#p"/>
+                        <swrl:argument2 rdf:resource="urn:swrl:var#u"/>
                     </rdf:Description>
                 </rdf:first>
                 <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>

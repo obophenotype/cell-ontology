@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-08-16/subsets/BDS_subset.owl
+data-version: cl/releases/2022-12-15/subsets/BDS_subset.owl
 subsetdef: 1_STAR ""
 subsetdef: 2_STAR ""
 subsetdef: 3_STAR ""
@@ -99,7 +99,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/BDS_subset
-property_value: owl:versionInfo "2022-08-16" xsd:string
+property_value: owl:versionInfo "2022-12-15" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -183,7 +183,6 @@ is_a: CARO:0000000 ! anatomical entity
 intersection_of: CARO:0000000 ! anatomical entity
 intersection_of: bearer_of PATO:0000125 ! mass
 relationship: bearer_of PATO:0000125 ! mass
-relationship: drains CARO:0000003 ! connected anatomical structure
 
 [Term]
 id: CARO:0000012
@@ -839,6 +838,15 @@ synonym: "inorganics" RELATED [ChEBI]
 is_a: CHEBI:23367 ! molecular entity
 
 [Term]
+id: CHEBI:24867
+name: monoatomic ion
+namespace: chebi_ontology
+subset: 3_STAR
+synonym: "monoatomic ions" RELATED [ChEBI]
+is_a: CHEBI:24870 ! ion
+is_a: CHEBI:33238 ! monoatomic entity
+
+[Term]
 id: CHEBI:24870
 name: ion
 namespace: chebi_ontology
@@ -1444,6 +1452,16 @@ synonym: "elementary particles" RELATED [ChEBI]
 is_a: CHEBI:36342 ! subatomic particle
 
 [Term]
+id: CHEBI:33238
+name: monoatomic entity
+namespace: chebi_ontology
+def: "A monoatomic entity is a molecular entity consisting of a single atom." []
+subset: 3_STAR
+synonym: "atomic entity" RELATED [ChEBI]
+synonym: "monoatomic entities" RELATED [ChEBI]
+is_a: CHEBI:33259 ! elemental molecular entity
+
+[Term]
 id: CHEBI:33242
 name: inorganic hydride
 namespace: chebi_ontology
@@ -1533,6 +1551,17 @@ synonym: "Nukleon" RELATED [ChEBI]
 synonym: "Nukleonen" RELATED [ChEBI]
 is_a: CHEBI:36339 ! baryon
 is_a: CHEBI:36347 ! nuclear particle
+
+[Term]
+id: CHEBI:33259
+name: elemental molecular entity
+namespace: chebi_ontology
+def: "A molecular entity all atoms of which have the same atomic number." []
+subset: 3_STAR
+synonym: "homoatomic entity" RELATED [ChEBI]
+synonym: "homoatomic molecular entities" RELATED [ChEBI]
+synonym: "homoatomic molecular entity" RELATED [ChEBI]
+is_a: CHEBI:23367 ! molecular entity
 
 [Term]
 id: CHEBI:33273
@@ -3205,6 +3234,7 @@ id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
@@ -3214,6 +3244,7 @@ intersection_of: CL:0000003 ! native cell
 intersection_of: capable_of GO:0017145 ! stem cell division
 relationship: capable_of GO:0017145 ! stem cell division
 relationship: in_taxon NCBITaxon:33208 ! Metazoa
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000048
@@ -4592,7 +4623,7 @@ id: CL:4023086
 name: T Martinotti neuron
 def: "A Martinotti neuron that has axons that form a horizontal ramification, making it T-shaped." [doi:10.1016/b978-0-12-369497-3.10004-4]
 subset: BDS_subset
-synonym: "'T-shaped' Martinotti neuron" EXACT []
+synonym: "T-shaped Martinotti neuron" EXACT []
 is_a: CL:4023076 ! Martinotti neuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070008 ! T Martinotti morphology
@@ -4605,7 +4636,7 @@ id: CL:4023087
 name: fan Martinotti neuron
 def: "A Martinotti neuron that has axons that form a fan-like plexus." [doi:10.1016/b978-0-12-369497-3.10004-4]
 subset: BDS_subset
-synonym: "'fanning-out' Martinotti neuron" EXACT []
+synonym: "fanning-out Martinotti neuron" EXACT []
 is_a: CL:4023076 ! Martinotti neuron
 intersection_of: CL:0000099 ! interneuron
 intersection_of: bearer_of PATO:0070009 ! fan Martinotti morphology
@@ -4934,22 +4965,21 @@ subset: goslim_pir
 subset: goslim_plant
 subset: prokaryote_subset
 synonym: "carrier" RELATED []
-xref: EC:7.-.-.-
 xref: Reactome:R-HSA-168313 "Virion-associated M2 protein mediated ion infusion"
 xref: Reactome:R-HSA-178215 "SMAD7:SMURF1 complex is exported to the cytosol"
 is_a: GO:0003674 ! molecular_function
 
 [Term]
 id: GO:0005216
-name: ion channel activity
+name: monoatomic ion channel activity
 namespace: molecular_function
 def: "Enables the facilitated diffusion of an ion (by an energy-independent process) by passage through a transmembrane aqueous pore or channel without evidence for a carrier-mediated mechanism. May be either selective (it enables passage of a specific ion only) or non-selective (it enables passage of two or more ions of same charge but different size)." [GOC:cy, GOC:mtg_transport, GOC:pr, ISBN:0815340729]
-is_a: GO:0015075 ! ion transmembrane transporter activity
+synonym: "ion channel activity" BROAD []
+is_a: GO:0015075 ! monoatomic ion transmembrane transporter activity
 is_a: GO:0015267 ! channel activity
-is_a: GO:0015318 ! inorganic molecular entity transmembrane transporter activity
 intersection_of: GO:0015267 ! channel activity
-intersection_of: has_primary_input CHEBI:36914 ! inorganic ion
-relationship: has_primary_input CHEBI:36914 ! inorganic ion
+intersection_of: has_primary_input CHEBI:24867 ! monoatomic ion
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/24479 xsd:anyURI
 
 [Term]
 id: GO:0005575
@@ -5080,27 +5110,17 @@ creation_date: 2012-12-13T16:25:32Z
 
 [Term]
 id: GO:0006811
-name: ion transport
+name: monoatomic ion transport
 namespace: biological_process
 def: "The directed movement of charged atoms or small charged molecules into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
 subset: goslim_drosophila
 subset: goslim_pir
 subset: goslim_yeast
+synonym: "ion transport" BROAD []
 is_a: GO:0006810 ! transport
 intersection_of: GO:0006810 ! transport
-intersection_of: has_primary_input CHEBI:24870 ! ion
-relationship: has_primary_input CHEBI:24870 ! ion
-
-[Term]
-id: GO:0006820
-name: anion transport
-namespace: biological_process
-alt_id: GO:0006822
-def: "The directed movement of anions, atoms or small molecules with a net negative charge, into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore." [GOC:ai]
-is_a: GO:0006811 ! ion transport
-intersection_of: GO:0006810 ! transport
-intersection_of: has_primary_input CHEBI:22563 ! anion
-relationship: has_primary_input CHEBI:22563 ! anion
+intersection_of: has_primary_input CHEBI:24867 ! monoatomic ion
+relationship: has_primary_input CHEBI:24867 ! monoatomic ion
 
 [Term]
 id: GO:0006836
@@ -5151,7 +5171,7 @@ is_a: GO:0009987 ! cellular process
 id: GO:0007267
 name: cell-cell signaling
 namespace: biological_process
-def: "Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell.  Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions." [GOC:dos, GOC:mah]
+def: "Any process that mediates the transfer of information from one cell to another. This process includes signal transduction in the receiving cell and, where applicable, release of a ligand and any processes that actively facilitate its transport and presentation to the receiving cell. Examples include signaling via soluble ligands, via cell adhesion molecules and via gap junctions." [GOC:dos, GOC:mah]
 subset: goslim_chembl
 subset: goslim_plant
 synonym: "cell-cell signalling" EXACT []
@@ -5478,15 +5498,17 @@ intersection_of: has_primary_input CHEBI:59888 ! gamma-aminobutyric acid zwitter
 
 [Term]
 id: GO:0015075
-name: ion transmembrane transporter activity
+name: monoatomic ion transmembrane transporter activity
 namespace: molecular_function
 def: "Enables the transfer of an ion from one side of a membrane to the other." [GOC:dgf, GOC:mtg_transport, ISBN:0815340729]
+synonym: "ion transmembrane transporter activity" BROAD []
 synonym: "ion transporter activity" EXACT []
 is_a: GO:0022857 ! transmembrane transporter activity
 intersection_of: GO:0022857 ! transmembrane transporter activity
-intersection_of: has_primary_input CHEBI:24870 ! ion
-relationship: has_primary_input CHEBI:24870 ! ion
-relationship: part_of GO:0034220 {http://purl.org/dc/terms/source="GO_REF:0000090"} ! ion transmembrane transport
+intersection_of: has_primary_input CHEBI:24867 ! monoatomic ion
+relationship: has_primary_input CHEBI:24867 ! monoatomic ion
+relationship: part_of GO:0034220 {http://purl.org/dc/terms/source="GO_REF:0000090"} ! monoatomic ion transmembrane transport
+property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/24479 xsd:anyURI
 
 [Term]
 id: GO:0015267
@@ -5510,40 +5532,26 @@ is_a: GO:0022803 ! passive transmembrane transporter activity
 
 [Term]
 id: GO:0015276
-name: ligand-gated ion channel activity
+name: ligand-gated monoatomic ion channel activity
 namespace: molecular_function
 def: "Enables the transmembrane transfer of an ion by a channel that opens when a specific ligand has been bound by the channel complex or one of its constituent parts." [GOC:mtg_transport, ISBN:0815340729]
 synonym: "ionotropic receptor activity" NARROW [GOC:bf, GOC:sart]
+synonym: "ligand-gated ion channel activity" BROAD []
 xref: Reactome:R-HSA-451310 "Activation of Edited Kainate receptors"
 xref: Reactome:R-HSA-451311 "Activation of Ca-permeable Kainate receptors"
 xref: Reactome:R-HSA-622325 "Activation of highly sodium permeable postsynaptic nicotinic acetylcholine receptors"
 xref: Reactome:R-HSA-622326 "Activation of highly calcium permeable nicotinic acetylcholine receptors"
 xref: Reactome:R-HSA-629595 "Activation of highly calcium permeable postsynaptic nicotinic acetylcholine receptors"
-is_a: GO:0005216 ! ion channel activity
 is_a: GO:0022834 ! ligand-gated channel activity
+is_a: GO:0022839 ! monoatomic ion gated channel activity
 intersection_of: GO:0022834 ! ligand-gated channel activity
-intersection_of: has_primary_input CHEBI:36914 ! inorganic ion
-
-[Term]
-id: GO:0015318
-name: inorganic molecular entity transmembrane transporter activity
-namespace: molecular_function
-def: "Enables the transfer of an inorganic molecular entity from the outside of a cell to the inside of the cell across a membrane. An inorganic molecular entity is a molecular entity that contains no carbon." [GOC:mtg_transport, ISBN:0815340729]
-subset: gocheck_do_not_annotate
-synonym: "inorganic solute uptake transmembrane transporter activity" EXACT []
-synonym: "inorganic uptake permease activity" EXACT []
-is_a: GO:0022857 ! transmembrane transporter activity
-intersection_of: GO:0022857 ! transmembrane transporter activity
-intersection_of: has_primary_input CHEBI:24835 ! inorganic molecular entity
-relationship: has_primary_input CHEBI:24835 ! inorganic molecular entity
-property_value: IAO:0000233 https://github.com/geneontology/go-ontology/issues/14372 xsd:anyURI
+intersection_of: has_primary_input CHEBI:24867 ! monoatomic ion
 
 [Term]
 id: GO:0015711
 name: organic anion transport
 namespace: biological_process
 def: "The directed movement of organic anions into, out of or within a cell, or between cells, by means of some agent such as a transporter or pore. Organic anions are atoms or small molecules with a negative charge which contain carbon in covalent linkage." [GOC:ai, GOC:krc]
-is_a: GO:0006820 ! anion transport
 is_a: GO:0071702 ! organic substance transport
 intersection_of: GO:0006810 ! transport
 intersection_of: has_primary_input CHEBI:25696 ! organic anion
@@ -5585,9 +5593,10 @@ relationship: has_primary_input CHEBI:64709 ! organic acid
 id: GO:0016020
 name: membrane
 namespace: cellular_component
+alt_id: GO:0016021
 alt_id: GO:0098589
 alt_id: GO:0098805
-def: "A lipid bilayer along with all the proteins and protein complexes embedded in it an attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
+def: "A lipid bilayer along with all the proteins and protein complexes embedded in it and attached to it." [GOC:dos, GOC:mah, ISBN:0815316194]
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
@@ -5595,10 +5604,14 @@ subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_yeast
+synonym: "integral component of membrane" NARROW []
+synonym: "integral to membrane" NARROW []
 synonym: "membrane region" NARROW []
 synonym: "region of membrane" NARROW []
+synonym: "transmembrane" RELATED [GOC:mah]
 synonym: "whole membrane" NARROW []
 xref: Wikipedia:Biological_membrane
+xref: Wikipedia:Transmembrane_protein
 is_a: GO:0110165 ! cellular anatomical entity
 disjoint_from: GO:0031012 ! extracellular matrix
 creation_date: 2014-03-06T11:37:54Z
@@ -5629,6 +5642,7 @@ is_a: GO:0051301 ! cell division
 intersection_of: GO:0051301 ! cell division
 intersection_of: has_input CL:0000034 ! stem cell
 relationship: has_input CL:0000034 ! stem cell
+relationship: never_in_taxon NCBITaxon_Union:0000023
 
 [Term]
 id: GO:0019226
@@ -5637,7 +5651,6 @@ namespace: biological_process
 def: "The neurological system process in which a signal is transmitted through the nervous system by a combination of action potential propagation and synaptic transmission." [GOC:curators, ISBN:0815316194]
 synonym: "conduction of nerve impulse" EXACT [GOC:dph]
 synonym: "signal transmission along a neuron" EXACT []
-is_a: GO:0035637 ! multicellular organismal signaling
 is_a: GO:0050877 ! nervous system process
 relationship: has_part GO:0001508 ! action potential
 relationship: has_part GO:0007268 ! chemical synaptic transmission
@@ -5693,6 +5706,17 @@ name: gated channel activity
 namespace: molecular_function
 def: "Enables the transmembrane transfer of a solute by a channel that opens in response to a specific stimulus." [GOC:mtg_transport]
 is_a: GO:0015267 ! channel activity
+
+[Term]
+id: GO:0022839
+name: monoatomic ion gated channel activity
+namespace: molecular_function
+def: "Enables the transmembrane transfer of a solute by a channel that opens in response to a specific ion stimulus." [GOC:mtg_transport]
+synonym: "ion gated channel activity" BROAD []
+is_a: GO:0005216 ! monoatomic ion channel activity
+is_a: GO:0022836 ! gated channel activity
+intersection_of: GO:0022836 ! gated channel activity
+intersection_of: has_primary_input CHEBI:24867 ! monoatomic ion
 
 [Term]
 id: GO:0022857
@@ -5888,18 +5912,19 @@ relationship: has_part PR:000000001 ! protein
 
 [Term]
 id: GO:0034220
-name: ion transmembrane transport
+name: monoatomic ion transmembrane transport
 namespace: biological_process
 alt_id: GO:0099131
 def: "A process in which an ion is transported across a membrane." [GOC:mah]
 comment: Note that this term is not intended for use in annotating lateral movement within membranes.
 synonym: "ATP hydrolysis coupled ion transmembrane transport" NARROW []
 synonym: "ion membrane transport" EXACT []
+synonym: "ion transmembrane transport" BROAD []
 synonym: "transmembrane ion transport" EXACT [GOC:dph, GOC:tb]
-is_a: GO:0006811 ! ion transport
+is_a: GO:0006811 ! monoatomic ion transport
 is_a: GO:0055085 ! transmembrane transport
 intersection_of: GO:0006810 ! transport
-intersection_of: has_primary_input CHEBI:24870 ! ion
+intersection_of: has_primary_input CHEBI:24867 ! monoatomic ion
 intersection_of: results_in_transport_across GO:0016020 ! membrane
 
 [Term]
@@ -5946,17 +5971,6 @@ relationship: part_of GO:0007275 ! multicellular organism development
 relationship: results_in_development_of UBERON:0000025 ! tube
 
 [Term]
-id: GO:0035637
-name: multicellular organismal signaling
-namespace: biological_process
-def: "The transfer of information occurring at the level of a multicellular organism." [GOC:go_curators]
-synonym: "multicellular organismal signalling" EXACT [GOC:bf]
-is_a: GO:0023052 ! signaling
-is_a: GO:0032501 ! multicellular organismal process
-created_by: bf
-creation_date: 2011-01-14T10:13:50Z
-
-[Term]
 id: GO:0036477
 name: somatodendritic compartment
 namespace: cellular_component
@@ -5990,7 +6004,7 @@ name: regulation of membrane potential
 namespace: biological_process
 def: "Any process that modulates the establishment or extent of a membrane potential, the electric potential existing across any membrane arising from charges in the membrane itself and from the charges present in the media on either side of the membrane." [GOC:jl, GOC:mtg_cardio, GOC:tb, ISBN:0198506732]
 is_a: BFO:0000003 ! occurrent
-relationship: has_part GO:0034220 ! ion transmembrane transport
+relationship: has_part GO:0034220 ! monoatomic ion transmembrane transport
 
 [Term]
 id: GO:0043009
@@ -6363,7 +6377,7 @@ relationship: part_of GO:0051641 ! cellular localization
 id: GO:0051932
 name: synaptic transmission, GABAergic
 namespace: biological_process
-def: "The vesicular release of  gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:dos, ISBN:0126603030]
+def: "The vesicular release of gamma-aminobutyric acid (GABA). from a presynapse, across a chemical synapse, the subsequent activation of GABA receptors at the postsynapse of a target cell (neuron, muscle, or secretory cell) and the effects of this activation on the postsynaptic membrane potential and ionic composition of the postsynaptic cytosol. This process encompasses both spontaneous and evoked release of neurotransmitter and all parts of synaptic vesicle exocytosis. Evoked transmission starts with the arrival of an action potential at the presynapse." [GOC:dos, ISBN:0126603030]
 synonym: "GABAergic synaptic transmission" EXACT []
 synonym: "synaptic transmission, GABA mediated" EXACT []
 synonym: "synaptic transmission, gamma-aminobutyric acid mediated" EXACT []
@@ -7327,6 +7341,15 @@ relationship: dc-contributor https://orcid.org/0000-0002-7073-9172
 creation_date: 2014-12-12T08:41:11Z
 
 [Term]
+id: PATO:0010001
+name: disconnected
+namespace: quality
+def: "A structural quality inhering in the bearer by virtue of the bearer consisting of multiple structures lacking any physical connection to each other." [GOC:dos]
+is_a: PATO:0000141 ! structure
+relationship: dc-contributor https://orcid.org/0000-0002-7073-9172
+creation_date: 2014-12-12T08:43:17Z
+
+[Term]
 id: PATO:0010006
 name: cell morphology
 namespace: quality
@@ -7884,8 +7907,8 @@ synonym: "ionotropic receptor" NARROW [PRO:XQ]
 xref: IUPHARfam:697
 is_a: PR:000049983 ! ion channel protein
 intersection_of: PR:000049983 ! ion channel protein
-intersection_of: capable_of GO:0015276 ! ligand-gated ion channel activity
-relationship: capable_of GO:0015276 ! ligand-gated ion channel activity
+intersection_of: capable_of GO:0015276 ! ligand-gated monoatomic ion channel activity
+relationship: capable_of GO:0015276 ! ligand-gated monoatomic ion channel activity
 
 [Term]
 id: PR:000044676
@@ -7915,8 +7938,8 @@ synonym: "fam:ion_chan" EXACT PRO-short-label [PRO:DAN]
 xref: IUPHARfam:689
 is_a: PR:000044676 ! channel protein
 intersection_of: PR:000044676 ! channel protein
-intersection_of: capable_of GO:0005216 ! ion channel activity
-relationship: capable_of GO:0005216 ! ion channel activity
+intersection_of: capable_of GO:0005216 ! monoatomic ion channel activity
+relationship: capable_of GO:0005216 ! monoatomic ion channel activity
 
 [Term]
 id: PR:P09240
@@ -8107,8 +8130,6 @@ xref: MAT:0000294
 xref: MESH:D006257
 xref: MIAA:0000294
 xref: NCIT:C12419
-xref: OpenCyc:Mx4rEOLm4rgPEdmAAAACs6hRjg
-xref: OpenCyc:Mx4rvVi6YJwpEbGdrcN5Y29ycA
 xref: SCTID:302548004
 xref: SPD:0000016
 xref: TAO:0001114
@@ -8174,7 +8195,6 @@ xref: TGMA:0001823
 xref: VHOG:0001759
 xref: XAO:0003000
 xref: ZFA:0000037
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000465 ! material anatomical entity
 relationship: existence_ends_during_or_before UBERON:0000071 ! death stage
 
@@ -8195,13 +8215,10 @@ xref: ENVO:01000162
 xref: FMA:67498
 xref: MA:0003001
 xref: NCIT:C13018
-xref: OpenCyc:Mx4rv5XMb5wpEbGdrcN5Y29ycA
-xref: OpenCyc:Mx4rwP3iWpwpEbGdrcN5Y29ycA
 xref: SCTID:272625005
 xref: UMLS:C0178784 {source="ncithesaurus:Organ"}
 xref: WBbt:0003760
 xref: Wikipedia:Organ_(anatomy)
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0010000 ! multicellular anatomical structure
 is_a: UBERON:0010000 ! multicellular anatomical structure
 disjoint_from: UBERON:0034921 ! multi organ part structure
@@ -8342,7 +8359,6 @@ xref: galen:ComplexSkeletalStructure
 xref: NCIT:C34076
 xref: SCTID:118966000
 xref: UMLS:C1519343 {source="ncithesaurus:Skeletal_System_Part"}
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0011216 {source="cjm"} ! organ system subdivision
 relationship: composed_primarily_of UBERON:0004765 ! skeletal element
 relationship: only_in_taxon NCBITaxon:7711 ! Chordata
@@ -8387,7 +8403,7 @@ creation_date: 2009-07-30T05:19:13Z
 id: UBERON:0000104
 name: life cycle
 namespace: uberon
-def: "An entire span of an organism's life, commencing with the zygote stage and ending in the death of the organism." [https://orcid.org/0000-0002-6601-2165]
+def: "An entire span of an organism's life. In metazoans, commences with the zygote stage and ends with the death of the organism." [https://orcid.org/0000-0002-6601-2165]
 subset: upper_level
 synonym: "entire life cycle" EXACT []
 synonym: "entire lifespan" EXACT []
@@ -8402,7 +8418,6 @@ is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000000 ! processual entity
 relationship: ends_with UBERON:0000071 ! death stage
 relationship: has_part UBERON:0000105 ! life cycle stage
-relationship: starts_with UBERON:0000106 ! zygote stage
 property_value: seeAlso https://github.com/obophenotype/uberon/issues/532 xsd:anyURI
 
 [Term]
@@ -8505,7 +8520,6 @@ xref: MmusDv:0000007
 xref: OGES:000003
 xref: OGES:000016
 xref: OGES:000021
-xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
 xref: WBls:0000005
 xref: Wikipedia:Blastula
 xref: XAO:1000003
@@ -8668,7 +8682,6 @@ xref: MA:0002474
 xref: MAT:0000038
 xref: MESH:D009055
 xref: MIAA:0000038
-xref: OpenCyc:Mx4rvVidh5wpEbGdrcN5Y29ycA
 xref: SCTID:21082005
 xref: TADS:0000040
 xref: TAO:0000547
@@ -8742,7 +8755,6 @@ xref: BTO:0000128
 xref: GAID:1294
 xref: MESH:D036703
 xref: OGEM:000006
-xref: OpenCyc:Mx4rEetFnKP2EdqAAAACs4vPlg
 xref: Wikipedia:Blastula
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000922 ! embryo
@@ -8774,14 +8786,12 @@ xref: BTO:0001369
 xref: BTO:0001485
 xref: EFO:0000801
 xref: EMAPA:35578
-xref: FBbt:00005069
 xref: FMA:72954
 xref: MA:0002888
 xref: MAT:0000025
 xref: MIAA:0000025
 xref: VSAO:0000033
 xref: XAO:0004042
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000006 ! material anatomical entity
 is_a: UBERON:0011216 ! organ system subdivision
 intersection_of: UBERON:0011216 ! organ system subdivision
@@ -8850,7 +8860,6 @@ xref: TGMA:0001824
 xref: VHOG:0001726
 xref: XAO:0004001
 xref: ZFA:0001487
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000465 ! material anatomical entity
 relationship: has_quality PATO:0002198 ! quality of a substance
 relationship: part_of UBERON:0000468 {notes="this relationship may be too strong and may be weakened in future"} ! multicellular organism
@@ -8880,7 +8889,6 @@ xref: UMLS:C0524461 {source="ncithesaurus:Lumen_Space"}
 xref: VHOG:0001728
 xref: XAO:0003190
 xref: ZFA:0001643
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0000466 ! immaterial anatomical entity
 relationship: surrounded_by UBERON:0000061 ! anatomical structure
 
@@ -8901,7 +8909,9 @@ xref: HAO:0000006
 xref: TAO:0001836
 xref: TGMA:0001826
 xref: VHOG:0001721
+is_a: BFO:0000040 ! material entity
 is_a: UBERON:0001062 ! anatomical entity
+disjoint_from: UBERON:0000466 ! immaterial anatomical entity
 
 [Term]
 id: UBERON:0000466
@@ -8921,6 +8931,7 @@ xref: HAO:0000007
 xref: TAO:0001835
 xref: TGMA:0001827
 xref: VHOG:0001727
+is_a: BFO:0000141 ! immaterial entity
 is_a: UBERON:0001062 ! anatomical entity
 
 [Term]
@@ -8953,7 +8964,6 @@ xref: galen:AnatomicalSystem
 xref: HAO:0000011
 xref: MA:0000003
 xref: NCIT:C12919
-xref: OpenCyc:Mx4rCWM0QCtDEdyAAADggVbxzQ
 xref: SCTID:278195005
 xref: TAO:0001439
 xref: TGMA:0001831
@@ -8964,7 +8974,6 @@ xref: WBbt:0005763
 xref: Wikipedia:Organ_system
 xref: XAO:0003002
 xref: ZFA:0001439
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000061 ! anatomical structure
 relationship: has_part UBERON:0000062 ! organ
 relationship: part_of UBERON:0000468 ! multicellular organism
@@ -9048,7 +9057,6 @@ xref: MAT:0000293
 xref: MESH:D001829
 xref: MIAA:0000293
 xref: NCIT:C32221
-xref: OpenCyc:Mx4rvViAHJwpEbGdrcN5Y29ycA
 xref: TAO:0001308
 xref: TGMA:0001840
 xref: UMLS:C0229962 {source="ncithesaurus:Body_Part"}
@@ -9102,7 +9110,7 @@ xref: TGMA:0001842
 xref: VHOG:0001737
 xref: XAO:0003160
 xref: ZFA:0001478
-is_a: UBERON:0001062 ! anatomical entity
+is_a: UBERON:0034923 ! disconnected anatomical group
 property_value: editor_note "Will be obsoleted in CARO v2 [https://github.com/obophenotype/caro/issues/3]" xsd:string
 
 [Term]
@@ -9199,7 +9207,6 @@ xref: VHOG:0000387
 xref: Wikipedia:Epithelium
 xref: XAO:0003045
 xref: ZFA:0001486
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000479 ! tissue
 intersection_of: UBERON:0000479 ! tissue
 intersection_of: composed_primarily_of CL:0000066 ! epithelial cell
@@ -9296,7 +9303,6 @@ xref: MESH:D004622
 xref: MIAA:0000019
 xref: NCIT:C28147
 xref: OGEM:000001
-xref: OpenCyc:Mx4rwP1ceZwpEbGdrcN5Y29ycA
 xref: SCTID:57991002
 xref: UMLS:C0013935 {source="ncithesaurus:Embryo"}
 xref: VHOG:0001766
@@ -9562,7 +9568,6 @@ xref: MESH:D001921
 xref: MIAA:0000098
 xref: NCIT:C12439
 xref: neuronames:21 {source="BIRNLEX:796"}
-xref: OpenCyc:Mx4rvVjT65wpEbGdrcN5Y29ycA
 xref: PBA:3999
 xref: SCTID:258335003
 xref: TAO:0000008
@@ -9679,7 +9684,6 @@ xref: MAT:0000188
 xref: MESH:D007596
 xref: MIAA:0000188
 xref: NCIT:C13044
-xref: OpenCyc:Mx4rvVjjdpwpEbGdrcN5Y29ycA
 xref: RETIRED_EHDAA2:0003182
 xref: SCTID:302536002
 xref: TAO:0000367
@@ -9726,7 +9730,6 @@ xref: MAT:0000030
 xref: MESH:D012137
 xref: MIAA:0000030
 xref: NCIT:C12779
-xref: OpenCyc:Mx4rvVjzFJwpEbGdrcN5Y29ycA
 xref: SCTID:278197002
 xref: TAO:0000272
 xref: UMLS:C0035237 {source="ncithesaurus:Respiratory_System"}
@@ -9824,14 +9827,12 @@ xref: EMAPA:35577
 xref: FMA:32558
 xref: MA:0000165
 xref: NCIT:C13056
-xref: OpenCyc:Mx4rvVjmr5wpEbGdrcN5Y29ycA
 xref: TAO:0000548
 xref: UMLS:C0026845 {source="ncithesaurus:Muscle"}
 xref: VSAO:0005038
 xref: WBbt:0005737
 xref: Wikipedia:Muscular_system
 xref: ZFA:0000548
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000006 ! material anatomical entity
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: composed_primarily_of UBERON:0001630 ! muscle organ
@@ -9872,7 +9873,6 @@ xref: MESH:D009420
 xref: MIAA:0000026
 xref: NCIT:C12755
 xref: neuronames:3236
-xref: OpenCyc:Mx4rvViT_pwpEbGdrcN5Y29ycA
 xref: SCTID:278196006
 xref: TAO:0000396
 xref: UMLS:C0027763 {source="ncithesaurus:Nervous_System"}
@@ -9934,7 +9934,6 @@ xref: MAT:0000457
 xref: MESH:D002490
 xref: NCIT:C12438
 xref: neuronames:854
-xref: OpenCyc:Mx4rvzYt3pwpEbGdrcN5Y29ycA
 xref: SCTID:278199004
 xref: TAO:0000012
 xref: UMLS:C0927232 {source="ncithesaurus:Central_Nervous_System"}
@@ -10040,7 +10039,6 @@ xref: GAID:30
 xref: galen:Back
 xref: MESH:D001415
 xref: NCIT:C13062
-xref: OpenCyc:Mx4rvVkEU5wpEbGdrcN5Y29ycA
 xref: SCTID:123961009
 xref: UMLS:C0004600 {source="ncithesaurus:Back"}
 xref: Wikipedia:Dorsum_(anatomy)
@@ -10117,14 +10115,12 @@ xref: EMAPA:35773
 xref: FMA:23881
 xref: MA:0000018
 xref: NCIT:C12788
-xref: OpenCyc:Mx4rvVi1rpwpEbGdrcN5Y29ycA
 xref: TAO:0000434
 xref: UMLS:C0037253 {source="ncithesaurus:Skeletal_System"}
 xref: VHOG:0001254
 xref: VSAO:0000027
 xref: XAO:0003060
 xref: ZFA:0000434
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0011216 ! organ system subdivision
 intersection_of: UBERON:0011216 ! organ system subdivision
 intersection_of: has_part UBERON:0004288 ! skeleton
@@ -10169,7 +10165,6 @@ xref: FMA:45615
 xref: galen:AlimentaryTract
 xref: MA:0000917
 xref: NCIT:C34082
-xref: OpenCyc:Mx4rvVi0GpwpEbGdrcN5Y29ycA
 xref: TAO:0000112
 xref: TGMA:0001819
 xref: UMLS:C0017189 {source="ncithesaurus:Gastrointestinal_Tract"}
@@ -10208,7 +10203,6 @@ xref: FMA:5022
 xref: GAID:131
 xref: galen:Muscle
 xref: MA:0000015
-xref: OpenCyc:Mx4rv2kf-5wpEbGdrcN5Y29ycA
 xref: SCTID:71616004
 xref: TAO:0005145
 xref: VHOG:0001245
@@ -10253,7 +10247,6 @@ xref: MA:0000133
 xref: MBA:403
 xref: NCIT:C12351
 xref: neuronames:241 {source="BIRNLEX:1042"}
-xref: OpenCyc:Mx4rvigx5ZwpEbGdrcN5Y29ycA
 xref: SCTID:278251007
 xref: UMLS:C0228174 {source="ncithesaurus:Cerebral_Hemisphere"}
 xref: UMLS:C0242202 {source="BIRNLEX:1042"}
@@ -10325,7 +10318,6 @@ xref: MAT:0000508
 xref: MESH:D013702
 xref: NCIT:C12353
 xref: neuronames:125 {source="BIRNLEX:1160"}
-xref: OpenCyc:Mx4rwQLi-ZwpEbGdrcN5Y29ycA
 xref: SCTID:180921000
 xref: UMLS:C0039485 {source="ncithesaurus:Temporal_Lobe"}
 xref: UMLS:C0039485 {source="BIRNLEX:1160"}
@@ -10362,7 +10354,6 @@ xref: MAT:0000506
 xref: MESH:D010296
 xref: NCIT:C12354
 xref: neuronames:95 {source="BIRNLEX:1148"}
-xref: OpenCyc:Mx4rvg-typwpEbGdrcN5Y29ycA
 xref: SCTID:180922007
 xref: UMLS:C0030560 {source="BIRNLEX:1148"}
 xref: UMLS:C0030560 {source="ncithesaurus:Parietal_Lobe_of_the_Brain"}
@@ -10460,7 +10451,6 @@ xref: MESH:D008636
 xref: MIAA:0000106
 xref: NCIT:C12510
 xref: neuronames:462 {source="BIRNLEX:1667"}
-xref: OpenCyc:Mx4rvsBUqpwpEbGdrcN5Y29ycA
 xref: RETIRED_EHDAA2:0001104
 xref: SCTID:279099009
 xref: TAO:0000128
@@ -10597,7 +10587,6 @@ xref: MESH:D004027
 xref: MIAA:0000420
 xref: NCIT:C12456
 xref: neuronames:288 {source="BIRNLEX:1503"}
-xref: OpenCyc:Mx4rwC-V0JwpEbGdrcN5Y29ycA
 xref: PBA:128013010
 xref: SCTID:279328001
 xref: TAO:0000101
@@ -10662,8 +10651,6 @@ xref: MESH:D008526
 xref: MIAA:0000111
 xref: NCIT:C12442
 xref: neuronames:698 {source="BIRNLEX:957"}
-xref: OpenCyc:Mx4rvVjxSJwpEbGdrcN5Y29ycA
-xref: OpenCyc:Mx4rwCqnXJwpEbGdrcN5Y29ycA
 xref: SCTID:279104005
 xref: TAO:0000545
 xref: UMLS:C0025148 {source="ncithesaurus:Medulla_Oblongata"}
@@ -10673,7 +10660,6 @@ xref: VHOG:0000181
 xref: Wikipedia:Bone_marrow_of_ovary_oblongata
 xref: XAO:0003100
 xref: ZFA:0000545
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000064 ! organ part
 relationship: capable_of GO:0002027 ! regulation of heart rate
 relationship: capable_of GO:0043576 ! regulation of respiratory gaseous exchange
@@ -10801,7 +10787,6 @@ xref: MA:0001112
 xref: MESH:D066128
 xref: NCIT:C32695
 xref: neuronames:2869
-xref: OpenCyc:Mx4rwDdKMpwpEbGdrcN5Y29ycA
 xref: TAO:0002197
 xref: UMLS:C0018220 {source="ncithesaurus:Gray_Matter"}
 xref: VHOG:0001768
@@ -10935,7 +10920,6 @@ xref: MA:0000004
 xref: MAT:0000296
 xref: MIAA:0000296
 xref: NCIT:C33816
-xref: OpenCyc:Mx4rvVkJjpwpEbGdrcN5Y29ycA
 xref: SCTID:262225004
 xref: TAO:0001115
 xref: UMLS:C0460005 {source="ncithesaurus:Trunk"}
@@ -10966,7 +10950,6 @@ xref: GAID:98
 xref: MA:0002418
 xref: MESH:D009141
 xref: NCIT:C12754
-xref: OpenCyc:Mx4rQRpVNgAKEdyHxgDggVfs8g
 xref: SCTID:278858007
 xref: UMLS:C0026860 {source="ncithesaurus:Musculoskeletal_System"}
 xref: VHOG:0001275
@@ -11027,7 +11010,6 @@ xref: MESH:D013116
 xref: MIAA:0000183
 xref: NCIT:C12464
 xref: neuronames:22 {source="BIRNLEX:1709"}
-xref: OpenCyc:Mx4rvVjjk5wpEbGdrcN5Y29ycA
 xref: SCTID:180959008
 xref: TAO:0000075
 xref: UMLS:C0037925 {source="ncithesaurus:Spinal_Cord"}
@@ -11155,7 +11137,7 @@ xref: VSAO:0000032
 xref: Wikipedia:Notochord
 xref: XAO:0000055
 xref: ZFA:0000135
-is_a: BFO:0000040 ! material entity
+is_a: UBERON:0000062 {source="PMID:15890825"} ! organ
 is_a: UBERON:0000481 {source="VSAO"} ! multi-tissue structure
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: develops_from UBERON:0004880 {source="ZFA"} ! chordamesoderm
@@ -11339,7 +11321,6 @@ xref: MAT:0000113
 xref: MESH:D008578
 xref: NCIT:C12348
 xref: NLXANAT:090204
-xref: OpenCyc:Mx4rwDOl8JwpEbGdrcN5Y29ycA
 xref: TAO:0001355
 xref: UMLS:C0025285 {source="ncithesaurus:Meninges"}
 xref: VHOG:0001295
@@ -11382,7 +11363,6 @@ xref: MAT:0000301
 xref: MESH:D003238
 xref: MIAA:0000301
 xref: NCIT:C12374
-xref: OpenCyc:Mx4rv-aBgZwpEbGdrcN5Y29ycA
 xref: SCTID:361919005
 xref: TAO:0001641
 xref: UMLS:C0009780 {source="ncithesaurus:Connective_Tissue"}
@@ -11420,7 +11400,6 @@ xref: NCIT:C12435
 xref: SCTID:91727004
 xref: UMLS:C2328219 {source="ncithesaurus:Muscle_Tissue"}
 xref: Wikipedia:Muscle_tissue
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000479 ! tissue
 is_a: UBERON:0004120 ! mesoderm-derived structure
 intersection_of: UBERON:0000479 ! tissue
@@ -11494,7 +11473,6 @@ xref: FMA:55676
 xref: NCIT:C13031
 xref: SCTID:384763002
 xref: UMLS:C0445620 {source="ncithesaurus:Brain_Part"}
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000073 ! regional part of nervous system
 intersection_of: UBERON:0000481 ! multi-tissue structure
@@ -11788,7 +11766,6 @@ xref: VHOG:0000063
 xref: Wikipedia:Cranial_neural_crest
 xref: XAO:0001001
 xref: ZFA:0001194
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0005291 ! embryonic tissue
 relationship: has_part CL:0000008 ! migratory cranial neural crest cell
@@ -11846,7 +11823,6 @@ xref: VHOG:0000170
 xref: Wikipedia:Mesenchyme
 xref: XAO:0003046
 xref: ZFA:0000393
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000479 ! tissue
 intersection_of: UBERON:0000479 ! tissue
 intersection_of: composed_primarily_of CL:0008019 ! mesenchymal cell
@@ -11893,10 +11869,8 @@ xref: FMA:9642
 xref: GAID:609
 xref: MESH:D009417
 xref: NCIT:C13052
-xref: OpenCyc:Mx4rVmfYCsQ_QdeM_bFAeS8NRQ
 xref: SCTID:91728009
 xref: UMLS:C0027757 {source="ncithesaurus:Nervous_Tissue"}
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000479 ! tissue
 intersection_of: UBERON:0000479 ! tissue
@@ -11928,7 +11902,6 @@ xref: EHDAA:914
 xref: EMAPA:16167
 xref: VHOG:0001119
 xref: XAO:0000252
-is_a: BFO:0000141 ! immaterial entity
 is_a: UBERON:0000464 ! anatomical space
 intersection_of: UBERON:0000464 ! anatomical space
 intersection_of: luminal_space_of UBERON:0001049 ! neural tube
@@ -12246,12 +12219,10 @@ xref: MA:0003006
 xref: MAT:0000032
 xref: MESH:D012863
 xref: MIAA:0000032
-xref: OpenCyc:Mx4rvVi1rpwpEbGdrcN5Y29ycA
 xref: SCTID:361378004
 xref: VSAO:0000026
 xref: Wikipedia:Skeleton
 xref: XAO:0004053
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0034925 ! anatomical collection
 disjoint_from: UBERON:0004770 ! articular system
 relationship: has_member UBERON:0004765 ! skeletal element
@@ -12357,7 +12328,6 @@ xref: FMA:23878
 xref: MA:0003007
 xref: SCTID:361827000
 xref: VSAO:0000181
-is_a: BFO:0000004 ! independent continuant
 is_a: UBERON:0034925 ! anatomical collection
 intersection_of: UBERON:0034925 ! anatomical collection
 intersection_of: has_member UBERON:0000982 ! skeletal joint
@@ -12520,8 +12490,7 @@ xref: AAO:0011000
 xref: CARO:0001000
 xref: FBbt:00007060
 xref: FMA:83115
-is_a: BFO:0000040 ! material entity
-is_a: UBERON:0000477 {source="FMA"} ! anatomical cluster
+is_a: UBERON:0000061 ! anatomical structure
 relationship: composed_primarily_of GO:0005575 ! cellular_component
 property_value: UBPROP:0000012 "we go with the FMA classification rather than the CARO one. FMA def: 'Anatomical cluster which has as direct parts cell parts from two or more cells.'" xsd:string {external_ontology="CARO", external_ontology="FMA"}
 
@@ -12901,7 +12870,6 @@ xref: EHDAA2:0003125
 xref: FBbt:00007006
 xref: FMA:292313
 xref: MIAA:0000019
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000465 ! material anatomical entity
 relationship: capable_of GO:0032502 ! developmental process
 
@@ -12911,7 +12879,6 @@ name: acellular membrane
 namespace: uberon
 def: "An acellular anatomical structure that is the bounding layer of a anatomical structure." [OBOL:automatic]
 xref: FMA:63871
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000476 ! acellular anatomical structure
 intersection_of: UBERON:0000476 ! acellular anatomical structure
 intersection_of: bounding_layer_of UBERON:0000061 ! anatomical structure
@@ -13534,7 +13501,6 @@ def: "Sum total of mesenchyme in the embryo." [https://github.com/obophenotype/h
 xref: EHDAA2:0001113
 xref: EHDAA:177
 xref: EMAPA:16097
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0000477 ! anatomical cluster
 relationship: composed_primarily_of UBERON:0003104 ! mesenchyme
@@ -13750,7 +13716,6 @@ xref: neuronames:1465
 xref: SCTID:362879001
 xref: UMLS:C0228116
 xref: Wikipedia:Meninges
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000006 ! material anatomical entity
 is_a: UBERON:0034925 ! anatomical collection
 intersection_of: UBERON:0034925 ! anatomical collection
@@ -13862,7 +13827,6 @@ xref: AAO:0000121
 xref: NCIT:C32450
 xref: UMLS:C1511770 {source="ncithesaurus:Dense_Connective_Tissue"}
 xref: Wikipedia:Dense_connective_tissue
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0002384 ! connective tissue
 intersection_of: UBERON:0002384 ! connective tissue
 intersection_of: composed_primarily_of UBERON:0011860 ! collection of collagen fibrils
@@ -13878,7 +13842,6 @@ xref: FMA:63212
 xref: MESH:D024022
 xref: NCIT:C32339
 xref: NIF_Subcellular:sao7547390221
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0000476 {source="ZFA"} ! acellular anatomical structure
 relationship: composed_primarily_of GO:0005581 ! collagen trimer
 relationship: composed_primarily_of GO:0098643 ! banded collagen fibril
@@ -13902,7 +13865,6 @@ namespace: uberon
 def: "An anatomical space which is the lumen of some anatomical conduit and connects two or more spaces together[FMA,modified]." [FMA:9338, http://orcid.org/0000-0002-6601-2165]
 synonym: "foramen space" NARROW []
 xref: FMA:9338
-is_a: BFO:0000141 ! immaterial entity
 is_a: UBERON:0000464 {source="FMA"} ! anatomical space
 relationship: connects UBERON:0000464 {cardinality="2"} ! anatomical space
 relationship: luminal_space_of UBERON:0004111 ! anatomical conduit
@@ -14020,7 +13982,6 @@ xref: MAT:0000505
 xref: MESH:D005625
 xref: NCIT:C12352
 xref: neuronames:56 {source="BIRNLEX:928"}
-xref: OpenCyc:Mx4rv3OJ8JwpEbGdrcN5Y29ycA
 xref: SCTID:180920004
 xref: UMLS:C0016733 {source="BIRNLEX:928"}
 xref: UMLS:C0016733 {source="ncithesaurus:Frontal_Lobe"}
@@ -14206,9 +14167,20 @@ namespace: uberon
 def: "An multicellular anatomical structure that has subparts of multiple organs as a part." [CARO:0020001]
 synonym: "anatomical cluster" RELATED [CARO:0020001]
 xref: CARO:0020001
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0010000 {source="CARO"} ! multicellular anatomical structure
 relationship: composed_primarily_of UBERON:0000064 ! organ part
+
+[Term]
+id: UBERON:0034923
+name: disconnected anatomical group
+namespace: uberon
+def: "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other." [CARO:0020000]
+xref: CARO:0020000
+xref: FBbt:00007276
+is_a: UBERON:0000465 {source="CARO"} ! material anatomical entity
+relationship: composed_primarily_of UBERON:0000061 ! anatomical structure
+relationship: has_component UBERON:0000061 {minCardinality="2"} ! anatomical structure
+relationship: has_quality PATO:0010001 ! disconnected
 
 [Term]
 id: UBERON:0034925
@@ -14227,7 +14199,6 @@ def: "The primordial mouth region of the developing head." [MP:0003119]
 synonym: "primitive mouth" EXACT [FMA:293105]
 synonym: "primordial mouth" EXACT []
 xref: FMA:293105
-is_a: BFO:0000040 ! material entity
 is_a: CARO:0000000 ! anatomical entity
 is_a: UBERON:0013522 ! subdivision of tube
 relationship: has_part UBERON:0000925 ! endoderm
@@ -14238,7 +14209,8 @@ relationship: part_of UBERON:0007026 ! presumptive gut
 id: UBERON:8440000
 name: cortical layer II/III
 namespace: uberon
-def: "A laminar subdivision of the neocortex that is comprised of both layers II & III." [PMID:34616063]
+def: "A laminar subdivision of the neocortex that is comprised of a part of layer II and a part of layer III." [PMID:34616063]
+comment: In rodents, layer II/III refers to a mereological sum of layers II and III as there is no clear architectonic boundary between them. {xref="PMID:29311847"}
 synonym: "cerebral cortex layer 2/3" EXACT []
 synonym: "neocortex layer 2/3" EXACT []
 is_a: UBERON:8440004 ! laminar subdivision of the cortex
@@ -14247,7 +14219,7 @@ is_a: UBERON:8440004 ! laminar subdivision of the cortex
 id: UBERON:8440001
 name: cortical layer IV/V
 namespace: uberon
-def: "A laminar subdivision of the neocortex that is comprised of both layers IV & V." [PMID:34616063]
+def: "A laminar subdivision of the neocortex that is comprised of a part of layer IV and a part of layer V." [PMID:34616063]
 synonym: "cerebral cortex layer 4/5" EXACT []
 synonym: "neocortex layer 4/5" EXACT []
 is_a: UBERON:8440004 ! laminar subdivision of the cortex
@@ -14256,7 +14228,7 @@ is_a: UBERON:8440004 ! laminar subdivision of the cortex
 id: UBERON:8440002
 name: cortical layer V/VI
 namespace: uberon
-def: "A laminar subdivision of the neocortex that is comprised of both layers V & VI." [PMID:34616063]
+def: "A laminar subdivision of the neocortex that is comprised of a part of layer V and a part of layer VI." [PMID:34616063]
 synonym: "cerebral cortex layer 5/6" EXACT []
 synonym: "neocortex layer 5/6" EXACT []
 is_a: UBERON:8440004 ! laminar subdivision of the cortex
@@ -14872,6 +14844,7 @@ property_value: IAO:0000232 "Do not use this relation directly. It is ended as a
 [Typedef]
 id: RO:0002327
 name: enables
+def: "c enables p iff c is capable of p and c acts to execute p." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: IAO:0000112 "a particular instances of akt-2 enables some instance of protein kinase activity" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
@@ -15011,11 +14984,39 @@ property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_a: has_potential_to_develop_into ! has potential to develop into
 
 [Typedef]
+id: RO:0002407
+name: indirectly positively regulates
+def: "p indirectly positively regulates q iff p is indirectly causally upstream of q and p positively regulates q." []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "indirectly activates" xsd:string
+property_value: RO:0002579 RO:0002213
+holds_over_chain: RO:0002409 RO:0002409
+holds_over_chain: RO:0002629 RO:0002407
+holds_over_chain: RO:0002629 RO:0002629
+is_transitive: true
+is_a: positively_regulates ! positively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002629 ! directly positively regulates
+
+[Typedef]
+id: RO:0002409
+name: indirectly negatively regulates
+def: "p indirectly negatively regulates q iff p is indirectly causally upstream of q and p negatively regulates q." []
+property_value: IAO:0000117 "Chris Mungall" xsd:string
+property_value: IAO:0000118 "indirectly inhibits" xsd:string
+property_value: RO:0002579 RO:0002212
+holds_over_chain: RO:0002630 RO:0002409
+holds_over_chain: RO:0002630 RO:0002630
+is_transitive: true
+is_a: negatively_regulates ! negatively regulates
+is_a: RO:0012012 ! indirectly regulates
+transitive_over: RO:0002630 ! directly negatively regulates
+
+[Typedef]
 id: RO:0002410
 name: causally related to
-def: "This relation groups causal relations between material entities and causal relations between processes" []
-property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
-property_value: IAO:0000114 IAO:0000428
+def: "relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause." [https://en.wikipedia.org/wiki/Causality]
+property_value: editor_note "This branch of the ontology deals with causal relations between entities. It is divided into two branches: causal relations between occurrents/processes, and causal relations between material entities. We take an 'activity flow-centric approach', with the former as primary, and define causal relations between material entities in terms of causal relations between occurrents.\n\nTo define causal relations in an activity-flow type network, we make use of 3 primitives:\n\n * Temporal: how do the intervals of the two occurrents relate? \n * Is the causal relation regulatory?\n * Is the influence positive or negative?\n\nThe first of these can be formalized in terms of the Allen Interval Algebra. Informally, the 3 bins we care about are 'direct', 'indirect' or overlapping. Note that all causal relations should be classified under a RO temporal relation (see the branch under 'temporally related to'). Note that all causal relations are temporal, but not all temporal relations are causal. Two occurrents can be related in time without being causally connected. We take causal influence to be primitive, elucidated as being such that has the upstream changed, some qualities of the donwstream would necessarily be modified.\n\nFor the second, we consider a relationship to be regulatory if the system in which the activities occur is capable of altering the relationship to achieve some objective. This could include changing the rate of production of a molecule.\n\nFor the third, we consider the effect of the upstream process on the output(s) of the downstream process. If the level of output is increased, or the rate of production of the output is increased, then the direction is increased. Direction can be positive, negative or neutral or capable of either direction. Two positives in succession yield a positive, two negatives in succession yield a positive, otherwise the default assumption is that the net effect is canceled and the influence is neutral.\n\nEach of these 3 primitives can be composed to yield a cross-product of different relation types." xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
 
@@ -15208,7 +15209,7 @@ inverse_of: process_has_causal_agent ! process has causal agent
 [Typedef]
 id: RO:0002501
 name: causal relation between processes
-def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one of direct activation or direct inhibition. p may be upstream, downstream, part of or a container of q." []
+def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one where the execution of p influences the execution of q. p may be upstream, downstream, part of, or a container of q." []
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://purl.obolibrary.org/obo/ro/docs/causal-relations
 property_value: IAO:0000232 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
@@ -15281,7 +15282,7 @@ is_a: functionally_related_to ! functionally related to
 [Typedef]
 id: RO:0002578
 name: directly regulates
-def: "Process(P1) directly regulates process(P2) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2." []
+def: "p directly regulates q iff p is immediately causally upstream of q and p regulates q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15348,7 +15349,7 @@ is_a: RO:0002596 ! capable of regulating
 [Typedef]
 id: RO:0002629
 name: directly positively regulates
-def: "Process(P1) directly postively regulates process(P2) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P1 directly positively regulates P2." []
+def: "p directly positively regulates q iff p is immediately causally upstream of q, and p positively regulates q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15361,7 +15362,7 @@ is_a: RO:0002578 ! directly regulates
 [Typedef]
 id: RO:0002630
 name: directly negatively regulates
-def: "Process(P1) directly negatively regulates process(P2) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P1 directly negatively regulates P2." []
+def: "p directly negatively regulates q iff p is immediately causally upstream of q, and p negatively regulates q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15453,6 +15454,23 @@ range: BFO:0000040 ! material entity
 is_a: RO:0002566 ! causally influences
 
 [Typedef]
+id: RO:0012011
+name: indirectly causally upstream of
+def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
+is_a: causally_upstream_of ! causally upstream of
+created_by: pg
+creation_date: 2022-09-26T06:07:17Z
+
+[Typedef]
+id: RO:0012012
+name: indirectly regulates
+def: "p indirectly regulates q iff p is indirectly causally upstream of q and p regulates q." []
+is_a: regulates ! regulates
+is_a: RO:0012011 ! indirectly causally upstream of
+created_by: pg
+creation_date: 2022-09-26T06:08:01Z
+
+[Typedef]
 id: RO:0013001
 name: has synaptic IO in region
 def: "A relationship between a neuron and a region, where the neuron has a functionally relevant number of input and/or output synapses in that region." []
@@ -15541,14 +15559,6 @@ property_value: IAO:0000232 "A diagnostic testing device utilizes a specimen mea
 property_value: IAO:0000232 "See github ticket https://github.com/oborel/obo-relations/issues/497" xsd:string
 holds_over_chain: capable_of has_input
 creation_date: 2021-11-08T12:00:00Z
-
-[Typedef]
-id: RO:0040036
-name: results in changes to anatomical or cellular structure
-def: "p has anatomical participant c iff p has participant c, and c is an anatomical entity" []
-is_a: has_participant ! has participant
-created_by: cjm
-creation_date: 2018-09-26T01:08:58Z
 
 [Typedef]
 id: acts_on_population_of
@@ -15733,11 +15743,10 @@ is_a: RO:0002501 ! causal relation between processes
 id: causally_upstream_of
 name: causally upstream of
 namespace: external
-def: "p is causally upstream of q if and only if p precedes q and p and q are linked in a causal chain" []
+def: "p is causally upstream of q iff p is causally related to q, the end of p precedes the end of q, and p is not an occurrent part of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002411
-property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 is_transitive: true
 is_a: causally_upstream_of_or_within ! causally upstream of or within
@@ -15747,7 +15756,9 @@ is_a: precedes ! precedes
 id: causally_upstream_of,_negative_effect
 name: causally upstream of, negative effect
 namespace: external
-comment: holds between x and y if and only if x is causally upstream of y and the progression of x decreases the frequency, rate or extent of y
+def: "p is causally upstream of, negative effect q iff p is casually upstream of q, and the execution of p decreases the execution of q." []
+subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
+subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002305
 property_value: http://purl.org/dc/terms/creator "cjm" xsd:string
 property_value: RO:0004050 RO:0002411
@@ -15758,6 +15769,7 @@ is_a: RO:0004046 ! causally upstream of or within, negative effect
 id: causally_upstream_of,_positive_effect
 name: causally upstream of, positive effect
 namespace: external
+def: "p is causally upstream of, positive effect q iff p is casually upstream of q, and the execution of p is required for the execution of q." []
 comment: holds between x and y if and only if x is causally upstream of y and the progression of x increases the frequency, rate or extent of y
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -15771,7 +15783,7 @@ is_a: RO:0004047 ! causally upstream of or within, positive effect
 id: causally_upstream_of_or_within
 name: causally upstream of or within
 namespace: external
-def: "p 'causally upstream or within' q iff (1) the end of p is before the end of q and (2) the execution of p exerts some causal influence over the outputs of q; i.e. if p was abolished or the outputs of p were to be modified, this would necessarily affect q." []
+def: "p is 'causally upstream or within' q iff p is causally related to q, and the end of p precedes, or is coincident with, the end of q." []
 synonym: "affects" RELATED []
 xref: RO:0002418
 property_value: editor_note "We would like to make this disjoint with 'preceded by', but this is prohibited in OWL2" xsd:string
@@ -16197,6 +16209,8 @@ is_a: existence_starts_during ! existence starts during
 id: extends_fibers_into
 name: extends_fibers_into
 namespace: uberon
+def: "X extends_fibers into Y iff there exists some neuron (N) and N has_soma_location X and N 'has synaptic IO in region' some Y" [https://orcid.org/0000-0002-7073-9172]
+holds_over_chain: RO:0002100 RO:0013001
 is_symmetric: true
 is_a: connected_to ! connected to
 
@@ -16635,13 +16649,12 @@ inverse_of: immediately_causally_upstream_of ! immediately causally upstream of
 id: immediately_causally_upstream_of
 name: immediately causally upstream of
 namespace: external
-def: "p is immediately causally upstream of q iff both (a) p immediately precedes q and (b) p is causally upstream of q. In addition, the output of p  must be an input of q." []
+def: "p is immediately causally upstream of q iff p is causally upstream of q, and the end of p is coincident with the beginning of q." []
 xref: RO:0002412
-property_value: IAO:0000114 IAO:0000428
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: RO:0002575 RO:0002411
 is_a: causally_upstream_of ! causally upstream of
-is_a: immediately_precedes ! immediately_precedes
+is_a: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_deep_to
@@ -16652,7 +16665,6 @@ xref: BSPO:0001107
 [Typedef]
 id: immediately_preceded_by
 name: immediately preceded by
-name: immediately_preceded_by
 namespace: external
 namespace: uberon
 comment: X immediately_preceded_by Y iff: end(X) simultaneous_with start(Y)
@@ -16661,12 +16673,11 @@ property_value: IAO:0000117 "David Osumi-Sutherland" xsd:string
 property_value: IAO:0000118 "starts_at_end_of" xsd:string
 holds_over_chain: starts_with ends_with
 is_a: preceded_by ! preceded by
-inverse_of: immediately_precedes ! immediately_precedes
+inverse_of: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_precedes
 name: immediately precedes
-name: immediately_precedes
 namespace: external
 comment: X immediately_precedes_Y iff: end(X) simultaneous_with start(Y)
 subset: ro-eco
@@ -16921,7 +16932,7 @@ id: negatively_regulates
 name: negatively regulates
 namespace: external
 namespace: gene_ontology
-def: "Process(P1) negatively regulates process(P2) iff: P1 terminates P2, or P1 descreases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "p negatively regulates q iff p regulates q, and p decreases the rate or magnitude of execution of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -17074,7 +17085,6 @@ inverse_of: has_part ! has part
 [Typedef]
 id: participates_in
 name: participates in
-name: participates_in
 namespace: external
 namespace: uberon
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
@@ -17103,7 +17113,7 @@ id: positively_regulates
 name: positively regulates
 namespace: external
 namespace: gene_ontology
-def: "Process(P1) postively regulates process(P2) iff: P1 initiates P2, or P1 increases the the frequency of initiation of P2 or the magnitude or rate of output of P2." []
+def: "p positively regulates q iff p regulates q, and p increases the rate or magnitude of execution of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
@@ -17289,13 +17299,11 @@ id: regulates
 name: regulates
 namespace: external
 namespace: gene_ontology
-def: "process(P1) regulates process(P2) iff: P1 results in the initiation or termination of P2 OR affects the frequency of its initiation or termination OR affects the magnitude or rate of output of P2." []
+def: "p regulates q iff p is causally upstream of q, the execution of p is not constant and varies according to specific conditions, and p influences the rate or magnitude of execution of q due to an effect either on some enabler of q or some enabler of a part of q." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002211
-property_value: editor_note "We use 'regulates' here to specifically imply control. However, many colloquial usages of the term correctly correspond to the weaker relation of 'causally upstream of or within' (aka influences). Consider relabeling to make things more explicit" xsd:string
-property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000117 "David Hill" xsd:string
 property_value: IAO:0000117 "Tanya Berardini" xsd:string
@@ -17352,13 +17360,12 @@ property_value: IAO:0000112 "an annotation of gene X to cell differentiation wit
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
 range: CARO:0000003 ! connected anatomical structure
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_assembly_of
 name: results in assembly of
-name: results_in_assembly_of
 namespace: external
 subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
@@ -17366,6 +17373,16 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002588
 is_a: results_in_formation_of ! results in formation of
 is_a: results_in_organization_of ! results in organization of
+
+[Typedef]
+id: results_in_changes_to_anatomical_or_cellular_structure
+name: results in changes to anatomical or cellular structure
+namespace: external
+def: "p has anatomical participant c iff p has participant c, and c is an anatomical entity" []
+xref: RO:0040036
+is_a: has_participant ! has participant
+created_by: cjm
+creation_date: 2018-09-26T01:08:58Z
 
 [Typedef]
 id: results_in_development_of
@@ -17380,8 +17397,8 @@ property_value: IAO:0000112 "every flower development (GO:0009908) results in de
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 http://www.geneontology.org/GO.doc.development.shtml xsd:anyURI
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_developmental_progression_of
@@ -17400,7 +17417,6 @@ is_a: RO:0002324 ! developmentally related to
 [Typedef]
 id: results_in_disassembly_of
 name: results in disassembly of
-name: results_in_disassembly_of
 namespace: external
 xref: RO:0002590
 is_a: results_in_organization_of ! results in organization of
@@ -17408,12 +17424,14 @@ is_a: RO:0002586 ! results in breakdown of
 
 [Typedef]
 id: results_in_distribution_of
+name: results in distribution of
 name: results_in_distribution_of
 namespace: external
 xref: GOREL:0002003
 
 [Typedef]
 id: results_in_fission_of
+name: results in fission of
 name: results_in_fission_of
 namespace: external
 xref: GOREL:0002004
@@ -17455,8 +17473,8 @@ namespace: external
 xref: RO:0002343
 property_value: IAO:0000112 "'pollen tube growth' results_in growth_of some 'pollen tube'" xsd:string
 property_value: IAO:0000117 "Chris Mungall" xsd:string
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_maturation_of
@@ -17472,8 +17490,8 @@ property_value: IAO:0000112 "bone maturation (GO:0070977) results_in_maturation_
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_morphogenesis_of
@@ -17489,8 +17507,8 @@ property_value: IAO:0000112 "tongue morphogenesis (GO:0043587) results in morpho
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000119 GOC:mtg_berkeley_2013 xsd:string
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 is_a: results_in_developmental_progression_of ! results in developmental progression of
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_movement_of
@@ -17503,7 +17521,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002565
 property_value: IAO:0000117 "Chris Mungall" xsd:string
 property_value: IAO:0000232 "" xsd:string
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_organization_of
@@ -17512,7 +17530,7 @@ namespace: external
 def: "p results in organization of c iff p results in the assembly, arrangement of constituent parts, or disassembly of c" []
 xref: RO:0002592
 is_a: has_participant ! has participant
-is_a: RO:0040036 ! results in changes to anatomical or cellular structure
+is_a: results_in_changes_to_anatomical_or_cellular_structure ! results in changes to anatomical or cellular structure
 
 [Typedef]
 id: results_in_transport_across

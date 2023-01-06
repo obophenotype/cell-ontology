@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2022-08-16/cl-basic.owl
+data-version: cl/releases/2022-12-15/cl-basic.owl
 subsetdef: added_for_HCA ""
 subsetdef: BDS_subset ""
 subsetdef: human_reference_atlas ""
@@ -24,7 +24,7 @@ property_value: dc-description "An ontology of cell types." xsd:string
 property_value: dc-title "Cell Ontology" xsd:string
 property_value: dcterms-license http://creativecommons.org/licenses/by/4.0/
 property_value: has_ontology_root_term CL:0000000
-property_value: owl:versionInfo "2022-08-16" xsd:string
+property_value: owl:versionInfo "2022-12-15" xsd:string
 
 [Term]
 id: CL:0000000
@@ -352,11 +352,13 @@ id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
 is_a: CL:0000548 ! animal cell
 is_a: CL:0011115 ! precursor cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000035
@@ -370,8 +372,10 @@ is_a: CL:0000723 ! somatic stem cell
 [Term]
 id: CL:0000036
 name: epithelial fate stem cell
+subset: human_reference_atlas
 synonym: "epithelial stem cell" EXACT []
 is_a: CL:0000035 ! single fate stem cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000037
@@ -891,6 +895,7 @@ id: CL:0000086
 name: germ line stem cell (sensu Nematoda and Protostomia)
 xref: FBbt:00004861
 is_a: CL:0000014 ! germ line stem cell
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000087
@@ -1319,6 +1324,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000130
 name: neuron associated cell (sensu Nematoda and Protostomia)
 is_a: CL:0000095 ! neuron associated cell
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000131
@@ -1625,9 +1631,11 @@ is_a: CL:0002659 ! glandular cell of stomach
 id: CL:0000163
 name: endocrine cell
 def: "A cell of an endocrine gland, ductless glands that secrete substances which are released directly into the circulation and which influence metabolism and other body functions." [MESH:D055098]
+subset: human_reference_atlas
 synonym: "endocrinocyte" EXACT []
 xref: FMA:83809
 is_a: CL:0000151 ! secretory cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000164
@@ -1759,11 +1767,13 @@ is_a: CL:0000163 ! endocrine cell
 id: CL:0000175
 name: luteal cell
 def: "A progesterone secreting cell in the corpus luteum. The large luteal cells develop from the granulosa cells. The small luteal cells develop from the theca cells." [MESH:D008184]
+subset: human_reference_atlas
 synonym: "lutein cell" EXACT []
 xref: BTO:0003939
 xref: FMA:18688
 is_a: CL:0000179 ! progesterone secreting cell
 is_a: CL:0002132 ! stromal cell of ovary
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000176
@@ -1788,6 +1798,7 @@ xref: EMAPA:29655
 xref: FMA:72297
 xref: MESH:D007985
 is_a: CL:0000177 ! testosterone secreting cell
+is_a: CL:4030031 ! interstitial cell
 relationship: develops_from CL:0009091 ! Leydig stem cell
 
 [Term]
@@ -2058,7 +2069,9 @@ is_a: CL:0000003 ! native cell
 id: CL:0000212
 name: absorptive cell
 def: "A cell that takes up and metabolizes substances." [CL:CVS]
+subset: human_reference_atlas
 is_a: CL:0000003 ! native cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000213
@@ -2998,6 +3011,7 @@ name: neuroblast (sensu Nematoda and Protostomia)
 synonym: "neuroblast" BROAD []
 xref: FBbt:00005146
 is_a: CL:0000047 ! neural stem cell
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000339
@@ -3015,11 +3029,13 @@ name: glioblast (sensu Nematoda and Protostomia)
 xref: FBbt:00005145
 is_a: CL:0000030 ! glioblast
 is_a: CL:0000130 ! neuron associated cell (sensu Nematoda and Protostomia)
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000341
 name: pigment cell (sensu Nematoda and Protostomia)
 is_a: CL:0000147 ! pigment cell
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000342
@@ -3234,6 +3250,7 @@ name: protoplast
 def: "The cell protoplasm after removal of the cell wall." [ISBN:08199377X]
 xref: MESH:D011523
 is_a: CL:0000578 ! experimentally modified cell in vitro
+relationship: never_in_taxon NCBITaxon:33208
 
 [Term]
 id: CL:0000372
@@ -3323,6 +3340,7 @@ id: CL:0000385
 name: prohemocyte (sensu Nematoda and Protostomia)
 xref: FBbt:00005062
 is_a: CL:0000390 ! blood cell (sensu Nematoda and Protostomia)
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000386
@@ -3356,6 +3374,7 @@ is_a: CL:0000658 ! cuticle secreting cell
 id: CL:0000390
 name: blood cell (sensu Nematoda and Protostomia)
 is_a: CL:0000081 ! blood cell
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000391
@@ -3792,7 +3811,6 @@ name: Langerhans cell
 def: "Langerhans cell is a conventional dendritic cell that has plasma membrane part CD207. A Langerhans cell is a stellate dendritic cell of myeloid origin, that appears clear on light microscopy and has a dark-staining, indented nucleus and characteristic inclusions (Birbeck granules) in the cytoplasm; Langerhans cells are found principally in the stratum spinosum of the epidermis, but they also occur in other stratified epithelia and have been identified in the lung, lymph nodes, spleen, and thymus." [GO_REF:0000031, GOC:add, GOC:amm, ISBN:0721601464, ISBN:0781735149, PMCID:PMC2346585, PMID:17850486]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000021 )(PMID:19243617). These cells are also CD1a-high, CD14-negative, CD207-positive (langerin), CD324-positive (E-cadherin), and DCIR-positive. They reside in the epidermis.
 subset: human_reference_atlas
-synonym: "Langerhans' cell" EXACT []
 synonym: "LC" EXACT []
 xref: BTO:0000705
 xref: CALOHA:TS-2375
@@ -3861,6 +3879,7 @@ id: CL:0000463
 name: epidermal cell (sensu Arthropoda)
 def: "An epidermal cell that secretes chitinous cuticle from its apical side." [FlyBase:ds, ISBN:ISBN\:978-0801481253]
 comment: While insect epidermis is generally columnar/cuboidal, there are certainly well studied cases where it is not (e.g.- Rhodnius prolixus when starved). So it would be safer to add this as a differentium for particular species where this is known. -DSJ.
+xref: FBbt:00007325
 is_a: CL:0000362 ! epidermal cell
 is_a: CL:0000710 ! neurecto-epithelial cell
 relationship: develops_from CL:0000464 ! epidermoblast
@@ -3899,6 +3918,7 @@ name: neuroglioblast (sensu Nematoda and Protostomia)
 synonym: "neuroglioblast" EXACT []
 xref: FBbt:00005147
 is_a: CL:0000047 ! neural stem cell
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000469
@@ -4123,10 +4143,12 @@ is_a: CL:0000099 ! interneuron
 id: CL:0000499
 name: stromal cell
 def: "A connective tissue cell of an organ found in the loose connective tissue. These are most often associated with the uterine mucosa and the ovary as well as the hematopoietic system and elsewhere." [GOC:tfm, MESH:D017154]
+subset: human_reference_atlas
 xref: BTO:0002064
 xref: FMA:83624
 is_a: CL:0002320 ! connective tissue cell
 relationship: develops_from CL:0000134 ! mesenchymal stem cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000500
@@ -4159,10 +4181,12 @@ is_a: CL:0000172 ! somatostatin secreting cell
 id: CL:0000503
 name: theca cell
 def: "A flattened stroma cell forming a sheath or theca outside the basal lamina lining the mature ovarian follicle. Thecal interstitial or stromal cells are steroidogenic, and produce primarily androgens which serve as precusors of estrogens in the granulosa cells." [MESH:D013799]
+subset: human_reference_atlas
 xref: BTO:0002850
 xref: FMA:18690
 is_a: CL:0000593 ! androgen secreting cell
 is_a: CL:0002132 ! stromal cell of ovary
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000504
@@ -4295,12 +4319,14 @@ id: CL:0000519
 name: phagocyte (sensu Nematoda and Protostomia)
 def: "A phagocyte from organisms in the Nematoda or Protostomia clades." [GOC:tfm]
 is_a: CL:0000234 ! phagocyte
+relationship: never_in_taxon NCBITaxon:33511
 
 [Term]
 id: CL:0000520
 name: prokaryotic cell
 xref: MESH:D011387
 is_a: CL:0000003 ! native cell
+relationship: never_in_taxon NCBITaxon:2759
 
 [Term]
 id: CL:0000521
@@ -4318,7 +4344,6 @@ id: CL:0000523
 name: mononuclear cytotrophoblast cell
 def: "A cell from the inner layer of the trophoblast of the early mammalian embryo that gives rise to the outer surface and villi of the chorion. Mononuclear crytoblasts fuse to give rise to a multinuclear cytotrophoblast." [GOC:tfm, ISBN:0323052908]
 subset: human_reference_atlas
-synonym: "Langhans' cell" EXACT []
 xref: FMA:83042
 is_a: CL:0000351 ! trophoblast cell
 relationship: present_in_taxon NCBITaxon:9606
@@ -4650,6 +4675,7 @@ id: CL:0000557
 name: granulocyte monocyte progenitor cell
 def: "A hematopoietic progenitor cell that is committed to the granulocyte and monocyte lineages. These cells are CD123-positive, and do not express Gata1 or Gata2 but do express C/EBPa, and Pu.1." [GO_REF:0000031, GOC:amm, GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/CFU-GM, http://www.copewithcytokines.de, ISBN:0721601464, MESH:D055014, PMCID:PMC2213186, PMCID:PMC548021, PMID:16551251, PMID:16647566]
 comment: Originally described in the dendritic cell ontology (DC_CL:0000042)(PMID:19243617). GMPs are reportedly CD16-positive, CD32-positive, CD34-positive, CD38-positive, CD45RA-positive, CD110-negative, CD117-positive, CD123-positive, and SCA1-negative.
+subset: human_reference_atlas
 synonym: "CFU-C , Colony forming unit in culture" BROAD [http://www.copewithcytokines.de]
 synonym: "CFU-GM" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "colony forming unit granulocyte macrophage" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
@@ -4661,6 +4687,7 @@ is_a: CL:0000763 ! myeloid cell
 is_a: CL:0001012 ! CD7-negative lymphoid progenitor OR granulocyte monocyte progenitor
 is_a: CL:0011026 ! progenitor cell
 is_a: CL:1001610 ! bone marrow hematopoietic cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000558
@@ -4854,6 +4881,7 @@ id: CL:0000577
 name: type EC enteroendocrine cell
 alt_id: CL:0002065
 def: "A subtype of enteroendocrine cells found in the gastrointestinal mucosa, particularly in the glands of pyloric antrum; duodenum; and ileum. These cell type secretes serotonin and some neurotransmitters including enkephalins and substance P. Their secretory granules stain readily with silver (argentaffin stain)." [MESH:A03.492.766.440.250, PMID:9505449]
+subset: human_reference_atlas
 synonym: "argentaffin cell" EXACT []
 synonym: "enterochromaffin cell" EXACT []
 synonym: "Kulchitsky cell" EXACT []
@@ -4864,6 +4892,7 @@ is_a: CL:0000166 ! chromaffin cell
 is_a: CL:0000458 ! serotonin secreting cell
 is_a: CL:0000506 ! enkephalin secreting cell
 is_a: CL:0002251 ! epithelial cell of alimentary canal
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000578
@@ -4928,6 +4957,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000584
 name: enterocyte
 def: "An epithelial cell that has its apical plasma membrane folded into microvilli to provide ample surface for the absorption of nutrients from the intestinal lumen." [SANBI:mhl]
+subset: human_reference_atlas
 synonym: "differentiated enterocyte" NARROW [https://orcid.org/0000-0001-9610-7627, PMID:33290721]
 synonym: "mature enterocyte" NARROW [https://orcid.org/0000-0001-9610-7627, PMID:33290721]
 xref: BTO:0000398
@@ -4936,6 +4966,7 @@ xref: MESH:D020895
 is_a: CL:0000239 ! brush border epithelial cell
 is_a: CL:0000677 ! gut absorptive cell
 is_a: CL:0002563 ! intestinal epithelial cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000585
@@ -5369,7 +5400,6 @@ name: Claudius cell
 def: "A cuboidal cell which along with Boettcher's cells form the floor of the external spiral sulcus, external to the organ of Corti." [GOC:tfm, ISBN:0721662544]
 synonym: "cell of Claudius" EXACT []
 synonym: "external supporting cell of Claudius" RELATED []
-synonym: "external supporting cell of vestibular epithelium" EXACT []
 xref: FMA:79802
 is_a: CL:0002315 ! supporting cell of cochlea
 
@@ -5386,11 +5416,13 @@ is_a: CL:0002165 ! phalangeal cell
 id: CL:0000636
 name: Mueller cell
 def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
+subset: human_reference_atlas
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
 xref: BTO:0003064
 is_a: CL:0000681 ! radial glial cell
 is_a: CL:0009004 ! retinal cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000637
@@ -5417,7 +5449,7 @@ is_a: CL:0000637 ! chromophil cell of anterior pituitary gland
 [Term]
 id: CL:0000639
 name: basophil cell of pars distalis of adenohypophysis
-def: "A basophillic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
+def: "A basophilic chromophil cell that of the anterior pituitary gland." [GOC:tfm]
 synonym: "basophil cell of anterior lobe of hypophysis" EXACT []
 synonym: "beta cell" RELATED []
 synonym: "pituitary beta cell" RELATED []
@@ -5634,19 +5666,24 @@ is_a: CL:0000468 ! neuroglioblast (sensu Nematoda and Protostomia)
 
 [Term]
 id: CL:0000663
-name: valve cell
-is_a: CL:0000003 ! native cell
+name: obsolete valve cell
+comment: https://github.com/obophenotype/cell-ontology/issues/726
+is_obsolete: true
+replaced_by: CL:1000147
 
 [Term]
 id: CL:0000664
-name: closable valve cell
-is_a: CL:0000185 ! myoepithelial cell
-is_a: CL:0000663 ! valve cell
+name: obsolete closable valve cell
+comment: https://github.com/obophenotype/cell-ontology/issues/726
+is_obsolete: true
+replaced_by: CL:1000147
 
 [Term]
 id: CL:0000665
-name: permanently open valve cell
-is_a: CL:0000663 ! valve cell
+name: obsolete permanently open valve cell
+comment: https://github.com/obophenotype/cell-ontology/issues/726
+is_obsolete: true
+replaced_by: CL:1000147
 
 [Term]
 id: CL:0000666
@@ -6011,11 +6048,13 @@ relationship: develops_from CL:0000133 ! neurectodermal cell
 id: CL:0000711
 name: cumulus cell
 def: "Cumulus cell is a specialized granulosa cell that surrounds and nourishes the oocyte. This cell-type surrounds the fully-grown oocyte to form a cumulus-oocyte complex (abbr. COC). The terms cumulus oophorus cells, cumulus granulosa cells, cumulus oophorous granulosa cells, granulosa-cumulus cells are used to make a distinction between this cell and the other functionally different subpopulation of granulosa cells at the wall of the Graafian follicle." [GOC:tfm, http://www.copewithcytokines.org/cope.cgi?key=cumulus%20cells]
+subset: human_reference_atlas
 xref: BTO:0002236
 xref: MESH:D054885
 is_a: CL:0000154 ! protein secreting cell
 is_a: CL:0002174 ! follicular cell of ovary
 relationship: develops_from CL:0000501 ! granulosa cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000712
@@ -6179,7 +6218,7 @@ is_a: CL:0000187 ! muscle cell
 id: CL:0000738
 name: leukocyte
 def: "An achromatic cell of the myeloid or lymphoid lineages capable of ameboid movement, found in blood or other tissue." [GOC:add, GOC:tfm, ISBN:978-0-323-05290-0]
-synonym: "immune cell" EXACT []
+synonym: "immune cell" RELATED []
 synonym: "leucocyte" EXACT []
 synonym: "white blood cell" EXACT []
 xref: BTO:0000751
@@ -6879,12 +6918,14 @@ is_a: CL:0002496 ! intraepithelial lymphocyte
 id: CL:0000802
 name: CD8-alpha alpha positive, gamma-delta intraepithelial T cell
 def: "A gamma-delta intraepithelial T cell that has the phenotype CD8-alpha alpha-positive." [GOC:add, GOC:tfm, ISBN:0781735149]
+subset: human_reference_atlas
 synonym: "CD8-positive, gamma-delta intraepithelial T lymphocyte" EXACT []
 synonym: "CD8-positive, gamma-delta intraepithelial T-cell" EXACT []
 synonym: "CD8-positive, gamma-delta intraepithelial T-lymphocyte" EXACT []
 synonym: "IEL" BROAD []
 synonym: "intraepithelial lymphocyte" BROAD []
 is_a: CL:0000801 {is_inferred="true"} ! gamma-delta intraepithelial T cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000803
@@ -7411,6 +7452,7 @@ id: CL:0000845
 name: marginal zone B cell of spleen
 def: "A mature B cell that is located in the marginal zone of the spleen with the phenotype CD23-negative and CD21-positive and expressing a B cell receptor usually reactive to bacterial cell wall components or senescent self components such as oxidized-LDL. This cell type is also described as being CD19-positive, B220-positive, IgM-high, AA4-negative, CD35-high." [GOC:add, GOC:dsd, http://en.wikipedia.org/wiki/Marginal-zone_B_cell, ISBN:0781735149, PMID:10933592, PMID:20933013]
 comment: MZ B cells are reportedly CD1-positive (mice), CD20-positive, CD48-positive, CD84-positive, CD150-positive, CD229-positive, and CD352-positive.
+subset: human_reference_atlas
 synonym: "B cell of marginal zone of spleen" EXACT []
 synonym: "marginal zone B cell" BROAD []
 synonym: "marginal zone B lymphocyte" BROAD []
@@ -7423,6 +7465,7 @@ synonym: "MZ B-cell" BROAD []
 synonym: "MZ B-lymphocyte" BROAD []
 is_a: CL:0000785 {is_inferred="true"} ! mature B cell
 is_a: CL:2000074 ! splenocyte
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000846
@@ -7566,7 +7609,7 @@ name: inflammatory macrophage
 def: "An elicited macrophage that is recruited into the tissues in response to injury and infection as part of an inflammatory response, expresses high levels of pro-inflammatory cytokines, ROS and NO, and shows potent microbicidal activity." [GO_REF:0000031, GOC:ana, PMID:19132917]
 comment: Markers: Express: TNFa, IL1b, IL6, iNOS, NADPH-oxidase; produce: reactive oxygen species, nitric oxide; role or process: immune, inflammation (inflammatory response).
 synonym: "classically activated macrophage" EXACT []
-synonym: "M1 macrophage" RELATED []
+synonym: "M1 macrophage" RELATED [PMID:28923980]
 is_a: CL:0000861 {is_inferred="true"} ! elicited macrophage
 
 [Term]
@@ -7775,7 +7818,7 @@ id: CL:0000890
 name: alternatively activated macrophage
 def: "An elicited macrophage characterized by low production of pro-inflammatory and Th1 polarizing cytokines and high expression of arginase-1, and associated with tissue remodelling." [GO_REF:0000031, GOC:ana, GOC:tfm, PMID:20510870]
 comment: Role or process: tissue remodeling.
-synonym: "M2 macrophage" RELATED []
+synonym: "M2 macrophage" RELATED [PMID:28923980]
 is_a: CL:0000861 {is_inferred="true"} ! elicited macrophage
 
 [Term]
@@ -9756,6 +9799,7 @@ id: CL:0001087
 name: effector memory CD4-positive, alpha-beta T cell, terminally differentiated
 def: "A CD4-positive, alpha beta memory T cell with the phenotype CD45RA-positive, CD45RO-negative, and CCR7-negative." [GOC:add, PMID:17465678, PMID:26883338, PMID:27997758, PMID:29133794]
 comment: This cell type is seen in human but not found in the mouse.
+subset: human_reference_atlas
 synonym: "CD4+ TEMRA" EXACT [PMID:17465678]
 synonym: "CD4-positive TEMRA" EXACT [PMID:17465678]
 synonym: "TEMRA" BROAD [PMID:17465678]
@@ -9763,6 +9807,7 @@ is_a: CL:0000897 ! CD4-positive, alpha-beta memory T cell
 is_a: CL:4030002 ! effector memory CD45RA-positive, alpha-beta T cell, terminally differentiated
 relationship: dc-contributor https://orcid.org/0000-0001-9990-8331
 relationship: develops_from CL:0000905 ! effector memory CD4-positive, alpha-beta T cell
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2021-01-18T16:32:44Z xsd:dateTime
 
 [Term]
@@ -9958,7 +10003,7 @@ creation_date: 2010-04-26T10:31:56Z
 
 [Term]
 id: CL:0002013
-name: GlyA-positive basophillic erythroblast
+name: GlyA-positive basophilic erythroblast
 def: "A basophilic erythroblast that is GlyA-positive." [GOC:ak, GOC:tfm, PMID:1638021]
 comment: Markers are associated with human cells.
 is_a: CL:0000549 {is_inferred="true"} ! basophilic erythroblast
@@ -9993,7 +10038,7 @@ def: "A polychromatiic erythroblast that is Gly-A-positive and CD71-low." [GOC:a
 comment: Cell surface markers are associated with human cells.
 is_a: CL:0000550 {is_inferred="true"} ! polychromatophilic erythroblast
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
-relationship: develops_from CL:0002013 ! GlyA-positive basophillic erythroblast
+relationship: develops_from CL:0002013 ! GlyA-positive basophilic erythroblast
 creation_date: 2010-04-26T10:53:16Z
 
 [Term]
@@ -10561,6 +10606,7 @@ creation_date: 2010-09-10T10:48:54Z
 id: CL:0002068
 name: Purkinje myocyte
 def: "Specialized cardiac myocyte that is subendocardially interspersed with the regular cardiac muscle cell. They are uninucleate cylindrical cells, associated end-to-end in long rows, continue from the node to the atrioventricular bundle; relatively short compared to ordinary myocytes but are nearly twice their diameter." [FMA:0412046911, GOC:tfm, PMID:19939742]
+subset: human_reference_atlas
 synonym: "myocytus conducens cardiacus" EXACT []
 synonym: "Purkinje cell fiber" EXACT []
 synonym: "Purkinje muscle cell" EXACT []
@@ -10568,6 +10614,7 @@ xref: BTO:0001032
 xref: FMA:14146
 is_a: CL:0002086 ! specialized cardiac myocyte
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
+relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-06-28T08:36:15Z
 
 [Term]
@@ -10795,12 +10842,14 @@ id: CL:0002088
 name: interstitial cell of Cajal
 def: "This is a cell found in the gastrointestinal tract of mammals and serves as a pacemaker that triggers gut contraction. ICCs mediate inputs from the enteric nervous system to smooth muscle cells and are thought to be the cells from which gastrointestinal stromal tumors (GISTs) arise." [GOC:tfm, PMID:16460275, PMID:19520112]
 comment: Some argue this cell type is of mesenchymal origin.
+subset: human_reference_atlas
 synonym: "ICC" EXACT []
 synonym: "intestinal pacemaker cell" EXACT [GOC:pr]
 xref: BTO:0003914
 xref: FMA:86573
 is_a: CL:0000710 {is_inferred="true"} ! neurecto-epithelial cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
+relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-07-22T03:26:00Z
 
 [Term]
@@ -11908,7 +11957,7 @@ alt_id: CL:1000036
 def: "A transient hepatic stem cell observed after liver injury with a high nuclear to cytoplasm ratio that can differentiate into mature hepatocytes and bile duct cells. Arises from more than one tissue." [PMID:17901986]
 subset: human_reference_atlas
 synonym: "hepatic oval cell" EXACT []
-synonym: "hepatic progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0] {http://purl.org/dc/elements/1.1/contributor="http://orcid.org/000-0003-1940-6740"}
+synonym: "hepatic progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0] {http://purl.org/dc/terms/contributor="http://orcid.org/0000-0003-1940-6740"}
 synonym: "liver progenitor cell" EXACT [https://doi.org/10.1038/s12276-020-0483-0]
 xref: BTO:0004270
 xref: FMA:86576
@@ -12000,7 +12049,6 @@ creation_date: 2010-09-02T02:20:50Z
 id: CL:0002204
 name: brush cell
 def: "A cell type found in the gastrointestinal and respiratory tracts that is characterized by the presence of a tuft of blunt, squat microvilli (120-140 per cell). Function of this cell type is not known." [GOC:tfm, ISBN:0517223651, PMID:15817800]
-subset: human_reference_atlas
 synonym: "caveolated cell" EXACT []
 synonym: "fibrillovesicular cell" EXACT []
 synonym: "multivesicular cell" EXACT []
@@ -12008,7 +12056,6 @@ synonym: "tuft cell" EXACT []
 xref: FMA:67978
 is_a: CL:0002076 ! endo-epithelial cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
-relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-09-02T02:28:53Z
 
 [Term]
@@ -12420,6 +12467,7 @@ synonym: "pulmonary myofibroblast" EXACT []
 synonym: "pulmonary septal cell" EXACT []
 xref: FMA:84467
 is_a: CL:0000057 {is_inferred="true"} ! fibroblast
+is_a: CL:4030031 ! interstitial cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-07T02:29:38Z
 
@@ -13182,7 +13230,7 @@ creation_date: 2010-09-14T02:08:23Z
 [Term]
 id: CL:0002310
 name: mammosomatotroph
-def: "An acidophil cell of the anterior pitiuatry gland that produces both prolactin and growth hormone." [GOC:tfm]
+def: "An acidophil cell of the anterior pituitary gland that produces both prolactin and growth hormone." [GOC:tfm]
 xref: FMA:83097
 is_a: CL:0000295 ! somatotropin secreting cell
 is_a: CL:0000439 ! prolactin secreting cell
@@ -13604,11 +13652,13 @@ id: CL:0002350
 name: endocardial cell
 alt_id: CL:1000475
 def: "An endothelial cell that lines the intracavitary lumen of the heart, separating the circulating blood from the underlying myocardium. This cell type releases a number of vasoactive substances including prostacyclin, nitrous oxide and endothelin." [GOC:tfm, ISSN:0452-3458]
+subset: human_reference_atlas
 synonym: "endocardial endothelial cell" EXACT []
 synonym: "endothelial cell of endocardium" EXACT [FMA:75621]
 xref: FMA:75621
 is_a: CL:0010008 ! cardiac endothelial cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
+relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-09-21T04:33:05Z
 
 [Term]
@@ -16283,11 +16333,12 @@ creation_date: 2011-07-08T02:08:40Z
 [Term]
 id: CL:0002638
 name: bronchioalveolar stem cell
-def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and club cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." [GOC:tfm, PMID:15960971]
+def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole. This cell types gives rise to alveolar cell types and club cells in response to lung injury. This cell type expresses markers Scgb1a1 and Sftpc." [GOC:tfm, MP:0011691, PMID:15960971]
 synonym: "basal epithelial cell of bronchioalveolar duct junction" EXACT []
 synonym: "BASC" EXACT []
 is_a: CL:1000350 ! basal cell of epithelium of terminal bronchiole
 is_a: CL:1000351 ! basal cell of epithelium of respiratory bronchiole
+relationship: dc-contributor http://orcid.org/0000-0001-7258-9596
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2011-06-21T03:26:08Z
 
@@ -16698,6 +16749,1016 @@ name: kidney cortical cell
 is_a: CL:1000497 {is_inferred="true"} ! kidney cell
 relationship: dc-contributor https://orcid.org/0000-0002-0956-8634
 creation_date: 2011-10-25T03:49:41Z
+
+[Term]
+id: CL:0003001
+name: bistratified retinal ganglion cell
+namespace: cell
+def: "A retinal ganglion cell that has dendrites stratified in two layers of the inner-plexiform layer." []
+synonym: "retinal ganglion D cell" EXACT []
+is_a: CL:0000740 ! retinal ganglion cell
+is_a: CL:0004247 ! bistratified cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003002
+name: G1 retinal ganglion cell
+namespace: cell
+def: "A retinal ganglion cell that has a small dendritic field and a medium dendritic arbor with post sympatic terminals in sublaminar layer S3." [PMID:11978858]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003003
+name: G2 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a small dendritic field and a sparse dendritic arbor with post sympatic terminals in sublaminar layer S3." [PMID:11978858]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003004
+name: G3 retinal ganglion cell
+namespace: cell
+def: "A bistratified retinal ganglion cell that has a small dendritic field with sparse density that terminates at the intersection of the S4-S5 sublaminar level, and a second dendrite field that is medium in size and degree of arborization that terminates in sublaminar layer S2." [PMID:11978858]
+comment: is_a bistratified retinal ganglion cell S4-S5 dendrite field having (small dendritic field, sparse density) and second dendrite field having (medium, meduim)
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003005
+name: G4 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a small dendritic field and dense dendritic arbor." []
+comment: Masland nomenclature PMID:11978858
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003006
+name: G4-ON retinal ganglion cell
+namespace: cell
+def: "A G4 retinal ganglion cell that has post sympatic terminals in sublaminar layers S3 and S4 and is depolarized by illumination of its receptive field center." [PMID:11978858]
+is_a: CL:0003005 ! G4 retinal ganglion cell
+is_a: CL:4023032 ! ON retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003007
+name: G4-OFF retinal ganglion cell
+namespace: cell
+def: "A G4 retinal ganglion cell that has post sympatic terminals in sublaminar layers S2 and S3 and is depolarized by decreased illumination of their receptive field center" []
+comment: Masland nomenclature PMID:11978858
+is_a: CL:0003005 ! G4 retinal ganglion cell
+is_a: CL:4023033 ! OFF retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003008
+name: G5 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a medium dendritic field and a medium dendritic arbor with post sympatic terminals in sublaminar layer S2." [PMID:11978858]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003009
+name: G6 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a medium dendritic field and a sparse dendritic arbor with post sympatic terminals in sublaminar layer S4 and S5." [PMID:11978858]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003010
+name: G7 retinal ganglion cell
+namespace: cell
+def: "A bistratified retinal ganglion cell that has a dendrite field that terminates in sublaminar layer S2 and a second dendrite field that terminates in sublaminar layer S4." [PMID:11978858]
+synonym: "ON-OFF DS" EXACT []
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003011
+name: G8 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a large dendritic field and a sparse dendritic arbor with post synaptic terminals in sublaminar layer S4." [PMID:11978858]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003012
+name: G9 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a large dendritic field and a medium dendritic arbor with post synaptic terminals in sublaminar layer S1 and S2." [PMID:11978858]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003013
+name: G10 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a large dendritic field, a medium dendritic arbor, and a long secondary dendrite shaft with post synaptic terminals in sublaminar layer S4." [PMID:11978858]
+comment: Capable of ON directional sensitivity.
+xref: https://orcid.org/0000-0001-7258-9596
+xref: https://orcid.org/0000-0002-5260-9315
+is_a: CL:0000740 ! retinal ganglion cell
+
+[Term]
+id: CL:0003014
+name: G11 retinal ganglion cell
+namespace: cell
+def: "A mono-stratified retinal ganglion cell that has a large dendritic field, a medium dendritic arbor, and a medium length secondary dendrite shaft." [PMID:11978858]
+comment: Is capable of brisk transient currents.
+xref: https://orcid.org/0000-0001-7258-9596
+xref: https://orcid.org/0000-0002-5260-9315
+is_a: CL:0000740 ! retinal ganglion cell
+
+[Term]
+id: CL:0003015
+name: G11-ON retinal ganglion cell
+namespace: cell
+def: "A G11 retinal ganglion cell that has post synaptic terminals in sublaminar layer S4 and is depolarized by illumination of its receptive field center." [PMID:11978858]
+xref: https://orcid.org/0000-0001-7258-9596
+xref: https://orcid.org/0000-0002-5260-9315
+is_a: CL:0003014 ! G11 retinal ganglion cell
+is_a: CL:4023032 ! ON retinal ganglion cell
+
+[Term]
+id: CL:0003016
+name: G11-OFF retinal ganglion cell
+namespace: cell
+def: "A G11 retinal ganglion cell that has post synaptic terminals in sublaminar layer S2 and is depolarized by decreased illumination of their receptive field center" [PMID:11978858]
+xref: https://orcid.org/0000-0001-7258-9596
+xref: https://orcid.org/0000-0002-5260-9315
+is_a: CL:0003014 ! G11 retinal ganglion cell
+is_a: CL:4023033 ! OFF retinal ganglion cell
+
+[Term]
+id: CL:0003017
+name: retinal ganglion cell B3 outer
+namespace: cell
+def: "A retinal ganglion B cell that has post synaptic terminals in S2." [PMID:12209831]
+is_a: CL:0004183 ! retinal ganglion cell B3
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003018
+name: retinal ganglion cell B3 inner
+namespace: cell
+def: "A retinal ganglion B3 cell with dentrites terminating in S4." [PMID:12209831]
+xref: BAMS:1010
+is_a: CL:0004183 ! retinal ganglion cell B3
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003020
+name: retinal ganglion cell C outer
+namespace: cell
+def: "A retinal ganglion cell C that has post-synaptic terminals in S2." [PMID:12209831]
+is_a: CL:0004116 ! retinal ganglion cell C
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003021
+name: retinal ganglion cell C4
+namespace: cell
+def: "A retinal ganglion cell C outer that has a medium dendritic field and a dense dendritic arbor." [PMID:12209831]
+is_a: CL:0003020 ! retinal ganglion cell C outer
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003022
+name: retinal ganglion cell C5
+namespace: cell
+def: "A retinal ganglion cell C outer that has medium dendritic density and field size." [PMID:12209831]
+is_a: CL:0003020 ! retinal ganglion cell C outer
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003023
+name: retinal ganglion cell C6
+namespace: cell
+def: "A retinal ganglion cell C outer that has dense dendritic diversity." [PMID:12209831]
+is_a: CL:0003020 ! retinal ganglion cell C outer
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003024
+name: retinal ganglion cell C inner
+namespace: cell
+def: "A retinal ganglion cell C with medium cell bodies and large dendritic field." [PMID:12209831]
+is_a: CL:0004116 ! retinal ganglion cell C
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003025
+name: retinal ganglion cell C3
+namespace: cell
+def: "A retinal ganglion cell C inner that has sparse dendritic density, and large dendritic field." [PMID:12209831]
+synonym: "epsilon" RELATED []
+is_a: CL:0003024 ! retinal ganglion cell C inner
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003026
+name: retinal ganglion cell D1
+namespace: cell
+def: "A bistratified retinal ganglion cell that has a small dendrite fields with a sparse dendrite arbor terminating in S2 and S3." [PMID:12209831]
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003027
+name: retinal ganglion cell D2
+namespace: cell
+def: "A bistratified retinal ganglion cell D cell that has medium dendritic arbor and a large dendritic field that terminates in S2 and S4." [PMID:12209831]
+synonym: "iota cell" RELATED []
+synonym: "ON-OFF direction selective" RELATED []
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003028
+name: M1 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has a small dendrite field with a dense dendrite arbor with post synaptic terminals in sublaminer layer S4." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003029
+name: M2 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has a small soma, a small dendrite field with a dense dendrite arbor, and post synaptic terminals in sublaminer layer S2 and S3." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003030
+name: M3 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has a medium soma and a small dendrite field." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003031
+name: M3-ON retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has post synaptic terminals in sublaminar layer S4 and is depolarized by illumination of its receptive field center." [PMID:16626866]
+is_a: CL:0003030 ! M3 retinal ganglion cell
+is_a: CL:4023032 ! ON retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003032
+name: M3-OFF retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has post synaptic terminals in sublaminar layer S2 and is depolarized by decreased illumination of their receptive field center" [PMID:16626866]
+is_a: CL:0003030 ! M3 retinal ganglion cell
+is_a: CL:4023033 ! OFF retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003033
+name: M4 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has a large soma, a medium dendritic field with post synaptic terminals in sublaminar layer S3." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003034
+name: M5 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that has a small soma, an assymetric dendritic field with post synaptic terminals in sublaminar layer S3." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003035
+name: M6 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell that contains opsin." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003036
+name: M7 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell with large soma and large dendritic field, with medium dendritic arbor, and has dendrites in layers 2 and 5." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003037
+name: M7-ON retinal ganglion cell
+namespace: cell
+def: "An M7 retinal ganglion cells with synaptic terminals in S4 and is depolarized by illumination of its receptive field center." [PMID:16626866]
+is_a: CL:0003036 ! M7 retinal ganglion cell
+is_a: CL:4023032 ! ON retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003038
+name: M7-OFF retinal ganglion cell
+namespace: cell
+def: "An M7 retinal ganglion cells with synaptic terminals in S2 and is depolarized by decreased illumination of their receptive field center" [PMID:16626866]
+is_a: CL:0003036 ! M7 retinal ganglion cell
+is_a: CL:4023033 ! OFF retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003039
+name: M8 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell with large soma and medium dendritic field, with dense dendritic arbor." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003040
+name: M9 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell with large soma and large dendritic field, with medium dendritic arbor, and has dendrites in layers 1 and 5." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003041
+name: M9-ON retinal ganglion cell
+namespace: cell
+def: "An M9 retinal ganglion cells with synaptic terminals in S2 and is depolarized by illumination of its receptive field center." [PMID:16626866]
+is_a: CL:0003040 ! M9 retinal ganglion cell
+is_a: CL:4023032 ! ON retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003042
+name: M9-OFF retinal ganglion cell
+namespace: cell
+def: "An M9 retinal ganglion cell with synaptic terminals in S4 that is depolarized by decreased illumination of their receptive field center" [PMID:16626866]
+is_a: CL:0003040 ! M9 retinal ganglion cell
+is_a: CL:4023033 ! OFF retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003043
+name: M10 retinal ganglion cell
+namespace: cell
+def: "A monostratified retinal ganglion cell with large soma and large dendritic field, with dense dendritic arbor." [PMID:16626866]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003044
+name: M11 retinal ganglion cell
+namespace: cell
+def: "A bistratified ganglion cell with small, dense dendritic fields that terminate in S1 and S3." [PMID:16626866]
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003045
+name: M12 retinal ganglion cell
+namespace: cell
+def: "A bistratified ganglion cell with larger, asymetric dendritic fields that terminate in S2 and S4." [PMID:16626866]
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003046
+name: M13 retinal ganglion cell
+namespace: cell
+def: "A bistratifed retinal ganglion cell that has small, symmetric dendritic fields that terminate in S2 and S4." [PMID:16626866]
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003047
+name: M14 retinal ganglion cell
+namespace: cell
+def: "A bistratifed retinal ganglion cell that has small, symmetric dendritic fields that terminate in S1 and S4-S5." [PMID:16626866]
+is_a: CL:0003001 ! bistratified retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003048
+name: L cone cell
+namespace: cell
+def: "A cone cell that detects long wavelength light. Exact peak of spectra detected differs between species. In humans, spectra peaks at 564-580 nm." [WikipediaVersioned:Cone_cell&oldid=1111888680]
+is_a: CL:0000573 ! retinal cone cell
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003049
+name: M cone cell
+namespace: cell
+def: "A cone cell that detects medium wavelength light. Exact peak of spectra detected differs between species. In humans, spectra peaks at 534-545 nm." [WikipediaVersioned:Cone_cell&oldid=1111888680]
+is_a: CL:0000573 ! retinal cone cell
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003050
+name: S cone cell
+namespace: cell
+def: "A cone cell that detects short wavelength light. Exact peak of spectra detected differs between species. In humans, spectra peaks at 420-440 nm." [WikipediaVersioned:Cone_cell&oldid=1111888680]
+is_a: CL:0000573 ! retinal cone cell
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0003051
+name: UV cone cell
+namespace: cell
+def: "A cone cell that detects ultraviolet (UV) wavelength light." []
+is_a: CL:0000573 ! retinal cone cell
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004001
+name: local interneuron
+namespace: cell
+def: "An interneuron whose axon stays entirely within the gray matter region where the cell body resides." []
+comment: Local interneurons form the category of interneurons whose axon stays entirely within the gray matter region where the cell body resides (Swanson, 2003, p. 245; Bota and Swanson, 2007, Fig. 3).
+xref: BAMS:1002
+is_a: CL:0000402 ! CNS interneuron
+
+[Term]
+id: CL:0004115
+name: retinal ganglion cell B
+namespace: cell
+def: "A monostratified retinal ganglion cell with small to medium soma and small to medium dendritic field." [PMID:12209831]
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004116
+name: retinal ganglion cell C
+namespace: cell
+def: "A retinal ganglion with cell medium cell bodies and medium to large dendritic fields." [PMID:12209831]
+comment: Group RGC cells are defined as having small to medium cell bodies and medium to large dendritic fields. Their morphology was more heterogeneous than that of Groups RGA and RGB. We classified cells with a large soma and a large dendritic field as RGA, cells with a small to medium to sized soma and a small to medium to sized dendritic field as RGB, and cells with a small to medium to sized soma but a medium to large dendritic field RGC.
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004117
+name: retinal ganglion cell A
+namespace: cell
+def: "A monostratified retinal ganglion cell with large soma and large dendritic field." [PMID:12209831]
+comment: This group includes all of the large bodied/large field RGCs in the rat. Group RGA cells have large somata (15 to 39 micrometers in diameter) and large, radially branching dendritic fields (235 to 748 micrometers in diameter), and many exhibit tracer coupling.
+synonym: "alpha cell" EXACT []
+xref: BAMS:1009
+is_a: CL:0000740 ! retinal ganglion cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004119
+name: retinal ganglion cell B1
+namespace: cell
+def: "A retinal ganglion cell B that has medium body size, medium dendritic field and dense dendritic arbor, and has post synaptic terminals in S2." [PMID:12209831]
+comment: Could not distingush between B1 and B4 from paper. {xref="PMID:12209831"}
+synonym: "retinal ganglion cell B4" EXACT []
+xref: BAMS:1047
+is_a: CL:0004115 ! retinal ganglion cell B
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004120
+name: retinal ganglion cell A1
+namespace: cell
+def: "A retinal ganglion A cell found in the retina with large somata, often polygonal in shape. The dendritic fields consist of three to seven stout dendrites that are sparce near soma. Dendrites terminate in S4." [PMID:12209831]
+synonym: "I-2" EXACT []
+synonym: "inner alpha retinal ganglion cell" EXACT []
+synonym: "type I" BROAD []
+xref: BAMS:1045
+is_a: CL:0004117 ! retinal ganglion cell A
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004121
+name: retinal ganglion cell B2
+namespace: cell
+def: "A retinal ganglion cell B that has a very small but very dense dendritic field, and has post synaptic terminals in S2." [PMID:12209831]
+xref: BAMS:1048
+is_a: CL:0004115 ! retinal ganglion cell B
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004124
+name: retinal ganglion cell C1
+namespace: cell
+def: "A retinal ganglion cell C inner that has medium dendritic diversity." [PMID:12209831]
+synonym: "delta" RELATED []
+synonym: "MTN projecting" RELATED []
+synonym: "ON-direction-selective" RELATED []
+xref: BAMS:1050
+is_a: CL:0003024 ! retinal ganglion cell C inner
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004125
+name: retinal ganglion cell C2 inner
+namespace: cell
+def: "A retinal ganglion cell C inner that has dense dendritic diversity." [PMID:12209831]
+xref: BAMS:1067
+is_a: CL:0003024 ! retinal ganglion cell C inner
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004126
+name: retinal ganglion cell C2 outer
+namespace: cell
+def: "A retinal ganglion cell C outer that has symmetrical and dense dendritic dendritic tree with a large dendritic field." [PMID:12209831]
+xref: BAMS:1066
+is_a: CL:0003020 ! retinal ganglion cell C outer
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004137
+name: retinal ganglion cell A2 inner
+namespace: cell
+def: "A retinal ganglion A2 cell with dendrites terminating in S4." [PMID:12209831]
+xref: BAMS:1061
+is_a: CL:0004138 ! retinal ganglion cell A2
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004138
+name: retinal ganglion cell A2
+namespace: cell
+def: "A retinal ganglion A cell with dense arbor near soma." [PMID:12209831]
+synonym: "I-1" EXACT []
+synonym: "outer alpha retinal ganglion cell" EXACT []
+synonym: "type I" BROAD []
+is_a: CL:0004117 ! retinal ganglion cell A
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004139
+name: retinal ganglion cell A2 outer
+namespace: cell
+def: "A retinal ganglion A2 cell with dendrites terminating in S2." [PMID:12209831]
+xref: BAMS:1065
+is_a: CL:0004138 ! retinal ganglion cell A2
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004161
+name: 510 nm-cone
+namespace: cell
+def: "A cone whose sensitivity measurements have an average spectral peak of 510 nm. These cones are described in rat." []
+xref: BAMS:1028 "MB"
+is_a: CL:0003049 ! M cone cell
+relationship: present_in_taxon NCBITaxon:9989
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004162
+name: 360 nm-cone
+namespace: cell
+def: "A cone whose sensitivity measurements have an average spectral peak of 358.2 nm. These cones are described in rat." []
+comment: The photopigment curves that provide best fits to...sensitivity measurements have an average spectral peak of 358.2 nm.
+xref: BAMS:1029 "MB"
+is_a: CL:0003051 ! UV cone cell
+relationship: present_in_taxon NCBITaxon:9989
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004183
+name: retinal ganglion cell B3
+namespace: cell
+def: "A monostratified retinal ganglion cell with medium soma, sparse dendritic tree, and medium dendritic field." []
+comment: Sixty to eighty neurons with small somata (12 to 24 micrometers in diameter), small dendritic fields (99 to 289 micrometers in diameter), and small axonal diameters (04. to 07. micrometers in diameter) make up Group RGB. We classified cells with a large soma and a large dendritic field as RGA, cells with a small to medium to sized soma and a small to medium to sized dendritic field as RGB, and cells with a small to medium to sized soma but a medium to large dendritic field RGC.
+xref: BAMS:1049
+is_a: CL:0004115 ! retinal ganglion cell B
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004213
+name: type 3a cone bipolar cell
+namespace: cell
+def: "A type of type 3 cone bipolar cell with distinctive curly dendrites." [PMID:19129389]
+is_a: CL:0000755 ! type 3 cone bipolar cell (sensu Mus)
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004214
+name: type 3b cone bipolar cell
+namespace: cell
+def: "A type of type 3 cone bipolar cell with distinctive crescent-shaped dendrites." [PMID:19129389]
+is_a: CL:0000755 ! type 3 cone bipolar cell (sensu Mus)
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004215
+name: type 5a cone bipolar cell
+namespace: cell
+def: "A type 5 cone bipolar cell with narrowly stratified post synaptic terminals." []
+is_a: CL:0000757 ! type 5 cone bipolar cell (sensu Mus)
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004216
+name: type 5b cone bipolar cell
+namespace: cell
+def: "A type 5 cone bipolar cell with diffuse axonal branches." []
+is_a: CL:0000757 ! type 5 cone bipolar cell (sensu Mus)
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004217
+name: H1 horizontal cell
+namespace: cell
+def: "A horizontal cell with a large cell body, thick dendrites, and a large dendritic arbor." [PMID:8571130]
+synonym: "A Horizontal Cell" EXACT []
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004218
+name: H2 horizontal cell
+namespace: cell
+def: "A horizontal cell with a small cell body, thin dendrites, and small dendritic arbor." [PMID:8571130]
+synonym: "B Horizontal Cell" EXACT []
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004219
+name: A2 amacrine cell
+namespace: cell
+def: "A bistratifed retinal amacrine cell with a small dendritic field, dendrite stratification in S1-S2, and a second dendrite stratification in S5." [PMID:9620701]
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004220
+name: flag amacrine cell
+namespace: cell
+def: "An amacrine cell with a small, asymteric dendritic field." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004221
+name: flag A amacrine cell
+namespace: cell
+def: "A flag amacrine cell with post-synaptic terminals in S2 and S3." [PMID:9620701]
+is_a: CL:0004220 ! flag amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004222
+name: flag B amacrine cell
+namespace: cell
+def: "A flag amacrine cell with post-synaptic terminals in S3, S4, and S5." [PMID:9620701]
+is_a: CL:0004220 ! flag amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004223
+name: AB diffuse-1 amacrine cell
+namespace: cell
+def: "A amacrine cell with a small dendritic field and post-synaptic terminals in S1, S2, S3, and S4. AB diffuse-1 amacrine cells have a tent-shaped dendritic arbor and undulate dendrites." [PMID:9620701]
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004224
+name: AB diffuse-2 amacrine cell
+namespace: cell
+def: "A broadly stratifying amacrine cell that has a small dendritic field and post-synaptic terminals in S2 and S3." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004225
+name: spider amacrine cell
+namespace: cell
+def: "A broadly stratifying amacrine cell with a small dendritic field, straight dendrites and post-synaptic terminals in S1, S2, and S3." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004226
+name: monostratified amacrine cell
+namespace: cell
+def: "An amacrine cell with a small dendritic field with post-synaptic terminals in S3 and S4." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004227
+name: flat bistratified amacrine cell
+namespace: cell
+def: "A bistratified amacrine cell with a small dendritic field. Flat bistratified amacrine cells have post-synaptic terminals both on the border of S1 and S2, and on the border of S3 and S4." [PMID:9620701]
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004228
+name: broad diffuse amacrine cell
+namespace: cell
+def: "An amacrine cell with a small dendritic field that has post-synaptic terminals in S1, S2, S3, and S4." [PMID:9620701]
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004229
+name: A2-like amacrine cell
+namespace: cell
+def: "A bistratified amacrine cell with a small dendritic field that has dendrite stratification in S2, and in S3 and S4." [PMID:9620701]
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004230
+name: diffuse bistratified amacrine cell
+namespace: cell
+def: "A bistratified amacrine cell with a small dendritic field that has post-synaptic terminals in S1 and the border of S1-S2, and termination of a second arbor within the border of S2-S3 and S3." [PMID:9620701]
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004231
+name: recurving diffuse amacrine cell
+namespace: cell
+def: "A broadly stratifying amacrine cell with a small dendritic field and a complex dendritic arbor. Recurving diffuse amacrine cells have post-synaptic terminals in S2, S3, and S4." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004232
+name: starburst amacrine cell
+namespace: cell
+def: "An amacrine cell with a flat dendritic arbor and a medium dendritic field. Starburst amacrine cells have post-synaptic terminals in S2." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004233
+name: DAPI-3 amacrine cell
+namespace: cell
+def: "An amacrine cell with a medium dendritic field and post-synaptic terminals that stratify at S2, with a second stratification that occurs in S3 and S4." []
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004234
+name: diffuse multistratified amacrine cell
+namespace: cell
+def: "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2, and in S3-S4." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004235
+name: AB broad diffuse-1 amacrine cell
+namespace: cell
+def: "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2 and S3." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004236
+name: AB broad diffuse-2 amacrine cell
+namespace: cell
+def: "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2, S3, and S4." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004237
+name: fountain amacrine cell
+namespace: cell
+def: "A retinal amacrine cell with a medium dendritic field and post-synaptic terminals in S1, S2, S3, and S4." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004238
+name: asymmetric bistratified amacrine cell
+namespace: cell
+def: "A bistratified amacrine cell with a medium dendritic field, a flat and sparse dendritic arbor, and post-synaptic terminals at the intersections of S1 and S2, and S3 and S4." [PMID:9620701]
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004239
+name: wavy bistratified amacrine cell
+namespace: cell
+def: "A bistratified amacrine cell with a medium dendritic field and post-synaptic terminals in S1-S2, and S4." [PMID:9620701]
+is_a: CL:0004250 ! bistratified retinal amacrine cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004240
+name: WF1 amacrine cell
+namespace: cell
+def: "An amacrine cell with a wide dendritic field, dendrites in S1, and post-synaptic terminals in S1." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004241
+name: WF2 amacrine cell
+namespace: cell
+def: "An amacrine cell with a wide dendritic field, dendrites in S2, and post-synaptic terminals in S1." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004242
+name: WF3-1 amacrine cell
+namespace: cell
+def: "An amacrine cell with a wide dendritic field, dendrites in S3, and post-synaptic terminals in S3. Dendrites of this cell type are straight and minimally branched." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004243
+name: WF3-2 amacrine cell
+namespace: cell
+def: "An amacrine cell with a wild dendritic field, dendrites in S3, and post-synaptic terminals in S3. Dendrites have spikes, cross over each other, and cover a larger volume than dendrties of W3-1 retinal amacrine cells." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004244
+name: WF4 amacrine cell
+namespace: cell
+def: "An amacrine cell with a wide dendritic field, dendrites in S4, and post-synaptic terminals in S4." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004245
+name: indoleamine-accumulating amacrine cell
+namespace: cell
+def: "An amacrine cell with a wide dendritic field and post-synaptic terminals in S5." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004246
+name: monostratified cell
+namespace: cell
+def: "A central nervous system neuron that stratifies at one and only one location." [PMID:9620701]
+is_a: CL:2000029 ! central nervous system neuron
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004247
+name: bistratified cell
+namespace: cell
+def: "A neuron that stratifies dendrites at two and only two locations." [https://orcid.org/0000-0002-5260-9315, PMID:9620701]
+is_a: CL:0000540 ! neuron
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+
+[Term]
+id: CL:0004250
+name: bistratified retinal amacrine cell
+namespace: cell
+def: "An amicrine that stratifies dendrites at two and only two locations." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+is_a: CL:0004247 ! bistratified cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004251
+name: narrow field retinal amacrine cell
+namespace: cell
+def: "An amicrine that has a narrow dendritic field." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004252
+name: medium field retinal amacrine cell
+namespace: cell
+def: "An amicrine that has a medium dendritic field." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
+
+[Term]
+id: CL:0004253
+name: wide field retinal amacrine cell
+namespace: cell
+def: "An amicrine that has a wide dendritic field." [PMID:9620701]
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0000745 ! retina horizontal cell
+property_value: dc-contributor https://orcid.org/0000-0001-7258-9596 xsd:string
+property_value: dc-contributor https://orcid.org/0000-0002-5260-9315 xsd:string
 
 [Term]
 id: CL:0005000
@@ -18310,6 +19371,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0009080
 name: tuft cell of small intestine
 def: "A tuft cell located in the small intestine." [http://orcid.org/0000-0003-3440-1876, http://orcid.org/0000-0003-4183-8865]
+subset: human_reference_atlas
 synonym: "brush cell of epithelium of small intestine" EXACT []
 synonym: "brush cell of epithelium proper of small intestine" EXACT []
 synonym: "brush cell of small intestine" EXACT []
@@ -18317,6 +19379,7 @@ synonym: "tuft cell of epithelium of small intestine" EXACT []
 is_a: CL:0002254 ! epithelial cell of small intestine
 is_a: CL:0019032 ! intestinal tuft cell
 relationship: dc-contributor https://orcid.org/0000-0002-2825-0621
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0009081
@@ -18430,6 +19493,7 @@ name: Leydig stem cell
 def: "A stem cell found in the interstitial compartment of the neonatal testis; it is capable of self-renewal as well as differentiation into steroidogenic cells (adult Leydig cells). Intermediate stages of development include progenitor Leydig cells and immature Leydig cells." [http://orcid.org/0000-0002-0819-0473, PMID:21181888]
 synonym: "stem Leydig cell" EXACT []
 is_a: CL:0000034 ! stem cell
+is_a: CL:4030031 ! interstitial cell
 relationship: dc-contributor https://orcid.org/0000-0002-2825-0621
 property_value: dcterms-date 2022-02-18T14:09:25Z xsd:dateTime
 
@@ -19119,10 +20183,12 @@ relationship: dc-contributor https://orcid.org/0000-0001-5208-3432
 id: CL:0011031
 name: monocyte-derived dendritic cell
 def: "A dendritic cell that develops from a monocyte." [BTO:0002900, PMID:30719026, PMID:32733468]
+subset: human_reference_atlas
 synonym: "MDDC cell" EXACT []
 is_a: CL:0000782 ! myeloid dendritic cell
 relationship: dc-contributor https://orcid.org/0000-0001-5208-3432
 relationship: develops_from CL:0000576 ! monocyte
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0011032
@@ -19190,10 +20256,8 @@ id: CL:0011107
 name: obsolete Muller cell
 def: "OBSOLETE: Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
 comment: Term was duplicated, use CL:0000636 instead
-subset: human_reference_atlas
 synonym: "Muller glia" EXACT []
 synonym: "Müller cell" EXACT []
-relationship: present_in_taxon NCBITaxon:9606
 is_obsolete: true
 replaced_by: CL:0000636
 
@@ -19323,12 +20387,58 @@ created_by: http://orcid.org/0000-0003-2473-2313
 [Term]
 id: CL:0017004
 name: telocyte
-comment: A supportive cell with a small, oval-shaped body and one to five telopodes. Telopodes are cytoplasmic protrusions from tens to hundreds of micrometers long and mostly below 0.2 microns of caliber. {xref="PMID:20367664", xref="MESH:D000067170", xref="https://en.wikipedia.org/wiki/Telocyte"}
-synonym: "ICLC" EXACT [PMID:20367664]
-synonym: "interstitial Cajal cell-like cell" EXACT [PMID:20367664]
-synonym: "interstitial Cajal-like cell" EXACT [PMID:20367664]
+def: "A supportive cell with a small, oval-shaped body and one to five telopodes. Telopodes are cytoplasmic protrusions from tens to hundreds of micrometers long and mostly below 0.2 microns of caliber." [https://en.wikipedia.org/wiki/Telocyte, MESH:D000067170, PMID:20367664, PMID:28714595, PMID:31311805]
+comment: Telocytes manage to develop complex networks in almost all organs of the human body. Although staining positively for vimentin antibody, some uncertainty still persists over the mesenchymal origin of these cells. {xref="https://doi.org/10.1016/B978-0-12-818561-2.00001-1"}
+subset: human_reference_atlas
+synonym: "ICLC" RELATED [PMID:20367664]
+synonym: "interstitial Cajal cell-like cell" NARROW [PMID:20367664]
+synonym: "interstitial Cajal-like cell" NARROW [PMID:20367664]
+synonym: "interstitial neuron" RELATED [PMID:31311805]
 is_a: CL:0002320 ! connective tissue cell
+relationship: present_in_taxon NCBITaxon:9606
 created_by: http://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0017005
+name: lymphoblast
+def: "A lymphocyte that has gotten larger after being stimulated by an antigen." [http://orcid.org/0000-0001-9990-8331, NCIT:C13013]
+xref: BTO:0000772
+xref: EFO:0000572
+xref: FMA:83030
+is_a: CL:0000542 ! lymphocyte
+property_value: http://purl.org/dc/elements/1.1/date 2022-08-17T14:20:01Z xsd:string
+created_by: http://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0017006
+name: B-lymphoblast
+def: "A lymphocyte of B lineage that has gotten larger after being stimulated by an antigen." [EFO:0005293, https://orcid.org/0000-0002-2825-0621]
+xref: EFO:0005293
+xref: FMA:83031
+is_a: CL:0000945 ! lymphocyte of B lineage
+is_a: CL:0017005 ! lymphoblast
+property_value: http://purl.org/dc/elements/1.1/date 2022-08-17T14:30:32Z xsd:string
+created_by: http://orcid.org/0000-0003-2473-2313
+
+[Term]
+id: CL:0017010
+name: hillock cell of urethral epithelium
+def: "A hillock cell that is part of the urethra." [http://orcid.org/0000-0001-7772-9578, PMID:30566875]
+synonym: "hillock cell of urethra" EXACT []
+is_a: CL:1000296 ! epithelial cell of urethra
+is_a: CL:4030024 ! hillock cell
+relationship: dc-contributor http://orcid.org/0000-0003-2473-2313
+property_value: dcterms-date 2022-10-13T13:51:35Z xsd:dateTime
+
+[Term]
+id: CL:0017011
+name: hillock cell of prostatic urethral epithelium
+def: "A hillock cell that is part of the prostatic urethra." [http://orcid.org/0000-0001-7772-9578, PMID:30566875]
+synonym: "hillock cell of prostatic urethra" EXACT []
+is_a: CL:0017003 ! epithelial cell of prostatic urethra
+is_a: CL:0017010 ! hillock cell of urethral epithelium
+relationship: dc-contributor http://orcid.org/0000-0003-2473-2313
+property_value: dcterms-date 2022-10-13T13:58:15Z xsd:dateTime
 
 [Term]
 id: CL:0017500
@@ -19567,6 +20677,18 @@ relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2020-10-15T12:47:46Z xsd:dateTime
 
 [Term]
+id: CL:0700009
+name: obsolete kidney collecting duct beta-intercalated cell
+def: "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type." [PMID:24051376, PMID:31300091, PMID:32016094]
+comment: Created with IRI in incorrect ID range
+synonym: "B-IC" EXACT [PMID:32016094]
+synonym: "kidney collecting duct intercalated cell type B" EXACT [PMID:31300091]
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-08-26T10:31:29Z xsd:dateTime
+is_obsolete: true
+replaced_by: CL:4030005
+
+[Term]
 id: CL:1000001
 name: retrotrapezoid nucleus neuron
 is_a: CL:2000029 ! central nervous system neuron
@@ -19631,10 +20753,10 @@ relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:1000147
-name: heart valve cell
-subset: human_reference_atlas
-is_a: CL:0000663 ! valve cell
-relationship: present_in_taxon NCBITaxon:9606
+name: cardiac valve cell
+def: "A cell that is part of a cardiac valve." [PMID:25311230]
+synonym: "heart valve cell" EXACT [PMID:30796046]
+is_a: CL:0000003 ! native cell
 
 [Term]
 id: CL:1000155
@@ -19870,10 +20992,8 @@ is_a: CL:0002319 ! neural cell
 id: CL:1000299
 name: fibroblast of connective tissue of prostate
 def: "A fibroblast that is part of the connective tissue of prostate." [GOC:tfm]
-subset: human_reference_atlas
 xref: FMA:261271
 is_a: CL:0000057 ! fibroblast
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:1000300
@@ -19886,10 +21006,8 @@ is_a: CL:0000057 ! fibroblast
 id: CL:1000301
 name: fibroblast of subepithelial connective tissue of prostatic gland
 def: "A fibroblast that is part of the subepithelial connective tissue of prostatic gland." [GOC:tfm]
-subset: human_reference_atlas
 xref: FMA:261275
 is_a: CL:0000057 ! fibroblast
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:1000302
@@ -21189,6 +22307,7 @@ id: CL:1000500
 name: kidney interstitial cell
 xref: KUPO:0001013
 is_a: CL:1000497 {is_inferred="true"} ! kidney cell
+is_a: CL:4030031 ! interstitial cell
 
 [Term]
 id: CL:1000504
@@ -22108,11 +23227,14 @@ is_a: CL:0000101 ! sensory neuron
 
 [Term]
 id: CL:1001566
-name: bronchioalveolar stem cells
-def: "A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." [MP:0011691]
+name: obsolete bronchioalveolar stem cells
+def: "OBSOLETE. A respiratory stem cell found at the junction of the terminal (conductive) bronchiole and the respiratory bronchiole, which gives rise to alveolar cell types and club cells in response to lung injury." [MP:0011691]
+comment: Duplicated term - merged into CL:0002638
 subset: human_reference_atlas
-is_a: CL:0000034 ! stem cell
 relationship: present_in_taxon NCBITaxon:9606
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/issues/1443 xsd:string
+is_obsolete: true
+replaced_by: CL:0002638
 
 [Term]
 id: CL:1001567
@@ -23298,7 +24420,7 @@ creation_date: 2015-02-23T05:48:40Z
 
 [Term]
 id: CL:2000091
-name: endometrial microvascular endothelial cells
+name: endometrial microvascular endothelial cell
 def: "Any microvascular endothelial cell that is part of a endometrial blood vessel." [GOC:TermGenie]
 subset: human_reference_atlas
 is_a: CL:0009095 ! endothelial cell of uterus
@@ -23654,6 +24776,16 @@ is_a: CL:4023121 ! sst chodl GABAergic cortical interneuron
 relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
+id: CL:4023026
+name: direct pathway medium spiny neuron
+def: "A medium spiny neuron that expresses dopamine type 1 receptors and projects to the globus pallidus internus or the substantia nigra pars reticulata." [PMID:34727523, WikipediaVersioned:Medium_spiny_neuron&oldid=1109726850]
+synonym: "D1-MSN" EXACT abbreviation [PMID:34727523]
+synonym: "dopamine 1 medium spiny neuron" EXACT [https://orcid.org/0000-0001-7258-9596]
+synonym: "dSPN" EXACT abbreviation [PMID:30096299]
+is_a: CL:1001474 ! medium spiny neuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4023027
 name: L5 T-Martinotti sst GABAergic cortical interneuron (Mmus)
 def: "A sst GABAergic cortical interneuron with a soma found in L5 and possesses 'T-shaped' Martinotti morphologies with local axonal plexus in L5a and translaminar axons restricted to the uppermost part of L1. They show low-threshold spiking patterns with strong rebound firing, and inhibit the L1 apical tuft of nearby pyramidal cells." [PMID:28254942, PMID:29326172]
@@ -23670,6 +24802,16 @@ def: "A sst GABAergic cortical interneuron with a soma found in lower L5 with mo
 subset: BDS_subset
 synonym: "L5 non-Martinotti SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
+relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023029
+name: indirect pathway medium spiny neuron
+def: "A medium spiny neuron that expresses dopamine type 2 receptors and projects to the external globus pallidus." [PMID:34727523, WikipediaVersioned:Medium_spiny_neuron&oldid=1109726850]
+synonym: "D2-MSN" EXACT abbreviation [PMID:34727523]
+synonym: "dopamine 2 medium spiny neuron" EXACT [https://orcid.org/0000-0001-7258-9596]
+synonym: "iSPN" EXACT abbreviation [PMID:30096299]
+is_a: CL:1001474 ! medium spiny neuron
 relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
 [Term]
@@ -23692,6 +24834,20 @@ synonym: "L4 SST (Mus musculus)" EXACT []
 is_a: CL:4023017 ! sst GABAergic cortical interneuron
 is_a: CL:4023076 ! Martinotti neuron
 relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023032
+name: ON retinal ganglion cell
+comment: A retinal ganglion cell that is depolarized by illumination of its receptive field center. {xref="PMID:19602302"}
+is_a: CL:0000740 ! retinal ganglion cell
+relationship: dc-contributor http://orcid.org/0000-0001-7258-9596
+
+[Term]
+id: CL:4023033
+name: OFF retinal ganglion cell
+def: "A retinal ganglion cell that is depolarized by decreased illumination of their receptive field center." [PMID:19602302]
+is_a: CL:0000740 ! retinal ganglion cell
+relationship: dc-contributor http://orcid.org/0000-0001-7258-9596
 
 [Term]
 id: CL:4023034
@@ -24034,7 +25190,7 @@ id: CL:4023086
 name: T Martinotti neuron
 def: "A Martinotti neuron that has axons that form a horizontal ramification, making it T-shaped." [doi:10.1016/b978-0-12-369497-3.10004-4]
 subset: BDS_subset
-synonym: "'T-shaped' Martinotti neuron" EXACT []
+synonym: "T-shaped Martinotti neuron" EXACT []
 is_a: CL:4023076 ! Martinotti neuron
 relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
@@ -24043,7 +25199,7 @@ id: CL:4023087
 name: fan Martinotti neuron
 def: "A Martinotti neuron that has axons that form a fan-like plexus." [doi:10.1016/b978-0-12-369497-3.10004-4]
 subset: BDS_subset
-synonym: "'fanning-out' Martinotti neuron" EXACT []
+synonym: "fanning-out Martinotti neuron" EXACT []
 is_a: CL:4023076 ! Martinotti neuron
 relationship: dc-contributor https://orcid.org/0000-0001-7258-9596
 
@@ -24510,6 +25666,16 @@ is_a: CL:0002319 ! neural cell
 relationship: dc-contributor http://orcid.org/0000-0002-2105-0715
 
 [Term]
+id: CL:4023187
+name: koniocellular cell
+def: "A neuron with a small cell body that is located in a koniocellular layer of the lateral geniculate nucleus (LGN)." [WikipediaVersioned:Lateral_geniculate_nucleus&oldid=1098375993]
+comment: In adult monkeys, koniocellular cells can be distinguished from parvocellular and magnocellular of the LGN by their expression of calbindin, the alpha subunit of type II calmodulin-dependent protein kinase, and the gamma subunit of protein kinase C. {xref="PMID:10845061"}
+synonym: "K cell" EXACT [PMID:10845061]
+xref: NIFEXT:44
+is_a: CL:2000029 ! central nervous system neuron
+relationship: dc-contributor http://orcid.org/0000-0001-7258-9596
+
+[Term]
 id: CL:4028001
 name: pulmonary capillary endothelial cell
 def: "Any capillary endothelial cell that is part of a lung." []
@@ -24524,10 +25690,10 @@ id: CL:4028002
 name: alveolar capillary type 1 endothelial cell
 def: "An alveolar capillary endothelial cell that is located distally to alveolar capillary type 2 endothelial cells." [PMID:31233341, PMID:32059772, PMID:32059779, PMID:32091393, PMID:33057196, PMID:33705684]
 subset: human_reference_atlas
-synonym: "'CAP1'" BROAD []
-synonym: "'capillary 1 cell'" BROAD []
-synonym: "'gCAP'" BROAD [PMID:33057196]
-synonym: "'general capillary cell'" BROAD [PMID:33057196]
+synonym: "CAP1" BROAD []
+synonym: "capillary 1 cell" BROAD []
+synonym: "gCAP" BROAD [PMID:33057196]
+synonym: "general capillary cell" BROAD [PMID:33057196]
 is_a: CL:0010003 ! epithelial cell of alveolus of lung
 is_a: CL:4028001 ! pulmonary capillary endothelial cell
 relationship: dc-contributor https://orcid.org/0000-0002-3293-5463
@@ -24638,8 +25804,8 @@ name: stromal cell of thymus
 def: "A stromal cell that is part of the thymus." [https://www.nature.com/articles/s41467-020-20082-7]
 synonym: "thymic stromal cell" EXACT []
 is_a: CL:0000499 ! stromal cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
 property_value: dcterms-date 2022-07-08T11:39:38Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030002
@@ -24660,8 +25826,8 @@ name: interstitial cell of thymus
 def: "A cell that makes up the loose connective tissue of the thymus." [https://www.nature.com/articles/s41467-020-20082-7]
 synonym: "thymic interstitial cell" EXACT []
 is_a: CL:4030001 ! stromal cell of thymus
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
 property_value: dcterms-date 2022-07-08T11:48:36Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030004
@@ -24670,6 +25836,17 @@ def: "A large epithelial cell found in the thymus. This cell type may internaliz
 is_a: CL:0002293 ! epithelial cell of thymus
 relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
 property_value: dcterms-date 2022-02-18T12:43:20Z xsd:dateTime
+
+[Term]
+id: CL:4030005
+name: kidney collecting duct beta-intercalated cell
+def: "A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type." [PMID:24051376, PMID:31300091, PMID:32016094]
+synonym: "B-IC" EXACT [PMID:32016094]
+synonym: "kidney collecting duct intercalated cell type B" EXACT [PMID:31300091]
+is_a: CL:0002201 ! renal beta-intercalated cell
+is_a: CL:1000715 ! kidney cortex collecting duct intercalated cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-09-14T16:19:11Z xsd:dateTime
 
 [Term]
 id: CL:4030006
@@ -24783,9 +25960,11 @@ property_value: dcterms-date 2022-05-31T11:15:10Z xsd:dateTime
 id: CL:4030016
 name: epithelial cell of early distal convoluted tubule
 def: "An epithelial cell located in the early distal convoluted tubule." [http://orcid.org/0000-0003-2804-127X, PMID:24855283]
+subset: human_reference_atlas
 synonym: "DCT1 cell" BROAD [PMID:24855283]
 is_a: CL:1000849 ! kidney distal convoluted tubule epithelial cell
 relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-06-21T12:47:48Z xsd:dateTime
 
 [Term]
@@ -24793,62 +25972,74 @@ id: CL:4030017
 name: epithelial cell of late distal convoluted tubule
 def: "An epithelial cell located in the late distal convoluted tubule." [http://orcid.org/0000-0003-2804-127X, PMID:24855283]
 comment: Although mineralocorticoid receptors are expressed throughout the entire [distal convoluted tubule], the DCT2 is sensitive to the actions of aldosterone, because it expresses an enzyme called 11-β hydroxysteroid dehydrogenase 2 (11-βHSD2) {xref="PMID:24855283"}
+subset: human_reference_atlas
 synonym: "DCT2 cell" BROAD [PMID:24855283]
 is_a: CL:1000849 ! kidney distal convoluted tubule epithelial cell
 relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-06-21T13:51:46Z xsd:dateTime
 
 [Term]
 id: CL:4030018
 name: kidney connecting tubule principal cell
 def: "A renal principal cell located in the connecting tubule." [http://orcid.org/0000-0003-2804-127X, PMID:27582101, PMID:31249312]
+subset: human_reference_atlas
 is_a: CL:0005009 ! renal principal cell
 is_a: CL:1000449 ! epithelial cell of nephron
 is_a: CL:1000507 ! kidney tubule cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-06-27T15:25:10Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030019
 name: kidney connecting tubule intercalated cell
 def: "A renal intercalated cell that is part of the renal connecting tubule." [PMID:9890303]
+subset: human_reference_atlas
 is_a: CL:0005010 ! renal intercalated cell
 is_a: CL:1000768 ! kidney connecting tubule epithelial cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-06-29T11:25:22Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030020
 name: kidney connecting tubule alpha-intercalated cell
 def: "A renal alpha-intercalated cell that is part of the renal connecting tubule." [PMID:2254448, PMID:24937428, PMID:9890303]
+subset: human_reference_atlas
 synonym: "connecting tubule A-IC" EXACT [PMID:24937428]
 synonym: "kidney connecting tubule intercalated cell type A" EXACT [PMID:9890303]
 is_a: CL:0005011 ! renal alpha-intercalated cell
 is_a: CL:4030019 ! kidney connecting tubule intercalated cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-06-29T12:48:43Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030021
 name: kidney connecting tubule beta-intercalated cell
-def: "A renal beta-intercalated cell that is part of the renal connecting tubule" [PMID:2254448, PMID:9890303]
+def: "A renal beta-intercalated cell that is part of the renal connecting tubule." [PMID:2254448, PMID:9890303]
+subset: human_reference_atlas
 synonym: "connecting tubule B-IC" EXACT [PMID:32065116]
 synonym: "kidney connecting tubule intercalated cell type B" EXACT [PMID:9890303]
 is_a: CL:0002201 ! renal beta-intercalated cell
 is_a: CL:4030019 ! kidney connecting tubule intercalated cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-06-29T14:31:18Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030022
 name: renal medullary fibroblast
 def: "A fibroblast that is located in the renal medulla interstitium." [https://doi.org/10.1101/2021.07.28.454201, PMID:10559635]
 comment: It has been noted that inner medullary fibroblasts are involved in the regulation of water and electrolyte homeostasis. {xref="PMID:10559635"}
+subset: human_reference_atlas
 synonym: "kidney medullary fibroblast" EXACT []
 is_a: CL:1000682 ! kidney medulla interstitial cell
 is_a: CL:1000692 ! kidney interstitial fibroblast
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+relationship: present_in_taxon NCBITaxon:9606
 property_value: dcterms-date 2022-07-05T12:13:40Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030023
@@ -24857,16 +26048,16 @@ def: "A hillock cell that is located in respiratory epithelium. In some mammalia
 synonym: "hillock cell of respiratory tract" NARROW []
 is_a: CL:0002368 ! respiratory epithelial cell
 is_a: CL:4030024 ! hillock cell
+relationship: dc-contributor http://orcid.org/0000-0002-1773-2692
 property_value: dcterms-date 2022-06-06T08:31:09Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor http://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030024
 name: hillock cell
 def: "An epithelial, transitional cell type between basal and secretory; located in stratified, non-ciliated structures (called hillocks) with high cell turnover in epithelium. In some mammalian species, this cell type has been noted to express KRT13 and is postulated to play a role in squamous barrier function and immunomodulation." [PMID:30069044]
 is_a: CL:0000066 ! epithelial cell
+relationship: dc-contributor http://orcid.org/0000-0002-1773-2692
 property_value: dcterms-date 2022-06-24T14:52:24Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor http://orcid.org/0000-0002-1773-2692
 
 [Term]
 id: CL:4030025
@@ -24876,8 +26067,111 @@ comment: Renal cortical fibroblasts have key roles in mediating intercellular co
 synonym: "kidney cortical fibroblast" EXACT []
 is_a: CL:1000681 ! kidney cortex interstitial cell
 is_a: CL:1000692 ! kidney interstitial fibroblast
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
 property_value: dcterms-date 2022-07-05T15:50:17Z xsd:dateTime
-property_value: http://purl.org/dc/elements/1.1/contributor https://orcid.org/0000-0002-1773-2692
+
+[Term]
+id: CL:4030026
+name: BEST4+ intestinal epithelial cell, human
+def: "An absorptive epithelial cell of the human intestine expressing bestrophin-4 (BEST4) calcium-activated ion channels." [https://orcid.org/0000-0002-7431-4139, PMID:24223998, PMID:35176508]
+is_a: CL:0000548 ! animal cell
+is_a: CL:0000677 ! gut absorptive cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-09-07T12:34:20Z xsd:dateTime
+
+[Term]
+id: CL:4030027
+name: GABAergic amacrine cell
+def: "An amacrine cell that uses GABA as a neurotransmitter." [https://doi.org/10.1016/j.cell.2020.08.013]
+synonym: "amacrine cell, GABAergic" EXACT []
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:0011005 ! GABAergic interneuron
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-10-17T12:35:11Z xsd:dateTime
+
+[Term]
+id: CL:4030028
+name: glycinergic amacrine cell
+def: "An amacrine cell that uses glycine as a neurotransmitter." [] {def="https://doi.org/10.1016/j.cell.2020.08.013"}
+synonym: "amacrine cell, glycinergic" EXACT []
+is_a: CL:0000561 ! amacrine cell
+is_a: CL:1001509 ! glycinergic neuron
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-10-17T12:40:06Z xsd:dateTime
+
+[Term]
+id: CL:4030029
+name: blood lymphocyte
+def: "A lymphocyte located in blood." [https://orcid.org/0000-0001-9990-8331]
+is_a: CL:0000542 ! lymphocyte
+is_a: CL:2000001 ! peripheral blood mononuclear cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-11-04T14:40:00Z xsd:dateTime
+
+[Term]
+id: CL:4030030
+name: peripheral blood lymphocyte
+def: "A blood lymphocyte located in the flowing, circulating blood of the body." [https://orcid.org/0000-0001-9990-8331, https://orcid.org/0000-0003-2534-198X, https://sciencing.com/what-peripheral-blood-4672930.html, PMID:31092833]
+is_a: CL:4030029 ! blood lymphocyte
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-11-14T10:08:14Z xsd:dateTime
+property_value: seeAlso https://github.com/obophenotype/cell-ontology/pull/1725
+
+[Term]
+id: CL:4030031
+name: interstitial cell
+def: "Any cell that is located within the interstitium between the cells most prominent in defining a given tissue. \"Interstitial cell\" is a morphological term and refers to a variety of cells with differing origins and phenotypes." [PMID:24987007]
+is_a: CL:0000003 ! native cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-11-30T14:35:08Z xsd:dateTime
+
+[Term]
+id: CL:4030032
+name: valve interstitial cell
+def: "An interstitial cell that is part of a cardiac valve leaflet. Along with valve endothelial cells, a valve interstitial cell maintains tissue homeostasis for the function of cardiac valves through secreting biochemical signals, matrix proteins and matrix remodeling enzymes." [https://doi.org/10.1098/rsif.2017.0580, https://doi.org/10.1161/ATVBAHA.120.314789, https://doi.org/10.1161/JAHA.117.006339, https://doi.org/10.2353/ajpath.2007.070251, https://orcid.org/0000-0001-7655-4833, PMID:25311230]
+comment: Activated valve interstitial cells undergo continual turn over into deactivated fibroblasts and other cell fates (such as apoptosis). {xref="PMID:25311230"}
+synonym: "cardiac valve interstitial cell" EXACT []
+synonym: "valvular interstitial cell" EXACT [PMID:25311230]
+synonym: "VIC" EXACT abbreviation [PMID:25311230, PMID:30796046]
+is_a: CL:0000151 ! secretory cell
+is_a: CL:1000147 ! cardiac valve cell
+is_a: CL:4030031 ! interstitial cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-12-06T14:18:45Z xsd:dateTime
+
+[Term]
+id: CL:4030033
+name: valve endothelial cell
+def: "An endothelial cell that lines a surface of a cardiac valve leaflet. Along with valve interstitial cells, a valve endothelial cell maintains tissue homeostasis for the function of cardiac valves through secreting biochemical signals, matrix proteins and matrix remodeling enzymes." [PMID:25311230]
+comment: At least in some mammalian species, a valve endothelial cell expresses CD31. Valve endothelial cells can undergo an endothelial to mesenchymal transition to acquire a fibroblast or myofibroblast phenotype that leads to changes in the microenvironmental signals and facilitates tissue regeneration. {xref="PMID:25311230"}
+synonym: "valvular endothelial cell" EXACT [PMID:25311230]
+synonym: "VEC" EXACT abbreviation [PMID:25311230, PMID:30796046]
+is_a: CL:0010008 ! cardiac endothelial cell
+is_a: CL:1000147 ! cardiac valve cell
+relationship: dc-contributor https://orcid.org/0000-0002-1773-2692
+property_value: dcterms-date 2022-12-09T11:58:49Z xsd:dateTime
+
+[Term]
+id: CL:4032000
+name: club-like cell of the urethral epithelium
+def: "An epithelial cell of the urethra that has an expression profile similar to lung club cells. Club-like cells of the urethra epithelium are similar to lung club cells in their expression of SCGB1A1 and in their enrichment of immunomodulatory programs." [PMID:30566875, PMID:32497356]
+comment: Club cells typically refer to bronchiolar exocrine cells found in the lungs. This cell type is given the name club cell due to their similarity to club cells in the lungs. {xref="PMID:30566875"}
+synonym: "club cell of the urethra epithelium" EXACT []
+synonym: "club-like cell of the prostatic urethra epithelium" EXACT [https://orcid.org/0000-0001-7258-9596]
+synonym: "prostate club cell" EXACT [PMID:30566875]
+is_a: CL:1000296 ! epithelial cell of urethra
+relationship: dc-contributor http://orcid.org/0000-0001-6757-4744
+property_value: editor_note "The term \"club-like\" is used to disambiguate from club cells which CL defines as a type of bronchial epithelial cell. This seems to reflect common usage of club cell when used without location (club cell seems to mean bronchial club cell, unless it is proceded or preceded by something that says it is not bronchial). In the literature, the name \"club-like\" isn't used." xsd:string
+
+[Term]
+id: CL:4032001
+name: reelin GABAergic cortical interneuron
+def: "A GABAergic interneuron located in the cerebral cortex that expresses reelin (rln)." [PMID:23803971]
+synonym: "rln GABAergic cortical interneuron" EXACT [PMID:29904965]
+is_a: CL:0010011 ! cerebral cortex GABAergic interneuron
+relationship: dc-contributor http://orcid.org/0000-0001-6757-4744
+property_value: dc-contributor http://orcid.org/0000-0001-5501-853X xsd:string
+property_value: dc-contributor http://orcid.org/0000-0001-7476-6306 xsd:string
 
 [Term]
 id: CP:0000000
