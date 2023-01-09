@@ -242,7 +242,6 @@ DEPLOY_GH=true
 cl:
 	$(MAKE) prepare_release IMP=false PAT=false 
 	$(MAKE) release-diff
-	cp imports/merged_import.owl ../../imports
 	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
 .PHONY: release-diff
@@ -250,7 +249,7 @@ release-diff:
 	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(ASSETS)), ../../$(n))
+MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
 
 deploy_release:
 	@test $(GHVERSION)
