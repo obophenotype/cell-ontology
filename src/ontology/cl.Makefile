@@ -242,6 +242,7 @@ DEPLOY_GH=true
 cl:
 	$(MAKE) prepare_release IMP=false PAT=false 
 	$(MAKE) release-diff
+	cp imports/merged_import.owl ../../imports
 	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
 .PHONY: release-diff
