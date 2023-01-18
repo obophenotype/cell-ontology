@@ -4849,12 +4849,16 @@ SubClassOf(obo:CL_0000164 obo:CL_0000163)
 # Class: obo:CL_0000165 (neuroendocrine cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D055099"^^xsd:string) obo:IAO_0000115 obo:CL_0000165 "An endocrine cell that has the specialized function to produce and secrete hormones in response to neuronal signals."^^xsd:string)
+AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000165 "CL:0000381")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000165 "BTO:0002691"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000165 "FMA:83810"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000165 "neurosecretory cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000165 "neurosecretory neuron"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000165 "neuroendocrine cell"^^xsd:string)
+EquivalentClasses(obo:CL_0000165 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0000165 obo:CL_0000163)
 SubClassOf(obo:CL_0000165 obo:CL_0000393)
+SubClassOf(obo:CL_0000165 obo:CL_0000527)
 SubClassOf(obo:CL_0000165 obo:CL_0000710)
 
 # Class: obo:CL_0000166 (chromaffin cell)
@@ -6535,11 +6539,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000380 "fly sheath cell"^^x
 AnnotationAssertion(rdfs:label obo:CL_0000380 "thecogen cell"^^xsd:string)
 SubClassOf(obo:CL_0000380 obo:CL_0000378)
 
-# Class: obo:CL_0000381 (neurosecretory neuron)
+# Class: obo:CL_0000381 (obsolete neurosecretory neuron)
 
-AnnotationAssertion(rdfs:label obo:CL_0000381 "neurosecretory neuron"^^xsd:string)
-EquivalentClasses(obo:CL_0000381 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
-SubClassOf(obo:CL_0000381 obo:CL_0000527)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000381 obo:CL_0000165)
+AnnotationAssertion(rdfs:comment obo:CL_0000381 "https://github.com/obophenotype/cell-ontology/issues/1784
+'neuroendocrine cell' (which has exact synonym \"neurosecretory cell\") and 'neurosecretory neuron' may all refer to the same cell type."^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000381 "obsolete neurosecretory neuron"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_0000381 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000382 (scolopale cell)
 
@@ -7798,7 +7804,6 @@ AnnotationAssertion(oboInOwl:inSubset obo:CL_0000548 <http://purl.obolibrary.org
 AnnotationAssertion(rdfs:label obo:CL_0000548 "animal cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000548 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208)))
 SubClassOf(obo:CL_0000548 obo:CL_0000255)
-SubClassOf(obo:CL_0000548 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208))
 
 # Class: obo:CL_0000549 (basophilic erythroblast)
 
@@ -23756,7 +23761,7 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0011003 <https
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0011003 "ILX:0107463")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011003 "magnocellular neuron")
 AnnotationAssertion(rdfs:label obo:CL_0011003 "magnocellular neurosecretory cell")
-SubClassOf(obo:CL_0011003 obo:CL_0000381)
+SubClassOf(obo:CL_0011003 obo:CL_0000165)
 SubClassOf(obo:CL_0011003 obo:CL_0000540)
 SubClassOf(obo:CL_0011003 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001898))
