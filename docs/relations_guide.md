@@ -93,9 +93,7 @@ To record the number of nuclei in a cell, one may use a subclass from the PATO t
 
 ![image](https://user-images.githubusercontent.com/112839/147105229-685b5cdf-8b09-4a36-b826-41ad405886b6.png)
 
-For example,
-
-[platelet](http://purl.obolibrary.org/obo/CL_0000233) has the following equivalence axiom:
+For example, [platelet](http://purl.obolibrary.org/obo/CL_0000233) has the following equivalence axiom:
 
 ['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* ([**has characteristic**](http://purl.obolibrary.org/obo/CL_0000053) *some* [anucleate](http://purl.obolibrary.org/obo/PATO_0001405)) *and* ([**has characteristic**](http://purl.obolibrary.org/obo/CL_0000053) some [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and* ([**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) some ['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and* ([**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) some ['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
 
@@ -115,7 +113,7 @@ For example,
 ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046) SubClassOf [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103) some ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038)
 
 
-Of note, historically **has (pre/post)synaptic terminal in** has been used to record synaptic connectivity. However, these relations are defined as being true when a single synapse is present in a region. In some use cases, these relations may be too sensitive to biological and/or experimental noise. 'synapsed to / by' are now preferred as the more specific relations to record functionally significant synaptic inputs and outputs.
+Of note, historically ['has presynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002113) and ['has postsynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002110) have been used to record synaptic connectivity. However, these relations are defined as being true when a single synapse is present in a region. In some use cases, these relations may be too sensitive to biological and/or experimental noise. 'synapsed to / by' are now preferred as the more specific relations to record functionally significant synaptic inputs and outputs.
 
 
 ### Taxon constraints
