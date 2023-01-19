@@ -8,7 +8,8 @@ To record anatomical locations for cell types, axioms are written using object p
 The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). 
 
 For example, ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) has the following subclass:
- [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) 
+
+[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) 
 
 In Manchester OWL syntax, this is represented as:
 
