@@ -45,7 +45,7 @@ There is also a dedicated set of relations for recording the location of synapti
 To record the location of a cell in an anatomical space (e.g., a sinus), [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) is used. For example, [lymph node marginal reticular cell](http://purl.obolibrary.org/obo/CL_0009103) has the following subclass:
 
 
-['located in'](http://purl.obolibrary.org/obo/RO_0001025) some ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
+[**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) some ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
 
 
 ### Recording function
@@ -81,11 +81,11 @@ Absence of a marker can be recorded using [**lacks_plasma_membrane_part**](http:
  
 ### Recording general cellular qualities (e.g., morphology)
 
-To record qualities of cells when a more specific object property does not exist, [**has characteristic**](http://purl.obolibrary.org/obo/CL_0000053) may be used.
+To record qualities of cells when a more specific object property does not exist, [**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) may be used.
 
 For example, [erythrocyte](http://purl.obolibrary.org/obo/CL_0000765) has the following subclass to describe the morphology of this cell type:
 
-[**has characteristic**](http://purl.obolibrary.org/obo/CL_0000053) *some* [biconcave](http://purl.obolibrary.org/obo/PATO_0002039)
+[**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) *some* [biconcave](http://purl.obolibrary.org/obo/PATO_0002039)
 
 
 ### Recording nuclear number
@@ -96,7 +96,7 @@ To record the number of nuclei in a cell, one may use a subclass from the PATO t
 
 For example, [platelet](http://purl.obolibrary.org/obo/CL_0000233) has the following equivalence axiom:
 
-['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* ([**has characteristic**](http://purl.obolibrary.org/obo/CL_0000053) *some* [anucleate](http://purl.obolibrary.org/obo/PATO_0001405)) *and* ([**has characteristic**](http://purl.obolibrary.org/obo/CL_0000053) some [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and* ([**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) some ['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and* ([**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) some ['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
+['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405)) *and* (['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) some [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
 
 
 ### Recording synaptic connectivity (neurons)
