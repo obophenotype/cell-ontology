@@ -90,7 +90,7 @@ For example, [erythrocyte](http://purl.obolibrary.org/obo/CL_0000765) has the fo
 
 ### Recording nuclear number
 
-To record the number of nuclei in a cell, one may use a subclass from the PATO term ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) with the ['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
+To record the number of nuclei in a cell, one may use a PATO subclass under the term ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) with the ['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
 
 ![image](https://user-images.githubusercontent.com/112839/147105229-685b5cdf-8b09-4a36-b826-41ad405886b6.png)
 
