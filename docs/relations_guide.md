@@ -22,7 +22,7 @@ This statement connotes the following:
  1. All parts of an epithelial cell are part of an epithelium.
  1. Epithelial cells are part of some epithelium at all times. This can be hard to apply in the context of development and may require additional consideration from an editor.
 
- In contrast, asserting that an ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) is ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) some ['kidney epithelium'](http://purl.obolibrary.org/obo/UBERON_0004819) is not correct because there are epithelial cells that exist that are not located in kidney epithelium.
+ In contrast, asserting that an ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) is ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium'](http://purl.obolibrary.org/obo/UBERON_0004819) is not correct because there are epithelial cells that exist that are not located in kidney epithelium.
 
 
 ### Recording anatomical location (neurons)
@@ -45,7 +45,7 @@ There is also a dedicated set of relations for recording the location of synapti
 To record the location of a cell in an anatomical space (e.g., a sinus), [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) is used. For example, [lymph node marginal reticular cell](http://purl.obolibrary.org/obo/CL_0009103) has the following subclass:
 
 
-[**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) some ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
+[**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) *some* ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
 
 
 ### Recording function
@@ -106,12 +106,12 @@ To record neuron-to-neuron or motor neuron-to-target cell connectivity, consider
 [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120)
 
 For example,
-['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038) SubClassOf [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120) some ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046)
+['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038) SubClassOf [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120) *some* ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046)
 
 [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103), which is the inverse of [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120)
 
 For example,
-['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046) SubClassOf [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103) some ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038)
+['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046) SubClassOf [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103) *some* ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038)
 
 
 Of note, historically ['has presynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002113) and ['has postsynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002110) have been used to record synaptic connectivity. However, these relations are defined as being true when a single synapse is present in a region. In some use cases, these relations may be too sensitive to biological and/or experimental noise. 'synapsed to / by' are now preferred as the more specific relations to record functionally significant synaptic inputs and outputs.
