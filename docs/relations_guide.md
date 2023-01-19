@@ -76,7 +76,7 @@ For example, ['alpha-beta T cell'](http://purl.obolibrary.org/obo/CL_0000789) ha
 
 ['T cell'](http://purl.obolibrary.org/obo/CL_0000084) *and* [**'has plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104) *some* ['alpha-beta T cell receptor complex'](http://purl.obolibrary.org/obo/GO_0042105) 
 
-Absence of a marker can be recorded using [**lacks_plasma_membrane_part**](http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part).
+Absence of a marker can be recorded using [**lacks_plasma_membrane_part**](https://ontobee.org/ontology/CL?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fcl%23lacks_plasma_membrane_part).
 
  
 ### Recording general cellular qualities (e.g., morphology)
