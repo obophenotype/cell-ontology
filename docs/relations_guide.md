@@ -90,13 +90,13 @@ For example, [erythrocyte](http://purl.obolibrary.org/obo/CL_0000765) has the fo
 
 ### Recording nuclear number
 
-To record the number of nuclei in a cell, one may use a subclass from the PATO term: ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) 
+To record the number of nuclei in a cell, one may use a subclass from the PATO term: ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) with the ['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
 
 ![image](https://user-images.githubusercontent.com/112839/147105229-685b5cdf-8b09-4a36-b826-41ad405886b6.png)
 
 For example, [platelet](http://purl.obolibrary.org/obo/CL_0000233) has the following equivalence axiom:
 
-['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* ([has characteristic](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405)) *and* (['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
+['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* (['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405)) *and* (['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
 
 
 ### Recording synaptic connectivity (neurons)
