@@ -70,7 +70,7 @@ For example, ['leukocyte'](http://purl.obolibrary.org/obo/CL_0000738) has the fo
 
 Only markers that are necessary to define a cell type should be recorded.
 
-The most commonly used relation for recording markers is [**'has plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104). This object property is used to record cell surface markers, especially in immune cells.  There are also more specific properties, [**'has low plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015016) and [**'has high plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015015), that can be used at an editor's discretion. In each case, a term from the [PRotein Ontology](https://github.com/PROconsortium/PRoteinOntology) or a protein complex term from the [Gene Ontology](https://github.com/geneontology/go-ontology) is used as the object of the relation.
+The most commonly used relation for recording markers is [**'has plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104). This object property is used to record cell surface markers, especially in immune cells.  There are also more specific properties, [**'has low plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015016) and [**'has high plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015015), that can be used at an editor's discretion. In each case, a term from the [PRotein Ontology (PRO)](https://github.com/PROconsortium/PRoteinOntology) or a protein complex term from the [Gene Ontology (GO)](https://github.com/geneontology/go-ontology) is used as the object of the relation.
 
 For example, ['alpha-beta T cell'](http://purl.obolibrary.org/obo/CL_0000789) has the following equivalence axiom:
 
