@@ -2195,6 +2195,7 @@ Declaration(Class(obo:CL_0017003))
 Declaration(Class(obo:CL_0017004))
 Declaration(Class(obo:CL_0017005))
 Declaration(Class(obo:CL_0017006))
+Declaration(Class(obo:CL_0017009))
 Declaration(Class(obo:CL_0017010))
 Declaration(Class(obo:CL_0017011))
 Declaration(Class(obo:CL_0017500))
@@ -2912,6 +2913,7 @@ Declaration(Class(obo:CL_4030030))
 Declaration(Class(obo:CL_4030031))
 Declaration(Class(obo:CL_4030032))
 Declaration(Class(obo:CL_4030033))
+Declaration(Class(obo:CL_4030035))
 Declaration(Class(obo:CL_4032000))
 Declaration(Class(obo:CL_4032001))
 Declaration(Class(obo:CP_0000000))
@@ -3003,7 +3005,6 @@ Declaration(ObjectProperty(obo:RO_0002292))
 Declaration(ObjectProperty(obo:RO_0013001))
 Declaration(ObjectProperty(obo:RO_0015015))
 Declaration(ObjectProperty(obo:RO_0015016))
-Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#has_completed>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#has_low_plasma_membrane_amount>))
 Declaration(ObjectProperty(<http://purl.obolibrary.org/obo/cl#has_not_completed>))
@@ -3063,7 +3064,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition"^^xsd:string)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to"^^xsd:string)
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3172,10 +3173,6 @@ AnnotationAssertion(rdfs:label rdfs:seeAlso "see also"^^xsd:string)
 ############################
 #   Object Properties
 ############################
-
-# Object Property: <http://purl.obolibrary.org/obo/cl#has_completed> (has_completed)
-
-AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl#has_completed> "has_completed"^^xsd:string)
 
 # Object Property: <http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount> (obsolete has_high_plasma_membrane_amount)
 
@@ -3533,9 +3530,9 @@ SubClassOf(obo:CL_0000032 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000114))
 
 # Class: obo:CL_0000033 (apocrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0721662544"^^xsd:string) obo:IAO_0000115 obo:CL_0000033 "An apocrine cell is a secretory cell characterized loss of part of the cytoplasm during the process of secretion - secretions are budded off through the plasma membrane producing membrane bound vesicles containing the secreted substance."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "ISBN:0721662544"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:25960390"^^xsd:string) obo:IAO_0000115 obo:CL_0000033 "An exocrine cell characterized by loss of part of the cytoplasm during the process of secretion. The secreted substance is accumulated at the apical end and is either budded off through the plasma membrane producing secreted vesicles or dissolved in the cytoplasm that is lost during secretion."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000033 "apocrine cell"^^xsd:string)
-SubClassOf(obo:CL_0000033 obo:CL_0000151)
+SubClassOf(obo:CL_0000033 obo:CL_0000152)
 
 # Class: obo:CL_0000034 (stem cell)
 
@@ -3860,6 +3857,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000060 "MESH:D009804"^^xsd:string
 AnnotationAssertion(rdfs:comment obo:CL_0000060 "legacy def: One of the cells forming the outer surface of dental pulp that produces tooth dentin."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000060 "odontoblast"^^xsd:string)
 SubClassOf(obo:CL_0000060 obo:CL_0000055)
+SubClassOf(obo:CL_0000060 obo:CL_0002148)
 SubClassOf(obo:CL_0000060 obo:CL_0002159)
 SubClassOf(obo:CL_0000060 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005176))
 SubClassOf(obo:CL_0000060 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0007003))
@@ -6855,7 +6853,7 @@ SubClassOf(obo:CL_0000430 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0005002))
 
 # Class: obo:CL_0000431 (iridophore)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "SANBI:mhl"^^xsd:string) obo:IAO_0000115 obo:CL_0000431 "A pigment cell derived from the neural crest. The cell contains flat light-reflecting platelets, probably of guanine, in stacks called reflecting platets or iridisomes. The color-generating components produce a silver, gold, or iridescent color."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "SANBI:mhl"^^xsd:string) obo:IAO_0000115 obo:CL_0000431 "A pigment cell derived from the neural crest. The cell contains flat light-reflecting platelets, probably of guanine, in stacks called reflecting platelets or iridisomes. The color-generating components produce a silver, gold, or iridescent color."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000431 "guanophore"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000431 "iridophore"^^xsd:string)
 SubClassOf(obo:CL_0000431 obo:CL_0000147)
@@ -7335,7 +7333,7 @@ AnnotationAssertion(rdfs:label obo:CL_0000492 "CD4-positive helper T cell"^^xsd:
 EquivalentClasses(obo:CL_0000492 ObjectIntersectionOf(obo:CL_0000624 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001816)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000492 obo:CL_0000624)
 SubClassOf(obo:CL_0000492 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000896))
-SubClassOf(obo:CL_0000492 ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217))
+SubClassOf(obo:CL_0000492 ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217))
 
 # Class: obo:CL_0000493 (obsolete regulatory T cell)
 
@@ -7793,6 +7791,7 @@ SubClassOf(obo:CL_0000547 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000038))
 
 # Class: obo:CL_0000548 (animal cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000548 "A native cell that is part of some Metazoa.")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000548 <http://purl.obolibrary.org/obo/ubprop#_upper_level>)
 AnnotationAssertion(rdfs:label obo:CL_0000548 "animal cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000548 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208)))
@@ -9017,6 +9016,7 @@ SubClassOf(obo:CL_0000678 obo:CL_0000540)
 
 # Class: obo:CL_0000679 (glutamatergic neuron)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000679 "A neuron that is capable of some neurotansmission by glutamate secretion.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000679 "WBbt:0006829"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000679 "glutamatergic neuron"^^xsd:string)
 EquivalentClasses(obo:CL_0000679 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535)))
@@ -9944,7 +9944,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000785 "mature B-cell"^^xsd
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000785 "mature B-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000785 "Mature B cells are also reportedly CD10-negative, CD19-positive, CD22-positive, CD34-negative, CD48-positive, CD79a-positive, CD84-positive, CD127-negative, CD352-positive, RAG-negative, TdT-negative, Vpre-B-negative, and pre-BCR-negative. Transcription factors expressed: Pax5-positive."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000785 "mature B cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000785 ObjectIntersectionOf(obo:CL_0001201 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002504) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0042113) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002335)))
+EquivalentClasses(obo:CL_0000785 ObjectIntersectionOf(obo:CL_0001201 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002504) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0042113) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0002335)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000785 obo:CL_0001201)
 SubClassOf(obo:CL_0000785 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000818))
 DisjointClasses(obo:CL_0000785 obo:CL_0000816)
@@ -9977,7 +9977,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000787 "memory B-cell"^^xsd
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000787 "memory B-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000787 "Memory B-cells are also reportedly CD5-negative, CD10-negative, CD21-positive, CD22-positive, CD23-negative, CD24-positive, CD25-positive, CD27-positive, CD34-negative, CD38-negative, CD40-positive, CD43-negative, CD44-positive, CD45-positive, CD53-positive, CD80-negative, CD81-negative, CD86-positive, and CD196/CCR6-positive."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000787 "memory B cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000787 ObjectIntersectionOf(obo:CL_0000785 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0042613) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001289) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002344) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001935)))
+EquivalentClasses(obo:CL_0000787 ObjectIntersectionOf(obo:CL_0000785 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0042613) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001289) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0002344) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001935)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000787 obo:CL_0000785)
 
 # Class: obo:CL_0000788 (naive B cell)
@@ -10020,7 +10020,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000791 "mature alpha-beta T
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000791 "mature alpha-beta T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000791 "mature alpha-beta T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000791 "mature alpha-beta T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000791 ObjectIntersectionOf(obo:CL_0000789 ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0045058)))
+EquivalentClasses(obo:CL_0000791 ObjectIntersectionOf(obo:CL_0000789 ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000791 obo:CL_0000789)
 SubClassOf(obo:CL_0000791 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000790))
 
@@ -10071,7 +10071,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000794 "CD8-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000794 "CD8-positive, alpha-beta cytotoxic T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000794 "Note that while T cells of this subset are loosely referred to 'cytotoxic T cells,' as many other T cell types, including CD4-positive, alpha-beta T cells and gamma-delta T cells exhibit cytotoxicity in vitro and in vivo."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000794 "CD8-positive, alpha-beta cytotoxic T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000794 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:BFO_0000051 obo:PR_000003466) ObjectSomeValuesFrom(obo:BFO_0000051 obo:PR_000003499) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001913) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0033380) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217)))
+EquivalentClasses(obo:CL_0000794 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:BFO_0000051 obo:PR_000003466) ObjectSomeValuesFrom(obo:BFO_0000051 obo:PR_000003499) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001913) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0033380) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000794 obo:CL_0000625)
 SubClassOf(obo:CL_0000794 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000906))
 
@@ -10151,7 +10151,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000800 "mature gamma-delta 
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000800 "mature gamma-delta T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000800 "mature gamma-delta T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000800 "mature gamma-delta T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000800 ObjectIntersectionOf(obo:CL_0000798 ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0045058)))
+EquivalentClasses(obo:CL_0000800 ObjectIntersectionOf(obo:CL_0000798 ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000800 obo:CL_0000798)
 SubClassOf(obo:CL_0000800 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000799))
 
@@ -10314,7 +10314,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000813 "memory T lymphocyte
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000813 "memory T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000813 "memory T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000813 "memory T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000813 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002286) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379)))
+EquivalentClasses(obo:CL_0000813 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0002286) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000813 obo:CL_0002419)
 DisjointClasses(obo:CL_0000813 obo:CL_0000898)
 
@@ -10330,7 +10330,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000814 "mature natural kill
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000814 "mature natural killer T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000814 "mature natural killer T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000814 "mature NK T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000814 ObjectIntersectionOf(obo:CL_0000791 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001874) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032394) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0045087) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217)))
+EquivalentClasses(obo:CL_0000814 ObjectIntersectionOf(obo:CL_0000791 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001874) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032394) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0045087) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000814 obo:CL_0000791)
 SubClassOf(obo:CL_0000814 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002042))
 
@@ -10984,7 +10984,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000875 "patrolling monocyte
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000875 "resident monocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000875 "Markers: CCR2-CX3CCR1+ (human, mouse, rat); human: CD16+, CCR5+, CD32/FcgRII-high, MHCII+, CD86+; mouse: CD62L-Ly6C-."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000875 "non-classical monocyte"^^xsd:string)
-EquivalentClasses(obo:CL_0000875 ObjectIntersectionOf(obo:CL_0000576 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0000587) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0031294) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001206) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030224) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001002) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001020) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001289)))
+EquivalentClasses(obo:CL_0000875 ObjectIntersectionOf(obo:CL_0000576 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0000587) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0031294) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001206) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030224) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001002) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001020) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001289)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000875 obo:CL_0000576)
 SubClassOf(obo:CL_0000875 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002393))
 
@@ -11182,7 +11182,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000897 "CD4-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000897 "CD4-positive, alpha-beta memory T-lymphocyte")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000897 "T4.Mem.Sp")
 AnnotationAssertion(rdfs:label obo:CL_0000897 "CD4-positive, alpha-beta memory T cell")
-EquivalentClasses(obo:CL_0000897 ObjectIntersectionOf(obo:CL_0000624 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002286) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379)))
+EquivalentClasses(obo:CL_0000897 ObjectIntersectionOf(obo:CL_0000624 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0002286) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379)))
 SubClassOf(obo:CL_0000897 obo:CL_0000624)
 
 # Class: obo:CL_0000898 (naive T cell)
@@ -11192,7 +11192,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000898 "naive T lymphocyte"
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000898 "naive T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000898 "naive T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000898 "naive T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000898 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001203) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001318) ObjectSomeValuesFrom(obo:RO_0015016 obo:PR_000001307) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0045058)))
+EquivalentClasses(obo:CL_0000898 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001203) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001318) ObjectSomeValuesFrom(obo:RO_0015016 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000898 obo:CL_0002419)
 
 # Class: obo:CL_0000899 (T-helper 17 cell)
@@ -11337,7 +11337,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000908 "CD8-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000908 "CD8-positive, alpha-beta cytokine secreting effector T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000908 "CD8-positive, alpha-beta cytokine secreting effector T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000908 "CD8-positive, alpha-beta cytokine secreting effector T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000908 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001343) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001380) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001816) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001318) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001869)))
+EquivalentClasses(obo:CL_0000908 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001343) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001380) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001816) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001318) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001869)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000908 obo:CL_0000625)
 SubClassOf(obo:CL_0000908 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000906))
 
@@ -11350,7 +11350,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000909 "CD8-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000909 "CD8-positive, alpha-beta memory T-lymphocyte")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000909 "T.8Mem.Sp")
 AnnotationAssertion(rdfs:label obo:CL_0000909 "CD8-positive, alpha-beta memory T cell")
-EquivalentClasses(obo:CL_0000909 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002286) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379)))
+EquivalentClasses(obo:CL_0000909 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001603) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0002286) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379)))
 
 # Class: obo:CL_0000910 (cytotoxic T cell)
 
@@ -11372,7 +11372,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000911 "effector T lymphocy
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000911 "effector T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000911 "effector T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000911 "effector T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000911 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0045026) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0045058)))
+EquivalentClasses(obo:CL_0000911 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0045026) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000911 obo:CL_0002419)
 
 # Class: obo:CL_0000912 (helper T cell)
@@ -11684,7 +11684,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000934 "CD4-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000934 "CD4-positive, alpha-beta cytotoxic T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000934 "CD4-positive, alpha-beta cytotoxic T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000934 "CD4-positive, alpha-beta cytotoxic T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000934 ObjectIntersectionOf(obo:CL_0000624 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001913) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217)))
+EquivalentClasses(obo:CL_0000934 ObjectIntersectionOf(obo:CL_0000624 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001913) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000934 obo:CL_0000624)
 SubClassOf(obo:CL_0000934 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000896))
 
@@ -11752,7 +11752,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000940 "mucosal invariant T
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000940 "mucosal invariant T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000940 "mucosal invariant T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000940 "mucosal invariant T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000940 ObjectIntersectionOf(obo:CL_0000791 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002227) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032394) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217)))
+EquivalentClasses(obo:CL_0000940 ObjectIntersectionOf(obo:CL_0000791 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002227) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032394) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000940 obo:CL_0000791)
 
 # Class: obo:CL_0000941 (thymic conventional dendritic cell)
@@ -11881,7 +11881,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000955 "pre-B-lymphocyte"^^
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000955 "pre-BII cell"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000955 "pre-B-II cell are also reportedly CD19-positive, CD22-positive, CD38-positive, CD45-positive, and CD48-positive."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000955 "pre-B-II cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000955 ObjectIntersectionOf(obo:CL_0000817 ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0071707) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_part> obo:PR_000006611) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001003)))
+EquivalentClasses(obo:CL_0000955 ObjectIntersectionOf(obo:CL_0000817 ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0071707) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_part> obo:PR_000006611) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001003)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000955 obo:CL_0000817)
 SubClassOf(obo:CL_0000955 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000826))
 DisjointClasses(obo:CL_0000955 obo:CL_0000956)
@@ -12016,7 +12016,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000966 "Bm4 B-lymphocyte"^^
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17992590"^^xsd:string) oboInOwl:hasRelatedSynonym obo:CL_0000966 "centrocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000966 "Bm4 B cells are also reportedly CD10-positive, CD23-negative, CD39-negative, CD44-positive, and CD71-positive."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000966 "Bm4 B cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000966 ObjectIntersectionOf(obo:CL_0000844 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001408) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0016446) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0071738) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000003516)))
+EquivalentClasses(obo:CL_0000966 ObjectIntersectionOf(obo:CL_0000844 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001408) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0016446) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0071738) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000003516)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000966 obo:CL_0000844)
 SubClassOf(obo:CL_0000966 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000963))
 
@@ -12028,7 +12028,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000967 "Bm5 B-cell"^^xsd:st
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000967 "Bm5 B-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000967 "Bm5 B cells are also reportedly CD10-positive, CD23-negative, CD38-negative, CD39-positive, CD44-positive, CD71-positive, and CD77-negative."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000967 "Bm5 B cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000967 ObjectIntersectionOf(obo:CL_0000787 ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0002314) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0016446) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0071738)))
+EquivalentClasses(obo:CL_0000967 ObjectIntersectionOf(obo:CL_0000787 ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0002314) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0016446) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0071738)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000967 obo:CL_0000787)
 SubClassOf(obo:CL_0000967 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000966))
 
@@ -12095,7 +12095,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000972 "class switched memo
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000972 "class switched memory B-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000972 "Per DSD: Class switched memory B cells are also reportedly CD48-positive, CD229-positive, and CD352-positive."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000972 "class switched memory B cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000972 ObjectIntersectionOf(obo:CL_0000787 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001963) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0045190) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0071753)))
+EquivalentClasses(obo:CL_0000972 ObjectIntersectionOf(obo:CL_0000787 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001963) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045190) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:GO_0071753)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000972 obo:CL_0000787)
 SubClassOf(obo:CL_0000972 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000970))
 
@@ -12951,7 +12951,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15032595"^^xsd:string) o
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15032595"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0001062 "CD8-positive TEMRA")
 AnnotationAssertion(rdfs:comment obo:CL_0001062 "This cell type is seen in human but not found in the mouse.")
 AnnotationAssertion(rdfs:label obo:CL_0001062 "effector memory CD8-positive, alpha-beta T cell, terminally differentiated")
-EquivalentClasses(obo:CL_0001062 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
+EquivalentClasses(obo:CL_0001062 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
 SubClassOf(obo:CL_0001062 obo:CL_0000909)
 SubClassOf(obo:CL_0001062 obo:CL_4030002)
 SubClassOf(obo:CL_0001062 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000913))
@@ -13143,7 +13143,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17465678"^^xsd:string) o
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17465678"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0001087 "CD4-positive TEMRA")
 AnnotationAssertion(rdfs:comment obo:CL_0001087 "This cell type is seen in human but not found in the mouse.")
 AnnotationAssertion(rdfs:label obo:CL_0001087 "effector memory CD4-positive, alpha-beta T cell, terminally differentiated")
-EquivalentClasses(obo:CL_0001087 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
+EquivalentClasses(obo:CL_0001087 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001017) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001203)))
 SubClassOf(obo:CL_0001087 obo:CL_0000897)
 SubClassOf(obo:CL_0001087 obo:CL_4030002)
 SubClassOf(obo:CL_0001087 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000905))
@@ -13187,7 +13187,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T-cell, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0001203 "CD8-positive, alpha-beta memory T cell, CD45RO-positive"^^xsd:string)
-EquivalentClasses(obo:CL_0001203 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
+EquivalentClasses(obo:CL_0001203 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0001203 obo:CL_0000909)
 SubClassOf(obo:CL_0001203 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000906))
 
@@ -13198,7 +13198,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T-cell, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0001204 "CD4-positive, alpha-beta memory T cell, CD45RO-positive"^^xsd:string)
-EquivalentClasses(obo:CL_0001204 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
+EquivalentClasses(obo:CL_0001204 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0001204 obo:CL_0000897)
 SubClassOf(obo:CL_0001204 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000896))
 
@@ -14629,7 +14629,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002124 "2010-08-18T09:57:19Z"
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002124 "gammadelta27-positive"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002124 "gd27-positive"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002124 "CD27-positive gamma-delta T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0002124 ObjectIntersectionOf(obo:CL_0000800 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001963) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032609) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217)))
+EquivalentClasses(obo:CL_0002124 ObjectIntersectionOf(obo:CL_0000800 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001963) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032609) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002124 obo:CL_0000800)
 SubClassOf(obo:CL_0002124 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002126))
 
@@ -14640,7 +14640,7 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002125 <https
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002125 "2010-08-18T09:57:29Z"^^xsd:string)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21976777"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002125 "gammadelta-17 cells"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002125 "CD27-negative gamma-delta T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0002125 ObjectIntersectionOf(obo:CL_0000800 ObjectSomeValuesFrom(obo:BFO_0000051 obo:PR_000003455) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032620) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0030217) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001963)))
+EquivalentClasses(obo:CL_0002125 ObjectIntersectionOf(obo:CL_0000800 ObjectSomeValuesFrom(obo:BFO_0000051 obo:PR_000003455) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032620) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030217) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001963)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002125 obo:CL_0000800)
 SubClassOf(obo:CL_0002125 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002126))
 
@@ -14891,10 +14891,9 @@ SubClassOf(obo:CL_0002147 obo:CL_0000446)
 
 # Class: obo:CL_0002148 (dental pulp cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:11087820"^^xsd:string) obo:IAO_0000115 obo:CL_0002148 "A cell found within the dental pulp."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:36267574"^^xsd:string) obo:IAO_0000115 obo:CL_0002148 "A cell found within the dental pulp."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002148 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002148 "2010-08-24T02:52:09Z"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002148 "BTO:0000339"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002148 "CALOHA:TS-0195"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002148 "FMA:87170"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002148 "dental pulp cell"^^xsd:string)
@@ -16045,15 +16044,18 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002254 obo:CL_0002563
 
 # Class: obo:CL_0002255 (stromal cell of endometrium)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11331626"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30013421"^^xsd:string) Annotation(oboInOwl:hasDbXref "Wiki:Decidualization&oldid=908981933#Endometrial_stromal_cells_(ESCs)"^^xsd:string) obo:IAO_0000115 obo:CL_0002255 "Connective tissue cells of the endometrium, these cells are fibroblastic in appearance. During decidualization they tranform into decidual (stromal) cells, swellling up and adopt an epithelial cell-like appearance due to the accumulation of glycogen and lipid droplets."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11331626"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30013421"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:30309298"^^xsd:string) Annotation(oboInOwl:hasDbXref "Wiki:Decidualization&oldid=908981933#Endometrial_stromal_cells_(ESCs)"^^xsd:string) Annotation(oboInOwl:hasDbXref "https://doi.org/10.1038/s41591-020-1040-z"^^xsd:string) obo:IAO_0000115 obo:CL_0002255 "A stromal cell of the endometrium that is fibroblastic in appearance. During decidualization this cell may differentiate into a decidual stromal cell."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002255 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002255 "2010-09-08T09:50:04Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002255 "CALOHA:TS-1266"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002255 "FMA:86490"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002255 "endometrial stromal cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30309298"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002255 "endometrial stromal fibroblast"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002255 "stromal cell of endometrium"^^xsd:string)
 EquivalentClasses(obo:CL_0002255 ObjectIntersectionOf(obo:CL_0000499 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001295)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002255 obo:CL_0000499)
+SubClassOf(obo:CL_0002255 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002337))
+SubClassOf(obo:CL_0002255 ObjectSomeValuesFrom(obo:RO_0002388 obo:CL_2000002))
 
 # Class: obo:CL_0002256 (supporting cell of carotid body)
 
@@ -17773,7 +17775,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002419 "CD3e-positive T cel
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002419 "mature T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002419 "CD3epsilon T cell"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002419 "mature T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0002419 ObjectIntersectionOf(obo:CL_0000084 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0042101) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0045058)))
+EquivalentClasses(obo:CL_0002419 ObjectIntersectionOf(obo:CL_0000084 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0042101) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002419 obo:CL_0000084)
 
 # Class: obo:CL_0002420 (immature T cell)
@@ -20282,7 +20284,7 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002678 <https
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002678 "2011-08-25T03:17:34Z"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0002678 "Cell has been described as being CD45RA-positive in human, but this doesn't fit with our current definition memory T cell."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002678 "memory regulatory T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0002678 ObjectIntersectionOf(obo:CL_0000792 ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#has_completed> obo:GO_0043379)))
+EquivalentClasses(obo:CL_0002678 ObjectIntersectionOf(obo:CL_0000792 ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379)))
 SubClassOf(obo:CL_0002678 obo:CL_0000792)
 SubClassOf(obo:CL_0002678 obo:CL_0000813)
 
@@ -24220,6 +24222,17 @@ AnnotationAssertion(rdfs:label obo:CL_0017006 "B-lymphoblast")
 SubClassOf(obo:CL_0017006 obo:CL_0000945)
 SubClassOf(obo:CL_0017006 obo:CL_0017005)
 
+# Class: obo:CL_0017009 (Axl+ dendritic cell, human)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28428369"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:29221729"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:31156637"^^xsd:string) obo:IAO_0000115 obo:CL_0017009 "A human dendritic cell that expresses the AXL and SIGLEC6 genes.")
+AnnotationAssertion(<http://purl.org/dc/elements/1.1/date> obo:CL_0017009 "2022-08-25T14:18:37Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:created_by obo:CL_0017009 <http://orcid.org/0000-0003-2473-2313>)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0017009 "AS DC, human")
+AnnotationAssertion(rdfs:label obo:CL_0017009 "Axl+ dendritic cell, human")
+SubClassOf(obo:CL_0017009 obo:CL_0001056)
+SubClassOf(obo:CL_0017009 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_O43699))
+SubClassOf(obo:CL_0017009 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P30530))
+
 # Class: obo:CL_0017010 (hillock cell of urethral epithelium)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref <http://orcid.org/0000-0001-7772-9578>) Annotation(oboInOwl:hasDbXref "PMID:30566875"^^xsd:string) obo:IAO_0000115 obo:CL_0017010 "A hillock cell that is part of the urethra."^^xsd:string)
@@ -26433,6 +26446,7 @@ SubClassOf(obo:CL_1000546 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000518
 
 # Class: obo:CL_1000547 (kidney inner medulla collecting duct epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1000547 "An epithelial cell that is part of some inner medullary collecting duct.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000547 "KUPO:0001061"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1000547 "kidney inner medulla collecting duct epithelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1000547 ObjectIntersectionOf(obo:CL_1000497 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004205)))
@@ -26473,6 +26487,7 @@ SubClassOf(obo:CL_1000596 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000527
 
 # Class: obo:CL_1000597 (papillary tips cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1000597 "A cell that is part of a tip of a renal papilla.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000597 "KUPO:0001112"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1000597 "papillary tips cell"^^xsd:string)
 EquivalentClasses(obo:CL_1000597 ObjectIntersectionOf(obo:CL_1000497 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0009095)))
@@ -26606,6 +26621,7 @@ SubClassOf(obo:CL_1000697 obo:CL_1000500)
 
 # Class: obo:CL_1000698 (kidney resident macrophage)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1000698 "A tissue-resident macrophage that is part of some kidney.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000698 "KUPO:0001109"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1000698 "kidney resident macrophage"^^xsd:string)
 SubClassOf(obo:CL_1000698 obo:CL_0000864)
@@ -26676,6 +26692,7 @@ SubClassOf(obo:CL_1000715 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000420
 
 # Class: obo:CL_1000716 (kidney outer medulla collecting duct principal cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25632105"^^xsd:string) obo:IAO_0000115 obo:CL_1000716 "Principal cell that is part of some outer medullary collecting duct. It is known in some mammalian species that this cell may express the epithelial sodium channel (ENaC).")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000716 "KUPO:0001132"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1000716 "kidney outer medulla collecting duct principal cell"^^xsd:string)
 EquivalentClasses(obo:CL_1000716 ObjectIntersectionOf(obo:CL_0005009 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004204)))
@@ -26685,6 +26702,7 @@ SubClassOf(obo:CL_1000716 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000420
 
 # Class: obo:CL_1000717 (kidney outer medulla collecting duct intercalated cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25632105"^^xsd:string) obo:IAO_0000115 obo:CL_1000717 "Intercalated cell that is part of some outer medullary collecting duct. It is known in some mammalian species that this cell may contribute in the maintenance of acid/base homeostasis.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000717 "KUPO:0001133"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1000717 "kidney outer medulla collecting duct intercalated cell"^^xsd:string)
 EquivalentClasses(obo:CL_1000717 ObjectIntersectionOf(obo:CL_0005010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004204)))
@@ -26917,6 +26935,7 @@ SubClassOf(obo:CL_1001021 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000128
 
 # Class: obo:CL_1001033 (peritubular capillary endothelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001033 "An endothelial cell that is part of some peritubular capillary.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001033 "KUPO:0001065"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001033 "peritubular capillary endothelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001033 ObjectIntersectionOf(obo:CL_1000892 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005272)))
@@ -27012,6 +27031,7 @@ SubClassOf(obo:CL_1001100 obo:CL_1001066)
 
 # Class: obo:CL_1001106 (kidney loop of Henle thick ascending limb epithelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25318757"^^xsd:string) obo:IAO_0000115 obo:CL_1001106 "An epithelial cell that is part of some loop of Henle thick ascending limb. It is known in some mammalian species that this cell may express the Na+-K+-2Cl− cotransporter (NKCC2) apically.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001106 "KUPO:0001049"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001106 "kidney loop of Henle thick ascending limb epithelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001106 ObjectIntersectionOf(obo:CL_1001016 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001291)))
@@ -27022,6 +27042,7 @@ SubClassOf(obo:CL_1001106 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000129
 
 # Class: obo:CL_1001107 (kidney loop of Henle thin ascending limb epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001107 "An epithelial cell that is part of some loop of Henle thin ascending limb.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001107 "KUPO:0001050"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001107 "kidney loop of Henle thin ascending limb epithelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001107 ObjectIntersectionOf(obo:CL_1001016 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004193)))
@@ -27030,6 +27051,7 @@ SubClassOf(obo:CL_1001107 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000419
 
 # Class: obo:CL_1001108 (kidney loop of Henle medullary thick ascending limb epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001108 "An epithelial cell that is part of some loop of Henle thick ascending limb segment located in the renal medulla.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001108 "KUPO:0001051"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001108 "kidney loop of Henle medullary thick ascending limb epithelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001108 ObjectIntersectionOf(obo:CL_1001016 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006376)))
@@ -27039,6 +27061,7 @@ SubClassOf(obo:CL_1001108 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000637
 
 # Class: obo:CL_1001109 (kidney loop of Henle cortical thick ascending limb epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001109 "An epithelial cell that is part of some loop of Henle thick ascending limb segment located in the renal cortex.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001109 "KUPO:0001052"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001109 "kidney loop of Henle cortical thick ascending limb epithelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001109 ObjectIntersectionOf(obo:CL_1001016 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006854)))
@@ -27048,6 +27071,7 @@ SubClassOf(obo:CL_1001109 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000685
 
 # Class: obo:CL_1001111 (kidney loop of Henle thin descending limb epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001111 "An epithelial cell that is part of some loop of Henle thin descending limb.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001111 "KUPO:0001054"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_1001111 "kidney loop of Henle thin descending limb epithelial cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001111 ObjectIntersectionOf(obo:CL_1001021 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005096)))
@@ -27093,7 +27117,9 @@ SubClassOf(obo:CL_1001127 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000477
 
 # Class: obo:CL_1001131 (vasa recta ascending limb cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001131 "A cell that is part of some vasa recta ascending limb.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001131 "KUPO:0001074"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20392798"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20392799"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:26062876"^^xsd:string) rdfs:comment obo:CL_1001131 "It is known in some mammalian species that this cell may express PV-1, a component of the fenestral diaphragm.")
 AnnotationAssertion(rdfs:label obo:CL_1001131 "vasa recta ascending limb cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001131 ObjectIntersectionOf(obo:CL_1001036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0009091)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001131 obo:CL_1001036)
@@ -27231,7 +27257,9 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001225 obo:CL_1000497
 
 # Class: obo:CL_1001285 (vasa recta descending limb cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_1001285 "A cell that is part of some vasa recta descending limb.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001285 "KUPO:0001071"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20392798"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:20392799"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:26062876"^^xsd:string) rdfs:comment obo:CL_1001285 "It is known in some mammalian species that this cell may express the urea transporter B.")
 AnnotationAssertion(rdfs:label obo:CL_1001285 "vasa recta descending limb cell"^^xsd:string)
 EquivalentClasses(obo:CL_1001285 ObjectIntersectionOf(obo:CL_1001036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0009202)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001285 obo:CL_1001036)
@@ -28125,7 +28153,7 @@ EquivalentClasses(obo:CL_2000034 ObjectIntersectionOf(obo:CL_0000856 ObjectSomeV
 
 # Class: obo:CL_2000035 (anterior lateral line neuromast mantle cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie"^^xsd:string) obo:IAO_0000115 obo:CL_2000035 "Any neuromast mantle cell that is part of a anterior lateral line."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie"^^xsd:string) obo:IAO_0000115 obo:CL_2000035 "Any neuromast mantle cell that is part of an anterior lateral line."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_2000035 <https://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000035 "2014-06-25T03:44:44Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:id obo:CL_2000035 "CL:2000035"^^xsd:string)
@@ -28244,7 +28272,7 @@ EquivalentClasses(obo:CL_2000047 ObjectIntersectionOf(obo:CL_0000100 ObjectSomeV
 
 # Class: obo:CL_2000048 (anterior horn motor neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-323-37101-8.00140-5"^^xsd:string) Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-323-42876-7.00030-2"^^xsd:string) Annotation(oboInOwl:hasDbXref "https://www.sciencedirect.com/topics/medicine-and-dentistry/anterior-horn-cell"^^xsd:string) obo:IAO_0000115 obo:CL_2000048 "An lower motor neuron whose soma is located in one of the ventral horns of the spinal cord and innervates skeletal muscles of the trunk or head."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-12-817962-8.00025-1"^^xsd:string) obo:IAO_0000115 obo:CL_2000048 "A lower motor neuron whose soma is located in the anterior horn. Anterior horn motor neurons project from the anterior portion of the grey matter in the spinal cord to some skeletal muscles."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_2000048 <https://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000048 "2014-10-03T00:26:27Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000048 "NCIT:C12645")
@@ -30570,6 +30598,15 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25311230"^^xsd:string) o
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25311230"^^xsd:string) rdfs:comment obo:CL_4030033 "At least in some mammalian species, a valve endothelial cell expresses CD31. Valve endothelial cells can undergo an endothelial to mesenchymal transition to acquire a fibroblast or myofibroblast phenotype that leads to changes in the microenvironmental signals and facilitates tissue regeneration."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_4030033 "valve endothelial cell")
 EquivalentClasses(obo:CL_4030033 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000946)))
+
+# Class: obo:CL_4030035 (dental pulp stem cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0002-2825-0621>) Annotation(oboInOwl:hasDbXref "DOI:10.1177/154405910208100806"^^xsd:string) obo:IAO_0000115 obo:CL_4030035 "A dental pulp cell that possesses stem-cell-like qualities, including self-renewal capability and multi-lineage differentiation."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030035 "2023-01-10T14:02:02Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasExactSynonym obo:CL_4030035 "DPSC"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_4030035 "dental pulp stem cell")
+EquivalentClasses(obo:CL_4030035 ObjectIntersectionOf(obo:CL_0000034 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001754)))
+SubClassOf(obo:CL_4030035 obo:CL_0002148)
 
 # Class: obo:CL_4032000 (club-like cell of the urethral epithelium)
 
