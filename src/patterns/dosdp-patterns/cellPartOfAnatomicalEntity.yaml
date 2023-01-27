@@ -23,10 +23,12 @@ relations:
 
 annotationProperties:
   xref: oio:hasDbXref
+  contributor: "http://purl.org/dc/terms/contributor"
 
 vars:
   cell: "'cell'"
   anatomical_entity: "'anatomical entity'"
+  creator: ""
 
 data_list_vars:
   pubs: "'xref'"
@@ -39,7 +41,7 @@ name:
     - anatomical_entity
 
 def:
-  text: "Any %s that is part of a(n) %s."
+  text: "A(n) %s that is part of a(n) %s."
   vars:
     - cell
     - anatomical_entity
@@ -52,3 +54,7 @@ equivalentTo:
   vars:
     - cell
     - anatomical_entity
+
+annotations:
+  - annotationProperty: contributor
+    var: creator
