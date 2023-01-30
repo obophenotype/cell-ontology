@@ -4844,13 +4844,20 @@ SubClassOf(obo:CL_0000164 obo:CL_0000163)
 
 # Class: obo:CL_0000165 (neuroendocrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D055099"^^xsd:string) obo:IAO_0000115 obo:CL_0000165 "An endocrine cell that has the specialized function to produce and secrete hormones in response to neuronal signals."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D055099"^^xsd:string) obo:IAO_0000115 obo:CL_0000165 "A neuron that is capable of some hormone secretion in response to neuronal signals."^^xsd:string)
+AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000165 "CL:0000381")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000165 "BTO:0002691"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000165 "FMA:83810"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000165 "neurosecretory cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000165 "neurosecretory cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000165 "neurosecretory neuron"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:5342440"^^xsd:string) Annotation(oboInOwl:hasDbXref "https://www.clinicalkey.com/#!/content/book/3-s2.0-B9780323555968000073"^^xsd:string) rdfs:comment obo:CL_0000165 "The neurosecretory cell is neither an ordinary neuron nor an endocrine cell, but a combination of both. Its neuronal features resemble those of ordinary neurons concerning both structure and function. The production of a visible secretory material marks the neurosecretory neuron as a gland cell, and the fact that extractable cellular products act in the manner of hormones places it in the realm of endocrine elements. 
+
+The modern definition of neurosecretion has evolved to include the release of any neuronal secretory product from a neuron.")
 AnnotationAssertion(rdfs:label obo:CL_0000165 "neuroendocrine cell"^^xsd:string)
+EquivalentClasses(obo:CL_0000165 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0000165 obo:CL_0000163)
 SubClassOf(obo:CL_0000165 obo:CL_0000393)
+SubClassOf(obo:CL_0000165 obo:CL_0000527)
 SubClassOf(obo:CL_0000165 obo:CL_0000710)
 
 # Class: obo:CL_0000166 (chromaffin cell)
@@ -6531,11 +6538,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000380 "fly sheath cell"^^x
 AnnotationAssertion(rdfs:label obo:CL_0000380 "thecogen cell"^^xsd:string)
 SubClassOf(obo:CL_0000380 obo:CL_0000378)
 
-# Class: obo:CL_0000381 (neurosecretory neuron)
+# Class: obo:CL_0000381 (obsolete neurosecretory neuron)
 
-AnnotationAssertion(rdfs:label obo:CL_0000381 "neurosecretory neuron"^^xsd:string)
-EquivalentClasses(obo:CL_0000381 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
-SubClassOf(obo:CL_0000381 obo:CL_0000527)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000381 obo:CL_0000165)
+AnnotationAssertion(rdfs:comment obo:CL_0000381 "https://github.com/obophenotype/cell-ontology/issues/1784
+'neuroendocrine cell' (which has exact synonym \"neurosecretory cell\") and 'neurosecretory neuron' may all refer to the same cell type."^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000381 "obsolete neurosecretory neuron"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_0000381 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000382 (scolopale cell)
 
@@ -23755,7 +23764,7 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0011003 <https
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0011003 "ILX:0107463")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011003 "magnocellular neuron")
 AnnotationAssertion(rdfs:label obo:CL_0011003 "magnocellular neurosecretory cell")
-SubClassOf(obo:CL_0011003 obo:CL_0000381)
+SubClassOf(obo:CL_0011003 obo:CL_0000165)
 SubClassOf(obo:CL_0011003 obo:CL_0000540)
 SubClassOf(obo:CL_0011003 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001898))
