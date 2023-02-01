@@ -1,5 +1,12 @@
-# A guide to selecting **object properties** in the Cell Ontology (CL)
+# Cell Ontology (CL) relations guide.
 
+The aim of this document is to provide accessible guidance on how formally record the properties of cell types in the Cell Ontology.  
+
+The term relation here typically means OWL ObjectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  For most cell types, editors using this guide should add simple subClassOf restrictions (e.g. subClassOf part_of some head) following the guidance here.  Use of EquivalentClass axioms should mostly be restricted to the addition of terms following standard design patterns in DOSDPs. Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
+
+Under most circumstances, it will be safe to use this guide to add simple subCLassOf restrictions even in the absence of a more complete understanding of OWL, to get the most from it, you should have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that you should be familiar with the meaning of existential restrictions, property heirarchies and property chains, object property domains, subClassOf and Equivalent Class axioms.  
+
+The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then reperated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
 
 ### Recording anatomical location (general cell types)
 
@@ -16,18 +23,18 @@ In Manchester OWL syntax, this is represented as:
 SubClassOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000483))
 
 
-This statement connotes the following:
+This statement denotes the following:
 
  1. All epithelial cells are part of an epithelium.
  1. All parts of an epithelial cell are part of an epithelium.
  1. Epithelial cells are part of some epithelium at all times. This can be hard to apply in the context of development and may require additional consideration from an editor.
 
- In contrast, asserting that an ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) is ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium'](http://purl.obolibrary.org/obo/UBERON_0004819) is not correct because there are epithelial cells that exist that are not located in kidney epithelium.
+ In contrast, asserting that an ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) is ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium'](http://purl.obolibrary.org/obo/UBERON_0004819) is not correct because there are epithelial cells that exist that are not located in kidney epithelia.
 
 
 ### Recording anatomical location (neurons)
 
-Due to the morphology of some neurons (i.e., neurons with neurites that extend across various anatomical structures), these cell types require additional consideration to record location. For example, an [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has a soma located in the [anterior (ventral) horn of the spinal cord](http://purl.obolibrary.org/obo/UBERON_0002257), but also projects an axon out of the spine to innervate muscles. There is a general relation for this, [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in), but a more specific relation exists for neurons. Since neuron types are often referred to in part by soma location, there is a dedicated relation for this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
+Due to the morphology of some neurons (i.e., neurons with neurites that extend across various anatomical structures), these cell types require additional consideration to record location. For example, an [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has a soma located in the [anterior (ventral) horn of the spinal cord](http://purl.obolibrary.org/obo/UBERON_0002257), but also projects an axon out of the spine to innervate muscles. There is a general relation for this, [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in), but more specific relations exists for neurons. Since neuron types are often referred to in part by soma location, there is a dedicated relation for this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
 
 
 For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has the following subclass:
