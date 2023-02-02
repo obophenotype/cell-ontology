@@ -1,36 +1,40 @@
 # Cell Ontology (CL) relations guide.
 
-The aim of this document is to provide an accessible guide to formally recording the properties of cell types in the Cell Ontology.  It does this by specifying which realtions to use for which properties and what the objects of the resulting relationships should be.
+The aim of this document is to provide an accessible guide to formally recording the properties of cell types in the Cell Ontology.  It does this by specifying which relations to use for which properties and what the objects of the resulting relationships should be.
 
-The term relation here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  For most cell types, editors using this guide should add simple subClassOf restrictions (e.g. subClassOf part_of some head) following the guidance here.  Use of EquivalentClass axioms should mostly be restricted to the addition of terms following standard design patterns in DOSDPs. Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
+The term 'relation' here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  To use this guide, at a minimum you should understand the nature of basic existential restrictions of the form.
 
-Under most circumstances, it will be safe to use this guide to add simple subCLassOf restrictions even in the absence of a more complete understanding of OWL.  However, to get the most from it, you should have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that you should be familiar with the meaning of existential restrictions, property heirarchies and property chains, object property domains, subClassOf and Equivalent Class axioms.  
+X subClassOf R some Y
 
-The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then reperated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
+e.g. [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)
+
+should be read in English as "all epithelial cells are part of some (type of) epithelium". Reading axioms in this way is important to avoid making false assertions. For example, it is not true that all epithlial cells are part of some type of kidney epithelium, so this assertion is incorrect:
+
+'epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066)subClassOf ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium']
+
+While that minimal understanding is sufficient for most edits, to get the most from this guide, you should have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that, in addition to simple existential restrictions, you should be familiar with the meaning of property heirarchies, property chains, object property domains, subClassOf and Equivalent Class axioms.  
+
+For most cell types, editors using this guide should add simple subClassOf restrictions following the guidance here.  When asserting subClassOf axioms, you should be as specific as you are comofortable with, given what you know about the cell type being defined, but it is OK to be vague as long as you do not assert anything you know to be false. EquivalentClass axioms should mostly be restricted to the addition of terms following standard design patterns in DOSDPs (relevant patterns are linked from this guide). Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
+
+The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then repeated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
 
 ### Recording anatomical location
 
 We record anatomical location by using objectProperties to relate cell types to terms from the Uberon anatomy ontology (although extensions to CL may use other ontologies the extend Uberon). In recording anatomical location, the choice of relation depends on whether the cell is located in a material structure (e.g. an epithelium), in a space (e.g. a sinusoid) and whether all or just some of the cell is in the structure or space.  Strictly speaking, in all cases the relationship should apply at all times, however, this can be hard to apply in the context of development.  In these cases a pragamatic compromises may need to be made.  These should be discussed with other editors and documented.
 
-The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). 
+The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). This applies between cells and material anatomical structures in cases where all of the cell is within the structure
 
-For example, ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) has the following subclass:
+For example, 'epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) subClassOf ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium']
 
-[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) 
-
-In Manchester OWL syntax, this is represented as:
+In OWL Functional syntax, this is represented as:
 
 SubClassOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000483))
-
 
 This statement denotes the following:
 
  1. All epithelial cells are part of an epithelium.
  1. All parts of an epithelial cell are part of an epithelium.
  1. Epithelial cells are part of some epithelium at all times. This can be hard to apply in the context of development and may require additional consideration from an editor.
-
- In contrast, asserting that an ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) is ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium'](http://purl.obolibrary.org/obo/UBERON_0004819) is not correct because there are epithelial cells that exist that are not located in kidney epithelia.
-
 
 ### Recording anatomical location (neurons)
 
