@@ -1,16 +1,16 @@
 # Cell Ontology (CL) relations guide.
 
-The aim of this document is to provide accessible guidance on how formally record the properties of cell types in the Cell Ontology.  
+The aim of this document is to provide an accessible guide to formally recording the properties of cell types in the Cell Ontology.  It does this by specifying which realtions to use for which properties and what the objects of the resulting relationships should be.
 
-The term relation here typically means OWL ObjectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  For most cell types, editors using this guide should add simple subClassOf restrictions (e.g. subClassOf part_of some head) following the guidance here.  Use of EquivalentClass axioms should mostly be restricted to the addition of terms following standard design patterns in DOSDPs. Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
+The term relation here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  For most cell types, editors using this guide should add simple subClassOf restrictions (e.g. subClassOf part_of some head) following the guidance here.  Use of EquivalentClass axioms should mostly be restricted to the addition of terms following standard design patterns in DOSDPs. Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
 
-Under most circumstances, it will be safe to use this guide to add simple subCLassOf restrictions even in the absence of a more complete understanding of OWL, to get the most from it, you should have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that you should be familiar with the meaning of existential restrictions, property heirarchies and property chains, object property domains, subClassOf and Equivalent Class axioms.  
+Under most circumstances, it will be safe to use this guide to add simple subCLassOf restrictions even in the absence of a more complete understanding of OWL.  However, to get the most from it, you should have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that you should be familiar with the meaning of existential restrictions, property heirarchies and property chains, object property domains, subClassOf and Equivalent Class axioms.  
 
 The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then reperated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
 
-### Recording anatomical location (general cell types)
+### Recording anatomical location
 
-To record anatomical locations for cell types, axioms are written using object properties to relate CL terms to Uberon terms.
+We record anatomical location by using objectProperties to relate cell types to terms from the Uberon anatomy ontology (although extensions to CL may use other ontologies the extend Uberon). In recording anatomical location, the choice of relation depends on whether the cell is located in a material structure (e.g. an epithelium), in a space (e.g. a sinusoid) and whether all or just some of the cell is in the structure or space.  Strictly speaking, in all cases the relationship should apply at all times, however, this can be hard to apply in the context of development.  In these cases a pragamatic compromises may need to be made.  These should be discussed with other editors and documented.
 
 The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). 
 
