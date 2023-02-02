@@ -2,19 +2,16 @@
 
 The aim of this document is to provide an accessible guide to formally recording the properties of cell types in the Cell Ontology.  It does this by specifying which relations to use for which properties and what the objects of the resulting relationships should be.
 
-The term 'relation' here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  To use this guide, at a minimum you should understand the nature of basic existential restrictions of the form.
+The term 'relation' here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  To use this guide, at a minimum you should understand the nature of basic existential restrictions of the form X subClassOf R some Y.
 
-X subClassOf R some Y
-
-e.g. [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)
-
-should be read in English as "all epithelial cells are part of some (type of) epithelium". Reading axioms in this way is important to avoid making false assertions. For example, it is not true that all epithlial cells are part of some type of kidney epithelium, so this assertion is incorrect:
+For example, "[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)"
+ should be read in English as "all epithelial cells are part of some (type of) epithelium". Reading axioms in this way is important to avoid making false assertions. For example, it is not true that all epithlial cells are part of some type of kidney epithelium, so this assertion is incorrect:
 
 'epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066)subClassOf ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium']
 
-While that minimal understanding is sufficient for most edits, to get the most from this guide, you should have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that, in addition to simple existential restrictions, you should be familiar with the meaning of property heirarchies, property chains, object property domains, subClassOf and Equivalent Class axioms.  
+While this minimal understanding is sufficient for most edits, readers will get more from it if they have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that, in addition to simple existential restrictions, you should be familiar with the meaning of property heirarchies, property chains, object property domains, subClassOf and Equivalent Class axioms.  
 
-For most cell types, editors using this guide should add simple subClassOf restrictions following the guidance here.  When asserting subClassOf axioms, you should be as specific as you are comofortable with, given what you know about the cell type being defined, but it is OK to be vague as long as you do not assert anything you know to be false. EquivalentClass axioms should mostly be restricted to the addition of terms following standard design patterns in DOSDPs (relevant patterns are linked from this guide). Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
+For most cell types, editors using this guide should add simple subClassOf restrictions following the guidance here.  When asserting subClassOf axioms, you should be as specific as you are comofortable with, given what you know about the cell type being defined, but it is OK to be vague as long as you do not assert anything you know to be false. EquivalentClass axioms need to be added more cautiously. They should mostly be restricted to the addition of terms following standard design patterns in DOSDPs (relevant patterns are linked from this guide), either using pattern-based generation or using patterns as a reference. Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
 
 The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then repeated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
 
@@ -22,34 +19,52 @@ The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, 
 
 We record anatomical location by using objectProperties to relate cell types to terms from the Uberon anatomy ontology (although extensions to CL may use other ontologies the extend Uberon). In recording anatomical location, the choice of relation depends on whether the cell is located in a material structure (e.g. an epithelium), in a space (e.g. a sinusoid) and whether all or just some of the cell is in the structure or space.  Strictly speaking, in all cases the relationship should apply at all times, however, this can be hard to apply in the context of development.  In these cases a pragamatic compromises may need to be made.  These should be discussed with other editors and documented.
 
-The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). This applies between cells and material anatomical structures in cases where all of the cell is within the structure
+The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). This applies between cells and material anatomical structures in cases where all of the cell is within the structure.
 
-For example, 'epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) subClassOf ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium']
+For example, 'epithelial cell' subClassOf [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)
 
 In OWL Functional syntax, this is represented as:
 
 SubClassOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000483))
 
-This statement denotes the following:
-
- 1. All epithelial cells are part of an epithelium.
- 1. All parts of an epithelial cell are part of an epithelium.
- 1. Epithelial cells are part of some epithelium at all times. This can be hard to apply in the context of development and may require additional consideration from an editor.
+Related Equivalence patterns: [cellPartOfAnatomicalEntity](https://github.com/obophenotype/cell-ontology/blob/master/src/patterns/dosdp-patterns/cellPartOfAnatomicalEntity.yaml). Use this as a guide for creating simple grouping classes for cells of type X in structures of type Y.
 
 ### Recording anatomical location (neurons)
 
-Due to the morphology of some neurons (i.e., neurons with neurites that extend across various anatomical structures), these cell types require additional consideration to record location. For example, an [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has a soma located in the [anterior (ventral) horn of the spinal cord](http://purl.obolibrary.org/obo/UBERON_0002257), but also projects an axon out of the spine to innervate muscles. There is a general relation for this, [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in), but more specific relations exists for neurons. Since neuron types are often referred to in part by soma location, there is a dedicated relation for this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
-
+Due to the morphology of some neurons (i.e., neurons with neurites that extend across various anatomical structures), these cell types require additional consideration to record location. For example, an [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has a soma located in the [anterior (ventral) horn of the spinal cord](http://purl.obolibrary.org/obo/UBERON_0002257), but also projects an axon out of the spine to innervate muscles. There is a general relation for this, [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in), but more specific relations exists for neurons. When neurobiologists talk about the location of neurons, they are typically refering to the location of their soma.  This is oftern reflected in the name.  We therefore have a dedicated relation for recording this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
 
 For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has the following subclass:
 
 [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100) *some* ['ventral horn of spinal cord'](http://purl.obolibrary.org/obo/UBERON_0002257)
 
-In Manchester OWL syntax, this is represented as:
+In OWL functional syntax, this is represented as:
 
 SubClassOf(obo:CL_2000048 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002257))
 
-There is also a dedicated set of relations for recording the location of synaptic terminals and projections of neurons.  See Recording synaptic connectivity below.
+### has_soma_location axiomatization:
+has_soma_location
+subPropertyOf: overlaps  # if X has_soma_location some Y, then X overlaps some Y)
+domain: neuron # X has_soma_location some Y => X is inferred to be a subClassOf neuron
+property chain: has_soma_location o part_of -> has_soma_location # if 
+
+Example of reasoning with the property chain:
+
+'cortical interneuron' equivalentTo 'interneuron' that has_soma_location some 'cerebral cortex'
+'rosehip neuron' subClassOf has_soma_location some 'cortical layer 1'
+'rosehip neuron' subClassOf interneuron
+'cortical layer 1' subClassOf part_of some 'cerebral cortex
+
+=> rosehip neuron subClassOf 'cortical interneron'
+
+There are also a dedicated set of relations for recording the location of synaptic terminals and projections of neurons.  
+
+To record connection between a neuron and a region it innervates we have a number of relations, all sub properties of overlaps
+
+![image](https://user-images.githubusercontent.com/112839/94337631-e0a83300-ffe3-11ea-8f13-ac8a484a5fb3.png)
+
+<TBA - detailed description of use of these relations>
+  
+Of note, historically ['has presynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002113) and ['has postsynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002110) have been used to record synaptic connectivity. However, these relations are defined as being true when a single synapse is present in a region. In some use cases, these relations may be too sensitive to biological and/or experimental noise. 'synapsed to / by' are now preferred as the more specific relations to record functionally significant synaptic inputs and outputs.
 
 ### Recording anatomical location (cells in immaterial spaces)
 
@@ -123,9 +138,6 @@ For example,
 
 For example,
 ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046) SubClassOf [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103) *some* ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038)
-
-
-Of note, historically ['has presynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002113) and ['has postsynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002110) have been used to record synaptic connectivity. However, these relations are defined as being true when a single synapse is present in a region. In some use cases, these relations may be too sensitive to biological and/or experimental noise. 'synapsed to / by' are now preferred as the more specific relations to record functionally significant synaptic inputs and outputs.
 
 
 ### Taxon constraints
