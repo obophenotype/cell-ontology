@@ -2,18 +2,16 @@
 
 The aim of this document is to provide an accessible guide to formally recording the properties of cell types in the Cell Ontology.  It does this by specifying which relations to use for which properties and what the objects of the resulting relationships should be.
 
-The term 'relation' here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  To use this guide, at a minimum you should understand the nature of basic existential restrictions of the form X subClassOf R some Y.
-
-For example, "[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)"
+The term 'relation' here typically means OWL objectProperty, but occasionally refers to annotation properties used as a shortcut for more complex formal assertions using objectProperties.  The guide will make clear whenever this is the case.  To use this guide, at a minimum you should understand the nature of basic existential restrictions of the form X subClassOf R some Y. For example, "[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)"
  should be read in English as "all epithelial cells are part of some (type of) epithelium". Reading axioms in this way is important to avoid making false assertions. For example, it is not true that all epithlial cells are part of some type of kidney epithelium, so this assertion is incorrect:
 
-'epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066)subClassOf ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium']
+['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066)subClassOf ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium']
 
-While this minimal understanding is sufficient for most edits, readers will get more from it if they have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that, in addition to simple existential restrictions, you should be familiar with the meaning of property heirarchies, property chains, object property domains, subClassOf and Equivalent Class axioms.  
+While this minimal understanding is sufficient to use this guide, editors will better understand the logical consequences of following its advice if they have a basic understanding of OWL formalisms in the EL profile of OWL.  Practically, this means that, in addition to simple existential restrictions, you should be familiar with the meaning of property heirarchies, property chains, object property domains, subClassOf and Equivalent Class axioms.  
 
-For most cell types, editors using this guide should add simple subClassOf restrictions following the guidance here.  When asserting subClassOf axioms, you should be as specific as you are comofortable with, given what you know about the cell type being defined, but it is OK to be vague as long as you do not assert anything you know to be false. EquivalentClass axioms need to be added more cautiously. They should mostly be restricted to the addition of terms following standard design patterns in DOSDPs (relevant patterns are linked from this guide), either using pattern-based generation or using patterns as a reference. Occasionally manual addition of EquivalentClass may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.
+For most cell types, editors using this guide should add simple subClassOf restrictions following the guidance here.  When asserting subClassOf axioms, you should be as specific as you are comofortable with, given what you know about the cell type being defined, but it is OK to be vague as long as you do not assert anything you know to be false. EquivalentClass axioms need to be added more cautiously.  Vague assertions must be avoided and some judgement is needed. Ideally most use of EquivalentClass axioms should restricted to the addition of terms following standard design patterns in DOSDPs (relevant patterns are linked from this guide), either using pattern-based generation or using patterns as a reference. More occasionally manual addition of EquivalentClass axioms not following any predifined patterns may be justified and safe, but you should be prepared to justify why it is safe on any associated ticket and are encouraged to seek review from other editors.  You should then create a new DOSDP tempalte to record this pattern for future editors.
 
-The guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then repeated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
+This guide uses two syntaxes:  Examples are first provided in Manchester Syntax, and then repeated using OWL Functional Synatax. The former corresponds to how axioms appear in Protege, the latter to how they appear in the editor's file and simple text diffs of it.
 
 ### Recording anatomical location
 
@@ -27,7 +25,9 @@ In OWL Functional syntax, this is represented as:
 
 SubClassOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000483))
 
-Related Equivalence patterns: [cellPartOfAnatomicalEntity](https://github.com/obophenotype/cell-ontology/blob/master/src/patterns/dosdp-patterns/cellPartOfAnatomicalEntity.yaml). Use this as a guide for creating simple grouping classes for cells of type X in structures of type Y.
+Related Equivalence patterns: 
+
+* [cellPartOfAnatomicalEntity](https://github.com/obophenotype/cell-ontology/blob/master/src/patterns/dosdp-patterns/cellPartOfAnatomicalEntity.yaml). Use this as a guide for creating simple grouping classes for cells of type X in structures of type Y.
 
 ### Recording anatomical location (neurons)
 
