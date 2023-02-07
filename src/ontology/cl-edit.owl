@@ -2913,7 +2913,10 @@ Declaration(Class(obo:CL_4030030))
 Declaration(Class(obo:CL_4030031))
 Declaration(Class(obo:CL_4030032))
 Declaration(Class(obo:CL_4030033))
+Declaration(Class(obo:CL_4030034))
 Declaration(Class(obo:CL_4030035))
+Declaration(Class(obo:CL_4030036))
+Declaration(Class(obo:CL_4030037))
 Declaration(Class(obo:CL_4032000))
 Declaration(Class(obo:CL_4032001))
 Declaration(Class(obo:CP_0000000))
@@ -4845,13 +4848,20 @@ SubClassOf(obo:CL_0000164 obo:CL_0000163)
 
 # Class: obo:CL_0000165 (neuroendocrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D055099"^^xsd:string) obo:IAO_0000115 obo:CL_0000165 "An endocrine cell that has the specialized function to produce and secrete hormones in response to neuronal signals."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D055099"^^xsd:string) obo:IAO_0000115 obo:CL_0000165 "A neuron that is capable of some hormone secretion in response to neuronal signals."^^xsd:string)
+AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000165 "CL:0000381")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000165 "BTO:0002691"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000165 "FMA:83810"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000165 "neurosecretory cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000165 "neurosecretory cell"^^xsd:string)
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000165 "neurosecretory neuron"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:5342440"^^xsd:string) Annotation(oboInOwl:hasDbXref "https://www.clinicalkey.com/#!/content/book/3-s2.0-B9780323555968000073"^^xsd:string) rdfs:comment obo:CL_0000165 "The neurosecretory cell is neither an ordinary neuron nor an endocrine cell, but a combination of both. Its neuronal features resemble those of ordinary neurons concerning both structure and function. The production of a visible secretory material marks the neurosecretory neuron as a gland cell, and the fact that extractable cellular products act in the manner of hormones places it in the realm of endocrine elements. 
+
+The modern definition of neurosecretion has evolved to include the release of any neuronal secretory product from a neuron.")
 AnnotationAssertion(rdfs:label obo:CL_0000165 "neuroendocrine cell"^^xsd:string)
+EquivalentClasses(obo:CL_0000165 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0000165 obo:CL_0000163)
 SubClassOf(obo:CL_0000165 obo:CL_0000393)
+SubClassOf(obo:CL_0000165 obo:CL_0000527)
 SubClassOf(obo:CL_0000165 obo:CL_0000710)
 
 # Class: obo:CL_0000166 (chromaffin cell)
@@ -6532,11 +6542,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000380 "fly sheath cell"^^x
 AnnotationAssertion(rdfs:label obo:CL_0000380 "thecogen cell"^^xsd:string)
 SubClassOf(obo:CL_0000380 obo:CL_0000378)
 
-# Class: obo:CL_0000381 (neurosecretory neuron)
+# Class: obo:CL_0000381 (obsolete neurosecretory neuron)
 
-AnnotationAssertion(rdfs:label obo:CL_0000381 "neurosecretory neuron"^^xsd:string)
-EquivalentClasses(obo:CL_0000381 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
-SubClassOf(obo:CL_0000381 obo:CL_0000527)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000381 obo:CL_0000165)
+AnnotationAssertion(rdfs:comment obo:CL_0000381 "https://github.com/obophenotype/cell-ontology/issues/1784
+'neuroendocrine cell' (which has exact synonym \"neurosecretory cell\") and 'neurosecretory neuron' may all refer to the same cell type."^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0000381 "obsolete neurosecretory neuron"^^xsd:string)
+AnnotationAssertion(owl:deprecated obo:CL_0000381 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000382 (scolopale cell)
 
@@ -7792,6 +7804,7 @@ SubClassOf(obo:CL_0000547 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000038))
 # Class: obo:CL_0000548 (animal cell)
 
 AnnotationAssertion(obo:IAO_0000115 obo:CL_0000548 "A native cell that is part of some Metazoa.")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000548 "metazoan cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000548 <http://purl.obolibrary.org/obo/ubprop#_upper_level>)
 AnnotationAssertion(rdfs:label obo:CL_0000548 "animal cell"^^xsd:string)
 EquivalentClasses(obo:CL_0000548 ObjectIntersectionOf(obo:CL_0000003 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_33208)))
@@ -10984,7 +10997,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000875 "patrolling monocyte
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000875 "resident monocyte"^^xsd:string)
 AnnotationAssertion(rdfs:comment obo:CL_0000875 "Markers: CCR2-CX3CCR1+ (human, mouse, rat); human: CD16+, CCR5+, CD32/FcgRII-high, MHCII+, CD86+; mouse: CD62L-Ly6C-."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000875 "non-classical monocyte"^^xsd:string)
-EquivalentClasses(obo:CL_0000875 ObjectIntersectionOf(obo:CL_0000576 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0000587) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0031294) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001206) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030224) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001002) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001020) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001289)))
+EquivalentClasses(obo:CL_0000875 ObjectIntersectionOf(obo:CL_0000576 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0000587) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0031294) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0030224) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001206) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001002) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001020) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001289)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000875 obo:CL_0000576)
 SubClassOf(obo:CL_0000875 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002393))
 
@@ -11192,7 +11205,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000898 "naive T lymphocyte"
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000898 "naive T-cell"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000898 "naive T-lymphocyte"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0000898 "naive T cell"^^xsd:string)
-EquivalentClasses(obo:CL_0000898 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001203) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001318) ObjectSomeValuesFrom(obo:RO_0015016 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
+EquivalentClasses(obo:CL_0000898 ObjectIntersectionOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001015) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001203) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001318) ObjectSomeValuesFrom(obo:RO_0015016 obo:PR_000001307)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000898 obo:CL_0002419)
 
 # Class: obo:CL_0000899 (T-helper 17 cell)
@@ -13187,7 +13200,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T-cell, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0001203 "CD8-positive, alpha-beta memory T cell, CD45RO-positive"^^xsd:string)
-EquivalentClasses(obo:CL_0001203 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
+EquivalentClasses(obo:CL_0001203 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0001203 obo:CL_0000909)
 SubClassOf(obo:CL_0001203 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000906))
 
@@ -13198,7 +13211,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T-cell, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0001204 "CD4-positive, alpha-beta memory T cell, CD45RO-positive"^^xsd:string)
-EquivalentClasses(obo:CL_0001204 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
+EquivalentClasses(obo:CL_0001204 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381) ObjectSomeValuesFrom(<http://purl.obolibrary.org/obo/cl#lacks_plasma_membrane_part> obo:PR_000001380)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0001204 obo:CL_0000897)
 SubClassOf(obo:CL_0001204 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000896))
 
@@ -14866,6 +14879,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002145 "FMA:70542"^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002145 "ciliated columnar cell of tracheobronchial tree"^^xsd:string)
 SubClassOf(obo:CL_0002145 obo:CL_0002202)
 SubClassOf(obo:CL_0002145 obo:CL_0005012)
+SubClassOf(obo:CL_0002145 obo:CL_4030034)
 SubClassOf(obo:CL_0002145 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002209))
 
 # Class: obo:CL_0002146 (clear cell of eccrine sweat gland)
@@ -16593,25 +16607,28 @@ SubClassOf(obo:CL_0002302 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0006909))
 
 # Class: obo:CL_0002303 (pigmented ciliary epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15106942"^^xsd:string) obo:IAO_0000115 obo:CL_0002303 "A ciliated epithelial cell of the retina, this cell type uptakes sodium chloride and passes it to non-pigmented ciliary epithelial cells."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15106942"^^xsd:string) obo:IAO_0000115 obo:CL_0002303 "A cell that is part of pigmented ciliary epithelium. This cell type uptakes sodium and chloride ions from stromal interstitium and passes the ions to non-pigmented ciliary epithelial cells via gap junctions."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002303 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002303 "2010-09-13T04:09:27Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002303 "FMA:70606"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002303 "PE"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.exer.2003.09.021"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002303 "PE cell"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.exer.2003.09.021"^^xsd:string) rdfs:comment obo:CL_0002303 "In a consensus model of unidirectional secretion, aqueous humour is formed by transferring solute, principally NaCl, from stroma to posterior chamber, with water passively following the osmotic gradient. Unidirectional secretion comprises three sequential steps. First, NaCl is transferred from the stromal interstitium into the pigmented ciliary epithelial (PE) cells. Second, solute passes from the PE into the non-pigmented ciliary epithelial (NPE) cells through gap junctions. Finally, NPE cells release Na+ and Cl− into the aqueous humour."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002303 "pigmented ciliary epithelial cell"^^xsd:string)
 SubClassOf(obo:CL_0002303 obo:CL_0000529)
-SubClassOf(obo:CL_0002303 obo:CL_0005012)
+SubClassOf(obo:CL_0002303 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001778))
 
 # Class: obo:CL_0002304 (non-pigmented ciliary epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15106942"^^xsd:string) obo:IAO_0000115 obo:CL_0002304 "A multi-ciliated cell of the retina that lacks visual pigment and contributes to aqueous humor by secreting chloride ions. This cell type maintains gap junctions with pigmented epithelial cells."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:15106942"^^xsd:string) obo:IAO_0000115 obo:CL_0002304 "A cell that is part of non-pigmented ciliary epithelium. This cell type participates in aqueous humor formation by releasing solute, principally sodium and chloride ions received from pigmented epithelial cells via gap junctions, into the aqueous humor of the eye."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002304 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002304 "2010-09-13T04:09:31Z"^^xsd:string)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002304 "FMA:70607"^^xsd:string)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002304 "NPE"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.exer.2003.09.021"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002304 "NPE cell"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10913011"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002304 "nonpigmented ciliary epithelial cell"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.exer.2003.09.021"^^xsd:string) rdfs:comment obo:CL_0002304 "In a consensus model of unidirectional secretion, aqueous humour is formed by transferring solute, principally NaCl, from stroma to posterior chamber, with water passively following the osmotic gradient. Unidirectional secretion comprises three sequential steps. First, NaCl is transferred from the stromal interstitium into the pigmented ciliary epithelial (PE) cells. Second, solute passes from the PE into the non-pigmented ciliary epithelial (NPE) cells through gap junctions. Finally, NPE cells release Na+ and Cl− into the aqueous humour."^^xsd:string)
 AnnotationAssertion(rdfs:label obo:CL_0002304 "non-pigmented ciliary epithelial cell"^^xsd:string)
 SubClassOf(obo:CL_0002304 obo:CL_0000710)
-SubClassOf(obo:CL_0002304 obo:CL_0005012)
+SubClassOf(obo:CL_0002304 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001778))
 
 # Class: obo:CL_0002305 (epithelial cell of distal tubule)
 
@@ -19306,14 +19323,16 @@ AnnotationAssertion(rdfs:label obo:CL_0002575 "central nervous system pericyte"^
 EquivalentClasses(obo:CL_0002575 ObjectIntersectionOf(obo:CL_0000669 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002575 obo:CL_0000669)
 
-# Class: obo:CL_0002576 (perineural cell)
+# Class: obo:CL_0002576 (perineurial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "http://en.wikipedia.org/wiki/Perineurium"^^xsd:string) obo:IAO_0000115 obo:CL_0002576 "A myofibroblast that lies in the connective tissue of the spinal cord that has a distinctly lamellar arrangement."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO:tfm"^^xsd:string) Annotation(oboInOwl:hasDbXref "NCIT:C41442"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:25818566"^^xsd:string) Annotation(oboInOwl:hasDbXref "http://en.wikipedia.org/wiki/Perineurium"^^xsd:string) Annotation(rdfs:comment <https://orcid.org/0000-0001-7655-4833>) obo:IAO_0000115 obo:CL_0002576 "A glial cell that is part of the perineurium. This cell type has thin long bipolar cytoplasmic processes, pinocytotic vesicles, fragments of external lamina and/or external lamina-like material, attachment plaques, and desmosome-like junctions. Perineurial cells historically have been referred to as fibroblasts because of shape; however, unlike fibroblasts, a perineurial cell: does not have a compact nucleus and large endoplasmic reticulum; does have a double basement membrane opposed to a single basal lamina; is carefully joined to other perineurial cells by tight junctions into a single sheet as opposed to arranged in a large mass; and finally, can surround a small axon bundle at a nerve terminal whereas a fibroblast cannot."^^xsd:string)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002576 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002576 "2011-03-02T03:03:58Z"^^xsd:string)
-AnnotationAssertion(rdfs:label obo:CL_0002576 "perineural cell"^^xsd:string)
-EquivalentClasses(obo:CL_0002576 ObjectIntersectionOf(obo:CL_0000186 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000121)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002576 obo:CL_0000186)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25818566"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_0002576 "perineurial glial cell"^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36244793"^^xsd:string) rdfs:comment obo:CL_0002576 "There are studies that largely accept the idea that the perineurial cell is a modified fibroblast with myofibroblastic features."^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_0002576 "perineurial cell"^^xsd:string)
+SubClassOf(obo:CL_0002576 obo:CL_0000125)
+SubClassOf(obo:CL_0002576 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000121))
 
 # Class: obo:CL_0002577 (placental epithelial cell)
 
@@ -21681,7 +21700,7 @@ SubClassOf(obo:CL_0005011 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046717))
 
 # Class: obo:CL_0005012 (multi-ciliated epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS"^^xsd:string) obo:IAO_0000115 obo:CL_0005012 "A ciliated epithelial cell with many cilium."^^xsd:string)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS"^^xsd:string) obo:IAO_0000115 obo:CL_0005012 "A ciliated epithelial cell with many cilia."^^xsd:string)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0005012 "MCC"@en)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0005012 "multi-ciliated cell"@en)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0005012 "multiciliated cell"@en)
@@ -23755,7 +23774,7 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0011003 <https
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0011003 "ILX:0107463")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011003 "magnocellular neuron")
 AnnotationAssertion(rdfs:label obo:CL_0011003 "magnocellular neurosecretory cell")
-SubClassOf(obo:CL_0011003 obo:CL_0000381)
+SubClassOf(obo:CL_0011003 obo:CL_0000165)
 SubClassOf(obo:CL_0011003 obo:CL_0000540)
 SubClassOf(obo:CL_0011003 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046879)))
 SubClassOf(obo:CL_0011003 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001898))
@@ -24617,6 +24636,7 @@ EquivalentClasses(obo:CL_1000245 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 
 AnnotationAssertion(rdfs:label obo:CL_1000271 "lung ciliated cell"^^xsd:string)
 EquivalentClasses(obo:CL_1000271 ObjectIntersectionOf(obo:CL_0000064 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002048)))
+SubClassOf(obo:CL_1000271 obo:CL_4030034)
 
 # Class: obo:CL_1000272 (lung secretory cell)
 
@@ -30599,6 +30619,15 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25311230"^^xsd:string) r
 AnnotationAssertion(rdfs:label obo:CL_4030033 "valve endothelial cell")
 EquivalentClasses(obo:CL_4030033 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000946)))
 
+# Class: obo:CL_4030034 (respiratory ciliated cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18757316"^^xsd:string) Annotation(oboInOwl:hasDbXref "PMID:21364219"^^xsd:string) obo:IAO_0000115 obo:CL_4030034 "A ciliated cell of the respiratory system. Ciliated cells are present in airway epithelium."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030034 "2023-01-25T11:06:01Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030034 "ciliated cell of the respiratory tract"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_4030034 "respiratory ciliated cell")
+EquivalentClasses(obo:CL_4030034 ObjectIntersectionOf(obo:CL_0000064 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004802)))
+SubClassOf(obo:CL_4030034 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001004))
+
 # Class: obo:CL_4030035 (dental pulp stem cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0002-2825-0621>) Annotation(oboInOwl:hasDbXref "DOI:10.1177/154405910208100806"^^xsd:string) obo:IAO_0000115 obo:CL_4030035 "A dental pulp cell that possesses stem-cell-like qualities, including self-renewal capability and multi-lineage differentiation."^^xsd:string)
@@ -30607,6 +30636,27 @@ AnnotationAssertion(Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.o
 AnnotationAssertion(rdfs:label obo:CL_4030035 "dental pulp stem cell")
 EquivalentClasses(obo:CL_4030035 ObjectIntersectionOf(obo:CL_0000034 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001754)))
 SubClassOf(obo:CL_4030035 obo:CL_0002148)
+
+# Class: obo:CL_4030036 (early spermatid)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.proteinatlas.org/humanproteome/single+cell+type/Germ+cells#earlyspermatids"^^xsd:string) obo:IAO_0000115 obo:CL_4030036 "A spermatid in an early stage of maturation that has a round morphology and is transcriptionally active."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030036 "2023-02-01T13:56:00Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/B978-0-323-01970-5.50014-2"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_4030036 "round spermatid"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_4030036 "early spermatid")
+SubClassOf(obo:CL_4030036 obo:CL_0000018)
+SubClassOf(obo:CL_4030036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000079))
+SubClassOf(obo:CL_4030036 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007286))
+
+# Class: obo:CL_4030037 (late spermatid)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.proteinatlas.org/humanproteome/single+cell+type/Germ+cells#latespermatids"^^xsd:string) obo:IAO_0000115 obo:CL_4030037 "A spermatid in a late stage of maturation that has an elongated morphology and is transcriptionally inert when the acrosome is fully developed."^^xsd:string)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030037 "2023-02-01T14:02:15Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/B978-0-323-01970-5.50014-2"^^xsd:string) oboInOwl:hasExactSynonym obo:CL_4030037 "elongated spermatid"^^xsd:string)
+AnnotationAssertion(rdfs:label obo:CL_4030037 "late spermatid")
+SubClassOf(obo:CL_4030037 obo:CL_0000018)
+SubClassOf(obo:CL_4030037 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000079))
+SubClassOf(obo:CL_4030037 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_4030036))
+SubClassOf(obo:CL_4030037 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007286))
 
 # Class: obo:CL_4032000 (club-like cell of the urethral epithelium)
 
