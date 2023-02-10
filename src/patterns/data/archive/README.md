@@ -1,0 +1,2 @@
+The archive folder is for transparency purposes when using the DOS-DP tool to generate terms. The TSV files are moved to this folder after being used, and the result is merged into the cl-edit file.
+When a TSV is from a general pattern, for example, cellPartOfAnatomicalEntity.yaml, please add a date to differentiate them.
