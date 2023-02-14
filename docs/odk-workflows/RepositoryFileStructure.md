@@ -21,7 +21,6 @@ These are the current imports in CL
 | caro | http://purl.obolibrary.org/obo/caro.owl | None |
 | uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
-| chebi | http://purl.obolibrary.org/obo/chebi.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
 
