@@ -23,3 +23,13 @@ If you want a new term added, or want edits to a current term, or spot any mista
 - Make sure to use `- [ ]` to denote action items in issues and pull requests, not just comments. These turn into checkboxes which makes it much faster to assess which comments have been addressed and can be ignored.
 - Give a short summary of the pull request - that way we can find suitable reviewers much quicker. Say which terms you are adding or what kinds of changes you are proposing.
 - It is most of the time a good idea to use `squash merge` rather than `merge` for your pull request, to keep the git history short and useful.
+
+## Pull requests that require imports to be refreshed
+
+If your pull request references foreign terms from an external ontology that are not yet present in the import module for that ontology (for example, you’re adding a logical definition that makes use of a GO term for the first time), imports needs to be refreshed for the foreign terms to be available to use.
+
+If you have the technical skills and/or the required computer resources (refreshing imports can be a memory-intensive task), you may refresh the imports yourself before submitting the pull request, by following the [appropriate procedure](odk-workflows/UpdateImports.md).
+
+If you can’t apply the imports refreshing procedure for any reason, you may instead opt for using “bare IRIs” when editing the ontology, everywhere you need a reference to a foreign term. Then, when submitting your pull request, label it with the tag `update-imports-required` to ask that a member of the tech support group refresh the imports before the pull request can be merged.
+
+People reviewing pull requests must 1) make sure that if a pull request is referencing bare IRIs, the request is tagged with `update-imports-required` (adding the label themselves if needed); and 2) make sure that imports have indeed been updated (either by the author of the pull request, or by someone from the tech support group if requested) before allowing the request to be merged.
