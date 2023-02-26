@@ -10,6 +10,9 @@ PREFIX replaced_by: <http://purl.obolibrary.org/obo/IAO_0100001>
 
 
 CONSTRUCT {
+  ?other_term a owl:Class .
+  ?term a owl:Class .
+  replaced_by: a owl:AnnotationProperty .
   ?other_term replaced_by: ?term .
 }
 
@@ -23,6 +26,6 @@ WHERE {
   FILTER NOT EXISTS {
     ?term owl:deprecated "true"^^xsd:boolean .
   }
-  
+
   FILTER(STR(?value)=STR(?id))
 }
