@@ -156,6 +156,10 @@ normalise_xsd_string: $(SRC)
 	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
 	rm $<.bak
 
+rm-altid:
+	$(ROBOT) query -i cl-edit.owl --format ttl query  --update ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
+	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl 
+
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 
