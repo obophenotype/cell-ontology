@@ -157,8 +157,11 @@ normalise_xsd_string: $(SRC)
 	rm $<.bak
 
 rm-altid:
-	$(ROBOT) query -i cl-edit.owl --format ttl query  --update ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
-	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl 
+	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
+	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl
+
+construct-replaced-by:
+	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
 
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
