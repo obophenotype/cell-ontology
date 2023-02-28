@@ -160,6 +160,9 @@ rm-altid:
 	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
 	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl
 
+merge-constructed:
+	$(ROBOT) merge -i $(SRC) -i tmp/cl-construct-replaced-by.ttl --collapse-import-closure false convert -f ofn -o $(SRC)
+
 construct-replaced-by:
 	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
 
