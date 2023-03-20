@@ -24,7 +24,7 @@ This should be read as ‘**all** melanocytes have some type of melanosome as a 
 
 Location of cell types is recorded by relating a cell type to a term in an anatomical ontology. For the Cell Ontology this means a term from Uberon. Strictly speaking, in all cases the relationship ***should apply at all times,*** however, this can be hard to apply in the context of development. In these cases a pragmatic compromise may need to be made. These should be discussed with other editors and documented.
 
-####  [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) 
+###  [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) 
 
 Use part\_of for cases where the location is a material anatomical structure (rather than a space, such as a sinus) and all of the cell is within the anatomical structure.
 
@@ -46,7 +46,7 @@ ilium ‘part of’ some ‘small intestine’
 
 ‘ileal goblet cell’ ‘part of’ some intestine
 
-#### located\_in
+### located\_in
 
 To record the location of a cell in an anatomical space (e.g., a sinus),
 [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) is used.
@@ -54,7 +54,7 @@ For example:
 
 ‘[lymph node marginal reticular cell](http://purl.obolibrary.org/obo/CL_0009103)’ subClassOf [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) *some* ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
 
-#### overlaps
+### overlaps
 
 [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) applies in cases where all of the cell is within the anatomical structure, but some cells have parts in multiple anatomical structures. For example, many neurons span multiple regions of the central nervous system. The general relation for this is [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part
 in).
@@ -63,7 +63,7 @@ in).
 
 ### Recording the location of neurons 
 
-#### [<u>has soma location</u>](http://purl.obolibrary.org/obo/RO_0002100)
+### [<u>has soma location</u>](http://purl.obolibrary.org/obo/RO_0002100)
 
 When neurobiologists talk about the location of vertebrate neurons, they are typically referring to the location of their soma. The importance of soma location to identify is underscored by how commonly cell types are named, in part, by soma location. We therefore have a dedicated relation for recording this: [**'has soma
 location'**](http://purl.obolibrary.org/obo/RO_0002100).
@@ -97,14 +97,14 @@ subClassOf interneuron 'cortical layer 1' subClassOf part\_of some 'cerebral cor
 
 =&gt; rosehip neuron subClassOf 'cortical interneuron'
 
-#### sends synaptic output to region
+### sends synaptic output to region
 
 A relationship between a neuron and a region, where the neuron has a functionally relevant number of output synapses in that region.
 
 '[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf [<u>sends synaptic output to region</u>](https://www.ebi.ac.uk/ols4/ontologies/fbbt/properties/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FRO_0013003?lang=en)
 *some* [<u>inferior posterior slope</u>](https://www.ebi.ac.uk/ols4/ontologies/fbbt/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FFBbt_00045046?lang=en)
 
-#### receives synaptic input in region
+### receives synaptic input in region
 
 A relationship between a neuron and a region, where the neuron has a
 functionally relevant number of output synapses in that region.
@@ -113,7 +113,7 @@ e.g. '[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/
 region</u>](https://www.ebi.ac.uk/ols4/ontologies/fbbt/properties/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FRO_0013002?lang=en)*’
 some ‘*<u>[superior posterior slope](https://www.ebi.ac.uk/ols4/ontologies/fbbt/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FFBbt_00045040?lang=en)’</u>
 
-#### fasciculates\_with
+### fasciculates\_with
 
 Use this to record the tracts or nerves that a neuron’s projections fasciculate with.
 
@@ -129,11 +129,11 @@ range: neuron projection bundle
 
 To record neuron-to-neuron or motor neuron-to-target cell connectivity, consider the following object properties. These properties should be used when connectivity is key to the definition, for example, in cases where a motor neuron type is defined by the type of muscle cell on which it synapses.
 
-#### [<u>synapsed to</u>](http://purl.obolibrary.org/obo/RO_0002120)
+### [<u>synapsed to</u>](http://purl.obolibrary.org/obo/RO_0002120)
 
 For example, ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038) SubClassOf [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120) *some* ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046)
 
-#### [<u>synapsed by</u>](http://purl.obolibrary.org/obo/RO_0002103)
+### [<u>synapsed by</u>](http://purl.obolibrary.org/obo/RO_0002103)
 
 -   This is the the inverse of [**synapsed
     > to**](http://purl.obolibrary.org/obo/RO_0002120)
@@ -144,7 +144,7 @@ For example, ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_00080
 
 Cellular function is recorded by linking GO biological process terms with the object properties [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) and ‘capable of part of’
 
-####  [<u>'capable of'</u>](http://purl.obolibrary.org/obo/RO_0002215)
+###  [<u>'capable of'</u>](http://purl.obolibrary.org/obo/RO_0002215)
 
 Use this relationships where the cell is capable of carrying out the
 entirety of the process
@@ -153,7 +153,7 @@ For example, ['hilus cell of ovary'](http://purl.obolibrary.org/obo/CL_0002095) 
 
 [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) *some* ['androgen secretion'](http://purl.obolibrary.org/obo/GO_0035935)
 
-#### ‘capable of part of’
+### ‘capable of part of’
 
 Use this relationship where only part of the process occurs in the cell
 type.
@@ -193,7 +193,7 @@ protein complex term from the [Gene Ontology
 (GO)](https://github.com/geneontology/go-ontology) is used as the object
 of the relation.
 
-#### [<u>'has plasma membrane part'</u>](http://purl.obolibrary.org/obo/RO_0002104)
+### [<u>'has plasma membrane part'</u>](http://purl.obolibrary.org/obo/RO_0002104)
 
 For example, ['alpha-beta T
 cell'](http://purl.obolibrary.org/obo/CL_0000789) has the following
@@ -204,9 +204,9 @@ plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104)
 *some* ['alpha-beta T cell receptor
 complex'](http://purl.obolibrary.org/obo/GO_0042105)
 
-#### [<u>'has low plasma membrane amount'</u>](http://purl.obolibrary.org/obo/RO_0015016)
+### [<u>'has low plasma membrane amount'</u>](http://purl.obolibrary.org/obo/RO_0015016)
 
-#### [<u>'has high plasma membrane amount</u>](http://purl.obolibrary.org/obo/RO_0015015)’
+### [<u>'has high plasma membrane amount</u>](http://purl.obolibrary.org/obo/RO_0015015)’
 
 [**lacks\_plasma\_membrane\_part**](https://ontobee.org/ontology/CL?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fcl%23lacks_plasma_membrane_part)
 
@@ -219,7 +219,7 @@ Note that this
 
 ### ‘expresses’
 
-#### Recording cell component parts
+### Recording cell component parts
 
 ### has part 
 
