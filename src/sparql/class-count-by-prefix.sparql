@@ -5,6 +5,8 @@ SELECT ?prefix (COUNT(DISTINCT ?cls) AS ?numberOfClasses) WHERE
 {
   ?cls a owl:Class .
   FILTER (!isBlank(?cls))
+  FILTER NOT EXISTS { ?cls owl:deprecated true }
+  FILTER (?cls != oboInOwl:ObsoleteClass)
   BIND( STRBEFORE(STRAFTER(str(?cls),"http://purl.obolibrary.org/obo/"), "_") AS ?prefix)
 }
 GROUP BY ?prefix
