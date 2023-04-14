@@ -265,3 +265,30 @@ deploy_release:
 	@test $(GHVERSION)
 	ls -alt $(MAIN_FILES_RELEASE)
 	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
+
+# -------------------------------------------
+# UPPER SLIM VALIDATION AND COVERAGE REPORTS
+# -------------------------------------------
+
+TERM_hematopoietic= CL:0000988
+TERM_eye= UBERON:0000970
+
+SLIM_TEMPLATES= blood_and_immune eye
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+
+.PHONY: slim_coverage
+slim_coverage: $(SLIM_REPORTS)
+xxx:
+	echo $(SLIM_REPORTS)
+	echo $(REPORTDIR)
+COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@
+
+$(REPORTDIR)/blood_and_immune_upper_slim.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
+	$(eval TERM_ID := $(TERM_hematopoietic))
+	$(COVERAGECMD)
+
+$(REPORTDIR)/eye_upper_slim.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
+	$(eval TERM_ID := $(TERM_eye))
+	$(COVERAGECMD)
+
+test: slim_coverage
