@@ -33,20 +33,20 @@ def calculate_coverage(_scope_dict: Dict[str, str], _term_leaves_dict: Dict[str,
     return f"{100 * (covered_tissue_number / len(_scope_dict)):.2f}%", covered_tissue_number, _not_covered_list
 
 
-def generate_scope_dict(ontologies: str, _term_dict: Dict[str, str], _scope: str) -> Dict[str, str]:
-    # Retrieve terms under scope in 'ontologies' with IRIs and labels from Ubergraph.
+def generate_scope_dict(_term_dict: Dict[str, str], _scope: str) -> Dict[str, str]:
+    # Retrieve terms under scope with IRIs and labels from Ubergraph.
     # Remove all superclasses of terms on the term list (via subClassOf/ and part_of)
-    mas_dict = get_scope_terms(ontologies, _scope)
+    mas_dict = get_scope_terms(_scope)
     return clean_up_scope_terms(_term_dict, mas_dict, _scope)
 
 
-def get_scope_terms(ontologies: str, _scope: str) -> Dict[str, str]:
-    # Get multicellular anatomical structure terms with IRIs and labels from Ubergraph
-    sparql.setQuery(get_scope_query(ontologies, _scope))
+def get_scope_terms(_scope: str) -> Dict[str, str]:
+    # Get terms under the scope with IRIs and labels from Ubergraph
+    sparql.setQuery(get_scope_query(_scope))
     mas_query_response = sparql.queryAndConvert()
     mas_dict: Dict[str, str] = {}
     for mas in mas_query_response["results"]["bindings"]:
-        mas_dict.update({mas['mas']['value']: mas['label']['value']})
+        mas_dict.update({mas['scope_member']['value']: mas['label']['value']})
     return mas_dict
 
 
@@ -62,15 +62,15 @@ def clean_up_scope_terms(_term_dict: Dict[str, str], mas_dict: Dict[str, str], _
 def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, str]]:
     # Get terms under, connected with 'subClassOf' relation, given the term list via template file from Ubergraph
     _term_leaves_dict = {}
-    sparql.setQuery(get_tissue_list_query(term_list, _scope))
+    sparql.setQuery(get_term_leave_list_query(term_list, _scope))
     ret = sparql.queryAndConvert()
     for row in ret["results"]["bindings"]:
-        if row['organ_label']['value'] not in _term_leaves_dict.keys():
+        if row['scope_term_label']['value'] not in _term_leaves_dict.keys():
             _term_leaves_dict.update(
-                {row['organ_label']['value']: {row['tissue']['value']: row['tissue_label']['value']}})
+                {row['scope_term_label']['value']: {row['term_leave']['value']: row['term_leave_label']['value']}})
         else:
-            _term_leaves_dict[row['organ_label']['value']].update(
-                {row['tissue']['value']: row['tissue_label']['value']})
+            _term_leaves_dict[row['scope_term_label']['value']].update(
+                {row['term_leave']['value']: row['term_leave_label']['value']})
     return _term_leaves_dict
 
 
@@ -83,33 +83,27 @@ def get_invalid_subclass_list(_term_dict: Dict[str, Dict[str, str]]) -> List[str
     return invalid_subclass_list
 
 
-def get_scope_query(ontology: str, scope_term: str) -> str:
-    """Returns the SPARQL query to retrieve multicellular anatomical structure terms with IRIs and labels
+def get_scope_query(scope_term: str) -> str:
+    """Returns the SPARQL query to retrieve terms under the scope with IRIs and labels
 
     Args:
-        ontology (str): Ontology name, can be either "uberon" or "all"
         scope_term (str): Scope of the slim
 
     Returns:
-        output (str): Multicellular anatomical structure SPARQL query
+        output (str): Scope members SPARQL query
     """
-    # ?mas rdfs:isDefinedBy 'obo:uberon.owl'
-    filter_str = "FILTER(strstarts(str(?mas),'http://purl.obolibrary.org/obo/UBERON_'))" if ontology == 'uberon' else ""
     _scope = scope_term if ":" in scope_term else f"<{scope_term}>"
     return f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
-        SELECT ?mas ?label
+        SELECT ?scope_member ?label
         WHERE
         {{
-          ?mas <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope} .
-          ?mas rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
-          ?mas rdfs:label ?label. 
-          ?s <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> ?mas.
-          FILTER(?s != ?mas)
-          {filter_str}
+          ?scope_member <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope} .
+          ?scope_member rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
+          ?scope_member rdfs:label ?label. 
         }}
     """
 
@@ -131,15 +125,15 @@ def get_superclass_value_query(term_iri_list: List[str], _scope: str) -> str:
             SELECT DISTINCT ?super ?label
             WHERE
             {{
-              ?organ <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?super. ?super rdfs:label ?label. 
+              ?term <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?super. ?super rdfs:label ?label. 
               ?super <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}
-              VALUES ?organ {{{' '.join(term_iri_list)}}}
-            FILTER(?organ != ?super)
+              VALUES ?term {{{' '.join(term_iri_list)}}}
+            FILTER(?term != ?super)
             }}
         """
 
 
-def get_tissue_list_query(term_iri_list: List[str], scope_term: str) -> str:
+def get_term_leave_list_query(term_iri_list: List[str], scope_term: str) -> str:
     """Returns the SPARQL query to retrieve ontology terms that are under the given term
 
     Args:
@@ -152,16 +146,15 @@ def get_tissue_list_query(term_iri_list: List[str], scope_term: str) -> str:
     _scope = scope_term if ":" in scope_term else f"<{scope_term}>"
     return f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-        PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
-        SELECT ?organ_label ?tissue ?tissue_label
+        SELECT ?scope_term_label ?term_leave ?term_leave_label
         WHERE
         {{
-          ?tissue <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?organ.
-          ?tissue rdfs:label ?tissue_label. 
-          ?tissue <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}. 
-          ?organ rdfs:label ?organ_label.
-          VALUES ?organ {{{' '.join(term_iri_list)}}}
+          ?term_leave <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?scope_term.
+          ?term_leave rdfs:label ?term_leave_label. 
+          ?term_leave <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}. 
+          ?scope_term rdfs:label ?scope_term_label.
+          VALUES ?scope_term {{{' '.join(term_iri_list)}}}
         }}
     """
 
@@ -173,9 +166,9 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--output', help='''Output file name''')
     args = parser.parse_args()
 
-    file_name = str(args.file)
     scope = str(args.scope)
     output_file = str(args.output)
+    file_name = str(args.file)
 
     # SPARQLWrapper init
     sparql = SPARQLWrapper(UBERGRAPH_ENDPOINT)
@@ -187,14 +180,14 @@ if __name__ == '__main__':
     invalid_slim_term_list = get_invalid_subclass_list(term_leaves_dict)
     if invalid_slim_term_list:
         raise Exception(f"{file_name} is invalid! {','.join(invalid_slim_term_list)} are subClassOf another slim term!")
-    scope_dict = generate_scope_dict("", term_dict, scope)
+    scope_dict = generate_scope_dict(term_dict, scope)
     report_str,  total_covered_number, not_covered_list = calculate_coverage(scope_dict, term_leaves_dict)
     result = list()
     result.append([report_str])
     result.append([total_covered_number])
     result.extend(not_covered_list)
-    file = open(output_file, 'w+', newline='')
-    with file:
-        write = csv.writer(file)
-        write.writerows(result)
+    if file_name:
+        with open(output_file, 'w+', newline='') as file:
+            write = csv.writer(file)
+            write.writerows(result)
     print(f"{file_name} has {report_str} coverage over {scope}")
