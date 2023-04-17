@@ -166,9 +166,9 @@ if __name__ == '__main__':
     parser.add_argument('-o', '--output', help='''Output file name''')
     args = parser.parse_args()
 
+    file_name = str(args.file)
     scope = str(args.scope)
     output_file = str(args.output)
-    file_name = str(args.file)
 
     # SPARQLWrapper init
     sparql = SPARQLWrapper(UBERGRAPH_ENDPOINT)
@@ -186,7 +186,7 @@ if __name__ == '__main__':
     result.append([report_str])
     result.append([total_covered_number])
     result.extend(not_covered_list)
-    if file_name:
+    if output_file:
         with open(output_file, 'w+', newline='') as file:
             write = csv.writer(file)
             write.writerows(result)
