@@ -12,6 +12,7 @@ Ontology(<http://purl.obolibrary.org/obo/cl.owl>
 Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/mappings.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/merged_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim.owl>)
 Annotation(obo:IAO_0000700 obo:CL_0000000)
 Annotation(<http://purl.org/dc/elements/1.1/description> "An ontology of cell types.")
 Annotation(<http://purl.org/dc/elements/1.1/title> "Cell Ontology")
@@ -2997,6 +2998,7 @@ Declaration(Class(obo:PR_000002030))
 Declaration(Class(obo:PR_000003264))
 Declaration(Class(obo:PR_000005444))
 Declaration(Class(obo:PR_000005460))
+Declaration(Class(obo:PR_000007785))
 Declaration(Class(obo:PR_000009981))
 Declaration(Class(obo:PR_000013502))
 Declaration(Class(obo:PR_000015325))
@@ -3084,6 +3086,7 @@ Declaration(AnnotationProperty(obo:RO_0002161))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#BDS_subset>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#abbreviation>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#added_for_HCA>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/pato#location_grouping>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#LATIN>))
@@ -3151,6 +3154,13 @@ SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#abbreviation> oboInOw
 # Annotation Property: <http://purl.obolibrary.org/obo/cl#added_for_HCA> (<http://purl.obolibrary.org/obo/cl#added_for_HCA>)
 
 SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInOwl:SubsetProperty)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> (blood_and_immune_upper_slim)
+
+AnnotationAssertion(<http://purl.org/dc/terms/date> <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> "2023-03-31T09:17:34Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> "a subset of general classes related to blood and the immune system, primarily of hematopoietic origin")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> "blood_and_immune_upper_slim")
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> oboInOwl:SubsetProperty)
 
 # Annotation Property: <http://purl.obolibrary.org/obo/pato#location_grouping> (<http://purl.obolibrary.org/obo/pato#location_grouping>)
 
@@ -3402,6 +3412,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000013 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000014 (germ line stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.stem.2012.05.016") obo:IAO_0000115 obo:CL_0000014 "A stem cell that is the precursor of gametes.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000014 "germline stem cell")
 AnnotationAssertion(rdfs:label obo:CL_0000014 "germ line stem cell")
 EquivalentClasses(obo:CL_0000014 ObjectIntersectionOf(obo:CL_0000039 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0017145)))
@@ -3422,6 +3433,7 @@ SubClassOf(obo:CL_0000015 ObjectSomeValuesFrom(obo:RO_0002216 obo:GO_0007283))
 
 # Class: obo:CL_0000016 (male germ line stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.stem.2012.05.016") obo:IAO_0000115 obo:CL_0000016 "A stem cell that is the precursor of male gametes.")
 AnnotationAssertion(rdfs:label obo:CL_0000016 "male germ line stem cell")
 SubClassOf(obo:CL_0000016 obo:CL_0000014)
 SubClassOf(obo:CL_0000016 obo:CL_0000015)
@@ -3495,6 +3507,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000021 obo:CL_0000586
 
 # Class: obo:CL_0000022 (female germ line stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.stem.2012.05.016") obo:IAO_0000115 obo:CL_0000022 "A stem cell that is the precursor of female gametes.")
 AnnotationAssertion(rdfs:label obo:CL_0000022 "female germ line stem cell")
 EquivalentClasses(obo:CL_0000022 ObjectIntersectionOf(obo:CL_0000021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0017145)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000022 obo:CL_0000014)
@@ -4148,42 +4161,53 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000084 obo:CL_0000542
 SubClassOf(obo:CL_0000084 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000827))
 DisjointClasses(obo:CL_0000084 obo:CL_0000945)
 
-# Class: obo:CL_0000085 (germ line stem cell (sensu Vertebrata))
+# Class: obo:CL_0000085 (obsolete germ line stem cell (sensu Vertebrata))
 
-AnnotationAssertion(rdfs:label obo:CL_0000085 "germ line stem cell (sensu Vertebrata)")
-SubClassOf(obo:CL_0000085 obo:CL_0000014)
-SubClassOf(obo:CL_0000085 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_7742))
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000085 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000085 obo:CL_0000014)
+AnnotationAssertion(rdfs:comment obo:CL_0000085 "Obsoleted as there is no need for a term specific for vertebrates.")
+AnnotationAssertion(rdfs:label obo:CL_0000085 "obsolete germ line stem cell (sensu Vertebrata)")
+AnnotationAssertion(owl:deprecated obo:CL_0000085 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000086 (germ line stem cell (sensu Nematoda and Protostomia))
+# Class: obo:CL_0000086 (obsolete germ line stem cell (sensu Nematoda and Protostomia))
 
-AnnotationAssertion(obo:RO_0002161 obo:CL_0000086 obo:NCBITaxon_33511)
-AnnotationAssertion(rdfs:label obo:CL_0000086 "germ line stem cell (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000086 obo:CL_0000014)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000086 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000086 obo:CL_0000014)
+AnnotationAssertion(rdfs:comment obo:CL_0000086 "Obsoleted as there is no need for a term specific for nematods and protostomes.")
+AnnotationAssertion(rdfs:label obo:CL_0000086 "obsolete germ line stem cell (sensu Nematoda and Protostomia)")
+AnnotationAssertion(owl:deprecated obo:CL_0000086 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000087 (male germ line stem cell (sensu Nematoda and Protostomia))
+# Class: obo:CL_0000087 (obsolete male germ line stem cell (sensu Nematoda and Protostomia))
 
-AnnotationAssertion(rdfs:label obo:CL_0000087 "male germ line stem cell (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000087 obo:CL_0000016)
-SubClassOf(obo:CL_0000087 obo:CL_0000086)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000087 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000087 obo:CL_0000016)
+AnnotationAssertion(rdfs:comment obo:CL_0000087 "Obsoleted as there is no need for a term specific for nematods and protostomes.")
+AnnotationAssertion(rdfs:label obo:CL_0000087 "obsolete male germ line stem cell (sensu Nematoda and Protostomia)")
+AnnotationAssertion(owl:deprecated obo:CL_0000087 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000088 (female germ line stem cell (sensu Nematoda and Protostomia))
+# Class: obo:CL_0000088 (obsolete female germ line stem cell (sensu Nematoda and Protostomia))
 
-AnnotationAssertion(rdfs:label obo:CL_0000088 "female germ line stem cell (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000088 obo:CL_0000022)
-SubClassOf(obo:CL_0000088 obo:CL_0000086)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000088 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000088 obo:CL_0000022)
+AnnotationAssertion(rdfs:comment obo:CL_0000088 "Obsoleted as there is no need for a term specific for nematods and protostomes.")
+AnnotationAssertion(rdfs:label obo:CL_0000088 "obsolete female germ line stem cell (sensu Nematoda and Protostomia)")
+AnnotationAssertion(owl:deprecated obo:CL_0000088 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000089 (male germ line stem cell (sensu Vertebrata))
+# Class: obo:CL_0000089 (obsolete male germ line stem cell (sensu Vertebrata))
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19948499") oboInOwl:hasExactSynonym obo:CL_0000089 "spermatogonial stem cell")
-AnnotationAssertion(rdfs:label obo:CL_0000089 "male germ line stem cell (sensu Vertebrata)")
-SubClassOf(obo:CL_0000089 obo:CL_0000016)
-SubClassOf(obo:CL_0000089 obo:CL_0000085)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000089 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000089 obo:CL_0000016)
+AnnotationAssertion(rdfs:comment obo:CL_0000089 "Obsoleted as there is no need for a term specific for vertebrates.")
+AnnotationAssertion(rdfs:label obo:CL_0000089 "obsolete male germ line stem cell (sensu Vertebrata)")
+AnnotationAssertion(owl:deprecated obo:CL_0000089 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000090 (female germ line stem cell (sensu Vertebrata))
+# Class: obo:CL_0000090 (obsolete female germ line stem cell (sensu Vertebrata))
 
-AnnotationAssertion(rdfs:label obo:CL_0000090 "female germ line stem cell (sensu Vertebrata)")
-SubClassOf(obo:CL_0000090 obo:CL_0000022)
-SubClassOf(obo:CL_0000090 obo:CL_0000085)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000090 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000090 obo:CL_0000022)
+AnnotationAssertion(rdfs:comment obo:CL_0000090 "Obsoleted as there is no need for a term specific for vertebrates.")
+AnnotationAssertion(rdfs:label obo:CL_0000090 "obsolete female germ line stem cell (sensu Vertebrata)")
+AnnotationAssertion(owl:deprecated obo:CL_0000090 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000091 (Kupffer cell)
 
@@ -9494,23 +9518,26 @@ AnnotationAssertion(rdfs:comment obo:CL_0000726 "Considering obsoleting as somet
 AnnotationAssertion(rdfs:label obo:CL_0000726 "chlamydospore")
 SubClassOf(obo:CL_0000726 obo:CL_0000605)
 
-# Class: obo:CL_0000727 (primary pigment cell)
+# Class: obo:CL_0000727 (obsolete primary pigment cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000727 "primary pigment cell")
-SubClassOf(obo:CL_0000727 obo:CL_0000548)
-SubClassOf(obo:CL_0000727 obo:CL_0001658)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000727 "https://github.com/obophenotype/cell-ontology/issues/1930")
+AnnotationAssertion(rdfs:comment obo:CL_0000727 "Obsoleted as this level of precision is deemed unnecessary for CL. Consider using either the more general CL:0001658 or, if you need to refer to primary pigment cells specifically, a term from a taxon-specific ontology such as FBbt:00004231.")
+AnnotationAssertion(rdfs:label obo:CL_0000727 "obsolete primary pigment cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000727 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000728 (secondary pigment cell)
+# Class: obo:CL_0000728 (obsolete secondary pigment cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000728 "secondary pigment cell")
-SubClassOf(obo:CL_0000728 obo:CL_0000548)
-SubClassOf(obo:CL_0000728 obo:CL_0001658)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000728 "https://github.com/obophenotype/cell-ontology/issues/1930")
+AnnotationAssertion(rdfs:comment obo:CL_0000728 "Obsoleted as this level of precision is deemed unnecessary for CL. Consider using either the more general CL:0001658 or, if you need to refer to secondary pigment cells specifically, a term from a taxon-specific ontology such as FBbt:00004232.")
+AnnotationAssertion(rdfs:label obo:CL_0000728 "obsolete secondary pigment cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000728 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000729 (tertiary pigment cell)
+# Class: obo:CL_0000729 (obsolete tertiary pigment cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000729 "tertiary pigment cell")
-SubClassOf(obo:CL_0000729 obo:CL_0000548)
-SubClassOf(obo:CL_0000729 obo:CL_0001658)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000729 "https://github.com/obophenotype/cell-ontology/issues/1930")
+AnnotationAssertion(rdfs:comment obo:CL_0000729 "Obsoleted as this level of precision is deemed unnecessary for CL. Consider using either the more general CL:0001658 or, if you need to refer to tertiary pigment cells specifically, a term from a taxon-specific ontology such as FBbt:00004233.")
+AnnotationAssertion(rdfs:label obo:CL_0000729 "obsolete tertiary pigment cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000729 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000730 (leading edge cell)
 
@@ -19378,14 +19405,16 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002572 obo:CL_0000134
 
 # Class: obo:CL_0002573 (Schwann cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002573 "A glial cell that ensheathes axons of neuron in the peripheral nervous system and are necessary for their maintainance and function.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:16807057") obo:IAO_0000115 obo:CL_0002573 "A glial cell that myelinates or ensheathes axons in the peripheral nervous system.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002573 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002573 "2011-03-02T01:19:27Z")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "BTO:0001220")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "CALOHA:TS-0898")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "MESH:D012583")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16807057") rdfs:comment obo:CL_0002573 "A myelinating Schwann cell wraps around a single axon. Myelination occurs in larger diameter axons, while a process called ensheathment occurs on smaller diameter axons in which a single cell wraps around multiple small, unmyelinated axons separating them with a thin layer of cytoplasm. The structure formed is called a Remak bundle.")
 AnnotationAssertion(rdfs:label obo:CL_0002573 "Schwann cell")
-EquivalentClasses(obo:CL_0002573 ObjectIntersectionOf(obo:CL_0000125 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000010)))
+SubClassOf(obo:CL_0002573 obo:CL_0000125)
+SubClassOf(obo:CL_0002573 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000010))
 
 # Class: obo:CL_0002574 (stromal cell of pancreas)
 
@@ -22401,8 +22430,15 @@ EquivalentClasses(obo:CL_0008031 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 
 # Class: obo:CL_0008032 (rosehip neuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.nature.com/articles/s41593-018-0205-2") obo:IAO_0000115 obo:CL_0008032 "A GABAergic interneuron in human cortical layer 1 that has large rosehip-shaped axonal boutons and compact arborization.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.nature.com/articles/s41593-018-0205-2") rdfs:comment obo:CL_0008032 "A rosehip cell has been shown to have an immunohistochemical profile GAD1+CCK+, CNR1–SST–CALB2–PVALB– that matches a single transcriptomically defined cell type whose specific molecular marker signature is not seen in mouse cortex.")
 AnnotationAssertion(rdfs:label obo:CL_0008032 "rosehip neuron"@en)
-EquivalentClasses(obo:CL_0008032 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005390) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P05532) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q8R4G0) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q9QZC1)))
+SubClassOf(obo:CL_0008032 obo:CL_0000099)
+SubClassOf(obo:CL_0008032 ObjectIntersectionOf(ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000005110) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000007785)))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005390))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011467))
 
 # Class: obo:CL_0008033 (decidual pericyte)
 
@@ -29389,11 +29425,11 @@ AnnotationAssertion(oboInOwl:inSubset obo:CL_4023038 <http://purl.obolibrary.org
 AnnotationAssertion(rdfs:label obo:CL_4023038 "L6b glutamatergic cortical neuron")
 EquivalentClasses(obo:CL_4023038 ObjectIntersectionOf(obo:CL_0000679 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_8440003)))
 
-# Class: obo:CL_4023039 (amgydala excitatory neuron)
+# Class: obo:CL_4023039 (amygdala excitatory neuron)
 
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023039 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") rdfs:comment obo:CL_4023039 "An excitatory neuron that is located in the amygdala.")
-AnnotationAssertion(rdfs:label obo:CL_4023039 "amgydala excitatory neuron")
+AnnotationAssertion(rdfs:label obo:CL_4023039 "amygdala excitatory neuron")
 EquivalentClasses(obo:CL_4023039 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001876) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535)))
 
 # Class: obo:CL_4023040 (L2/3-6 intratelencephalic projecting glutamatergic cortical neuron)
@@ -31117,7 +31153,7 @@ EquivalentClasses(obo:CL_4033025 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 
 # Class: obo:CL_4033026 (lung perichondrial fibroblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36543915") obo:IAO_0000115 obo:CL_4033026 "A perichondrial fibroblast that is part of the lung")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36543915") obo:IAO_0000115 obo:CL_4033026 "A perichondrial fibroblast that is part of the lung.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033026 <https://orcid.org/0000-0001-6677-8489>)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033026 <https://orcid.org/0000-0002-9185-3994>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033026 "2023-03-16T16:15:39Z"^^xsd:dateTime)
