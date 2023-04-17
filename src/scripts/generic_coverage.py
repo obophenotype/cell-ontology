@@ -23,9 +23,9 @@ def calculate_coverage(_scope_dict: Dict[str, str], _term_leaves_dict: Dict[str,
     _not_covered_list = []
     for scope_iri, scope_label in _scope_dict.items():
         covered = False
-        for organ, tissue in _term_leaves_dict.items():
+        for term_leaf in _term_leaves_dict.values():
             # Coverage % calculation part and creating not_covered list
-            if tissue.get(scope_iri) and not covered:
+            if term_leaf.get(scope_iri) and not covered:
                 covered_tissue_number = covered_tissue_number + 1
                 covered = True
         if not covered and [scope_iri, scope_label] not in _not_covered_list:
@@ -62,15 +62,15 @@ def clean_up_scope_terms(_term_dict: Dict[str, str], mas_dict: Dict[str, str], _
 def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, str]]:
     # Get terms under, connected with 'subClassOf' relation, given the term list via template file from Ubergraph
     _term_leaves_dict = {}
-    sparql.setQuery(get_term_leave_list_query(term_list, _scope))
+    sparql.setQuery(get_term_leaves_list_query(term_list, _scope))
     ret = sparql.queryAndConvert()
     for row in ret["results"]["bindings"]:
         if row['scope_term_label']['value'] not in _term_leaves_dict.keys():
             _term_leaves_dict.update(
-                {row['scope_term_label']['value']: {row['term_leave']['value']: row['term_leave_label']['value']}})
+                {row['scope_term_label']['value']: {row['term_leaf']['value']: row['term_leaf_label']['value']}})
         else:
             _term_leaves_dict[row['scope_term_label']['value']].update(
-                {row['term_leave']['value']: row['term_leave_label']['value']})
+                {row['term_leaf']['value']: row['term_leaf_label']['value']})
     return _term_leaves_dict
 
 
@@ -133,7 +133,7 @@ def get_superclass_value_query(term_iri_list: List[str], _scope: str) -> str:
         """
 
 
-def get_term_leave_list_query(term_iri_list: List[str], scope_term: str) -> str:
+def get_term_leaves_list_query(term_iri_list: List[str], scope_term: str) -> str:
     """Returns the SPARQL query to retrieve ontology terms that are under the given term
 
     Args:
@@ -147,12 +147,12 @@ def get_term_leave_list_query(term_iri_list: List[str], scope_term: str) -> str:
     return f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
-        SELECT ?scope_term_label ?term_leave ?term_leave_label
+        SELECT ?scope_term_label ?term_leaf ?term_leaf_label
         WHERE
         {{
-          ?term_leave <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?scope_term.
-          ?term_leave rdfs:label ?term_leave_label. 
-          ?term_leave <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}. 
+          ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?scope_term.
+          ?term_leaf rdfs:label ?term_leaf_label. 
+          ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}. 
           ?scope_term rdfs:label ?scope_term_label.
           VALUES ?scope_term {{{' '.join(term_iri_list)}}}
         }}
