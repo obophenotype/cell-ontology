@@ -37,3 +37,4 @@ These are the components in CL
 | -------- | --- |
 | hra_subset.owl | None |
 | mappings.owl | None |
+| blood_and_immune_upper_slim.owl | None |
