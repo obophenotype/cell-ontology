@@ -20,9 +20,10 @@ def calculate_coverage(_scope_dict: Dict[str, str], _term_leaves_dict: Dict[str,
         * A coverage report with number of total terms and percentage of the covered terms
     """
     _covered_term_count_by_each_term = [[term, len(scope_members)] for term, scope_members in _term_leaves_dict.items()]
-    covered_term = set(member for scope_members in _term_leaves_dict.values() for member in scope_members)
+    sort_term_count = sorted(_covered_term_count_by_each_term, key=lambda x: x[1])
+    covered_term = set([member for scope_members in _term_leaves_dict.values() for member in scope_members if member in _scope_dict.keys()])
     _not_covered_list = [[scope_iri, scope_label] for scope_iri, scope_label in _scope_dict.items() if scope_iri not in covered_term]
-    return f"{100 * (len(covered_term) / len(_scope_dict)):.2f}%", _covered_term_count_by_each_term, _not_covered_list
+    return f"{100 * (len(covered_term) / len(_scope_dict)):.2f}%", sort_term_count, _not_covered_list
 
 
 def generate_scope_dict(_term_dict: Dict[str, str], _scope: str) -> Dict[str, str]:
