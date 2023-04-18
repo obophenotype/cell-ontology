@@ -19,44 +19,36 @@ def calculate_coverage(_scope_dict: Dict[str, str], _term_leaves_dict: Dict[str,
     Returns:
         * A coverage report with number of total terms and percentage of the covered terms
     """
-    covered_tissue_number = 0
-    _not_covered_list = []
-    for scope_iri, scope_label in _scope_dict.items():
-        covered = False
-        for term_leaf in _term_leaves_dict.values():
-            # Coverage % calculation part and creating not_covered list
-            if term_leaf.get(scope_iri) and not covered:
-                covered_tissue_number = covered_tissue_number + 1
-                covered = True
-        if not covered and [scope_iri, scope_label] not in _not_covered_list:
-            _not_covered_list.append([scope_iri, scope_label])
-    return f"{100 * (covered_tissue_number / len(_scope_dict)):.2f}%", covered_tissue_number, _not_covered_list
+    _covered_term_count_by_each_term = [[term, len(scope_members)] for term, scope_members in _term_leaves_dict.items()]
+    covered_term = set(member for scope_members in _term_leaves_dict.values() for member in scope_members)
+    _not_covered_list = [[scope_iri, scope_label] for scope_iri, scope_label in _scope_dict.items() if scope_iri not in covered_term]
+    return f"{100 * (len(covered_term) / len(_scope_dict)):.2f}%", _covered_term_count_by_each_term, _not_covered_list
 
 
 def generate_scope_dict(_term_dict: Dict[str, str], _scope: str) -> Dict[str, str]:
     # Retrieve terms under scope with IRIs and labels from Ubergraph.
     # Remove all superclasses of terms on the term list (via subClassOf/ and part_of)
-    mas_dict = get_scope_terms(_scope)
-    return clean_up_scope_terms(_term_dict, mas_dict, _scope)
+    _scope_dict = get_scope_terms(_scope)
+    return clean_up_scope_terms(_term_dict, _scope_dict, _scope)
 
 
 def get_scope_terms(_scope: str) -> Dict[str, str]:
     # Get terms under the scope with IRIs and labels from Ubergraph
     sparql.setQuery(get_scope_query(_scope))
-    mas_query_response = sparql.queryAndConvert()
-    mas_dict: Dict[str, str] = {}
-    for mas in mas_query_response["results"]["bindings"]:
-        mas_dict.update({mas['scope_member']['value']: mas['label']['value']})
-    return mas_dict
+    scope_query_response = sparql.queryAndConvert()
+    _scope_dict: Dict[str, str] = {}
+    for item in scope_query_response["results"]["bindings"]:
+        _scope_dict.update({item['scope_member']['value']: item['label']['value']})
+    return _scope_dict
 
 
-def clean_up_scope_terms(_term_dict: Dict[str, str], mas_dict: Dict[str, str], _scope: str) -> Dict[str, str]:
+def clean_up_scope_terms(_term_dict: Dict[str, str], _scope_dict: Dict[str, str], _scope: str) -> Dict[str, str]:
     # Remove all superclasses of terms on the scope list (via subClassOf/ and part_of)
     sparql.setQuery(get_superclass_value_query(list(_term_dict.values()), _scope))
     super_ret = sparql.queryAndConvert()
     for super_class in super_ret["results"]["bindings"]:
-        mas_dict.pop(super_class['super']['value'], None)
-    return mas_dict
+        _scope_dict.pop(super_class['super']['value'], None)
+    return _scope_dict
 
 
 def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, str]]:
@@ -65,11 +57,11 @@ def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, st
     sparql.setQuery(get_term_leaves_list_query(term_list, _scope))
     ret = sparql.queryAndConvert()
     for row in ret["results"]["bindings"]:
-        if row['scope_term_label']['value'] not in _term_leaves_dict.keys():
+        if row['term_label']['value'] not in _term_leaves_dict.keys():
             _term_leaves_dict.update(
-                {row['scope_term_label']['value']: {row['term_leaf']['value']: row['term_leaf_label']['value']}})
+                {row['term_label']['value']: {row['term_leaf']['value']: row['term_leaf_label']['value']}})
         else:
-            _term_leaves_dict[row['scope_term_label']['value']].update(
+            _term_leaves_dict[row['term_label']['value']].update(
                 {row['term_leaf']['value']: row['term_leaf_label']['value']})
     return _term_leaves_dict
 
@@ -126,7 +118,8 @@ def get_superclass_value_query(term_iri_list: List[str], _scope: str) -> str:
             WHERE
             {{
               ?term <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?super. ?super rdfs:label ?label. 
-              ?super <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}
+              ?super <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}.
+              ?super rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
               VALUES ?term {{{' '.join(term_iri_list)}}}
             FILTER(?term != ?super)
             }}
@@ -141,20 +134,20 @@ def get_term_leaves_list_query(term_iri_list: List[str], scope_term: str) -> str
         scope_term (str): Scope term
 
     Returns:
-        output (str): TIssue list SPARQL query
+        output (str): Term leaves SPARQL query
     """
     _scope = scope_term if ":" in scope_term else f"<{scope_term}>"
     return f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
-        SELECT ?scope_term_label ?term_leaf ?term_leaf_label
+        SELECT ?term_label ?term_leaf ?term_leaf_label
         WHERE
         {{
-          ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?scope_term.
-          ?term_leaf rdfs:label ?term_leaf_label. 
+          ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?term.
+          ?term_leaf rdfs:label ?term_leaf_label. ?term_leaf rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
           ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}. 
-          ?scope_term rdfs:label ?scope_term_label.
-          VALUES ?scope_term {{{' '.join(term_iri_list)}}}
+          ?term rdfs:label ?term_label.
+          VALUES ?term {{{' '.join(term_iri_list)}}}
         }}
     """
 
@@ -180,11 +173,15 @@ if __name__ == '__main__':
     invalid_slim_term_list = get_invalid_subclass_list(term_leaves_dict)
     if invalid_slim_term_list:
         raise Exception(f"{file_name} is invalid! {','.join(invalid_slim_term_list)} are subClassOf another slim term!")
+        # TODO make an other report when this is throwns
     scope_dict = generate_scope_dict(term_dict, scope)
-    report_str,  total_covered_number, not_covered_list = calculate_coverage(scope_dict, term_leaves_dict)
+    report_str,  covered_term_count_by_each_term, not_covered_list = calculate_coverage(scope_dict, term_leaves_dict)
     result = list()
+    result.append(["#####Coverage percentage#####"])
     result.append([report_str])
-    result.append([total_covered_number])
+    result.append(["#####Number of terms covered by each term in the slim#####"])
+    result.extend(covered_term_count_by_each_term)
+    result.append([f"#####Terms that are not covered by {file_name} under {scope}#####"])
     result.extend(not_covered_list)
     if output_file:
         with open(output_file, 'w+', newline='') as file:
