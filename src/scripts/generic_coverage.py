@@ -197,11 +197,12 @@ if __name__ == '__main__':
     term_leaves_dict = get_term_leaves(list(term_dict.values()), scope)
     invalid_slim_term_list = get_invalid_subclass_list(list(term_dict.values()))
     if invalid_slim_term_list:
-        invalid_report_file = output_file.replace("templates/", "templates/invalid_terms_", 1)
+        invalid_report_file = output_file.replace("templates/", "templates/overlapping_terms_", 1)
         with open(invalid_report_file, 'w+', newline='') as invalid_file:
             write = csv.writer(invalid_file)
             write.writerows(invalid_slim_term_list)
-        raise Exception(f"{file_name} is invalid! {invalid_report_file} report for more details")
+        # Disabling the exception for now
+        # raise Exception(f"{file_name} is invalid! {invalid_report_file} report for more details")
     scope_dict = generate_scope_dict(term_dict, scope)
     report_str,  covered_term_count_by_each_term, not_covered_list = calculate_coverage(scope_dict, term_leaves_dict)
     result = list()
