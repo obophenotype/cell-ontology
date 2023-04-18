@@ -141,6 +141,7 @@ def get_term_leaves_list_query(term_iri_list: List[str], scope_term: str) -> str
     return f"""
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
+        PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
         SELECT ?term_label ?term_leaf ?term_leaf_label
         WHERE
         {{
@@ -197,7 +198,7 @@ if __name__ == '__main__':
     term_leaves_dict = get_term_leaves(list(term_dict.values()), scope)
     invalid_slim_term_list = get_invalid_subclass_list(list(term_dict.values()))
     if invalid_slim_term_list:
-        invalid_report_file = output_file.replace("templates/", "templates/overlapping_terms_", 1)
+        invalid_report_file = output_file.replace("templates/", "reports/overlapping_terms_", 1)
         with open(invalid_report_file, 'w+', newline='') as invalid_file:
             write = csv.writer(invalid_file)
             write.writerows(invalid_slim_term_list)
