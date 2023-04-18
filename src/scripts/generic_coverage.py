@@ -66,12 +66,18 @@ def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, st
     return _term_leaves_dict
 
 
-def get_invalid_subclass_list(_term_dict: Dict[str, Dict[str, str]]) -> List[str]:
-    merged_subset = {k: v for key, value in _term_dict.items() for k, v in value.items() if key != value.get(k)}
+def get_invalid_subclass_list(term_list: List[str]) -> List[str]:
+# def get_invalid_subclass_list(_term_dict: Dict[str, Dict[str, str]]) -> List[str]:
+    # merged_subset = {k: v for key, value in _term_dict.items() for k, v in value.items() if key != value.get(k)}
+    # invalid_subclass_list = []
+    # for term, term_subset in _term_dict.items():
+    #     if term in merged_subset.values():
+    #         invalid_subclass_list.append(term)
     invalid_subclass_list = []
-    for term, term_subset in _term_dict.items():
-        if term in merged_subset.values():
-            invalid_subclass_list.append(term)
+    sparql.setQuery(get_invalid_subclass_list_query(term_list))
+    ret = sparql.queryAndConvert()
+    for row in ret["results"]["bindings"]:
+        invalid_subclass_list.append([row["sub"]["value"] + " " + row["sub_label"]["value"], "rdfs:subClassOf", row["obj"]["value"] + " " + row["obj_label"]["value"]])
     return invalid_subclass_list
 
 
@@ -152,6 +158,30 @@ def get_term_leaves_list_query(term_iri_list: List[str], scope_term: str) -> str
     """
 
 
+def get_invalid_subclass_list_query(term_iri_list: List[str]) -> str:
+    """Returns the SPARQL query to retrieve slim terms that are subclasses of other slim terms
+
+    Args:
+        term_iri_list (List[str]): Term IRI list
+
+    Returns:
+        output (str): Invalid subclass list SPARQL query
+    """
+    return f"""
+        PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+        PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+        PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
+        SELECT DISTINCT ?sub ?sub_label ?obj ?obj_label WHERE {{
+        VALUES ?sub {{{' '.join(term_iri_list)}}}
+        VALUES ?obj {{{' '.join(term_iri_list)}}}
+        ?sub rdfs:subClassOf ?obj .
+        ?sub rdfs:label ?sub_label .
+        ?obj rdfs:label ?obj_label .
+        FILTER(?sub != ?obj)
+        }}
+    """
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('-s', '--scope', help='''Upper class term that you want to calculate coverage of your slim''')
@@ -170,10 +200,13 @@ if __name__ == '__main__':
     term_dict = pd.read_csv(file_name, usecols=["ID", "label"], index_col=1).iloc[1:, :].squeeze().to_dict()
 
     term_leaves_dict = get_term_leaves(list(term_dict.values()), scope)
-    invalid_slim_term_list = get_invalid_subclass_list(term_leaves_dict)
+    invalid_slim_term_list = get_invalid_subclass_list(list(term_dict.values()))
     if invalid_slim_term_list:
-        raise Exception(f"{file_name} is invalid! {','.join(invalid_slim_term_list)} are subClassOf another slim term!")
-        # TODO make an other report when this is throwns
+        invalid_report_file = output_file.replace("templates/", "templates/invalid_terms_", 1)
+        with open(invalid_report_file, 'w+', newline='') as invalid_file:
+            write = csv.writer(invalid_file)
+            write.writerows(invalid_slim_term_list)
+        raise Exception(f"{file_name} is invalid! {invalid_report_file} report for more details")
     scope_dict = generate_scope_dict(term_dict, scope)
     report_str,  covered_term_count_by_each_term, not_covered_list = calculate_coverage(scope_dict, term_leaves_dict)
     result = list()
