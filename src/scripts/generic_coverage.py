@@ -67,12 +67,7 @@ def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, st
 
 
 def get_invalid_subclass_list(term_list: List[str]) -> List[str]:
-# def get_invalid_subclass_list(_term_dict: Dict[str, Dict[str, str]]) -> List[str]:
-    # merged_subset = {k: v for key, value in _term_dict.items() for k, v in value.items() if key != value.get(k)}
-    # invalid_subclass_list = []
-    # for term, term_subset in _term_dict.items():
-    #     if term in merged_subset.values():
-    #         invalid_subclass_list.append(term)
+    # Get slim terms that are subclasses of other slim terms
     invalid_subclass_list = []
     sparql.setQuery(get_invalid_subclass_list_query(term_list))
     ret = sparql.queryAndConvert()
