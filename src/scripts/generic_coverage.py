@@ -199,7 +199,7 @@ if __name__ == '__main__':
     term_leaves_dict = get_term_leaves(list(term_dict.values()), scope)
     invalid_slim_term_list = get_invalid_subclass_list(list(term_dict.values()))
     if invalid_slim_term_list:
-        invalid_report_file = output_file.replace("templates/", "reports/overlapping_terms_", 1)
+        invalid_report_file = output_file.replace("reports/", "reports/overlapping_terms_", 1)
         with open(invalid_report_file, 'w+', newline='') as invalid_file:
             write = csv.writer(invalid_file)
             write.writerows(invalid_slim_term_list)
