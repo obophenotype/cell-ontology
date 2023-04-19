@@ -9,6 +9,7 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
+Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/mappings.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/merged_import.owl>)
@@ -2941,6 +2942,7 @@ Declaration(Class(obo:CL_4033015))
 Declaration(Class(obo:CL_4033016))
 Declaration(Class(obo:CL_4033017))
 Declaration(Class(obo:CL_4033018))
+Declaration(Class(obo:CL_4033019))
 Declaration(Class(obo:CL_4033020))
 Declaration(Class(obo:CL_4033021))
 Declaration(Class(obo:CL_4033022))
@@ -2948,6 +2950,16 @@ Declaration(Class(obo:CL_4033023))
 Declaration(Class(obo:CL_4033024))
 Declaration(Class(obo:CL_4033025))
 Declaration(Class(obo:CL_4033026))
+Declaration(Class(obo:CL_4033027))
+Declaration(Class(obo:CL_4033028))
+Declaration(Class(obo:CL_4033029))
+Declaration(Class(obo:CL_4033030))
+Declaration(Class(obo:CL_4033031))
+Declaration(Class(obo:CL_4033032))
+Declaration(Class(obo:CL_4033033))
+Declaration(Class(obo:CL_4033034))
+Declaration(Class(obo:CL_4033035))
+Declaration(Class(obo:CL_4033036))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -2986,6 +2998,7 @@ Declaration(Class(obo:PR_000002030))
 Declaration(Class(obo:PR_000003264))
 Declaration(Class(obo:PR_000005444))
 Declaration(Class(obo:PR_000005460))
+Declaration(Class(obo:PR_000007785))
 Declaration(Class(obo:PR_000009981))
 Declaration(Class(obo:PR_000013502))
 Declaration(Class(obo:PR_000015325))
@@ -3009,6 +3022,7 @@ Declaration(Class(obo:PR_Q9Y5Y4))
 Declaration(Class(obo:PR_Q9Z0F7))
 Declaration(Class(obo:UBERON_0001004))
 Declaration(Class(obo:UBERON_0001335))
+Declaration(Class(obo:UBERON_0001786))
 Declaration(Class(obo:UBERON_0002222))
 Declaration(Class(obo:UBERON_0002339))
 Declaration(Class(obo:UBERON_0002548))
@@ -3072,6 +3086,7 @@ Declaration(AnnotationProperty(obo:RO_0002161))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#BDS_subset>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#abbreviation>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#added_for_HCA>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/pato#location_grouping>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#LATIN>))
@@ -3139,6 +3154,13 @@ SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#abbreviation> oboInOw
 # Annotation Property: <http://purl.obolibrary.org/obo/cl#added_for_HCA> (<http://purl.obolibrary.org/obo/cl#added_for_HCA>)
 
 SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#added_for_HCA> oboInOwl:SubsetProperty)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> (blood_and_immune_upper_slim)
+
+AnnotationAssertion(<http://purl.org/dc/terms/date> <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> "2023-03-31T09:17:34Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> "a subset of general classes related to blood and the immune system, primarily of hematopoietic origin")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> "blood_and_immune_upper_slim")
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim> oboInOwl:SubsetProperty)
 
 # Annotation Property: <http://purl.obolibrary.org/obo/pato#location_grouping> (<http://purl.obolibrary.org/obo/pato#location_grouping>)
 
@@ -3390,6 +3412,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000013 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000014 (germ line stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.stem.2012.05.016") obo:IAO_0000115 obo:CL_0000014 "A stem cell that is the precursor of gametes.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000014 "germline stem cell")
 AnnotationAssertion(rdfs:label obo:CL_0000014 "germ line stem cell")
 EquivalentClasses(obo:CL_0000014 ObjectIntersectionOf(obo:CL_0000039 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0017145)))
@@ -3410,6 +3433,7 @@ SubClassOf(obo:CL_0000015 ObjectSomeValuesFrom(obo:RO_0002216 obo:GO_0007283))
 
 # Class: obo:CL_0000016 (male germ line stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.stem.2012.05.016") obo:IAO_0000115 obo:CL_0000016 "A stem cell that is the precursor of male gametes.")
 AnnotationAssertion(rdfs:label obo:CL_0000016 "male germ line stem cell")
 SubClassOf(obo:CL_0000016 obo:CL_0000014)
 SubClassOf(obo:CL_0000016 obo:CL_0000015)
@@ -3483,6 +3507,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000021 obo:CL_0000586
 
 # Class: obo:CL_0000022 (female germ line stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.stem.2012.05.016") obo:IAO_0000115 obo:CL_0000022 "A stem cell that is the precursor of female gametes.")
 AnnotationAssertion(rdfs:label obo:CL_0000022 "female germ line stem cell")
 EquivalentClasses(obo:CL_0000022 ObjectIntersectionOf(obo:CL_0000021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0017145)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000022 obo:CL_0000014)
@@ -4136,42 +4161,53 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000084 obo:CL_0000542
 SubClassOf(obo:CL_0000084 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000827))
 DisjointClasses(obo:CL_0000084 obo:CL_0000945)
 
-# Class: obo:CL_0000085 (germ line stem cell (sensu Vertebrata))
+# Class: obo:CL_0000085 (obsolete germ line stem cell (sensu Vertebrata))
 
-AnnotationAssertion(rdfs:label obo:CL_0000085 "germ line stem cell (sensu Vertebrata)")
-SubClassOf(obo:CL_0000085 obo:CL_0000014)
-SubClassOf(obo:CL_0000085 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_7742))
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000085 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000085 obo:CL_0000014)
+AnnotationAssertion(rdfs:comment obo:CL_0000085 "Obsoleted as there is no need for a term specific for vertebrates.")
+AnnotationAssertion(rdfs:label obo:CL_0000085 "obsolete germ line stem cell (sensu Vertebrata)")
+AnnotationAssertion(owl:deprecated obo:CL_0000085 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000086 (germ line stem cell (sensu Nematoda and Protostomia))
+# Class: obo:CL_0000086 (obsolete germ line stem cell (sensu Nematoda and Protostomia))
 
-AnnotationAssertion(obo:RO_0002161 obo:CL_0000086 obo:NCBITaxon_33511)
-AnnotationAssertion(rdfs:label obo:CL_0000086 "germ line stem cell (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000086 obo:CL_0000014)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000086 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000086 obo:CL_0000014)
+AnnotationAssertion(rdfs:comment obo:CL_0000086 "Obsoleted as there is no need for a term specific for nematods and protostomes.")
+AnnotationAssertion(rdfs:label obo:CL_0000086 "obsolete germ line stem cell (sensu Nematoda and Protostomia)")
+AnnotationAssertion(owl:deprecated obo:CL_0000086 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000087 (male germ line stem cell (sensu Nematoda and Protostomia))
+# Class: obo:CL_0000087 (obsolete male germ line stem cell (sensu Nematoda and Protostomia))
 
-AnnotationAssertion(rdfs:label obo:CL_0000087 "male germ line stem cell (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000087 obo:CL_0000016)
-SubClassOf(obo:CL_0000087 obo:CL_0000086)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000087 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000087 obo:CL_0000016)
+AnnotationAssertion(rdfs:comment obo:CL_0000087 "Obsoleted as there is no need for a term specific for nematods and protostomes.")
+AnnotationAssertion(rdfs:label obo:CL_0000087 "obsolete male germ line stem cell (sensu Nematoda and Protostomia)")
+AnnotationAssertion(owl:deprecated obo:CL_0000087 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000088 (female germ line stem cell (sensu Nematoda and Protostomia))
+# Class: obo:CL_0000088 (obsolete female germ line stem cell (sensu Nematoda and Protostomia))
 
-AnnotationAssertion(rdfs:label obo:CL_0000088 "female germ line stem cell (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000088 obo:CL_0000022)
-SubClassOf(obo:CL_0000088 obo:CL_0000086)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000088 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000088 obo:CL_0000022)
+AnnotationAssertion(rdfs:comment obo:CL_0000088 "Obsoleted as there is no need for a term specific for nematods and protostomes.")
+AnnotationAssertion(rdfs:label obo:CL_0000088 "obsolete female germ line stem cell (sensu Nematoda and Protostomia)")
+AnnotationAssertion(owl:deprecated obo:CL_0000088 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000089 (male germ line stem cell (sensu Vertebrata))
+# Class: obo:CL_0000089 (obsolete male germ line stem cell (sensu Vertebrata))
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19948499") oboInOwl:hasExactSynonym obo:CL_0000089 "spermatogonial stem cell")
-AnnotationAssertion(rdfs:label obo:CL_0000089 "male germ line stem cell (sensu Vertebrata)")
-SubClassOf(obo:CL_0000089 obo:CL_0000016)
-SubClassOf(obo:CL_0000089 obo:CL_0000085)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000089 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000089 obo:CL_0000016)
+AnnotationAssertion(rdfs:comment obo:CL_0000089 "Obsoleted as there is no need for a term specific for vertebrates.")
+AnnotationAssertion(rdfs:label obo:CL_0000089 "obsolete male germ line stem cell (sensu Vertebrata)")
+AnnotationAssertion(owl:deprecated obo:CL_0000089 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000090 (female germ line stem cell (sensu Vertebrata))
+# Class: obo:CL_0000090 (obsolete female germ line stem cell (sensu Vertebrata))
 
-AnnotationAssertion(rdfs:label obo:CL_0000090 "female germ line stem cell (sensu Vertebrata)")
-SubClassOf(obo:CL_0000090 obo:CL_0000022)
-SubClassOf(obo:CL_0000090 obo:CL_0000085)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000090 "https://github.com/obophenotype/cell-ontology/issues/1935")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000090 obo:CL_0000022)
+AnnotationAssertion(rdfs:comment obo:CL_0000090 "Obsoleted as there is no need for a term specific for vertebrates.")
+AnnotationAssertion(rdfs:label obo:CL_0000090 "obsolete female germ line stem cell (sensu Vertebrata)")
+AnnotationAssertion(owl:deprecated obo:CL_0000090 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000091 (Kupffer cell)
 
@@ -9704,6 +9740,7 @@ SubClassOf(obo:CL_0000748 ObjectSomeValuesFrom(obo:RO_0002216 obo:GO_0007601))
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:14689473") obo:IAO_0000115 obo:CL_0000749 "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the inner half of the inner plexiform layer. These cells depolarize in response to light stimulation of their corresponding photoreceptors.")
 AnnotationAssertion(rdfs:label obo:CL_0000749 "ON-bipolar cell")
 SubClassOf(obo:CL_0000749 obo:CL_0000748)
+SubClassOf(obo:CL_0000749 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001791))
 
 # Class: obo:CL_0000750 (OFF-bipolar cell)
 
@@ -9716,10 +9753,11 @@ SubClassOf(obo:CL_0000750 obo:CL_0000748)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:14689473") obo:IAO_0000115 obo:CL_0000751 "A bipolar neuron found in the retina that is synapsed by rod photoreceptor cells but not by cone photoreceptor cells.  These neurons depolarize in response to light.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000751 "FMA:67750")
 AnnotationAssertion(rdfs:label obo:CL_0000751 "rod bipolar cell")
-SubClassOf(obo:CL_0000751 obo:CL_0000748)
+SubClassOf(obo:CL_0000751 obo:CL_0000749)
 SubClassOf(obo:CL_0000751 ObjectSomeValuesFrom(obo:RO_0002102 obo:UBERON_0008925))
 SubClassOf(obo:CL_0000751 ObjectSomeValuesFrom(obo:RO_0002102 obo:UBERON_0008926))
 SubClassOf(obo:CL_0000751 ObjectSomeValuesFrom(obo:RO_0002103 obo:CL_0000604))
+SubClassOf(obo:CL_0000751 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_40674))
 
 # Class: obo:CL_0000752 (cone retinal bipolar cell)
 
@@ -19397,14 +19435,16 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002572 obo:CL_0000134
 
 # Class: obo:CL_0002573 (Schwann cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002573 "A glial cell that ensheathes axons of neuron in the peripheral nervous system and are necessary for their maintainance and function.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:16807057") obo:IAO_0000115 obo:CL_0002573 "A glial cell that myelinates or ensheathes axons in the peripheral nervous system.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002573 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002573 "2011-03-02T01:19:27Z")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "BTO:0001220")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "CALOHA:TS-0898")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "MESH:D012583")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16807057") rdfs:comment obo:CL_0002573 "A myelinating Schwann cell wraps around a single axon. Myelination occurs in larger diameter axons, while a process called ensheathment occurs on smaller diameter axons in which a single cell wraps around multiple small, unmyelinated axons separating them with a thin layer of cytoplasm. The structure formed is called a Remak bundle.")
 AnnotationAssertion(rdfs:label obo:CL_0002573 "Schwann cell")
-EquivalentClasses(obo:CL_0002573 ObjectIntersectionOf(obo:CL_0000125 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000010)))
+SubClassOf(obo:CL_0002573 obo:CL_0000125)
+SubClassOf(obo:CL_0002573 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000010))
 
 # Class: obo:CL_0002574 (stromal cell of pancreas)
 
@@ -22420,8 +22460,15 @@ EquivalentClasses(obo:CL_0008031 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 
 # Class: obo:CL_0008032 (rosehip neuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.nature.com/articles/s41593-018-0205-2") obo:IAO_0000115 obo:CL_0008032 "A GABAergic interneuron in human cortical layer 1 that has large rosehip-shaped axonal boutons and compact arborization.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.nature.com/articles/s41593-018-0205-2") rdfs:comment obo:CL_0008032 "A rosehip cell has been shown to have an immunohistochemical profile GAD1+CCK+, CNR1–SST–CALB2–PVALB– that matches a single transcriptomically defined cell type whose specific molecular marker signature is not seen in mouse cortex.")
 AnnotationAssertion(rdfs:label obo:CL_0008032 "rosehip neuron"@en)
-EquivalentClasses(obo:CL_0008032 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005390) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P05532) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q8R4G0) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q9QZC1)))
+SubClassOf(obo:CL_0008032 obo:CL_0000099)
+SubClassOf(obo:CL_0008032 ObjectIntersectionOf(ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000005110) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000007785)))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005390))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_9606))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_0008032 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011467))
 
 # Class: obo:CL_0008033 (decidual pericyte)
 
@@ -31066,6 +31113,16 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33351116") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4033018 "lung megakaryocyte")
 SubClassOf(obo:CL_4033018 obo:CL_0000556)
 
+# Class: obo:CL_4033019 (ON-blue cone bipolar cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") obo:IAO_0000115 obo:CL_4033019 "An ON bipolar cell type with dendrites selectively contacting S-cones.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033019 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033019 "2023-04-04T09:48:15Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033019 "BB cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033019 "The axons of a blue cone bipolar cell terminate close to the ganglion cell layer, where they transfer the S-cone ON signal to small bistratified ganglion cells. Other targets of a blue cone bipolar cell include amacrine cells and possibly large bistratified ganglion cells.")
+AnnotationAssertion(rdfs:label obo:CL_4033019 "ON-blue cone bipolar cell")
+SubClassOf(obo:CL_4033019 obo:CL_0000749)
+
 # Class: obo:CL_4033020 (mucus secreting cell of trachea gland)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18931053") Annotation(oboInOwl:hasDbXref "PMID:29656943") obo:IAO_0000115 obo:CL_4033020 "A mucus secreting cell that is part of a submucosal gland of the trachea.")
@@ -31133,6 +31190,106 @@ AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033026 "2023-03-16T1
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36543915") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033026 "PC-fibro")
 AnnotationAssertion(rdfs:label obo:CL_4033026 "lung perichondrial fibroblast")
 EquivalentClasses(obo:CL_4033026 ObjectIntersectionOf(obo:CL_4033025 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002048)))
+
+# Class: obo:CL_4033027 (diffuse bipolar 1 cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22006647") obo:IAO_0000115 obo:CL_4033027 "An OFF diffuse bipolar cell that makes synaptic contact with both L/M and S-cone photoreceptors and only minimal contact with rod photoreceptors.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033027 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033027 "2023-04-04T10:48:29Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22006647") oboInOwl:hasExactSynonym obo:CL_4033027 "Diffuse Bipolar Cell Type DB1")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22006647") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033027 "DB1 bipolar")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22006647") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033027 "DB1 bipolar cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033027 "DB1 cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22006647") Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033027 "In primates, a diffuse bipolar 1 cell on average makes 81 ribbon (output) synapses, 13 contacts are with OFF parasol cells and 47 contacts are with OFF midget cells. This cell might make flat contacts at both triad-associated and non-triad-associated positions on the cone pedicle.")
+AnnotationAssertion(rdfs:label obo:CL_4033027 "diffuse bipolar 1 cell")
+SubClassOf(obo:CL_4033027 obo:CL_0000750)
+
+# Class: obo:CL_4033028 (diffuse bipolar 2 cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25309346") Annotation(oboInOwl:hasDbXref "PMID:26500507") Annotation(oboInOwl:hasDbXref "PMID:27833534") obo:IAO_0000115 obo:CL_4033028 "An OFF diffuse bipolar cell that predominantly connects to ON parasol cells and lateral amacrine cells. This cell contains a large number of synaptic ribbons and a small axon arbor area.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033028 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033028 "2023-04-04T10:49:07Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033028 "DB2 cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033028 "In primates, a diffuse bipolar 2 cell makes an average of 133 ribbon synapses, 47 contacts are with OFF parasol cells and 4 contacts are with OFF midget cells.")
+AnnotationAssertion(rdfs:label obo:CL_4033028 "diffuse bipolar 2 cell")
+SubClassOf(obo:CL_4033028 obo:CL_0000750)
+
+# Class: obo:CL_4033029 (diffuse bipolar 3a cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") Annotation(oboInOwl:hasDbXref "PMID:33009001") obo:IAO_0000115 obo:CL_4033029 "An OFF calbindin-positive bipolar cell that has a large dendritic field and stratifies narrowly close to the middle of the inner plexiform layer. Its axon terminal is characterized by regularly branching and varicose processes resembling beads on a string. Most of DB3a contacts with cones are triad-associated.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033029 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033029 "2023-04-04T10:53:33Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.3389/fnana.2015.00122") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033029 "DB3 cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033029 "DB3a cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.3389/fnana.2015.00122") Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033029 "Originally, DB3a cells were termed diffuse bipolar 3 (DB3) cells. When an additional bipolar type which stratifies slightly more vitread and is calbindin negative was detected, this cell was renamed diffuse bipolar 3a cell. The axons of neighboring DB3a cells make homologous gap junctions. The DB3a cells provide the majority of their output to OFF parasol cells.")
+AnnotationAssertion(rdfs:label obo:CL_4033029 "diffuse bipolar 3a cell")
+SubClassOf(obo:CL_4033029 obo:CL_0000750)
+
+# Class: obo:CL_4033030 (diffuse bipolar 3b cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033030 "An OFF calbindin-negative bipolar cell that has a large dendritic field and stratifies narrowly close to the middle of the inner plexiform layer. Its axon terminal is characterized by regularly branching and varicose processes resembling beads on a string. Most of DB3b contacts with cones are non-triad-associated.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033030 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033030 "2023-04-04T10:53:42Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033030 "DB3b cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24107939") Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:33009001") rdfs:comment obo:CL_4033030 "In humans, a DB3b cell is CD15 positive. A DB3b cell might make sparse contacts to rod photoreceptors.")
+AnnotationAssertion(rdfs:label obo:CL_4033030 "diffuse bipolar 3b cell")
+SubClassOf(obo:CL_4033030 obo:CL_0000750)
+
+# Class: obo:CL_4033031 (diffuse bipolar 4 cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27833534") Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033031 "An ON diffuse bipolar cell that predominantly connects to ON parasol cells and lateral amacrine cells.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033031 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033031 "2023-04-04T09:51:10Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033031 "DB4 cell")
+AnnotationAssertion(rdfs:label obo:CL_4033031 "diffuse bipolar 4 cell")
+SubClassOf(obo:CL_4033031 obo:CL_0000749)
+
+# Class: obo:CL_4033032 (diffuse bipolar 6 cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033032 "An ON diffuse bipolar cell that has a large dendritic field and large axon terminals, which show little or no overlap. This cell predominantly connects to narrow thorny ganglion cells.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033032 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033032 "2023-04-04T09:51:22Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033032 "DB6 cell")
+AnnotationAssertion(rdfs:label obo:CL_4033032 "diffuse bipolar 6 cell")
+SubClassOf(obo:CL_4033032 obo:CL_0000749)
+
+# Class: obo:CL_4033033 (flat midget bipolar cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033033 "An OFF bipolar cell with a small dendritic tree that provides most of the triad-associated basal (flat) contacts at cone pedicles.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033033 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033033 "2023-04-04T10:54:00Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033033 "FMB cell")
+AnnotationAssertion(rdfs:label obo:CL_4033033 "flat midget bipolar cell")
+SubClassOf(obo:CL_4033033 obo:CL_0000750)
+
+# Class: obo:CL_4033034 (invaginating midget bipolar cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033034 "An ON bipolar cell with a small dendritic tree that forms most of the central (invaginating) elements opposite the synaptic ribbon at the cone triad.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033034 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033034 "2023-04-04T09:51:44Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033034 "IMB cell")
+AnnotationAssertion(rdfs:label obo:CL_4033034 "invaginating midget bipolar cell")
+SubClassOf(obo:CL_4033034 obo:CL_0000749)
+
+# Class: obo:CL_4033035 (giant bipolar cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033035 "An ON bipolar cell that has large dendritic and axonal fields.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033035 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033035 "2023-04-04T09:54:15Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>) oboInOwl:hasRelatedSynonym obo:CL_4033035 "GB cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033035 "A giant bipolar cell is usually monostratified, although, very rarely, it can be bistratified.")
+AnnotationAssertion(rdfs:label obo:CL_4033035 "giant bipolar cell")
+SubClassOf(obo:CL_4033035 obo:CL_0000749)
+
+# Class: obo:CL_4033036 (OFFx cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30712875") Annotation(oboInOwl:hasDbXref "PMID:31995762") Annotation(oboInOwl:hasDbXref "PMID:32555229") obo:IAO_0000115 obo:CL_4033036 "An OFF bipolar cell that is fovea-specific and expresses FEZF1, NXPH1 and NXPH2.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4033036 obo:NCBITaxon_9443)
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033036 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033036 "2023-04-04T10:54:15Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4033036 "OFFx cell")
+SubClassOf(obo:CL_4033036 obo:CL_0000750)
+SubClassOf(obo:CL_4033036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001786))
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
