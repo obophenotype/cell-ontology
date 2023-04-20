@@ -19,6 +19,13 @@ This is the repository that contains the source for the cell ontology. Most user
 To browse the ontology, we recommend using OLS:
 https://www.ebi.ac.uk/ols/ontologies/cl
 
+<b>Latest CL release files</b><br>
+https://github.com/obophenotype/cell-ontology/releases/latest
+
+<b>Description of release files</b><br>
+https://oboacademy.github.io/obook/reference/release-artefacts/
+
+
 For more details on CL see:
 - [CL Website](https://cell-ontology.github.io/)
 - [CL on the OBO Foundry](http://obofoundry.org/ontology/cl.html)
