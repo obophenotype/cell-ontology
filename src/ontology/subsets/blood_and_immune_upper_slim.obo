@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-04-04/subsets/blood_and_immune_upper_slim.owl
+data-version: cl/releases/2023-04-20/subsets/blood_and_immune_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -93,7 +93,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/blood_and_immune_upper_slim
-property_value: owl:versionInfo "2023-04-04" xsd:string
+property_value: owl:versionInfo "2023-04-20" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -1486,7 +1486,6 @@ id: CL:0000566
 name: angioblastic mesenchymal cell
 def: "A mesenchymal stem cell capable of developing into blood vessel endothelium." [GOC:dsd, GOC:tfm, PMID:12768659]
 comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive, CD309-positive, and TAL1-positive.
-subset: human_reference_atlas
 synonym: "angioblast" EXACT []
 synonym: "chondroplast" EXACT []
 is_a: CARO:0000006 ! material anatomical entity
@@ -1498,7 +1497,6 @@ intersection_of: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 intersection_of: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
 intersection_of: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute lymphocytic leukemia protein 1
 relationship: develops_from CL:0000134 ! mesenchymal stem cell
-relationship: present_in_taxon NCBITaxon:9606
 relationship: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 relationship: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
 relationship: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute lymphocytic leukemia protein 1
@@ -1580,7 +1578,6 @@ relationship: capable_of GO:0048103 ! somatic stem cell division
 id: CL:0000738
 name: leukocyte
 def: "An achromatic cell of the myeloid or lymphoid lineages capable of ameboid movement, found in blood or other tissue." [GOC:add, GOC:tfm, ISBN:978-0-323-05290-0]
-subset: human_reference_atlas
 synonym: "immune cell" RELATED []
 synonym: "leucocyte" EXACT []
 synonym: "white blood cell" EXACT []
@@ -1599,7 +1596,6 @@ relationship: capable_of GO:0001667 ! ameboidal-type cell migration
 relationship: develops_from CL:0000037 ! hematopoietic stem cell
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 relationship: part_of UBERON:0002405 ! immune system
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000762
@@ -1619,6 +1615,7 @@ relationship: develops_from CL:0000828 ! thromboblast
 id: CL:0000763
 name: myeloid cell
 def: "A cell of the monocyte, granulocyte, mast cell, megakaryocyte, or erythroid lineage." [GOC:add]
+subset: human_reference_atlas
 xref: BTO:0001441
 xref: CALOHA:TS-0647
 xref: MESH:D022423
@@ -1627,6 +1624,7 @@ is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: develops_from CL:0000049 ! common myeloid progenitor
 relationship: develops_from CL:0000049 ! common myeloid progenitor
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000764
@@ -1688,12 +1686,10 @@ relationship: has_part GO:0005634 ! nucleus
 id: CL:0000766
 name: myeloid leukocyte
 def: "A cell of the monocyte, granulocyte, or mast cell lineage." [GOC:add]
-subset: human_reference_atlas
 is_a: CL:0000738 {is_inferred="true"} ! leukocyte
 is_a: CL:0000763 ! myeloid cell
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: develops_from CL:0000049 ! common myeloid progenitor
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000767
@@ -1789,7 +1785,6 @@ id: CL:0000782
 name: myeloid dendritic cell
 def: "A dendritic cell of the myeloid lineage." [GOC:add, PMID:10449155, PMID:17332250, PMID:9521319]
 comment: These cells are CD1a-negative, CD1b-positive, CD11a-positive, CD11c-positive, CD13-positive, CD14-negative, CD20-negative, CD21-negative, CD33-positive, CD40-negative, CD50-positive, CD54-positive, CD58-positive, CD68-negative, CD80-negative, CD83-negative, CD85j-positive, CD86-positive, CD89-negative, CD95-positive, CD120a-negative, CD120b-positive, CD123-negative, CD178-negative, CD206-negative, CD207-negative, CD209-negative, and TNF-alpha-negative. Upon TLR stimulation, they are capable of producing high levels of TNF-alpha, IL-6, CXCL8 (IL-8).
-subset: human_reference_atlas
 synonym: "CD11c+CD123- DC" EXACT []
 synonym: "interdigitating cell" BROAD []
 synonym: "mDC" EXACT []
@@ -1802,7 +1797,6 @@ intersection_of: CL:4030046 PR:000001865 ! lacks_plasma_membrane_part interleuki
 intersection_of: develops_from CL:0000763 ! myeloid cell
 relationship: CL:4030046 PR:000001865 ! lacks_plasma_membrane_part interleukin-3 receptor class 2 alpha chain
 relationship: develops_from CL:0000763 ! myeloid cell
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000784
@@ -2651,7 +2645,6 @@ creation_date: 2010-09-15T01:34:57Z
 id: CL:0002320
 name: connective tissue cell
 def: "A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone." [GOC:tfm, ISBN:0618947256]
-subset: human_reference_atlas
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
@@ -2660,7 +2653,6 @@ intersection_of: CL:0002371 ! somatic cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0002384 ! connective tissue
-relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-09-15T03:01:54Z
 
 [Term]
@@ -3024,7 +3016,7 @@ synonym: "transcriptionally active chromatin" EXACT []
 xref: NIF_Subcellular:sao445485807
 xref: Wikipedia:Euchromatin
 is_a: GO:0000785 ! chromatin
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22355" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22355" xsd:anyURI
 
 [Term]
 id: GO:0000792
@@ -3039,7 +3031,7 @@ synonym: "transcriptionally silent chromatin" EXACT []
 xref: NIF_Subcellular:sao581845896
 xref: Wikipedia:Heterochromatin
 is_a: GO:0000785 ! chromatin
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22355" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22355" xsd:anyURI
 
 [Term]
 id: GO:0001508
@@ -3145,7 +3137,7 @@ def: "A multicellular organismal process by which exposure to an activating fact
 subset: goslim_pir
 is_a: GO:0009987 ! cellular process
 is_a: GO:0032501 ! multicellular organismal process
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24416" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24416" xsd:anyURI
 
 [Term]
 id: GO:0001816
@@ -3168,7 +3160,7 @@ synonym: "interleukin production" NARROW [GOC:add, GOC:mah, http://wiki.geneonto
 synonym: "interleukin secretion" NARROW [GOC:add, GOC:mah, http://wiki.geneontology.org/index.php/Why_isn%27t_interleukin_in_GO%3F]
 is_a: GO:0010467 ! gene expression
 is_a: GO:0032501 ! multicellular organismal process
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/19116" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/19116" xsd:anyURI
 
 [Term]
 id: GO:0001820
@@ -3294,7 +3286,7 @@ name: immune effector process
 namespace: biological_process
 def: "Any process of the immune system that executes a component of an immune response. An effector immune process takes place after its activation." [GO_REF:0000022, GOC:add, ISBN:0781735149]
 is_a: GO:0002376 ! immune system process
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/18737" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/18737" xsd:anyURI
 
 [Term]
 id: GO:0002262
@@ -4143,7 +4135,7 @@ synonym: "protoplast" RELATED [GOC:mah]
 xref: Wikipedia:Intracellular
 is_a: GO:0110165 ! cellular anatomical entity
 relationship: part_of CL:0000000 ! cell
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/17776" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/17776" xsd:anyURI
 
 [Term]
 id: GO:0005634
@@ -4224,7 +4216,7 @@ subset: prokaryote_subset
 xref: Wikipedia:Cytoplasm
 is_a: GO:0110165 ! cellular anatomical entity
 relationship: part_of GO:0005622 ! intracellular anatomical structure
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23023" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/23023" xsd:anyURI
 
 [Term]
 id: GO:0005764
@@ -4358,7 +4350,7 @@ synonym: "cell-cell contact zone" BROAD []
 synonym: "intercellular junction" EXACT [NIF_Subcellular:sao1395777368]
 xref: NIF_Subcellular:sao1922892319
 is_a: GO:0070161 ! anchoring junction
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22122" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22122" xsd:anyURI
 
 [Term]
 id: GO:0006259
@@ -4478,7 +4470,7 @@ subset: goslim_plant
 subset: prokaryote_subset
 synonym: "single-organism transport" RELATED []
 is_a: GO:0051234 ! establishment of localization
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/20292" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20292" xsd:anyURI
 created_by: jl
 creation_date: 2012-12-13T16:25:32Z
 
@@ -4540,7 +4532,7 @@ relationship: has_part GO:0010324 ! membrane invagination
 relationship: has_target_end_location GO:0031410 ! cytoplasmic vesicle
 relationship: has_target_start_location GO:0005576 ! extracellular region
 relationship: process_has_causal_agent GO:0030139 ! endocytic vesicle
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24907" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24907" xsd:anyURI
 
 [Term]
 id: GO:0006900
@@ -4582,7 +4574,7 @@ def: "A vesicle-mediated transport process that results in the engulfment of ext
 xref: Wikipedia:Phagocytosis
 is_a: GO:0006897 ! endocytosis
 relationship: never_in_taxon NCBITaxon:4751
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24907" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24907" xsd:anyURI
 
 [Term]
 id: GO:0006915
@@ -4845,7 +4837,7 @@ is_a: GO:0048856 ! anatomical structure development
 intersection_of: GO:0048856 ! anatomical structure development
 intersection_of: results_in_developmental_progression_of UBERON:0000468 ! multicellular organism
 relationship: results_in_developmental_progression_of UBERON:0000468 ! multicellular organism
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/21234" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/21234" xsd:anyURI
 
 [Term]
 id: GO:0007369
@@ -4976,7 +4968,7 @@ synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
 is_a: BFO:0000015 ! process
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24968" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24968" xsd:anyURI
 created_by: jl
 creation_date: 2012-09-19T15:05:24Z
 
@@ -5049,7 +5041,7 @@ synonym: "macromolecule formation" EXACT []
 synonym: "macromolecule synthesis" EXACT []
 is_a: GO:0043170 ! macromolecule metabolic process
 is_a: GO:1901576 ! organic substance biosynthetic process
-property_value: IAO:0000233 "http://amigo.geneontology.org/amigo/term/GO:0070589" xsd:anyURI
+property_value: term_tracker_item "http://amigo.geneontology.org/amigo/term/GO:0070589" xsd:anyURI
 
 [Term]
 id: GO:0009605
@@ -5193,7 +5185,7 @@ def: "The process in which a gene's sequence is converted into a mature gene pro
 subset: goslim_flybase_ribbon
 xref: Wikipedia:Gene_expression
 is_a: GO:0043170 ! macromolecule metabolic process
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22557" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22557" xsd:anyURI
 
 [Term]
 id: GO:0012501
@@ -5221,7 +5213,7 @@ is_a: GO:0008219 ! cell death
 intersection_of: GO:0008219 ! cell death
 intersection_of: starts_with GO:0007165 ! signal transduction
 relationship: starts_with GO:0007165 ! signal transduction
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24835" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24835" xsd:anyURI
 
 [Term]
 id: GO:0012505
@@ -5396,7 +5388,7 @@ namespace: biological_process
 def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues." [GOC:cjm, GOC:dph, GOC:ems, GOC:pf, Wikipedia:Cell_migration]
 xref: Wikipedia:Cell_migration
 is_a: GO:0048870 ! cell motility
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24787" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24787" xsd:anyURI
 
 [Term]
 id: GO:0017145
@@ -5445,7 +5437,7 @@ is_a: GO:0044238 ! primary metabolic process
 intersection_of: GO:0008152 ! metabolic process
 intersection_of: has_primary_input_or_output PR:000000001 ! protein
 relationship: has_primary_input_or_output PR:000000001 ! protein
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23112" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/23112" xsd:anyURI
 
 [Term]
 id: GO:0019724
@@ -5682,7 +5674,7 @@ is_a: GO:0048468 ! cell development
 intersection_of: GO:0032502 ! developmental process
 intersection_of: results_in_development_of CL:0000988 ! hematopoietic cell
 relationship: results_in_development_of CL:0000988 ! hematopoietic cell
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22178" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22178" xsd:anyURI
 
 [Term]
 id: GO:0030098
@@ -5762,7 +5754,7 @@ is_a: GO:0048869 ! cellular developmental process
 intersection_of: GO:0048869 ! cellular developmental process
 intersection_of: results_in_acquisition_of_features_of CL:0000000 ! cell
 relationship: results_in_acquisition_of_features_of CL:0000000 ! cell
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24390" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24390" xsd:anyURI
 
 [Term]
 id: GO:0030183
@@ -6038,8 +6030,8 @@ synonym: "pseudopodial protrusion" EXACT []
 synonym: "reticulopodium" NARROW []
 xref: Wikipedia:Pseudopod
 is_a: GO:0120025 ! plasma membrane bounded cell projection
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/21139" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/21141" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/21139" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/21141" xsd:anyURI
 
 [Term]
 id: GO:0031268
@@ -6234,7 +6226,7 @@ is_a: GO:0043933 ! protein-containing complex organization
 intersection_of: GO:0022411 ! cellular component disassembly
 intersection_of: results_in_disassembly_of GO:0032991 ! protein-containing complex
 relationship: results_in_disassembly_of GO:0032991 ! protein-containing complex
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22580" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22580" xsd:anyURI
 
 [Term]
 id: GO:0032991
@@ -6732,7 +6724,7 @@ synonym: "biological condensate" NARROW []
 synonym: "non-membrane-enclosed organelle" EXACT []
 xref: NIF_Subcellular:sao1456184038
 is_a: GO:0043226 ! organelle
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/21881" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/21881" xsd:anyURI
 
 [Term]
 id: GO:0043229
@@ -6824,7 +6816,7 @@ is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0032991 ! protein-containing complex
 relationship: results_in_organization_of GO:0032991 ! protein-containing complex
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22580" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22580" xsd:anyURI
 created_by: mah
 creation_date: 2010-09-08T10:01:42Z
 
@@ -6885,7 +6877,7 @@ synonym: "interspecies interaction between organisms" EXACT []
 synonym: "interspecies interaction with other organisms" EXACT []
 is_a: GO:0008150 ! biological_process
 relationship: never_in_taxon NCBITaxon:4895
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/20191" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20191" xsd:anyURI
 
 [Term]
 id: GO:0045058
@@ -7096,7 +7088,7 @@ intersection_of: GO:0008150 ! biological_process
 intersection_of: results_in_development_of CL:0000000 ! cell
 relationship: part_of GO:0030154 ! cell differentiation
 relationship: results_in_development_of CL:0000000 ! cell
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24390" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24390" xsd:anyURI
 
 [Term]
 id: GO:0048513
@@ -7321,7 +7313,7 @@ synonym: "cell locomotion" EXACT []
 synonym: "cell movement" RELATED []
 synonym: "movement of a cell" EXACT []
 is_a: GO:0009987 ! cellular process
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/19809" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/19809" xsd:anyURI
 
 [Term]
 id: GO:0048871
@@ -7339,7 +7331,7 @@ def: "Any biological process involved in the maintenance of the steady-state num
 synonym: "cell population homeostasis" EXACT []
 synonym: "homeostasis of cell number" EXACT [GOC:dph]
 is_a: GO:0048871 ! multicellular organismal-level homeostasis
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24218" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24218" xsd:anyURI
 
 [Term]
 id: GO:0050776
@@ -7474,7 +7466,7 @@ intersection_of: has_participant UBERON:0001016 ! nervous system
 relationship: has_participant UBERON:0001016 ! nervous system
 relationship: in_taxon NCBITaxon:33208 {all_only="true"} ! Metazoa
 relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/13824" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/13824" xsd:anyURI
 
 [Term]
 id: GO:0050878
@@ -7633,8 +7625,8 @@ is_a: GO:0006996 ! organelle organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0005694 ! chromosome
 relationship: results_in_organization_of GO:0005694 ! chromosome
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22811" xsd:anyURI
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/4585" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22811" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/4585" xsd:anyURI
 
 [Term]
 id: GO:0051301
@@ -7864,7 +7856,7 @@ is_a: GO:0043933 ! protein-containing complex organization
 intersection_of: GO:0022607 ! cellular component assembly
 intersection_of: results_in_assembly_of GO:0032991 ! protein-containing complex
 relationship: results_in_assembly_of GO:0032991 ! protein-containing complex
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22580" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22580" xsd:anyURI
 
 [Term]
 id: GO:0065007
@@ -8025,7 +8017,7 @@ is_a: GO:0043933 ! protein-containing complex organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:1990904 ! ribonucleoprotein complex
 relationship: results_in_organization_of GO:1990904 ! ribonucleoprotein complex
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/25143" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25143" xsd:anyURI
 created_by: mah
 creation_date: 2010-09-08T10:10:35Z
 
@@ -8079,7 +8071,7 @@ intersection_of: GO:0035148 ! tube formation
 intersection_of: results_in_formation_of UBERON:0003914 ! epithelial tube
 relationship: part_of GO:0060562 ! epithelial tube morphogenesis
 relationship: results_in_formation_of UBERON:0003914 ! epithelial tube
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22302" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22302" xsd:anyURI
 created_by: mah
 creation_date: 2010-02-26T02:15:40Z
 
@@ -8175,7 +8167,7 @@ synonym: "defence response to pathogen, incompatible interaction" NARROW []
 synonym: "defense response, incompatible interaction" NARROW []
 synonym: "resistance response to pathogen" NARROW []
 is_a: GO:0051707 ! response to other organism
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22173" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22173" xsd:anyURI
 created_by: dos
 creation_date: 2013-11-11T12:59:11Z
 
@@ -8381,7 +8373,7 @@ is_a: GO:0042995 ! cell projection
 intersection_of: GO:0042995 ! cell projection
 intersection_of: has_part GO:0098590 ! plasma membrane region
 relationship: has_part GO:0098590 ! plasma membrane region
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/13193" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/13193" xsd:anyURI
 created_by: krc
 creation_date: 2017-03-21T17:26:07Z
 
@@ -8396,7 +8388,7 @@ is_a: GO:0120036 ! plasma membrane bounded cell projection organization
 intersection_of: GO:0022607 ! cellular component assembly
 intersection_of: results_in_assembly_of GO:0120025 ! plasma membrane bounded cell projection
 relationship: results_in_assembly_of GO:0120025 ! plasma membrane bounded cell projection
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/13298" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/13298" xsd:anyURI
 created_by: krc
 creation_date: 2017-04-24T23:56:08Z
 
@@ -8409,7 +8401,7 @@ is_a: GO:0030030 ! cell projection organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0120025 ! plasma membrane bounded cell projection
 relationship: results_in_organization_of GO:0120025 ! plasma membrane bounded cell projection
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/13298" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/13298" xsd:anyURI
 created_by: krc
 creation_date: 2017-04-26T16:07:02Z
 
@@ -8425,7 +8417,7 @@ is_a: GO:0000280 ! nuclear division
 is_a: GO:1903047 ! mitotic cell cycle process
 intersection_of: GO:0000280 ! nuclear division
 intersection_of: part_of GO:0000278 ! mitotic cell cycle
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/19910" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/19910" xsd:anyURI
 created_by: pg
 creation_date: 2017-03-23T14:44:23Z
 
@@ -8449,7 +8441,7 @@ namespace: biological_process
 def: "The assembly and secretion a set of components to form an extracellular vesicule, a membrane-bounded vesicle that is released into the extracellular region. Extracellular vesicles include exosomes, microvesicles and apoptotic bodies, based on the mechanism by which they are released from cells and differentiated based on their size and content." [PMID:28736435]
 synonym: "extracellular vesicle assembly" EXACT []
 is_a: GO:0044085 ! cellular component biogenesis
-property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/14256" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/14256" xsd:anyURI
 created_by: pg
 creation_date: 2017-10-23T11:53:42Z
 
@@ -10821,8 +10813,7 @@ xref: SCTID:302548004
 xref: SPD:0000016
 xref: TAO:0001114
 xref: TGMA:0000002
-xref: UMLS:C0018670 {source="ncithesaurus:Head"}
-xref: UMLS:C0018670 {source="BIRNLEX:1230"}
+xref: UMLS:C0018670 {source="ncithesaurus:Head", source="BIRNLEX:1230"}
 xref: VHOG:0001644
 xref: WBbt:0005739
 xref: Wikipedia:Head
@@ -11309,8 +11300,7 @@ synonym: "cavum oris" RELATED [BTO:0001090]
 synonym: "mouth cavity" RELATED [BTO:0001090]
 synonym: "oral region" RELATED [EHDAA2:0001326]
 synonym: "oral vestibule" RELATED [BTO:0001090]
-synonym: "regio oralis" EXACT [BTO:0004698]
-synonym: "regio oralis" EXACT LATIN [FMA:49184, FMA:TA]
+synonym: "regio oralis" EXACT LATIN [BTO:0004698, FMA:49184, FMA:TA]
 synonym: "rima oris" RELATED [BTO:0001090]
 synonym: "stoma" RELATED []
 synonym: "stomatodaeum" RELATED [VHOG:0000812]
@@ -11459,6 +11449,7 @@ name: musculature of body
 namespace: uberon
 def: "The subdivision of the musculoskeletal system that consists of all the muscles of the body[VSAO, modified]." [VSAO:0000033]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 synonym: "muscle system" EXACT []
 synonym: "muscle system of body" EXACT []
@@ -11488,6 +11479,7 @@ relationship: capable_of GO:0003012 ! muscle system process
 relationship: composed_primarily_of UBERON:0001015 ! musculature
 relationship: never_in_taxon NCBITaxon:6040
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
+relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "consider whether this should be restricted to skeletal musculature. See https://github.com/obophenotype/uberon/issues/77" xsd:string
 property_value: UBPROP:0000001 "Anatomical system that consists of the muscles of the body.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000033", ontology="VSAO", source="VSAO:curator"}
 property_value: UBPROP:0000012 "we place the MA term musculature here, rather than under uberon:musculature, as this seems more appropriate given the structure of MA" xsd:string {external_ontology="MA"}
@@ -11789,28 +11781,15 @@ relationship: present_in_taxon NCBITaxon:4751
 id: UBERON:0000477
 name: anatomical cluster
 namespace: uberon
-def: "Anatomical group that has its parts adjacent to one another." [http://orcid.org/0000-0001-9114-8737]
+def: "Anatomical group whose component anatomical structures lie in close proximity to each other." [FBbt:00007277]
 subset: common_anatomy
 subset: upper_level
-xref: AAO:0010009
-xref: AEO:0000041
-xref: BILA:0000041
-xref: CARO:0000041
-xref: EHDAA2:0003041
 xref: FBbt:00007277
-xref: FMA:49443
-xref: HAO:0000041
-xref: TADS:0000605
-xref: TAO:0001478
-xref: TGMA:0001842
 xref: VHOG:0001737
-xref: XAO:0003160
-xref: ZFA:0001478
 is_a: UBERON:0034923 ! disconnected anatomical group
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
-property_value: editor_note "Will be obsoleted in CARO v2 [https://github.com/obophenotype/caro/issues/3]" xsd:string
 
 [Term]
 id: UBERON:0000479
@@ -12325,7 +12304,7 @@ property_value: UBPROP:0000007 "cardiac" xsd:string
 id: UBERON:0000982
 name: skeletal joint
 namespace: uberon
-def: "Anatomical cluster that consists of two or more adjacent skeletal structures, which may be interconnected by various types of tissue[VSAO]." [GO_REF:0000034, http://dx.plos.org/10.1371/journal.pone.0051070, VSAO:0000101, Wikipedia:Joint]
+def: "Anatomical structure that consists of two or more adjacent skeletal structures, which may be interconnected by various types of tissue[VSAO]." [GO_REF:0000034, http://dx.plos.org/10.1371/journal.pone.0051070, VSAO:0000101, Wikipedia:Joint]
 subset: efo_slim
 subset: organ_slim
 subset: pheno_slim
@@ -12638,8 +12617,7 @@ xref: NCIT:C12438
 xref: neuronames:854
 xref: SCTID:278199004
 xref: TAO:0000012
-xref: UMLS:C0927232 {source="ncithesaurus:Central_Nervous_System"}
-xref: UMLS:C0927232 {source="BIRNLEX:1099"}
+xref: UMLS:C0927232 {source="ncithesaurus:Central_Nervous_System", source="BIRNLEX:1099"}
 xref: VHOG:0000293
 xref: Wikipedia:Central_nervous_system
 xref: XAO:0000215
@@ -14334,6 +14312,7 @@ name: skeleton
 namespace: uberon
 def: "Anatomical cluster that consists of all the skeletal elements (eg., bone, cartilage, and teeth) of the body." [VSAO:0000026]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 synonym: "set of all bones" EXACT []
@@ -14357,6 +14336,7 @@ is_a: UBERON:0034925 ! anatomical collection
 disjoint_from: UBERON:0004770 ! articular system
 relationship: has_member UBERON:0004765 ! skeletal element
 relationship: part_of UBERON:0001434 ! skeletal system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: RO:0002171 UBERON:0000383
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/The-skeletal-system" xsd:anyURI
 property_value: UBPROP:0000001 "Anatomical cluster that consists of all the skeletal elements (eg., bone, cartilage, and teeth) of the body.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000026", ontology="VSAO", source="GO_REF:0000034, http://dx.plos.org/10.1371/journal.pone.0051070"}
@@ -14653,7 +14633,7 @@ property_value: UBPROP:0000012 "WP treats this as synonym of axial mesoderm. Ind
 id: UBERON:0004905
 name: articulation
 namespace: uberon
-def: "Anatomical cluster that connects two or more adjacent skeletal elements or hardened body parts." [http://orcid.org/0000-0002-6601-2165]
+def: "Anatomical structure that connects two or more adjacent skeletal elements or hardened body parts." [http://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "joint" NARROW []
 xref: FBbt:00005811
@@ -14667,6 +14647,7 @@ namespace: uberon
 def: "A proximal-distal subdivision of the digestive tract." [http://orcid.org/0000-0002-6601-2165]
 subset: non_informative
 synonym: "alimentary system subdivision" RELATED [FMA:71131]
+synonym: "gut section" RELATED [FBbt:00100315]
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED [FMA:71131]
@@ -14951,6 +14932,7 @@ id: UBERON:0005944
 name: axial skeleton plus cranial skeleton
 namespace: uberon
 def: "Subdivision of skeleton which consists of cranial skeleton, set of all vertebrae, set of all ribs and sternum[FMA, modified]." [FMA:71221, https://github.com/obophenotype/uberon/issues/44, https://github.com/obophenotype/uberon/wiki/The-axial-skeleton, VSAO:0000056, Wikipedia:Axial_skeleton]
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 synonym: "skeleton axiale" RELATED LATIN [Wikipedia:Axial_skeleton]
@@ -14969,6 +14951,7 @@ is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: contributes_to_morphology_of UBERON:0001434 ! skeletal system
 relationship: develops_from UBERON:0003089 ! sclerotome
 relationship: part_of UBERON:0011137 ! axial skeletal system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/8/8b/Axial_skeleton_diagram.svg" xsd:anyURI
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton" xsd:anyURI
 property_value: UBPROP:0000001 "Skeletal subdivision of the central body axis including the cranium, vertebrae, notochord, ribs, and sternum.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000056", ontology="VSAO", source="PSPUB:0000170"}
@@ -15050,6 +15033,7 @@ xref: MIAA:0000049
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 property_value: IAO:0000232 "currently this is an extremely generic class, encompassing both protostomes and deuterostomes." xsd:string
+property_value: IAO:0006012 "2023-04-20" xsd:string
 property_value: UBPROP:0000007 "branchial" xsd:string
 property_value: UBPROP:0000007 "pharyngeal" xsd:string
 
@@ -15411,6 +15395,7 @@ id: UBERON:0007798
 name: vascular system
 namespace: uberon
 def: "Anatomical system that consists of all blood and lymph vessels." [http://orcid.org/0000-0002-6601-2165]
+subset: human_reference_atlas
 subset: pheno_slim
 xref: BTO:0001085
 xref: CALOHA:TS-2053
@@ -15421,6 +15406,7 @@ xref: NCIT:C33854
 xref: UMLS:C0489903 {source="ncithesaurus:Vascular_System"}
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0004535 {source="MA"} ! cardiovascular system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "consider merging with vasculature" xsd:string
 property_value: UBPROP:0000001 "The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System]." xsd:string {source="ncithesaurus:Vascular_System"}
 property_value: UBPROP:0000012 "in both MA and BTO, the arterial system and venous sytem are subtypes of the vascular system" xsd:string {external_ontology="MA"}
@@ -15794,6 +15780,7 @@ id: UBERON:0014477
 name: thoracic skeleton
 namespace: uberon
 def: "Subdivision of skeletal system that consists of all skeletal elements in the thoracic region of the trunk. In most vertebrates this is the rib cage and sternum." [https://orcid.org/0000-0002-6601-2165, Wikipedia:Rib_cage]
+subset: human_reference_atlas
 subset: pheno_slim
 synonym: "skeleton of thorax" EXACT []
 synonym: "thoracic part of axial skeleton" EXACT []
@@ -15804,6 +15791,7 @@ xref: Wikipedia:Thoracic_skeleton
 is_a: UBERON:0010912 ! subdivision of skeleton
 relationship: part_of UBERON:0000915 ! thoracic segment of trunk
 relationship: part_of UBERON:0002090 ! postcranial axial skeleton
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: UBERON:0014903
@@ -16298,23 +16286,6 @@ domain: CL:0000540 ! neuron
 is_a: RO:0002113 ! has presynaptic terminal in
 transitive_over: part_of ! part_of
 expand_expression_to: "BFO_0000051 some (\n   GO_0030424 and BFO_0000051 some (\n      GO_0042734 and BFO_0000050 some (\n         GO_0045202 and BFO_0000050 some ?Y)))" []
-
-[Typedef]
-id: RO:0002103
-name: synapsed by
-namespace: fly_anatomy.ontology
-def: "Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it. " []
-def: "Relation between an anatomical structure and a neuron that chemically synapses to it." [https://orcid.org/0000-0002-7073-9172]
-xref: RO:0002103
-property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
-property_value: RO:0001900 RO:0001901
-is_a: RO:0002485 ! receives input from
-inverse_of: RO:0002120 ! synapsed to
-expand_expression_to: "BFO_0000051 some (GO_0045211 that BFO_0000050 some (GO_0045202 that BFO_0000051 some (GO_0042734 that BFO_0000050 some ?Y)))" []
-expand_expression_to: "BFO_0000051 some (GO_0045211 that part_of some (GO_0045202 that has_part some (GO_0042734 that BFO_0000050 some Y?)))" []
 
 [Typedef]
 id: RO:0002104
@@ -17546,7 +17517,15 @@ is_a: has_part ! has part
 id: conduit_for
 name: conduit for
 namespace: uberon
-def: "x is a conduit for y iff y passes through the lumen of x." []
+def: "x is a conduit for y iff y overlaps through the lumen_of of x, and y has parts on either side of the lumen of x." []
+subset: ro-eco
+xref: RO:0002570
+property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
+property_value: IAO:0000119 "UBERON:cjm" xsd:string
+property_value: IAO:0000232 "This relation holds between a thing with a 'conduit' (e.g. a bone foramen) and a 'conduee' (for example, a nerve) such that at the time the relationship holds, the conduee has two ends sticking out either end of the conduit. It should therefore note be used for objects that move through the conduit but whose spatial extent does not span the passage. For example, it would not be used for a mountain that contains a long tunnel through which trains pass. Nor would we use it for a digestive tract and objects such as food that pass through." xsd:string
+domain: BFO:0000040 ! material entity
+range: BFO:0000040 ! material entity
+is_a: overlaps ! overlaps
 
 [Typedef]
 id: connected_to
@@ -19436,8 +19415,28 @@ is_a: adjacent_to ! adjacent to
 [Typedef]
 id: synapsed_by
 name: synapsed by
+namespace: fly_anatomy.ontology
 namespace: uberon
-def: "Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it." []
+def: "Relation between an anatomical structure (including cells) and a neuron that chemically synapses to it. " []
+def: "Relation between an anatomical structure and a neuron that chemically synapses to it." [https://orcid.org/0000-0002-7073-9172]
+xref: RO:0002103
+property_value: http://purl.org/spar/cito/citesAsAuthority http://www.ncbi.nlm.nih.gov/pubmed/22402613
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
+property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
+property_value: RO:0001900 RO:0001901
+is_a: RO:0002485 ! receives input from
+inverse_of: RO:0002120 ! synapsed to
+expand_expression_to: "BFO_0000051 some (GO_0045211 that BFO_0000050 some (GO_0045202 that BFO_0000051 some (GO_0042734 that BFO_0000050 some ?Y)))" []
+expand_expression_to: "BFO_0000051 some (GO_0045211 that part_of some (GO_0045202 that has_part some (GO_0042734 that BFO_0000050 some Y?)))" []
+
+[Typedef]
+id: term_tracker_item
+name: term tracker item
+namespace: external
+xref: IAO:0000233
+is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: transformation_of
