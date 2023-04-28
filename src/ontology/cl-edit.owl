@@ -6669,9 +6669,10 @@ SubClassOf(obo:CL_0000384 obo:CL_0000630)
 
 # Class: obo:CL_0000385 (prohemocyte (sensu Nematoda and Protostomia))
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-012369493-5.50008-0") obo:IAO_0000115 obo:CL_0000385 "A precursor of mature hemocytes.")
 AnnotationAssertion(obo:RO_0002161 obo:CL_0000385 obo:NCBITaxon_33511)
 AnnotationAssertion(rdfs:label obo:CL_0000385 "prohemocyte (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000385 obo:CL_0000390)
+SubClassOf(obo:CL_0000385 obo:CL_0008001)
 
 # Class: obo:CL_0000386 (attachment cell)
 
@@ -6680,11 +6681,11 @@ SubClassOf(obo:CL_0000386 obo:CL_0000630)
 
 # Class: obo:CL_0000387 (hemocyte (sensu Arthropoda))
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-012369493-5.50008-0") obo:IAO_0000115 obo:CL_0000387 "A blood cell of the circulatory system of arthropods.")
 AnnotationAssertion(rdfs:label obo:CL_0000387 "hemocyte (sensu Arthropoda)")
-SubClassOf(obo:CL_0000387 obo:CL_0000519)
+SubClassOf(obo:CL_0000387 obo:CL_0000390)
 SubClassOf(obo:CL_0000387 ObjectSomeValuesFrom(obo:RO_0002160 obo:NCBITaxon_6656))
 SubClassOf(obo:CL_0000387 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000385))
-SubClassOf(Annotation(oboInOwl:hasDbXref "PMID:18025161") obo:CL_0000387 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0035010))
 
 # Class: obo:CL_0000388 (tendon cell)
 
@@ -6708,18 +6709,20 @@ AnnotationAssertion(obo:RO_0002161 obo:CL_0000390 obo:NCBITaxon_33511)
 AnnotationAssertion(rdfs:label obo:CL_0000390 "blood cell (sensu Nematoda and Protostomia)")
 SubClassOf(obo:CL_0000390 obo:CL_0000081)
 
-# Class: obo:CL_0000391 (podocyte (sensu Diptera))
+# Class: obo:CL_0000391 (obsolete podocyte (sensu Diptera))
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:12930778") obo:IAO_0000115 obo:CL_0000391 "An insect immune cell that develops from plasmatocyte.")
-AnnotationAssertion(rdfs:label obo:CL_0000391 "podocyte (sensu Diptera)")
-SubClassOf(obo:CL_0000391 obo:CL_0000387)
-SubClassOf(obo:CL_0000391 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000394))
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000391 "https://github.com/obophenotype/cell-ontology/issues/1949")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000391 obo:CL_0000394)
+AnnotationAssertion(rdfs:comment obo:CL_0000391 "Obsoleted as podocytes are not a distinct cell type from plasmatocytes.")
+AnnotationAssertion(rdfs:label obo:CL_0000391 "obsolete podocyte (sensu Diptera)")
+AnnotationAssertion(owl:deprecated obo:CL_0000391 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000392 (crystal cell)
 
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000392 "FMA:63847")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-012369493-5.50008-0") obo:IAO_0000115 obo:CL_0000392 "A hemocyte that synthesizes and secretes melanins as part of the antimicrobial immune response. It is characterized morphologically by crystal inclusions of phenoloxidases in its cytoplasm, hence its name.")
 AnnotationAssertion(rdfs:label obo:CL_0000392 "crystal cell")
-SubClassOf(obo:CL_0000392 obo:CL_0000391)
+SubClassOf(obo:CL_0000392 obo:CL_0000387)
+SubClassOf(obo:CL_0000392 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000395))
 
 # Class: obo:CL_0000393 (electrically responsive cell)
 
@@ -6729,18 +6732,23 @@ SubClassOf(obo:CL_0000393 obo:CL_0000211)
 
 # Class: obo:CL_0000394 (plasmatocyte)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/B978-012369493-5.50008-0") obo:IAO_0000115 obo:CL_0000394 "A phagocytic hemocyte, responsible for the engulfment of small particles, microbes, and apoptotic tissue debris. It may also secretes antimicrobial peptides and contribute to the production and secretion of proteins of the hemolymph.")
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000394 "macrophage")
 AnnotationAssertion(rdfs:label obo:CL_0000394 "plasmatocyte")
 SubClassOf(obo:CL_0000394 obo:CL_0000387)
+SubClassOf(obo:CL_0000394 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0035010))
 
 # Class: obo:CL_0000395 (procrystal cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-012369493-5.50008-0") obo:IAO_0000115 obo:CL_0000395 "A precursor of mature crystal cells.")
 AnnotationAssertion(rdfs:label obo:CL_0000395 "procrystal cell")
-SubClassOf(obo:CL_0000395 obo:CL_0000387)
+SubClassOf(obo:CL_0000395 obo:CL_0000385)
 
 # Class: obo:CL_0000396 (lamellocyte)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:https://doi.org/10.1016/B978-012369493-5.50008-0") obo:IAO_0000115 obo:CL_0000396 "A hemocyte found in immuno-stimulated larvae.")
 AnnotationAssertion(rdfs:label obo:CL_0000396 "lamellocyte")
-SubClassOf(obo:CL_0000396 obo:CL_0000394)
+SubClassOf(obo:CL_0000396 obo:CL_0000387)
 
 # Class: obo:CL_0000397 (ganglion interneuron)
 
@@ -6748,10 +6756,13 @@ AnnotationAssertion(rdfs:label obo:CL_0000397 "ganglion interneuron")
 EquivalentClasses(obo:CL_0000397 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000045)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000397 obo:CL_0000099)
 
-# Class: obo:CL_0000398 (polygonal cell)
+# Class: obo:CL_0000398 (obsolete polygonal cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000398 "polygonal cell")
-SubClassOf(obo:CL_0000398 obo:CL_0000387)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000398 "https://github.com/obophenotype/cell-ontology/issues/1949")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000398 obo:CL_0000385)
+AnnotationAssertion(rdfs:comment obo:CL_0000398 "Obsoleted as this is actually the same thing as prohemocytes.")
+AnnotationAssertion(rdfs:label obo:CL_0000398 "obsolete polygonal cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000398 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000399 (obsolete phloem element)
 
@@ -6766,10 +6777,13 @@ AnnotationAssertion(obo:IAO_0100001 obo:CL_0000400 obo:PO_0000332)
 AnnotationAssertion(rdfs:label obo:CL_0000400 "obsolete pavement cell")
 AnnotationAssertion(owl:deprecated obo:CL_0000400 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000401 (macrophage (sensu Diptera))
+# Class: obo:CL_0000401 (obsolete macrophage (sensu Diptera))
 
-AnnotationAssertion(rdfs:label obo:CL_0000401 "macrophage (sensu Diptera)")
-SubClassOf(obo:CL_0000401 obo:CL_0000394)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000401 "https://github.com/obophenotype/cell-ontology/issues/1949")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000401 obo:CL_0000394)
+AnnotationAssertion(rdfs:comment obo:CL_0000401 "Obsoleted as plasmatocytes are the macrophages (phagocytic cells) of Diptera.")
+AnnotationAssertion(rdfs:label obo:CL_0000401 "obsolete macrophage (sensu Diptera)")
+AnnotationAssertion(owl:deprecated obo:CL_0000401 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000402 (CNS interneuron)
 
@@ -9443,12 +9457,14 @@ AnnotationAssertion(owl:deprecated obo:CL_0000714 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000715 (embryonic crystal cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000715 "A crystal cell that derives from the embryonic head mesoderm.")
 AnnotationAssertion(rdfs:label obo:CL_0000715 "embryonic crystal cell")
 SubClassOf(obo:CL_0000715 obo:CL_0000392)
-SubClassOf(obo:CL_0000715 obo:CL_0000736)
+SubClassOf(obo:CL_0000715 obo:CL_0011008)
 
 # Class: obo:CL_0000716 (lymph gland crystal cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000716 "A crystal cell that derives from the larval lymph gland.")
 AnnotationAssertion(rdfs:label obo:CL_0000716 "lymph gland crystal cell")
 SubClassOf(obo:CL_0000716 obo:CL_0000392)
 SubClassOf(obo:CL_0000716 obo:CL_0000735)
@@ -9573,25 +9589,30 @@ SubClassOf(obo:CL_0000732 obo:CL_0000548)
 
 # Class: obo:CL_0000733 (lymph gland plasmatocyte)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000733 "A plasmatocyte that derives from the larval lymph gland.")
 AnnotationAssertion(rdfs:label obo:CL_0000733 "lymph gland plasmatocyte")
 SubClassOf(obo:CL_0000733 obo:CL_0000394)
 SubClassOf(obo:CL_0000733 obo:CL_0000735)
 
-# Class: obo:CL_0000734 (embryonic gland plasmatocyte)
+# Class: obo:CL_0000734 (obsolete embryonic gland plasmatocyte)
 
-AnnotationAssertion(rdfs:label obo:CL_0000734 "embryonic gland plasmatocyte")
-SubClassOf(obo:CL_0000734 obo:CL_0000394)
-SubClassOf(obo:CL_0000734 obo:CL_0000736)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000734 obo:CL_0011009)
+AnnotationAssertion(rdfs:comment obo:CL_0000734 "Obsoleted as this is the same thing as 'embryonic plasmatocyte'.")
+AnnotationAssertion(rdfs:label obo:CL_0000734 "obsolete embryonic gland plasmatocyte")
+AnnotationAssertion(owl:deprecated obo:CL_0000734 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000735 (lymph gland hemocyte)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1242/dev.00702") obo:IAO_0000115 obo:CL_0000735 "A hemocyte that derives from the larval lymph gland.")
 AnnotationAssertion(rdfs:label obo:CL_0000735 "lymph gland hemocyte")
 SubClassOf(obo:CL_0000735 obo:CL_0000387)
 
 # Class: obo:CL_0000736 (embryonic gland hemocyte)
 
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000736 obo:CL_0011008)
+AnnotationAssertion(rdfs:comment obo:CL_0000736 "Obsoleted as this term probably resulted from a confusion. Hemocytes are either derived from the embryonic head mesoderm (\"embryonic hemocytes\") or from the larval lymph gland (\"lymph gland hemocytes\"), not from an \"embryonic gland\".")
 AnnotationAssertion(rdfs:label obo:CL_0000736 "embryonic gland hemocyte")
-SubClassOf(obo:CL_0000736 obo:CL_0000387)
+AnnotationAssertion(owl:deprecated obo:CL_0000736 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000737 (striated muscle cell)
 
@@ -23996,15 +24017,16 @@ SubClassOf(obo:CL_0011007 obo:CL_0000222)
 
 # Class: obo:CL_0011008 (embryonic hemocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:17967061") obo:IAO_0000115 obo:CL_0011008 "A hemocyte derived from head mesoderm, which enters the hemolymph as acirculating cell.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:17967061") obo:IAO_0000115 obo:CL_0011008 "A hemocyte derived from the embryonic head mesoderm, which enters the hemolymph as a circulating cell.")
 AnnotationAssertion(rdfs:label obo:CL_0011008 "embryonic hemocyte")
 SubClassOf(obo:CL_0011008 obo:CL_0000387)
 
 # Class: obo:CL_0011009 (embryonic plasmatocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:17967061") obo:IAO_0000115 obo:CL_0011009 "A plasmatocyte derived from head mesoderm.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") Annotation(oboInOwl:hasDbXref "PMID:17967061") obo:IAO_0000115 obo:CL_0011009 "A plasmatocyte derived from the embryonic head mesoderm.")
 AnnotationAssertion(rdfs:label obo:CL_0011009 "embryonic plasmatocyte")
 SubClassOf(obo:CL_0011009 obo:CL_0000394)
+SubClassOf(obo:CL_0011009 obo:CL_0011008)
 
 # Class: obo:CL_0011010 (lateral mesodermal cell)
 
