@@ -16,8 +16,15 @@ An ontology of cell types
 
 This is the repository that contains the source for the cell ontology. Most users do not need to use this repo directly.
 
-To browse the ontology, we recommend using OLS:
-https://www.ebi.ac.uk/ols/ontologies/cl
+<b>Browse the ontology using OLS</b><br>
+https://www.ebi.ac.uk/ols4/ontologies/cl
+
+<b>Latest CL release files</b><br>
+https://github.com/obophenotype/cell-ontology/releases/latest
+
+<b>Description of release files</b><br>
+https://oboacademy.github.io/obook/reference/release-artefacts/
+
 
 For more details on CL see:
 - [CL Website](https://cell-ontology.github.io/)
