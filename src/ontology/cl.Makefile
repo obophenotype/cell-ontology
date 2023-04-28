@@ -273,7 +273,7 @@ deploy_release:
 TERM_hematopoietic= CL:0000988
 TERM_eye= UBERON:0000970
 
-SLIM_TEMPLATES= blood_and_immune
+SLIM_TEMPLATES= blood_and_immune eye
 SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
 
 .PHONY: slim_coverage
