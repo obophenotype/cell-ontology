@@ -227,17 +227,9 @@ characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
 
 <img src="media/image1.png" style="width:2.75657in;height:2.39014in" alt="image" />
 
-For example, [platelet](http://purl.obolibrary.org/obo/CL_0000233) has the following equivalence axiom:
+For example, 
 
-['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* (['has
-characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some*
-[**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405)) *and*
-(['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053)
-*some* [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and*
-(['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some*
-['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and*
-(['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some*
-['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
+[platelet](http://purl.obolibrary.org/obo/CL_0000233) subClassOf (['has_characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405))
 
 Note - that pato includes bridging axioms that infer part relationships
 based on these characteristics.
