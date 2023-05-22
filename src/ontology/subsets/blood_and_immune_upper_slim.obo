@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-04-20/subsets/blood_and_immune_upper_slim.owl
+data-version: cl/releases/2023-05-22/subsets/blood_and_immune_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -16,6 +16,7 @@ subsetdef: dubious_grouping ""
 subsetdef: early_development ""
 subsetdef: efo_slim ""
 subsetdef: emapa_ehdaa2 ""
+subsetdef: eye_upper_slim "a subset of general classes related to specific cell types in the eye."
 subsetdef: functional_classification ""
 subsetdef: gocheck_do_not_annotate ""
 subsetdef: gocheck_do_not_manually_annotate ""
@@ -53,6 +54,7 @@ subsetdef: relational_slim ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 subsetdef: scalar_slim ""
+subsetdef: term_scheduled_for_obsoletion ""
 subsetdef: uberon_slim ""
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: unverified_taxonomic_grouping ""
@@ -93,7 +95,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/blood_and_immune_upper_slim
-property_value: owl:versionInfo "2023-04-20" xsd:string
+property_value: owl:versionInfo "2023-05-22" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -603,7 +605,6 @@ id: CL:0000092
 name: osteoclast
 def: "A specialized phagocytic cell associated with the absorption and removal of the mineralized matrix of bone tissue, which typically differentiates from monocytes. This cell has the following markers: tartrate-resistant acid phosphatase type 5-positive, PU.1-positive, c-fos-positive, nuclear factor NF-kappa-B p100 subunit-positive, tumor necrosis factor receptor superfamily member 11A-positive and macrophage colony-stimulating factor 1 receptor-positive." [GO_REF:0000031, GOC:add, GOC:tfm, ISBN:0781735149, PMID:10428500, PMID:15055519, PMID:17380158]
 comment: Morphology: Highly vesicular; markers: Surface: RANK, cFMS (MCSF receptor); Secreted: cathepsin K and TRAP (tartate resistant acid phosphatase); transcription factors: PU.1, cFOS, MITF, NFkB (p52); role or process: tissue remodelling: bone resorption; lineage: hematopoietic, myeloid.
-subset: human_reference_atlas
 synonym: "chondroclast" RELATED []
 xref: BTO:0000968
 xref: CALOHA:TS-0721
@@ -630,7 +631,6 @@ relationship: has_part PR:000001937 ! tartrate-resistant acid phosphatase type 5
 relationship: has_part PR:000001944 ! transcription factor PU.1
 relationship: has_part PR:000007597 ! protein c-Fos
 relationship: has_part PR:000011178 ! nuclear factor NF-kappa-B p100 subunit
-relationship: present_in_taxon NCBITaxon:9606
 relationship: RO:0002104 PR:000001954 ! has plasma membrane part tumor necrosis factor receptor superfamily member 11A
 relationship: RO:0002104 PR:000002062 ! has plasma membrane part macrophage colony-stimulating factor 1 receptor
 
@@ -1486,6 +1486,7 @@ id: CL:0000566
 name: angioblastic mesenchymal cell
 def: "A mesenchymal stem cell capable of developing into blood vessel endothelium." [GOC:dsd, GOC:tfm, PMID:12768659]
 comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive, CD309-positive, and TAL1-positive.
+subset: human_reference_atlas
 synonym: "angioblast" EXACT []
 synonym: "chondroplast" EXACT []
 is_a: CARO:0000006 ! material anatomical entity
@@ -1497,6 +1498,7 @@ intersection_of: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 intersection_of: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
 intersection_of: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute lymphocytic leukemia protein 1
 relationship: develops_from CL:0000134 ! mesenchymal stem cell
+relationship: present_in_taxon NCBITaxon:9606
 relationship: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 relationship: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
 relationship: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute lymphocytic leukemia protein 1
@@ -1578,6 +1580,7 @@ relationship: capable_of GO:0048103 ! somatic stem cell division
 id: CL:0000738
 name: leukocyte
 def: "An achromatic cell of the myeloid or lymphoid lineages capable of ameboid movement, found in blood or other tissue." [GOC:add, GOC:tfm, ISBN:978-0-323-05290-0]
+subset: human_reference_atlas
 synonym: "immune cell" RELATED []
 synonym: "leucocyte" EXACT []
 synonym: "white blood cell" EXACT []
@@ -1596,6 +1599,7 @@ relationship: capable_of GO:0001667 ! ameboidal-type cell migration
 relationship: develops_from CL:0000037 ! hematopoietic stem cell
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 relationship: part_of UBERON:0002405 ! immune system
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000762
@@ -1615,7 +1619,6 @@ relationship: develops_from CL:0000828 ! thromboblast
 id: CL:0000763
 name: myeloid cell
 def: "A cell of the monocyte, granulocyte, mast cell, megakaryocyte, or erythroid lineage." [GOC:add]
-subset: human_reference_atlas
 xref: BTO:0001441
 xref: CALOHA:TS-0647
 xref: MESH:D022423
@@ -1624,7 +1627,6 @@ is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: develops_from CL:0000049 ! common myeloid progenitor
 relationship: develops_from CL:0000049 ! common myeloid progenitor
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000764
@@ -1686,10 +1688,12 @@ relationship: has_part GO:0005634 ! nucleus
 id: CL:0000766
 name: myeloid leukocyte
 def: "A cell of the monocyte, granulocyte, or mast cell lineage." [GOC:add]
+subset: human_reference_atlas
 is_a: CL:0000738 {is_inferred="true"} ! leukocyte
 is_a: CL:0000763 ! myeloid cell
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: develops_from CL:0000049 ! common myeloid progenitor
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000767
@@ -1785,6 +1789,7 @@ id: CL:0000782
 name: myeloid dendritic cell
 def: "A dendritic cell of the myeloid lineage." [GOC:add, PMID:10449155, PMID:17332250, PMID:9521319]
 comment: These cells are CD1a-negative, CD1b-positive, CD11a-positive, CD11c-positive, CD13-positive, CD14-negative, CD20-negative, CD21-negative, CD33-positive, CD40-negative, CD50-positive, CD54-positive, CD58-positive, CD68-negative, CD80-negative, CD83-negative, CD85j-positive, CD86-positive, CD89-negative, CD95-positive, CD120a-negative, CD120b-positive, CD123-negative, CD178-negative, CD206-negative, CD207-negative, CD209-negative, and TNF-alpha-negative. Upon TLR stimulation, they are capable of producing high levels of TNF-alpha, IL-6, CXCL8 (IL-8).
+subset: human_reference_atlas
 synonym: "CD11c+CD123- DC" EXACT []
 synonym: "interdigitating cell" BROAD []
 synonym: "mDC" EXACT []
@@ -1797,6 +1802,7 @@ intersection_of: CL:4030046 PR:000001865 ! lacks_plasma_membrane_part interleuki
 intersection_of: develops_from CL:0000763 ! myeloid cell
 relationship: CL:4030046 PR:000001865 ! lacks_plasma_membrane_part interleukin-3 receptor class 2 alpha chain
 relationship: develops_from CL:0000763 ! myeloid cell
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000784
@@ -2337,11 +2343,13 @@ is_a: CL:0001060 ! hematopoietic oligopotent progenitor cell, lineage-negative
 id: CL:0001035
 name: bone cell
 def: "A connective tissue cell found in bone." [GO_REF:0000034, GOC:add]
+subset: human_reference_atlas
 is_a: CL:0000548 {is_inferred="true"} ! animal cell
 intersection_of: CL:0000548 ! animal cell
 intersection_of: part_of UBERON:0001474 ! bone element
 relationship: dc-contributor https://orcid.org/0000-0001-9990-8331
 relationship: part_of UBERON:0001474 ! bone element
+relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2011-11-16T04:28:16Z
 
 [Term]
@@ -2645,6 +2653,7 @@ creation_date: 2010-09-15T01:34:57Z
 id: CL:0002320
 name: connective tissue cell
 def: "A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone." [GOC:tfm, ISBN:0618947256]
+subset: human_reference_atlas
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
@@ -2653,6 +2662,7 @@ intersection_of: CL:0002371 ! somatic cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0002384 ! connective tissue
+relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-09-15T03:01:54Z
 
 [Term]
@@ -4525,14 +4535,12 @@ synonym: "plasma membrane invagination" NARROW []
 synonym: "vesicle endocytosis" EXACT []
 xref: Wikipedia:Endocytosis
 is_a: GO:0016192 ! vesicle-mediated transport
-intersection_of: GO:0016192 ! vesicle-mediated transport
-intersection_of: process_has_causal_agent GO:0030139 ! endocytic vesicle
+is_a: GO:0098657 ! import into cell
 relationship: has_part GO:0006900 ! vesicle budding from membrane
 relationship: has_part GO:0010324 ! membrane invagination
 relationship: has_target_end_location GO:0031410 ! cytoplasmic vesicle
-relationship: has_target_start_location GO:0005576 ! extracellular region
-relationship: process_has_causal_agent GO:0030139 ! endocytic vesicle
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24907" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25268" xsd:anyURI
 
 [Term]
 id: GO:0006900
@@ -5716,16 +5724,6 @@ synonym: "secretory vesicle" RELATED []
 xref: NIF_Subcellular:sao885490876
 is_a: GO:0031410 ! cytoplasmic vesicle
 relationship: part_of GO:0012505 ! endomembrane system
-
-[Term]
-id: GO:0030139
-name: endocytic vesicle
-namespace: cellular_component
-def: "A membrane-bounded intracellular vesicle formed by invagination of the plasma membrane around an extracellular substance. Endocytic vesicles fuse with early endosomes to deliver the cargo for further sorting." [GOC:go_curators, PMID:19696797]
-synonym: "endocytotic transport vesicle" EXACT []
-synonym: "endocytotic vesicle" EXACT []
-xref: NIF_Subcellular:sao1362520468
-is_a: GO:0031410 ! cytoplasmic vesicle
 
 [Term]
 id: GO:0030141
@@ -8227,6 +8225,21 @@ intersection_of: part_of GO:0005604 ! basement membrane
 relationship: part_of GO:0005604 ! basement membrane
 
 [Term]
+id: GO:0098657
+name: import into cell
+namespace: biological_process
+def: "The directed movement of some substance from outside of a cell into a cell. This may occur via transport across the plasma membrane or via endocytosis." [GOC:dos]
+synonym: "uptake" BROAD []
+is_a: GO:0006810 ! transport
+intersection_of: GO:0006810 ! transport
+intersection_of: has_primary_input CHEBI:24431
+intersection_of: has_target_end_location GO:0005737 ! cytoplasm
+intersection_of: has_target_start_location GO:0005576 ! extracellular region
+relationship: has_primary_input CHEBI:24431
+relationship: has_target_end_location GO:0005737 ! cytoplasm
+relationship: has_target_start_location GO:0005576 ! extracellular region
+
+[Term]
 id: GO:0098793
 name: presynapse
 namespace: cellular_component
@@ -8344,7 +8357,9 @@ subset: goslim_synapse
 is_a: GO:0007267 ! cell-cell signaling
 intersection_of: GO:0007267 ! cell-cell signaling
 intersection_of: occurs_in GO:0045202 ! synapse
+relationship: in_taxon NCBITaxon:33208 {all_only="true"} ! Metazoa
 relationship: occurs_in GO:0045202 ! synapse
+relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
 
 [Term]
 id: GO:0099537
@@ -8359,6 +8374,7 @@ id: GO:0110165
 name: cellular anatomical entity
 namespace: cellular_component
 def: "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex." [GOC:kmv]
+subset: goslim_pir
 is_a: CARO:0000000 ! anatomical entity
 is_a: GO:0005575 ! cellular_component
 created_by: kmv
