@@ -1,7 +1,5 @@
 # Cell Ontology (CL) relations guide.
 
-## Related documents: 
-* [<u>Defining cell types - from free text to formal definitions.</u>](http://fu.bar)
 
 ## Intro 
 The aim of this document is to provide an accessible guide to how to use relations to record the properties that define cell types including location, lineage, function, morphology and marker genes. The term 'relations' here refers principally to OWL object properties, but also includes annoation properties used as shortcuts for more expressive logical axioms that can be programatically generated from them.
