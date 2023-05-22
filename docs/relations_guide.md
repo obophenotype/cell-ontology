@@ -4,12 +4,9 @@
 * [<u>Defining cell types - from free text to formal definitions.</u>](http://fu.bar)
 
 ## Intro 
-The aim of this document is to provide an accessible guide to how to use relations to record the properties that define
-cell types including location, lineage, function, morphology and marker genes. The term 'relations' here refers principally to OWL Object Properties, but also includes Annoation Properties used as shortcuts for more expressive logical axioms that can be programatically generated from them.
+The aim of this document is to provide an accessible guide to how to use relations to record the properties that define cell types including location, lineage, function, morphology and marker genes. The term 'relations' here refers principally to OWL object properties, but also includes annoation properties used as shortcuts for more expressive logical axioms that can be programatically generated from them.
 
 Relations in this guide are grouped by general use case (e.g. recording location) and each is illustrated by an example e.g.-
-
--   CD4-positive, alpha-beta T-Cell subClassOf ‘has plasma membrane part’ some ‘CD4 molecule’
 
 -   melanocyte subClassOf ‘has part’ some melanosome.
 
@@ -45,13 +42,14 @@ ilium ‘part of’ some ‘small intestine’
 
 To record the location of a cell in an anatomical space (e.g., a sinus),
 [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) is used.
+
 For example:
 
 ‘[lymph node marginal reticular cell](http://purl.obolibrary.org/obo/CL_0009103)’ subClassOf [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) *some* ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
 
 ### overlaps
 
-[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) applies in cases where all of the cell is within the anatomical structure, but some cells have parts in multiple anatomical structures. For example, many neurons span multiple regions of the central nervous system. The general relation for this is [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in).
+[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) applies in cases where an entire cell is within an anatomical structure, but some cells have parts in multiple anatomical structures. For example, many neurons span multiple regions of the central nervous system. The general relation for this is [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in).
 
 [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) is not currently used directly in the cell ontology (time of writing 05/2023), but more specific relationships exist for recording the location of neurons and their parts. These are described in the next section.
 
@@ -59,7 +57,7 @@ For example:
 
 ### [<u>has soma location</u>](http://purl.obolibrary.org/obo/RO_0002100)
 
-When neurobiologists talk about the location of vertebrate neurons, they are typically referring to the location of their soma. The importance of soma location to identify is underscored by how commonly cell types are named, in part, by soma location. We therefore have a dedicated relation for recording this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
+When neurobiologists talk about the location of vertebrate neurons, they are typically referring to soma location. The importance of soma location to identify is underscored by how commonly cell types are named, in part, by soma location. We therefore have a dedicated relation for recording this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
 
 For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has the following subclass axiom:
 
@@ -138,7 +136,7 @@ For example, ['hilus cell of ovary'](http://purl.obolibrary.org/obo/CL_0002095) 
 
 Use this relationship where only part of the process occurs in the cell type.
 
-e.g.  '
+e.g.  'retinal bipolar neuron' 'capable of part of' some 'visual perception'
 
 ## Recording developmental lineage
 
@@ -177,9 +175,8 @@ plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104)
 Absence of a marker can be recorded using
 [**lacks\_plasma\_membrane\_part**](https://ontobee.org/ontology/CL?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fcl%23lacks_plasma_membrane_part)
 
-For example:
 
-TBA
+ 
 
 Warning - this is used in place of the more accurate OWL expression "NOT has_part some X*** in order to keep within the EL profile of OWL. It's use with a general class as a target can potentially lead to reasoning errors.  
 
@@ -187,12 +184,26 @@ Warning - this is used in place of the more accurate OWL expression "NOT has_par
 
 ### ‘expresses’
 
+Use this to link a cell type to a gene or transcript that defines it:
+
+For example:
+
+'lamp5 GABAergic cortical interneuron' EquivalentTo:
+interneuron and ('has soma location' some 'cerebral cortex')
+and ('capable of' some 'gamma-aminobutyric acid secretion, neurotransmission') 
+and (expresses some 'lysosome-associated membrane glycoprotein 5')
 
 ### Recording cell parts
 
 To record parts above the granularity of proteins and complexes, use a 'has part' relationship with and object from the Gene Ontology cellular_cmponent branch.
 
 e.g. 'melanocyte' subClassOf 'has part' some 'melanosome'
+
+This GO term can be combined with a PATO quality term (e.g. for shape) where necessary, e.g.
+
+For example:
+
+'mature basophil' subClassOf ('has part' some (nucleus and ('has characteristic' some lobed)))
 
 ## Recording general cellular characteristics
 
