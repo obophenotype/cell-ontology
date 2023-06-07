@@ -4,11 +4,11 @@
 
 ### General rules
 1. All names should be singular nouns.
-2. Names should not be capitalised, unless they are or contain a proper name (e.g. _Johnston's organ_).
-3. Avoid special characters: use only alpha-numeric characters, space, dash (`-`), slash (`/`), and apostrophe (`'`).
+2. Words should not be capitalized, unless they are proper names or are capitalized as a standard (e.g., “Peyer's” and “B” in “Peyer's patch B cell”).
+3. Avoid special characters: use only alphanumeric characters, space, dash (`-`), slash (`/`), and apostrophe (`'`).
 
 ### Advice
-Bear in mind that users will often encounter terms in isolation. Long descriptive names (within reason!) are therefore preferable, especially where there is obvious potential for confusion. For example, _calyx_ (which simply means “cup”) could refer to a structure in the oviduct or in the mushroom body, depending on your field of specialisation. It is therefore better to use _mushroom body calyx_ and _oviduct calyx_ rather than simply _calyx_ alone.
+Bear in mind that users will often encounter terms in isolation. Long, descriptive names (within reason!) are therefore preferable, especially where there is obvious potential for confusion. For example, _calyx_ (which simply means “cup”) could refer to a structure in the oviduct or in the mushroom body, depending on your field of specialization. It is therefore better to use _mushroom body calyx_ or _oviduct calyx_ rather than simply _calyx_ alone.
 
 Try to maintain consistent patterns of naming where possible. However, it may make sense to override this in order to conform to common usage.
 
@@ -68,7 +68,7 @@ Guidelines on the type of synonyms:
 ## Considerations on style
 The following considerations apply both to all human-readable fields (names, textual definitions, comments, synonyms).
 
-* **US english or British english?** Where there are differences in the accepted spelling between english and US usage, use the US form.
+* **US english or British english?** Where there are differences in the accepted spelling between english and US usage, use the US form. British english variants of the labels may be added as synonyms (e.g., a term labelled “epithelial cell of esophagus” may have “epithelial cell of oesophagus” as an exact synonym).
 * **Use of jargon.** The aim of the ontology is to provide useable descriptions and links to the reader. Consequently, try to avoid obscure jargon or pretentious latin/greek, especially where widely understood, plain alternatives exist. Where it will aid searching, such terms may be added to synonyms and/or as asides in the “gloss” part of definitions.
 * **That or which?** These are so interchangead that there isn’t really a rule anymore. But as a guideline, use “which” after a comma (e.g., “this study, which cost $10,000, was a success”), and “that” when no comma is used (e.g., “the study that cost $10,000 was a success”).
 * **Use of hyphens.** Yes to those that help clarity (e.g., “posterior-most”) and those that are regularly used/accepted in the literature. Generally, no hyphens after prefixes such as “sub”, “mid”, “semi”, “hemi”, etc. (e.g., “hemidesmosome” instead of “hemi-desmosome”), unless it helps with clarity (e.g. “multi-innervated”). No hyphens for composed location adjectives (e.g., “posteroanterior”), unless there are more than two compounds (e.g., “ventro-posterolateral”).
