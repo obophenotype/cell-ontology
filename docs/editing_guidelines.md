@@ -3,12 +3,12 @@
 ## Naming terms
 
 ### General rules
-1. All names should be singular nouns.
+1. All labels should be singular nouns.
 2. Words should not be capitalized, unless they are proper names or are capitalized as a standard (e.g., “Peyer's” and “B” in “Peyer's patch B cell”).
 3. Avoid special characters: use only alphanumeric characters, space, dash (`-`), slash (`/`), and apostrophe (`'`).
 
 ### Advice
-Bear in mind that users will often encounter terms in isolation. Long, descriptive names (within reason!) are therefore preferable, especially where there is obvious potential for confusion. For example, _calyx_ (which simply means “cup”) could refer to a structure in the oviduct or in the mushroom body, depending on your field of specialization. It is therefore better to use _mushroom body calyx_ or _oviduct calyx_ rather than simply _calyx_ alone.
+Bear in mind that users will often encounter terms in isolation. Long, descriptive labels (within reason!) are therefore preferable, especially where there is obvious potential for confusion. For example, _calyx_ (which simply means “cup”) could refer to a structure in the oviduct or in the mushroom body, depending on your field of specialization. It is therefore better to use _mushroom body calyx_ or _oviduct calyx_ rather than simply _calyx_ alone.
 
 Try to maintain consistent patterns of naming where possible. However, it may make sense to override this in order to conform to common usage.
 
@@ -24,7 +24,8 @@ The basic structure of a definition should be as follows:
 
 where `genus` is a general classification and `diff1`, `diff2`, etc. are the _differentia_, which state what differentiates this class from others that share the same general classification. The gloss, when present, gives some key points of interest about the class.
 
-The first sentence of the definition should be in singular form. The remaining of the definition may then enter into plural if needed.
+The first sentence of the definition should refer to the definiendum in singular form. The rest of the definition may then invoke the plural form.
+
 
 ### Contents of definitions
 It is difficult to specify, _a priori_, which assertions should be included in a textual definition. However there are some general guidelines.
@@ -36,7 +37,7 @@ It is difficult to specify, _a priori_, which assertions should be included in a
 5. LIMIT information that applies to only some members of the class. This should only be used sparingly; when used, it should be made clear that it does not apply to all members of the class.
 6. AVOID using gene expression as the differentium.
 7. AVOID extensive repetition of assertions made in superclass definitions, unless these assertions are used to provide direct evidence for class membership.
-8. DO NOT add informations about what happens in mutant backgrounds or other kind of non-control conditions.
+8. DO NOT add informations about what happens in mutant or pathological states backgrounds or other kinds of non-control conditions.
 9. DO NOT include reasons for believing the assertions to be true. These should be recorded in comments.
 10. DO NOT raise questions in the definition. The definition should have the sense of being definitive, which is undermined if we show doubt. Any doubt should be recorded in comments instead.
 
@@ -45,8 +46,8 @@ It is difficult to specify, _a priori_, which assertions should be included in a
 Comments should be used for:
 
 1. Providing evidence. In some cases it is useful to know the type of evidence for an assertion. This should not be recorded in the definition, but _can_ be recorded in a comment.
-2. Disambiguation. Sometimes a single term is used in the literature with multiple meanings. In such cases, acomment should be added outlining these different uses and how they relate to the standard definition set in the ontology.
-3. Reporting editorial decisions (or decisions in waiting) about the term. This includes providing a reason for obsoleting a term, or letting users and curators know that the term may be merged or split in the future, e.g. when enough evidence for the merge/split will be available.
+2. Disambiguation. Sometimes a single term is used in the literature with multiple meanings. In such cases, a comment should be added outlining these different uses and how they relate to the definition set in the ontology.
+3. Reporting editorial decisions (or decisions in waiting) about the term. This includes providing a reason for obsoleting a term, or letting users and curators know that the term may be merged or split in the future, e.g., when enough evidence for the merge/split will be available.
 
 Try to be consistent in how you phrase the various types of comments. For example:
 
@@ -55,24 +56,24 @@ Try to be consistent in how you phrase the various types of comments. For exampl
 
 
 ## Synonyms
-Extensive addition of synonyms help searching. Add as many synonyms as you like.
+Extensive addition of synonyms help “findability” of terms when search. Synonyms can and should be added liberally.
 
 Guidelines on the type of synonyms:
 
 1. Use an _exact_ synonym when the name and the synonym can be used interchangeably, at least in a given context. This includes the case where the synonym is an abbreviation that, in a broader context, could have a different meaning. For example, _DPM_  can be an exact synonym of _dorsal pharyngeal muscle cell_, even though “DPM” could have many more meanings generally, because in the context where “dorsal pharyngeal muscle cell” is used, “DPM” is commonly used interchangeably to refer to these cells.
 2. There is no expectation that exact synonyms should be unique across the entire ontology. For example, in the _Drosophila_ Anatomy Ontology _DPM_ is also an exact synonym of _mushroom body dorsal paired medial cell_.
-3. Be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term. For example, saying that _dmd5_ is a narrow synonym of _abdominal dorsal multidendritic neuron_ means that “dmd5“ refers to a narrower concept than _abdominal dorsal multidendritic neuron_, not the other way around.
+3. Be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term. For example, saying that “peripheral blood mononuclear cell” is a narrow synonym of “mononuclear cell” means that “peripheral blood mononuclear cell“ refers to a narrower concept than “mononuclear cell”, not the other way around.
 4. The _related_ type may be used for other cases where the overlap between the synonym and the term name may be unclear, but you want people to find the term when they are searching for the synonym.
 
 
 ## Considerations on style
 The following considerations apply both to all human-readable fields (names, textual definitions, comments, synonyms).
 
-* **US english or British english?** Where there are differences in the accepted spelling between english and US usage, use the US form. British english variants of the labels may be added as synonyms (e.g., a term labelled “epithelial cell of esophagus” may have “epithelial cell of oesophagus” as an exact synonym).
-* **Use of jargon.** The aim of the ontology is to provide useable descriptions and links to the reader. Consequently, try to avoid obscure jargon or pretentious latin/greek, especially where widely understood, plain alternatives exist. Where it will aid searching, such terms may be added to synonyms and/or as asides in the “gloss” part of definitions.
-* **That or which?** These are so interchangead that there isn’t really a rule anymore. But as a guideline, use “which” after a comma (e.g., “this study, which cost $10,000, was a success”), and “that” when no comma is used (e.g., “the study that cost $10,000 was a success”).
-* **Use of hyphens.** Yes to those that help clarity (e.g., “posterior-most”) and those that are regularly used/accepted in the literature. Generally, no hyphens after prefixes such as “sub”, “mid”, “semi”, “hemi”, etc. (e.g., “hemidesmosome” instead of “hemi-desmosome”), unless it helps with clarity (e.g. “multi-innervated”). No hyphens for composed location adjectives (e.g., “posteroanterior”), unless there are more than two compounds (e.g., “ventro-posterolateral”).
-* **Abbreviations.** Avoid abbreviations, contractions, and symbols born out of laziness, such as `&`, `+`, or `vs` for “versus”. Avoid abbreviations unless they’re self-explanatory, commonly understood, or they really do help to reduce the amount of typing enough to enhance readibility. Use full chemical element names, not symbols (e.g., “hydrogen” instead of “H+”, “copper” instead of “Cu”, etc.). For biomolecules, spell out the term wherever practical (e.g., “fibroblast growth factor” instead of “FGF”). Abbreviations are of course always acceptable in synonyms, in cases where the abbreviation _is_ the synonym.
+* **United States (US) English or British English?** Where there are differences in the accepted spelling between British and US English, use the US form. British English variants of the labels may be added as synonyms (e.g., a term labelled “epithelial cell of esophagus” may have “epithelial cell of oesophagus” as an exact synonym).
+* **Use of jargon.** The aim of the ontology is to provide useable descriptions and links to the reader. Consequently, try to avoid obscure jargon or pretentious Latin/Greek, especially where widely understood, plain alternatives exist. Where it will aid searching, such terms may be added to synonyms and/or as asides in the “gloss” part of definitions.
+* **That or which?** These are so interchangeable that there isn’t really a rule anymore. But as a guideline, use “which” after a comma (e.g., “this study, which cost $10,000, was a success”), and “that” when no comma is used (e.g., “the study that cost $10,000 was a success”).
+* **Use of hyphens.** Yes to those that help clarity (e.g., “posterior-most”) and those that are regularly used/accepted in the literature. Generally, no hyphens after prefixes such as “sub”, “mid”, “semi”, “hemi”, etc. (e.g., “hemidesmosome” instead of “hemi-desmosome”), unless it helps with clarity (e.g., “multi-innervated”). No hyphens for composed location adjectives (e.g., “posteroanterior”), unless there are more than two compounds (e.g., “ventro-posterolateral”).
+* **Abbreviations.** Avoid abbreviations, contractions, and symbols born out of laziness, such as `&`, `+`, or `vs` for “versus”. Avoid abbreviations unless they are self-explanatory, commonly understood, or they really do help to reduce the amount of typing enough to enhance readability. Use full chemical element names, not symbols (e.g., “hydrogen” instead of “H+”, “copper” instead of “Cu”, etc.). For biomolecules, spell out the term wherever practical (e.g., “fibroblast growth factor” instead of “FGF”). Abbreviations are acceptable in synonyms, in cases where the abbreviation _is_ the synonym.
 
 
 ## Cross-references to the literature
@@ -106,7 +107,7 @@ The formal definition of a class is made up of all the logical axioms about the 
 
 
 ### Asserting classification
-In order to keep the ontology maintainable, asserted classifications should be limited where possible. Ideally, all terms would have only a single asserted parentt. Given the presence of suitable logically defined classes (see below) and sufficient relationships for the term you are making, additional classification can be inferred automatically by reasoning.
+In order to keep the ontology maintainable, asserted classifications should be limited where possible. Ideally, all terms would have only a single asserted parent (also known as “superclass”). Given the presence of suitable logically defined classes (see below) and sufficient relationships for the term you are making, additional classification can be inferred automatically by reasoning.
 
 However, as we are limited in what types of classification we are able to infer, you may need to assert multiple parents. Two asserted classifications are plainly acceptable. If you must assert three or ore classifications, then you should make a note with a suggestion for which of the asserted classifications are good candidates for formalisation and inferred classification.
 
@@ -130,7 +131,7 @@ Care must be taken not to use logically defined classes too liberally. You shoul
 
 If you are unsure whether a characteristic of a cell should be expressed as a relationship or as a differentium in a logically defined class: use a relationship.
 
-The textual definition of a logically defined class should be a plain english equivalent of the logical definition. However, in some cases it can be useful to add more details in the “gloss” part, when relevant.
+The textual definition of a logically defined class should be a plain English equivalent of the logical definition. However, in some cases it can be useful to add more details in the “gloss” part when relevant.
 
 
 ### Asserting relationships
