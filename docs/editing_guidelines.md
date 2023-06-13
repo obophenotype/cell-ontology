@@ -56,7 +56,7 @@ Try to be consistent in how you phrase the various types of comments. For exampl
 
 
 ## Synonyms
-Extensive addition of synonyms help “findability” of terms when search. Synonyms can and should be added liberally.
+Extensive addition of synonyms helps “findability” of terms when search. Synonyms can and should be added liberally.
 
 Guidelines on the type of synonyms:
 
@@ -94,7 +94,7 @@ ORCID identifiers may also be used when the only available source for an asserti
 ## Formal definitions
 The formal definition of a class is made up of all the logical axioms about the class (as opposed to the annotation assertion axioms). This includes classification assertions, relationship assertions, equivalence assertions, and disjointness assertions.
 
-> Note: In OWL formalism, both classification and relationship assertions are represented using `SubClassOf` axioms. However in this document, we make a strict distinction between a _classification_ (where a class is a subclass of a _named class_), and a _relationship_ (where a class is a subclass of an _anonymous class expression_).
+> Note: In OWL formalism, both classification and relationship assertions are represented using `SubClassOf` axioms. However, in this document, we make a strict distinction between a _classification_ (where a class is a subclass of a _named class_), and a _relationship_ (where a class is a subclass of an _anonymous class expression_).
 >
 > For example, in the formal definition of CL:0000392 (“crystal cell”):
 >
