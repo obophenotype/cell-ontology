@@ -28,7 +28,7 @@ subClassOf [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050)
 
 ilium ‘part of’ some ‘small intestine’
 
-‘small intestine’ ‘part of’ some intestine’
+‘small intestine’ ‘part of’ some intestine
 
 =>
 
@@ -71,7 +71,7 @@ For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000
 
 **Example of reasoning with the property chain:**
 
-'cortical interneuron' equivalentTo 'interneuron' that has\_soma\_location some 'cerebral cortex' 'rosehip neuron'
+'cortical interneuron' equivalentTo 'interneuron' that has\_soma\_location some 'cerebral cortex' 
 
 'rosehip neuron' subClassOf interneuron  and has\_soma\_location some 'cortical layer 1' 
 
@@ -83,15 +83,15 @@ For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000
 
 A relationship between a neuron and a region, where the neuron has a functionally relevant number of output synapses in that region.
 
-'[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf [<u>sends synaptic output to region</u>](https://www.ebi.ac.uk/ols4/ontologies/fbbt/properties/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FRO_0013003?lang=en)
-*some* [<u>inferior posterior slope</u>](https://www.ebi.ac.uk/ols4/ontologies/fbbt/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FFBbt_00045046?lang=en)
+'[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf [<u>sends synaptic output to region</u>](http://purl.obolibrary.org/obo/RO_0013003)
+*some* [<u>inferior posterior slope</u>](http://purl.obolibrary.org/obo/FBbt_00045046)
 
 ### receives synaptic input in region
 
-A relationship between a neuron and a region, where the neuron has a functionally relevant number of output synapses:
+A relationship between a neuron and a region, where the neuron has a functionally relevant number of input synapses:
 
-e.g. '[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf ‘[<u>receives synaptic input in region</u>](https://www.ebi.ac.uk/ols4/ontologies/fbbt/properties/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FRO_0013002?lang=en)*’
-some ‘*<u>[superior posterior slope](https://www.ebi.ac.uk/ols4/ontologies/fbbt/classes/http%253A%252F%252Fpurl.obolibrary.org%252Fobo%252FFBbt_00045040?lang=en)’</u>
+e.g. '[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf ‘[<u>receives synaptic input in region</u>](http://purl.obolibrary.org/obo/RO_0013002)*’
+some ‘*<u>[superior posterior slope](http://purl.obolibrary.org/obo/FBbt_00045040)’</u>
 
 ### fasciculates\_with
 
@@ -102,6 +102,7 @@ e.g. ‘Betz cell’ subClasssOf ‘fasciculates with’ some ‘corticospinal t
 subPropertyOf: overlaps
 
 domain: neuron
+
 range: neuron projection bundle
 
 ## Recording synaptic connectivity (neurons)
@@ -172,8 +173,6 @@ plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104)
 
 Absence of a marker can be recorded using
 [**lacks\_plasma\_membrane\_part**](https://ontobee.org/ontology/CL?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fcl%23lacks_plasma_membrane_part)
-
-
  
 
 Warning - this is used in place of the more accurate OWL expression "NOT has_part some X*** in order to keep within the EL profile of OWL. It's use with a general class as a target can potentially lead to reasoning errors.  
@@ -182,7 +181,7 @@ Warning - this is used in place of the more accurate OWL expression "NOT has_par
 
 ### ‘expresses’
 
-Use this to link a cell type to a gene or transcript that defines it:
+Use this to link a cell type to a gene or gene product that defines it:
 
 For example:
 
@@ -191,9 +190,11 @@ interneuron and ('has soma location' some 'cerebral cortex')
 and ('capable of' some 'gamma-aminobutyric acid secretion, neurotransmission') 
 and (expresses some 'lysosome-associated membrane glycoprotein 5')
 
+In FBbt, FlyBase Gene IDs are permitted here (using standard resolvable URL pattern).  In CL currenly only PRO IDs are permitted.  In PCL, a broader range of IDs have been used (depending on data sources used).
+
 ### Recording cell parts
 
-To record parts above the granularity of proteins and complexes, use a 'has part' relationship with and object from the Gene Ontology cellular_cmponent branch.
+To record parts above the granularity of proteins and complexes, use a 'has part' relationship with an object from the Gene Ontology cellular_component branch.
 
 e.g. 'melanocyte' subClassOf 'has part' some 'melanosome'
 
@@ -217,7 +218,7 @@ examples is not exhaustive:
 ### Recording Morphology
 
 PATO has a set of general morphology terms which may be applicable to
-cells
+cells.
 
 For example, [erythrocyte](http://purl.obolibrary.org/obo/CL_0000765)
 subClassOf [**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053)
@@ -234,13 +235,13 @@ To record the number of nuclei in a cell, use a PATO subclass
 under the term ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) with the ['has
 characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
 
-<img src="media/image1.png" style="width:2.75657in;height:2.39014in" alt="image" />
+![image](https://github.com/obophenotype/cell-ontology/assets/112839/4b6aa141-c42f-4bff-9d9e-bdb71a17e882)
 
 For example, 
 
 [platelet](http://purl.obolibrary.org/obo/CL_0000233) subClassOf (['has_characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405))
 
-Note - that pato includes bridging axioms that infer part relationships
+Note - that PATO includes bridging axioms that infer part relationships
 based on these characteristics.
 
 e.g.
