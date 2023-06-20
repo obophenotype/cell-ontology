@@ -1,0 +1,51 @@
+pattern_name: neuronHasSomaLoc
+pattern_iri: http://purl.obolibrary.org/obo/cl/cellHasSomaLoc
+
+description: "Use this template to define a class of neurons by a combination of
+  gross type and soma locataion. e.g. cortical interneuron."
+#  examples:
+#    - http://purl.obolibrary.org/obo/CL_0008031  # cortical interneuron
+#    - http://purl.obolibrary.org/obo/FBbt_00003702 # adult optic lobe neuron
+
+contributors:
+  - https://orcid.org/0000-0002-6601-2165  # Christopher Mungall
+  - https://orcid.org/0000-0002-7073-9172  # David Osumi-Sutherland
+
+classes:
+  neuron: "CL:0000540"
+  anatomical entity: "UBERON:0001062"
+
+relations:
+  has soma location: "RO:0002100"
+
+annotationProperties:
+  xref: oio:hasDbXref
+
+vars:
+  neuron: "'neuron'"
+  anatomical_entity: "'anatomical entity'"
+
+data_list_vars:
+  pubs: "'xref'"
+  # Use this for recording reference using PMID/DOIS
+
+name:
+  text: "%s of %s"
+  vars:
+    - neuron
+    - anatomical_entity
+
+def:
+  text: "Any %s whose soma is located in a(n) %s."
+  vars:
+    - neuron
+    - anatomical_entity
+  annotations:
+    - annotationProperty: xref
+      value: pubs
+
+equivalentTo:
+  text: "%s and ('has soma location' some %s)"
+  vars:
+    - neuron
+    - anatomical_entity

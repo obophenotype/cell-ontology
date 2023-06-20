@@ -1,123 +1,256 @@
-# A guide to selecting **object properties** in the Cell Ontology (CL)
+# Cell Ontology (CL) relations guide.
 
 
-### Recording anatomical location (general cell types)
+## Intro 
+The aim of this document is to provide an accessible guide to how to use relations to record the properties that define cell types including location, lineage, function, morphology and marker genes. The term 'relations' here refers principally to OWL object properties, but also includes annoation properties used as shortcuts for more expressive logical axioms that can be programatically generated from them.
 
-To record anatomical locations for cell types, axioms are written using object properties to relate CL terms to Uberon terms.
+Relations in this guide are grouped by general use case (e.g. recording location) and each is illustrated by an example e.g.-
 
-The most commonly used object property to record anatomical location is [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050). 
+-   melanocyte subClassOf ‘has part’ some melanosome.
 
-For example, ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) has the following subclass:
+This should be read as ‘**all** melanocytes have some type of melanosome as a part’ as should all axioms of this form. The examples should all be correct, but may not reflect the full complexity of axioms in the ontology. Where no example is currently present in CL, examples are taken from the Drosophila Anatomy Ontology, which follows the same schema.
 
-[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) *some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483) 
+## Recording location
 
-In Manchester OWL syntax, this is represented as:
+Location of cell types is recorded by relating a cell type to a term in an anatomical ontology. For the Cell Ontology this means a term from Uberon. 
 
-SubClassOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000483))
+###  [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) 
 
+Use part\_of for cases where the location is a material anatomical structure (rather than a space, such as a sinus) and all of the cell is within the anatomical structure.
 
-This statement connotes the following:
+‘[epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066)
+subClassOf [**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050)
+*some* [epithelium](http://purl.obolibrary.org/obo/UBERON_0000483)
 
- 1. All epithelial cells are part of an epithelium.
- 1. All parts of an epithelial cell are part of an epithelium.
- 1. Epithelial cells are part of some epithelium at all times. This can be hard to apply in the context of development and may require additional consideration from an editor.
+‘part of’ is transitive, which means that it applies across chains of relationships. For example,
 
- In contrast, asserting that an ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) is ['part of'](http://purl.obolibrary.org/obo/BFO_0000050) *some* ['kidney epithelium'](http://purl.obolibrary.org/obo/UBERON_0004819) is not correct because there are epithelial cells that exist that are not located in kidney epithelium.
+‘ileal goblet cell’ part\_of some ileum
 
+ilium ‘part of’ some ‘small intestine’
 
-### Recording anatomical location (neurons)
+‘small intestine’ ‘part of’ some intestine
 
-Due to the morphology of some neurons (i.e., neurons with neurites that extend across various anatomical structures), these cell types require additional consideration to record location. For example, an [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has a soma located in the [anterior (ventral) horn of the spinal cord](http://purl.obolibrary.org/obo/UBERON_0002257), but also projects an axon out of the spine to innervate muscles. There is a general relation for this, [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in), but a more specific relation exists for neurons. Since neuron types are often referred to in part by soma location, there is a dedicated relation for this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
+=>
 
+’ileal goblet cell’ ‘part of’ some ‘small intestine’
+&
+‘ileal goblet cell’ ‘part of’ some intestine
 
-For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has the following subclass:
+### located\_in
+
+To record the location of a cell in an anatomical space (e.g., a sinus),
+[**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) is used.
+
+For example:
+
+‘[lymph node marginal reticular cell](http://purl.obolibrary.org/obo/CL_0009103)’ subClassOf [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) *some* ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
+
+### overlaps
+
+[**'part of'**](http://purl.obolibrary.org/obo/BFO_0000050) applies in cases where an entire cell is within an anatomical structure, but some cells have parts in multiple anatomical structures. For example, many neurons span multiple regions of the central nervous system. The general relation for this is [**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) (has some part in).
+
+[**overlaps**](http://purl.obolibrary.org/obo/RO_0002131) is not currently used directly in the cell ontology (time of writing 05/2023), but more specific relationships exist for recording the location of neurons and their parts. These are described in the next section.
+
+### Recording the location of neurons 
+
+### [<u>has soma location</u>](http://purl.obolibrary.org/obo/RO_0002100)
+
+When neurobiologists talk about the location of vertebrate neurons, they are typically referring to soma location. The importance of soma location to identify is underscored by how commonly cell types are named, in part, by soma location. We therefore have a dedicated relation for recording this: [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100).
+
+For example, [anterior horn motor neuron](http://purl.obolibrary.org/obo/CL_2000048) has the following subclass axiom:
 
 [**'has soma location'**](http://purl.obolibrary.org/obo/RO_0002100) *some* ['ventral horn of spinal cord'](http://purl.obolibrary.org/obo/UBERON_0002257)
 
-In Manchester OWL syntax, this is represented as:
+**axiomatization of ‘has soma location’**
 
-SubClassOf(obo:CL_2000048 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002257))
+-   *subPropertyOf*: overlaps \# if X has\_soma\_location some Y, then X overlaps some Y)
 
-There is also a dedicated set of relations for recording the location of synaptic terminals and projections of neurons.  See Recording synaptic connectivity below.
+-   *domain*: neuron \# X has\_soma\_location some Y => X is inferred to be a subClassOf neuron
 
-### Recording anatomical location (cells in immaterial spaces)
+-   *property chain*: has\_soma\_location o part\_of --> has\_soma\_location \# If x has soma location y and y is part\_of z, then x has\_soma\_location\_z
 
-To record the location of a cell in an anatomical space (e.g., a sinus), [**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) is used. For example, [lymph node marginal reticular cell](http://purl.obolibrary.org/obo/CL_0009103) has the following subclass:
+**Example of reasoning with the property chain:**
 
+'cortical interneuron' equivalentTo 'interneuron' that has\_soma\_location some 'cerebral cortex' 
 
-[**'located in'**](http://purl.obolibrary.org/obo/RO_0001025) *some* ['subcapsular sinus of lymph node'](http://purl.obolibrary.org/obo/UBERON_0005463)
+'rosehip neuron' subClassOf interneuron  and has\_soma\_location some 'cortical layer 1' 
 
+'cortical layer 1'  subClassOf part\_of some 'cerebral cortex
 
-### Recording function
+=> 'rosehip neuron' subClassOf 'cortical interneuron'
 
-Cellular function is recorded by linking GO biological process terms with the object property [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215). 
+### sends synaptic output to region
+
+A relationship between a neuron and a region, where the neuron has a functionally relevant number of output synapses in that region.
+
+'[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf [<u>sends synaptic output to region</u>](http://purl.obolibrary.org/obo/RO_0013003)
+*some* [<u>inferior posterior slope</u>](http://purl.obolibrary.org/obo/FBbt_00045046)
+
+### receives synaptic input in region
+
+A relationship between a neuron and a region, where the neuron has a functionally relevant number of input synapses:
+
+e.g. '[<u>adult basket subesophageal neuron</u>](http://purl.obolibrary.org/obo/FBbt_00051856)' SubClassOf ‘[<u>receives synaptic input in region</u>](http://purl.obolibrary.org/obo/RO_0013002)*’
+some ‘*<u>[superior posterior slope](http://purl.obolibrary.org/obo/FBbt_00045040)’</u>
+
+### fasciculates\_with
+
+Use this to record the tracts or nerves that a neuron’s projections fasciculate with.
+
+e.g. ‘Betz cell’ subClasssOf ‘fasciculates with’ some ‘corticospinal tract’.
+
+subPropertyOf: overlaps
+
+domain: neuron
+
+range: neuron projection bundle
+
+## Recording synaptic connectivity (neurons)
+
+To record neuron-to-neuron or motor neuron-to-target muscle connectivity, consider the following object properties. These properties should be used when connectivity is key to the definition, for example, in cases where a motor neuron type is defined by the type of muscle fiber on which it synapses.
+
+### [<u>synapsed to</u>](http://purl.obolibrary.org/obo/RO_0002120)
+
+For example, ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038) SubClassOf [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120) *some* ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046)
+
+### [<u>synapsed by</u>](http://purl.obolibrary.org/obo/RO_0002103)
+
+-   This is the the inverse of [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120)
+
+For example, ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046) SubClassOf [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103) *some* ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038)
+
+## Recording function
+
+Cellular function is recorded by linking GO biological process terms with the object properties [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) and ‘capable of part of’
+
+###  [<u>'capable of'</u>](http://purl.obolibrary.org/obo/RO_0002215)
+
+Use this relationships where the cell is capable of carrying out the entirety of the process
 
 For example, ['hilus cell of ovary'](http://purl.obolibrary.org/obo/CL_0002095) has the following subclass:
 
 [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) *some* ['androgen secretion'](http://purl.obolibrary.org/obo/GO_0035935)
 
+### ‘capable of part of’
 
-### Recording developmental lineage
+Use this relationship where only part of the process occurs in the cell type.
 
-Developmental lineage is recorded between cell types with the object property [**develops from**](http://purl.obolibrary.org/obo/RO_0002202), or in the case where there are no intermediates between the cells, [**'directly develops from'**](http://purl.obolibrary.org/obo/RO_0002207).
+e.g.  'retinal bipolar neuron' 'capable of part of' some 'visual perception'
 
-For example, ['leukocyte'](http://purl.obolibrary.org/obo/CL_0000738) has the following subclass:
+## Recording developmental lineage
 
-[**develops from**](http://purl.obolibrary.org/obo/RO_0002202) *some* ['hematopoietic stem cell'](http://purl.obolibrary.org/obo/CL_0000037)
+Developmental lineage is recorded between cell types with the object property [**develops from**](http://purl.obolibrary.org/obo/RO_0002202) (a transitive property), or in the case where there are no intermediates between the cells, [**'directly develops from'**](http://purl.obolibrary.org/obo/RO_0002207) (a non-transitive subproperty of **develops_from**)
 
+For example, ['leukocyte'](http://purl.obolibrary.org/obo/CL_0000738) subClassOf [**develops from**](http://purl.obolibrary.org/obo/RO_0002202) *some* ['hematopoietic stem cell'](http://purl.obolibrary.org/obo/CL_0000037)
 
-### Recording cell markers
+## Recording cell markers
 
 Only markers that are necessary to define a cell type should be recorded.
 
-The most commonly used relation for recording markers is [**'has plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104). This object property is used to record cell surface markers, especially in immune cells.  There are also more specific properties, [**'has low plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015016) and [**'has high plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015015), that can be used at an editor's discretion. In each case, a term from the [PRotein Ontology (PRO)](https://github.com/PROconsortium/PRoteinOntology) or a protein complex term from the [Gene Ontology (GO)](https://github.com/geneontology/go-ontology) is used as the object of the relation.
+### cell surface (protein) markers
 
-For example, ['alpha-beta T cell'](http://purl.obolibrary.org/obo/CL_0000789) has the following equivalence axiom:
+The cell ontology has a set of terms for recording cell surface markers.
 
-['T cell'](http://purl.obolibrary.org/obo/CL_0000084) *and* [**'has plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104) *some* ['alpha-beta T cell receptor complex'](http://purl.obolibrary.org/obo/GO_0042105) 
+The most commonly used relation for recording markers is [**'has plasma
+membrane part'**](http://purl.obolibrary.org/obo/RO_0002104). This
+object property is used to record cell surface markers, especially in
+immune cells. There are also more specific properties, [**'has low
+plasma membrane amount'**](http://purl.obolibrary.org/obo/RO_0015016)
+and [**'has high plasma membrane
+amount'**](http://purl.obolibrary.org/obo/RO_0015015), that can be used
+at an editor's discretion. In each case, a term from the [PRotein
+Ontology (PRO)](https://github.com/PROconsortium/PRoteinOntology) or a
+protein complex term from the [Gene Ontology
+(GO)](https://github.com/geneontology/go-ontology) is used as the object
+of the relation.
 
-Absence of a marker can be recorded using [**lacks_plasma_membrane_part**](https://ontobee.org/ontology/CL?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fcl%23lacks_plasma_membrane_part).
+For example, ['alpha-beta T cell'](http://purl.obolibrary.org/obo/CL_0000789) has the following
+equivalence axiom:
 
+['T cell'](http://purl.obolibrary.org/obo/CL_0000084) *and* [**'has
+plasma membrane part'**](http://purl.obolibrary.org/obo/RO_0002104)
+*some* ['alpha-beta T cell receptor complex'](http://purl.obolibrary.org/obo/GO_0042105)
+
+Absence of a marker can be recorded using
+[**lacks\_plasma\_membrane\_part**](https://ontobee.org/ontology/CL?iri=http%3A%2F%2Fpurl.obolibrary.org%2Fobo%2Fcl%23lacks_plasma_membrane_part)
  
-### Recording general cellular qualities (e.g., morphology)
 
-To record qualities of cells when a more specific object property does not exist, [**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) may be used.
+Warning - this is used in place of the more accurate OWL expression "NOT has_part some X*** in order to keep within the EL profile of OWL. It's use with a general class as a target can potentially lead to reasoning errors.  
 
-For example, [erythrocyte](http://purl.obolibrary.org/obo/CL_0000765) has the following subclass to describe the morphology of this cell type:
+### recording gene markers
 
-[**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) *some* [biconcave](http://purl.obolibrary.org/obo/PATO_0002039)
+### ‘expresses’
 
+Use this to link a cell type to a gene or gene product that defines it:
 
-### Recording nuclear number
+For example:
 
-To record the number of nuclei in a cell, one may use a PATO subclass under the term ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) with the ['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
+'lamp5 GABAergic cortical interneuron' EquivalentTo:
+interneuron and ('has soma location' some 'cerebral cortex')
+and ('capable of' some 'gamma-aminobutyric acid secretion, neurotransmission') 
+and (expresses some 'lysosome-associated membrane glycoprotein 5')
 
-![image](https://user-images.githubusercontent.com/112839/147105229-685b5cdf-8b09-4a36-b826-41ad405886b6.png)
+In FBbt, FlyBase Gene IDs are permitted here (using standard resolvable URL pattern).  In CL currenly only PRO IDs are permitted.  In PCL, a broader range of IDs have been used (depending on data sources used).
 
-For example, [platelet](http://purl.obolibrary.org/obo/CL_0000233) has the following equivalence axiom:
+### Recording cell parts
 
-['myeloid cell'](http://purl.obolibrary.org/obo/CL_0000763) *and* (['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405)) *and* (['has characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [discoid](http://purl.obolibrary.org/obo/PATO_0001874)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood coagulation'](http://purl.obolibrary.org/obo/GO_0007596)) *and* (['capable of'](http://purl.obolibrary.org/obo/RO_0002215) *some* ['blood circulation'](http://purl.obolibrary.org/obo/GO_0008015))
+To record parts above the granularity of proteins and complexes, use a 'has part' relationship with an object from the Gene Ontology cellular_component branch.
 
+e.g. 'melanocyte' subClassOf 'has part' some 'melanosome'
 
-### Recording synaptic connectivity (neurons)
+This GO term can be combined with a PATO quality term (e.g. for shape) where necessary, e.g.
 
-To record neuron-to-neuron or motor neuron-to-target cell connectivity, consider the following object properties. These properties should be used when connectivity is key to the definition, for example, in cases where a motor neuron type is defined by the type of muscle cell on which it synapses.
+For example:
 
-[**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120)
+'mature basophil' subClassOf ('has part' some (nucleus and ('has characteristic' some lobed)))
 
-For example,
-['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038) SubClassOf [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120) *some* ['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046)
+## Recording general cellular characteristics
 
-[**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103), which is the inverse of [**synapsed to**](http://purl.obolibrary.org/obo/RO_0002120)
+The ontology [<u>PATO</u>](https://www.ebi.ac.uk/ols4/ontologies/pato),
+has a rich set of terms that can be used to record the general
+characteristics of cells, such as their morphology. These are recorded
+using [**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053).
 
-For example,
-['extrafusal muscle fiber'](http://purl.obolibrary.org/obo/CL_0008046) SubClassOf [**synapsed by**](http://purl.obolibrary.org/obo/RO_0002103) *some* ['alpha motor neuron'](http://purl.obolibrary.org/obo/CL_0008038)
+In choosing PATO terms, avoid those referring to some change in
+characteristic (e.g,.’ increased branchiness’). The following list of
+examples is not exhaustive:
 
+### Recording Morphology
 
-Of note, historically ['has presynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002113) and ['has postsynaptic terminal in'](http://purl.obolibrary.org/obo/RO_0002110) have been used to record synaptic connectivity. However, these relations are defined as being true when a single synapse is present in a region. In some use cases, these relations may be too sensitive to biological and/or experimental noise. 'synapsed to / by' are now preferred as the more specific relations to record functionally significant synaptic inputs and outputs.
+PATO has a set of general morphology terms which may be applicable to
+cells.
 
+For example, [erythrocyte](http://purl.obolibrary.org/obo/CL_0000765)
+subClassOf [**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053)
+*some* [biconcave](http://purl.obolibrary.org/obo/PATO_0002039)
 
-### Taxon constraints
+PATO also has a set of terms for [<u>specific cell morphologies</u>](https://www.ebi.ac.uk/ols4/ontologies/pato) (mostly
+neuronal), e.g.
 
-See https://oboacademy.github.io/obook/explanation/taxon-constraints-explainer/.
+‘Betz cell’ subClassOf ‘has characteristic’ some ‘standard pyramidal morphology’
+
+### Recording nuclear number 
+
+To record the number of nuclei in a cell, use a PATO subclass
+under the term ['nucleate quality'](http://purl.obolibrary.org/obo/PATO_0001404) with the ['has
+characteristic'](http://purl.obolibrary.org/obo/RO_0000053) relation.
+
+![image](https://github.com/obophenotype/cell-ontology/assets/112839/4b6aa141-c42f-4bff-9d9e-bdb71a17e882)
+
+For example, 
+
+[platelet](http://purl.obolibrary.org/obo/CL_0000233) subClassOf (['has_characteristic'](http://purl.obolibrary.org/obo/RO_0000053) *some* [**anucleate**](http://purl.obolibrary.org/obo/PATO_0001405))
+
+Note - that PATO includes bridging axioms that infer part relationships
+based on these characteristics.
+
+e.g.
+
+cell and ('has characteristic' some multinucleate) SubClassOf 'has part'
+some nucleus
+                       
+## Taxon constraints
+
+See
+<https://oboacademy.github.io/obook/explanation/taxon-constraints-explainer/>.
 
