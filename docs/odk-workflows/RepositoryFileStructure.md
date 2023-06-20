@@ -39,3 +39,4 @@ These are the components in CL
 | mappings.owl | None |
 | blood_and_immune_upper_slim.owl | None |
 | eye_upper_slim.owl | None |
+| cell_type_upper_slim.owl | None |
