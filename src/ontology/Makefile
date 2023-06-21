@@ -50,7 +50,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/cell_type_upper_slim.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 PATTERNDIR=                 ../patterns
@@ -128,7 +128,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim cell_type_upper_slim
+SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -417,12 +417,12 @@ $(COMPONENTSDIR)/eye_upper_slim.owl: $(TEMPLATEDIR)/eye_upper_slim.csv
 .PRECIOUS: $(COMPONENTSDIR)/eye_upper_slim.owl
 
 
-$(COMPONENTSDIR)/cell_type_upper_slim.owl: $(TEMPLATEDIR)/cell_type_upper_slim.csv
+$(COMPONENTSDIR)/general_cell_types_upper_slim.owl: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
 	if [ $(COMP) = true ] ; then $(ROBOT) template  \
 		$(patsubst %, --template %, $^) \
 		$(ANNOTATE_CONVERT_FILE); fi
 
-.PRECIOUS: $(COMPONENTSDIR)/cell_type_upper_slim.owl
+.PRECIOUS: $(COMPONENTSDIR)/general_cell_types_upper_slim.owl
 # ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------
