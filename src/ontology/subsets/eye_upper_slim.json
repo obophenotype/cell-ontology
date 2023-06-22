@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-05-22"
+        "val" : "2023-06-22"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/cl/releases/2023-05-22/subsets/eye_upper_slim.owl"
+      "version" : "http://purl.obolibrary.org/obo/cl/releases/2023-06-22/subsets/eye_upper_slim.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000002",
@@ -1090,7 +1090,7 @@
           "xrefs" : [ "GOC:tfm", "MESH:D013234" ]
         },
         "comments" : [ "This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "animal stem cell"
@@ -1365,13 +1365,15 @@
           "xrefs" : [ "ISBN:0517223651", "MESH:D005347", "http://en.wikipedia.org/wiki/Fibroblast" ]
         },
         "comments" : [ "These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "xrefs" : [ {
           "val" : "BTO:0000452"
         }, {
           "val" : "CALOHA:TS-0362"
         }, {
           "val" : "FMA:63877"
+        }, {
+          "val" : "NCIT:C12482"
         }, {
           "val" : "VHOG:0001482"
         } ],
@@ -1389,7 +1391,7 @@
           "val" : "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina.",
           "xrefs" : [ "FB:ma", "GOC:tfm", "MESH:D004847" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "epitheliocyte"
@@ -1486,6 +1488,7 @@
           "val" : "A cell found predominately in the blood.",
           "xrefs" : [ "GOC:add", "GOC:tfm" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim" ],
         "xrefs" : [ {
           "val" : "FMA:62844"
         }, {
@@ -1600,6 +1603,7 @@
           "xrefs" : [ "MESH:D009457" ]
         },
         "comments" : [ "Not all glial cells develop from glioblasts, with microglia developing from the mesoderm instead. See https://github.com/obophenotype/cell-ontology/issues/1571" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "neuroglial cell"
@@ -1794,7 +1798,7 @@
           "val" : "A pigment cell derived from the neural crest. Contains melanin-filled pigment granules, which gives a brown to black appearance.",
           "xrefs" : [ "SANBI:mhl" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
           "val" : "melanophore"
@@ -1894,7 +1898,7 @@
           "val" : "A non-striated, elongated, spindle-shaped cell found lining the digestive tract, uterus, and blood vessels. They develop from specialized myoblasts (smooth muscle myoblast).",
           "xrefs" : [ "MESH:D032389", "PMID:9315361", "http://en.wikipedia.org/wiki/Smooth_muscle_cell" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "non-striated muscle cell"
@@ -2325,10 +2329,6 @@
       "lbl" : "pigmented epithelial cell",
       "type" : "CLASS"
     }, {
-      "id" : "http://purl.obolibrary.org/obo/CL_0000530",
-      "lbl" : "primary neuron",
-      "type" : "CLASS"
-    }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000540",
       "lbl" : "neuron",
       "type" : "CLASS",
@@ -2338,7 +2338,7 @@
           "xrefs" : [ "MESH:D009474", "http://en.wikipedia.org/wiki/Neuron" ]
         },
         "comments" : [ "These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "nerve cell"
@@ -3685,6 +3685,7 @@
           "val" : "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates.",
           "xrefs" : [ "GOC:pr" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim" ],
         "xrefs" : [ {
           "val" : "PMID:10702418"
         } ]
@@ -6565,6 +6566,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
           "val" : "https://github.com/geneontology/go-ontology/issues/24787"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_4890"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "biological_process"
@@ -10602,6 +10606,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "external"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#is_class_level",
           "val" : "true"
@@ -36915,7 +36922,7 @@
           "val" : "Anatomical system that consists of all blood and lymph vessels.",
           "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim" ],
         "xrefs" : [ {
           "val" : "BTO:0001085"
         }, {
@@ -36934,9 +36941,6 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "consider merging with vasculature"
-        }, {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
-          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System]."
@@ -38958,6 +38962,13 @@
         "comments" : [ "a subset of general classes related to specific cell types in the eye." ]
       }
     }, {
+      "id" : "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim",
+      "lbl" : "general_cell_types_upper_slim",
+      "type" : "PROPERTY",
+      "meta" : {
+        "comments" : [ "a subset of general classes of cell types in the cell ontology." ]
+      }
+    }, {
       "id" : "http://purl.obolibrary.org/obo/cl#has_high_plasma_membrane_amount",
       "lbl" : "obsolete has_high_plasma_membrane_amount",
       "type" : "PROPERTY",
@@ -40351,10 +40362,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/CL_0000710"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/CL_0000530",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/CL_0000540"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/CL_0000540",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/CL_0000393"
@@ -41672,6 +41679,10 @@
       "sub" : "http://purl.obolibrary.org/obo/GO_0000792",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GO_0000785"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/GO_0001505",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_6072"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0001508",
       "pred" : "is_a",
@@ -47645,16 +47656,6 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0002346",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/CL_0000133"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0002346",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
-      "obj" : "http://purl.obolibrary.org/obo/CL_0000530",
-      "meta" : {
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#source",
-          "val" : "ZFA"
-        } ]
-      }
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0002384",
       "pred" : "is_a",
@@ -55470,6 +55471,10 @@
         "sub" : "http://purl.obolibrary.org/obo/GO_0000278",
         "pred" : "http://purl.obolibrary.org/obo/RO_0002162",
         "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_2759"
+      }, {
+        "sub" : "http://purl.obolibrary.org/obo/GO_0001505",
+        "pred" : "http://purl.obolibrary.org/obo/RO_0002162",
+        "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_6072"
       }, {
         "sub" : "http://purl.obolibrary.org/obo/GO_0005581",
         "pred" : "http://purl.obolibrary.org/obo/RO_0002162",

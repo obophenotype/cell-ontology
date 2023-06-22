@@ -30,8 +30,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/eye_upper_slim.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2023-05-22/subsets/eye_upper_slim.owl"/>
-        <owl:versionInfo>2023-05-22</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2023-06-22/subsets/eye_upper_slim.owl"/>
+        <owl:versionInfo>2023-06-22</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -121,6 +121,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000233">
         <oboInOwl:hasDbXref>IAO:0000233</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>term_tracker_item</oboInOwl:id>
         <oboInOwl:is_class_level rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_class_level>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
@@ -613,6 +614,16 @@ WHERE {
     
 
 
+    <!-- http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim">
+        <rdfs:comment>a subset of general classes of cell types in the cell ontology.</rdfs:comment>
+        <rdfs:label>general_cell_types_upper_slim</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/fbbt#FORMULA -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/fbbt#FORMULA">
@@ -793,14 +804,6 @@ WHERE {
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/go#systematic_synonym">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/go#term_scheduled_for_obsoletion -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/go#term_scheduled_for_obsoletion">
-        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
     
 
@@ -1674,6 +1677,12 @@ WHERE {
     <!-- http://www.geneontology.org/formats/oboInOwl#is_metadata_tag -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#is_redundant -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_redundant"/>
     
 
 
@@ -8503,6 +8512,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>CALOHA:TS-2086</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:63368</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>animal stem cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.</rdfs:comment>
         <rdfs:label>stem cell</rdfs:label>
@@ -9005,7 +9015,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>BTO:0000452</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-0362</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:63877</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>NCIT:C12482</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001482</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.</rdfs:comment>
         <rdfs:label>fibroblast</rdfs:label>
@@ -9040,6 +9052,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:66768</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBbt:0003672</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>epitheliocyte</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>epithelial cell</rdfs:label>
     </owl:Class>
@@ -9180,6 +9193,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <obo:IAO_0000115>A cell found predominately in the blood.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:62844</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D001773</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <rdfs:label>blood cell</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -9393,6 +9407,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:54536</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>neuroglial cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>neuroglia</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <rdfs:comment>Not all glial cells develop from glioblasts, with microglia developing from the mesoderm instead. See https://github.com/obophenotype/cell-ontology/issues/1571</rdfs:comment>
         <rdfs:label>glial cell</rdfs:label>
     </owl:Class>
@@ -9659,6 +9674,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D008544</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001679</oboInOwl:hasDbXref>
         <oboInOwl:hasNarrowSynonym>melanophore</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>melanocyte</rdfs:label>
     </owl:Class>
@@ -9795,6 +9811,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasExactSynonym>SMCs</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>myocytes, smooth muscle</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>smooth muscle fiber</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>smooth muscle cell</rdfs:label>
     </owl:Class>
@@ -10629,15 +10646,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CL_0000530 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000530">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
-        <rdfs:label>primary neuron</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/CL_0000540 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000540">
@@ -10659,6 +10667,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>VHOG:0001483</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBbt:0003679</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>nerve cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.</rdfs:comment>
         <rdfs:label>neuron</rdfs:label>
@@ -13760,6 +13769,7 @@ radial glial cells acting as neural progenitors throughout life.</rdfs:comment>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>PMID:10702418</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <rdfs:label>retinal cell</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14446,6 +14456,18 @@ plexiform layer.</owl:annotatedTarget>
     <!-- http://purl.obolibrary.org/obo/GO_0001505 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0001505">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6072"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6072"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>Any process that modulates levels of neurotransmitter.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0001505</oboInOwl:id>
@@ -15199,32 +15221,32 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005581">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
-        <rdfs:subClassOf rdf:nodeID="genid1383"/>
         <rdfs:subClassOf rdf:nodeID="genid1385"/>
+        <rdfs:subClassOf rdf:nodeID="genid1387"/>
         <obo:IAO_0000115>A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>Wikipedia:Collagen</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0005581</oboInOwl:id>
         <rdfs:label>collagen trimer</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid1383">
+    <owl:Restriction rdf:nodeID="genid1385">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid1385">
+    <owl:Restriction rdf:nodeID="genid1387">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
         <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid1383"/>
+        <owl:annotatedTarget rdf:nodeID="genid1385"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid1385"/>
+        <owl:annotatedTarget rdf:nodeID="genid1387"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -17690,6 +17712,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0048870"/>
         <obo:IAO_0000115>The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24787</obo:IAO_0000233>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4890"/>
         <oboInOwl:hasDbXref>Wikipedia:Cell_migration</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0016477</oboInOwl:id>
@@ -27272,7 +27295,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2557"/>
+        <rdfs:subClassOf rdf:nodeID="genid2559"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
@@ -27313,14 +27336,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>camera-type eye</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2557">
+    <owl:Restriction rdf:nodeID="genid2559">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003072"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000019"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2557"/>
+        <owl:annotatedTarget rdf:nodeID="genid2559"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -28421,7 +28444,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000076">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000490"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
-        <rdfs:subClassOf rdf:nodeID="genid2671"/>
+        <rdfs:subClassOf rdf:nodeID="genid2673"/>
         <obo:IAO_0000115>The surface (external) layer of ectoderm which begins to proliferate shortly after separation from the neuroectoderm.</obo:IAO_0000115>
         <obo:IAO_0000116>merge with non-neural. In vertebrates, the ectoderm has three parts: external ectoderm (also known as surface ectoderm), the neurectoderm (neural crest, and neural tube)</obo:IAO_0000116>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
@@ -28446,7 +28469,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>external ectoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1d/Ectoderm.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2671">
+    <owl:Restriction rdf:nodeID="genid2673">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
     </owl:Restriction>
@@ -28459,7 +28482,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000076"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2671"/>
+        <owl:annotatedTarget rdf:nodeID="genid2673"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -28828,7 +28851,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2704"/>
+        <rdfs:subClassOf rdf:nodeID="genid2706"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002082"/>
@@ -28864,14 +28887,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>gastrula stage</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2704">
+    <owl:Restriction rdf:nodeID="genid2706">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2704"/>
+        <owl:annotatedTarget rdf:nodeID="genid2706"/>
         <oboInOwl:source>BILS</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -29140,7 +29163,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2740"/>
+        <rdfs:subClassOf rdf:nodeID="genid2742"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -29213,7 +29236,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/issues/661</rdfs:seeAlso>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2740">
+    <owl:Restriction rdf:nodeID="genid2742">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
     </owl:Restriction>
@@ -29226,7 +29249,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2740"/>
+        <owl:annotatedTarget rdf:nodeID="genid2742"/>
         <oboInOwl:notes>exceptions in some taxa</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -29352,15 +29375,15 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2761"/>
+        <rdfs:subClassOf rdf:nodeID="genid2763"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001969"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2764"/>
         <rdfs:subClassOf rdf:nodeID="genid2766"/>
+        <rdfs:subClassOf rdf:nodeID="genid2768"/>
         <obo:IAO_0000115>A fluid that is composed of blood plasma and erythrocytes.</obo:IAO_0000115>
         <obo:IAO_0000232>This class excludes blood analogues, such as the insect analog of blood. See UBERON:0000179 haemolymphatic fluid.</obo:IAO_0000232>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -29402,34 +29425,34 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>blood</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2761">
+    <owl:Restriction rdf:nodeID="genid2763">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid2764">
+    <owl:Restriction rdf:nodeID="genid2766">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002049"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid2766">
+    <owl:Restriction rdf:nodeID="genid2768">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006596"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2761"/>
+        <owl:annotatedTarget rdf:nodeID="genid2763"/>
         <oboInOwl:source>CL:tm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2764"/>
+        <owl:annotatedTarget rdf:nodeID="genid2766"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1330</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2766"/>
+        <owl:annotatedTarget rdf:nodeID="genid2768"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -29735,7 +29758,7 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000463">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-        <rdfs:subClassOf rdf:nodeID="genid2807"/>
+        <rdfs:subClassOf rdf:nodeID="genid2809"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -29777,14 +29800,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#upper_level"/>
         <rdfs:label>organism substance</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2807">
+    <owl:Restriction rdf:nodeID="genid2809">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2807"/>
+        <owl:annotatedTarget rdf:nodeID="genid2809"/>
         <oboInOwl:notes>this relationship may be too strong and may be weakened in future</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -31118,7 +31141,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000221"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2926"/>
+        <rdfs:subClassOf rdf:nodeID="genid2928"/>
         <obo:IAO_0000115>Primary germ layer that is the outer of the embryo&apos;s three germ layers and gives rise to epidermis and neural tissue.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Primary germ layer that is the outer of the embryonic germ layers and gives rise to epidermis and neural tissue.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
@@ -31156,14 +31179,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>ectoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2926">
+    <owl:Restriction rdf:nodeID="genid2928">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006601"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2926"/>
+        <owl:annotatedTarget rdf:nodeID="genid2928"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -31216,7 +31239,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000223"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2934"/>
+        <rdfs:subClassOf rdf:nodeID="genid2936"/>
         <obo:IAO_0000115>Primary germ layer that lies remote from the surface of the embryo and gives rise to internal tissues such as gut.</obo:IAO_0000115>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000007>endodermal</obo:UBPROP_0000007>
@@ -31253,14 +31276,14 @@ plexiform layer.</owl:annotatedTarget>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png</foaf:depicted_by>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2934">
+    <owl:Restriction rdf:nodeID="genid2936">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006595"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000925"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2934"/>
+        <owl:annotatedTarget rdf:nodeID="genid2936"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -31305,7 +31328,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2942"/>
+        <rdfs:subClassOf rdf:nodeID="genid2944"/>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <obo:UBPROP_0000001>Primary germ layer that is the middle of the embryonic germ layers.[AAO]</obo:UBPROP_0000001>
@@ -31350,7 +31373,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>mesoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2942">
+    <owl:Restriction rdf:nodeID="genid2944">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006603"/>
     </owl:Restriction>
@@ -31363,7 +31386,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2942"/>
+        <owl:annotatedTarget rdf:nodeID="genid2944"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -31586,7 +31609,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000966"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid2973"/>
+        <rdfs:subClassOf rdf:nodeID="genid2975"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into"/>
@@ -31652,14 +31675,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>cranial nerve II</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2973">
+    <owl:Restriction rdf:nodeID="genid2975">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003902"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000941"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2973"/>
+        <owl:annotatedTarget rdf:nodeID="genid2975"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -31803,7 +31826,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005181"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
-        <rdfs:subClassOf rdf:nodeID="genid2998"/>
+        <rdfs:subClassOf rdf:nodeID="genid3000"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -31877,14 +31900,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:comment>Taxon notes:&quot; the ascidian tube-like heart lacks chambers....The ascidian heart is formed after metamorphosis as a simple tube-like structure with a single-layered myoepithelium that is continuous with a single-layered pericar- dial wall. It lacks chambers and endocardium.... The innovation of the chambered heart was a key event in vertebrate evolution, because the chambered heart generates one-way blood flow with high pressure, a critical requirement for the efficient blood supply of large-body vertebrates... all extant vertebrates have hearts with two or more chambers (Moorman and Christoffels 2003)&quot; DOI:10.1101/gad.1485706</rdfs:comment>
         <rdfs:label>heart</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2998">
+    <owl:Restriction rdf:nodeID="genid3000">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015410"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000948"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2998"/>
+        <owl:annotatedTarget rdf:nodeID="genid3000"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -31962,7 +31985,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000955">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
-        <rdfs:subClassOf rdf:nodeID="genid3014"/>
+        <rdfs:subClassOf rdf:nodeID="genid3016"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000123"/>
@@ -31987,7 +32010,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3020"/>
+        <rdfs:subClassOf rdf:nodeID="genid3022"/>
         <obo:IAO_0000115>The brain is the center of the nervous system in all vertebrate, and most invertebrate, animals. Some primitive animals such as jellyfish and starfish have a decentralized nervous system without a brain, while sponges lack any nervous system at all. In vertebrates, the brain is located in the head, protected by the skull and close to the primary sensory apparatus of vision, hearing, balance, taste, and smell[WP].</obo:IAO_0000115>
         <obo:IAO_0000116>requires review for applicability to invertebrate structures, e.g. synganglion</obo:IAO_0000116>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -32048,11 +32071,11 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>brain</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3014">
+    <owl:Restriction rdf:nodeID="genid3016">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3020">
+    <owl:Restriction rdf:nodeID="genid3022">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006238"/>
     </owl:Restriction>
@@ -32065,13 +32088,13 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3014"/>
+        <owl:annotatedTarget rdf:nodeID="genid3016"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3020"/>
+        <owl:annotatedTarget rdf:nodeID="genid3022"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -32373,9 +32396,9 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000050567"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010313"/>
-        <rdfs:subClassOf rdf:nodeID="genid3061"/>
         <rdfs:subClassOf rdf:nodeID="genid3063"/>
         <rdfs:subClassOf rdf:nodeID="genid3065"/>
+        <rdfs:subClassOf rdf:nodeID="genid3067"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -32400,7 +32423,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001773"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3071"/>
+        <rdfs:subClassOf rdf:nodeID="genid3073"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
@@ -32456,28 +32479,22 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>cornea</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3061">
+    <owl:Restriction rdf:nodeID="genid3063">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001801"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3063">
+    <owl:Restriction rdf:nodeID="genid3065">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010409"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3065">
+    <owl:Restriction rdf:nodeID="genid3067">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012430"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3071">
+    <owl:Restriction rdf:nodeID="genid3073">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004348"/>
     </owl:Restriction>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3061"/>
-        <oboInOwl:source>MA</oboInOwl:source>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
@@ -32488,12 +32505,18 @@ plexiform layer.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:nodeID="genid3065"/>
+        <oboInOwl:source>MA</oboInOwl:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid3067"/>
         <oboInOwl:source>FMA-isa</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3071"/>
+        <owl:annotatedTarget rdf:nodeID="genid3073"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -32683,10 +32706,10 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0019207"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3096"/>
         <rdfs:subClassOf rdf:nodeID="genid3098"/>
         <rdfs:subClassOf rdf:nodeID="genid3100"/>
         <rdfs:subClassOf rdf:nodeID="genid3102"/>
+        <rdfs:subClassOf rdf:nodeID="genid3104"/>
         <obo:IAO_0000115>The retina is the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6656"/>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -32737,28 +32760,22 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>retina</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/e/ed/Human_eye_cross-sectional_view_grayscale.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3096">
+    <owl:Restriction rdf:nodeID="genid3098">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000573"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3098">
+    <owl:Restriction rdf:nodeID="genid3100">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000604"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3100">
+    <owl:Restriction rdf:nodeID="genid3102">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000740"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3102">
+    <owl:Restriction rdf:nodeID="genid3104">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003072"/>
     </owl:Restriction>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000966"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3096"/>
-        <oboInOwl:source>FMA</oboInOwl:source>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000966"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
@@ -32775,6 +32792,12 @@ plexiform layer.</owl:annotatedTarget>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000966"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:nodeID="genid3102"/>
+        <oboInOwl:source>FMA</oboInOwl:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000966"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid3104"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -32848,8 +32871,8 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002104"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3113"/>
         <rdfs:subClassOf rdf:nodeID="genid3115"/>
+        <rdfs:subClassOf rdf:nodeID="genid3117"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
@@ -32885,24 +32908,24 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>eye</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3113">
+    <owl:Restriction rdf:nodeID="genid3115">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000149"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3115">
+    <owl:Restriction rdf:nodeID="genid3117">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000210"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000970"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3113"/>
+        <owl:annotatedTarget rdf:nodeID="genid3115"/>
         <oboInOwl:source>PMID:21062451</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000970"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3115"/>
+        <owl:annotatedTarget rdf:nodeID="genid3117"/>
         <oboInOwl:source>PMID:21062451</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -33504,7 +33527,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3177"/>
+        <rdfs:subClassOf rdf:nodeID="genid3179"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
@@ -33557,14 +33580,14 @@ plexiform layer.</owl:annotatedTarget>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg</foaf:depicted_by>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3177">
+    <owl:Restriction rdf:nodeID="genid3179">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016880"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3177"/>
+        <owl:annotatedTarget rdf:nodeID="genid3179"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -33652,7 +33675,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3190"/>
+        <rdfs:subClassOf rdf:nodeID="genid3192"/>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:UBPROP_0000001>Part of the nervous system which includes the brain and spinal cord.[AAO]</obo:UBPROP_0000001>
@@ -33699,7 +33722,7 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>central nervous system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3190">
+    <owl:Restriction rdf:nodeID="genid3192">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
     </owl:Restriction>
@@ -33713,7 +33736,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3190"/>
+        <owl:annotatedTarget rdf:nodeID="genid3192"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -34460,7 +34483,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000042"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3267"/>
+        <rdfs:subClassOf rdf:nodeID="genid3269"/>
         <obo:IAO_0000115>Simple squamous epithelium of mesodermal origin which lines serous membranes. Examples: mesothelium of pleura, mesothelium of peritoneum[FMA]. Wikipedia: The mesothelium is a membrane that forms the lining of several body cavities: the pleura (thoracal cavity), peritoneum (abdominal cavity including the mesentery) and pericardium (heart sac). Mesothelial tissue also surrounds the male internal reproductive organs (the tunica vaginalis testis) and covers the internal reproductive organs of women (the tunica serosa uteri).</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000111</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0002422</oboInOwl:hasDbXref>
@@ -34485,14 +34508,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>mesothelium</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/25/Mesothelium_peritoneal_wash_high_mag.jpg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3267">
+    <owl:Restriction rdf:nodeID="genid3269">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000077"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001136"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3267"/>
+        <owl:annotatedTarget rdf:nodeID="genid3269"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -34867,7 +34890,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3308"/>
+        <rdfs:subClassOf rdf:nodeID="genid3310"/>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
@@ -34907,14 +34930,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>digestive tract</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3308">
+    <owl:Restriction rdf:nodeID="genid3310">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007026"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3308"/>
+        <owl:annotatedTarget rdf:nodeID="genid3310"/>
         <oboInOwl:source>NCBIBook:NBK10107</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -34994,7 +35017,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003386"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011222"/>
-        <rdfs:subClassOf rdf:nodeID="genid3322"/>
+        <rdfs:subClassOf rdf:nodeID="genid3324"/>
         <obo:IAO_0000115>The ciliary muscle is a ring of smooth muscle in the middle layer of the eye that controls the eye&apos;s accommodation for viewing objects at varying distances and regulates the flow of aqueous humour through Schlemm&apos;s canal. [WP,unvetted].</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref>BTO:0000654</oboInOwl:hasDbXref>
@@ -35017,7 +35040,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>ciliary muscle</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/28/Gray872.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3322">
+    <owl:Restriction rdf:nodeID="genid3324">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001775"/>
     </owl:Restriction>
@@ -35036,7 +35059,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001605"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3322"/>
+        <owl:annotatedTarget rdf:nodeID="genid3324"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -35177,7 +35200,7 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001711">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000064"/>
-        <rdfs:subClassOf rdf:nodeID="genid3341"/>
+        <rdfs:subClassOf rdf:nodeID="genid3343"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
@@ -35229,14 +35252,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>eyelid</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/84/Eye_makeup.jpg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3341">
+    <owl:Restriction rdf:nodeID="genid3343">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000019"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001711"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3341"/>
+        <owl:annotatedTarget rdf:nodeID="genid3343"/>
         <oboInOwl:source>multiple</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -35532,7 +35555,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011892"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3380"/>
+        <rdfs:subClassOf rdf:nodeID="genid3382"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -35575,14 +35598,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>iris</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3380">
+    <owl:Restriction rdf:nodeID="genid3382">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004128"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001769"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3380"/>
+        <owl:annotatedTarget rdf:nodeID="genid3382"/>
         <oboInOwl:source>XAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -35655,7 +35678,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3394"/>
+        <rdfs:subClassOf rdf:nodeID="genid3396"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -35707,14 +35730,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>corneal epithelium</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3394">
+    <owl:Restriction rdf:nodeID="genid3396">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000076"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001772"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3394"/>
+        <owl:annotatedTarget rdf:nodeID="genid3396"/>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -35811,16 +35834,16 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001773">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000064"/>
-        <rdfs:subClassOf rdf:nodeID="genid3410"/>
         <rdfs:subClassOf rdf:nodeID="genid3412"/>
+        <rdfs:subClassOf rdf:nodeID="genid3414"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000963"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3415"/>
         <rdfs:subClassOf rdf:nodeID="genid3417"/>
+        <rdfs:subClassOf rdf:nodeID="genid3419"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -35862,44 +35885,44 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>sclera</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3410">
+    <owl:Restriction rdf:nodeID="genid3412">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012430"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3412">
+    <owl:Restriction rdf:nodeID="genid3414">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000347"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3415">
+    <owl:Restriction rdf:nodeID="genid3417">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003314"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3417">
+    <owl:Restriction rdf:nodeID="genid3419">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007213"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001773"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3410"/>
+        <owl:annotatedTarget rdf:nodeID="genid3412"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001773"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3412"/>
+        <owl:annotatedTarget rdf:nodeID="genid3414"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001773"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3415"/>
+        <owl:annotatedTarget rdf:nodeID="genid3417"/>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001773"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3417"/>
+        <owl:annotatedTarget rdf:nodeID="genid3419"/>
         <oboInOwl:inferred_by>cjm</oboInOwl:inferred_by>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
@@ -35960,7 +35983,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010427"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3427"/>
+        <rdfs:subClassOf rdf:nodeID="genid3429"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -35999,14 +36022,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>ciliary body</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3427">
+    <owl:Restriction rdf:nodeID="genid3429">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001775"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3427"/>
+        <owl:annotatedTarget rdf:nodeID="genid3429"/>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -36054,14 +36077,14 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001776">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002203"/>
-        <rdfs:subClassOf rdf:nodeID="genid3435"/>
+        <rdfs:subClassOf rdf:nodeID="genid3437"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0019207"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3438"/>
+        <rdfs:subClassOf rdf:nodeID="genid3440"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -36124,24 +36147,24 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>optic choroid</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3435">
+    <owl:Restriction rdf:nodeID="genid3437">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001768"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3438">
+    <owl:Restriction rdf:nodeID="genid3440">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001802"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001776"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3435"/>
+        <owl:annotatedTarget rdf:nodeID="genid3437"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001776"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3438"/>
+        <owl:annotatedTarget rdf:nodeID="genid3440"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -36242,7 +36265,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000964"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3461"/>
+        <rdfs:subClassOf rdf:nodeID="genid3463"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -36291,14 +36314,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>substantia propria of cornea</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3461">
+    <owl:Restriction rdf:nodeID="genid3463">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007213"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001777"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3461"/>
+        <owl:annotatedTarget rdf:nodeID="genid3463"/>
         <oboInOwl:inferred_by>cjm</oboInOwl:inferred_by>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
@@ -36375,9 +36398,9 @@ plexiform layer.</owl:annotatedTarget>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000488"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015808"/>
-        <rdfs:subClassOf rdf:nodeID="genid3478"/>
         <rdfs:subClassOf rdf:nodeID="genid3480"/>
         <rdfs:subClassOf rdf:nodeID="genid3482"/>
+        <rdfs:subClassOf rdf:nodeID="genid3484"/>
         <obo:IAO_0000115>A double layer covering the ciliary body that produces aqueous humor.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref>BTO:0001770</oboInOwl:hasDbXref>
@@ -36397,15 +36420,15 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>ciliary epithelium</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3478">
+    <owl:Restriction rdf:nodeID="genid3480">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001775"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3480">
+    <owl:Restriction rdf:nodeID="genid3482">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048770"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3482">
+    <owl:Restriction rdf:nodeID="genid3484">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003000"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001796"/>
     </owl:Restriction>
@@ -36418,19 +36441,19 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001778"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3478"/>
+        <owl:annotatedTarget rdf:nodeID="genid3480"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001778"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3480"/>
+        <owl:annotatedTarget rdf:nodeID="genid3482"/>
         <oboInOwl:source>MP</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001778"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3482"/>
+        <owl:annotatedTarget rdf:nodeID="genid3484"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -36553,7 +36576,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0048770"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3500"/>
+        <rdfs:subClassOf rdf:nodeID="genid3502"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -36614,14 +36637,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>pigmented layer of retina</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3500">
+    <owl:Restriction rdf:nodeID="genid3502">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001787"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001782"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3500"/>
+        <owl:annotatedTarget rdf:nodeID="genid3502"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -36725,7 +36748,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003902"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3517"/>
+        <rdfs:subClassOf rdf:nodeID="genid3519"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -36759,14 +36782,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>photoreceptor layer of retina</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3517">
+    <owl:Restriction rdf:nodeID="genid3519">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000287"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001787"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3517"/>
+        <owl:annotatedTarget rdf:nodeID="genid3519"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -36939,7 +36962,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003902"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3539"/>
+        <rdfs:subClassOf rdf:nodeID="genid3541"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -36986,14 +37009,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>outer nuclear layer of retina</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3539">
+    <owl:Restriction rdf:nodeID="genid3541">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000287"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001789"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3539"/>
+        <owl:annotatedTarget rdf:nodeID="genid3541"/>
         <oboInOwl:notes>soma</oboInOwl:notes>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
@@ -37333,7 +37356,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001792">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001781"/>
-        <rdfs:subClassOf rdf:nodeID="genid3581"/>
+        <rdfs:subClassOf rdf:nodeID="genid3583"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -37392,7 +37415,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>ganglionic layer of retina</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3581">
+    <owl:Restriction rdf:nodeID="genid3583">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003902"/>
     </owl:Restriction>
@@ -37405,7 +37428,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001792"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3581"/>
+        <owl:annotatedTarget rdf:nodeID="genid3583"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -37481,7 +37504,7 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001793">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001781"/>
-        <rdfs:subClassOf rdf:nodeID="genid3596"/>
+        <rdfs:subClassOf rdf:nodeID="genid3598"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
@@ -37537,14 +37560,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>nerve fiber layer of retina</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3596">
+    <owl:Restriction rdf:nodeID="genid3598">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003902"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001793"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3596"/>
+        <owl:annotatedTarget rdf:nodeID="genid3598"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -37923,7 +37946,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001796">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006312"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006314"/>
-        <rdfs:subClassOf rdf:nodeID="genid3650"/>
+        <rdfs:subClassOf rdf:nodeID="genid3652"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -37959,14 +37982,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>aqueous humor of eyeball</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3650">
+    <owl:Restriction rdf:nodeID="genid3652">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001766"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001796"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3650"/>
+        <owl:annotatedTarget rdf:nodeID="genid3652"/>
         <oboInOwl:notes>FMA def states A and P</oboInOwl:notes>
         <oboInOwl:notes>located_in in EHDAA2</oboInOwl:notes>
         <oboInOwl:source>VHOG</oboInOwl:source>
@@ -38148,7 +38171,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001799"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3674"/>
+        <rdfs:subClassOf rdf:nodeID="genid3676"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -38172,7 +38195,7 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>vitreous body</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3674">
+    <owl:Restriction rdf:nodeID="genid3676">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
@@ -38185,7 +38208,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001798"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3674"/>
+        <owl:annotatedTarget rdf:nodeID="genid3676"/>
         <oboInOwl:notes>neural ectoderm of optic cup</oboInOwl:notes>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
     </owl:Axiom>
@@ -38320,8 +38343,8 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001801">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000063"/>
-        <rdfs:subClassOf rdf:nodeID="genid3695"/>
         <rdfs:subClassOf rdf:nodeID="genid3697"/>
+        <rdfs:subClassOf rdf:nodeID="genid3699"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -38354,24 +38377,24 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>anterior segment of eyeball</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/ba/Cataract_in_human_eye.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3695">
+    <owl:Restriction rdf:nodeID="genid3697">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010230"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3697">
+    <owl:Restriction rdf:nodeID="genid3699">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000123"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010230"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001801"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3695"/>
+        <owl:annotatedTarget rdf:nodeID="genid3697"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001801"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3697"/>
+        <owl:annotatedTarget rdf:nodeID="genid3699"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38422,8 +38445,8 @@ plexiform layer.</owl:annotatedTarget>
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001802">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000063"/>
-        <rdfs:subClassOf rdf:nodeID="genid3706"/>
         <rdfs:subClassOf rdf:nodeID="genid3708"/>
+        <rdfs:subClassOf rdf:nodeID="genid3710"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
@@ -38453,24 +38476,24 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>posterior segment of eyeball</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3706">
+    <owl:Restriction rdf:nodeID="genid3708">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010230"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3708">
+    <owl:Restriction rdf:nodeID="genid3710">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000122"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010230"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001802"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3706"/>
+        <owl:annotatedTarget rdf:nodeID="genid3708"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001802"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3708"/>
+        <owl:annotatedTarget rdf:nodeID="genid3710"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38507,9 +38530,9 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001811">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000060"/>
-        <rdfs:subClassOf rdf:nodeID="genid3716"/>
         <rdfs:subClassOf rdf:nodeID="genid3718"/>
         <rdfs:subClassOf rdf:nodeID="genid3720"/>
+        <rdfs:subClassOf rdf:nodeID="genid3722"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -38559,15 +38582,15 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>conjunctiva</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/55/Gray883.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3716">
+    <owl:Restriction rdf:nodeID="genid3718">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005908"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3718">
+    <owl:Restriction rdf:nodeID="genid3720">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010409"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3720">
+    <owl:Restriction rdf:nodeID="genid3722">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000076"/>
     </owl:Restriction>
@@ -38580,19 +38603,19 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001811"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3716"/>
+        <owl:annotatedTarget rdf:nodeID="genid3718"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001811"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3718"/>
+        <owl:annotatedTarget rdf:nodeID="genid3720"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001811"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3720"/>
+        <owl:annotatedTarget rdf:nodeID="genid3722"/>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38656,7 +38679,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3733"/>
+        <rdfs:subClassOf rdf:nodeID="genid3735"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002298"/>
         <obo:IAO_0000115>The most anterior region of the brain including both the telencephalon and diencephalon.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -38703,14 +38726,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>forebrain</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3733">
+    <owl:Restriction rdf:nodeID="genid3735">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006240"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001890"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3733"/>
+        <owl:annotatedTarget rdf:nodeID="genid3735"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -38786,14 +38809,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002616"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
-        <rdfs:subClassOf rdf:nodeID="genid3743"/>
+        <rdfs:subClassOf rdf:nodeID="genid3745"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3746"/>
+        <rdfs:subClassOf rdf:nodeID="genid3748"/>
         <obo:IAO_0000115>The midbrain is the middle division of the three primary divisions of the developing chordate brain or the corresponding part of the adult brain (in vertebrates, includes a ventral part containing the cerebral peduncles and a dorsal tectum containing the corpora quadrigemina and that surrounds the aqueduct of Sylvius connecting the third and fourth ventricles)[GO].</obo:IAO_0000115>
         <obo:IAO_0000116>developmental relationships need revised</obo:IAO_0000116>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001894"/>
@@ -38846,24 +38869,24 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>midbrain</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/f/f9/Human_brain_inferior_view_description.JPG</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3743">
+    <owl:Restriction rdf:nodeID="genid3745">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003849"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3746">
+    <owl:Restriction rdf:nodeID="genid3748">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009616"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001891"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3743"/>
+        <owl:annotatedTarget rdf:nodeID="genid3745"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001891"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3746"/>
+        <owl:annotatedTarget rdf:nodeID="genid3748"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38966,14 +38989,14 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001890"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3760"/>
+        <rdfs:subClassOf rdf:nodeID="genid3762"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002433"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001890"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3763"/>
+        <rdfs:subClassOf rdf:nodeID="genid3765"/>
         <obo:IAO_0000115>The division of the forebrain that develops from the foremost primary cerebral vesicle.</obo:IAO_0000115>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001891"/>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002028"/>
@@ -39036,24 +39059,24 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>diencephalon</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3760">
+    <owl:Restriction rdf:nodeID="genid3762">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003851"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3763">
+    <owl:Restriction rdf:nodeID="genid3765">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006222"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001894"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3760"/>
+        <owl:annotatedTarget rdf:nodeID="genid3762"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001894"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3763"/>
+        <owl:annotatedTarget rdf:nodeID="genid3765"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -39490,7 +39513,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002298"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3812"/>
+        <rdfs:subClassOf rdf:nodeID="genid3814"/>
         <obo:IAO_0000115>Ventral part of the midbrain, separated from the hindbrain by the isthmus[ISBN:0471888893]. Subdivision of the midbrain lying anterior to the tectum and posterior to the substantia nigra and cerebral peduncle[FMA] The part of the midbrain extending from the substantia nigra to the cerebral aqueduct in a horizontal section of the midbrain. It forms the floor of the midbrain that surrounds the cerebral aqueduct[WP].</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <obo:UBPROP_0000003>Together, our results reveal a shared basic organization in the tegmental domains of the diencephalon and midbrain of developing lamprey, indicating early appearance of the domain in vertebrate phylogeny.[well established][VHOG]</obo:UBPROP_0000003>
@@ -39530,14 +39553,14 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>midbrain tegmentum</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/b6/Gray712.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3812">
+    <owl:Restriction rdf:nodeID="genid3814">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010285"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001943"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3812"/>
+        <owl:annotatedTarget rdf:nodeID="genid3814"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -39717,8 +39740,8 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3841"/>
         <rdfs:subClassOf rdf:nodeID="genid3843"/>
+        <rdfs:subClassOf rdf:nodeID="genid3845"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -39731,7 +39754,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004872"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3847"/>
+        <rdfs:subClassOf rdf:nodeID="genid3849"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
@@ -39790,34 +39813,34 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>blood vessel</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3841">
+    <owl:Restriction rdf:nodeID="genid3843">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3843">
+    <owl:Restriction rdf:nodeID="genid3845">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007500"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3847">
+    <owl:Restriction rdf:nodeID="genid3849">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006965"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3841"/>
+        <owl:annotatedTarget rdf:nodeID="genid3843"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3843"/>
+        <owl:annotatedTarget rdf:nodeID="genid3845"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3847"/>
+        <owl:annotatedTarget rdf:nodeID="genid3849"/>
         <oboInOwl:source>GO:0072360</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40176,7 +40199,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002028">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002616"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
-        <rdfs:subClassOf rdf:nodeID="genid3892"/>
+        <rdfs:subClassOf rdf:nodeID="genid3894"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -40189,7 +40212,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3896"/>
+        <rdfs:subClassOf rdf:nodeID="genid3898"/>
         <obo:IAO_0000115>The most posterior of the three principal regions of the brain. In mammals and birds the hindbrain is divided into a rostral metencephalon and a caudal myelencephalon. In zebrafish, with the exception of the cerebellum, the ventral remainder of the metencephalon can be separated only arbitrarily from the more caudal myelencephalic portion of the medulla oblongata (From: Neuroanatomy of the Zebrafish Brain)[ZFA]. Organ component of neuraxis that has as its parts the pons, cerebellum and medulla oblongata[FMA].</obo:IAO_0000115>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001891"/>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001894"/>
@@ -40240,25 +40263,25 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>hindbrain</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3892">
+    <owl:Restriction rdf:nodeID="genid3894">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002298"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid3896">
+    <owl:Restriction rdf:nodeID="genid3898">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007277"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002028"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3892"/>
+        <owl:annotatedTarget rdf:nodeID="genid3894"/>
         <oboInOwl:notes>modified-source-relation</oboInOwl:notes>
         <oboInOwl:source>ABA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002028"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3896"/>
+        <owl:annotatedTarget rdf:nodeID="genid3898"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41079,7 +41102,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000019"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3987"/>
+        <rdfs:subClassOf rdf:nodeID="genid3989"/>
         <obo:IAO_0000115>Vasculature that is part of the eye region.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <obo:UBPROP_0000012>not part of the eye in ZFA. Note this changed to a blood vessel in ZFA</obo:UBPROP_0000012>
@@ -41100,14 +41123,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>vasculature of eye</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3987">
+    <owl:Restriction rdf:nodeID="genid3989">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003314"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002203"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3987"/>
+        <owl:annotatedTarget rdf:nodeID="genid3989"/>
         <oboInOwl:source>ISBN:0781772214</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41167,7 +41190,7 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0040011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid3997"/>
+        <rdfs:subClassOf rdf:nodeID="genid3999"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
@@ -41201,14 +41224,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>musculoskeletal system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid3997">
+    <owl:Restriction rdf:nodeID="genid3999">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid3997"/>
+        <owl:annotatedTarget rdf:nodeID="genid3999"/>
         <oboInOwl:notes>check ctenophore</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -41346,15 +41369,15 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4017"/>
+        <rdfs:subClassOf rdf:nodeID="genid4019"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003076"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4020"/>
         <rdfs:subClassOf rdf:nodeID="genid4022"/>
+        <rdfs:subClassOf rdf:nodeID="genid4024"/>
         <obo:IAO_0000115>Part of the central nervous system located in the vertebral canal continuous with and caudal to the brain; demarcated from brain by plane of foramen magnum. It is composed of an inner core of gray matter in which nerve cells predominate, and an outer layer of white matter in which myelinated nerve fibers predominate, and surrounds the central canal. (CUMBO).</obo:IAO_0000115>
         <obo:IAO_0000116>TODO - add superclass to unify with VNC?</obo:IAO_0000116>
         <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000955"/>
@@ -41411,34 +41434,34 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>spinal cord</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4017">
+    <owl:Restriction rdf:nodeID="genid4019">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0005000"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4020">
+    <owl:Restriction rdf:nodeID="genid4022">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003853"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4022">
+    <owl:Restriction rdf:nodeID="genid4024">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006241"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002240"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4017"/>
+        <owl:annotatedTarget rdf:nodeID="genid4019"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002240"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4020"/>
+        <owl:annotatedTarget rdf:nodeID="genid4022"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002240"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4022"/>
+        <owl:annotatedTarget rdf:nodeID="genid4024"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -41881,7 +41904,7 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002323">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002553"/>
-        <rdfs:subClassOf rdf:nodeID="genid4073"/>
+        <rdfs:subClassOf rdf:nodeID="genid4075"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002572"/>
@@ -41922,14 +41945,14 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>coelemic cavity lumen</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4073">
+    <owl:Restriction rdf:nodeID="genid4075">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002494"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003886"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002323"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4073"/>
+        <owl:annotatedTarget rdf:nodeID="genid4075"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -42037,9 +42060,9 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001049"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4093"/>
         <rdfs:subClassOf rdf:nodeID="genid4095"/>
         <rdfs:subClassOf rdf:nodeID="genid4097"/>
+        <rdfs:subClassOf rdf:nodeID="genid4099"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
@@ -42094,15 +42117,15 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>notochord</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4093">
+    <owl:Restriction rdf:nodeID="genid4095">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4095">
+    <owl:Restriction rdf:nodeID="genid4097">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004880"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4097">
+    <owl:Restriction rdf:nodeID="genid4099">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
     </owl:Restriction>
@@ -42121,19 +42144,19 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4093"/>
+        <owl:annotatedTarget rdf:nodeID="genid4095"/>
         <oboInOwl:source>http://tolweb.org/Chordata/2499</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4095"/>
+        <owl:annotatedTarget rdf:nodeID="genid4097"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4097"/>
+        <owl:annotatedTarget rdf:nodeID="genid4099"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42219,8 +42242,8 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007503"/>
-        <rdfs:subClassOf rdf:nodeID="genid4111"/>
         <rdfs:subClassOf rdf:nodeID="genid4113"/>
+        <rdfs:subClassOf rdf:nodeID="genid4115"/>
         <obo:IAO_0000115>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</obo:IAO_0000115>
         <obo:IAO_0000116>currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making &apos;somitic mesoderm&apos; a separate term and correlate with regionalization processes. Consider moving ZFA term to &apos;trunk somite&apos; as it is part of the trunk</obo:IAO_0000116>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
@@ -42266,11 +42289,11 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:label>somite</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4111">
+    <owl:Restriction rdf:nodeID="genid4113">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4113">
+    <owl:Restriction rdf:nodeID="genid4115">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
     </owl:Restriction>
@@ -42283,13 +42306,13 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4111"/>
+        <owl:annotatedTarget rdf:nodeID="genid4113"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4113"/>
+        <owl:annotatedTarget rdf:nodeID="genid4115"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42402,12 +42425,12 @@ plexiform layer.</owl:annotatedTarget>
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002342">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010316"/>
-        <rdfs:subClassOf rdf:nodeID="genid4129"/>
         <rdfs:subClassOf rdf:nodeID="genid4131"/>
         <rdfs:subClassOf rdf:nodeID="genid4133"/>
         <rdfs:subClassOf rdf:nodeID="genid4135"/>
         <rdfs:subClassOf rdf:nodeID="genid4137"/>
         <rdfs:subClassOf rdf:nodeID="genid4139"/>
+        <rdfs:subClassOf rdf:nodeID="genid4141"/>
         <obo:IAO_0000115>A specialized region of ectoderm found between the neural ectoderm (neural plate) and non-neural ectoderm and composed of highly migratory pluripotent cells that delaminate in early embryonic development from the dorsal neural tube and give rise to an astounding variety of differentiated cell types[MP].</obo:IAO_0000115>
         <obo:IAO_0000116>consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams).</obo:IAO_0000116>
         <obo:RO_0002174 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117565"/>
@@ -42447,66 +42470,66 @@ plexiform layer.</owl:annotatedTarget>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png</foaf:depicted_by>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4129">
+    <owl:Restriction rdf:nodeID="genid4131">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4131">
+    <owl:Restriction rdf:nodeID="genid4133">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_89593"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4133">
+    <owl:Restriction rdf:nodeID="genid4135">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4135">
+    <owl:Restriction rdf:nodeID="genid4137">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005062"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4137">
+    <owl:Restriction rdf:nodeID="genid4139">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4139">
+    <owl:Restriction rdf:nodeID="genid4141">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4129"/>
+        <owl:annotatedTarget rdf:nodeID="genid4131"/>
         <oboInOwl:source>XAO</oboInOwl:source>
         <oboInOwl:source>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4131"/>
+        <owl:annotatedTarget rdf:nodeID="genid4133"/>
         <oboInOwl:notes>Hall and others restrict NC to vertebrates but we opt for a less restrictive constraint to avoid inconsistencies when areas such as P1 area of pallium in hagfishes inherit cell lineage from telecephalon-contributing NC cells</oboInOwl:notes>
         <oboInOwl:source>ISBN:0073040584</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4133"/>
+        <owl:annotatedTarget rdf:nodeID="genid4135"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4135"/>
+        <owl:annotatedTarget rdf:nodeID="genid4137"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4137"/>
+        <owl:annotatedTarget rdf:nodeID="genid4139"/>
         <oboInOwl:notes>pre migratory https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4139"/>
+        <owl:annotatedTarget rdf:nodeID="genid4141"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42596,7 +42619,6 @@ plexiform layer.</owl:annotatedTarget>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000133"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4152"/>
         <obo:IAO_0000115>Embryonic ectoderm that gives rise to nervous tissue.</obo:IAO_0000115>
         <obo:UBPROP_0000003>(...) the ability of ectoderm to produce neuronal cells is a general metazoan feature.[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000007>neurectodermal</obo:UBPROP_0000007>
@@ -42632,16 +42654,6 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>neurectoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4152">
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000530"/>
-    </owl:Restriction>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4152"/>
-        <oboInOwl:source>ZFA</oboInOwl:source>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -53254,7 +53266,6 @@ plexiform layer.</owl:annotatedTarget>
         <rdfs:subClassOf rdf:nodeID="genid5454"/>
         <obo:IAO_0000115>Anatomical system that consists of all blood and lymph vessels.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with vasculature</obo:IAO_0000116>
-        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <obo:UBPROP_0000001>The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System].</obo:UBPROP_0000001>
         <obo:UBPROP_0000012>in both MA and BTO, the arterial system and venous sytem are subtypes of the vascular system</obo:UBPROP_0000012>
         <oboInOwl:hasDbXref>BTO:0001085</oboInOwl:hasDbXref>
@@ -53266,7 +53277,6 @@ plexiform layer.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>UMLS:C0489903</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0007798</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>vascular system</rdfs:label>
     </owl:Class>
