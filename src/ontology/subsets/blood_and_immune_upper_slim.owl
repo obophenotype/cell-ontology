@@ -30,8 +30,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/blood_and_immune_upper_slim.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2023-05-22/subsets/blood_and_immune_upper_slim.owl"/>
-        <owl:versionInfo>2023-05-22</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2023-06-22/subsets/blood_and_immune_upper_slim.owl"/>
+        <owl:versionInfo>2023-06-22</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -121,6 +121,7 @@
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/IAO_0000233">
         <oboInOwl:hasDbXref>IAO:0000233</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>external</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>term_tracker_item</oboInOwl:id>
         <oboInOwl:is_class_level rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_class_level>
         <oboInOwl:is_metadata_tag rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</oboInOwl:is_metadata_tag>
@@ -613,6 +614,16 @@ WHERE {
     
 
 
+    <!-- http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim">
+        <rdfs:comment>a subset of general classes of cell types in the cell ontology.</rdfs:comment>
+        <rdfs:label>general_cell_types_upper_slim</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/fbbt#FORMULA -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/fbbt#FORMULA">
@@ -793,14 +804,6 @@ WHERE {
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/go#systematic_synonym">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/go#term_scheduled_for_obsoletion -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/go#term_scheduled_for_obsoletion">
-        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SubsetProperty"/>
     </owl:AnnotationProperty>
     
 
@@ -1674,6 +1677,12 @@ WHERE {
     <!-- http://www.geneontology.org/formats/oboInOwl#is_metadata_tag -->
 
     <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_metadata_tag"/>
+    
+
+
+    <!-- http://www.geneontology.org/formats/oboInOwl#is_redundant -->
+
+    <owl:AnnotationProperty rdf:about="http://www.geneontology.org/formats/oboInOwl#is_redundant"/>
     
 
 
@@ -8217,6 +8226,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>CALOHA:TS-2086</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:63368</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>animal stem cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.</rdfs:comment>
         <rdfs:label>stem cell</rdfs:label>
@@ -8871,7 +8881,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>BTO:0000452</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-0362</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:63877</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>NCIT:C12482</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>VHOG:0001482</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.</rdfs:comment>
         <rdfs:label>fibroblast</rdfs:label>
@@ -8907,6 +8919,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>FMA:66768</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBbt:0003672</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>epitheliocyte</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>epithelial cell</rdfs:label>
     </owl:Class>
@@ -9037,6 +9050,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <obo:IAO_0000115>A cell found predominately in the blood.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:62844</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D001773</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <rdfs:label>blood cell</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -9095,6 +9109,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasExactSynonym>T-lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>immature T cell</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>mature T cell</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>T cell</rdfs:label>
     </owl:Class>
@@ -10181,29 +10196,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/CL_0000233 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000233">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000763"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001405"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0001874"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007596"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0008015"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000081"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000225"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000458"/>
@@ -10222,7 +10214,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007596"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -10349,6 +10341,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D008264</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>histiocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>Morphology: Diameter 30_M-80 _M, abundant cytoplasm, low N/C ratio, eccentric nucleus. Irregular shape with pseudopods, highly adhesive. Contain vacuoles and phagosomes, may contain azurophilic granules; markers: Mouse &amp; Human: CD68, in most cases CD11b. Mouse: in most cases F4/80+; role or process: immune, antigen presentation, &amp; tissue remodelling; lineage: hematopoietic, myeloid.</rdfs:comment>
         <rdfs:label>macrophage</rdfs:label>
@@ -10404,6 +10397,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasExactSynonym>B-cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>B-lymphocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>B cell</rdfs:label>
     </owl:Class>
@@ -10732,6 +10726,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>MESH:D003713</oboInOwl:hasDbXref>
         <oboInOwl:hasRelatedSynonym>interdigitating cell</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>veiled cell</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>dendritic cell</rdfs:label>
     </owl:Class>
@@ -10806,15 +10801,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     
 
 
-    <!-- http://purl.obolibrary.org/obo/CL_0000530 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000530">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000540"/>
-        <rdfs:label>primary neuron</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/CL_0000540 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000540">
@@ -10836,6 +10822,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>VHOG:0001483</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBbt:0003679</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>nerve cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.</rdfs:comment>
         <rdfs:label>neuron</rdfs:label>
@@ -11817,22 +11804,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000557"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>colony forming unit granulocyte macrophage</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:0721601464</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMCID:PMC2213186</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMCID:PMC548021</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000557"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>granulocyte-macrophage progenitor</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:0721601464</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMCID:PMC2213186</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>PMCID:PMC548021</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000557"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A hematopoietic progenitor cell that is committed to the granulocyte and monocyte lineages. These cells are CD123-positive, and do not express Gata1 or Gata2 but do express C/EBPa, and Pu.1.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:amm</oboInOwl:hasDbXref>
@@ -11866,6 +11837,22 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000557"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>GMP</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ISBN:0721601464</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMCID:PMC2213186</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMCID:PMC548021</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000557"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>colony forming unit granulocyte macrophage</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>ISBN:0721601464</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMCID:PMC2213186</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMCID:PMC548021</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000557"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>granulocyte-macrophage progenitor</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ISBN:0721601464</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMCID:PMC2213186</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMCID:PMC548021</oboInOwl:hasDbXref>
@@ -12249,6 +12236,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>CALOHA:TS-0638</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:62864</oboInOwl:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>Morphology: Mononuclear cell, diameter, 14 to 20 _M, N/C ratio 2:1-1:1. Nucleus may appear in variety of shapes: round, kidney, lobulated, or convoluted. Fine azurophilic granules present; markers: CD11b (shared with other myeloid cells), human: CD14, mouse: F4/80-mid,GR1-low; location: Blood, but can be recruited into tissues; role or process: immune &amp; tissue remodelling; lineage: hematopoietic, myeloid.</rdfs:comment>
         <rdfs:label>monocyte</rdfs:label>
@@ -12513,6 +12501,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>CALOHA:TS-0549</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:62852</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D007962</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>NCIT:C12529</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>leucocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>white blood cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>immune cell</oboInOwl:hasRelatedSynonym>
@@ -15134,6 +15123,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9990-8331"/>
         <oboInOwl:creation_date>2011-11-16T04:28:16Z</oboInOwl:creation_date>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>bone cell</rdfs:label>
     </owl:Class>
@@ -17556,6 +17546,18 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0001775">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009987"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032501"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A multicellular organismal process by which exposure to an activating factor such as a cellular or soluble ligand results in a change in the morphology or behavior of a cell.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24416</obo:IAO_0000233>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
@@ -20204,32 +20206,32 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005581">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
-        <rdfs:subClassOf rdf:nodeID="genid2340"/>
-        <rdfs:subClassOf rdf:nodeID="genid2342"/>
+        <rdfs:subClassOf rdf:nodeID="genid2332"/>
+        <rdfs:subClassOf rdf:nodeID="genid2334"/>
         <obo:IAO_0000115>A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>Wikipedia:Collagen</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0005581</oboInOwl:id>
         <rdfs:label>collagen trimer</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2340">
+    <owl:Restriction rdf:nodeID="genid2332">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid2342">
+    <owl:Restriction rdf:nodeID="genid2334">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
         <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2340"/>
+        <owl:annotatedTarget rdf:nodeID="genid2332"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2342"/>
+        <owl:annotatedTarget rdf:nodeID="genid2334"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -23125,6 +23127,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0006810"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009987"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002608"/>
@@ -23132,6 +23135,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cellular transport process in which transported substances are moved in membrane-bounded vesicles; transported substances are enclosed in the vesicle lumen or located in the vesicle membrane. The process begins with a step that directs a substance to the forming vesicle, and includes vesicle budding and coating. Vesicles are then targeted to, and fuse with, an acceptor membrane.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/25421</obo:IAO_0000233>
         <oboInOwl:hasAlternativeId>GO:0006899</oboInOwl:hasAlternativeId>
         <oboInOwl:hasExactSynonym>vesicle transport</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>vesicular transport</oboInOwl:hasExactSynonym>
@@ -23256,6 +23260,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0048870"/>
         <obo:IAO_0000115>The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24787</obo:IAO_0000233>
+        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4890"/>
         <oboInOwl:hasDbXref>Wikipedia:Cell_migration</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0016477</oboInOwl:id>
@@ -38646,7 +38651,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4191"/>
+        <rdfs:subClassOf rdf:nodeID="genid4183"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002082"/>
@@ -38682,14 +38687,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>gastrula stage</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4191">
+    <owl:Restriction rdf:nodeID="genid4183">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4191"/>
+        <owl:annotatedTarget rdf:nodeID="genid4183"/>
         <oboInOwl:source>BILS</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38913,7 +38918,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4223"/>
+        <rdfs:subClassOf rdf:nodeID="genid4215"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -38986,7 +38991,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/issues/661</rdfs:seeAlso>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4223">
+    <owl:Restriction rdf:nodeID="genid4215">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
     </owl:Restriction>
@@ -38999,7 +39004,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4223"/>
+        <owl:annotatedTarget rdf:nodeID="genid4215"/>
         <oboInOwl:notes>exceptions in some taxa</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -39125,15 +39130,15 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4244"/>
+        <rdfs:subClassOf rdf:nodeID="genid4236"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001969"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4247"/>
-        <rdfs:subClassOf rdf:nodeID="genid4249"/>
+        <rdfs:subClassOf rdf:nodeID="genid4239"/>
+        <rdfs:subClassOf rdf:nodeID="genid4241"/>
         <obo:IAO_0000115>A fluid that is composed of blood plasma and erythrocytes.</obo:IAO_0000115>
         <obo:IAO_0000232>This class excludes blood analogues, such as the insect analog of blood. See UBERON:0000179 haemolymphatic fluid.</obo:IAO_0000232>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -39175,34 +39180,34 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>blood</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4244">
+    <owl:Restriction rdf:nodeID="genid4236">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4247">
+    <owl:Restriction rdf:nodeID="genid4239">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002049"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4249">
+    <owl:Restriction rdf:nodeID="genid4241">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006596"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4244"/>
+        <owl:annotatedTarget rdf:nodeID="genid4236"/>
         <oboInOwl:source>CL:tm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4247"/>
+        <owl:annotatedTarget rdf:nodeID="genid4239"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1330</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4249"/>
+        <owl:annotatedTarget rdf:nodeID="genid4241"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -39508,7 +39513,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000463">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-        <rdfs:subClassOf rdf:nodeID="genid4290"/>
+        <rdfs:subClassOf rdf:nodeID="genid4282"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -39550,14 +39555,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#upper_level"/>
         <rdfs:label>organism substance</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4290">
+    <owl:Restriction rdf:nodeID="genid4282">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4290"/>
+        <owl:annotatedTarget rdf:nodeID="genid4282"/>
         <oboInOwl:notes>this relationship may be too strong and may be weakened in future</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -40788,7 +40793,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000221"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4399"/>
+        <rdfs:subClassOf rdf:nodeID="genid4391"/>
         <obo:IAO_0000115>Primary germ layer that is the outer of the embryo&apos;s three germ layers and gives rise to epidermis and neural tissue.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Primary germ layer that is the outer of the embryonic germ layers and gives rise to epidermis and neural tissue.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
@@ -40826,14 +40831,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>ectoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4399">
+    <owl:Restriction rdf:nodeID="genid4391">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006601"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4399"/>
+        <owl:annotatedTarget rdf:nodeID="genid4391"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40886,7 +40891,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000223"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4407"/>
+        <rdfs:subClassOf rdf:nodeID="genid4399"/>
         <obo:IAO_0000115>Primary germ layer that lies remote from the surface of the embryo and gives rise to internal tissues such as gut.</obo:IAO_0000115>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000007>endodermal</obo:UBPROP_0000007>
@@ -40923,14 +40928,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png</foaf:depicted_by>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4407">
+    <owl:Restriction rdf:nodeID="genid4399">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006595"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000925"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4407"/>
+        <owl:annotatedTarget rdf:nodeID="genid4399"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40975,7 +40980,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4415"/>
+        <rdfs:subClassOf rdf:nodeID="genid4407"/>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <obo:UBPROP_0000001>Primary germ layer that is the middle of the embryonic germ layers.[AAO]</obo:UBPROP_0000001>
@@ -41020,7 +41025,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>mesoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4415">
+    <owl:Restriction rdf:nodeID="genid4407">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006603"/>
     </owl:Restriction>
@@ -41033,7 +41038,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4415"/>
+        <owl:annotatedTarget rdf:nodeID="genid4407"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41240,7 +41245,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005181"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
-        <rdfs:subClassOf rdf:nodeID="genid4442"/>
+        <rdfs:subClassOf rdf:nodeID="genid4434"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -41314,14 +41319,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:comment>Taxon notes:&quot; the ascidian tube-like heart lacks chambers....The ascidian heart is formed after metamorphosis as a simple tube-like structure with a single-layered myoepithelium that is continuous with a single-layered pericar- dial wall. It lacks chambers and endocardium.... The innovation of the chambered heart was a key event in vertebrate evolution, because the chambered heart generates one-way blood flow with high pressure, a critical requirement for the efficient blood supply of large-body vertebrates... all extant vertebrates have hearts with two or more chambers (Moorman and Christoffels 2003)&quot; DOI:10.1101/gad.1485706</rdfs:comment>
         <rdfs:label>heart</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4442">
+    <owl:Restriction rdf:nodeID="genid4434">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015410"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000948"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4442"/>
+        <owl:annotatedTarget rdf:nodeID="genid4434"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41979,7 +41984,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4514"/>
+        <rdfs:subClassOf rdf:nodeID="genid4506"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
@@ -42032,14 +42037,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg</foaf:depicted_by>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4514">
+    <owl:Restriction rdf:nodeID="genid4506">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016880"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4514"/>
+        <owl:annotatedTarget rdf:nodeID="genid4506"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42127,7 +42132,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4527"/>
+        <rdfs:subClassOf rdf:nodeID="genid4519"/>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:UBPROP_0000001>Part of the nervous system which includes the brain and spinal cord.[AAO]</obo:UBPROP_0000001>
@@ -42174,7 +42179,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>central nervous system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4527">
+    <owl:Restriction rdf:nodeID="genid4519">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
     </owl:Restriction>
@@ -42188,7 +42193,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4527"/>
+        <owl:annotatedTarget rdf:nodeID="genid4519"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42682,7 +42687,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4581"/>
+        <rdfs:subClassOf rdf:nodeID="genid4573"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001630"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005090"/>
         <obo:IAO_0000115>Skeletal element that is composed of bone tissue.</obo:IAO_0000115>
@@ -42732,14 +42737,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>bone element</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4581">
+    <owl:Restriction rdf:nodeID="genid4573">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002481"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4581"/>
+        <owl:annotatedTarget rdf:nodeID="genid4573"/>
         <oboInOwl:source>VSAO-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42851,7 +42856,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4596"/>
+        <rdfs:subClassOf rdf:nodeID="genid4588"/>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
@@ -42891,14 +42896,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>digestive tract</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4596">
+    <owl:Restriction rdf:nodeID="genid4588">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007026"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4596"/>
+        <owl:annotatedTarget rdf:nodeID="genid4588"/>
         <oboInOwl:source>NCBIBook:NBK10107</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43176,8 +43181,8 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4637"/>
-        <rdfs:subClassOf rdf:nodeID="genid4639"/>
+        <rdfs:subClassOf rdf:nodeID="genid4629"/>
+        <rdfs:subClassOf rdf:nodeID="genid4631"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -43190,7 +43195,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004872"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4643"/>
+        <rdfs:subClassOf rdf:nodeID="genid4635"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
@@ -43249,34 +43254,34 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>blood vessel</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4637">
+    <owl:Restriction rdf:nodeID="genid4629">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4639">
+    <owl:Restriction rdf:nodeID="genid4631">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007500"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4643">
+    <owl:Restriction rdf:nodeID="genid4635">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006965"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4637"/>
+        <owl:annotatedTarget rdf:nodeID="genid4629"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4639"/>
+        <owl:annotatedTarget rdf:nodeID="genid4631"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4643"/>
+        <owl:annotatedTarget rdf:nodeID="genid4635"/>
         <oboInOwl:source>GO:0072360</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44001,7 +44006,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0040011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4724"/>
+        <rdfs:subClassOf rdf:nodeID="genid4716"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
@@ -44035,14 +44040,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>musculoskeletal system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4724">
+    <owl:Restriction rdf:nodeID="genid4716">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4724"/>
+        <owl:annotatedTarget rdf:nodeID="genid4716"/>
         <oboInOwl:notes>check ctenophore</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -44172,7 +44177,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002323">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002553"/>
-        <rdfs:subClassOf rdf:nodeID="genid4743"/>
+        <rdfs:subClassOf rdf:nodeID="genid4735"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002572"/>
@@ -44213,14 +44218,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>coelemic cavity lumen</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4743">
+    <owl:Restriction rdf:nodeID="genid4735">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002494"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003886"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002323"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4743"/>
+        <owl:annotatedTarget rdf:nodeID="genid4735"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -44328,9 +44333,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001049"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4763"/>
-        <rdfs:subClassOf rdf:nodeID="genid4765"/>
-        <rdfs:subClassOf rdf:nodeID="genid4767"/>
+        <rdfs:subClassOf rdf:nodeID="genid4755"/>
+        <rdfs:subClassOf rdf:nodeID="genid4757"/>
+        <rdfs:subClassOf rdf:nodeID="genid4759"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
@@ -44385,15 +44390,15 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>notochord</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4763">
+    <owl:Restriction rdf:nodeID="genid4755">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4765">
+    <owl:Restriction rdf:nodeID="genid4757">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004880"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4767">
+    <owl:Restriction rdf:nodeID="genid4759">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
     </owl:Restriction>
@@ -44412,19 +44417,19 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4763"/>
+        <owl:annotatedTarget rdf:nodeID="genid4755"/>
         <oboInOwl:source>http://tolweb.org/Chordata/2499</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4765"/>
+        <owl:annotatedTarget rdf:nodeID="genid4757"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4767"/>
+        <owl:annotatedTarget rdf:nodeID="genid4759"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44510,8 +44515,8 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007503"/>
-        <rdfs:subClassOf rdf:nodeID="genid4781"/>
-        <rdfs:subClassOf rdf:nodeID="genid4783"/>
+        <rdfs:subClassOf rdf:nodeID="genid4773"/>
+        <rdfs:subClassOf rdf:nodeID="genid4775"/>
         <obo:IAO_0000115>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</obo:IAO_0000115>
         <obo:IAO_0000116>currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making &apos;somitic mesoderm&apos; a separate term and correlate with regionalization processes. Consider moving ZFA term to &apos;trunk somite&apos; as it is part of the trunk</obo:IAO_0000116>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
@@ -44557,11 +44562,11 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>somite</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4781">
+    <owl:Restriction rdf:nodeID="genid4773">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4783">
+    <owl:Restriction rdf:nodeID="genid4775">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
     </owl:Restriction>
@@ -44574,13 +44579,13 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4781"/>
+        <owl:annotatedTarget rdf:nodeID="genid4773"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4783"/>
+        <owl:annotatedTarget rdf:nodeID="genid4775"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44693,12 +44698,12 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002342">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010316"/>
+        <rdfs:subClassOf rdf:nodeID="genid4791"/>
+        <rdfs:subClassOf rdf:nodeID="genid4793"/>
+        <rdfs:subClassOf rdf:nodeID="genid4795"/>
+        <rdfs:subClassOf rdf:nodeID="genid4797"/>
         <rdfs:subClassOf rdf:nodeID="genid4799"/>
         <rdfs:subClassOf rdf:nodeID="genid4801"/>
-        <rdfs:subClassOf rdf:nodeID="genid4803"/>
-        <rdfs:subClassOf rdf:nodeID="genid4805"/>
-        <rdfs:subClassOf rdf:nodeID="genid4807"/>
-        <rdfs:subClassOf rdf:nodeID="genid4809"/>
         <obo:IAO_0000115>A specialized region of ectoderm found between the neural ectoderm (neural plate) and non-neural ectoderm and composed of highly migratory pluripotent cells that delaminate in early embryonic development from the dorsal neural tube and give rise to an astounding variety of differentiated cell types[MP].</obo:IAO_0000115>
         <obo:IAO_0000116>consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams).</obo:IAO_0000116>
         <obo:RO_0002174 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117565"/>
@@ -44738,66 +44743,66 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png</foaf:depicted_by>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4799">
+    <owl:Restriction rdf:nodeID="genid4791">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4801">
+    <owl:Restriction rdf:nodeID="genid4793">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_89593"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4803">
+    <owl:Restriction rdf:nodeID="genid4795">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4805">
+    <owl:Restriction rdf:nodeID="genid4797">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005062"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4807">
+    <owl:Restriction rdf:nodeID="genid4799">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4809">
+    <owl:Restriction rdf:nodeID="genid4801">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4799"/>
+        <owl:annotatedTarget rdf:nodeID="genid4791"/>
         <oboInOwl:source>XAO</oboInOwl:source>
         <oboInOwl:source>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4801"/>
+        <owl:annotatedTarget rdf:nodeID="genid4793"/>
         <oboInOwl:notes>Hall and others restrict NC to vertebrates but we opt for a less restrictive constraint to avoid inconsistencies when areas such as P1 area of pallium in hagfishes inherit cell lineage from telecephalon-contributing NC cells</oboInOwl:notes>
         <oboInOwl:source>ISBN:0073040584</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4803"/>
+        <owl:annotatedTarget rdf:nodeID="genid4795"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4805"/>
+        <owl:annotatedTarget rdf:nodeID="genid4797"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4807"/>
+        <owl:annotatedTarget rdf:nodeID="genid4799"/>
         <oboInOwl:notes>pre migratory https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4809"/>
+        <owl:annotatedTarget rdf:nodeID="genid4801"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44887,7 +44892,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000133"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4822"/>
         <obo:IAO_0000115>Embryonic ectoderm that gives rise to nervous tissue.</obo:IAO_0000115>
         <obo:UBPROP_0000003>(...) the ability of ectoderm to produce neuronal cells is a general metazoan feature.[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000007>neurectodermal</obo:UBPROP_0000007>
@@ -44923,16 +44927,6 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>neurectoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4822">
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000530"/>
-    </owl:Restriction>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4822"/>
-        <oboInOwl:source>ZFA</oboInOwl:source>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -44996,7 +44990,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4836"/>
+        <rdfs:subClassOf rdf:nodeID="genid4826"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -45054,14 +45048,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>bone marrow</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/7/74/Gray72-en.svg</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4836">
+    <owl:Restriction rdf:nodeID="genid4826">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002371"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4836"/>
+        <owl:annotatedTarget rdf:nodeID="genid4826"/>
         <oboInOwl:source>FMA</oboInOwl:source>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
@@ -45333,14 +45327,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
-        <rdfs:subClassOf rdf:nodeID="genid4869"/>
+        <rdfs:subClassOf rdf:nodeID="genid4859"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4872"/>
+        <rdfs:subClassOf rdf:nodeID="genid4862"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002405"/>
         <obo:IAO_0000115>Anatomical system that is involved in the production of hematopoietic cells.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Anatomical system that consists of the blood and blood forming tissues.[AAO]</obo:UBPROP_0000001>
@@ -45383,24 +45377,24 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>hematopoietic system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4869">
+    <owl:Restriction rdf:nodeID="genid4859">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002193"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4872">
+    <owl:Restriction rdf:nodeID="genid4862">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003061"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4869"/>
+        <owl:annotatedTarget rdf:nodeID="genid4859"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4872"/>
+        <owl:annotatedTarget rdf:nodeID="genid4862"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -45771,7 +45765,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4914"/>
+        <rdfs:subClassOf rdf:nodeID="genid4904"/>
         <obo:IAO_0000115>Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>It is reasonable to assume that the proximate invertebrate ancestor of the vertebrates had an amphioxus-like tail bud in its larval stage. This archetypal tail bud would have (...) (3) lacked any component of mesenchyme cells, (4) budded off new mesodermal segments directly, without any intervening zone of presomitic mesoderm (...). Then, early in vertebrate evolution, epithelium-to-mesenchyme interconversions (and the gene networks for effecting them) became prominent features of development. (...) In any case, conspicuous mesenchymal components tended to be added to the vertebrate tail bud itself. In addition, a mesenchymatous presomitic mesoderm (not a part of the tail bud proper) came to intervene between the tail bud and the forming somites.[well established][VHOG]</obo:UBPROP_0000003>
@@ -45796,14 +45790,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>presomitic mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4914">
+    <owl:Restriction rdf:nodeID="genid4904">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007282"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4914"/>
+        <owl:annotatedTarget rdf:nodeID="genid4904"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46035,9 +46029,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
-        <rdfs:subClassOf rdf:nodeID="genid4938"/>
-        <rdfs:subClassOf rdf:nodeID="genid4940"/>
-        <rdfs:subClassOf rdf:nodeID="genid4942"/>
+        <rdfs:subClassOf rdf:nodeID="genid4928"/>
+        <rdfs:subClassOf rdf:nodeID="genid4930"/>
+        <rdfs:subClassOf rdf:nodeID="genid4932"/>
         <obo:IAO_0000115>A region of embryonic ectodermal cells that lie directly above the notochord. During neurulation, they change shape and produce an infolding of the neural plate (the neural fold) that then seals to form the neural tube[XAO]. The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium[ZFA].</obo:IAO_0000115>
         <obo:UBPROP_0000001>The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>(...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...).[well established][VHOG]</obo:UBPROP_0000003>
@@ -46069,34 +46063,34 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>neural plate</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4938">
+    <owl:Restriction rdf:nodeID="genid4928">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4940">
+    <owl:Restriction rdf:nodeID="genid4930">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002256"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4942">
+    <owl:Restriction rdf:nodeID="genid4932">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007284"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4938"/>
+        <owl:annotatedTarget rdf:nodeID="genid4928"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4940"/>
+        <owl:annotatedTarget rdf:nodeID="genid4930"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4942"/>
+        <owl:annotatedTarget rdf:nodeID="genid4932"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46161,7 +46155,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4952"/>
+        <rdfs:subClassOf rdf:nodeID="genid4942"/>
         <obo:IAO_0000115>The paraxial mesoderm is the mesoderm located bilaterally adjacent to the notochord and neural tube[GO].</obo:IAO_0000115>
         <obo:UBPROP_0000001>Mesoderm lateral to the neural tube and notochord that is divided into cranial and post-cranial portions. The trunk portions further segment into somites.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>Presently, Cephalochordata, Urochordata, and Vertebrata are placed as subphyla of the phylum Chordata, in which the overall organization of embryonic tissues (dorsal hollow nerve cord, ventral digestive tract, axial notochord, and bilateral paraxial mesoderm) is largely conserved. In contrast, the echinoderms and hemichordates are sister groups of the chordates and they lack the notochord and paraxial mesoderm. Thus, the basic mesodermal organization of vertebrates must have appeared first in the common ancestor of the chordates.[well established][VHOG]</obo:UBPROP_0000003>
@@ -46190,7 +46184,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>paraxial mesoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4952">
+    <owl:Restriction rdf:nodeID="genid4942">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
     </owl:Restriction>
@@ -46203,7 +46197,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4952"/>
+        <owl:annotatedTarget rdf:nodeID="genid4942"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46275,7 +46269,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
-        <rdfs:subClassOf rdf:nodeID="genid4963"/>
+        <rdfs:subClassOf rdf:nodeID="genid4953"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -46319,7 +46313,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>lateral plate mesoderm</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4963">
+    <owl:Restriction rdf:nodeID="genid4953">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
@@ -46332,7 +46326,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4963"/>
+        <owl:annotatedTarget rdf:nodeID="genid4953"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
         <oboInOwl:source>VHOG</oboInOwl:source>
     </owl:Axiom>
@@ -46417,15 +46411,15 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003084">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001048"/>
-        <rdfs:subClassOf rdf:nodeID="genid4978"/>
-        <rdfs:subClassOf rdf:nodeID="genid4980"/>
+        <rdfs:subClassOf rdf:nodeID="genid4968"/>
+        <rdfs:subClassOf rdf:nodeID="genid4970"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4983"/>
+        <rdfs:subClassOf rdf:nodeID="genid4973"/>
         <obo:IAO_0000115>Bilateral groups of cells consisting of three rows: one row of endocardial precursors medially and two rows of myocardical precursors laterally. The two populations fuse at the midline to form the heart rudiment or cone.</obo:IAO_0000115>
         <obo:IAO_0000116>should probably be merged with heart rudiment.</obo:IAO_0000116>
         <obo:UBPROP_0000001>Bilateral groups of cells consisting of three rows: one row of endocardial precursors medially and two rows of myocardical precursors laterally. The two populations fuse at the midline between 21 and 26 somites to form the heart rudiment or cone. Stainier 2001.[TAO]</obo:UBPROP_0000001>
@@ -46445,15 +46439,15 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>heart primordium</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4978">
+    <owl:Restriction rdf:nodeID="genid4968">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4980">
+    <owl:Restriction rdf:nodeID="genid4970">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4983">
+    <owl:Restriction rdf:nodeID="genid4973">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007005"/>
     </owl:Restriction>
@@ -46466,19 +46460,19 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4978"/>
+        <owl:annotatedTarget rdf:nodeID="genid4968"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4980"/>
+        <owl:annotatedTarget rdf:nodeID="genid4970"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4983"/>
+        <owl:annotatedTarget rdf:nodeID="genid4973"/>
         <oboInOwl:source>XAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46533,8 +46527,8 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003089">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007530"/>
-        <rdfs:subClassOf rdf:nodeID="genid4993"/>
-        <rdfs:subClassOf rdf:nodeID="genid4995"/>
+        <rdfs:subClassOf rdf:nodeID="genid4983"/>
+        <rdfs:subClassOf rdf:nodeID="genid4985"/>
         <obo:IAO_0000115>Ventral somitic compartment that is a precursor of the axial skeleton[XAO]. Sclerotomes eventually differentiate into the vertebrae and most of the skull. The caudal (posterior) half of one sclerotome fuses with the rostral (anterior) half of the adjacent one to form each vertebra. From their initial location within the somite, the sclerotome cells migrate medially towards the notochord. These cells meet the sclerotome cells from the other side to form the vertebral body. From this vertebral body, sclerotome cells move dorsally and surround the developing spinal cord, forming the vertebral arch[WP].</obo:IAO_0000115>
         <obo:UBPROP_0000001>Skeletogenic portion of somites.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The vertebrate sclerotome has no equivalent in amphioxus and is a novelty linked with the evolution of the axial skeleton.[well established][VHOG]</obo:UBPROP_0000003>
@@ -46561,11 +46555,11 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>sclerotome</rdfs:label>
         <foaf:depicted_by rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png</foaf:depicted_by>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4993">
+    <owl:Restriction rdf:nodeID="genid4983">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4995">
+    <owl:Restriction rdf:nodeID="genid4985">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
     </owl:Restriction>
@@ -46584,13 +46578,13 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4993"/>
+        <owl:annotatedTarget rdf:nodeID="genid4983"/>
         <oboInOwl:source>VHOG:0000680</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4995"/>
+        <owl:annotatedTarget rdf:nodeID="genid4985"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46858,7 +46852,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011997"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5027"/>
+        <rdfs:subClassOf rdf:nodeID="genid5017"/>
         <obo:IAO_0000115>The part of the coelom in the embryo between the somatopleuric and splanchnopleuric mesoderm; the principal body cavities of the trunk (thoracic, abdominal, and pelvic) arise from this embryonic part of the coelom.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with coelom. TODO - add spatial relationships to halves of LPM. Note the OG places XAO and ZFA coelem terms here. editor note: TODO check ZFA, which appears to be a structure present in adults</obo:IAO_0000116>
         <obo:UBPROP_0000003>(...) I regard it unlikely that coeloms of all bilaterian animals are comparable and evolved very early. Considering all these questions, few convincing characters concerning the evolution of body cavities remain to be named. (...) A segmental coelom appears to have evolved at least two times, in Annelida and in Myomerata (Acrania and Craniota).[well established][VHOG]</obo:UBPROP_0000003>
@@ -46874,14 +46868,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>intraembryonic coelom</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5027">
+    <owl:Restriction rdf:nodeID="genid5017">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5027"/>
+        <owl:annotatedTarget rdf:nodeID="genid5017"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47203,8 +47197,8 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007688"/>
-        <rdfs:subClassOf rdf:nodeID="genid5072"/>
-        <rdfs:subClassOf rdf:nodeID="genid5074"/>
+        <rdfs:subClassOf rdf:nodeID="genid5062"/>
+        <rdfs:subClassOf rdf:nodeID="genid5064"/>
         <obo:IAO_0000115>A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle.</obo:IAO_0000115>
         <obo:UBPROP_0000012>this term denotes the primary heart field; GO:0003128 denotes the superclass of primary and secondary: specific region of the lateral mesoderm into the area which will form the primary beating heart tube[GO:0003138]</obo:UBPROP_0000012>
         <oboInOwl:hasDbXref>XAO:0004185</oboInOwl:hasDbXref>
@@ -47217,24 +47211,24 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0004140</oboInOwl:id>
         <rdfs:label>primary heart field</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5072">
+    <owl:Restriction rdf:nodeID="genid5062">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5074">
+    <owl:Restriction rdf:nodeID="genid5064">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0036146"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5072"/>
+        <owl:annotatedTarget rdf:nodeID="genid5062"/>
         <oboInOwl:source>GO:0003128</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5074"/>
+        <owl:annotatedTarget rdf:nodeID="genid5064"/>
         <oboInOwl:source>https://orcid.org/0000-0003-3308-6245</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47293,7 +47287,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003914"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012275"/>
-        <rdfs:subClassOf rdf:nodeID="genid5083"/>
+        <rdfs:subClassOf rdf:nodeID="genid5073"/>
         <obo:IAO_0000115>An epithelial tube that will give rise to the mature heart.</obo:IAO_0000115>
         <obo:UBPROP_0000001>the paired, longitudinal, endothelial-lined channels formed from the cardiogenic mesoderm in embryonic development; angiogenic cell clusters (aka angioblastic cords) located in a horse-shoe shape configuration in the cardiogenic plate coalesce to form the right and left endocardial heart tubes which then fuse in cephalo-caudal direction to form a single primitive heart tube.</obo:UBPROP_0000001>
         <oboInOwl:hasDbXref>AAO:0010411</oboInOwl:hasDbXref>
@@ -47313,14 +47307,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>heart tube</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5083">
+    <owl:Restriction rdf:nodeID="genid5073">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004141"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5083"/>
+        <owl:annotatedTarget rdf:nodeID="genid5073"/>
         <oboInOwl:source>ZFA-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47940,7 +47934,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5159"/>
+        <rdfs:subClassOf rdf:nodeID="genid5149"/>
         <obo:IAO_0000115>A specialized form of connective tissue in which the extracellular matrix is firm, providing the tissue with resilience, and/or mineralized and that functions in mechanical and structural support.[VSAO].</obo:IAO_0000115>
         <obo:UBPROP_0000001>A specialized form of connective tissue in which the extracellular matrix is firm, providing the tissue with resilience, and/or mineralized and that functions in mechanical and structural support.[VSAO]</obo:UBPROP_0000001>
         <oboInOwl:hasDbXref>EMAPA:37744</oboInOwl:hasDbXref>
@@ -47954,7 +47948,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:comment>Four classes of mineralized tissues are found in vertebrates: bone, cartilage, dentine, and enamel. We think of cartilage and bone as skeletal tissues and of enamel and dentine as dental tissues, but enamel and dentine arose evolutionarily together with bone as skeletal tissues in the dermal skeleton (exoskeleton) of early vertebrates. Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone. Cartilage, on the other hand, provided the basis for the second vertebrate skeletal system, the endoskeleton (Smith and Hall, 1990; Hall, 1998a,b). some invertebrate skeletal tissues have surprisingly bone-like features. Examples include chondrocytes interconnected by cell processes in cephalopod cartilages (Cole and Hall, 2004a,b), and the calcium phosphate layer in the shells of brachiopods (Rodland et al., 2003). However, neither bone nor mineralized cartilage have been found in invertebrates. Editors notes: TODO - develops_from</rdfs:comment>
         <rdfs:label>skeletal tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5159">
+    <owl:Restriction rdf:nodeID="genid5149">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0007001"/>
     </owl:Restriction>
@@ -47967,7 +47961,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004755"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5159"/>
+        <owl:annotatedTarget rdf:nodeID="genid5149"/>
         <oboInOwl:date_retrieved>2012-08-14</oboInOwl:date_retrieved>
         <oboInOwl:external_class>VSAO:0000015</oboInOwl:external_class>
         <oboInOwl:source>VSAO</oboInOwl:source>
@@ -48006,7 +48000,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004765">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
-        <rdfs:subClassOf rdf:nodeID="genid5164"/>
+        <rdfs:subClassOf rdf:nodeID="genid5154"/>
         <obo:IAO_0000115>Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Organ entity that is typically involved in mechanical support and may have different skeletal tissue compositions at different stages.[VSAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001>Organ entity that may have different tissue compositions at different stages and is typically involved in mechanical support.[TAO]</obo:UBPROP_0000001>
@@ -48022,14 +48016,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>skeletal element</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5164">
+    <owl:Restriction rdf:nodeID="genid5154">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5164"/>
+        <owl:annotatedTarget rdf:nodeID="genid5154"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48074,7 +48068,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
-        <rdfs:subClassOf rdf:nodeID="genid5173"/>
+        <rdfs:subClassOf rdf:nodeID="genid5163"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -48113,14 +48107,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0004770</oboInOwl:id>
         <rdfs:label>articular system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5173">
+    <owl:Restriction rdf:nodeID="genid5163">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004770"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5173"/>
+        <owl:annotatedTarget rdf:nodeID="genid5163"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48879,7 +48873,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002100"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5270"/>
+        <rdfs:subClassOf rdf:nodeID="genid5260"/>
         <obo:IAO_0000115>Mesenchyme that is part of a developing trunk.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EFO:0003485</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0002092</oboInOwl:hasDbXref>
@@ -48895,14 +48889,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>trunk mesenchyme</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5270">
+    <owl:Restriction rdf:nodeID="genid5260">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5270"/>
+        <owl:annotatedTarget rdf:nodeID="genid5260"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49013,7 +49007,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5284"/>
+        <rdfs:subClassOf rdf:nodeID="genid5274"/>
         <obo:IAO_0000115>Multi-tissue structure that arises from the heart rudiment and will become the heart tube.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001512</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:424</oboInOwl:hasDbXref>
@@ -49031,14 +49025,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>primitive heart tube</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5284">
+    <owl:Restriction rdf:nodeID="genid5274">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004291"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5284"/>
+        <owl:annotatedTarget rdf:nodeID="genid5274"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49206,7 +49200,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005856">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011585"/>
-        <rdfs:subClassOf rdf:nodeID="genid5309"/>
+        <rdfs:subClassOf rdf:nodeID="genid5299"/>
         <obo:IAO_0000115>A delimited region of dense mesenchyme within looser mesenchyme.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000148</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2_RETIRED:0003148</oboInOwl:hasDbXref>
@@ -49216,7 +49210,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0005856</oboInOwl:id>
         <rdfs:label>developing mesenchymal condensation</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5309">
+    <owl:Restriction rdf:nodeID="genid5299">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000335"/>
     </owl:Restriction>
@@ -49235,7 +49229,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5309"/>
+        <owl:annotatedTarget rdf:nodeID="genid5299"/>
         <oboInOwl:source>AEO-modified-relation</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49341,7 +49335,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
-        <rdfs:subClassOf rdf:nodeID="genid5321"/>
+        <rdfs:subClassOf rdf:nodeID="genid5311"/>
         <obo:IAO_0000115>The notochordal plate is the dorsal part of the notochordal process when the ventral portion breaks down. It is continuous laterally with the endoderm that composes the roof of the primitive foregut and is in contact dorsally with the neural tube. The folding off of the notochordal plate gives rise to the notochord.</obo:IAO_0000115>
         <obo:IAO_0000116>TODO - check ordering; awaiting confirmation from JB</obo:IAO_0000116>
         <obo:UBPROP_0000001>The notochordal plate is the dorsal part of the notochordal process when the ventral portion breaks down. It is continuous laterally with the endoderm that composes the roof of the primitive foregut and is in contact dorsally with the neural tube. The folding off of the notochordal plate gives rise to the notochord. [Carson_JL, Dehart_DB, Developmental_Dynamics_(1994)_201:_260-278, Gesteland_K_and_Schoenwolf_GC, Inagaki_T, Morphogenesis_of_the_murine_node_and_notochordal_plate, The_prechordal_plate, Vrablic_T, see_Mueller_F_and_O&apos;Rahilly_R, the_rostral_end_of_the_notochord_and_nearby_median_features_in_staged_human_embryos._Cells_Tissues_Organs_(2003)_173:_1-20_and_Sulik_K][VHOG]</obo:UBPROP_0000001>
@@ -49356,7 +49350,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#emapa_ehdaa2"/>
         <rdfs:label>notochordal plate</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5321">
+    <owl:Restriction rdf:nodeID="genid5311">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
     </owl:Restriction>
@@ -49369,7 +49363,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5321"/>
+        <owl:annotatedTarget rdf:nodeID="genid5311"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49407,7 +49401,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5327"/>
+        <rdfs:subClassOf rdf:nodeID="genid5317"/>
         <obo:IAO_0000115>A midline cellular cord formed from the migration of mesenchymal cells from the primitive knot.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001279</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:224</oboInOwl:hasDbXref>
@@ -49424,14 +49418,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:comment>The notochordal process grows cranially until it reaches the prechordal plate, the future site of the mouth. In this area the ectoderm is attached directly to the endoderm without intervening mesoderm. This area is known as the oropharyngeal membrane, and it will break down to become the mouth. At the other end of the primitive streak the ectoderm is also fused directly to the endoderm; this is known as the cloacal membrane (proctodeum), or primordial anus.</rdfs:comment>
         <rdfs:label>notochordal process</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5327">
+    <owl:Restriction rdf:nodeID="genid5317">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5327"/>
+        <owl:annotatedTarget rdf:nodeID="genid5317"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50177,7 +50171,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0002494"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5436"/>
+        <rdfs:subClassOf rdf:nodeID="genid5426"/>
         <obo:IAO_0000115>A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood or analogs[GO,modified].</obo:IAO_0000115>
         <obo:UBPROP_0000008>note we reserve the subclass &apos;heart&apos; from the vertebrate multi-chambered heart. &apos;The first heart-like organ is believed to have appeared 500my ago in an ancestral bilaterian&apos;. Amniotes: four-chambered heart. Amphibians: two atria, one ventricle, pulmonary; fish: single atrium and ventricle; amphioxus: tubular, non-striated, closed, unidirectional; ascidians: tubular, striated, open, bidirectional; arthropods: tubular, open; C elegans: contractile pharynx; Cnideria: striated muscle cells associated with gastrodermis</obo:UBPROP_0000008>
         <oboInOwl:hasDbXref>SPD:0000130</oboInOwl:hasDbXref>
@@ -50192,14 +50186,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:comment>Gene notes: Bmp, Nkx, Gata</rdfs:comment>
         <rdfs:label>primary circulatory organ</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5436">
+    <owl:Restriction rdf:nodeID="genid5426">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0008015"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5436"/>
+        <owl:annotatedTarget rdf:nodeID="genid5426"/>
         <oboInOwl:notes>GO uses blood circulation generically to include the haemolymphatic fluid of arthropods</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -50289,7 +50283,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006598"/>
-        <rdfs:subClassOf rdf:nodeID="genid5450"/>
+        <rdfs:subClassOf rdf:nodeID="genid5440"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002387"/>
@@ -50306,14 +50300,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>presumptive segmental plate</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5450">
+    <owl:Restriction rdf:nodeID="genid5440">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007282"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5450"/>
+        <owl:annotatedTarget rdf:nodeID="genid5440"/>
         <oboInOwl:consistent_with>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:consistent_with>
         <oboInOwl:source>EDHAA2</oboInOwl:source>
     </owl:Axiom>
@@ -50412,7 +50406,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <!-- http://purl.obolibrary.org/obo/UBERON_0007285 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007285">
-        <owl:equivalentClass rdf:nodeID="genid5466"/>
+        <owl:equivalentClass rdf:nodeID="genid5456"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006598"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -50438,7 +50432,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>presumptive paraxial mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid5466">
+    <owl:Class rdf:nodeID="genid5456">
         <owl:intersectionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006598"/>
             <owl:Restriction>
@@ -50454,7 +50448,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid5466"/>
+        <owl:annotatedTarget rdf:nodeID="genid5456"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1277</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50531,7 +50525,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000000"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003104"/>
-        <rdfs:subClassOf rdf:nodeID="genid5482"/>
+        <rdfs:subClassOf rdf:nodeID="genid5472"/>
         <obo:IAO_0000115>Mesenchyme with little extracellular matrix.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000146</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0003146</oboInOwl:hasDbXref>
@@ -50539,7 +50533,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0007524</oboInOwl:id>
         <rdfs:label>dense mesenchyme tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5482">
+    <owl:Restriction rdf:nodeID="genid5472">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000057"/>
     </owl:Restriction>
@@ -50552,7 +50546,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5482"/>
+        <owl:annotatedTarget rdf:nodeID="genid5472"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50649,10 +50643,9 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007798">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
-        <rdfs:subClassOf rdf:nodeID="genid5494"/>
+        <rdfs:subClassOf rdf:nodeID="genid5484"/>
         <obo:IAO_0000115>Anatomical system that consists of all blood and lymph vessels.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with vasculature</obo:IAO_0000116>
-        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <obo:UBPROP_0000001>The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System].</obo:UBPROP_0000001>
         <obo:UBPROP_0000012>in both MA and BTO, the arterial system and venous sytem are subtypes of the vascular system</obo:UBPROP_0000012>
         <oboInOwl:hasDbXref>BTO:0001085</oboInOwl:hasDbXref>
@@ -50664,18 +50657,17 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:hasDbXref>UMLS:C0489903</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0007798</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>vascular system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5494">
+    <owl:Restriction rdf:nodeID="genid5484">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007798"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5494"/>
+        <owl:annotatedTarget rdf:nodeID="genid5484"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50809,7 +50801,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5512"/>
+        <rdfs:subClassOf rdf:nodeID="genid5502"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -50826,14 +50818,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0009142</oboInOwl:id>
         <rdfs:label>entire embryonic mesenchyme</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5512">
+    <owl:Restriction rdf:nodeID="genid5502">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5512"/>
+        <owl:annotatedTarget rdf:nodeID="genid5502"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50889,7 +50881,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5520"/>
+        <rdfs:subClassOf rdf:nodeID="genid5510"/>
         <oboInOwl:hasDbXref>EHDAA2:0002094</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>trunk and cervical paraxial mesenchyme</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -50897,14 +50889,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0009618</oboInOwl:id>
         <rdfs:label>trunk paraxial mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5520">
+    <owl:Restriction rdf:nodeID="genid5510">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5520"/>
+        <owl:annotatedTarget rdf:nodeID="genid5510"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50926,7 +50918,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009881">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
-        <rdfs:subClassOf rdf:nodeID="genid5524"/>
+        <rdfs:subClassOf rdf:nodeID="genid5514"/>
         <oboInOwl:hasDbXref>EFO:0003704</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0005041</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0005041</oboInOwl:hasDbXref>
@@ -50936,14 +50928,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>anterior lateral plate mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5524">
+    <owl:Restriction rdf:nodeID="genid5514">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009881"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5524"/>
+        <owl:annotatedTarget rdf:nodeID="genid5514"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51078,7 +51070,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005577"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5545"/>
+        <rdfs:subClassOf rdf:nodeID="genid5535"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -51098,14 +51090,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0010210</oboInOwl:id>
         <rdfs:label>blood clot</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5545">
+    <owl:Restriction rdf:nodeID="genid5535">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010210"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5545"/>
+        <owl:annotatedTarget rdf:nodeID="genid5535"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51229,8 +51221,8 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010912">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
-        <rdfs:subClassOf rdf:nodeID="genid5565"/>
-        <rdfs:subClassOf rdf:nodeID="genid5567"/>
+        <rdfs:subClassOf rdf:nodeID="genid5555"/>
+        <rdfs:subClassOf rdf:nodeID="genid5557"/>
         <obo:IAO_0000115>Anatomical cluster consisting of the skeletal elements (i.e. bone elements, cartilage elements, cartilage condensations) that are part of an individual subdivision of the organism. Excludes joints.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Anatomical cluster consisting of the skeletal elements that are part of the skeleton.[VSAO]</obo:UBPROP_0000001>
         <oboInOwl:hasDbXref>FMA:23879</oboInOwl:hasDbXref>
@@ -51243,11 +51235,11 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#non_informative"/>
         <rdfs:label>subdivision of skeleton</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5565">
+    <owl:Restriction rdf:nodeID="genid5555">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5567">
+    <owl:Restriction rdf:nodeID="genid5557">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004288"/>
     </owl:Restriction>
@@ -51260,13 +51252,13 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5565"/>
+        <owl:annotatedTarget rdf:nodeID="genid5555"/>
         <oboInOwl:source>UBERONREF:0000003</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5567"/>
+        <owl:annotatedTarget rdf:nodeID="genid5557"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51345,7 +51337,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CARO_0000006"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
-        <rdfs:subClassOf rdf:nodeID="genid5578"/>
+        <rdfs:subClassOf rdf:nodeID="genid5568"/>
         <obo:IAO_0000115>Subdivision of the skeletal system which consists of the postcranial axial skeleton plus associated joints.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>axial skeletal system</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>FMA:302077</oboInOwl:hasDbXref>
@@ -51355,7 +51347,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <rdfs:label>postcranial axial skeletal system</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton</rdfs:seeAlso>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5578">
+    <owl:Restriction rdf:nodeID="genid5568">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
     </owl:Restriction>
@@ -51368,7 +51360,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011138"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5578"/>
+        <owl:annotatedTarget rdf:nodeID="genid5568"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51633,7 +51625,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034769"/>
-        <rdfs:subClassOf rdf:nodeID="genid5611"/>
+        <rdfs:subClassOf rdf:nodeID="genid5601"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#site_of"/>
@@ -51655,7 +51647,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0012429</oboInOwl:id>
         <rdfs:label>hematopoietic tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5611">
+    <owl:Restriction rdf:nodeID="genid5601">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
@@ -51668,7 +51660,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012429"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5611"/>
+        <owl:annotatedTarget rdf:nodeID="genid5601"/>
         <oboInOwl:source>defitional</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52239,7 +52231,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0016887">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000481"/>
-        <rdfs:subClassOf rdf:nodeID="genid5682"/>
+        <rdfs:subClassOf rdf:nodeID="genid5672"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -52262,7 +52254,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
         <oboInOwl:id>UBERON:0016887</oboInOwl:id>
         <rdfs:label>entire extraembryonic component</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5682">
+    <owl:Restriction rdf:nodeID="genid5672">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004716"/>
     </owl:Restriction>
@@ -52275,7 +52267,7 @@ MH: sexual subtypes should probably be logically defined based on sexual process
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5682"/>
+        <owl:annotatedTarget rdf:nodeID="genid5672"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52606,14 +52598,14 @@ MH: sexual subtypes should probably be logically defined based on sexual process
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
                     </owl:Restriction>
                 </owl:someValuesFrom>
-                <owl:equivalentClass rdf:nodeID="genid5741"/>
+                <owl:equivalentClass rdf:nodeID="genid5731"/>
             </owl:Restriction>
         </owl:annotatedSource>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid5741"/>
+        <owl:annotatedTarget rdf:nodeID="genid5731"/>
         <rdfs:comment>Should belong in BFO, but lives in caro for now.</rdfs:comment>
     </owl:Axiom>
-    <owl:Restriction rdf:nodeID="genid5741">
+    <owl:Restriction rdf:nodeID="genid5731">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0000125"/>
     </owl:Restriction>

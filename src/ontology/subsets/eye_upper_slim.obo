@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-05-22/subsets/eye_upper_slim.owl
+data-version: cl/releases/2023-06-22/subsets/eye_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -18,6 +18,7 @@ subsetdef: efo_slim ""
 subsetdef: emapa_ehdaa2 ""
 subsetdef: eye_upper_slim "a subset of general classes related to specific cell types in the eye."
 subsetdef: functional_classification ""
+subsetdef: general_cell_types_upper_slim "a subset of general classes of cell types in the cell ontology."
 subsetdef: gocheck_do_not_annotate ""
 subsetdef: gocheck_do_not_manually_annotate ""
 subsetdef: goslim_agr ""
@@ -54,7 +55,6 @@ subsetdef: relational_slim ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 subsetdef: scalar_slim ""
-subsetdef: term_scheduled_for_obsoletion ""
 subsetdef: uberon_slim ""
 subsetdef: ubprop:upper_level "abstract upper-level terms not directly useful for analysis"
 subsetdef: unverified_taxonomic_grouping ""
@@ -95,7 +95,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/eye_upper_slim
-property_value: owl:versionInfo "2023-05-22" xsd:string
+property_value: owl:versionInfo "2023-06-22" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -382,6 +382,7 @@ id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
@@ -554,10 +555,12 @@ id: CL:0000057
 name: fibroblast
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." [http://en.wikipedia.org/wiki/Fibroblast, ISBN:0517223651, MESH:D005347]
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 xref: BTO:0000452
 xref: CALOHA:TS-0362
 xref: FMA:63877
+xref: NCIT:C12482
 xref: VHOG:0001482
 is_a: CARO:0000000 ! anatomical entity
 is_a: CL:0002320 ! connective tissue cell
@@ -568,6 +571,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000066
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:D004847]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
@@ -625,6 +629,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000081
 name: blood cell
 def: "A cell found predominately in the blood." [GOC:add, GOC:tfm]
+subset: general_cell_types_upper_slim
 xref: FMA:62844
 xref: MESH:D001773
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
@@ -710,6 +715,7 @@ id: CL:0000125
 name: glial cell
 def: "A non-neuronal cell of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu. Guide neuronal migration during development, and exchange metabolites with neurons." [MESH:D009457]
 comment: Not all glial cells develop from glioblasts, with microglia developing from the mesoderm instead. See https://github.com/obophenotype/cell-ontology/issues/1571
+subset: general_cell_types_upper_slim
 synonym: "neuroglia" RELATED []
 synonym: "neuroglial cell" EXACT []
 xref: BTO:0002606
@@ -800,6 +806,7 @@ is_a: CL:0000325 ! stuff accumulating cell
 id: CL:0000148
 name: melanocyte
 def: "A pigment cell derived from the neural crest. Contains melanin-filled pigment granules, which gives a brown to black appearance." [SANBI:mhl]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "melanophore" NARROW []
 xref: BTO:0000847
@@ -865,6 +872,7 @@ relationship: develops_from CL:0000056 ! myoblast
 id: CL:0000192
 name: smooth muscle cell
 def: "A non-striated, elongated, spindle-shaped cell found lining the digestive tract, uterus, and blood vessels. They develop from specialized myoblasts (smooth muscle myoblast)." [http://en.wikipedia.org/wiki/Smooth_muscle_cell, MESH:D032389, PMID:9315361]
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "myocytes, smooth muscle" EXACT [MESH:D032389]
 synonym: "non-striated muscle cell" BROAD []
@@ -1164,15 +1172,11 @@ name: pigmented epithelial cell
 is_a: CL:0000710 ! neurecto-epithelial cell
 
 [Term]
-id: CL:0000530
-name: primary neuron
-is_a: CL:0000540 ! neuron
-
-[Term]
 id: CL:0000540
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [http://en.wikipedia.org/wiki/Neuron, MESH:D009474]
 comment: These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.
+subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
 xref: BTO:0000938
@@ -2153,6 +2157,7 @@ creation_date: 2017-07-09T19:12:36Z
 id: CL:0009004
 name: retinal cell
 def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." [GOC:pr]
+subset: general_cell_types_upper_slim
 xref: PMID:10702418
 is_a: CL:0002319 ! neural cell
 intersection_of: CL:0002319 ! neural cell
@@ -2391,6 +2396,8 @@ id: GO:0001505
 name: regulation of neurotransmitter levels
 namespace: biological_process
 def: "Any process that modulates levels of neurotransmitter." [GOC:jl]
+relationship: in_taxon NCBITaxon:6072 {all_only="true"} ! Eumetazoa
+relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 
 [Term]
 id: GO:0001508
@@ -3731,6 +3738,7 @@ namespace: biological_process
 def: "The controlled self-propelled movement of a cell from one site to a destination guided by molecular cues." [GOC:cjm, GOC:dph, GOC:ems, GOC:pf, Wikipedia:Cell_migration]
 xref: Wikipedia:Cell_migration
 is_a: GO:0048870 ! cell motility
+relationship: never_in_taxon NCBITaxon:4890
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24787" xsd:anyURI
 
 [Term]
@@ -12722,7 +12730,6 @@ xref: ZFA:0001120
 is_a: UBERON:0000923 ! germ layer
 is_a: UBERON:0004121 ! ectoderm-derived structure
 relationship: has_part CL:0000133 ! neurectodermal cell
-relationship: has_part CL:0000530 {source="ZFA"} ! primary neuron
 property_value: UBPROP:0000003 "(...) the ability of ectoderm to produce neuronal cells is a general metazoan feature.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000150", ontology="VHOG", source="DOI:10.1046/j.1469-7580.2001.19910133.x Graham A. The development and evolution of the pharyngeal arches. J Anat (2001)", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "neurectodermal" xsd:string
 property_value: UBPROP:0000013 "we prefer neurectoderm to neural ectoderm since placodal ectoderm is not classified here" xsd:string
@@ -15992,7 +15999,6 @@ id: UBERON:0007798
 name: vascular system
 namespace: uberon
 def: "Anatomical system that consists of all blood and lymph vessels." [http://orcid.org/0000-0002-6601-2165]
-subset: human_reference_atlas
 subset: pheno_slim
 xref: BTO:0001085
 xref: CALOHA:TS-2053
@@ -16003,7 +16009,6 @@ xref: NCIT:C33854
 xref: UMLS:C0489903 {source="ncithesaurus:Vascular_System"}
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0004535 {source="MA"} ! cardiovascular system
-relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "consider merging with vasculature" xsd:string
 property_value: UBPROP:0000001 "The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System]." xsd:string {source="ncithesaurus:Vascular_System"}
 property_value: UBPROP:0000012 "in both MA and BTO, the arterial system and venous sytem are subtypes of the vascular system" xsd:string {external_ontology="MA"}
@@ -20482,6 +20487,7 @@ expand_expression_to: "BFO_0000051 some (GO_0045211 that part_of some (GO_004520
 id: term_tracker_item
 name: term tracker item
 namespace: external
+namespace: uberon
 xref: IAO:0000233
 is_metadata_tag: true
 is_class_level: true
