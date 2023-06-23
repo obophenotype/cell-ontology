@@ -6,13 +6,14 @@ assignees:
 labels: pattern
 ---
 
-**Context**:
+**Context**
 
+**Tasks**
 - [ ] Update logical definition of %CL class%
 - [ ] Update patterns of all subclasses of %CL class% to use standard pattern for %CL class%
 - [ ] Add DOSDP pattern for grouping %CL class%
 - [ ] Update relations guide to include new standard pattern for %CL class%
 
-**Comments**:
+**Comments**
 
 
