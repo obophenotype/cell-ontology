@@ -1,6 +1,6 @@
 ---
 name: Typos/Bugs/Errors
-about: Report all kinds of typos or bugs in CL
+about: Report typos or bugs in CL
 title: "[Typo/Bug]"
 labels: typo, bug
 ---

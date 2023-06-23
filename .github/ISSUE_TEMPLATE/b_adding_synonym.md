@@ -8,9 +8,4 @@ labels: synonym
 **CL term**
 
 
-**Synonym to be added**
-
-
-**broad/exact/narrow/related ?**
-
-
+**Synonym to be added** (include synonym scope broad/exact/narrow/related and reference(s))
