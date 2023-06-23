@@ -5,7 +5,7 @@ title: "[NTR]"
 labels: 'new term request'
 ---
 
-Please check that the term does not already exist by searching through OLS:
+Please check that the term does not already exist by using the ontology search tool OLS:
 https://www.ebi.ac.uk/ols4/ontologies/cl
 
 
