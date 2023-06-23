@@ -3,7 +3,7 @@ name: Add design pattern
 about: Epic ticket for adding a new design pattern
 title: "[Design pattern] %label of CL class%"
 assignees: 
-labels:
+labels: pattern
 ---
 
 **Context**:
