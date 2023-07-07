@@ -78,7 +78,7 @@ The following considerations apply both to all human-readable fields (names, tex
 
 
 ## Cross-references to the literature
-Assertions in textual definitions, evidence provided in comments, and synonyms should be as much as possible backed up by citing the appropriate literature.
+Assertions in textual definitions, evidence provided in comments, and synonyms should be backed up by citing the appropriate literature.
 
 Citations are made by cross-references, that is by adding `http://www.geneontology.org/formats/oboInOwl#hasDbXref` annotations to the definition, comment, and synonym annotations. Add one such annotation per reference, using the CURIE syntax with well-known prefixes:
 
@@ -90,6 +90,25 @@ If the main source for an assertion is a term in another ontology, the short ide
 
 ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. This should be done sparingly.
 
+**Technical details of adding a cross-reference using Protégé**:
+
+For all: In the "Create Annotation" window, select the annotation property **database_cross_reference**.
+
+If the cross-reference can be represented as a CURIE and is not an ORCID: Enter the CURIE, using the bioregistry standard prefix, as a Value on the "Literal" tab. Leave Datatype empty.
+
+Non-CURIE values (e.g., URLs) are discouraged, but when used are also entered the same way, i.e., as a literal string with no Datatype selected.
+
+In cases where more than one CURIE is available for a resource, e.g., both a PMID and a doi are available, there is no preference for one over the other.
+
+If the cross-reference is an ORCID, enter the ORCID as an IRI in the IRI field on the “IRI Editor” tab.
+
+To restate, in all cases except ORCIDs, the CURIE is preferred and entered as a literal string. For ORCIDs, the IRI is preferred and is entered as an IRI.
+
+The above instructions apply whether the cross-reference is added to another annotation (e.g., annotating a text defintion or comment) or adding to the overall class (i.e., not an annotation of another annotation). 
+
+## Term contributors
+
+ When adding an ORCID to identify a term contributor, in the "Create Annotation" window, select the annotation property **dcterms:contributor**. The ORCID is still entered as an IRI on the “IRI Editor” tab.
 
 ## Formal definitions
 The formal definition of a class is made up of all the logical axioms about the class (as opposed to the annotation assertion axioms). This includes classification assertions, relationship assertions, equivalence assertions, and disjointness assertions.
