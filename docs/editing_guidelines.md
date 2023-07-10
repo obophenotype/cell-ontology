@@ -102,7 +102,7 @@ In cases where more than one CURIE is available for a resource, either is accept
 
 If the cross-reference is an ORCID, enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
-To restate, in all cases except ORCIDs, the CURIE is preferred and entered as a literal string. For ORCIDs, the IRI is preferred and is entered as an IRI.
+To restate, in all cases except ORCIDs, the CURIE is preferred and entered as a literal string. ORCIDs MUST be entered as an IRI.
 
 The above instructions apply whether the cross-reference is added to another annotation (e.g., annotating a text defintion or comment) or adding to the overall class (i.e., not an annotation of another annotation). 
 
