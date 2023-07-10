@@ -108,7 +108,7 @@ The above instructions apply whether the cross-reference is added to another ann
 
 ## Term contributors
 
- When adding an ORCID to identify a term contributor, in the "Create Annotation" window, select the annotation property **dcterms:contributor**. The ORCID is still entered as an IRI on the “IRI Editor” tab.
+When adding an ORCID to identify a term contributor, in the "Create Annotation" window, select the annotation property **dcterms:contributor**. The ORCID is still entered as an IRI on the “IRI Editor” tab.
 
 ## Formal definitions
 The formal definition of a class is made up of all the logical axioms about the class (as opposed to the annotation assertion axioms). This includes classification assertions, relationship assertions, equivalence assertions, and disjointness assertions.
