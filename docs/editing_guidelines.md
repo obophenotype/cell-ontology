@@ -100,7 +100,7 @@ Non-CURIE values (e.g., URLs) are discouraged, but when used are also entered th
 
 In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.
 
-If the cross-reference is an ORCID, enter the ORCID as an IRI in the IRI field on the “IRI Editor” tab.
+If the cross-reference is an ORCID, enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
 To restate, in all cases except ORCIDs, the CURIE is preferred and entered as a literal string. For ORCIDs, the IRI is preferred and is entered as an IRI.
 
