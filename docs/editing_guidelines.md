@@ -103,7 +103,7 @@ Citations are made by cross-references, that is by adding `http://www.geneontolo
 
 If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
 
-DO NOT use URLs as database cross-references. They should be entered using `rdfs:seeAlso` (see below).
+DO NOT enter URLs as database cross-references. They should be entered using `rdfs:seeAlso` (see below).
 
 ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. However, this should be AVOIDED.
 
