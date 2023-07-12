@@ -111,7 +111,7 @@ ORCID identifiers may also be used when the only available source for an asserti
 
 For CURIEs and ORCIDs: In the "Create Annotation" window, select the annotation property **database_cross_reference**.
 
-For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld), as a Value on the "Literal" tab. Leave Datatype empty.
+For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld)), as a Value on the "Literal" tab. Leave Datatype empty.
 
 In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.
 
