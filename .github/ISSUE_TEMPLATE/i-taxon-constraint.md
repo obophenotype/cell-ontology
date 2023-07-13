@@ -1,6 +1,6 @@
 ---
 name: Taxon constraints
-about: Request for taxon constrains to be added to existing CL terms.
+about: Request for taxon constraints to be added to existing CL terms
 title: "[Taxon constraint]"
 labels: taxon constraint
 ---
@@ -16,4 +16,3 @@ Please indicate one of the following (by adding an x in between the brackets):
 - [ ] present in taxon
 
 **References:**
-

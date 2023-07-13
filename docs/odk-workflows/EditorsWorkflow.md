@@ -11,6 +11,7 @@ This document only covers the first editing workflow, but more will be added in 
 ### Local editing workflow
 
 Workflow requirements:
+
 - git
 - github
 - docker
@@ -42,9 +43,9 @@ git checkout -b issue23removeprocess
 #### 4. _Perform edit_
 Using your editor of choice, perform the intended edit. For example:
 
-_Protege_
+_Protégé_
 
-1. Open `src/ontology/cl-edit.owl` in Protege
+1. Open `src/ontology/cl-edit.owl` in Protégé
 2. Make the change
 3. Save the file
 
@@ -74,7 +75,7 @@ git status
 git diff
 ```
 #### 5. Quality control
-Now its time to run your quality control checks. This can either happen locally ([5a](#Local-testing)) or through your continuous integration system ([7/5b](#continuous-integration-testing)).
+Now it's time to run your quality control checks. This can either happen locally ([5a](#5a-local-testing)) or through your continuous integration system ([7/5b](#75b-continuous-integration-testing)).
 
 #### 5a. Local testing
 If you chose to run your test locally:
@@ -101,19 +102,19 @@ git push -u origin issue23removeprocess
 Then you go to your project on GitHub, and create a new pull request from the branch, for example: https://github.com/INCATools/ontology-development-kit/pulls
 
 There is a lot of great advise on how to write pull requests, but at the very least you should:
-- mention the tickets affected: `see #23` to link to a related ticket, or `fixes #23` if, by merging this pull request, the ticket is fixed. Tickets in the latter case will be closed automatically by Github when the pull request is merged.
+- mention the tickets affected: `see #23` to link to a related ticket, or `fixes #23` if, by merging this pull request, the ticket is fixed. Tickets in the latter case will be closed automatically by GitHub when the pull request is merged.
 - summarise the changes in a few sentences. Consider the reviewer: what would they want to know right away.
 - If the diff is large, provide instructions on how to review the pull request best (sometimes, there are many changed files, but only one important change).
 
 #### 7/5b. Continuous Integration Testing
-If you didn't run and local quality control checks (see [5a](#Local-testing)), you should have Continuous Integration (CI) set up, for example:
+If you didn't run and local quality control checks (see [5a](#5a-local-testing)), you should have Continuous Integration (CI) set up, for example:
 - Travis
 - GitHub Actions
 
 More on how to set this up [here](ContinuousIntegration.md). Once the pull request is created, the CI will automatically trigger. If all is fine, it will show up green, otherwise red.
 
 #### 8. Community review
-Once all the automatic tests have passed, it is important to put a second set of eyes on the pull request. Ontologies are inherently social - as in that they represent some kind of community consensus on how a domain is organised conceptually. This seems high brow talk, but it is very important that as an ontology editor, you have your work validated by the community you are trying to serve (e.g. your colleagues, other contributors etc). In our experience, it is hard to get more than one review on a pull request - two is great. You can set up GitHub branch protection to actually require a review before a pull request can be merged! We recommend this.
+Once all the automatic tests have passed, it is important to put a second set of eyes on the pull request. Ontologies are inherently social - as in that they represent some kind of community consensus on how a domain is organised conceptually. This seems high brow talk, but it is very important that as an ontology editor, you have your work validated by the community you are trying to serve (e.g. your colleagues, other contributors etc.). In our experience, it is hard to get more than one review on a pull request - two is great. You can set up GitHub branch protection to actually require a review before a pull request can be merged! We recommend this.
 
 This step seems daunting to some hopefully under-resourced ontologies, but we recommend to put this high up on your list of priorities - train a colleague, reach out!
 
@@ -121,4 +122,4 @@ This step seems daunting to some hopefully under-resourced ontologies, but we re
 When the QC is green and the reviews are in (approvals), it is time to merge the pull request. After the pull request is merged, remember to delete the branch as well (this option will show up as a big button right after you have merged the pull request). If you have not done so, close all the associated tickets fixed by the pull request.
 
 #### 10. Changelog (Optional)
-It is sometimes difficult to keep track of changes made to an ontology. Some ontology teams opt to document changes in a changelog (simply a text file in your repository) so that when release day comes, you know everything you have changed. This is advisable at least for major changes (such as a new release system, a new pattern or template etc).
+It is sometimes difficult to keep track of changes made to an ontology. Some ontology teams opt to document changes in a changelog (simply a text file in your repository) so that when release day comes, you know everything you have changed. This is advisable at least for major changes (such as a new release system, a new pattern or template etc.).

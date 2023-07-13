@@ -13,7 +13,7 @@ These steps are outlined in detail in the following.
 Preparation:
 
 1. Ensure that all your pull requests are merged into your main (master) branch
-2. Make sure that all changes to master are committed to Github (`git status` should say that there are no modified files)
+2. Make sure that all changes to master are committed to GitHub (`git status` should say that there are no modified files)
 3. Locally make sure you have the latest changes from master (`git pull`)
 4. Checkout a new branch (e.g. `git checkout -b release-2021-01-01`)
 5. You may or may not want to refresh your imports as part of your release strategy (see [here](UpdateImports.md))
@@ -29,7 +29,7 @@ This will create all the specified release targets (OBO, OWL, JSON, and the vari
 
 ## Review the release
 
-1. (Optional) Rough check. This step is frequently skipped, but for the more paranoid among us (like the author of this doc), this is a 3 minute additional effort for some peace of mind. Open the main release (cl.owl) in you favourite development environment (i.e. Protege) and eyeball the hierarchy. We recommend two simple checks: 
+1. (Optional) Rough check. This step is frequently skipped, but for the more paranoid among us (like the author of this doc), this is a 3 minute additional effort for some peace of mind. Open the main release (cl.owl) in you favourite development environment (i.e. Protégé) and eyeball the hierarchy. We recommend two simple checks: 
     1. Does the very top level of the hierarchy look ok? This means that all new terms have been imported/updated correctly.
     2. Does at least one change that you know should be in this release appear? For example, a new class. This means that the release was actually based on the recent edit file. 
 2. Commit your changes to the branch and make a pull request
@@ -44,7 +44,7 @@ Once your [CI checks](ContinuousIntegration.md) have passed, and your reviews ar
 
 ## Create a GitHub release
 
-1. Go to your releases page on GitHub by navigating to your repository, and then clicking on releases (usually on the right, for example: https://github.com/obophenotype/cell-ontology/releases. Then click "Draft new release"
+1. Go to your releases page on GitHub by navigating to your repository, and then clicking on releases (usually on the right, for example: https://github.com/obophenotype/cell-ontology/releases). Then click "Draft new release"
 1. As the tag version you **need to choose the date on which your ontologies were build.** You can find this, for example, by looking at the `cl.obo` file and check the `data-version:` property. The date needs to be prefixed with a `v`, so, for example `v2020-02-06`.
 1. You can write whatever you want in the release title, but we typically write the date again. The description underneath should contain a concise list of changes or term additions.
 1. Click "Publish release". Done.
@@ -63,7 +63,7 @@ Sometimes you will get cryptic error messages when using legacy tools using OBO 
 2. To debug this, in your terminal enter `sh run.sh make IMP=false PAT=false oort -B` (assuming you are already in the ontology folder in your directory) 
 3. This should show you where the error is in the log (eg multiple different definitions) 
 WARNING: THE FIX BELOW IS NOT IDEAL, YOU SHOULD ALWAYS TRY TO FIX UPSTREAM IF POSSIBLE
-4. Open `cl-edit.owl` in Protege and find the offending term and delete all offending issue (e.g. delete ALL definition, if the problem was "multiple def tags not allowed") and save. 
+4. Open `cl-edit.owl` in Protégé and find the offending term and delete all offending issue (e.g. delete ALL definition, if the problem was "multiple def tags not allowed") and save. 
 *While this is not idea, as it will remove all definitions from that term, it will be added back again when the term is fixed in the ontology it was imported from and added back in.
 5. Rerun `sh run.sh make IMP=false PAT=false oort -B` and if it all passes, commit your changes to a branch and make a pull request as usual.
 

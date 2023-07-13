@@ -14,16 +14,16 @@ Importing a new term is split into two sub-phases:
 ### Declaring terms to be imported
 There are three ways to declare terms that are to be imported from an external ontology. Choose the appropriate one for your particular scenario (all three can be used in parallel if need be):
 
-1. Protege-based declaration
+1. Protégé-based declaration
 2. Using term files
 3. Using the custom import template
 
-#### Protege-based declaration
+#### Protégé-based declaration
 
 This workflow is to be avoided, but may be appropriate if the editor _does not have access to the ODK docker container_. 
 This approach also applies to ontologies that use base module import approach.
 
-1. Open your ontology (edit file) in Protege (5.5+).
+1. Open your ontology (edit file) in Protégé (5.5+).
 1. Select 'owl:Thing'
 1. Add a new class as usual.
 1. Paste the _full iri_ in the 'Name:' field, for example, http://purl.obolibrary.org/obo/CHEBI_50906.
@@ -31,7 +31,7 @@ This approach also applies to ontologies that use base module import approach.
 
 <img src="https://raw.githubusercontent.com/INCATools/ontology-development-kit/master/docs/img/AddingClasses.png" alt="Adding Classes" />
 
-Now you can use this term for example to construct logical definitions. The next time the imports are refreshed (see how to refresh [here](#Refresh-imports)), the metadata (labels, definitions, etc) for this term are imported from the respective external source ontology and becomes visible in your ontology.
+Now you can use this term for example to construct logical definitions. The next time the imports are refreshed (see how to refresh [here](#refresh-imports)), the metadata (labels, definitions, etc.) for this term are imported from the respective external source ontology and becomes visible in your ontology.
 
 
 #### Using term files
@@ -43,7 +43,7 @@ GO:0008150
 GO:0008151
 ```
 
-Now you can run the [refresh imports workflow](#Refresh-imports)) and the two terms will be imported.
+Now you can run the [refresh imports workflow](#refresh-imports)) and the two terms will be imported.
 
 #### Using the custom import template 
 
@@ -60,7 +60,7 @@ use_custom_import_module: TRUE
 
 Now you can manage your imported terms directly in the custom external terms template, which is located at `src/templates/external_import.owl`. Note that this file is a [ROBOT template](http://robot.obolibrary.org/template), and can, in principle, be extended to include any axioms you like. Before extending the template, however, read the following carefully.
 
-The main purpose of the custom import template is to enable the management off all terms to be imported in a centralised place. To enable that, you do not have to do anything other than maintaining the template. So if you, say current import `APOLLO_SV:00000480`, and you wish to import `APOLLO_SV:00000532`, you simply add a row like this:
+The main purpose of the custom import template is to enable the management off all terms to be imported in a centralised place. To enable that, you do not have to do anything other than maintaining the template. So if you, say currently import `APOLLO_SV:00000480`, and you wish to import `APOLLO_SV:00000532`, you simply add a row like this:
 
 ```
 ID	Entity Type
@@ -69,9 +69,9 @@ APOLLO_SV:00000480	owl:Class
 APOLLO_SV:00000532	owl:Class
 ```
 
-When the imports are refreshed [see imports refresh workflow](#Refresh-imports), the term(s) will simply be imported from the configured ontologies.
+When the imports are refreshed [see imports refresh workflow](#refresh-imports), the term(s) will simply be imported from the configured ontologies.
 
-Now, if you wish to extent the Makefile (which is beyond these instructions) and add, say, synonyms to the imported terms, you can do that, but you need to (a) preserve the `ID` and `ENTITY` columns and (b) ensure that the ROBOT template is valid otherwise, [see here](http://robot.obolibrary.org/template).
+Now, if you wish to extend the Makefile (which is beyond these instructions) and add, say, synonyms to the imported terms, you can do that, but you need to (a) preserve the `ID` and `ENTITY` columns and (b) ensure that the ROBOT template is valid otherwise, [see here](http://robot.obolibrary.org/template).
 
 _WARNING_. Note that doing this is a _widespread antipattern_ (see related [issue](https://github.com/OBOFoundry/OBOFoundry.github.io/issues/1443)). You should not change the axioms of terms that do not belong into your ontology unless necessary - such changes should always be pushed into the ontology where they belong. However, since people are doing it, whether the OBO Foundry likes it or not, at least using the _custom imports module_ as described here localises the changes to a single simple template and ensures that none of the annotations added this way are merged into the [base file](https://github.com/INCATools/ontology-development-kit/blob/master/docs/ReleaseArtefacts.md#release-artefact-1-base-required).  
 
@@ -139,14 +139,14 @@ Axiom 1: BFO:123 SubClassOf BFO:124
 
 Gets removed.
 
-The base file pipeline is a bit more complex then the normal pipelines, because
+The base file pipeline is a bit more complex than the normal pipelines, because
 of the logical interactions between the imported ontologies. This is solved by _first 
 merging all mirrors into one huge file and then extracting one mega module from it.
 
 Example: Let's say we are importing terms from Uberon, GO and RO in our ontologies.
 When we use the base pipelines, we
 
-1) First obtain the base (ususally by simply downloading it, but there is also an option now to create it with ROBOT)
+1) First obtain the base (usually by simply downloading it, but there is also an option now to create it with ROBOT)
 2) We merge all base files into one big pile
 3) Then we extract a single module `imports/merged_import.owl`
 
@@ -170,7 +170,7 @@ sh run.sh make imports/merged_import.owl
 ```
 Note: if your mirrors are updated, you can run `sh run.sh make no-mirror-refresh-merged`
 
-This requires quite a bit of memory on your local machine, so if you encounter an error, it might be a lack of memory on your computer. A solution would be to create a ticket in an issue tracker requesting for the term to be imported, and your one of the local devs should pick this up and run the import for you.
+This requires quite a bit of memory on your local machine, so if you encounter an error, it might be a lack of memory on your computer. A solution would be to create a ticket in an issue tracker requesting for the term to be imported, and one of the local devs should pick this up and run the import for you.
 
-Lastly, restart Protege, and the term should be imported in ready to be used.
+Lastly, restart Protégé, and the term should be imported in ready to be used.
 

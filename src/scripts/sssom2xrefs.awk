@@ -28,7 +28,7 @@ END {
 }
 
 # We only generate cross-references for "exact" mappings
-/skos:exactMatch/ {
+/(skos:exactMatch|semapv:crossSpeciesExactMatch)/ {
   split($object_index, object, ":");
   # Only process mappings where the object term belongs to Uberon
   if ( object[1] == "CL" ) {

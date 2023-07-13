@@ -1,13 +1,56 @@
 name: 'Create ROBOT diffs on Pull requests'
 
-on: 
+on:
 
   issue_comment:
         types: [created]
 
+env:
+  DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  branch_status:
+    if: ${{ github.event.issue.pull_request }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: khan/pull-request-comment-trigger@v1.1.0
+        id: check
+        with:
+          trigger: '#gogoeditdiff'
+        env:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
+      - uses: xt0rted/pull-request-comment-branch@v1
+        id: comment-branch
+      # Checks-out current branch
+      - uses: actions/checkout@v3
+        if: steps.check.outputs.triggered == 'true'
+        with:
+          ref: ${{ steps.comment-branch.outputs.head_ref }}
+          fetch-depth: 0
+      - name: Check current branch status
+        if: steps.check.outputs.triggered == 'true'
+        id: info
+        run: |
+          echo "status=$(git rev-list --left-right --count origin/$DEFAULT_BRANCH...origin/`git branch --show-current` | awk '{print $1}')"
+          echo "status=$(git rev-list --left-right --count origin/$DEFAULT_BRANCH...origin/`git branch --show-current` | awk '{print $1}')" >> $GITHUB_OUTPUT
+      - name: Warn users with a comment
+        if: steps.info.outputs.status >= 1
+        run: echo "Your branch is ${{ steps.info.outputs.status }} commit/s behind, please update your branch.   " > warncomment.md
+      - name: post comment
+        if: steps.info.outputs.status >= 1 && steps.check.outputs.triggered == 'true'
+        env:
+          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        uses: NejcZdovc/comment-pr@v1.1.1
+        with:
+          file: "../../warncomment.md"
+      - name: fail
+        if: steps.info.outputs.status >= 1 && steps.check.outputs.triggered == 'true'
+        run: |
+          echo "Your branch is ${{ steps.info.outputs.status }} commit/s behind, please update your branch.   "
+          exit 1
   edit_file:
+    needs: [branch_status]
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
@@ -41,6 +84,7 @@ jobs:
           name: edit-diff.md
           path: edit-diff.md
   classify_branch:
+    needs: [branch_status]
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
@@ -68,6 +112,7 @@ jobs:
           path: src/ontology/cl-simple.owl
           retention-days: 1
   classify_main:
+    needs: [branch_status]
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
@@ -93,9 +138,7 @@ jobs:
           path: src/ontology/cl-simple.owl
           retention-days: 1
   diff_classification:
-    needs:
-      - classify_branch
-      - classify_main
+    needs:  [classify_branch, classify_main]
     runs-on: ubuntu-latest
     container: obolibrary/odklite:v1.3.0
     steps:
@@ -176,4 +219,3 @@ jobs:
         with:
           file: "../../edit-comment.md"
           identifier: "UNREASONED"
-
