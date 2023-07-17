@@ -35,8 +35,10 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
    - Save csv file with name XXX_upper_slim.csv in src/templates
 
 - Modify src/ontology/cl-odk.yaml introducing new lines for the new slim:
-   - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/bf8af4ca-80b0-4dd0-ab11-d9ce1afa2939)
-   - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/f26e7ae5-c2b4-4509-828f-7d5a49c2874e)
+  
+     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/4673253e-9526-43b4-8608-8d7e7b27d988)
+
+     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/254ad25f-7bf2-4ac2-afe2-9ad067d9c1ea)
 
 ### 2. Generating the Slim OWL file:
 - Navigate to the src/ontology file in the terminal with Docker opened.
@@ -45,13 +47,14 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 ### 3. Modifying the Catalog:
 - Open the src/ontology/catalog-v001.xml file.
 - Add the following line: `<uri name="http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl" uri="components/XXX_upper_slim.owl"/>` (change "XXX" to the subset label).
-   - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/9fed5519-aca2-4a87-999f-8ac44b361f37)
+   - ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/429a8098-9748-4e3b-a5a1-c3e178d6cb6c)
+
 
 
 ### 4. Preparing the Upper Level Slim import to CL:
 - Open src/ontology/cl-edit.owl.
 - Add the following import statement: `Import(<http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl>)`. (change "XXX" to the subset label).
-   - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/b0da114e-4df6-4fee-93f3-2733fea4b4cf)
+   - ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/0b467b48-ad94-46e9-80a1-bc473de769e8)
 
 
 ### 5. Updating the slim owl file:
@@ -62,10 +65,12 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 - Open src/ontology/cl.Makefile.
 - Add the subset label to SLIM_TEMPLATES (without _upper_slim!!!).
     
-    ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/874da667-bfb6-4f46-abc0-fdd798553d48)
+    ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/18960b0b-098c-42cf-95b1-ab1f1978a8bc)
+
 - Add the term that will be used to test coverage
      
-     ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/c7ec5b9f-3deb-43f4-a68e-b07c1eff4fbe)
+     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/24a0c221-da18-4754-9a45-e6b65b6cec35)
+
    - Add:
 
    ```
@@ -76,7 +81,8 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
    (substitute "XXX" to the subset label and YYY for the tested label)
 
 
-     ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/96619a7f-0c81-40b2-ada7-2829703b500c)
+     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/7eb18255-0ef7-4fbc-9f7f-e582372165bf)
+
 - Using the terminal, navigate to src/ontology.
 - Run the command: `sh run.sh make slim_coverage`.
 
