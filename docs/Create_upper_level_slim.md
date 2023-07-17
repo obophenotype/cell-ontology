@@ -38,7 +38,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
    - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/bf8af4ca-80b0-4dd0-ab11-d9ce1afa2939)
    - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/f26e7ae5-c2b4-4509-828f-7d5a49c2874e)
 
-### 2. Generating the slim owl file:
+### 2. Generating the Slim OWL file:
 - Open the src/ontology file in the terminal with Docker opened.
 - Run the command: `sh run.sh make update_repo`.
 
@@ -48,7 +48,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
    - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/9fed5519-aca2-4a87-999f-8ac44b361f37)
 
 
-### 4. Importing the Upper Level Slim in CL:
+### 4. Preparing the Upper Level Slim import to CL:
 - Open src/ontology/cl-edit.owl.
 - Add the following import statement: `Import(<http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl>)`. (change "XXX" to the subset label).
    - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/b0da114e-4df6-4fee-93f3-2733fea4b4cf)
