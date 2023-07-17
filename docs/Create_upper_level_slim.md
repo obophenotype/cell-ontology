@@ -39,7 +39,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
    - ![image](https://github.com/aleixpuigb/Protocols/assets/94959119/f26e7ae5-c2b4-4509-828f-7d5a49c2874e)
 
 ### 2. Generating the Slim OWL file:
-- Open the src/ontology file in the terminal with Docker opened.
+- Navigate to the src/ontology file in the terminal with Docker opened.
 - Run the command: `sh run.sh make update_repo`.
 
 ### 3. Modifying the Catalog:
@@ -81,7 +81,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 - Run the command: `sh run.sh make slim_coverage`.
 
 
-### Understanding reports 
+## Understanding reports 
 
 The reports can be accessed at src/ontology/reports/XXX_upper_slim.csv. First, the coverage percentage is displayed, indicating the proportion of cells covered. Secondly, the number of cells covered by each term of the subset is provided. Finally, a list is presented, indicating all the terms that were expected to be covered but are not currently included.
 
