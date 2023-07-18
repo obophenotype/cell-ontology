@@ -23,7 +23,7 @@ Furthermore, the description of the slim should follow a consistent pattern. It 
 
 ### 1. Preparing the subset:
 - Create XXX_upper_slim in Protege (change "XXX" to the subset label). [See *Adding a new Subset*](https://oboacademy.github.io/obook/howto/add-new-slim/).
-- Create a CSV table with the following characteristics (Find examples in src/templates):
+- Create a CSV table with the following characteristics (Find examples in `src/templates`):
   - 3 columns
 
 ID | subset | label
@@ -32,12 +32,12 @@ ID | AI oboInOwl:inSubset|
 CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 ... | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | ...
 
-   - Save csv file with name XXX_upper_slim.csv in src/templates
+   - Save the CSV file with the name 'XXX_upper_slim.csv' in the `src/templates` directory.
 
-- Modify src/ontology/cl-odk.yaml introducing new lines for the new slim (change "XXX" to the subset label):
+- Modify `src/ontology/cl-odk.yaml` introducing new lines for the new slim (change "XXX" to the subset label):
 
 	```
-  	id: XXX_upper_slim
+  	- id: XXX_upper_slim
  	```
 
      ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/4673253e-9526-43b4-8608-8d7e7b27d988)
@@ -52,7 +52,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/254ad25f-7bf2-4ac2-afe2-9ad067d9c1ea)
 
 ### 2. Generating the Slim OWL file:
-- Navigate to the src/ontology file in the terminal. Make sure Docker is running.
+- Navigate to the `src/ontology` file in the terminal. Make sure Docker is running.
 - Run the command:
 
   ```
@@ -60,7 +60,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
   ```
 
 ### 3. Modifying the Catalog:
-- Open the src/ontology/catalog-v001.xml file.
+- Open the `src/ontology/catalog-v001.xml` file.
 - Add the following line (change "XXX" to the subset label):
 
   ```
@@ -71,7 +71,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 
 
 ### 4. Preparing the Upper Level Slim import to CL:
-- Open src/ontology/cl-edit.owl.
+- Open `src/ontology/cl-edit.owl`.
 - Add the following import statement (change "XXX" to the subset label):
 
     ```
@@ -93,7 +93,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
      ```
 
 ### 6. Testing Slim Coverage:
-- Open src/ontology/cl.Makefile.
+- Open `src/ontology/cl.Makefile`.
 - Add the subset label to SLIM_TEMPLATES (without _upper_slim!!!).
     
     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/18960b0b-098c-42cf-95b1-ab1f1978a8bc)
@@ -114,7 +114,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 
      ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/7eb18255-0ef7-4fbc-9f7f-e582372165bf)
 
-- Using the terminal, navigate to src/ontology.
+- Using the terminal, navigate to `src/ontology`.
 - Run the command:
 
     ```
@@ -124,8 +124,8 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 
 ## Understanding reports 
 
-The reports can be accessed at src/ontology/reports/XXX_upper_slim.csv. First, the coverage percentage is displayed, indicating the proportion of cells covered. Secondly, the number of cells covered by each term of the subset is provided. Finally, a list is presented, indicating all the terms that were expected to be covered but are not currently included.
+The reports can be accessed at `src/ontology/reports/XXX_upper_slim.csv`. First, the coverage percentage is displayed, indicating the proportion of cells covered. Secondly, the number of cells covered by each term of the subset is provided. Finally, a list is presented, indicating all the terms that were expected to be covered but are not currently included.
 
-Ideally, terms would have more than 1 cell covered, but not too many, as that might indicate the term is too general. Furthermore, a term covering hundreds of cells might indicate that it is too general, and a more specific term (or multiple) should be evaluated, specially if it overlaps with other terms of the subset. Example: For the eye_upper_slim, 'retinal cell' is a (too) general term that overlaps other grouping terms such as 'retinal bipolar neuron', 'retina horizontal cell' or 'amacrine cell'.
+Ideally, terms would have more than 1 cell covered. Furthermore, a term covering hundreds of cells might indicate that it is too general, and a more specific term (or multiple) should be evaluated, specially if it overlaps with other terms of the subset. Example: For the eye_upper_slim, 'retinal cell' is a (too) general term that overlaps other grouping terms such as 'retinal bipolar neuron', 'retina horizontal cell' or 'amacrine cell'.
 
-In the case that there is overlapping of terms (term A in the subset covers term B of the subset), a coverage file will be created and it can be accessed at src/ontology/reports/overlapping_terms_XXX_upper_slim.csv.
+In the case that there is overlapping of terms (term A in the subset covers term B of the subset), a coverage file will be created and it can be accessed at `src/ontology/reports/overlapping_terms_XXX_upper_slim.csv`.
