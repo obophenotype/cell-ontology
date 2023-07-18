@@ -41,7 +41,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
      ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/254ad25f-7bf2-4ac2-afe2-9ad067d9c1ea)
 
 ### 2. Generating the Slim OWL file:
-- Navigate to the src/ontology file in the terminal with Docker opened.
+- Navigate to the src/ontology file in the terminal. Make sure Docker is running.
 - Run the command: `sh run.sh make update_repo`.
 
 ### 3. Modifying the Catalog:
