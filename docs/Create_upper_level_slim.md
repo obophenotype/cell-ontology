@@ -84,7 +84,7 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 - Run the command:
 
     ```
-    sh run.sh make all_subsets
+    sh run.sh make all_subsets -B
     ```
    - Alternatively, run the following command to run it anyway even if it says it is up to date (change "XXX" to the subset label):
 
