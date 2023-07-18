@@ -23,7 +23,7 @@ Furthermore, the description of the slim should follow a consistent pattern. It 
 
 ### 1. Preparing the subset:
 - Create XXX_upper_slim in Protege (change "XXX" to the subset label). [See *Adding a new Subset*](https://oboacademy.github.io/obook/howto/add-new-slim/).
-- Create a CSV table with the following characteristics (Find examples in [src/templates](https://github.com/obophenotype/cell-ontology/tree/master/src/templates)):
+- Create a CSV table with the following characteristics (Find examples in src/templates):
   - 3 columns
 
 ID | subset | label
@@ -34,11 +34,20 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 
    - Save csv file with name XXX_upper_slim.csv in src/templates
 
-- Modify src/ontology/cl-odk.yaml introducing new lines for the new slim:
-  
+- Modify src/ontology/cl-odk.yaml introducing new lines for the new slim (change "XXX" to the subset label):
+
+	- `- id: XXX_upper_slim`
+
      ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/4673253e-9526-43b4-8608-8d7e7b27d988)
 
-     ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/254ad25f-7bf2-4ac2-afe2-9ad067d9c1ea)
+   ```
+    - filename: XXX_upper_slim.owl
+      use_template: True
+      templates:
+        - XXX_upper_slim.csv
+   ```
+
+    ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/254ad25f-7bf2-4ac2-afe2-9ad067d9c1ea)
 
 ### 2. Generating the Slim OWL file:
 - Navigate to the src/ontology file in the terminal. Make sure Docker is running.
