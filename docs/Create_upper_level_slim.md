@@ -36,7 +36,9 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 
 - Modify src/ontology/cl-odk.yaml introducing new lines for the new slim (change "XXX" to the subset label):
 
-	- `- id: XXX_upper_slim`
+	```
+  	id: XXX_upper_slim
+ 	```
 
      ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/4673253e-9526-43b4-8608-8d7e7b27d988)
 
@@ -51,24 +53,44 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
 
 ### 2. Generating the Slim OWL file:
 - Navigate to the src/ontology file in the terminal. Make sure Docker is running.
-- Run the command: `sh run.sh make update_repo`.
+- Run the command:
+
+  ```
+  sh run.sh make update_repo
+  ```
 
 ### 3. Modifying the Catalog:
 - Open the src/ontology/catalog-v001.xml file.
-- Add the following line: `<uri name="http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl" uri="components/XXX_upper_slim.owl"/>` (change "XXX" to the subset label).
+- Add the following line (change "XXX" to the subset label):
+
+  ```
+  <uri name="http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl" uri="components/XXX_upper_slim.owl"/>`
+  ```
    - ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/429a8098-9748-4e3b-a5a1-c3e178d6cb6c)
 
 
 
 ### 4. Preparing the Upper Level Slim import to CL:
 - Open src/ontology/cl-edit.owl.
-- Add the following import statement: `Import(<http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl>)`. (change "XXX" to the subset label).
-   - ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/0b467b48-ad94-46e9-80a1-bc473de769e8)
+- Add the following import statement (change "XXX" to the subset label):
+
+    ```
+    Import(<http://purl.obolibrary.org/obo/cl/components/XXX_upper_slim.owl>)
+    ```
+    ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/0b467b48-ad94-46e9-80a1-bc473de769e8)
 
 
 ### 5. Updating the slim owl file:
-- Run the command: `sh run.sh make all_subsets`.
-   - Alternatively, run the command: `sh run.sh make components/XXX_upper_slim.owl -B` (to run it anyway even if it says it is up to date) (change "XXX" to the subset label).
+- Run the command:
+
+    ```
+    sh run.sh make all_subsets
+    ```
+   - Alternatively, run the following command to run it anyway even if it says it is up to date (change "XXX" to the subset label):
+
+     ```
+     sh run.sh make components/XXX_upper_slim.owl -B
+     ```
 
 ### 6. Testing Slim Coverage:
 - Open src/ontology/cl.Makefile.
@@ -93,7 +115,11 @@ CL:####### | 	http://purl.obolibrary.org/obo/cl#XXX_upper_slim | CL term
      ![image](https://github.com/obophenotype/cell-ontology/assets/94959119/7eb18255-0ef7-4fbc-9f7f-e582372165bf)
 
 - Using the terminal, navigate to src/ontology.
-- Run the command: `sh run.sh make slim_coverage`.
+- Run the command:
+
+    ```
+    sh run.sh make slim_coverage
+    ```
 
 
 ## Understanding reports 
