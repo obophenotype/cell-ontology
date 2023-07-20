@@ -27,7 +27,7 @@ jobs:
             name: cl-diff.md
             path: cl-diff.md
       - name: Prepare release comment
-        run: "echo \"[Here's a diff of how this release impacts cl.owl](cl-diff.md)\" >comment.md"
+        run: "echo \"[Here's a diff of how this release impacts cl.owl](https://github.com/obophenotype/cell-ontology/blob/${{ env.GITHUB_SHA }}/src/ontology/diffs/cl-diff.md)\" >comment.md"
       - name: Post reasoned comment
         env:
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
