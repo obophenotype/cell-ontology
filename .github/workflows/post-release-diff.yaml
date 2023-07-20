@@ -16,25 +16,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-    #   - name: Upload release diff
-    #     uses: actions/upload-artifact@v2
-    #     with:
-    #         name: cl-diff.md
-    #         path: src/ontology/diffs/cl-diff.md
-    #   - name: Download release diff
-    #     uses: actions/download-artifact@v3
-    #     with:
-    #         name: cl-diff.md
-    #         path: cl-diff.md
       - name: Prepare release comment
         env:
             GITHUB_SHA: ${{ github.sha }}
         run: "echo \"[Here's a diff of how this release impacts cl.owl](https://github.com/obophenotype/cell-ontology/blob/${{ env.GITHUB_SHA }}/src/ontology/diffs/cl-diff.md)\" >comment.md"
       - name: Post reasoned comment
         env:
-          GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         uses: NejcZdovc/comment-pr@v1.1.1
         with:
-          github_token: ${{env.GITHUB_TOKEN}}
+          github_token: ${{ env.GITHUB_TOKEN }}
           file: "../../comment.md"
           identifier: "CL-DIFF"
