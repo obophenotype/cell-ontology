@@ -7,6 +7,6 @@ SELECT ?term WHERE {
   { ?term owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first ?term ] ] }
     UNION
   { ?term owl:equivalentClass [ owl:intersectionOf [ rdf:rest*/rdf:first [ owl:someValuesFrom ?term ] ] ] }
-  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/cl_")))
+  FILTER(isIRI(?term) && (STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/cl#")))
 }
 

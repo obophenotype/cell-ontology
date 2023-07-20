@@ -156,6 +156,16 @@ normalise_xsd_string: $(SRC)
 	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
 	rm $<.bak
 
+rm-altid:
+	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
+	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl
+
+merge-constructed:
+	$(ROBOT) merge -i $(SRC) -i tmp/cl-construct-replaced-by.ttl --collapse-import-closure false convert -f ofn -o $(SRC)
+
+construct-replaced-by:
+	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
+
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 
@@ -221,3 +231,69 @@ $(TMPDIR)/hra_subset.owl:
 
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+	
+
+# Make CL-plus (CL + PCL product)
+
+cl-plus.owl: $(ONT)-full.owl
+	$(ROBOT) merge --input-iri http://purl.obolibrary.org/obo/pcl/pcl-base.owl --input $(ONT)-full.owl \
+		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
+		relax \
+		reduce -r ELK \
+		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+
+# ----------------------------------------
+# RELEASE DEPLOYMENT
+# ----------------------------------------
+
+DEPLOY_GH=true
+
+.PHONY: cl
+cl:
+	$(MAKE) prepare_release IMP=false PAT=false 
+	$(MAKE) release-diff
+	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
+
+.PHONY: release-diff
+release-diff:
+	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
+		
+FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
+MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
+
+deploy_release:
+	@test $(GHVERSION)
+	ls -alt $(MAIN_FILES_RELEASE)
+	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
+
+# -------------------------------------------
+# UPPER SLIM VALIDATION AND COVERAGE REPORTS
+# -------------------------------------------
+
+TERM_hematopoietic= CL:0000988
+TERM_eye= UBERON:0000970
+TERM_general = CL:0000548
+
+SLIM_TEMPLATES= blood_and_immune eye general_cell_types
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+
+.PHONY: slim_coverage
+slim_coverage: $(SLIM_REPORTS)
+xxx:
+	echo $(SLIM_REPORTS)
+	echo $(REPORTDIR)
+COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@
+
+$(REPORTDIR)/blood_and_immune_upper_slim.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
+	$(eval TERM_ID := $(TERM_hematopoietic))
+	$(COVERAGECMD)
+
+$(REPORTDIR)/eye_upper_slim.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
+	$(eval TERM_ID := $(TERM_eye))
+	$(COVERAGECMD)
+
+$(REPORTDIR)/general_cell_types_upper_slim.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
+	$(eval TERM_ID := $(TERM_general))
+	$(COVERAGECMD)
+
+test: slim_coverage

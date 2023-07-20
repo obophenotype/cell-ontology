@@ -9,7 +9,3 @@ labels: 'text definition'
 
 
 **Suggested revision of textual definition**
-
-
-
-

@@ -8,6 +8,4 @@ labels: CL-classhierarchy
 **CL term**
 
 
-**Suggested revision and reasons**
-
-
+**Suggested revision of class hierarchy**
