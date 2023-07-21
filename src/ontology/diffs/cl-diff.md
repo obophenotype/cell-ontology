@@ -3860,7 +3860,7 @@ Previous. An information content entity is a non-realizable information entity t
 
 ### intermediate cell of urothelium `http://purl.obolibrary.org/obo/CL_4030055`
 #### Removed
-- [intermediate cell of urothelium](http://purl.obolibrary.org/obo/CL_4030055) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) " urothelial intermediate cell" 
+- [intermediate cell of urothelium](http://purl.obolibrary.org/obo/CL_4030055) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "urothelial intermediate cell" 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1007/978-3-030-14366-4_8" 
 
 #### Added
