@@ -7,8 +7,10 @@
 2. Words should not be capitalized, unless they are proper names or are capitalized as a standard (e.g., “Peyer's” and “B” in “Peyer's patch B cell”).
 3. Avoid special characters: use only alphanumeric characters, space, dash (`-`), slash (`/`), and apostrophe (`'`).
 
-### Advice
-Bear in mind that users will often encounter terms in isolation. Long, descriptive labels (within reason!) are therefore preferable, especially where there is obvious potential for confusion. For example, _calyx_ (which simply means “cup”) could refer to a structure in the oviduct or in the mushroom body, depending on your field of specialization. It is therefore better to use _mushroom body calyx_ or _oviduct calyx_ rather than simply _calyx_ alone.
+### Advice on writing labels
+Bear in mind that users will often encounter terms in isolation. Sufficiently descriptive labels are therefore recommended, especially where there is obvious potential for confusion. For example, the label 'peripheral nervous system neuron' is preferred over 'peripheral neuron' as the former has more clarity.
+
+For classes that refer to cell types in specific anatomical structures, the label may have the adjectival or noun form of the anatomical structure, for example, 'hepatic oval stem cell' or 'liver dendritic cell' ("hepatic" vs. "liver"). To determine which form of the anatomical term to use, it is recommended for the editor to search PubMed/review literature to determine common usage. If there is no clear preference, the editor can defer to use the adjectival form and add the noun form as an exact synonym.
 
 Try to maintain consistent patterns of naming where possible. However, it may make sense to override this in order to conform to common usage.
 
