@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-07-20/subsets/eye_upper_slim.owl
+data-version: cl/releases/2023-08-04/subsets/eye_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -95,7 +95,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/eye_upper_slim
-property_value: owl:versionInfo "2023-07-20" xsd:string
+property_value: owl:versionInfo "2023-08-04" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -1399,7 +1399,6 @@ id: CL:0000566
 name: angioblastic mesenchymal cell
 def: "A mesenchymal stem cell capable of developing into blood vessel endothelium." [GOC:dsd, GOC:tfm, PMID:12768659]
 comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive, CD309-positive, and TAL1-positive.
-subset: human_reference_atlas
 synonym: "angioblast" EXACT []
 synonym: "chondroplast" EXACT []
 is_a: CL:0000134 {is_inferred="true"} ! mesenchymal stem cell
@@ -1410,7 +1409,6 @@ intersection_of: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 intersection_of: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
 intersection_of: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute lymphocytic leukemia protein 1
 relationship: develops_from CL:0000134 ! mesenchymal stem cell
-relationship: present_in_taxon NCBITaxon:9606
 relationship: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 relationship: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
 relationship: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute lymphocytic leukemia protein 1
@@ -1878,7 +1876,6 @@ creation_date: 2010-09-15T01:34:57Z
 id: CL:0002320
 name: connective tissue cell
 def: "A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone." [GOC:tfm, ISBN:0618947256]
-subset: human_reference_atlas
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
@@ -1887,7 +1884,6 @@ intersection_of: CL:0002371 ! somatic cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0002384 ! connective tissue
-relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-09-15T03:01:54Z
 
 [Term]
@@ -2052,9 +2048,7 @@ creation_date: 2012-06-27T08:27:35Z
 id: CL:0008000
 name: non-striated muscle cell
 def: "Any muscle cell in which the fibers are not organised into sarcomeres." [GOC:DOS]
-subset: human_reference_atlas
 is_a: CL:0000187 ! muscle cell
-relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0008001
@@ -3317,10 +3311,28 @@ id: GO:0008219
 name: cell death
 namespace: biological_process
 def: "Any biological process that results in permanent cessation of all vital functions of a cell. A cell should be considered dead when any one of the following molecular or morphological criteria is met: (1) the cell has lost the integrity of its plasma membrane; (2) the cell, including its nucleus, has undergone complete fragmentation into discrete bodies (frequently referred to as apoptotic bodies). The cell corpse (or its fragments) may be engulfed by an adjacent cell in vivo, but engulfment of whole cells should not be considered a strict criteria to define cell death as, under some circumstances, live engulfed cells can be released from phagosomes (see PMID:18045538)." [GOC:mah, GOC:mtg_apoptosis, PMID:25236395]
-comment: This term should not be used for direct annotation. The only exception should be when experimental data (e.g., staining with trypan blue or propidium iodide) show that cell death has occurred, but fail to provide details on death modality (accidental versus programmed). When information is provided on the cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Also, if experimental data suggest that a gene product influences cell death indirectly, rather than being involved in the death process directly, consider annotating to a 'regulation' term.
+comment: This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO.  When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms.
+subset: gocheck_do_not_annotate
 synonym: "accidental cell death" RELATED []
 synonym: "necrosis" RELATED []
 is_a: GO:0009987 ! cellular process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24680" xsd:anyURI
+
+[Term]
+id: GO:0008283
+name: cell population proliferation
+namespace: biological_process
+def: "The multiplication or reproduction of cells, resulting in the expansion of a cell population." [GOC:mah, GOC:mb]
+comment: This term was moved out from being a child of 'cellular process' because it is a cell population-level process, and cellular processes are restricted to those processes that involve individual cells. Also note that this term is intended to be used for the proliferation of cells within a multicellular organism, not for the expansion of a population of single-celled organisms.
+subset: goslim_agr
+subset: goslim_chembl
+subset: goslim_drosophila
+subset: goslim_flybase_ribbon
+subset: goslim_mouse
+subset: goslim_pir
+synonym: "cell proliferation" RELATED []
+is_a: GO:0009987 ! cellular process
+relationship: never_in_taxon NCBITaxon:4751
 
 [Term]
 id: GO:0009058
@@ -3356,8 +3368,10 @@ synonym: "macromolecule biosynthesis" EXACT []
 synonym: "macromolecule formation" EXACT []
 synonym: "macromolecule synthesis" EXACT []
 is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
-property_value: term_tracker_item "http://amigo.geneontology.org/amigo/term/GO:0070589" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/15249" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25418" xsd:anyURI
 
 [Term]
 id: GO:0009314
@@ -3532,11 +3546,12 @@ creation_date: 2012-12-11T16:56:55Z
 id: GO:0010467
 name: gene expression
 namespace: biological_process
-def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, translation and maturation for protein-coding genes." [GOC:txnOH-2018, PMID:25934543, PMID:31580950]
+def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, as well as translation and maturation for protein-coding genes." [GOC:txnOH-2018, PMID:25934543, PMID:31580950]
 subset: goslim_flybase_ribbon
 xref: Wikipedia:Gene_expression
-is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0009059 ! macromolecule biosynthetic process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22557" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25419" xsd:anyURI
 
 [Term]
 id: GO:0012501
@@ -3862,6 +3877,7 @@ subset: prokaryote_subset
 synonym: "cell projection organisation" EXACT []
 synonym: "cell projection organization and biogenesis" RELATED [GOC:mah]
 synonym: "cell surface structure organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0008283 ! cell population proliferation
 is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0042995 ! cell projection
@@ -4635,6 +4651,18 @@ def: "The chemical reactions and pathways involving those compounds which are fo
 subset: goslim_pir
 synonym: "primary metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0044249
+name: cellular biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of substances, carried out by individual cells." [GOC:jl]
+synonym: "cellular anabolism" EXACT []
+synonym: "cellular biosynthesis" EXACT []
+synonym: "cellular formation" EXACT []
+synonym: "cellular synthesis" EXACT []
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0044297
@@ -5644,9 +5672,9 @@ name: chemical synaptic transmission, postsynaptic
 namespace: biological_process
 def: "The part of synaptic transmission occurring in the post-synapse: a signal transduction pathway consisting of neurotransmitter receptor activation and its effects on postsynaptic membrane potential and the ionic composition of the postsynaptic cytosol." [GOC:dos]
 subset: goslim_synapse
-synonym: "postsynaptic process involved in chemical synaptic transmission" RELATED syngo_official_label []
+synonym: "postsynaptic process involved in chemical synaptic transmission" EXACT syngo_official_label []
+is_a: GO:0007166 ! cell surface receptor signaling pathway
 is_a: GO:0050877 ! nervous system process
-is_a: GO:1905114 ! cell surface receptor signaling pathway involved in cell-cell signaling
 intersection_of: GO:0007166 ! cell surface receptor signaling pathway
 intersection_of: occurs_in GO:0098794 ! postsynapse
 intersection_of: part_of GO:0007268 ! chemical synaptic transmission
@@ -5675,6 +5703,7 @@ def: "A part of a cellular organism that is either an immaterial entity or a mat
 subset: goslim_pir
 is_a: CARO:0000000 ! anatomical entity
 is_a: GO:0005575 ! cellular_component
+is_a: UBERON:0000061 ! anatomical structure
 created_by: kmv
 creation_date: 2019-08-12T18:01:37Z
 
@@ -5822,25 +5851,6 @@ intersection_of: GO:0031982 ! vesicle
 intersection_of: part_of GO:0005576 ! extracellular region
 created_by: jl
 creation_date: 2014-10-22T14:26:11Z
-
-[Term]
-id: GO:1905114
-name: cell surface receptor signaling pathway involved in cell-cell signaling
-namespace: biological_process
-def: "Any cell surface receptor signaling pathway that is involved in cell-cell signaling." [GO_REF:0000060, GOC:TermGenie, ISBN:0-7167-3051-0]
-synonym: "cell surface receptor linked signal transduction involved in cell-cell signaling" EXACT [GOC:TermGenie]
-synonym: "cell surface receptor linked signal transduction involved in cell-cell signalling" EXACT [GOC:TermGenie]
-synonym: "cell surface receptor linked signaling pathway involved in cell-cell signaling" EXACT [GOC:TermGenie]
-synonym: "cell surface receptor linked signaling pathway involved in cell-cell signalling" EXACT [GOC:TermGenie]
-synonym: "cell surface receptor linked signalling pathway involved in cell-cell signaling" EXACT [GOC:TermGenie]
-synonym: "cell surface receptor linked signalling pathway involved in cell-cell signalling" EXACT [GOC:TermGenie]
-synonym: "cell surface receptor signaling pathway involved in cell-cell signalling" EXACT [GOC:TermGenie]
-is_a: GO:0007166 ! cell surface receptor signaling pathway
-intersection_of: GO:0007166 ! cell surface receptor signaling pathway
-intersection_of: part_of GO:0007267 ! cell-cell signaling
-relationship: part_of GO:0007267 ! cell-cell signaling
-created_by: dos
-creation_date: 2016-04-06T16:59:57Z
 
 [Term]
 id: GO:1990904
@@ -19120,12 +19130,14 @@ creation_date: 2017-05-24T09:31:01Z
 id: has_ontology_root_term
 name: has ontology root term
 name: preferred_root
+namespace: external
 namespace: uberon
 def: "Ontology annotation property. Relates an ontology to a term that is a designated root term of the ontology. Display tools like OLS can use terms annotated with this property as the starting point for rendering the ontology class hierarchy. There can be more than one root." []
 xref: IAO:0000700
 property_value: IAO:0000111 "has ontology root term" xsd:string
 property_value: IAO:0000117 "Nicolas Matentzoglu" xsd:string
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: has_output
