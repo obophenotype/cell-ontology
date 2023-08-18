@@ -105,6 +105,8 @@ Citations are made by cross-references, that is by adding `http://www.geneontolo
 
 If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
 
+If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D004759, NOT MESH:A03.492.766.440.250.
+
 DO NOT enter URLs as database cross-references. They should be entered using `rdfs:seeAlso` (see below).
 
 ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. However, this should be AVOIDED.
