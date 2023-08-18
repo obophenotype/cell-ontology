@@ -119,7 +119,7 @@ In cases where more than one CURIE is available for a resource, either is accept
 
 For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
-For URLs: In the "Create Annotation" window, select the annotation property **seeAlso** (`rdfs:seeAlso`). Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
+For URLs: In the "Create Annotation" window, select the annotation property **'see also'** (`rdfs:seeAlso`). Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
 DO NOT use database_cross_reference with a value that is a URL. 
 
 To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
