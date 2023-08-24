@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-07-20/subsets/blood_and_immune_upper_slim.owl
+data-version: cl/releases/2023-08-24/subsets/blood_and_immune_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -95,7 +95,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/blood_and_immune_upper_slim
-property_value: owl:versionInfo "2023-07-20" xsd:string
+property_value: owl:versionInfo "2023-08-24" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -311,7 +311,7 @@ subset: human_reference_atlas
 synonym: "blood forming stem cell" EXACT []
 synonym: "colony forming unit hematopoietic" RELATED []
 synonym: "hemopoietic stem cell" EXACT []
-synonym: "HSC" EXACT []
+synonym: "HSC" RELATED abbreviation []
 xref: BTO:0000725
 xref: CALOHA:TS-0448
 xref: FMA:70337
@@ -357,10 +357,10 @@ id: CL:0000038
 name: erythroid progenitor cell
 def: "A progenitor cell committed to the erythroid lineage." [GOC:add, ISBN:0721601464]
 subset: blood_and_immune_upper_slim
-synonym: "BFU-E" RELATED []
+synonym: "BFU-E" RELATED abbreviation []
 synonym: "blast forming unit erythroid" RELATED []
 synonym: "burst forming unit erythroid" RELATED []
-synonym: "CFU-E" RELATED []
+synonym: "CFU-E" RELATED abbreviation []
 synonym: "colony forming unit erythroid" RELATED []
 synonym: "erythroid stem cell" RELATED []
 xref: BTO:0004911
@@ -373,7 +373,7 @@ id: CL:0000040
 name: monoblast
 def: "A myeloid progenitor cell committed to the monocyte lineage. This cell is CD11b-positive, has basophilic cytoplasm, euchromatin, and the presence of a nucleolus." [GOC:add, http://en.wikipedia.org/wiki/Monoblast, http://www.copewithcytokines.de, PMID:1104740]
 comment: Morphology: mononuclear cell, diameter 12-20 _M, non-granular, N/C ratio 3/1 - 4/1; markers: CD11b (shared with many other myeloid cells); location: Adult: bone marrow; fetal: liver, Yolk Sac; role or process: hematopoiesis, monocyte development; lineage: hematopoietic, myeloid.
-synonym: "CFU-M" RELATED []
+synonym: "CFU-M" RELATED abbreviation []
 synonym: "colony forming unit macrophage" RELATED []
 synonym: "colony forming unit monocyte" RELATED []
 synonym: "monocyte stem cell" RELATED []
@@ -416,9 +416,9 @@ name: common myeloid progenitor
 def: "A progenitor cell committed to myeloid lineage, including the megakaryocyte and erythroid lineages." [GOC:add, ISBN:0878932437, MESH:D023461]
 comment: This cell type is intended to be compatible with any vertebrate common myeloid progenitor.  For mammalian CMP known to be CD34-positive, please use the term 'common myeloid progenitor, CD34-positive' (CL_0001059).
 subset: human_reference_atlas
-synonym: "CFU-GEMM" RELATED [ISBN:0878932437]
-synonym: "CFU-S" RELATED [ISBN:0878932437]
-synonym: "CMP" EXACT [ISBN:0878932437]
+synonym: "CFU-GEMM" RELATED abbreviation [ISBN:0878932437]
+synonym: "CFU-S" RELATED abbreviation [ISBN:0878932437]
+synonym: "CMP" RELATED abbreviation [ISBN:0878932437]
 synonym: "colony forming unit granulocyte, erythrocyte, macrophage, and megakaryocyte" RELATED [ISBN:0878932437]
 synonym: "common myeloid precursor" EXACT []
 synonym: "multipotential myeloid stem cell" RELATED [ISBN:0878932437]
@@ -462,13 +462,13 @@ name: common lymphoid progenitor
 def: "A oligopotent progenitor cell committed to the lymphoid lineage." [GOC:add, GOC:dsd, GOC:tfm, PMID:10407577, PMID:16551251]
 comment: CLP are CD7-positive, CD10-positive, CD19-negative, CD34-positive, CD45RA-positive, CD79a-negative, CD127-positive, AA4.1-positive, RAG-negative, Sca-1-low, sIgM-negative, sIgD-negative, TdT-negative, Vpre-B-negative, and pre-BCR-negative. Expression of transcription factors include E2A-positive, EBF-positive, Ikaros-negative, PU.1-negative, and Pax5-negative.
 subset: human_reference_atlas
-synonym: "CLP" EXACT []
+synonym: "CLP" RELATED abbreviation []
 synonym: "committed lymphopoietic stem cell" RELATED []
 synonym: "common lymphocyte precursor" EXACT []
 synonym: "common lymphocyte progenitor" EXACT []
 synonym: "common lymphoid precursor" EXACT []
 synonym: "early lymphocyte progenitor" RELATED []
-synonym: "ELP" RELATED []
+synonym: "ELP" RELATED abbreviation []
 synonym: "lymphoid stem cell" RELATED []
 synonym: "lymphopoietic stem cell" RELATED []
 is_a: CL:0002032 {is_inferred="true"} ! hematopoietic oligopotent progenitor cell
@@ -541,6 +541,7 @@ is_a: CL:0000548 ! animal cell
 disjoint_from: CL:0000738 ! leukocyte
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: present_in_taxon NCBITaxon:9606
+property_value: depicted_by "https://www.swissbiopics.org/api/image/Epithelial_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000071
@@ -746,9 +747,9 @@ id: CL:0000134
 name: mesenchymal stem cell
 def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. In humans, this cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
-synonym: "BMSC" NARROW []
+synonym: "BMSC" RELATED abbreviation []
 synonym: "bone marrow stromal cells" NARROW []
-synonym: "CFU-F" RELATED []
+synonym: "CFU-F" RELATED abbreviation []
 synonym: "colony-forming unit-fibroblast" NARROW []
 synonym: "marrow stromal cells" NARROW [PMID:11378515]
 synonym: "mesenchymal precursor cell" RELATED []
@@ -756,7 +757,7 @@ synonym: "mesenchymal progenitor cells" RELATED PLURAL [MESH:D044982]
 synonym: "mesenchymal stem cell" RELATED []
 synonym: "mesenchymal stromal cell" RELATED []
 synonym: "mesenchymal stromal cells" RELATED PLURAL []
-synonym: "MSC" RELATED [PMID:11378515]
+synonym: "MSC" RELATED abbreviation [PMID:11378515]
 synonym: "stem cells, mesenchymal" RELATED PLURAL [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
@@ -771,7 +772,7 @@ name: professional antigen presenting cell
 def: "A cell capable of processing and presenting lipid and protein antigens to T cells in order to initiate an immune response." [GOC:add, ISBN:0781735149]
 comment: Note change of name; nearly all somatic cells can present antigens to T cells via MHC Class I complexes leading to effector responses, but professional antigen presenting cells constitutively express MHC Class II as well as costimulatory molecules, and thus can initiate immune responses via T cells.
 subset: blood_and_immune_upper_slim
-synonym: "APC" BROAD []
+synonym: "APC" RELATED abbreviation []
 is_a: CL:0000738 ! leukocyte
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: capable_of GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
@@ -812,6 +813,7 @@ is_a: CL:0000183 ! contractile cell
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0002371 ! somatic cell
 relationship: develops_from CL:0000056 ! myoblast
+property_value: depicted_by "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000211
@@ -1040,7 +1042,7 @@ relationship: capable_of GO:0015671 ! oxygen transport
 [Term]
 id: CL:0000333
 name: migratory neural crest cell
-def: "A cell derived from the specialized ectoderm flanking each side of the embryonic neural plate, which after the closure of the neural tube, forms masses of cells that migrate out from the dorsal aspect of the neural tube to spread throughout the body." [MESH:A16.254.600]
+def: "A cell derived from the specialized ectoderm flanking each side of the embryonic neural plate, which after the closure of the neural tube, forms masses of cells that migrate out from the dorsal aspect of the neural tube to spread throughout the body." [doi:10.1016/j.stem.2015.02.017]
 xref: FMA:86667
 is_a: CL:0000219 ! motile cell
 is_a: CL:0011012 ! neural crest cell
@@ -1163,6 +1165,7 @@ is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
 relationship: capable_of GO:0019226 ! transmission of nerve impulse
 relationship: present_in_taxon NCBITaxon:9606
+property_value: depicted_by "https://www.swissbiopics.org/api/image/Neuron_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000542
@@ -1192,7 +1195,7 @@ relationship: present_in_taxon NCBITaxon:9606
 [Term]
 id: CL:0000547
 name: proerythroblast
-def: "An immature, nucleated erythrocyte occupying the stage of erythropoeisis that follows formation of erythroid progenitor cells. This cell is CD71-positive, has both a nucleus and a nucleolus, and lacks hematopoeitic lineage markers." [ISBN:0721601464, MESH:A11.118.290.350.200, PMID:1638021]
+def: "An immature, nucleated erythrocyte occupying the stage of erythropoeisis that follows formation of erythroid progenitor cells. This cell is CD71-positive, has both a nucleus and a nucleolus, and lacks hematopoeitic lineage markers." [ISBN:0721601464, PMID:1638021]
 subset: blood_and_immune_upper_slim
 synonym: "pronormoblast" RELATED []
 synonym: "rubriblast" EXACT [ISBN:0721601464]
@@ -1244,6 +1247,7 @@ is_a: CL:0000255 ! eukaryotic cell
 intersection_of: CL:0000003 ! native cell
 intersection_of: only_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
+property_value: depicted_by "https://www.swissbiopics.org/api/image/Animal_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000549
@@ -1384,9 +1388,9 @@ def: "A hematopoietic progenitor cell that is committed to the granulocyte and m
 comment: Originally described in the dendritic cell ontology (DC_CL:0000042)(PMID:19243617). GMPs are reportedly CD16-positive, CD32-positive, CD34-positive, CD38-positive, CD45RA-positive, CD110-negative, CD117-positive, CD123-positive, and SCA1-negative.
 subset: human_reference_atlas
 synonym: "CFU-C , Colony forming unit in culture" BROAD [http://www.copewithcytokines.de]
-synonym: "CFU-GM" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
+synonym: "CFU-GM" RELATED abbreviation [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "colony forming unit granulocyte macrophage" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
-synonym: "GMP" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
+synonym: "GMP" RELATED abbreviation [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "granulocyte-macrophage progenitor" EXACT [ISBN:0721601464, PMCID:PMC2213186, PMCID:PMC548021]
 synonym: "granulocyte/monocyte precursor" EXACT []
 synonym: "granulocyte/monocyte progenitor" EXACT []
@@ -1894,7 +1898,7 @@ synonym: "gamma-delta T lymphocyte" EXACT []
 synonym: "gamma-delta T-cell" EXACT []
 synonym: "gamma-delta T-lymphocyte" EXACT []
 synonym: "gammadelta T cell" EXACT []
-synonym: "gd T cell" RELATED []
+synonym: "gd T cell" RELATED abbreviation []
 is_a: CL:0000084 {is_inferred="true"} ! T cell
 intersection_of: CL:0000084 ! T cell
 intersection_of: RO:0002104 GO:0042106 ! has plasma membrane part gamma-delta T cell receptor complex
@@ -2817,6 +2821,8 @@ subset: blood_and_immune_upper_slim
 xref: BTO:0000772
 xref: EFO:0000572
 xref: FMA:83030
+is_a: CL:0000542 ! lymphocyte
+relationship: output_of GO:0046649 ! lymphocyte activation
 property_value: http://purl.org/dc/elements/1.1/date "2022-08-17T14:20:01Z" xsd:string
 created_by: http://orcid.org/0000-0003-2473-2313
 
@@ -4985,10 +4991,28 @@ id: GO:0008219
 name: cell death
 namespace: biological_process
 def: "Any biological process that results in permanent cessation of all vital functions of a cell. A cell should be considered dead when any one of the following molecular or morphological criteria is met: (1) the cell has lost the integrity of its plasma membrane; (2) the cell, including its nucleus, has undergone complete fragmentation into discrete bodies (frequently referred to as apoptotic bodies). The cell corpse (or its fragments) may be engulfed by an adjacent cell in vivo, but engulfment of whole cells should not be considered a strict criteria to define cell death as, under some circumstances, live engulfed cells can be released from phagosomes (see PMID:18045538)." [GOC:mah, GOC:mtg_apoptosis, PMID:25236395]
-comment: This term should not be used for direct annotation. The only exception should be when experimental data (e.g., staining with trypan blue or propidium iodide) show that cell death has occurred, but fail to provide details on death modality (accidental versus programmed). When information is provided on the cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Also, if experimental data suggest that a gene product influences cell death indirectly, rather than being involved in the death process directly, consider annotating to a 'regulation' term.
+comment: This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO.  When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms.
+subset: gocheck_do_not_annotate
 synonym: "accidental cell death" RELATED []
 synonym: "necrosis" RELATED []
 is_a: GO:0009987 ! cellular process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24680" xsd:anyURI
+
+[Term]
+id: GO:0008283
+name: cell population proliferation
+namespace: biological_process
+def: "The multiplication or reproduction of cells, resulting in the expansion of a cell population." [GOC:mah, GOC:mb]
+comment: This term was moved out from being a child of 'cellular process' because it is a cell population-level process, and cellular processes are restricted to those processes that involve individual cells. Also note that this term is intended to be used for the proliferation of cells within a multicellular organism, not for the expansion of a population of single-celled organisms.
+subset: goslim_agr
+subset: goslim_chembl
+subset: goslim_drosophila
+subset: goslim_flybase_ribbon
+subset: goslim_mouse
+subset: goslim_pir
+synonym: "cell proliferation" RELATED []
+is_a: GO:0009987 ! cellular process
+relationship: never_in_taxon NCBITaxon:4751
 
 [Term]
 id: GO:0009058
@@ -5024,8 +5048,10 @@ synonym: "macromolecule biosynthesis" EXACT []
 synonym: "macromolecule formation" EXACT []
 synonym: "macromolecule synthesis" EXACT []
 is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
-property_value: term_tracker_item "http://amigo.geneontology.org/amigo/term/GO:0070589" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/15249" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25418" xsd:anyURI
 
 [Term]
 id: GO:0009605
@@ -5165,11 +5191,12 @@ creation_date: 2013-12-02T13:58:34Z
 id: GO:0010467
 name: gene expression
 namespace: biological_process
-def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, translation and maturation for protein-coding genes." [GOC:txnOH-2018, PMID:25934543, PMID:31580950]
+def: "The process in which a gene's sequence is converted into a mature gene product (protein or RNA). This includes the production of an RNA transcript and its processing, as well as translation and maturation for protein-coding genes." [GOC:txnOH-2018, PMID:25934543, PMID:31580950]
 subset: goslim_flybase_ribbon
 xref: Wikipedia:Gene_expression
-is_a: GO:0043170 ! macromolecule metabolic process
+is_a: GO:0009059 ! macromolecule biosynthetic process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22557" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25419" xsd:anyURI
 
 [Term]
 id: GO:0012501
@@ -5617,6 +5644,7 @@ subset: prokaryote_subset
 synonym: "cell projection organisation" EXACT []
 synonym: "cell projection organization and biogenesis" RELATED [GOC:mah]
 synonym: "cell surface structure organization and biogenesis" RELATED [GOC:mah]
+is_a: GO:0008283 ! cell population proliferation
 is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0042995 ! cell projection
@@ -6839,6 +6867,18 @@ def: "The chemical reactions and pathways involving those compounds which are fo
 subset: goslim_pir
 synonym: "primary metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+
+[Term]
+id: GO:0044249
+name: cellular biosynthetic process
+namespace: biological_process
+def: "The chemical reactions and pathways resulting in the formation of substances, carried out by individual cells." [GOC:jl]
+synonym: "cellular anabolism" EXACT []
+synonym: "cellular biosynthesis" EXACT []
+synonym: "cellular formation" EXACT []
+synonym: "cellular synthesis" EXACT []
+is_a: GO:0009058 ! biosynthetic process
+is_a: GO:0044237 ! cellular metabolic process
 
 [Term]
 id: GO:0044419
@@ -8356,6 +8396,7 @@ def: "A part of a cellular organism that is either an immaterial entity or a mat
 subset: goslim_pir
 is_a: CARO:0000000 ! anatomical entity
 is_a: GO:0005575 ! cellular_component
+is_a: UBERON:0000061 ! anatomical structure
 created_by: kmv
 creation_date: 2019-08-12T18:01:37Z
 
@@ -15992,16 +16033,6 @@ name: lacks_plasma_membrane_part
 expand_expression_to: "http://purl.obolibrary.org/obo/BFO_0000051 exactly 0 (http://purl.obolibrary.org/obo/GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)" []
 
 [Typedef]
-id: IAO:0000136
-name: is about
-def: "A (currently) primitive relation that relates an information artifact to an entity." []
-property_value: editor_note "7/6/2009 Alan Ruttenberg. Following discussion with Jonathan Rees, and introduction of \"mentions\" relation. Weaken the is_about relationship to be primitive. \n\nWe will try to build it back up by elaborating the various subproperties that are more precisely defined.\n\nSome currently missing phenomena that should be considered \"about\" are predications - \"The only person who knows the answer is sitting beside me\" , Allegory, Satire, and other literary forms that can be topical without explicitly mentioning the topic." xsd:string
-property_value: IAO:0000112 "This document is about information artifacts and their representations" xsd:string
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "person:Alan Ruttenberg" xsd:string
-property_value: IAO:0000119 "Smith, Ceusters, Ruttenberg, 2000 years of philosophy" xsd:string
-
-[Typedef]
 id: RO:0000052
 name: characteristic of
 def: "a relation between a specifically dependent continuant (the characteristic) and any other entity (the bearer), in which the characteristic depends on the bearer for its existence." []
@@ -16110,21 +16141,6 @@ property_value: IAO:0000112 "this parent cell derives into this cell (cell divis
 property_value: IAO:0000112 "this parent nucleus derives into this nucleus (nuclear division)" xsd:string
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000118 "derives_into" xsd:string
-
-[Typedef]
-id: RO:0001018
-name: contained in
-subset: ro-eco
-property_value: editor_note "Containment is location not involving parthood, and arises only where some immaterial continuant is involved." xsd:string
-property_value: editor_note "Containment obtains in each case between material and immaterial continuants, for instance: lung contained_in thoracic cavity; bladder contained_in pelvic cavity. Hence containment is not a transitive relation.    If c part_of c1 at t then we have also, by our definition and by the axioms of mereology applied to spatial regions, c located_in c1 at t. Thus, many examples of instance-level location relations for continuants are in fact cases of instance-level parthood. For material continuants location and parthood coincide. Containment is location not involving parthood, and arises only where some immaterial continuant is involved. To understand this relation, we first define overlap for continuants as follows:    c1 overlap c2 at t =def for some c, c part_of c1 at t and c part_of c2 at t. The containment relation on the instance level can then be defined (see definition):" xsd:string
-property_value: editor_note "Intended meaning:\ndomain: material entity\nrange: spatial region or site (immaterial continuant)\n        " xsd:string
-property_value: IAO:0000111 "contained in" xsd:string
-property_value: IAO:0000118 "contained_in" xsd:string
-property_value: RO:0001900 RO:0001901
-domain: BFO:0000040 ! material entity
-range: BFO:0000004 ! independent continuant
-holds_over_chain: located_in part_of
-inverse_of: contains ! contains
 
 [Typedef]
 id: RO:0002000
@@ -17067,12 +17083,6 @@ holds_over_chain: capable_of positively_regulates
 is_a: RO:0002596 ! capable of regulating
 
 [Typedef]
-id: RO:0002610
-name: correlated with
-def: "A relationship that holds between two entities, where the entities exhibit a statistical dependence relationship. The entities may be statistical variables, or they may be other kinds of entities such as diseases, chemical entities or processes." []
-property_value: IAO:0000232 "Groups both positive and negative correlation" xsd:string
-
-[Typedef]
 id: RO:0004031
 name: enables subfunction
 def: "Holds between an entity and an process P where the entity enables some larger compound process, and that larger process has-part P." []
@@ -17262,16 +17272,6 @@ property_value: IAO:0000232 "A diagnostic testing device utilizes a specimen mea
 property_value: IAO:0000232 "See github ticket https://github.com/oborel/obo-relations/issues/497" xsd:string
 holds_over_chain: capable_of has_input
 creation_date: 2021-11-08T12:00:00Z
-
-[Typedef]
-id: RO:0017003
-name: positively correlated with
-def: "A relation between entities in which one increases or decreases as the other does the same." []
-property_value: dc-contributor https://orcid.org/0000-0003-1909-9269
-property_value: IAO:0000118 "directly correlated with" xsd:string
-is_reflexive: true
-is_symmetric: true
-is_a: RO:0002610 ! correlated with
 
 [Typedef]
 id: acts_on_population_of
@@ -17585,11 +17585,12 @@ is_a: RO:0002323 ! mereotopologically related to
 [Typedef]
 id: contains
 name: contains
+name: obsolete contains
 namespace: uberon
-subset: ro-eco
 xref: RO:0001019
 property_value: IAO:0000111 "contains" xsd:string
-property_value: RO:0001900 RO:0001901
+property_value: seeAlso https://github.com/oborel/obo-relations/issues/693
+is_obsolete: true
 
 [Typedef]
 id: contains_process
@@ -17864,13 +17865,7 @@ is_a: connected_to ! connected to
 id: editor_note
 name: editor note
 namespace: uberon
-def: "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology." []
 xref: IAO:0000116
-property_value: IAO:0000111 "editor note" xsd:string
-property_value: IAO:0000114 IAO:0000122
-property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
-property_value: IAO:0000119 "GROUP:OBI:<http://purl.obofoundry.org/obo/obi>" xsd:string
-property_value: isDefinedBy http://purl.obolibrary.org/obo/iao.owl
 is_metadata_tag: true
 
 [Typedef]
@@ -18188,12 +18183,11 @@ creation_date: 2017-05-24T09:31:01Z
 id: has_ontology_root_term
 name: has ontology root term
 name: preferred_root
+namespace: external
 namespace: uberon
-def: "Ontology annotation property. Relates an ontology to a term that is a designated root term of the ontology. Display tools like OLS can use terms annotated with this property as the starting point for rendering the ontology class hierarchy. There can be more than one root." []
 xref: IAO:0000700
-property_value: IAO:0000111 "has ontology root term" xsd:string
-property_value: IAO:0000117 "Nicolas Matentzoglu" xsd:string
 is_metadata_tag: true
+is_class_level: true
 
 [Typedef]
 id: has_output
@@ -18244,7 +18238,7 @@ namespace: external
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
 xref: RO:0000057
 property_value: editor_note "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
-property_value: http://purl.org/dc/elements/1.1/source "http://www.obofoundry.org/ro/#OBO_REL:has_participant" xsd:string
+property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:has_participant" xsd:string
 property_value: IAO:0000111 "has participant" xsd:string
 property_value: IAO:0000112 "this blood coagulation has participant this blood clot" xsd:string
 property_value: IAO:0000112 "this investigation has participant this investigator" xsd:string
@@ -18638,7 +18632,7 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 xref: RO:0001025
 property_value: editor_note "Location as a relation between instances: The primitive instance-level relation c located_in r at t reflects the fact that each continuant is at any given time associated with exactly one spatial region, namely its exact location. Following we can use this relation to define a further instance-level location relation - not between a continuant and the region which it exactly occupies, but rather between one continuant and another. c is located in c1, in this sense, whenever the spatial region occupied by c is part_of the spatial region occupied by c1.    Note that this relation comprehends both the relation of exact location between one continuant and another which obtains when r and r1 are identical (for example, when a portion of fluid exactly fills a cavity), as well as those sorts of inexact location relations which obtain, for example, between brain and head or between ovum and uterus" xsd:string
 property_value: editor_note "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
-property_value: http://purl.org/dc/elements/1.1/source "http://www.obofoundry.org/ro/#OBO_REL:located_in" xsd:string
+property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:located_in" xsd:string
 property_value: IAO:0000111 "located in" xsd:string
 property_value: IAO:0000112 "my brain is located in my head" xsd:string
 property_value: IAO:0000112 "this rat is located in this cage" xsd:string
@@ -18947,7 +18941,7 @@ def: "x is preceded by y if and only if the time point at which y ends is before
 subset: ro-eco
 xref: BFO:0000062
 property_value: editor_note "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
-property_value: http://purl.org/dc/elements/1.1/source "http://www.obofoundry.org/ro/#OBO_REL:preceded_by" xsd:string
+property_value: http://purl.org/dc/terms/source "http://www.obofoundry.org/ro/#OBO_REL:preceded_by" xsd:string
 property_value: IAO:0000111 "preceded by" xsd:string
 property_value: IAO:0000118 "is preceded by" xsd:string
 property_value: IAO:0000118 "preceded_by" xsd:string
@@ -19481,14 +19475,7 @@ id: term_tracker_item
 name: term tracker item
 namespace: external
 namespace: uberon
-def: "An IRI or similar locator for a request or discussion of an ontology term." []
-comment: The 'tracker item' can associate a tracker with a specific ontology term.
 xref: IAO:0000233
-property_value: IAO:0000111 "term tracker item" xsd:string
-property_value: IAO:0000112 "the URI for an OBI Terms ticket at sourceforge, such as https://sourceforge.net/p/obi/obi-terms/772/" xsd:string
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
-property_value: IAO:0000119 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
 is_metadata_tag: true
 is_class_level: true
 
