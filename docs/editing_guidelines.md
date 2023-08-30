@@ -107,14 +107,14 @@ If the main source for an assertion is a term in another ontology, the short ide
 
 If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D004759, NOT MESH:A03.492.766.440.250.
 
-DO NOT enter URLs as database cross-references. They should be entered using `rdfs:seeAlso` (see below).
-
 ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. However, this should be AVOIDED.
 
 **Technical details of adding a cross-reference using Protégé**:
 
 For CURIEs, ORCIDs: In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+
 For adding URLs to text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+
 For adding URLs to axioms that are NOT text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**source**](http://www.geneontology.org/formats/oboInOwl#source).
 
 For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld)), as a Value on the "Literal" tab. Leave Datatype empty.
