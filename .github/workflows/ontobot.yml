@@ -18,6 +18,11 @@ jobs:
       - name: Checkout main branch
         uses: actions/checkout@v3
 
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ matrix.python-version }}
+
       - name: Return issue number
         id: gh-script-issue
         uses: actions/github-script@v6
@@ -46,12 +51,18 @@ jobs:
       - name: Get jar & create alias command.
         run: wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.1.0/kgcl-robot-standalone-0.1.0.jar -O kgcl-robot.jar
 
-      - name: Run kgcl-robot
-        id: kgcl-robot
+      - name: Install dependencies
         run: |
-            java -jar kgcl-robot.jar apply -i ${{ env.resource }} \
-            -k "create class CL:000099999999 'new class'" \
-            -o ${{ env.resource }}
+          pip install ontobot-change-agent
+
+      - name: Run ochange
+        id: ochange
+        run: |
+          ochange process-issue ${{ env.resource }} \
+          -r ${{ steps.gh-script-repo.outputs.result }} \
+          -n ${{ steps.gh-script-issue.outputs.result }} \
+          -g ${{ secrets.GH_TOKEN }} \
+          -j kgcl-robot.jar
 
       - name: Clean-up
         run: rm -f kgcl-robot.jar
@@ -60,15 +71,12 @@ jobs:
         uses: peter-evans/create-pull-request@v5
         # if: ${{ env.PR_TITLE}}
         with:
-          token: ${{ secrets.GH_TOKEN }}
           branch-suffix: short-commit-hash
           labels: Automated
-        #   author: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
-        #   committer: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
-        #   body: ${{ env.PR_BODY }}
-        #   title: ${{ env.PR_TITLE }}
-          body: "TEST KGCL_JAVA run."
-          title: "TEST KGCL_JAVA run."
-          branch: "test-kgcl-robot"
+          author: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
+          committer: ${{ env.ISSUE_CREATOR }} <${{ env.ISSUE_CREATOR }}@users.noreply.github.com>
+          body: ${{ env.PR_BODY }}
+          title: ${{ env.PR_TITLE }}
           base: ${{ github.head_ref }}
-        #   branch: ${{ env.branch-name }}
+          branch: ${{ env.branch-name }}
+          # token: ${{ secrets.GH_TOKEN }}
