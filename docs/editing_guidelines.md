@@ -105,13 +105,17 @@ Citations are made by cross-references, that is by adding `http://www.geneontolo
 
 If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
 
-DO NOT enter URLs as database cross-references. They should be entered using `rdfs:seeAlso` (see below).
+If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D004759, NOT MESH:A03.492.766.440.250.
 
 ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. However, this should be AVOIDED.
 
 **Technical details of adding a cross-reference using Protégé**:
 
-For CURIEs and ORCIDs: In the "Create Annotation" window, select the annotation property **database_cross_reference**.
+For CURIEs, ORCIDs: In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+
+For adding URLs to text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+
+For adding URLs to axioms that are NOT text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**source**](http://www.geneontology.org/formats/oboInOwl#source).
 
 For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld)), as a Value on the "Literal" tab. Leave Datatype empty.
 
@@ -119,12 +123,9 @@ In cases where more than one CURIE is available for a resource, either is accept
 
 For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
 
-For URLs: In the "Create Annotation" window, select the annotation property **'see also'** (`rdfs:seeAlso`). Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
-DO NOT use database_cross_reference with a value that is a URL. 
+For URLs: Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
 
 To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
-
-The above instructions apply whether the cross-reference is added to another annotation (e.g., annotating a text defintion or comment) or adding to the overall class (i.e., not an annotation of another annotation). 
 
 ## Term contributors
 
