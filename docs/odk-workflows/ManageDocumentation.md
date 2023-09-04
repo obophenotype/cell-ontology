@@ -3,9 +3,9 @@
 The documentation for CL is managed in two places (relative to the repository root):
 
 1. The `docs` directory contains all the files that pertain to the content of the documentation (more below)
-2. the `mkdocs.yaml` file cotains the documentation config, in particular its navigation bar and theme.
+2. the `mkdocs.yaml` file contains the documentation config, in particular its navigation bar and theme.
 
-The documentation is hosted using github pages, on a special branch of the repository (called `gh-pages`). It is important that this branch is never deleted - it contains all the files GitHub pages needs to render and deploy the site. It is also important to note that _the gh-pages branch should never be edited manually_. All changes to the docs happen inside the `docs` directory on the `main` branch.
+The documentation is hosted using GitHub pages, on a special branch of the repository (called `gh-pages`). It is important that this branch is never deleted - it contains all the files GitHub pages needs to render and deploy the site. It is also important to note that _the gh-pages branch should never be edited manually_. All changes to the docs happen inside the `docs` directory on the `main` branch.
 
 ## Editing the docs
 
@@ -42,4 +42,6 @@ The documentation is _not_ automatically updated from the Markdown, and needs to
    ```
 3. Just to double check, you can now navigate to your documentation pages (usually https://obophenotype.github.io/cell-ontology/). 
    Just make sure you give GitHub 2-5 minutes to build the pages!
+
+
 

@@ -156,6 +156,16 @@ normalise_xsd_string: $(SRC)
 	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
 	rm $<.bak
 
+rm-altid:
+	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
+	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl
+
+merge-constructed:
+	$(ROBOT) merge -i $(SRC) -i tmp/cl-construct-replaced-by.ttl --collapse-import-closure false convert -f ofn -o $(SRC)
+
+construct-replaced-by:
+	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
+
 ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
 DOSDPT=dosdp-tools
 
@@ -255,3 +265,35 @@ deploy_release:
 	@test $(GHVERSION)
 	ls -alt $(MAIN_FILES_RELEASE)
 	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
+
+# -------------------------------------------
+# UPPER SLIM VALIDATION AND COVERAGE REPORTS
+# -------------------------------------------
+
+TERM_hematopoietic= CL:0000988
+TERM_eye= UBERON:0000970
+TERM_general = CL:0000548
+
+SLIM_TEMPLATES= blood_and_immune eye general_cell_types
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+
+.PHONY: slim_coverage
+slim_coverage: $(SLIM_REPORTS)
+xxx:
+	echo $(SLIM_REPORTS)
+	echo $(REPORTDIR)
+COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@
+
+$(REPORTDIR)/blood_and_immune_upper_slim.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
+	$(eval TERM_ID := $(TERM_hematopoietic))
+	$(COVERAGECMD)
+
+$(REPORTDIR)/eye_upper_slim.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
+	$(eval TERM_ID := $(TERM_eye))
+	$(COVERAGECMD)
+
+$(REPORTDIR)/general_cell_types_upper_slim.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
+	$(eval TERM_ID := $(TERM_general))
+	$(COVERAGECMD)
+
+test: slim_coverage

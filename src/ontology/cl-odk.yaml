@@ -28,6 +28,9 @@ documentation:
 subset_group:
   products:
     - id: BDS_subset
+    - id: blood_and_immune_upper_slim
+    - id: eye_upper_slim
+    - id: general_cell_types_upper_slim
 import_group:
   use_base_merging: TRUE
   slme_individuals: exclude
@@ -36,6 +39,11 @@ import_group:
     - <http://purl.obolibrary.org/obo/OBA_*>
     - <http://purl.obolibrary.org/obo/ENVO_*>
     - <http://purl.obolibrary.org/obo/OBI_*>
+    - <http://purl.obolibrary.org/obo/NBO_*>
+    - <http://purl.obolibrary.org/obo/PO_*>
+    - <http://purl.obolibrary.org/obo/SO_*>
+    - <http://purl.obolibrary.org/obo/DDANAT_*>
+    - <http://purl.obolibrary.org/obo/NCBITaxon_Union_*>
     - <http://purl.obolibrary.org/obo/GOCHE_*>
     - <http://purl.obolibrary.org/obo/CLO_*>
     - <http://www.genenames.org/cgi-bin/gene_symbol_report*>
@@ -56,10 +64,6 @@ import_group:
       use_base: TRUE
     - id: ro
       use_base: TRUE
-    - id: chebi
-      make_base: TRUE
-      use_gzipped: TRUE
-      is_large: TRUE
     - id: pato
       use_base: TRUE
     - id: ncbitaxon
@@ -83,12 +87,26 @@ robot_report:
     - nolabels
     - pmid-not-dbxref
     - obsolete-replaced_by
+    - obsolete-alt-id
     - orcid-contributor
     - illegal-annotation-property
+    - label-synonym-polysemy
   custom_sparql_exports :
     - basic-report
 components:
   products:
     - filename: hra_subset.owl
     - filename: mappings.owl
-robot_java_args: '-Xmx8G'
+    - filename: blood_and_immune_upper_slim.owl
+      use_template: True
+      templates:
+        - blood_and_immune_upper_slim.csv
+    - filename: eye_upper_slim.owl
+      use_template: True
+      templates:
+        - eye_upper_slim.csv
+    - filename: general_cell_types_upper_slim.owl
+      use_template: True
+      templates:
+        - general_cell_types_upper_slim.csv
+
