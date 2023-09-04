@@ -7,8 +7,10 @@
 2. Words should not be capitalized, unless they are proper names or are capitalized as a standard (e.g., “Peyer's” and “B” in “Peyer's patch B cell”).
 3. Avoid special characters: use only alphanumeric characters, space, dash (`-`), slash (`/`), and apostrophe (`'`).
 
-### Advice
-Bear in mind that users will often encounter terms in isolation. Long, descriptive labels (within reason!) are therefore preferable, especially where there is obvious potential for confusion. For example, _calyx_ (which simply means “cup”) could refer to a structure in the oviduct or in the mushroom body, depending on your field of specialization. It is therefore better to use _mushroom body calyx_ or _oviduct calyx_ rather than simply _calyx_ alone.
+### Advice on writing labels
+Bear in mind that users will often encounter terms in isolation. Sufficiently descriptive labels are therefore recommended, especially where there is obvious potential for confusion. For example, the label 'peripheral nervous system neuron' is preferred over 'peripheral neuron' as the former has more clarity.
+
+For classes that refer to cell types in specific anatomical structures, the label may have the adjectival or noun form of the anatomical structure, for example, 'hepatic oval stem cell' or 'liver dendritic cell' ("hepatic" vs. "liver"). To determine which form of the anatomical term to use, it is recommended for the editor to search PubMed/review literature to determine common usage. If there is no clear preference, the editor can defer to use the adjectival form and add the noun form as an exact synonym.
 
 Try to maintain consistent patterns of naming where possible. However, it may make sense to override this in order to conform to common usage.
 
@@ -56,15 +58,30 @@ Try to be consistent in how you phrase the various types of comments. For exampl
 
 
 ## Synonyms
-Extensive addition of synonyms helps “findability” of terms when search. Synonyms can and should be added liberally.
+Extensive addition of synonyms helps “findability” of terms when search. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
 
 Guidelines on the type of synonyms:
 
-1. Use an _exact_ synonym only when the label and the synonym can be used interchangeably without dispute and refer to the same concept. For example, the terms “leukocyte”, “leucocyte” (spelling variation”) and “white blood cell” (layman’s term) all refer to the exact same concept (a specific cell type) and would be considered exact synonyms. Terms that may refer to other concepts, especially within the biomedical domain, should not be annotated as exact synonyms, including abbreviations. A synonym that is an abbreviation should be annotated as a _related_ synonym and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/cl#abbreviation`). For example, “WBC” can stand for “white blood cell” and refer to “leukocyte”, but within the biomedical domain it can also represent “white blood cell count” or, perhaps less frequently, “whole-body counting”, two distinct concepts with separate OBO ontology terms.
-2. Exact synonyms should be unique across the ontology. In other words, if class _A_ has synonym “X”, “X” should not be an exact synonym for any other CL term.
-3. Be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term. For example, saying that “peripheral blood mononuclear cell” is a narrow synonym of “mononuclear cell” means that “peripheral blood mononuclear cell“ refers to a narrower concept than “mononuclear cell”, not the other way around.
-4. The _related_ synonym type should be used for cases where the overlap between the synonym and the term label may be uncler, disputable or not true in all scenarios or contexts, but you want the term to be findable when searching. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 1 above).
-5. If a synonym includes a mix of abbreviations and words, the _related_ type should still be used unless there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated. For example, “lung TRM CD8-positive, CD103-positive cell” would be an exact synonym of “lung resident memory CD8-positive, CD103-positive, alpha-beta T cell”, even though “TRM” (in this case) is an abbreviation for “tissue resident T cell”. Note that without this context “TRM” should not be considered an exact synonym for “tissue resident T cell” as “TRM” could also mean “treatment-related mortality”, another OBO ontology concept. Compare the previous example to “IMB cell”, which should be a _related_ synonym of “invaginating midget bipolar cell”.
+1. DO use `has_exact_synonym` only when the label and the synonym can be used interchangeably without dispute and refer to the same concept. 
+
+Example: the terms “leukocyte”, “leucocyte” (spelling variation”) and “white blood cell” (layman’s term) all refer to the exact same concept (a specific cell type) and would be considered exact synonyms.
+
+2. Terms that may refer to other concepts, especially within the biomedical domain, should NOT be annotated as exact synonyms, including abbreviations. A synonym that is an abbreviation should be annotated using `has_related_synonym`and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/cl#abbreviation`).
+
+Example: “WBC” can stand for “white blood cell” and refer to “leukocyte”, but within the biomedical domain it can also represent “white blood cell count” or, perhaps less frequently, “whole-body counting”, two distinct concepts with separate OBO ontology terms.
+
+3. DO check that exact synonyms are unique across the ontology. In other words, if class _A_ has synonym “X”, “X” should NOT be an exact synonym for any other CL term.
+
+4. DO be mindful of the “directionality” of the _narrow_ and _broad_ types of synonyms. They qualify the _synonym_, not the original term.
+
+Example: asserting that “peripheral blood mononuclear cell” is a narrow synonym of “mononuclear cell” means that “peripheral blood mononuclear cell“ refers to a narrower (more specific) concept than “mononuclear cell”, not the other way around.
+
+5. DO use `has_related_synonym` where the overlap between the synonym and the term label may be uncler, disputable or not true in all scenarios or contexts, but do want the term to be findable when using the synonym as a search string. This includes abbreviations, which should be annotated as _related_ synonyms with synonym type “abbreviation” (see point 2 above).
+
+6. If a synonym includes a mix of abbreviations and words, DO use `has_related_synonym` EXCEPT when there is enough context within the synonym itself to make it clear that the synonym refers only to the concept being annotated.
+
+Example: “lung TRM CD8-positive, CD103-positive cell” should be an exact synonym of “lung resident memory CD8-positive, CD103-positive, alpha-beta T cell”, even though “TRM” (in this case) is an abbreviation for “tissue resident T cell”. Note that without this context “TRM” should NOT be considered an exact synonym for “tissue resident T cell” as “TRM” could also mean “treatment-related mortality”, another OBO ontology concept. 
+Compare the previous example to “IMB cell”, which should be a _related_ synonym of “invaginating midget bipolar cell”, as there is not enough context to confidently infer what "IMB" stands for.
 
 
 ## Considerations on style
@@ -78,7 +95,7 @@ The following considerations apply both to all human-readable fields (names, tex
 
 
 ## Cross-references to the literature
-Assertions in textual definitions, evidence provided in comments, and synonyms should be as much as possible backed up by citing the appropriate literature.
+Assertions in textual definitions, evidence provided in comments, and synonyms should be backed up by citing the appropriate literature.
 
 Citations are made by cross-references, that is by adding `http://www.geneontology.org/formats/oboInOwl#hasDbXref` annotations to the definition, comment, and synonym annotations. Add one such annotation per reference, using the CURIE syntax with well-known prefixes:
 
@@ -88,8 +105,31 @@ Citations are made by cross-references, that is by adding `http://www.geneontolo
 
 If the main source for an assertion is a term in another ontology, the short identifier for that term may be used as a cross-reference. For example, `WBbt:0006799` to cross-reference a term in the _C. elegans_ Gross Anatomy Ontology.
 
-ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. This should be done sparingly.
+If using a MeSH (Medical Subject Heading) term as a cross-reference, add the database_cross_reference annotation using the MeSH Unique ID, NOT MeSH Tree Number. For example, a database_cross_reference can be MESH:D004759, NOT MESH:A03.492.766.440.250.
 
+ORCID identifiers may also be used when the only available source for an assertion is an individual researcher. However, this should be AVOIDED.
+
+**Technical details of adding a cross-reference using Protégé**:
+
+For CURIEs, ORCIDs: In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+
+For adding URLs to text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**database_cross_reference**](http://www.geneontology.org/formats/oboInOwl#hasDbXref).
+
+For adding URLs to axioms that are NOT text definitions or synonyms:  In the "Create Annotation" window, select the annotation property [**source**](http://www.geneontology.org/formats/oboInOwl#source).
+
+For CURIEs: Enter the CURIE, using the [bioregistry OBO context](https://bioregistry.io/context/obo) prefix ([link to prefixmap](https://github.com/biopragmatics/bioregistry/blob/main/exports/contexts/obo.context.jsonld)), as a Value on the "Literal" tab. Leave Datatype empty.
+
+In cases where more than one CURIE is available for a resource, either is acceptable, but using the more semantically specific identifier is recommended. For example, when both a PMID and a doi are available for a resource, using the PMID is recommended since it indicates the cross-reference points to a paper, as opposed to a doi which could point to any digital object.
+
+For ORCIDs: Enter the ORCID as an IRI in the IRI field on the "IRI Editor" tab, for example `https://orcid.org/0000-0002-7356-1779`.
+
+For URLs: Enter the URL as a literal string with Datatype `xsd:anyURI` selected.
+
+To restate, in all cases above except ORCIDs, the values are entered as literal strings. An ORCID MUST BE entered as an IRI.
+
+## Term contributors
+
+When adding an ORCID to identify a term contributor, in the "Create Annotation" window, select the annotation property **dcterms:contributor**. The ORCID is still entered as an IRI on the “IRI Editor” tab.
 
 ## Formal definitions
 The formal definition of a class is made up of all the logical axioms about the class (as opposed to the annotation assertion axioms). This includes classification assertions, relationship assertions, equivalence assertions, and disjointness assertions.
