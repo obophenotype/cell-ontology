@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-08-24/subsets/eye_upper_slim.owl
+data-version: cl/releases/2023-09-21/subsets/eye_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -85,6 +85,7 @@ synonymtypedef: LATIN "latin term"
 synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
 synonymtypedef: NON_MAMMAL ""
 synonymtypedef: PENDING_REVIEW ""
+synonymtypedef: PLURAL ""
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: PRO-short-label ""
 synonymtypedef: scientific_name ""
@@ -95,7 +96,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/eye_upper_slim
-property_value: owl:versionInfo "2023-08-24" xsd:string
+property_value: owl:versionInfo "2023-09-21" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -271,16 +272,6 @@ disjoint_from: GO:0043226 ! organelle
 relationship: only_in_taxon NCBITaxon:131567 ! cellular organisms
 
 [Term]
-id: CL:0000003
-name: native cell
-def: "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." [CARO:mah]
-comment: To accommodate unicellular organisms better, 'cell in vivo' has been re-labeled 'native cell' to better represent its intended meaning - that is, that it is a cell in the context of a multicellular organism or in a natural environment. 'Native' is intended to contrast with 'in vitro', which refers to cells or other biological entities that have been intentionally placed in a controlled, non-natural setting for the purpose of study or manipulation. (MAH 1.12.12).
-subset: ubprop:upper_level
-synonym: "cell in vivo" NARROW []
-xref: CARO:0000013
-is_a: CL:0000000 ! cell
-
-[Term]
 id: CL:0000005
 name: fibroblast neural crest derived
 def: "Any fibroblast that is deriived from the neural crest." [https://orcid.org/0000-0001-5208-3432]
@@ -315,7 +306,6 @@ is_a: CL:0000333 ! migratory neural crest cell
 id: CL:0000030
 name: glioblast
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0000548 ! animal cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 
 [Term]
@@ -326,7 +316,7 @@ synonym: "neuroblast" EXACT []
 xref: BTO:0000930
 xref: FMA:70563
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000255 ! eukaryotic cell
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 
 [Term]
@@ -339,9 +329,8 @@ subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
-is_a: CL:0000548 ! animal cell
 is_a: CL:0011115 ! precursor cell
-intersection_of: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0017145 ! stem cell division
 relationship: capable_of GO:0017145 ! stem cell division
 relationship: in_taxon NCBITaxon:33208 ! Metazoa
@@ -424,8 +413,7 @@ synonym: "multipotent cell" EXACT []
 synonym: "multipotent stem cell" EXACT []
 xref: FMA:84789
 is_a: CL:0000034 ! stem cell
-is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0001402 ! multipotent
 intersection_of: capable_of GO:0017145 ! stem cell division
 relationship: bearer_of PATO:0001402 ! multipotent
@@ -531,7 +519,7 @@ xref: CARO:0000077
 xref: FBbt:00000124
 xref: FMA:66768
 xref: WBbt:0003672
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "https://www.swissbiopics.org/api/image/Epithelial_cells.svg" xsd:anyURI
@@ -556,7 +544,6 @@ name: columnar/cuboidal epithelial cell
 def: "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." [GO:0002065, https://orcid.org/0000-0001-5208-3432]
 subset: human_reference_atlas
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0002371 ! somatic cell
 relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
@@ -657,6 +644,7 @@ relationship: part_of UBERON:0001017 ! central nervous system
 id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
 is_a: CL:0000095 ! neuron associated cell
+is_a: CL:0000255 ! eukaryotic cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 
@@ -678,7 +666,7 @@ is_a: CL:0000095 ! neuron associated cell
 id: CL:0000126
 name: macroglial cell
 def: "A neuroglial cell of ectodermal origin, i.e., the astrocytes and oligodendrocytes considered together." [GOC:tfm, ISBN:0721662544]
-synonym: "macroglia" RELATED PLURAL [doi:10.1152/physrev.2001.81.2.871]
+synonym: "macroglia" RELATED OMO:0003004 [doi:10.1152/physrev.2001.81.2.871]
 synonym: "macrogliocyte" EXACT []
 xref: BTO:0000771
 xref: CALOHA:TS-2027
@@ -731,12 +719,12 @@ synonym: "CFU-F" RELATED abbreviation []
 synonym: "colony-forming unit-fibroblast" NARROW []
 synonym: "marrow stromal cells" NARROW [PMID:11378515]
 synonym: "mesenchymal precursor cell" RELATED []
-synonym: "mesenchymal progenitor cells" RELATED PLURAL [MESH:D044982]
+synonym: "mesenchymal progenitor cells" RELATED OMO:0003004 [MESH:D044982]
 synonym: "mesenchymal stem cell" RELATED []
 synonym: "mesenchymal stromal cell" RELATED []
-synonym: "mesenchymal stromal cells" RELATED PLURAL []
+synonym: "mesenchymal stromal cells" RELATED OMO:0003004 []
 synonym: "MSC" RELATED abbreviation [PMID:11378515]
-synonym: "stem cells, mesenchymal" RELATED PLURAL [MESH:D044982]
+synonym: "stem cells, mesenchymal" RELATED OMO:0003004 [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
@@ -765,8 +753,7 @@ xref: CALOHA:TS-0613
 xref: FMA:70545
 xref: MESH:D008544
 xref: VHOG:0001679
-is_a: CL:0000147 {is_inferred="true"} ! pigment cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0000147 ! pigment cell
 intersection_of: CL:0000147 ! pigment cell
 intersection_of: develops_from CL:0000541 ! melanoblast
 intersection_of: has_part GO:0042470 ! melanosome
@@ -779,7 +766,6 @@ id: CL:0000149
 name: visual pigment cell
 synonym: "pigment cell" BROAD []
 is_a: CL:0000147 ! pigment cell
-is_a: CL:0000548 ! animal cell
 
 [Term]
 id: CL:0000151
@@ -788,8 +774,8 @@ def: "A cell that specializes in controlled release of one or more substances." 
 subset: human_reference_atlas
 xref: BTO:0003659
 xref: FMA:86916
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0032940 ! secretion by cell
 relationship: capable_of GO:0032940 ! secretion by cell
 relationship: present_in_taxon NCBITaxon:9606
@@ -798,7 +784,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000183
 name: contractile cell
 def: "A cell whose primary function is to shorten." [FB:ma]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000187
@@ -814,7 +800,6 @@ xref: FMA:67328
 xref: WBbt:0003675
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000393 ! electrically responsive cell
-is_a: CL:0002371 ! somatic cell
 relationship: develops_from CL:0000056 ! myoblast
 property_value: depicted_by "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
 
@@ -842,7 +827,7 @@ name: sensory receptor cell
 def: "A cell that is capable of detection of a stimulus involved in sensory perception." []
 synonym: "receptor cell" EXACT []
 xref: MESH:D011984
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0050906 ! detection of stimulus involved in sensory perception
 intersection_of: part_of UBERON:0001032 ! sensory system
@@ -866,7 +851,7 @@ property_value: depicted_by "https://www.swissbiopics.org/api/image/Photorecepto
 id: CL:0000211
 name: electrically active cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." [FB:ma]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000213
@@ -879,14 +864,14 @@ is_a: CL:0000215 ! barrier cell
 id: CL:0000215
 name: barrier cell
 def: "A cell whose primary function is to prevent the transport of stuff across compartments." [JB:jb]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000219
 name: motile cell
 def: "A cell that moves by its own activities." [FB:ma]
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0048870 ! cell motility
 relationship: capable_of GO:0048870 ! cell motility
 
@@ -948,8 +933,8 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000255
 name: eukaryotic cell
 xref: MESH:D005057
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: only_in_taxon NCBITaxon:2759 ! Eukaryota
 relationship: only_in_taxon NCBITaxon:2759 ! Eukaryota
 
@@ -968,7 +953,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000293
 name: structural cell
 def: "A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism." [TAIR:sr]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000306
@@ -982,13 +967,13 @@ id: CL:0000325
 name: stuff accumulating cell
 def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
 subset: ubprop:upper_level
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000329
 name: oxygen accumulating cell
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0015671 ! oxygen transport
 relationship: capable_of GO:0015671 ! oxygen transport
 
@@ -1023,7 +1008,7 @@ id: CL:0000342
 name: pigment cell (sensu Vertebrata)
 def: "Any animal cell containing pigment granules." [GOC:tfm, ISBN:0721662544]
 is_a: CL:0000147 ! pigment cell
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000255 ! eukaryotic cell
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 
 [Term]
@@ -1032,7 +1017,6 @@ name: scleral cell
 def: "A cell of the sclera of the eye." [GOC:add]
 subset: eye_upper_slim
 is_a: CL:0000293 ! structural cell
-is_a: CL:0000548 ! animal cell
 intersection_of: CL:0000293 ! structural cell
 intersection_of: part_of UBERON:0001773 ! sclera
 relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
@@ -1044,7 +1028,6 @@ name: choroidal cell of the eye
 def: "A structural cell that is part of optic choroid." [GOC:add]
 subset: eye_upper_slim
 is_a: CL:0000293 ! structural cell
-is_a: CL:0000548 ! animal cell
 intersection_of: CL:0000293 ! structural cell
 intersection_of: part_of UBERON:0001776 ! optic choroid
 relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
@@ -1065,9 +1048,11 @@ xref: BTO:0000854
 xref: EHDAA2:0004546
 xref: FMA:72395
 is_a: CL:0000007 ! early embryonic cell (metazoa)
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0010017 ! zygote
 intersection_of: CL:0010017 ! zygote
 intersection_of: only_in_taxon NCBITaxon:33208 ! Metazoa
+relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
 
 [Term]
 id: CL:0000393
@@ -1100,7 +1085,7 @@ def: "A precursor cell destined to differentiate into smooth muscle myocytes." [
 synonym: "myoblast, smooth muscle" EXACT [MESH:D032390]
 synonym: "satellite cell" RELATED []
 xref: FMA:84798
-is_a: CL:0000056 {is_inferred="true"} ! myoblast
+is_a: CL:0000056 ! myoblast
 intersection_of: CL:0000056 ! myoblast
 intersection_of: RO:0002203 CL:0000192 ! develops into smooth muscle cell
 relationship: RO:0002203 CL:0000192 ! develops into smooth muscle cell
@@ -1149,7 +1134,6 @@ comment: Derived from UBERON:0002342 neural crest.
 xref: BTO:0003217
 xref: FMA:83377
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0002371 ! somatic cell
 is_a: CL:0011026 ! progenitor cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
@@ -1197,18 +1181,6 @@ relationship: has_part CL:0017503 ! basophilic cytoplasm
 relationship: has_part CL:0017505 ! increased nucleus size
 relationship: has_part GO:0005730 ! nucleolus
 relationship: RO:0002104 PR:000001945 ! has plasma membrane part transferrin receptor protein 1
-
-[Term]
-id: CL:0000548
-name: animal cell
-def: "A native cell that is part of some Metazoa." []
-subset: ubprop:upper_level
-synonym: "metazoan cell" EXACT []
-is_a: CL:0000255 ! eukaryotic cell
-intersection_of: CL:0000003 ! native cell
-intersection_of: only_in_taxon NCBITaxon:33208 ! Metazoa
-relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
-property_value: depicted_by "https://www.swissbiopics.org/api/image/Animal_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000549
@@ -1388,7 +1360,7 @@ def: "Interneuron of the vertebrate retina. They integrate, modulate, and interp
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "AC" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
-synonym: "ACs" RELATED PLURAL [doi:10.1038/s41598-020-66092-9]
+synonym: "ACs" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
 synonym: "amacrine neuron" EXACT []
 xref: BTO:0004044
 xref: FMA:67766
@@ -1497,7 +1469,6 @@ id: CL:0000680
 name: muscle precursor cell
 def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
 relationship: develops_from CL:0000222 ! mesodermal cell
@@ -1533,8 +1504,7 @@ def: "A stem cell that can give rise to cell types of the body other than those 
 xref: CALOHA:TS-2086
 xref: FMA:63368
 xref: MESH:D053687
-is_a: CL:0000034 {is_inferred="true"} ! stem cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0000034 ! stem cell
 intersection_of: CL:0000034 ! stem cell
 intersection_of: capable_of GO:0048103 ! somatic stem cell division
 relationship: capable_of GO:0048103 ! somatic stem cell division
@@ -1548,7 +1518,7 @@ subset: human_reference_atlas
 synonym: "gangliocyte" EXACT []
 synonym: "ganglion cell of retina" EXACT []
 synonym: "RGC" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
-synonym: "RGCs" RELATED PLURAL [doi:10.1038/s41598-020-66092-9]
+synonym: "RGCs" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
 xref: BTO:0001800
 xref: FMA:67765
 xref: MESH:D012165
@@ -1563,7 +1533,7 @@ def: "A neuron that laterally connects other neurons in the inner nuclear layer 
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "HC" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
-synonym: "HCs" RELATED PLURAL [doi:10.1038/s41598-020-66092-9]
+synonym: "HCs" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
 synonym: "horizontal cell" EXACT []
 xref: BTO:0004120
 is_a: CL:0000099 ! interneuron
@@ -1577,8 +1547,8 @@ def: "A bipolar neuron found in the retina and having connections with photorece
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "BC" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
-synonym: "BCs" RELATED PLURAL [doi:10.1038/s41598-020-66092-9]
-synonym: "BPs" RELATED PLURAL [GSE137537]
+synonym: "BCs" RELATED abbreviation [doi:10.1038/s41598-020-66092-9]
+synonym: "BPs" RELATED abbreviation [GSE137537]
 is_a: CL:0000103 ! bipolar neuron
 is_a: CL:0000679 ! glutamatergic neuron
 is_a: CL:0008028 ! visual system neuron
@@ -1730,7 +1700,7 @@ xref: BTO:0000574
 xref: CALOHA:TS-2017
 xref: FMA:70366
 xref: FMA:83598
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0002031
@@ -1766,7 +1736,6 @@ name: ecto-epithelial cell
 def: "An epithelial cell derived from ectoderm." [FMA:69074, GOC:tfm]
 xref: FMA:69074
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: develops_from CL:0000221 ! ectodermal cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
@@ -1780,7 +1749,6 @@ def: "Epithelial cell derived from mesoderm or mesenchyme." [FMA:69076, GOC:tfm]
 synonym: "epithelial mesenchymal cell" EXACT []
 xref: FMA:69076
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: develops_from CL:0000222 ! mesodermal cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
@@ -1818,7 +1786,6 @@ subset: eye_upper_slim
 xref: FMA:70950
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000306 ! crystallin accumulating cell
-is_a: CL:0002371 ! somatic cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0000965 ! lens of camera-type eye
 creation_date: 2010-09-07T10:38:03Z
@@ -1828,8 +1795,8 @@ id: CL:0002242
 name: nucleate cell
 def: "A cell containing at least one nucleus." [GOC:tfm]
 xref: FMA:67513
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0002505 ! nucleated
 relationship: bearer_of PATO:0002505 ! nucleated
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
@@ -1872,8 +1839,8 @@ name: neural cell
 def: "A cell that is part of the nervous system." [GOC:tfm, ISBN:0618947256]
 xref: CALOHA:TS-2040
 xref: FMA:70333
-is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0001016 ! nervous system
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0001016 ! nervous system
@@ -1887,8 +1854,8 @@ subset: human_reference_atlas
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
-is_a: CL:0002371 {is_inferred="true"} ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0002384 ! connective tissue
@@ -1903,7 +1870,7 @@ xref: CALOHA:TS-0263
 xref: FMA:82840
 xref: FMA:82841
 xref: WBbt:0007028
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-15T03:39:21Z
 
@@ -1924,23 +1891,11 @@ relationship: present_in_taxon NCBITaxon:9606
 creation_date: 2010-09-22T01:57:40Z
 
 [Term]
-id: CL:0002371
-name: somatic cell
-def: "A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." [GOC:tfm, ISBN:0721662544]
-subset: ubprop:upper_level
-xref: BTO:0001268
-xref: FMA:72300
-xref: WBbt:0008378
-is_a: CL:0000548 ! animal cell
-relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
-creation_date: 2010-09-24T09:44:42Z
-
-[Term]
 id: CL:0002485
 name: retinal melanocyte
 def: "A melanocyte of the retina. This cell type is distinct from pigmented retinal epithelium." [GOC:tfm, MP:0010190]
 subset: eye_upper_slim
-is_a: CL:0000148 {is_inferred="true"} ! melanocyte
+is_a: CL:0000148 ! melanocyte
 is_a: CL:0009004 ! retinal cell
 intersection_of: CL:0000148 ! melanocyte
 intersection_of: part_of UBERON:0000966 ! retina
@@ -1958,8 +1913,8 @@ xref: BTO:0001539
 xref: CALOHA:TS-0115
 xref: FMA:83808
 xref: FMA:84791
-is_a: CL:0002371 {is_inferred="true"} ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0007100 ! primary circulatory organ
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0007100 ! primary circulatory organ
@@ -1971,7 +1926,6 @@ name: embryonic blood vessel endothelial progenitor cell
 def: "An endothelial progenitor cell that participates in angiogenesis during development." [GOC:tfm]
 comment: See CL:0002619.
 is_a: CL:0000222 ! mesodermal cell
-is_a: CL:0002371 ! somatic cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2011-02-28T04:20:39Z
 
@@ -2013,7 +1967,7 @@ subset: eye_upper_slim
 subset: human_reference_atlas
 xref: BTO:0004910
 xref: FMA:75802
-is_a: CL:0000066 {is_inferred="true"} ! epithelial cell
+is_a: CL:0000066 ! epithelial cell
 is_a: CL:0000149 ! visual pigment cell
 is_a: CL:0009004 ! retinal cell
 intersection_of: CL:0000066 ! epithelial cell
@@ -2083,7 +2037,6 @@ name: mesenchymal cell
 def: "A non-polarised cell precursor cell that is part of some mesenchyme, is associated with the cell matrix but is not connected to other cells and is capable of migration." []
 synonym: "mesenchyme cell" EXACT []
 is_a: CL:0000219 ! motile cell
-is_a: CL:0002371 ! somatic cell
 relationship: capable_of GO:0016477 ! cell migration
 relationship: part_of UBERON:0003104 ! mesenchyme
 
@@ -2122,7 +2075,7 @@ id: CL:0010017
 name: zygote
 def: "A zygote in a plant or an animal." []
 xref: MESH:D015053
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 relationship: seeAlso https://github.com/obophenotype/cell-ontology/issues/786
 
 [Term]
@@ -2157,8 +2110,8 @@ id: CL:0011115
 name: precursor cell
 def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
 comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell.
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0030154 ! cell differentiation
 relationship: capable_of GO:0030154 ! cell differentiation
 
@@ -2215,7 +2168,6 @@ subset: eye_upper_slim
 synonym: "epithelial cell of conjunctiva" EXACT [FMA:70552]
 xref: FMA:70552
 is_a: CL:0000066 {is_inferred="true"} ! epithelial cell
-is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0001811 ! conjunctiva
 relationship: part_of UBERON:0001811 ! conjunctiva
@@ -2260,7 +2212,7 @@ name: retinal astrocyte
 def: "A star-shaped glial cell that is part of some retina. This cell links neurons to blood vessels and may provide structural and physiological support to optic nerve head axons." [PMID:25236977, PMID:33796062]
 comment: In response to elevated intraocular pressure, a retinal astrocyte may modulate extracellular matrix remodeling. In the human retina, a retinal astrocyte is GFAP-positive, SOD3-positive and GYPC-positive. {xref="PMID:33796062", xref="PMID:32555229"}
 subset: eye_upper_slim
-synonym: "retinal astroglia" RELATED [PMID:33796062] {synonymtypedef="PLURAL"}
+synonym: "retinal astroglia" RELATED OMO:0003004 [PMID:33796062]
 is_a: CL:0000127 ! astrocyte
 is_a: CL:0009004 ! retinal cell
 intersection_of: CL:0000127 ! astrocyte
@@ -5887,6 +5839,8 @@ name: root
 namespace: ncbi_taxonomy
 synonym: "all" RELATED synonym []
 xref: GC_ID:1
+xref: PMID:30365038
+xref: PMID:32761142
 
 [Term]
 id: NCBITaxon:10066
@@ -9161,6 +9115,9 @@ relationship: never_in_taxon NCBITaxon:7227
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 relationship: part_of UBERON:0015410 {source="MA"} ! heart plus pericardium
 relationship: present_in_taxon NCBITaxon:9606
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Heart.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" xsd:string
 property_value: UBPROP:0000001 "Blood pumping organ composed of four chambers: sinus venosus, atrium, cardiac ventricle and bulbus arteriosus.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000114", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Part of the circulatory system responsible for pumping blood; composed of three chambers--two atria and one ventricle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010210", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000002 "relationship type change: differentiates_from lateral plate mesoderm (AAO:0010574) CHANGED TO: develops_from lateral plate mesoderm (UBERON:0003081)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010210", ontology="AAO"}
@@ -9231,6 +9188,8 @@ relationship: in_anterior_side_of UBERON:0000468 ! multicellular organism
 relationship: part_of UBERON:0001017 {source="FMA"} ! central nervous system
 relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "requires review for applicability to invertebrate structures, e.g. synganglion" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" xsd:string
 property_value: UBPROP:0000001 "Cavitated compound organ which is comprised of gray and white matter and surrounds the cerebral ventricular system.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000008", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Part of the central nervous system situated within the cranium and composed of both nerve cell bodies and nerve fibers.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010478", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "The part of the central nervous system contained within the cranium, comprising the forebrain, midbrain, hindbrain, and metencephalon. It is derived from the anterior part of the embryonic neural tube (or the encephalon). Does not include retina. (CUMBO)" xsd:string {source="http://neurolex.org/wiki/Cumbo_terms"}
@@ -9596,6 +9555,11 @@ relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg" xsd:anyURI
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" xsd:string
 property_value: UBPROP:0000001 "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000541", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000202", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23", source="http://bgee.unil.ch/"}
 
@@ -11657,6 +11621,8 @@ relationship: part_of UBERON:0003931 ! diencephalic white matter
 relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/f/f6/Gray773.png" xsd:anyURI
 property_value: editor_note "relationships need checking by expert. NIF and ZFA both state part of diencepahalon; MA says part of optic nerve II. in uberon, CNS and PNS are spatially disjoint, and axon tracts are part of the CNS so we make the relationship to CNII 'continuous_with'" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" xsd:string
 
 [Term]
 id: UBERON:0001943
@@ -11744,7 +11710,6 @@ name: blood vessel
 namespace: uberon
 def: "A vessel through which blood circulates in the body." [BTO:0001102, Wikipedia:Blood_vessel]
 subset: efo_slim
-subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -11786,7 +11751,6 @@ relationship: has_part CL:0000071 {source="AEO"} ! blood vessel endothelial cell
 relationship: has_part UBERON:0007500 {source="EHDAA2"} ! epithelial tube open at both ends
 relationship: has_quality PATO:0002045 ! dendritic
 relationship: part_of UBERON:0004537 ! blood vasculature
-relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
 property_value: editor_note "consider adopting the EMAPA superclass 'vascular element', which includes microvasculature (e.g. capillaries), vascular plexus" xsd:string
 property_value: UBPROP:0000001 "Any of the vessels through which blood circulates in the body. [XAO:0001011_][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001250", ontology="VHOG", source="http://bgee.unil.ch/"}
@@ -12219,6 +12183,8 @@ intersection_of: part_of UBERON:0000019 ! camera-type eye
 relationship: develops_from UBERON:0003314 {source="ISBN:0781772214"} ! eye mesenchyme
 relationship: part_of UBERON:0000019 ! camera-type eye
 relationship: present_in_taxon NCBITaxon:9606
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" xsd:string
 property_value: UBPROP:0000012 "not part of the eye in ZFA. Note this changed to a blood vessel in ZFA" xsd:string {external_ontology="ZFA"}
 
 [Term]
@@ -12350,6 +12316,8 @@ relationship: part_of UBERON:0001017 ! central nervous system
 relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg" xsd:anyURI
 property_value: editor_note "TODO - add superclass to unify with VNC?" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Spinal_Cord.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Spinal_Cord.glb" xsd:string
 property_value: RO:0002171 UBERON:0000955 {exceptions="ZFA", source="https://github.com/obophenotype/uberon/issues/378", status="pending"}
 property_value: UBPROP:0000001 "Part of the central nervous system which descends from the hindbrain within the vertebral column.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010151", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "(...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...) (reference 1); The neural tube is destined to differentiate into the brain and spinal cord (the central nervous system) (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000601", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28, ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.165", source="http://bgee.unil.ch/"}
@@ -14320,6 +14288,8 @@ intersection_of: UBERON:0002049 ! vasculature
 intersection_of: composed_primarily_of UBERON:0001981 ! blood vessel
 relationship: composed_primarily_of UBERON:0001981 ! blood vessel
 relationship: present_in_taxon NCBITaxon:9606
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" xsd:string
 
 [Term]
 id: UBERON:0004638
@@ -16257,6 +16227,14 @@ xref: Wikipedia:Ciliary_processes
 is_a: UBERON:0000481 ! multi-tissue structure
 relationship: part_of UBERON:0001775 ! ciliary body
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/b/b2/Gray875.png" xsd:anyURI
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_L.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_R.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_L.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_R.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-l.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-r.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-l.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-r.glb" xsd:string
 
 [Term]
 id: UBERON:0010912
@@ -18495,16 +18473,6 @@ domain: BFO:0000004 ! independent continuant
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
-id: contains
-name: contains
-name: obsolete contains
-namespace: uberon
-xref: RO:0001019
-property_value: IAO:0000111 "contains" xsd:string
-property_value: seeAlso https://github.com/oborel/obo-relations/issues/693
-is_obsolete: true
-
-[Typedef]
 id: contains_process
 name: contains process
 namespace: uberon
@@ -18777,7 +18745,12 @@ is_a: connected_to ! connected to
 id: editor_note
 name: editor note
 namespace: uberon
+def: "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology." []
 xref: IAO:0000116
+property_value: IAO:0000111 "editor note" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
+property_value: IAO:0000119 "GROUP:OBI:<http://purl.obofoundry.org/obo/obi>" xsd:string
 is_metadata_tag: true
 
 [Typedef]
@@ -19097,7 +19070,10 @@ name: has ontology root term
 name: preferred_root
 namespace: external
 namespace: uberon
+def: "Ontology annotation property. Relates an ontology to a term that is a designated root term of the ontology. Display tools like OLS can use terms annotated with this property as the starting point for rendering the ontology class hierarchy. There can be more than one root." []
 xref: IAO:0000700
+property_value: IAO:0000111 "has ontology root term" xsd:string
+property_value: IAO:0000117 "Nicolas Matentzoglu" xsd:string
 is_metadata_tag: true
 is_class_level: true
 
@@ -20389,7 +20365,14 @@ id: term_tracker_item
 name: term tracker item
 namespace: external
 namespace: uberon
+def: "An IRI or similar locator for a request or discussion of an ontology term." []
+comment: The 'tracker item' can associate a tracker with a specific ontology term.
 xref: IAO:0000233
+property_value: IAO:0000111 "term tracker item" xsd:string
+property_value: IAO:0000112 "the URI for an OBI Terms ticket at sourceforge, such as https://sourceforge.net/p/obi/obi-terms/772/" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
+property_value: IAO:0000119 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
 is_metadata_tag: true
 is_class_level: true
 

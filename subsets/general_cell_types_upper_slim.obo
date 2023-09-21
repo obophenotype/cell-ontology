@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-08-24/subsets/general_cell_types_upper_slim.owl
+data-version: cl/releases/2023-09-21/subsets/general_cell_types_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -85,6 +85,7 @@ synonymtypedef: LATIN "latin term"
 synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
 synonymtypedef: NON_MAMMAL ""
 synonymtypedef: PENDING_REVIEW ""
+synonymtypedef: PLURAL ""
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: PRO-short-label ""
 synonymtypedef: scientific_name ""
@@ -95,7 +96,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/general_cell_types_upper_slim
-property_value: owl:versionInfo "2023-08-24" xsd:string
+property_value: owl:versionInfo "2023-09-21" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -268,16 +269,6 @@ disjoint_from: GO:0043226 ! organelle
 relationship: only_in_taxon NCBITaxon:131567 ! cellular organisms
 
 [Term]
-id: CL:0000003
-name: native cell
-def: "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." [CARO:mah]
-comment: To accommodate unicellular organisms better, 'cell in vivo' has been re-labeled 'native cell' to better represent its intended meaning - that is, that it is a cell in the context of a multicellular organism or in a natural environment. 'Native' is intended to contrast with 'in vitro', which refers to cells or other biological entities that have been intentionally placed in a controlled, non-natural setting for the purpose of study or manipulation. (MAH 1.12.12).
-subset: ubprop:upper_level
-synonym: "cell in vivo" NARROW []
-xref: CARO:0000013
-is_a: CL:0000000 ! cell
-
-[Term]
 id: CL:0000006
 name: neuronal receptor cell
 synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
@@ -303,9 +294,8 @@ subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
-is_a: CL:0000548 ! animal cell
 is_a: CL:0011115 ! precursor cell
-intersection_of: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0017145 ! stem cell division
 relationship: capable_of GO:0017145 ! stem cell division
 relationship: in_taxon NCBITaxon:33208 ! Metazoa
@@ -369,8 +359,7 @@ def: "A cell that is within the developmental lineage of gametes and is able to 
 comment: Originally this term had some plant germ line cell children.
 subset: general_cell_types_upper_slim
 subset: ubprop:upper_level
-is_a: CL:0000003 ! native cell
-disjoint_from: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
 relationship: capable_of GO:0022414 ! reproductive process
 
 [Term]
@@ -409,8 +398,7 @@ synonym: "multipotent cell" EXACT []
 synonym: "multipotent stem cell" EXACT []
 xref: FMA:84789
 is_a: CL:0000034 ! stem cell
-is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0001402 ! multipotent
 intersection_of: capable_of GO:0017145 ! stem cell division
 relationship: bearer_of PATO:0001402 ! multipotent
@@ -516,7 +504,7 @@ xref: CARO:0000077
 xref: FBbt:00000124
 xref: FMA:66768
 xref: WBbt:0003672
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
 disjoint_from: CL:0000738 ! leukocyte
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: present_in_taxon NCBITaxon:9606
@@ -528,7 +516,6 @@ name: columnar/cuboidal epithelial cell
 def: "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." [GO:0002065, https://orcid.org/0000-0001-5208-3432]
 subset: human_reference_atlas
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0002371 ! somatic cell
 relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
@@ -700,12 +687,12 @@ synonym: "CFU-F" RELATED abbreviation []
 synonym: "colony-forming unit-fibroblast" NARROW []
 synonym: "marrow stromal cells" NARROW [PMID:11378515]
 synonym: "mesenchymal precursor cell" RELATED []
-synonym: "mesenchymal progenitor cells" RELATED PLURAL [MESH:D044982]
+synonym: "mesenchymal progenitor cells" RELATED OMO:0003004 [MESH:D044982]
 synonym: "mesenchymal stem cell" RELATED []
 synonym: "mesenchymal stromal cell" RELATED []
-synonym: "mesenchymal stromal cells" RELATED PLURAL []
+synonym: "mesenchymal stromal cells" RELATED OMO:0003004 []
 synonym: "MSC" RELATED abbreviation [PMID:11378515]
-synonym: "stem cells, mesenchymal" RELATED PLURAL [MESH:D044982]
+synonym: "stem cells, mesenchymal" RELATED OMO:0003004 [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
@@ -762,8 +749,7 @@ xref: CALOHA:TS-0613
 xref: FMA:70545
 xref: MESH:D008544
 xref: VHOG:0001679
-is_a: CL:0000147 {is_inferred="true"} ! pigment cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0000147 ! pigment cell
 intersection_of: CL:0000147 ! pigment cell
 intersection_of: develops_from CL:0000541 ! melanoblast
 intersection_of: has_part GO:0042470 ! melanosome
@@ -776,7 +762,6 @@ id: CL:0000149
 name: visual pigment cell
 synonym: "pigment cell" BROAD []
 is_a: CL:0000147 ! pigment cell
-is_a: CL:0000548 ! animal cell
 
 [Term]
 id: CL:0000151
@@ -785,8 +770,8 @@ def: "A cell that specializes in controlled release of one or more substances." 
 subset: human_reference_atlas
 xref: BTO:0003659
 xref: FMA:86916
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0032940 ! secretion by cell
 relationship: capable_of GO:0032940 ! secretion by cell
 relationship: present_in_taxon NCBITaxon:9606
@@ -798,7 +783,6 @@ def: "A cell of an exocrine gland; i.e. a gland that discharges its secretion vi
 subset: general_cell_types_upper_slim
 xref: FMA:16014
 is_a: CL:0000151 ! secretory cell
-is_a: CL:0000548 ! animal cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: part_of UBERON:0002365 ! exocrine gland
 relationship: part_of UBERON:0002365 ! exocrine gland
@@ -812,7 +796,6 @@ subset: human_reference_atlas
 synonym: "endocrinocyte" EXACT []
 xref: FMA:83809
 is_a: CL:0000151 ! secretory cell
-is_a: CL:0000548 ! animal cell
 relationship: part_of UBERON:0000949 ! endocrine system
 relationship: present_in_taxon NCBITaxon:9606
 
@@ -820,7 +803,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000183
 name: contractile cell
 def: "A cell whose primary function is to shorten." [FB:ma]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000187
@@ -836,7 +819,6 @@ xref: FMA:67328
 xref: WBbt:0003675
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000393 ! electrically responsive cell
-is_a: CL:0002371 ! somatic cell
 relationship: develops_from CL:0000056 ! myoblast
 property_value: depicted_by "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
 
@@ -850,8 +832,8 @@ synonym: "skeletal muscle cell" EXACT []
 xref: BTO:0004392
 xref: CALOHA:TS-2158
 xref: FMA:9727
-is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0001134 ! skeletal muscle tissue
 relationship: part_of UBERON:0001134 ! skeletal muscle tissue
 relationship: present_in_taxon NCBITaxon:9606
@@ -880,7 +862,7 @@ name: sensory receptor cell
 def: "A cell that is capable of detection of a stimulus involved in sensory perception." []
 synonym: "receptor cell" EXACT []
 xref: MESH:D011984
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0050906 ! detection of stimulus involved in sensory perception
 intersection_of: part_of UBERON:0001032 ! sensory system
@@ -904,14 +886,14 @@ property_value: depicted_by "https://www.swissbiopics.org/api/image/Photorecepto
 id: CL:0000211
 name: electrically active cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." [FB:ma]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000219
 name: motile cell
 def: "A cell that moves by its own activities." [FB:ma]
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0048870 ! cell motility
 relationship: capable_of GO:0048870 ! cell motility
 
@@ -948,7 +930,7 @@ id: CL:0000226
 name: single nucleate cell
 def: "A cell with a single nucleus." [FB:ma, GOC:tfm]
 is_a: CL:0002242 ! nucleate cell
-intersection_of: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0001407 ! mononucleate
 relationship: bearer_of PATO:0001407 ! mononucleate
 
@@ -962,7 +944,7 @@ synonym: "syncytium" EXACT []
 xref: AEO:0000203
 xref: WBbt:0008074
 is_a: CL:0002242 ! nucleate cell
-intersection_of: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0001908 ! multinucleate
 relationship: bearer_of PATO:0001908 ! multinucleate
 
@@ -976,8 +958,7 @@ xref: MESH:D010586
 is_a: CL:0000219 ! motile cell
 is_a: CL:0000325 ! stuff accumulating cell
 is_a: CL:0000473 ! defensive cell
-is_a: CL:0000548 ! animal cell
-intersection_of: CL:0000003 ! native cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0006909 ! phagocytosis
 relationship: capable_of GO:0006909 ! phagocytosis
 
@@ -1031,8 +1012,8 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000255
 name: eukaryotic cell
 xref: MESH:D005057
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: only_in_taxon NCBITaxon:2759 ! Eukaryota
 relationship: only_in_taxon NCBITaxon:2759 ! Eukaryota
 
@@ -1041,7 +1022,7 @@ id: CL:0000325
 name: stuff accumulating cell
 def: "A cell that is specialised to accumulate a particular substance(s)." [FB:ma]
 subset: ubprop:upper_level
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000327
@@ -1068,8 +1049,8 @@ is_a: CL:0008019 ! mesenchymal cell
 id: CL:0000349
 name: extraembryonic cell
 subset: general_cell_types_upper_slim
-is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0000478 ! extraembryonic structure
 relationship: part_of UBERON:0000478 ! extraembryonic structure
 
@@ -1099,9 +1080,11 @@ xref: BTO:0000854
 xref: EHDAA2:0004546
 xref: FMA:72395
 is_a: CL:0000007 ! early embryonic cell (metazoa)
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0010017 ! zygote
 intersection_of: CL:0010017 ! zygote
 intersection_of: only_in_taxon NCBITaxon:33208 ! Metazoa
+relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
 
 [Term]
 id: CL:0000393
@@ -1157,7 +1140,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000473
 name: defensive cell
 def: "A cell whose primary function is to protect the organism." [JB:jb]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000499
@@ -1192,7 +1175,7 @@ def: "A precursor cell destined to differentiate into smooth muscle myocytes." [
 synonym: "myoblast, smooth muscle" EXACT [MESH:D032390]
 synonym: "satellite cell" RELATED []
 xref: FMA:84798
-is_a: CL:0000056 {is_inferred="true"} ! myoblast
+is_a: CL:0000056 ! myoblast
 intersection_of: CL:0000056 ! myoblast
 intersection_of: RO:0002203 CL:0000192 ! develops into smooth muscle cell
 relationship: RO:0002203 CL:0000192 ! develops into smooth muscle cell
@@ -1203,7 +1186,7 @@ name: skeletal muscle myoblast
 def: "A myoblast that differentiates into skeletal muscle fibers." [SANBI:mhl]
 synonym: "skeletal myoblast" EXACT []
 xref: FMA:84799
-is_a: CL:0000056 {is_inferred="true"} ! myoblast
+is_a: CL:0000056 ! myoblast
 is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0000056 ! myoblast
 intersection_of: RO:0002203 CL:0008002 ! develops into skeletal muscle fiber
@@ -1256,7 +1239,6 @@ comment: Derived from UBERON:0002342 neural crest.
 xref: BTO:0003217
 xref: FMA:83377
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0002371 ! somatic cell
 is_a: CL:0011026 ! progenitor cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
 
@@ -1284,18 +1266,6 @@ relationship: has_part CL:0017500 ! neutrophillic cytoplasm
 relationship: has_part CL:0017505 ! increased nucleus size
 relationship: has_part GO:0000792 ! heterochromatin
 relationship: present_in_taxon NCBITaxon:9606
-
-[Term]
-id: CL:0000548
-name: animal cell
-def: "A native cell that is part of some Metazoa." []
-subset: ubprop:upper_level
-synonym: "metazoan cell" EXACT []
-is_a: CL:0000255 ! eukaryotic cell
-intersection_of: CL:0000003 ! native cell
-intersection_of: only_in_taxon NCBITaxon:33208 ! Metazoa
-relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
-property_value: depicted_by "https://www.swissbiopics.org/api/image/Animal_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000557
@@ -1435,7 +1405,6 @@ id: CL:0000680
 name: muscle precursor cell
 def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
 is_a: CL:0000055 ! non-terminally differentiated cell
-is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
 relationship: develops_from CL:0000222 ! mesodermal cell
@@ -1448,8 +1417,7 @@ def: "A stem cell that can give rise to cell types of the body other than those 
 xref: CALOHA:TS-2086
 xref: FMA:63368
 xref: MESH:D053687
-is_a: CL:0000034 {is_inferred="true"} ! stem cell
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0000034 ! stem cell
 intersection_of: CL:0000034 ! stem cell
 intersection_of: capable_of GO:0048103 ! somatic stem cell division
 relationship: capable_of GO:0048103 ! somatic stem cell division
@@ -1483,6 +1451,7 @@ xref: FMA:62852
 xref: MESH:D007962
 xref: NCIT:C12529
 is_a: CL:0000219 ! motile cell
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 is_a: CL:0002242 ! nucleate cell
 intersection_of: CL:0000988 ! hematopoietic cell
@@ -1781,7 +1750,7 @@ xref: BTO:0000574
 xref: CALOHA:TS-2017
 xref: FMA:70366
 xref: FMA:83598
-is_a: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000990
@@ -1815,8 +1784,8 @@ name: bone cell
 def: "A connective tissue cell found in bone." [GO_REF:0000034, GOC:add]
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
-is_a: CL:0000548 {is_inferred="true"} ! animal cell
-intersection_of: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0001474 ! bone element
 relationship: dc-contributor https://orcid.org/0000-0001-9990-8331
 relationship: part_of UBERON:0001474 ! bone element
@@ -1941,7 +1910,6 @@ name: ecto-epithelial cell
 def: "An epithelial cell derived from ectoderm." [FMA:69074, GOC:tfm]
 xref: FMA:69074
 is_a: CL:0000066 ! epithelial cell
-is_a: CL:0002371 ! somatic cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: develops_from CL:0000221 ! ectodermal cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
@@ -1980,8 +1948,8 @@ id: CL:0002242
 name: nucleate cell
 def: "A cell containing at least one nucleus." [GOC:tfm]
 xref: FMA:67513
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0002505 ! nucleated
 relationship: bearer_of PATO:0002505 ! nucleated
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
@@ -1993,8 +1961,8 @@ name: neural cell
 def: "A cell that is part of the nervous system." [GOC:tfm, ISBN:0618947256]
 xref: CALOHA:TS-2040
 xref: FMA:70333
-is_a: CL:0002371 ! somatic cell
-intersection_of: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0001016 ! nervous system
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0001016 ! nervous system
@@ -2008,8 +1976,8 @@ subset: human_reference_atlas
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
-is_a: CL:0002371 {is_inferred="true"} ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0002384 ! connective tissue
@@ -2024,21 +1992,9 @@ xref: CALOHA:TS-0263
 xref: FMA:82840
 xref: FMA:82841
 xref: WBbt:0007028
-is_a: CL:0000548 ! animal cell
+is_a: CL:0000000 ! cell
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-15T03:39:21Z
-
-[Term]
-id: CL:0002371
-name: somatic cell
-def: "A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." [GOC:tfm, ISBN:0721662544]
-subset: ubprop:upper_level
-xref: BTO:0001268
-xref: FMA:72300
-xref: WBbt:0008378
-is_a: CL:0000548 ! animal cell
-relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
-creation_date: 2010-09-24T09:44:42Z
 
 [Term]
 id: CL:0002372
@@ -2067,8 +2023,8 @@ xref: BTO:0001539
 xref: CALOHA:TS-0115
 xref: FMA:83808
 xref: FMA:84791
-is_a: CL:0002371 {is_inferred="true"} ! somatic cell
-intersection_of: CL:0002371 ! somatic cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0007100 ! primary circulatory organ
 relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 relationship: part_of UBERON:0007100 ! primary circulatory organ
@@ -2080,7 +2036,7 @@ name: skeletogenic cell
 def: "Cell that has the potential to form a skeletal cell type (e.g. cells in periosteum, cells in marrow) and produce extracellular matrix (often mineralized) and skeletal tissue (often mineralized)." [GO_REF:0000034]
 comment: Needs logical definition. Should be capable_of skeletal system morphogenesis? or skeletal tissue development? needs to be added to GO. NOTES:a cell type of the early embryo (see also: mesenchymal cells) that will give rise to mineralized connective tissue. Scleroblasts can differentiate into osteoblasts (bone-forming cells), chondroblasts (cartilage-forming cells), odontoblasts (dentin-forming cells), ameloblasts (enamel-forming cells). The mesenchymal cells developing into osteoblasts and chondroblasts are derived from the mesoderm. Those developing into odontoblasts are neural crest cells. Those developing into ameloblasts are derived from the ectoderm. (http://www.copewithcytokines.de/cope.cgi?key=scleroblasts)
 synonym: "scleroblast" EXACT [GO_REF:0000034]
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 relationship: dc-contributor https://orcid.org/0000-0001-9114-8737
 creation_date: 2012-06-15T02:51:27Z
 
@@ -2138,7 +2094,6 @@ name: mesenchymal cell
 def: "A non-polarised cell precursor cell that is part of some mesenchyme, is associated with the cell matrix but is not connected to other cells and is capable of migration." []
 synonym: "mesenchyme cell" EXACT []
 is_a: CL:0000219 ! motile cell
-is_a: CL:0002371 ! somatic cell
 relationship: capable_of GO:0016477 ! cell migration
 relationship: part_of UBERON:0003104 ! mesenchyme
 
@@ -2158,7 +2113,7 @@ id: CL:0010017
 name: zygote
 def: "A zygote in a plant or an animal." []
 xref: MESH:D015053
-is_a: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
 relationship: seeAlso https://github.com/obophenotype/cell-ontology/issues/786
 
 [Term]
@@ -2192,8 +2147,8 @@ id: CL:0011115
 name: precursor cell
 def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
 comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell.
-is_a: CL:0000003 ! native cell
-intersection_of: CL:0000003 ! native cell
+is_a: CL:0000000 ! cell
+intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0030154 ! cell differentiation
 relationship: capable_of GO:0030154 ! cell differentiation
 
@@ -5134,17 +5089,6 @@ relationship: only_in_taxon NCBITaxon:33208 ! Metazoa
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/13824" xsd:anyURI
 
 [Term]
-id: GO:0050886
-name: endocrine process
-namespace: biological_process
-def: "The process that involves the secretion of or response to endocrine hormones. An endocrine hormone is a hormone released into the circulatory system." [ISBN:0721662544]
-subset: goslim_generic
-subset: goslim_pir
-synonym: "endocrine physiological process" EXACT []
-synonym: "endocrine physiology" EXACT []
-is_a: GO:0003008 ! system process
-
-[Term]
 id: GO:0050896
 name: response to stimulus
 namespace: biological_process
@@ -5934,6 +5878,8 @@ name: root
 namespace: ncbi_taxonomy
 synonym: "all" RELATED synonym []
 xref: GC_ID:1
+xref: PMID:30365038
+xref: PMID:32761142
 
 [Term]
 id: NCBITaxon:10066
@@ -9169,8 +9115,6 @@ xref: Wikipedia:Endocrine_system
 xref: XAO:0000158
 xref: ZFA:0001158
 is_a: UBERON:0015204 ! glandular system
-intersection_of: UBERON:0015203 ! non-connected functional system
-intersection_of: capable_of GO:0050886 ! endocrine process
 disjoint_from: UBERON:0001004 ! respiratory system
 disjoint_from: UBERON:0001007 ! digestive system
 disjoint_from: UBERON:0001009 ! circulatory system
@@ -9181,7 +9125,6 @@ disjoint_from: UBERON:0002330 ! exocrine system
 disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 disjoint_from: UBERON:0004456 ! entire sense organ system
-relationship: capable_of GO:0050886 ! endocrine process
 relationship: composed_primarily_of UBERON:0002368 ! endocrine gland
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
@@ -9324,6 +9267,11 @@ relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: present_in_taxon NCBITaxon:9606
 property_value: depicted_by "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg" xsd:anyURI
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" xsd:string
+property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" xsd:string
 property_value: UBPROP:0000001 "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000541", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000202", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23", source="http://bgee.unil.ch/"}
 
@@ -14149,16 +14097,6 @@ domain: BFO:0000004 ! independent continuant
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
-id: contains
-name: contains
-name: obsolete contains
-namespace: uberon
-xref: RO:0001019
-property_value: IAO:0000111 "contains" xsd:string
-property_value: seeAlso https://github.com/oborel/obo-relations/issues/693
-is_obsolete: true
-
-[Typedef]
 id: contains_process
 name: contains process
 namespace: uberon
@@ -14431,7 +14369,12 @@ is_a: connected_to ! connected to
 id: editor_note
 name: editor note
 namespace: uberon
+def: "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology." []
 xref: IAO:0000116
+property_value: IAO:0000111 "editor note" xsd:string
+property_value: IAO:0000114 IAO:0000122
+property_value: IAO:0000117 "PERSON:Daniel Schober" xsd:string
+property_value: IAO:0000119 "GROUP:OBI:<http://purl.obofoundry.org/obo/obi>" xsd:string
 is_metadata_tag: true
 
 [Typedef]
@@ -14751,7 +14694,10 @@ name: has ontology root term
 name: preferred_root
 namespace: external
 namespace: uberon
+def: "Ontology annotation property. Relates an ontology to a term that is a designated root term of the ontology. Display tools like OLS can use terms annotated with this property as the starting point for rendering the ontology class hierarchy. There can be more than one root." []
 xref: IAO:0000700
+property_value: IAO:0000111 "has ontology root term" xsd:string
+property_value: IAO:0000117 "Nicolas Matentzoglu" xsd:string
 is_metadata_tag: true
 is_class_level: true
 
@@ -16041,7 +15987,14 @@ id: term_tracker_item
 name: term tracker item
 namespace: external
 namespace: uberon
+def: "An IRI or similar locator for a request or discussion of an ontology term." []
+comment: The 'tracker item' can associate a tracker with a specific ontology term.
 xref: IAO:0000233
+property_value: IAO:0000111 "term tracker item" xsd:string
+property_value: IAO:0000112 "the URI for an OBI Terms ticket at sourceforge, such as https://sourceforge.net/p/obi/obi-terms/772/" xsd:string
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
+property_value: IAO:0000119 "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg" xsd:string
 is_metadata_tag: true
 is_class_level: true
 
