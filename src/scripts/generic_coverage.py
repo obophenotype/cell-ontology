@@ -92,10 +92,12 @@ def get_scope_query(scope_term: str) -> str:
         PREFIX owl: <http://www.w3.org/2002/07/owl#>
         PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
+        PREFIX BFO: <http://purl.obolibrary.org/obo/BFO_>
+        PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
         SELECT ?scope_member ?label
         WHERE
         {{
-          ?scope_member <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope} .
+          ?scope_member rdfs:subClassOf|BFO:0000050|RO:0002100 {_scope} .
           ?scope_member rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
           ?scope_member rdfs:label ?label. 
         }}
@@ -116,14 +118,15 @@ def get_superclass_value_query(term_iri_list: List[str], _scope: str) -> str:
             PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
             PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
             PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
+            PREFIX BFO: <http://purl.obolibrary.org/obo/BFO_>
             SELECT DISTINCT ?super ?label
             WHERE
             {{
-              ?term <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?super. ?super rdfs:label ?label. 
-              ?super <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}.
+              ?term rdfs:subClassOf ?super. ?super rdfs:label ?label. 
+              ?super rdfs:subClassOf|BFO:0000050 {_scope}.
               ?super rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
               VALUES ?term {{{' '.join(term_iri_list)}}}
-            FILTER(?term != ?super)
+            FILTER(?term != ?super)      
             }}
         """
 
@@ -143,12 +146,13 @@ def get_term_leaves_list_query(term_iri_list: List[str], scope_term: str) -> str
         PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
         PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
+        PREFIX BFO: <http://purl.obolibrary.org/obo/BFO_>
         SELECT ?term_label ?term_leaf ?term_leaf_label
         WHERE
         {{
-          ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf> ?term.
+          ?term_leaf rdfs:subClassOf ?term.
           ?term_leaf rdfs:label ?term_leaf_label. ?term_leaf rdfs:isDefinedBy <http://purl.obolibrary.org/obo/cl.owl> .
-          ?term_leaf <http://www.w3.org/2000/01/rdf-schema#subClassOf>|<http://purl.obolibrary.org/obo/BFO_0000050> {_scope}. 
+          ?term_leaf rdfs:subClassOf|BFO:0000050 {_scope}. 
           ?term rdfs:label ?term_label.
           VALUES ?term {{{' '.join(term_iri_list)}}}
         }}
