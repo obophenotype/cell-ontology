@@ -92,7 +92,7 @@ def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, st
     return _term_leaves_dict
 
 
-def get_invalid_subclass_list(term_list: List[str]) -> list[list[Union[str, Any]]]:
+def get_invalid_subclass_list(term_list: List[str]) -> List[List[str]]:
     # Get slim terms that are subclasses of other slim terms
     query = get_invalid_subclass_list_query(term_list)
 
