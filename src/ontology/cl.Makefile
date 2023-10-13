@@ -272,7 +272,7 @@ deploy_release:
 
 TERM_hematopoietic= CL:0000988
 TERM_eye= UBERON:0000970
-TERM_general = CL:0000548
+TERM_general = CL:0000000
 
 SLIM_TEMPLATES= blood_and_immune eye general_cell_types
 SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
@@ -282,7 +282,7 @@ slim_coverage: $(SLIM_REPORTS)
 xxx:
 	echo $(SLIM_REPORTS)
 	echo $(REPORTDIR)
-COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@
+COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@ -c makefile
 
 $(REPORTDIR)/blood_and_immune_upper_slim.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
 	$(eval TERM_ID := $(TERM_hematopoietic))
