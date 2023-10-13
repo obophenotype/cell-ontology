@@ -229,6 +229,17 @@ def run_command(command, wd):
         print(e.stderr)
 
 
+def modify_docker_script(input_file, output_file):
+    with open(input_file, "r") as f:
+        lines = f.readlines()
+
+    # Make the change in the content
+    lines[69] = lines[69].replace("-ti", "-t")
+
+    with open(output_file, "w") as f:
+        f.writelines(lines)
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -240,42 +251,46 @@ if __name__ == "__main__":
         "-f", "--file", help="""File path of your slim's template file"""
     )
     parser.add_argument("-o", "--output", help="""Output file name""")
+    parser.add_argument(
+        "-c",
+        "--caller",
+        default="user",
+        help="""Caller of the path. It is used to determine how to use the make 
+        command""",
+    )
     args = parser.parse_args()
 
     file_name = str(args.file)
     scope = str(args.scope)
     output_file = str(args.output)
-
-    # Change -ti flag to -t in the run.sh
-    docker_script = "../ontology/run.sh"
-    docker_script_temp = "../ontology/run_temp.sh"
-
-    # Read the content of the input file
-    with open(docker_script, "r") as f:
-        lines = f.readlines()
-
-    # Make the change
-    if len(lines) >= 70:
-        lines[69] = lines[69].replace("-ti", "-t")
-
-    # Write the modified content to the output file
-    with open(docker_script_temp, "w") as f:
-        f.writelines(lines)
+    caller = str(args.caller)
 
     # Define the working directory where you want to run the command
     working_directory = "../ontology/"
-    make_command = [
-        "sh",
-        "run_temp.sh",
-        "make",
-        "cl-base.owl",
-        "MIR=false",
-        "IMP=false",
-    ]
+
+    if caller == "user":
+        # Change -ti flag to -t in the run.sh
+        modify_docker_script("../ontology/run.sh", "../ontology/run_temp.sh")
+        make_command = [
+            "sh",
+            "run_temp.sh",
+            "make",
+            "cl-full.owl",
+            "MIR=false",
+            "IMP=false",
+        ]
+    else:
+        make_command = [
+            "make",
+            "cl-full.owl",
+            "MIR=false",
+            "IMP=false",
+        ]
+
     relation_graph_command = [
         "relation-graph",
         "--ontology-file",
-        "cl-base.owl",
+        "cl-full.owl",
         "--output-file",
         "test.ttl",
         "--output-subclasses",
@@ -289,10 +304,11 @@ if __name__ == "__main__":
     ]
 
     run_command(make_command, working_directory)
-    os.remove(docker_script_temp)
+    if caller == "user":
+        os.remove("../ontology/run_temp.sh")
     run_command(relation_graph_command, working_directory)
 
-    cl_base = Graph().parse("../ontology/cl-base.owl", format="xml")
+    cl_base = Graph().parse("../ontology/cl-simple.owl", format="xml")
     cl_rel = Graph().parse("../ontology/test.ttl", format="ttl")
     cl = cl_base + cl_rel
 
