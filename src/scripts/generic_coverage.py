@@ -308,7 +308,7 @@ if __name__ == "__main__":
         os.remove("../ontology/run_temp.sh")
     run_command(relation_graph_command, working_directory)
 
-    cl_base = Graph().parse("../ontology/cl-simple.owl", format="xml")
+    cl_base = Graph().parse("../ontology/cl-full.owl", format="xml")
     cl_rel = Graph().parse("../ontology/test.ttl", format="ttl")
     cl = cl_base + cl_rel
 
