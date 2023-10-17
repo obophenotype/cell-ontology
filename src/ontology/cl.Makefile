@@ -295,5 +295,3 @@ $(REPORTDIR)/eye_upper_slim.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
 $(REPORTDIR)/general_cell_types_upper_slim.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
 	$(eval TERM_ID := $(TERM_general))
 	$(COVERAGECMD)
-
-test: slim_coverage
