@@ -2,12 +2,12 @@
 
 ## Left
 - Ontology IRI: `http://purl.obolibrary.org/obo/cl.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/cl/releases/2023-08-24/cl.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/cl/releases/2023-09-21/cl.owl`
 - Loaded from: `http://purl.obolibrary.org/obo/cl.owl`
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/cl.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/cl/releases/2023-09-21/cl.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/cl/releases/2023-10-19/cl.owl`
 - Loaded from: `file:/work/src/ontology/../../cl.owl`
 
 ### Ontology imports 
@@ -16,380 +16,1190 @@
 
 ### Ontology annotations 
 #### Removed
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2023-08-24" 
-
-#### Added
 - [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2023-09-21" 
 
+#### Added
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2023-10-19" 
 
-### A2 amacrine cell `http://purl.obolibrary.org/obo/CL_0004219`
+
+### BFO_0000009 `http://purl.obolibrary.org/obo/BFO_0000009`
 #### Removed
-- [A2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004219) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A bistratifed retinal amacrine cell with a small dendritic field, dendrite stratification in S1-S2, and a second dendrite stratification in S5." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- Class: [BFO_0000009](http://purl.obolibrary.org/obo/BFO_0000009) 
+
+
+
+### Betz cell `http://purl.obolibrary.org/obo/CL_0008049`
+#### Removed
+- [Betz cell](http://purl.obolibrary.org/obo/CL_0008049) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://en.wikipedia.org/w/index.php?title=Betz_cell&amp;oldid=977472330#/media/File:GolgiStainedPyramidalCell.jpg" 
 
 #### Added
-- [A2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004219) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A bistratifed retinal amacrine cell with a small dendritic field, dendrite stratification in S1-S2, and a second dendrite stratification in S5. This cell type releases the neurotransmitter glycine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24246263" 
-
-- [A2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004219) SubClassOf [glycinergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030028) 
-
-- [A2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004219) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+- [Betz cell](http://purl.obolibrary.org/obo/CL_0008049) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://en.wikipedia.org/w/index.php?title=Betz_cell&amp;oldid=977472330#/media/File:GolgiStainedPyramidalCell.jpg" 
 
 
-### A2-like amacrine cell `http://purl.obolibrary.org/obo/CL_0004229`
+### CCL3-positive alveolar macrophage `http://purl.obolibrary.org/obo/CL_4033041`
 
 #### Added
-- [A2-like amacrine cell](http://purl.obolibrary.org/obo/CL_0004229) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+- [CCL3-positive alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033041) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [CCL3-positive alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033041) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### AB broad diffuse-1 amacrine cell `http://purl.obolibrary.org/obo/CL_0004235`
+### CHEBI_15355 `http://purl.obolibrary.org/obo/CHEBI_15355`
 #### Removed
-- [AB broad diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004235) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2 and S3." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "choline acetate" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChemIDplus:" 
 
-- [AB broad diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004235) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "InChI=1S/C7H16NO2/c1-7(9)10-6-5-8(2,3)4/h5-6H2,1-4H3/q+1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [InChI](http://purl.obolibrary.org/obo/fbbt#InChI) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "InChIKey=OIPILFWXSMYKGL-UHFFFAOYSA-N" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [InChIKey](http://purl.obolibrary.org/obo/fbbt#InChIKey) 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CC(=O)OCC[N+](C)(C)C" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SMILES](http://purl.obolibrary.org/obo/fbbt#SMILES) 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Acetylcholine" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Actylcholine is an ester of acetic acid and choline, which acts as a neurotransmitter." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "2-acetyloxy-N,N,N-trimethylethanaminium" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Azetylcholin" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ACh" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChemIDplus:" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:15355" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ACETYLCHOLINE" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PDBeChem:" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "C7H16NO2" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [FORMULA](http://purl.obolibrary.org/obo/fbbt#FORMULA) 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "O-Acetylcholine" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+
+
+### CHEBI_16670 `http://purl.obolibrary.org/obo/CHEBI_16670`
+#### Removed
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Peptid" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "peptidos" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Peptide" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "peptido" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Amide derived from two or more amino carboxylic acid molecules (the same or different) by formation of a covalent bond from the carbonyl carbon of one to the nitrogen atom of another with formal loss of water. The term is usually applied to structures formed from alpha-amino acids, but it includes those derived from any amino carboxylic acid." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:16670" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "C2H4NO2R(C2H2NOR)n" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [FORMULA](http://purl.obolibrary.org/obo/fbbt#FORMULA) 
+
+- [CHEBI_16670](http://purl.obolibrary.org/obo/CHEBI_16670) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "peptides" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+
+
+### CHEBI_18059 `http://purl.obolibrary.org/obo/CHEBI_18059`
+#### Removed
+- [CHEBI_18059](http://purl.obolibrary.org/obo/CHEBI_18059) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lipids" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_18059](http://purl.obolibrary.org/obo/CHEBI_18059) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Lipid" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_18059](http://purl.obolibrary.org/obo/CHEBI_18059) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:18059" 
+
+- [CHEBI_18059](http://purl.obolibrary.org/obo/CHEBI_18059) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "'Lipids' is a loosely defined term for substances of biological origin that are soluble in nonpolar solvents. They consist of saponifiable lipids, such as glycerides (fats and oils) and phospholipids, as well as nonsaponifiable lipids, principally steroids." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_18059](http://purl.obolibrary.org/obo/CHEBI_18059) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_18059](http://purl.obolibrary.org/obo/CHEBI_18059) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lipid" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProt:" 
+
+
+
+### CHEBI_24431 `http://purl.obolibrary.org/obo/CHEBI_24431`
+#### Removed
+- [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:24431" 
+
+- [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A chemical entity is a physical entity of interest in chemistry including molecular entities, parts thereof, and chemical substances." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+
+
+### CHEBI_24780 `http://purl.obolibrary.org/obo/CHEBI_24780`
+#### Removed
+- [CHEBI_24780](http://purl.obolibrary.org/obo/CHEBI_24780) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:24780" 
+
+- [CHEBI_24780](http://purl.obolibrary.org/obo/CHEBI_24780) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_24780](http://purl.obolibrary.org/obo/CHEBI_24780) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A five-membered organic heterocycle containing two nitrogen atoms at positions 1 and 3, or any of its derivatives; compounds containing an imidazole skeleton." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+
+
+### CHEBI_24828 `http://purl.obolibrary.org/obo/CHEBI_24828`
+#### Removed
+- [CHEBI_24828](http://purl.obolibrary.org/obo/CHEBI_24828) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:24828" 
+
+- [CHEBI_24828](http://purl.obolibrary.org/obo/CHEBI_24828) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_24828](http://purl.obolibrary.org/obo/CHEBI_24828) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any compound containing an indole skeleton." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+
+
+### CHEBI_25806 `http://purl.obolibrary.org/obo/CHEBI_25806`
+#### Removed
+- [CHEBI_25806](http://purl.obolibrary.org/obo/CHEBI_25806) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "oxygen molecular entities" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_25806](http://purl.obolibrary.org/obo/CHEBI_25806) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:25806" 
+
+- [CHEBI_25806](http://purl.obolibrary.org/obo/CHEBI_25806) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "oxygen molecular entity" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_25806](http://purl.obolibrary.org/obo/CHEBI_25806) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+
+
+### CHEBI_32952 `http://purl.obolibrary.org/obo/CHEBI_32952`
+#### Removed
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:32952" 
+
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "amines" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A compound formally derived from ammonia by replacing one, two or three hydrogen atoms by hydrocarbyl groups." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Amine" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Amin" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_32952](http://purl.obolibrary.org/obo/CHEBI_32952) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "an amine" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProt:" 
+
+
+
+### CHEBI_32988 `http://purl.obolibrary.org/obo/CHEBI_32988`
+#### Removed
+- [CHEBI_32988](http://purl.obolibrary.org/obo/CHEBI_32988) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:32988" 
+
+- [CHEBI_32988](http://purl.obolibrary.org/obo/CHEBI_32988) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amide is a derivative of an oxoacid RkE(=O)l(OH)m (l =/= 0) in which an acidic hydroxy group has been replaced by an amino or substituted amino group." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_32988](http://purl.obolibrary.org/obo/CHEBI_32988) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Amide" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_32988](http://purl.obolibrary.org/obo/CHEBI_32988) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_32988](http://purl.obolibrary.org/obo/CHEBI_32988) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "amides" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+
+
+### CHEBI_33566 `http://purl.obolibrary.org/obo/CHEBI_33566`
+#### Removed
+- [CHEBI_33566](http://purl.obolibrary.org/obo/CHEBI_33566) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33566" 
+
+- [CHEBI_33566](http://purl.obolibrary.org/obo/CHEBI_33566) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+
+
+### CHEBI_33567 `http://purl.obolibrary.org/obo/CHEBI_33567`
+#### Removed
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Catecholamine" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "4-(2-Aminoethyl)pyrocatechol [4-(2-aminoethyl)benzene-1,2-diol] and derivatives formed by substitution." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "catecholamines" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "C8H9NO2R2" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [FORMULA](http://purl.obolibrary.org/obo/fbbt#FORMULA) 
+
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33567" 
+
+- [CHEBI_33567](http://purl.obolibrary.org/obo/CHEBI_33567) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "catecholamines" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+
+
+### CHEBI_33655 `http://purl.obolibrary.org/obo/CHEBI_33655`
+#### Removed
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cyclically conjugated molecular entity with a stability (due to delocalization) significantly greater than that of a hypothetical localized structure (e.g. Kekule structure) is said to possess aromatic character." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "aromatische Verbindungen" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "aromatic compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33655" 
+
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "aromatics" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "aromatic molecular entity" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_33655](http://purl.obolibrary.org/obo/CHEBI_33655) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+
+
+### CHEBI_33709 `http://purl.obolibrary.org/obo/CHEBI_33709`
+#### Removed
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "amino acids" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Aminocarbonsaeure" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Aminokarbonsaeure" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Aminosaeure" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A carboxylic acid containing one or more amino groups." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_33709](http://purl.obolibrary.org/obo/CHEBI_33709) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33709" 
+
+
+
+### CHEBI_33822 `http://purl.obolibrary.org/obo/CHEBI_33822`
+#### Removed
+- [CHEBI_33822](http://purl.obolibrary.org/obo/CHEBI_33822) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_33822](http://purl.obolibrary.org/obo/CHEBI_33822) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An organic compound having at least one hydroxy group attached to a carbon atom." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_33822](http://purl.obolibrary.org/obo/CHEBI_33822) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hydroxy compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_33822](http://purl.obolibrary.org/obo/CHEBI_33822) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33822" 
+
+- [CHEBI_33822](http://purl.obolibrary.org/obo/CHEBI_33822) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organic hydroxy compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+
+
+### CHEBI_33832 `http://purl.obolibrary.org/obo/CHEBI_33832`
+#### Removed
+- [CHEBI_33832](http://purl.obolibrary.org/obo/CHEBI_33832) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33832" 
+
+- [CHEBI_33832](http://purl.obolibrary.org/obo/CHEBI_33832) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_33832](http://purl.obolibrary.org/obo/CHEBI_33832) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organic cyclic compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+
+
+### CHEBI_33853 `http://purl.obolibrary.org/obo/CHEBI_33853`
+#### Removed
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "arenols" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "aryl alcohol" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProt:" 
+
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Aryl alcohol" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Compounds having one or more hydroxy groups attached to a benzene or other arene ring." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "phenols" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_33853](http://purl.obolibrary.org/obo/CHEBI_33853) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:33853" 
+
+
+
+### CHEBI_35352 `http://purl.obolibrary.org/obo/CHEBI_35352`
+#### Removed
+- [CHEBI_35352](http://purl.obolibrary.org/obo/CHEBI_35352) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any heteroorganic entity containing at least one carbon-nitrogen bond." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_35352](http://purl.obolibrary.org/obo/CHEBI_35352) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "organonitrogen compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [CHEBI_35352](http://purl.obolibrary.org/obo/CHEBI_35352) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organonitrogens" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_35352](http://purl.obolibrary.org/obo/CHEBI_35352) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_35352](http://purl.obolibrary.org/obo/CHEBI_35352) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:35352" 
+
+
+
+### CHEBI_50047 `http://purl.obolibrary.org/obo/CHEBI_50047`
+#### Removed
+- [CHEBI_50047](http://purl.obolibrary.org/obo/CHEBI_50047) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_50047](http://purl.obolibrary.org/obo/CHEBI_50047) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A compound formally derived from ammonia by replacing one, two or three hydrogen atoms by organyl groups." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_50047](http://purl.obolibrary.org/obo/CHEBI_50047) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:50047" 
+
+- [CHEBI_50047](http://purl.obolibrary.org/obo/CHEBI_50047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organic amino compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+
+
+### CHEBI_50860 `http://purl.obolibrary.org/obo/CHEBI_50860`
+#### Removed
+- [CHEBI_50860](http://purl.obolibrary.org/obo/CHEBI_50860) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organic molecular entities" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_50860](http://purl.obolibrary.org/obo/CHEBI_50860) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any molecular entity that contains carbon." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_50860](http://purl.obolibrary.org/obo/CHEBI_50860) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:50860" 
+
+- [CHEBI_50860](http://purl.obolibrary.org/obo/CHEBI_50860) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organic compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_50860](http://purl.obolibrary.org/obo/CHEBI_50860) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "organic entity" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_50860](http://purl.obolibrary.org/obo/CHEBI_50860) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+
+
+### CHEBI_50906 `http://purl.obolibrary.org/obo/CHEBI_50906`
+#### Removed
+- Class: [CHEBI_50906](http://purl.obolibrary.org/obo/CHEBI_50906) 
+
+- [CHEBI_50906](http://purl.obolibrary.org/obo/CHEBI_50906) SubClassOf [role](http://purl.obolibrary.org/obo/BFO_0000023) 
+
+
+
+### CHEBI_50994 `http://purl.obolibrary.org/obo/CHEBI_50994`
+#### Removed
+- [CHEBI_50994](http://purl.obolibrary.org/obo/CHEBI_50994) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:50994" 
+
+- [CHEBI_50994](http://purl.obolibrary.org/obo/CHEBI_50994) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_50994](http://purl.obolibrary.org/obo/CHEBI_50994) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A compound formally derived from ammonia by replacing one hydrogen atom by an organyl group." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_50994](http://purl.obolibrary.org/obo/CHEBI_50994) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "primary amino compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+
+
+### CHEBI_51143 `http://purl.obolibrary.org/obo/CHEBI_51143`
+#### Removed
+- [CHEBI_51143](http://purl.obolibrary.org/obo/CHEBI_51143) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Nitrogenous compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+- [CHEBI_51143](http://purl.obolibrary.org/obo/CHEBI_51143) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nitrogen compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_51143](http://purl.obolibrary.org/obo/CHEBI_51143) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:51143" 
+
+- [CHEBI_51143](http://purl.obolibrary.org/obo/CHEBI_51143) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_51143](http://purl.obolibrary.org/obo/CHEBI_51143) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nitrogen molecular entities" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+
+
+### CHEBI_5686 `http://purl.obolibrary.org/obo/CHEBI_5686`
+#### Removed
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "compuesto heterociclico" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "chebi_ontology" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cyclic compound having as ring members atoms of at least two different elements." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ANON:ANON" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "compuestos heterociclicos" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPAC:" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "heterocyclic compounds" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [id](http://www.geneontology.org/formats/oboInOwl#id) "CHEBI:5686" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "heterocycle" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ChEBI:" 
+
+- [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Heterocyclic compound" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "KEGG COMPOUND:" 
+
+
+
+### D1/D2-hybrid medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030050`
+#### Removed
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1/2" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hybrid D1/2 cell type" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1/D2 hybrid" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1/D2-hybrid MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
 #### Added
-- [AB broad diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004235) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2 and S3. This cell type releases the neurotransmitter gamma-aminobutyric acid (GABA)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1/D2 hybrid" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [AB broad diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004235) SubClassOf [GABAergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030027) 
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1/2" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-- [AB broad diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004235) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1/D2-hybrid MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [D1/D2-hybrid medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030050) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hybrid D1/2 cell type" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### AB broad diffuse-2 amacrine cell `http://purl.obolibrary.org/obo/CL_0004236`
+### FORMULA `http://purl.obolibrary.org/obo/fbbt#FORMULA`
 #### Removed
-- [AB broad diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004236) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2, S3, and S4." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- AnnotationProperty: [FORMULA](http://purl.obolibrary.org/obo/fbbt#FORMULA) 
 
-- [AB broad diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004236) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [FORMULA](http://purl.obolibrary.org/obo/fbbt#FORMULA) SubPropertyOf: [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) 
+
+
+
+### Feyrter cell `http://purl.obolibrary.org/obo/CL_0002066`
+#### Removed
+- [Feyrter cell](http://purl.obolibrary.org/obo/CL_0002066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "P cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [AB broad diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004236) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a medium dendritic field and post-synaptic terminals in S2, S3, and S4. This cell type releases the neurotransmitter gamma-aminobutyric acid (GABA)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
-
-- [AB broad diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004236) SubClassOf [GABAergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030027) 
-
-- [AB broad diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004236) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
+- [Feyrter cell](http://purl.obolibrary.org/obo/CL_0002066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "P cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### AB diffuse-1 amacrine cell `http://purl.obolibrary.org/obo/CL_0004223`
+### GCIs 
 #### Removed
-- [AB diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004223) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) DisjointWith [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [disconnected](http://purl.obolibrary.org/obo/PATO_0010001) 
+
+- [has part](http://purl.obolibrary.org/obo/BFO_0000051) some ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mass](http://purl.obolibrary.org/obo/PATO_0000125)) EquivalentTo [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mass](http://purl.obolibrary.org/obo/PATO_0000125) 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Should belong in BFO, but lives in caro for now." 
+
+
+
+### H1 horizontal cell `http://purl.obolibrary.org/obo/CL_0004217`
+#### Removed
+- [H1 horizontal cell](http://purl.obolibrary.org/obo/CL_0004217) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "H1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 #### Added
-- [AB diffuse-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004223) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+- [H1 horizontal cell](http://purl.obolibrary.org/obo/CL_0004217) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "H1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 
-### AB diffuse-2 amacrine cell `http://purl.obolibrary.org/obo/CL_0004224`
+### H2 horizontal cell `http://purl.obolibrary.org/obo/CL_0004218`
 #### Removed
-- [AB diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004224) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A broadly stratifying amacrine cell that has a small dendritic field and post-synaptic terminals in S2 and S3." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [H2 horizontal cell](http://purl.obolibrary.org/obo/CL_0004218) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "H2" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [AB diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004224) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 #### Added
-- [AB diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004224) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A broadly stratifying amacrine cell that has a small dendritic field and post-synaptic terminals in S2 and S3. This cell type releases the neurotransmitter glycine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [H2 horizontal cell](http://purl.obolibrary.org/obo/CL_0004218) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "H2" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
-
-- [AB diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004224) SubClassOf [glycinergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030028) 
-
-- [AB diffuse-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004224) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 
-### BEST4+ intestinal epithelial cell, human `http://purl.obolibrary.org/obo/CL_4030026`
+### Hofbauer cell `http://purl.obolibrary.org/obo/CL_3000001`
 #### Removed
-- [BEST4+ intestinal epithelial cell, human](http://purl.obolibrary.org/obo/CL_4030026) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Oval eosinophilic histiocytes with granules and vacuoles found in placenta, which are of mesenchymal origin, in mesoderm of the chorionic villus, particularly numerous in early pregnancy." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30429548" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:CellBLAST" 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) SubClassOf [macrophage](http://purl.obolibrary.org/obo/CL_0000235) 
 
 #### Added
-- [BEST4+ intestinal epithelial cell, human](http://purl.obolibrary.org/obo/CL_4030026) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A tissue-resident macrophage that is part of the placenta. A Hofbauer cell expresses high levels of growth factors and metalloproteinases that support vasculogenesis, angiogenesis, branching morphogenesis and tissue remodeling. A Hofbauer cell has a fetal origin and is present throughout pregnancy." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35438172" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30429548" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:CellBLAST" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30498493" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34745147" 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HBC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Hofbauer cells are a heterogenic group of macrophages that resemble M2-like cells. Initially described in chorionic villi in humans, a Hofbauer cell is now often used to describe any fetal-derived placental macrophage that resides within the placental villous core, amnion, and chorion laeve." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30498493" 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) SubClassOf [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) 
+
+- [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [placenta](http://purl.obolibrary.org/obo/UBERON_0001987) 
 
 
-### CD25+ mast cell `http://purl.obolibrary.org/obo/CL_0011023`
+### IAO_creation_date `http://purl.obolibrary.org/obo/IAO_creation_date`
 #### Removed
-- [CD25+ mast cell](http://purl.obolibrary.org/obo/CL_0011023) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- AnnotationProperty: [IAO_creation_date](http://purl.obolibrary.org/obo/IAO_creation_date) 
 
 
 
-### Caenorhabditis hypodermal cell `http://purl.obolibrary.org/obo/CL_0000411`
+### IAO_scope `http://purl.obolibrary.org/obo/IAO_scope`
 #### Removed
-- [Caenorhabditis hypodermal cell](http://purl.obolibrary.org/obo/CL_0000411) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- AnnotationProperty: [IAO_scope](http://purl.obolibrary.org/obo/IAO_scope) 
 
 
 
-### DAPI-3 amacrine cell `http://purl.obolibrary.org/obo/CL_0004233`
+### IUPAC_NAME `http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME`
 #### Removed
-- [DAPI-3 amacrine cell](http://purl.obolibrary.org/obo/CL_0004233) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a medium dendritic field and post-synaptic terminals that stratify at S2, with a second stratification that occurs in S3 and S4." 
+- AnnotationProperty: [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) 
+
+- [IUPAC_NAME](http://purl.obolibrary.org/obo/fbbt#IUPAC_NAME) SubPropertyOf: [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) 
+
+
+
+### InChI `http://purl.obolibrary.org/obo/fbbt#InChI`
+#### Removed
+- AnnotationProperty: [InChI](http://purl.obolibrary.org/obo/fbbt#InChI) 
+
+- [InChI](http://purl.obolibrary.org/obo/fbbt#InChI) SubPropertyOf: [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) 
+
+
+
+### InChIKey `http://purl.obolibrary.org/obo/fbbt#InChIKey`
+#### Removed
+- AnnotationProperty: [InChIKey](http://purl.obolibrary.org/obo/fbbt#InChIKey) 
+
+- [InChIKey](http://purl.obolibrary.org/obo/fbbt#InChIKey) SubPropertyOf: [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) 
+
+
+
+### Island of Calleja granule cell `http://purl.obolibrary.org/obo/CL_4030053`
+#### Removed
+- [Island of Calleja granule cell](http://purl.obolibrary.org/obo/CL_4030053) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-ICj" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
 #### Added
-- [DAPI-3 amacrine cell](http://purl.obolibrary.org/obo/CL_0004233) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a medium dendritic field and post-synaptic terminals that stratify at S2, with a second stratification that occurs in S3 and S4. This cell type releases the neurotransmitter glycine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9194315" 
+- [Island of Calleja granule cell](http://purl.obolibrary.org/obo/CL_4030053) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-ICj" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-- [DAPI-3 amacrine cell](http://purl.obolibrary.org/obo/CL_0004233) SubClassOf [glycinergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030028) 
-
-- [DAPI-3 amacrine cell](http://purl.obolibrary.org/obo/CL_0004233) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### Eumycetozoan cell `http://purl.obolibrary.org/obo/CL_0000257`
-#### Removed
-- [Eumycetozoan cell](http://purl.obolibrary.org/obo/CL_0000257) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Eumycetozoa](http://purl.obolibrary.org/obo/NCBITaxon_142796)) 
+### L2 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030060`
 
 #### Added
-- [Eumycetozoan cell](http://purl.obolibrary.org/obo/CL_0000257) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Eumycetozoa](http://purl.obolibrary.org/obo/NCBITaxon_142796)) 
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2 intratelencephalic projecting glutamatergic neuron" 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L2 IT" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) [date](http://purl.org/dc/terms/date) "2023-10-10T14:10:36Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- Class: [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer II](http://purl.obolibrary.org/obo/UBERON_0005391)) 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+- [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer II](http://purl.obolibrary.org/obo/UBERON_0005391) 
 
 
-### His-Purkinje system cell `http://purl.obolibrary.org/obo/CL_0010007`
-#### Removed
-- [His-Purkinje system cell](http://purl.obolibrary.org/obo/CL_0010007) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [His-Purkinje system](http://purl.obolibrary.org/obo/UBERON_0004146)) 
-
-- [His-Purkinje system cell](http://purl.obolibrary.org/obo/CL_0010007) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+### L2/3 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030059`
 
 #### Added
-- [His-Purkinje system cell](http://purl.obolibrary.org/obo/CL_0010007) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [His-Purkinje system](http://purl.obolibrary.org/obo/UBERON_0004146)) 
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) [date](http://purl.org/dc/terms/date) "2023-10-10T14:10:21Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
 
-- [His-Purkinje system cell](http://purl.obolibrary.org/obo/CL_0010007) SubClassOf [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) 
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
 
-### IAO_0000234 `http://purl.obolibrary.org/obo/IAO_0000234`
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L2/3 IT" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-#### Added
-- AnnotationProperty: [IAO_0000234](http://purl.obolibrary.org/obo/IAO_0000234) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
 
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3 intratelencephalic projecting glutamatergic neuron" 
 
-### L2/3 bipolar vip GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023007`
-#### Removed
-- [L2/3 bipolar vip GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3 bipolar vip GABAergic cortical interneuron (Mmus)" 
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
 
-#### Added
-- [L2/3 bipolar vip GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3 bipolar vip GABAergic interneuron (Mmus)" 
+- Class: [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) 
+
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer II/III](http://purl.obolibrary.org/obo/UBERON_8440000)) 
+
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+- [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer II/III](http://purl.obolibrary.org/obo/UBERON_8440000) 
 
 
 ### L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex `http://purl.obolibrary.org/obo/CL_4023047`
 #### Removed
-- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1101/2020.10.19.343129" 
+- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer II/III](http://purl.obolibrary.org/obo/UBERON_8440000)) 
+
+- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer II/III](http://purl.obolibrary.org/obo/UBERON_8440000) 
+
+- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
 
 #### Added
-- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3 of the primary motor cortex." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1101/2020.10.19.343129" 
+- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) EquivalentTo [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) 
+
+- [L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023047) SubClassOf [L2/3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030059) 
 
 
-### L2/3-6 intratelencephalic projecting glutamatergic cortical neuron `http://purl.obolibrary.org/obo/CL_4023040`
-#### Removed
-- [L2/3-6 intratelencephalic projecting glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023040) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3-6 intratelencephalic projecting glutamatergic cortical neuron" 
-
-#### Added
-- [L2/3-6 intratelencephalic projecting glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023040) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3-6 intratelencephalic projecting glutamatergic neuron" 
-
-
-### L2/3/5 fan Martinotti sst GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023030`
-#### Removed
-- [L2/3/5 fan Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023030) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3/5 fan Martinotti sst GABAergic cortical interneuron (Mmus)" 
+### L3 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030061`
 
 #### Added
-- [L2/3/5 fan Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023030) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3/5 fan Martinotti sst GABAergic interneuron (Mmus)" 
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) [label](http://www.w3.org/2000/01/rdf-schema#label) "L3 intratelencephalic projecting glutamatergic neuron" 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L3 IT" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 3." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) [date](http://purl.org/dc/terms/date) "2023-10-10T14:10:47Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- Class: [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer III](http://purl.obolibrary.org/obo/UBERON_0005392)) 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+- [L3 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030061) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer III](http://purl.obolibrary.org/obo/UBERON_0005392) 
 
 
-### L4 sst GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023031`
-#### Removed
-- [L4 sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023031) [label](http://www.w3.org/2000/01/rdf-schema#label) "L4 sst GABAergic cortical interneuron (Mmus)" 
-
-#### Added
-- [L4 sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023031) [label](http://www.w3.org/2000/01/rdf-schema#label) "L4 sst Martinotti interneuron (Mmus)" 
-
-
-### L5 T-Martinotti sst GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023027`
-#### Removed
-- [L5 T-Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023027) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 T-Martinotti sst GABAergic cortical interneuron (Mmus)" 
-
-#### Added
-- [L5 T-Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023027) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 sst T-Martinotti interneuron (Mmus)" 
-
-
-### L5 non-Martinotti sst GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023028`
-#### Removed
-- [L5 non-Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023028) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 non-Martinotti sst GABAergic cortical interneuron (Mmus)" 
-
-#### Added
-- [L5 non-Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023028) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 non-Martinotti sst GABAergic interneuron (Mmus)" 
-
-
-### L5 vip cortical GABAergic interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023014`
-#### Removed
-- [L5 vip cortical GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 vip cortical GABAergic interneuron (Mmus)" 
+### L4 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030063`
 
 #### Added
-- [L5 vip cortical GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 vip GABAergic interneuron (Mmus)" 
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) [label](http://www.w3.org/2000/01/rdf-schema#label) "L4 intratelencephalic projecting glutamatergic neuron" 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) [date](http://purl.org/dc/terms/date) "2023-10-10T14:11:25Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 4." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L4 IT" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
+
+- Class: [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer IV](http://purl.obolibrary.org/obo/UBERON_0005393)) 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer IV](http://purl.obolibrary.org/obo/UBERON_0005393) 
+
+- [L4 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030063) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
 
 
-### L5,6 neurogliaform lamp5 GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023023`
-#### Removed
-- [L5,6 neurogliaform lamp5 GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023023) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5,6 neurogliaform lamp5 GABAergic cortical interneuron (Mmus)" 
-
-#### Added
-- [L5,6 neurogliaform lamp5 GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023023) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5,6 neurogliaform lamp5 GABAergic interneuron (Mmus)" 
-
-
-### L5/6 cck cortical GABAergic interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023071`
-#### Removed
-- [L5/6 cck cortical GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023071) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 cck cortical GABAergic interneuron (Mmus)" 
-
-#### Added
-- [L5/6 cck cortical GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023071) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 cck GABAergic interneuron (Mmus)" 
-
-
-### L5/6 cck, vip cortical GABAergic interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023019`
-#### Removed
-- [L5/6 cck, vip cortical GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023019) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 cck, vip cortical GABAergic interneuron (Mmus)" 
-
-#### Added
-- [L5/6 cck, vip cortical GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023019) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 cck, vip GABAergic interneuron (Mmus)" 
-
-
-### L5/6 non-Martinotti sst GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023118`
-#### Removed
-- [L5/6 non-Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023118) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 non-Martinotti sst GABAergic cortical interneuron (Mmus)" 
+### L4/5 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030062`
 
 #### Added
-- [L5/6 non-Martinotti sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023118) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 non-Martinotti sst GABAergic interneuron (Mmus)" 
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) [date](http://purl.org/dc/terms/date) "2023-10-10T14:11:04Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) [label](http://www.w3.org/2000/01/rdf-schema#label) "L4/5 intratelencephalic projecting glutamatergic neuron" 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic with a soma located in cortical layer 4/5." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L4/5 IT" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34004146" 
+
+- Class: [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer IV/V](http://purl.obolibrary.org/obo/UBERON_8440001)) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer IV/V](http://purl.obolibrary.org/obo/UBERON_8440001) 
 
 
-### L6 tyrosine hydroxylase sst GABAergic cortical interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023075`
+### L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex `http://purl.obolibrary.org/obo/CL_4023048`
 #### Removed
-- [L6 tyrosine hydroxylase sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023075) [label](http://www.w3.org/2000/01/rdf-schema#label) "L6 tyrosine hydroxylase sst GABAergic cortical interneuron (Mmus)" 
+- [L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023048) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer IV/V](http://purl.obolibrary.org/obo/UBERON_8440001)) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023048) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023048) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer IV/V](http://purl.obolibrary.org/obo/UBERON_8440001) 
 
 #### Added
-- [L6 tyrosine hydroxylase sst GABAergic cortical interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023075) [label](http://www.w3.org/2000/01/rdf-schema#label) "L6 th sst GABAergic interneuron (Mmus)" 
+- [L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023048) EquivalentTo [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) 
+
+- [L4/5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023048) SubClassOf [L4/5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030062) 
 
 
-### L6b subplate glutamatergic neuron of the primary motor cortex `http://purl.obolibrary.org/obo/CL_4023046`
+### L5 extratelencephalic projecting glutamatergic cortical neuron `http://purl.obolibrary.org/obo/CL_4023041`
 #### Removed
-- [L6b subplate glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023046) [label](http://www.w3.org/2000/01/rdf-schema#label) "L6b subplate glutamatergic neuron of the primary motor cortex" 
+- [L5 extratelencephalic projecting glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023041) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L5b neuron" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/j.neuron.2011.07.029" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [L6b subplate glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023046) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "L6b subplate glutamatergic neuron of the primary motor cortex" 
+- [L5 extratelencephalic projecting glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023041) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L5b neuron" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/j.neuron.2011.07.029" 
 
-- [L6b subplate glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023046) [label](http://www.w3.org/2000/01/rdf-schema#label) "L6b glutamatergic neuron of the primary motor cortex" 
-
-
-### Leydig cell `http://purl.obolibrary.org/obo/CL_0000178`
-#### Removed
-- [Leydig cell](http://purl.obolibrary.org/obo/CL_0000178) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-
-### Malpighian tubule stellate cell `http://purl.obolibrary.org/obo/CL_1000155`
-#### Removed
-- [Malpighian tubule stellate cell](http://purl.obolibrary.org/obo/CL_1000155) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### WF1 amacrine cell `http://purl.obolibrary.org/obo/CL_0004240`
-#### Removed
-- [WF1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004240) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+### L5 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030064`
 
 #### Added
-- [WF1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004240) SubClassOf [wide field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004253) 
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) [date](http://purl.org/dc/terms/date) "2023-10-10T14:11:59Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 intratelencephalic projecting glutamatergic neuron" 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L5 IT" 
+  - [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 5." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37609206" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
+
+- Class: [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer V](http://purl.obolibrary.org/obo/UBERON_0005394)) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer V](http://purl.obolibrary.org/obo/UBERON_0005394) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
 
 
-### WF2 amacrine cell `http://purl.obolibrary.org/obo/CL_0004241`
+### L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex `http://purl.obolibrary.org/obo/CL_4023049`
 #### Removed
-- [WF2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004241) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023049) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer V](http://purl.obolibrary.org/obo/UBERON_0005394)) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023049) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023049) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer V](http://purl.obolibrary.org/obo/UBERON_0005394) 
 
 #### Added
-- [WF2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004241) SubClassOf [wide field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004253) 
+- [L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023049) EquivalentTo [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) 
+
+- [L5 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023049) SubClassOf [L5 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030064) 
 
 
-### WF3-1 amacrine cell `http://purl.obolibrary.org/obo/CL_0004242`
+### L6 intratelencephalic projecting glutamatergic neuron `http://purl.obolibrary.org/obo/CL_4030065`
+
+#### Added
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 6." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37609206" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) [date](http://purl.org/dc/terms/date) "2023-10-10T14:12:23Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4389-9821](https://orcid.org/0000-0003-4389-9821) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "L6 IT" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37292694" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) [label](http://www.w3.org/2000/01/rdf-schema#label) "L6 intratelencephalic projecting glutamatergic neuron" 
+
+- Class: [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer VI](http://purl.obolibrary.org/obo/UBERON_0005395)) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer VI](http://purl.obolibrary.org/obo/UBERON_0005395) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
+
+
+### L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex `http://purl.obolibrary.org/obo/CL_4023050`
 #### Removed
-- [WF3-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004242) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023050) EquivalentTo [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer VI](http://purl.obolibrary.org/obo/UBERON_0005395)) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023050) SubClassOf [has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [cortical layer VI](http://purl.obolibrary.org/obo/UBERON_0005395) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023050) SubClassOf [L2/3-6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4023040) 
 
 #### Added
-- [WF3-1 amacrine cell](http://purl.obolibrary.org/obo/CL_0004242) SubClassOf [wide field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004253) 
+- [L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023050) EquivalentTo [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) and ([has soma location](http://purl.obolibrary.org/obo/RO_0002100) some [primary motor cortex](http://purl.obolibrary.org/obo/UBERON_0001384)) 
+
+- [L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023050) SubClassOf [L6 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030065) 
 
 
-### WF3-2 amacrine cell `http://purl.obolibrary.org/obo/CL_0004243`
+### ON-blue cone bipolar cell `http://purl.obolibrary.org/obo/CL_4033019`
 #### Removed
-- [WF3-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004243) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [ON-blue cone bipolar cell](http://purl.obolibrary.org/obo/CL_4033019) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BB cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
 
 #### Added
-- [WF3-2 amacrine cell](http://purl.obolibrary.org/obo/CL_0004243) SubClassOf [wide field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004253) 
+- [ON-blue cone bipolar cell](http://purl.obolibrary.org/obo/CL_4033019) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BB cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### WF4 amacrine cell `http://purl.obolibrary.org/obo/CL_0004244`
+### RXFP1-positive interface island D1-medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030054`
 #### Removed
-- [WF4 amacrine cell](http://purl.obolibrary.org/obo/CL_0004244) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [RXFP1-positive interface island D1-medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030054) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-NUDAP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
 #### Added
-- [WF4 amacrine cell](http://purl.obolibrary.org/obo/CL_0004244) SubClassOf [wide field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004253) 
+- [RXFP1-positive interface island D1-medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030054) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-NUDAP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### absorptive cell `http://purl.obolibrary.org/obo/CL_0000212`
+### SMILES `http://purl.obolibrary.org/obo/fbbt#SMILES`
 #### Removed
-- [absorptive cell](http://purl.obolibrary.org/obo/CL_0000212) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- AnnotationProperty: [SMILES](http://purl.obolibrary.org/obo/fbbt#SMILES) 
+
+- [SMILES](http://purl.obolibrary.org/obo/fbbt#SMILES) SubPropertyOf: [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) 
+
+
+
+### T cell receptor binding `http://purl.obolibrary.org/obo/GO_0042608`
+#### Removed
+- [T cell receptor binding](http://purl.obolibrary.org/obo/GO_0042608) EquivalentTo [protein-containing complex binding](http://purl.obolibrary.org/obo/GO_0044877) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [T cell receptor complex](http://purl.obolibrary.org/obo/GO_0042101)) 
 
 #### Added
-- [absorptive cell](http://purl.obolibrary.org/obo/CL_0000212) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [T cell receptor binding](http://purl.obolibrary.org/obo/GO_0042608) EquivalentTo [binding](http://purl.obolibrary.org/obo/GO_0005488) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [T cell receptor complex](http://purl.obolibrary.org/obo/GO_0042101)) 
 
 
-### adepithelial cell `http://purl.obolibrary.org/obo/CL_0000462`
+### TCR-positive macrophage `http://purl.obolibrary.org/obo/CL_4030058`
 
 #### Added
-- [adepithelial cell](http://purl.obolibrary.org/obo/CL_0000462) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macrophage that expresses the T cell receptor complex at the cell surface." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26074923" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0001-9990-8331](https://orcid.org/0000-0001-9990-8331) 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "TCR.macs" 
+  - [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37500727" 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "T cell receptor positive macrophage" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26074923" 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "TCR+ macrophage" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26074923" 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-3308-6245](https://orcid.org/0000-0003-3308-6245) 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [label](http://www.w3.org/2000/01/rdf-schema#label) "TCR-positive macrophage" 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) [date](http://purl.org/dc/terms/date) "2023-09-26T12:27:14Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- Class: [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) EquivalentTo [macrophage](http://purl.obolibrary.org/obo/CL_0000235) and ([has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [T cell receptor complex](http://purl.obolibrary.org/obo/GO_0042101)) 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) SubClassOf [macrophage](http://purl.obolibrary.org/obo/CL_0000235) 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) SubClassOf [protein-containing material entity](http://purl.obolibrary.org/obo/PR_000050567) 
+
+- [TCR-positive macrophage](http://purl.obolibrary.org/obo/CL_4030058) SubClassOf [has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [T cell receptor complex](http://purl.obolibrary.org/obo/GO_0042101) 
+
+
+### abbreviation `http://purl.obolibrary.org/obo/cl#abbreviation`
+#### Removed
+- [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-1773-2692](https://orcid.org/0000-0002-1773-2692) 
+
+- [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) [label](http://www.w3.org/2000/01/rdf-schema#label) "abbreviation" 
+
+- [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) [date](http://purl.org/dc/elements/1.1/date) "2022-03-29T15:09:49Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- AnnotationProperty: [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+- [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) SubPropertyOf: [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) 
+
+
+
+### abbreviation `http://purl.obolibrary.org/obo/OMO_0003000`
+
+#### Added
+- [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "CHEBI:26523 (reactive oxygen species) has an exact synonym (ROS), which is of type OMO:0003000 (abbreviation)" 
+
+- [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) [label](http://www.w3.org/2000/01/rdf-schema#label) "abbreviation" 
+
+- [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A synonym type for describing abbreviations or initalisms" 
+
+- [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) [created](http://purl.org/dc/terms/created) "2023-03-03"^^[date](http://www.w3.org/2001/XMLSchema#date) 
+
+- [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
+
+- [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [122](https://github.com/information-artifact-ontology/ontology-metadata/issues/122) 
+
+- AnnotationProperty: [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### acellular anatomical structure `http://purl.obolibrary.org/obo/CARO_0000040`
+#### Removed
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Example.  Insect cuticle, eggshell, hair." 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) [label](http://www.w3.org/2000/01/rdf-schema#label) "acellular anatomical structure" 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000040" 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical structure that has no cells or cell parts as a part." 
+
+- Class: [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) DisjointWith [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) DisjointWith [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) DisjointWith [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) EquivalentTo [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) and ([has component](http://purl.obolibrary.org/obo/RO_0002180) exactly 0 [cell](http://purl.obolibrary.org/obo/CARO_0000013)) and ([has component](http://purl.obolibrary.org/obo/RO_0002180) exactly 0 [cell part](http://purl.obolibrary.org/obo/CARO_0000014)) 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) SubClassOf [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) 
+
+- [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+
+
+### acetylcholine binding `http://purl.obolibrary.org/obo/GO_0042166`
+#### Removed
+- [acetylcholine binding](http://purl.obolibrary.org/obo/GO_0042166) SubClassOf [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) 
+
+#### Added
+- [acetylcholine binding](http://purl.obolibrary.org/obo/GO_0042166) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+
+### acetylcholine biosynthetic process `http://purl.obolibrary.org/obo/GO_0008292`
+#### Removed
+- [acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_0008292) SubClassOf [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) 
+
+#### Added
+- [acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_0008292) SubClassOf [biosynthetic process](http://purl.obolibrary.org/obo/GO_0009058) 
+
+
+### acetylcholine catabolic process `http://purl.obolibrary.org/obo/GO_0006581`
+#### Removed
+- [acetylcholine catabolic process](http://purl.obolibrary.org/obo/GO_0006581) SubClassOf [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) 
+
+#### Added
+- [acetylcholine catabolic process](http://purl.obolibrary.org/obo/GO_0006581) SubClassOf [catabolic process](http://purl.obolibrary.org/obo/GO_0009056) 
+
+
+### acetylcholine metabolic process `http://purl.obolibrary.org/obo/GO_0008291`
+#### Removed
+- [acetylcholine metabolic process](http://purl.obolibrary.org/obo/GO_0008291) SubClassOf [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) 
+
+#### Added
+- [acetylcholine metabolic process](http://purl.obolibrary.org/obo/GO_0008291) SubClassOf [metabolic process](http://purl.obolibrary.org/obo/GO_0008152) 
+
+
+### acetylcholine-gated monoatomic cation-selective channel activity `http://purl.obolibrary.org/obo/GO_0022848`
+#### Removed
+- [acetylcholine-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022848) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([regulated by](http://purl.obolibrary.org/obo/RO_0002334) some [acetylcholine binding](http://purl.obolibrary.org/obo/GO_0042166)) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) 
+
+- [acetylcholine-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022848) SubClassOf [regulated by](http://purl.obolibrary.org/obo/RO_0002334) some [acetylcholine binding](http://purl.obolibrary.org/obo/GO_0042166) 
+
+#### Added
+- [acetylcholine-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022848) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355)) 
+
+- [acetylcholine-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022848) SubClassOf [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_15355](http://purl.obolibrary.org/obo/CHEBI_15355) 
 
 
 ### airway submucosal gland duct ciliated cell `http://purl.obolibrary.org/obo/CL_4033055`
 
 #### Added
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated cell that is part of a ciliated duct of an airway submucosal gland." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30864819" 
+- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17707699" 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-9185-3994](https://orcid.org/0000-0002-9185-3994) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [date](http://purl.org/dc/terms/date) "2023-09-08T10:32:27Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [label](http://www.w3.org/2000/01/rdf-schema#label) "airway submucosal gland duct ciliated cell" 
-
-- Class: [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) EquivalentTo [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [airway submucosal gland](http://purl.obolibrary.org/obo/UBERON_8410077)) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014)) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) SubClassOf [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) 
-
-- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [airway submucosal gland](http://purl.obolibrary.org/obo/UBERON_8410077) 
+- [airway submucosal gland duct ciliated cell](http://purl.obolibrary.org/obo/CL_4033055) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### alarm substance cell `http://purl.obolibrary.org/obo/CL_0007021`
+### alveolar capillary type 1 endothelial cell `http://purl.obolibrary.org/obo/CL_4028002`
 #### Removed
-- [alarm substance cell](http://purl.obolibrary.org/obo/CL_0007021) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [alveolar capillary type 1 endothelial cell](http://purl.obolibrary.org/obo/CL_4028002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "gCAP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33057196" 
 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+- [alveolar capillary type 1 endothelial cell](http://purl.obolibrary.org/obo/CL_4028002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CAP1" 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [alveolar capillary type 1 endothelial cell](http://purl.obolibrary.org/obo/CL_4028002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "gCAP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33057196" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [alveolar capillary type 1 endothelial cell](http://purl.obolibrary.org/obo/CL_4028002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CAP1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### alveolar capillary type 2 endothelial cell `http://purl.obolibrary.org/obo/CL_4028003`
+#### Removed
+- [alveolar capillary type 2 endothelial cell](http://purl.obolibrary.org/obo/CL_4028003) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "aCAP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [alveolar capillary type 2 endothelial cell](http://purl.obolibrary.org/obo/CL_4028003) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "aCAP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### alveolar type 1 fibroblast cell `http://purl.obolibrary.org/obo/CL_4028004`
+#### Removed
+- [alveolar type 1 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028004) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AF1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [alveolar type 1 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028004) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AF1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### alveolar type 2 fibroblast cell `http://purl.obolibrary.org/obo/CL_4028006`
+#### Removed
+- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AF2" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MANC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MANC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AF2" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### amacrine cell `http://purl.obolibrary.org/obo/CL_0000561`
 #### Removed
-- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ACs" 
+- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AC" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
-#### Added
 - [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ACs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
@@ -397,713 +1207,665 @@
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
-
-### amnion `http://purl.obolibrary.org/obo/UBERON_0000305`
-
 #### Added
-- [amnion](http://purl.obolibrary.org/obo/UBERON_0000305) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Placenta.glb" 
-
-
-### amoeboid cell `http://purl.obolibrary.org/obo/CL_0000732`
-#### Removed
-- [amoeboid cell](http://purl.obolibrary.org/obo/CL_0000732) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### animal cell `http://purl.obolibrary.org/obo/CL_0000548`
-#### Removed
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [label](http://www.w3.org/2000/01/rdf-schema#label) "animal cell" 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A native cell that is part of some Metazoa." 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Metazoa](http://purl.obolibrary.org/obo/NCBITaxon_33208)) 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Metazoa](http://purl.obolibrary.org/obo/NCBITaxon_33208) 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-#### Added
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete animal cell" 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "OBSOLETE. A native cell that is part of some Metazoa." 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-- [animal cell](http://purl.obolibrary.org/obo/CL_0000548) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "https://github.com/obophenotype/cell-ontology/issues/2124" 
-
-
-### animal zygote `http://purl.obolibrary.org/obo/CL_0000365`
-
-#### Added
-- [animal zygote](http://purl.obolibrary.org/obo/CL_0000365) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-- [animal zygote](http://purl.obolibrary.org/obo/CL_0000365) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Metazoa](http://purl.obolibrary.org/obo/NCBITaxon_33208) 
-
-
-### anucleate cell `http://purl.obolibrary.org/obo/CL_0000225`
-#### Removed
-- [anucleate cell](http://purl.obolibrary.org/obo/CL_0000225) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [anucleate](http://purl.obolibrary.org/obo/PATO_0001405)) 
-
-- [anucleate cell](http://purl.obolibrary.org/obo/CL_0000225) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [anucleate cell](http://purl.obolibrary.org/obo/CL_0000225) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [anucleate](http://purl.obolibrary.org/obo/PATO_0001405)) 
-
-- [anucleate cell](http://purl.obolibrary.org/obo/CL_0000225) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### aorta `http://purl.obolibrary.org/obo/UBERON_0000947`
-
-#### Added
-- [aorta](http://purl.obolibrary.org/obo/UBERON_0000947) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [aorta](http://purl.obolibrary.org/obo/UBERON_0000947) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### apoptosis fated cell `http://purl.obolibrary.org/obo/CL_0000445`
-#### Removed
-- [apoptosis fated cell](http://purl.obolibrary.org/obo/CL_0000445) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [apoptosis fated cell](http://purl.obolibrary.org/obo/CL_0000445) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### arcade cell `http://purl.obolibrary.org/obo/CL_0000418`
-#### Removed
-- [arcade cell](http://purl.obolibrary.org/obo/CL_0000418) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### arch of aorta `http://purl.obolibrary.org/obo/UBERON_0001508`
-
-#### Added
-- [arch of aorta](http://purl.obolibrary.org/obo/UBERON_0001508) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [arch of aorta](http://purl.obolibrary.org/obo/UBERON_0001508) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### ascending aorta `http://purl.obolibrary.org/obo/UBERON_0001496`
-
-#### Added
-- [ascending aorta](http://purl.obolibrary.org/obo/UBERON_0001496) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [ascending aorta](http://purl.obolibrary.org/obo/UBERON_0001496) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### ascending colon `http://purl.obolibrary.org/obo/UBERON_0001156`
-
-#### Added
-- [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-- [ascending colon](http://purl.obolibrary.org/obo/UBERON_0001156) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-
-### asymmetric bistratified amacrine cell `http://purl.obolibrary.org/obo/CL_0004238`
-
-#### Added
-- [asymmetric bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004238) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
-
-
-### atrioventricular bundle cell `http://purl.obolibrary.org/obo/CL_0010005`
-#### Removed
-- [atrioventricular bundle cell](http://purl.obolibrary.org/obo/CL_0010005) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bundle of His](http://purl.obolibrary.org/obo/UBERON_0002353)) 
-
-#### Added
-- [atrioventricular bundle cell](http://purl.obolibrary.org/obo/CL_0010005) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bundle of His](http://purl.obolibrary.org/obo/UBERON_0002353)) 
-
-
-### barrier cell `http://purl.obolibrary.org/obo/CL_0000215`
-#### Removed
-- [barrier cell](http://purl.obolibrary.org/obo/CL_0000215) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [barrier cell](http://purl.obolibrary.org/obo/CL_0000215) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### barrier epithelial cell `http://purl.obolibrary.org/obo/CL_0000073`
-#### Removed
-- [barrier epithelial cell](http://purl.obolibrary.org/obo/CL_0000073) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### binucleate cell `http://purl.obolibrary.org/obo/CL_0000227`
-#### Removed
-- [binucleate cell](http://purl.obolibrary.org/obo/CL_0000227) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [binucleate](http://purl.obolibrary.org/obo/PATO_0001406)) 
-
-#### Added
-- [binucleate cell](http://purl.obolibrary.org/obo/CL_0000227) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [binucleate](http://purl.obolibrary.org/obo/PATO_0001406)) 
-
-
-### bladder cell `http://purl.obolibrary.org/obo/CL_1001319`
-#### Removed
-- [bladder cell](http://purl.obolibrary.org/obo/CL_1001319) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255)) 
-
-#### Added
-- [bladder cell](http://purl.obolibrary.org/obo/CL_1001319) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255)) 
-
-
-### blood vasculature `http://purl.obolibrary.org/obo/UBERON_0004537`
-
-#### Added
-- [blood vasculature](http://purl.obolibrary.org/obo/UBERON_0004537) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [blood vasculature](http://purl.obolibrary.org/obo/UBERON_0004537) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### blood vessel `http://purl.obolibrary.org/obo/UBERON_0001981`
-#### Removed
-- [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-
-### bone cell `http://purl.obolibrary.org/obo/CL_0001035`
-#### Removed
-- [bone cell](http://purl.obolibrary.org/obo/CL_0001035) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bone element](http://purl.obolibrary.org/obo/UBERON_0001474)) 
-
-- [bone cell](http://purl.obolibrary.org/obo/CL_0001035) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [bone cell](http://purl.obolibrary.org/obo/CL_0001035) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bone element](http://purl.obolibrary.org/obo/UBERON_0001474)) 
-
-- [bone cell](http://purl.obolibrary.org/obo/CL_0001035) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### brachiocephalic artery `http://purl.obolibrary.org/obo/UBERON_0001529`
-
-#### Added
-- [brachiocephalic artery](http://purl.obolibrary.org/obo/UBERON_0001529) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [brachiocephalic artery](http://purl.obolibrary.org/obo/UBERON_0001529) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### brain `http://purl.obolibrary.org/obo/UBERON_0000955`
-
-#### Added
-- [brain](http://purl.obolibrary.org/obo/UBERON_0000955) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-- [brain](http://purl.obolibrary.org/obo/UBERON_0000955) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-
-### brain vascular cell `http://purl.obolibrary.org/obo/CL_4023072`
-#### Removed
-- [brain vascular cell](http://purl.obolibrary.org/obo/CL_4023072) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vasculature of brain](http://purl.obolibrary.org/obo/UBERON_0008998)) 
-
-- [brain vascular cell](http://purl.obolibrary.org/obo/CL_4023072) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [brain vascular cell](http://purl.obolibrary.org/obo/CL_4023072) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [vasculature of brain](http://purl.obolibrary.org/obo/UBERON_0008998)) 
-
-- [brain vascular cell](http://purl.obolibrary.org/obo/CL_4023072) SubClassOf [neural cell](http://purl.obolibrary.org/obo/CL_0002319) 
-
-
-### broad diffuse amacrine cell `http://purl.obolibrary.org/obo/CL_0004228`
-#### Removed
-- [broad diffuse amacrine cell](http://purl.obolibrary.org/obo/CL_0004228) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
-
-#### Added
-- [broad diffuse amacrine cell](http://purl.obolibrary.org/obo/CL_0004228) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
-
-
-### bronchial submucosal gland ciliated duct `http://purl.obolibrary.org/obo/UBERON_8600010`
-
-#### Added
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [label](http://www.w3.org/2000/01/rdf-schema#label) "bronchial submucosal gland ciliated duct" 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-9185-3994](https://orcid.org/0000-0002-9185-3994) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [date](http://purl.org/dc/terms/date) "2023-05-02T08:07:56Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600010" 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated duct part of a bronchial submucosal gland." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30864819" 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- Class: [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) EquivalentTo [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bronchus submucosal gland](http://purl.obolibrary.org/obo/UBERON_8410043)) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) SubClassOf [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) 
-
-- [bronchial submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600010) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [bronchus submucosal gland](http://purl.obolibrary.org/obo/UBERON_8410043) 
-
-
-### bronchus `http://purl.obolibrary.org/obo/UBERON_0002185`
-
-#### Added
-- [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
-
-- [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-- [bronchus](http://purl.obolibrary.org/obo/UBERON_0002185) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-
-### bronchus connective tissue `http://purl.obolibrary.org/obo/UBERON_0003592`
-#### Removed
-- [bronchus connective tissue](http://purl.obolibrary.org/obo/UBERON_0003592) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [bronchus connective tissue](http://purl.obolibrary.org/obo/UBERON_0003592) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### caecum `http://purl.obolibrary.org/obo/UBERON_0001153`
-
-#### Added
-- [caecum](http://purl.obolibrary.org/obo/UBERON_0001153) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-- [caecum](http://purl.obolibrary.org/obo/UBERON_0001153) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-
-### cap cell `http://purl.obolibrary.org/obo/CL_0000676`
-#### Removed
-- [cap cell](http://purl.obolibrary.org/obo/CL_0000676) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### capsule of liver `http://purl.obolibrary.org/obo/UBERON_0016479`
-
-#### Added
-- [capsule of liver](http://purl.obolibrary.org/obo/UBERON_0016479) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Liver.glb" 
-
-- [capsule of liver](http://purl.obolibrary.org/obo/UBERON_0016479) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Liver.glb" 
-
-
-### capsule of lymph node `http://purl.obolibrary.org/obo/UBERON_0002194`
-
-#### Added
-- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
-
-- [capsule of lymph node](http://purl.obolibrary.org/obo/UBERON_0002194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
-
-
-### cardiac septum cell `http://purl.obolibrary.org/obo/CL_2000022`
-#### Removed
-- [cardiac septum cell](http://purl.obolibrary.org/obo/CL_2000022) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cardiac septum](http://purl.obolibrary.org/obo/UBERON_0002099)) 
-
-- [cardiac septum cell](http://purl.obolibrary.org/obo/CL_2000022) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [cardiac septum cell](http://purl.obolibrary.org/obo/CL_2000022) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cardiac septum](http://purl.obolibrary.org/obo/UBERON_0002099)) 
-
-- [cardiac septum cell](http://purl.obolibrary.org/obo/CL_2000022) SubClassOf [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) 
-
-
-### cardiac valve cell `http://purl.obolibrary.org/obo/CL_1000147`
-#### Removed
-- [cardiac valve cell](http://purl.obolibrary.org/obo/CL_1000147) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cardiac valve](http://purl.obolibrary.org/obo/UBERON_0000946)) 
-
-- [cardiac valve cell](http://purl.obolibrary.org/obo/CL_1000147) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [cardiac valve cell](http://purl.obolibrary.org/obo/CL_1000147) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cardiac valve](http://purl.obolibrary.org/obo/UBERON_0000946)) 
-
-- [cardiac valve cell](http://purl.obolibrary.org/obo/CL_1000147) SubClassOf [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) 
-
-
-### cardiac vein `http://purl.obolibrary.org/obo/UBERON_0004148`
-
-#### Added
-- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [cardiac vein](http://purl.obolibrary.org/obo/UBERON_0004148) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### cardioblast (sensu Arthropoda) `http://purl.obolibrary.org/obo/CL_0000465`
-
-#### Added
-- [cardioblast (sensu Arthropoda)](http://purl.obolibrary.org/obo/CL_0000465) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### cardiocyte `http://purl.obolibrary.org/obo/CL_0002494`
-#### Removed
-- [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) EquivalentTo [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [primary circulatory organ](http://purl.obolibrary.org/obo/UBERON_0007100)) 
-
-- [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [primary circulatory organ](http://purl.obolibrary.org/obo/UBERON_0007100)) 
-
-- [cardiocyte](http://purl.obolibrary.org/obo/CL_0002494) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### cell of skeletal muscle `http://purl.obolibrary.org/obo/CL_0000188`
-#### Removed
-- [cell of skeletal muscle](http://purl.obolibrary.org/obo/CL_0000188) EquivalentTo [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skeletal muscle tissue](http://purl.obolibrary.org/obo/UBERON_0001134)) 
-
-- [cell of skeletal muscle](http://purl.obolibrary.org/obo/CL_0000188) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [cell of skeletal muscle](http://purl.obolibrary.org/obo/CL_0000188) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skeletal muscle tissue](http://purl.obolibrary.org/obo/UBERON_0001134)) 
-
-- [cell of skeletal muscle](http://purl.obolibrary.org/obo/CL_0000188) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### chorionic plate `http://purl.obolibrary.org/obo/UBERON_0004027`
-
-#### Added
-- [chorionic plate](http://purl.obolibrary.org/obo/UBERON_0004027) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Placenta.glb" 
-
-
-### choroidal cell of the eye `http://purl.obolibrary.org/obo/CL_0000348`
-#### Removed
-- [choroidal cell of the eye](http://purl.obolibrary.org/obo/CL_0000348) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### ciliary processes `http://purl.obolibrary.org/obo/UBERON_0010427`
-
-#### Added
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-l.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-r.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-r.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_L.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_R.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_R.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_L.glb" 
-
-- [ciliary processes](http://purl.obolibrary.org/obo/UBERON_0010427) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-l.glb" 
-
-
-### ciliated cell `http://purl.obolibrary.org/obo/CL_0000064`
-#### Removed
-- [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [cilium](http://purl.obolibrary.org/obo/GO_0005929)) 
-
-- [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [cilium](http://purl.obolibrary.org/obo/GO_0005929)) 
-
-- [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### circulating cell `http://purl.obolibrary.org/obo/CL_0000080`
-#### Removed
-- [circulating cell](http://purl.obolibrary.org/obo/CL_0000080) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [haemolymphatic fluid](http://purl.obolibrary.org/obo/UBERON_0000179)) 
-
-- [circulating cell](http://purl.obolibrary.org/obo/CL_0000080) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [circulating cell](http://purl.obolibrary.org/obo/CL_0000080) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [haemolymphatic fluid](http://purl.obolibrary.org/obo/UBERON_0000179)) 
-
-- [circulating cell](http://purl.obolibrary.org/obo/CL_0000080) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### cnidocyte `http://purl.obolibrary.org/obo/CL_0011029`
-#### Removed
-- [cnidocyte](http://purl.obolibrary.org/obo/CL_0011029) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### colic artery `http://purl.obolibrary.org/obo/UBERON_0035548`
-
-#### Added
-- [colic artery](http://purl.obolibrary.org/obo/UBERON_0035548) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### collar cell `http://purl.obolibrary.org/obo/CL_0010016`
-#### Removed
-- [collar cell](http://purl.obolibrary.org/obo/CL_0010016) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### colon endothelial cell `http://purl.obolibrary.org/obo/CL_1001572`
-#### Removed
-- [colon endothelial cell](http://purl.obolibrary.org/obo/CL_1001572) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "colon endothelial cells" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CALOHA:TS-2397" 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PLURAL](http://purl.obolibrary.org/obo/caloha-reqs-vetted#PLURAL) 
-
-#### Added
-- [colon endothelial cell](http://purl.obolibrary.org/obo/CL_1001572) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "colon endothelial cells" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CALOHA:TS-2397" 
+- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ACs" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
-### columnar/cuboidal epithelial cell `http://purl.obolibrary.org/obo/CL_0000075`
+- [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+
+
+### anatomical boundary `http://purl.obolibrary.org/obo/CARO_0000010`
 #### Removed
-- [columnar/cuboidal epithelial cell](http://purl.obolibrary.org/obo/CL_0000075) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Except in the case of abstracted fiat boundaries such as the midline plane of an organism, all 2D anatomical entities have a 3 dimensional projection.  For example, the surface of the shell of a muscle has a distinct shape that projects into the third dimension.  Note that boundaries are 2D structures.  They have no thickness - and so can not be sites of gene expression or gene product localisation.  For this, use boundary region terms." 
+
+- [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) [label](http://www.w3.org/2000/01/rdf-schema#label) "anatomical boundary" 
+
+- [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A non-material anatomical entity of two dimensions. Anatomical boundaries are contiguous structures." 
+
+- Class: [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) 
+
+- [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) SubClassOf [BFO_0000009](http://purl.obolibrary.org/obo/BFO_0000009) 
+
+- [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) SubClassOf [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) 
 
 
 
-### common hepatic artery `http://purl.obolibrary.org/obo/UBERON_0005436`
-
-#### Added
-- [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [common hepatic artery](http://purl.obolibrary.org/obo/UBERON_0005436) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### common iliac vein `http://purl.obolibrary.org/obo/UBERON_0001139`
-
-#### Added
-- [common iliac vein](http://purl.obolibrary.org/obo/UBERON_0001139) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [common iliac vein](http://purl.obolibrary.org/obo/UBERON_0001139) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### compact bone tissue `http://purl.obolibrary.org/obo/UBERON_0001439`
-
-#### Added
-- [compact bone tissue](http://purl.obolibrary.org/obo/UBERON_0001439) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Pelvis.glb" 
-
-- [compact bone tissue](http://purl.obolibrary.org/obo/UBERON_0001439) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Pelvis.glb" 
-
-
-### conjunctival epithelial cell `http://purl.obolibrary.org/obo/CL_1000432`
+### anatomical entity `http://purl.obolibrary.org/obo/CARO_0000000`
 #### Removed
-- [conjunctival epithelial cell](http://purl.obolibrary.org/obo/CL_1000432) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) [label](http://www.w3.org/2000/01/rdf-schema#label) "anatomical entity" 
+
+- [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex.  Or, a substance produced by a cellular organism with granularity above the level of a protein complex." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CAROC:Brownsville2014" 
+
+- [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000000" 
+
+- [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Following BFO, material anatomical entities may have immaterial parts (the lumen of your stomach is part of your stomach).  The granularity limit follows the limits set by the Gene Ontology on the granularity limit for GO:cellular_component. Note that substances produced by an organism (sweat, feaces, urine) do not need to be part of an organism to qualify as an anatomical structure." 
+
+- [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) DisjointUnionOf [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006), [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) 
+
+- [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) SubClassOf [biological entity](http://purl.obolibrary.org/obo/CARO_0030000) 
+
+
+
+### angioblastic mesenchymal cell `http://purl.obolibrary.org/obo/CL_0000566`
+#### Removed
+- [angioblastic mesenchymal cell](http://purl.obolibrary.org/obo/CL_0000566) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [angioblastic mesenchymal cell](http://purl.obolibrary.org/obo/CL_0000566) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+
+### animal organ development `http://purl.obolibrary.org/obo/GO_0048513`
+#### Removed
+- [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) EquivalentTo [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) and ([results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [organ](http://purl.obolibrary.org/obo/UBERON_0000062)) 
+
+- [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) SubClassOf [results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [organ](http://purl.obolibrary.org/obo/UBERON_0000062) 
+
+#### Added
+- [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/25943"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### arachnoid barrier cell `http://purl.obolibrary.org/obo/CL_4023097`
+#### Removed
+- [arachnoid barrier cell](http://purl.obolibrary.org/obo/CL_4023097) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AB cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:23298861" 
+
+- [arachnoid barrier cell](http://purl.obolibrary.org/obo/CL_4023097) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ABC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30096314" 
+
+#### Added
+- [arachnoid barrier cell](http://purl.obolibrary.org/obo/CL_4023097) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ABC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30096314" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [arachnoid barrier cell](http://purl.obolibrary.org/obo/CL_4023097) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AB cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:23298861" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### articular chondrocyte `http://purl.obolibrary.org/obo/CL_1001607`
+
+#### Added
+- [articular chondrocyte](http://purl.obolibrary.org/obo/CL_1001607) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [articular chondrocyte](http://purl.obolibrary.org/obo/CL_1001607) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### baculum development `http://purl.obolibrary.org/obo/GO_1990375`
+#### Removed
+- [baculum development](http://purl.obolibrary.org/obo/GO_1990375) SubClassOf [bone development](http://purl.obolibrary.org/obo/GO_0060348) 
+
+
+
+### basal cell of urothelium `http://purl.obolibrary.org/obo/CL_1000486`
+
+#### Added
+- [basal cell of urothelium](http://purl.obolibrary.org/obo/CL_1000486) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [basal cell of urothelium](http://purl.obolibrary.org/obo/CL_1000486) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### basophil activation involved in immune response `http://purl.obolibrary.org/obo/GO_0002276`
+#### Removed
+- [basophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002276) SubClassOf [myeloid cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002275) 
+
+#### Added
+- [basophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002276) SubClassOf [leukocyte activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002366) 
+
+- [basophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002276) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [myeloid cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002275) 
+
+
+### basophil degranulation `http://purl.obolibrary.org/obo/GO_0002561`
+#### Removed
+- [basophil degranulation](http://purl.obolibrary.org/obo/GO_0002561) SubClassOf [basophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002276) 
+
+#### Added
+- [basophil degranulation](http://purl.obolibrary.org/obo/GO_0002561) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [basophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002276) 
+
+
+### bile acid catabolic process `http://purl.obolibrary.org/obo/GO_0030573`
+#### Removed
+- [bile acid catabolic process](http://purl.obolibrary.org/obo/GO_0030573) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MetaCyc:7ALPHADEHYDROX-PWY" 
+
+
+
+### biological entity `http://purl.obolibrary.org/obo/CARO_0030000`
+#### Removed
+- [biological entity](http://purl.obolibrary.org/obo/CARO_0030000) [label](http://www.w3.org/2000/01/rdf-schema#label) "biological entity" 
+
+- [biological entity](http://purl.obolibrary.org/obo/CARO_0030000) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Important for alignment with Darwin Core class &quot;Organism&quot;." 
+
+- [biological entity](http://purl.obolibrary.org/obo/CARO_0030000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Entity that is, is part of, or derived from an organism, virus, or viroid or a collection of them." 
+
+- Class: [biological entity](http://purl.obolibrary.org/obo/CARO_0030000) 
+
+- [biological entity](http://purl.obolibrary.org/obo/CARO_0030000) SubClassOf [independent continuant](http://purl.obolibrary.org/obo/BFO_0000004) 
+
+
+
+### blood vessel remodeling `http://purl.obolibrary.org/obo/GO_0001974`
+
+#### Added
+- [blood vessel remodeling](http://purl.obolibrary.org/obo/GO_0001974) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "blood vessel remodelling" 
+
+
+### bone marrow macrophage `http://purl.obolibrary.org/obo/CL_0002476`
+#### Removed
+- [bone marrow macrophage](http://purl.obolibrary.org/obo/CL_0002476) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MF.BM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [bone marrow macrophage](http://purl.obolibrary.org/obo/CL_0002476) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MF.BM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### boundary_of `http://purl.obolibrary.org/obo/RO_0002000`
+#### Removed
+- [boundary_of](http://purl.obolibrary.org/obo/RO_0002000) [label](http://www.w3.org/2000/01/rdf-schema#label) "boundary_of" 
+
+
+
+### calcium activated cation channel activity `http://purl.obolibrary.org/obo/GO_0005227`
+#### Removed
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) [label](http://www.w3.org/2000/01/rdf-schema#label) "calcium activated cation channel activity" 
+
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([positively regulated by](http://purl.obolibrary.org/obo/RO_0002336) some [calcium ion binding](http://purl.obolibrary.org/obo/GO_0005509)) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) 
+
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) SubClassOf [positively regulated by](http://purl.obolibrary.org/obo/RO_0002336) some [calcium ion binding](http://purl.obolibrary.org/obo/GO_0005509) 
+
+#### Added
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "calcium activated cation channel activity" 
+
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) [label](http://www.w3.org/2000/01/rdf-schema#label) "calcium-activated cation channel activity" 
+
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_39124](http://purl.obolibrary.org/obo/CHEBI_39124)) 
+
+- [calcium activated cation channel activity](http://purl.obolibrary.org/obo/GO_0005227) SubClassOf [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_39124](http://purl.obolibrary.org/obo/CHEBI_39124) 
+
+
+### calcium-release channel activity `http://purl.obolibrary.org/obo/GO_0015278`
+#### Removed
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "GO:0005218" 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Enables the transmembrane transfer of a calcium ion from intracellular stores by a channel that opens when a specific intracellular ligand has been bound by the channel complex or one of its constituent parts." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mah" 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9717215" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "ITPR3 transports Ca2+ from the endoplasmic reticulum to the cytosol" 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "intracellular ligand-gated calcium channel activity" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0015278" 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0015278" 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) [label](http://www.w3.org/2000/01/rdf-schema#label) "calcium-release channel activity" 
+
+- Class: [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [release of sequestered calcium ion into cytosol](http://purl.obolibrary.org/obo/GO_0051209)) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_29108](http://purl.obolibrary.org/obo/CHEBI_29108)) 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) SubClassOf [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [release of sequestered calcium ion into cytosol](http://purl.obolibrary.org/obo/GO_0051209) 
+
+- [calcium-release channel activity](http://purl.obolibrary.org/obo/GO_0015278) SubClassOf [ligand-gated calcium channel activity](http://purl.obolibrary.org/obo/GO_0099604) 
+
+
+
+### cardioblast `http://purl.obolibrary.org/obo/CL_0002664`
+#### Removed
+- [cardioblast](http://purl.obolibrary.org/obo/CL_0002664) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CPC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19745164" 
+
+#### Added
+- [cardioblast](http://purl.obolibrary.org/obo/CL_0002664) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CPC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19745164" 
+
+
+### cell `http://purl.obolibrary.org/obo/CARO_0000013`
+#### Removed
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000013" 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) [label](http://www.w3.org/2000/01/rdf-schema#label) "cell" 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "deprecate and replace with CL or GO term?" 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical structure that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO:0005623" 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CL:0000000" 
+
+- Class: [cell](http://purl.obolibrary.org/obo/CARO_0000013) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) DisjointWith [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) DisjointWith [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) DisjointWith [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) DisjointWith [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) DisjointWith [cell part](http://purl.obolibrary.org/obo/CARO_0000014) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+- [cell](http://purl.obolibrary.org/obo/CARO_0000013) SubClassOf [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) 
+
+
+
+### cell part `http://purl.obolibrary.org/obo/CARO_0000014`
+#### Removed
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) [label](http://www.w3.org/2000/01/rdf-schema#label) "cell part"@en 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000014" 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical structure that is part of a cell and that has a granularity level equal to that of a protein complex or higher." 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) [IAO_0000118](http://purl.obolibrary.org/obo/IAO_0000118) "cell component" 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "This is declared equivalent with GO:0044464. The definition should be co-ordinated with GO. We could obsolete the CARO class and just use the GO class." 
+
+- Class: [cell part](http://purl.obolibrary.org/obo/CARO_0000014) 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) DisjointWith [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) DisjointWith [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) DisjointWith [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) DisjointWith [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cell](http://purl.obolibrary.org/obo/CARO_0000013) 
+
+- [cell part](http://purl.obolibrary.org/obo/CARO_0000014) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+
+
+### cellular anatomical entity `http://purl.obolibrary.org/obo/GO_0110165`
+
+#### Added
+- [cellular anatomical entity](http://purl.obolibrary.org/obo/GO_0110165) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+- [cellular anatomical entity](http://purl.obolibrary.org/obo/GO_0110165) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/24200"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### cellular anatomical structure `http://purl.obolibrary.org/obo/CARO_0020003`
+#### Removed
+- [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
+
+- [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2018-09-28T14:20:19Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical structure consisting of one or more cells." 
+
+- [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) [label](http://www.w3.org/2000/01/rdf-schema#label) "cellular anatomical structure"@en 
+
+- Class: [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) 
+
+- [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) EquivalentTo [cell](http://purl.obolibrary.org/obo/CARO_0000013) or ([has part](http://purl.obolibrary.org/obo/BFO_0000051) some [cell](http://purl.obolibrary.org/obo/CARO_0000013)) 
+  - [definition](http://purl.obolibrary.org/obo/IAO_0000115) "With a reflexive part_of relation this might safely be defined as 'anatomical structure' that has_part some cell" 
+
+- [cellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0020003) SubClassOf [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) 
+
+
+
+### cellular organism `http://purl.obolibrary.org/obo/CARO_0010004`
+#### Removed
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) [IAO_creation_date](http://purl.obolibrary.org/obo/IAO_creation_date) "7.16.2011" 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0010004" 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) [label](http://www.w3.org/2000/01/rdf-schema#label) "cellular organism" 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "A general term for organism that is agnostic about single cell vs multi-cellular.  Note that this is a subclass of 'anatomical structure', meaning that an organism must be a connected structure. For example, if I take one plant and make a rooted cutting from a it, I now have two (clonally related) organisms. " 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An individual member of a clade of cellular organisms." 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-9114-8737](https://orcid.org/0000-0001-9114-8737) 
+
+- Class: [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+- [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) SubClassOf [organism](http://purl.obolibrary.org/obo/CARO_0001010) 
+
+
+
+### cerebellar granule cell precursor `http://purl.obolibrary.org/obo/CL_0002362`
+#### Removed
+- [cerebellar granule cell precursor](http://purl.obolibrary.org/obo/CL_0002362) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GCP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.3389/fncir.2020.611841" 
+
+#### Added
+- [cerebellar granule cell precursor](http://purl.obolibrary.org/obo/CL_0002362) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GCP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.3389/fncir.2020.611841" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### chandelier cell `http://purl.obolibrary.org/obo/CL_4023083`
+#### Removed
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling a chandelier. Chandelier cells can be multipolar or bitufted." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15378039" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:27199673" 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ChC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15378039" 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) EquivalentTo [interneuron](http://purl.obolibrary.org/obo/CL_0000099) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [chandelier cell morphology](http://purl.obolibrary.org/obo/PATO_0070011)) 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) SubClassOf [interneuron](http://purl.obolibrary.org/obo/CL_0000099) 
+
+#### Added
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "axo-axonic cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33862423" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:27199673" 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ChC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15378039" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A GABAergic interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling the candlesticks and candles of a chandelier. Chandelier cells can be multipolar or bitufted." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15378039" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:27199673" 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) EquivalentTo [GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0011005) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [chandelier cell morphology](http://purl.obolibrary.org/obo/PATO_0070011)) 
+
+- [chandelier cell](http://purl.obolibrary.org/obo/CL_4023083) SubClassOf [GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0011005) 
+
+
+### chordate pharynx development `http://purl.obolibrary.org/obo/GO_0160093`
+
+#### Added
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-08-29T21:05:28Z" 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0160093" 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/18285"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [label](http://www.w3.org/2000/01/rdf-schema#label) "chordate pharynx development" 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process whose specific outcome is the progression of cordate pharynx over time, from its formation to the mature structure." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:23020903" 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "rynl" 
+
+- Class: [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) EquivalentTo [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) and ([results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [chordate pharynx](http://purl.obolibrary.org/obo/UBERON_0001042)) 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) SubClassOf [results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [chordate pharynx](http://purl.obolibrary.org/obo/UBERON_0001042) 
+
+- [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) SubClassOf [pharynx development](http://purl.obolibrary.org/obo/GO_0060465) 
+
+
+### chorion syncytiotrophoblast `http://purl.obolibrary.org/obo/UBERON_0003224`
+
+#### Added
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "TODO - check" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An extraembryonic structure that develops_from a syncytiotrophoblast and is part of a chorion." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EHDAA2:0001973" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EHDAA:156" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0003224" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) [label](http://www.w3.org/2000/01/rdf-schema#label) "chorion syncytiotrophoblast" 
+
+- Class: [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) EquivalentTo [extraembryonic structure](http://purl.obolibrary.org/obo/UBERON_0000478) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chorion membrane](http://purl.obolibrary.org/obo/UBERON_0003124)) and ([develops from](http://purl.obolibrary.org/obo/RO_0002202) some [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371)) 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) SubClassOf [extraembryonic structure](http://purl.obolibrary.org/obo/UBERON_0000478) 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) 
+  - [notes](http://www.geneontology.org/formats/oboInOwl#notes) "polar trophectoderm syncytiotrophoblast" 
+
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "EHDAA2" 
+
+- [chorion syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0003224) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chorion membrane](http://purl.obolibrary.org/obo/UBERON_0003124) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "EHDAA2" 
+
+
+### chorionic membrane mesenchymal stem cell `http://purl.obolibrary.org/obo/CL_0002541`
+
+#### Added
+- [chorionic membrane mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0002541) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [chorionic membrane mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0002541) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### choroid plexus epithelial cell `http://purl.obolibrary.org/obo/CL_0000706`
+
+#### Added
+- [choroid plexus epithelial cell](http://purl.obolibrary.org/obo/CL_0000706) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [choroid plexus epithelial cell](http://purl.obolibrary.org/obo/CL_0000706) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### collagen fibril binding `http://purl.obolibrary.org/obo/GO_0098633`
+#### Removed
+- [collagen fibril binding](http://purl.obolibrary.org/obo/GO_0098633) SubClassOf [protein-containing complex binding](http://purl.obolibrary.org/obo/GO_0044877) 
+
+#### Added
+- [collagen fibril binding](http://purl.obolibrary.org/obo/GO_0098633) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+
+### common lymphoid progenitor `http://purl.obolibrary.org/obo/CL_0000051`
+#### Removed
+- [common lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CLP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+- [common lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ELP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [common lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ELP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [common lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CLP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### common myeloid progenitor `http://purl.obolibrary.org/obo/CL_0000049`
+#### Removed
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-S" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CMP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-GEMM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+#### Added
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-GEMM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-S" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor](http://purl.obolibrary.org/obo/CL_0000049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CMP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+
+### common myeloid progenitor, CD34-positive `http://purl.obolibrary.org/obo/CL_0001059`
+#### Removed
+- [common myeloid progenitor, CD34-positive](http://purl.obolibrary.org/obo/CL_0001059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CMP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor, CD34-positive](http://purl.obolibrary.org/obo/CL_0001059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-GEMM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor, CD34-positive](http://purl.obolibrary.org/obo/CL_0001059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-S" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+#### Added
+- [common myeloid progenitor, CD34-positive](http://purl.obolibrary.org/obo/CL_0001059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-S" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor, CD34-positive](http://purl.obolibrary.org/obo/CL_0001059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-GEMM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+- [common myeloid progenitor, CD34-positive](http://purl.obolibrary.org/obo/CL_0001059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CMP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0878932437" 
+
+
+### connected anatomical structure `http://purl.obolibrary.org/obo/CARO_0000003`
+#### Removed
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Material anatomical entity that is a single connected structure with inherent 3D shape generated by coordinated expression of the organism's own genome." 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000003" 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Note that the definition does not say 'generated exclusively by the co-ordinated expression of the organism's own genome', so this is still valid for cases where normal morphogenesis requires the actions of a facultative symbiont, or some looser dependency such as the a requirement for the presence of gut flora for normal gut development." 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) [label](http://www.w3.org/2000/01/rdf-schema#label) "connected anatomical structure" 
+
+- Class: [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+-  DisjointClasses: [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003), [organism substance](http://purl.obolibrary.org/obo/CARO_0000004), [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) EquivalentTo [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [3-D shape](http://purl.obolibrary.org/obo/PATO_0002266)) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000)) 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) SubClassOf [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) SubClassOf [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) 
+
+- [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) SubClassOf [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [3-D shape](http://purl.obolibrary.org/obo/PATO_0002266) 
 
 
 
 ### connective tissue cell `http://purl.obolibrary.org/obo/CL_0002320`
 #### Removed
-- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) EquivalentTo [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [connective tissue](http://purl.obolibrary.org/obo/UBERON_0002384)) 
+- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [connective tissue](http://purl.obolibrary.org/obo/UBERON_0002384)) 
-
-- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### contains `http://purl.obolibrary.org/obo/RO_0001019`
+
+### core `http://purl.obolibrary.org/obo/caro#core`
 #### Removed
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+- AnnotationProperty: [core](http://purl.obolibrary.org/obo/caro#core) 
 
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [label](http://www.w3.org/2000/01/rdf-schema#label) "contains" 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "contains"@en 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [id](http://www.geneontology.org/formats/oboInOwl#id) "contains" 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0001019" 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete contains" 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "contains" 
-
-- [contains](http://purl.obolibrary.org/obo/RO_0001019) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) [693](https://github.com/oborel/obo-relations/issues/693) 
-
-- ObjectProperty: [contains](http://purl.obolibrary.org/obo/RO_0001019) 
+- [core](http://purl.obolibrary.org/obo/caro#core) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
 
 
 
-### contractile cell `http://purl.obolibrary.org/obo/CL_0000183`
+### corticothalamic-projecting glutamatergic cortical neuron `http://purl.obolibrary.org/obo/CL_4023013`
+
+#### Added
+- [corticothalamic-projecting glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023013) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [corticothalamic-projecting glutamatergic cortical neuron](http://purl.obolibrary.org/obo/CL_4023013) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### cytotoxic T cell degranulation `http://purl.obolibrary.org/obo/GO_0043316`
 #### Removed
-- [contractile cell](http://purl.obolibrary.org/obo/CL_0000183) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [cytotoxic T cell degranulation](http://purl.obolibrary.org/obo/GO_0043316) SubClassOf [T cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002286) 
 
 #### Added
-- [contractile cell](http://purl.obolibrary.org/obo/CL_0000183) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [cytotoxic T cell degranulation](http://purl.obolibrary.org/obo/GO_0043316) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [T cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002286) 
 
 
-### corneocyte `http://purl.obolibrary.org/obo/CL_0002153`
+### decidual natural killer cell, human `http://purl.obolibrary.org/obo/CL_0002343`
+
+#### Added
+- [decidual natural killer cell, human](http://purl.obolibrary.org/obo/CL_0002343) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [decidual natural killer cell, human](http://purl.obolibrary.org/obo/CL_0002343) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### decreased mass `http://purl.obolibrary.org/obo/PATO_0001562`
 #### Removed
-- [corneocyte](http://purl.obolibrary.org/obo/CL_0002153) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001562" 
 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) 
 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "low mass" 
 
-### cortex of kidney `http://purl.obolibrary.org/obo/UBERON_0001225`
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "PATO:0000579" 
 
-#### Added
-- [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_R.glb" 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mass which is lower than normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATO:GVG" 
 
-- [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_L.glb" 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
 
-- [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_R.glb" 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "small mass" 
 
-- [cortex of kidney](http://purl.obolibrary.org/obo/UBERON_0001225) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_L.glb" 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [label](http://www.w3.org/2000/01/rdf-schema#label) "decreased mass" 
 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
 
-### corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex `http://purl.obolibrary.org/obo/CL_4023055`
+- Class: [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) 
 
-#### Added
-- [corticothalamic VAL/VM projecting glutamatergic neuron of the primary motor cortex](http://purl.obolibrary.org/obo/CL_4023055) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "The assertion of this cell type under L6 CT is due to the ambiguity of lower L5 and L6." 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) EquivalentTo [mass](http://purl.obolibrary.org/obo/PATO_0000125) and ([decreased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015008) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
 
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) SubClassOf [mass](http://purl.obolibrary.org/obo/PATO_0000125) 
 
-### created `http://purl.org/dc/terms/created`
+- [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) SubClassOf [decreased object quality](http://purl.obolibrary.org/obo/PATO_0002303) 
 
-#### Added
-- AnnotationProperty: [created](http://purl.org/dc/terms/created) 
-
-
-### curation status specification `http://purl.obolibrary.org/obo/IAO_0000078`
-
-#### Added
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON:Bill Bug"@en 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [IAO_0000114](http://purl.obolibrary.org/obo/IAO_0000114) [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [label](http://www.w3.org/2000/01/rdf-schema#label) "curation status specification"@en 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "OBI_0000266"@en 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The curation status of the term. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value."@en 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;"@en 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "Better to represent curation as a process with parts and then relate labels to that process (in IAO meeting)"@en 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "curation status specification"@en 
-
-- Class: [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) EquivalentTo {[example to be eventually removed](http://purl.obolibrary.org/obo/IAO_0000002) , [metadata complete](http://purl.obolibrary.org/obo/IAO_0000120) , [organizational term](http://purl.obolibrary.org/obo/IAO_0000121) , [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) , [metadata incomplete](http://purl.obolibrary.org/obo/IAO_0000123) , [uncurated](http://purl.obolibrary.org/obo/IAO_0000124) , [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) , [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) , [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428)} 
-
-- [curation status specification](http://purl.obolibrary.org/obo/IAO_0000078) SubClassOf [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) 
-
-
-### cyanoblast `http://purl.obolibrary.org/obo/CL_0005005`
-#### Removed
-- [cyanoblast](http://purl.obolibrary.org/obo/CL_0005005) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### cyanophore `http://purl.obolibrary.org/obo/CL_0000747`
-#### Removed
-- [cyanophore](http://purl.obolibrary.org/obo/CL_0000747) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### cystic artery `http://purl.obolibrary.org/obo/UBERON_0039222`
-
-#### Added
-- [cystic artery](http://purl.obolibrary.org/obo/UBERON_0039222) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [cystic artery](http://purl.obolibrary.org/obo/UBERON_0039222) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### cystoblast `http://purl.obolibrary.org/obo/CL_0000722`
-#### Removed
-- [cystoblast](http://purl.obolibrary.org/obo/CL_0000722) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [cystoblast](http://purl.obolibrary.org/obo/CL_0000722) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### data about an ontology part `http://purl.obolibrary.org/obo/IAO_0000102`
-
-#### Added
-- [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Person:Alan Ruttenberg"@en 
-
-- [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Data about an ontology part is a data item about a part of an ontology, for example a term"@en 
-
-- [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) [label](http://www.w3.org/2000/01/rdf-schema#label) "data about an ontology part"@en 
-
-- [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "data about an ontology part"@en 
-
-- Class: [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) 
-
-- [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) SubClassOf [data item](http://purl.obolibrary.org/obo/IAO_0000027) 
-
-
-### data item `http://purl.obolibrary.org/obo/IAO_0000027`
-
-#### Added
-- [data item](http://purl.obolibrary.org/obo/IAO_0000027) [label](http://www.w3.org/2000/01/rdf-schema#label) "data item"@en 
-
-- [data item](http://purl.obolibrary.org/obo/IAO_0000027) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "data item"@en 
-
-- Class: [data item](http://purl.obolibrary.org/obo/IAO_0000027) 
-
-- [data item](http://purl.obolibrary.org/obo/IAO_0000027) SubClassOf [information content entity](http://purl.obolibrary.org/obo/IAO_0000030) 
-
-
-### date `http://www.w3.org/2001/XMLSchema#date`
-
-#### Added
-- [date](http://www.w3.org/2001/XMLSchema#date) 
-
-
-### defensive cell `http://purl.obolibrary.org/obo/CL_0000473`
-#### Removed
-- [defensive cell](http://purl.obolibrary.org/obo/CL_0000473) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [defensive cell](http://purl.obolibrary.org/obo/CL_0000473) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### defined by construct `http://purl.obolibrary.org/obo/OMO_0002000`
-
-#### Added
-- [defined by construct](http://purl.obolibrary.org/obo/OMO_0002000) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "'part disjoint with' 'defined by construct' &quot;&quot;&quot;
-    PREFIX owl: &lt;http://www.w3.org/2002/07/owl#&gt;
-    PREFIX : &lt;http://example.org/
-    CONSTRUCT {
-      [
-        a owl:Restriction ;
-        owl:onProperty :part_of ;
-        owl:someValuesFrom ?a ;
-        owl:disjointWith [
-          a owl:Restriction ;
-          owl:onProperty :part_of ;
-          owl:someValuesFrom ?b
-        ]
-      ]
-    }
-    WHERE {
-      ?a :part_disjoint_with ?b .
-    }" 
-
-- [defined by construct](http://purl.obolibrary.org/obo/OMO_0002000) [contributor](http://purl.org/dc/elements/1.1/contributor) [0000-0002-8688-6599](https://orcid.org/0000-0002-8688-6599) 
-
-- [defined by construct](http://purl.obolibrary.org/obo/OMO_0002000) [label](http://www.w3.org/2000/01/rdf-schema#label) "defined by construct" 
-
-- [defined by construct](http://purl.obolibrary.org/obo/OMO_0002000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Links an annotation property to a SPARQL CONSTRUCT query which is meant to provide semantics for a shortcut relation." 
-
-- [defined by construct](http://purl.obolibrary.org/obo/OMO_0002000) [contributor](http://purl.org/dc/elements/1.1/contributor) [0000-0002-7356-1779](https://orcid.org/0000-0002-7356-1779) 
-
-- [defined by construct](http://purl.obolibrary.org/obo/OMO_0002000) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [963](https://github.com/ontodev/robot/issues/963) 
-
-
-### defined class `http://purl.obolibrary.org/obo/IAO_0000420`
-
-#### Added
-- [defined class](http://purl.obolibrary.org/obo/IAO_0000420) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Alan Ruttenberg"@en 
-
-- [defined class](http://purl.obolibrary.org/obo/IAO_0000420) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "&quot;definitions&quot;, in some readings, always are given by necessary and sufficient conditions. So one must be careful (and this is difficult sometimes) to distinguish between defined classes and universal."@en 
-
-- [defined class](http://purl.obolibrary.org/obo/IAO_0000420) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "defined class"@en 
-
-- [defined class](http://purl.obolibrary.org/obo/IAO_0000420) [label](http://www.w3.org/2000/01/rdf-schema#label) "defined class"@en 
-
-- [defined class](http://purl.obolibrary.org/obo/IAO_0000420) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A defined class is a class that is defined by a set of logically necessary and sufficient conditions but is not a universal"@en 
-
-- Individual: [defined class](http://purl.obolibrary.org/obo/IAO_0000420) 
 
 
 ### definition `http://purl.obolibrary.org/obo/IAO_0000115`
-
-#### Added
-- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [IAO_0000114](http://purl.obolibrary.org/obo/IAO_0000114) [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) 
-
-- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "definition"@en 
-
+#### Removed
 - [definition](http://purl.obolibrary.org/obo/IAO_0000115) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "2012-04-05: 
 Barry Smith
 
@@ -1125,1367 +1887,2065 @@ Personally, I am more comfortable weakening definition to documentation, with in
 
 We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with.  "@en 
 
-- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The official definition, explaining the meaning of a class or property. Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions."@en 
-
-- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [label](http://www.w3.org/2000/01/rdf-schema#label) "definition"@en 
-
-- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "GROUP:OBI:&lt;http://purl.obolibrary.org/obo/obi&gt;"@en 
-
-- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON:Daniel Schober"@en 
-
-
-### denotator type `http://purl.obolibrary.org/obo/IAO_0000409`
-
 #### Added
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "The Basic Formal Ontology ontology makes a distinction between Universals and defined classes, where the formal are &quot;natural kinds&quot; and the latter arbitrary collections of entities."@en 
+- [definition](http://purl.obolibrary.org/obo/IAO_0000115) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "2012-04-05: 
+Barry Smith
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "Barry Smith, Werner Ceusters"@en 
+The official OBI definition, explaining the meaning of a class or property: 'Shall be Aristotelian, formalized and normalized. Can be augmented with colloquial definitions'  is terrible.
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "denotator type"@en 
+Can you fix to something like:
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) [label](http://www.w3.org/2000/01/rdf-schema#label) "denotator type"@en 
+A statement of necessary and sufficient conditions explaining the meaning of an expression referring to a class or property.
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Alan Ruttenberg"@en 
+Alan Ruttenberg
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A denotator type indicates how a term should be interpreted from an ontological perspective."@en 
+Your proposed definition is a reasonable candidate, except that it is very common that necessary and sufficient conditions are not given. Mostly they are necessary, occasionally they are necessary and sufficient or just sufficient. Often they use terms that are not themselves defined and so they effectively can't be evaluated by those criteria. 
 
-- Class: [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) 
+On the specifics of the proposed definition:
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) EquivalentTo {[universal](http://purl.obolibrary.org/obo/IAO_0000410) , [defined class](http://purl.obolibrary.org/obo/IAO_0000420) , [named class expression](http://purl.obolibrary.org/obo/IAO_0000421)} 
+We don't have definitions of 'meaning' or 'expression' or 'property'. For 'reference' in the intended sense I think we use the term 'denotation'. For 'expression', I think we you mean symbol, or identifier. For 'meaning' it differs for class and property. For class we want documentation that let's the intended reader determine whether an entity is instance of the class, or not. For property we want documentation that let's the intended reader determine, given a pair of potential relata, whether the assertion that the relation holds is true. The 'intended reader' part suggests that we also specify who, we expect, would be able to understand the definition, and also generalizes over human and computer reader to include textual and logical definition. 
 
-- [denotator type](http://purl.obolibrary.org/obo/IAO_0000409) SubClassOf [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) 
+Personally, I am more comfortable weakening definition to documentation, with instructions as to what is desirable. 
 
-
-### depiction `http://xmlns.com/foaf/0.1/depiction`
-
-#### Added
-- AnnotationProperty: [depiction](http://xmlns.com/foaf/0.1/depiction) 
+We also have the outstanding issue of how to aim different definitions to different audiences. A clinical audience reading chebi wants a different sort of definition documentation/definition from a chemistry trained audience, and similarly there is a need for a definition that is adequate for an ontologist to work with."@en 
 
 
-### descending aorta `http://purl.obolibrary.org/obo/UBERON_0001514`
-
-#### Added
-- [descending aorta](http://purl.obolibrary.org/obo/UBERON_0001514) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [descending aorta](http://purl.obolibrary.org/obo/UBERON_0001514) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### descending colon `http://purl.obolibrary.org/obo/UBERON_0001158`
-
-#### Added
-- [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-- [descending colon](http://purl.obolibrary.org/obo/UBERON_0001158) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-
-### diffuse bistratified amacrine cell `http://purl.obolibrary.org/obo/CL_0004230`
-
-#### Added
-- [diffuse bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004230) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
-
-
-### diffuse multistratified amacrine cell `http://purl.obolibrary.org/obo/CL_0004234`
+### dental pulp stem cell `http://purl.obolibrary.org/obo/CL_4030035`
 #### Removed
-- [diffuse multistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004234) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [dental pulp stem cell](http://purl.obolibrary.org/obo/CL_4030035) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "DPSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [diffuse multistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004234) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
+- [dental pulp stem cell](http://purl.obolibrary.org/obo/CL_4030035) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "DPSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### diploid cell `http://purl.obolibrary.org/obo/CL_0000415`
+### dentate gyrus mossy fiber `http://purl.obolibrary.org/obo/GO_0044302`
 #### Removed
-- [diploid cell](http://purl.obolibrary.org/obo/CL_0000415) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [label](http://www.w3.org/2000/01/rdf-schema#label) "dentate gyrus mossy fiber" 
 
-#### Added
-- [diploid cell](http://purl.obolibrary.org/obo/CL_0000415) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0044302" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "jl" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Distinctive, unmyelinated axons produced by dentate gyrus granule cells." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17765709" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NIF_Subcellular:nlx_subcell_20090601" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2010-02-05T11:23:55Z" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NIF_Subcellular:nlx_subcell_20090601" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dentate gyrus mossy fibre" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "granule cell axon" 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "cellular_component" 
+
+- Class: [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) SubClassOf [axon](http://purl.obolibrary.org/obo/GO_0030424) 
+
+- [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dentate gyrus granule cell](http://purl.obolibrary.org/obo/CL_2000089) 
 
 
-### distal tip cell (sensu Nematoda) `http://purl.obolibrary.org/obo/CL_0000661`
+
+### depicted by `http://xmlns.com/foaf/0.1/depicted_by`
 #### Removed
-- [distal tip cell (sensu Nematoda)](http://purl.obolibrary.org/obo/CL_0000661) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [depicted by](http://xmlns.com/foaf/0.1/depicted_by) [is_metadata_tag](http://www.geneontology.org/formats/oboInOwl#is_metadata_tag) true 
+
+- [depicted by](http://xmlns.com/foaf/0.1/depicted_by) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [depicted by](http://xmlns.com/foaf/0.1/depicted_by) [id](http://www.geneontology.org/formats/oboInOwl#id) "depicted_by" 
+
+- [depicted by](http://xmlns.com/foaf/0.1/depicted_by) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://xmlns.com/foaf/0.1/depicted_by" 
+
+- [depicted by](http://xmlns.com/foaf/0.1/depicted_by) [label](http://www.w3.org/2000/01/rdf-schema#label) "depicted by" 
+
+- [depicted by](http://xmlns.com/foaf/0.1/depicted_by) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "depicted_by" 
 
 
 
-### duct epithelial cell `http://purl.obolibrary.org/obo/CL_0000068`
+### deuterosomal cell `http://purl.obolibrary.org/obo/CL_4033044`
+
+#### Added
+- [deuterosomal cell](http://purl.obolibrary.org/obo/CL_4033044) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [deuterosomal cell](http://purl.obolibrary.org/obo/CL_4033044) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### differentiation-committed oligodendrocyte precursor `http://purl.obolibrary.org/obo/CL_4023059`
 #### Removed
-- [duct epithelial cell](http://purl.obolibrary.org/obo/CL_0000068) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### duct of eccrine sweat gland `http://purl.obolibrary.org/obo/UBERON_0035073`
+- [differentiation-committed oligodendrocyte precursor](http://purl.obolibrary.org/obo/CL_4023059) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "COP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [duct of eccrine sweat gland](http://purl.obolibrary.org/obo/UBERON_0035073) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A duct made up of simple tubular epithelium that is part of an eccrine sweat gland. The main function of the duct of the eccrine sweat gland is the reabsorption of Na and Cl ions as sweat flows through the duct. It has two cell layers: basal and luminal. It is continuous with the secretory coil and goes towards the skin surface. The distal segment of the duct is relatively straight and connects with the acrosyringium in the epidermis. Most of the ion reabsorption occurs in the proximal part of the duct." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31608304" 
+- [differentiation-committed oligodendrocyte precursor](http://purl.obolibrary.org/obo/CL_4023059) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "COP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### duodenal papilla `http://purl.obolibrary.org/obo/UBERON_0004914`
-
-#### Added
-- [duodenal papilla](http://purl.obolibrary.org/obo/UBERON_0004914) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Small_Intestine.glb" 
-
-
-### duodenum `http://purl.obolibrary.org/obo/UBERON_0002114`
-
-#### Added
-- [duodenum](http://purl.obolibrary.org/obo/UBERON_0002114) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Small_Intestine.glb" 
-
-- [duodenum](http://purl.obolibrary.org/obo/UBERON_0002114) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Small_Intestine.glb" 
-
-
-### ecto-epithelial cell `http://purl.obolibrary.org/obo/CL_0002077`
+### diffuse bipolar 1 cell `http://purl.obolibrary.org/obo/CL_4033027`
 #### Removed
-- [ecto-epithelial cell](http://purl.obolibrary.org/obo/CL_0002077) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [diffuse bipolar 1 cell](http://purl.obolibrary.org/obo/CL_4033027) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB1 bipolar cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22006647" 
 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
+- [diffuse bipolar 1 cell](http://purl.obolibrary.org/obo/CL_4033027) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB1 cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-### editor note `http://purl.obolibrary.org/obo/IAO_0000116`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
 
-#### Added
-- [editor note](http://purl.obolibrary.org/obo/IAO_0000116) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "editor note"@en 
+- [diffuse bipolar 1 cell](http://purl.obolibrary.org/obo/CL_4033027) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB1 bipolar" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22006647" 
 
-- [editor note](http://purl.obolibrary.org/obo/IAO_0000116) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON:Daniel Schober"@en 
-
-- [editor note](http://purl.obolibrary.org/obo/IAO_0000116) [IAO_0000114](http://purl.obolibrary.org/obo/IAO_0000114) [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) 
-
-- [editor note](http://purl.obolibrary.org/obo/IAO_0000116) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "GROUP:OBI:&lt;http://purl.obofoundry.org/obo/obi&gt;"@en 
-
-- [editor note](http://purl.obolibrary.org/obo/IAO_0000116) [label](http://www.w3.org/2000/01/rdf-schema#label) "editor note"@en 
-
-- [editor note](http://purl.obolibrary.org/obo/IAO_0000116) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An administrative note intended for its editor. It may not be included in the publication version of the ontology, so it should contain nothing necessary for end users to understand the ontology."@en 
-
-
-### efferent lymphatic vessel `http://purl.obolibrary.org/obo/UBERON_0010397`
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [efferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010397) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
+- [diffuse bipolar 1 cell](http://purl.obolibrary.org/obo/CL_4033027) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB1 bipolar cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22006647" 
 
-- [efferent lymphatic vessel](http://purl.obolibrary.org/obo/UBERON_0010397) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [diffuse bipolar 1 cell](http://purl.obolibrary.org/obo/CL_4033027) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB1 cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [diffuse bipolar 1 cell](http://purl.obolibrary.org/obo/CL_4033027) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB1 bipolar" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22006647" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### diffuse bipolar 2 cell `http://purl.obolibrary.org/obo/CL_4033028`
+#### Removed
+- [diffuse bipolar 2 cell](http://purl.obolibrary.org/obo/CL_4033028) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB2 cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [diffuse bipolar 2 cell](http://purl.obolibrary.org/obo/CL_4033028) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB2 cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### diffuse bipolar 3a cell `http://purl.obolibrary.org/obo/CL_4033029`
+#### Removed
+- [diffuse bipolar 3a cell](http://purl.obolibrary.org/obo/CL_4033029) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB3 cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.3389/fnana.2015.00122" 
+
+- [diffuse bipolar 3a cell](http://purl.obolibrary.org/obo/CL_4033029) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB3a cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [diffuse bipolar 3a cell](http://purl.obolibrary.org/obo/CL_4033029) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB3 cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.3389/fnana.2015.00122" 
+
+- [diffuse bipolar 3a cell](http://purl.obolibrary.org/obo/CL_4033029) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB3a cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### diffuse bipolar 3b cell `http://purl.obolibrary.org/obo/CL_4033030`
+#### Removed
+- [diffuse bipolar 3b cell](http://purl.obolibrary.org/obo/CL_4033030) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB3b cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [diffuse bipolar 3b cell](http://purl.obolibrary.org/obo/CL_4033030) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB3b cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### diffuse bipolar 4 cell `http://purl.obolibrary.org/obo/CL_4033031`
+#### Removed
+- [diffuse bipolar 4 cell](http://purl.obolibrary.org/obo/CL_4033031) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB4 cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [diffuse bipolar 4 cell](http://purl.obolibrary.org/obo/CL_4033031) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB4 cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### diffuse bipolar 6 cell `http://purl.obolibrary.org/obo/CL_4033032`
+#### Removed
+- [diffuse bipolar 6 cell](http://purl.obolibrary.org/obo/CL_4033032) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB6 cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [diffuse bipolar 6 cell](http://purl.obolibrary.org/obo/CL_4033032) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "DB6 cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### direct pathway medium spiny neuron `http://purl.obolibrary.org/obo/CL_4023026`
+#### Removed
+- [direct pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023026) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dSPN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30096299" 
+
+- [direct pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023026) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "D1-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34727523" 
+
+#### Added
+- [direct pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023026) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "D1-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34727523" 
+
+- [direct pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023026) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dSPN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30096299" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### disconnected anatomical group `http://purl.obolibrary.org/obo/CARO_0020000`
+#### Removed
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000054" 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) [label](http://www.w3.org/2000/01/rdf-schema#label) "disconnected anatomical group" 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other." 
+
+- Class: [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) EquivalentTo [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [disconnected](http://purl.obolibrary.org/obo/PATO_0010001)) and ([has component](http://purl.obolibrary.org/obo/RO_0002180) min 2 [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003)) 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) SubClassOf [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) SubClassOf [has component](http://purl.obolibrary.org/obo/RO_0002180) some [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+- [disconnected anatomical group](http://purl.obolibrary.org/obo/CARO_0020000) SubClassOf [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [disconnected](http://purl.obolibrary.org/obo/PATO_0010001) 
+
+
+
+### distal limb integumentary appendage `http://purl.obolibrary.org/obo/UBERON_0009564`
+
+#### Added
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D006724" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0009564" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "unguis" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "keratin sheath" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A nail, hoof or claw." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11710767" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [label](http://www.w3.org/2000/01/rdf-schema#label) "distal limb integumentary appendage" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hoof, claw or nail" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "hoof or claw" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "keratin plate" 
+
+- Class: [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [distal segment of digit](http://purl.obolibrary.org/obo/UBERON_0009551) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "cjm" 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) SubClassOf [integumentary projection](http://purl.obolibrary.org/obo/UBERON_0013703) 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [skin epidermis](http://purl.obolibrary.org/obo/UBERON_0001003) 
+
+- [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [embryonic skin basal layer](http://purl.obolibrary.org/obo/UBERON_0011272) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "Wikipathways:WP2062" 
+
+
+### dorsal skin of digit `http://purl.obolibrary.org/obo/UBERON_0005275`
+
+#### Added
+- [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "skin of dorsal part of digit" 
+
+- [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0005275" 
+
+- [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dorsal digit skin" 
+
+- [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal skin of digit" 
+
+- Class: [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) 
+
+- [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) SubClassOf [digit skin](http://purl.obolibrary.org/obo/UBERON_0015249) 
+
+
+### dorsal skin of finger `http://purl.obolibrary.org/obo/UBERON_0005276`
+
+#### Added
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A dorsal skin of digit that is part of a manual digit." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [UBPROP_0000012](http://purl.obolibrary.org/obo/UBPROP_0000012) "this class is explicitly the union of the two FMA classes" 
+  - [external_ontology](http://www.geneontology.org/formats/oboInOwl#external_ontology) "FMA" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:60346" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal skin of finger" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "subdivision of skin of dorsal part of finger" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:60346" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "skin of dorsal part of finger" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:38320" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:38320" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0005276" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dorsal finger skin" 
+
+- Class: [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) EquivalentTo [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [manual digit](http://purl.obolibrary.org/obo/UBERON_0002389)) 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) SubClassOf [manual digit skin](http://purl.obolibrary.org/obo/UBERON_0003533) 
+
+- [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) SubClassOf [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) 
+
+
+### dorsal skin of toe `http://purl.obolibrary.org/obo/UBERON_0005277`
+
+#### Added
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:37868" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [UBPROP_0000012](http://purl.obolibrary.org/obo/UBPROP_0000012) "this class is explicitly the union of the two FMA classes" 
+  - [external_ontology](http://www.geneontology.org/formats/oboInOwl#external_ontology) "FMA" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:60523" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "skin of dorsal part of toe" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:37868" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [label](http://www.w3.org/2000/01/rdf-schema#label) "dorsal skin of toe" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "subdivision of skin of dorsal part of toe" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:60523" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A dorsal skin of digit that is part of a pedal digit." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "dorsal toe skin" 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0005277" 
+
+- Class: [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) EquivalentTo [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pedal digit](http://purl.obolibrary.org/obo/UBERON_0001466)) 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) SubClassOf [dorsal skin of digit](http://purl.obolibrary.org/obo/UBERON_0005275) 
+
+- [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) SubClassOf [pedal digit skin](http://purl.obolibrary.org/obo/UBERON_0003530) 
+
+
+### early lymphoid progenitor `http://purl.obolibrary.org/obo/CL_0000936`
+#### Removed
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GMLP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18371378" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ELP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LMPP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LMPP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GMLP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18371378" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [early lymphoid progenitor](http://purl.obolibrary.org/obo/CL_0000936) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ELP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### eccentric medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030057`
+#### Removed
+- [eccentric medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eSPN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cell.2018.07.028" 
+
+- [eccentric medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eccentric MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1101/2022.10.12.511898" 
+
+- [eccentric medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eccentric SPN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cell.2018.07.028" 
+
+#### Added
+- [eccentric medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eccentric MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1101/2022.10.12.511898" 
+
+- [eccentric medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eccentric SPN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cell.2018.07.028" 
+
+- [eccentric medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "eSPN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cell.2018.07.028" 
 
 
 ### egg cell `http://purl.obolibrary.org/obo/CL_0000025`
 #### Removed
-- [egg cell](http://purl.obolibrary.org/obo/CL_0000025) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### ejaculatory duct `http://purl.obolibrary.org/obo/UBERON_0000999`
+- [egg cell](http://purl.obolibrary.org/obo/CL_0000025) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://www.swissbiopics.org/api/image/Egg_cell.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 #### Added
-- [ejaculatory duct](http://purl.obolibrary.org/obo/UBERON_0000999) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Prostate.glb" 
+- [egg cell](http://purl.obolibrary.org/obo/CL_0000025) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://www.swissbiopics.org/api/image/Egg_cell.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 
-### electrically active cell `http://purl.obolibrary.org/obo/CL_0000211`
-#### Removed
-- [electrically active cell](http://purl.obolibrary.org/obo/CL_0000211) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+### embryonic organ development `http://purl.obolibrary.org/obo/GO_0048568`
 
 #### Added
-- [electrically active cell](http://purl.obolibrary.org/obo/CL_0000211) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [embryonic organ development](http://purl.obolibrary.org/obo/GO_0048568) SubClassOf [results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [organ](http://purl.obolibrary.org/obo/UBERON_0000062) 
 
 
-### embryonic blood vessel endothelial progenitor cell `http://purl.obolibrary.org/obo/CL_0002546`
+### endocrine-paracrine cell of prostate gland `http://purl.obolibrary.org/obo/CL_0002313`
 #### Removed
-- [embryonic blood vessel endothelial progenitor cell](http://purl.obolibrary.org/obo/CL_0002546) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [endocrine-paracrine cell of prostate gland](http://purl.obolibrary.org/obo/CL_0002313) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [endocrine-paracrine cell of prostate gland](http://purl.obolibrary.org/obo/CL_0002313) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
 
-### embryonic cell (metazoa) `http://purl.obolibrary.org/obo/CL_0002321`
+### enucleate erythrocyte `http://purl.obolibrary.org/obo/CL_0000595`
 #### Removed
-- [embryonic cell (metazoa)](http://purl.obolibrary.org/obo/CL_0002321) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [enucleate erythrocyte](http://purl.obolibrary.org/obo/CL_0000595) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RBC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [embryonic cell (metazoa)](http://purl.obolibrary.org/obo/CL_0002321) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [enucleate erythrocyte](http://purl.obolibrary.org/obo/CL_0000595) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RBC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### endo-epithelial cell `http://purl.obolibrary.org/obo/CL_0002076`
+### eosinophil degranulation `http://purl.obolibrary.org/obo/GO_0043308`
 #### Removed
-- [endo-epithelial cell](http://purl.obolibrary.org/obo/CL_0002076) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### endocrine cell `http://purl.obolibrary.org/obo/CL_0000163`
-#### Removed
-- [endocrine cell](http://purl.obolibrary.org/obo/CL_0000163) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some 
-([hormone secretion](http://purl.obolibrary.org/obo/GO_0046879) and ([has target end location](http://purl.obolibrary.org/obo/RO_0002339) some [circulatory system](http://purl.obolibrary.org/obo/UBERON_0001009)))) 
-
-- [endocrine cell](http://purl.obolibrary.org/obo/CL_0000163) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [eosinophil degranulation](http://purl.obolibrary.org/obo/GO_0043308) SubClassOf [eosinophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002278) 
 
 #### Added
-- [endocrine cell](http://purl.obolibrary.org/obo/CL_0000163) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some 
-([hormone secretion](http://purl.obolibrary.org/obo/GO_0046879) and ([has target end location](http://purl.obolibrary.org/obo/RO_0002339) some [circulatory system](http://purl.obolibrary.org/obo/UBERON_0001009)))) 
+- [eosinophil degranulation](http://purl.obolibrary.org/obo/GO_0043308) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [eosinophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002278) 
 
 
-### endocrine system `http://purl.obolibrary.org/obo/UBERON_0000949`
+### eosinophil progenitor cell `http://purl.obolibrary.org/obo/CL_0000611`
 #### Removed
-- [endocrine system](http://purl.obolibrary.org/obo/UBERON_0000949) EquivalentTo [non-connected functional system](http://purl.obolibrary.org/obo/UBERON_0015203) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [endocrine process](http://purl.obolibrary.org/obo/GO_0050886)) 
+- [eosinophil progenitor cell](http://purl.obolibrary.org/obo/CL_0000611) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-Eo" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [endocrine system](http://purl.obolibrary.org/obo/UBERON_0000949) SubClassOf [capable of](http://purl.obolibrary.org/obo/RO_0002215) some [endocrine process](http://purl.obolibrary.org/obo/GO_0050886) 
+- [eosinophil progenitor cell](http://purl.obolibrary.org/obo/CL_0000611) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "EoP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2212039" 
 
-
-### enteroglial cell `http://purl.obolibrary.org/obo/CL_4040002`
-#### Removed
-- [enteroglial cell](http://purl.obolibrary.org/obo/CL_4040002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "enteric glia" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11169131" 
-
-  - [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2626675" 
 
 #### Added
-- [enteroglial cell](http://purl.obolibrary.org/obo/CL_4040002) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "enteric glia" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11169131" 
+- [eosinophil progenitor cell](http://purl.obolibrary.org/obo/CL_0000611) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-Eo" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+- [eosinophil progenitor cell](http://purl.obolibrary.org/obo/CL_0000611) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "EoP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2212039" 
 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-### epidermal cell (sensu Arthropoda) `http://purl.obolibrary.org/obo/CL_0000463`
-
-#### Added
-- [epidermal cell (sensu Arthropoda)](http://purl.obolibrary.org/obo/CL_0000463) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### epididymal lumen `http://purl.obolibrary.org/obo/UBERON_0035956`
-#### Removed
-- [epididymal lumen](http://purl.obolibrary.org/obo/UBERON_0035956) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [seminal fluid](http://purl.obolibrary.org/obo/UBERON_0006530) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
-
-#### Added
-- [epididymal lumen](http://purl.obolibrary.org/obo/UBERON_0035956) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [seminal fluid](http://purl.obolibrary.org/obo/UBERON_0006530) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2626675" 
 
 
 ### epithelial cell `http://purl.obolibrary.org/obo/CL_0000066`
 #### Removed
-- [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://www.swissbiopics.org/api/image/Epithelial_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 #### Added
-- [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://www.swissbiopics.org/api/image/Epithelial_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 
-### epithelial cell of amnion `http://purl.obolibrary.org/obo/CL_0002536`
+### epithelial cell of endometrial gland `http://purl.obolibrary.org/obo/CL_0009084`
+
+#### Added
+- [epithelial cell of endometrial gland](http://purl.obolibrary.org/obo/CL_0009084) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [epithelial cell of endometrial gland](http://purl.obolibrary.org/obo/CL_0009084) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### epithelial cell of lung `http://purl.obolibrary.org/obo/CL_0000082`
 #### Removed
-- [epithelial cell of amnion](http://purl.obolibrary.org/obo/CL_0002536) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [epithelial cell of amnion](http://purl.obolibrary.org/obo/CL_0002536) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [epithelial cell of amnion](http://purl.obolibrary.org/obo/CL_0002536) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### epithelial cell of cervix `http://purl.obolibrary.org/obo/CL_0002535`
+
+### epithelial cell of tracheobronchial tree `http://purl.obolibrary.org/obo/CL_0002202`
 #### Removed
-- [epithelial cell of cervix](http://purl.obolibrary.org/obo/CL_0002535) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [epithelial cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002202) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [epithelial cell of cervix](http://purl.obolibrary.org/obo/CL_0002535) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [epithelial cell of cervix](http://purl.obolibrary.org/obo/CL_0002535) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [epithelial cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002202) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### epithelial cell of external acoustic meatus `http://purl.obolibrary.org/obo/CL_1000434`
+
+### erythroid progenitor cell `http://purl.obolibrary.org/obo/CL_0000038`
 #### Removed
-- [epithelial cell of external acoustic meatus](http://purl.obolibrary.org/obo/CL_1000434) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [erythroid progenitor cell](http://purl.obolibrary.org/obo/CL_0000038) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [epithelial cell of external acoustic meatus](http://purl.obolibrary.org/obo/CL_1000434) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [erythroid progenitor cell](http://purl.obolibrary.org/obo/CL_0000038) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [epithelial cell of external acoustic meatus](http://purl.obolibrary.org/obo/CL_1000434) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [erythroid progenitor cell](http://purl.obolibrary.org/obo/CL_0000038) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [erythroid progenitor cell](http://purl.obolibrary.org/obo/CL_0000038) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### epithelial cell of gallbladder `http://purl.obolibrary.org/obo/CL_1000415`
+### erythroid progenitor cell, mammalian `http://purl.obolibrary.org/obo/CL_0001066`
 #### Removed
-- [epithelial cell of gallbladder](http://purl.obolibrary.org/obo/CL_1000415) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [erythroid progenitor cell, mammalian](http://purl.obolibrary.org/obo/CL_0001066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [epithelial cell of gallbladder](http://purl.obolibrary.org/obo/CL_1000415) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [erythroid progenitor cell, mammalian](http://purl.obolibrary.org/obo/CL_0001066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [epithelial cell of gallbladder](http://purl.obolibrary.org/obo/CL_1000415) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [erythroid progenitor cell, mammalian](http://purl.obolibrary.org/obo/CL_0001066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [erythroid progenitor cell, mammalian](http://purl.obolibrary.org/obo/CL_0001066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BFU-E" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### epithelial cell of lacrimal canaliculus `http://purl.obolibrary.org/obo/CL_1000433`
+### esophagus development `http://purl.obolibrary.org/obo/GO_1903702`
 #### Removed
-- [epithelial cell of lacrimal canaliculus](http://purl.obolibrary.org/obo/CL_1000433) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-- [epithelial cell of lacrimal canaliculus](http://purl.obolibrary.org/obo/CL_1000433) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [esophagus development](http://purl.obolibrary.org/obo/GO_1903702) SubClassOf [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) 
 
 #### Added
-- [epithelial cell of lacrimal canaliculus](http://purl.obolibrary.org/obo/CL_1000433) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [esophagus development](http://purl.obolibrary.org/obo/GO_1903702) SubClassOf [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) 
 
 
-### epithelial cell of pancreas `http://purl.obolibrary.org/obo/CL_0000083`
+### establishment of localization `http://purl.obolibrary.org/obo/GO_0051234`
+
+#### Added
+- [establishment of localization](http://purl.obolibrary.org/obo/GO_0051234) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [gocheck_do_not_annotate](http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate) 
+
+- [establishment of localization](http://purl.obolibrary.org/obo/GO_0051234) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/24200"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+
+### estrogen receptor `http://purl.obolibrary.org/obo/PR_000007204`
+
+#### Added
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [id](http://www.geneontology.org/formats/oboInOwl#id) "PR:000007204" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nuclear receptor subfamily 3 group A member 1" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Category=gene." 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "protein" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER-alpha" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ESR" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [crossSpeciesExactMatch](https://w3id.org/semapv/vocab/crossSpeciesExactMatch) [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "IUPHARobj:620" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Estra" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ESR1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PRO-short-label](http://purl.obolibrary.org/obo/pr#PRO-short-label) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PRO:DNx" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "estradiol receptor" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NR3A1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A protein that is a translation product of the human ESR1 gene or a 1:1 ortholog thereof." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PRO:DNx" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [label](http://www.w3.org/2000/01/rdf-schema#label) "estrogen receptor" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER" 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Estr" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- Class: [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) SubClassOf [protein](http://purl.obolibrary.org/obo/PR_000000001) 
+
+- [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) SubClassOf [CHEBI_36080](http://purl.obolibrary.org/obo/CHEBI_36080) 
+
+
+### estrogen receptor (human) `http://purl.obolibrary.org/obo/PR_P03372`
+
+#### Added
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DTO:00117511" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "estradiol receptor (human)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ESR1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An estrogen receptor that is encoded in the genome of human." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PRO:DNx" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER (human)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NR3A1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [id](http://www.geneontology.org/formats/oboInOwl#id) "PR:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9020968" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "PR:P03372 located_in GO:0005829" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "hESR1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PRO-short-label](http://purl.obolibrary.org/obo/pr#PRO-short-label) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PRO:DNx" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER-alpha (human)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "protein" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-446168" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "PR:P03372 located_in GO:0005654" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ESR" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [label](http://www.w3.org/2000/01/rdf-schema#label) "estrogen receptor (human)" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Category=organism-gene." 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nuclear receptor subfamily 3 group A member 1 (human)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P03372" 
+
+- Class: [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) EquivalentTo [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606)) 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) SubClassOf [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) 
+
+- [estrogen receptor (human)](http://purl.obolibrary.org/obo/PR_P03372) SubClassOf [Homo sapiens protein](http://purl.obolibrary.org/obo/PR_000029067) 
+
+
+### estrogen receptor (mouse) `http://purl.obolibrary.org/obo/PR_P19785`
+
+#### Added
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER-alpha (mouse)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Category=organism-gene." 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "protein" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "mESR1" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PRO-short-label](http://purl.obolibrary.org/obo/pr#PRO-short-label) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PRO:DNx" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER (mouse)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Estra" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Esr" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nuclear receptor subfamily 3 group A member 1 (mouse)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "estradiol receptor (mouse)" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An estrogen receptor that is encoded in the genome of mouse." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PRO:DNx" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OMA:P19785" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [label](http://www.w3.org/2000/01/rdf-schema#label) "estrogen receptor (mouse)" 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Esr1" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Nr3a1" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "Estr" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UniProtKB:P19785" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [Gene-based](http://purl.obolibrary.org/obo/pr#Gene-based) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) [id](http://www.geneontology.org/formats/oboInOwl#id) "PR:P19785" 
+
+- Class: [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) EquivalentTo [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Mus musculus](http://purl.obolibrary.org/obo/NCBITaxon_10090)) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) SubClassOf [Mus musculus protein](http://purl.obolibrary.org/obo/PR_000029032) 
+
+- [estrogen receptor (mouse)](http://purl.obolibrary.org/obo/PR_P19785) SubClassOf [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) 
+
+
+### exhausted T cell differentiation `http://purl.obolibrary.org/obo/GO_0160083`
+
+#### Added
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "T cell exhaustion" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [label](http://www.w3.org/2000/01/rdf-schema#label) "exhausted T cell differentiation" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which an activated T cell acquires specialized features of an exhausted T cell." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31570879" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:21739672" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0160083" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/25698"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2023-07-14T22:56:05Z" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "rynl" 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "T cell dysfuction" 
+
+- Class: [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) EquivalentTo [cell differentiation](http://purl.obolibrary.org/obo/GO_0030154) and ([results in acquisition of features of](http://purl.obolibrary.org/obo/RO_0002315) some [exhausted T cell](http://purl.obolibrary.org/obo/CL_0011025)) 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) SubClassOf [results in acquisition of features of](http://purl.obolibrary.org/obo/RO_0002315) some [exhausted T cell](http://purl.obolibrary.org/obo/CL_0011025) 
+
+- [exhausted T cell differentiation](http://purl.obolibrary.org/obo/GO_0160083) SubClassOf [T cell differentiation](http://purl.obolibrary.org/obo/GO_0030217) 
+
+
+### extraembryonic structure `http://purl.obolibrary.org/obo/CARO_0000042`
 #### Removed
-- [epithelial cell of pancreas](http://purl.obolibrary.org/obo/CL_0000083) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "MH: define as not part of embryo, or will not develop into embryo? MH: changed def to exclude cells so this class could be included in gross anatomical part. DOS: Changed to something that I think works for both vertebrates and invertebrates and that keeps the restriction to multicellular structures.  Old def: &quot;Anatomical structure that is contiguous with the embryo and is comprised of portions of tissue that will not contribute to the embryo.&quot;.  One remaining question - perhaps zygote is too restrictive given that some organisms have parthenogenesis e.g. aphids?
+" 
 
-- [epithelial cell of pancreas](http://purl.obolibrary.org/obo/CL_0000083) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A multicellular anatomical structure that is associated with an embryo and derived from the zygote from which it develops, but which does not contribute to the embryo proper or to structures that are part of the same organism after embryogenesis." 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000042" 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) [label](http://www.w3.org/2000/01/rdf-schema#label) "extraembryonic structure" 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [plus](http://purl.obolibrary.org/obo/caro#plus) 
+
+- Class: [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) DisjointWith [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) DisjointWith [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) SubClassOf [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) 
+
+- [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+
+
+### fallopian tube ciliated cell `http://purl.obolibrary.org/obo/CL_4030007`
 
 #### Added
-- [epithelial cell of pancreas](http://purl.obolibrary.org/obo/CL_0000083) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [fallopian tube ciliated cell](http://purl.obolibrary.org/obo/CL_4030007) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [fallopian tube ciliated cell](http://purl.obolibrary.org/obo/CL_4030007) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### epithelial cell of urethra `http://purl.obolibrary.org/obo/CL_1000296`
+### fallopian tube secretory epithelial cell `http://purl.obolibrary.org/obo/CL_4030006`
+
+#### Added
+- [fallopian tube secretory epithelial cell](http://purl.obolibrary.org/obo/CL_4030006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [fallopian tube secretory epithelial cell](http://purl.obolibrary.org/obo/CL_4030006) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### fasciculates with `http://purl.obolibrary.org/obo/RO_0002101`
 #### Removed
-- [epithelial cell of urethra](http://purl.obolibrary.org/obo/CL_1000296) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [fasciculates with](http://purl.obolibrary.org/obo/RO_0002101) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Relation between a neuron and the neuron projection bundle it fasciculates with. FOL: x fasciculates_with y iff: exists some 'neuron ; CL_0000540'(x), some 'neuron projection bundle ; CARO_0001001'(y), some 'neuron projection ; GO_0043005'(np), np part_of x AND np overlaps y AND np aligned_with y" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
 
-- [epithelial cell of urethra](http://purl.obolibrary.org/obo/CL_1000296) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [fasciculates with](http://purl.obolibrary.org/obo/RO_0002101) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
 
-#### Added
-- [epithelial cell of urethra](http://purl.obolibrary.org/obo/CL_1000296) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [fasciculates with](http://purl.obolibrary.org/obo/RO_0002101) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002101" 
+
+- [fasciculates with](http://purl.obolibrary.org/obo/RO_0002101) [id](http://www.geneontology.org/formats/oboInOwl#id) "fasciculates_with" 
 
 
-### epithelial cell of viscerocranial mucosa `http://purl.obolibrary.org/obo/CL_1000441`
+
+### fibroblast of lung `http://purl.obolibrary.org/obo/CL_0002553`
 #### Removed
-- [epithelial cell of viscerocranial mucosa](http://purl.obolibrary.org/obo/CL_1000441) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [fibroblast of lung](http://purl.obolibrary.org/obo/CL_0002553) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [fibroblast of lung](http://purl.obolibrary.org/obo/CL_0002553) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
 
-### erythrophore `http://purl.obolibrary.org/obo/CL_0000574`
+### fibroblast of pulmonary artery `http://purl.obolibrary.org/obo/CL_0002557`
+
+#### Added
+- [fibroblast of pulmonary artery](http://purl.obolibrary.org/obo/CL_0002557) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [fibroblast of pulmonary artery](http://purl.obolibrary.org/obo/CL_0002557) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### fibroblast of villous mesenchyme `http://purl.obolibrary.org/obo/CL_0002558`
+
+#### Added
+- [fibroblast of villous mesenchyme](http://purl.obolibrary.org/obo/CL_0002558) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [fibroblast of villous mesenchyme](http://purl.obolibrary.org/obo/CL_0002558) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### flat midget bipolar cell `http://purl.obolibrary.org/obo/CL_4033033`
 #### Removed
-- [erythrophore](http://purl.obolibrary.org/obo/CL_0000574) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [flat midget bipolar cell](http://purl.obolibrary.org/obo/CL_4033033) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "FMB cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [flat midget bipolar cell](http://purl.obolibrary.org/obo/CL_4033033) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "FMB cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-
-### eukaryotic cell `http://purl.obolibrary.org/obo/CL_0000255`
+### folliculostellate cell `http://purl.obolibrary.org/obo/CL_0000642`
 #### Removed
-- [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Eukaryota](http://purl.obolibrary.org/obo/NCBITaxon_2759)) 
+- [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "FSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.23937/2572-407X.1510006" 
 
-#### Added
-- [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Eukaryota](http://purl.obolibrary.org/obo/NCBITaxon_2759)) 
+- [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "FS cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### example to be eventually removed `http://purl.obolibrary.org/obo/IAO_0000002`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34734454" 
 
 #### Added
-- [example to be eventually removed](http://purl.obolibrary.org/obo/IAO_0000002) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "example to be eventually removed"@en 
+- [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "FSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [example to be eventually removed](http://purl.obolibrary.org/obo/IAO_0000002) [label](http://www.w3.org/2000/01/rdf-schema#label) "example to be eventually removed"@en 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.23937/2572-407X.1510006" 
 
-- Individual: [example to be eventually removed](http://purl.obolibrary.org/obo/IAO_0000002) 
+- [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "FS cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34734454" 
 
 
-### exocrine cell `http://purl.obolibrary.org/obo/CL_0000152`
+### gamma-delta T cell `http://purl.obolibrary.org/obo/CL_0000798`
 #### Removed
-- [exocrine cell](http://purl.obolibrary.org/obo/CL_0000152) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### expand expression to `http://purl.obolibrary.org/obo/IAO_0000424`
+- [gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000798) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "gd T cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "ObjectProperty: RO_0002104
-Label: has plasma membrane part
-Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (http://purl.org/obo/owl/GO#GO_0005886 and http://purl.obolibrary.org/obo/BFO_0000051 some ?Y)&quot;
-"@en 
-
-- [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) [label](http://www.w3.org/2000/01/rdf-schema#label) "expand expression to"@en 
-
-- [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Chris Mungall"@en 
-
-- [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "expand expression to"@en 
-
-- [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A macro expansion tag applied to an object property (or possibly a data property)  which can be used by a macro-expansion engine to generate more complex expressions from simpler ones"@en 
+- [gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000798) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "gd T cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### external cervical os `http://purl.obolibrary.org/obo/UBERON_0013760`
-
-#### Added
-- [external cervical os](http://purl.obolibrary.org/obo/UBERON_0013760) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Uterus.glb" 
-
-
-### external iliac vein `http://purl.obolibrary.org/obo/UBERON_0001316`
-
-#### Added
-- [external iliac vein](http://purl.obolibrary.org/obo/UBERON_0001316) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### extraembryonic cell `http://purl.obolibrary.org/obo/CL_0000349`
+### giant bipolar cell `http://purl.obolibrary.org/obo/CL_4033035`
 #### Removed
-- [extraembryonic cell](http://purl.obolibrary.org/obo/CL_0000349) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [extraembryonic structure](http://purl.obolibrary.org/obo/UBERON_0000478)) 
+- [giant bipolar cell](http://purl.obolibrary.org/obo/CL_4033035) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GB cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [extraembryonic cell](http://purl.obolibrary.org/obo/CL_0000349) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [extraembryonic cell](http://purl.obolibrary.org/obo/CL_0000349) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [extraembryonic structure](http://purl.obolibrary.org/obo/UBERON_0000478)) 
-
-- [extraembryonic cell](http://purl.obolibrary.org/obo/CL_0000349) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### eye trabecular meshwork `http://purl.obolibrary.org/obo/UBERON_0005969`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
 
 #### Added
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_L.glb" 
+- [giant bipolar cell](http://purl.obolibrary.org/obo/CL_4033035) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GB cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
 
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-l.glb" 
-
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_R.glb" 
-
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-l.glb" 
-
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-r.glb" 
-
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_R.glb" 
-
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-r.glb" 
-
-- [eye trabecular meshwork](http://purl.obolibrary.org/obo/UBERON_0005969) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_L.glb" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### failed exploratory term `http://purl.obolibrary.org/obo/IAO_0000103`
+### glial cell `http://purl.obolibrary.org/obo/CL_0000125`
 
 #### Added
-- [failed exploratory term](http://purl.obolibrary.org/obo/IAO_0000103) [label](http://www.w3.org/2000/01/rdf-schema#label) "failed exploratory term"@en 
+- [glial cell](http://purl.obolibrary.org/obo/CL_0000125) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [failed exploratory term](http://purl.obolibrary.org/obo/IAO_0000103) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Person:Alan Ruttenberg"@en 
-
-- [failed exploratory term](http://purl.obolibrary.org/obo/IAO_0000103) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "failed exploratory term"@en 
-
-- [failed exploratory term](http://purl.obolibrary.org/obo/IAO_0000103) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The term was used in an attempt to structure part of the ontology but in retrospect failed to do a good job"@en 
-
-- Individual: [failed exploratory term](http://purl.obolibrary.org/obo/IAO_0000103) 
+- [glial cell](http://purl.obolibrary.org/obo/CL_0000125) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### falciform ligament `http://purl.obolibrary.org/obo/UBERON_0001247`
+### glial restricted tripotential precursor cell `http://purl.obolibrary.org/obo/CL_4040000`
+#### Removed
+- [glial restricted tripotential precursor cell](http://purl.obolibrary.org/obo/CL_4040000) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GRP cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11756508" 
 
 #### Added
-- [falciform ligament](http://purl.obolibrary.org/obo/UBERON_0001247) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Liver.glb" 
+- [glial restricted tripotential precursor cell](http://purl.obolibrary.org/obo/CL_4040000) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GRP cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [falciform ligament](http://purl.obolibrary.org/obo/UBERON_0001247) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Liver.glb" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11756508" 
 
 
-### fat body cell `http://purl.obolibrary.org/obo/CL_0000565`
+### globular bushy cell `http://purl.obolibrary.org/obo/CL_4023164`
 #### Removed
-- [fat body cell](http://purl.obolibrary.org/obo/CL_0000565) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [globular bushy cell](http://purl.obolibrary.org/obo/CL_4023164) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "GBC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-
-
-### fenestrated cell `http://purl.obolibrary.org/obo/CL_0000666`
-#### Removed
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### fetal hepatobiliary progenitor cell `http://purl.obolibrary.org/obo/CL_0009013`
-#### Removed
-- [fetal hepatobiliary progenitor cell](http://purl.obolibrary.org/obo/CL_0009013) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### flag A amacrine cell `http://purl.obolibrary.org/obo/CL_0004221`
-#### Removed
-- [flag A amacrine cell](http://purl.obolibrary.org/obo/CL_0004221) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A flag amacrine cell with post-synaptic terminals in S2 and S3." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31881018" 
 
 #### Added
-- [flag A amacrine cell](http://purl.obolibrary.org/obo/CL_0004221) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A flag amacrine cell with post-synaptic terminals in S2 and S3. This cell type releases the neurotransmitter glycine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [globular bushy cell](http://purl.obolibrary.org/obo/CL_4023164) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "GBC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31881018" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24246263" 
-
-- [flag A amacrine cell](http://purl.obolibrary.org/obo/CL_0004221) SubClassOf [glycinergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030028) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### flag B amacrine cell `http://purl.obolibrary.org/obo/CL_0004222`
-#### Removed
-- [flag B amacrine cell](http://purl.obolibrary.org/obo/CL_0004222) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A flag amacrine cell with post-synaptic terminals in S3, S4, and S5." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+### glutamate-gated calcium ion channel activity `http://purl.obolibrary.org/obo/GO_0022849`
 
 #### Added
-- [flag B amacrine cell](http://purl.obolibrary.org/obo/CL_0004222) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A flag amacrine cell with post-synaptic terminals in S3, S4, and S5. This cell type releases the neurotransmitter glycine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0022849" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24246263" 
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
 
-- [flag B amacrine cell](http://purl.obolibrary.org/obo/CL_0004222) SubClassOf [glycinergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030028) 
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Enables the transmembrane transfer of a calcium ion by a channel that opens when glutamate has been bound by the channel complex or one of its constituent parts." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0815340729" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mtg_transport" 
+
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) [label](http://www.w3.org/2000/01/rdf-schema#label) "glutamate-gated calcium ion channel activity" 
+
+- Class: [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) 
+
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_29108](http://purl.obolibrary.org/obo/CHEBI_29108)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_14321](http://purl.obolibrary.org/obo/CHEBI_14321)) 
+
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) SubClassOf [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) 
+
+- [glutamate-gated calcium ion channel activity](http://purl.obolibrary.org/obo/GO_0022849) SubClassOf [ligand-gated calcium channel activity](http://purl.obolibrary.org/obo/GO_0099604) 
 
 
-### flag amacrine cell `http://purl.obolibrary.org/obo/CL_0004220`
+### granulocyte monocyte progenitor cell `http://purl.obolibrary.org/obo/CL_0000557`
 #### Removed
-- [flag amacrine cell](http://purl.obolibrary.org/obo/CL_0004220) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [granulocyte monocyte progenitor cell](http://purl.obolibrary.org/obo/CL_0000557) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-GM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC548021" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721601464" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2213186" 
+
+- [granulocyte monocyte progenitor cell](http://purl.obolibrary.org/obo/CL_0000557) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GMP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC548021" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721601464" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2213186" 
 
 #### Added
-- [flag amacrine cell](http://purl.obolibrary.org/obo/CL_0004220) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+- [granulocyte monocyte progenitor cell](http://purl.obolibrary.org/obo/CL_0000557) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-GM" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC548021" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721601464" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2213186" 
+
+- [granulocyte monocyte progenitor cell](http://purl.obolibrary.org/obo/CL_0000557) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "GMP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC548021" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721601464" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMCID:PMC2213186" 
 
 
-### flask cell `http://purl.obolibrary.org/obo/CL_0007023`
+### gross anatomical part `http://purl.obolibrary.org/obo/CARO_0001008`
 #### Removed
-- [flask cell](http://purl.obolibrary.org/obo/CL_0007023) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical structure that is part of a multicellular organism and is at the gross anatomical level, e.g. above the level of a cell.  Included are portions of organism substances such as blood, multi-cell-part structures such as axon tracts, acellular anatomical structures such as hair, and organism subdivisions such as head. Excluded is the whole organism and more granular parts of the organism, such as atoms, molecules, macromolecular complexes and cells. " 
 
-#### Added
-- [flask cell](http://purl.obolibrary.org/obo/CL_0007023) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) [label](http://www.w3.org/2000/01/rdf-schema#label) "gross anatomical part"@en 
 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-9114-8737](https://orcid.org/0000-0001-9114-8737) 
 
-### flat bistratified amacrine cell `http://purl.obolibrary.org/obo/CL_0004227`
-#### Removed
-- [flat bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004227) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A bistratified amacrine cell with a small dendritic field. Flat bistratified amacrine cells have post-synaptic terminals both on the border of S1 and S2, and on the border of S3 and S4." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) [IAO_creation_date](http://purl.obolibrary.org/obo/IAO_creation_date) "10.7.2011" 
 
-#### Added
-- [flat bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004227) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A bistratified amacrine cell with a small dendritic field. Flat bistratified amacrine cells have post-synaptic terminals both on the border of S1 and S2, and on the border of S3 and S4. This cell type releases the neurotransmitter glycine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25630271" 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [plus](http://purl.obolibrary.org/obo/caro#plus) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- Class: [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) 
 
-- [flat bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004227) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) EquivalentTo [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) or [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) or [acellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0000040) or [extraembryonic structure](http://purl.obolibrary.org/obo/CARO_0000042) or [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) or [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
 
-- [flat bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004227) SubClassOf [glycinergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030028) 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) 
 
+- [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) SubClassOf [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) 
 
-### foam cell `http://purl.obolibrary.org/obo/CL_0000891`
-#### Removed
-- [foam cell](http://purl.obolibrary.org/obo/CL_0000891) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [foam cell](http://purl.obolibrary.org/obo/CL_0000891) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### follicle cell of egg chamber `http://purl.obolibrary.org/obo/CL_0000477`
-
-#### Added
-- [follicle cell of egg chamber](http://purl.obolibrary.org/obo/CL_0000477) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### follicle stem cell (sensu Arthropoda) `http://purl.obolibrary.org/obo/CL_0000441`
-
-#### Added
-- [follicle stem cell (sensu Arthropoda)](http://purl.obolibrary.org/obo/CL_0000441) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### follicular dendritic cell `http://purl.obolibrary.org/obo/CL_0000442`
-#### Removed
-- [follicular dendritic cell](http://purl.obolibrary.org/obo/CL_0000442) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### follicular epithelial cell `http://purl.obolibrary.org/obo/CL_0000500`
-#### Removed
-- [follicular epithelial cell](http://purl.obolibrary.org/obo/CL_0000500) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### fornix of brain `http://purl.obolibrary.org/obo/UBERON_0000052`
-
-#### Added
-- [fornix of brain](http://purl.obolibrary.org/obo/UBERON_0000052) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-- [fornix of brain](http://purl.obolibrary.org/obo/UBERON_0000052) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-
-### fountain amacrine cell `http://purl.obolibrary.org/obo/CL_0004237`
-#### Removed
-- [fountain amacrine cell](http://purl.obolibrary.org/obo/CL_0004237) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A retinal amacrine cell with a medium dendritic field and post-synaptic terminals in S1, S2, S3, and S4." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
-
-- [fountain amacrine cell](http://purl.obolibrary.org/obo/CL_0004237) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
-
-#### Added
-- [fountain amacrine cell](http://purl.obolibrary.org/obo/CL_0004237) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A retinal amacrine cell with a medium dendritic field and post-synaptic terminals in S1, S2, S3, and S4. This cell type releases the neurotransmitter gamma-aminobutyric acid (GABA)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:10614594" 
-
-- [fountain amacrine cell](http://purl.obolibrary.org/obo/CL_0004237) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
-
-- [fountain amacrine cell](http://purl.obolibrary.org/obo/CL_0004237) SubClassOf [GABAergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030027) 
-
-
-### fourth ventricle `http://purl.obolibrary.org/obo/UBERON_0002422`
-
-#### Added
-- [fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0002422) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [fourth ventricle](http://purl.obolibrary.org/obo/UBERON_0002422) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### fundus of urinary bladder `http://purl.obolibrary.org/obo/UBERON_0006082`
-
-#### Added
-- [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Urinary_Bladder.glb" 
-
-- [fundus of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0006082) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Urinary_Bladder.glb" 
-
-
-### fungal cell `http://purl.obolibrary.org/obo/CL_0000521`
-#### Removed
-- [fungal cell](http://purl.obolibrary.org/obo/CL_0000521) DisjointWith [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-- [fungal cell](http://purl.obolibrary.org/obo/CL_0000521) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751)) 
-
-#### Added
-- [fungal cell](http://purl.obolibrary.org/obo/CL_0000521) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751)) 
-
-
-### gamete-nursing cell `http://purl.obolibrary.org/obo/CL_4029001`
-#### Removed
-- [gamete-nursing cell](http://purl.obolibrary.org/obo/CL_4029001) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [gamete-nursing cell](http://purl.obolibrary.org/obo/CL_4029001) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### germ line cell `http://purl.obolibrary.org/obo/CL_0000039`
-#### Removed
-- [germ line cell](http://purl.obolibrary.org/obo/CL_0000039) DisjointWith [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-- [germ line cell](http://purl.obolibrary.org/obo/CL_0000039) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [germ line cell](http://purl.obolibrary.org/obo/CL_0000039) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### germ line stem cell `http://purl.obolibrary.org/obo/CL_0000014`
-#### Removed
-- [germ line stem cell](http://purl.obolibrary.org/obo/CL_0000014) SubClassOf [germ line cell](http://purl.obolibrary.org/obo/CL_0000039) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [germ line stem cell](http://purl.obolibrary.org/obo/CL_0000014) SubClassOf [germ line cell](http://purl.obolibrary.org/obo/CL_0000039) 
-
-
-### germinal center `http://purl.obolibrary.org/obo/UBERON_0010754`
-#### Removed
-- [germinal center](http://purl.obolibrary.org/obo/UBERON_0010754) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [germinal center](http://purl.obolibrary.org/obo/UBERON_0010754) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### germline-derived nurse cell `http://purl.obolibrary.org/obo/CL_4029002`
-#### Removed
-- [germline-derived nurse cell](http://purl.obolibrary.org/obo/CL_4029002) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### glandular epithelial cell `http://purl.obolibrary.org/obo/CL_0000150`
-#### Removed
-- [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### glioblast `http://purl.obolibrary.org/obo/CL_0000030`
-#### Removed
-- [glioblast](http://purl.obolibrary.org/obo/CL_0000030) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### gut absorptive cell `http://purl.obolibrary.org/obo/CL_0000677`
-#### Removed
-- [gut absorptive cell](http://purl.obolibrary.org/obo/CL_0000677) SubClassOf [absorptive cell](http://purl.obolibrary.org/obo/CL_0000212) 
-
-#### Added
-- [gut absorptive cell](http://purl.obolibrary.org/obo/CL_0000677) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### hair follicle cell `http://purl.obolibrary.org/obo/CL_0002559`
-#### Removed
-- [hair follicle cell](http://purl.obolibrary.org/obo/CL_0002559) EquivalentTo [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hair follicle](http://purl.obolibrary.org/obo/UBERON_0002073)) 
-
-- [hair follicle cell](http://purl.obolibrary.org/obo/CL_0002559) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [hair follicle cell](http://purl.obolibrary.org/obo/CL_0002559) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hair follicle](http://purl.obolibrary.org/obo/UBERON_0002073)) 
-
-- [hair follicle cell](http://purl.obolibrary.org/obo/CL_0002559) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
 
 
 ### haploid cell `http://purl.obolibrary.org/obo/CL_0000413`
+
+#### Added
+- [haploid cell](http://purl.obolibrary.org/obo/CL_0000413) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [haploid cell](http://purl.obolibrary.org/obo/CL_0000413) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### has postsynaptic terminal in `http://purl.obolibrary.org/obo/RO_0002110`
 #### Removed
-- [haploid cell](http://purl.obolibrary.org/obo/CL_0000413) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [haploid](http://purl.obolibrary.org/obo/PATO_0001375)) 
+- [has postsynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002110) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Relation between a neuron and the structure in which its dendrite receives synapses." 
 
-- [haploid cell](http://purl.obolibrary.org/obo/CL_0000413) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [has postsynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002110) [id](http://www.geneontology.org/formats/oboInOwl#id) "has_postsynaptic_terminals_in" 
 
-#### Added
-- [haploid cell](http://purl.obolibrary.org/obo/CL_0000413) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [haploid](http://purl.obolibrary.org/obo/PATO_0001375)) 
+- [has postsynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002110) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
 
-- [haploid cell](http://purl.obolibrary.org/obo/CL_0000413) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [has postsynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002110) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002110" 
 
-
-### has obsolescence reason `http://purl.obolibrary.org/obo/IAO_0000231`
-
-#### Added
-- [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "has obsolescence reason"@en 
-
-- [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [label](http://www.w3.org/2000/01/rdf-schema#label) "has obsolescence reason"@en 
-
-- [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON:Alan Ruttenberg"@en 
-
-- [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Relates an annotation property to an obsolescence reason. The values of obsolescence reasons come from a list of predefined terms, instances of the class obsolescence reason specification."@en 
-
-- [has obsolescence reason](http://purl.obolibrary.org/obo/IAO_0000231) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON:Melanie Courtot"@en 
+- [has postsynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002110) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "BFO_0000051 some (GO_0045211 and BFO_0000050 some (GO_0045202 and BFO_0000050 some ?Y))" 
 
 
-### has_broad_synonym `http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym`
 
-#### Added
-- [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/information-artifact-ontology/ontology-metadata/issues/18" 
-
-- [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) "https://github.com/information-artifact-ontology/ontology-metadata/issues/18" 
-
-- [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) [label](http://www.w3.org/2000/01/rdf-schema#label) "has broad synonym"@en 
-
-- [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-5208-3432](http://orcid.org/0000-0001-5208-3432) 
-
-- [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An alternative label for a class or property which has a more general meaning than the preferred name/primary label." 
-
-
-### has_exact_synonym `http://www.geneontology.org/formats/oboInOwl#hasExactSynonym`
-
-#### Added
-- [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An alternative label for a class or property which has the exact same meaning than the preferred name/primary label." 
-
-- [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) "https://github.com/information-artifact-ontology/ontology-metadata/issues/20" 
-
-- [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-5208-3432](http://orcid.org/0000-0001-5208-3432) 
-
-- [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) [label](http://www.w3.org/2000/01/rdf-schema#label) "has exact synonym"@en 
-
-- [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/information-artifact-ontology/ontology-metadata/issues/20" 
-
-
-### has_narrow_synonym `http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym`
-
-#### Added
-- [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-5208-3432](http://orcid.org/0000-0001-5208-3432) 
-
-- [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) [label](http://www.w3.org/2000/01/rdf-schema#label) "has narrow synonym"@en 
-
-- [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) "https://github.com/information-artifact-ontology/ontology-metadata/issues/19" 
-
-- [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An alternative label for a class or property which has a more specific meaning than the preferred name/primary label." 
-
-- [has_narrow_synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/information-artifact-ontology/ontology-metadata/issues/19" 
-
-
-### has_related_synonym `http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym`
-
-#### Added
-- [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-5208-3432](http://orcid.org/0000-0001-5208-3432) 
-
-- [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) "https://github.com/information-artifact-ontology/ontology-metadata/issues/21" 
-
-- [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) [label](http://www.w3.org/2000/01/rdf-schema#label) "has related synonym"@en 
-
-- [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An alternative label for a class or property that has been used synonymously with the primary term name, but the usage is not strictly correct." 
-
-- [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/information-artifact-ontology/ontology-metadata/issues/21" 
-
-
-### hatching gland cell `http://purl.obolibrary.org/obo/CL_0000249`
+### has presynaptic terminal in `http://purl.obolibrary.org/obo/RO_0002113`
 #### Removed
-- [hatching gland cell](http://purl.obolibrary.org/obo/CL_0000249) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [has presynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002113) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002113" 
+
+- [has presynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002113) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
+
+- [has presynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002113) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "BFO_0000051 some (GO_0042734 that BFO_0000050 some (GO_0045202 that BFO_0000050 some ?Y))" 
+
+- [has presynaptic terminal in](http://purl.obolibrary.org/obo/RO_0002113) [id](http://www.geneontology.org/formats/oboInOwl#id) "has_presynaptic_terminals_in" 
 
 
 
-### heart `http://purl.obolibrary.org/obo/UBERON_0000948`
-
-#### Added
-- [heart](http://purl.obolibrary.org/obo/UBERON_0000948) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
-
-- [heart](http://purl.obolibrary.org/obo/UBERON_0000948) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
-
-- [heart](http://purl.obolibrary.org/obo/UBERON_0000948) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Heart.glb" 
-
-
-### heart left ventricle `http://purl.obolibrary.org/obo/UBERON_0002084`
+### has small molecule activator `http://purl.obolibrary.org/obo/RO_0012001`
 
 #### Added
-- [heart left ventricle](http://purl.obolibrary.org/obo/UBERON_0002084) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [label](http://www.w3.org/2000/01/rdf-schema#label) "has small molecule activator"@en 
 
-- [heart left ventricle](http://purl.obolibrary.org/obo/UBERON_0002084) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "a relation between a process and a continuant, in which the process is activated by the small molecule continuant" 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-04-22T20:28:37Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "external" 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [label](http://www.w3.org/2000/01/rdf-schema#label) "has small molecule activator" 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) [0000-0003-1813-6857](https://orcid.org/0000-0003-1813-6857) 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [shorthand](http://www.geneontology.org/formats/oboInOwl#shorthand) "has_small_molecule_activator" 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0012001" 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) [id](http://www.geneontology.org/formats/oboInOwl#id) "has_small_molecule_activator" 
+
+- ObjectProperty: [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) InverseOf [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) 
+
+- [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) SubPropertyOf: [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) 
 
 
-### heart right ventricle `http://purl.obolibrary.org/obo/UBERON_0002080`
+### has small molecule regulator `http://purl.obolibrary.org/obo/RO_0012000`
 
 #### Added
-- [heart right ventricle](http://purl.obolibrary.org/obo/UBERON_0002080) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
+- [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) [0000-0003-1813-6857](https://orcid.org/0000-0003-1813-6857) 
 
-- [heart right ventricle](http://purl.obolibrary.org/obo/UBERON_0002080) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
+- [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) [label](http://www.w3.org/2000/01/rdf-schema#label) "has small molecule regulator"@en 
+
+- [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "a relation between a process and a continuant, in which the process is regulated by the small molecule continuant" 
+
+- [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-04-22T20:27:26Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- ObjectProperty: [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) 
+
+- [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) InverseOf [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) 
+
+- [has small molecule regulator](http://purl.obolibrary.org/obo/RO_0012000) SubPropertyOf: [has participant](http://purl.obolibrary.org/obo/RO_0000057) 
 
 
-### hematopoietic cell `http://purl.obolibrary.org/obo/CL_0000988`
+### has soma location `http://purl.obolibrary.org/obo/RO_0002100`
 #### Removed
-- [hematopoietic cell](http://purl.obolibrary.org/obo/CL_0000988) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [has soma location](http://purl.obolibrary.org/obo/RO_0002100) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
 
-#### Added
-- [hematopoietic cell](http://purl.obolibrary.org/obo/CL_0000988) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [has soma location](http://purl.obolibrary.org/obo/RO_0002100) [id](http://www.geneontology.org/formats/oboInOwl#id) "has_soma_location" 
+
+- [has soma location](http://purl.obolibrary.org/obo/RO_0002100) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "BFO_0000051 some (GO_0043025 and BFO_0000050 some ?Y)" 
+
+- [has soma location](http://purl.obolibrary.org/obo/RO_0002100) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002100" 
+
+- [has soma location](http://purl.obolibrary.org/obo/RO_0002100) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Relation between a neuron and an anatomical structure that its soma is part of." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
 
 
-### hemocyte (sensu Arthropoda) `http://purl.obolibrary.org/obo/CL_0000387`
 
-#### Added
-- [hemocyte (sensu Arthropoda)](http://purl.obolibrary.org/obo/CL_0000387) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### hepatic oval stem cell `http://purl.obolibrary.org/obo/CL_0002196`
+### has synaptic terminal in `http://purl.obolibrary.org/obo/RO_0002130`
 #### Removed
-- [hepatic oval stem cell](http://purl.obolibrary.org/obo/CL_0002196) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [has synaptic terminal in](http://purl.obolibrary.org/obo/RO_0002130) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "expands to - X overlaps some ('synapse ; GO_0045202' that part_of some ?Y)" 
+
+- [has synaptic terminal in](http://purl.obolibrary.org/obo/RO_0002130) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A relation between a neuron and some structure in which it either chemically synapses to some target or in which it receives (chemical) synaptic input." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
+
+- [has synaptic terminal in](http://purl.obolibrary.org/obo/RO_0002130) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "RO_0002131 some (GO_0045202 and BFO_0000050 some ?Y)" 
+
+- [has synaptic terminal in](http://purl.obolibrary.org/obo/RO_0002130) [id](http://www.geneontology.org/formats/oboInOwl#id) "has_synaptic_terminals_in" 
+
+- [has synaptic terminal in](http://purl.obolibrary.org/obo/RO_0002130) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
+
+- [has synaptic terminal in](http://purl.obolibrary.org/obo/RO_0002130) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002130" 
 
 
 
-### hepatic portal vein `http://purl.obolibrary.org/obo/UBERON_0001639`
-
-#### Added
-- [hepatic portal vein](http://purl.obolibrary.org/obo/UBERON_0001639) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [hepatic portal vein](http://purl.obolibrary.org/obo/UBERON_0001639) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### hepatocyte `http://purl.obolibrary.org/obo/CL_0000182`
+### has_boundary `http://purl.obolibrary.org/obo/RO_0002002`
 #### Removed
-- [hepatocyte](http://purl.obolibrary.org/obo/CL_0000182) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [has_boundary](http://purl.obolibrary.org/obo/RO_0002002) [label](http://www.w3.org/2000/01/rdf-schema#label) "has_boundary"@en 
+
+- [has_boundary](http://purl.obolibrary.org/obo/RO_0002002) Domain [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
+
+- [has_boundary](http://purl.obolibrary.org/obo/RO_0002002) Range [anatomical boundary](http://purl.obolibrary.org/obo/CARO_0000010) 
 
 
 
-### hindlimb skin `http://purl.obolibrary.org/obo/UBERON_0003532`
-
-#### Added
-- [hindlimb skin](http://purl.obolibrary.org/obo/UBERON_0003532) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lower limb skin" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-0819-0473" 
-
-
-### histoblast `http://purl.obolibrary.org/obo/CL_0000373`
+### hematopoietic stem cell `http://purl.obolibrary.org/obo/CL_0000037`
 #### Removed
-- [histoblast](http://purl.obolibrary.org/obo/CL_0000373) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [hematopoietic stem cell](http://purl.obolibrary.org/obo/CL_0000037) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [histoblast](http://purl.obolibrary.org/obo/CL_0000373) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [hematopoietic stem cell](http://purl.obolibrary.org/obo/CL_0000037) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### hypothalamus `http://purl.obolibrary.org/obo/UBERON_0001898`
+### hepatic portal fibroblast `http://purl.obolibrary.org/obo/CL_0009100`
 
 #### Added
-- [hypothalamus](http://purl.obolibrary.org/obo/UBERON_0001898) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
+- [hepatic portal fibroblast](http://purl.obolibrary.org/obo/CL_0009100) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [hypothalamus](http://purl.obolibrary.org/obo/UBERON_0001898) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
+- [hepatic portal fibroblast](http://purl.obolibrary.org/obo/CL_0009100) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### hypothalamus cell `http://purl.obolibrary.org/obo/CL_2000030`
+### hepatic stem cell `http://purl.obolibrary.org/obo/CL_0002195`
 #### Removed
-- [hypothalamus cell](http://purl.obolibrary.org/obo/CL_2000030) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hypothalamus](http://purl.obolibrary.org/obo/UBERON_0001898)) 
+- [hepatic stem cell](http://purl.obolibrary.org/obo/CL_0002195) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HpSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18442648" 
 
 #### Added
-- [hypothalamus cell](http://purl.obolibrary.org/obo/CL_2000030) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hypothalamus](http://purl.obolibrary.org/obo/UBERON_0001898)) 
+- [hepatic stem cell](http://purl.obolibrary.org/obo/CL_0002195) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HpSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18442648" 
 
 
-### ileocolic artery `http://purl.obolibrary.org/obo/UBERON_0001197`
-
-#### Added
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [ileocolic artery](http://purl.obolibrary.org/obo/UBERON_0001197) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### ileocolic vein `http://purl.obolibrary.org/obo/UBERON_0001219`
-
-#### Added
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [ileocolic vein](http://purl.obolibrary.org/obo/UBERON_0001219) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### ileum `http://purl.obolibrary.org/obo/UBERON_0002116`
-
-#### Added
-- [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Small_Intestine.glb" 
-
-- [ileum](http://purl.obolibrary.org/obo/UBERON_0002116) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Small_Intestine.glb" 
-
-
-### ilium `http://purl.obolibrary.org/obo/UBERON_0001273`
-
-#### Added
-- [ilium](http://purl.obolibrary.org/obo/UBERON_0001273) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Pelvis.glb" 
-
-- [ilium](http://purl.obolibrary.org/obo/UBERON_0001273) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Pelvis.glb" 
-
-
-### imaginal disc cell `http://purl.obolibrary.org/obo/CL_0000429`
-
-#### Added
-- [imaginal disc cell](http://purl.obolibrary.org/obo/CL_0000429) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### indoleamine-accumulating amacrine cell `http://purl.obolibrary.org/obo/CL_0004245`
+### heterocyclic compound binding `http://purl.obolibrary.org/obo/GO_1901363`
 #### Removed
-- [indoleamine-accumulating amacrine cell](http://purl.obolibrary.org/obo/CL_0004245) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a wide dendritic field and post-synaptic terminals in S5." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [heterocyclic compound binding](http://purl.obolibrary.org/obo/GO_1901363) EquivalentTo [binding](http://purl.obolibrary.org/obo/GO_0005488) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686)) 
 
-- [indoleamine-accumulating amacrine cell](http://purl.obolibrary.org/obo/CL_0004245) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
-
-#### Added
-- [indoleamine-accumulating amacrine cell](http://purl.obolibrary.org/obo/CL_0004245) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a wide dendritic field and post-synaptic terminals in S5. This cell type releases the neurotransmitters gamma-aminobutyric acid (GABA) and serotonin." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:12486181" 
-
-- [indoleamine-accumulating amacrine cell](http://purl.obolibrary.org/obo/CL_0004245) SubClassOf [wide field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004253) 
-
-- [indoleamine-accumulating amacrine cell](http://purl.obolibrary.org/obo/CL_0004245) SubClassOf [serotonergic neuron](http://purl.obolibrary.org/obo/CL_0000850) 
-
-- [indoleamine-accumulating amacrine cell](http://purl.obolibrary.org/obo/CL_0004245) SubClassOf [GABAergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030027) 
-
-
-### inferior mesenteric artery `http://purl.obolibrary.org/obo/UBERON_0001183`
+- [heterocyclic compound binding](http://purl.obolibrary.org/obo/GO_1901363) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
 
 #### Added
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
+- [heterocyclic compound binding](http://purl.obolibrary.org/obo/GO_1901363) EquivalentTo [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [CHEBI_5686](http://purl.obolibrary.org/obo/CHEBI_5686)) 
 
-- [inferior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001183) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### inferior mesenteric vein `http://purl.obolibrary.org/obo/UBERON_0001215`
-
-#### Added
-- [inferior mesenteric vein](http://purl.obolibrary.org/obo/UBERON_0001215) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
+- [heterocyclic compound binding](http://purl.obolibrary.org/obo/GO_1901363) SubClassOf [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) 
 
 
-### inflammatory cell `http://purl.obolibrary.org/obo/CL_0009002`
+### hippocampal mossy fiber `http://purl.obolibrary.org/obo/GO_0097457`
 #### Removed
-- [inflammatory cell](http://purl.obolibrary.org/obo/CL_0009002) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [hippocampal mossy fiber](http://purl.obolibrary.org/obo/GO_0097457) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Axon of dentate gyrus granule cell projecting to hippocampal area CA3, characterized by expansions (mossy fiber expansions) giving the fibers a mossy appearance. These unmyelinated axons were first described by Ramon y Cajal." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17765709" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NIF_Subcellular:nlx_subcell_100312" 
+
+- [hippocampal mossy fiber](http://purl.obolibrary.org/obo/GO_0097457) SubClassOf [dentate gyrus mossy fiber](http://purl.obolibrary.org/obo/GO_0044302) 
 
 #### Added
-- [inflammatory cell](http://purl.obolibrary.org/obo/CL_0009002) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [hippocampal mossy fiber](http://purl.obolibrary.org/obo/GO_0097457) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An axon of a hippocampal granule cell, including dentate gyrus granule cell and CA3 granule cell, characterized by expansions (mossy fiber expansions) giving the fibers a mossy appearance. These unmyelinated axons were first described by Ramon y Cajal." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17765709" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24336151" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NIF_Subcellular:nlx_subcell_100312" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20554881" 
+
+- [hippocampal mossy fiber](http://purl.obolibrary.org/obo/GO_0097457) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/25796"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [hippocampal mossy fiber](http://purl.obolibrary.org/obo/GO_0097457) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [hippocampal granule cell](http://purl.obolibrary.org/obo/CL_0001033) 
+
+- [hippocampal mossy fiber](http://purl.obolibrary.org/obo/GO_0097457) SubClassOf [axon](http://purl.obolibrary.org/obo/GO_0030424) 
 
 
-### information content entity `http://purl.obolibrary.org/obo/IAO_0000030`
-
-#### Added
-- [information content entity](http://purl.obolibrary.org/obo/IAO_0000030) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "information content entity"@en 
-
-- [information content entity](http://purl.obolibrary.org/obo/IAO_0000030) [label](http://www.w3.org/2000/01/rdf-schema#label) "information content entity"@en 
-
-- Class: [information content entity](http://purl.obolibrary.org/obo/IAO_0000030) 
-
-- [information content entity](http://purl.obolibrary.org/obo/IAO_0000030) SubClassOf [generically dependent continuant](http://purl.obolibrary.org/obo/BFO_0000031) 
-
-
-### inner cell mass cell `http://purl.obolibrary.org/obo/CL_2000020`
+### histamine catabolic process `http://purl.obolibrary.org/obo/GO_0001695`
 #### Removed
-- [inner cell mass cell](http://purl.obolibrary.org/obo/CL_2000020) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inner cell mass](http://purl.obolibrary.org/obo/UBERON_0000087)) 
-
-- [inner cell mass cell](http://purl.obolibrary.org/obo/CL_2000020) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [inner cell mass cell](http://purl.obolibrary.org/obo/CL_2000020) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inner cell mass](http://purl.obolibrary.org/obo/UBERON_0000087)) 
-
-- [inner cell mass cell](http://purl.obolibrary.org/obo/CL_2000020) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [histamine catabolic process](http://purl.obolibrary.org/obo/GO_0001695) SubClassOf [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) 
 
 
-### internal iliac vein `http://purl.obolibrary.org/obo/UBERON_0001317`
+
+### hypertrophic chondrocyte `http://purl.obolibrary.org/obo/CL_0000743`
 
 #### Added
-- [internal iliac vein](http://purl.obolibrary.org/obo/UBERON_0001317) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
+- [hypertrophic chondrocyte](http://purl.obolibrary.org/obo/CL_0000743) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [internal iliac vein](http://purl.obolibrary.org/obo/UBERON_0001317) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
+- [hypertrophic chondrocyte](http://purl.obolibrary.org/obo/CL_0000743) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### internal pudendal vein `http://purl.obolibrary.org/obo/UBERON_0018252`
+### ice binding `http://purl.obolibrary.org/obo/GO_0050825`
 
 #### Added
-- [internal pudendal vein](http://purl.obolibrary.org/obo/UBERON_0018252) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ice nucleation inhibitor activity" 
 
-- [internal pudendal vein](http://purl.obolibrary.org/obo/UBERON_0018252) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Binding to ice, water reduced to the solid state by cold temperature. It is a white or transparent colorless substance, crystalline, brittle, and viscoidal." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:curators" 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ice crystal binding" 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [label](http://www.w3.org/2000/01/rdf-schema#label) "ice binding" 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0050825" 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ice nucleation activity" 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "antifreeze activity" 
+
+- Class: [ice binding](http://purl.obolibrary.org/obo/GO_0050825) 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) EquivalentTo [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [CHEBI_15377](http://purl.obolibrary.org/obo/CHEBI_15377)) 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) SubClassOf [small molecule binding](http://purl.obolibrary.org/obo/GO_0036094) 
+
+- [ice binding](http://purl.obolibrary.org/obo/GO_0050825) SubClassOf [has input](http://purl.obolibrary.org/obo/RO_0002233) some [CHEBI_15377](http://purl.obolibrary.org/obo/CHEBI_15377) 
 
 
-### interstitial cell `http://purl.obolibrary.org/obo/CL_4030031`
+### imaginal disc morphogenesis `http://purl.obolibrary.org/obo/GO_0007560`
 #### Removed
-- [interstitial cell](http://purl.obolibrary.org/obo/CL_4030031) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [interstitial tissue](http://purl.obolibrary.org/obo/UBERON_0005169)) 
-
-- [interstitial cell](http://purl.obolibrary.org/obo/CL_4030031) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [imaginal disc morphogenesis](http://purl.obolibrary.org/obo/GO_0007560) SubClassOf [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) 
 
 #### Added
-- [interstitial cell](http://purl.obolibrary.org/obo/CL_4030031) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [interstitial tissue](http://purl.obolibrary.org/obo/UBERON_0005169)) 
-
-- [interstitial cell](http://purl.obolibrary.org/obo/CL_4030031) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [imaginal disc morphogenesis](http://purl.obolibrary.org/obo/GO_0007560) SubClassOf [animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0009887) 
 
 
-### interventricular septum `http://purl.obolibrary.org/obo/UBERON_0002094`
-
-#### Added
-- [interventricular septum](http://purl.obolibrary.org/obo/UBERON_0002094) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
-
-- [interventricular septum](http://purl.obolibrary.org/obo/UBERON_0002094) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
-
-
-### intrapulmonary bronchus `http://purl.obolibrary.org/obo/UBERON_0035767`
+### immaterial anatomical entity `http://purl.obolibrary.org/obo/CARO_0000007`
 #### Removed
-- [intrapulmonary bronchus](http://purl.obolibrary.org/obo/UBERON_0035767) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical entity that has no mass." 
 
-- [intrapulmonary bronchus](http://purl.obolibrary.org/obo/UBERON_0035767) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000007" 
 
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
+
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) [label](http://www.w3.org/2000/01/rdf-schema#label) "immaterial anatomical entity" 
+
+- Class: [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) 
+
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) DisjointWith [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) 
+
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) EquivalentTo [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) and (not ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mass](http://purl.obolibrary.org/obo/PATO_0000125))) 
+
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) SubClassOf [immaterial entity](http://purl.obolibrary.org/obo/BFO_0000141) 
+
+- [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) SubClassOf [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) 
+
+
+
+### immunoglobulin binding `http://purl.obolibrary.org/obo/GO_0019865`
+
+#### Added
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0019865" 
+
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Binding to an immunoglobulin." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ma" 
+
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) [label](http://www.w3.org/2000/01/rdf-schema#label) "immunoglobulin binding" 
+
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- Class: [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) 
+
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) EquivalentTo [binding](http://purl.obolibrary.org/obo/GO_0005488) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [immunoglobulin complex](http://purl.obolibrary.org/obo/GO_0019814)) 
+
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) SubClassOf [has input](http://purl.obolibrary.org/obo/RO_0002233) some [immunoglobulin complex](http://purl.obolibrary.org/obo/GO_0019814) 
+
+- [immunoglobulin binding](http://purl.obolibrary.org/obo/GO_0019865) SubClassOf [protein-containing complex binding](http://purl.obolibrary.org/obo/GO_0044877) 
+
+
+### increased mass `http://purl.obolibrary.org/obo/PATO_0001563`
+#### Removed
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001563" 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [RO_0002604](http://purl.obolibrary.org/obo/RO_0002604) [decreased mass](http://purl.obolibrary.org/obo/PATO_0001562) 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "large mass" 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "high mass" 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [label](http://www.w3.org/2000/01/rdf-schema#label) "increased mass" 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mass which is higher than normal or average." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATO:GVG" 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "PATO:0000578" 
+
+- Class: [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) EquivalentTo [mass](http://purl.obolibrary.org/obo/PATO_0000125) and ([increased in magnitude relative to](http://purl.obolibrary.org/obo/RO_0015007) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) SubClassOf [increased object quality](http://purl.obolibrary.org/obo/PATO_0002305) 
+
+- [increased mass](http://purl.obolibrary.org/obo/PATO_0001563) SubClassOf [mass](http://purl.obolibrary.org/obo/PATO_0000125) 
+
+
+
+### indirect pathway medium spiny neuron `http://purl.obolibrary.org/obo/CL_4023029`
+#### Removed
+- [indirect pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023029) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "D2-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34727523" 
+
+- [indirect pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023029) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "iSPN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30096299" 
+
+#### Added
+- [indirect pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023029) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "iSPN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30096299" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [indirect pathway medium spiny neuron](http://purl.obolibrary.org/obo/CL_4023029) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "D2-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34727523" 
+
+
+### innervates `http://purl.obolibrary.org/obo/RO_0002134`
+#### Removed
+- [innervates](http://purl.obolibrary.org/obo/RO_0002134) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "RO_0002132 some (GO_0043005 that (RO_0002131 some (GO_0045202 that BFO_0000050 some ?Y)))" 
+
+- [innervates](http://purl.obolibrary.org/obo/RO_0002134) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Relation between a 'neuron projection bundle' and a region in which one or more of its component neuron projections either synapses to targets or receives synaptic input. T innervates some R Expands_to: T has_fasciculating_neuron_projection that synapse_in some R." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
+
+- [innervates](http://purl.obolibrary.org/obo/RO_0002134) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
+
+
+
+### intermediate cell of urothelium `http://purl.obolibrary.org/obo/CL_4030055`
+
+#### Added
+- [intermediate cell of urothelium](http://purl.obolibrary.org/obo/CL_4030055) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [intermediate cell of urothelium](http://purl.obolibrary.org/obo/CL_4030055) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### intermediate filament binding `http://purl.obolibrary.org/obo/GO_0019215`
+#### Removed
+- [intermediate filament binding](http://purl.obolibrary.org/obo/GO_0019215) SubClassOf [protein-containing complex binding](http://purl.obolibrary.org/obo/GO_0044877) 
+
+#### Added
+- [intermediate filament binding](http://purl.obolibrary.org/obo/GO_0019215) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
+
+
+### intracellular ligand-gated monoatomic ion channel activity `http://purl.obolibrary.org/obo/GO_0005217`
+#### Removed
+- [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) [label](http://www.w3.org/2000/01/rdf-schema#label) "intracellular ligand-gated monoatomic ion channel activity" 
+
+- [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "intracellular ligand-gated ion channel activity" 
+
+- [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0005217" 
+
+- [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Enables the transmembrane transfer of an ion by a channel that opens when a specific intracellular ligand has been bound by the channel complex or one of its constituent parts." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0815340729" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:mtg_transport" 
+
+- Class: [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) 
+
+- [intracellular ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005217) SubClassOf [ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0015276) 
+
+
+
+### invaginating midget bipolar cell `http://purl.obolibrary.org/obo/CL_4033034`
+#### Removed
+- [invaginating midget bipolar cell](http://purl.obolibrary.org/obo/CL_4033034) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "IMB cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+#### Added
+- [invaginating midget bipolar cell](http://purl.obolibrary.org/obo/CL_4033034) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "IMB cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### ionocyte `http://purl.obolibrary.org/obo/CL_0005006`
-#### Removed
-- [ionocyte](http://purl.obolibrary.org/obo/CL_0005006) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### iridoblast `http://purl.obolibrary.org/obo/CL_0005001`
-#### Removed
-- [iridoblast](http://purl.obolibrary.org/obo/CL_0005001) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### iridophore `http://purl.obolibrary.org/obo/CL_0000431`
-#### Removed
-- [iridophore](http://purl.obolibrary.org/obo/CL_0000431) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### ischium `http://purl.obolibrary.org/obo/UBERON_0001274`
 
 #### Added
-- [ischium](http://purl.obolibrary.org/obo/UBERON_0001274) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Pelvis.glb" 
+- [ionocyte](http://purl.obolibrary.org/obo/CL_0005006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [ischium](http://purl.obolibrary.org/obo/UBERON_0001274) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Pelvis.glb" 
-
-
-### jejunum `http://purl.obolibrary.org/obo/UBERON_0002115`
-
-#### Added
-- [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Small_Intestine.glb" 
-
-- [jejunum](http://purl.obolibrary.org/obo/UBERON_0002115) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Small_Intestine.glb" 
+- [ionocyte](http://purl.obolibrary.org/obo/CL_0005006) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### kidney capsule `http://purl.obolibrary.org/obo/UBERON_0002015`
+### ionotropic glutamate receptor activity `http://purl.obolibrary.org/obo/GO_0004970`
 
 #### Added
-- [kidney capsule](http://purl.obolibrary.org/obo/UBERON_0002015) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_L.glb" 
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0004970" 
 
-- [kidney capsule](http://purl.obolibrary.org/obo/UBERON_0002015) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_R.glb" 
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) [label](http://www.w3.org/2000/01/rdf-schema#label) "ionotropic glutamate receptor activity" 
 
-- [kidney capsule](http://purl.obolibrary.org/obo/UBERON_0002015) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_R.glb" 
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Catalysis of the transmembrane transfer of an ion by a channel that opens when glutamate has been bound by the channel complex or one of its constituent parts." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0198506732" 
 
-- [kidney capsule](http://purl.obolibrary.org/obo/UBERON_0002015) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_L.glb" 
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Note that this term represents an activity and not a gene product. Consider also annotating to the molecular function terms 'glutamate-gated ion channel activity ; GO:0005234' and 'cation channel activity ; GO:0005261'." 
+
+- Class: [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) 
+
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_24867](http://purl.obolibrary.org/obo/CHEBI_24867)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_14321](http://purl.obolibrary.org/obo/CHEBI_14321)) 
+
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) SubClassOf [glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0008066) 
+
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) 
+
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) SubClassOf [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_14321](http://purl.obolibrary.org/obo/CHEBI_14321) 
+
+- [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) SubClassOf [transmitter-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0022824) 
+
+
+### ionotropic glutamate receptor complex `http://purl.obolibrary.org/obo/GO_0008328`
+
+#### Added
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0008328" 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) [label](http://www.w3.org/2000/01/rdf-schema#label) "ionotropic glutamate receptor complex" 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "cellular_component" 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A multimeric assembly of four or five subunits which form a structure with an extracellular N-terminus and a large loop that together form the ligand binding domain. The C-terminus is intracellular. The ionotropic glutamate receptor complex itself acts as a ligand-gated ion channel; on binding glutamate, charged ions pass through a channel in the center of the receptor complex." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.bris.ac.uk/Depts/Synaptic/info/glutamate.html" 
+
+- Class: [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) EquivalentTo [protein-containing complex](http://purl.obolibrary.org/obo/GO_0032991) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970)) 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) SubClassOf [neurotransmitter receptor complex](http://purl.obolibrary.org/obo/GO_0098878) 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) SubClassOf [monoatomic ion channel complex](http://purl.obolibrary.org/obo/GO_0034702) 
+
+- [ionotropic glutamate receptor complex](http://purl.obolibrary.org/obo/GO_0008328) SubClassOf [capable of](http://purl.obolibrary.org/obo/RO_0002215) some [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) 
+
+
+### ionotropic glutamate receptor signaling pathway `http://purl.obolibrary.org/obo/GO_0035235`
+
+#### Added
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0035235" 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) [label](http://www.w3.org/2000/01/rdf-schema#label) "ionotropic glutamate receptor signaling pathway" 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The series of molecular signals initiated by glutamate binding to a glutamate receptor on the surface of the target cell, followed by the movement of ions through a channel in the receptor complex, and ending with the regulation of a downstream cellular process, e.g. transcription." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:signaling" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0198506732" 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ionotropic glutamate receptor signalling pathway" 
+
+- Class: [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) EquivalentTo [signal transduction](http://purl.obolibrary.org/obo/GO_0007165) and ([starts with](http://purl.obolibrary.org/obo/RO_0002224) some [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970)) 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) SubClassOf [starts with](http://purl.obolibrary.org/obo/RO_0002224) some [ionotropic glutamate receptor activity](http://purl.obolibrary.org/obo/GO_0004970) 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) SubClassOf [glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0007215) 
+
+- [ionotropic glutamate receptor signaling pathway](http://purl.obolibrary.org/obo/GO_0035235) SubClassOf [ligand-gated ion channel signaling pathway](http://purl.obolibrary.org/obo/GO_1990806) 
+
+
+### is small molecule activator of `http://purl.obolibrary.org/obo/RO_0012005`
+
+#### Added
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "a relation between a continuant and a process, in which the continuant is a small molecule that activates the process" 
+
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-06-24T13:15:26Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) [0000-0003-1813-6857](https://orcid.org/0000-0003-1813-6857) 
+
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) [see also](http://www.w3.org/2000/01/rdf-schema#seeAlso) "https://wiki.geneontology.org/Is_small_molecule_activator_of"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) [label](http://www.w3.org/2000/01/rdf-schema#label) "is small molecule activator of"@en 
+
+- ObjectProperty: [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) 
+
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) SubPropertyOf: [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) 
+
+- [is small molecule activator of](http://purl.obolibrary.org/obo/RO_0012005) SubPropertyOf: [capable of positively regulating](http://purl.obolibrary.org/obo/RO_0002598) 
+
+
+### is small molecule regulator of `http://purl.obolibrary.org/obo/RO_0012004`
+
+#### Added
+- [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) [0000-0003-1813-6857](https://orcid.org/0000-0003-1813-6857) 
+
+- [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "a relation between a continuant and a process, in which the continuant is a small molecule that regulates the process" 
+
+- [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2020-06-24T13:15:17Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) [label](http://www.w3.org/2000/01/rdf-schema#label) "is small molecule regulator of"@en 
+
+- ObjectProperty: [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) 
+
+- [is small molecule regulator of](http://purl.obolibrary.org/obo/RO_0012004) SubPropertyOf: [capable of regulating](http://purl.obolibrary.org/obo/RO_0002596) 
 
 
 ### kidney cell `http://purl.obolibrary.org/obo/CL_1000497`
+
+#### Added
+- [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of a kidney." 
+
+
+### kidney collecting duct cell `http://purl.obolibrary.org/obo/CL_1001225`
 #### Removed
-- [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113)) 
-
-- [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [kidney](http://purl.obolibrary.org/obo/UBERON_0002113)) 
-
-- [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### kidney pyramid `http://purl.obolibrary.org/obo/UBERON_0004200`
-
-#### Added
-- [kidney pyramid](http://purl.obolibrary.org/obo/UBERON_0004200) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_L.glb" 
-
-- [kidney pyramid](http://purl.obolibrary.org/obo/UBERON_0004200) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_R.glb" 
-
-- [kidney pyramid](http://purl.obolibrary.org/obo/UBERON_0004200) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_R.glb" 
-
-- [kidney pyramid](http://purl.obolibrary.org/obo/UBERON_0004200) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_L.glb" 
-
-
-### labyrinth supporting cell `http://purl.obolibrary.org/obo/CL_0000631`
-#### Removed
-- [labyrinth supporting cell](http://purl.obolibrary.org/obo/CL_0000631) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### large intestine `http://purl.obolibrary.org/obo/UBERON_0000059`
-
-#### Added
-- [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-- [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-- [large intestine](http://purl.obolibrary.org/obo/UBERON_0000059) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/SBU_F_Intestine_Large.glb" 
-
-
-### larval midgut cell `http://purl.obolibrary.org/obo/CL_0009003`
-#### Removed
-- [larval midgut cell](http://purl.obolibrary.org/obo/CL_0009003) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [larval midgut cell](http://purl.obolibrary.org/obo/CL_0009003) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### laryngeal cartilage `http://purl.obolibrary.org/obo/UBERON_0001739`
-
-#### Added
-- [laryngeal cartilage](http://purl.obolibrary.org/obo/UBERON_0001739) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-larynx.glb" 
-
-- [laryngeal cartilage](http://purl.obolibrary.org/obo/UBERON_0001739) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-larynx.glb" 
-
-
-### larynx `http://purl.obolibrary.org/obo/UBERON_0001737`
-
-#### Added
-- [larynx](http://purl.obolibrary.org/obo/UBERON_0001737) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-larynx.glb" 
-
-- [larynx](http://purl.obolibrary.org/obo/UBERON_0001737) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-larynx.glb" 
-
-
-### leading edge cell `http://purl.obolibrary.org/obo/CL_0000730`
-#### Removed
-- [leading edge cell](http://purl.obolibrary.org/obo/CL_0000730) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### left cardiac atrium `http://purl.obolibrary.org/obo/UBERON_0002079`
-
-#### Added
-- [left cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002079) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
-
-- [left cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002079) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
-
-
-### left cerebral hemisphere `http://purl.obolibrary.org/obo/UBERON_0002812`
-
-#### Added
-- [left cerebral hemisphere](http://purl.obolibrary.org/obo/UBERON_0002812) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [left cerebral hemisphere](http://purl.obolibrary.org/obo/UBERON_0002812) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### left common carotid artery plus branches `http://purl.obolibrary.org/obo/UBERON_0001536`
-
-#### Added
-- [left common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [left common carotid artery plus branches](http://purl.obolibrary.org/obo/UBERON_0001536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### left eye `http://purl.obolibrary.org/obo/UBERON_0004548`
-
-#### Added
-- [left eye](http://purl.obolibrary.org/obo/UBERON_0004548) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_L.glb" 
-
-- [left eye](http://purl.obolibrary.org/obo/UBERON_0004548) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_L.glb" 
-
-- [left eye](http://purl.obolibrary.org/obo/UBERON_0004548) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-l.glb" 
-
-- [left eye](http://purl.obolibrary.org/obo/UBERON_0004548) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-l.glb" 
-
-
-### left kidney `http://purl.obolibrary.org/obo/UBERON_0004538`
-
-#### Added
-- [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_L.glb" 
-
-- [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_L.glb" 
-
-- [left kidney](http://purl.obolibrary.org/obo/UBERON_0004538) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Kidney_Left.glb" 
-
-
-### left lobe of liver `http://purl.obolibrary.org/obo/UBERON_0001115`
-
-#### Added
-- [left lobe of liver](http://purl.obolibrary.org/obo/UBERON_0001115) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Liver.glb" 
-
-- [left lobe of liver](http://purl.obolibrary.org/obo/UBERON_0001115) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Liver.glb" 
-
-
-### left lung `http://purl.obolibrary.org/obo/UBERON_0002168`
-
-#### Added
-- [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-- [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-- [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [left lung](http://purl.obolibrary.org/obo/UBERON_0002168) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
-
-
-### left nipple `http://purl.obolibrary.org/obo/UBERON_0013772`
-
-#### Added
-- [left nipple](http://purl.obolibrary.org/obo/UBERON_0013772) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.3/3d-vh-f-mammary-gland-l.glb" 
-
-
-### left pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0001652`
-
-#### Added
-- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [left pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001652) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### left putamen `http://purl.obolibrary.org/obo/UBERON_0008884`
-
-#### Added
-- [left putamen](http://purl.obolibrary.org/obo/UBERON_0008884) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-- [left putamen](http://purl.obolibrary.org/obo/UBERON_0008884) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-
-### left renal artery `http://purl.obolibrary.org/obo/UBERON_0001186`
-
-#### Added
-- [left renal artery](http://purl.obolibrary.org/obo/UBERON_0001186) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [left renal artery](http://purl.obolibrary.org/obo/UBERON_0001186) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### left renal vein `http://purl.obolibrary.org/obo/UBERON_0001142`
-
-#### Added
-- [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [left renal vein](http://purl.obolibrary.org/obo/UBERON_0001142) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### left subclavian artery `http://purl.obolibrary.org/obo/UBERON_0001584`
-
-#### Added
-- [left subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001584) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [left subclavian artery](http://purl.obolibrary.org/obo/UBERON_0001584) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### left thymus lobe `http://purl.obolibrary.org/obo/UBERON_0005457`
-
-#### Added
-- [left thymus lobe](http://purl.obolibrary.org/obo/UBERON_0005457) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Thymus.glb" 
-
-- [left thymus lobe](http://purl.obolibrary.org/obo/UBERON_0005457) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Thymus.glb" 
-
-
-### left ureter `http://purl.obolibrary.org/obo/UBERON_0001223`
-
-#### Added
-- [left ureter](http://purl.obolibrary.org/obo/UBERON_0001223) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Ureter_L.glb" 
-
-- [left ureter](http://purl.obolibrary.org/obo/UBERON_0001223) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Ureter_L.glb" 
-
-
-### left uterine tube `http://purl.obolibrary.org/obo/UBERON_0001303`
-
-#### Added
-- [left uterine tube](http://purl.obolibrary.org/obo/UBERON_0001303) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Fallopian_Tube_L.glb" 
-
-
-### leucoblast `http://purl.obolibrary.org/obo/CL_0005003`
-#### Removed
-- [leucoblast](http://purl.obolibrary.org/obo/CL_0005003) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### leucophore `http://purl.obolibrary.org/obo/CL_0000571`
-#### Removed
-- [leucophore](http://purl.obolibrary.org/obo/CL_0000571) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### leukocyte `http://purl.obolibrary.org/obo/CL_0000738`
-
-#### Added
-- [leukocyte](http://purl.obolibrary.org/obo/CL_0000738) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### ligament cell `http://purl.obolibrary.org/obo/CL_0000384`
-#### Removed
-- [ligament cell](http://purl.obolibrary.org/obo/CL_0000384) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### liver `http://purl.obolibrary.org/obo/UBERON_0002107`
-
-#### Added
-- [liver](http://purl.obolibrary.org/obo/UBERON_0002107) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Liver.glb" 
-
-- [liver](http://purl.obolibrary.org/obo/UBERON_0002107) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Liver.glb" 
-
-
-### lobar bronchus of left lung `http://purl.obolibrary.org/obo/UBERON_0003405`
-
-#### Added
-- [lobar bronchus of left lung](http://purl.obolibrary.org/obo/UBERON_0003405) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [lobar bronchus of left lung](http://purl.obolibrary.org/obo/UBERON_0003405) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-- [lobar bronchus of left lung](http://purl.obolibrary.org/obo/UBERON_0003405) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
-
-- [lobar bronchus of left lung](http://purl.obolibrary.org/obo/UBERON_0003405) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-
-### lobar bronchus of right lung `http://purl.obolibrary.org/obo/UBERON_0003404`
-
-#### Added
-- [lobar bronchus of right lung](http://purl.obolibrary.org/obo/UBERON_0003404) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
-
-- [lobar bronchus of right lung](http://purl.obolibrary.org/obo/UBERON_0003404) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-- [lobar bronchus of right lung](http://purl.obolibrary.org/obo/UBERON_0003404) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-- [lobar bronchus of right lung](http://purl.obolibrary.org/obo/UBERON_0003404) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-
-### lobular bronchiole `http://purl.obolibrary.org/obo/UBERON_8600000`
-
-#### Added
-- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [lobular bronchiole](http://purl.obolibrary.org/obo/UBERON_8600000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### lower urinary tract cell `http://purl.obolibrary.org/obo/CL_1000600`
-#### Removed
-- [lower urinary tract cell](http://purl.obolibrary.org/obo/CL_1000600) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lower urinary tract](http://purl.obolibrary.org/obo/UBERON_0001556)) 
-
-- [lower urinary tract cell](http://purl.obolibrary.org/obo/CL_1000600) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [kidney collecting duct cell](http://purl.obolibrary.org/obo/CL_1001225) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
   - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
 
 #### Added
-- [lower urinary tract cell](http://purl.obolibrary.org/obo/CL_1000600) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [lower urinary tract](http://purl.obolibrary.org/obo/UBERON_0001556)) 
+- [kidney collecting duct cell](http://purl.obolibrary.org/obo/CL_1001225) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of a collecting duct of renal tubule." 
 
-- [lower urinary tract cell](http://purl.obolibrary.org/obo/CL_1000600) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [kidney collecting duct cell](http://purl.obolibrary.org/obo/CL_1001225) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
 
 
-### lung `http://purl.obolibrary.org/obo/UBERON_0002048`
+### kidney connecting tubule principal cell `http://purl.obolibrary.org/obo/CL_4030018`
+#### Removed
+- [kidney connecting tubule principal cell](http://purl.obolibrary.org/obo/CL_4030018) SubClassOf [kidney tubule cell](http://purl.obolibrary.org/obo/CL_1000507) 
+
+- [kidney connecting tubule principal cell](http://purl.obolibrary.org/obo/CL_4030018) SubClassOf [epithelial cell of nephron](http://purl.obolibrary.org/obo/CL_1000449) 
+
+- [kidney connecting tubule principal cell](http://purl.obolibrary.org/obo/CL_4030018) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [renal connecting tubule](http://purl.obolibrary.org/obo/UBERON_0005097) 
 
 #### Added
-- [lung](http://purl.obolibrary.org/obo/UBERON_0002048) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-- [lung](http://purl.obolibrary.org/obo/UBERON_0002048) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-- [lung](http://purl.obolibrary.org/obo/UBERON_0002048) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [lung](http://purl.obolibrary.org/obo/UBERON_0002048) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
+- [kidney connecting tubule principal cell](http://purl.obolibrary.org/obo/CL_4030018) SubClassOf [kidney connecting tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000768) 
 
 
-### lung ciliated cell `http://purl.obolibrary.org/obo/CL_1000271`
+### kidney cortex collecting duct epithelial cell `http://purl.obolibrary.org/obo/CL_1000549`
 #### Removed
-- [lung ciliated cell](http://purl.obolibrary.org/obo/CL_1000271) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [kidney cortex collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000549) EquivalentTo [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cortical collecting duct](http://purl.obolibrary.org/obo/UBERON_0004203)) 
 
+- [kidney cortex collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000549) SubClassOf [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) 
+
+#### Added
+- [kidney cortex collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000549) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that is part of a cortical collecting duct." 
+
+- [kidney cortex collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000549) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [cortical collecting duct](http://purl.obolibrary.org/obo/UBERON_0004203)) 
+
+- [kidney cortex collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000549) SubClassOf [renal cortical epithelial cell](http://purl.obolibrary.org/obo/CL_0002584) 
+
+- [kidney cortex collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000549) SubClassOf [epithelial cell of nephron](http://purl.obolibrary.org/obo/CL_1000449) 
+
+
+### kidney cortex collecting duct intercalated cell `http://purl.obolibrary.org/obo/CL_1000715`
+#### Removed
+- [kidney cortex collecting duct intercalated cell](http://purl.obolibrary.org/obo/CL_1000715) SubClassOf [renal cortical epithelial cell](http://purl.obolibrary.org/obo/CL_0002584) 
+
+
+
+### kidney cortex collecting duct principal cell `http://purl.obolibrary.org/obo/CL_1000714`
+#### Removed
+- [kidney cortex collecting duct principal cell](http://purl.obolibrary.org/obo/CL_1000714) SubClassOf [renal cortical epithelial cell](http://purl.obolibrary.org/obo/CL_0002584) 
+
+
+
+### kidney cortical cell `http://purl.obolibrary.org/obo/CL_0002681`
+#### Removed
+- [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+
+#### Added
+- [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of a cortex of kidney." 
+
+- [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+
+
+### kidney inner medulla collecting duct epithelial cell `http://purl.obolibrary.org/obo/CL_1000547`
+#### Removed
+- [kidney inner medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000547) EquivalentTo [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inner medullary collecting duct](http://purl.obolibrary.org/obo/UBERON_0004205)) 
+
+- [kidney inner medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000547) SubClassOf [kidney collecting duct cell](http://purl.obolibrary.org/obo/CL_1001225) 
+
+#### Added
+- [kidney inner medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000547) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [inner medullary collecting duct](http://purl.obolibrary.org/obo/UBERON_0004205)) 
+
+- [kidney inner medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000547) SubClassOf [kidney medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000546) 
+
+
+### kidney interstitial cell `http://purl.obolibrary.org/obo/CL_1000500`
+#### Removed
+- [kidney interstitial cell](http://purl.obolibrary.org/obo/CL_1000500) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+
+#### Added
+- [kidney interstitial cell](http://purl.obolibrary.org/obo/CL_1000500) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of kidney interstitium." 
+
+- [kidney interstitial cell](http://purl.obolibrary.org/obo/CL_1000500) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+
+
+### kidney medulla cell `http://purl.obolibrary.org/obo/CL_1000504`
+#### Removed
+- [kidney medulla cell](http://purl.obolibrary.org/obo/CL_1000504) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+
+#### Added
+- [kidney medulla cell](http://purl.obolibrary.org/obo/CL_1000504) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of a renal medulla." 
+
+- [kidney medulla cell](http://purl.obolibrary.org/obo/CL_1000504) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+
+
+### kidney medulla collecting duct epithelial cell `http://purl.obolibrary.org/obo/CL_1000546`
+#### Removed
+- [kidney medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000546) EquivalentTo [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [renal medulla collecting duct](http://purl.obolibrary.org/obo/UBERON_0005185)) 
+
+#### Added
+- [kidney medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000546) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that is part of a renal medulla collecting duct." 
+
+- [kidney medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000546) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [renal medulla collecting duct](http://purl.obolibrary.org/obo/UBERON_0005185)) 
+
+- [kidney medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000546) SubClassOf [epithelial cell of nephron](http://purl.obolibrary.org/obo/CL_1000449) 
+
+
+### kidney outer medulla collecting duct epithelial cell `http://purl.obolibrary.org/obo/CL_1000548`
+#### Removed
+- [kidney outer medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000548) EquivalentTo [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [outer medullary collecting duct](http://purl.obolibrary.org/obo/UBERON_0004204)) 
+
+- [kidney outer medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000548) SubClassOf [kidney collecting duct cell](http://purl.obolibrary.org/obo/CL_1001225) 
+
+#### Added
+- [kidney outer medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000548) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that is part of an outer medullary collecting duct." 
+
+- [kidney outer medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000548) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [outer medullary collecting duct](http://purl.obolibrary.org/obo/UBERON_0004204)) 
+
+- [kidney outer medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000548) SubClassOf [kidney medulla collecting duct epithelial cell](http://purl.obolibrary.org/obo/CL_1000546) 
+
+
+### kidney pelvis cell `http://purl.obolibrary.org/obo/CL_1000505`
+#### Removed
+- [kidney pelvis cell](http://purl.obolibrary.org/obo/CL_1000505) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+
+#### Added
+- [kidney pelvis cell](http://purl.obolibrary.org/obo/CL_1000505) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of a renal pelvis." 
+
+- [kidney pelvis cell](http://purl.obolibrary.org/obo/CL_1000505) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+
+
+### kidney tubule cell `http://purl.obolibrary.org/obo/CL_1000507`
+#### Removed
+- [kidney tubule cell](http://purl.obolibrary.org/obo/CL_1000507) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+
+#### Added
+- [kidney tubule cell](http://purl.obolibrary.org/obo/CL_1000507) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is part of a nephron tubule." 
+
+- [kidney tubule cell](http://purl.obolibrary.org/obo/CL_1000507) SubClassOf [kidney cell](http://purl.obolibrary.org/obo/CL_1000497) 
+
+
+### lactocyte type 1 `http://purl.obolibrary.org/obo/CL_4033059`
+
+#### Added
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LC1" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [label](http://www.w3.org/2000/01/rdf-schema#label) "lactocyte type 1" 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal cluster 1 cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34097179" 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lactocyte that highly expresses genes associated with transcription, immune cell function, and cellular stress. A lactocyte type 1 also expresses genes involved in milk component biosynthesis (e.g., LALBA and CSNs), albeit at lower levels than a lactocyte type 2." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35377806" 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "progenitor MEC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LMC major luminal cluster 1" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [date](http://purl.org/dc/terms/date) "2023-10-16T13:15:36Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) [contributor](http://purl.org/dc/terms/contributor) [X](https://orcid.org/0000-0003-4361-817X) 
+
+- Class: [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) 
+
+- [lactocyte type 1](http://purl.obolibrary.org/obo/CL_4033059) SubClassOf [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) 
+
+
+### lactocyte type 2 `http://purl.obolibrary.org/obo/CL_4033060`
+
+#### Added
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal cluster 2 cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35377806" 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LMC major luminal cluster 2" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [contributor](http://purl.org/dc/terms/contributor) [X](https://orcid.org/0000-0003-4361-817X) 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [label](http://www.w3.org/2000/01/rdf-schema#label) "lactocyte type 2" 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LC2" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A lactocyte that highly expresses genes associated with lipid production and milk component biosynthesis." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35377806" 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) [date](http://purl.org/dc/terms/date) "2023-10-16T13:15:55Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- Class: [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) 
+
+- [lactocyte type 2](http://purl.obolibrary.org/obo/CL_4033060) SubClassOf [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) 
+
+
+### ligand-gated calcium channel activity `http://purl.obolibrary.org/obo/GO_0099604`
+#### Removed
+- [ligand-gated calcium channel activity](http://purl.obolibrary.org/obo/GO_0099604) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_29108](http://purl.obolibrary.org/obo/CHEBI_29108)) 
+
+#### Added
+- [ligand-gated calcium channel activity](http://purl.obolibrary.org/obo/GO_0099604) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_29108](http://purl.obolibrary.org/obo/CHEBI_29108)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431)) 
+
+
+### ligand-gated channel activity `http://purl.obolibrary.org/obo/GO_0022834`
+
+#### Added
+- [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431)) 
+
+- [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) SubClassOf [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431) 
+
+
+### ligand-gated monoatomic cation channel activity `http://purl.obolibrary.org/obo/GO_0099094`
+#### Removed
+- [ligand-gated monoatomic cation channel activity](http://purl.obolibrary.org/obo/GO_0099094) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) 
+
+#### Added
+- [ligand-gated monoatomic cation channel activity](http://purl.obolibrary.org/obo/GO_0099094) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431)) 
+
+
+### ligand-gated monoatomic ion channel activity `http://purl.obolibrary.org/obo/GO_0015276`
+#### Removed
+- [ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0015276) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_24867](http://purl.obolibrary.org/obo/CHEBI_24867)) 
+
+- [ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0015276) SubClassOf [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) 
+
+#### Added
+- [ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0015276) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_24867](http://purl.obolibrary.org/obo/CHEBI_24867)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24431](http://purl.obolibrary.org/obo/CHEBI_24431)) 
+
+- [ligand-gated monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0015276) SubClassOf [monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005216) 
+
+
+### luminal adaptive secretory precursor cell of mammary gland `http://purl.obolibrary.org/obo/CL_4033057`
+
+#### Added
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A luminal epithelial cell of the mammary gland that can proliferate and has the potential to differentiate into a lactocyte during pregnancy. In humans, a luminal adaptive secretory precursor cell can be identified by high levels of the markers EpCAM and CD49f, and in mice it can be identified by low levels of CD29 and high levels of CD14, Kit, CD61, and Tspan8." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-6677-8489" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://nrs.harvard.edu/URN-3:HUL.INSTREPOS:37368328" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19648928" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35617956" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://nrs.harvard.edu/URN-3:HUL.INSTREPOS:37368328" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [date](http://purl.org/dc/terms/date) "2023-10-13T13:02:55Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal secretory cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37380767" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LumSec" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37380767" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AV" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35617956" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "alveolar progenitor" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26390871" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LASP" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-6677-8489" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER-negative luminal alveolar progenitor" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://nrs.harvard.edu/URN-3:HUL.INSTREPOS:37368328" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "alveolar cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35617956" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LP" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1101/2023.04.21.537845" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [contributor](http://purl.org/dc/terms/contributor) [X](https://orcid.org/0000-0003-4969-670X) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal progenitor" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1101/2023.04.21.537845" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal progenitor cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20346151" 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) [label](http://www.w3.org/2000/01/rdf-schema#label) "luminal adaptive secretory precursor cell of mammary gland" 
+
+- Class: [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) SubClassOf [luminal epithelial cell of mammary gland](http://purl.obolibrary.org/obo/CL_0002326) 
+
+- [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) SubClassOf [progenitor cell](http://purl.obolibrary.org/obo/CL_0011026) 
+
+
+### luminal hormone-sensing cell of mammary gland `http://purl.obolibrary.org/obo/CL_4033058`
+
+#### Added
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [contributor](http://purl.org/dc/terms/contributor) [X](https://orcid.org/0000-0003-4969-670X) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HS" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1101/2023.04.21.537845" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Following lineage specification, a luminal hormone-sensing cell expresses receptors for one or more hormones, such as estrogens, progesterone, androgens, and prolactin. In response to progesterone, luminal hormone-sensing cells express TNFSF11, WNT4, and RSPO1, among other factors, which cause branching, proliferation, and partial differentiation in LASP and B-Myo cells during luteal phases of the estrous/menstrual cycle and during gestation. During ductal elongation, ER activity drives expression of AREG in LHS cells, which is necessary for proliferation of the epithelium to fill the mammary fat pad." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26390871" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0003-4969-670X" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34156490" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal hormone-responsive cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37380767" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "luminal mature cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20346151" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LumHR" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37380767" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [date](http://purl.org/dc/terms/date) "2023-10-16T08:30:25Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [label](http://www.w3.org/2000/01/rdf-schema#label) "luminal hormone-sensing cell of mammary gland" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A luminal epithelial cell of the mammary gland that transduces endocrine cues to orchestrate proliferation, architectural remodeling, and differentiation of other cells in the mammary gland via paracrine signaling. This cell expresses high levels of estrogen receptors. In humans, a luminal hormone-sensing cell can be identified by high levels of EpCAM and low levels of CD49f, and in mice it can be identified by low levels of CD29 and high levels of Foxa1, CD133, and Sca1 (Ly6a)." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-6677-8489" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26390871" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://nrs.harvard.edu/URN-3:HUL.INSTREPOS:37368328" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19648928" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34156490" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "hormone sensing cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1101/2023.04.21.537845" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ER-positive luminal hormone-sensor cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://nrs.harvard.edu/URN-3:HUL.INSTREPOS:37368328" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HS-MEC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26390871" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "hormone-sensing mammary epithelial cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26390871" 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LHS" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0001-6677-8489" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- Class: [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [luminal epithelial cell of mammary gland](http://purl.obolibrary.org/obo/CL_0002326) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [exocrine cell](http://purl.obolibrary.org/obo/CL_0000152) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [protein-containing material entity](http://purl.obolibrary.org/obo/PR_000050567) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [has plasma membrane part](http://purl.obolibrary.org/obo/RO_0002104) some [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) 
+
+
+### lung endothelial cell `http://purl.obolibrary.org/obo/CL_1001567`
+#### Removed
+- [lung endothelial cell](http://purl.obolibrary.org/obo/CL_1001567) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lung endothelial cell](http://purl.obolibrary.org/obo/CL_1001567) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+
+### lung goblet cell `http://purl.obolibrary.org/obo/CL_1000143`
+#### Removed
+- [lung goblet cell](http://purl.obolibrary.org/obo/CL_1000143) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lung goblet cell](http://purl.obolibrary.org/obo/CL_1000143) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+
+### lung interstitial macrophage `http://purl.obolibrary.org/obo/CL_4033043`
+#### Removed
+- [lung interstitial macrophage](http://purl.obolibrary.org/obo/CL_4033043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung IM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36211428" 
+
+#### Added
+- [lung interstitial macrophage](http://purl.obolibrary.org/obo/CL_4033043) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lung interstitial macrophage](http://purl.obolibrary.org/obo/CL_4033043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung IM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36211428" 
+
+- [lung interstitial macrophage](http://purl.obolibrary.org/obo/CL_4033043) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 ### lung megakaryocyte `http://purl.obolibrary.org/obo/CL_4033018`
 #### Removed
-- [lung megakaryocyte](http://purl.obolibrary.org/obo/CL_4033018) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung MKs" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) 
-
+- [lung megakaryocyte](http://purl.obolibrary.org/obo/CL_4033018) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MKL" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33351116" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36524131" 
 
-#### Added
 - [lung megakaryocyte](http://purl.obolibrary.org/obo/CL_4033018) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung MKs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33351116" 
 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+#### Added
+- [lung megakaryocyte](http://purl.obolibrary.org/obo/CL_4033018) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung MKs" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33351116" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+- [lung megakaryocyte](http://purl.obolibrary.org/obo/CL_4033018) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MKL" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36524131" 
 
 
 ### lung migratory dendritic cell `http://purl.obolibrary.org/obo/CL_4033045`
@@ -2493,1232 +3953,1981 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
 - [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung mDCs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34516781" 
 
-#### Added
-- [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung mDCs" 
+- [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung mDC" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34516781" 
+
+#### Added
+- [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung mDCs" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34516781" 
 
+- [lung migratory dendritic cell](http://purl.obolibrary.org/obo/CL_4033045) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung mDC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-### lung secretory cell `http://purl.obolibrary.org/obo/CL_1000272`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34516781" 
+
+
+### lung neuroendocrine cell `http://purl.obolibrary.org/obo/CL_1000223`
 #### Removed
-- [lung secretory cell](http://purl.obolibrary.org/obo/CL_1000272) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [lung neuroendocrine cell](http://purl.obolibrary.org/obo/CL_1000223) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "PNEC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-
-
-### luteal cell `http://purl.obolibrary.org/obo/CL_0000175`
-
-#### Added
-- [luteal cell](http://purl.obolibrary.org/obo/CL_0000175) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "corpus luteum cell" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:16790079" 
-
-
-### lymph node T cell domain `http://purl.obolibrary.org/obo/UBERON_0010417`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33355253" 
 
 #### Added
-- [lymph node T cell domain](http://purl.obolibrary.org/obo/UBERON_0010417) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
+- [lung neuroendocrine cell](http://purl.obolibrary.org/obo/CL_1000223) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "PNEC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33355253" 
 
-- [lymph node T cell domain](http://purl.obolibrary.org/obo/UBERON_0010417) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
-
-
-### lymph node follicle `http://purl.obolibrary.org/obo/UBERON_0010748`
-
-#### Added
-- [lymph node follicle](http://purl.obolibrary.org/obo/UBERON_0010748) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
-
-- [lymph node follicle](http://purl.obolibrary.org/obo/UBERON_0010748) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### lymph vasculature `http://purl.obolibrary.org/obo/UBERON_0004536`
-
-#### Added
-- [lymph vasculature](http://purl.obolibrary.org/obo/UBERON_0004536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
-
-- [lymph vasculature](http://purl.obolibrary.org/obo/UBERON_0004536) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
-
-
-### macroglial cell `http://purl.obolibrary.org/obo/CL_0000126`
+### lung perichondrial fibroblast `http://purl.obolibrary.org/obo/CL_4033026`
 #### Removed
-- [macroglial cell](http://purl.obolibrary.org/obo/CL_0000126) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "macroglia" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+- [lung perichondrial fibroblast](http://purl.obolibrary.org/obo/CL_4033026) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "PC-fibro" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1152/physrev.2001.81.2.871" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36543915" 
 
 #### Added
-- [macroglial cell](http://purl.obolibrary.org/obo/CL_0000126) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "macroglia" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1152/physrev.2001.81.2.871" 
+- [lung perichondrial fibroblast](http://purl.obolibrary.org/obo/CL_4033026) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+- [lung perichondrial fibroblast](http://purl.obolibrary.org/obo/CL_4033026) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lung perichondrial fibroblast](http://purl.obolibrary.org/obo/CL_4033026) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "PC-fibro" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36543915" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### male gamete `http://purl.obolibrary.org/obo/CL_0000408`
+### lung resident memory CD4-positive, alpha-beta T cell `http://purl.obolibrary.org/obo/CL_4033038`
 #### Removed
-- [male gamete](http://purl.obolibrary.org/obo/CL_0000408) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [lung resident memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033038) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung CD4-positive TRM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-
-
-### male genital duct `http://purl.obolibrary.org/obo/UBERON_0006947`
-
-#### Added
-- [male genital duct](http://purl.obolibrary.org/obo/UBERON_0006947) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Prostate.glb" 
-
-
-### male reproductive system `http://purl.obolibrary.org/obo/UBERON_0000079`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31265968" 
 
 #### Added
-- [male reproductive system](http://purl.obolibrary.org/obo/UBERON_0000079) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Prostate.glb" 
+- [lung resident memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033038) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung CD4-positive TRM" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31265968" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [lung resident memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033038) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lung resident memory CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033038) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### male urethra `http://purl.obolibrary.org/obo/UBERON_0001333`
-
-#### Added
-- [male urethra](http://purl.obolibrary.org/obo/UBERON_0001333) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Urethra.glb" 
-
-
-### mammary gland epithelial cell `http://purl.obolibrary.org/obo/CL_0002327`
+### lung resident memory CD8-positive, alpha-beta T cell `http://purl.obolibrary.org/obo/CL_4033039`
 #### Removed
-- [mammary gland epithelial cell](http://purl.obolibrary.org/obo/CL_0002327) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [lung resident memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033039) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung CD8-positive TRM" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-
-
-### medulla of lymph node `http://purl.obolibrary.org/obo/UBERON_0002007`
-
-#### Added
-- [medulla of lymph node](http://purl.obolibrary.org/obo/UBERON_0002007) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
-
-- [medulla of lymph node](http://purl.obolibrary.org/obo/UBERON_0002007) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
-
-
-### melanoblast `http://purl.obolibrary.org/obo/CL_0000541`
-#### Removed
-- [melanoblast](http://purl.obolibrary.org/obo/CL_0000541) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### melanocyte `http://purl.obolibrary.org/obo/CL_0000148`
-#### Removed
-- [melanocyte](http://purl.obolibrary.org/obo/CL_0000148) SubClassOf [pigment cell](http://purl.obolibrary.org/obo/CL_0000147) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-- [melanocyte](http://purl.obolibrary.org/obo/CL_0000148) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31265968" 
 
 #### Added
-- [melanocyte](http://purl.obolibrary.org/obo/CL_0000148) SubClassOf [pigment cell](http://purl.obolibrary.org/obo/CL_0000147) 
+- [lung resident memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033039) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lung CD8-positive TRM" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31265968" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [lung resident memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033039) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [lung resident memory CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033039) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### lymph node lymphatic vessel endothelial cell `http://purl.obolibrary.org/obo/CL_0009115`
+
+#### Added
+- [lymph node lymphatic vessel endothelial cell](http://purl.obolibrary.org/obo/CL_0009115) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [lymph node lymphatic vessel endothelial cell](http://purl.obolibrary.org/obo/CL_0009115) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### macrophage activation involved in immune response `http://purl.obolibrary.org/obo/GO_0002281`
+#### Removed
+- [macrophage activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002281) SubClassOf [myeloid cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002275) 
+
+#### Added
+- [macrophage activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002281) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [myeloid cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002275) 
+
+- [macrophage activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002281) SubClassOf [leukocyte activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002366) 
+
+
+### mammary alveolar cell `http://purl.obolibrary.org/obo/CL_0002325`
+#### Removed
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [label](http://www.w3.org/2000/01/rdf-schema#label) "mammary alveolar cell" 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The milk-producing cell of the alveolar unit that emerges during pregnancy." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19022771" 
+
+#### Added
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [contributor](http://purl.org/dc/terms/contributor) [X](https://orcid.org/0000-0003-4361-817X) 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [label](http://www.w3.org/2000/01/rdf-schema#label) "lactocyte" 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "LMC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lactation-derived mammary cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "lactaction-associated mammary epithelial cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "mammary alveolar cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19022771" 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A milk-producing glandular epithelial cell that is part of a mammary gland alveolus and differentiates from a luminal adaptive secretory precursor cell during secretory differentiation (also termed lactogenesis I). Following secretory activation (also termed lactogenesis II), a lactocyte is involved in the synthesis and/or transport of milk constituents including proteins, oligosaccharides, lactose, micronutrients, fat, hormones, immunoglobulins, and cytokines into the lumen of the lactating mammary gland." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35091553" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19022771" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35377806" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:28717367" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1177/156482659601700404" 
+
+- [mammary alveolar cell](http://purl.obolibrary.org/obo/CL_0002325) SubClassOf [develops from](http://purl.obolibrary.org/obo/RO_0002202) some [luminal adaptive secretory precursor cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033057) 
+
+
+### mass `http://purl.obolibrary.org/obo/PATO_0000125`
+#### Removed
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A physical quality that inheres in a bearer by virtue of the proportion of the bearer's amount of matter." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [scalar_slim](http://purl.obolibrary.org/obo/pato#scalar_slim) 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "For any biological use of PATO, the concept that should be used is 'mass' and not 'weight'. For example, increased weight of an organism." 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0000125" 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [relational_slim](http://purl.obolibrary.org/obo/pato#relational_slim) 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [attribute_slim](http://purl.obolibrary.org/obo/pato#attribute_slim) 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) [label](http://www.w3.org/2000/01/rdf-schema#label) "mass" 
+
+- Class: [mass](http://purl.obolibrary.org/obo/PATO_0000125) 
+
+- [mass](http://purl.obolibrary.org/obo/PATO_0000125) SubClassOf [physical quality](http://purl.obolibrary.org/obo/PATO_0001018) 
+
+
+
+### mast cell degranulation `http://purl.obolibrary.org/obo/GO_0043303`
+#### Removed
+- [mast cell degranulation](http://purl.obolibrary.org/obo/GO_0043303) SubClassOf [mast cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002279) 
+
+#### Added
+- [mast cell degranulation](http://purl.obolibrary.org/obo/GO_0043303) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [mast cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002279) 
+
+
+### material anatomical entity `http://purl.obolibrary.org/obo/CARO_0000006`
+#### Removed
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical entity that has mass." 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) [label](http://www.w3.org/2000/01/rdf-schema#label) "material anatomical entity" 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000006" 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
+
+- Class: [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) DisjointWith [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) DisjointWith [immaterial anatomical entity](http://purl.obolibrary.org/obo/CARO_0000007) 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) EquivalentTo [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mass](http://purl.obolibrary.org/obo/PATO_0000125)) 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) SubClassOf [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mass](http://purl.obolibrary.org/obo/PATO_0000125) 
+
+- [material anatomical entity](http://purl.obolibrary.org/obo/CARO_0000006) SubClassOf [anatomical entity](http://purl.obolibrary.org/obo/CARO_0000000) 
+
+
+
+### matrix D1 medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030043`
+#### Removed
+- [matrix D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1M" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [matrix D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "matrix D1-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [matrix D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-matrix" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+#### Added
+- [matrix D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-matrix" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [matrix D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "matrix D1-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [matrix D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030043) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1M" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### matrix D2 medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030047`
+#### Removed
+- [matrix D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "matrix D2-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [matrix D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2M" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [matrix D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2-matrix" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+#### Added
+- [matrix D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "matrix D2-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [matrix D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2M" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [matrix D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030047) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2-matrix" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### mature CD4 single-positive thymocyte `http://purl.obolibrary.org/obo/CL_0002436`
+#### Removed
+- [mature CD4 single-positive thymocyte](http://purl.obolibrary.org/obo/CL_0002436) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "T.4SP24-.Th" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [mature CD4 single-positive thymocyte](http://purl.obolibrary.org/obo/CL_0002436) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "T.4SP24-.Th" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### maximally connected `http://purl.obolibrary.org/obo/PATO_0010000`
+#### Removed
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0010000" 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A structural quality inhering in the bearer by virtue of the bearer consisting of a single, maximally connected structure." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:dos" 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [label](http://www.w3.org/2000/01/rdf-schema#label) "maximally connected" 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "What counts as maximally connected may be relative to some specification of granularity." 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2014-12-12T08:41:11Z" 
+
+- Class: [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) 
+
+- [maximally connected](http://purl.obolibrary.org/obo/PATO_0010000) SubClassOf [structure](http://purl.obolibrary.org/obo/PATO_0000141) 
+
+
+
+### medullary reticular cell `http://purl.obolibrary.org/obo/CL_0009106`
+#### Removed
+- [medullary reticular cell](http://purl.obolibrary.org/obo/CL_0009106) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MedRC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [medullary reticular cell](http://purl.obolibrary.org/obo/CL_0009106) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MedRC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### mesenchymal cell `http://purl.obolibrary.org/obo/CL_0008019`
-#### Removed
-- [mesenchymal cell](http://purl.obolibrary.org/obo/CL_0008019) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
 
+#### Added
+- [mesenchymal cell](http://purl.obolibrary.org/obo/CL_0008019) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [mesenchymal cell](http://purl.obolibrary.org/obo/CL_0008019) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
 ### mesenchymal stem cell `http://purl.obolibrary.org/obo/CL_0000134`
 #### Removed
-- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "mesenchymal progenitor cells" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PLURAL](http://purl.obolibrary.org/obo/cl#PLURAL) 
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-F" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044982" 
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BMSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "stem cells, mesenchymal" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PLURAL](http://purl.obolibrary.org/obo/cl#PLURAL) 
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044982" 
-
-- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "mesenchymal stromal cells" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [PLURAL](http://purl.obolibrary.org/obo/cl#PLURAL) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11378515" 
 
 #### Added
-- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "mesenchymal progenitor cells" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BMSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044982" 
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MSC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "mesenchymal stromal cells" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11378515" 
 
-- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "stem cells, mesenchymal" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D044982" 
+- [mesenchymal stem cell](http://purl.obolibrary.org/obo/CL_0000134) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-F" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### mesenchymal stem cell of orbital adipose tissue `http://purl.obolibrary.org/obo/CL_4040004`
+### mesothelial cell of visceral pleura `http://purl.obolibrary.org/obo/CL_1000493`
 
 #### Added
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [label](http://www.w3.org/2000/01/rdf-schema#label) "mesenchymal stem cell of orbital adipose tissue" 
+- [mesothelial cell of visceral pleura](http://purl.obolibrary.org/obo/CL_1000493) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "OAMSC" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31377878" 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [date](http://purl.org/dc/terms/date) "2023-09-18T10:43:00Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-0819-0473](https://orcid.org/0000-0002-0819-0473) 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Orbital ASCs" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30210548" 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any mesenchymal stem cell of adipose tissue that is part of an orbital region." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-0819-0473](https://orcid.org/0000-0002-0819-0473) 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "orbital adipose-derived mesenchymal stem cell" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31377878" 
-
-- Class: [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) EquivalentTo [mesenchymal stem cell of adipose tissue](http://purl.obolibrary.org/obo/CL_0002570) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [orbital region](http://purl.obolibrary.org/obo/UBERON_0004088)) 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [orbital region](http://purl.obolibrary.org/obo/UBERON_0004088) 
-
-- [mesenchymal stem cell of orbital adipose tissue](http://purl.obolibrary.org/obo/CL_4040004) SubClassOf [mesenchymal stem cell of adipose tissue](http://purl.obolibrary.org/obo/CL_0002570) 
+- [mesothelial cell of visceral pleura](http://purl.obolibrary.org/obo/CL_1000493) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### mesenteric lymph node `http://purl.obolibrary.org/obo/UBERON_0002509`
+### metallothionein-positive alveolar macrophage `http://purl.obolibrary.org/obo/CL_4033042`
 
 #### Added
-- [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_M_Lymph_Node.glb" 
+- [metallothionein-positive alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033042) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
-- [mesenteric lymph node](http://purl.obolibrary.org/obo/UBERON_0002509) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/NIH_F_Lymph_Node.glb" 
+- [metallothionein-positive alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033042) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
-### meso-epithelial cell `http://purl.obolibrary.org/obo/CL_0002078`
+### microvillus organization `http://purl.obolibrary.org/obo/GO_0032528`
+
+#### Added
+- [microvillus organization](http://purl.obolibrary.org/obo/GO_0032528) SubClassOf not ([in taxon](http://purl.obolibrary.org/obo/RO_0002162) some [Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751)) 
+
+- [microvillus organization](http://purl.obolibrary.org/obo/GO_0032528) SubClassOf [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some (not ([Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751))) 
+
+
+### monoatomic ion gated channel activity `http://purl.obolibrary.org/obo/GO_0022839`
 #### Removed
-- [meso-epithelial cell](http://purl.obolibrary.org/obo/CL_0002078) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) [label](http://www.w3.org/2000/01/rdf-schema#label) "monoatomic ion gated channel activity" 
+
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_24867](http://purl.obolibrary.org/obo/CHEBI_24867)) 
+
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) SubClassOf [monoatomic ion channel activity](http://purl.obolibrary.org/obo/GO_0005216) 
+
+#### Added
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) [label](http://www.w3.org/2000/01/rdf-schema#label) "monoatomic ion-gated channel activity" 
+
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "monoatomic ion gated channel activity" 
+
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24867](http://purl.obolibrary.org/obo/CHEBI_24867)) 
+
+- [monoatomic ion gated channel activity](http://purl.obolibrary.org/obo/GO_0022839) SubClassOf [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_24867](http://purl.obolibrary.org/obo/CHEBI_24867) 
 
 
-
-### mesothelial cell of anterior chamber of eye `http://purl.obolibrary.org/obo/CL_1000444`
+### monoblast `http://purl.obolibrary.org/obo/CL_0000040`
 #### Removed
-- [mesothelial cell of anterior chamber of eye](http://purl.obolibrary.org/obo/CL_1000444) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [monoblast](http://purl.obolibrary.org/obo/CL_0000040) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-M" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [mesothelial cell of anterior chamber of eye](http://purl.obolibrary.org/obo/CL_1000444) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
+- [monoblast](http://purl.obolibrary.org/obo/CL_0000040) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "CFU-M" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### mesothelial cell of dura mater `http://purl.obolibrary.org/obo/CL_1000298`
+### mononuclear phagocyte `http://purl.obolibrary.org/obo/CL_0000113`
+
+#### Added
+- [mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_0000113) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_0000113) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### multi-cell-part structure `http://purl.obolibrary.org/obo/CARO_0001000`
 #### Removed
-- [mesothelial cell of dura mater](http://purl.obolibrary.org/obo/CL_1000298) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
 
-#### Added
-- [mesothelial cell of dura mater](http://purl.obolibrary.org/obo/CL_1000298) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A structure consisting of multiple cell components but which is not itself a cell and does not have (complete) cells as a part." 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0001000" 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) [label](http://www.w3.org/2000/01/rdf-schema#label) "multi-cell-part structure" 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) [IAO_0000118](http://purl.obolibrary.org/obo/IAO_0000118) "multi-cell-component structure" 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Examples: a bundle of neuron projections in the brain; a region neuropil in an arthropod central nervous system; a region of cortex (preikaryal rind) in an arthropod brain." 
+
+- Class: [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) DisjointWith [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) and ([has part](http://purl.obolibrary.org/obo/BFO_0000051) only (not ([cell](http://purl.obolibrary.org/obo/CARO_0000013)))) and ([has component](http://purl.obolibrary.org/obo/RO_0002180) min 2 [cell part](http://purl.obolibrary.org/obo/CARO_0000014)) 
+
+- [multi-cell-part structure](http://purl.obolibrary.org/obo/CARO_0001000) SubClassOf [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) 
 
 
-### mesothelial cell of peritoneum `http://purl.obolibrary.org/obo/CL_1000490`
+
+### multi-ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_0005012`
 #### Removed
-- [mesothelial cell of peritoneum](http://purl.obolibrary.org/obo/CL_1000490) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [multi-ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0005012) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MCC"@en 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
-- [mesothelial cell of peritoneum](http://purl.obolibrary.org/obo/CL_1000490) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
+- [multi-ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0005012) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "MCC"@en 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### mesothelial cell of pleura `http://purl.obolibrary.org/obo/CL_1000491`
+### multicellular anatomical structure `http://purl.obolibrary.org/obo/CARO_0010000`
 #### Removed
-- [mesothelial cell of pleura](http://purl.obolibrary.org/obo/CL_1000491) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
 
-#### Added
-- [mesothelial cell of pleura](http://purl.obolibrary.org/obo/CL_1000491) SubClassOf [mesothelial cell](http://purl.obolibrary.org/obo/CL_0000077) 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "djs93" 
 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An anatomical structure that has more than one cell as a part." 
 
-### metadata complete `http://purl.obolibrary.org/obo/IAO_0000120`
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) [label](http://www.w3.org/2000/01/rdf-schema#label) "multicellular anatomical structure" 
 
-#### Added
-- [metadata complete](http://purl.obolibrary.org/obo/IAO_0000120) [label](http://www.w3.org/2000/01/rdf-schema#label) "metadata complete"@en 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) [IAO_creation_date](http://purl.obolibrary.org/obo/IAO_creation_date) "Sun Feb 27 10:53:00 GMT 2011" 
 
-- [metadata complete](http://purl.obolibrary.org/obo/IAO_0000120) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "metadata complete"@en 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0010000" 
 
-- [metadata complete](http://purl.obolibrary.org/obo/IAO_0000120) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Class has all its metadata, but is either not guaranteed to be in its final location in the asserted IS_A hierarchy or refers to another class that is not complete."@en 
+- Class: [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
 
-- Individual: [metadata complete](http://purl.obolibrary.org/obo/IAO_0000120) 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) EquivalentTo [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [multicellular](http://purl.obolibrary.org/obo/PATO_0001993)) 
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "There is a cost to burying this in PATO.  We lose that we could relax the cardinality assertion to subClassOf has_part some cell.  I'm sure having this axiom inherited would come in handy.  DOS" 
 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) SubClassOf [connected anatomical structure](http://purl.obolibrary.org/obo/CARO_0000003) 
 
-### metadata incomplete `http://purl.obolibrary.org/obo/IAO_0000123`
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) SubClassOf [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) 
 
-#### Added
-- [metadata incomplete](http://purl.obolibrary.org/obo/IAO_0000123) [label](http://www.w3.org/2000/01/rdf-schema#label) "metadata incomplete"@en 
-
-- [metadata incomplete](http://purl.obolibrary.org/obo/IAO_0000123) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "metadata incomplete"@en 
-
-- [metadata incomplete](http://purl.obolibrary.org/obo/IAO_0000123) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Class is being worked on; however, the metadata (including definition) are not complete or sufficiently clear to the branch editors."@en 
-
-- Individual: [metadata incomplete](http://purl.obolibrary.org/obo/IAO_0000123) 
+- [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) SubClassOf [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [multicellular](http://purl.obolibrary.org/obo/PATO_0001993) 
 
 
-### microglial cell `http://purl.obolibrary.org/obo/CL_0000129`
+
+### multicellular organism `http://purl.obolibrary.org/obo/CARO_0000012`
 #### Removed
-- [microglial cell](http://purl.obolibrary.org/obo/CL_0000129) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "microglia" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+- [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) [label](http://www.w3.org/2000/01/rdf-schema#label) "multicellular organism" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+- [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "MH: Can't define this class based on 2 or more cells because most multi cellular organisms (if not all) have only a single cell at some point in life history. 
 
-#### Added
-- [microglial cell](http://purl.obolibrary.org/obo/CL_0000129) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "microglia" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+MH: sexual subtypes should probably be logically defined based on sexual processes or sex qualities." 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+- [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical structure that is an individual member of a clade and, at some point in its life-cycle, consists of more than one cell." 
 
+- [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000012" 
 
-### micropylar cell `http://purl.obolibrary.org/obo/CL_0007022`
-#### Removed
-- [micropylar cell](http://purl.obolibrary.org/obo/CL_0007022) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- Class: [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) 
 
-#### Added
-- [micropylar cell](http://purl.obolibrary.org/obo/CL_0007022) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### middle colic artery `http://purl.obolibrary.org/obo/UBERON_0001196`
-
-#### Added
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [middle colic artery](http://purl.obolibrary.org/obo/UBERON_0001196) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### middle colic vein `http://purl.obolibrary.org/obo/UBERON_0001218`
-
-#### Added
-- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [middle colic vein](http://purl.obolibrary.org/obo/UBERON_0001218) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### mitogenic signaling cell `http://purl.obolibrary.org/obo/CL_0000422`
-#### Removed
-- [mitogenic signaling cell](http://purl.obolibrary.org/obo/CL_0000422) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [mitogenic signaling cell](http://purl.obolibrary.org/obo/CL_0000422) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### monostratified amacrine cell `http://purl.obolibrary.org/obo/CL_0004226`
-#### Removed
-- [monostratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004226) EquivalentTo [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [monostratified dendrite cell morphology](http://purl.obolibrary.org/obo/PATO_0070063)) 
-
-- [monostratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004226) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
-
-#### Added
-- [monostratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004226) EquivalentTo [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [monostratified dendrite cell morphology](http://purl.obolibrary.org/obo/PATO_0070063)) 
-
-- [monostratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004226) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
-
-
-### motile cell `http://purl.obolibrary.org/obo/CL_0000219`
-#### Removed
-- [motile cell](http://purl.obolibrary.org/obo/CL_0000219) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [cell motility](http://purl.obolibrary.org/obo/GO_0048870)) 
-
-- [motile cell](http://purl.obolibrary.org/obo/CL_0000219) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [motile cell](http://purl.obolibrary.org/obo/CL_0000219) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [cell motility](http://purl.obolibrary.org/obo/GO_0048870)) 
-
-- [motile cell](http://purl.obolibrary.org/obo/CL_0000219) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### multi fate stem cell `http://purl.obolibrary.org/obo/CL_0000048`
-#### Removed
-- [multi fate stem cell](http://purl.obolibrary.org/obo/CL_0000048) EquivalentTo [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [multipotent](http://purl.obolibrary.org/obo/PATO_0001402)) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [stem cell division](http://purl.obolibrary.org/obo/GO_0017145)) 
-
-- [multi fate stem cell](http://purl.obolibrary.org/obo/CL_0000048) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [multi fate stem cell](http://purl.obolibrary.org/obo/CL_0000048) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [multipotent](http://purl.obolibrary.org/obo/PATO_0001402)) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [stem cell division](http://purl.obolibrary.org/obo/GO_0017145)) 
-
-
-### multinucleate cell `http://purl.obolibrary.org/obo/CL_0000228`
-#### Removed
-- [multinucleate cell](http://purl.obolibrary.org/obo/CL_0000228) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [multinucleate](http://purl.obolibrary.org/obo/PATO_0001908)) 
-
-#### Added
-- [multinucleate cell](http://purl.obolibrary.org/obo/CL_0000228) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [multinucleate](http://purl.obolibrary.org/obo/PATO_0001908)) 
-
-
-### mural cell `http://purl.obolibrary.org/obo/CL_0008034`
-#### Removed
-- [mural cell](http://purl.obolibrary.org/obo/CL_0008034) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [multicellular organism](http://purl.obolibrary.org/obo/CARO_0000012) SubClassOf [cellular organism](http://purl.obolibrary.org/obo/CARO_0010004) 
 
 
 
 ### muscle cell `http://purl.obolibrary.org/obo/CL_0000187`
 #### Removed
-- [muscle cell](http://purl.obolibrary.org/obo/CL_0000187) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [muscle cell](http://purl.obolibrary.org/obo/CL_0000187) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://www.swissbiopics.org/api/image/Muscle_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+#### Added
+- [muscle cell](http://purl.obolibrary.org/obo/CL_0000187) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://www.swissbiopics.org/api/image/Muscle_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 
-
-### muscle precursor cell `http://purl.obolibrary.org/obo/CL_0000680`
+### myeloid dendritic cell `http://purl.obolibrary.org/obo/CL_0000782`
 #### Removed
-- [muscle precursor cell](http://purl.obolibrary.org/obo/CL_0000680) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [myeloid dendritic cell](http://purl.obolibrary.org/obo/CL_0000782) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [myeloid dendritic cell](http://purl.obolibrary.org/obo/CL_0000782) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 
-### myocyte of sinoatrial node `http://purl.obolibrary.org/obo/CL_1000409`
+### myeloid leukocyte `http://purl.obolibrary.org/obo/CL_0000766`
 #### Removed
-- [myocyte of sinoatrial node](http://purl.obolibrary.org/obo/CL_1000409) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "myocyte of sinoatrial node" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:67102" 
+- [myeloid leukocyte](http://purl.obolibrary.org/obo/CL_0000766) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [myeloid leukocyte](http://purl.obolibrary.org/obo/CL_0000766) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 
-### named class expression `http://purl.obolibrary.org/obo/IAO_0000421`
+### nail `http://purl.obolibrary.org/obo/UBERON_0001705`
 
 #### Added
-- [named class expression](http://purl.obolibrary.org/obo/IAO_0000421) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "named class expressions are used in order to have more concise logical definition but their extensions may not be interesting classes on their own. In languages such as OWL, with no provisions for macros, these show up as actuall classes. Tools may with to not show them as such, and to replace uses of the macros with their expansions"@en 
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [IAO_0000232](http://purl.obolibrary.org/obo/IAO_0000232) "Use this class for both the nails of primates and the homologous claws of mammals such as mouse." 
 
-- [named class expression](http://purl.obolibrary.org/obo/IAO_0000421) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "named class expression"@en 
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CALOHA:TS-2034" 
 
-- [named class expression](http://purl.obolibrary.org/obo/IAO_0000421) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Alan Ruttenberg"@en 
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [uberon_slim](http://purl.obolibrary.org/obo/uberon/core#uberon_slim) 
 
-- [named class expression](http://purl.obolibrary.org/obo/IAO_0000421) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A named class expression is a logical expression that is given a name. The name can be used in place of the expression."@en 
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [pheno_slim](http://purl.obolibrary.org/obo/uberon/core#pheno_slim) 
 
-- [named class expression](http://purl.obolibrary.org/obo/IAO_0000421) [label](http://www.w3.org/2000/01/rdf-schema#label) "named class expression"@en 
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MIAA:0000158" 
 
-- Individual: [named class expression](http://purl.obolibrary.org/obo/IAO_0000421) 
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EFO:0000956" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54326" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [UBPROP_0000008](http://purl.obolibrary.org/obo/UBPROP_0000008) "A primate's nail consists of the unguis alone; the subunguis has disappeared" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCIT:C33156" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A horn-like keratin structure covering the dorsal aspect of the terminal phalanges of fingers and toes[WP]." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://github.com/obophenotype/uberon/issues/120" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Nail_(anatomy)" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "claw" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Claw" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [label](http://www.w3.org/2000/01/rdf-schema#label) "nail" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MAT:0000158" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "talon" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "VHOG:0001361" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [efo_slim](http://purl.obolibrary.org/obo/uberon/core#efo_slim) 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nail/claw" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://orcid.org/0000-0002-6601-2165" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0001705" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UMLS:C0027342" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ncithesaurus:Nail" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GAID:1320" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001719" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "The nails of humans and the claws are moth are highly similar. Both species have a proximal nail fold, cuticle, nail matrix, nail bed, nail plate, and hyponychium. Distinguishing features are the shape of the nail and the presence of an extended hyponychium in the mouse [PMC3579226]" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Nail_(anatomy)" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D009262" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:35580" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EV:0100159" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MA:0002703" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "galen:Nail" 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "SCTID:72651009" 
+
+- Class: [nail](http://purl.obolibrary.org/obo/UBERON_0001705) 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) SubClassOf [composed primarily of](http://purl.obolibrary.org/obo/RO_0002473) some [keratin filament](http://purl.obolibrary.org/obo/GO_0045095) 
+
+- [nail](http://purl.obolibrary.org/obo/UBERON_0001705) SubClassOf [distal limb integumentary appendage](http://purl.obolibrary.org/obo/UBERON_0009564) 
 
 
-### native cell `http://purl.obolibrary.org/obo/CL_0000003`
+### nail development `http://purl.obolibrary.org/obo/GO_0035878`
+
+#### Added
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2011-05-31T02:30:34Z" 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0035878" 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "bf" 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) [label](http://www.w3.org/2000/01/rdf-schema#label) "nail development" 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process whose specific outcome is the progression of a nail over time, from its formation to the mature structure. A nail is a horn-like envelope covering the outer end of a finger or toe, and consists of the nail plate, the nail matrix and the nail bed below it, and the grooves surrounding it." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:bf" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0323025781" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Nail_(anatomy)" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UBERON:0001705" 
+
+- Class: [nail development](http://purl.obolibrary.org/obo/GO_0035878) 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) EquivalentTo [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) and ([results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [nail](http://purl.obolibrary.org/obo/UBERON_0001705)) 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [limb development](http://purl.obolibrary.org/obo/GO_0060173) 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) SubClassOf [results in development of](http://purl.obolibrary.org/obo/RO_0002296) some [nail](http://purl.obolibrary.org/obo/UBERON_0001705) 
+
+- [nail development](http://purl.obolibrary.org/obo/GO_0035878) SubClassOf [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) 
+
+
+### nail of manual digit `http://purl.obolibrary.org/obo/UBERON_0009565`
+
+#### Added
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54327" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "claw of manus" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "SCTID:244197001" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:35349" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UMLS:C0222001" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ncithesaurus:Fingernail" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "manual claw" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [pheno_slim](http://purl.obolibrary.org/obo/uberon/core#pheno_slim) 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [label](http://www.w3.org/2000/01/rdf-schema#label) "nail of manual digit" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCIT:C32609" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nail of finger" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54327" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "fingernail" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54327" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A nail that is part of a manual digit." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0009565" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "forelimb digit claw" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:35349" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "claw of hand" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nail plate of finger" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54327" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "finger nail" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54327" 
+
+- Class: [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) EquivalentTo [nail](http://purl.obolibrary.org/obo/UBERON_0001705) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [manual digit](http://purl.obolibrary.org/obo/UBERON_0002389)) 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dorsal skin of finger](http://purl.obolibrary.org/obo/UBERON_0005276) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [distal segment of manual digit](http://purl.obolibrary.org/obo/UBERON_0009552) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships" 
+
+- [nail of manual digit](http://purl.obolibrary.org/obo/UBERON_0009565) SubClassOf [nail](http://purl.obolibrary.org/obo/UBERON_0001705) 
+
+
+### nail of pedal digit `http://purl.obolibrary.org/obo/UBERON_0009567`
+
+#### Added
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCIT:C33790" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "XAO:0003103" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0009567" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "claw of foot" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [label](http://www.w3.org/2000/01/rdf-schema#label) "nail of pedal digit" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "toe nail" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54328" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UMLS:C0222007" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ncithesaurus:Toe_Nail" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "hindlimb claw" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:36457" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nail plate of toe" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54328" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [pheno_slim](http://purl.obolibrary.org/obo/uberon/core#pheno_slim) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:36457" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54328" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "pedal claw" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "claw of pes" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nail of toe" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54328" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "hindlimb digit claw" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A nail that is part of a pedal digit." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "OBOL:automatic" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "SCTID:244198006" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "claw of toe" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [SENSU](http://purl.obolibrary.org/obo/uberon/core#SENSU) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "toenail" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:54328" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nail of pes" 
+
+- Class: [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) EquivalentTo [nail](http://purl.obolibrary.org/obo/UBERON_0001705) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pedal digit](http://purl.obolibrary.org/obo/UBERON_0001466)) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) SubClassOf [nail](http://purl.obolibrary.org/obo/UBERON_0001705) 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [dorsal skin of toe](http://purl.obolibrary.org/obo/UBERON_0005277) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
+
+- [nail of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009567) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [distal segment of pedal digit](http://purl.obolibrary.org/obo/UBERON_0009553) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "https://github.com/obophenotype/uberon/wiki/Inferring-part-of-relationships" 
+
+
+### nail plate `http://purl.obolibrary.org/obo/UBERON_0008198`
+
+#### Added
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:35583" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [UBPROP_0000012](http://purl.obolibrary.org/obo/UBPROP_0000012) "in FMA, the nail is the nail plate" 
+  - [external_ontology](http://www.geneontology.org/formats/oboInOwl#external_ontology) "FMA" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [label](http://www.w3.org/2000/01/rdf-schema#label) "nail plate" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCIT:C34216" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0008198" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Nail_plate" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MA:0002708" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "lamina unguis" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Nail_plate" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [LATIN](http://purl.obolibrary.org/obo/uberon/core#LATIN) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The nail plate is the hard and translucent portion of the nail, composed of keratin." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://github.com/obophenotype/uberon/issues/20" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Nail_plate" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://sourceforge.net/p/geneontology/ontology-requests/8479/" 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://upload.wikimedia.org/wikipedia/commons/9/9f/Fingernail_label.jpg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "SCTID:372177002" 
+
+- Class: [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) SubClassOf [integumentary system layer](http://purl.obolibrary.org/obo/UBERON_0013754) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [keratinocyte](http://purl.obolibrary.org/obo/CL_0000312) 
+
+- [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nail](http://purl.obolibrary.org/obo/UBERON_0001705) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "MA" 
+
+
+### natural killer cell degranulation `http://purl.obolibrary.org/obo/GO_0043320`
 #### Removed
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [label](http://www.w3.org/2000/01/rdf-schema#label) "native cell" 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "To accommodate unicellular organisms better, 'cell in vivo' has been re-labeled 'native cell' to better represent its intended meaning - that is, that it is a cell in the context of a multicellular organism or in a natural environment. 'Native' is intended to contrast with 'in vitro', which refers to cells or other biological entities that have been intentionally placed in a controlled, non-natural setting for the purpose of study or manipulation. (MAH 1.12.12)." 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CARO:mah" 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [natural killer cell degranulation](http://purl.obolibrary.org/obo/GO_0043320) SubClassOf [natural killer cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002323) 
 
 #### Added
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "https://github.com/obophenotype/cell-ontology/issues/2124" 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "OBSOLETE. A cell that is found in a natural setting, which includes multicellular organism cells 'in vivo' (i.e. part of an organism), and unicellular organisms 'in environment' (i.e. part of a natural environment)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "CARO:mah" 
-
-- [native cell](http://purl.obolibrary.org/obo/CL_0000003) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete native cell" 
+- [natural killer cell degranulation](http://purl.obolibrary.org/obo/GO_0043320) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [natural killer cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002323) 
 
 
-### nephrocyte `http://purl.obolibrary.org/obo/CL_0002520`
+### negative regulation of acetylcholine biosynthetic process `http://purl.obolibrary.org/obo/GO_1905922`
 #### Removed
-- [nephrocyte](http://purl.obolibrary.org/obo/CL_0002520) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [negative regulation of acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_1905922) SubClassOf [negative regulation of cellular biosynthetic process](http://purl.obolibrary.org/obo/GO_0031327) 
 
 #### Added
-- [nephrocyte](http://purl.obolibrary.org/obo/CL_0002520) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [negative regulation of acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_1905922) SubClassOf [negative regulation of biosynthetic process](http://purl.obolibrary.org/obo/GO_0009890) 
 
 
-### neural cell `http://purl.obolibrary.org/obo/CL_0002319`
+### negative regulation of acetylcholine metabolic process `http://purl.obolibrary.org/obo/GO_0060410`
 #### Removed
-- [neural cell](http://purl.obolibrary.org/obo/CL_0002319) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016)) 
-
-- [neural cell](http://purl.obolibrary.org/obo/CL_0002319) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [neural cell](http://purl.obolibrary.org/obo/CL_0002319) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016)) 
-
-- [neural cell](http://purl.obolibrary.org/obo/CL_0002319) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [negative regulation of acetylcholine metabolic process](http://purl.obolibrary.org/obo/GO_0060410) SubClassOf [negative regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031324) 
 
 
-### neural progenitor cell `http://purl.obolibrary.org/obo/CL_0011020`
+
+### negative regulation of basophil degranulation `http://purl.obolibrary.org/obo/GO_1903582`
 #### Removed
-- [neural progenitor cell](http://purl.obolibrary.org/obo/CL_0011020) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [negative regulation of basophil degranulation](http://purl.obolibrary.org/obo/GO_1903582) SubClassOf [negative regulation of leukocyte activation](http://purl.obolibrary.org/obo/GO_0002695) 
 
 
 
-### neuroblast (sensu Nematoda and Protostomia) `http://purl.obolibrary.org/obo/CL_0000338`
+### negative regulation of blood vessel remodeling `http://purl.obolibrary.org/obo/GO_0060313`
 
 #### Added
-- [neuroblast (sensu Nematoda and Protostomia)](http://purl.obolibrary.org/obo/CL_0000338) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [negative regulation of blood vessel remodeling](http://purl.obolibrary.org/obo/GO_0060313) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "negative regulation of blood vessel remodelling" 
 
 
-### neuroblast (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_0000031`
+### negative regulation of bone remodeling `http://purl.obolibrary.org/obo/GO_0046851`
+
+#### Added
+- [negative regulation of bone remodeling](http://purl.obolibrary.org/obo/GO_0046851) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "negative regulation of bone remodelling" 
+
+
+### negative regulation of cell population proliferation `http://purl.obolibrary.org/obo/GO_0008285`
+
+#### Added
+- [negative regulation of cell population proliferation](http://purl.obolibrary.org/obo/GO_0008285) SubClassOf not ([in taxon](http://purl.obolibrary.org/obo/RO_0002162) some [Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751)) 
+
+- [negative regulation of cell population proliferation](http://purl.obolibrary.org/obo/GO_0008285) SubClassOf [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some (not ([Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751))) 
+
+
+### negative regulation of cytotoxic T cell degranulation `http://purl.obolibrary.org/obo/GO_0043318`
 #### Removed
-- [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [negative regulation of cytotoxic T cell degranulation](http://purl.obolibrary.org/obo/GO_0043318) SubClassOf [negative regulation of T cell activation](http://purl.obolibrary.org/obo/GO_0050868) 
 
 
-### neuroendocrine gland `http://purl.obolibrary.org/obo/UBERON_0010133`
+
+### negative regulation of eosinophil degranulation `http://purl.obolibrary.org/obo/GO_0043310`
 #### Removed
-- [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) EquivalentTo [endocrine gland](http://purl.obolibrary.org/obo/UBERON_0002368) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016)) 
-
-- [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) 
-
-#### Added
-- [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) EquivalentTo [endocrine gland](http://purl.obolibrary.org/obo/UBERON_0002368) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018)) 
-
-- [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) SubClassOf [overlaps](http://purl.obolibrary.org/obo/RO_0002131) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) 
-
-- [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) 
+- [negative regulation of eosinophil degranulation](http://purl.obolibrary.org/obo/GO_0043310) SubClassOf [negative regulation of eosinophil activation](http://purl.obolibrary.org/obo/GO_1902567) 
 
 
-### neuroendocrine system `http://purl.obolibrary.org/obo/UBERON_8600018`
 
-#### Added
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [label](http://www.w3.org/2000/01/rdf-schema#label) "neuroendocrine system" 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "In vertebrates, the hypothalamic-pituitary-target organ axis (H-P axis), the autonomic nervous system (ANS) and the diffuse neuroendocrine or APUD system contribute to the neuroendocrine system." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15481802" 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A regulatory system of the body that integrates the nervous system and the endocrine system. This system is formed by specialized neuroendocrine cells located mainly in the nervous system and neuroendocrine glands. However, they can also be found as either single cells or small clusters of cells dispersed throughout the surface epithelium of different tissues. The neuroendocrine system functions through the release of neurotransmitters and neurohormones, enabling communication between the endocrine and nervous systems to govern vitally important processes that include growth, reproduction, metabolism and energy homeostasis, electrolyte and water balance, and responses to stress." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15481802" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/B978-0-12-375097-6.10001-0" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17003257" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:endocrinology" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25905254" 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [date](http://purl.org/dc/terms/date) "2023-08-29T10:49:45Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NES" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15481802" 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [ABBREVIATION](http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION) 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600018" 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
-
-- Class: [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) SubClassOf [anatomical system](http://purl.obolibrary.org/obo/UBERON_0000467) 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) SubClassOf [overlaps](http://purl.obolibrary.org/obo/RO_0002131) some [nervous system](http://purl.obolibrary.org/obo/UBERON_0001016) 
-
-- [neuroendocrine system](http://purl.obolibrary.org/obo/UBERON_8600018) SubClassOf [overlaps](http://purl.obolibrary.org/obo/RO_0002131) some [endocrine system](http://purl.obolibrary.org/obo/UBERON_0000949) 
-
-
-### neuroglioblast (sensu Nematoda and Protostomia) `http://purl.obolibrary.org/obo/CL_0000468`
-
-#### Added
-- [neuroglioblast (sensu Nematoda and Protostomia)](http://purl.obolibrary.org/obo/CL_0000468) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### neuromast mantle cell `http://purl.obolibrary.org/obo/CL_0000851`
+### negative regulation of mast cell degranulation `http://purl.obolibrary.org/obo/GO_0043305`
 #### Removed
-- [neuromast mantle cell](http://purl.obolibrary.org/obo/CL_0000851) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [negative regulation of mast cell degranulation](http://purl.obolibrary.org/obo/GO_0043305) SubClassOf [negative regulation of mast cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0033007) 
 
 
 
-### neuron associated cell (sensu Nematoda and Protostomia) `http://purl.obolibrary.org/obo/CL_0000130`
-
-#### Added
-- [neuron associated cell (sensu Nematoda and Protostomia)](http://purl.obolibrary.org/obo/CL_0000130) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### neuron associated cell (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_0000123`
-
-#### Added
-- [neuron associated cell (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000123) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### nitrogen fixing cell `http://purl.obolibrary.org/obo/CL_0000725`
+### negative regulation of natural killer cell degranulation `http://purl.obolibrary.org/obo/GO_0043322`
 #### Removed
-- [nitrogen fixing cell](http://purl.obolibrary.org/obo/CL_0000725) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [nitrogen fixation](http://purl.obolibrary.org/obo/GO_0009399)) 
-
-- [nitrogen fixing cell](http://purl.obolibrary.org/obo/CL_0000725) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [nitrogen fixing cell](http://purl.obolibrary.org/obo/CL_0000725) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [nitrogen fixation](http://purl.obolibrary.org/obo/GO_0009399)) 
-
-- [nitrogen fixing cell](http://purl.obolibrary.org/obo/CL_0000725) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [negative regulation of natural killer cell degranulation](http://purl.obolibrary.org/obo/GO_0043322) SubClassOf [negative regulation of natural killer cell activation](http://purl.obolibrary.org/obo/GO_0032815) 
 
 
-### notochordal cell `http://purl.obolibrary.org/obo/CL_0007005`
+
+### negative regulation of neutrophil degranulation `http://purl.obolibrary.org/obo/GO_0043314`
 #### Removed
-- [notochordal cell](http://purl.obolibrary.org/obo/CL_0007005) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [notochordal cell](http://purl.obolibrary.org/obo/CL_0007005) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [negative regulation of neutrophil degranulation](http://purl.obolibrary.org/obo/GO_0043314) SubClassOf [negative regulation of neutrophil activation](http://purl.obolibrary.org/obo/GO_1902564) 
 
 
-### nucleate cell `http://purl.obolibrary.org/obo/CL_0002242`
+
+### negative regulation of pharynx morphogenesis `http://purl.obolibrary.org/obo/GO_0110042`
 #### Removed
-- [nucleate cell](http://purl.obolibrary.org/obo/CL_0002242) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [nucleated](http://purl.obolibrary.org/obo/PATO_0002505)) 
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0110042" 
 
-- [nucleate cell](http://purl.obolibrary.org/obo/CL_0002242) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2017-07-24T21:05:08Z" 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) [label](http://www.w3.org/2000/01/rdf-schema#label) "negative regulation of pharynx morphogenesis" 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "kmv" 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that stops, prevents, or reduces the frequency, rate or extent of pharynx morphogenesis." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:rz" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20805556" 
+
+- Class: [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) some [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040)) 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) SubClassOf [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) SubClassOf [negative regulation of developmental process](http://purl.obolibrary.org/obo/GO_0051093) 
+
+- [negative regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110042) SubClassOf [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) some [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) 
+
+
+
+### negative regulation of pulmonary blood vessel remodeling `http://purl.obolibrary.org/obo/GO_1905110`
 
 #### Added
-- [nucleate cell](http://purl.obolibrary.org/obo/CL_0002242) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [nucleated](http://purl.obolibrary.org/obo/PATO_0002505)) 
-
-- [nucleate cell](http://purl.obolibrary.org/obo/CL_0002242) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [negative regulation of pulmonary blood vessel remodeling](http://purl.obolibrary.org/obo/GO_1905110) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "negative regulation of pulmonary blood vessel remodelling" 
 
 
-### obsolescence reason specification `http://purl.obolibrary.org/obo/IAO_0000225`
+### negative regulation of tissue remodeling `http://purl.obolibrary.org/obo/GO_0034104`
 
 #### Added
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON: Melanie Courtot"@en 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "PERSON: Alan Ruttenberg"@en 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The reason for which a term has been deprecated. The allowed values come from an enumerated list of predefined terms. See the specification of these instances for more detailed definitions of each enumerated value."@en 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolescence reason specification"@en 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [IAO_0000114](http://purl.obolibrary.org/obo/IAO_0000114) [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "obsolescence reason specification"@en 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "The creation of this class has been inspired in part by Werner Ceusters' paper, Applying evolutionary terminology auditing to the Gene Ontology."@en 
-
-- Class: [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) EquivalentTo {[failed exploratory term](http://purl.obolibrary.org/obo/IAO_0000103) , [placeholder removed](http://purl.obolibrary.org/obo/IAO_0000226) , [terms merged](http://purl.obolibrary.org/obo/IAO_0000227) , [term imported](http://purl.obolibrary.org/obo/IAO_0000228) , [term split](http://purl.obolibrary.org/obo/IAO_0000229) , [out of scope](http://purl.obolibrary.org/obo/OMO_0001000)} 
-
-- [obsolescence reason specification](http://purl.obolibrary.org/obo/IAO_0000225) SubClassOf [data about an ontology part](http://purl.obolibrary.org/obo/IAO_0000102) 
+- [negative regulation of tissue remodeling](http://purl.obolibrary.org/obo/GO_0034104) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "negative regulation of tissue remodelling" 
 
 
-### oenocyte `http://purl.obolibrary.org/obo/CL_0000487`
+### negatively regulates `http://purl.obolibrary.org/obo/RO_0002212`
 #### Removed
-- [oenocyte](http://purl.obolibrary.org/obo/CL_0000487) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [oenocyte](http://purl.obolibrary.org/obo/CL_0000487) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [negatively regulates](http://purl.obolibrary.org/obo/RO_0002212) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "gene_ontology" 
 
 
-### olfactory bulb `http://purl.obolibrary.org/obo/UBERON_0002264`
 
-#### Added
-- [olfactory bulb](http://purl.obolibrary.org/obo/UBERON_0002264) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-- [olfactory bulb](http://purl.obolibrary.org/obo/UBERON_0002264) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-
-### oocyte `http://purl.obolibrary.org/obo/CL_0000023`
+### neuron `http://purl.obolibrary.org/obo/CL_0000540`
 #### Removed
-- [oocyte](http://purl.obolibrary.org/obo/CL_0000023) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [neuron](http://purl.obolibrary.org/obo/CL_0000540) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://www.swissbiopics.org/api/image/Neuron_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 #### Added
-- [oocyte](http://purl.obolibrary.org/obo/CL_0000023) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Metazoa](http://purl.obolibrary.org/obo/NCBITaxon_33208) 
-
-- [oocyte](http://purl.obolibrary.org/obo/CL_0000023) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [neuron](http://purl.obolibrary.org/obo/CL_0000540) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://www.swissbiopics.org/api/image/Neuron_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 
-### oogonial cell `http://purl.obolibrary.org/obo/CL_0000024`
+### neurotransmitter binding `http://purl.obolibrary.org/obo/GO_0042165`
 #### Removed
-- [oogonial cell](http://purl.obolibrary.org/obo/CL_0000024) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_pir](http://purl.obolibrary.org/obo/go#goslim_pir) 
+
+- [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Binding to a neurotransmitter, any chemical substance that is capable of transmitting (or inhibiting the transmission of) a nerve impulse from a neuron to another cell." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0198506732" 
+
+- [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0042165" 
+
+- [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) [label](http://www.w3.org/2000/01/rdf-schema#label) "neurotransmitter binding" 
+
+- [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- Class: [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) 
+
+- [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) SubClassOf [binding](http://purl.obolibrary.org/obo/GO_0005488) 
 
 
 
-### ophthalmic artery `http://purl.obolibrary.org/obo/UBERON_0001619`
-
-#### Added
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [ophthalmic artery](http://purl.obolibrary.org/obo/UBERON_0001619) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### ophthalmic vein `http://purl.obolibrary.org/obo/UBERON_0011191`
-
-#### Added
-- [ophthalmic vein](http://purl.obolibrary.org/obo/UBERON_0011191) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [ophthalmic vein](http://purl.obolibrary.org/obo/UBERON_0011191) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### optic tract `http://purl.obolibrary.org/obo/UBERON_0001908`
-
-#### Added
-- [optic tract](http://purl.obolibrary.org/obo/UBERON_0001908) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [optic tract](http://purl.obolibrary.org/obo/UBERON_0001908) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### organizational term `http://purl.obolibrary.org/obo/IAO_0000121`
-
-#### Added
-- [organizational term](http://purl.obolibrary.org/obo/IAO_0000121) [label](http://www.w3.org/2000/01/rdf-schema#label) "organizational term"@en 
-
-- [organizational term](http://purl.obolibrary.org/obo/IAO_0000121) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "organizational term"@en 
-
-- [organizational term](http://purl.obolibrary.org/obo/IAO_0000121) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Term created to ease viewing/sort terms for development purpose, and will not be included in a release"@en 
-
-- Individual: [organizational term](http://purl.obolibrary.org/obo/IAO_0000121) 
-
-
-### osteocyte `http://purl.obolibrary.org/obo/CL_0000137`
-
-#### Added
-- [osteocyte](http://purl.obolibrary.org/obo/CL_0000137) SubClassOf [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) 
-
-
-### out of scope `http://purl.obolibrary.org/obo/OMO_0001000`
-
-#### Added
-- [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) [IAO_0000234](http://purl.obolibrary.org/obo/IAO_0000234) "https://orcid.org/0000-0001-5208-3432" 
-
-- [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "This obsolesence reason should be used conservatively. Typical valid examples are: un-necessary grouping classes in disease ontologies, a phenotype term added on the assumption it was a disease."@en 
-
-- [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) [0000-0001-5208-3432](http://orcid.org/0000-0001-5208-3432) 
-
-- [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The term was added to the ontology on the assumption it was in scope, but it turned out later that it was not."@en 
-
-- [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/information-artifact-ontology/ontology-metadata/issues/77" 
-
-- [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) [label](http://www.w3.org/2000/01/rdf-schema#label) "out of scope" 
-
-- Individual: [out of scope](http://purl.obolibrary.org/obo/OMO_0001000) 
-
-
-### oxygen accumulating cell `http://purl.obolibrary.org/obo/CL_0000329`
+### neurotransmitter biosynthetic process `http://purl.obolibrary.org/obo/GO_0042136`
 #### Removed
-- [oxygen accumulating cell](http://purl.obolibrary.org/obo/CL_0000329) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [oxygen transport](http://purl.obolibrary.org/obo/GO_0015671)) 
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter synthesis" 
 
-- [oxygen accumulating cell](http://purl.obolibrary.org/obo/CL_0000329) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_synapse](http://purl.obolibrary.org/obo/go#goslim_synapse) 
 
-#### Added
-- [oxygen accumulating cell](http://purl.obolibrary.org/obo/CL_0000329) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [oxygen transport](http://purl.obolibrary.org/obo/GO_0015671)) 
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter anabolism" 
 
-- [oxygen accumulating cell](http://purl.obolibrary.org/obo/CL_0000329) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the formation of any of a group of substances that are released on excitation from the axon terminal of a presynaptic neuron of the central or peripheral nervous system and travel across the synaptic cleft to either excite or inhibit the target cell." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:jl" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "neurotransmitter biosynthesis and storage" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0042136" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [label](http://www.w3.org/2000/01/rdf-schema#label) "neurotransmitter biosynthetic process" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter biosynthesis" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "neurotransmitter biosynthetic process and storage" 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter formation" 
+
+- Class: [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) SubClassOf [cellular biosynthetic process](http://purl.obolibrary.org/obo/GO_0044249) 
+
+- [neurotransmitter biosynthetic process](http://purl.obolibrary.org/obo/GO_0042136) SubClassOf [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) 
 
 
-### pancreas `http://purl.obolibrary.org/obo/UBERON_0001264`
 
-#### Added
-- [pancreas](http://purl.obolibrary.org/obo/UBERON_0001264) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Pancreas.glb" 
-
-- [pancreas](http://purl.obolibrary.org/obo/UBERON_0001264) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Pancreas.glb" 
-
-
-### paracrine cell `http://purl.obolibrary.org/obo/CL_0000512`
+### neurotransmitter catabolic process `http://purl.obolibrary.org/obo/GO_0042135`
 #### Removed
-- [paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0042135" 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways resulting in the breakdown of any of a group of substances that are released on excitation from the axon terminal of a presynaptic neuron of the central or peripheral nervous system and travel across the synaptic cleft to either excite or inhibit the target cell." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:jl" 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter breakdown" 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_synapse](http://purl.obolibrary.org/obo/go#goslim_synapse) 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter degradation" 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter catabolism" 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [label](http://www.w3.org/2000/01/rdf-schema#label) "neurotransmitter catabolic process" 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- Class: [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) SubClassOf [cellular catabolic process](http://purl.obolibrary.org/obo/GO_0044248) 
+
+- [neurotransmitter catabolic process](http://purl.obolibrary.org/obo/GO_0042135) SubClassOf [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) 
 
 
 
-### paraganglia type 2 cell `http://purl.obolibrary.org/obo/CL_0000701`
+### neurotransmitter metabolic process `http://purl.obolibrary.org/obo/GO_0042133`
 #### Removed
-- [paraganglia type 2 cell](http://purl.obolibrary.org/obo/CL_0000701) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [goslim_pir](http://purl.obolibrary.org/obo/go#goslim_pir) 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [never_in_taxon](http://purl.obolibrary.org/obo/RO_0002161) [Schizosaccharomyces](http://purl.obolibrary.org/obo/NCBITaxon_4895) 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The chemical reactions and pathways involving neurotransmitters, any of a group of substances that are released on excitation from the axon terminal of a presynaptic neuron of the central or peripheral nervous system and travel across the synaptic cleft to either excite or inhibit the target cell." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:jl" 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurotransmitter metabolism" 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [label](http://www.w3.org/2000/01/rdf-schema#label) "neurotransmitter metabolic process" 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0042133" 
+
+- Class: [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) DisjointWith [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some [Schizosaccharomyces](http://purl.obolibrary.org/obo/NCBITaxon_4895) 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) SubClassOf [cellular metabolic process](http://purl.obolibrary.org/obo/GO_0044237) 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) SubClassOf not ([in taxon](http://purl.obolibrary.org/obo/RO_0002162) some [Schizosaccharomyces](http://purl.obolibrary.org/obo/NCBITaxon_4895)) 
+
+- [neurotransmitter metabolic process](http://purl.obolibrary.org/obo/GO_0042133) SubClassOf [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some (not ([Schizosaccharomyces](http://purl.obolibrary.org/obo/NCBITaxon_4895))) 
 
 
 
-### pending final vetting `http://purl.obolibrary.org/obo/IAO_0000125`
-
-#### Added
-- [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "All definitions, placement in the asserted IS_A hierarchy and required minimal metadata are complete. The class is awaiting a final review by someone other than the term editor."@en 
-
-- [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "pending final vetting"@en 
-
-- [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) [label](http://www.w3.org/2000/01/rdf-schema#label) "pending final vetting"@en 
-
-- Individual: [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) 
-
-
-### pericardial cavity `http://purl.obolibrary.org/obo/UBERON_0001074`
+### neurotransmitter receptor activity `http://purl.obolibrary.org/obo/GO_0030594`
 #### Removed
-- [pericardial cavity](http://purl.obolibrary.org/obo/UBERON_0001074) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [pericardial fluid](http://purl.obolibrary.org/obo/UBERON_0002409) 
-
-#### Added
-- [pericardial cavity](http://purl.obolibrary.org/obo/UBERON_0001074) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [pericardial fluid](http://purl.obolibrary.org/obo/UBERON_0002409) 
+- [neurotransmitter receptor activity](http://purl.obolibrary.org/obo/GO_0030594) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) 
 
 
-### peridermal cell `http://purl.obolibrary.org/obo/CL_0000078`
+
+### neurotransmitter secretion `http://purl.obolibrary.org/obo/GO_0007269`
 #### Removed
-- [peridermal cell](http://purl.obolibrary.org/obo/CL_0000078) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [neurotransmitter secretion](http://purl.obolibrary.org/obo/GO_0007269) SubClassOf [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) 
 
 
 
-### periglomerular cell `http://purl.obolibrary.org/obo/CL_1001435`
+### neurotransmitter uptake `http://purl.obolibrary.org/obo/GO_0001504`
 #### Removed
-- [periglomerular cell](http://purl.obolibrary.org/obo/CL_1001435) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "periglomerular cell" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NIFEXT:122" 
+- [neurotransmitter uptake](http://purl.obolibrary.org/obo/GO_0001504) SubClassOf [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) 
 
 
 
-### perivascular cell `http://purl.obolibrary.org/obo/CL_4033054`
+### neutrophil degranulation `http://purl.obolibrary.org/obo/GO_0043312`
 #### Removed
-- [perivascular cell](http://purl.obolibrary.org/obo/CL_4033054) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([adjacent to](http://purl.obolibrary.org/obo/RO_0002220) some [vasculature](http://purl.obolibrary.org/obo/UBERON_0002049)) 
-
-- [perivascular cell](http://purl.obolibrary.org/obo/CL_4033054) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [neutrophil degranulation](http://purl.obolibrary.org/obo/GO_0043312) SubClassOf [neutrophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002283) 
 
 #### Added
-- [perivascular cell](http://purl.obolibrary.org/obo/CL_4033054) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([adjacent to](http://purl.obolibrary.org/obo/RO_0002220) some [vasculature](http://purl.obolibrary.org/obo/UBERON_0002049)) 
-
-- [perivascular cell](http://purl.obolibrary.org/obo/CL_4033054) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [neutrophil degranulation](http://purl.obolibrary.org/obo/GO_0043312) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [neutrophil activation involved in immune response](http://purl.obolibrary.org/obo/GO_0002283) 
 
 
-### perivascular space `http://purl.obolibrary.org/obo/UBERON_0014930`
+### non-membrane-bounded organelle `http://purl.obolibrary.org/obo/GO_0043228`
 #### Removed
-- [perivascular space](http://purl.obolibrary.org/obo/UBERON_0014930) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+- [non-membrane-bounded organelle](http://purl.obolibrary.org/obo/GO_0043228) [has narrow synonym](http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym) "biological condensate" 
 
 #### Added
-- [perivascular space](http://purl.obolibrary.org/obo/UBERON_0014930) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+- [non-membrane-bounded organelle](http://purl.obolibrary.org/obo/GO_0043228) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "biological condensate" 
 
 
-### phagocyte `http://purl.obolibrary.org/obo/CL_0000234`
+### non-striated muscle cell `http://purl.obolibrary.org/obo/CL_0008000`
 #### Removed
-- [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [phagocytosis](http://purl.obolibrary.org/obo/GO_0006909)) 
+- [non-striated muscle cell](http://purl.obolibrary.org/obo/CL_0008000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [phagocytosis](http://purl.obolibrary.org/obo/GO_0006909)) 
+- [non-striated muscle cell](http://purl.obolibrary.org/obo/CL_0008000) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### phagocyte (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_0000518`
 
-#### Added
-- [phagocyte (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000518) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### photosynthetic cell `http://purl.obolibrary.org/obo/CL_0000628`
+### normal mass `http://purl.obolibrary.org/obo/PATO_0045030`
 #### Removed
-- [photosynthetic cell](http://purl.obolibrary.org/obo/CL_0000628) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mass which is relatively normal or average." 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-9227-0670](https://orcid.org/0000-0001-9227-0670) 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0045030" 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2017-12-22T14:16:43Z" 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) [label](http://www.w3.org/2000/01/rdf-schema#label) "normal mass" 
+
+- Class: [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) EquivalentTo [mass](http://purl.obolibrary.org/obo/PATO_0000125) and ([has relative magnitude](http://purl.obolibrary.org/obo/RO_0015010) some [normal](http://purl.obolibrary.org/obo/PATO_0000461)) 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) SubClassOf [normal object quality](http://purl.obolibrary.org/obo/PATO_0045001) 
+
+- [normal mass](http://purl.obolibrary.org/obo/PATO_0045030) SubClassOf [mass](http://purl.obolibrary.org/obo/PATO_0000125) 
+
+
+
+### nuclear estrogen receptor binding `http://purl.obolibrary.org/obo/GO_0030331`
 
 #### Added
-- [photosynthetic cell](http://purl.obolibrary.org/obo/CL_0000628) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Binding to a nuclear estrogen receptor." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:ai" 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0030331" 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) [label](http://www.w3.org/2000/01/rdf-schema#label) "nuclear estrogen receptor binding" 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/16717"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "estrogen receptor binding" 
+
+- Class: [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) EquivalentTo [binding](http://purl.obolibrary.org/obo/GO_0005488) and ([has input](http://purl.obolibrary.org/obo/RO_0002233) some [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204)) 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) SubClassOf [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) 
+
+- [nuclear estrogen receptor binding](http://purl.obolibrary.org/obo/GO_0030331) SubClassOf [has input](http://purl.obolibrary.org/obo/RO_0002233) some [estrogen receptor](http://purl.obolibrary.org/obo/PR_000007204) 
 
 
-### pigment cell (sensu Nematoda and Protostomia) `http://purl.obolibrary.org/obo/CL_0000341`
+### nuclear receptor binding `http://purl.obolibrary.org/obo/GO_0016922`
+
+#### Added
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "steroid hormone receptor binding" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0016922" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "molecular_function" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [label](http://www.w3.org/2000/01/rdf-schema#label) "nuclear receptor binding" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ligand-dependent nuclear receptor binding" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "GO:0035257" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Binding to a nuclear receptor protein. Nuclear receptor proteins are DNA-binding transcription factors which are regulated by binding to a ligand." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:7776974" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has_alternative_id](http://www.geneontology.org/formats/oboInOwl#hasAlternativeId) "GO:0035258" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "nuclear hormone receptor binding" 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ligand-dependent nuclear receptor interactor activity" 
+
+- Class: [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) 
+
+- [nuclear receptor binding](http://purl.obolibrary.org/obo/GO_0016922) SubClassOf [RNA polymerase II-specific DNA-binding transcription factor binding](http://purl.obolibrary.org/obo/GO_0061629) 
+
+
+### nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030051`
 #### Removed
-- [pigment cell (sensu Nematoda and Protostomia)](http://purl.obolibrary.org/obo/CL_0000341) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1Sh" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NAc shell and OT D1-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+#### Added
+- [nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1Sh" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030051) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NAc shell and OT D1-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-
-### pigment cell (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_0000342`
+### nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030052`
 #### Removed
-- [pigment cell (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000342) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030052) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nucleus accumbens shell and olfactory tubercle D2-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030052) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NAc shell and OT D2-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030052) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2Sh" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
 #### Added
-- [pigment cell (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000342) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030052) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2Sh" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030052) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "NAc shell and OT D2-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030052) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nucleus accumbens shell and olfactory tubercle D2-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### pigment erythroblast `http://purl.obolibrary.org/obo/CL_0005004`
+### obsolete animal cell `http://purl.obolibrary.org/obo/CL_0000548`
 #### Removed
-- [pigment erythroblast](http://purl.obolibrary.org/obo/CL_0005004) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### pineal body `http://purl.obolibrary.org/obo/UBERON_0001905`
+- [obsolete animal cell](http://purl.obolibrary.org/obo/CL_0000548) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://www.swissbiopics.org/api/image/Animal_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 #### Added
-- [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [pineal body](http://purl.obolibrary.org/obo/UBERON_0001905) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
+- [obsolete animal cell](http://purl.obolibrary.org/obo/CL_0000548) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://www.swissbiopics.org/api/image/Animal_cells.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 
-### piriform cortex `http://purl.obolibrary.org/obo/UBERON_0004725`
-
-#### Added
-- [piriform cortex](http://purl.obolibrary.org/obo/UBERON_0004725) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [piriform cortex](http://purl.obolibrary.org/obo/UBERON_0004725) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### pituitary gland `http://purl.obolibrary.org/obo/UBERON_0000007`
+### obsolete choroid plexus cell `http://purl.obolibrary.org/obo/CL_4023073`
 #### Removed
-- [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) SubClassOf [neuroendocrine gland](http://purl.obolibrary.org/obo/UBERON_0010133) 
+- [obsolete choroid plexus cell](http://purl.obolibrary.org/obo/CL_4023073) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-#### Added
-- [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007) SubClassOf [endocrine gland](http://purl.obolibrary.org/obo/UBERON_0002368) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "BTO" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "VHOG" 
-
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "EFO" 
+- [obsolete choroid plexus cell](http://purl.obolibrary.org/obo/CL_4023073) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### pituitary gland cell `http://purl.obolibrary.org/obo/CL_2000004`
+
+### occurs in `http://purl.obolibrary.org/obo/BFO_0000066`
 #### Removed
-- [pituitary gland cell](http://purl.obolibrary.org/obo/CL_2000004) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007)) 
-
-#### Added
-- [pituitary gland cell](http://purl.obolibrary.org/obo/CL_2000004) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pituitary gland](http://purl.obolibrary.org/obo/UBERON_0000007)) 
+- [occurs in](http://purl.obolibrary.org/obo/BFO_0000066) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "gene_ontology" 
 
 
-### placeholder removed `http://purl.obolibrary.org/obo/IAO_0000226`
 
-#### Added
-- [placeholder removed](http://purl.obolibrary.org/obo/IAO_0000226) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "placeholder removed"@en 
-
-- [placeholder removed](http://purl.obolibrary.org/obo/IAO_0000226) [label](http://www.w3.org/2000/01/rdf-schema#label) "placeholder removed"@en 
-
-- Individual: [placeholder removed](http://purl.obolibrary.org/obo/IAO_0000226) 
-
-
-### placenta `http://purl.obolibrary.org/obo/UBERON_0001987`
-
-#### Added
-- [placenta](http://purl.obolibrary.org/obo/UBERON_0001987) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Placenta.glb" 
-
-
-### plural form `http://purl.obolibrary.org/obo/OMO_0003004`
-
-#### Added
-- [plural form](http://purl.obolibrary.org/obo/OMO_0003004) [label](http://www.w3.org/2000/01/rdf-schema#label) "plural form" 
-
-- [plural form](http://purl.obolibrary.org/obo/OMO_0003004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A synonym type for describing pluralization synonyms" 
-
-- [plural form](http://purl.obolibrary.org/obo/OMO_0003004) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "CHEBI:23367 (molecular entity) has an exact synonym (molecular entities), which is of the type OMO:0003004 (plural form)" 
-
-- [plural form](http://purl.obolibrary.org/obo/OMO_0003004) [created](http://purl.org/dc/terms/created) "2023-03-03"^^[date](http://www.w3.org/2001/XMLSchema#date) 
-
-- [plural form](http://purl.obolibrary.org/obo/OMO_0003004) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [122](https://github.com/information-artifact-ontology/ontology-metadata/issues/122) 
-
-- [plural form](http://purl.obolibrary.org/obo/OMO_0003004) [contributor](http://purl.org/dc/terms/contributor) [0000-0003-4423-4370](https://orcid.org/0000-0003-4423-4370) 
-
-- AnnotationProperty: [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
-
-
-### plural term `http://purl.obolibrary.org/obo/uberon/core#PLURAL`
+### oligodendrocyte precursor cell `http://purl.obolibrary.org/obo/CL_0002453`
 #### Removed
-- [plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) [label](http://www.w3.org/2000/01/rdf-schema#label) "plural term" 
+- [oligodendrocyte precursor cell](http://purl.obolibrary.org/obo/CL_0002453) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "O2A/OPC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11756508" 
+
+- [oligodendrocyte precursor cell](http://purl.obolibrary.org/obo/CL_0002453) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "O-2A/OPC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24133281" 
+
+#### Added
+- [oligodendrocyte precursor cell](http://purl.obolibrary.org/obo/CL_0002453) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "O-2A/OPC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24133281" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [oligodendrocyte precursor cell](http://purl.obolibrary.org/obo/CL_0002453) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "O2A/OPC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11756508" 
 
 
+### onychocyte `http://purl.obolibrary.org/obo/CL_4033056`
 
-### polar body `http://purl.obolibrary.org/obo/CL_0002090`
+#### Added
+- [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) [date](http://purl.org/dc/terms/date) "2023-10-03T12:49:46Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) [label](http://www.w3.org/2000/01/rdf-schema#label) "onychocyte" 
+
+- [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A differentiated flat keratinocyte that is part of a nail plate. An onychocyte is firmly adherent and does not desquamate." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24079581" 
+
+- [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- Class: [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) 
+
+- [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [nail plate](http://purl.obolibrary.org/obo/UBERON_0008198) 
+
+- [onychocyte](http://purl.obolibrary.org/obo/CL_4033056) SubClassOf [keratinocyte](http://purl.obolibrary.org/obo/CL_0000312) 
+
+
+### organ `http://purl.obolibrary.org/obo/UBERON_0000062`
 #### Removed
-- [polar body](http://purl.obolibrary.org/obo/CL_0002090) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [organ](http://purl.obolibrary.org/obo/UBERON_0000062) SubClassOf [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
 
 
 
-### polyploid `http://purl.obolibrary.org/obo/PATO_0001377`
-
-#### Added
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) [label](http://www.w3.org/2000/01/rdf-schema#label) "polyploid" 
-
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "quality" 
-
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [value_slim](http://purl.obolibrary.org/obo/pato#value_slim) 
-
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) [id](http://www.geneontology.org/formats/oboInOwl#id) "PATO:0001377" 
-
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [cell_quality](http://purl.obolibrary.org/obo/pato#cell_quality) 
-
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ploidy quality inhering in a bearer by virtue of the bearer's containing more than two homologous sets of chromosomes." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:http://en.wikipedia.org/wiki/Polyploid" 
-
-- Class: [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) 
-
-- [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) SubClassOf [euploid](http://purl.obolibrary.org/obo/PATO_0001393) 
-
-
-### polyploid cell `http://purl.obolibrary.org/obo/CL_0000412`
+### organism `http://purl.obolibrary.org/obo/CARO_0001010`
 #### Removed
-- [polyploid cell](http://purl.obolibrary.org/obo/CL_0000412) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell whose nucleus, or nuclei, each contain more than two haploid genomes." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FB:ma" 
+- [organism](http://purl.obolibrary.org/obo/CARO_0001010) [label](http://www.w3.org/2000/01/rdf-schema#label) "organism" 
 
-- [polyploid cell](http://purl.obolibrary.org/obo/CL_0000412) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [organism](http://purl.obolibrary.org/obo/CARO_0001010) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Melissa Haendel" 
 
-#### Added
-- [polyploid cell](http://purl.obolibrary.org/obo/CL_0000412) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell that contains more than two haploid sets of chromosomes." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://bio.libretexts.org/Bookshelves/Introductory_and_General_Biology/Biology_(Kimball)/07%3A_Cell_Division/7.04%3A_Polyploidy"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+- [organism](http://purl.obolibrary.org/obo/CARO_0001010) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "organism or virus or viroid" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32646579" 
+- [organism](http://purl.obolibrary.org/obo/CARO_0001010) [IAO_creation_date](http://purl.obolibrary.org/obo/IAO_creation_date) "9/18/11" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FB:ma" 
+- [organism](http://purl.obolibrary.org/obo/CARO_0001010) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Material anatomical entity that is a member of an individual species or is a viral or viroid particle." 
 
-- [polyploid cell](http://purl.obolibrary.org/obo/CL_0000412) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [polyploid](http://purl.obolibrary.org/obo/PATO_0001377)) 
+- Class: [organism](http://purl.obolibrary.org/obo/CARO_0001010) 
 
-- [polyploid cell](http://purl.obolibrary.org/obo/CL_0000412) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-- [polyploid cell](http://purl.obolibrary.org/obo/CL_0000412) SubClassOf [bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [polyploid](http://purl.obolibrary.org/obo/PATO_0001377) 
+- [organism](http://purl.obolibrary.org/obo/CARO_0001010) SubClassOf [material entity](http://purl.obolibrary.org/obo/BFO_0000040) 
 
 
-### pontine tegmentum `http://purl.obolibrary.org/obo/UBERON_0003023`
 
-#### Added
-- [pontine tegmentum](http://purl.obolibrary.org/obo/UBERON_0003023) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [pontine tegmentum](http://purl.obolibrary.org/obo/UBERON_0003023) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### posterior lateral line neuromast supporting cell `http://purl.obolibrary.org/obo/CL_2000039`
+### organism subdivision `http://purl.obolibrary.org/obo/CARO_0000032`
 #### Removed
-- [posterior lateral line neuromast supporting cell](http://purl.obolibrary.org/obo/CL_2000039) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Anatomical structure which is a subdivision of a whole organism, consisting of components of multiple anatomical systems, largely surrounded by a contiguous region of integument."@en 
+
+- [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "Old definition: Anatomical structure which is a primary subdivision of whole organism. The mereological sum of these is the whole organism." 
+
+- [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) [label](http://www.w3.org/2000/01/rdf-schema#label) "organism subdivision" 
+
+- [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000032" 
+
+- [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [core](http://purl.obolibrary.org/obo/caro#core) 
+
+- Class: [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) 
+
+- [organism subdivision](http://purl.obolibrary.org/obo/CARO_0000032) SubClassOf [multicellular anatomical structure](http://purl.obolibrary.org/obo/CARO_0010000) 
 
 
 
-### preameloblast `http://purl.obolibrary.org/obo/CL_0007000`
+### organism substance `http://purl.obolibrary.org/obo/CARO_0000004`
 #### Removed
-- [preameloblast](http://purl.obolibrary.org/obo/CL_0007000) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "Examples include feces, urine, blood, blood plasma, lymph, hemolymph, cerbro-spinal fluid.  This class does not encompass anatomical entities with inherent 3D structure such as dentine and arthropod cuticle." 
+
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Material anatomical entity in a gaseous, liquid, semisolid or solid state; produced by anatomical structures or derived from inhaled and ingested substances that have been modified by anatomical structures as they pass through the body and that does not have inherent 3D shape generated by coordinated expression of the organism's own genome." 
+
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) [label](http://www.w3.org/2000/01/rdf-schema#label) "organism substance" 
+
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) [id](http://www.geneontology.org/formats/oboInOwl#id) "CARO:0000004" 
+
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Note - CARO explicitly declares organisms substances to be part of (some) organism." 
+
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "portion of organism substance" 
+
+- Class: [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) 
+
+- [organism substance](http://purl.obolibrary.org/obo/CARO_0000004) SubClassOf [gross anatomical part](http://purl.obolibrary.org/obo/CARO_0001008) 
 
 
 
-### precementoblast `http://purl.obolibrary.org/obo/CL_0007002`
+### ossification involved in bone remodeling `http://purl.obolibrary.org/obo/GO_0043932`
 #### Removed
-- [precementoblast](http://purl.obolibrary.org/obo/CL_0007002) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [ossification involved in bone remodeling](http://purl.obolibrary.org/obo/GO_0043932) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ossification involved in bone remodelling" 
+
+#### Added
+- [ossification involved in bone remodeling](http://purl.obolibrary.org/obo/GO_0043932) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ossification involved in bone remodelling" 
 
 
-
-### prechondroblast `http://purl.obolibrary.org/obo/CL_0007009`
+### oxytocin receptor sst GABAergic cortical interneuron `http://purl.obolibrary.org/obo/CL_4023122`
 #### Removed
-- [prechondroblast](http://purl.obolibrary.org/obo/CL_0007009) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [oxytocin receptor sst GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023122) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "OxtrINs" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25303526" 
+
+#### Added
+- [oxytocin receptor sst GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023122) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "OxtrINs" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25303526" 
 
 
-
-### precursor cell `http://purl.obolibrary.org/obo/CL_0011115`
+### peg cell `http://purl.obolibrary.org/obo/CL_4033014`
 #### Removed
-- [precursor cell](http://purl.obolibrary.org/obo/CL_0011115) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [cell differentiation](http://purl.obolibrary.org/obo/GO_0030154)) 
+- [peg cell](http://purl.obolibrary.org/obo/CL_4033014) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "FTESC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [precursor cell](http://purl.obolibrary.org/obo/CL_0011115) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [precursor cell](http://purl.obolibrary.org/obo/CL_0011115) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [cell differentiation](http://purl.obolibrary.org/obo/GO_0030154)) 
-
-- [precursor cell](http://purl.obolibrary.org/obo/CL_0011115) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### preferred_root `http://purl.obolibrary.org/obo/IAO_0000700`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22911892" 
 
 #### Added
-- [preferred_root](http://purl.obolibrary.org/obo/IAO_0000700) [label](http://www.w3.org/2000/01/rdf-schema#label) "has ontology root term"@en 
+- [peg cell](http://purl.obolibrary.org/obo/CL_4033014) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "FTESC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [preferred_root](http://purl.obolibrary.org/obo/IAO_0000700) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "has ontology root term"@en 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22911892" 
 
-- [preferred_root](http://purl.obolibrary.org/obo/IAO_0000700) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Ontology annotation property. Relates an ontology to a term that is a designated root term of the ontology. Display tools like OLS can use terms annotated with this property as the starting point for rendering the ontology class hierarchy. There can be more than one root."@en 
+- [peg cell](http://purl.obolibrary.org/obo/CL_4033014) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [preferred_root](http://purl.obolibrary.org/obo/IAO_0000700) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Nicolas Matentzoglu"@en 
+- [peg cell](http://purl.obolibrary.org/obo/CL_4033014) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### preodontoblast `http://purl.obolibrary.org/obo/CL_0007003`
+### pharyngeal gland morphogenesis `http://purl.obolibrary.org/obo/GO_1905905`
 #### Removed
-- [preodontoblast](http://purl.obolibrary.org/obo/CL_0007003) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "pharynx gland morphogenesis" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "glandulae pharyngeae morphogenesis" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The developmental process by which a pharyngeal gland is generated and organized." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:TermGenie" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GO_REF:0000083" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:21868609" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:1905905" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "rz" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [label](http://www.w3.org/2000/01/rdf-schema#label) "pharyngeal gland morphogenesis" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2017-02-03T14:39:10Z" 
+
+- Class: [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) EquivalentTo [anatomical structure morphogenesis](http://purl.obolibrary.org/obo/GO_0009653) and ([results in morphogenesis of](http://purl.obolibrary.org/obo/RO_0002298) some [pharyngeal gland](http://purl.obolibrary.org/obo/UBERON_0003295)) 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) SubClassOf [gland morphogenesis](http://purl.obolibrary.org/obo/GO_0022612) 
+
+- [pharyngeal gland morphogenesis](http://purl.obolibrary.org/obo/GO_1905905) SubClassOf [results in morphogenesis of](http://purl.obolibrary.org/obo/RO_0002298) some [pharyngeal gland](http://purl.obolibrary.org/obo/UBERON_0003295) 
 
 
 
-### preosteoblast `http://purl.obolibrary.org/obo/CL_0007010`
-
-#### Added
-- [preosteoblast](http://purl.obolibrary.org/obo/CL_0007010) SubClassOf [connective tissue cell](http://purl.obolibrary.org/obo/CL_0002320) 
-
-
-### primary lymphoid nodule of tonsil `http://purl.obolibrary.org/obo/UBERON_0010423`
+### pharyngeal muscle development `http://purl.obolibrary.org/obo/GO_0043282`
 #### Removed
-- [primary lymphoid nodule of tonsil](http://purl.obolibrary.org/obo/UBERON_0010423) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [pharyngeal muscle development](http://purl.obolibrary.org/obo/GO_0043282) [label](http://www.w3.org/2000/01/rdf-schema#label) "pharyngeal muscle development" 
 
-- [primary lymphoid nodule of tonsil](http://purl.obolibrary.org/obo/UBERON_0010423) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-
-### primary neuron (sensu Teleostei) `http://purl.obolibrary.org/obo/CL_0000530`
+- [pharyngeal muscle development](http://purl.obolibrary.org/obo/GO_0043282) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [pharynx development](http://purl.obolibrary.org/obo/GO_0060465) 
 
 #### Added
-- [primary neuron (sensu Teleostei)](http://purl.obolibrary.org/obo/CL_0000530) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
+- [pharyngeal muscle development](http://purl.obolibrary.org/obo/GO_0043282) [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) "https://github.com/geneontology/go-ontology/issues/18285"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [pharyngeal muscle development](http://purl.obolibrary.org/obo/GO_0043282) [label](http://www.w3.org/2000/01/rdf-schema#label) "chordate pharyngeal muscle development" 
+
+- [pharyngeal muscle development](http://purl.obolibrary.org/obo/GO_0043282) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [chordate pharynx development](http://purl.obolibrary.org/obo/GO_0160093) 
 
 
-### primary spermatocyte `http://purl.obolibrary.org/obo/CL_0000656`
+### pharynx morphogenesis `http://purl.obolibrary.org/obo/GO_0110040`
 #### Removed
-- [primary spermatocyte](http://purl.obolibrary.org/obo/CL_0000656) SubClassOf [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
 
-#### Added
-- [primary spermatocyte](http://purl.obolibrary.org/obo/CL_0000656) SubClassOf [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) 
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) [label](http://www.w3.org/2000/01/rdf-schema#label) "pharynx morphogenesis" 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The process in which the anatomical structures of the pharynx are generated and organized." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:rz" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20805556" 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2017-07-24T20:51:28Z" 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0110040" 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "kmv" 
+
+- Class: [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) EquivalentTo [anatomical structure morphogenesis](http://purl.obolibrary.org/obo/GO_0009653) and ([results in morphogenesis of](http://purl.obolibrary.org/obo/RO_0002298) some [pharynx](http://purl.obolibrary.org/obo/UBERON_0006562)) 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) SubClassOf [anatomical structure morphogenesis](http://purl.obolibrary.org/obo/GO_0009653) 
+
+- [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) SubClassOf [results in morphogenesis of](http://purl.obolibrary.org/obo/RO_0002298) some [pharynx](http://purl.obolibrary.org/obo/UBERON_0006562) 
 
 
-### primordial germ cell `http://purl.obolibrary.org/obo/CL_0000670`
+
+### photoreceptor cell `http://purl.obolibrary.org/obo/CL_0000210`
 #### Removed
-- [primordial germ cell](http://purl.obolibrary.org/obo/CL_0000670) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [photoreceptor cell](http://purl.obolibrary.org/obo/CL_0000210) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "https://www.swissbiopics.org/api/image/Photoreceptor_cell.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+#### Added
+- [photoreceptor cell](http://purl.obolibrary.org/obo/CL_0000210) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://www.swissbiopics.org/api/image/Photoreceptor_cell.svg"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
 
 
-
-### progenitor cell of endocrine pancreas `http://purl.obolibrary.org/obo/CL_0002351`
+### physical object quality `http://purl.obolibrary.org/obo/PATO_0001241`
 #### Removed
-- [progenitor cell of endocrine pancreas](http://purl.obolibrary.org/obo/CL_0002351) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [physical object quality](http://purl.obolibrary.org/obo/PATO_0001241) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "multiply inhering quality of a physical entity " 
 
 
 
-### progenitor cell of mammary luminal epithelium `http://purl.obolibrary.org/obo/CL_0009116`
+### placental amniotic mesenchymal stromal cell `http://purl.obolibrary.org/obo/CL_2000061`
+
+#### Added
+- [placental amniotic mesenchymal stromal cell](http://purl.obolibrary.org/obo/CL_2000061) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [placental amniotic mesenchymal stromal cell](http://purl.obolibrary.org/obo/CL_2000061) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### placental villus capillary endothelial cell `http://purl.obolibrary.org/obo/CL_2000062`
 #### Removed
-- [progenitor cell of mammary luminal epithelium](http://purl.obolibrary.org/obo/CL_0009116) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 
-### prokaryotic cell `http://purl.obolibrary.org/obo/CL_0000520`
+### plus `http://purl.obolibrary.org/obo/caro#plus`
 #### Removed
-- [prokaryotic cell](http://purl.obolibrary.org/obo/CL_0000520) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- AnnotationProperty: [plus](http://purl.obolibrary.org/obo/caro#plus) 
 
-#### Added
-- [prokaryotic cell](http://purl.obolibrary.org/obo/CL_0000520) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### prostate duct `http://purl.obolibrary.org/obo/UBERON_0002485`
-
-#### Added
-- [prostate duct](http://purl.obolibrary.org/obo/UBERON_0002485) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Prostate.glb" 
+- [plus](http://purl.obolibrary.org/obo/caro#plus) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
 
 
-### prostate gland `http://purl.obolibrary.org/obo/UBERON_0002367`
 
-#### Added
-- [prostate gland](http://purl.obolibrary.org/obo/UBERON_0002367) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Prostate.glb" 
-
-
-### prostatic urethra `http://purl.obolibrary.org/obo/UBERON_0001335`
-
-#### Added
-- [prostatic urethra](http://purl.obolibrary.org/obo/UBERON_0001335) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Urethra.glb" 
-
-
-### pulmonary acinus `http://purl.obolibrary.org/obo/UBERON_0008874`
-
-#### Added
-- [pulmonary acinus](http://purl.obolibrary.org/obo/UBERON_0008874) SubClassOf [anatomical entity](http://purl.obolibrary.org/obo/UBERON_0001062) 
-
-
-### pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0002012`
-
-#### Added
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0002012) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### pulmonary trunk `http://purl.obolibrary.org/obo/UBERON_0002333`
-
-#### Added
-- [pulmonary trunk](http://purl.obolibrary.org/obo/UBERON_0002333) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [pulmonary trunk](http://purl.obolibrary.org/obo/UBERON_0002333) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### pulmonary vascular system `http://purl.obolibrary.org/obo/UBERON_0008886`
-
-#### Added
-- [pulmonary vascular system](http://purl.obolibrary.org/obo/UBERON_0008886) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [pulmonary vascular system](http://purl.obolibrary.org/obo/UBERON_0008886) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-
-### pulmonary vein `http://purl.obolibrary.org/obo/UBERON_0002016`
-
-#### Added
-- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [pulmonary vein](http://purl.obolibrary.org/obo/UBERON_0002016) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### pyramidal neuron `http://purl.obolibrary.org/obo/CL_0000598`
+### positive regulation of acetylcholine biosynthetic process `http://purl.obolibrary.org/obo/GO_1905923`
 #### Removed
-- [pyramidal neuron](http://purl.obolibrary.org/obo/CL_0000598) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "pyramidal neuron" 
-
-
-
-### ready for release `http://purl.obolibrary.org/obo/IAO_0000122`
+- [positive regulation of acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_1905923) SubClassOf [positive regulation of cellular biosynthetic process](http://purl.obolibrary.org/obo/GO_0031328) 
 
 #### Added
-- [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "ready for release"@en 
-
-- [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) [label](http://www.w3.org/2000/01/rdf-schema#label) "ready for release"@en 
-
-- [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Class has undergone final review, is ready for use, and will be included in the next release. Any class lacking &quot;ready_for_release&quot; should be considered likely to change place in hierarchy, have its definition refined, or be obsoleted in the next release.  Those classes deemed &quot;ready_for_release&quot; will also derived from a chain of ancestor classes that are also &quot;ready_for_release.&quot;"@en 
-
-- Individual: [ready for release](http://purl.obolibrary.org/obo/IAO_0000122) 
+- [positive regulation of acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_1905923) SubClassOf [positive regulation of biosynthetic process](http://purl.obolibrary.org/obo/GO_0009891) 
 
 
-### rectum `http://purl.obolibrary.org/obo/UBERON_0001052`
-
-#### Added
-- [rectum](http://purl.obolibrary.org/obo/UBERON_0001052) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-- [rectum](http://purl.obolibrary.org/obo/UBERON_0001052) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-
-### recurving diffuse amacrine cell `http://purl.obolibrary.org/obo/CL_0004231`
+### positive regulation of acetylcholine metabolic process `http://purl.obolibrary.org/obo/GO_0060409`
 #### Removed
-- [recurving diffuse amacrine cell](http://purl.obolibrary.org/obo/CL_0004231) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
+- [positive regulation of acetylcholine metabolic process](http://purl.obolibrary.org/obo/GO_0060409) SubClassOf [positive regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031325) 
+
+
+
+### positive regulation of basophil degranulation `http://purl.obolibrary.org/obo/GO_1903583`
+#### Removed
+- [positive regulation of basophil degranulation](http://purl.obolibrary.org/obo/GO_1903583) SubClassOf [positive regulation of leukocyte activation](http://purl.obolibrary.org/obo/GO_0002696) 
+
+
+
+### positive regulation of blood vessel remodeling `http://purl.obolibrary.org/obo/GO_2000504`
 
 #### Added
-- [recurving diffuse amacrine cell](http://purl.obolibrary.org/obo/CL_0004231) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
+- [positive regulation of blood vessel remodeling](http://purl.obolibrary.org/obo/GO_2000504) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "positive regulation of blood vessel remodelling" 
 
 
-### renal artery `http://purl.obolibrary.org/obo/UBERON_0001184`
-
-#### Added
-- [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [renal artery](http://purl.obolibrary.org/obo/UBERON_0001184) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### renal lymph node `http://purl.obolibrary.org/obo/UBERON_0003425`
+### positive regulation of bone remodeling `http://purl.obolibrary.org/obo/GO_0046852`
 
 #### Added
-- [renal lymph node](http://purl.obolibrary.org/obo/UBERON_0003425) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "perirenal lymph node" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35764904" 
-
-- [renal lymph node](http://purl.obolibrary.org/obo/UBERON_0003425) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "pararenal lymph node" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:28346247" 
-
-- [renal lymph node](http://purl.obolibrary.org/obo/UBERON_0003425) [has_broad_synonym](http://www.geneontology.org/formats/oboInOwl#hasBroadSynonym) "para-renal lymph node" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22740822" 
+- [positive regulation of bone remodeling](http://purl.obolibrary.org/obo/GO_0046852) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "positive regulation of bone remodelling" 
 
 
-### renal medulla `http://purl.obolibrary.org/obo/UBERON_0000362`
+### positive regulation of cell population proliferation `http://purl.obolibrary.org/obo/GO_0008284`
 
 #### Added
-- [renal medulla](http://purl.obolibrary.org/obo/UBERON_0000362) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_R.glb" 
+- [positive regulation of cell population proliferation](http://purl.obolibrary.org/obo/GO_0008284) SubClassOf [in taxon](http://purl.obolibrary.org/obo/RO_0002162) some (not ([Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751))) 
 
-- [renal medulla](http://purl.obolibrary.org/obo/UBERON_0000362) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_R.glb" 
-
-- [renal medulla](http://purl.obolibrary.org/obo/UBERON_0000362) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_L.glb" 
-
-- [renal medulla](http://purl.obolibrary.org/obo/UBERON_0000362) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_L.glb" 
+- [positive regulation of cell population proliferation](http://purl.obolibrary.org/obo/GO_0008284) SubClassOf not ([in taxon](http://purl.obolibrary.org/obo/RO_0002162) some [Fungi](http://purl.obolibrary.org/obo/NCBITaxon_4751)) 
 
 
-### renal papilla `http://purl.obolibrary.org/obo/UBERON_0001228`
-
-#### Added
-- [renal papilla](http://purl.obolibrary.org/obo/UBERON_0001228) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_L.glb" 
-
-- [renal papilla](http://purl.obolibrary.org/obo/UBERON_0001228) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Ureter_L.glb" 
-
-- [renal papilla](http://purl.obolibrary.org/obo/UBERON_0001228) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Ureter_R.glb" 
-
-- [renal papilla](http://purl.obolibrary.org/obo/UBERON_0001228) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_R.glb" 
+### positive regulation of cytotoxic T cell degranulation `http://purl.obolibrary.org/obo/GO_0043319`
+#### Removed
+- [positive regulation of cytotoxic T cell degranulation](http://purl.obolibrary.org/obo/GO_0043319) SubClassOf [positive regulation of T cell activation](http://purl.obolibrary.org/obo/GO_0050870) 
 
 
-### renal vein `http://purl.obolibrary.org/obo/UBERON_0001140`
+
+### positive regulation of eosinophil degranulation `http://purl.obolibrary.org/obo/GO_0043311`
+#### Removed
+- [positive regulation of eosinophil degranulation](http://purl.obolibrary.org/obo/GO_0043311) SubClassOf [positive regulation of eosinophil activation](http://purl.obolibrary.org/obo/GO_1902568) 
+
+
+
+### positive regulation of histamine secretion by mast cell `http://purl.obolibrary.org/obo/GO_1903595`
 
 #### Added
-- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [renal vein](http://purl.obolibrary.org/obo/UBERON_0001140) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
+- [positive regulation of histamine secretion by mast cell](http://purl.obolibrary.org/obo/GO_1903595) SubClassOf [positive regulation of multicellular organismal process](http://purl.obolibrary.org/obo/GO_0051240) 
 
 
-### requires discussion `http://purl.obolibrary.org/obo/IAO_0000428`
+### positive regulation of mast cell degranulation `http://purl.obolibrary.org/obo/GO_0043306`
+#### Removed
+- [positive regulation of mast cell degranulation](http://purl.obolibrary.org/obo/GO_0043306) SubClassOf [positive regulation of mast cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0033008) 
+
+
+
+### positive regulation of natural killer cell degranulation `http://purl.obolibrary.org/obo/GO_0043323`
+#### Removed
+- [positive regulation of natural killer cell degranulation](http://purl.obolibrary.org/obo/GO_0043323) SubClassOf [positive regulation of natural killer cell activation](http://purl.obolibrary.org/obo/GO_0032816) 
+
+
+
+### positive regulation of neutrophil degranulation `http://purl.obolibrary.org/obo/GO_0043315`
+#### Removed
+- [positive regulation of neutrophil degranulation](http://purl.obolibrary.org/obo/GO_0043315) SubClassOf [positive regulation of neutrophil activation](http://purl.obolibrary.org/obo/GO_1902565) 
+
+
+
+### positive regulation of pharynx morphogenesis `http://purl.obolibrary.org/obo/GO_0110043`
+#### Removed
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0110043" 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) [label](http://www.w3.org/2000/01/rdf-schema#label) "positive regulation of pharynx morphogenesis" 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2017-07-24T21:09:48Z" 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that activates or increases the frequency, rate or extent of pharynx morphogenesis." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:rz" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20805556" 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "kmv" 
+
+- Class: [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([positively regulates](http://purl.obolibrary.org/obo/RO_0002213) some [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040)) 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) SubClassOf [positive regulation of developmental process](http://purl.obolibrary.org/obo/GO_0051094) 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) SubClassOf [positively regulates](http://purl.obolibrary.org/obo/RO_0002213) some [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) 
+
+- [positive regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110043) SubClassOf [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) 
+
+
+
+### positive regulation of pulmonary blood vessel remodeling `http://purl.obolibrary.org/obo/GO_1905111`
 
 #### Added
-- [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A term that is metadata complete, has been reviewed, and problems have been identified that require discussion before release. Such a term requires editor note(s) to identify the outstanding issues."@en 
-
-- [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "group:OBI"@en 
-
-- [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428) [label](http://www.w3.org/2000/01/rdf-schema#label) "requires discussion"@en 
-
-- [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "requires discussion"@en 
-
-- [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Alan Ruttenberg"@en 
-
-- Individual: [requires discussion](http://purl.obolibrary.org/obo/IAO_0000428) 
+- [positive regulation of pulmonary blood vessel remodeling](http://purl.obolibrary.org/obo/GO_1905111) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "positive regulation of pulmonary blood vessel remodelling" 
 
 
-### respiratory system `http://purl.obolibrary.org/obo/UBERON_0001004`
+### positive regulation of tissue remodeling `http://purl.obolibrary.org/obo/GO_0034105`
 
 #### Added
-- [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
+- [positive regulation of tissue remodeling](http://purl.obolibrary.org/obo/GO_0034105) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "positive regulation of tissue remodelling" 
 
-- [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
 
-- [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
+### positively regulates `http://purl.obolibrary.org/obo/RO_0002213`
+#### Removed
+- [positively regulates](http://purl.obolibrary.org/obo/RO_0002213) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "gene_ontology" 
 
-- [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
 
-- [respiratory system](http://purl.obolibrary.org/obo/UBERON_0001004) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb" 
+
+### post-embryonic animal organ development `http://purl.obolibrary.org/obo/GO_0048569`
+#### Removed
+- [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "post-embryonic animal organogenesis" 
+
+- [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) [label](http://www.w3.org/2000/01/rdf-schema#label) "post-embryonic animal organ development" 
+
+- [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0048569" 
+
+- [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Development, taking place during the post-embryonic phase of an animal tissue or tissues that work together to perform a specific function or functions. Development pertains to the process whose specific outcome is the progression of a structure over time, from its formation to the mature structure. Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:jid" 
+
+- Class: [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) 
+
+- [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) SubClassOf [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) 
+
+
+
+### post-embryonic animal organ morphogenesis `http://purl.obolibrary.org/obo/GO_0048563`
+#### Removed
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Morphogenesis, during the post-embryonic phase, of an animal tissue or tissues that work together to perform a specific function or functions. Morphogenesis pertains to process in which anatomical structures are generated and organized. Organs are commonly observed as visibly distinct structures, but may also exist as loosely associated clusters of cells that work together to perform a specific function or functions." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:jid" 
+
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) [label](http://www.w3.org/2000/01/rdf-schema#label) "post-embryonic animal organ morphogenesis" 
+
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0048563" 
+
+- Class: [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) 
+
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) 
+
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) SubClassOf [animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0009887) 
+
+- [post-embryonic animal organ morphogenesis](http://purl.obolibrary.org/obo/GO_0048563) SubClassOf [post-embryonic animal morphogenesis](http://purl.obolibrary.org/obo/GO_0009886) 
+
+
+
+### post-embryonic hemopoiesis `http://purl.obolibrary.org/obo/GO_0035166`
+#### Removed
+- [post-embryonic hemopoiesis](http://purl.obolibrary.org/obo/GO_0035166) SubClassOf [post-embryonic animal organ development](http://purl.obolibrary.org/obo/GO_0048569) 
+
+
+
+### professional antigen presenting cell `http://purl.obolibrary.org/obo/CL_0000145`
+#### Removed
+- [professional antigen presenting cell](http://purl.obolibrary.org/obo/CL_0000145) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "APC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+#### Added
+- [professional antigen presenting cell](http://purl.obolibrary.org/obo/CL_0000145) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "APC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+
+### prostate gland microvascular endothelial cell `http://purl.obolibrary.org/obo/CL_2000059`
+#### Removed
+- [prostate gland microvascular endothelial cell](http://purl.obolibrary.org/obo/CL_2000059) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [prostate gland microvascular endothelial cell](http://purl.obolibrary.org/obo/CL_2000059) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+
+### prostate neuroendocrine cell `http://purl.obolibrary.org/obo/CL_0017002`
+
+#### Added
+- [prostate neuroendocrine cell](http://purl.obolibrary.org/obo/CL_0017002) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [prostate neuroendocrine cell](http://purl.obolibrary.org/obo/CL_0017002) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### protein kinase activity `http://purl.obolibrary.org/obo/GO_0004672`
+
+#### Added
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9732753" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "JAK1-activated RAF1 phosphorylates MAPKs" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9833820" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "PKR dimer autophosphorylates" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836404" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates MAPT" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836184" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates CDK1" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836159" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates DHX9" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836322" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates MKK6" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836435" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates SNCA" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836362" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates TP53 tetramer" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836449" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates HIV tat" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836383" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates ILF3:ILF2" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836617" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates SPHK1" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9835885" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates eIF2-alpha" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836515" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates PTPN2" 
+
+- [protein kinase activity](http://purl.obolibrary.org/obo/GO_0004672) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9836664" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "p-PKR dimer phosphorylates PPP2R5A" 
+
+
+### protein transporter activity `http://purl.obolibrary.org/obo/GO_0140318`
+
+#### Added
+- [protein transporter activity](http://purl.obolibrary.org/obo/GO_0140318) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-2248891" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "M6PR transports activated ARSA to the lysosome" 
+
+
+### protein tyrosine kinase activity `http://purl.obolibrary.org/obo/GO_0004713`
+#### Removed
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9762209" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "BACH1 is phosphorylated at tyrosine 486" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-5357429" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "AXL autophosphorylates on Y772 and Y814" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-8964252" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "G alpha (s):GTP:SRC catalyzes SRC to p-Y416-SRC" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-8964242" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "G protein alpha (i)-SRC complex catalyzes SRC to p-Y416-SRC" 
+
+#### Added
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9732738" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "JAK1-mediated phosphorylation of RAF1" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-5357429" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "AXL autophosphorylates on Y779 and Y821" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-9762209" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "BACH1 is phosphorylated at tyrosine 483" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-8964252" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "G alpha (s):GTP:SRC catalyzes SRC to p-Y419-SRC" 
+
+- [protein tyrosine kinase activity](http://purl.obolibrary.org/obo/GO_0004713) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-8964242" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "G protein alpha (i)-SRC complex catalyzes SRC to p-Y419-SRC" 
+
+
+### pulmonary artery endothelial cell `http://purl.obolibrary.org/obo/CL_1001568`
+
+#### Added
+- [pulmonary artery endothelial cell](http://purl.obolibrary.org/obo/CL_1001568) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [pulmonary artery endothelial cell](http://purl.obolibrary.org/obo/CL_1001568) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### pulmonary blood vessel remodeling `http://purl.obolibrary.org/obo/GO_0101010`
+
+#### Added
+- [pulmonary blood vessel remodeling](http://purl.obolibrary.org/obo/GO_0101010) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "pulmonary blood vessel remodelling" 
+
+
+### pulmonary interstitial fibroblast `http://purl.obolibrary.org/obo/CL_0002241`
+#### Removed
+- [pulmonary interstitial fibroblast](http://purl.obolibrary.org/obo/CL_0002241) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [pulmonary interstitial fibroblast](http://purl.obolibrary.org/obo/CL_0002241) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+
+### quality `http://purl.obolibrary.org/obo/PATO_0000001`
+#### Removed
+- [quality](http://purl.obolibrary.org/obo/PATO_0000001) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "trait" 
+
+- [quality](http://purl.obolibrary.org/obo/PATO_0000001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PATOC:GVG" 
+
+
+
+### regulates `http://purl.obolibrary.org/obo/RO_0002211`
+#### Removed
+- [regulates](http://purl.obolibrary.org/obo/RO_0002211) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "gene_ontology" 
+
+
+
+### regulation of acetylcholine biosynthetic process `http://purl.obolibrary.org/obo/GO_1905921`
+#### Removed
+- [regulation of acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_1905921) SubClassOf [regulation of cellular biosynthetic process](http://purl.obolibrary.org/obo/GO_0031326) 
+
+#### Added
+- [regulation of acetylcholine biosynthetic process](http://purl.obolibrary.org/obo/GO_1905921) SubClassOf [regulation of biosynthetic process](http://purl.obolibrary.org/obo/GO_0009889) 
+
+
+### regulation of acetylcholine metabolic process `http://purl.obolibrary.org/obo/GO_0060408`
+#### Removed
+- [regulation of acetylcholine metabolic process](http://purl.obolibrary.org/obo/GO_0060408) SubClassOf [regulation of cellular metabolic process](http://purl.obolibrary.org/obo/GO_0031323) 
+
+
+
+### regulation of basophil degranulation `http://purl.obolibrary.org/obo/GO_1903581`
+#### Removed
+- [regulation of basophil degranulation](http://purl.obolibrary.org/obo/GO_1903581) SubClassOf [regulation of leukocyte activation](http://purl.obolibrary.org/obo/GO_0002694) 
+
+
+
+### regulation of blood vessel remodeling `http://purl.obolibrary.org/obo/GO_0060312`
+
+#### Added
+- [regulation of blood vessel remodeling](http://purl.obolibrary.org/obo/GO_0060312) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "regulation of blood vessel remodelling" 
+
+
+### regulation of bone remodeling `http://purl.obolibrary.org/obo/GO_0046850`
+
+#### Added
+- [regulation of bone remodeling](http://purl.obolibrary.org/obo/GO_0046850) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "regulation of bone remodelling" 
+
+
+### regulation of cytotoxic T cell degranulation `http://purl.obolibrary.org/obo/GO_0043317`
+#### Removed
+- [regulation of cytotoxic T cell degranulation](http://purl.obolibrary.org/obo/GO_0043317) SubClassOf [regulation of T cell activation](http://purl.obolibrary.org/obo/GO_0050863) 
+
+
+
+### regulation of eosinophil degranulation `http://purl.obolibrary.org/obo/GO_0043309`
+#### Removed
+- [regulation of eosinophil degranulation](http://purl.obolibrary.org/obo/GO_0043309) SubClassOf [regulation of eosinophil activation](http://purl.obolibrary.org/obo/GO_1902566) 
+
+
+
+### regulation of mast cell degranulation `http://purl.obolibrary.org/obo/GO_0043304`
+#### Removed
+- [regulation of mast cell degranulation](http://purl.obolibrary.org/obo/GO_0043304) SubClassOf [regulation of mast cell activation involved in immune response](http://purl.obolibrary.org/obo/GO_0033006) 
+
+
+
+### regulation of natural killer cell degranulation `http://purl.obolibrary.org/obo/GO_0043321`
+#### Removed
+- [regulation of natural killer cell degranulation](http://purl.obolibrary.org/obo/GO_0043321) SubClassOf [regulation of natural killer cell activation](http://purl.obolibrary.org/obo/GO_0032814) 
+
+
+
+### regulation of neurotransmitter levels `http://purl.obolibrary.org/obo/GO_0001505`
+#### Removed
+- [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that modulates levels of neurotransmitter." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:jl" 
+
+- [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0001505" 
+
+- [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) [label](http://www.w3.org/2000/01/rdf-schema#label) "regulation of neurotransmitter levels" 
+
+- Class: [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) 
+
+- [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) SubClassOf [only in taxon](http://purl.obolibrary.org/obo/RO_0002160) some [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+- [regulation of neurotransmitter levels](http://purl.obolibrary.org/obo/GO_0001505) SubClassOf [in taxon](http://purl.obolibrary.org/obo/RO_0002162) only [Eumetazoa](http://purl.obolibrary.org/obo/NCBITaxon_6072) 
+
+
+
+### regulation of neutrophil degranulation `http://purl.obolibrary.org/obo/GO_0043313`
+#### Removed
+- [regulation of neutrophil degranulation](http://purl.obolibrary.org/obo/GO_0043313) SubClassOf [regulation of neutrophil activation](http://purl.obolibrary.org/obo/GO_1902563) 
+
+
+
+### regulation of pharynx morphogenesis `http://purl.obolibrary.org/obo/GO_0110041`
+#### Removed
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) [created_by](http://www.geneontology.org/formats/oboInOwl#created_by) "kmv" 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any process that modulates the frequency, rate or extent of pharynx morphogenesis, the process in which the anatomical structure of the pharynx is generated and organized." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:rz" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20805556" 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) [creation_date](http://www.geneontology.org/formats/oboInOwl#creation_date) "2017-07-24T21:00:20Z" 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) [label](http://www.w3.org/2000/01/rdf-schema#label) "regulation of pharynx morphogenesis" 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "biological_process" 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) [id](http://www.geneontology.org/formats/oboInOwl#id) "GO:0110041" 
+
+- Class: [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) EquivalentTo [biological regulation](http://purl.obolibrary.org/obo/GO_0065007) and ([regulates](http://purl.obolibrary.org/obo/RO_0002211) some [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040)) 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) SubClassOf [regulates](http://purl.obolibrary.org/obo/RO_0002211) some [pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110040) 
+
+- [regulation of pharynx morphogenesis](http://purl.obolibrary.org/obo/GO_0110041) SubClassOf [regulation of anatomical structure morphogenesis](http://purl.obolibrary.org/obo/GO_0022603) 
+
+
+
+### regulation of pulmonary blood vessel remodeling `http://purl.obolibrary.org/obo/GO_1905109`
+
+#### Added
+- [regulation of pulmonary blood vessel remodeling](http://purl.obolibrary.org/obo/GO_1905109) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "regulation of pulmonary blood vessel remodelling" 
+
+
+### regulation of tissue remodeling `http://purl.obolibrary.org/obo/GO_0034103`
+
+#### Added
+- [regulation of tissue remodeling](http://purl.obolibrary.org/obo/GO_0034103) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "regulation of tissue remodelling" 
+
+
+### relational_slim `http://purl.obolibrary.org/obo/pato#relational_slim`
+#### Removed
+- AnnotationProperty: [relational_slim](http://purl.obolibrary.org/obo/pato#relational_slim) 
+
+- [relational_slim](http://purl.obolibrary.org/obo/pato#relational_slim) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
+
+
+
+### respiratory suprabasal cell `http://purl.obolibrary.org/obo/CL_4033048`
+
+#### Added
+- [respiratory suprabasal cell](http://purl.obolibrary.org/obo/CL_4033048) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [respiratory suprabasal cell](http://purl.obolibrary.org/obo/CL_4033048) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
 
 ### retina horizontal cell `http://purl.obolibrary.org/obo/CL_0000745`
@@ -3726,31 +5935,27 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
 - [retina horizontal cell](http://purl.obolibrary.org/obo/CL_0000745) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HCs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+
+- [retina horizontal cell](http://purl.obolibrary.org/obo/CL_0000745) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 #### Added
 - [retina horizontal cell](http://purl.obolibrary.org/obo/CL_0000745) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HCs" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
+- [retina horizontal cell](http://purl.obolibrary.org/obo/CL_0000745) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "HC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-### retinal astrocyte `http://purl.obolibrary.org/obo/CL_4033015`
-#### Removed
-- [retinal astrocyte](http://purl.obolibrary.org/obo/CL_4033015) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "retinal astroglia" 
-  - [synonym_type_property](http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty) [plural term](http://purl.obolibrary.org/obo/uberon/core#PLURAL) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33796062" 
-
-#### Added
-- [retinal astrocyte](http://purl.obolibrary.org/obo/CL_4033015) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "retinal astroglia" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33796062" 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 
 ### retinal bipolar neuron `http://purl.obolibrary.org/obo/CL_0000748`
@@ -3758,31 +5963,41 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
 - [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BPs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GSE137537" 
 
 - [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BCs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+
+- [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 #### Added
-- [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BCs" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+- [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 - [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BPs" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GSE137537" 
+
+- [retinal bipolar neuron](http://purl.obolibrary.org/obo/CL_0000748) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "BCs" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 
 ### retinal ganglion cell `http://purl.obolibrary.org/obo/CL_0000740`
@@ -3790,236 +6005,44 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
 - [retinal ganglion cell](http://purl.obolibrary.org/obo/CL_0000740) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RGCs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+
+- [retinal ganglion cell](http://purl.obolibrary.org/obo/CL_0000740) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RGC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
 #### Added
 - [retinal ganglion cell](http://purl.obolibrary.org/obo/CL_0000740) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RGCs" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
 
+- [retinal ganglion cell](http://purl.obolibrary.org/obo/CL_0000740) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "RGC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-### retinal melanocyte `http://purl.obolibrary.org/obo/CL_0002485`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41598-020-66092-9" 
+
+
+### role `http://purl.obolibrary.org/obo/BFO_0000023`
 #### Removed
-- [retinal melanocyte](http://purl.obolibrary.org/obo/CL_0002485) SubClassOf [melanocyte](http://purl.obolibrary.org/obo/CL_0000148) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [role](http://purl.obolibrary.org/obo/BFO_0000023) EquivalentTo [CHEBI_50906](http://purl.obolibrary.org/obo/CHEBI_50906) 
+
+- [role](http://purl.obolibrary.org/obo/BFO_0000023) SubClassOf [CHEBI_50906](http://purl.obolibrary.org/obo/CHEBI_50906) 
 
 #### Added
-- [retinal melanocyte](http://purl.obolibrary.org/obo/CL_0002485) SubClassOf [melanocyte](http://purl.obolibrary.org/obo/CL_0000148) 
+- [role](http://purl.obolibrary.org/obo/BFO_0000023) SubClassOf [realizable entity](http://purl.obolibrary.org/obo/BFO_0000017) 
 
 
-### retinal pigment epithelial cell `http://purl.obolibrary.org/obo/CL_0002586`
+### saccular `http://purl.obolibrary.org/obo/PATO_0001987`
 #### Removed
-- [retinal pigment epithelial cell](http://purl.obolibrary.org/obo/CL_0002586) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
+- [saccular](http://purl.obolibrary.org/obo/PATO_0001987) [IAO_0000118](http://purl.obolibrary.org/obo/IAO_0000118) "sacular" 
+  - [IAO_scope](http://purl.obolibrary.org/obo/IAO_scope) "EXACT" 
 
-#### Added
-- [retinal pigment epithelial cell](http://purl.obolibrary.org/obo/CL_0002586) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
-
-
-### right cardiac atrium `http://purl.obolibrary.org/obo/UBERON_0002078`
-
-#### Added
-- [right cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002078) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
-
-- [right cardiac atrium](http://purl.obolibrary.org/obo/UBERON_0002078) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
-
-
-### right cerebral hemisphere `http://purl.obolibrary.org/obo/UBERON_0002813`
-
-#### Added
-- [right cerebral hemisphere](http://purl.obolibrary.org/obo/UBERON_0002813) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [right cerebral hemisphere](http://purl.obolibrary.org/obo/UBERON_0002813) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### right eye `http://purl.obolibrary.org/obo/UBERON_0004549`
-
-#### Added
-- [right eye](http://purl.obolibrary.org/obo/UBERON_0004549) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-r.glb" 
-
-- [right eye](http://purl.obolibrary.org/obo/UBERON_0004549) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_R.glb" 
-
-- [right eye](http://purl.obolibrary.org/obo/UBERON_0004549) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_R.glb" 
-
-- [right eye](http://purl.obolibrary.org/obo/UBERON_0004549) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-eye-r.glb" 
-
-
-### right kidney `http://purl.obolibrary.org/obo/UBERON_0004539`
-
-#### Added
-- [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Kidney_Right.glb" 
-
-- [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Kidney_R.glb" 
-
-- [right kidney](http://purl.obolibrary.org/obo/UBERON_0004539) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Kidney_R.glb" 
-
-
-### right lobe of liver `http://purl.obolibrary.org/obo/UBERON_0001114`
-
-#### Added
-- [right lobe of liver](http://purl.obolibrary.org/obo/UBERON_0001114) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Liver.glb" 
-
-- [right lobe of liver](http://purl.obolibrary.org/obo/UBERON_0001114) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Liver.glb" 
-
-
-### right lung `http://purl.obolibrary.org/obo/UBERON_0002167`
-
-#### Added
-- [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-- [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-- [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [right lung](http://purl.obolibrary.org/obo/UBERON_0002167) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
-
-
-### right nipple `http://purl.obolibrary.org/obo/UBERON_0013773`
-
-#### Added
-- [right nipple](http://purl.obolibrary.org/obo/UBERON_0013773) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.3/3d-vh-f-mammary-gland-r.glb" 
-
-
-### right pulmonary artery `http://purl.obolibrary.org/obo/UBERON_0001651`
-
-#### Added
-- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [right pulmonary artery](http://purl.obolibrary.org/obo/UBERON_0001651) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### right putamen `http://purl.obolibrary.org/obo/UBERON_0008885`
-
-#### Added
-- [right putamen](http://purl.obolibrary.org/obo/UBERON_0008885) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-- [right putamen](http://purl.obolibrary.org/obo/UBERON_0008885) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-
-### right renal artery `http://purl.obolibrary.org/obo/UBERON_0001185`
-
-#### Added
-- [right renal artery](http://purl.obolibrary.org/obo/UBERON_0001185) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [right renal artery](http://purl.obolibrary.org/obo/UBERON_0001185) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### right renal vein `http://purl.obolibrary.org/obo/UBERON_0001141`
-
-#### Added
-- [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [right renal vein](http://purl.obolibrary.org/obo/UBERON_0001141) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### right thymus lobe `http://purl.obolibrary.org/obo/UBERON_0005469`
-
-#### Added
-- [right thymus lobe](http://purl.obolibrary.org/obo/UBERON_0005469) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Thymus.glb" 
-
-- [right thymus lobe](http://purl.obolibrary.org/obo/UBERON_0005469) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Thymus.glb" 
-
-
-### right ureter `http://purl.obolibrary.org/obo/UBERON_0001222`
-
-#### Added
-- [right ureter](http://purl.obolibrary.org/obo/UBERON_0001222) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Ureter_R.glb" 
-
-- [right ureter](http://purl.obolibrary.org/obo/UBERON_0001222) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Ureter_R.glb" 
-
-
-### right uterine tube `http://purl.obolibrary.org/obo/UBERON_0001302`
-
-#### Added
-- [right uterine tube](http://purl.obolibrary.org/obo/UBERON_0001302) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Fallopian_Tube_R.glb" 
-
-
-### rod bipolar cell `http://purl.obolibrary.org/obo/CL_0000751`
-
-#### Added
-- [rod bipolar cell](http://purl.obolibrary.org/obo/CL_0000751) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### root `http://purl.obolibrary.org/obo/NCBITaxon_1`
-
-#### Added
-- [root](http://purl.obolibrary.org/obo/NCBITaxon_1) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30365038" 
-
-- [root](http://purl.obolibrary.org/obo/NCBITaxon_1) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32761142" 
-
-
-### rosehip neuron `http://purl.obolibrary.org/obo/CL_0008032`
-
-#### Added
-- [rosehip neuron](http://purl.obolibrary.org/obo/CL_0008032) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### salivary gland cell `http://purl.obolibrary.org/obo/CL_0009005`
-#### Removed
-- [salivary gland cell](http://purl.obolibrary.org/obo/CL_0009005) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [salivary gland cell](http://purl.obolibrary.org/obo/CL_0009005) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### saphenous vein smooth muscle tissue `http://purl.obolibrary.org/obo/UBERON_8480068`
-
-#### Added
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-0819-0473](https://orcid.org/0000-0002-0819-0473) 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A portion of smooth muscle tissue that is part of a saphenous vein." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-0819-0473" 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8480068" 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) [date](http://purl.org/dc/terms/date) "2023-08-31T11:41:09Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) [label](http://www.w3.org/2000/01/rdf-schema#label) "saphenous vein smooth muscle tissue" 
-
-- Class: [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) EquivalentTo [smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_0001135) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [saphenous vein](http://purl.obolibrary.org/obo/UBERON_0007318)) 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [saphenous vein](http://purl.obolibrary.org/obo/UBERON_0007318) 
-
-- [saphenous vein smooth muscle tissue](http://purl.obolibrary.org/obo/UBERON_8480068) SubClassOf [venous system smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004696) 
-
-
-### scleral cell `http://purl.obolibrary.org/obo/CL_0000347`
-#### Removed
-- [scleral cell](http://purl.obolibrary.org/obo/CL_0000347) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### scolopale cell `http://purl.obolibrary.org/obo/CL_0000382`
-#### Removed
-- [scolopale cell](http://purl.obolibrary.org/obo/CL_0000382) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### scolopidial ligament cell `http://purl.obolibrary.org/obo/CL_0000407`
-#### Removed
-- [scolopidial ligament cell](http://purl.obolibrary.org/obo/CL_0000407) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### sebaceous gland cell `http://purl.obolibrary.org/obo/CL_2000021`
-#### Removed
-- [sebaceous gland cell](http://purl.obolibrary.org/obo/CL_2000021) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sebaceous gland](http://purl.obolibrary.org/obo/UBERON_0001821)) 
-
-- [sebaceous gland cell](http://purl.obolibrary.org/obo/CL_2000021) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [sebaceous gland cell](http://purl.obolibrary.org/obo/CL_2000021) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [sebaceous gland](http://purl.obolibrary.org/obo/UBERON_0001821)) 
-
-- [sebaceous gland cell](http://purl.obolibrary.org/obo/CL_2000021) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
 
 
 ### secondary crest myofibroblast `http://purl.obolibrary.org/obo/CL_4033016`
@@ -4027,883 +6050,451 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
 - [secondary crest myofibroblast](http://purl.obolibrary.org/obo/CL_4033016) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SCMFs" 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural term](http://purl.obolibrary.org/obo/uberon#PLURAL) 
-
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25448080" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
+
+- [secondary crest myofibroblast](http://purl.obolibrary.org/obo/CL_4033016) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SCMF" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33624948" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
 #### Added
 - [secondary crest myofibroblast](http://purl.obolibrary.org/obo/CL_4033016) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SCMFs" 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25448080" 
 
   - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [plural form](http://purl.obolibrary.org/obo/OMO_0003004) 
 
+- [secondary crest myofibroblast](http://purl.obolibrary.org/obo/CL_4033016) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SCMF" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33624948" 
 
-### secondary neuron (sensu Teleostei) `http://purl.obolibrary.org/obo/CL_0000535`
-
-#### Added
-- [secondary neuron (sensu Teleostei)](http://purl.obolibrary.org/obo/CL_0000535) SubClassOf [eukaryotic cell](http://purl.obolibrary.org/obo/CL_0000255) 
-
-
-### secondary spermatocyte `http://purl.obolibrary.org/obo/CL_0000657`
-#### Removed
-- [secondary spermatocyte](http://purl.obolibrary.org/obo/CL_0000657) SubClassOf [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [secondary spermatocyte](http://purl.obolibrary.org/obo/CL_0000657) SubClassOf [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### secretory cell `http://purl.obolibrary.org/obo/CL_0000151`
 #### Removed
-- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [secretion by cell](http://purl.obolibrary.org/obo/GO_0032940)) 
+- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [secretion by cell](http://purl.obolibrary.org/obo/GO_0032940)) 
-
-- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
-### segmental bronchus `http://purl.obolibrary.org/obo/UBERON_0002184`
 
-#### Added
-- [segmental bronchus](http://purl.obolibrary.org/obo/UBERON_0002184) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [segmental bronchus](http://purl.obolibrary.org/obo/UBERON_0002184) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" 
-
-- [segmental bronchus](http://purl.obolibrary.org/obo/UBERON_0002184) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" 
-
-- [segmental bronchus](http://purl.obolibrary.org/obo/UBERON_0002184) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-
-### seminal vesicle `http://purl.obolibrary.org/obo/UBERON_0000998`
-
-#### Added
-- [seminal vesicle](http://purl.obolibrary.org/obo/UBERON_0000998) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Prostate.glb" 
-
-
-### sensory epithelial cell `http://purl.obolibrary.org/obo/CL_0000098`
+### serotonin-gated monoatomic cation-selective channel activity `http://purl.obolibrary.org/obo/GO_0022850`
 #### Removed
-- [sensory epithelial cell](http://purl.obolibrary.org/obo/CL_0000098) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) [label](http://www.w3.org/2000/01/rdf-schema#label) "serotonin-gated monoatomic cation-selective channel activity" 
+
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) EquivalentTo [ligand-gated channel activity](http://purl.obolibrary.org/obo/GO_0022834) and ([regulated by](http://purl.obolibrary.org/obo/RO_0002334) some [serotonin binding](http://purl.obolibrary.org/obo/GO_0051378)) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) 
+
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) SubClassOf [regulated by](http://purl.obolibrary.org/obo/RO_0002334) some [serotonin binding](http://purl.obolibrary.org/obo/GO_0051378) 
+
+#### Added
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) [label](http://www.w3.org/2000/01/rdf-schema#label) "serotonin-gated monoatomic cation channel activity" 
+
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "serotonin-gated monoatomic cation-selective channel activity" 
+
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) EquivalentTo [gated channel activity](http://purl.obolibrary.org/obo/GO_0022836) and ([has primary input](http://purl.obolibrary.org/obo/RO_0004009) some [CHEBI_23906](http://purl.obolibrary.org/obo/CHEBI_23906)) and ([has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_350546](http://purl.obolibrary.org/obo/CHEBI_350546)) 
+
+- [serotonin-gated monoatomic cation-selective channel activity](http://purl.obolibrary.org/obo/GO_0022850) SubClassOf [has small molecule activator](http://purl.obolibrary.org/obo/RO_0012001) some [CHEBI_350546](http://purl.obolibrary.org/obo/CHEBI_350546) 
 
 
+### serous secreting cell of bronchus submucosal gland `http://purl.obolibrary.org/obo/CL_4033005`
 
-### sensory receptor cell `http://purl.obolibrary.org/obo/CL_0000197`
+#### Added
+- [serous secreting cell of bronchus submucosal gland](http://purl.obolibrary.org/obo/CL_4033005) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [serous secreting cell of bronchus submucosal gland](http://purl.obolibrary.org/obo/CL_4033005) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### small bistratified retinal ganglion cell `http://purl.obolibrary.org/obo/CL_4033053`
 #### Removed
-- [sensory receptor cell](http://purl.obolibrary.org/obo/CL_0000197) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [small bistratified retinal ganglion cell](http://purl.obolibrary.org/obo/CL_4033053) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "sbRGC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-#### Added
-- [sensory receptor cell](http://purl.obolibrary.org/obo/CL_0000197) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34093409" 
 
-
-### sheath cell (sensu Nematoda) `http://purl.obolibrary.org/obo/CL_0000367`
-#### Removed
-- [sheath cell (sensu Nematoda)](http://purl.obolibrary.org/obo/CL_0000367) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### sigmoid colon `http://purl.obolibrary.org/obo/UBERON_0001159`
-
-#### Added
-- [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-- [sigmoid colon](http://purl.obolibrary.org/obo/UBERON_0001159) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-
-### single fate stem cell `http://purl.obolibrary.org/obo/CL_0000035`
-#### Removed
-- [single fate stem cell](http://purl.obolibrary.org/obo/CL_0000035) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [unipotent](http://purl.obolibrary.org/obo/PATO_0001400)) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [stem cell division](http://purl.obolibrary.org/obo/GO_0017145)) 
-
-#### Added
-- [single fate stem cell](http://purl.obolibrary.org/obo/CL_0000035) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [unipotent](http://purl.obolibrary.org/obo/PATO_0001400)) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [stem cell division](http://purl.obolibrary.org/obo/GO_0017145)) 
-
-
-### single nucleate cell `http://purl.obolibrary.org/obo/CL_0000226`
-#### Removed
-- [single nucleate cell](http://purl.obolibrary.org/obo/CL_0000226) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mononucleate](http://purl.obolibrary.org/obo/PATO_0001407)) 
-
-#### Added
-- [single nucleate cell](http://purl.obolibrary.org/obo/CL_0000226) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([bearer of](http://purl.obolibrary.org/obo/RO_0000053) some [mononucleate](http://purl.obolibrary.org/obo/PATO_0001407)) 
-
-
-### skeletal muscle myoblast `http://purl.obolibrary.org/obo/CL_0000515`
-#### Removed
-- [skeletal muscle myoblast](http://purl.obolibrary.org/obo/CL_0000515) SubClassOf [myoblast](http://purl.obolibrary.org/obo/CL_0000056) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [skeletal muscle myoblast](http://purl.obolibrary.org/obo/CL_0000515) SubClassOf [myoblast](http://purl.obolibrary.org/obo/CL_0000056) 
-
-
-### skeletogenic cell `http://purl.obolibrary.org/obo/CL_0007001`
-#### Removed
-- [skeletogenic cell](http://purl.obolibrary.org/obo/CL_0007001) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [skeletogenic cell](http://purl.obolibrary.org/obo/CL_0007001) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### skin of body `http://purl.obolibrary.org/obo/UBERON_0002097`
-
-#### Added
-- [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Skin.glb" 
-
-- [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.3/3d-vh-f-skin.glb" 
-
-- [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Skin.glb" 
-
-- [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Skin.glb" 
-
-- [skin of body](http://purl.obolibrary.org/obo/UBERON_0002097) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_M_Skin.glb" 
-
-
-### skin of gonad `http://purl.obolibrary.org/obo/UBERON_8480074`
-
-#### Added
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-0819-0473](https://orcid.org/0000-0002-0819-0473) 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8480074" 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) [date](http://purl.org/dc/terms/date) "2023-08-29T10:24:24Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) [label](http://www.w3.org/2000/01/rdf-schema#label) "skin of gonad" 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A zone of skin part of some gonad." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://orcid.org/0000-0002-0819-0473" 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- Class: [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) EquivalentTo [zone of skin](http://purl.obolibrary.org/obo/UBERON_0000014) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [gonad](http://purl.obolibrary.org/obo/UBERON_0000991)) 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [gonad](http://purl.obolibrary.org/obo/UBERON_0000991) 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) SubClassOf [reproductive structure](http://purl.obolibrary.org/obo/UBERON_0005156) 
-
-- [skin of gonad](http://purl.obolibrary.org/obo/UBERON_8480074) SubClassOf [zone of skin](http://purl.obolibrary.org/obo/UBERON_0000014) 
-
-
-### small intestine `http://purl.obolibrary.org/obo/UBERON_0002108`
-
-#### Added
-- [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Small_Intestine.glb" 
-
-- [small intestine](http://purl.obolibrary.org/obo/UBERON_0002108) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Small_Intestine.glb" 
-
-
-### smooth muscle myoblast `http://purl.obolibrary.org/obo/CL_0000514`
-#### Removed
-- [smooth muscle myoblast](http://purl.obolibrary.org/obo/CL_0000514) SubClassOf [myoblast](http://purl.obolibrary.org/obo/CL_0000056) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [smooth muscle myoblast](http://purl.obolibrary.org/obo/CL_0000514) SubClassOf [myoblast](http://purl.obolibrary.org/obo/CL_0000056) 
-
-
-### somatic cell `http://purl.obolibrary.org/obo/CL_0002371`
-#### Removed
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [label](http://www.w3.org/2000/01/rdf-schema#label) "somatic cell" 
-
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721662544" 
-
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete somatic cell" 
-
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
-
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "OBSOLETE. A cell of an organism that does not pass on its genetic material to the organism's offspring (i.e. a non-germ line cell)." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721662544" 
-
-- [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "https://github.com/obophenotype/cell-ontology/issues/1150" 
-
-
-### somatic nurse-like cell `http://purl.obolibrary.org/obo/CL_4029003`
-#### Removed
-- [somatic nurse-like cell](http://purl.obolibrary.org/obo/CL_4029003) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### somatic stem cell `http://purl.obolibrary.org/obo/CL_0000723`
-#### Removed
-- [somatic stem cell](http://purl.obolibrary.org/obo/CL_0000723) SubClassOf [stem cell](http://purl.obolibrary.org/obo/CL_0000034) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-- [somatic stem cell](http://purl.obolibrary.org/obo/CL_0000723) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-#### Added
-- [somatic stem cell](http://purl.obolibrary.org/obo/CL_0000723) SubClassOf [stem cell](http://purl.obolibrary.org/obo/CL_0000034) 
-
-
-### spermatid `http://purl.obolibrary.org/obo/CL_0000018`
-#### Removed
-- [spermatid](http://purl.obolibrary.org/obo/CL_0000018) SubClassOf [male germ cell](http://purl.obolibrary.org/obo/CL_0000015) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-- [spermatid](http://purl.obolibrary.org/obo/CL_0000018) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-#### Added
-- [spermatid](http://purl.obolibrary.org/obo/CL_0000018) SubClassOf [male germ cell](http://purl.obolibrary.org/obo/CL_0000015) 
-
-
-### spermatocyte `http://purl.obolibrary.org/obo/CL_0000017`
-#### Removed
-- [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-- [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) SubClassOf [male germ cell](http://purl.obolibrary.org/obo/CL_0000015) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [spermatocyte](http://purl.obolibrary.org/obo/CL_0000017) SubClassOf [male germ cell](http://purl.obolibrary.org/obo/CL_0000015) 
-
-
-### spermatogonium `http://purl.obolibrary.org/obo/CL_0000020`
-#### Removed
-- [spermatogonium](http://purl.obolibrary.org/obo/CL_0000020) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### spider amacrine cell `http://purl.obolibrary.org/obo/CL_0004225`
-#### Removed
-- [spider amacrine cell](http://purl.obolibrary.org/obo/CL_0004225) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
-
-#### Added
-- [spider amacrine cell](http://purl.obolibrary.org/obo/CL_0004225) SubClassOf [narrow field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004251) 
-
-
-### spinal cord `http://purl.obolibrary.org/obo/UBERON_0002240`
-
-#### Added
-- [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Spinal_Cord.glb" 
-
-- [spinal cord](http://purl.obolibrary.org/obo/UBERON_0002240) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Spinal_Cord.glb" 
-
-
-### spleen `http://purl.obolibrary.org/obo/UBERON_0002106`
-
-#### Added
-- [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Spleen.glb" 
-
-- [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Spleen.glb" 
-
-- [spleen](http://purl.obolibrary.org/obo/UBERON_0002106) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Spleen.glb" 
-
-
-### splenic artery `http://purl.obolibrary.org/obo/UBERON_0001194`
-
-#### Added
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [splenic artery](http://purl.obolibrary.org/obo/UBERON_0001194) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### splenic vein `http://purl.obolibrary.org/obo/UBERON_0003713`
-
-#### Added
-- [splenic vein](http://purl.obolibrary.org/obo/UBERON_0003713) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [splenic vein](http://purl.obolibrary.org/obo/UBERON_0003713) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### starburst amacrine cell `http://purl.obolibrary.org/obo/CL_0004232`
-#### Removed
-- [starburst amacrine cell](http://purl.obolibrary.org/obo/CL_0004232) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a flat dendritic arbor and a medium dendritic field. Starburst amacrine cells have post-synaptic terminals in S2." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
-
-- [starburst amacrine cell](http://purl.obolibrary.org/obo/CL_0004232) SubClassOf [amacrine cell](http://purl.obolibrary.org/obo/CL_0000561) 
-
-#### Added
-- [starburst amacrine cell](http://purl.obolibrary.org/obo/CL_0004232) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An amacrine cell with a flat dendritic arbor and a medium dendritic field. Starburst amacrine cells have post-synaptic terminals in S2. This cell type releases the neurotransmitters gamma-aminobutyric acid (GABA) and acetylcholine." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9620701" 
+- [small bistratified retinal ganglion cell](http://purl.obolibrary.org/obo/CL_4033053) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SBS ganglion cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
 
-- [starburst amacrine cell](http://purl.obolibrary.org/obo/CL_0004232) SubClassOf [cholinergic neuron](http://purl.obolibrary.org/obo/CL_0000108) 
+#### Added
+- [small bistratified retinal ganglion cell](http://purl.obolibrary.org/obo/CL_4033053) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "sbRGC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34093409" 
 
-- [starburst amacrine cell](http://purl.obolibrary.org/obo/CL_0004232) SubClassOf [GABAergic amacrine cell](http://purl.obolibrary.org/obo/CL_4030027) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [small bistratified retinal ganglion cell](http://purl.obolibrary.org/obo/CL_4033053) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SBS ganglion cell" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32032773" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### stem cell `http://purl.obolibrary.org/obo/CL_0000034`
+### smooth muscle cell of the pulmonary artery `http://purl.obolibrary.org/obo/CL_0002591`
+
+#### Added
+- [smooth muscle cell of the pulmonary artery](http://purl.obolibrary.org/obo/CL_0002591) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [smooth muscle cell of the pulmonary artery](http://purl.obolibrary.org/obo/CL_0002591) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### spherical bushy cell `http://purl.obolibrary.org/obo/CL_4023163`
 #### Removed
-- [stem cell](http://purl.obolibrary.org/obo/CL_0000034) EquivalentTo [native cell](http://purl.obolibrary.org/obo/CL_0000003) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [stem cell division](http://purl.obolibrary.org/obo/GO_0017145)) 
+- [spherical bushy cell](http://purl.obolibrary.org/obo/CL_4023163) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "SBC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [stem cell](http://purl.obolibrary.org/obo/CL_0000034) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31881018" 
 
 #### Added
-- [stem cell](http://purl.obolibrary.org/obo/CL_0000034) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([capable of](http://purl.obolibrary.org/obo/RO_0002215) some [stem cell division](http://purl.obolibrary.org/obo/GO_0017145)) 
+- [spherical bushy cell](http://purl.obolibrary.org/obo/CL_4023163) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "SBC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31881018" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### stratified epithelial cell `http://purl.obolibrary.org/obo/CL_0000079`
+### spinal cord development `http://purl.obolibrary.org/obo/GO_0021510`
 #### Removed
-- [stratified epithelial cell](http://purl.obolibrary.org/obo/CL_0000079) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [spinal cord development](http://purl.obolibrary.org/obo/GO_0021510) SubClassOf [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) 
+
+#### Added
+- [spinal cord development](http://purl.obolibrary.org/obo/GO_0021510) SubClassOf [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) 
 
 
-
-### structural cell `http://purl.obolibrary.org/obo/CL_0000293`
+### stomach development `http://purl.obolibrary.org/obo/GO_0062094`
 #### Removed
-- [structural cell](http://purl.obolibrary.org/obo/CL_0000293) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [stomach development](http://purl.obolibrary.org/obo/GO_0062094) SubClassOf [animal organ development](http://purl.obolibrary.org/obo/GO_0048513) 
 
 #### Added
-- [structural cell](http://purl.obolibrary.org/obo/CL_0000293) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [stomach development](http://purl.obolibrary.org/obo/GO_0062094) SubClassOf [anatomical structure development](http://purl.obolibrary.org/obo/GO_0048856) 
 
 
-### stuff accumulating cell `http://purl.obolibrary.org/obo/CL_0000325`
+### striosomal D1 medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030048`
 #### Removed
-- [stuff accumulating cell](http://purl.obolibrary.org/obo/CL_0000325) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [striosomal D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030048) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1S" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+- [striosomal D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030048) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-striosome" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/j.cub.2021.10.015" 
+
+- [striosomal D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030048) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "striosome D1-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
 #### Added
-- [stuff accumulating cell](http://purl.obolibrary.org/obo/CL_0000325) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [striosomal D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030048) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1-striosome" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1016/j.cub.2021.10.015" 
+
+- [striosomal D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030048) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D1S" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [striosomal D1 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030048) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "striosome D1-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### subarachnoid space `http://purl.obolibrary.org/obo/UBERON_0000315`
+### striosomal D2 medium spiny neuron `http://purl.obolibrary.org/obo/CL_4030049`
 #### Removed
-- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ISBN:0471888893" 
+- [striosomal D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2-striosome" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [contains](http://purl.obolibrary.org/obo/RO_0001019) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-#### Added
-- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [blood vessel](http://purl.obolibrary.org/obo/UBERON_0001981) 
-  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ISBN:0471888893" 
+- [striosomal D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "striosome D2-MSN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [subarachnoid space](http://purl.obolibrary.org/obo/UBERON_0000315) SubClassOf [location of](http://purl.obolibrary.org/obo/RO_0001015) some [cerebrospinal fluid](http://purl.obolibrary.org/obo/UBERON_0001359) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
+- [striosomal D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2S" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-### submucosal gland acinus `http://purl.obolibrary.org/obo/UBERON_8600012`
-
-#### Added
-- [submucosal gland acinus](http://purl.obolibrary.org/obo/UBERON_8600012) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [submucosal gland acinus](http://purl.obolibrary.org/obo/UBERON_8600012) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### submucosal gland ciliated duct `http://purl.obolibrary.org/obo/UBERON_8600014`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
 #### Added
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+- [striosomal D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "striosome D2-MSN" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) [date](http://purl.org/dc/terms/date) "2023-05-02T08:09:14Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+- [striosomal D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2-striosome" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) [label](http://www.w3.org/2000/01/rdf-schema#label) "submucosal gland ciliated duct" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated tubular structure in a submucosal gland connecting the submucosal gland collecting duct with the surface epithelium." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30864819" 
+- [striosomal D2 medium spiny neuron](http://purl.obolibrary.org/obo/CL_4030049) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "D2S" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.cub.2021.10.015" 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17707699" 
-
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600014" 
-
-- Class: [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) 
-
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) SubClassOf [duct](http://purl.obolibrary.org/obo/UBERON_0000058) 
-
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [submucosal gland](http://purl.obolibrary.org/obo/UBERON_0011148) 
-
-- [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) SubClassOf [has part](http://purl.obolibrary.org/obo/BFO_0000051) some [ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0000067) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
-### substantia nigra `http://purl.obolibrary.org/obo/UBERON_0002038`
-
-#### Added
-- [substantia nigra](http://purl.obolibrary.org/obo/UBERON_0002038) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_F_Brain.glb" 
-
-- [substantia nigra](http://purl.obolibrary.org/obo/UBERON_0002038) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/Allen_M_Brain.glb" 
-
-
-### superior mesenteric artery `http://purl.obolibrary.org/obo/UBERON_0001182`
-
-#### Added
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-- [superior mesenteric artery](http://purl.obolibrary.org/obo/UBERON_0001182) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-
-### supporting cell `http://purl.obolibrary.org/obo/CL_0000630`
+### synapsed by `http://purl.obolibrary.org/obo/RO_0002103`
 #### Removed
-- [supporting cell](http://purl.obolibrary.org/obo/CL_0000630) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [synapsed by](http://purl.obolibrary.org/obo/RO_0002103) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "BFO_0000051 some (GO_0045211 that BFO_0000050 some (GO_0045202 that BFO_0000051 some (GO_0042734 that BFO_0000050 some ?Y)))" 
 
-#### Added
-- [supporting cell](http://purl.obolibrary.org/obo/CL_0000630) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [synapsed by](http://purl.obolibrary.org/obo/RO_0002103) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Relation between an anatomical structure and a neuron that chemically synapses to it." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
+
+- [synapsed by](http://purl.obolibrary.org/obo/RO_0002103) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
 
 
-### syncytial epithelial cell `http://purl.obolibrary.org/obo/CL_0000420`
+
+### synapsed to `http://purl.obolibrary.org/obo/RO_0002120`
 #### Removed
-- [syncytial epithelial cell](http://purl.obolibrary.org/obo/CL_0000420) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
+- [synapsed to](http://purl.obolibrary.org/obo/RO_0002120) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Relation between a neuron and an anatomical structure that it chemically synapses to." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) [0000-0002-7073-9172](https://orcid.org/0000-0002-7073-9172) 
+
+- [synapsed to](http://purl.obolibrary.org/obo/RO_0002120) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "RO:0002120" 
+
+- [synapsed to](http://purl.obolibrary.org/obo/RO_0002120) [expand expression to](http://purl.obolibrary.org/obo/IAO_0000424) "BFO_0000051 some (GO_0042734 that BFO_0000050 some (GO_0045202 that BFO_0000051 some (GO_0045211 that BFO_0000050 some ?Y)))" 
+
+- [synapsed to](http://purl.obolibrary.org/obo/RO_0002120) [id](http://www.geneontology.org/formats/oboInOwl#id) "synapsed_to" 
+
+- [synapsed to](http://purl.obolibrary.org/obo/RO_0002120) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "fly_anatomy.ontology" 
 
 
 
-### systemic artery `http://purl.obolibrary.org/obo/UBERON_0004573`
-
-#### Added
-- [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [systemic artery](http://purl.obolibrary.org/obo/UBERON_0004573) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### term imported `http://purl.obolibrary.org/obo/IAO_0000228`
-
-#### Added
-- [term imported](http://purl.obolibrary.org/obo/IAO_0000228) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "term imported"@en 
-
-- [term imported](http://purl.obolibrary.org/obo/IAO_0000228) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "This is to be used when the original term has been replaced by a term imported from an other ontology. An editor note should indicate what is the URI of the new term to use."@en 
-
-- [term imported](http://purl.obolibrary.org/obo/IAO_0000228) [label](http://www.w3.org/2000/01/rdf-schema#label) "term imported"@en 
-
-- Individual: [term imported](http://purl.obolibrary.org/obo/IAO_0000228) 
-
-
-### term replaced by `http://purl.obolibrary.org/obo/IAO_0100001`
+### syncytiotrophoblast `http://purl.obolibrary.org/obo/UBERON_0000371`
 
 #### Added
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [IAO_0000114](http://purl.obolibrary.org/obo/IAO_0000114) [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:0000371" 
 
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "Person:Alan Ruttenberg"@en 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:83040" 
 
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "term replaced by"@en 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EMAPA:16068" 
 
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Add as annotation triples in the granting ontology"@en 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "SCTID:256965005" 
 
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Person:Alan Ruttenberg"@en 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "NCIT:C33918" 
 
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [label](http://www.w3.org/2000/01/rdf-schema#label) "term replaced by"@en 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "syntrophoblast layer" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0073040584" 
 
-- [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Use on obsolete terms, relating the term to another term that can be used as a substitute"@en 
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [depicted by](http://xmlns.com/foaf/0.1/depicted_by) "http://upload.wikimedia.org/wikipedia/commons/d/df/Gray36.png"^^[anyURI](http://www.w3.org/2001/XMLSchema#anyURI) 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "syncitiotrophoblast" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "syncitiotrophoblastus" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Syncytiotrophoblast" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [LATIN](http://purl.obolibrary.org/obo/uberon/core#LATIN) 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "UMLS:C1135936" 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "ncithesaurus:Syncytiotrophoblast" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Syncytiotrophoblast" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EHDAA:91" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Extraembryonic cells of trophoblastic shell surrounding embryo, outside the cytotrophoblast layer, involved with implantation of the blastocyst by eroding extracellular matrix surrounding maternal endometrial cells at site of implantation, also contribute to villi. (dark staining, multinucleated)." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Wikipedia:Syncytiotrophoblast" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://embryology.med.unsw.edu.au/Notes/placenta5.htm" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "EHDAA:129" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "BTO:0001335" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [label](http://www.w3.org/2000/01/rdf-schema#label) "syncytiotrophoblast" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "syntrophoblast" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "syncytial trophoblast" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FMA:83040" 
+
+- Class: [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ectoplacental cone](http://purl.obolibrary.org/obo/UBERON_0004364) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "EMAPA" 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) SubClassOf [composed primarily of](http://purl.obolibrary.org/obo/RO_0002473) some [syncytiotrophoblast cell](http://purl.obolibrary.org/obo/CL_0000525) 
+
+- [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) SubClassOf [embryonic structure](http://purl.obolibrary.org/obo/UBERON_0002050) 
+  - [source](http://www.geneontology.org/formats/oboInOwl#source) "FMA" 
 
 
-### term split `http://purl.obolibrary.org/obo/IAO_0000229`
-
-#### Added
-- [term split](http://purl.obolibrary.org/obo/IAO_0000229) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "term split"@en 
-
-- [term split](http://purl.obolibrary.org/obo/IAO_0000229) [label](http://www.w3.org/2000/01/rdf-schema#label) "term split"@en 
-
-- [term split](http://purl.obolibrary.org/obo/IAO_0000229) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "This is to be used when a term has been split in two or more new terms. An editor note should indicate the reason for the split and indicate the URIs of the new terms created."@en 
-
-- Individual: [term split](http://purl.obolibrary.org/obo/IAO_0000229) 
-
-
-### term tracker item `http://purl.obolibrary.org/obo/IAO_0000233`
-
-#### Added
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [label](http://www.w3.org/2000/01/rdf-schema#label) "term tracker item"@en 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg"@en 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "The 'tracker item' can associate a tracker with a specific ontology term."@en 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An IRI or similar locator for a request or discussion of an ontology term."@en 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [IAO_0000114](http://purl.obolibrary.org/obo/IAO_0000114) [pending final vetting](http://purl.obolibrary.org/obo/IAO_0000125) 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Person: Jie Zheng, Chris Stoeckert, Alan Ruttenberg"@en 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "term tracker item"@en 
-
-- [term tracker item](http://purl.obolibrary.org/obo/IAO_0000233) [IAO_0000112](http://purl.obolibrary.org/obo/IAO_0000112) "the URI for an OBI Terms ticket at sourceforge, such as https://sourceforge.net/p/obi/obi-terms/772/"@en 
-
-
-### terms merged `http://purl.obolibrary.org/obo/IAO_0000227`
-
-#### Added
-- [terms merged](http://purl.obolibrary.org/obo/IAO_0000227) [label](http://www.w3.org/2000/01/rdf-schema#label) "terms merged"@en 
-
-- [terms merged](http://purl.obolibrary.org/obo/IAO_0000227) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "An editor note should explain what were the merged terms and the reason for the merge."@en 
-
-- [terms merged](http://purl.obolibrary.org/obo/IAO_0000227) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "terms merged"@en 
-
-- Individual: [terms merged](http://purl.obolibrary.org/obo/IAO_0000227) 
-
-
-### thecogen cell `http://purl.obolibrary.org/obo/CL_0000380`
+### syncytiotrophoblast cell `http://purl.obolibrary.org/obo/CL_0000525`
 #### Removed
-- [thecogen cell](http://purl.obolibrary.org/obo/CL_0000380) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### thymus `http://purl.obolibrary.org/obo/UBERON_0002370`
+- [syncytiotrophoblast cell](http://purl.obolibrary.org/obo/CL_0000525) SubClassOf [placental villous trophoblast](http://purl.obolibrary.org/obo/CL_2000060) 
 
 #### Added
-- [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Thymus.glb" 
+- [syncytiotrophoblast cell](http://purl.obolibrary.org/obo/CL_0000525) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [syncytiotrophoblast](http://purl.obolibrary.org/obo/UBERON_0000371) 
 
-- [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Thymus.glb" 
-
-- [thymus](http://purl.obolibrary.org/obo/UBERON_0002370) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Thymus.glb" 
+- [syncytiotrophoblast cell](http://purl.obolibrary.org/obo/CL_0000525) SubClassOf [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) 
 
 
-### tip cell `http://purl.obolibrary.org/obo/CL_0000423`
+### tissue remodeling `http://purl.obolibrary.org/obo/GO_0048771`
+
+#### Added
+- [tissue remodeling](http://purl.obolibrary.org/obo/GO_0048771) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "tissue remodelling" 
+
+
+### tissue-resident macrophage `http://purl.obolibrary.org/obo/CL_0000864`
+
+#### Added
+- [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+
+### title `http://purl.org/dc/terms/title`
 #### Removed
-- [tip cell](http://purl.obolibrary.org/obo/CL_0000423) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- AnnotationProperty: [title](http://purl.org/dc/terms/title) 
 
 
 
-### to be replaced with external ontology term `http://purl.obolibrary.org/obo/IAO_0000423`
-
-#### Added
-- [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Alan Ruttenberg"@en 
-
-- [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "group:OBI"@en 
-
-- [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Terms with this status should eventually replaced with a term from another ontology."@en 
-
-- [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "to be replaced with external ontology term"@en 
-
-- [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) [label](http://www.w3.org/2000/01/rdf-schema#label) "to be replaced with external ontology term"@en 
-
-- Individual: [to be replaced with external ontology term](http://purl.obolibrary.org/obo/IAO_0000423) 
-
-
-### tonsil `http://purl.obolibrary.org/obo/UBERON_0002372`
+### tracheal epithelial cell `http://purl.obolibrary.org/obo/CL_0000307`
 #### Removed
-- [tonsil](http://purl.obolibrary.org/obo/UBERON_0002372) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [tracheal epithelial cell](http://purl.obolibrary.org/obo/CL_0000307) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
 
-- [tonsil](http://purl.obolibrary.org/obo/UBERON_0002372) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [tracheal epithelial cell](http://purl.obolibrary.org/obo/CL_0000307) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 
-### tonsil capsule `http://purl.obolibrary.org/obo/UBERON_0005207`
+### tracheobronchial goblet cell `http://purl.obolibrary.org/obo/CL_0019003`
+
+#### Added
+- [tracheobronchial goblet cell](http://purl.obolibrary.org/obo/CL_0019003) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [tracheobronchial goblet cell](http://purl.obolibrary.org/obo/CL_0019003) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### transmembrane transporter activity `http://purl.obolibrary.org/obo/GO_0022857`
+
+#### Added
+- [transmembrane transporter activity](http://purl.obolibrary.org/obo/GO_0022857) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-434650" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "MATEs mediate extrusion of xenobiotics" 
+
+
+### transmitter-gated channel activity `http://purl.obolibrary.org/obo/GO_0022835`
 #### Removed
-- [tonsil capsule](http://purl.obolibrary.org/obo/UBERON_0005207) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [transmitter-gated channel activity](http://purl.obolibrary.org/obo/GO_0022835) EquivalentTo [channel activity](http://purl.obolibrary.org/obo/GO_0015267) and ([regulated by](http://purl.obolibrary.org/obo/RO_0002334) some [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165)) 
 
-- [tonsil capsule](http://purl.obolibrary.org/obo/UBERON_0005207) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [transmitter-gated channel activity](http://purl.obolibrary.org/obo/GO_0022835) SubClassOf [regulated by](http://purl.obolibrary.org/obo/RO_0002334) some [neurotransmitter binding](http://purl.obolibrary.org/obo/GO_0042165) 
 
 
 
-### tonsil epithelium `http://purl.obolibrary.org/obo/UBERON_0013696`
+### transporter activity `http://purl.obolibrary.org/obo/GO_0005215`
 #### Removed
-- [tonsil epithelium](http://purl.obolibrary.org/obo/UBERON_0013696) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [transporter activity](http://purl.obolibrary.org/obo/GO_0005215) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-178215" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "SMAD7:SMURF1 complex is exported to the cytosol" 
 
-- [tonsil epithelium](http://purl.obolibrary.org/obo/UBERON_0013696) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+- [transporter activity](http://purl.obolibrary.org/obo/GO_0005215) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "Reactome:R-HSA-168313" 
+  - [label](http://www.w3.org/2000/01/rdf-schema#label) "Virion-associated M2 protein mediated ion infusion" 
 
 
 
-### tonsil germinal center `http://purl.obolibrary.org/obo/UBERON_0013688`
+### umbrella cell of urothelium `http://purl.obolibrary.org/obo/CL_4030056`
+
+#### Added
+- [umbrella cell of urothelium](http://purl.obolibrary.org/obo/CL_4030056) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [umbrella cell of urothelium](http://purl.obolibrary.org/obo/CL_4030056) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### ureter smooth muscle cell `http://purl.obolibrary.org/obo/CL_1000979`
+
+#### Added
+- [ureter smooth muscle cell](http://purl.obolibrary.org/obo/CL_1000979) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [ureter smooth muscle cell](http://purl.obolibrary.org/obo/CL_1000979) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
+### ureteric bud cell `http://purl.obolibrary.org/obo/CL_4030066`
+
+#### Added
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) [date](http://purl.org/dc/terms/date) "2023-10-13T11:22:42Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) [contributor](http://purl.org/dc/terms/contributor) "https://orcid.org/0000-0002-1425-877X" 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "UB cell" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24183650" 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that is part of a ureteric bud. A ureteric bud cell has the potential to induce metanephric mesenchymal cells to proliferate and convert to epithelia that form renal tubules via: (1) the secretion of multiple diffusible growth factors that rescue renal progenitors from apoptosis and stimulate them to proliferate and (2) contact-dependent mechanisms that induce mesenchymal-epithelial conversion." 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17133361" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24183650" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9374839" 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) [label](http://www.w3.org/2000/01/rdf-schema#label) "ureteric bud cell" 
+
+- Class: [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ureteric bud](http://purl.obolibrary.org/obo/UBERON_0000084)) 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) SubClassOf [participates in](http://purl.obolibrary.org/obo/RO_0000056) some [epithelial cell proliferation involved in renal tubule morphogenesis](http://purl.obolibrary.org/obo/GO_2001013) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:9374839" 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ureteric bud](http://purl.obolibrary.org/obo/UBERON_0000084) 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) SubClassOf [duct epithelial cell](http://purl.obolibrary.org/obo/CL_0000068) 
+
+- [ureteric bud cell](http://purl.obolibrary.org/obo/CL_4030066) SubClassOf [kidney epithelial cell](http://purl.obolibrary.org/obo/CL_0002518) 
+
+
+### valve endothelial cell `http://purl.obolibrary.org/obo/CL_4030033`
 #### Removed
-- [tonsil germinal center](http://purl.obolibrary.org/obo/UBERON_0013688) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+- [valve endothelial cell](http://purl.obolibrary.org/obo/CL_4030033) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VEC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
 
-- [tonsil germinal center](http://purl.obolibrary.org/obo/UBERON_0013688) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25311230" 
 
-
-
-### trachea `http://purl.obolibrary.org/obo/UBERON_0003126`
-
-#### Added
-- [trachea](http://purl.obolibrary.org/obo/UBERON_0003126) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-trachea.glb" 
-
-- [trachea](http://purl.obolibrary.org/obo/UBERON_0003126) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [trachea](http://purl.obolibrary.org/obo/UBERON_0003126) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-trachea.glb" 
-
-
-### trachea cartilage `http://purl.obolibrary.org/obo/UBERON_0003604`
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30796046" 
 
 #### Added
-- [trachea cartilage](http://purl.obolibrary.org/obo/UBERON_0003604) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-trachea.glb" 
+- [valve endothelial cell](http://purl.obolibrary.org/obo/CL_4030033) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VEC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25311230" 
 
-- [trachea cartilage](http://purl.obolibrary.org/obo/UBERON_0003604) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-trachea.glb" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-- [trachea cartilage](http://purl.obolibrary.org/obo/UBERON_0003604) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" 
-
-- [trachea cartilage](http://purl.obolibrary.org/obo/UBERON_0003604) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" 
-
-
-### tracheal submucosal gland ciliated duct `http://purl.obolibrary.org/obo/UBERON_8600011`
-
-#### Added
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [date](http://purl.org/dc/terms/date) "2023-05-02T08:08:14Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-9185-3994](https://orcid.org/0000-0002-9185-3994) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [has_obo_namespace](http://www.geneontology.org/formats/oboInOwl#hasOBONamespace) "uberon" 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated duct part of a tracheal submucosal gland." 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30864819" 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [label](http://www.w3.org/2000/01/rdf-schema#label) "tracheal submucosal gland ciliated duct" 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [id](http://www.geneontology.org/formats/oboInOwl#id) "UBERON:8600011" 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- Class: [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) EquivalentTo [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trachea gland](http://purl.obolibrary.org/obo/UBERON_0005203)) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) SubClassOf [part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [trachea gland](http://purl.obolibrary.org/obo/UBERON_0005203) 
-
-- [tracheal submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600011) SubClassOf [submucosal gland ciliated duct](http://purl.obolibrary.org/obo/UBERON_8600014) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30796046" 
 
 
-### tracheobronchial serous cell `http://purl.obolibrary.org/obo/CL_0019001`
+### valve interstitial cell `http://purl.obolibrary.org/obo/CL_4030032`
 #### Removed
-- [tracheobronchial serous cell](http://purl.obolibrary.org/obo/CL_0019001) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
+- [valve interstitial cell](http://purl.obolibrary.org/obo/CL_4030032) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VIC" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25311230" 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30796046" 
+
+#### Added
+- [valve interstitial cell](http://purl.obolibrary.org/obo/CL_4030032) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
+
+- [valve interstitial cell](http://purl.obolibrary.org/obo/CL_4030032) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [valve interstitial cell](http://purl.obolibrary.org/obo/CL_4030032) [has exact synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VIC" 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25311230" 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30796046" 
 
 
-
-### transit amplifying cell `http://purl.obolibrary.org/obo/CL_0009010`
+### von Economo neuron `http://purl.obolibrary.org/obo/CL_4030039`
 #### Removed
-- [transit amplifying cell](http://purl.obolibrary.org/obo/CL_0009010) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
+- [von Economo neuron](http://purl.obolibrary.org/obo/CL_4030039) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "VEN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/cl#abbreviation) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32127543" 
 
 #### Added
-- [transit amplifying cell](http://purl.obolibrary.org/obo/CL_0009010) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+- [von Economo neuron](http://purl.obolibrary.org/obo/CL_4030039) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "VEN" 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [abbreviation](http://purl.obolibrary.org/obo/OMO_0003000) 
 
-
-### transit amplifying cell of anorectum `http://purl.obolibrary.org/obo/CL_0009056`
-#### Removed
-- [transit amplifying cell of anorectum](http://purl.obolibrary.org/obo/CL_0009056) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### transit amplifying cell of appendix `http://purl.obolibrary.org/obo/CL_0009027`
-#### Removed
-- [transit amplifying cell of appendix](http://purl.obolibrary.org/obo/CL_0009027) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### transit amplifying cell of colon `http://purl.obolibrary.org/obo/CL_0009011`
-#### Removed
-- [transit amplifying cell of colon](http://purl.obolibrary.org/obo/CL_0009011) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### transit amplifying cell of small intestine `http://purl.obolibrary.org/obo/CL_0009012`
-#### Removed
-- [transit amplifying cell of small intestine](http://purl.obolibrary.org/obo/CL_0009012) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### transitional epithelial cell `http://purl.obolibrary.org/obo/CL_0000244`
-#### Removed
-- [transitional epithelial cell](http://purl.obolibrary.org/obo/CL_0000244) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### transporting cell `http://purl.obolibrary.org/obo/CL_0000627`
-#### Removed
-- [transporting cell](http://purl.obolibrary.org/obo/CL_0000627) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [transporting cell](http://purl.obolibrary.org/obo/CL_0000627) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### transverse colon `http://purl.obolibrary.org/obo/UBERON_0001157`
-
-#### Added
-- [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-- [transverse colon](http://purl.obolibrary.org/obo/UBERON_0001157) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-
-### trigone of urinary bladder `http://purl.obolibrary.org/obo/UBERON_0001257`
-
-#### Added
-- [trigone of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001257) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Urinary_Bladder.glb" 
-
-- [trigone of urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001257) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Urinary_Bladder.glb" 
-
-
-### type-1 epithelial cell of thymus `http://purl.obolibrary.org/obo/CL_0002294`
-#### Removed
-- [type-1 epithelial cell of thymus](http://purl.obolibrary.org/obo/CL_0002294) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "subcapsular thymic epithelial cell" 
-
-#### Added
-- [type-1 epithelial cell of thymus](http://purl.obolibrary.org/obo/CL_0002294) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "subcapsular thymic epithelial cell" 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:2694455" 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18194204" 
-
-
-### umbilical artery `http://purl.obolibrary.org/obo/UBERON_0001310`
-
-#### Added
-- [umbilical artery](http://purl.obolibrary.org/obo/UBERON_0001310) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Placenta.glb" 
-
-
-### umbilical cord `http://purl.obolibrary.org/obo/UBERON_0002331`
-
-#### Added
-- [umbilical cord](http://purl.obolibrary.org/obo/UBERON_0002331) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Placenta.glb" 
-
-
-### umbilical vein `http://purl.obolibrary.org/obo/UBERON_0002066`
-
-#### Added
-- [umbilical vein](http://purl.obolibrary.org/obo/UBERON_0002066) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Placenta.glb" 
-
-
-### uncurated `http://purl.obolibrary.org/obo/IAO_0000124`
-
-#### Added
-- [uncurated](http://purl.obolibrary.org/obo/IAO_0000124) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Nothing done yet beyond assigning a unique class ID and proposing a preferred term."@en 
-
-- [uncurated](http://purl.obolibrary.org/obo/IAO_0000124) [label](http://www.w3.org/2000/01/rdf-schema#label) "uncurated"@en 
-
-- [uncurated](http://purl.obolibrary.org/obo/IAO_0000124) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "uncurated"@en 
-
-- Individual: [uncurated](http://purl.obolibrary.org/obo/IAO_0000124) 
-
-
-### universal `http://purl.obolibrary.org/obo/IAO_0000410`
-
-#### Added
-- [universal](http://purl.obolibrary.org/obo/IAO_0000410) [IAO_0000117](http://purl.obolibrary.org/obo/IAO_0000117) "Alan Ruttenberg"@en 
-
-- [universal](http://purl.obolibrary.org/obo/IAO_0000410) [label](http://www.w3.org/2000/01/rdf-schema#label) "universal"@en 
-
-- [universal](http://purl.obolibrary.org/obo/IAO_0000410) [IAO_0000119](http://purl.obolibrary.org/obo/IAO_0000119) "A Formal Theory of Substances, Qualities, and Universals, http://ontology.buffalo.edu/bfo/SQU.pdf"@en 
-
-- [universal](http://purl.obolibrary.org/obo/IAO_0000410) [editor note](http://purl.obolibrary.org/obo/IAO_0000116) "Hard to give a definition for. Intuitively a &quot;natural kind&quot; rather than a collection of any old things, which a class is able to be, formally. At the meta level, universals are defined as positives, are disjoint with their siblings, have single asserted parents."@en 
-
-- [universal](http://purl.obolibrary.org/obo/IAO_0000410) [IAO_0000111](http://purl.obolibrary.org/obo/IAO_0000111) "universal"@en 
-
-- Individual: [universal](http://purl.obolibrary.org/obo/IAO_0000410) 
-
-
-### ureteral cell `http://purl.obolibrary.org/obo/CL_1000601`
-#### Removed
-- [ureteral cell](http://purl.obolibrary.org/obo/CL_1000601) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
-
-- [ureteral cell](http://purl.obolibrary.org/obo/CL_1000601) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true" 
-
-#### Added
-- [ureteral cell](http://purl.obolibrary.org/obo/CL_1000601) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [ureter](http://purl.obolibrary.org/obo/UBERON_0000056)) 
-
-- [ureteral cell](http://purl.obolibrary.org/obo/CL_1000601) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
-
-
-### urethra cell `http://purl.obolibrary.org/obo/CL_1001320`
-#### Removed
-- [urethra cell](http://purl.obolibrary.org/obo/CL_1001320) EquivalentTo [animal cell](http://purl.obolibrary.org/obo/CL_0000548) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057)) 
-
-#### Added
-- [urethra cell](http://purl.obolibrary.org/obo/CL_1001320) EquivalentTo [cell](http://purl.obolibrary.org/obo/CL_0000000) and ([part_of](http://purl.obolibrary.org/obo/BFO_0000050) some [urethra](http://purl.obolibrary.org/obo/UBERON_0000057)) 
-
-
-### urinary bladder `http://purl.obolibrary.org/obo/UBERON_0001255`
-
-#### Added
-- [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Urinary_Bladder.glb" 
-
-- [urinary bladder](http://purl.obolibrary.org/obo/UBERON_0001255) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Urinary_Bladder.glb" 
-
-
-### urinary bladder neck smooth muscle `http://purl.obolibrary.org/obo/UBERON_0004230`
-
-#### Added
-- [urinary bladder neck smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004230) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Urinary_Bladder.glb" 
-
-- [urinary bladder neck smooth muscle](http://purl.obolibrary.org/obo/UBERON_0004230) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Urinary_Bladder.glb" 
-
-
-### uterine cervix `http://purl.obolibrary.org/obo/UBERON_0000002`
-
-#### Added
-- [uterine cervix](http://purl.obolibrary.org/obo/UBERON_0000002) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Uterus.glb" 
-
-
-### uterus `http://purl.obolibrary.org/obo/UBERON_0000995`
-
-#### Added
-- [uterus](http://purl.obolibrary.org/obo/UBERON_0000995) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Uterus.glb" 
-
-
-### valve `http://purl.obolibrary.org/obo/UBERON_0003978`
-
-#### Added
-- [valve](http://purl.obolibrary.org/obo/UBERON_0003978) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" 
-
-- [valve](http://purl.obolibrary.org/obo/UBERON_0003978) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" 
-
-
-### vasculature of eye `http://purl.obolibrary.org/obo/UBERON_0002203`
-
-#### Added
-- [vasculature of eye](http://purl.obolibrary.org/obo/UBERON_0002203) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [vasculature of eye](http://purl.obolibrary.org/obo/UBERON_0002203) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### vena cava `http://purl.obolibrary.org/obo/UBERON_0004087`
-
-#### Added
-- [vena cava](http://purl.obolibrary.org/obo/UBERON_0004087) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" 
-
-- [vena cava](http://purl.obolibrary.org/obo/UBERON_0004087) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" 
-
-
-### venous blood vessel `http://purl.obolibrary.org/obo/UBERON_0003920`
-
-#### Added
-- [venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003920) [present_in_taxon](http://purl.obolibrary.org/obo/RO_0002175) [Homo sapiens](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
-
-- [venous blood vessel](http://purl.obolibrary.org/obo/UBERON_0003920) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas) 
-
-
-### vermiform appendix `http://purl.obolibrary.org/obo/UBERON_0001154`
-
-#### Added
-- [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_F_Intestine_Large.glb" 
-
-- [vermiform appendix](http://purl.obolibrary.org/obo/UBERON_0001154) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/SBU_M_Intestine_Large.glb" 
-
-
-### vertebrate lens cell `http://purl.obolibrary.org/obo/CL_0002222`
-#### Removed
-- [vertebrate lens cell](http://purl.obolibrary.org/obo/CL_0002222) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### vestibular dark cell `http://purl.obolibrary.org/obo/CL_0000846`
-#### Removed
-- [vestibular dark cell](http://purl.obolibrary.org/obo/CL_0000846) SubClassOf [somatic cell](http://purl.obolibrary.org/obo/CL_0002371) 
-
-
-
-### visual pigment cell `http://purl.obolibrary.org/obo/CL_0000149`
-#### Removed
-- [visual pigment cell](http://purl.obolibrary.org/obo/CL_0000149) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### wavy bistratified amacrine cell `http://purl.obolibrary.org/obo/CL_0004239`
-
-#### Added
-- [wavy bistratified amacrine cell](http://purl.obolibrary.org/obo/CL_0004239) SubClassOf [medium field retinal amacrine cell](http://purl.obolibrary.org/obo/CL_0004252) 
-
-
-### white fat cell `http://purl.obolibrary.org/obo/CL_0000448`
-#### Removed
-- [white fat cell](http://purl.obolibrary.org/obo/CL_0000448) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "white fat cell" 
-
-
-
-### xanthoblast `http://purl.obolibrary.org/obo/CL_0005002`
-#### Removed
-- [xanthoblast](http://purl.obolibrary.org/obo/CL_0005002) SubClassOf [animal cell](http://purl.obolibrary.org/obo/CL_0000548) 
-
-
-
-### zygote `http://purl.obolibrary.org/obo/CL_0010017`
-#### Removed
-- [zygote](http://purl.obolibrary.org/obo/CL_0010017) SubClassOf [native cell](http://purl.obolibrary.org/obo/CL_0000003) 
-
-#### Added
-- [zygote](http://purl.obolibrary.org/obo/CL_0010017) SubClassOf [cell](http://purl.obolibrary.org/obo/CL_0000000) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32127543" 
