@@ -50,7 +50,9 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_
 oort: tmp/source-merged.obo
 	ontology-release-runner --reasoner elk tmp/source-merged.obo --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
 
-test: oort
+# With the new OWLAPI 4.5.26, which allows arbitrary annotation properties in the OBO parser and oort using a previous OWLAPI version, 
+# we are having conflicts when converting it. Also, the oort step is not used in any release artefact.
+#test: oort
 
 tmp/$(ONT)-stripped.owl: oort
 	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
