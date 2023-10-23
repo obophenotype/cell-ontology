@@ -3,7 +3,7 @@ import argparse
 import csv
 import os
 import subprocess
-from typing import Any, Dict, List, Union
+from typing import Dict, List
 
 from rdflib import Graph
 
@@ -211,6 +211,21 @@ def get_invalid_subclass_list_query(term_iri_list: List[str]) -> str:
 
 
 def run_command(command, wd):
+    """
+    Execute a command in a specified working directory.
+
+    Args:
+        command (list): A list containing the command and its arguments.
+        wd (str): The working directory in which to execute the command.
+
+    Returns:
+        None
+
+    Prints the command's standard output and standard error.
+
+    Raises:
+        subprocess.CalledProcessError: If the command execution fails.
+    """
     try:
         completed_process = subprocess.run(
             command,
@@ -229,14 +244,14 @@ def run_command(command, wd):
         print(e.stderr)
 
 
-def modify_docker_script(input_file, output_file):
+def modify_docker_script(input_file, _output_file):
     with open(input_file, "r") as f:
         lines = f.readlines()
 
     # Make the change in the content
     lines[69] = lines[69].replace("-ti", "-t")
 
-    with open(output_file, "w") as f:
+    with open(_output_file, "w") as f:
         f.writelines(lines)
 
 
