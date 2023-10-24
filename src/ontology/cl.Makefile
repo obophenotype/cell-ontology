@@ -284,18 +284,16 @@ slim_coverage: $(SLIM_REPORTS)
 xxx:
 	echo $(SLIM_REPORTS)
 	echo $(REPORTDIR)
-COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@
+COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@ -c makefile
 
-$(REPORTDIR)/blood_and_immune_upper_slim.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
+$(REPORTDIR)/blood_and_immune_upper_slim_report.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
 	$(eval TERM_ID := $(TERM_hematopoietic))
 	$(COVERAGECMD)
 
-$(REPORTDIR)/eye_upper_slim.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
+$(REPORTDIR)/eye_upper_slim_report.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
 	$(eval TERM_ID := $(TERM_eye))
 	$(COVERAGECMD)
 
-$(REPORTDIR)/general_cell_types_upper_slim.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
+$(REPORTDIR)/general_cell_types_upper_slim_report.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
 	$(eval TERM_ID := $(TERM_general))
 	$(COVERAGECMD)
-
-test: slim_coverage
