@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 import argparse
 import csv
+from collections import defaultdict
 import os
 import subprocess
 from typing import Dict, List
@@ -78,16 +79,13 @@ def get_term_leaves(term_list: List[str], _scope: str) -> Dict[str, Dict[str, st
     # Prepare the SPARQL query
     query = get_term_leaves_list_query(term_list, _scope)
 
-    _term_leaves_dict = {}
+    _term_leaves_dict = defaultdict(dict)
     for _result in cl.query(query):
         term_label = _result.term_label.toPython()
         term_leaf = _result.term_leaf.toPython()
         term_leaf_label = _result.term_leaf_label.toPython()
 
-        if term_label not in _term_leaves_dict:
-            _term_leaves_dict[term_label] = {term_leaf: term_leaf_label}
-        else:
-            _term_leaves_dict[term_label][term_leaf] = term_leaf_label
+        _term_leaves_dict[term_label][term_leaf] = term_leaf_label
 
     return _term_leaves_dict
 
@@ -128,6 +126,7 @@ def get_scope_query(scope_term: str) -> str:
         {{
           ?scope_member rdfs:subClassOf|BFO:0000050|RO:0002100 {_scope} .
           ?scope_member rdfs:label ?label. 
+          FILTER(contains(str(?scope_member), "CL"))
         }}
     """
 
@@ -174,14 +173,16 @@ def get_term_leaves_list_query(term_iri_list: List[str], scope_term: str) -> str
         PREFIX CL: <http://purl.obolibrary.org/obo/CL_>
         PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
         PREFIX BFO: <http://purl.obolibrary.org/obo/BFO_>
+        PREFIX RO: <http://purl.obolibrary.org/obo/RO_>
         SELECT ?term_label ?term_leaf ?term_leaf_label
         WHERE
         {{
           ?term_leaf rdfs:subClassOf ?term.
           ?term_leaf rdfs:label ?term_leaf_label.
-          ?term_leaf rdfs:subClassOf|BFO:0000050 {_scope}. 
+          ?term_leaf rdfs:subClassOf|BFO:0000050|RO:0002100 {_scope}. 
           ?term rdfs:label ?term_label.
           VALUES ?term {{{' '.join(term_iri_list)}}}
+          FILTER(contains(str(?term_leaf), "CL"))
         }}
     """
 
@@ -310,12 +311,13 @@ if __name__ == "__main__":
         "test.ttl",
         "--output-subclasses",
         "true",
-        "--reflexive-subclasses",
         "false",
         "--property",
         "http://purl.obolibrary.org/obo/BFO_0000050",
         "--property",
         "http://purl.obolibrary.org/obo/RO_0002100",
+        "--property",
+        "http://www.w3.org/2000/01/rdf-schema#subClassOf",
     ]
 
     run_command(make_command, working_directory)
@@ -326,6 +328,8 @@ if __name__ == "__main__":
     cl_base = Graph().parse("../ontology/cl-full.owl", format="xml")
     cl_rel = Graph().parse("../ontology/test.ttl", format="ttl")
     cl = cl_base + cl_rel
+
+    cl.serialize("ontology.owl", format="turtle")
 
     term_dict = {}
     with open(file_name, mode="r", encoding="utf-8-sig", newline="") as csvfile:
