@@ -1,0 +1,36 @@
+PREFIX obo: <http://purl.obolibrary.org/obo/>
+PREFIX oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?entity ?property ?value WHERE {
+  VALUES ?property {
+    obo:IAO_0000118
+    oboInOwl:hasExactSynonym
+    rdfs:label
+  }
+  { SELECT DISTINCT ?iname (COUNT(DISTINCT ?entity) AS ?cnt) WHERE {
+      VALUES ?property {
+        obo:IAO_0000118
+        oboInOwl:hasExactSynonym
+        rdfs:label
+      }
+      ?entity ?property ?name .
+      OPTIONAL {
+        ?abbr a owl:Axiom;
+              owl:annotatedSource ?entity;
+              owl:annotatedProperty oboInOwl:hasExactSynonym;
+              owl:annotatedTarget ?name;
+              oboInOwl:hasSynonymType <http://purl.obolibrary.org/obo/cl#abbreviation>.
+      }
+
+      BIND(UCASE((?name)) AS ?iname)
+      FILTER (!isBlank(?entity) && !BOUND(?abbr))
+      FILTER NOT EXISTS { ?entity owl:deprecated true }
+    } GROUP BY ?iname HAVING (?cnt > 1)
+  }
+  ?entity ?property ?value .
+  FILTER (!isBlank(?entity))
+  FILTER NOT EXISTS { ?entity owl:deprecated true }
+  FILTER (UCASE(?value) = ?iname)
+} ORDER BY ?entity

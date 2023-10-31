@@ -58,8 +58,6 @@ import_group:
         - http://purl.obolibrary.org/obo/GO_
         - http://purl.obolibrary.org/obo/GOREL_
         - http://purl.obolibrary.org/obo/GOCHE_
-    - id: caro
-      use_base: TRUE
     - id: uberon 
       use_base: TRUE
     - id: ro
@@ -68,6 +66,8 @@ import_group:
       use_base: TRUE
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+    - id: omo
+      module_type: mirror
 pattern_pipelines_group:
   products:
     - id: clustering
@@ -90,6 +90,7 @@ robot_report:
     - obsolete-alt-id
     - orcid-contributor
     - illegal-annotation-property
+    - label-synonym-polysemy
   custom_sparql_exports :
     - basic-report
 components:
