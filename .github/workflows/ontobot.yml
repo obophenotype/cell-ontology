@@ -48,12 +48,15 @@ jobs:
           echo "resource=src/ontology/cl-edit.owl" >> $GITHUB_ENV
           echo "branch-name=kgcl_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
       
-      - name: Get jar & create alias command.
-        run: wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-standalone-0.2.0.jar -O kgcl-robot.jar
+      - name: Get jar & enable plugin.
+        run: |
+          mkdir -p robot-plugins
+          wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O robot-plugins/kgcl.jar
+          echo "ROBOT_PLUGINS_DIRECTORY=$(pwd)/robot-plugins/" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: |
-          pip install ontobot-change-agent
+          pip install git+https://github.com/hrshdhgd/ontobot-change-agent.git
 
       - name: Run ochange
         id: ochange
@@ -61,11 +64,10 @@ jobs:
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }} \
-          -j kgcl-robot.jar
+          -g ${{ secrets.GH_TOKEN }}
 
       - name: Clean-up
-        run: rm -f kgcl-robot.jar
+        run: rm -rf robot-plugins
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
