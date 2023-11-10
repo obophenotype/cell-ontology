@@ -57,6 +57,14 @@ To trigger an automated human readable diff, add the following tag to a comment 
 
 CL is used in a number of applications including: 
 
+**CellxGene**
+
+The Cell ontology is used to annotate cell types on the single cell transcriptomics platform CellxGene.  All datasets on CellXGene are annotated according to a standard schema that specifies the use of CL to record Cell Type.  Uses in CellXgene tools:
+ - In the [Discover](https://cellxgene.cziscience.com/) tool, the structure of CL is used to drive faceted searching for datasets and collections by Cell Type.
+ - In the [Gene Expression](https://cellxgene.cziscience.com/gene-expression), CL annotation is used to aggregate expression data.
+ - In [CellGuide](https://cellxgene.cziscience.com/cellguide) CL provides content and CL term names and synonyms drive search and graphical browsing.
+ - The [Cell Census](https://chanzuckerberg.github.io/cellxgene-census/) API supports retrieval of cross-dataset matrices containing transcriptmics data for cells annotated with specified terms from CL and other ontologies.
+
 **HuBMAP**
 
 HuBMAP develops tools to create an open, global atlas of the human body at the cellular level. The Cell Ontology is used in annotating cell types in the tools developed.
