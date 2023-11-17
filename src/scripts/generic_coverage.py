@@ -257,10 +257,6 @@ def modify_docker_script(input_file, _output_file):
         f.writelines(lines)
 
 
-def clean_up():
-    os.remove("test.ttl")
-
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -313,7 +309,7 @@ if __name__ == "__main__":
         "--ontology-file",
         "cl-full.owl",
         "--output-file",
-        "test.ttl",
+        "tmp/test.ttl",
         "--output-subclasses",
         "true",
         "false",
@@ -331,7 +327,7 @@ if __name__ == "__main__":
     run_command(relation_graph_command, working_directory)
 
     cl_base = Graph().parse("../ontology/cl-full.owl", format="xml")
-    cl_rel = Graph().parse("../ontology/test.ttl", format="ttl")
+    cl_rel = Graph().parse("../ontology/tmp/test.ttl", format="ttl")
     cl = cl_base + cl_rel
 
     term_dict = {}
@@ -371,4 +367,3 @@ if __name__ == "__main__":
             write = csv.writer(file)
             write.writerows(result)
     print(f"{file_name} has {report_str} coverage over {scope}")
-    clean_up()
