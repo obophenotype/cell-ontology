@@ -55,6 +55,9 @@ jobs:
             const repo = context.repo.owner + "/" + context.repo.repo;
             return { issue_number, repo };
 
+      - name: Use issue number and repository name
+        run: echo "Issue Number: ${{ steps.gh-script.outputs.issue_number }}, Repository: ${{ steps.gh-script.outputs.repo }}"
+
       - name: Set branch name
         id: vars
         run: |
