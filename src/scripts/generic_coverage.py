@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import argparse
 import csv
 from collections import defaultdict
@@ -256,6 +257,10 @@ def modify_docker_script(input_file, _output_file):
         f.writelines(lines)
 
 
+def clean_up():
+    os.remove("test.ttl")
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument(
@@ -329,8 +334,6 @@ if __name__ == "__main__":
     cl_rel = Graph().parse("../ontology/test.ttl", format="ttl")
     cl = cl_base + cl_rel
 
-    cl.serialize("ontology.owl", format="turtle")
-
     term_dict = {}
     with open(file_name, mode="r", encoding="utf-8-sig", newline="") as csvfile:
         reader = csv.DictReader(csvfile)
@@ -368,3 +371,4 @@ if __name__ == "__main__":
             write = csv.writer(file)
             write.writerows(result)
     print(f"{file_name} has {report_str} coverage over {scope}")
+    clean_up()
