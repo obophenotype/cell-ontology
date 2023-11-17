@@ -15,6 +15,7 @@ jobs:
         id: check-body
         uses: actions/github-script@v6
         with:
+          github-token: ${{ secrets.GH_TOKEN }}
           script: |
             const issue = await github.issues.get({
               owner: context.repo.owner,
