@@ -15,9 +15,8 @@ jobs:
         id: check-body
         uses: actions/github-script@v6
         with:
-          github-token: ${{ secrets.GH_TOKEN }}
           script: |
-            const issue = await github.issues.get({
+            const issue = await github.rest.issues.get({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.issue.number
@@ -27,6 +26,7 @@ jobs:
               return false;
             }
             return issue.data.body.includes('Hey ontobot');
+  
   build:
     needs: check
     if: needs.check.outputs.phraseExists == 'true'
