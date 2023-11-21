@@ -71,7 +71,7 @@ jobs:
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
-        # if: ${{ env.PR_TITLE}}
+        if: ${{ env.PR_TITLE}}
         with:
           branch-suffix: short-commit-hash
           labels: Automated
