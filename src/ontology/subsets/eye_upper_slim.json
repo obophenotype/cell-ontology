@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-10-19"
+        "val" : "2023-11-22"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/cl/releases/2023-10-19/subsets/eye_upper_slim.owl"
+      "version" : "http://purl.obolibrary.org/obo/cl/releases/2023-11-22/subsets/eye_upper_slim.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000002",
@@ -4248,10 +4248,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome).",
-          "xrefs" : [ "GOC:pdt", "NIF_Subcellular:sao1337158144" ]
+          "val" : "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of  cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex).",
+          "xrefs" : [ "GOC:pdt" ]
         },
-        "comments" : [ "Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this." ],
+        "comments" : [ "Note that, in addition to forming the root of the cellular component ontology, this term is recommended for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
@@ -4268,6 +4268,9 @@
           "val" : "NIF_Subcellular:sao1337158144"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/17729"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
           "val" : "GO:0008372"
         }, {
@@ -5527,7 +5530,7 @@
           "val" : "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.",
           "xrefs" : [ "GOC:pdt" ]
         },
-        "comments" : [ "Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this." ],
+        "comments" : [ "Note that, in addition to forming the root of the biological process ontology, this term is recommended for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_pombe", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
@@ -5636,29 +5639,6 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
           "val" : "https://github.com/geneontology/go-ontology/issues/24680"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "biological_process"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/GO_0008283",
-      "lbl" : "cell population proliferation",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "The multiplication or reproduction of cells, resulting in the expansion of a cell population.",
-          "xrefs" : [ "GOC:mah", "GOC:mb" ]
-        },
-        "comments" : [ "This term was moved out from being a child of 'cellular process' because it is a cell population-level process, and cellular processes are restricted to those processes that involve individual cells. Also note that this term is intended to be used for the proliferation of cells within a multicellular organism, not for the expansion of a population of single-celled organisms." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir" ],
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "cell proliferation"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
-          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_4751"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "biological_process"
@@ -6687,6 +6667,9 @@
           "xrefs" : [ "GOC:mah" ]
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/26279"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "biological_process"
         } ]
@@ -20018,7 +20001,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "camera-type eye plus associated structures"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "eyes",
           "xrefs" : [ "TAO:0000107" ]
@@ -20166,7 +20149,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/c/c0/Gray722.png"
         } ]
       }
@@ -20240,8 +20223,6 @@
           "val" : "EHDAA2:0003106"
         }, {
           "val" : "EMAPA:31858"
-        }, {
-          "val" : "FBbt:00000004"
         }, {
           "val" : "FMA:7154"
         }, {
@@ -20354,10 +20335,10 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/4/4e/Ens.png"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/en/thumb/4/4e/Ens.png/200px-Ens.png"
         } ]
       }
@@ -20886,6 +20867,8 @@
           "xrefs" : [ "MP:0012532" ]
         } ],
         "xrefs" : [ {
+          "val" : "BTO:0006242"
+        }, {
           "val" : "EHDAA2:0001968"
         }, {
           "val" : "EHDAA:1494"
@@ -20923,7 +20906,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1d/Ectoderm.png"
         } ]
       }
@@ -21140,6 +21123,8 @@
         }, {
           "val" : "FBdv:00005288"
         }, {
+          "val" : "IDOMAL:0000302"
+        }, {
           "val" : "NCIT:C12601"
         }, {
           "val" : "PdumDv:0000100"
@@ -21245,7 +21230,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png"
         } ]
       }
@@ -21591,7 +21576,7 @@
           "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "val" : "https://github.com/obophenotype/uberon/issues/661"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg"
         } ]
       }
@@ -21756,7 +21741,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png"
         } ]
       }
@@ -21950,7 +21935,7 @@
           "pred" : "hasExactSynonym",
           "val" : "lumen space"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "anatomical spaces",
           "xrefs" : [ "ZFA:0001643" ]
@@ -22108,7 +22093,7 @@
           "val" : "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function.",
           "xrefs" : [ "CARO:0000011" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "system",
@@ -22125,7 +22110,7 @@
           "pred" : "hasExactSynonym",
           "val" : "organ system"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "anatomical systems",
           "xrefs" : [ "ZFA:0001439" ]
@@ -22158,6 +22143,8 @@
           "val" : "FMA:7149"
         }, {
           "val" : "HAO:0000011"
+        }, {
+          "val" : "IDOMAL:0002460"
         }, {
           "val" : "MA:0000003"
         }, {
@@ -22194,6 +22181,9 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_4751"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
@@ -22419,7 +22409,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "acellular anatomical structures",
           "xrefs" : [ "ZFA:0000382" ]
@@ -22475,6 +22465,8 @@
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
         "xrefs" : [ {
           "val" : "FBbt:00007277"
+        }, {
+          "val" : "IDOMAL:0002461"
         }, {
           "val" : "VHOG:0001737"
         } ],
@@ -22589,7 +22581,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "multi-tissue structures",
           "xrefs" : [ "ZFA:0001488" ]
@@ -22709,7 +22701,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg"
         } ]
       }
@@ -22727,7 +22719,7 @@
           "pred" : "hasExactSynonym",
           "val" : "epithelium simplex squamosum"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "simple squamous epithelia",
           "xrefs" : [ "ZFA:0001498" ]
@@ -22768,7 +22760,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg"
         } ]
       }
@@ -22786,7 +22778,7 @@
           "pred" : "hasExactSynonym",
           "val" : "heterogenous epithelium"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "atypical epithelia",
           "xrefs" : [ "ZFA:0001493" ]
@@ -22832,7 +22824,7 @@
           "val" : "cavitated organ",
           "xrefs" : [ "FMA:55671" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "cavitated compound organs",
           "xrefs" : [ "ZFA:0001490" ]
@@ -22885,7 +22877,7 @@
           "val" : "simple epithelium",
           "xrefs" : [ "FMA:45561" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "unilaminar epithelia",
           "xrefs" : [ "ZFA:0001495" ]
@@ -23034,6 +23026,8 @@
         }, {
           "val" : "GAID:963"
         }, {
+          "val" : "IDOMAL:0000646"
+        }, {
           "val" : "MAT:0000226"
         }, {
           "val" : "MESH:D004622"
@@ -23071,7 +23065,7 @@
           "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "val" : "https://github.com/obophenotype/uberon/issues/503"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/2/2d/Wrinkledfrog_embryos.jpg"
         } ]
       }
@@ -23223,7 +23217,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png"
         } ]
       }
@@ -23298,10 +23292,10 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png"
         } ]
       }
@@ -23400,7 +23394,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png"
         } ]
       }
@@ -23490,7 +23484,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/9/93/Gray977.png"
         } ]
       }
@@ -23505,7 +23499,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasBroadSynonym",
           "val" : "2n",
           "xrefs" : [ "BIRNLEX:1640", "NIFSTD:NeuroNames_abbrevSource" ]
@@ -23905,7 +23899,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/8/80/Laminaarcusvertebrae.png"
         } ]
       }
@@ -24012,7 +24006,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/b3/1543%2CVisalius%27OpticChiasma.jpg"
         } ]
       }
@@ -24031,7 +24025,7 @@
           "val" : "cornea of camera-type eye",
           "xrefs" : [ "GO:0061303" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "corneas",
           "xrefs" : [ "ZFA:0000640" ]
@@ -24093,7 +24087,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -24129,7 +24123,7 @@
           "val" : "crystalline lens",
           "xrefs" : [ "BTO:0000723", "PMID:36055924" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "lenses",
           "xrefs" : [ "ZFA:0000035" ]
@@ -24222,7 +24216,7 @@
           "val" : "Netzhaut",
           "xrefs" : [ "BTO:0001175" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "retinas",
           "xrefs" : [ "ZFA:0000152" ]
@@ -24303,7 +24297,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/ed/Human_eye_cross-sectional_view_grayscale.png"
         } ]
       }
@@ -24391,7 +24385,7 @@
           "val" : "articular joint",
           "xrefs" : [ "BTO:0001686" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "joints",
           "xrefs" : [ "ZFA:0001596" ]
@@ -24543,7 +24537,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg"
         }, {
           "pred" : "http://xmlns.com/foaf/0.1/depiction",
@@ -24571,7 +24565,7 @@
           "val" : "Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes.",
           "xrefs" : [ "FB:gg", "NLM:alimentary+system", "Wikipedia:Digestive_system" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "alimentary system"
@@ -24631,6 +24625,9 @@
           "val" : "ncithesaurus:Digestive_System"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "An anatomical system consisting of the alimentary canal and digestive glands responsible for intake, absorption, digestion and excretion of food.[AAO]"
         }, {
@@ -24653,7 +24650,7 @@
           "val" : "Organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP].",
           "xrefs" : [ "Wikipedia:Circulatory_system" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
           "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
           "pred" : "hasRelatedSynonym",
@@ -24685,6 +24682,9 @@
           "pred" : "http://purl.obolibrary.org/obo/RO_0002174",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_6231"
         }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Anatomical system of ion binding, a pumping mechanism, and an efficient vascular system; consisting of the blood, heart, and blood and lymph vessels, respectively.[AAO]"
         }, {
@@ -24694,7 +24694,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg"
         } ]
       }
@@ -24779,7 +24779,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/e5/Muscles_anterior_labeled.png"
         } ]
       }
@@ -24884,10 +24884,10 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png"
         } ]
       }
@@ -24902,7 +24902,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#cumbo", "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasExactSynonym",
           "val" : "CNS"
         }, {
@@ -25055,6 +25055,7 @@
           "val" : "A slender neuron projection bundle[FBbt]; A bundle of anatomical fibers, as of muscle or nerve (American Heritage Dictionary 4th ed).",
           "xrefs" : [ "BIRNLEX:872", "FBbt:00005101" ]
         },
+        "comments" : [ "EDITOR_NOTE note FBbt class not disjoint from tract. Consider merging with 'neuron projection bundle'" ],
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
@@ -25099,9 +25100,6 @@
           "val" : "Wikipedia:Nervous_system_fascicle"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "note FBbt class not disjoint from tract. Consider merging with 'neuron projection bundle'"
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         } ]
@@ -25136,7 +25134,7 @@
           "pred" : "hasExactSynonym",
           "val" : "sensory subsystem"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "sensory systems",
           "xrefs" : [ "TAO:0000282" ]
@@ -25198,7 +25196,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/c/c0/Gray722.png"
         } ]
       }
@@ -25223,7 +25221,7 @@
           "val" : "placode",
           "xrefs" : [ "FBbt:00005495" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "primordia",
           "xrefs" : [ "XAO:0003043" ]
@@ -25342,7 +25340,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png"
         } ]
       }
@@ -25508,7 +25506,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/3/3b/Glatte_Muskelzellen.jpg"
         } ]
       }
@@ -25561,7 +25559,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/25/Mesothelium_peritoneal_wash_high_mag.jpg"
         } ]
       }
@@ -25620,7 +25618,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/ee/432px-Gray-back.PNG"
         } ]
       }
@@ -25797,7 +25795,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/55/Mona_Lisa_headcrop.jpg"
         } ]
       }
@@ -25810,7 +25808,7 @@
           "val" : "A tube extending from the mouth to the anus.",
           "xrefs" : [ "Wikipedia:Talk:Human_gastrointestinal_tract", "https://github.com/geneontology/go-ontology/issues/7549" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "gut"
@@ -25878,6 +25876,9 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_41324"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "The alimentary or digestive tract, and associated organs.[TAO]"
@@ -25950,7 +25951,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/28/Gray872.png"
         } ]
       }
@@ -26030,11 +26031,11 @@
           "pred" : "hasExactSynonym",
           "val" : "palpebra"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "blephara"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "palpebrae"
         } ],
@@ -26089,7 +26090,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/8/84/Eye_makeup.jpg"
         } ]
       }
@@ -26167,7 +26168,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -26245,7 +26246,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/eb/Gray869.png"
         } ]
       }
@@ -26263,11 +26264,11 @@
           "pred" : "hasRelatedSynonym",
           "val" : "anterior uvea"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "irides"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "irises",
           "xrefs" : [ "VHOG:0000101" ]
@@ -26444,7 +26445,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png"
         } ]
       }
@@ -26522,7 +26523,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -26543,7 +26544,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "anterior uvea"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "ciliary bodies",
           "xrefs" : [ "VHOG:0000102" ]
@@ -26596,7 +26597,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -26691,7 +26692,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -26761,7 +26762,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png"
         } ]
       }
@@ -26986,7 +26987,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png"
         } ]
       }
@@ -27019,7 +27020,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "layer of rods and cones"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "retinal photoreceptor layers",
           "xrefs" : [ "ZFA:0000143" ]
@@ -27055,7 +27056,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png"
         } ]
       }
@@ -27102,7 +27103,7 @@
           "val" : "stratum limitans externum retinae",
           "xrefs" : [ "FMA:58683", "FMA:TA" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasRelatedSynonym",
           "val" : "BRB",
           "xrefs" : [ "https://github.com/obophenotype/mammalian-phenotype-ontology/issues/2109" ]
@@ -27111,7 +27112,7 @@
           "val" : "blood retina barrier",
           "xrefs" : [ "https://github.com/obophenotype/mammalian-phenotype-ontology/issues/2109" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "outer limiting membranes",
           "xrefs" : [ "ZFA:0001331" ]
@@ -27189,7 +27190,7 @@
           "val" : "retina, outer nuclear layer",
           "xrefs" : [ "BAMS:Ronl" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "retinal outer nuclear layers",
           "xrefs" : [ "ZFA:0001464" ]
@@ -27265,7 +27266,7 @@
           "val" : "stratum plexiforme externum retinae",
           "xrefs" : [ "FMA:58685", "FMA:TA" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasNarrowSynonym",
           "val" : "OPL"
         }, {
@@ -27273,7 +27274,7 @@
           "val" : "retina, outer plexiform layer",
           "xrefs" : [ "BAMS:Ropl" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "retinal outer plexiform layers",
           "xrefs" : [ "ZFA:0001330" ]
@@ -27507,7 +27508,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png"
         } ]
       }
@@ -27558,7 +27559,7 @@
           "val" : "optic fiber layer",
           "xrefs" : [ "VHOG:0001169" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "optic fiber layers",
           "xrefs" : [ "TAO:0002212" ]
@@ -27611,7 +27612,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasBroadSynonym",
           "val" : "ILM",
           "xrefs" : [ "ZFA:0001029" ]
@@ -27641,7 +27642,7 @@
           "val" : "stratum limitans internum retinae",
           "xrefs" : [ "FMA:58689", "FMA:TA" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "inner limiting membranes",
           "xrefs" : [ "ZFA:0001029" ]
@@ -27699,7 +27700,7 @@
           "val" : "stratum plexiforme internum",
           "xrefs" : [ "FMA:58704" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasNarrowSynonym",
           "val" : "IPL"
         }, {
@@ -27775,7 +27776,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/55/Gray881.png"
         } ]
       }
@@ -27844,7 +27845,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -27923,7 +27924,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -27961,7 +27962,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -28086,7 +28087,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/ba/Cataract_in_human_eye.png"
         } ]
       }
@@ -28146,7 +28147,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/1/1e/Schematic_diagram_of_the_human_eye_en.svg"
         } ]
       }
@@ -28161,12 +28162,12 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "conjunctivae",
           "xrefs" : [ "XAO:0000182" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "conjunctivas",
           "xrefs" : [ "XAO:0000182" ]
@@ -28221,7 +28222,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/55/Gray883.png"
         } ]
       }
@@ -28236,7 +28237,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasBroadSynonym",
           "val" : "FB",
           "xrefs" : [ "BIRNLEX:1509", "NIFSTD:NeuroNames_abbrevSource" ]
@@ -28319,7 +28320,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg"
         } ]
       }
@@ -28334,7 +28335,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasBroadSynonym",
           "val" : "MB",
           "xrefs" : [ "BIRNLEX:1667", "NIFSTD:NeuroNames_abbrevSource" ]
@@ -28436,7 +28437,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/f/f9/Human_brain_inferior_view_description.JPG"
         } ]
       }
@@ -28451,7 +28452,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasBroadSynonym",
           "val" : "DiE",
           "xrefs" : [ "BIRNLEX:1503", "NIFSTD:NeuroNames_abbrevSource" ]
@@ -28583,7 +28584,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg"
         } ]
       }
@@ -28698,7 +28699,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/6b/Illu_pituitary_pineal_glands.jpg"
         } ]
       }
@@ -28716,7 +28717,7 @@
           "pred" : "hasExactSynonym",
           "val" : "optic lemniscus"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "optic tracts",
           "xrefs" : [ "ZFA:0000252" ]
@@ -28790,7 +28791,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/f/f6/Gray773.png"
         }, {
           "pred" : "http://xmlns.com/foaf/0.1/depiction",
@@ -28812,7 +28813,7 @@
         "comments" : [ "'tegmentum' is used generically for the ventral part of the brainstem (ISBN:0471888893). We use the label 'midbrain tegmentum' to denote the midbrain structure. In NIFSTD tegmentum is a composite structure and there is a separate class for midbrain tegmentum and pontine tegmentum" ],
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasBroadSynonym",
           "val" : "MTg",
           "xrefs" : [ "BIRNLEX:1200", "NIFSTD:NeuroNames_abbrevSource" ]
@@ -28887,7 +28888,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/b6/Gray712.png"
         } ]
       }
@@ -28957,7 +28958,7 @@
           "val" : "A vessel through which blood circulates in the body.",
           "xrefs" : [ "BTO:0001102", "Wikipedia:Blood_vessel" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "vascular element",
@@ -29029,6 +29030,9 @@
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "consider adopting the EMAPA superclass 'vascular element', which includes microvasculature (e.g. capillaries), vascular plexus"
         }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Any of the vessels through which blood circulates in the body. [XAO:0001011_][VHOG]"
         }, {
@@ -29047,7 +29051,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg"
         } ]
       }
@@ -29107,7 +29111,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/66/Gray871.png"
         } ]
       }
@@ -29236,7 +29240,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/d/d2/Spinal_nerve.svg"
         } ]
       }
@@ -29345,7 +29349,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg"
         } ]
       }
@@ -29386,7 +29390,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg"
         } ]
       }
@@ -29416,7 +29420,7 @@
           "val" : "embryonale Struktur",
           "xrefs" : [ "BTO:0000174" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "embryonic structures",
           "xrefs" : [ "ZFA:0001105" ]
@@ -30018,10 +30022,10 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/c/ce/Gray846.png"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/ee/Scheme_body_cavities-en.svg"
         } ]
       }
@@ -30036,7 +30040,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#cumbo", "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#major_organ", "http://purl.obolibrary.org/obo/uberon/core#organ_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasRelatedSynonym",
           "val" : "SpC"
         }, {
@@ -30149,7 +30153,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/58/Spinal_cord_direv.svg"
         }, {
           "pred" : "http://xmlns.com/foaf/0.1/depiction",
@@ -30270,7 +30274,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/b7/Gray719.png"
         } ]
       }
@@ -30372,10 +30376,10 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/d/d7/Grey_matter_and_white_matter_-_very_high_mag.jpg"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/d/d2/Spinal_nerve.svg"
         } ]
       }
@@ -30388,6 +30392,7 @@
           "val" : "The cavity within the body of all animals higher than the coelenterates and certain primitive worms, formed by the splitting of the embryonic mesoderm into two layers. In mammals it forms the peritoneal, pleural, and pericardial cavities.",
           "xrefs" : [ "BTO:0001707" ]
         },
+        "comments" : [ "EDITOR_NOTE check the FMA placement here; ncit placement of body cavity here probably not correct" ],
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
@@ -30454,9 +30459,6 @@
           "val" : "galen:BodyCavity"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "check the FMA placement here; ncit placement of body cavity here probably not correct"
-        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Anatomical space, part of the trunk that contains the pericardial and pleuroperitoneal cavities[ZFA]."
         }, {
@@ -30567,7 +30569,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png"
         } ]
       }
@@ -30598,7 +30600,7 @@
           "val" : "epithelial somite",
           "xrefs" : [ "https://github.com/obophenotype/uberon/wiki/The-neural-crest" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "somites"
         }, {
@@ -30650,8 +30652,8 @@
           "val" : "ZFA:0000155"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making 'somitic mesoderm' a separate term and correlate with regionalization processes. Consider moving ZFA term to 'trunk somite' as it is part of the trunk"
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000232",
+          "val" : "EDITOR_NOTE currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making 'somitic mesoderm' a separate term and correlate with regionalization processes. Consider moving ZFA term to 'trunk somite' as it is part of the trunk"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_7712"
@@ -30680,7 +30682,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png"
         } ]
       }
@@ -30696,7 +30698,7 @@
         "comments" : [ "Gene notes: Many factors and genes, such as Pax3 (Tremblay et al., 1995), slug (Nieto et al., 1994), AP-2 (Zhang et al., 1996; Schorle et al., 1996), and Wnt-1/3a (Ikeya et al., 1997) are expressed in the dorsal most region of the neural tube, and have been shown to be involved in the generation of neural crest cells." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasExactSynonym",
           "val" : "NC",
           "xrefs" : [ "XAO:0000048" ]
@@ -30750,8 +30752,8 @@
           "val" : "neuronames:1366"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
-          "val" : "consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams)."
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000232",
+          "val" : "EDITOR_NOTE consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams)."
         }, {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002174",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_117565"
@@ -30771,10 +30773,10 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png"
         } ]
       }
@@ -31014,7 +31016,7 @@
           "val" : "Anatomical system that is involved in the production of hematopoietic cells.",
           "xrefs" : [ "Wikipedia:Haematopoiesis" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "haematological system"
@@ -31083,6 +31085,9 @@
           "val" : "ZFA:0005023"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Anatomical system that consists of the blood and blood forming tissues.[AAO]"
         }, {
@@ -31212,7 +31217,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/e3/Gray21.png"
         } ]
       }
@@ -31240,7 +31245,7 @@
           "val" : "ectodermal cranial placode",
           "xrefs" : [ "UBERON:cjm" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "cranial placodes",
           "xrefs" : [ "XAO:0000305" ]
@@ -31572,7 +31577,7 @@
           "pred" : "hasBroadSynonym",
           "val" : "ventral lateral plate mesoderm"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "blood islands"
         }, {
@@ -31671,7 +31676,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png"
         } ]
       }
@@ -31717,7 +31722,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "optic field"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "optic placodes"
         } ],
@@ -31813,7 +31818,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "lens placodes",
           "xrefs" : [ "ZFA:0000122" ]
@@ -31863,7 +31868,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Gray864.png"
         } ]
       }
@@ -31933,7 +31938,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png"
         } ]
       }
@@ -32025,7 +32030,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png"
         } ]
       }
@@ -32067,7 +32072,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasExactSynonym",
           "val" : "LPM",
           "xrefs" : [ "ZFA:0000121" ]
@@ -32134,7 +32139,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png"
         } ]
       }
@@ -32199,7 +32204,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "sclerotomes",
           "xrefs" : [ "TAO:0001080" ]
@@ -32213,6 +32218,8 @@
           "val" : "AAO:0010571"
         }, {
           "val" : "AEO:0000212"
+        }, {
+          "val" : "BTO:0006255"
         }, {
           "val" : "EHDAA2:0003439"
         }, {
@@ -32247,7 +32254,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png"
         } ]
       }
@@ -32262,7 +32269,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "optic stalks",
           "xrefs" : [ "ZFA:0000137" ]
@@ -32307,7 +32314,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/2/2f/Gray864.png"
         } ]
       }
@@ -32322,7 +32329,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasExactSynonym",
           "val" : "CNC",
           "xrefs" : [ "XAO:0001001" ]
@@ -32499,7 +32506,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/f/f4/Mesenchymal_Stem_Cell.jpg"
         } ]
       }
@@ -33168,7 +33175,7 @@
           "val" : "diencephalic tract/commissure",
           "xrefs" : [ "ZFA:0000338" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "diencephalic tracts and commissures",
           "xrefs" : [ "TAO:0000338" ]
@@ -33405,7 +33412,7 @@
           "val" : "foramen",
           "xrefs" : [ "EHDAA2:0003080" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasNarrowSynonym",
           "val" : "foramina",
           "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
@@ -33413,7 +33420,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "opening"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "ostia"
         }, {
@@ -33517,7 +33524,7 @@
           "val" : "ocular vesicle",
           "xrefs" : [ "VHOG:0000165" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "optic vesicles",
           "xrefs" : [ "ZFA:0000050" ]
@@ -33554,7 +33561,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/e/e0/Gray863.png"
         } ]
       }
@@ -33620,12 +33627,12 @@
           "val" : "primary heart field",
           "xrefs" : [ "PMID:17276708", "XAO:0004185" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasRelatedSynonym",
           "val" : "FHF",
           "xrefs" : [ "XAO:0004185" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#ABBREVIATION",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasRelatedSynonym",
           "val" : "PHF",
           "xrefs" : [ "XAO:0004185" ]
@@ -34053,7 +34060,7 @@
           "val" : "Anatomical system that has as its parts the heart and blood vessels.",
           "xrefs" : [ "BTO:0000088" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "CV system",
@@ -34117,6 +34124,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000232",
           "val" : "we treat cardiovascular as part of circulatory system, with the latter including other kinds of circulation, including lymph."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000003",
           "val" : "The vessels of the cardiovascular system are as varied as the diverse organs they supply. However, these variations are based on modifications of a fundamental plan of organization common to vertebrates.[well established][VHOG]"
@@ -34462,12 +34472,12 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "endothelia",
           "xrefs" : [ "ZFA:0001639" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "vascular endothelia",
           "xrefs" : [ "XAO:0000356" ]
@@ -34624,7 +34634,7 @@
           "val" : "A proximal-distal subdivision of the digestive tract.",
           "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#non_informative" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#non_informative" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "alimentary system subdivision",
@@ -34652,6 +34662,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000232",
           "val" : "intended to denote both embryonic and adult structures. Note the FMA grouping here is not quite correct."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
@@ -35144,7 +35157,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg"
         } ]
       }
@@ -35286,7 +35299,7 @@
           "val" : "outer layer optic cup",
           "xrefs" : [ "ZFA:0000064" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "presumptive pigmented epithelia",
           "xrefs" : [ "ZFA:0000064" ]
@@ -35351,7 +35364,7 @@
           "val" : "optic cup inner layer",
           "xrefs" : [ "EHDAA2:0001304" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasExactSynonym",
           "val" : "presumptive retinas",
           "xrefs" : [ "ZFA:0001071" ]
@@ -35490,6 +35503,8 @@
           "xrefs" : [ "EMAPA:16208" ]
         } ],
         "xrefs" : [ {
+          "val" : "BTO:0006179"
+        }, {
           "val" : "EHDAA2:0001512"
         }, {
           "val" : "EHDAA:424"
@@ -35652,11 +35667,7 @@
         },
         "comments" : [ "See notes for serous membrane" ],
         "xrefs" : [ {
-          "val" : "EMAPA:16060"
-        }, {
           "val" : "FMA:9689"
-        }, {
-          "val" : "MA:0000005"
         }, {
           "val" : "SCTID:362890006"
         } ],
@@ -35744,7 +35755,7 @@
           "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "val" : "http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/8/8b/Axial_skeleton_diagram.svg"
         } ]
       }
@@ -35772,7 +35783,7 @@
           "val" : "neurofibrum",
           "xrefs" : [ "FMA:5914" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "nerve fibers",
           "xrefs" : [ "BAMS:nfi" ]
@@ -36222,8 +36233,6 @@
           "val" : "pharyngeal tube"
         } ],
         "xrefs" : [ {
-          "val" : "FBbt:00005380"
-        }, {
           "val" : "MAT:0000049"
         }, {
           "val" : "MESH:D010614"
@@ -36819,7 +36828,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "presumptive segmental plates",
           "xrefs" : [ "ZFA:0000053" ]
@@ -37214,7 +37223,7 @@
           "val" : "Anatomical system that consists of all blood and lymph vessels.",
           "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim" ],
         "xrefs" : [ {
           "val" : "BTO:0001085"
         }, {
@@ -37233,6 +37242,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000116",
           "val" : "consider merging with vasculature"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System]."
@@ -37892,7 +37904,7 @@
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depicted_by",
+          "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/b2/Gray875.png"
         }, {
           "pred" : "http://xmlns.com/foaf/0.1/depiction",
@@ -38503,7 +38515,7 @@
           "val" : "The region of the organism associated with the visceral organs.",
           "xrefs" : [ "AEO:0000103" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#non_informative" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#non_informative" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "body",
@@ -38523,6 +38535,9 @@
           "val" : "FMA:231424"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Cardinal body part, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the vertebral column and ribcage. Examples: There is only one body proper[FMA:231424]."
         }, {
@@ -38663,6 +38678,7 @@
       "lbl" : "heart plus pericardium",
       "type" : "CLASS",
       "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "heart/pericardium",
@@ -38674,6 +38690,9 @@
           "val" : "MA:0002449"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         } ]
@@ -39118,7 +39137,7 @@
           "val" : "appendage of eye",
           "xrefs" : [ "http://medical-dictionary.thefreedictionary.com/ocular+adnexa" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#PLURAL",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003004",
           "pred" : "hasRelatedSynonym",
           "val" : "appendages of the eye",
           "xrefs" : [ "http://medical-dictionary.thefreedictionary.com/ocular+adnexa" ]
@@ -39302,6 +39321,17 @@
           "val" : "http://purl.obolibrary.org/obo/RO_0015016"
         } ],
         "deprecated" : true
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/cl#kidney_slim",
+      "lbl" : "kidney_upper_slim",
+      "type" : "PROPERTY",
+      "meta" : {
+        "comments" : [ "a subset of general classes related to specific cell types in the kidney" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.org/dc/terms/date",
+          "val" : "2023-11-22T11:18:57Z"
+        } ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED",
@@ -39690,6 +39720,14 @@
       "lbl" : "consider",
       "type" : "PROPERTY"
     }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+      "lbl" : "created by",
+      "type" : "PROPERTY"
+    }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
+      "lbl" : "creation date",
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
       "lbl" : "has_alternative_id",
       "type" : "PROPERTY"
@@ -39782,6 +39820,10 @@
       "lbl" : "has_synonym_type",
       "type" : "PROPERTY"
     }, {
+      "id" : "http://www.geneontology.org/formats/oboInOwl#id",
+      "lbl" : "id",
+      "type" : "PROPERTY"
+    }, {
       "id" : "http://www.geneontology.org/formats/oboInOwl#inSubset",
       "lbl" : "in_subset",
       "type" : "PROPERTY"
@@ -39806,6 +39848,25 @@
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
           "val" : "seeAlso"
+        } ]
+      }
+    }, {
+      "id" : "http://xmlns.com/foaf/0.1/depiction",
+      "lbl" : "depiction",
+      "type" : "PROPERTY",
+      "meta" : {
+        "xrefs" : [ {
+          "val" : "http://xmlns.com/foaf/0.1/depiction"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#is_metadata_tag",
+          "val" : "true"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "depiction"
         } ]
       }
     } ],
@@ -42244,10 +42305,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GO_0009987"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/GO_0008283",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0009987"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0009058",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GO_0008152"
@@ -42429,7 +42486,7 @@
       "obj" : "http://purl.obolibrary.org/obo/GO_0051301"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0017145",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002233",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0004009",
       "obj" : "http://purl.obolibrary.org/obo/CL_0000034"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0019226",
@@ -42543,10 +42600,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GO_0023061",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
       "obj" : "http://purl.obolibrary.org/obo/GO_0007267"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GO_0030030",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0008283"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0030030",
       "pred" : "is_a",
@@ -43033,7 +43086,7 @@
       "obj" : "http://purl.obolibrary.org/obo/GO_0017145"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0048103",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002233",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0004009",
       "obj" : "http://purl.obolibrary.org/obo/CL_0000723"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0048285",
@@ -53457,7 +53510,7 @@
       "definedClassId" : "http://purl.obolibrary.org/obo/GO_0017145",
       "genusIds" : [ "http://purl.obolibrary.org/obo/GO_0051301" ],
       "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002233",
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0004009",
         "fillerId" : "http://purl.obolibrary.org/obo/CL_0000034"
       } ]
     }, {
@@ -53702,7 +53755,7 @@
       "definedClassId" : "http://purl.obolibrary.org/obo/GO_0048103",
       "genusIds" : [ "http://purl.obolibrary.org/obo/GO_0051301" ],
       "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002233",
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0004009",
         "fillerId" : "http://purl.obolibrary.org/obo/CL_0000723"
       } ]
     }, {
