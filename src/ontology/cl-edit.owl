@@ -13,6 +13,7 @@ Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim
 Import(<http://purl.obolibrary.org/obo/cl/components/eye_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/general_cell_types_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/kidney_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/mappings.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/merged_import.owl>)
 Annotation(obo:IAO_0000700 obo:CL_0000000)
@@ -3160,6 +3161,7 @@ Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#added_for_HCA>
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#eye_upper_slim>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim>))
+Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/cl#kidney_upper_slim>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/pato#location_grouping>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#HUMAN_PREFERRED>))
 Declaration(AnnotationProperty(<http://purl.obolibrary.org/obo/uberon#LATIN>))
@@ -3243,6 +3245,13 @@ SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#eye_upper_slim> oboIn
 AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim> "a subset of general classes of cell types in the cell ontology.")
 AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim> "general_cell_types_upper_slim")
 SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim> oboInOwl:SubsetProperty)
+
+# Annotation Property: <http://purl.obolibrary.org/obo/cl#kidney_upper_slim> (kidney_upper_slim)
+
+AnnotationAssertion(<http://purl.org/dc/terms/date> <http://purl.obolibrary.org/obo/cl#kidney_upper_slim> "2023-11-22T11:18:57Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:comment <http://purl.obolibrary.org/obo/cl#kidney_upper_slim> "a subset of general classes related to specific cell types in the kidney")
+AnnotationAssertion(rdfs:label <http://purl.obolibrary.org/obo/cl#kidney_upper_slim> "kidney_upper_slim")
+SubAnnotationPropertyOf(<http://purl.obolibrary.org/obo/cl#kidney_upper_slim> oboInOwl:SubsetProperty)
 
 # Annotation Property: <http://purl.obolibrary.org/obo/pato#location_grouping> (<http://purl.obolibrary.org/obo/pato#location_grouping>)
 
@@ -30774,11 +30783,10 @@ EquivalentClasses(obo:CL_4030029 ObjectIntersectionOf(obo:CL_0000542 ObjectSomeV
 
 # Class: obo:CL_4030030 (peripheral blood lymphocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0001-9990-8331>) Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0003-2534-198X>) Annotation(oboInOwl:hasDbXref <https://sciencing.com/what-peripheral-blood-4672930.html>) Annotation(oboInOwl:hasDbXref "PMID:31092833") obo:IAO_0000115 obo:CL_4030030 "A blood lymphocyte located in the flowing, circulating blood of the body.")
-AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030030 <https://orcid.org/0000-0002-1773-2692>)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0001-9990-8331>) Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0003-2534-198X>) Annotation(oboInOwl:hasDbXref "PMID:31092833") Annotation(oboInOwl:hasDbXref "https://sciencing.com/what-peripheral-blood-4672930.html") obo:IAO_0000115 obo:CL_4030030 "A blood lymphocyte located in the flowing, circulating blood of the body.")
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030030 "2022-11-14T10:08:14Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:seeAlso obo:CL_4030030 <https://github.com/obophenotype/cell-ontology/pull/1725>)
 AnnotationAssertion(rdfs:label obo:CL_4030030 "peripheral blood lymphocyte")
+AnnotationAssertion(rdfs:seeAlso obo:CL_4030030 "https://github.com/obophenotype/cell-ontology/pull/1725")
 SubClassOf(obo:CL_4030030 obo:CL_4030029)
 SubClassOf(obo:CL_4030030 ObjectSomeValuesFrom(obo:RO_0001025 obo:UBERON_0013755))
 SubClassOf(obo:CL_4030030 ObjectSomeValuesFrom(obo:RO_0001025 obo:UBERON_0013756))
