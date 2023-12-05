@@ -275,8 +275,9 @@ deploy_release:
 TERM_hematopoietic= CL:0000988
 TERM_eye= UBERON:0000970
 TERM_general = CL:0000000
+TERM_kidney= UBERON:0002113
 
-SLIM_TEMPLATES= blood_and_immune eye general_cell_types
+SLIM_TEMPLATES= blood_and_immune eye general_cell_types kidney
 SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
 
 .PHONY: slim_coverage
@@ -296,4 +297,8 @@ $(REPORTDIR)/eye_upper_slim_report.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
 
 $(REPORTDIR)/general_cell_types_upper_slim_report.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
 	$(eval TERM_ID := $(TERM_general))
+	$(COVERAGECMD)
+
+$(REPORTDIR)/kidney_upper_slim_report.csv: $(TEMPLATEDIR)/kidney_upper_slim.csv
+	$(eval TERM_ID := $(TERM_kidney))
 	$(COVERAGECMD)

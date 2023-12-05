@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+
 import argparse
 import csv
 from collections import defaultdict
@@ -308,7 +309,7 @@ if __name__ == "__main__":
         "--ontology-file",
         "cl-full.owl",
         "--output-file",
-        "test.ttl",
+        "tmp/test.ttl",
         "--output-subclasses",
         "true",
         "false",
@@ -326,10 +327,8 @@ if __name__ == "__main__":
     run_command(relation_graph_command, working_directory)
 
     cl_base = Graph().parse("../ontology/cl-full.owl", format="xml")
-    cl_rel = Graph().parse("../ontology/test.ttl", format="ttl")
+    cl_rel = Graph().parse("../ontology/tmp/test.ttl", format="ttl")
     cl = cl_base + cl_rel
-
-    cl.serialize("ontology.owl", format="turtle")
 
     term_dict = {}
     with open(file_name, mode="r", encoding="utf-8-sig", newline="") as csvfile:

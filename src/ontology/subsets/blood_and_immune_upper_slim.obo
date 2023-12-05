@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-10-19/subsets/blood_and_immune_upper_slim.owl
+data-version: cl/releases/2023-11-22/subsets/blood_and_immune_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -41,6 +41,7 @@ subsetdef: http://purl.obolibrary.org/obo/valid_for_go_ontology ""
 subsetdef: http://purl.obolibrary.org/obo/valid_for_gocam ""
 subsetdef: human_reference_atlas ""
 subsetdef: inconsistent_with_fma ""
+subsetdef: kidney_slim "a subset of general classes related to specific cell types in the kidney"
 subsetdef: location_grouping ""
 subsetdef: major_organ ""
 subsetdef: mpath_slim ""
@@ -58,7 +59,6 @@ subsetdef: unverified_taxonomic_grouping ""
 subsetdef: upper_level ""
 subsetdef: value_slim ""
 subsetdef: vertebrate_core ""
-synonymtypedef: ABBREVIATION ""
 synonymtypedef: blast_name ""
 synonymtypedef: common_name ""
 synonymtypedef: COMPARATIVE_PREFERRED ""
@@ -76,8 +76,9 @@ synonymtypedef: LATIN ""
 synonymtypedef: LATIN "latin term"
 synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
 synonymtypedef: NON_MAMMAL ""
+synonymtypedef: OMO:0003000 "abbreviation"
+synonymtypedef: OMO:0003004 "plural form"
 synonymtypedef: PENDING_REVIEW ""
-synonymtypedef: PLURAL ""
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: PRO-short-label ""
 synonymtypedef: scientific_name ""
@@ -87,7 +88,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/blood_and_immune_upper_slim
-property_value: owl:versionInfo "2023-10-19" xsd:string
+property_value: owl:versionInfo "2023-11-22" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -421,7 +422,7 @@ is_a: CL:0000000 ! cell
 disjoint_from: CL:0000738 ! leukocyte
 relationship: part_of UBERON:0000483 ! epithelium
 relationship: present_in_taxon NCBITaxon:9606
-property_value: http://xmlns.com/foaf/0.1/depiction "https://www.swissbiopics.org/api/image/Epithelial_cells.svg" xsd:anyURI
+property_value: depiction "https://www.swissbiopics.org/api/image/Epithelial_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000071
@@ -498,6 +499,7 @@ xref: BTO:0000968
 xref: CALOHA:TS-0721
 xref: FMA:66781
 xref: MESH:D010010
+is_a: CL:0000518 ! phagocyte (sensu Vertebrata)
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
 is_a: CL:0001035 {is_inferred="true"} ! bone cell
 is_a: PR:000050567 ! protein-containing material entity
@@ -602,6 +604,18 @@ relationship: RO:0015015 PR:000002065 ! has high plasma membrane amount mast/ste
 relationship: RO:0015015 PR:000007431 ! has high plasma membrane amount high affinity immunoglobulin epsilon receptor subunit alpha
 
 [Term]
+id: CL:0000113
+name: mononuclear phagocyte
+def: "A vertebrate phagocyte with a single nucleus." [GOC:add, GOC:tfm, ISBN:0781735149]
+subset: human_reference_atlas
+xref: BTO:0001433
+is_a: CL:0000518 {is_inferred="true"} ! phagocyte (sensu Vertebrata)
+is_a: CL:0000842 ! mononuclear cell
+intersection_of: CL:0000518 ! phagocyte (sensu Vertebrata)
+intersection_of: bearer_of PATO:0001407 ! mononucleate
+relationship: present_in_taxon NCBITaxon:9606
+
+[Term]
 id: CL:0000115
 name: endothelial cell
 def: "An endothelial cell comprises the outermost layer or lining of anatomical structures and can be squamous or cuboidal. In mammals, endothelial cell has vimentin filaments and is derived from the mesoderm." [GOC:tfm, http://en.wikipedia.org/wiki/Endothelial_cell, https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3364936&group_id=36855, MESH:D042783, PMID:21275341]
@@ -690,7 +704,7 @@ xref: WBbt:0003675
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000393 ! electrically responsive cell
 relationship: develops_from CL:0000056 ! myoblast
-property_value: http://xmlns.com/foaf/0.1/depiction "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
+property_value: depiction "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000211
@@ -859,8 +873,8 @@ xref: CALOHA:TS-0587
 xref: FMA:63261
 xref: FMA:83585
 xref: MESH:D008264
+is_a: CL:0000113 ! mononuclear phagocyte
 is_a: CL:0000145 ! professional antigen presenting cell
-is_a: CL:0000234 ! phagocyte
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
 intersection_of: CL:0000766 ! myeloid leukocyte
 intersection_of: capable_of GO:0002504 ! antigen processing and presentation of peptide or polysaccharide antigen via MHC class II
@@ -976,8 +990,8 @@ xref: BTO:0002042
 xref: CALOHA:TS-0194
 xref: FMA:83036
 xref: MESH:D003713
+is_a: CL:0000113 ! mononuclear phagocyte
 is_a: CL:0000145 ! professional antigen presenting cell
-is_a: CL:0000842 ! mononuclear cell
 is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000738 ! leukocyte
 intersection_of: bearer_of PATO:0001407 ! mononucleate
@@ -1025,6 +1039,14 @@ def: "A cell whose primary function is to protect the organism." [JB:jb]
 is_a: CL:0000000 ! cell
 
 [Term]
+id: CL:0000518
+name: phagocyte (sensu Vertebrata)
+def: "A phagocyte in vertebrates that is able to phagocytosis." [GOC:tfm]
+is_a: CL:0000234 ! phagocyte
+is_a: CL:0000255 ! eukaryotic cell
+relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
+
+[Term]
 id: CL:0000540
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [http://en.wikipedia.org/wiki/Neuron, MESH:D009474]
@@ -1043,7 +1065,7 @@ is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
 relationship: capable_of GO:0019226 ! transmission of nerve impulse
 relationship: present_in_taxon NCBITaxon:9606
-property_value: http://xmlns.com/foaf/0.1/depiction "https://www.swissbiopics.org/api/image/Neuron_cells.svg" xsd:anyURI
+property_value: depiction "https://www.swissbiopics.org/api/image/Neuron_cells.svg" xsd:anyURI
 
 [Term]
 id: CL:0000542
@@ -1372,8 +1394,8 @@ subset: human_reference_atlas
 xref: BTO:0000876
 xref: CALOHA:TS-0638
 xref: FMA:62864
+is_a: CL:0000113 ! mononuclear phagocyte
 is_a: CL:0000766 {is_inferred="true"} ! myeloid leukocyte
-is_a: CL:0000842 ! mononuclear cell
 is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0000766 ! myeloid leukocyte
 intersection_of: bearer_of PATO:0001407 ! mononucleate
@@ -2959,8 +2981,8 @@ namespace: biological_process
 def: "The change in morphology and behavior of a dendritic cell resulting from exposure to a cytokine, chemokine, cellular ligand, or soluble factor." [GOC:mgi_curators, ISBN:0781735149]
 is_a: GO:0002274 ! myeloid leukocyte activation
 intersection_of: GO:0001775 ! cell activation
-intersection_of: has_input CL:0000782 ! myeloid dendritic cell
-relationship: has_input CL:0000782 ! myeloid dendritic cell
+intersection_of: has_primary_input CL:0000782 ! myeloid dendritic cell
+relationship: has_primary_input CL:0000782 ! myeloid dendritic cell
 
 [Term]
 id: GO:0001775
@@ -3154,8 +3176,8 @@ def: "A change in the morphology or behavior of a myeloid leukocyte resulting fr
 synonym: "myeloid leucocyte activation" EXACT []
 is_a: GO:0045321 ! leukocyte activation
 intersection_of: GO:0001775 ! cell activation
-intersection_of: has_input CL:0000766 ! myeloid leukocyte
-relationship: has_input CL:0000766 ! myeloid leukocyte
+intersection_of: has_primary_input CL:0000766 ! myeloid leukocyte
+relationship: has_primary_input CL:0000766 ! myeloid leukocyte
 
 [Term]
 id: GO:0002285
@@ -3792,7 +3814,7 @@ name: molecular_function
 namespace: molecular_function
 alt_id: GO:0005554
 def: "A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs." [GOC:pdt]
-comment: Note that, in addition to forming the root of the molecular function ontology, this term is recommended for use for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this. Despite its name, this is not a type of 'function' in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex.
+comment: Note that, in addition to forming the root of the molecular function ontology, this term is recommended for the annotation of gene products whose molecular function is unknown. When this term is used for annotation, it indicates that no information was available about the molecular function of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this. Despite its name, this is not a type of 'function' in the sense typically defined by upper ontologies such as Basic Formal Ontology (BFO). It is instead a BFO:process carried out by a single gene product or complex.
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -3857,8 +3879,8 @@ id: GO:0005575
 name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
-def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine when it carries out a molecular function. There are two ways in which the gene ontology describes locations of gene products: (1) relative to cellular structures (e.g., cytoplasmic side of plasma membrane) or compartments (e.g., mitochondrion), and (2) the stable macromolecular complexes of which they are parts (e.g., the ribosome)." [GOC:pdt, NIF_Subcellular:sao1337158144]
-comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for use for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of  cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." [GOC:pdt]
+comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -3871,6 +3893,7 @@ synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
 xref: NIF_Subcellular:sao1337158144
 is_a: BFO:0000040 ! material entity
 disjoint_from: GO:0008150 ! biological_process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/17729" xsd:anyURI
 
 [Term]
 id: GO:0005576
@@ -4751,14 +4774,14 @@ is_a: GO:0032501 ! multicellular organismal process
 id: GO:0007596
 name: blood coagulation
 namespace: biological_process
-def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." [http://www.graylab.ac.uk/omd/, ISBN:0198506732]
+def: "The sequential process in which the multiple coagulation factors of the blood interact, ultimately resulting in the formation of an insoluble fibrin clot; it may be divided into three stages: stage 1, the formation of intrinsic and extrinsic prothrombin converting principle; stage 2, the formation of thrombin; stage 3, the formation of stable fibrin polymers." [PMID:30700128]
 synonym: "blood clotting" EXACT []
 xref: Wikipedia:Coagulation
 is_a: GO:0007599 ! hemostasis
 is_a: GO:0050817 ! coagulation
 intersection_of: GO:0050817 ! coagulation
-intersection_of: has_output UBERON:0010210 ! blood clot
-relationship: has_output UBERON:0010210 ! blood clot
+intersection_of: has_primary_output UBERON:0010210 ! blood clot
+relationship: has_primary_output UBERON:0010210 ! blood clot
 relationship: part_of GO:0042060 ! wound healing
 
 [Term]
@@ -4787,7 +4810,7 @@ alt_id: GO:0000004
 alt_id: GO:0007582
 alt_id: GO:0044699
 def: "A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence." [GOC:pdt]
-comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for use for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
+comment: Note that, in addition to forming the root of the biological process ontology, this term is recommended for the annotation of gene products whose biological process is unknown. When this term is used for annotation, it indicates that no information was available about the biological process of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
@@ -4840,22 +4863,6 @@ synonym: "accidental cell death" RELATED []
 synonym: "necrosis" RELATED []
 is_a: GO:0009987 ! cellular process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24680" xsd:anyURI
-
-[Term]
-id: GO:0008283
-name: cell population proliferation
-namespace: biological_process
-def: "The multiplication or reproduction of cells, resulting in the expansion of a cell population." [GOC:mah, GOC:mb]
-comment: This term was moved out from being a child of 'cellular process' because it is a cell population-level process, and cellular processes are restricted to those processes that involve individual cells. Also note that this term is intended to be used for the proliferation of cells within a multicellular organism, not for the expansion of a population of single-celled organisms.
-subset: goslim_agr
-subset: goslim_chembl
-subset: goslim_drosophila
-subset: goslim_flybase_ribbon
-subset: goslim_mouse
-subset: goslim_pir
-synonym: "cell proliferation" RELATED []
-is_a: GO:0009987 ! cellular process
-relationship: never_in_taxon NCBITaxon:4751
 
 [Term]
 id: GO:0009058
@@ -5255,8 +5262,8 @@ def: "The self-renewing division of a stem cell. A stem cell is an undifferentia
 synonym: "stem cell renewal" EXACT []
 is_a: GO:0051301 ! cell division
 intersection_of: GO:0051301 ! cell division
-intersection_of: has_input CL:0000034 ! stem cell
-relationship: has_input CL:0000034 ! stem cell
+intersection_of: has_primary_input CL:0000034 ! stem cell
+relationship: has_primary_input CL:0000034 ! stem cell
 
 [Term]
 id: GO:0019226
@@ -5487,11 +5494,11 @@ subset: prokaryote_subset
 synonym: "cell projection organisation" EXACT []
 synonym: "cell projection organization and biogenesis" RELATED [GOC:mah]
 synonym: "cell surface structure organization and biogenesis" RELATED [GOC:mah]
-is_a: GO:0008283 ! cell population proliferation
 is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0042995 ! cell projection
 relationship: results_in_organization_of GO:0042995 ! cell projection
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26279" xsd:anyURI
 
 [Term]
 id: GO:0030031
@@ -5718,6 +5725,7 @@ namespace: biological_process
 def: "The process in which a relatively unspecialized monocyte acquires the specialized features of a macrophage." [GOC:add, ISBN:0781735149]
 synonym: "macrophage cell differentiation" EXACT []
 is_a: GO:0002573 ! myeloid leukocyte differentiation
+is_a: GO:1903131 ! mononuclear cell differentiation
 intersection_of: GO:0030154 ! cell differentiation
 intersection_of: results_in_acquisition_of_features_of CL:0000235 ! macrophage
 relationship: results_in_acquisition_of_features_of CL:0000235 ! macrophage
@@ -5785,6 +5793,7 @@ def: "Any process that modulates the frequency, rate or extent of cell migration
 is_a: GO:2000145 ! regulation of cell motility
 intersection_of: GO:0065007 ! biological regulation
 intersection_of: regulates GO:0016477 ! cell migration
+relationship: never_in_taxon NCBITaxon:4890
 relationship: regulates GO:0016477 ! cell migration
 
 [Term]
@@ -6352,8 +6361,8 @@ synonym: "T-cell activation" EXACT []
 synonym: "T-lymphocyte activation" EXACT []
 is_a: GO:0046649 ! lymphocyte activation
 intersection_of: GO:0001775 ! cell activation
-intersection_of: has_input CL:0000084 ! T cell
-relationship: has_input CL:0000084 ! T cell
+intersection_of: has_primary_input CL:0000084 ! T cell
+relationship: has_primary_input CL:0000084 ! T cell
 
 [Term]
 id: GO:0042113
@@ -6365,8 +6374,8 @@ synonym: "B-cell activation" EXACT []
 synonym: "B-lymphocyte activation" EXACT []
 is_a: GO:0046649 ! lymphocyte activation
 intersection_of: GO:0001775 ! cell activation
-intersection_of: has_input CL:0000236 ! B cell
-relationship: has_input CL:0000236 ! B cell
+intersection_of: has_primary_input CL:0000236 ! B cell
+relationship: has_primary_input CL:0000236 ! B cell
 
 [Term]
 id: GO:0042221
@@ -6805,8 +6814,8 @@ xref: Wikipedia:Immunologic_activation
 is_a: GO:0001775 ! cell activation
 is_a: GO:0002376 ! immune system process
 intersection_of: GO:0001775 ! cell activation
-intersection_of: has_input CL:0000738 ! leukocyte
-relationship: has_input CL:0000738 ! leukocyte
+intersection_of: has_primary_input CL:0000738 ! leukocyte
+relationship: has_primary_input CL:0000738 ! leukocyte
 relationship: in_taxon NCBITaxon:7742 {all_only="true"} ! Vertebrata <vertebrates>
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 
@@ -6866,8 +6875,8 @@ namespace: biological_process
 def: "A change in morphology and behavior of a lymphocyte resulting from exposure to a specific antigen, mitogen, cytokine, chemokine, cellular ligand, or soluble factor." [GOC:mgi_curators, ISBN:0781735149]
 is_a: GO:0045321 ! leukocyte activation
 intersection_of: GO:0001775 ! cell activation
-intersection_of: has_input CL:0000542 ! lymphocyte
-relationship: has_input CL:0000542 ! lymphocyte
+intersection_of: has_primary_input CL:0000542 ! lymphocyte
+relationship: has_primary_input CL:0000542 ! lymphocyte
 
 [Term]
 id: GO:0046849
@@ -6894,8 +6903,8 @@ def: "The self-renewing division of a somatic stem cell, a stem cell that can gi
 synonym: "somatic stem cell renewal" EXACT []
 is_a: GO:0017145 ! stem cell division
 intersection_of: GO:0051301 ! cell division
-intersection_of: has_input CL:0000723 ! somatic stem cell
-relationship: has_input CL:0000723 ! somatic stem cell
+intersection_of: has_primary_input CL:0000723 ! somatic stem cell
+relationship: has_primary_input CL:0000723 ! somatic stem cell
 
 [Term]
 id: GO:0048284
@@ -10684,7 +10693,6 @@ xref: CALOHA:TS-0436
 xref: EFO:0000964
 xref: EHDAA2:0003106
 xref: EMAPA:31858
-xref: FBbt:00000004
 xref: FMA:7154
 xref: GAID:61
 xref: galen:Head
@@ -11018,6 +11026,7 @@ xref: BILS:0000106
 xref: EFO:0001322
 xref: EHDAA:27
 xref: FBdv:00005288
+xref: IDOMAL:0000302 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
 xref: NCIT:C12601
 xref: PdumDv:0000100
 xref: VHOG:0000745
@@ -11079,7 +11088,7 @@ is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png" xsd:anyURI
 property_value: editor_note "consider adding a preceding stage 'morula stage' as part of cleavage" xsd:string
 
 [Term]
@@ -11231,7 +11240,7 @@ relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: overlaps UBERON:0001004 {notes="exceptions in some taxa"} ! respiratory system
 relationship: part_of UBERON:0000033 ! head
 relationship: proximalmost_part_of UBERON:0001555 ! digestive tract
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/661" xsd:anyURI
 property_value: UBPROP:0000001 "Cavity in which food is initially ingested and generally contains teeth, tongue and glands.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010355", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "Molecular and developmental cell lineage data suggest that the acoel mouth opening is homologous to the mouth of protostomes and deuterostomes and that the last common ancestor of the Bilateria (the 'urbilaterian') had only this single digestive opening.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000812", ontology="VHOG", source="DOI:10.1038/nature07309 Hejnol A, Martindale MQ, Acoel development indicates the independent evolution of the bilaterian mouth and anus. Nature (2008)", source="http://bgee.unil.ch/"}
@@ -11324,7 +11333,7 @@ intersection_of: UBERON:0000468 ! multicellular organism
 intersection_of: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
 relationship: develops_from UBERON:0007010 ! cleaving embryo
 relationship: existence_starts_and_ends_during UBERON:0000108 ! blastula stage
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/c/c6/Blastulation.png" xsd:anyURI
 property_value: editor_note "TODO - check relationship with epiblast. Note in FMA this is not a subclass of embryo, but in uberon embryo is the whole organism from zygote onwards and thus includes the blastula" xsd:string
 
 [Term]
@@ -11413,7 +11422,7 @@ namespace: uberon
 def: "Non-material anatomical entity of three dimensions, that is generated by morphogenetic or other physiologic processes; is surrounded by one or more anatomical structures; contains one or more organism substances or anatomical structures." [http://orcid.org/0000-0001-9114-8737]
 subset: common_anatomy
 subset: upper_level
-synonym: "anatomical spaces" RELATED PLURAL [ZFA:0001643]
+synonym: "anatomical spaces" RELATED OMO:0003004 [ZFA:0001643]
 synonym: "lumen" BROAD []
 synonym: "lumen space" EXACT []
 synonym: "space" BROAD []
@@ -11494,10 +11503,11 @@ name: anatomical system
 namespace: uberon
 def: "Multicellular, connected anatomical structure that has multiple organs as parts and whose parts work together to achieve some shared function." [CARO:0000011]
 subset: common_anatomy
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: upper_level
-synonym: "anatomical systems" RELATED PLURAL [ZFA:0001439]
+synonym: "anatomical systems" RELATED OMO:0003004 [ZFA:0001439]
 synonym: "body system" EXACT [BIRNLEX:14]
 synonym: "connected anatomical system" EXACT [CARO:0000011]
 synonym: "organ system" EXACT []
@@ -11517,6 +11527,7 @@ xref: FBbt:00004856
 xref: FMA:7149
 xref: galen:AnatomicalSystem
 xref: HAO:0000011
+xref: IDOMAL:0002460 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
 xref: MA:0000003
 xref: NCIT:C12919
 xref: SCTID:278195005
@@ -11535,6 +11546,7 @@ relationship: part_of UBERON:0000468 ! multicellular organism
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
+relationship: present_in_taxon NCBITaxon:9606
 relationship: seeAlso EHDAA2:0001330
 
 [Term]
@@ -11641,7 +11653,7 @@ namespace: uberon
 def: "Anatomical structure that consists of cell parts and cell substances and together does not constitute a cell or a tissue." [http://orcid.org/0000-0001-9114-8737]
 subset: common_anatomy
 subset: vertebrate_core
-synonym: "acellular anatomical structures" RELATED PLURAL [ZFA:0000382]
+synonym: "acellular anatomical structures" RELATED OMO:0003004 [ZFA:0000382]
 xref: AAO:0010268
 xref: AEO:0000040
 xref: BILA:0000040
@@ -11668,6 +11680,7 @@ def: "Anatomical group whose component anatomical structures lie in close proxim
 subset: common_anatomy
 subset: upper_level
 xref: FBbt:00007277
+xref: IDOMAL:0002461 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
 xref: VHOG:0001737
 is_a: UBERON:0034923 ! disconnected anatomical group
 relationship: present_in_taxon NCBITaxon:33090
@@ -11723,7 +11736,7 @@ namespace: uberon
 def: "Anatomical structure that has as its parts two or more portions of tissue of at least two different types and which through specific morphogenetic processes forms a single distinct structural unit demarcated by bona-fide boundaries from other distinct structural units of different types." [CARO:0000055, http://orcid.org/0000-0001-9114-8737]
 subset: common_anatomy
 subset: upper_level
-synonym: "multi-tissue structures" RELATED PLURAL [ZFA:0001488]
+synonym: "multi-tissue structures" RELATED OMO:0003004 [ZFA:0001488]
 xref: AAO:0010048
 xref: AEO:0000055
 xref: BILA:0000055
@@ -11784,7 +11797,7 @@ relationship: composed_primarily_of CL:0000066 ! epithelial cell
 relationship: has_part GO:0005911 ! cell-cell junction
 relationship: has_part UBERON:0005769 ! basement membrane of epithelium
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
-property_value: depicted:by "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg" xsd:anyURI
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg" xsd:anyURI
 property_value: UBPROP:0000003 "The two basic types of metazoan tissue are epithelial and connective. The simplest metazoans, and developmental stages of many primitive invertebrates, consist solely of these two layers. Thus, epithelial and connective tissues may be the primary (original) tissues of metazoans, and both are important in the functional organization of animals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000387", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.59", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "epithelial" xsd:string
 
@@ -11796,7 +11809,7 @@ def: "Unilaminar epithelium which consists of a single layer of squamous cells. 
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "epithelium simplex squamosum" EXACT []
-synonym: "simple squamous epithelia" RELATED PLURAL [ZFA:0001498]
+synonym: "simple squamous epithelia" RELATED OMO:0003004 [ZFA:0001498]
 xref: AAO:0010066
 xref: AEO:0000070
 xref: BILA:0000070
@@ -11815,7 +11828,7 @@ is_a: UBERON:0000490 ! unilaminar epithelium
 is_a: UBERON:0006914 ! squamous epithelium
 intersection_of: UBERON:0000490 ! unilaminar epithelium
 intersection_of: has_part CL:0000076 ! squamous epithelial cell
-property_value: depicted:by "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg" xsd:anyURI
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg" xsd:anyURI
 property_value: UBPROP:0000001 "Unilaminar epithelium that consists of a single layer of squamous cells.[CARO]" xsd:string {date_retrieved="2012-06-20", external_class="CARO:0000070", ontology="CARO", source="FMA:45565", source="http://orcid.org/0000-0001-9114-8737"}
 
 [Term]
@@ -11825,7 +11838,7 @@ namespace: uberon
 def: "Epithelium which consists of a single layer of epithelial cells. Examples: endothelium, mesothelium, glandular squamous epithelium.[FMA]." [FMA:45561, http://orcid.org/0000-0001-9114-8737]
 subset: vertebrate_core
 synonym: "simple epithelium" EXACT [FMA:45561]
-synonym: "unilaminar epithelia" RELATED PLURAL [ZFA:0001495]
+synonym: "unilaminar epithelia" RELATED OMO:0003004 [ZFA:0001495]
 xref: AAO:0010062
 xref: AEO:0000073
 xref: BILA:0000073
@@ -11896,6 +11909,7 @@ xref: FBbt:00000052
 xref: FMA:69068
 xref: GAID:963
 xref: http://neurolex.org/wiki/Category\:Embryonic_organism
+xref: IDOMAL:0000646 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
 xref: MAT:0000226
 xref: MESH:D004622
 xref: MIAA:0000019
@@ -11913,7 +11927,7 @@ intersection_of: existence_ends_with UBERON:0000068 ! embryo stage
 intersection_of: existence_starts_with UBERON:0000068 ! embryo stage
 relationship: existence_ends_with UBERON:0000068 ! embryo stage
 relationship: existence_starts_with UBERON:0000068 ! embryo stage
-property_value: depicted:by "https://upload.wikimedia.org/wikipedia/commons/2/2d/Wrinkledfrog_embryos.jpg" xsd:anyURI
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/2/2d/Wrinkledfrog_embryos.jpg" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/503" xsd:anyURI
 property_value: UBPROP:0000007 "embryonic" xsd:string
 property_value: UBPROP:0000012 "Obsoleted in ZFA. Note that embryo is not classified as an embryonic structure - an embryonic structure is only the parts of an embryo" xsd:string {external_ontology="ZFA"}
@@ -11988,7 +12002,7 @@ xref: ZFA:0000016
 is_a: UBERON:0000923 ! germ layer
 relationship: has_part CL:0000221 ! ectodermal cell
 relationship: immediate_transformation_of UBERON:0006601 {source="Bgee:AN"} ! presumptive ectoderm
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png" xsd:anyURI
 property_value: UBPROP:0000001 "Primary germ layer that is the outer of the embryonic germ layers and gives rise to epidermis and neural tissue.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000137", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000003 "The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000153", ontology="VHOG", source="ISBN:978-0878932504 Gilbert SF, Developmental Biology (2006) Limb development and evolution, p.722", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "ectodermal" xsd:string
@@ -12028,8 +12042,8 @@ xref: ZFA:0000017
 is_a: UBERON:0000923 ! germ layer
 relationship: has_part CL:0000223 ! endodermal cell
 relationship: immediate_transformation_of UBERON:0006595 {source="Bgee:AN"} ! presumptive endoderm
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png" xsd:anyURI
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png" xsd:anyURI
 property_value: UBPROP:0000003 "The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000154", ontology="VHOG", source="ISBN:978-0878932504 Gilbert SF, Developmental Biology (2006) Limb development and evolution, p.722", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "endodermal" xsd:string
 
@@ -12075,7 +12089,7 @@ is_a: UBERON:0000923 {notes="sometimes not considered primary"} ! germ layer
 relationship: has_part CL:0000222 ! mesodermal cell
 relationship: immediate_transformation_of UBERON:0006603 {source="Bgee:AN"} ! presumptive mesoderm
 relationship: never_in_taxon NCBITaxon:6040
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png" xsd:anyURI
 property_value: UBPROP:0000001 "Primary germ layer that is the middle of the embryonic germ layers.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000304", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000003 "The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000152", ontology="VHOG", source="ISBN:978-0878932504 Gilbert SF, Developmental Biology (2006) Limb development and evolution, p.722", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "mesodermal" xsd:string
@@ -12114,7 +12128,7 @@ is_a: UBERON:0013522 ! subdivision of tube
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: part_of UBERON:0000924 ! ectoderm
 relationship: part_of UBERON:0035804 ! future mouth
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/9/93/Gray977.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/9/93/Gray977.png" xsd:anyURI
 property_value: editor_note "consider indicating location. e.g. anterior. Note some AOs place this as part of oral opening, but it's not clear when this structure comes into existence" xsd:string
 property_value: UBPROP:0000001 "Anterior part of the embryonic alimentary canal formed as an invagination of the ectoderm; the future mouth.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001290", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "the primordial mouth region of the developing head, initially a midline ectodermal depression between the forebrain bulge (cranially) and the heart bulge (caudally) and between the maxillary and mandibular components of the first pharyngeal arch; the stomodeum is separated from the anterior end of the foregut by the buccopharyngeal membrane; the mouth is developed partly from the stomodeum, and partly from the floor of the anterior portion of the foregut; the lips, teeth, and gums are formed from the walls of the stomodeum, but the tongue is developed in the floor of the pharynx" xsd:string {source="MP:0012522", taxon="NCBITaxon:40674"}
@@ -12176,9 +12190,9 @@ relationship: never_in_taxon NCBITaxon:7227
 relationship: only_in_taxon NCBITaxon:7742 ! Vertebrata <vertebrates>
 relationship: part_of UBERON:0015410 {source="MA"} ! heart plus pericardium
 relationship: present_in_taxon NCBITaxon:9606
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Heart.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" xsd:string
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Heart.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb" xsd:anyURI
 property_value: UBPROP:0000001 "Blood pumping organ composed of four chambers: sinus venosus, atrium, cardiac ventricle and bulbus arteriosus.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000114", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Part of the circulatory system responsible for pumping blood; composed of three chambers--two atria and one ventricle.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010210", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000002 "relationship type change: differentiates_from lateral plate mesoderm (AAO:0010574) CHANGED TO: develops_from lateral plate mesoderm (UBERON:0003081)[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010210", ontology="AAO"}
@@ -12198,7 +12212,7 @@ subset: vertebrate_core
 synonym: "articular joint" RELATED [BTO:0001686]
 synonym: "articulation" BROAD [VSAO:0000101]
 synonym: "joint" BROAD [FMA:7490, VSAO:0000101]
-synonym: "joints" RELATED PLURAL [ZFA:0001596]
+synonym: "joints" RELATED OMO:0003004 [ZFA:0001596]
 xref: AEO:0000182
 xref: BTO:0001686
 xref: CALOHA:TS-2023
@@ -12282,12 +12296,12 @@ relationship: existence_ends_during UBERON:0000066 ! fully formed stage
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: present_in_taxon NCBITaxon:9606
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg" xsd:anyURI
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" xsd:string
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" xsd:anyURI
 property_value: UBPROP:0000001 "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000541", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000202", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23", source="http://bgee.unil.ch/"}
 
@@ -12297,6 +12311,7 @@ name: digestive system
 namespace: uberon
 def: "Anatomical system that has as its parts the organs devoted to the ingestion, digestion, and assimilation of food and the discharge of residual wastes." [FB:gg, NLM:alimentary+system, Wikipedia:Digestive_system]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -12337,6 +12352,7 @@ disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:0002405 ! immune system
 relationship: capable_of GO:0022600 ! digestive system process
 relationship: existence_ends_during UBERON:0000066 ! fully formed stage
+relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "An anatomical system consisting of the alimentary canal and digestive glands responsible for intake, absorption, digestion and excretion of food.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000129", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000007 "digestive" xsd:string
 property_value: UBPROP:0000012 "many anatomy ontologies consider gastrointestinal system synonymous with digestive system. here we follow MA in dividing digestive system into gastrointestinal and hepatobiliary. hepatobiliary includes the liver and biliary tract. species-specific AO classes are categorized according to whether liver is included. For example, XAO includes liver as part of XAO:0000125 alimentary system, so we assume this class is the more generic class" xsd:string {external_ontology="MA"}
@@ -12346,6 +12362,7 @@ id: UBERON:0001009
 name: circulatory system
 namespace: uberon
 def: "Organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP]." [Wikipedia:Circulatory_system]
+subset: human_reference_atlas
 subset: uberon_slim
 synonym: "systema cardiovasculare" RELATED LATIN [Wikipedia:Circulatory_system]
 xref: AAO:0000959
@@ -12364,7 +12381,8 @@ relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: never_in_taxon NCBITaxon:6073
 relationship: never_in_taxon NCBITaxon:6157
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
+relationship: present_in_taxon NCBITaxon:9606
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
 property_value: IAO:0000232 "the cardiovascular system and the lymphatic system are parts of the circulatory system" xsd:string
 property_value: RO:0002174 NCBITaxon:6231 {notes="WBbt coelomocyte currently classified as circulating cell"}
 property_value: UBPROP:0000001 "Anatomical system of ion binding, a pumping mechanism, and an efficient vascular system; consisting of the blood, heart, and blood and lymph vessels, respectively.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000959", ontology="AAO", source="AAO:BJB"}
@@ -12405,7 +12423,7 @@ xref: ZFA:0000548
 is_a: UBERON:0011216 ! organ system subdivision
 relationship: composed_primarily_of UBERON:0001630 ! muscle organ
 relationship: part_of UBERON:0000383 ! musculature of body
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/e/e5/Muscles_anterior_labeled.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/e5/Muscles_anterior_labeled.png" xsd:anyURI
 property_value: RO:0002171 UBERON:0001474
 property_value: UBPROP:0000012 "In FMA this is classified as a set of organs. ZFA musculature system has subtypes, so it is classified here. WBbt muscular system has subtypes so it goes here. Note that we use the MA term set of skeletal muscles here as it seems most appropriate (*not* MA:musculature). AAO is generally confused here." xsd:string {external_ontology="FMA"}
 
@@ -12461,8 +12479,8 @@ relationship: has_part CL:0000540 ! neuron
 relationship: immediate_transformation_of UBERON:0016880 {source="Bgee:AN"} ! future nervous system
 relationship: never_in_taxon NCBITaxon:6040
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg" xsd:anyURI
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png" xsd:anyURI
 property_value: UBPROP:0000001 "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Anatomical system consisting of nerve bodies and nerve fibers which regulate the response of the body to external and internal stimuli.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000324", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000003 "Nervous systems evolved in the ancestor of Eumetazoa.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000402", ontology="VHOG", source="ISBN:978-0198566694 Schmidt-Rhaesa A, The evolution of organ systems (2007) p.117", source="http://bgee.unil.ch/"}
@@ -12480,7 +12498,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cerebrospinal axis" NARROW [FMA:55675]
-synonym: "CNS" EXACT ABBREVIATION []
+synonym: "CNS" EXACT OMO:0003000 []
 synonym: "neuraxis" RELATED [FMA:55675]
 synonym: "systema nervosum centrale" EXACT LATIN [FMA:55675, FMA:TA]
 xref: AAO:0000090
@@ -12532,7 +12550,7 @@ subset: uberon_slim
 synonym: "bud" RELATED []
 synonym: "future organ" RELATED []
 synonym: "placode" RELATED [FBbt:00005495]
-synonym: "primordia" RELATED PLURAL [XAO:0003043]
+synonym: "primordia" RELATED OMO:0003004 [XAO:0003043]
 synonym: "rudiment" RELATED []
 xref: AEO:0000171
 xref: BTO:0001886
@@ -12586,7 +12604,7 @@ is_a: UBERON:0005291 ! embryonic tissue
 is_a: UBERON:0010371 ! ecto-epithelium
 is_a: UBERON:0016879 ! future central nervous system
 relationship: develops_from UBERON:0005068 ! neural rod
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
 property_value: UBPROP:0000001 "Hollow epithelial tube on dorsal side of the embryo that develops into the central nervous system.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010617", ontology="AAO", source="AAO:JOR"}
 property_value: UBPROP:0000001 "The dorsal tubular structure in the vertebrate embryo that develops into the brain and spinal cord. [TFD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000307", ontology="VHOG", source="http://bgee.unil.ch/", source="http://medical-dictionary.thefreedictionary.com/neural+tube"}
 property_value: UBPROP:0000003 "(...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000307", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28", source="http://bgee.unil.ch/"}
@@ -12681,7 +12699,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "bone" RELATED [AEO:0000082, BTO:0000140, MA:0001459, VHOG:0001190]
 synonym: "bone organ" EXACT [FMA:5018]
-synonym: "bones" RELATED PLURAL [ZFA:0001514]
+synonym: "bones" RELATED OMO:0003004 [ZFA:0001514]
 xref: AAO:0000047
 xref: AEO:0000082
 xref: BTO:0000140
@@ -12728,6 +12746,7 @@ id: UBERON:0001555
 name: digestive tract
 namespace: uberon
 def: "A tube extending from the mouth to the anus." [https://github.com/geneontology/go-ontology/issues/7549, Wikipedia:Talk\:Human_gastrointestinal_tract]
+subset: human_reference_atlas
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "alimentary canal" NARROW []
@@ -12762,6 +12781,7 @@ relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: never_in_taxon NCBITaxon:41324 {source="DOI:10.1371/journal.pone.0016309"}
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
 relationship: part_of UBERON:0001007 ! digestive system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "The alimentary or digestive tract, and associated organs.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000112", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "The bilaterian gut is typically a complete tube that opens to the exterior at both ends. It consists of mouth, foregut, midgut, hindgut, and anus (reference 1); Although all vertebrates have a digestive tract and accessory glands, various parts of this system are not necessarily homologous, analogous, or even present in all species. Therefore, broad comparisons can be best made under the listings of headgut, foregut, midgut, pancreas and biliary system, hindgut (reference 2).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000309", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.203, ISBN:978-0521617147 Stevens CE and Hume ID, Comparative physiology of the vertebrate digestive system (2004) p.11", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000012 "FMA also has a term 'gastrointestinal tract', but this includes the liver." xsd:string {external_ontology="FMA"}
@@ -12843,6 +12863,7 @@ name: blood vessel
 namespace: uberon
 def: "A vessel through which blood circulates in the body." [BTO:0001102, Wikipedia:Blood_vessel]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -12884,7 +12905,8 @@ relationship: has_part CL:0000071 {source="AEO"} ! blood vessel endothelial cell
 relationship: has_part UBERON:0007500 {source="EHDAA2"} ! epithelial tube open at both ends
 relationship: has_quality PATO:0002045 ! dendritic
 relationship: part_of UBERON:0004537 ! blood vasculature
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
+relationship: present_in_taxon NCBITaxon:9606
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
 property_value: editor_note "consider adopting the EMAPA superclass 'vascular element', which includes microvasculature (e.g. capillaries), vascular plexus" xsd:string
 property_value: UBPROP:0000001 "Any of the vessels through which blood circulates in the body. [XAO:0001011_][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001250", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000001 "Any of the vessels through which blood circulates in the body.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0011004", ontology="AAO", source="AAO:EJS"}
@@ -12939,7 +12961,7 @@ relationship: composed_primarily_of UBERON:0000055 ! vessel
 relationship: has_part UBERON:0000179 ! haemolymphatic fluid
 relationship: part_of UBERON:0007798 ! vascular system
 relationship: present_in_taxon NCBITaxon:9606
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg" xsd:anyURI
 property_value: editor_note "see also: vascular system. Consider merging?" xsd:string
 property_value: UBPROP:0000007 "vascular" xsd:string
 
@@ -12955,7 +12977,7 @@ synonym: "developing embryonic structure" EXACT [FBbt:00004208]
 synonym: "developing structure" RELATED []
 synonym: "embryonale Struktur" RELATED [BTO:0000174]
 synonym: "embryonic anatomical structure" EXACT [RETIRED_EHDAA2:0003169]
-synonym: "embryonic structures" RELATED PLURAL [ZFA:0001105]
+synonym: "embryonic structures" RELATED OMO:0003004 [ZFA:0001105]
 xref: AAO:0000138
 xref: BILA:0000034
 xref: BTO:0000174
@@ -13171,8 +13193,8 @@ intersection_of: luminal_space_of UBERON:0000915 ! thoracic segment of trunk
 intersection_of: part_of UBERON:0002323 ! coelemic cavity lumen
 relationship: luminal_space_of UBERON:0000915 ! thoracic segment of trunk
 relationship: part_of UBERON:0002323 ! coelemic cavity lumen
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/c/ce/Gray846.png" xsd:anyURI
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/e/ee/Scheme_body_cavities-en.svg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/c/ce/Gray846.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/ee/Scheme_body_cavities-en.svg" xsd:anyURI
 property_value: UBPROP:0000008 "In many species, the diaphragm separates thoracic and abdominal cavities" xsd:string
 
 [Term]
@@ -13181,6 +13203,7 @@ name: coelemic cavity lumen
 namespace: uberon
 alt_id: UBERON:0000169
 def: "The cavity within the body of all animals higher than the coelenterates and certain primitive worms, formed by the splitting of the embryonic mesoderm into two layers. In mammals it forms the peritoneal, pleural, and pericardial cavities." [BTO:0001707]
+comment: EDITOR_NOTE check the FMA placement here; ncit placement of body cavity here probably not correct
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "body cavity" BROAD [BTO:0001707]
@@ -13208,7 +13231,6 @@ xref: ZFA:0001438
 is_a: UBERON:0002553 ! anatomical cavity
 relationship: luminal_space_of UBERON:0011997 ! coelom
 relationship: transformation_of UBERON:0003886 {evidence="definitional"} ! future coelemic cavity lumen
-property_value: editor_note "check the FMA placement here; ncit placement of body cavity here probably not correct" xsd:string
 property_value: UBPROP:0000001 "Anatomical space, part of the trunk that contains the pericardial and pleuroperitoneal cavities[ZFA]." xsd:string {date_retrieved="2012-09-12", external_class="ZFA:0001438", ontology="ZFA", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "The cavity within the body of all animals higher than the coelenterates and certain primitive worms, formed by the splitting of the embryonic mesoderm into two layers. In mammals it forms the peritoneal, pleural, and pericardial cavities[BTO]." xsd:string {date_retrieved="2012-09-12", external_class="BTO:0001707", ontology="BTO", source="BTO"}
 property_value: UBPROP:0000008 "In mammals it forms the peritoneal, pleural, and pericardial cavities" xsd:string
@@ -13258,7 +13280,7 @@ relationship: only_in_taxon NCBITaxon:7711 {source="http://tolweb.org/Chordata/2
 relationship: part_of UBERON:0011137 ! axial skeletal system
 relationship: produces PR:000014841 ! sonic hedgehog protein
 relationship: ventral_to UBERON:0001049 ! neural tube
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
 property_value: UBPROP:0000001 "Avascular multi-tissue structure composed of large vacuolated epithelial cells (chordablasts) and perichordal fibrous tissue.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000032", ontology="VSAO", source="PSPUB:0000170"}
 property_value: UBPROP:0000001 "Rod-like principal supportive element of the embryo and larva, present in the midline just ventral to the neural tube, and differentiating during the segmentation period to form large vacuolated epithelial cells and a surrounding a sheath of fibrous and elastic layers. Layering of the sheath may differ in structure, thickness and development among groups; in cypriniforms there are actually three very thin layers to the sheath. A functional, well developed notochord is present throughout life in certain basal fish groups but not in cypriniforms. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000135", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Slender rod of fibrous connective tissue surrounding a core of fluid-filled cells of mesodermal origin; it lies above the gut and directly beneath the spinal cord. The notochord is present during early development and in a few cases it is retained through life; however, usually the notochord is replaced by the vertebral column.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000327", ontology="AAO", source="AAO:LAP"}
@@ -13280,7 +13302,7 @@ synonym: "epimere" RELATED [ISBN:0073040584]
 synonym: "epimere mesoderm" RELATED []
 synonym: "epithelial somite" RELATED [https://github.com/obophenotype/uberon/wiki/The-neural-crest]
 synonym: "mesodermal cluster" BROAD [GO:0001756]
-synonym: "somites" RELATED PLURAL []
+synonym: "somites" RELATED OMO:0003004 []
 synonym: "somitic mesoderm" RELATED []
 synonym: "somitus" RELATED LATIN [Wikipedia:Somite]
 xref: AAO:0010569
@@ -13307,8 +13329,8 @@ is_a: UBERON:0007503 {source="EHDAA2"} ! epithelial vesicle
 relationship: develops_from UBERON:0003059 {source="ZFA"} ! presomitic mesoderm
 relationship: never_in_taxon NCBITaxon:7712 {source="PMID:17237766"}
 relationship: only_in_taxon NCBITaxon:7711 {source="GOTAX:0000352"} ! Chordata
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
-property_value: editor_note "currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making 'somitic mesoderm' a separate term and correlate with regionalization processes. Consider moving ZFA term to 'trunk somite' as it is part of the trunk" xsd:string
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
+property_value: IAO:0000232 "EDITOR_NOTE currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making 'somitic mesoderm' a separate term and correlate with regionalization processes. Consider moving ZFA term to 'trunk somite' as it is part of the trunk" xsd:string
 property_value: UBPROP:0000001 "Post-cranial axial segments which form sclerotome and dermomyotome.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010569", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000001 "Undifferentiated mesodermal components of early trunk or tail segments or metameres, derived from paraxial mesoderm; forms myotomes, sclerotomes and perhaps dermatomes. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000155", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000002 "relationship loss: develops_from paraxial mesenchyme (TAO:0000942)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000155", ontology="TAO"}
@@ -13327,7 +13349,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "crista neuralis" RELATED LATIN [Wikipedia:Neural_crest]
-synonym: "NC" EXACT ABBREVIATION [XAO:0000048]
+synonym: "NC" EXACT OMO:0003000 [XAO:0000048]
 synonym: "neural crest material" RELATED [VHOG:0000057]
 xref: AAO:0010578
 xref: BTO:0001764
@@ -13356,9 +13378,9 @@ relationship: develops_from UBERON:0005062 {source="PMID:11523831"} ! neural fol
 relationship: existence_starts_during UBERON:0000110 {source="PMID:11523831"} ! neurula stage
 relationship: only_in_taxon NCBITaxon:89593 {notes="Hall and others restrict NC to vertebrates but we opt for a less restrictive constraint to avoid inconsistencies when areas such as P1 area of pallium in hagfishes inherit cell lineage from telecephalon-contributing NC cells", source="ISBN:0073040584"} ! Craniata <chordates>
 relationship: part_of UBERON:0002346 {source="XAO", source="https://github.com/obophenotype/uberon/wiki/The-neural-crest"} ! neurectoderm
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png" xsd:anyURI
-property_value: depicted:by "https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png" xsd:anyURI
-property_value: editor_note "consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams)." xsd:string
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png" xsd:anyURI
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png" xsd:anyURI
+property_value: IAO:0000232 "EDITOR_NOTE consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams)." xsd:string
 property_value: RO:0002174 NCBITaxon:117565 {source="ISBN:0073040584", source="PMID:17377535"}
 property_value: UBPROP:0000001 "A cell population arising from the dorsolateral aspect of the central nervous system primordium during the segmentation period, and later migrating along stereotyped pathways to give rise to a diverse and well-defined set of cell types including pigment cells, peripheral neurons and glia, and head cartilage. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000045", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Migratory cell population which delaminates from neural tube, borders surface ectoderm and neural ectoderm, and gives rise to many different tissue types.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010578", ontology="AAO", source="AAO:EJS"}
@@ -13447,7 +13469,7 @@ relationship: part_of UBERON:0001474 ! bone element
 relationship: part_of UBERON:0002390 {source="FMA", source="MA"} ! hematopoietic system
 relationship: part_of UBERON:0002405 ! immune system
 relationship: present_in_taxon NCBITaxon:9606
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/7/74/Gray72-en.svg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/7/74/Gray72-en.svg" xsd:anyURI
 property_value: editor_note "consider placement of NCIT:C53466 medullary bone" xsd:string
 property_value: editor_note "TODO - create superclass for bone marrow / head kidney. both are portions of tissue in the hematopoetic system. also consider adding as subclass of zone of bone organ for consistency with FMA. See also: Leydig and epigonal organs" xsd:string
 property_value: UBPROP:0000003 "The bone marrow is the hematopoietic organ in all vertebrates but fishes, in which hematopoiesis occurs in the kidney.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001218", ontology="VHOG", source="DOI:10.1146/annurev.cellbio.22.010605.093317 Hartenstein V, Blood Cells and Blood Cell Development in the Animal Kingdom. Annual Review of Cell and Developmental Biology (2006)", source="http://bgee.unil.ch/"}
@@ -13532,6 +13554,7 @@ name: hematopoietic system
 namespace: uberon
 def: "Anatomical system that is involved in the production of hematopoietic cells." [Wikipedia:Haematopoiesis]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -13569,6 +13592,7 @@ disjoint_from: UBERON:0002405 ! immune system
 relationship: develops_from UBERON:0003061 {evidence="definitional"} ! blood island
 relationship: only_in_taxon NCBITaxon:7711 ! Chordata
 relationship: part_of UBERON:0002193 {source="FMA"} ! hemolymphoid system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "Anatomical system that consists of the blood and blood forming tissues.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0011002", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000003 "Zebrafish developmental hematopoiesis shows close correspondence to the development of the mammalian hematopoietic system and is regulated by conserved molecular pathways.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001624", ontology="VHOG", source="DOI:10.1016/j.coph.2010.05.004 Ellett F, Lieschke GJ, Zebrafish as a model for vertebrate hematopoiesis. Current Opinion in Pharmacology (2010)", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "hematopoietic" xsd:string
@@ -13659,7 +13683,7 @@ xref: VHOG:0000243
 xref: Wikipedia:Epiblast
 is_a: UBERON:0002050 ! embryonic structure
 relationship: has_part CL:0000352 ! epiblast cell
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/e/e3/Gray21.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/e/e3/Gray21.png" xsd:anyURI
 property_value: editor_note "MP says - tissue that gives rise to the ectoderm, endoderm and mesoderm of the embryo proper. In HOG, epiblast is part of primitive streak/blastpore, which is inconsistent with the MP definition of primitive streak as a ridge of the epiblast. Note that these terms, epiblast and hypoblast, are also used to describe layers of the avian embryonic blastoderm, but the layers so-named seem to be altogether different in these two kinds of vertebrate embryos(CVS). Consider obsoleting this as a grouping class" xsd:string
 property_value: UBPROP:0000003 "In pregastrula zebrafish embryos, the epiblast is an inverted cup of cells that sits on top of a large yolk cell. (...) In amniote embryos (mammals and birds), gastrulation initiates in an epithelial layer called the epiblast. Cells in the epiblast undergo an epithelial to mesenchymal transition (EMT), migrate through the primitive streak (PS), and incorporate in the middle (mesoderm) or outer (endoderm) layer. The presumptive definitive endoderm (DE) cells invade and displace an outer layer of extraembryonic tissue cells, the hypoblast in chick and the visceral endoderm (VE) in mouse, which form supporting structures such as the yolk sac.[uncertain][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000243", ontology="VHOG", source="DOI:10.1146/annurev.cellbio.042308.113344 Zorn AM, Wells JM, Vertebrate endoderm development and organ formation. Annual Review of Cell Developmental Biology (2009)", source="http://bgee.unil.ch/"}
 
@@ -13720,7 +13744,7 @@ subset: efo_slim
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "blood islands" EXACT PLURAL []
+synonym: "blood islands" EXACT OMO:0003004 []
 synonym: "caudal hematopoietic tissue" RELATED []
 synonym: "posterior blood island" RELATED []
 synonym: "posterior ICM" RELATED []
@@ -13766,7 +13790,7 @@ is_a: UBERON:0002050 ! embryonic structure
 relationship: develops_from UBERON:0000926 ! mesoderm
 relationship: only_in_taxon NCBITaxon:7711 ! Chordata
 relationship: part_of UBERON:0000926 ! mesoderm
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
 property_value: UBPROP:0000001 "The portion of the mesoderm underlying the midline of the embryo. [Gastrulation:_From_cells_to_embryo_(2004)_Cold_Spring_Harbor, Glossary_XV, New_York:_Cold_Spring_Harbor_Laboratory_Press, Stern_CD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000107", ontology="VHOG", source="http://bgee.unil.ch/"}
 
 [Term]
@@ -13803,7 +13827,7 @@ is_a: UBERON:0016879 ! future central nervous system
 relationship: developmentally_induced_by UBERON:0002328 {source="Wikipedia"} ! notochord
 relationship: immediate_transformation_of UBERON:0007284 {source="Bgee:AN"} ! presumptive neural plate
 relationship: only_in_taxon NCBITaxon:7711 {source="GOTAX:0000352"} ! Chordata
-property_value: depicted:by "https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png" xsd:anyURI
+property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png" xsd:anyURI
 property_value: UBPROP:0000001 "The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000132", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000003 "(...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...).[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000068", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.28", source="http://bgee.unil.ch/"}
 
@@ -13837,7 +13861,7 @@ is_a: UBERON:0015212 ! lateral structure
 relationship: existence_starts_during UBERON:0000109 ! gastrula stage
 relationship: immediate_transformation_of UBERON:0007285 {source="Bgee:AN"} ! presumptive paraxial mesoderm
 relationship: in_lateral_side_of UBERON:0000922 ! embryo
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
 property_value: UBPROP:0000001 "Mesoderm lateral to the neural tube and notochord that is divided into cranial and post-cranial portions. The trunk portions further segment into somites.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010568", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000003 "Presently, Cephalochordata, Urochordata, and Vertebrata are placed as subphyla of the phylum Chordata, in which the overall organization of embryonic tissues (dorsal hollow nerve cord, ventral digestive tract, axial notochord, and bilateral paraxial mesoderm) is largely conserved. In contrast, the echinoderms and hemichordates are sister groups of the chordates and they lack the notochord and paraxial mesoderm. Thus, the basic mesodermal organization of vertebrates must have appeared first in the common ancestor of the chordates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000114", ontology="VHOG", source="DOI:10.1002/dvdy.21177 Kusakabe R and Kuratani S. Evolutionary perspectives from development of mesodermal components in the lamprey. Developmental dynamics (2007)", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000012 "note that all AOs differ in the relationship between this structure and the mesoderm; in ZFA it is a subclass (and this is implied by the GO definition and GO relationships), in AAO it is part of, and in EHDAA2 it develops from the mesoderm (but in EHDAA2 the naming convention is to use 'paraxial mesenchyme', rather than 'paraxial mesoderm'). Also in ZFA it is part of the trunk whereas this conflicts with the division into head and trunk in ehdaa2 (which we follow here)" xsd:string {external_ontology="ZFA"}
@@ -13853,7 +13877,7 @@ subset: uberon_slim
 synonym: "lateral mesoderm" EXACT [GO:0048368]
 synonym: "lateral plate" RELATED []
 synonym: "lateral plate mesenchyme" RELATED [EHDAA2:0000919]
-synonym: "LPM" EXACT ABBREVIATION [ZFA:0000121]
+synonym: "LPM" EXACT OMO:0003000 [ZFA:0000121]
 synonym: "mesoderma laminae lateralis" RELATED LATIN [Wikipedia:Lateral_plate_mesoderm]
 xref: AAO:0010574
 xref: EHDAA2:0000919
@@ -13875,7 +13899,7 @@ is_a: UBERON:0007524 {source="EHDAA2"} ! dense mesenchyme tissue
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: part_of UBERON:0000926 {source="EHDAA2", source="VHOG"} ! mesoderm
 relationship: surrounds UBERON:0003887 ! intraembryonic coelom
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png" xsd:anyURI
 property_value: UBPROP:0000001 "Portion of mesoderm traditionally thought to give rise to limb bones and parts of the girdles.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010574", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000001 "The portion of the mesoderm of the trunk of vertebrate embryos lying lateral to the intermediate mesoderm. [...] [It] subdivides into two plates: one dorsal, called the somatopleure, and one ventral, called the splanchnopleure. [Gastrulation:_From_cells_to_embryo_(2004)_Cold_Spring_Harbor, Glossary_XV, New_York:_Cold_Spring_Harbor_Laboratory_Press, Stern_CD][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000118", ontology="VHOG", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000003 "A ventrolateral zone of amphioxus mesoderm grows down to surround the gut. Homology of this zone to the lateral plate mesoderm of vertebrates is supported by site of origin and fate.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000118", ontology="VHOG", source="DOI:10.1073/pnas.97.9.4449 Shimeld SM and Holland PW. Vertebrate innovations. PNAS (2000)", source="http://bgee.unil.ch/"}
@@ -13914,10 +13938,11 @@ def: "Ventral somitic compartment that is a precursor of the axial skeleton[XAO]
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "sclerotomes" EXACT PLURAL [TAO:0001080]
+synonym: "sclerotomes" EXACT OMO:0003004 [TAO:0001080]
 synonym: "sclerotomus" RELATED LATIN [Wikipedia:Sclerotome]
 xref: AAO:0010571
 xref: AEO:0000212
+xref: BTO:0006255 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
 xref: EHDAA2:0003439
 xref: EMAPA:31159
 xref: FMA:295652
@@ -13932,7 +13957,7 @@ is_a: UBERON:0005856 {source="EHDAA2"} ! developing mesenchymal condensation
 is_a: UBERON:0007530 {source="EHDAA2"} ! migrating mesenchyme population
 relationship: develops_from UBERON:0002329 {source="ZFA"} ! somite
 relationship: only_in_taxon NCBITaxon:7742 {source="VHOG:0000680"} ! Vertebrata <vertebrates>
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png" xsd:anyURI
 property_value: UBPROP:0000001 "Skeletogenic portion of somites.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010571", ontology="AAO", source="AAO:EJS"}
 property_value: UBPROP:0000003 "The vertebrate sclerotome has no equivalent in amphioxus and is a novelty linked with the evolution of the axial skeleton.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000680", ontology="VHOG", source="DOI:10.1073/pnas.97.9.4449 Shimeld SM and Holland PW. Vertebrate innovations. PNAS (2000)", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000012 "part_of somite in XAO" xsd:string {external_ontology="XAO"}
@@ -13992,7 +14017,7 @@ intersection_of: composed_primarily_of CL:0008019 ! mesenchymal cell
 relationship: composed_primarily_of CL:0008019 ! mesenchymal cell
 relationship: functionally_related_to GO:0032502 ! developmental process
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/f/f4/Mesenchymal_Stem_Cell.jpg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/f/f4/Mesenchymal_Stem_Cell.jpg" xsd:anyURI
 property_value: editor_note "the relationship to mesoderm is weaker than develops_from in order to have classes such as 'head mesenchyme from mesoderm' make sense" xsd:string
 property_value: UBPROP:0000001 "A mesh-like cell arrangement, less compact than an epithelium. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000393", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "Portion of tissue consisting of loosely organized undifferentiated mesodermal cells that give rise to such structures as connective tissues, blood, lymphatics, bone, and cartilage.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010427", ontology="AAO", source="AAO:EJS"}
@@ -14056,9 +14081,9 @@ namespace: uberon
 def: "Any tube, opening or passage that connects two distinct anatomical spaces." [http://orcid.org/0000-0002-6601-2165]
 subset: common_anatomy
 synonym: "foramen" NARROW [EHDAA2:0003080]
-synonym: "foramina" NARROW PLURAL [https://orcid.org/0000-0002-6601-2165]
+synonym: "foramina" NARROW OMO:0003004 [https://orcid.org/0000-0002-6601-2165]
 synonym: "opening" RELATED []
-synonym: "ostia" RELATED PLURAL []
+synonym: "ostia" RELATED OMO:0003004 []
 synonym: "ostium" RELATED []
 xref: AEO:0000080
 xref: EHDAA2:0003080
@@ -14126,10 +14151,10 @@ id: UBERON:0004140
 name: primary heart field
 namespace: uberon
 def: "A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle." [GO:0003138, GOC:mtg_heart, GOC:rl]
-synonym: "FHF" RELATED ABBREVIATION [XAO:0004185]
+synonym: "FHF" RELATED OMO:0003000 [XAO:0004185]
 synonym: "first heart field" EXACT [XAO:0004185]
 synonym: "heart field" RELATED [XAO:0004185]
-synonym: "PHF" RELATED ABBREVIATION [XAO:0004185]
+synonym: "PHF" RELATED OMO:0003000 [XAO:0004185]
 synonym: "primary heart field" EXACT [PMID:17276708, XAO:0004185]
 xref: XAO:0004185
 is_a: UBERON:0002050 ! embryonic structure
@@ -14231,6 +14256,7 @@ name: cardiovascular system
 namespace: uberon
 def: "Anatomical system that has as its parts the heart and blood vessels." [BTO:0000088]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -14270,6 +14296,7 @@ intersection_of: part_of UBERON:0001009 ! circulatory system
 relationship: has_part UBERON:0000948 ! heart
 relationship: has_part UBERON:0001981 ! blood vessel
 relationship: part_of UBERON:0001009 ! circulatory system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: IAO:0000232 "we treat cardiovascular as part of circulatory system, with the latter including other kinds of circulation, including lymph." xsd:string
 property_value: UBPROP:0000003 "The vessels of the cardiovascular system are as varied as the diverse organs they supply. However, these variations are based on modifications of a fundamental plan of organization common to vertebrates.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000302", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.451", source="http://bgee.unil.ch/"}
 
@@ -14292,8 +14319,8 @@ intersection_of: UBERON:0002049 ! vasculature
 intersection_of: composed_primarily_of UBERON:0001981 ! blood vessel
 relationship: composed_primarily_of UBERON:0001981 ! blood vessel
 relationship: present_in_taxon NCBITaxon:9606
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" xsd:string
-property_value: http://xmlns.com/foaf/0.1/depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" xsd:string
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Blood_Vasculature.glb" xsd:anyURI
+property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Blood_Vasculature.glb" xsd:anyURI
 
 [Term]
 id: UBERON:0004638
@@ -14437,8 +14464,8 @@ name: cardiovascular system endothelium
 namespace: uberon
 def: "An endothelium that is part of the cardiovascular system." [https://orcid.org/0000-0002-6601-2165]
 subset: vertebrate_core
-synonym: "endothelia" RELATED PLURAL [ZFA:0001639]
-synonym: "vascular endothelia" RELATED PLURAL [XAO:0000356]
+synonym: "endothelia" RELATED OMO:0003004 [ZFA:0001639]
+synonym: "vascular endothelia" RELATED OMO:0003004 [XAO:0000356]
 xref: BTO:0001853
 xref: EMAPA:35201
 xref: GAID:519
@@ -14512,6 +14539,7 @@ id: UBERON:0004921
 name: subdivision of digestive tract
 namespace: uberon
 def: "A proximal-distal subdivision of the digestive tract." [http://orcid.org/0000-0002-6601-2165]
+subset: human_reference_atlas
 subset: non_informative
 synonym: "alimentary system subdivision" RELATED [FMA:71131]
 synonym: "gut section" RELATED [FBbt:00100315]
@@ -14524,6 +14552,7 @@ is_a: UBERON:0013522 ! subdivision of tube
 intersection_of: UBERON:0013522 ! subdivision of tube
 intersection_of: subdivision_of UBERON:0001555 ! digestive tract
 relationship: part_of UBERON:0001555 ! digestive tract
+relationship: present_in_taxon NCBITaxon:9606
 relationship: subdivision_of UBERON:0001555 ! digestive tract
 property_value: IAO:0000232 "intended to denote both embryonic and adult structures. Note the FMA grouping here is not quite correct." xsd:string
 
@@ -14726,6 +14755,7 @@ def: "Multi-tissue structure that arises from the heart rudiment and will become
 subset: vertebrate_core
 synonym: "early primitive heart tube" NARROW [EMAPA:16208]
 synonym: "primitive heart tube" EXACT [EMAPA:16215]
+xref: BTO:0006179 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
 xref: EHDAA2:0001512
 xref: EHDAA:424
 xref: EHDAA:436
@@ -14817,7 +14847,7 @@ relationship: contributes_to_morphology_of UBERON:0001434 ! skeletal system
 relationship: develops_from UBERON:0003089 ! sclerotome
 relationship: part_of UBERON:0011137 ! axial skeletal system
 relationship: present_in_taxon NCBITaxon:9606
-property_value: depicted:by "http://upload.wikimedia.org/wikipedia/commons/8/8b/Axial_skeleton_diagram.svg" xsd:anyURI
+property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/8/8b/Axial_skeleton_diagram.svg" xsd:anyURI
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton" xsd:anyURI
 property_value: UBPROP:0000001 "Skeletal subdivision of the central body axis including the cranium, vertebrae, notochord, ribs, and sternum.[VSAO]" xsd:string {date_retrieved="2012-08-14", external_class="VSAO:0000056", ontology="VSAO", source="PSPUB:0000170"}
 
@@ -14890,7 +14920,6 @@ subset: grouping_class
 subset: uberon_slim
 synonym: "anterior part of foregut" RELATED []
 synonym: "pharyngeal tube" RELATED []
-xref: FBbt:00005380
 xref: MAT:0000049
 xref: MESH:D010614
 xref: MIAA:0000049
@@ -15142,7 +15171,7 @@ name: presumptive segmental plate
 namespace: uberon
 def: "A presumptive structure that has the potential to develop into a presomitic mesoderm." [OBOL:automatic]
 subset: efo_slim
-synonym: "presumptive segmental plates" RELATED PLURAL [ZFA:0000053]
+synonym: "presumptive segmental plates" RELATED OMO:0003004 [ZFA:0000053]
 xref: EFO:0003421
 xref: TAO:0000053
 xref: ZFA:0000053
@@ -15255,6 +15284,7 @@ id: UBERON:0007798
 name: vascular system
 namespace: uberon
 def: "Anatomical system that consists of all blood and lymph vessels." [http://orcid.org/0000-0002-6601-2165]
+subset: human_reference_atlas
 subset: pheno_slim
 xref: BTO:0001085
 xref: CALOHA:TS-2053
@@ -15265,6 +15295,7 @@ xref: NCIT:C33854
 xref: UMLS:C0489903 {source="ncithesaurus:Vascular_System"}
 is_a: UBERON:0000467 ! anatomical system
 relationship: part_of UBERON:0004535 {source="MA"} ! cardiovascular system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: editor_note "consider merging with vasculature" xsd:string
 property_value: UBPROP:0000001 "The cardiovascular and lymphatic systems, collectively[ncithesaurus:Vascular_System]." xsd:string {source="ncithesaurus:Vascular_System"}
 property_value: UBPROP:0000012 "in both MA and BTO, the arterial system and venous sytem are subtypes of the vascular system" xsd:string {external_ontology="MA"}
@@ -15616,6 +15647,7 @@ id: UBERON:0013702
 name: body proper
 namespace: uberon
 def: "The region of the organism associated with the visceral organs." [AEO:0000103]
+subset: human_reference_atlas
 subset: non_informative
 synonym: "body" RELATED [AEO:0000103]
 synonym: "whole body" RELATED [BTO:0001489]
@@ -15625,6 +15657,7 @@ xref: EMAPA:36031
 xref: FMA:231424
 is_a: UBERON:0000475 {source="AEO"} ! organism subdivision
 relationship: part_of UBERON:0013701 ! main body axis
+relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "Cardinal body part, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the vertebral column and ribcage. Examples: There is only one body proper[FMA:231424]." xsd:string {source="FMA:231424"}
 
 [Term]
@@ -15702,11 +15735,13 @@ relationship: part_of UBERON:0001009 ! circulatory system
 id: UBERON:0015410
 name: heart plus pericardium
 namespace: uberon
+subset: human_reference_atlas
 synonym: "heart/pericardium" EXACT [MA:0002449]
 xref: EMAPA:37597 {source="MA:th"}
 xref: MA:0002449
 is_a: UBERON:0005178 {source="MA"} ! thoracic cavity element
 relationship: part_of UBERON:0004535 ! cardiovascular system
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: UBERON:0015757
@@ -17484,6 +17519,13 @@ id: deep_to
 name: deep to
 namespace: uberon
 xref: BSPO:0000107
+
+[Typedef]
+id: depiction
+name: depiction
+namespace: uberon
+xref: http://xmlns.com/foaf/0.1/depiction
+is_metadata_tag: true
 
 [Typedef]
 id: developmentally_induced_by

@@ -40,3 +40,4 @@ These are the components in CL
 | blood_and_immune_upper_slim.owl | None |
 | eye_upper_slim.owl | None |
 | general_cell_types_upper_slim.owl | None |
+| kidney_upper_slim.owl | None |
