@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2023-12-05/subsets/blood_and_immune_upper_slim.owl
+data-version: cl/releases/2024-01-04/subsets/blood_and_immune_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -60,7 +60,6 @@ subsetdef: upper_level ""
 subsetdef: value_slim ""
 subsetdef: vertebrate_core ""
 synonymtypedef: blast_name ""
-synonymtypedef: common_name ""
 synonymtypedef: COMPARATIVE_PREFERRED ""
 synonymtypedef: DEPRECATED ""
 synonymtypedef: DUBIOUS ""
@@ -77,6 +76,7 @@ synonymtypedef: LATIN "latin term"
 synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
 synonymtypedef: NON_MAMMAL ""
 synonymtypedef: OMO:0003000 "abbreviation"
+synonymtypedef: OMO:0003003 ""
 synonymtypedef: OMO:0003004 "plural form"
 synonymtypedef: PENDING_REVIEW ""
 synonymtypedef: PLURAL "plural term"
@@ -88,7 +88,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/blood_and_immune_upper_slim
-property_value: owl:versionInfo "2023-12-05" xsd:string
+property_value: owl:versionInfo "2024-01-04" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -2042,6 +2042,7 @@ id: CL:0000839
 name: myeloid lineage restricted progenitor cell
 def: "A progenitor cell restricted to the myeloid lineage." [GOC:add, GOC:tfm, PMID:19022770]
 comment: Note that this is a class of cell types, not an identified single cell type.
+subset: human_reference_atlas
 synonym: "myeloid progenitor cell" BROAD []
 xref: BTO:0004730
 xref: CALOHA:TS-2099
@@ -2051,6 +2052,7 @@ is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0002031 ! hematopoietic lineage restricted progenitor cell
 intersection_of: capable_of GO:0030099 ! myeloid cell differentiation
 relationship: capable_of GO:0030099 ! myeloid cell differentiation
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: CL:0000842
@@ -3794,17 +3796,6 @@ xref: Wikipedia:Circulatory_system
 is_a: GO:0003008 ! system process
 
 [Term]
-id: GO:0003016
-name: respiratory system process
-namespace: biological_process
-alt_id: GO:0010802
-def: "A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange." [GOC:dph, GOC:mtg_cardio, GOC:tb]
-subset: goslim_generic
-synonym: "respiratory gaseous exchange" EXACT []
-is_a: GO:0003008 ! system process
-relationship: part_of GO:0007585 ! respiratory gaseous exchange by respiratory system
-
-[Term]
 id: GO:0003674
 name: molecular_function
 namespace: molecular_function
@@ -4745,16 +4736,6 @@ is_a: GO:0009888 ! tissue development
 intersection_of: GO:0048856 ! anatomical structure development
 intersection_of: results_in_development_of UBERON:0000926 ! mesoderm
 relationship: results_in_development_of UBERON:0000926 ! mesoderm
-
-[Term]
-id: GO:0007585
-name: respiratory gaseous exchange by respiratory system
-namespace: biological_process
-def: "The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism's cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms." [ISBN:0198506732]
-subset: goslim_chembl
-synonym: "breathing" BROAD []
-synonym: "respiration" BROAD []
-is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0007586
@@ -8512,8 +8493,8 @@ property_value: has_rank NCBITaxon:family
 id: NCBITaxon:10088
 name: Mus <genus>
 namespace: ncbi_taxonomy
-synonym: "mice" EXACT common_name []
-synonym: "mouse" EXACT common_name []
+synonym: "mice" EXACT OMO:0003003 []
+synonym: "mouse" EXACT OMO:0003003 []
 synonym: "Mus" EXACT scientific_name []
 xref: GC_ID:1
 is_a: NCBITaxon:39107 ! Murinae
@@ -8525,7 +8506,7 @@ name: Mus musculus
 namespace: ncbi_taxonomy
 alt_id: NCBITaxon:85055
 synonym: "house mouse" EXACT genbank_common_name []
-synonym: "mouse" EXACT common_name []
+synonym: "mouse" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:862507 ! Mus <subgenus>
 property_value: has_rank NCBITaxon:species
@@ -8594,7 +8575,7 @@ synonym: "Eucaryotae" RELATED synonym []
 synonym: "eucaryotes" EXACT genbank_common_name []
 synonym: "Eukarya" RELATED synonym []
 synonym: "Eukaryotae" RELATED synonym []
-synonym: "eukaryotes" EXACT common_name []
+synonym: "eukaryotes" EXACT OMO:0003003 []
 synonym: "eukaryotes" RELATED blast_name []
 xref: GC_ID:1
 xref: PMID:23020233
@@ -8670,7 +8651,7 @@ namespace: ncbi_taxonomy
 synonym: "Animalia" RELATED synonym []
 synonym: "animals" RELATED blast_name []
 synonym: "metazoans" EXACT genbank_common_name []
-synonym: "multicellular animals" EXACT common_name []
+synonym: "multicellular animals" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:33154 ! Opisthokonta
 property_value: has_rank NCBITaxon:kingdom
@@ -8687,7 +8668,7 @@ property_value: has_rank NCBITaxon:clade
 id: NCBITaxon:33511
 name: Deuterostomia
 namespace: ncbi_taxonomy
-synonym: "deuterostomes" EXACT common_name []
+synonym: "deuterostomes" EXACT OMO:0003003 []
 xref: GC_ID:1
 is_a: NCBITaxon:33213 ! Bilateria
 property_value: has_rank NCBITaxon:clade
@@ -8790,8 +8771,8 @@ property_value: has_rank NCBITaxon:subphylum
 id: NCBITaxon:9347
 name: Eutheria
 namespace: ncbi_taxonomy
-synonym: "eutherian mammals" EXACT common_name []
-synonym: "placental mammals" EXACT common_name []
+synonym: "eutherian mammals" EXACT OMO:0003003 []
+synonym: "placental mammals" EXACT OMO:0003003 []
 synonym: "Placentalia" RELATED synonym []
 synonym: "placentals" EXACT genbank_common_name []
 synonym: "placentals" RELATED blast_name []
@@ -10647,6 +10628,7 @@ namespace: uberon
 def: "An occurrent [span:Occurrent] that exists in time by occurring or happening, has temporal parts and always involves and depends on some entity." [span:ProcessualEntity]
 subset: common_anatomy
 subset: upper_level
+xref: BFO:0000003
 disjoint_from: UBERON:0001062 ! anatomical entity
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
@@ -10667,54 +10649,6 @@ relationship: has_part UBERON:0013522 ! subdivision of tube
 relationship: has_quality PATO:0002299 ! tubular
 property_value: IAO:0000232 "not every anatomical conduit is a tube - for example, a bone foramen is an opening in the bone, and there is no distinct separate tube structure. Tubes may transport large mixed objects (for example, a bolus of food in the digestive tube) or they may transport the secretions of a single gland (for example, gland ducts)" xsd:string
 property_value: UBPROP:0000007 "tubular" xsd:string
-
-[Term]
-id: UBERON:0000033
-name: head
-namespace: uberon
-def: "The head is the anterior-most division of the body [GO]." [GO:0060322, Wikipedia:Head]
-subset: efo_slim
-subset: pheno_slim
-subset: uberon_slim
-subset: vertebrate_core
-synonym: "adult head" NARROW []
-synonym: "cephalic area" RELATED [SPD:0000016]
-synonym: "head (volume)" EXACT [FMA:7154]
-xref: AAO:0010335
-xref: AEO:0000106
-xref: BILA:0000115
-xref: BIRNLEX:1230
-xref: BTO:0000282
-xref: CALOHA:TS-0436
-xref: EFO:0000964
-xref: EHDAA2:0003106
-xref: EMAPA:31858
-xref: FMA:7154
-xref: GAID:61
-xref: galen:Head
-xref: HAO:0000397
-xref: MA:0000023
-xref: MAT:0000294
-xref: MESH:D006257
-xref: MIAA:0000294
-xref: NCIT:C12419
-xref: SCTID:302548004
-xref: SPD:0000016
-xref: TAO:0001114
-xref: TGMA:0000002
-xref: UMLS:C0018670 {source="ncithesaurus:Head", source="BIRNLEX:1230"}
-xref: VHOG:0001644
-xref: WBbt:0005739
-xref: Wikipedia:Head
-xref: XAO:0003024
-xref: ZFA:0001114
-is_a: UBERON:0011676 ! subdivision of organism along main body axis
-relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-relationship: part_of UBERON:0007811 ! craniocervical region
-property_value: RO:0002171 UBERON:0000948
-property_value: UBPROP:0000001 "Organism subdivision that is the part of the body consisting of the cranial and pharyngeal regions.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0010335", ontology="AAO", source="AAO:BJB"}
-property_value: UBPROP:0000001 "Organism subdivision which is the part of the body which consists of the cranial and pharygeal regions.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0001114", ontology="TAO", source="ZFIN:curator"}
-property_value: UBPROP:0000003 "Vertebrate evolution has been characterized by a fresh and vast array of cranial structures that collectively form the head.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0001644", ontology="VHOG", source="ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.82", source="http://bgee.unil.ch/"}
 
 [Term]
 id: UBERON:0000055
@@ -11160,22 +11094,6 @@ property_value: seeAlso "https://github.com/obophenotype/developmental-stage-ont
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/533" xsd:anyURI
 
 [Term]
-id: UBERON:0000153
-name: anterior region of body
-namespace: uberon
-is_a: UBERON:0000475 ! organism subdivision
-disjoint_from: UBERON:0000154 {source="lexical"} ! posterior region of body
-relationship: anterior_to UBERON:0000154 ! posterior region of body
-relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-
-[Term]
-id: UBERON:0000154
-name: posterior region of body
-namespace: uberon
-is_a: UBERON:0000475 ! organism subdivision
-relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-
-[Term]
 id: UBERON:0000165
 name: mouth
 namespace: uberon
@@ -11233,8 +11151,6 @@ intersection_of: UBERON:0004921 ! subdivision of digestive tract
 intersection_of: proximalmost_part_of UBERON:0001555 ! digestive tract
 relationship: develops_from UBERON:0035804 ! future mouth
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
-relationship: overlaps UBERON:0001004 {notes="exceptions in some taxa"} ! respiratory system
-relationship: part_of UBERON:0000033 ! head
 relationship: proximalmost_part_of UBERON:0001555 ! digestive tract
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/661" xsd:anyURI
@@ -11792,7 +11708,7 @@ intersection_of: composed_primarily_of CL:0000066 ! epithelial cell
 relationship: composed_primarily_of CL:0000066 ! epithelial cell
 relationship: has_part GO:0005911 ! cell-cell junction
 relationship: has_part UBERON:0005769 ! basement membrane of epithelium
-relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
+relationship: only_in_taxon NCBITaxon:33208 {source="http://palaeos.com/metazoa/porifera/homoscleromorpha.html"} ! Metazoa
 property_value: depiction "https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg" xsd:anyURI
 property_value: UBPROP:0000003 "The two basic types of metazoan tissue are epithelial and connective. The simplest metazoans, and developmental stages of many primitive invertebrates, consist solely of these two layers. Thus, epithelial and connective tissues may be the primary (original) tissues of metazoans, and both are important in the functional organization of animals.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000387", ontology="VHOG", source="ISBN:978-0030259821 Ruppert EE, Fox RS, Barnes RD, Invertebrate zoology: a functional evolutionary approach (2003) p.59", source="http://bgee.unil.ch/"}
 property_value: UBPROP:0000007 "epithelial" xsd:string
@@ -12239,69 +12155,6 @@ property_value: UBPROP:0000001 "Anatomical cluster that consists of two or more 
 property_value: UBPROP:0000001 "Anatomical cluster which consists of two or more adjacent bones or cartilages, which may be interconnected by various types of tissue.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000367", ontology="TAO", source="TAO:pem"}
 
 [Term]
-id: UBERON:0001004
-name: respiratory system
-namespace: uberon
-def: "Functional system which consists of structures involved in respiration." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Respiratory_system]
-subset: efo_slim
-subset: functional_classification
-subset: human_reference_atlas
-subset: pheno_slim
-subset: uberon_slim
-subset: vertebrate_core
-synonym: "apparatus respiratorius" EXACT []
-synonym: "apparatus respiratorius" RELATED [BTO:0000203]
-synonym: "Atmungssystem" RELATED [BTO:0000203]
-synonym: "respiratory system" EXACT []
-synonym: "systema respiratorium" RELATED LATIN [Wikipedia:Respiratory_system]
-xref: AAO:0000541
-xref: BTO:0000203
-xref: CALOHA:TS-1319
-xref: EFO:0000804
-xref: EHDAA2:0001604
-xref: EHDAA:2203
-xref: EMAPA:16727
-xref: EV:0100036
-xref: FMA:7158
-xref: GAID:78
-xref: MA:0000327
-xref: MAT:0000030
-xref: MESH:D012137
-xref: MIAA:0000030
-xref: NCIT:C12779
-xref: SCTID:278197002
-xref: TAO:0000272
-xref: UMLS:C0035237 {source="ncithesaurus:Respiratory_System"}
-xref: VHOG:0000202
-xref: Wikipedia:Respiratory_system
-xref: XAO:0000117
-xref: ZFA:0000272
-is_a: UBERON:0000467 ! anatomical system
-intersection_of: UBERON:0000467 ! anatomical system
-intersection_of: capable_of GO:0007585 ! respiratory gaseous exchange by respiratory system
-disjoint_from: UBERON:0001007 ! digestive system
-disjoint_from: UBERON:0001009 ! circulatory system
-disjoint_from: UBERON:0001016 ! nervous system
-disjoint_from: UBERON:0001434 ! skeletal system
-disjoint_from: UBERON:0002204 ! musculoskeletal system
-disjoint_from: UBERON:0002390 ! hematopoietic system
-disjoint_from: UBERON:0002405 ! immune system
-relationship: capable_of GO:0003016 ! respiratory system process
-relationship: capable_of GO:0007585 ! respiratory gaseous exchange by respiratory system
-relationship: existence_ends_during UBERON:0000066 ! fully formed stage
-relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
-relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-relationship: present_in_taxon NCBITaxon:9606
-property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg" xsd:anyURI
-property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb" xsd:anyURI
-property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb" xsd:anyURI
-property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb" xsd:anyURI
-property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb" xsd:anyURI
-property_value: depiction "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb" xsd:anyURI
-property_value: UBPROP:0000001 "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000541", ontology="AAO", source="AAO:BJB"}
-property_value: UBPROP:0000003 "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]" xsd:string {date_retrieved="2012-09-17", external_class="VHOG:0000202", ontology="VHOG", source="ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23", source="http://bgee.unil.ch/"}
-
-[Term]
 id: UBERON:0001007
 name: digestive system
 namespace: uberon
@@ -12615,6 +12468,7 @@ subset: common_anatomy
 subset: upper_level
 xref: AAO:0010841
 xref: AEO:0000000
+xref: BFO:0000004
 xref: BILA:0000000
 xref: BIRNLEX:6
 xref: CARO:0000000
@@ -14908,25 +14762,6 @@ intersection_of: has_quality PATO:0001548 ! quality of a liquid
 relationship: has_quality PATO:0001548 ! quality of a liquid
 
 [Term]
-id: UBERON:0006562
-name: pharynx
-namespace: uberon
-def: "The pharynx is the part of the digestive system immediately posterior to the mouth[GO]." [GO:0060465]
-subset: grouping_class
-subset: uberon_slim
-synonym: "anterior part of foregut" RELATED []
-synonym: "pharyngeal tube" RELATED []
-xref: MAT:0000049
-xref: MESH:D010614
-xref: MIAA:0000049
-is_a: UBERON:0004921 ! subdivision of digestive tract
-relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
-property_value: IAO:0000232 "currently this is an extremely generic class, encompassing both protostomes and deuterostomes." xsd:string
-property_value: IAO:0006012 "2023-04-20" xsd:string
-property_value: UBPROP:0000007 "branchial" xsd:string
-property_value: UBPROP:0000007 "pharyngeal" xsd:string
-
-[Term]
 id: UBERON:0006595
 name: presumptive endoderm
 namespace: uberon
@@ -15297,32 +15132,6 @@ property_value: UBPROP:0000001 "The cardiovascular and lymphatic systems, collec
 property_value: UBPROP:0000012 "in both MA and BTO, the arterial system and venous sytem are subtypes of the vascular system" xsd:string {external_ontology="MA"}
 
 [Term]
-id: UBERON:0007811
-name: craniocervical region
-namespace: uberon
-def: "The anteriormost subdivision of the body that includes the head, jaws, pharyngeal region and the neck (if present). In vertebrates this is the subdivision that includes the cervical vertebrae." [https://orcid.org/0000-0002-6601-2165]
-subset: pheno_slim
-synonym: "cephalic area" RELATED [https://github.com/obophenotype/uberon/issues/379]
-synonym: "cephalic part of animal" RELATED [Wikipedia:Head]
-synonym: "cephalic region" RELATED [https://github.com/obophenotype/uberon/issues/379]
-synonym: "head and neck" RELATED [FMA:280881]
-synonym: "head or neck" RELATED []
-xref: CALOHA:TS-2356
-xref: EV:0100009
-xref: FMA:280881
-xref: galen:HeadAndNeck
-xref: MA:0000006
-xref: NCIT:C12418
-xref: SCTID:361355005
-xref: UMLS:C0460004 {source="ncithesaurus:Head_and_Neck"}
-xref: WikipediaCategory:Head_and_neck
-is_a: UBERON:0000475 {source="MA"} ! organism subdivision
-relationship: has_part UBERON:0000033 ! head
-relationship: has_part UBERON:0006562 ! pharynx
-relationship: part_of UBERON:0000153 ! anterior region of body
-relationship: part_of UBERON:0013702 ! body proper
-
-[Term]
 id: UBERON:0009142
 name: entire embryonic mesenchyme
 namespace: uberon
@@ -15482,7 +15291,6 @@ def: "Subdivision of the skeletal system which consists of the axial skeleton pl
 xref: FMA:7483
 is_a: UBERON:0000075 {source="FMA"} ! subdivision of skeletal system
 relationship: has_part UBERON:0000982 ! skeletal joint
-relationship: has_part UBERON:0005944 ! axial skeleton plus cranial skeleton
 property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton" xsd:anyURI
 
 [Term]
@@ -16292,6 +16100,14 @@ property_value: IAO:0000119 https://en.wikipedia.org/wiki/Allen%27s_interval_alg
 property_value: IAO:0000232 "Do not use this relation directly. It is ended as a grouping for relations between occurrents involving the relative timing of their starts and ends." xsd:string
 domain: BFO:0000003 ! occurrent
 range: BFO:0000003 ! occurrent
+
+[Typedef]
+id: RO:0002253
+name: has connecting branch
+def: "inverse of connecting branch of" []
+subset: RO:0002259
+property_value: RO:0004036 BFO:0000051
+is_a: RO:0002375 ! in branching relationship with
 
 [Typedef]
 id: RO:0002255
@@ -17417,6 +17233,19 @@ property_value: IAO:0000119 http://www.ncbi.nlm.nih.gov/pubmed/22293552
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern" xsd:anyURI
 is_a: RO:0002323 ! mereotopologically related to
+
+[Typedef]
+id: connecting_branch_of
+name: connecting branch of
+namespace: uberon
+def: "b connecting-branch-of s iff b is connected to s, and there exists some tree-like structure t such that the mereological sum of b plus s is either the same as t or a branching-part-of t." []
+xref: RO:0002252
+property_value: IAO:0000112 "In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is connecting branch of S, and B1-1 as a connecting branch of B1." xsd:string
+property_value: RO:0004036 BFO:0000050
+property_value: seeAlso https://github.com/obophenotype/uberon/issues/2212
+is_a: connected_to ! connected to
+is_a: RO:0002375 ! in branching relationship with
+inverse_of: RO:0002253 ! has connecting branch
 
 [Typedef]
 id: connects
