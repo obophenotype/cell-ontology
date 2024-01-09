@@ -50,7 +50,9 @@ tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_
 oort: tmp/source-merged.obo
 	ontology-release-runner --reasoner elk tmp/source-merged.obo --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
 
-test: oort
+# With the new OWLAPI 4.5.26, which allows arbitrary annotation properties in the OBO parser and oort using a previous OWLAPI version, 
+# we are having conflicts when converting it. Also, the oort step is not used in any release artefact.
+#test: oort
 
 tmp/$(ONT)-stripped.owl: oort
 	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
@@ -272,9 +274,10 @@ deploy_release:
 
 TERM_hematopoietic= CL:0000988
 TERM_eye= UBERON:0000970
-TERM_general = CL:0000548
+TERM_general = CL:0000000
+TERM_kidney= UBERON:0002113
 
-SLIM_TEMPLATES= blood_and_immune eye general_cell_types
+SLIM_TEMPLATES= blood_and_immune eye general_cell_types kidney
 SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
 
 .PHONY: slim_coverage
@@ -282,18 +285,20 @@ slim_coverage: $(SLIM_REPORTS)
 xxx:
 	echo $(SLIM_REPORTS)
 	echo $(REPORTDIR)
-COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@
+COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@ -c makefile
 
-$(REPORTDIR)/blood_and_immune_upper_slim.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
+$(REPORTDIR)/blood_and_immune_upper_slim_report.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
 	$(eval TERM_ID := $(TERM_hematopoietic))
 	$(COVERAGECMD)
 
-$(REPORTDIR)/eye_upper_slim.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
+$(REPORTDIR)/eye_upper_slim_report.csv: $(TEMPLATEDIR)/eye_upper_slim.csv
 	$(eval TERM_ID := $(TERM_eye))
 	$(COVERAGECMD)
 
-$(REPORTDIR)/general_cell_types_upper_slim.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
+$(REPORTDIR)/general_cell_types_upper_slim_report.csv: $(TEMPLATEDIR)/general_cell_types_upper_slim.csv
 	$(eval TERM_ID := $(TERM_general))
 	$(COVERAGECMD)
 
-test: slim_coverage
+$(REPORTDIR)/kidney_upper_slim_report.csv: $(TEMPLATEDIR)/kidney_upper_slim.csv
+	$(eval TERM_ID := $(TERM_kidney))
+	$(COVERAGECMD)

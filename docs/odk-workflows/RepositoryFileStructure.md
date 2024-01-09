@@ -18,7 +18,6 @@ These are the current imports in CL
 | ------ | --- | ---- |
 | pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
 | go | http://purl.obolibrary.org/obo/go.owl | None |
-| caro | http://purl.obolibrary.org/obo/caro.owl | None |
 | uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
@@ -41,3 +40,4 @@ These are the components in CL
 | blood_and_immune_upper_slim.owl | None |
 | eye_upper_slim.owl | None |
 | general_cell_types_upper_slim.owl | None |
+| kidney_upper_slim.owl | None |
