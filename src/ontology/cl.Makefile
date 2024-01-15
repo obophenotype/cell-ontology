@@ -302,3 +302,9 @@ $(REPORTDIR)/general_cell_types_upper_slim_report.csv: $(TEMPLATEDIR)/general_ce
 $(REPORTDIR)/kidney_upper_slim_report.csv: $(TEMPLATEDIR)/kidney_upper_slim.csv
 	$(eval TERM_ID := $(TERM_kidney))
 	$(COVERAGECMD)
+
+cl.db: $(EDIT_PREPROCESSED)
+	semsql make $@
+
+reports/obo-profile.tsv: cl.db $(TMPDIR)/obo-profile.yaml
+	runoak validate-multiple $< --schema $(TMPDIR)/obo-profile.yaml --output $@ --cutoff 5000
