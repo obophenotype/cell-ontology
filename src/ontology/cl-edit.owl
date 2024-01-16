@@ -10,6 +10,7 @@ Prefix(oboInOwl:=<http://www.geneontology.org/formats/oboInOwl#>)
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
 Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/cellxgene_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/eye_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/general_cell_types_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
@@ -3012,6 +3013,9 @@ Declaration(Class(obo:CL_4033058))
 Declaration(Class(obo:CL_4033059))
 Declaration(Class(obo:CL_4033060))
 Declaration(Class(obo:CL_4033061))
+Declaration(Class(obo:CL_4033062))
+Declaration(Class(obo:CL_4033063))
+Declaration(Class(obo:CL_4033064))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3216,7 +3220,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3310,11 +3314,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -31777,6 +31781,42 @@ AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033061 <https
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28287163") oboInOwl:hasBroadSynonym obo:CL_4033061 "endothelial cell of central vein")
 AnnotationAssertion(rdfs:label obo:CL_4033061 "endothelial cell of central vein of liver")
 EquivalentClasses(obo:CL_4033061 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006841)))
+
+# Class: obo:CL_4033062 (interstitial extravillous trophoblast cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") Annotation(oboInOwl:hasDbXref "doi:10.1007/978-3-030-84725-8") obo:IAO_0000115 obo:CL_4033062 "A trophoblast cell that invades the uterine wall to anchor the placenta to the uterus. An interstitial extravillous trophoblast cell differentiates from an extravillous trophoblast cell, becoming hyperchromatic and changing its morphology to a fibroblast-like spindle-shaped cell. In humans, this cell can be distinguished by the expression of placental-specific protein 8, which stimulates migration.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033062 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033062 "2024-01-08T15:43:15Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1007/978-3-030-84725-8") oboInOwl:hasExactSynonym obo:CL_4033062 "invasive interstitial extravillous trophoblast cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033062 "iEVT")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") oboInOwl:hasRelatedSynonym obo:CL_4033062 "interstitial extravillous trophoblast")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11337369") oboInOwl:hasRelatedSynonym obo:CL_4033062 "interstitial trophoblast")
+AnnotationAssertion(rdfs:label obo:CL_4033062 "interstitial extravillous trophoblast cell")
+SubClassOf(obo:CL_4033062 obo:CL_0000351)
+SubClassOf(obo:CL_4033062 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0008036))
+
+# Class: obo:CL_4033063 (endovascular extravillous trophoblast cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") Annotation(oboInOwl:hasDbXref "doi:10.1007/978-3-030-84725-8") obo:IAO_0000115 obo:CL_4033063 "A trophoblast cell that invades the maternal spiral arteries and replace the endothelial lining, remodeling the vessels and allowing for adequate blood transport into the placenta. An endovascular extravillous trophoblast cell differentiates from an extravillous trophoblast cell. In humans, this cell can be distinguished by the expression of CD56.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033063 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033063 "2024-01-08T15:43:32Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033063 "eEVT")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") oboInOwl:hasRelatedSynonym obo:CL_4033063 "endovascular extravillous trophoblast")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11337369") oboInOwl:hasRelatedSynonym obo:CL_4033063 "endovascular trophoblast")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37630754") rdfs:comment obo:CL_4033063 "Shortly after implantation, the endovascular extravillous trophoblast cells occlude the maternal spiral arteries, preventing premature oxygen delivery to the placental villi and reducing fetal oxidative stress.")
+AnnotationAssertion(rdfs:label obo:CL_4033063 "endovascular extravillous trophoblast cell")
+SubClassOf(obo:CL_4033063 obo:CL_0000351)
+SubClassOf(obo:CL_4033063 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0008036))
+
+# Class: obo:CL_4033064 (uterine resident macrophage)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36113384") obo:IAO_0000115 obo:CL_4033064 "A tissue-resident macrophage that is part of the uterus.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033064 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033064 "2024-01-08T16:05:09Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36113384") oboInOwl:hasBroadSynonym obo:CL_4033064 "uterine macrophage")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36113384") rdfs:comment obo:CL_4033064 "Uterine macrophages are reported to be evenly distributed throughout the endometrial stroma but with aggregations observed close to the lumen of superficial secretory glands.")
+AnnotationAssertion(rdfs:label obo:CL_4033064 "uterine resident macrophage")
+EquivalentClasses(obo:CL_4033064 ObjectIntersectionOf(obo:CL_0000864 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000995)))
 
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
