@@ -1,0 +1,1278 @@
+id: http://purl.obolibrary.org/obo/omo/schema
+name: Ontology-Metadata
+title: Ontology Metadata Ontology Schema
+description: >-
+  Schema for ontology metadata
+license: https://creativecommons.org/publicdomain/zero/1.0/
+version: 0.0.1
+
+default_curi_maps:
+  - obo_context
+  - semweb_context
+  
+prefixes:
+  omoschema: http://purl.obolibrary.org/obo/schema/
+  obo: http://purl.obolibrary.org/obo/
+  RO: http://purl.obolibrary.org/obo/RO_
+  OMO: http://purl.obolibrary.org/obo/OMO_
+  IAO: http://purl.obolibrary.org/obo/IAO_
+  OBI: http://purl.obolibrary.org/obo/OBI_
+  NCIT: http://purl.obolibrary.org/obo/NCIT_
+  oio: http://www.geneontology.org/formats/oboInOwl#
+  dcterms: http://purl.org/dc/terms/
+  linkml: https://w3id.org/linkml/
+  skos: http://www.w3.org/2004/02/skos/core#
+  biolink: https://w3id.org/biolink/vocab/
+  sdo: http://schema.org/  
+  owl: http://www.w3.org/2002/07/owl#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  pav: http://purl.org/pav/
+  prov: http://www.w3.org/ns/prov-o#
+  CL: http://purl.obolibrary.org/obo/CL_
+
+default_prefix: omoschema
+default_range: string
+
+imports:
+  - linkml:types
+
+subsets:
+  ## we take GO and OBI as two canonical "styles" of ontologies.
+  ## these can be thought of similarly to ROBOT profiles
+  
+  go required profile:
+  go recommended profile:
+  go permitted profile:
+  obi required profile:
+  obi permitted profile:
+  allotrope required profile:
+    see_also:
+      - https://gitlab.com/allotrope-open-source/allotrope-devops/-/wikis/uploads/Allotrope_Framework_Term_Curation_Style_Guide.pdf
+  allotrope permitted profile:
+    see_also:
+      - https://gitlab.com/allotrope-open-source/allotrope-devops/-/wikis/uploads/Allotrope_Framework_Term_Curation_Style_Guide.pdf
+  
+classes:
+
+  #GOStyleTermProfile:
+  #  slots:
+
+  Any:
+    class_uri: linkml:Any
+  
+  AnnotationPropertyMixin:
+    mixin: true
+    description: Groups all annotation property bundles
+
+  HasMinimalMetadata:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    description: Absolute minimum metadata model
+    slots:
+      - definition
+      
+  HasSynonyms:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    description: >-
+      a mixin for a class whose members can have synonyms
+    comments:
+      - the GO-style synonym model has four distinct scopes, with additional types as annotation axioms
+      - the OBI synonym model is to use alternative_term, or potentially a subproperty
+    slots:
+    # GO-style
+    - has_exact_synonym
+    - has_narrow_synonym
+    - has_broad_synonym
+    - has_related_synonym
+    # OBI-style
+    - alternative_term
+    - ISA_alternative_term
+    - IEDB_alternative_term
+    - editor_preferred_term
+    - OBO_foundry_unique_label
+
+
+  HasMappings:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    slots:
+    # skos
+    - broadMatch
+    - closeMatch
+    - exactMatch
+    - narrowMatch
+    # oio
+    - database_cross_reference
+    
+  HasProvenance:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    slots:
+    # oio: proposed to be deprecated
+    - created_by
+    - creation_date
+    # dct / rdfs
+    - contributor
+    - creator
+    - created
+    - date
+    - isDefinedBy
+    # iao
+    - editor_note
+    - term_editor
+    - definition_source
+    - ontology_term_requester
+    - imported_from
+    - term_tracker_item
+
+  HasLifeCycle:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    slots:
+    - deprecated
+    - has_obsolescence_reason
+    - term_replaced_by
+    - consider
+    - has_alternative_id
+    - excluded_from_QC_check
+    - excluded_subClassOf
+    - excluded_synonym
+    - should_conform_to
+    rules:
+      - description: if a term is deprecated it should have either consider or replaced by
+        preconditions:
+          slot_conditions:
+            deprecated:
+              equals_expression: "true"
+        postconditions:
+          any_of:
+            - slot_conditions:
+                term_replaced_by:
+                  required: true
+            - slot_conditions:
+                consider:
+                  required: true
+      - description: if a term is not deprecated it should have neither consider nor replaced by
+        preconditions:
+          none_of:
+            - slot_conditions:
+                deprecated:
+                  equals_expression: "true"
+        postconditions:
+          none_of:
+            - slot_conditions:
+                term_replaced_by:
+                  required: true
+            - slot_conditions:
+                consider:
+                  required: true
+      - description: if a term is deprecated its label should start with the string obsolete
+        preconditions:
+          slot_conditions:
+            deprecated:
+              equals_expression: "true"
+        postconditions:
+          slot_conditions:
+            label:
+              pattern: "^obsolete "
+
+  HasCategory:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    slots:
+    # categorization
+    - has_obo_namespace
+    - category
+    - in_subset
+    - conformsTo
+  
+  HasUserInformation:
+    mixin: true
+    is_a: AnnotationPropertyMixin
+    slots:
+    # informative for user
+    - comment
+    - seeAlso
+    - image
+    - example_of_usage
+    - curator_note
+    - has_curation_status
+    - depicted_by
+    - depiction
+    - page
+  
+  Thing:
+    abstract: true
+    class_uri: owl:Thing
+    slots:
+      - type
+    
+  NamedObject:
+    is_a: Thing
+    description: Anything with an IRI
+    aliases:
+      - named entity
+      - identified object
+      - IRI
+    slots:
+      - id
+
+  Ontology:
+    is_a: NamedObject
+    class_uri: owl:Ontology
+    description: An OWL ontology
+    slots:
+    - title
+    - has_ontology_root_term
+    - license
+    - source
+    - versionIRI
+    - versionInfo
+    - comment
+    - creator
+    - created
+    - imports
+    slot_usage:
+      title:
+        required: true
+      license:
+        required: true
+      versionIRI:
+        required: true
+      versionInfo:
+        required: true
+      
+  Term:
+    description: A NamedObject that includes classes, properties, but not ontologies
+    aliases:
+      - term
+    is_a: NamedObject
+    mixins:
+      - HasSynonyms
+      - HasLifeCycle
+      - HasProvenance
+      - HasMappings
+      - HasCategory
+#      - HasHistory
+      - HasUserInformation
+    abstract: true
+
+        
+  Class:
+    aliases:
+      - term
+      - concept
+    is_a: Term
+    mixins:
+      - ClassExpression
+    class_uri: owl:Class
+    close_mappings:
+      - skos:Concept
+    slots:
+    # logic shortcuts
+    - never_in_taxon
+    - disconnected_from
+    # taxon classes only
+    - has_rank
+    slot_usage:
+      label:
+        recommended: true
+      definition:
+        recommended: true
+      broadMatch:
+        range: Class
+      exactMatch:
+        range: Class
+      narrowMatch:
+        range: Class
+      closeMatch:
+        range: Class
+      subClassOf:
+        range: Class
+    
+  Property:
+    abstract: true
+    class_uri: rdf:Property
+    is_a: Term
+    slots:
+    - domain
+    - range
+    - is_class_level
+    - is_metadata_tag
+    slot_usage:
+      label:
+        recommended: true
+      definition:
+        recommended: true
+      broadMatch:
+        range: Property
+      exactMatch:
+        range: Property
+      narrowMatch:
+        range: Property
+      closeMatch:
+        range: Property
+      subClassOf:
+        range: Property
+      
+  AnnotationProperty:
+    is_a: Property
+    class_uri: owl:AnnotationProperty
+    slots:
+    - shorthand
+    
+  ObjectProperty:
+    is_a: Property
+    class_uri: owl:ObjectProperty
+    mixins:
+      - PropertyExpression
+    slots:
+    - temporal_interpretation
+    - is_cyclic
+    - is_transitive
+    - shorthand
+    - equivalentProperty
+    - inverseOf
+    - propertyChainAxiom
+    
+  TransitiveProperty:
+    is_a: ObjectProperty
+    
+  NamedIndividual:
+    is_a: Term
+    class_uri: owl:NamedIndividual
+    #slots:
+    #- type
+
+  Annotation:
+    represents_relationship: true
+    attributes:
+      predicate:
+        relational_role: PREDICATE
+      object:
+        relational_role: OBJECT
+    
+  Axiom:
+    class_uri: owl:Axiom
+    represents_relationship: true
+    exact_mappings:
+      - rdf:Statement
+    slots:
+    # owl
+    - annotatedProperty
+    - annotatedSource
+    - annotatedTarget
+    ## generic annotations
+    - annotations
+    # other
+    - source
+    - is_inferred
+    - notes
+    - url
+    - has_axiom_label
+    - is_a_defining_property_chain_axiom
+    - is_a_defining_property_chain_axiom_where_second_argument_is_reflexive
+    - created_by
+    - date_retrieved
+    - evidence
+    - external_ontology
+    - database_cross_reference
+    - has_exact_synonym
+    - has_synonym_type
+    - comment
+    - label
+    - seeAlso
+    slot_usage:
+      database_cross_reference:
+        in_subset:
+          - go permitted profile
+        description: >-
+          Uses to indicate the source of an axiom
+        exact_mappings:
+          - dcterms:source
+          
+  Subset:
+    description: A collection of terms grouped for some purpose
+    is_a: AnnotationProperty
+    class_uri: oio:Subset
+
+  Anonymous:
+    abstract: true
+    description: Abstract root class for all anonymous (non-named; lacking an identifier) expressions
+
+  AnonymousClassExpression:
+    is_a: Anonymous
+
+  Restriction:
+    is_a: AnonymousClassExpression
+    class_uri: owl:Restriction
+    mixins:
+      - ClassExpression
+    mixin: true
+    slots:
+    - onProperty
+    - someValuesFrom
+    - allValuesFrom
+
+  PropertyValue:
+    aliases:
+      - annotation
+    abstract: true
+    description: >-
+      A generic grouping for the different kinds of key-value associations on object. Minimally, a property value
+      has a predicate and a value. It can also have a list of xrefs indicating provenance, as well as a metadata
+      object.
+    comments:
+      - >-
+        Any PropertyValue can have a meta object, which can itself have basicPropertyValues, meaning that like
+        the OWL annotation model, axiom annotations can be nested to arbitrary levels.
+    slots:
+      - pred
+      - val
+      - xrefs
+      - meta
+      - valType
+      - lang
+
+  DefinitionPropertyValue:
+    is_a: PropertyValue
+    description: >-
+      A property value that represents an assertion about the textual definition of an entity
+    slot_usage:
+      val:
+        role: definition text
+        range: narrative text
+        description: >-
+          The textual string representing the definition.
+      xrefs:
+        multivalued: true
+        range: XrefString
+        description: >-
+          A list of identifiers that support the definition. The semantics are intentionally broad,
+          and these identifiers might represent individual agents that contributed to the text of the
+          definition, external publications, websites, or links to supporting information, or external
+          vocabulary entities that played a contributing role in the definition.
+
+  
+    
+  ## MIXINS
+  Expression:
+    mixin: true
+    
+  ClassExpression:
+    is_a: Expression
+    mixin: true
+    slots:
+    - disjointWith
+    - equivalentClass
+    - intersectionOf
+    - subClassOf
+    - cardinality
+    - complementOf
+    - oneOf
+    - unionOf
+
+  PropertyExpression:
+    is_a: Expression
+    mixin: true
+    slots:
+    - disjointWith
+
+  ObsoleteAspect:
+    description: Auto-classifies anything that is obsolete
+    mixin: true
+    slot_usage:
+      label:
+        pattern: "^obsolete"
+    classification_rules:
+      - slot_conditions:
+          deprecated:
+            equals_expression: "true"
+
+  NotObsoleteAspect:
+    description: Auto-classifies anything that is not obsolete
+    mixin: true
+    classification_rules:
+      - slot_conditions:
+          none_of:
+            deprecated:
+              equals_expression: "true"
+    rules:
+      postconditions:
+        none_of:
+          - slot_conditions:
+              label:
+                pattern: "^obsolete"
+
+slots:
+
+  # core
+  core_property:
+    abstract: true
+    description: abstract grouping of core properties
+    
+  id:
+    is_a: core_property
+    identifier: true
+    required: true
+    range: uriorcurie
+    description: this maps to the URI in RDF
+
+  label:
+    is_a: core_property
+    slot_uri: rdfs:label
+    multivalued: false
+    range: label type
+    exact_mappings:
+      - skos:prefLabel
+    in_subset:
+      - allotrope required profile
+      - go required profile
+      - obi required profile
+    comments:
+      - SHOULD follow OBO label guidelines
+      - MUST be unique within an ontology
+      - SHOULD be unique across OBO
+
+  annotations:
+    multivalued: true
+    range: Annotation
+
+  definition:
+    is_a: core_property
+    slot_uri: IAO:0000115
+    multivalued: true
+    range: DefinitionPropertyValue
+    exact_mappings:
+      - skos:definition
+    in_subset:
+      - allotrope required profile
+      - go required profile
+      - obi required profile
+    comments:
+      - SHOULD be in Aristotelian (genus-differentia) form
+  
+  predicate:
+    relational_role: PREDICATE
+
+  object:
+    relational_role: OBJECT
+
+  title:
+    slot_uri: dcterms:title
+    range: narrative text
+    
+  # aliases and synonyms
+  match_aspect:
+    mixin: true
+  match:
+    abstract: true
+    mixins:
+      - match_aspect
+  broadMatch:
+    is_a: match
+    slot_uri: skos:broadMatch
+    multivalued: true
+    range: Thing
+  closeMatch:
+    is_a: match
+    slot_uri: skos:closeMatch
+    multivalued: true
+    range: Thing
+  exactMatch:
+    is_a: match
+    slot_uri: skos:exactMatch
+    multivalued: true
+    range: Thing
+  narrowMatch:
+    is_a: match
+    slot_uri: skos:narrowMatch
+    multivalued: true
+    range: Thing
+  database_cross_reference:
+    is_a: match
+    slot_uri: oio:hasDbXref
+    multivalued: true
+    range: CURIELiteral
+
+  xrefs:
+    multivalued: true
+    range: XrefString
+    description: >-
+      A list of cross references to other entities represented in other ontologies, vocabularies, databases, or
+      websites. The semantics of xrefs are intentionally weak, and most closely align with rdfs:seeAlso
+    close_mappings:
+      - rdfs:seeAlso
+    exact_mappings:
+      - oio:hasDbXref
+    
+  # informative for user
+  informative_property:
+    abstract: true
+    
+  comment:
+    is_a: informative_property
+    slot_uri: rdfs:comment
+    multivalued: true
+    comments:
+      - in obo format, a term cannot have more than one comment
+  category:
+    is_a: informative_property
+    slot_uri: biolink:category
+    
+  image:
+    is_a: informative_property
+    slot_uri: sdo:image
+    range: Thing
+
+  example_of_usage:
+    is_a: informative_property
+    slot_uri: IAO:0000112
+    multivalued: true
+    exact_mappings:
+      - skos:example
+    in_subset:
+      - allotrope permitted profile  ## allotrope uses skos
+  changeNote:
+    is_a: informative_property
+    slot_uri: skos:changeNote
+    multivalued: true
+    in_subset:
+      - allotrope permitted profile  ## allotrope uses skos
+  has_curation_status:
+    is_a: informative_property
+    slot_uri: IAO:0000114
+  defaultLanguage:
+    is_a: informative_property
+    slot_uri: protege:defaultLanguage
+  has_ontology_root_term:
+    is_a: informative_property
+    slot_uri: IAO:0000700
+    multivalued: true
+    range: Class
+  # patterns
+  conformsTo:
+    is_a: informative_property
+    slot_uri: dcterms:conformsTo
+    multivalued: true
+    range: Thing
+
+  license:
+    is_a: informative_property
+    slot_uri: dcterms:license
+    range: Thing
+
+  # links
+  depicted_by:
+    is_a: informative_property
+    slot_uri: foaf:depicted_by
+    multivalued: true
+    deprecated: This annotion never existed in FOAF namespace.
+    deprecated_element_has_exact_replacement: depiction
+    range: Thing
+  depiction:
+    is_a: informative_property
+    slot_uri: foaf:depiction
+    multivalued: true
+    range: Thing
+  page:
+    is_a: informative_property
+    slot_uri: foaf:page
+    multivalued: true
+    
+  version_property:
+    abstract: true
+  versionIRI:
+    is_a: version_property    
+    slot_uri: owl:versionIRI
+    range: uriorcurie
+  versionInfo:
+    is_a: version_property    
+    slot_uri: owl:versionInfo
+    close_mappings:
+      - pav:version
+
+
+  # obsoletion and metadata
+  obsoletion_related_property:
+    abstract: true
+    description: Grouping class for all properties related to lifecycle
+
+  deprecated:
+    is_a: obsoletion_related_property
+    aliases:
+      - is obsolete
+    slot_uri: owl:deprecated
+    domain: ObsoleteAspect
+    range: boolean
+    in_subset:
+      - allotrope permitted profile
+      - go permitted profile
+      - obi permitted profile
+  term_replaced_by:
+    is_a: obsoletion_related_property
+    slot_uri: IAO:0100001
+    domain: ObsoleteAspect
+    range: Any ## TODO
+    comments:
+      - RULE: subject must be deprecated
+    exact_mappings:
+      - dcterms:isReplacedBy
+    in_subset:
+      - go permitted profile
+      - obi permitted profile
+      - allotrope permitted profile ## allotrope uses skos
+  has_obsolescence_reason:
+    is_a: obsoletion_related_property
+    slot_uri: IAO:0000231
+    domain: ObsoleteAspect
+    comments:
+      - RULE: subject must be deprecated
+    range: Any
+  consider:
+    is_a: obsoletion_related_property
+    slot_uri: oio:consider
+    domain: ObsoleteAspect
+    multivalued: true
+    comments:
+      - RULE: subject must be deprecated
+    in_subset:
+      - go permitted profile
+    range: Any  ## TODO
+  has_alternative_id:
+    description: >-
+      Relates a live term to a deprecated ID that was merged in
+    #deprecated: This is deprecated as it is redundant with the inverse replaced_by triple
+    is_a: obsoletion_related_property
+    slot_uri: oio:hasAlternativeId
+    multivalued: true
+    domain: NotObsoleteAspect
+    range: string
+    comments:
+      - RULE: object must NOT be deprecated
+    in_subset:
+      - go permitted profile
+    see_also:
+      - https://github.com/owlcs/owlapi/issues/317
+    
+  temporal_interpretation:
+    slot_uri: RO:0001900
+    range: NamedIndividual
+  never_in_taxon:
+    slot_uri: RO:0002161
+    multivalued: true
+    range: Class
+  is_a_defining_property_chain_axiom:
+    slot_uri: RO:0002581
+  is_a_defining_property_chain_axiom_where_second_argument_is_reflexive:
+    slot_uri: RO:0002582
+
+  # term provenance
+  provenance_property:
+    abstract: true
+  contributor:
+    is_a: provenance_property
+    slot_uri: dcterms:contributor
+    multivalued: true
+    range: Thing
+    close_mappings:
+      - prov:wasAttributedTo
+    pattern: "^orcid:[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)$"
+  creator:
+    is_a: provenance_property
+    slot_uri: dcterms:creator
+    multivalued: true
+    close_mappings:
+      - prov:wasAttributedTo
+  created:
+    is_a: provenance_property
+    slot_uri: dcterms:created
+    multivalued: false
+    description: when the term came into being
+    close_mappings:
+      - pav:createdOn
+  date:
+    is_a: provenance_property
+    slot_uri: dcterms:date
+    multivalued: true
+    description: when the term was updated
+    close_mappings:
+      - pav:authoredOn
+  source:
+    is_a: provenance_property
+    slot_uri: dcterms:source
+    multivalued: true
+    exact_mappings:
+    - http://purl.org/dc/terms/source
+    - oio:source
+  created_by:
+    is_a: provenance_property
+    slot_uri: oio:created_by
+    deprecated: proposed obsoleted by OMO group 2022-04-12
+    deprecated_element_has_exact_replacement: creator
+    range: Thing
+  creation_date:
+    is_a: provenance_property
+    slot_uri: oio:creation_date
+    multivalued: true
+    deprecated: proposed obsoleted by OMO group 2022-04-12
+    deprecated_element_has_exact_replacement: created
+    todos:
+    - restrict range
+  date_retrieved:
+    is_a: provenance_property
+    slot_uri: oio:date_retrieved
+  editor_note:
+    is_a: provenance_property
+    slot_uri: IAO:0000116
+    multivalued: true
+    range: narrative text
+  term_editor:
+    is_a: provenance_property
+    slot_uri: IAO:0000117
+    multivalued: true
+  definition_source:
+    is_a: provenance_property
+    slot_uri: IAO:0000119
+    multivalued: true
+    in_subset:
+      - obi permitted profile
+    todos:
+    - restrict range
+  curator_note:
+    is_a: provenance_property
+    slot_uri: IAO:0000232
+    multivalued: true
+  term_tracker_item:
+    is_a: provenance_property
+    slot_uri: IAO:0000233
+    multivalued: true
+    range: Thing
+  ontology_term_requester:
+    is_a: provenance_property
+    slot_uri: IAO:0000234
+  imported_from:
+    is_a: provenance_property
+    slot_uri: IAO:0000412
+    multivalued: true
+    range: NamedIndividual
+  has_axiom_label:
+    is_a: provenance_property
+    slot_uri: IAO:0010000
+    range: Thing
+
+
+  # shortcuts
+  shortcut_annotation_property:
+    abstract: true
+  
+  disconnected_from:
+    is_a: shortcut_annotation_property
+    #slot_uri: obo:envo#disconnected_from
+    range: Class
+
+
+  # QC metadata
+  excluded_axiom:
+    abstract: true
+  excluded_from_QC_check:
+    is_a: excluded_axiom
+    #slot_uri: obo:mondo#excluded_from_qc_check
+    range: Thing
+  excluded_subClassOf:
+    is_a: excluded_axiom
+    #slot_uri: obo:mondo#excluded_subClassOf
+    multivalued: true
+    range: Class
+  excluded_synonym:
+    is_a: excluded_axiom
+    #slot_uri: obo:mondo#excluded_synonym
+    multivalued: true
+    exact_mappings:
+      - skos:hiddenSynonym
+  should_conform_to:
+    is_a: excluded_axiom
+    #slot_uri: obo:mondo#should_conform_to
+    range: Thing
+
+  # metaclass properties
+  has_rank:
+    #slot_uri: obo:ncbitaxon#has_rank
+    exact_mappings:
+    - obo:ncbitaxon/subsets/taxslim#has_rank
+    range: Thing
+    
+  # synonyms and aliases
+  alternative_term:
+    slot_uri: IAO:0000118
+    multivalued: true
+    exact_mappings:
+      - skos:altLabel
+    in_subset:
+      - allotrope permitted profile  ## allotrope uses skos
+  ISA_alternative_term:
+    is_a: alternative_term
+    slot_uri: OBI:0001847
+  IEDB_alternative_term:
+    is_a: alternative_term
+    slot_uri: OBI:9991118
+  OBO_foundry_unique_label:
+    is_a: alternative_term
+    slot_uri: IAO:0000589
+    todos:
+      - add uniquekey
+      
+  synonym:
+    is_a: alternative_term
+    slot_uri: OIO:hasSynonym
+    range: label type
+    multivalued: true
+    abstract: true
+  # provenance
+  editor_preferred_term:
+    is_a: alternative_term
+    in_subset:
+      - obi permitted profile
+    slot_uri: IAO:0000111
+    multivalued: true
+  has_exact_synonym:
+    is_a: synonym
+    slot_uri: oio:hasExactSynonym
+    multivalued: true
+    range: label type
+    disjoint_with:
+      - label
+
+  has_narrow_synonym:
+    is_a: synonym
+    slot_uri: oio:hasNarrowSynonym
+    multivalued: true
+    range: label type
+  has_related_synonym:
+    slot_uri: oio:hasRelatedSynonym
+    multivalued: true
+    range: label type
+  has_broad_synonym:
+    is_a: synonym
+    slot_uri: oio:hasBroadSynonym
+    multivalued: true
+    range: label type
+  has_synonym_type:
+    slot_uri: oio:hasSynonymType
+    multivalued: true
+    range: AnnotationProperty
+  has_obo_namespace:
+    slot_uri: oio:hasOBONamespace
+    multivalued: true
+
+  in_subset:
+    slot_uri: oio:inSubset
+    multivalued: true
+    range: Subset
+    description: >-
+      Maps an ontology element to a subset it belongs to
+    
+  # reification
+  
+  reification_predicate:
+    abstract: true
+  
+  
+  annotatedProperty:
+    is_a: reification_predicate
+    slot_uri: owl:annotatedProperty
+    relational_role: PREDICATE
+    exact_mappings:
+      - rdf:predicate
+    range: AnnotationProperty
+  annotatedSource:
+    is_a: reification_predicate
+    slot_uri: owl:annotatedSource
+    relational_role: SUBJECT
+    range: NamedObject
+    exact_mappings:
+      - rdf:subject
+    todos:
+    - restrict range
+  annotatedTarget:
+    is_a: reification_predicate
+    relational_role: OBJECT
+    exact_mappings:
+      - rdf:object
+    slot_uri: owl:annotatedTarget
+    todos:
+    - restrict range
+    range: Any
+
+  imports:
+    slot_uri: owl:imports
+
+  # logical predicates
+  # TODO: import these
+  
+  logical_predicate:
+    abstract: true
+
+  cardinality:
+    is_a: logical_predicate
+    slot_uri: owl:cardinality
+  complementOf:
+    is_a: logical_predicate
+    slot_uri: owl:complementOf
+    todos:
+    - restrict range
+  disjointWith:
+    is_a: logical_predicate
+    slot_uri: owl:disjointWith
+    multivalued: true
+    range: Thing
+  distinctMembers:
+    is_a: logical_predicate
+    slot_uri: owl:distinctMembers
+    range: Thing
+  equivalentClass:
+    is_a: logical_predicate
+    mixins:
+      - match_aspect
+    slot_uri: owl:equivalentClass
+    multivalued: true
+    todos:
+    - restrict range
+    range: ClassExpression
+  sameAs:
+    is_a: logical_predicate
+    mixins:
+      - match_aspect
+    slot_uri: owl:sameAs
+    multivalued: true
+    todos:
+    - restrict range
+    range: Thing
+  equivalentProperty:
+    is_a: logical_predicate
+    mixins:
+      - match_aspect
+    slot_uri: owl:equivalentProperty
+    multivalued: true
+    range: Property
+  hasValue:
+    is_a: logical_predicate
+    slot_uri: owl:hasValue
+    todos:
+    - restrict range
+    range: Any
+  intersectionOf:
+    is_a: logical_predicate
+    slot_uri: owl:intersectionOf
+    todos:
+    - restrict range
+    range: ClassExpression
+  inverseOf:
+    is_a: logical_predicate
+    slot_uri: owl:inverseOf
+    todos:
+    - restrict range
+    range: Property
+  maxQualifiedCardinality:
+    is_a: logical_predicate
+    slot_uri: owl:maxQualifiedCardinality
+    range: integer
+  members:
+    is_a: logical_predicate
+    slot_uri: owl:members
+    range: Thing
+  minCardinality:
+    is_a: logical_predicate
+    slot_uri: owl:minCardinality
+    range: integer
+  minQualifiedCardinality:
+    is_a: logical_predicate
+    slot_uri: owl:minQualifiedCardinality
+    range: integer
+  onClass:
+    is_a: logical_predicate
+    slot_uri: owl:onClass
+    range: ClassExpression
+  onProperty:
+    is_a: logical_predicate
+    slot_uri: owl:onProperty
+    multivalued: true
+    range: PropertyExpression
+  oneOf:
+    is_a: logical_predicate
+    slot_uri: owl:oneOf
+    range: ClassExpression
+  propertyChainAxiom:
+    is_a: logical_predicate
+    slot_uri: owl:propertyChainAxiom
+    multivalued: true
+    todos:
+    - restrict range
+  qualifiedCardinality:
+    is_a: logical_predicate
+    slot_uri: owl:qualifiedCardinality
+  allValuesFrom:
+    is_a: logical_predicate
+    slot_uri: owl:allValuesFrom
+    todos:
+    - restrict range
+  someValuesFrom:
+    is_a: logical_predicate
+    slot_uri: owl:someValuesFrom
+    multivalued: true
+    todos:
+    - restrict range
+  unionOf:
+    is_a: logical_predicate
+    slot_uri: owl:unionOf
+  domain:
+    is_a: logical_predicate
+    slot_uri: rdfs:domain
+    multivalued: true
+    todos:
+    - restrict range
+  range:
+    is_a: logical_predicate
+    slot_uri: rdfs:range
+    multivalued: true
+    todos:
+    - restrict range
+  isDefinedBy:
+    slot_uri: rdfs:isDefinedBy
+    range: Ontology
+    close_mappings:
+      - pav:importedFrom
+      - dcterms:publisher
+  seeAlso:
+    slot_uri: rdfs:seeAlso
+    multivalued: true
+    range: Thing
+  type:
+    is_a: logical_predicate
+    slot_uri: rdf:type
+    multivalued: true
+    range: uriorcurie
+    designates_type: true
+  subClassOf:
+    is_a: logical_predicate
+    slot_uri: rdfs:subClassOf
+    multivalued: true
+    range: ClassExpression
+
+  # DEPRECATED
+
+  oboInOwl_id:
+    slot_uri: oio:id
+    #range: uriorcurie
+    range: string
+    #deprecated: redundant with URI
+    #deprecated_element_has_exact_replacement: id
+
+  oboInOwl_ontology:
+    slot_uri: oio:ontology
+    deprecated: todo
+    deprecated_element_has_exact_replacement: ontology
+
+  is_class_level:
+    slot_uri: oio:is_class_level
+    range: boolean
+    deprecated: deprecated oboInOwl property
+  is_cyclic:
+    slot_uri: oio:is_cyclic
+    range: boolean
+    deprecated: deprecated oboInOwl property
+  is_inferred:
+    slot_uri: oio:is_inferred
+    range: boolean
+    deprecated: deprecated oboInOwl property
+  is_metadata_tag:
+    slot_uri: oio:is_metadata_tag
+    range: boolean
+    deprecated: deprecated oboInOwl property
+  is_transitive:
+    slot_uri: oio:is_transitive
+    range: boolean
+    deprecated: deprecated oboInOwl property
+    deprecated_element_has_exact_replacement: TransitiveProperty
+    
+  notes:
+    slot_uri: oio:notes
+    multivalued: true
+    deprecated: deprecated oboInOwl property
+  shorthand:
+    slot_uri: oio:shorthand
+    multivalued: true
+    deprecated: deprecated oboInOwl property
+  url:
+    slot_uri: oio:url
+    deprecated: deprecated oboInOwl property
+
+  evidence:
+    slot_uri: oio:evidence
+    deprecated: deprecated oboInOwl property
+  external_ontology:
+    slot_uri: oio:external_ontology
+    multivalued: true
+    deprecated: deprecated oboInOwl property
+    
+  # definition source
+  NCIT_definition_source:
+    slot_uri: NCIT:P378
+    deprecated: use OMO over NCIT
+    deprecated_element_has_exact_replacement: definition_source
+    
+  # Term Type
+  NCIT_term_type:
+    slot_uri: NCIT:P383
+    deprecated: use OMO over NCIT
+    deprecated_element_has_exact_replacement: category
+
+  # Term source
+  NCIT_term_source:
+    slot_uri: NCIT:P384
+    deprecated: use OMO over NCIT
+    deprecated_element_has_exact_replacement: isDefinedBy
+    
+
+types:
+  XrefString:
+    typeof: string
+    description: >-
+      A string that is a cross reference to another entity represented in another ontology, vocabulary, database, or
+      website. The string SHOULD be a CURIE or a URL, but this standard relaxes this to a string to support
+      parsing of legacy ontologies that may use other syntaxes. If a CURIE is provided, this SHOULD be registered
+      in a standard registry such as bioregistry.
+    see_also:
+      - https://owlcollab.github.io/oboformat/doc/obo-syntax.html#2.5
+  iri type:
+    typeof: uriorcurie
+    description: >-
+      An IRI
+
+  CURIELiteral:
+    typeof: string
+    description: >-
+      A string representation of a CURIE
+
+  URLLiteral:
+    typeof: string
+    description: >-
+      A URL representation of a CURIE
+
+  tidy string:
+    typeof: string
+    pattern: "^[^\\s].*[^\\s]$"
+
+  label type:
+    typeof: tidy string
+
+    description: >-
+      A string that provides a human-readable name for an entity
+      
+  narrative text:
+    typeof: string
+    description: >-
+      A string that provides a human-readable description of something
+
+  
