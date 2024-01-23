@@ -303,8 +303,15 @@ $(REPORTDIR)/kidney_upper_slim_report.csv: $(TEMPLATEDIR)/kidney_upper_slim.csv
 	$(eval TERM_ID := $(TERM_kidney))
 	$(COVERAGECMD)
 
-cl.db: $(EDIT_PREPROCESSED)
+cl-simple.db: $(ONT)-simple.owl
+	rm cl-base.db
 	semsql make $@
+	rm cl-base-relation-graph.tsv.gz
 
-reports/obo-profile.tsv: cl.db $(TMPDIR)/obo-profile.yaml
-	runoak validate-multiple $< --schema $(TMPDIR)/obo-profile.yaml --output $@ --cutoff 5000
+reports/obo-profile.tsv: cl-base.db obo-profile.yaml
+	runoak validate-multiple $< --schema obo-profile.yaml --output $@ --cutoff 5000
+	awk 'NR==1 {print} NR!=1 && $$2~/CL:/' $@ > $@.tmp.tsv && mv $@.tmp.tsv $@
+
+.PHONY: oak_validation
+oak_validation: reports/obo-profile.tsv
+	make COMP=false IMP=false MIR=false BRI=false PAT=false $<
