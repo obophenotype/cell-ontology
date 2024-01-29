@@ -11,13 +11,14 @@ default_curi_maps:
   - semweb_context
   
 prefixes:
-  omoschema: http://purl.obolibrary.org/obo/schema/
+  omoschema: http://purl.obolibrary.org/obo/omo/schema/
   obo: http://purl.obolibrary.org/obo/
   RO: http://purl.obolibrary.org/obo/RO_
   OMO: http://purl.obolibrary.org/obo/OMO_
   IAO: http://purl.obolibrary.org/obo/IAO_
   OBI: http://purl.obolibrary.org/obo/OBI_
   NCIT: http://purl.obolibrary.org/obo/NCIT_
+  NCBITaxon: http://purl.obolibrary.org/obo/NCBITaxon_
   oio: http://www.geneontology.org/formats/oboInOwl#
   dcterms: http://purl.org/dc/terms/
   linkml: https://w3id.org/linkml/
@@ -28,10 +29,13 @@ prefixes:
   rdfs: http://www.w3.org/2000/01/rdf-schema#
   pav: http://purl.org/pav/
   prov: http://www.w3.org/ns/prov-o#
-  CL: http://purl.obolibrary.org/obo/CL_
+  orcid: https://orcid.org/
 
 default_prefix: omoschema
 default_range: string
+
+settings:
+  orcid_regex: "orcid:\\d{4}-\\d{4}-\\d{4}-\\d{3}[0-9X]"
 
 imports:
   - linkml:types
@@ -69,6 +73,7 @@ classes:
     is_a: AnnotationPropertyMixin
     description: Absolute minimum metadata model
     slots:
+      - label
       - definition
       
   HasSynonyms:
@@ -244,7 +249,7 @@ classes:
         required: true
       
   Term:
-    description: A NamedObject that includes classes, properties, but not ontologies
+    description: A NamedThing that includes classes, properties, but not ontologies
     aliases:
       - term
     is_a: NamedObject
@@ -256,6 +261,7 @@ classes:
       - HasCategory
 #      - HasHistory
       - HasUserInformation
+      - HasMinimalMetadata
     abstract: true
 
         
@@ -277,7 +283,7 @@ classes:
     - has_rank
     slot_usage:
       label:
-        recommended: true
+        required: true
       definition:
         recommended: true
       broadMatch:
@@ -317,12 +323,14 @@ classes:
         range: Property
       
   AnnotationProperty:
+    description: A property used in non-logical axioms
     is_a: Property
     class_uri: owl:AnnotationProperty
     slots:
     - shorthand
     
   ObjectProperty:
+    description: A property that connects two objects in logical axioms
     is_a: Property
     class_uri: owl:ObjectProperty
     mixins:
@@ -337,23 +345,52 @@ classes:
     - propertyChainAxiom
     
   TransitiveProperty:
+    description: An ObjectProperty with the property of transitivity
     is_a: ObjectProperty
     
   NamedIndividual:
+    description: An instance that has a IRI
     is_a: Term
     class_uri: owl:NamedIndividual
     #slots:
     #- type
 
+  HomoSapiens:
+    is_a: NamedIndividual
+    description: An individual human being
+    class_uri: NCBITaxon:9606
+    id_prefixes:
+      - orcid
+    slot_usage:
+      id:
+        pattern: "^orcid:.*"
+
+  Agent:
+    is_a: NamedIndividual
+    class_uri: prov:Agent
+    id_prefixes:
+      - orcid
+    slot_usage:
+      id:
+        pattern: "^orcid:.*"
+
+  Image:
+    is_a: NamedIndividual
+    class_uri: IAO:0000101
+
   Annotation:
+    description: A reified property-object pair
     represents_relationship: true
     attributes:
       predicate:
         relational_role: PREDICATE
+        #required: true
       object:
         relational_role: OBJECT
+        #required: true
     
   Axiom:
+    description: A logical or non-logical statement
     class_uri: owl:Axiom
     represents_relationship: true
     exact_mappings:
@@ -414,47 +451,6 @@ classes:
     - onProperty
     - someValuesFrom
     - allValuesFrom
-
-  PropertyValue:
-    aliases:
-      - annotation
-    abstract: true
-    description: >-
-      A generic grouping for the different kinds of key-value associations on object. Minimally, a property value
-      has a predicate and a value. It can also have a list of xrefs indicating provenance, as well as a metadata
-      object.
-    comments:
-      - >-
-        Any PropertyValue can have a meta object, which can itself have basicPropertyValues, meaning that like
-        the OWL annotation model, axiom annotations can be nested to arbitrary levels.
-    slots:
-      - pred
-      - val
-      - xrefs
-      - meta
-      - valType
-      - lang
-
-  DefinitionPropertyValue:
-    is_a: PropertyValue
-    description: >-
-      A property value that represents an assertion about the textual definition of an entity
-    slot_usage:
-      val:
-        role: definition text
-        range: narrative text
-        description: >-
-          The textual string representing the definition.
-      xrefs:
-        multivalued: true
-        range: XrefString
-        description: >-
-          A list of identifiers that support the definition. The semantics are intentionally broad,
-          and these identifiers might represent individual agents that contributed to the text of the
-          definition, external publications, websites, or links to supporting information, or external
-          vocabulary entities that played a contributing role in the definition.
-
-  
     
   ## MIXINS
   Expression:
@@ -543,7 +539,7 @@ slots:
     is_a: core_property
     slot_uri: IAO:0000115
     multivalued: true
-    range: DefinitionPropertyValue
+    range: narrative text
     exact_mappings:
       - skos:definition
     in_subset:
@@ -552,7 +548,7 @@ slots:
       - obi required profile
     comments:
       - SHOULD be in Aristotelian (genus-differentia) form
-  
+
   predicate:
     relational_role: PREDICATE
 
@@ -595,17 +591,6 @@ slots:
     slot_uri: oio:hasDbXref
     multivalued: true
     range: CURIELiteral
-
-  xrefs:
-    multivalued: true
-    range: XrefString
-    description: >-
-      A list of cross references to other entities represented in other ontologies, vocabularies, databases, or
-      websites. The semantics of xrefs are intentionally weak, and most closely align with rdfs:seeAlso
-    close_mappings:
-      - rdfs:seeAlso
-    exact_mappings:
-      - oio:hasDbXref
     
   # informative for user
   informative_property:
@@ -646,11 +631,17 @@ slots:
   defaultLanguage:
     is_a: informative_property
     slot_uri: protege:defaultLanguage
+  language:
+    is_a: informative_property
+    slot_uri: dcterms:language
+    exact_mappings:
+      - dce:language
   has_ontology_root_term:
     is_a: informative_property
     slot_uri: IAO:0000700
     multivalued: true
     range: Class
+    #recommended: true
   # patterns
   conformsTo:
     is_a: informative_property
@@ -658,6 +649,7 @@ slots:
     multivalued: true
     range: Thing
 
+  # licensing
   license:
     is_a: informative_property
     slot_uri: dcterms:license
@@ -670,16 +662,20 @@ slots:
     multivalued: true
     deprecated: This annotion never existed in FOAF namespace.
     deprecated_element_has_exact_replacement: depiction
-    range: Thing
+    range: Image
   depiction:
     is_a: informative_property
     slot_uri: foaf:depiction
     multivalued: true
-    range: Thing
+    range: Image
   page:
     is_a: informative_property
     slot_uri: foaf:page
     multivalued: true
+
+  symbol:
+    is_a: informative_property
+    slot_uri: IAO:0000028
     
   version_property:
     abstract: true
@@ -729,7 +725,8 @@ slots:
     domain: ObsoleteAspect
     comments:
       - RULE: subject must be deprecated
-    range: Any
+    todos:
+    - restrict range
   consider:
     is_a: obsoletion_related_property
     slot_uri: oio:consider
@@ -743,12 +740,12 @@ slots:
   has_alternative_id:
     description: >-
       Relates a live term to a deprecated ID that was merged in
-    #deprecated: This is deprecated as it is redundant with the inverse replaced_by triple
+    deprecated: This is deprecated as it is redundant with the inverse replaced_by triple
     is_a: obsoletion_related_property
     slot_uri: oio:hasAlternativeId
     multivalued: true
     domain: NotObsoleteAspect
-    range: string
+    range: uriorcurie
     comments:
       - RULE: object must NOT be deprecated
     in_subset:
@@ -763,6 +760,10 @@ slots:
     slot_uri: RO:0002161
     multivalued: true
     range: Class
+  present_in_taxon:
+    slot_uri: RO:0002175
+    multivalued: true
+    range: Class
   is_a_defining_property_chain_axiom:
     slot_uri: RO:0002581
   is_a_defining_property_chain_axiom_where_second_argument_is_reflexive:
@@ -775,16 +776,24 @@ slots:
     is_a: provenance_property
     slot_uri: dcterms:contributor
     multivalued: true
-    range: Thing
+    range: Agent
     close_mappings:
       - prov:wasAttributedTo
-    pattern: "^orcid:[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)$"
+    structured_pattern:
+      syntax: "{orcid_regex}"
+      interpolated: true
+      partial_match: false
   creator:
     is_a: provenance_property
     slot_uri: dcterms:creator
     multivalued: true
+    range: Agent
     close_mappings:
       - prov:wasAttributedTo
+    structured_pattern:
+      syntax: "{orcid_regex}"
+      interpolated: true
+      partial_match: false
   created:
     is_a: provenance_property
     slot_uri: dcterms:created
@@ -811,7 +820,6 @@ slots:
     slot_uri: oio:created_by
     deprecated: proposed obsoleted by OMO group 2022-04-12
     deprecated_element_has_exact_replacement: creator
-    range: Thing
   creation_date:
     is_a: provenance_property
     slot_uri: oio:creation_date
@@ -1026,7 +1034,7 @@ slots:
     is_a: logical_predicate
     slot_uri: owl:disjointWith
     multivalued: true
-    range: Thing
+    range: Class
   distinctMembers:
     is_a: logical_predicate
     slot_uri: owl:distinctMembers
@@ -1147,6 +1155,8 @@ slots:
   seeAlso:
     slot_uri: rdfs:seeAlso
     multivalued: true
+    todos:
+    - restrict range
     range: Thing
   type:
     is_a: logical_predicate
@@ -1236,15 +1246,6 @@ slots:
     
 
 types:
-  XrefString:
-    typeof: string
-    description: >-
-      A string that is a cross reference to another entity represented in another ontology, vocabulary, database, or
-      website. The string SHOULD be a CURIE or a URL, but this standard relaxes this to a string to support
-      parsing of legacy ontologies that may use other syntaxes. If a CURIE is provided, this SHOULD be registered
-      in a standard registry such as bioregistry.
-    see_also:
-      - https://owlcollab.github.io/oboformat/doc/obo-syntax.html#2.5
   iri type:
     typeof: uriorcurie
     description: >-
@@ -1275,4 +1276,51 @@ types:
     description: >-
       A string that provides a human-readable description of something
 
-  
+enums:
+  DefinitionConstraintComponent:
+    description: >-
+      An extension of SHACL constraint component for constraining definitions
+    source: https://philpapers.org/archive/SEPGFW.pdf
+    see_also:
+      - https://github.com/INCATools/ontology-access-kit/issues/305
+    permissible_values:
+      DefinitionConstraint:
+        description: >-
+          A general problem with a definition
+        meaning: omoschema:DCC.Any
+      DefinitionPresence:
+        is_a: DefinitionConstraint
+        description: >-
+          An entity must have a definition
+        meaning: omoschema:DCC.S0
+      Conventions:
+        is_a: DefinitionConstraint
+        description: >-
+          Definitions should conform to conventions
+        meaning: omoschema:DCC.S1
+      Harmonized:
+        is_a: DefinitionConstraint
+        description: >-
+          Definitions should be harmonized
+        meaning: omoschema:DCC.S1.1
+      GenusDifferentiaForm:
+        is_a: DefinitionConstraint
+        description: >-
+          A definition should follow the genus-differentia form
+        meaning: omoschema:DCC.S3
+      SingleGenus:
+        is_a: GenusDifferentiaForm
+        description: >-
+          An entity must have a single genus
+        meaning: omoschema:DCC.S3.1
+      Circularity:
+        is_a: DefinitionConstraint
+        description: >-
+          A definition must not be circular
+        meaning: omoschema:DCC.S7
+      MatchTextAndLogical:
+        is_a: DefinitionConstraint
+        description: >-
+          Text definitions and logical forms should match
+        meaning: omoschema:DCC.S11
+      
