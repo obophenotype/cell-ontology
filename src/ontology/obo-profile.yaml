@@ -676,6 +676,14 @@ slots:
   symbol:
     is_a: informative_property
     slot_uri: IAO:0000028
+
+  expand_expression_to:
+    is_a: informative_property
+    slot_uri: IAO:0000424
+
+  is_negative_form_of:
+    is_a: informative_property
+    slot_uri: RO:0004050
     
   version_property:
     abstract: true
@@ -779,10 +787,7 @@ slots:
     range: Agent
     close_mappings:
       - prov:wasAttributedTo
-    structured_pattern:
-      syntax: "{orcid_regex}"
-      interpolated: true
-      partial_match: false
+    pattern: "^orcid:[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)|^<https:\/\/www.wikidata.org\/entity\/(Q|P)[0-9]+>$|^<https:\/\/github.com\/orgs\/[a-z-_]+\/teams\/>$|^(<https:\/\/ror.org\/)[0-9a-z]{9}>$"
   creator:
     is_a: provenance_property
     slot_uri: dcterms:creator
@@ -1138,14 +1143,12 @@ slots:
     is_a: logical_predicate
     slot_uri: rdfs:domain
     multivalued: true
-    todos:
-    - restrict range
+    range: Class
   range:
     is_a: logical_predicate
     slot_uri: rdfs:range
     multivalued: true
-    todos:
-    - restrict range
+    range: Class
   isDefinedBy:
     slot_uri: rdfs:isDefinedBy
     range: Ontology
@@ -1155,8 +1158,6 @@ slots:
   seeAlso:
     slot_uri: rdfs:seeAlso
     multivalued: true
-    todos:
-    - restrict range
     range: Thing
   type:
     is_a: logical_predicate
