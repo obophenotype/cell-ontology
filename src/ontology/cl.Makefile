@@ -233,7 +233,12 @@ $(TMPDIR)/hra_subset.owl:
 
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-	
+
+## Download CellXGene reference subset
+
+CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
+$(TEMPLATEDIR)/cellxgene_subset.tsv:
+	wget $(CELLXGENE_SUBSET_URL) -O $@
 
 # Make CL-plus (CL + PCL product)
 
