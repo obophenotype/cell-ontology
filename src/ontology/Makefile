@@ -50,7 +50,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 PATTERNDIR=                 ../patterns
@@ -437,6 +437,14 @@ $(COMPONENTSDIR)/kidney_upper_slim.owl: $(TEMPLATEDIR)/kidney_upper_slim.csv
 		$(ANNOTATE_CONVERT_FILE); fi
 
 .PRECIOUS: $(COMPONENTSDIR)/kidney_upper_slim.owl
+
+
+$(COMPONENTSDIR)/cellxgene_subset.owl: $(TEMPLATEDIR)/cellxgene_subset.tsv
+	if [ $(COMP) = true ] ; then $(ROBOT) template  \
+		$(patsubst %, --template %, $^) \
+		$(ANNOTATE_CONVERT_FILE); fi
+
+.PRECIOUS: $(COMPONENTSDIR)/cellxgene_subset.owl
 # ----------------------------------------
 # Mirroring upstream ontologies
 # ----------------------------------------

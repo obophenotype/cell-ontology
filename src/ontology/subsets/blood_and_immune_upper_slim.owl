@@ -29,8 +29,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/blood_and_immune_upper_slim.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2023-12-05/subsets/blood_and_immune_upper_slim.owl"/>
-        <owl:versionInfo>2023-12-05</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2024-01-04/subsets/blood_and_immune_upper_slim.owl"/>
+        <owl:versionInfo>2024-01-04</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -310,6 +310,14 @@ Annotations: IAO_0000424 &quot;http://purl.obolibrary.org/obo/BFO_0000051 some (
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-4423-4370"/>
         <terms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2023-03-03</terms:created>
         <rdfs:label>abbreviation</rdfs:label>
+        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/OMO_0003003 -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/OMO_0003003">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
     </owl:AnnotationProperty>
     
@@ -881,14 +889,6 @@ WHERE {
     <!-- http://purl.obolibrary.org/obo/ncbitaxon#blast_name -->
 
     <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ncbitaxon#blast_name">
-        <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
-    </owl:AnnotationProperty>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/ncbitaxon#common_name -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.obolibrary.org/obo/ncbitaxon#common_name">
         <rdfs:subPropertyOf rdf:resource="http://www.geneontology.org/formats/oboInOwl#SynonymTypeProperty"/>
     </owl:AnnotationProperty>
     
@@ -4461,6 +4461,37 @@ Expands_to: T has_fasciculating_neuron_projection that synapse_in some R.</obo:I
         <rdfs:label>has output</rdfs:label>
         <rdfs:label xml:lang="en">has output</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://wiki.geneontology.org/Has_output</rdfs:seeAlso>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002252 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002252">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002375"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002253"/>
+        <obo:IAO_0000112>In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is connecting branch of S, and B1-1 as a connecting branch of B1.</obo:IAO_0000112>
+        <obo:IAO_0000115>b connecting-branch-of s iff b is connected to s, and there exists some tree-like structure t such that the mereological sum of b plus s is either the same as t or a branching-part-of t.</obo:IAO_0000115>
+        <obo:RO_0004036 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
+        <oboInOwl:hasDbXref>RO:0002252</oboInOwl:hasDbXref>
+        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>connecting_branch_of</oboInOwl:id>
+        <oboInOwl:shorthand>connecting_branch_of</oboInOwl:shorthand>
+        <rdfs:label>connecting branch of</rdfs:label>
+        <rdfs:seeAlso rdf:resource="https://github.com/obophenotype/uberon/issues/2212"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/RO_0002253 -->
+
+    <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/RO_0002253">
+        <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002375"/>
+        <obo:IAO_0000115>inverse of connecting branch of</obo:IAO_0000115>
+        <obo:RO_0004036 rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/RO_0002259"/>
+        <rdfs:label>has connecting branch</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -14385,10 +14416,12 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A progenitor cell restricted to the myeloid lineage.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasBroadSynonym>myeloid progenitor cell</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>BTO:0004730</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-2099</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:70339</oboInOwl:hasDbXref>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:comment>Note that this is a class of cell types, not an identified single cell type.</rdfs:comment>
         <rdfs:label>myeloid lineage restricted progenitor cell</rdfs:label>
     </owl:Class>
@@ -19702,35 +19735,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0003016 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003016">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003008"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007585"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange.</obo:IAO_0000115>
-        <oboInOwl:hasAlternativeId>GO:0010802</oboInOwl:hasAlternativeId>
-        <oboInOwl:hasExactSynonym>respiratory gaseous exchange</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:0003016</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_generic"/>
-        <rdfs:label>respiratory system process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0003016"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:dph</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:mtg_cardio</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:tb</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0003674 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0003674">
@@ -19983,32 +19987,32 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005581">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
+        <rdfs:subClassOf rdf:nodeID="genid2301"/>
         <rdfs:subClassOf rdf:nodeID="genid2303"/>
-        <rdfs:subClassOf rdf:nodeID="genid2305"/>
         <obo:IAO_0000115>A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>Wikipedia:Collagen</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0005581</oboInOwl:id>
         <rdfs:label>collagen trimer</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2303">
+    <owl:Restriction rdf:nodeID="genid2301">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid2305">
+    <owl:Restriction rdf:nodeID="genid2303">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
         <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2303"/>
+        <owl:annotatedTarget rdf:nodeID="genid2301"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2305"/>
+        <owl:annotatedTarget rdf:nodeID="genid2303"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -21916,27 +21920,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedTarget>The process whose specific outcome is the progression of the mesoderm over time, from its formation to the mature structure. The mesoderm is the middle germ layer that develops into muscle, bone, cartilage, blood and connective tissue.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:dph</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:tb</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_0007585 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0007585">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032501"/>
-        <obo:IAO_0000115>The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism&apos;s cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms.</obo:IAO_0000115>
-        <oboInOwl:hasBroadSynonym>breathing</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasBroadSynonym>respiration</oboInOwl:hasBroadSynonym>
-        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:0007585</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_chembl"/>
-        <rdfs:label>respiratory gaseous exchange by respiratory system</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0007585"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The process of gaseous exchange between an organism and its environment. In plants, microorganisms, and many small animals, air or water makes direct contact with the organism&apos;s cells or tissue fluids, and the processes of diffusion supply the organism with dioxygen (O2) and remove carbon dioxide (CO2). In larger animals the efficiency of gaseous exchange is improved by specialized respiratory organs, such as lungs and gills, which are ventilated by breathing mechanisms.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>ISBN:0198506732</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -32133,13 +32116,13 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>mice</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10088"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>mouse</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     
 
@@ -32167,7 +32150,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_10090"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>mouse</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     
 
@@ -32316,7 +32299,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>eukaryotes</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
@@ -32502,7 +32485,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>multicellular animals</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
@@ -32547,7 +32530,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33511"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>deuterostomes</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     
 
@@ -32781,13 +32764,13 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9347"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>eutherian mammals</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9347"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>placental mammals</owl:annotatedTarget>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#common_name"/>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003003"/>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9347"/>
@@ -37355,6 +37338,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33090"/>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+        <oboInOwl:hasDbXref>BFO:0000003</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>UBERON:0000000</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#common_anatomy"/>
@@ -37412,123 +37396,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Any hollow cylindrical anatomical structure containing a lumen through which substances are transported.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000033 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000033">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011676"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The head is the anterior-most division of the body [GO].</obo:IAO_0000115>
-        <obo:RO_0002171 rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000948"/>
-        <obo:UBPROP_0000001>Organism subdivision that is the part of the body consisting of the cranial and pharyngeal regions.[AAO]</obo:UBPROP_0000001>
-        <obo:UBPROP_0000001>Organism subdivision which is the part of the body which consists of the cranial and pharygeal regions.[TAO]</obo:UBPROP_0000001>
-        <obo:UBPROP_0000003>Vertebrate evolution has been characterized by a fresh and vast array of cranial structures that collectively form the head.[well established][VHOG]</obo:UBPROP_0000003>
-        <oboInOwl:hasDbXref>AAO:0010335</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>AEO:0000106</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>BILA:0000115</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>BIRNLEX:1230</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>BTO:0000282</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>CALOHA:TS-0436</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EFO:0000964</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EHDAA2:0003106</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EMAPA:31858</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FMA:7154</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GAID:61</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>HAO:0000397</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MA:0000023</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MAT:0000294</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MESH:D006257</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MIAA:0000294</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NCIT:C12419</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>SCTID:302548004</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>SPD:0000016</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>TAO:0001114</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>TGMA:0000002</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UMLS:C0018670</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>VHOG:0001644</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>WBbt:0005739</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Head</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>XAO:0003024</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ZFA:0001114</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>galen:Head</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>head (volume)</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasNarrowSynonym>adult head</oboInOwl:hasNarrowSynonym>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>cephalic area</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>UBERON:0000033</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
-        <rdfs:label>head</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The head is the anterior-most division of the body [GO].</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0060322</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Head</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
-        <owl:annotatedTarget>Organism subdivision that is the part of the body consisting of the cranial and pharyngeal regions.[AAO]</owl:annotatedTarget>
-        <oboInOwl:date_retrieved>2012-06-20</oboInOwl:date_retrieved>
-        <oboInOwl:external_class>AAO:0010335</oboInOwl:external_class>
-        <oboInOwl:ontology>AAO</oboInOwl:ontology>
-        <oboInOwl:source>AAO:BJB</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
-        <owl:annotatedTarget>Organism subdivision which is the part of the body which consists of the cranial and pharygeal regions.[TAO]</owl:annotatedTarget>
-        <oboInOwl:date_retrieved>2012-08-14</oboInOwl:date_retrieved>
-        <oboInOwl:external_class>TAO:0001114</oboInOwl:external_class>
-        <oboInOwl:ontology>TAO</oboInOwl:ontology>
-        <oboInOwl:source>ZFIN:curator</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000003"/>
-        <owl:annotatedTarget>Vertebrate evolution has been characterized by a fresh and vast array of cranial structures that collectively form the head.[well established][VHOG]</owl:annotatedTarget>
-        <oboInOwl:date_retrieved>2012-09-17</oboInOwl:date_retrieved>
-        <oboInOwl:external_class>VHOG:0001644</oboInOwl:external_class>
-        <oboInOwl:ontology>VHOG</oboInOwl:ontology>
-        <oboInOwl:source>ISBN:978-0072528305 Kardong KV, Vertebrates: Comparative Anatomy, Function, Evolution (2006) p.82</oboInOwl:source>
-        <oboInOwl:source>http://bgee.unil.ch/</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-        <owl:annotatedTarget>UMLS:C0018670</owl:annotatedTarget>
-        <oboInOwl:source>BIRNLEX:1230</oboInOwl:source>
-        <oboInOwl:source>ncithesaurus:Head</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>head (volume)</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:7154</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>cephalic area</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>SPD:0000016</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -38366,7 +38233,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4124"/>
+        <rdfs:subClassOf rdf:nodeID="genid4112"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002082"/>
@@ -38402,14 +38269,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>gastrula stage</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4124">
+    <owl:Restriction rdf:nodeID="genid4112">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4124"/>
+        <owl:annotatedTarget rdf:nodeID="genid4112"/>
         <oboInOwl:source>BILS</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38556,53 +38423,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000153 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000153">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000475"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0000096"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000154"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000154"/>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>UBERON:0000153</oboInOwl:id>
-        <rdfs:label>anterior region of body</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000153"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#disjointWith"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000154"/>
-        <oboInOwl:source>lexical</oboInOwl:source>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0000154 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000154">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000475"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>UBERON:0000154</oboInOwl:id>
-        <rdfs:label>posterior region of body</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0000165 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000165">
@@ -38620,17 +38440,10 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004921"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BSPO_0001106"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4155"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -38703,21 +38516,11 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/obophenotype/uberon/issues/661</rdfs:seeAlso>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/0/06/Mouth_illustration-Otis_Archives.jpg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4155">
-        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002131"/>
-        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-    </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004921"/>
         <oboInOwl:notes>the mouth contains structures such as jaw skeleton that may not strictly be considered tract parts</oboInOwl:notes>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4155"/>
-        <oboInOwl:notes>exceptions in some taxa</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
@@ -38841,15 +38644,15 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4176"/>
+        <rdfs:subClassOf rdf:nodeID="genid4157"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001969"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4179"/>
-        <rdfs:subClassOf rdf:nodeID="genid4181"/>
+        <rdfs:subClassOf rdf:nodeID="genid4160"/>
+        <rdfs:subClassOf rdf:nodeID="genid4162"/>
         <obo:IAO_0000115>A fluid that is composed of blood plasma and erythrocytes.</obo:IAO_0000115>
         <obo:IAO_0000232>This class excludes blood analogues, such as the insect analog of blood. See UBERON:0000179 haemolymphatic fluid.</obo:IAO_0000232>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -38891,34 +38694,34 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>blood</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4176">
+    <owl:Restriction rdf:nodeID="genid4157">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4179">
+    <owl:Restriction rdf:nodeID="genid4160">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002049"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4181">
+    <owl:Restriction rdf:nodeID="genid4162">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006596"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4176"/>
+        <owl:annotatedTarget rdf:nodeID="genid4157"/>
         <oboInOwl:source>CL:tm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4179"/>
+        <owl:annotatedTarget rdf:nodeID="genid4160"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1330</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4181"/>
+        <owl:annotatedTarget rdf:nodeID="genid4162"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -39222,7 +39025,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000463">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000465"/>
-        <rdfs:subClassOf rdf:nodeID="genid4222"/>
+        <rdfs:subClassOf rdf:nodeID="genid4203"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -39264,14 +39067,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#upper_level"/>
         <rdfs:label>organism substance</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4222">
+    <owl:Restriction rdf:nodeID="genid4203">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000468"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4222"/>
+        <owl:annotatedTarget rdf:nodeID="genid4203"/>
         <oboInOwl:notes>this relationship may be too strong and may be weakened in future</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -40014,12 +39817,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005769"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6072"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
+        <rdfs:subClassOf rdf:nodeID="genid4264"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -40063,6 +39861,16 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>epithelium</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg</foaf:depiction>
     </owl:Class>
+    <owl:Restriction rdf:nodeID="genid4264">
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+    </owl:Restriction>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000483"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid4264"/>
+        <oboInOwl:source>http://palaeos.com/metazoa/porifera/homoscleromorpha.html</oboInOwl:source>
+    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000483"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -40524,7 +40332,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000221"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4334"/>
+        <rdfs:subClassOf rdf:nodeID="genid4316"/>
         <obo:IAO_0000115>Primary germ layer that is the outer of the embryo&apos;s three germ layers and gives rise to epidermis and neural tissue.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Primary germ layer that is the outer of the embryonic germ layers and gives rise to epidermis and neural tissue.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
@@ -40562,14 +40370,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>ectoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4334">
+    <owl:Restriction rdf:nodeID="genid4316">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006601"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4334"/>
+        <owl:annotatedTarget rdf:nodeID="genid4316"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40622,7 +40430,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000223"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4342"/>
+        <rdfs:subClassOf rdf:nodeID="genid4324"/>
         <obo:IAO_0000115>Primary germ layer that lies remote from the surface of the embryo and gives rise to internal tissues such as gut.</obo:IAO_0000115>
         <obo:UBPROP_0000003>The Bilateria are triploblastic (with true endoderm, mesoderm, and ectoderm) (...).[well established][VHOG]</obo:UBPROP_0000003>
         <obo:UBPROP_0000007>endodermal</obo:UBPROP_0000007>
@@ -40659,14 +40467,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4342">
+    <owl:Restriction rdf:nodeID="genid4324">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006595"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000925"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4342"/>
+        <owl:annotatedTarget rdf:nodeID="genid4324"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40711,7 +40519,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4350"/>
+        <rdfs:subClassOf rdf:nodeID="genid4332"/>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <obo:UBPROP_0000001>Primary germ layer that is the middle of the embryonic germ layers.[AAO]</obo:UBPROP_0000001>
@@ -40756,7 +40564,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>mesoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4350">
+    <owl:Restriction rdf:nodeID="genid4332">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006603"/>
     </owl:Restriction>
@@ -40769,7 +40577,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4350"/>
+        <owl:annotatedTarget rdf:nodeID="genid4332"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40976,7 +40784,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005181"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
-        <rdfs:subClassOf rdf:nodeID="genid4377"/>
+        <rdfs:subClassOf rdf:nodeID="genid4359"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -41053,14 +40861,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4377">
+    <owl:Restriction rdf:nodeID="genid4359">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015410"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000948"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4377"/>
+        <owl:annotatedTarget rdf:nodeID="genid4359"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41246,160 +41054,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedTarget>joints</owl:annotatedTarget>
         <oboInOwl:hasDbXref>ZFA:0001596</oboInOwl:hasDbXref>
         <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003004"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0001004 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0001004">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0000467"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007585"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0003016"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0007585"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001007"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001009"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
-        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002405"/>
-        <obo:IAO_0000115>Functional system which consists of structures involved in respiration.</obo:IAO_0000115>
-        <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
-        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
-        <obo:UBPROP_0000001>The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]</obo:UBPROP_0000001>
-        <obo:UBPROP_0000003>There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]</obo:UBPROP_0000003>
-        <oboInOwl:hasDbXref>AAO:0000541</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>BTO:0000203</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>CALOHA:TS-1319</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EFO:0000804</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EHDAA2:0001604</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EHDAA:2203</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EMAPA:16727</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EV:0100036</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FMA:7158</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GAID:78</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MA:0000327</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MAT:0000030</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MESH:D012137</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MIAA:0000030</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NCIT:C12779</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>SCTID:278197002</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>TAO:0000272</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UMLS:C0035237</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>VHOG:0000202</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Wikipedia:Respiratory_system</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>XAO:0000117</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ZFA:0000272</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>apparatus respiratorius</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>respiratory system</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>Atmungssystem</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>apparatus respiratorius</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>systema respiratorium</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>UBERON:0001004</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#functional_classification"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
-        <rdfs:label>respiratory system</rdfs:label>
-        <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg</foaf:depiction>
-        <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb</foaf:depiction>
-        <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb</foaf:depiction>
-        <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb</foaf:depiction>
-        <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb</foaf:depiction>
-        <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb</foaf:depiction>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Functional system which consists of structures involved in respiration.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Respiratory_system</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002161"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
-        <oboInOwl:source>Wikipedia:Acoelomorpha</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000001"/>
-        <owl:annotatedTarget>The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]</owl:annotatedTarget>
-        <oboInOwl:date_retrieved>2012-06-20</oboInOwl:date_retrieved>
-        <oboInOwl:external_class>AAO:0000541</oboInOwl:external_class>
-        <oboInOwl:ontology>AAO</oboInOwl:ontology>
-        <oboInOwl:source>AAO:BJB</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/UBPROP_0000003"/>
-        <owl:annotatedTarget>There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]</owl:annotatedTarget>
-        <oboInOwl:date_retrieved>2012-09-17</oboInOwl:date_retrieved>
-        <oboInOwl:external_class>VHOG:0000202</oboInOwl:external_class>
-        <oboInOwl:ontology>VHOG</oboInOwl:ontology>
-        <oboInOwl:source>ISBN:978-0030223693 Liem KF, Bemis WE, Walker WF, Grande L, Functional Anatomy of the Vertebrates: An Evolutionary Perspective (2001) p.599 and Figure 18-23</oboInOwl:source>
-        <oboInOwl:source>http://bgee.unil.ch/</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-        <owl:annotatedTarget>UMLS:C0035237</owl:annotatedTarget>
-        <oboInOwl:source>ncithesaurus:Respiratory_System</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>Atmungssystem</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BTO:0000203</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>apparatus respiratorius</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>BTO:0000203</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001004"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>systema respiratorium</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Respiratory_system</oboInOwl:hasDbXref>
-        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/uberon/core#LATIN"/>
     </owl:Axiom>
     
 
@@ -41725,7 +41379,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4449"/>
+        <rdfs:subClassOf rdf:nodeID="genid4415"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
@@ -41778,14 +41432,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4449">
+    <owl:Restriction rdf:nodeID="genid4415">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016880"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4449"/>
+        <owl:annotatedTarget rdf:nodeID="genid4415"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41873,7 +41527,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4462"/>
+        <rdfs:subClassOf rdf:nodeID="genid4428"/>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:UBPROP_0000001>Part of the nervous system which includes the brain and spinal cord.[AAO]</obo:UBPROP_0000001>
@@ -41920,7 +41574,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>central nervous system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4462">
+    <owl:Restriction rdf:nodeID="genid4428">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
     </owl:Restriction>
@@ -41934,7 +41588,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4462"/>
+        <owl:annotatedTarget rdf:nodeID="genid4428"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42215,6 +41869,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
         <oboInOwl:hasDbXref>AAO:0010841</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>AEO:0000000</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>BFO:0000004</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BILA:0000000</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BIRNLEX:6</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CARO:0000000</oboInOwl:hasDbXref>
@@ -42428,7 +42083,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4516"/>
+        <rdfs:subClassOf rdf:nodeID="genid4482"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001630"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005090"/>
         <obo:IAO_0000115>Skeletal element that is composed of bone tissue.</obo:IAO_0000115>
@@ -42478,14 +42133,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>bone element</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4516">
+    <owl:Restriction rdf:nodeID="genid4482">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002481"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4516"/>
+        <owl:annotatedTarget rdf:nodeID="genid4482"/>
         <oboInOwl:source>VSAO-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42596,7 +42251,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4531"/>
+        <rdfs:subClassOf rdf:nodeID="genid4497"/>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
@@ -42638,14 +42293,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>digestive tract</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4531">
+    <owl:Restriction rdf:nodeID="genid4497">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007026"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4531"/>
+        <owl:annotatedTarget rdf:nodeID="genid4497"/>
         <oboInOwl:source>NCBIBook:NBK10107</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42922,8 +42577,8 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4572"/>
-        <rdfs:subClassOf rdf:nodeID="genid4574"/>
+        <rdfs:subClassOf rdf:nodeID="genid4538"/>
+        <rdfs:subClassOf rdf:nodeID="genid4540"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -42936,7 +42591,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004872"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4578"/>
+        <rdfs:subClassOf rdf:nodeID="genid4544"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
@@ -42995,34 +42650,34 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>blood vessel</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4572">
+    <owl:Restriction rdf:nodeID="genid4538">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4574">
+    <owl:Restriction rdf:nodeID="genid4540">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007500"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4578">
+    <owl:Restriction rdf:nodeID="genid4544">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006965"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4572"/>
+        <owl:annotatedTarget rdf:nodeID="genid4538"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4574"/>
+        <owl:annotatedTarget rdf:nodeID="genid4540"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4578"/>
+        <owl:annotatedTarget rdf:nodeID="genid4544"/>
         <oboInOwl:source>GO:0072360</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43745,7 +43400,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0040011"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4659"/>
+        <rdfs:subClassOf rdf:nodeID="genid4625"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002492"/>
@@ -43779,14 +43434,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>musculoskeletal system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4659">
+    <owl:Restriction rdf:nodeID="genid4625">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4659"/>
+        <owl:annotatedTarget rdf:nodeID="genid4625"/>
         <oboInOwl:notes>check ctenophore</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -43915,7 +43570,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002323">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002553"/>
-        <rdfs:subClassOf rdf:nodeID="genid4678"/>
+        <rdfs:subClassOf rdf:nodeID="genid4644"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002572"/>
@@ -43956,14 +43611,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:comment>EDITOR_NOTE check the FMA placement here; ncit placement of body cavity here probably not correct</rdfs:comment>
         <rdfs:label>coelemic cavity lumen</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4678">
+    <owl:Restriction rdf:nodeID="genid4644">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002494"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003886"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002323"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4678"/>
+        <owl:annotatedTarget rdf:nodeID="genid4644"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -44071,9 +43726,9 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001049"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4698"/>
-        <rdfs:subClassOf rdf:nodeID="genid4700"/>
-        <rdfs:subClassOf rdf:nodeID="genid4702"/>
+        <rdfs:subClassOf rdf:nodeID="genid4664"/>
+        <rdfs:subClassOf rdf:nodeID="genid4666"/>
+        <rdfs:subClassOf rdf:nodeID="genid4668"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
@@ -44128,15 +43783,15 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>notochord</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4698">
+    <owl:Restriction rdf:nodeID="genid4664">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4700">
+    <owl:Restriction rdf:nodeID="genid4666">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004880"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4702">
+    <owl:Restriction rdf:nodeID="genid4668">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
     </owl:Restriction>
@@ -44155,19 +43810,19 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4698"/>
+        <owl:annotatedTarget rdf:nodeID="genid4664"/>
         <oboInOwl:source>http://tolweb.org/Chordata/2499</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4700"/>
+        <owl:annotatedTarget rdf:nodeID="genid4666"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4702"/>
+        <owl:annotatedTarget rdf:nodeID="genid4668"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44252,8 +43907,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002329">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007503"/>
-        <rdfs:subClassOf rdf:nodeID="genid4716"/>
-        <rdfs:subClassOf rdf:nodeID="genid4718"/>
+        <rdfs:subClassOf rdf:nodeID="genid4682"/>
+        <rdfs:subClassOf rdf:nodeID="genid4684"/>
         <obo:IAO_0000115>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</obo:IAO_0000115>
         <obo:IAO_0000232>EDITOR_NOTE currently classified as an epithelial vesicle, consistent with EHDAA2 and https://github.com/obophenotype/uberon/wiki/The-neural-crest. Consider making &apos;somitic mesoderm&apos; a separate term and correlate with regionalization processes. Consider moving ZFA term to &apos;trunk somite&apos; as it is part of the trunk</obo:IAO_0000232>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
@@ -44299,11 +43954,11 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>somite</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4716">
+    <owl:Restriction rdf:nodeID="genid4682">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4718">
+    <owl:Restriction rdf:nodeID="genid4684">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
     </owl:Restriction>
@@ -44316,13 +43971,13 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4716"/>
+        <owl:annotatedTarget rdf:nodeID="genid4682"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4718"/>
+        <owl:annotatedTarget rdf:nodeID="genid4684"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44435,12 +44090,12 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002342">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010316"/>
-        <rdfs:subClassOf rdf:nodeID="genid4734"/>
-        <rdfs:subClassOf rdf:nodeID="genid4736"/>
-        <rdfs:subClassOf rdf:nodeID="genid4738"/>
-        <rdfs:subClassOf rdf:nodeID="genid4740"/>
-        <rdfs:subClassOf rdf:nodeID="genid4742"/>
-        <rdfs:subClassOf rdf:nodeID="genid4744"/>
+        <rdfs:subClassOf rdf:nodeID="genid4700"/>
+        <rdfs:subClassOf rdf:nodeID="genid4702"/>
+        <rdfs:subClassOf rdf:nodeID="genid4704"/>
+        <rdfs:subClassOf rdf:nodeID="genid4706"/>
+        <rdfs:subClassOf rdf:nodeID="genid4708"/>
+        <rdfs:subClassOf rdf:nodeID="genid4710"/>
         <obo:IAO_0000115>A specialized region of ectoderm found between the neural ectoderm (neural plate) and non-neural ectoderm and composed of highly migratory pluripotent cells that delaminate in early embryonic development from the dorsal neural tube and give rise to an astounding variety of differentiated cell types[MP].</obo:IAO_0000115>
         <obo:IAO_0000232>EDITOR_NOTE consider including subclasses for pre- and post- migratory (e.g. sheets/paths/streams).</obo:IAO_0000232>
         <obo:RO_0002174 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_117565"/>
@@ -44480,66 +44135,66 @@ For example, A and B may be gene products and binding of B by A positively regul
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4734">
+    <owl:Restriction rdf:nodeID="genid4700">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4736">
+    <owl:Restriction rdf:nodeID="genid4702">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_89593"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4738">
+    <owl:Restriction rdf:nodeID="genid4704">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4740">
+    <owl:Restriction rdf:nodeID="genid4706">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005062"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4742">
+    <owl:Restriction rdf:nodeID="genid4708">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4744">
+    <owl:Restriction rdf:nodeID="genid4710">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4734"/>
+        <owl:annotatedTarget rdf:nodeID="genid4700"/>
         <oboInOwl:source>XAO</oboInOwl:source>
         <oboInOwl:source>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4736"/>
+        <owl:annotatedTarget rdf:nodeID="genid4702"/>
         <oboInOwl:notes>Hall and others restrict NC to vertebrates but we opt for a less restrictive constraint to avoid inconsistencies when areas such as P1 area of pallium in hagfishes inherit cell lineage from telecephalon-contributing NC cells</oboInOwl:notes>
         <oboInOwl:source>ISBN:0073040584</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4738"/>
+        <owl:annotatedTarget rdf:nodeID="genid4704"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4740"/>
+        <owl:annotatedTarget rdf:nodeID="genid4706"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4742"/>
+        <owl:annotatedTarget rdf:nodeID="genid4708"/>
         <oboInOwl:notes>pre migratory https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4744"/>
+        <owl:annotatedTarget rdf:nodeID="genid4710"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44727,7 +44382,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4769"/>
+        <rdfs:subClassOf rdf:nodeID="genid4735"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -44785,14 +44440,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>bone marrow</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/7/74/Gray72-en.svg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4769">
+    <owl:Restriction rdf:nodeID="genid4735">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002371"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4769"/>
+        <owl:annotatedTarget rdf:nodeID="genid4735"/>
         <oboInOwl:source>FMA</oboInOwl:source>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
@@ -45063,14 +44718,14 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002390">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
-        <rdfs:subClassOf rdf:nodeID="genid4802"/>
+        <rdfs:subClassOf rdf:nodeID="genid4768"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4805"/>
+        <rdfs:subClassOf rdf:nodeID="genid4771"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002405"/>
         <obo:IAO_0000115>Anatomical system that is involved in the production of hematopoietic cells.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -45115,24 +44770,24 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>hematopoietic system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4802">
+    <owl:Restriction rdf:nodeID="genid4768">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002193"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4805">
+    <owl:Restriction rdf:nodeID="genid4771">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003061"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4802"/>
+        <owl:annotatedTarget rdf:nodeID="genid4768"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4805"/>
+        <owl:annotatedTarget rdf:nodeID="genid4771"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -45503,7 +45158,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4847"/>
+        <rdfs:subClassOf rdf:nodeID="genid4813"/>
         <obo:IAO_0000115>Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>It is reasonable to assume that the proximate invertebrate ancestor of the vertebrates had an amphioxus-like tail bud in its larval stage. This archetypal tail bud would have (...) (3) lacked any component of mesenchyme cells, (4) budded off new mesodermal segments directly, without any intervening zone of presomitic mesoderm (...). Then, early in vertebrate evolution, epithelium-to-mesenchyme interconversions (and the gene networks for effecting them) became prominent features of development. (...) In any case, conspicuous mesenchymal components tended to be added to the vertebrate tail bud itself. In addition, a mesenchymatous presomitic mesoderm (not a part of the tail bud proper) came to intervene between the tail bud and the forming somites.[well established][VHOG]</obo:UBPROP_0000003>
@@ -45528,14 +45183,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>presomitic mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4847">
+    <owl:Restriction rdf:nodeID="genid4813">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007282"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4847"/>
+        <owl:annotatedTarget rdf:nodeID="genid4813"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45765,9 +45420,9 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
-        <rdfs:subClassOf rdf:nodeID="genid4871"/>
-        <rdfs:subClassOf rdf:nodeID="genid4873"/>
-        <rdfs:subClassOf rdf:nodeID="genid4875"/>
+        <rdfs:subClassOf rdf:nodeID="genid4837"/>
+        <rdfs:subClassOf rdf:nodeID="genid4839"/>
+        <rdfs:subClassOf rdf:nodeID="genid4841"/>
         <obo:IAO_0000115>A region of embryonic ectodermal cells that lie directly above the notochord. During neurulation, they change shape and produce an infolding of the neural plate (the neural fold) that then seals to form the neural tube[XAO]. The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium[ZFA].</obo:IAO_0000115>
         <obo:UBPROP_0000001>The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium. Kimmel et al, 1995.[TAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>(...) at some stage of its development, every chordate exhibits five uniquely derived characters or synapomorphies of the group: (...) (4) a single, tubular nerve cord that is located dorsal to the notochord (...).[well established][VHOG]</obo:UBPROP_0000003>
@@ -45799,34 +45454,34 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>neural plate</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4871">
+    <owl:Restriction rdf:nodeID="genid4837">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4873">
+    <owl:Restriction rdf:nodeID="genid4839">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002256"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4875">
+    <owl:Restriction rdf:nodeID="genid4841">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007284"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4871"/>
+        <owl:annotatedTarget rdf:nodeID="genid4837"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4873"/>
+        <owl:annotatedTarget rdf:nodeID="genid4839"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4875"/>
+        <owl:annotatedTarget rdf:nodeID="genid4841"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45891,7 +45546,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4885"/>
+        <rdfs:subClassOf rdf:nodeID="genid4851"/>
         <obo:IAO_0000115>The paraxial mesoderm is the mesoderm located bilaterally adjacent to the notochord and neural tube[GO].</obo:IAO_0000115>
         <obo:UBPROP_0000001>Mesoderm lateral to the neural tube and notochord that is divided into cranial and post-cranial portions. The trunk portions further segment into somites.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>Presently, Cephalochordata, Urochordata, and Vertebrata are placed as subphyla of the phylum Chordata, in which the overall organization of embryonic tissues (dorsal hollow nerve cord, ventral digestive tract, axial notochord, and bilateral paraxial mesoderm) is largely conserved. In contrast, the echinoderms and hemichordates are sister groups of the chordates and they lack the notochord and paraxial mesoderm. Thus, the basic mesodermal organization of vertebrates must have appeared first in the common ancestor of the chordates.[well established][VHOG]</obo:UBPROP_0000003>
@@ -45920,7 +45575,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>paraxial mesoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4885">
+    <owl:Restriction rdf:nodeID="genid4851">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
     </owl:Restriction>
@@ -45933,7 +45588,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4885"/>
+        <owl:annotatedTarget rdf:nodeID="genid4851"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46005,7 +45660,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
-        <rdfs:subClassOf rdf:nodeID="genid4896"/>
+        <rdfs:subClassOf rdf:nodeID="genid4862"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -46049,7 +45704,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>lateral plate mesoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4896">
+    <owl:Restriction rdf:nodeID="genid4862">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
@@ -46062,7 +45717,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4896"/>
+        <owl:annotatedTarget rdf:nodeID="genid4862"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
         <oboInOwl:source>VHOG</oboInOwl:source>
     </owl:Axiom>
@@ -46146,15 +45801,15 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003084">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001048"/>
-        <rdfs:subClassOf rdf:nodeID="genid4911"/>
-        <rdfs:subClassOf rdf:nodeID="genid4913"/>
+        <rdfs:subClassOf rdf:nodeID="genid4877"/>
+        <rdfs:subClassOf rdf:nodeID="genid4879"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4916"/>
+        <rdfs:subClassOf rdf:nodeID="genid4882"/>
         <obo:IAO_0000115>Bilateral groups of cells consisting of three rows: one row of endocardial precursors medially and two rows of myocardical precursors laterally. The two populations fuse at the midline to form the heart rudiment or cone.</obo:IAO_0000115>
         <obo:IAO_0000116>should probably be merged with heart rudiment.</obo:IAO_0000116>
         <obo:UBPROP_0000001>Bilateral groups of cells consisting of three rows: one row of endocardial precursors medially and two rows of myocardical precursors laterally. The two populations fuse at the midline between 21 and 26 somites to form the heart rudiment or cone. Stainier 2001.[TAO]</obo:UBPROP_0000001>
@@ -46174,15 +45829,15 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>heart primordium</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4911">
+    <owl:Restriction rdf:nodeID="genid4877">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4913">
+    <owl:Restriction rdf:nodeID="genid4879">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4916">
+    <owl:Restriction rdf:nodeID="genid4882">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007005"/>
     </owl:Restriction>
@@ -46195,19 +45850,19 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4911"/>
+        <owl:annotatedTarget rdf:nodeID="genid4877"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4913"/>
+        <owl:annotatedTarget rdf:nodeID="genid4879"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4916"/>
+        <owl:annotatedTarget rdf:nodeID="genid4882"/>
         <oboInOwl:source>XAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46262,8 +45917,8 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003089">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007530"/>
-        <rdfs:subClassOf rdf:nodeID="genid4926"/>
-        <rdfs:subClassOf rdf:nodeID="genid4928"/>
+        <rdfs:subClassOf rdf:nodeID="genid4892"/>
+        <rdfs:subClassOf rdf:nodeID="genid4894"/>
         <obo:IAO_0000115>Ventral somitic compartment that is a precursor of the axial skeleton[XAO]. Sclerotomes eventually differentiate into the vertebrae and most of the skull. The caudal (posterior) half of one sclerotome fuses with the rostral (anterior) half of the adjacent one to form each vertebra. From their initial location within the somite, the sclerotome cells migrate medially towards the notochord. These cells meet the sclerotome cells from the other side to form the vertebral body. From this vertebral body, sclerotome cells move dorsally and surround the developing spinal cord, forming the vertebral arch[WP].</obo:IAO_0000115>
         <obo:UBPROP_0000001>Skeletogenic portion of somites.[AAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000003>The vertebrate sclerotome has no equivalent in amphioxus and is a novelty linked with the evolution of the axial skeleton.[well established][VHOG]</obo:UBPROP_0000003>
@@ -46291,11 +45946,11 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>sclerotome</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4926">
+    <owl:Restriction rdf:nodeID="genid4892">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4928">
+    <owl:Restriction rdf:nodeID="genid4894">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
     </owl:Restriction>
@@ -46314,13 +45969,13 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4926"/>
+        <owl:annotatedTarget rdf:nodeID="genid4892"/>
         <oboInOwl:source>VHOG:0000680</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4928"/>
+        <owl:annotatedTarget rdf:nodeID="genid4894"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46592,7 +46247,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011997"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4961"/>
+        <rdfs:subClassOf rdf:nodeID="genid4927"/>
         <obo:IAO_0000115>The part of the coelom in the embryo between the somatopleuric and splanchnopleuric mesoderm; the principal body cavities of the trunk (thoracic, abdominal, and pelvic) arise from this embryonic part of the coelom.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with coelom. TODO - add spatial relationships to halves of LPM. Note the OG places XAO and ZFA coelem terms here. editor note: TODO check ZFA, which appears to be a structure present in adults</obo:IAO_0000116>
         <obo:UBPROP_0000003>(...) I regard it unlikely that coeloms of all bilaterian animals are comparable and evolved very early. Considering all these questions, few convincing characters concerning the evolution of body cavities remain to be named. (...) A segmental coelom appears to have evolved at least two times, in Annelida and in Myomerata (Acrania and Craniota).[well established][VHOG]</obo:UBPROP_0000003>
@@ -46608,14 +46263,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>intraembryonic coelom</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4961">
+    <owl:Restriction rdf:nodeID="genid4927">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4961"/>
+        <owl:annotatedTarget rdf:nodeID="genid4927"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46934,8 +46589,8 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007688"/>
-        <rdfs:subClassOf rdf:nodeID="genid5006"/>
-        <rdfs:subClassOf rdf:nodeID="genid5008"/>
+        <rdfs:subClassOf rdf:nodeID="genid4972"/>
+        <rdfs:subClassOf rdf:nodeID="genid4974"/>
         <obo:IAO_0000115>A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle.</obo:IAO_0000115>
         <obo:UBPROP_0000012>this term denotes the primary heart field; GO:0003128 denotes the superclass of primary and secondary: specific region of the lateral mesoderm into the area which will form the primary beating heart tube[GO:0003138]</obo:UBPROP_0000012>
         <oboInOwl:hasDbXref>XAO:0004185</oboInOwl:hasDbXref>
@@ -46948,24 +46603,24 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0004140</oboInOwl:id>
         <rdfs:label>primary heart field</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5006">
+    <owl:Restriction rdf:nodeID="genid4972">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5008">
+    <owl:Restriction rdf:nodeID="genid4974">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0036146"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5006"/>
+        <owl:annotatedTarget rdf:nodeID="genid4972"/>
         <oboInOwl:source>GO:0003128</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5008"/>
+        <owl:annotatedTarget rdf:nodeID="genid4974"/>
         <oboInOwl:source>https://orcid.org/0000-0003-3308-6245</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47024,7 +46679,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003914"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012275"/>
-        <rdfs:subClassOf rdf:nodeID="genid5017"/>
+        <rdfs:subClassOf rdf:nodeID="genid4983"/>
         <obo:IAO_0000115>An epithelial tube that will give rise to the mature heart.</obo:IAO_0000115>
         <obo:UBPROP_0000001>the paired, longitudinal, endothelial-lined channels formed from the cardiogenic mesoderm in embryonic development; angiogenic cell clusters (aka angioblastic cords) located in a horse-shoe shape configuration in the cardiogenic plate coalesce to form the right and left endocardial heart tubes which then fuse in cephalo-caudal direction to form a single primitive heart tube.</obo:UBPROP_0000001>
         <oboInOwl:hasDbXref>AAO:0010411</oboInOwl:hasDbXref>
@@ -47044,14 +46699,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>heart tube</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5017">
+    <owl:Restriction rdf:nodeID="genid4983">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004141"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5017"/>
+        <owl:annotatedTarget rdf:nodeID="genid4983"/>
         <oboInOwl:source>ZFA-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47670,7 +47325,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5093"/>
+        <rdfs:subClassOf rdf:nodeID="genid5059"/>
         <obo:IAO_0000115>A specialized form of connective tissue in which the extracellular matrix is firm, providing the tissue with resilience, and/or mineralized and that functions in mechanical and structural support.[VSAO].</obo:IAO_0000115>
         <obo:UBPROP_0000001>A specialized form of connective tissue in which the extracellular matrix is firm, providing the tissue with resilience, and/or mineralized and that functions in mechanical and structural support.[VSAO]</obo:UBPROP_0000001>
         <oboInOwl:hasDbXref>EMAPA:37744</oboInOwl:hasDbXref>
@@ -47684,7 +47339,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:comment>Four classes of mineralized tissues are found in vertebrates: bone, cartilage, dentine, and enamel. We think of cartilage and bone as skeletal tissues and of enamel and dentine as dental tissues, but enamel and dentine arose evolutionarily together with bone as skeletal tissues in the dermal skeleton (exoskeleton) of early vertebrates. Scales and teeth of sharks are examples of dermal skeletal elements that are still composed of the three ancient components-enamel, dentine, and bone. Cartilage, on the other hand, provided the basis for the second vertebrate skeletal system, the endoskeleton (Smith and Hall, 1990; Hall, 1998a,b). some invertebrate skeletal tissues have surprisingly bone-like features. Examples include chondrocytes interconnected by cell processes in cephalopod cartilages (Cole and Hall, 2004a,b), and the calcium phosphate layer in the shells of brachiopods (Rodland et al., 2003). However, neither bone nor mineralized cartilage have been found in invertebrates. Editors notes: TODO - develops_from</rdfs:comment>
         <rdfs:label>skeletal tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5093">
+    <owl:Restriction rdf:nodeID="genid5059">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0007001"/>
     </owl:Restriction>
@@ -47697,7 +47352,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004755"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5093"/>
+        <owl:annotatedTarget rdf:nodeID="genid5059"/>
         <oboInOwl:date_retrieved>2012-08-14</oboInOwl:date_retrieved>
         <oboInOwl:external_class>VSAO:0000015</oboInOwl:external_class>
         <oboInOwl:source>VSAO</oboInOwl:source>
@@ -47736,7 +47391,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004765">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
-        <rdfs:subClassOf rdf:nodeID="genid5098"/>
+        <rdfs:subClassOf rdf:nodeID="genid5064"/>
         <obo:IAO_0000115>Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Organ entity that is typically involved in mechanical support and may have different skeletal tissue compositions at different stages.[VSAO]</obo:UBPROP_0000001>
         <obo:UBPROP_0000001>Organ entity that may have different tissue compositions at different stages and is typically involved in mechanical support.[TAO]</obo:UBPROP_0000001>
@@ -47752,14 +47407,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>skeletal element</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5098">
+    <owl:Restriction rdf:nodeID="genid5064">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5098"/>
+        <owl:annotatedTarget rdf:nodeID="genid5064"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47804,7 +47459,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
-        <rdfs:subClassOf rdf:nodeID="genid5107"/>
+        <rdfs:subClassOf rdf:nodeID="genid5073"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -47843,14 +47498,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0004770</oboInOwl:id>
         <rdfs:label>articular system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5107">
+    <owl:Restriction rdf:nodeID="genid5073">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004770"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5107"/>
+        <owl:annotatedTarget rdf:nodeID="genid5073"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48610,7 +48265,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002100"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5204"/>
+        <rdfs:subClassOf rdf:nodeID="genid5170"/>
         <obo:IAO_0000115>Mesenchyme that is part of a developing trunk.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EFO:0003485</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0002092</oboInOwl:hasDbXref>
@@ -48626,14 +48281,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>trunk mesenchyme</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5204">
+    <owl:Restriction rdf:nodeID="genid5170">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5204"/>
+        <owl:annotatedTarget rdf:nodeID="genid5170"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48744,7 +48399,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5218"/>
+        <rdfs:subClassOf rdf:nodeID="genid5184"/>
         <obo:IAO_0000115>Multi-tissue structure that arises from the heart rudiment and will become the heart tube.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>BTO:0006179</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0001512</oboInOwl:hasDbXref>
@@ -48763,14 +48418,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>primitive heart tube</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5218">
+    <owl:Restriction rdf:nodeID="genid5184">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004291"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5218"/>
+        <owl:annotatedTarget rdf:nodeID="genid5184"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48944,7 +48599,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005856">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011585"/>
-        <rdfs:subClassOf rdf:nodeID="genid5244"/>
+        <rdfs:subClassOf rdf:nodeID="genid5210"/>
         <obo:IAO_0000115>A delimited region of dense mesenchyme within looser mesenchyme.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000148</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2_RETIRED:0003148</oboInOwl:hasDbXref>
@@ -48954,7 +48609,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0005856</oboInOwl:id>
         <rdfs:label>developing mesenchymal condensation</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5244">
+    <owl:Restriction rdf:nodeID="genid5210">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000335"/>
     </owl:Restriction>
@@ -48973,7 +48628,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5244"/>
+        <owl:annotatedTarget rdf:nodeID="genid5210"/>
         <oboInOwl:source>AEO-modified-relation</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49078,7 +48733,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
-        <rdfs:subClassOf rdf:nodeID="genid5256"/>
+        <rdfs:subClassOf rdf:nodeID="genid5222"/>
         <obo:IAO_0000115>The notochordal plate is the dorsal part of the notochordal process when the ventral portion breaks down. It is continuous laterally with the endoderm that composes the roof of the primitive foregut and is in contact dorsally with the neural tube. The folding off of the notochordal plate gives rise to the notochord.</obo:IAO_0000115>
         <obo:IAO_0000116>TODO - check ordering; awaiting confirmation from JB</obo:IAO_0000116>
         <obo:UBPROP_0000001>The notochordal plate is the dorsal part of the notochordal process when the ventral portion breaks down. It is continuous laterally with the endoderm that composes the roof of the primitive foregut and is in contact dorsally with the neural tube. The folding off of the notochordal plate gives rise to the notochord. [Carson_JL, Dehart_DB, Developmental_Dynamics_(1994)_201:_260-278, Gesteland_K_and_Schoenwolf_GC, Inagaki_T, Morphogenesis_of_the_murine_node_and_notochordal_plate, The_prechordal_plate, Vrablic_T, see_Mueller_F_and_O&apos;Rahilly_R, the_rostral_end_of_the_notochord_and_nearby_median_features_in_staged_human_embryos._Cells_Tissues_Organs_(2003)_173:_1-20_and_Sulik_K][VHOG]</obo:UBPROP_0000001>
@@ -49093,7 +48748,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#emapa_ehdaa2"/>
         <rdfs:label>notochordal plate</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5256">
+    <owl:Restriction rdf:nodeID="genid5222">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
     </owl:Restriction>
@@ -49106,7 +48761,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5256"/>
+        <owl:annotatedTarget rdf:nodeID="genid5222"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49143,7 +48798,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5262"/>
+        <rdfs:subClassOf rdf:nodeID="genid5228"/>
         <obo:IAO_0000115>A midline cellular cord formed from the migration of mesenchymal cells from the primitive knot.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001279</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:224</oboInOwl:hasDbXref>
@@ -49160,14 +48815,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:comment>The notochordal process grows cranially until it reaches the prechordal plate, the future site of the mouth. In this area the ectoderm is attached directly to the endoderm without intervening mesoderm. This area is known as the oropharyngeal membrane, and it will break down to become the mouth. At the other end of the primitive streak the ectoderm is also fused directly to the endoderm; this is known as the cloacal membrane (proctodeum), or primordial anus.</rdfs:comment>
         <rdfs:label>notochordal process</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5262">
+    <owl:Restriction rdf:nodeID="genid5228">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5262"/>
+        <owl:annotatedTarget rdf:nodeID="genid5228"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49239,41 +48894,6 @@ For example, A and B may be gene products and binding of B by A positively regul
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
         <owl:annotatedTarget>body fluid</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GAID:266</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/UBERON_0006562 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0006562">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004921"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The pharynx is the part of the digestive system immediately posterior to the mouth[GO].</obo:IAO_0000115>
-        <obo:IAO_0000232>currently this is an extremely generic class, encompassing both protostomes and deuterostomes.</obo:IAO_0000232>
-        <obo:IAO_0006012>2023-04-20</obo:IAO_0006012>
-        <obo:UBPROP_0000007>branchial</obo:UBPROP_0000007>
-        <obo:UBPROP_0000007>pharyngeal</obo:UBPROP_0000007>
-        <oboInOwl:hasDbXref>MAT:0000049</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MESH:D010614</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MIAA:0000049</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>anterior part of foregut</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>pharyngeal tube</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>UBERON:0006562</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#grouping_class"/>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
-        <rdfs:label>pharynx</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006562"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The pharynx is the part of the digestive system immediately posterior to the mouth[GO].</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GO:0060465</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -49909,7 +49529,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0002494"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5371"/>
+        <rdfs:subClassOf rdf:nodeID="genid5335"/>
         <obo:IAO_0000115>A hollow, muscular organ, which, by contracting rhythmically, keeps up the circulation of the blood or analogs[GO,modified].</obo:IAO_0000115>
         <obo:UBPROP_0000008>note we reserve the subclass &apos;heart&apos; from the vertebrate multi-chambered heart. &apos;The first heart-like organ is believed to have appeared 500my ago in an ancestral bilaterian&apos;. Amniotes: four-chambered heart. Amphibians: two atria, one ventricle, pulmonary; fish: single atrium and ventricle; amphioxus: tubular, non-striated, closed, unidirectional; ascidians: tubular, striated, open, bidirectional; arthropods: tubular, open; C elegans: contractile pharynx; Cnideria: striated muscle cells associated with gastrodermis</obo:UBPROP_0000008>
         <oboInOwl:hasDbXref>SPD:0000130</oboInOwl:hasDbXref>
@@ -49924,14 +49544,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:comment>Gene notes: Bmp, Nkx, Gata</rdfs:comment>
         <rdfs:label>primary circulatory organ</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5371">
+    <owl:Restriction rdf:nodeID="genid5335">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0008015"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5371"/>
+        <owl:annotatedTarget rdf:nodeID="genid5335"/>
         <oboInOwl:notes>GO uses blood circulation generically to include the haemolymphatic fluid of arthropods</oboInOwl:notes>
     </owl:Axiom>
     <owl:Axiom>
@@ -50021,7 +49641,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006598"/>
-        <rdfs:subClassOf rdf:nodeID="genid5385"/>
+        <rdfs:subClassOf rdf:nodeID="genid5349"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002387"/>
@@ -50038,14 +49658,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>presumptive segmental plate</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5385">
+    <owl:Restriction rdf:nodeID="genid5349">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007282"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5385"/>
+        <owl:annotatedTarget rdf:nodeID="genid5349"/>
         <oboInOwl:consistent_with>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:consistent_with>
         <oboInOwl:source>EDHAA2</oboInOwl:source>
     </owl:Axiom>
@@ -50144,7 +49764,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <!-- http://purl.obolibrary.org/obo/UBERON_0007285 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007285">
-        <owl:equivalentClass rdf:nodeID="genid5401"/>
+        <owl:equivalentClass rdf:nodeID="genid5365"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006598"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -50170,7 +49790,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>presumptive paraxial mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid5401">
+    <owl:Class rdf:nodeID="genid5365">
         <owl:intersectionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006598"/>
             <owl:Restriction>
@@ -50186,7 +49806,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid5401"/>
+        <owl:annotatedTarget rdf:nodeID="genid5365"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1277</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50262,7 +49882,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003104"/>
-        <rdfs:subClassOf rdf:nodeID="genid5417"/>
+        <rdfs:subClassOf rdf:nodeID="genid5381"/>
         <obo:IAO_0000115>Mesenchyme with little extracellular matrix.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000146</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0003146</oboInOwl:hasDbXref>
@@ -50270,7 +49890,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0007524</oboInOwl:id>
         <rdfs:label>dense mesenchyme tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5417">
+    <owl:Restriction rdf:nodeID="genid5381">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000057"/>
     </owl:Restriction>
@@ -50283,7 +49903,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5417"/>
+        <owl:annotatedTarget rdf:nodeID="genid5381"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50380,7 +50000,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007798">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
-        <rdfs:subClassOf rdf:nodeID="genid5429"/>
+        <rdfs:subClassOf rdf:nodeID="genid5393"/>
         <obo:IAO_0000115>Anatomical system that consists of all blood and lymph vessels.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with vasculature</obo:IAO_0000116>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -50399,14 +50019,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>vascular system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5429">
+    <owl:Restriction rdf:nodeID="genid5393">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007798"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5429"/>
+        <owl:annotatedTarget rdf:nodeID="genid5393"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50436,99 +50056,6 @@ For example, A and B may be gene products and binding of B by A positively regul
     
 
 
-    <!-- http://purl.obolibrary.org/obo/UBERON_0007811 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007811">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000475"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000153"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0013702"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000033"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006562"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>The anteriormost subdivision of the body that includes the head, jaws, pharyngeal region and the neck (if present). In vertebrates this is the subdivision that includes the cervical vertebrae.</obo:IAO_0000115>
-        <oboInOwl:hasDbXref>CALOHA:TS-2356</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>EV:0100009</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>FMA:280881</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>MA:0000006</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>NCIT:C12418</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>SCTID:361355005</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>UMLS:C0460004</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>WikipediaCategory:Head_and_neck</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>galen:HeadAndNeck</oboInOwl:hasDbXref>
-        <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
-        <oboInOwl:hasRelatedSynonym>cephalic area</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>cephalic part of animal</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>cephalic region</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>head and neck</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:hasRelatedSynonym>head or neck</oboInOwl:hasRelatedSynonym>
-        <oboInOwl:id>UBERON:0007811</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
-        <rdfs:label>craniocervical region</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000475"/>
-        <oboInOwl:source>MA</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The anteriormost subdivision of the body that includes the head, jaws, pharyngeal region and the neck (if present). In vertebrates this is the subdivision that includes the cervical vertebrae.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://orcid.org/0000-0002-6601-2165</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-        <owl:annotatedTarget>UMLS:C0460004</owl:annotatedTarget>
-        <oboInOwl:source>ncithesaurus:Head_and_Neck</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>cephalic area</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/379</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>cephalic part of animal</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>Wikipedia:Head</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>cephalic region</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>https://github.com/obophenotype/uberon/issues/379</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007811"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
-        <owl:annotatedTarget>head and neck</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:280881</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/UBERON_0009142 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009142">
@@ -50539,7 +50066,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5447"/>
+        <rdfs:subClassOf rdf:nodeID="genid5400"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -50556,14 +50083,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0009142</oboInOwl:id>
         <rdfs:label>entire embryonic mesenchyme</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5447">
+    <owl:Restriction rdf:nodeID="genid5400">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5447"/>
+        <owl:annotatedTarget rdf:nodeID="genid5400"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50619,7 +50146,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5455"/>
+        <rdfs:subClassOf rdf:nodeID="genid5408"/>
         <oboInOwl:hasDbXref>EHDAA2:0002094</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>trunk and cervical paraxial mesenchyme</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -50627,14 +50154,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0009618</oboInOwl:id>
         <rdfs:label>trunk paraxial mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5455">
+    <owl:Restriction rdf:nodeID="genid5408">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5455"/>
+        <owl:annotatedTarget rdf:nodeID="genid5408"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50656,7 +50183,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009881">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
-        <rdfs:subClassOf rdf:nodeID="genid5459"/>
+        <rdfs:subClassOf rdf:nodeID="genid5412"/>
         <oboInOwl:hasDbXref>EFO:0003704</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0005041</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0005041</oboInOwl:hasDbXref>
@@ -50666,14 +50193,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>anterior lateral plate mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5459">
+    <owl:Restriction rdf:nodeID="genid5412">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009881"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5459"/>
+        <owl:annotatedTarget rdf:nodeID="genid5412"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50807,7 +50334,7 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005577"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5480"/>
+        <rdfs:subClassOf rdf:nodeID="genid5433"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -50827,14 +50354,14 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0010210</oboInOwl:id>
         <rdfs:label>blood clot</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5480">
+    <owl:Restriction rdf:nodeID="genid5433">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010210"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5480"/>
+        <owl:annotatedTarget rdf:nodeID="genid5433"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50956,8 +50483,8 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010912">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
-        <rdfs:subClassOf rdf:nodeID="genid5500"/>
-        <rdfs:subClassOf rdf:nodeID="genid5502"/>
+        <rdfs:subClassOf rdf:nodeID="genid5453"/>
+        <rdfs:subClassOf rdf:nodeID="genid5455"/>
         <obo:IAO_0000115>Anatomical cluster consisting of the skeletal elements (i.e. bone elements, cartilage elements, cartilage condensations) that are part of an individual subdivision of the organism. Excludes joints.</obo:IAO_0000115>
         <obo:UBPROP_0000001>Anatomical cluster consisting of the skeletal elements that are part of the skeleton.[VSAO]</obo:UBPROP_0000001>
         <oboInOwl:hasDbXref>FMA:23879</oboInOwl:hasDbXref>
@@ -50970,11 +50497,11 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#non_informative"/>
         <rdfs:label>subdivision of skeleton</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5500">
+    <owl:Restriction rdf:nodeID="genid5453">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5502">
+    <owl:Restriction rdf:nodeID="genid5455">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004288"/>
     </owl:Restriction>
@@ -50987,13 +50514,13 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5500"/>
+        <owl:annotatedTarget rdf:nodeID="genid5453"/>
         <oboInOwl:source>UBERONREF:0000003</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5502"/>
+        <owl:annotatedTarget rdf:nodeID="genid5455"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51038,12 +50565,6 @@ For example, A and B may be gene products and binding of B by A positively regul
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000982"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005944"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <obo:IAO_0000115>Subdivision of the skeletal system which consists of the axial skeleton plus associated joints.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:7483</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -51070,7 +50591,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
-        <rdfs:subClassOf rdf:nodeID="genid5513"/>
+        <rdfs:subClassOf rdf:nodeID="genid5465"/>
         <obo:IAO_0000115>Subdivision of the skeletal system which consists of the postcranial axial skeleton plus associated joints.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>axial skeletal system</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>FMA:302077</oboInOwl:hasDbXref>
@@ -51080,7 +50601,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <rdfs:label>postcranial axial skeletal system</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton</rdfs:seeAlso>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5513">
+    <owl:Restriction rdf:nodeID="genid5465">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
     </owl:Restriction>
@@ -51093,7 +50614,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011138"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5513"/>
+        <owl:annotatedTarget rdf:nodeID="genid5465"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51358,7 +50879,7 @@ For example, A and B may be gene products and binding of B by A positively regul
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034769"/>
-        <rdfs:subClassOf rdf:nodeID="genid5546"/>
+        <rdfs:subClassOf rdf:nodeID="genid5498"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#site_of"/>
@@ -51380,7 +50901,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0012429</oboInOwl:id>
         <rdfs:label>hematopoietic tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5546">
+    <owl:Restriction rdf:nodeID="genid5498">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
@@ -51393,7 +50914,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012429"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5546"/>
+        <owl:annotatedTarget rdf:nodeID="genid5498"/>
         <oboInOwl:source>defitional</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51967,7 +51488,7 @@ For example, A and B may be gene products and binding of B by A positively regul
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0016887">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000481"/>
-        <rdfs:subClassOf rdf:nodeID="genid5617"/>
+        <rdfs:subClassOf rdf:nodeID="genid5569"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -51990,7 +51511,7 @@ For example, A and B may be gene products and binding of B by A positively regul
         <oboInOwl:id>UBERON:0016887</oboInOwl:id>
         <rdfs:label>entire extraembryonic component</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5617">
+    <owl:Restriction rdf:nodeID="genid5569">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004716"/>
     </owl:Restriction>
@@ -52003,7 +51524,7 @@ For example, A and B may be gene products and binding of B by A positively regul
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5617"/>
+        <owl:annotatedTarget rdf:nodeID="genid5569"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
