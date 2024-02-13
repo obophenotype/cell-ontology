@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2024-01-04/subsets/eye_upper_slim.owl
+data-version: cl/releases/2024-02-13/subsets/eye_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -31,6 +31,7 @@ subsetdef: goslim_mouse ""
 subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
 subsetdef: goslim_pombe ""
+subsetdef: goslim_prokaryote ""
 subsetdef: goslim_synapse ""
 subsetdef: goslim_yeast ""
 subsetdef: grouping_class ""
@@ -49,7 +50,6 @@ subsetdef: non_informative ""
 subsetdef: organ_slim ""
 subsetdef: pheno_slim ""
 subsetdef: phenotype_rcn ""
-subsetdef: prokaryote_subset ""
 subsetdef: ro-eco ""
 subsetdef: RO:0002259 ""
 subsetdef: scalar_slim ""
@@ -62,7 +62,6 @@ subsetdef: vertebrate_core ""
 synonymtypedef: blast_name ""
 synonymtypedef: COMPARATIVE_PREFERRED ""
 synonymtypedef: DEPRECATED ""
-synonymtypedef: DUBIOUS ""
 synonymtypedef: equivalent_name ""
 synonymtypedef: genbank_common_name ""
 synonymtypedef: Gene-based ""
@@ -71,13 +70,14 @@ synonymtypedef: HUMAN_PREFERRED ""
 synonymtypedef: HUMAN_PREFERRED "preferred term when talking about an instance of this class in Homo sapiens"
 synonymtypedef: in_part ""
 synonymtypedef: INCONSISTENT ""
-synonymtypedef: LATIN ""
 synonymtypedef: LATIN "latin term"
 synonymtypedef: MISSPELLING "a mis-spelling that is in common use and thus recorded"
 synonymtypedef: NON_MAMMAL ""
 synonymtypedef: OMO:0003000 "abbreviation"
+synonymtypedef: OMO:0003002 ""
 synonymtypedef: OMO:0003003 ""
 synonymtypedef: OMO:0003004 "plural form"
+synonymtypedef: OMO:0003011 ""
 synonymtypedef: PENDING_REVIEW ""
 synonymtypedef: PLURAL "plural term"
 synonymtypedef: PRO-short-label ""
@@ -88,7 +88,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/eye_upper_slim
-property_value: owl:versionInfo "2024-01-04" xsd:string
+property_value: owl:versionInfo "2024-02-13" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -144,6 +144,7 @@ id: CL:0000000
 name: cell
 def: "A material entity of anatomical origin (part of or deriving from an organism) that has as its parts a maximally connected cell compartment surrounded by a plasma membrane." [CARO:mah]
 comment: The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one).
+subset: cellxgene_subset
 subset: ubprop:upper_level
 xref: CALOHA:TS-2035
 xref: FBbt:00007002
@@ -172,6 +173,7 @@ relationship: develops_from CL:0000008 ! migratory cranial neural crest cell
 [Term]
 id: CL:0000006
 name: neuronal receptor cell
+subset: cellxgene_subset
 synonym: "neuronal receptor cell (sensu Animalia)" EXACT []
 is_a: CL:0000101 ! sensory neuron
 is_a: CL:0000197 ! sensory receptor cell
@@ -194,6 +196,7 @@ is_a: CL:0000333 ! migratory neural crest cell
 [Term]
 id: CL:0000030
 name: glioblast
+subset: cellxgene_subset
 is_a: CL:0000055 ! non-terminally differentiated cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 
@@ -201,6 +204,7 @@ relationship: develops_from CL:0000133 ! neurectodermal cell
 id: CL:0000031
 name: neuroblast (sensu Vertebrata)
 def: "A cell that will develop into a neuron often after a migration phase." [GOC:NV, http://en.wikipedia.org/wiki/Neuroblast]
+subset: cellxgene_subset
 synonym: "neuroblast" EXACT []
 xref: BTO:0000930
 xref: FMA:70563
@@ -213,6 +217,7 @@ id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
 comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
@@ -231,6 +236,7 @@ name: hematopoietic stem cell
 def: "A stem cell from which all cells of the lymphoid and myeloid lineages develop, including blood cells and cells of the immune system. Hematopoietic stem cells lack cell markers of effector cells (lin-negative). Lin-negative is defined by lacking one or more of the following cell surface markers: CD2, CD3 epsilon, CD4, CD5 ,CD8 alpha chain, CD11b, CD14, CD19, CD20, CD56, ly6G, ter119." [GOC:add, GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/Hematopoietic_stem_cell, PMID:19022770]
 comment: Markers differ between species, and two sets of markers have been described for mice. HSCs are reportedly CD34-positive, CD45-positive, CD48-negative, CD150-positive, CD133-positive, and CD244-negative.
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "blood forming stem cell" EXACT []
 synonym: "colony forming unit hematopoietic" RELATED []
@@ -280,6 +286,7 @@ id: CL:0000038
 name: erythroid progenitor cell
 def: "A progenitor cell committed to the erythroid lineage." [GOC:add, ISBN:0721601464]
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 synonym: "BFU-E" RELATED OMO:0003000 []
 synonym: "blast forming unit erythroid" RELATED []
 synonym: "burst forming unit erythroid" RELATED []
@@ -311,6 +318,7 @@ id: CL:0000049
 name: common myeloid progenitor
 def: "A progenitor cell committed to myeloid lineage, including the megakaryocyte and erythroid lineages." [GOC:add, ISBN:0878932437, MESH:D023461]
 comment: This cell type is intended to be compatible with any vertebrate common myeloid progenitor.  For mammalian CMP known to be CD34-positive, please use the term 'common myeloid progenitor, CD34-positive' (CL_0001059).
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "CFU-GEMM" RELATED OMO:0003000 [ISBN:0878932437]
 synonym: "CFU-S" RELATED OMO:0003000 [ISBN:0878932437]
@@ -330,6 +338,7 @@ id: CL:0000050
 name: megakaryocyte-erythroid progenitor cell
 def: "A progenitor cell committed to the megakaryocyte and erythroid lineages." [GOC:add, GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/Megakaryocyte-erythroid_progenitor_cell, MESH:D055015, PMID:16647566]
 comment: MEPs are reportedly CD19-negative, CD34-negative, CD45RA-negative, CD110-positive, CD117-positive, and SCA1-negative and reportedly express the transcription factors GATA-1 and NF-E2.
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "CFU-EM" EXACT []
 synonym: "CFU-MegE" EXACT []
@@ -362,6 +371,7 @@ id: CL:0000055
 name: non-terminally differentiated cell
 def: "A precursor cell with a limited number of potential fates." [SANBI:mhl]
 comment: define using PATO mulit-potent or oligopotent?
+subset: cellxgene_subset
 synonym: "blast cell" EXACT []
 xref: BTO:0000125
 xref: FMA:84782
@@ -383,6 +393,7 @@ id: CL:0000057
 name: fibroblast
 def: "A connective tissue cell which secretes an extracellular matrix rich in collagen and other macromolecules. Flattened and irregular in outline with branching processes; appear fusiform or spindle-shaped." [http://en.wikipedia.org/wiki/Fibroblast, ISBN:0517223651, MESH:D005347]
 comment: These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative.
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 xref: BTO:0000452
@@ -398,6 +409,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000066
 name: epithelial cell
 def: "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina." [FB:ma, GOC:tfm, MESH:D004847]
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "epitheliocyte" EXACT []
@@ -416,6 +428,7 @@ property_value: depiction "https://www.swissbiopics.org/api/image/Epithelial_cel
 id: CL:0000071
 name: blood vessel endothelial cell
 def: "An endothelial cell that lines the vasculature." [GOC:tfm]
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "cuboidal endothelial cell of vascular tree" EXACT []
 is_a: CL:0000076 {is_inferred="true"} ! squamous epithelial cell
@@ -430,6 +443,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000075
 name: columnar/cuboidal epithelial cell
 def: "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." [GO:0002065, https://orcid.org/0000-0001-5208-3432]
+subset: cellxgene_subset
 subset: human_reference_atlas
 is_a: CL:0000066 ! epithelial cell
 relationship: present_in_taxon NCBITaxon:9606
@@ -437,6 +451,7 @@ relationship: present_in_taxon NCBITaxon:9606
 [Term]
 id: CL:0000076
 name: squamous epithelial cell
+subset: cellxgene_subset
 xref: CALOHA:TS-1249
 is_a: CL:0000066 ! epithelial cell
 
@@ -444,6 +459,7 @@ is_a: CL:0000066 ! epithelial cell
 id: CL:0000077
 name: mesothelial cell
 def: "A flattened epithelial cell of mesenchymal origin that lines the serous cavity." [GOC:tfm, ISBN:0721662544]
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "mesotheliocyte" EXACT []
 xref: FMA:66773
@@ -456,6 +472,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000081
 name: blood cell
 def: "A cell found predominately in the blood." [GOC:add, GOC:tfm]
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 xref: FMA:62844
 xref: MESH:D001773
@@ -467,6 +484,7 @@ relationship: capable_of GO:0008015 ! blood circulation
 [Term]
 id: CL:0000095
 name: neuron associated cell
+subset: cellxgene_subset
 is_a: CL:0002319 ! neural cell
 relationship: develops_from CL:0000133 ! neurectodermal cell
 
@@ -474,6 +492,7 @@ relationship: develops_from CL:0000133 ! neurectodermal cell
 id: CL:0000099
 name: interneuron
 def: "Most generally any neuron which is not motor or sensory. Interneurons may also refer to neurons whose axons remain within a particular brain region as contrasted with projection neurons which have axons projecting to other brain regions." [GOC:tfm, MESH:D007395]
+subset: cellxgene_subset
 subset: human_reference_atlas
 xref: BTO:0003811
 xref: FBbt:00005125
@@ -501,6 +520,7 @@ id: CL:0000103
 name: bipolar neuron
 def: "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body." [GOC:tfm, ISBN:0444009442]
 subset: BDS_subset
+subset: cellxgene_subset
 xref: FMA:67282
 is_a: CL:0000099 ! interneuron
 intersection_of: CL:0000099 ! interneuron
@@ -512,6 +532,7 @@ id: CL:0000115
 name: endothelial cell
 def: "An endothelial cell comprises the outermost layer or lining of anatomical structures and can be squamous or cuboidal. In mammals, endothelial cell has vimentin filaments and is derived from the mesoderm." [GOC:tfm, http://en.wikipedia.org/wiki/Endothelial_cell, https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3364936&group_id=36855, MESH:D042783, PMID:21275341]
 comment: From FMA: 9.07.2001: Endothelial cell has always been classified as a kind of epithelial cell, specifically a squamous cell but that is not true. First, endothelial cell can either be squamous or cuboidal (e.g. high-endothelial cell) and secondly, it has different embryological derivation (mesodermal) than a true epithelial cell (ectodermal and endodermal). The basis for present classification is the fact that it comprises the outermost layer or lining of anatomical structures (location-based) but a better structural basis for the differentia is the cytoskeleton of the cell. Endothelial cell has vimentin filaments while an epithelial cell has keratin filaments. [Onard].
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "endotheliocyte" EXACT []
 xref: BTO:0001176
@@ -531,6 +552,7 @@ relationship: part_of UBERON:0001017 ! central nervous system
 [Term]
 id: CL:0000123
 name: neuron associated cell (sensu Vertebrata)
+subset: cellxgene_subset
 is_a: CL:0000095 ! neuron associated cell
 is_a: CL:0000255 ! eukaryotic cell
 relationship: develops_from CL:0000333 ! migratory neural crest cell
@@ -541,6 +563,7 @@ id: CL:0000125
 name: glial cell
 def: "A non-neuronal cell of the nervous system. They not only provide physical support, but also respond to injury, regulate the ionic and chemical composition of the extracellular milieu. Guide neuronal migration during development, and exchange metabolites with neurons." [MESH:D009457]
 comment: Not all glial cells develop from glioblasts, with microglia developing from the mesoderm instead. See https://github.com/obophenotype/cell-ontology/issues/1571
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 synonym: "neuroglia" RELATED []
 synonym: "neuroglial cell" EXACT []
@@ -554,6 +577,7 @@ is_a: CL:0000095 ! neuron associated cell
 id: CL:0000126
 name: macroglial cell
 def: "A neuroglial cell of ectodermal origin, i.e., the astrocytes and oligodendrocytes considered together." [GOC:tfm, ISBN:0721662544]
+subset: cellxgene_subset
 synonym: "macroglia" RELATED OMO:0003004 [doi:10.1152/physrev.2001.81.2.871]
 synonym: "macrogliocyte" EXACT []
 xref: BTO:0000771
@@ -567,6 +591,7 @@ id: CL:0000127
 name: astrocyte
 def: "A class of large neuroglial (macroglial) cells in the central nervous system - the largest and most numerous neuroglial cells in the brain and spinal cord. Astrocytes (from 'star' cells) are irregularly shaped with many long processes, including those with 'end feet' which form the glial (limiting) membrane and directly and indirectly contribute to the blood-brain barrier. They regulate the extracellular ionic and chemical environment, and 'reactive astrocytes' (along with microglia) respond to injury." [GOC:dsd, GOC:tfm, http://en.wikipedia.org/wiki/Astrocyte, MESH:D001253, PMID:11746784, PMID:12162730, PMID:12898703, PMID:20942978]
 comment: Astrocytes are reportedly CD68-negative, CD121a-positive, CD184-positive, CD192-positive, CRF-positive, EGFR-positive, GFAP-positive, GLUT1-positive, MBP-negative, and NGFR-positive.
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "astrocytic glia" EXACT []
 xref: BTO:0000099
@@ -579,6 +604,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000132
 name: corneal endothelial cell
 def: "An hexagonal, flattened, mitochondria-rich endothelial cell that forms a monolayer on the posterior surface of the cornea (the corneal endothelium). Corneal endothelial cells are derived from the neural crest and are responsible for keeping the cornea transparent by maintaining the tissue in a semi-dry state through the action of their ionic pumps and tight junction barrier." [GOC:tfm, PMID:21976958, PMID:23284695, PMID:34741068, PMID:36769303]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 xref: CALOHA:TS-0172
@@ -601,6 +627,7 @@ id: CL:0000134
 name: mesenchymal stem cell
 def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. In humans, this cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
+subset: cellxgene_subset
 synonym: "BMSC" RELATED OMO:0003000 []
 synonym: "bone marrow stromal cells" NARROW []
 synonym: "CFU-F" RELATED OMO:0003000 []
@@ -633,6 +660,7 @@ is_a: CL:0000325 ! stuff accumulating cell
 id: CL:0000148
 name: melanocyte
 def: "A pigment cell derived from the neural crest. Contains melanin-filled pigment granules, which gives a brown to black appearance." [SANBI:mhl]
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "melanophore" NARROW []
@@ -659,6 +687,7 @@ is_a: CL:0000147 ! pigment cell
 id: CL:0000151
 name: secretory cell
 def: "A cell that specializes in controlled release of one or more substances." [GOC:tfm, ISBN:0721662544]
+subset: cellxgene_subset
 xref: BTO:0003659
 xref: FMA:86916
 is_a: CL:0000000 ! cell
@@ -670,12 +699,14 @@ relationship: capable_of GO:0032940 ! secretion by cell
 id: CL:0000183
 name: contractile cell
 def: "A cell whose primary function is to shorten." [FB:ma]
+subset: cellxgene_subset
 is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000187
 name: muscle cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." [MESH:D032342]
+subset: cellxgene_subset
 synonym: "muscle fiber" EXACT []
 synonym: "myocyte" EXACT []
 xref: BTO:0000888
@@ -693,6 +724,7 @@ property_value: depiction "https://www.swissbiopics.org/api/image/Muscle_cells.s
 id: CL:0000192
 name: smooth muscle cell
 def: "A non-striated, elongated, spindle-shaped cell found lining the digestive tract, uterus, and blood vessels. They develop from specialized myoblasts (smooth muscle myoblast)." [http://en.wikipedia.org/wiki/Smooth_muscle_cell, MESH:D032389, PMID:9315361]
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "myocytes, smooth muscle" EXACT [MESH:D032389]
@@ -724,6 +756,7 @@ relationship: part_of UBERON:0001032 ! sensory system
 id: CL:0000210
 name: photoreceptor cell
 def: "A cell specialized to detect and transduce light." [MESH:D010786]
+subset: cellxgene_subset
 xref: BTO:0001060
 xref: CALOHA:TS-0868
 xref: FMA:86740
@@ -774,6 +807,7 @@ relationship: part_of UBERON:0000924 ! ectoderm
 id: CL:0000222
 name: mesodermal cell
 def: "A cell of the middle germ layer of the embryo." [MESH:D008648]
+subset: cellxgene_subset
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
@@ -794,6 +828,7 @@ id: CL:0000232
 name: erythrocyte
 def: "A red blood cell. In mammals, mature erythrocytes are biconcave disks containing hemoglobin whose function is to transport oxygen." [GOC:tfm, MESH:D004912]
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "RBC" EXACT []
 synonym: "red blood cell" EXACT []
@@ -818,6 +853,7 @@ relationship: present_in_taxon NCBITaxon:9606
 [Term]
 id: CL:0000255
 name: eukaryotic cell
+subset: cellxgene_subset
 xref: MESH:D005057
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
@@ -827,6 +863,7 @@ relationship: only_in_taxon NCBITaxon:2759 ! Eukaryota
 [Term]
 id: CL:0000287
 name: eye photoreceptor cell
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 is_a: CL:0000210 ! photoreceptor cell
@@ -968,13 +1005,14 @@ is_a: CL:0000211 ! electrically active cell
 id: CL:0000514
 name: smooth muscle myoblast
 def: "A precursor cell destined to differentiate into smooth muscle myocytes." [GOC:tfm, MESH:D032390]
+subset: cellxgene_subset
 synonym: "myoblast, smooth muscle" EXACT [MESH:D032390]
 synonym: "satellite cell" RELATED []
 xref: FMA:84798
 is_a: CL:0000056 ! myoblast
 intersection_of: CL:0000056 ! myoblast
-intersection_of: RO:0002203 CL:0000192 ! develops into smooth muscle cell
-relationship: RO:0002203 CL:0000192 ! develops into smooth muscle cell
+intersection_of: develops_into CL:0000192 ! smooth muscle cell
+relationship: develops_into CL:0000192 ! smooth muscle cell
 
 [Term]
 id: CL:0000526
@@ -989,6 +1027,7 @@ relationship: present_in_taxon NCBITaxon:9606
 [Term]
 id: CL:0000529
 name: pigmented epithelial cell
+subset: cellxgene_subset
 is_a: CL:0000710 ! neurecto-epithelial cell
 
 [Term]
@@ -996,6 +1035,7 @@ id: CL:0000540
 name: neuron
 def: "The basic cellular unit of nervous tissue. Each neuron consists of a body, an axon, and dendrites. Their purpose is to receive, conduct, and transmit impulses in the nervous system." [http://en.wikipedia.org/wiki/Neuron, MESH:D009474]
 comment: These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma.
+subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
@@ -1028,6 +1068,7 @@ id: CL:0000547
 name: proerythroblast
 def: "An immature, nucleated erythrocyte occupying the stage of erythropoeisis that follows formation of erythroid progenitor cells. This cell is CD71-positive, has both a nucleus and a nucleolus, and lacks hematopoeitic lineage markers." [ISBN:0721601464, PMID:1638021]
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 synonym: "pronormoblast" RELATED []
 synonym: "rubriblast" EXACT [ISBN:0721601464]
 xref: FMA:83518
@@ -1036,6 +1077,7 @@ is_a: CL:0002242 ! nucleate cell
 is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000764 ! erythroid lineage cell
 intersection_of: bearer_of PATO:0002505 ! nucleated
+intersection_of: bearer_of PATO:0040072 ! high nuclear/cytoplasmic ratio
 intersection_of: CL:4030046 PR:000001002 ! lacks_plasma_membrane_part CD19 molecule
 intersection_of: CL:4030046 PR:000001004 ! lacks_plasma_membrane_part CD4 molecule
 intersection_of: CL:4030046 PR:000001012 ! lacks_plasma_membrane_part integrin alpha-M
@@ -1048,9 +1090,9 @@ intersection_of: CL:4030046 PR:000001839 ! lacks_plasma_membrane_part T-cell sur
 intersection_of: CL:4030046 PR:000001889 ! lacks_plasma_membrane_part CD14 molecule
 intersection_of: CL:4030046 PR:000002978 ! lacks_plasma_membrane_part lymphocyte antigen 6G
 intersection_of: has_part CL:0017503 ! basophilic cytoplasm
-intersection_of: has_part CL:0017505 ! increased nucleus size
 intersection_of: has_part GO:0005730 ! nucleolus
 intersection_of: RO:0002104 PR:000001945 ! has plasma membrane part transferrin receptor protein 1
+relationship: bearer_of PATO:0040072 ! high nuclear/cytoplasmic ratio
 relationship: CL:4030046 PR:000001002 ! lacks_plasma_membrane_part CD19 molecule
 relationship: CL:4030046 PR:000001004 ! lacks_plasma_membrane_part CD4 molecule
 relationship: CL:4030046 PR:000001012 ! lacks_plasma_membrane_part integrin alpha-M
@@ -1064,7 +1106,6 @@ relationship: CL:4030046 PR:000001889 ! lacks_plasma_membrane_part CD14 molecule
 relationship: CL:4030046 PR:000002978 ! lacks_plasma_membrane_part lymphocyte antigen 6G
 relationship: develops_from CL:0000038 ! erythroid progenitor cell
 relationship: has_part CL:0017503 ! basophilic cytoplasm
-relationship: has_part CL:0017505 ! increased nucleus size
 relationship: has_part GO:0005730 ! nucleolus
 relationship: RO:0002104 PR:000001945 ! has plasma membrane part transferrin receptor protein 1
 
@@ -1132,6 +1173,7 @@ id: CL:0000553
 name: megakaryocyte progenitor cell
 def: "The earliest cytologically identifiable precursor in the thrombocytic series. This cell is capable of endomitosis and lacks expression of hematopoieitic lineage markers (lin-negative)." [GOC:dsd, GOC:tfm, ISBN:0721601464]
 comment: Lineage negative is described here as CD2-negative, CD3-negative, CD4-negative, CD5-negative, CD8a-negative, CD14-negative, CD19-negative, CD20-negative, CD56-negative, Ly6g-negative, and Ter119-negative.
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "CFU-Meg" EXACT [PMID:11722431, PMID:12482498]
 synonym: "colony-forming unit-megakaryocyte" EXACT []
@@ -1187,6 +1229,7 @@ name: megakaryocyte
 def: "A large hematopoietic cell (50 to 100 micron) with a lobated nucleus. Once mature, this cell undergoes multiple rounds of endomitosis and cytoplasmic restructuring to allow platelet formation and release." [http://en.wikipedia.org/wiki/Megakaryocyte, ISBN:0721601464, MESH:D008533, PMID:31043076]
 comment: Megakaryocytes are reportedly CD181-positive and CD182-positive.
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "megacaryocyte" EXACT []
 synonym: "megalocaryocyte" EXACT []
@@ -1205,6 +1248,7 @@ id: CL:0000558
 name: reticulocyte
 def: "An immature erythrocyte that changes the protein composition of its plasma membrane by exosome formation and extrusion. The types of protein removed differ between species though removal of the transferrin receptor is apparent in mammals and birds." [GOC:add, GOC:tfm, PMID:15946868, PMID:2037622]
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 xref: BTO:0001173
 xref: CALOHA:TS-0864
 xref: MESH:D012156
@@ -1243,6 +1287,7 @@ relationship: RO:0002104 PR:000001945 ! has plasma membrane part transferrin rec
 id: CL:0000561
 name: amacrine cell
 def: "Interneuron of the vertebrate retina. They integrate, modulate, and interpose a temporal domain in the visual message presented to the retinal ganglion cells, with which they synapse in the inner plexiform layer. They lack large axons." [GOC:tfm, MESH:D025042, WikipediaVersioned:Amacrine_cell&oldid=1023572246]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "AC" RELATED OMO:0003000 [doi:10.1038/s41598-020-66092-9]
@@ -1280,6 +1325,7 @@ relationship: RO:0002104 PR:000016043 ! has plasma membrane part T-cell acute ly
 id: CL:0000573
 name: retinal cone cell
 def: "One of the two photoreceptor cell types in the vertebrate retina. In cones the photopigment is in invaginations of the cell membrane of the outer segment. Cones are less sensitive to light than rods, but they provide vision with higher spatial and temporal acuity, and the combination of signals from cones with different pigments allows color vision." [MESH:D017949]
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "cone" RELATED [doi:10.1038/s41598-020-66092-9]
 xref: BTO:0001036
@@ -1293,6 +1339,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000575
 name: corneal epithelial cell
 def: "An epithelial cell of the cornea." [GOC:tfm]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "epithelial cell of cornea" EXACT [FMA:70551]
@@ -1310,6 +1357,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000604
 name: retinal rod cell
 def: "One of the two photoreceptor cell types of the vertebrate retina. In rods the photopigment is in stacks of membranous disks separate from the outer cell membrane. Rods are more sensitive to light than cones, but rod mediated vision has less spatial and temporal resolution than cone vision." [MESH:D017948]
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "rod" RELATED [doi:10.1038/s41598-020-66092-9]
 xref: BTO:0001024
@@ -1323,6 +1371,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000636
 name: Mueller cell
 def: "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer." [GOC:NV, PMID:21911394]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "Muller cell" EXACT MISSPELLING [doi:10.21769/BioProtoc.4179]
@@ -1338,6 +1387,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000679
 name: glutamatergic neuron
 def: "A neuron that is capable of some neurotansmission by glutamate secretion." []
+subset: cellxgene_subset
 subset: human_reference_atlas
 xref: FBbt:00100291
 xref: WBbt:0006829
@@ -1352,17 +1402,19 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000680
 name: muscle precursor cell
 def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
+subset: cellxgene_subset
 is_a: CL:0000055 ! non-terminally differentiated cell
 intersection_of: CL:0011115 ! precursor cell
-intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
+intersection_of: develops_into CL:0000187 ! muscle cell
 relationship: develops_from CL:0000222 ! mesodermal cell
-relationship: RO:0002203 CL:0000187 ! develops into muscle cell
+relationship: develops_into CL:0000187 ! muscle cell
 
 [Term]
 id: CL:0000681
 name: radial glial cell
 def: "A cell present in the developing CNS. Functions as both a precursor cell and as a scaffold to support neuronal migration." [GOC:dph]
 comment: Unlike that of mammals, the brain of adult teleost fish exhibits an intense and widespread neurogenic activity as a result of the persistence of\nradial glial cells acting as neural progenitors throughout life.
+subset: cellxgene_subset
 synonym: "forebrain radial glial cell" NARROW []
 is_a: CL:0000125 ! glial cell
 relationship: develops_from CL:0000710 ! neurecto-epithelial cell
@@ -1396,6 +1448,7 @@ relationship: capable_of GO:0048103 ! somatic stem cell division
 id: CL:0000740
 name: retinal ganglion cell
 def: "The set of neurons that receives neural inputs via bipolar, horizontal and amacrine cells. The axons of these cells make up the optic nerve." [GOC:dph]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "gangliocyte" EXACT []
@@ -1413,6 +1466,7 @@ relationship: RO:0002100 UBERON:0000966 ! has soma location retina
 id: CL:0000745
 name: retina horizontal cell
 def: "A neuron that laterally connects other neurons in the inner nuclear layer of the retina." [ISBN:0195088433]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "HC" RELATED OMO:0003000 [doi:10.1038/s41598-020-66092-9]
@@ -1427,6 +1481,7 @@ relationship: RO:0002100 UBERON:0003902 ! has soma location retinal neural layer
 id: CL:0000748
 name: retinal bipolar neuron
 def: "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the inner plexiform layer." [PMID:14689473]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "BC" RELATED OMO:0003000 [doi:10.1038/s41598-020-66092-9]
@@ -1445,6 +1500,7 @@ relationship: RO:0002100 UBERON:0001791 ! has soma location inner nuclear layer 
 id: CL:0000763
 name: myeloid cell
 def: "A cell of the monocyte, granulocyte, mast cell, megakaryocyte, or erythroid lineage." [GOC:add]
+subset: cellxgene_subset
 xref: BTO:0001441
 xref: CALOHA:TS-0647
 xref: MESH:D022423
@@ -1458,6 +1514,7 @@ id: CL:0000764
 name: erythroid lineage cell
 def: "A immature or mature cell in the lineage leading to and including erythrocytes." [GOC:add, GOC:tfm]
 comment: Note that in FMA erythropoietic cells are types of nucleated erythrocytes and thus don't include erythrocytes.
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "erythropoietic cell" EXACT []
 xref: CALOHA:TS-0290
@@ -1471,6 +1528,7 @@ id: CL:0000765
 name: erythroblast
 def: "A nucleated precursor of an erythrocyte that lacks hematopoietic lineage markers." [GOC:add, ISBN:0721601464, PMID:18174176]
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 synonym: "normoblast" EXACT []
 xref: BTO:0001571
 xref: CALOHA:TS-0289
@@ -1515,6 +1573,7 @@ name: hematopoietic multipotent progenitor cell
 def: "A hematopoietic multipotent progenitor cell is multipotent, but not capable of long-term self-renewal. These cells are characterized as lacking lineage cell surface markers and being CD34-positive in both mice and humans." [GOC:add, GOC:tfm, PMID:19022770]
 comment: Markers differ between mouse and human.
 subset: blood_and_immune_upper_slim
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "hemopoietic progenitor cell" EXACT []
 synonym: "MPP" EXACT []
@@ -1562,6 +1621,7 @@ id: CL:0000839
 name: myeloid lineage restricted progenitor cell
 def: "A progenitor cell restricted to the myeloid lineage." [GOC:add, GOC:tfm, PMID:19022770]
 comment: Note that this is a class of cell types, not an identified single cell type.
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "myeloid progenitor cell" BROAD []
 xref: BTO:0004730
@@ -1578,6 +1638,7 @@ relationship: present_in_taxon NCBITaxon:9606
 id: CL:0000988
 name: hematopoietic cell
 def: "A cell of a hematopoietic lineage." [GO_REF:0000031, GOC:add]
+subset: cellxgene_subset
 synonym: "haematopoietic cell" EXACT []
 synonym: "haemopoietic cell" EXACT []
 synonym: "hemopoietic cell" EXACT []
@@ -1645,6 +1706,7 @@ id: CL:0002139
 name: endothelial cell of vascular tree
 def: "An endothelial cell of the vascular tree, which includes blood vessels and lymphatic vessels." [GOC:dsd, GOC:tfm, PMID:12768659]
 comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive, TAL1-positive.
+subset: cellxgene_subset
 synonym: "cubodial endothelial cell of vascular tree" NARROW []
 synonym: "vascular endothelial cell" EXACT []
 xref: BTO:0001854
@@ -1692,6 +1754,7 @@ id: CL:0002303
 name: pigmented ciliary epithelial cell
 def: "A cell that is part of pigmented ciliary epithelium. This cell type uptakes sodium and chloride ions from stromal interstitium and passes the ions to non-pigmented ciliary epithelial cells via gap junctions." [PMID:15106942]
 comment: In a consensus model of unidirectional secretion, aqueous humour is formed by transferring solute, principally NaCl, from stroma to posterior chamber, with water passively following the osmotic gradient. Unidirectional secretion comprises three sequential steps. First, NaCl is transferred from the stromal interstitium into the pigmented ciliary epithelial (PE) cells. Second, solute passes from the PE into the non-pigmented ciliary epithelial (NPE) cells through gap junctions. Finally, NPE cells release Na+ and Cl− into the aqueous humour. {xref="https://doi.org/10.1016/j.exer.2003.09.021"}
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "PE cell" EXACT [https://doi.org/10.1016/j.exer.2003.09.021]
@@ -1707,6 +1770,7 @@ id: CL:0002304
 name: non-pigmented ciliary epithelial cell
 def: "A cell that is part of non-pigmented ciliary epithelium. This cell type participates in aqueous humor formation by releasing solute, principally sodium and chloride ions received from pigmented epithelial cells via gap junctions, into the aqueous humor of the eye." [GOC:tfm, PMID:15106942]
 comment: In a consensus model of unidirectional secretion, aqueous humour is formed by transferring solute, principally NaCl, from stroma to posterior chamber, with water passively following the osmotic gradient. Unidirectional secretion comprises three sequential steps. First, NaCl is transferred from the stromal interstitium into the pigmented ciliary epithelial (PE) cells. Second, solute passes from the PE into the non-pigmented ciliary epithelial (NPE) cells through gap junctions. Finally, NPE cells release Na+ and Cl− into the aqueous humour. {xref="https://doi.org/10.1016/j.exer.2003.09.021"}
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "nonpigmented ciliary epithelial cell" EXACT [PMID:10913011]
@@ -1722,6 +1786,7 @@ creation_date: 2010-09-13T04:09:31Z
 id: CL:0002319
 name: neural cell
 def: "A cell that is part of the nervous system." [GOC:tfm, ISBN:0618947256]
+subset: cellxgene_subset
 xref: CALOHA:TS-2040
 xref: FMA:70333
 is_a: CL:0000000 ! cell
@@ -1735,6 +1800,7 @@ creation_date: 2010-09-15T01:34:57Z
 id: CL:0002320
 name: connective tissue cell
 def: "A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone." [GOC:tfm, ISBN:0618947256]
+subset: cellxgene_subset
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
@@ -1760,6 +1826,7 @@ creation_date: 2010-09-15T03:39:21Z
 id: CL:0002363
 name: keratocyte
 def: "A keratocyte is a specialized fibroblast residing in the cornea stroma that has a flattened, dendritic morphology; located between the lamellae with a large flattened nucleus, and lengthy processes which communicate with neighboring cells. This corneal layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratan sulfate." [GOC:tfm, ISBN:9780702029585]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 synonym: "corneal fibroblast" EXACT []
@@ -1830,6 +1897,7 @@ creation_date: 2011-03-01T05:28:52Z
 id: CL:0002585
 name: retinal blood vessel endothelial cell
 def: "A blood vessel endothelial cell that is part of the retina." [GOC:tfm]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 is_a: CL:0000071 {is_inferred="true"} ! blood vessel endothelial cell
@@ -1845,6 +1913,7 @@ creation_date: 2011-03-06T03:28:27Z
 id: CL:0002586
 name: retinal pigment epithelial cell
 def: "An epithelial cell of the retinal pigmented epithelium." [GOC:tfm]
+subset: cellxgene_subset
 subset: eye_upper_slim
 subset: human_reference_atlas
 xref: BTO:0004910
@@ -1899,6 +1968,7 @@ is_a: CL:0000187 ! muscle cell
 id: CL:0008001
 name: hematopoietic precursor cell
 def: "Any hematopoietic cell that is a precursor of some other hematopoietic cell type." [GOC:dos]
+subset: cellxgene_subset
 is_a: CL:0000988 ! hematopoietic cell
 
 [Term]
@@ -1915,6 +1985,7 @@ relationship: part_of UBERON:8600004 ! visceral muscle tissue
 id: CL:0008019
 name: mesenchymal cell
 def: "A non-polarised cell precursor cell that is part of some mesenchyme, is associated with the cell matrix but is not connected to other cells and is capable of migration." []
+subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "mesenchyme cell" EXACT []
 is_a: CL:0000219 ! motile cell
@@ -1964,6 +2035,7 @@ relationship: seeAlso https://github.com/obophenotype/cell-ontology/issues/786
 id: CL:0011012
 name: neural crest cell
 def: "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells." [https://orcid.org/0000-0001-5208-3432, https://orcid.org/0000-0002-9900-7880]
+subset: cellxgene_subset
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002321 ! embryonic cell (metazoa)
 
@@ -1971,6 +2043,7 @@ is_a: CL:0002321 ! embryonic cell (metazoa)
 id: CL:0011026
 name: progenitor cell
 def: "A precursor cell that has a tendency to differentiate into a specific type of cell. They are descendants of stem cells, only they are more constrained in their differentiation potential or capacity for self-renewal, and are often more limited in both senses." [https://doi.org/10.1016/B978-0-12-409503-8.00002-0, ISBN:978-1-62808-994-3]
+subset: cellxgene_subset
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: develops_from CL:0000034 ! stem cell
@@ -1992,6 +2065,7 @@ id: CL:0011115
 name: precursor cell
 def: "A cell that, by division or terminal differentiation, can give rise to other cell types." [GOC:dos]
 comment: Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell.
+subset: cellxgene_subset
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0030154 ! cell differentiation
@@ -2032,20 +2106,10 @@ relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2009-12-28T04:25:23Z
 
 [Term]
-id: CL:0017505
-name: increased nucleus size
-def: "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell." [GOC:tfm]
-is_a: GO:0005634 ! nucleus
-intersection_of: GO:0005634 ! nucleus
-intersection_of: bearer_of PATO:0000586 ! increased size
-relationship: bearer_of PATO:0000586 ! increased size
-relationship: dc-contributor https://orcid.org/0000-0003-1980-3228
-creation_date: 2009-12-23T10:53:24Z
-
-[Term]
 id: CL:1000432
 name: conjunctival epithelial cell
 def: "An epithelial cell that is part of the conjunctiva." [GOC:tfm]
+subset: cellxgene_subset
 subset: eye_upper_slim
 synonym: "epithelial cell of conjunctiva" EXACT [FMA:70552]
 xref: FMA:70552
@@ -2058,6 +2122,7 @@ relationship: part_of UBERON:0001811 ! conjunctiva
 id: CL:1000443
 name: ciliary muscle cell
 def: "A smooth muscle cell that is part of the ciliary body." [GOC:tfm]
+subset: cellxgene_subset
 subset: eye_upper_slim
 synonym: "smooth muscle cell of ciliary body" EXACT [FMA:70610]
 xref: FMA:70610
@@ -2368,7 +2433,7 @@ id: GO:0005575
 name: cellular_component
 namespace: cellular_component
 alt_id: GO:0008372
-def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of  cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." [GOC:pdt]
+def: "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex)." [GOC:pdt]
 comment: Note that, in addition to forming the root of the cellular component ontology, this term is recommended for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this.
 subset: goslim_candida
 subset: goslim_chembl
@@ -2399,8 +2464,8 @@ subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 synonym: "extracellular" EXACT []
 xref: Wikipedia:Extracellular
 is_a: GO:0110165 ! cellular anatomical entity
@@ -2459,7 +2524,7 @@ comment: Note that for multicellular organisms, the extracellular space refers t
 subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "intercellular space" RELATED []
 xref: NIF_Subcellular:sao1425028079
 is_a: GO:0110165 ! cellular anatomical entity
@@ -2523,8 +2588,8 @@ subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 synonym: "chromatid" RELATED []
 synonym: "interphase chromosome" NARROW []
 synonym: "prophase chromosome" NARROW []
@@ -2558,8 +2623,8 @@ subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 xref: Wikipedia:Cytoplasm
 is_a: GO:0110165 ! cellular anatomical entity
 relationship: part_of GO:0005622 ! intracellular anatomical structure
@@ -2577,8 +2642,8 @@ subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 synonym: "free ribosome" NARROW [NIF_Subcellular:sao1139385046]
 synonym: "membrane bound ribosome" NARROW [NIF_Subcellular:sao1291545653]
 synonym: "ribosomal RNA" RELATED []
@@ -2603,8 +2668,8 @@ subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_plant
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 synonym: "bacterial inner membrane" NARROW []
 synonym: "cell membrane" EXACT []
 synonym: "cellular membrane" EXACT [NIF_Subcellular:sao6433132645]
@@ -2646,7 +2711,7 @@ subset: goslim_drosophila
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "protein anabolism" EXACT []
 synonym: "protein biosynthesis" EXACT []
 synonym: "protein biosynthetic process" EXACT []
@@ -2718,7 +2783,7 @@ subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "single-organism transport" RELATED []
 is_a: GO:0051234 ! establishment of localization
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20292" xsd:anyURI
@@ -3134,7 +3199,7 @@ id: GO:0008219
 name: cell death
 namespace: biological_process
 def: "Any biological process that results in permanent cessation of all vital functions of a cell. A cell should be considered dead when any one of the following molecular or morphological criteria is met: (1) the cell has lost the integrity of its plasma membrane; (2) the cell, including its nucleus, has undergone complete fragmentation into discrete bodies (frequently referred to as apoptotic bodies). The cell corpse (or its fragments) may be engulfed by an adjacent cell in vivo, but engulfment of whole cells should not be considered a strict criteria to define cell death as, under some circumstances, live engulfed cells can be released from phagosomes (see PMID:18045538)." [GOC:mah, GOC:mtg_apoptosis, PMID:25236395]
-comment: This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO.  When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms.
+comment: This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO. When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms.
 subset: gocheck_do_not_annotate
 synonym: "accidental cell death" RELATED []
 synonym: "necrosis" RELATED []
@@ -3373,7 +3438,7 @@ subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_plant
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "caspase-independent apoptosis" RELATED []
 synonym: "caspase-independent cell death" NARROW []
 synonym: "non-apoptotic programmed cell death" NARROW []
@@ -3652,8 +3717,8 @@ subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pombe
+subset: goslim_prokaryote
 subset: goslim_yeast
-subset: prokaryote_subset
 synonym: "biological signaling" EXACT []
 synonym: "signaling process" EXACT []
 synonym: "signalling" EXACT []
@@ -3680,7 +3745,7 @@ id: GO:0030030
 name: cell projection organization
 namespace: biological_process
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, GOC:mah, http://www.cogsci.princeton.edu/~wn/]
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "cell projection organisation" EXACT []
 synonym: "cell projection organization and biogenesis" RELATED [GOC:mah]
 synonym: "cell surface structure organization and biogenesis" RELATED [GOC:mah]
@@ -3860,7 +3925,7 @@ subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_pir
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "matrisome" NARROW []
 synonym: "proteinaceous extracellular matrix" EXACT []
 xref: NIF_Subcellular:nlx_subcell_20090513
@@ -4184,7 +4249,7 @@ subset: goslim_agr
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "cell process" BROAD []
 synonym: "cellular process" BROAD []
 synonym: "cellular projection" EXACT []
@@ -4242,12 +4307,14 @@ alt_id: GO:0034960
 alt_id: GO:0043283
 alt_id: GO:0044259
 def: "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [GOC:mah]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "biopolymer metabolic process" EXACT [GOC:mtg_chebi_dec09]
 synonym: "macromolecule metabolism" EXACT []
 synonym: "multicellular organismal macromolecule metabolic process" NARROW []
 synonym: "organismal macromolecule metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0043209
@@ -4273,7 +4340,7 @@ def: "Organized structure of distinctive morphology and function. Includes the n
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_pir
-subset: prokaryote_subset
+subset: goslim_prokaryote
 xref: NIF_Subcellular:sao1539965131
 xref: Wikipedia:Organelle
 is_a: GO:0110165 ! cellular anatomical entity
@@ -4455,9 +4522,11 @@ id: GO:0044238
 name: primary metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism." [GOC:go_curators, http://www.metacyc.org]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "primary metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0044249
@@ -4643,6 +4712,7 @@ id: GO:0048856
 name: anatomical structure development
 namespace: biological_process
 def: "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome." [GO_REF:0000021]
+subset: gocheck_do_not_annotate
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_plant
@@ -4651,6 +4721,7 @@ is_a: GO:0032502 ! developmental process
 intersection_of: GO:0032502 ! developmental process
 intersection_of: results_in_development_of UBERON:0000061 ! anatomical structure
 relationship: results_in_development_of UBERON:0000061 ! anatomical structure
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 
 [Term]
 id: GO:0048869
@@ -4668,7 +4739,7 @@ def: "Any process involved in the controlled self-propelled movement of a cell t
 subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "cell locomotion" EXACT []
 synonym: "cell movement" RELATED []
 synonym: "movement of a cell" EXACT []
@@ -4754,7 +4825,7 @@ subset: goslim_agr
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "physiological response to stimulus" EXACT []
 is_a: GO:0008150 ! biological_process
 
@@ -5081,7 +5152,7 @@ subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_pombe
-subset: prokaryote_subset
+subset: goslim_prokaryote
 synonym: "cellular macromolecule complex assembly" RELATED []
 synonym: "cellular protein complex assembly" EXACT []
 synonym: "cellular protein-containing complex assembly" RELATED []
@@ -5165,10 +5236,12 @@ id: GO:0071704
 name: organic substance metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon." [GOC:mah]
+subset: gocheck_do_not_annotate
 synonym: "organic molecular entity metabolic process" EXACT []
 synonym: "organic molecular entity metabolism" EXACT []
 synonym: "organic substance metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: mah
 creation_date: 2010-03-08T03:32:18Z
 
@@ -5208,7 +5281,7 @@ creation_date: 2010-09-10T01:39:16Z
 id: GO:0071944
 name: cell periphery
 namespace: cellular_component
-def: "The broad region around and including the plasma membrane of a cell,  encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." [GOC:pdt]
+def: "The broad region around and including the plasma membrane of a cell, encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures." [GOC:pdt]
 subset: goslim_flybase_ribbon
 is_a: GO:0110165 ! cellular anatomical entity
 created_by: mah
@@ -5509,6 +5582,7 @@ subset: goslim_pir
 is_a: GO:0005575 ! cellular_component
 is_a: UBERON:0000061 ! anatomical structure
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24200" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: kmv
 creation_date: 2019-08-12T18:01:37Z
 
@@ -6019,30 +6093,6 @@ synonym: "relational shape quality" EXACT []
 is_a: PATO:0000051 ! morphology
 
 [Term]
-id: PATO:0000068
-name: qualitative
-namespace: quality
-comment: TODO: define this or obsolete it and move children somewhere else.
-is_a: PATO:0000001 ! quality
-
-[Term]
-id: PATO:0000069
-name: deviation (from_normal)
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average." [PATOC:GVG]
-subset: attribute_slim
-is_a: PATO:0000068 ! qualitative
-
-[Term]
-id: PATO:0000117
-name: size
-namespace: quality
-def: "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude." [WordNet:WordNet]
-subset: attribute_slim
-subset: scalar_slim
-is_a: PATO:0000051 ! morphology
-
-[Term]
 id: PATO:0000136
 name: closure
 namespace: quality
@@ -6085,36 +6135,6 @@ subset: value_slim
 synonym: "round" RELATED []
 synonym: "rounded" RELATED []
 is_a: PATO:0000947 ! elliptic
-
-[Term]
-id: PATO:0000461
-name: normal
-namespace: quality
-def: "A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average." [PATOC:GVG]
-subset: abnormal_slim
-subset: mpath_slim
-subset: value_slim
-synonym: "average" RELATED []
-is_a: PATO:0000068 ! qualitative
-property_value: RO:0002604 PATO:0000460
-
-[Term]
-id: PATO:0000586
-name: increased size
-namespace: quality
-alt_id: PATO:0001202
-def: "A size quality which is relatively high." [PATOC:GVG]
-subset: value_slim
-synonym: "big" RELATED []
-synonym: "enlarged" RELATED []
-synonym: "expanded" RELATED []
-synonym: "great" RELATED []
-synonym: "large" RELATED []
-is_a: PATO:0000117 ! size
-is_a: PATO:0002305 ! increased object quality
-intersection_of: PATO:0000117 ! size
-intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
-property_value: RO:0002604 PATO:0000587
 
 [Term]
 id: PATO:0000608
@@ -6508,32 +6528,6 @@ relationship: dc-contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2011-06-08T06:33:50Z
 
 [Term]
-id: PATO:0002300
-name: increased quality
-namespace: quality
-def: "A quality that has a value that is increased compared to normal or average." [PATOC:GVG]
-is_a: PATO:0000069 ! deviation (from_normal)
-intersection_of: PATO:0000001 ! quality
-intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
-relationship: dc-contributor https://orcid.org/0000-0002-2061-091X
-relationship: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
-property_value: RO:0002604 PATO:0002301
-creation_date: 2011-06-16T06:39:43Z
-
-[Term]
-id: PATO:0002305
-name: increased object quality
-namespace: quality
-def: "A quality of an object that has a value that is increased compared to normal or average." [PATOC:GVG]
-is_a: PATO:0001241 ! physical object quality
-is_a: PATO:0002300 ! increased quality
-intersection_of: PATO:0001241 ! physical object quality
-intersection_of: RO:0015007 PATO:0000461 ! increased in magnitude relative to normal
-relationship: dc-contributor https://orcid.org/0000-0002-2061-091X
-property_value: RO:0002604 PATO:0002303
-creation_date: 2011-06-16T06:54:01Z
-
-[Term]
 id: PATO:0002309
 name: fiber shaped
 namespace: quality
@@ -6605,6 +6599,16 @@ def: "A quality inhering in a structure by virtue of it consisting of many of re
 comment: A complete coverage of this domain would subclasses homopolymeric, copolymeric, crystalline.
 subset: value_slim
 is_a: PATO:0000141 ! structure
+
+[Term]
+id: PATO:0040072
+name: high nuclear/cytoplasmic ratio
+namespace: quality
+def: "A quality inhering in a cell by virtue of the cell having a high nuclear/cytoplasmic ratio." [http://lymerick.net/blood-cells.pdf, Wikipedia:NC_ratio&oldid=931936284]
+comment: A high nuclear/cytolasmic ratio is 70% or higher.
+synonym: "high N:C ratio" EXACT []
+is_a: PATO:0001396 ! cellular quality
+created_by: http://orcid.org/0000-0001-5208-3432
 
 [Term]
 id: PATO:0070006
@@ -7097,7 +7101,7 @@ synonym: "eye" BROAD [FMA:54448]
 synonym: "eyes" RELATED OMO:0003004 [TAO:0000107]
 synonym: "orbital part of face" RELATED [FMA:54448]
 synonym: "orbital region" RELATED [FMA:54448]
-synonym: "regio orbitalis" EXACT LATIN [FMA:54448, FMA:TA]
+synonym: "regio orbitalis" EXACT OMO:0003011 [FMA:54448, FMA:TA]
 synonym: "vertebrate eye" NARROW []
 xref: AAO:0010340
 xref: BIRNLEX:1169
@@ -7152,7 +7156,7 @@ xref: CALOHA:TS-2043
 xref: EHDAA2:0001824
 xref: EHDAA:500
 xref: EMAPA:35955
-xref: FBbt:00005155
+xref: FBbt:00005155 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: GAID:63
 xref: HAO:0000930
 xref: MA:0000017
@@ -7241,7 +7245,7 @@ def: "Multi-tissue structure that is comprised of a secretory epithelial layer (
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "serosa" RELATED [Wikipedia:Serous_membrane]
-synonym: "tunica serosa" EXACT LATIN [FMA:9581]
+synonym: "tunica serosa" EXACT OMO:0003011 [FMA:9581]
 synonym: "wall of serous sac" EXACT [FMA:9581]
 xref: FMA:9581
 xref: GAID:19
@@ -7320,7 +7324,7 @@ xref: BILA:0000003
 xref: CARO:0000003
 xref: EHDAA2:0003003
 xref: EMAPA:0
-xref: FBbt:00007001
+xref: FBbt:00007001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:305751
 xref: FMA:67135
 xref: GAID:781
@@ -7525,7 +7529,7 @@ def: "The surface (external) layer of ectoderm which begins to proliferate short
 subset: pheno_slim
 synonym: "surface (external) ectoderm" EXACT []
 synonym: "surface ectoderm" EXACT [MP:0012532]
-xref: BTO:0006242 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: BTO:0006242 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: EHDAA2:0001968
 xref: EHDAA:1494
 xref: EHDAA:350
@@ -7638,13 +7642,13 @@ synonym: "fertilized egg stage" RELATED []
 synonym: "one cell stage" EXACT []
 synonym: "one-cell stage" RELATED [VHOG:0000745]
 synonym: "zygote" RELATED [VHOG:0000745]
-synonym: "zygotum" RELATED LATIN [Wikipedia:Zygote]
+synonym: "zygotum" RELATED OMO:0003011 [Wikipedia:Zygote]
 xref: BilaDO:0000005
 xref: BILS:0000106
 xref: EFO:0001322
 xref: EHDAA:27
 xref: FBdv:00005288
-xref: IDOMAL:0000302 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: IDOMAL:0000302 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C12601
 xref: PdumDv:0000100
 xref: VHOG:0000745
@@ -7791,7 +7795,7 @@ synonym: "funiculus" EXACT []
 synonym: "nerve fiber bundle" EXACT [FBbt:00005099]
 synonym: "neural fiber bundle" EXACT []
 xref: CARO:0001001
-xref: FBbt:00005099
+xref: FBbt:00005099 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: NLX:147821
 is_a: UBERON:0005162 ! multi cell part structure
 relationship: has_part GO:0043005 ! neuron projection
@@ -7824,13 +7828,13 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "adult mouth" NARROW []
-synonym: "cavital oralis" RELATED LATIN [Wikipedia:Mouth]
+synonym: "cavital oralis" RELATED OMO:0003011 [Wikipedia:Mouth]
 synonym: "cavitas oris" RELATED [BTO:0001090]
 synonym: "cavum oris" RELATED [BTO:0001090]
 synonym: "mouth cavity" RELATED [BTO:0001090]
 synonym: "oral region" RELATED [EHDAA2:0001326]
 synonym: "oral vestibule" RELATED [BTO:0001090]
-synonym: "regio oralis" EXACT LATIN [BTO:0004698, FMA:49184, FMA:TA]
+synonym: "regio oralis" EXACT OMO:0003011 [BTO:0004698, FMA:49184, FMA:TA]
 synonym: "rima oris" RELATED [BTO:0001090]
 synonym: "stoma" RELATED []
 synonym: "stomatodaeum" RELATED [VHOG:0000812]
@@ -7845,7 +7849,7 @@ xref: EFO:0000825
 xref: EHDAA2:0001326
 xref: EHDAA:542
 xref: EMAPA:16262
-xref: FBbt:00003126
+xref: FBbt:00003126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:49184
 xref: GAID:75
 xref: galen:Mouth
@@ -8028,7 +8032,7 @@ xref: CALOHA:TS-2101
 xref: CARO:0000004
 xref: EHDAA2:0003004
 xref: EMAPA:35178
-xref: FBbt:00007019
+xref: FBbt:00007019 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9669
 xref: galen:BodySubstance
 xref: HAO:0000004
@@ -8063,7 +8067,7 @@ xref: AEO:0000005
 xref: BILA:0000005
 xref: CARO:0000005
 xref: EHDAA2:0003005
-xref: FBbt:00007017
+xref: FBbt:00007017 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:5897
 xref: HAO:0000005
 xref: NCIT:C94478
@@ -8091,7 +8095,7 @@ xref: AEO:0000006
 xref: BILA:0000006
 xref: CARO:0000006
 xref: EHDAA2:0003006
-xref: FBbt:00007016
+xref: FBbt:00007016 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67165
 xref: HAO:0000006
 xref: TAO:0001836
@@ -8117,7 +8121,7 @@ xref: AEO:0000007
 xref: BILA:0000007
 xref: CARO:0000007
 xref: EHDAA2:0003007
-xref: FBbt:00007015
+xref: FBbt:00007015 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67112
 xref: HAO:0000007
 xref: TAO:0001835
@@ -8155,11 +8159,11 @@ xref: EHDAA2:0003011
 xref: EHDAA:392
 xref: EMAPA:16103
 xref: EV:0100000
-xref: FBbt:00004856
+xref: FBbt:00004856 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7149
 xref: galen:AnatomicalSystem
 xref: HAO:0000011
-xref: IDOMAL:0002460 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: IDOMAL:0002460 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: MA:0000003
 xref: NCIT:C12919
 xref: SCTID:278195005
@@ -8210,7 +8214,7 @@ xref: EHDAA2:0003191
 xref: EHDAA:1
 xref: EMAPA:25765
 xref: EV:0100016
-xref: FBbt:00000001
+xref: FBbt:00000001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:256135
 xref: galen:Organism
 xref: HAO:0000012
@@ -8255,7 +8259,7 @@ xref: CARO:0000032
 xref: EFO:0000808
 xref: EHDAA2:0003032
 xref: EMAPA:36031
-xref: FBbt:00007009
+xref: FBbt:00007009 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7153
 xref: galen:BodyPart
 xref: HAO:0000032
@@ -8291,7 +8295,7 @@ xref: AEO:0000040
 xref: BILA:0000040
 xref: CARO:0000040
 xref: EHDAA2:0003040
-xref: FBbt:00007013
+xref: FBbt:00007013 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:63863
 xref: HAO:0000040
 xref: TAO:0000382
@@ -8311,8 +8315,7 @@ namespace: uberon
 def: "Anatomical group whose component anatomical structures lie in close proximity to each other." [FBbt:00007277]
 subset: common_anatomy
 subset: upper_level
-xref: FBbt:00007277
-xref: IDOMAL:0002461 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: FBbt:00007277 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: VHOG:0001737
 is_a: UBERON:0034923 ! disconnected anatomical group
 relationship: present_in_taxon NCBITaxon:33090
@@ -8339,7 +8342,7 @@ xref: CALOHA:TS-2090
 xref: CARO:0000043
 xref: EHDAA2:0003043
 xref: EMAPA:35868
-xref: FBbt:00007003
+xref: FBbt:00007003 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9637
 xref: galen:Tissue
 xref: HAO:0000043
@@ -8374,7 +8377,7 @@ xref: AEO:0000055
 xref: BILA:0000055
 xref: CARO:0000055
 xref: EHDAA2:0003055
-xref: FBbt:00007010
+xref: FBbt:00007010 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000055
 xref: TAO:0001488
 xref: TGMA:0001847
@@ -8407,7 +8410,7 @@ xref: CALOHA:TS-0288
 xref: CARO:0000066
 xref: EHDAA2:0003066
 xref: EMAPA:32738
-xref: FBbt:00007005
+xref: FBbt:00007005 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9639
 xref: GAID:402
 xref: HAO:0000066
@@ -8584,11 +8587,11 @@ xref: EHDAA2:0000002
 xref: EHDAA2_RETIRED:0003236
 xref: EHDAA:38
 xref: EMAPA:16039
-xref: FBbt:00000052
+xref: FBbt:00000052 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69068
 xref: GAID:963
 xref: http://neurolex.org/wiki/Category\:Embryonic_organism
-xref: IDOMAL:0000646 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: IDOMAL:0000646 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: MAT:0000226
 xref: MESH:D004622
 xref: MIAA:0000019
@@ -8628,7 +8631,7 @@ xref: AAO:0000480
 xref: BILA:0000035
 xref: BTO:0000556
 xref: EMAPA:36033
-xref: FBbt:00000110
+xref: FBbt:00000110 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69069
 xref: GAID:1303
 xref: MESH:D005855
@@ -8663,7 +8666,7 @@ xref: EFO:0000414
 xref: EHDAA2:0000428
 xref: EMAPA:16069
 xref: EV:0100003
-xref: FBbt:00000111
+xref: FBbt:00000111 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69070
 xref: GAID:1304
 xref: MAT:0000155
@@ -8704,7 +8707,7 @@ xref: EFO:0002545
 xref: EHDAA2:0000436
 xref: EMAPA:16062
 xref: EV:0100005
-xref: FBbt:00000125
+xref: FBbt:00000125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69071
 xref: GAID:1305
 xref: MAT:0000175
@@ -8750,7 +8753,7 @@ xref: EHDAA:160
 xref: EHDAA:183
 xref: EMAPA:16083
 xref: EV:0100006
-xref: FBbt:00000126
+xref: FBbt:00000126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69072
 xref: GAID:522
 xref: MAT:0000174
@@ -8794,7 +8797,7 @@ synonym: "stomodeal-hypophyseal primordium" BROAD [XAO:0000269]
 xref: BTO:0004224
 xref: EHDAA2:0001929
 xref: EMAPA:16263
-xref: FBbt:00000439
+xref: FBbt:00000439 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:295846
 xref: NCIT:C34306
 xref: TAO:0001290
@@ -8828,8 +8831,8 @@ synonym: "2n" BROAD OMO:0003000 [BIRNLEX:1640, NIFSTD:NeuroNames_abbrevSource]
 synonym: "CN-II" RELATED [ZFA:0000435]
 synonym: "cranial II" EXACT []
 synonym: "nerve II" RELATED [NeuroNames:289]
-synonym: "nervus opticus" EXACT LATIN []
-synonym: "nervus opticus [II]" EXACT LATIN [FMA:50863, FMA:TA]
+synonym: "nervus opticus" EXACT OMO:0003011 []
+synonym: "nervus opticus [II]" EXACT OMO:0003011 [FMA:50863, FMA:TA]
 synonym: "optic" RELATED [TAO:0000435]
 synonym: "optic II" EXACT [EHDAA2:0001313]
 synonym: "optic II nerve" EXACT [EHDAA2:0001313]
@@ -8975,7 +8978,7 @@ xref: EHDAA:2641
 xref: EHDAA:6485
 xref: EMAPA:16894
 xref: EV:0100164
-xref: FBbt:00005095
+xref: FBbt:00005095 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:50801
 xref: GAID:571
 xref: galen:Brain
@@ -9040,9 +9043,9 @@ def: "A decussation of the diencephalon where the fibers of the optic nerve cros
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "chiasma" RELATED LATIN [NeuroNames:459]
-synonym: "chiasma nervorum opticorum" RELATED LATIN [NeuroNames:459]
-synonym: "chiasma opticum" EXACT LATIN [Wikipedia:Optic_chiasm]
+synonym: "chiasma" RELATED OMO:0003011 [NeuroNames:459]
+synonym: "chiasma nervorum opticorum" RELATED OMO:0003011 [NeuroNames:459]
+synonym: "chiasma opticum" EXACT OMO:0003011 [Wikipedia:Optic_chiasm]
 synonym: "decussation of optic nerve fibers" EXACT [FMA:62045]
 synonym: "optic chiasm" EXACT [Wikipedia:Optic_chiasm]
 synonym: "optic chiasm (Rufus of Ephesus)" RELATED [NeuroNames:459]
@@ -9260,7 +9263,7 @@ xref: BTO:0000439
 xref: CALOHA:TS-0309
 xref: EFO:0000827
 xref: EV:0100336
-xref: FBbt:00005162
+xref: FBbt:00005162 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: GAID:69
 xref: MAT:0000140
 xref: MESH:D005123
@@ -9339,7 +9342,7 @@ xref: BTO:0000058
 xref: CALOHA:TS-1293
 xref: EFO:0000793
 xref: EV:0100056
-xref: FBbt:00005055
+xref: FBbt:00005055 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7152
 xref: GAID:278
 xref: galen:DigestiveSystem
@@ -9378,9 +9381,10 @@ namespace: uberon
 def: "Organ system that passes nutrients (such as amino acids and electrolytes), gases, hormones, blood cells, etc. to and from cells in the body to help fight diseases and help stabilize body temperature and pH to maintain homeostasis[WP]." [Wikipedia:Circulatory_system]
 subset: human_reference_atlas
 subset: uberon_slim
-synonym: "systema cardiovasculare" RELATED LATIN [Wikipedia:Circulatory_system]
+synonym: "systema cardiovasculare" RELATED OMO:0003011 [Wikipedia:Circulatory_system]
 xref: AAO:0000959
 xref: CALOHA:TS-2103
+xref: MESH:D002319 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: VHOG:0001248
 xref: Wikipedia:Circulatory_system
 is_a: UBERON:0000467 ! anatomical system
@@ -9417,7 +9421,7 @@ synonym: "muscles" RELATED []
 synonym: "muscles set" EXACT []
 synonym: "musculature" EXACT []
 synonym: "musculature system" RELATED []
-synonym: "musculi" EXACT LATIN [FMA:32558, FMA:TA]
+synonym: "musculi" EXACT OMO:0003011 [FMA:32558, FMA:TA]
 synonym: "set of muscles" EXACT [FMA:32558]
 synonym: "set of skeletal muscles" EXACT [MA:0000165]
 xref: AAO:0011066
@@ -9448,12 +9452,13 @@ namespace: uberon
 def: "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO]." [BIRNLEX:844, ISBN:0-14-051288-8, ISBN:3110148986, NLM:nervous+system, WB:rynl, Wikipedia:Nervous_system, ZFIN:curator]
 subset: cumbo
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "nerve net" NARROW [Wikipedia:Nerve_net]
 synonym: "neurological system" EXACT [GO:0050877]
-synonym: "systema nervosum" RELATED LATIN [Wikipedia:Nervous_system]
+synonym: "systema nervosum" RELATED OMO:0003011 [Wikipedia:Nervous_system]
 xref: AAO:0000324
 xref: BILA:0000079
 xref: BIRNLEX:844
@@ -9464,7 +9469,7 @@ xref: EHDAA2:0001246
 xref: EHDAA:826
 xref: EMAPA:16469
 xref: EV:0100162
-xref: FBbt:00005093
+xref: FBbt:00005093 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7157
 xref: GAID:466
 xref: MA:0000016
@@ -9493,6 +9498,7 @@ relationship: has_part CL:0000540 ! neuron
 relationship: immediate_transformation_of UBERON:0016880 {source="Bgee:AN"} ! future nervous system
 relationship: never_in_taxon NCBITaxon:6040
 relationship: only_in_taxon NCBITaxon:6072 ! Eumetazoa
+relationship: present_in_taxon NCBITaxon:9606
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg" xsd:anyURI
 property_value: depiction "http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png" xsd:anyURI
 property_value: UBPROP:0000001 "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000396", ontology="TAO", source="ZFIN:curator"}
@@ -9508,13 +9514,14 @@ namespace: uberon
 def: "The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord." [GO:0021551, http://www.frontiersinzoology.com/content/7/1/29, https://sourceforge.net/p/geneontology/ontology-requests/11422/]
 subset: cumbo
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "cerebrospinal axis" NARROW [FMA:55675]
 synonym: "CNS" EXACT OMO:0003000 []
 synonym: "neuraxis" RELATED [FMA:55675]
-synonym: "systema nervosum centrale" EXACT LATIN [FMA:55675, FMA:TA]
+synonym: "systema nervosum centrale" EXACT OMO:0003011 [FMA:55675, FMA:TA]
 xref: AAO:0000090
 xref: BAMS:CNS
 xref: BILA:0000080
@@ -9527,7 +9534,7 @@ xref: EHDAA:828
 xref: EMAPA:16470
 xref: EMAPA:16754
 xref: EV:0100163
-xref: FBbt:00005094
+xref: FBbt:00005094 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:55675
 xref: GAID:570
 xref: MA:0000167
@@ -9548,6 +9555,7 @@ relationship: immediate_transformation_of UBERON:0016879 {source="Bgee:AN"} ! fu
 relationship: never_in_taxon NCBITaxon:147099 {source="Wikipedia:Acoelomorpha"}
 relationship: only_in_taxon NCBITaxon:33213 ! Bilateria
 relationship: part_of UBERON:0001016 ! nervous system
+relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "Part of the nervous system which includes the brain and spinal cord.[AAO]" xsd:string {date_retrieved="2012-06-20", external_class="AAO:0000090", ontology="AAO", source="AAO:BJB"}
 property_value: UBPROP:0000001 "The brain and spinal cord. Kimmel et al, 1995.[TAO]" xsd:string {date_retrieved="2012-08-14", external_class="TAO:0000012", ontology="TAO", source="ZFIN:curator"}
 property_value: UBPROP:0000001 "The central nervous system (CNS) is the part of the nervous system which includes the brain, spinal cord, and nerve cell layer of the retina (CUMBO)." xsd:string {source="BIRNLEX:1099"}
@@ -9569,7 +9577,7 @@ synonym: "tract" RELATED []
 synonym: "tract of neuraxis" EXACT [FMA:83847]
 xref: BIRNLEX:1649
 xref: EV:0100304
-xref: FBbt:00005100
+xref: FBbt:00005100 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:83847
 xref: NLX:147822
 is_a: UBERON:0000122 ! neuron projection bundle
@@ -9584,7 +9592,7 @@ def: "A slender neuron projection bundle[FBbt]; A bundle of anatomical fibers, a
 comment: EDITOR_NOTE note FBbt class not disjoint from tract. Consider merging with 'neuron projection bundle'
 subset: uberon_slim
 synonym: "fascicle" BROAD [FBbt:00005101]
-synonym: "fasciculus" EXACT LATIN []
+synonym: "fasciculus" EXACT OMO:0003011 []
 synonym: "nerve bundle" EXACT [FMA:12235]
 synonym: "nerve fasciculus" EXACT [FMA:12235]
 synonym: "nerve fiber tract" RELATED [BTO:0002191]
@@ -9607,8 +9615,8 @@ def: "Anatomical system that overlaps the nervous system and is responsible for 
 subset: efo_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "organa sensuum" EXACT LATIN [FMA:75259, FMA:TA]
-synonym: "organa sensuum" RELATED LATIN [Wikipedia:Sensory_system]
+synonym: "organa sensuum" EXACT OMO:0003011 [FMA:75259, FMA:TA]
+synonym: "organa sensuum" RELATED OMO:0003011 [Wikipedia:Sensory_system]
 synonym: "sense organ subsystem" EXACT []
 synonym: "sense organs" EXACT [FMA:75259]
 synonym: "sense organs set" EXACT [FMA:75259]
@@ -9622,7 +9630,7 @@ xref: BILA:0000099
 xref: EFO:0000805
 xref: EHDAA2:0003094
 xref: EMAPA:16192
-xref: FBbt:00007692
+xref: FBbt:00007692 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:75259
 xref: MA:0002442
 xref: MAT:0000031
@@ -9658,7 +9666,7 @@ xref: AEO:0000171
 xref: BTO:0001886
 xref: EFO:0001652
 xref: EHDAA2:0003171
-xref: FBbt:00005495
+xref: FBbt:00005495 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:86589
 xref: MAT:0000482
 xref: NCIT:C34275
@@ -9678,7 +9686,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "neural primordium" RELATED []
 synonym: "presumptive central nervous system" RELATED []
-synonym: "tubus neuralis" RELATED LATIN [Wikipedia:Neural_tube]
+synonym: "tubus neuralis" RELATED OMO:0003011 [Wikipedia:Neural_tube]
 xref: AAO:0010617
 xref: BTO:0001057
 xref: CALOHA:TS-2371
@@ -9690,7 +9698,7 @@ xref: EMAPA:16164
 xref: EMAPA:16757
 xref: FMA:293882
 xref: MAT:0000069
-xref: MESH:D054259
+xref: MESH:D054259 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: MIAA:0000069
 xref: NCIT:C34226
 xref: neuronames:1365
@@ -9726,7 +9734,7 @@ xref: BILA:0000000
 xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
-xref: FBbt:10000000
+xref: FBbt:10000000 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -9753,8 +9761,8 @@ subset: vertebrate_core
 synonym: "involuntary muscle" EXACT []
 synonym: "non-striated muscle" EXACT []
 synonym: "smooth muscle" EXACT []
-synonym: "textus muscularis levis; textus muscularis nonstriatus" RELATED LATIN [Wikipedia:Smooth_muscle_tissue]
-synonym: "textus muscularis nonstriatus" EXACT LATIN [FMA:14070, FMA:TA]
+synonym: "textus muscularis levis; textus muscularis nonstriatus" RELATED OMO:0003011 [Wikipedia:Smooth_muscle_tissue]
+synonym: "textus muscularis nonstriatus" EXACT OMO:0003011 [FMA:14070, FMA:TA]
 synonym: "visceral muscle" NARROW SENSU []
 synonym: "visceral muscle tissue" NARROW SENSU []
 xref: AAO:0010244
@@ -9920,7 +9928,7 @@ namespace: uberon
 def: "A subdivision of the head that has as parts the layers deep to the surface of the anterior surface, including the mouth, eyes, and nose (when present). In vertebrates, this includes the facial skeleton and structures superficial to the facial skeleton (cheeks, mouth, eyeballs, skin of face, etc)." [http://orcid.org/0000-0002-6601-2165]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "facia/facies" RELATED LATIN [Wikipedia:Face]
+synonym: "facia/facies" RELATED OMO:0003011 [Wikipedia:Face]
 synonym: "visage" RELATED [BTO:0003369]
 xref: BTO:0003369
 xref: CALOHA:TS-2216
@@ -9966,10 +9974,11 @@ xref: BTO:0000545
 xref: EHDAA2:0000726
 xref: EHDAA:518
 xref: EMAPA:16247
-xref: FBbt:00003125
+xref: FBbt:00003125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45615
 xref: galen:AlimentaryTract
 xref: MA:0000917
+xref: MESH:D041981 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: NCIT:C34082
 xref: TAO:0000112
 xref: TGMA:0001819
@@ -10001,7 +10010,7 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "Bowman`s muscles" RELATED [BTO:0000654]
 synonym: "ciliaris" RELATED [Wikipedia:Ciliary_muscle]
-synonym: "musculus ciliaris" RELATED LATIN [Wikipedia:Ciliary_muscle]
+synonym: "musculus ciliaris" RELATED OMO:0003011 [Wikipedia:Ciliary_muscle]
 synonym: "musculus ciliarus" EXACT [BTO:0000654]
 xref: BTO:0000654
 xref: EMAPA:35240
@@ -10100,7 +10109,7 @@ synonym: "anterior chamber" EXACT [HP:0000593, MP:0010709]
 synonym: "anterior chamber of eye" EXACT []
 synonym: "camera anterior" EXACT []
 synonym: "camera anterior bulbi" RELATED [BTO:0002084]
-synonym: "camera anterior bulbi oculi" RELATED LATIN [Wikipedia:Anterior_chamber_of_eyeball]
+synonym: "camera anterior bulbi oculi" RELATED OMO:0003011 [Wikipedia:Anterior_chamber_of_eyeball]
 synonym: "camera oculi anterior" RELATED [BTO:0002084]
 synonym: "eye anterior chamber" EXACT []
 xref: BTO:0002084
@@ -10132,7 +10141,7 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "pars iridica retinae" RELATED [Wikipedia:Uvea]
 synonym: "tunica vasculatis oculi" RELATED [Wikipedia:Uvea]
-synonym: "tunica vasculosa bulbi" RELATED LATIN [Wikipedia:Uvea]
+synonym: "tunica vasculosa bulbi" RELATED OMO:0003011 [Wikipedia:Uvea]
 synonym: "tunica vasculosa of eyeball" EXACT [FMA:58103]
 synonym: "uvea" EXACT [FMA:58103]
 synonym: "uveal tract" EXACT [FMA:58103]
@@ -10214,13 +10223,13 @@ synonym: "anterior corneal epithelium" EXACT []
 synonym: "anterior endothelium of cornea" RELATED [BTO:0000287]
 synonym: "cornea epithelial tissue" EXACT [OBOL:automatic]
 synonym: "cornea epithelium" EXACT [OBOL:automatic]
-synonym: "e. anterius corneae" RELATED LATIN [Wikipedia:Corneal_epithelium]
+synonym: "e. anterius corneae" RELATED OMO:0003011 [Wikipedia:Corneal_epithelium]
 synonym: "endothelium anterius corneae" RELATED [BTO:0000287]
 synonym: "endothelium camerae anterioris bulbi" RELATED [BTO:0000287]
 synonym: "endothelium corneale" RELATED [BTO:0000287]
 synonym: "epithelial tissue of cornea" EXACT [OBOL:automatic]
 synonym: "epithelium anterius (cornea)" EXACT []
-synonym: "epithelium anterius corneae" EXACT LATIN [FMA:58263, FMA:TA]
+synonym: "epithelium anterius corneae" EXACT OMO:0003011 [FMA:58263, FMA:TA]
 synonym: "epithelium corneæ anterior layer" EXACT []
 synonym: "epithelium of cornea" EXACT []
 synonym: "epithelium posterius corneae" RELATED [BTO:0000287]
@@ -10306,7 +10315,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "anterior uvea" RELATED []
 synonym: "ciliary bodies" RELATED OMO:0003004 [VHOG:0000102]
-synonym: "corpus ciliare" RELATED LATIN [Wikipedia:Ciliary_body]
+synonym: "corpus ciliare" RELATED OMO:0003011 [Wikipedia:Ciliary_body]
 synonym: "ocular ciliary body" EXACT []
 xref: AAO:0010341
 xref: BTO:0000260
@@ -10348,7 +10357,7 @@ synonym: "chorioid" RELATED [BTO:0001829]
 synonym: "choroid" EXACT [MA:0000263]
 synonym: "choroid coat" EXACT [Wikipedia:Choroid]
 synonym: "choroidea" EXACT [Wikipedia:Choroid]
-synonym: "choroidea" RELATED LATIN [Wikipedia:Choroid]
+synonym: "choroidea" RELATED OMO:0003011 [Wikipedia:Choroid]
 synonym: "eye choroid" EXACT [VHOG:0001568]
 synonym: "optic choroid" RELATED [ZFA:0005229]
 synonym: "posterior uvea" EXACT [Wikipedia:Uvea#Regions]
@@ -10394,7 +10403,7 @@ subset: vertebrate_core
 synonym: "corneal stroma" EXACT [MA:0001245]
 synonym: "stroma of cornea" EXACT []
 synonym: "substantia propria" BROAD []
-synonym: "substantia propria corneae" EXACT LATIN [FMA:58306, FMA:TA]
+synonym: "substantia propria corneae" EXACT OMO:0003011 [FMA:58306, FMA:TA]
 xref: CALOHA:TS-1138
 xref: EFO:0002514
 xref: EMAPA:17602
@@ -10483,7 +10492,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "epithelium, retinal pigment" RELATED [BTO:0001177]
 synonym: "outer pigmented layer of retina" EXACT []
-synonym: "p. pigmentosa retinae" RELATED LATIN [Wikipedia:Retinal_pigment_epithelium]
+synonym: "p. pigmentosa retinae" RELATED OMO:0003011 [Wikipedia:Retinal_pigment_epithelium]
 synonym: "pigment epithelium of retina" EXACT []
 synonym: "pigmented epithelium" RELATED []
 synonym: "pigmented retina" RELATED []
@@ -10494,9 +10503,9 @@ synonym: "retinal pigment epithelium" EXACT [MP:0005201, Wikipedia:Retinal_pigme
 synonym: "retinal pigment layer" RELATED [VHOG:0000536]
 synonym: "retinal pigmented epithelium" EXACT [ZFA:0000144]
 synonym: "RPE" RELATED []
-synonym: "stratum pigmentosa retinae" RELATED LATIN [Wikipedia:Retinal_pigment_epithelium]
+synonym: "stratum pigmentosa retinae" RELATED OMO:0003011 [Wikipedia:Retinal_pigment_epithelium]
 synonym: "stratum pigmentosum (retina)" EXACT []
-synonym: "stratum pigmentosum retinae" EXACT LATIN [FMA:58627, FMA:TA]
+synonym: "stratum pigmentosum retinae" EXACT OMO:0003011 [FMA:58627, FMA:TA]
 xref: AAO:0011096
 xref: BTO:0001177
 xref: CALOHA:TS-0869
@@ -10544,7 +10553,7 @@ synonym: "retina photoreceptor layer" EXACT []
 synonym: "retinal photoreceptor layer" EXACT [ZFA:0000143]
 synonym: "retinal photoreceptor layers" RELATED OMO:0003004 [ZFA:0000143]
 synonym: "stratum segmentorum externorum et internorum (retina)" EXACT []
-synonym: "stratum segmentorum externorum et internorum retinae" EXACT LATIN [FMA:58680, FMA:TA]
+synonym: "stratum segmentorum externorum et internorum retinae" EXACT OMO:0003011 [FMA:58680, FMA:TA]
 xref: EMAPA:35686
 xref: FMA:58680
 xref: MA:0001308
@@ -10581,7 +10590,7 @@ synonym: "outer limiting membranes" RELATED OMO:0003004 [ZFA:0001331]
 synonym: "retina external limiting lamina" EXACT []
 synonym: "retina outer limiting membrane" EXACT [MP:0010236]
 synonym: "stratum limitans externum (retina)" EXACT []
-synonym: "stratum limitans externum retinae" EXACT LATIN [FMA:58683, FMA:TA]
+synonym: "stratum limitans externum retinae" EXACT OMO:0003011 [FMA:58683, FMA:TA]
 xref: EMAPA:36518
 xref: FMA:58683
 xref: MA:0001309
@@ -10613,7 +10622,7 @@ synonym: "retina, outer nuclear layer" RELATED [BAMS:Ronl]
 synonym: "retinal outer nuclear layer" EXACT []
 synonym: "retinal outer nuclear layers" RELATED OMO:0003004 [ZFA:0001464]
 synonym: "stratum nucleare externum (retina)" EXACT []
-synonym: "stratum nucleare externum retinae" EXACT LATIN [FMA:58684, FMA:TA]
+synonym: "stratum nucleare externum retinae" EXACT OMO:0003011 [FMA:58684, FMA:TA]
 xref: BAMS:Ronl
 xref: BTO:0005600
 xref: EMAPA:19157
@@ -10650,7 +10659,7 @@ synonym: "retina, outer plexiform layer" RELATED [BAMS:Ropl]
 synonym: "retinal outer plexiform layer" EXACT []
 synonym: "retinal outer plexiform layers" RELATED OMO:0003004 [ZFA:0001330]
 synonym: "stratum plexiforme externum" EXACT []
-synonym: "stratum plexiforme externum retinae" EXACT LATIN [FMA:58685, FMA:TA]
+synonym: "stratum plexiforme externum retinae" EXACT OMO:0003011 [FMA:58685, FMA:TA]
 xref: BAMS:Ropl
 xref: BTO:0003174
 xref: EMAPA:35744
@@ -10689,7 +10698,7 @@ synonym: "retina inner nuclear layer" EXACT []
 synonym: "retina, inner nuclear layer" RELATED [BAMS:Rinl]
 synonym: "retinal inner nuclear layer" EXACT []
 synonym: "stratum nucleare internum" EXACT []
-synonym: "stratum nucleare internum retinae" EXACT LATIN [FMA:58686, FMA:TA]
+synonym: "stratum nucleare internum retinae" EXACT OMO:0003011 [FMA:58686, FMA:TA]
 xref: BAMS:Rinl
 xref: BTO:0003176
 xref: EMAPA:19155
@@ -10735,7 +10744,7 @@ synonym: "retinal ganglion cell layer" EXACT []
 synonym: "retinal ganglion layer" EXACT [MP:0008510]
 synonym: "RGC layer" EXACT []
 synonym: "stratum ganglionicum (retina)" EXACT [FMA:58687]
-synonym: "stratum ganglionicum retinae" RELATED LATIN [Wikipedia:Ganglion_cell_layer]
+synonym: "stratum ganglionicum retinae" RELATED OMO:0003011 [Wikipedia:Ganglion_cell_layer]
 xref: BAMS:Rgcl
 xref: BTO:0003398
 xref: CALOHA:TS-0867
@@ -10779,8 +10788,8 @@ synonym: "optic fiber layer" RELATED [VHOG:0001169]
 synonym: "optic fiber layers" RELATED OMO:0003004 [TAO:0002212]
 synonym: "retina nerve fiber layer" EXACT []
 synonym: "stratum neurofibrarum (retina)" EXACT []
-synonym: "stratum neurofibrarum retinae" EXACT LATIN [FMA:58688, FMA:TA]
-synonym: "stratum neurofibrum retinae" RELATED LATIN [Wikipedia:Nerve_fiber_layer]
+synonym: "stratum neurofibrarum retinae" EXACT OMO:0003011 [FMA:58688, FMA:TA]
+synonym: "stratum neurofibrum retinae" RELATED OMO:0003011 [Wikipedia:Nerve_fiber_layer]
 synonym: "stratum opticum of retina" EXACT []
 xref: DMBA:15652
 xref: EMAPA:18591
@@ -10815,7 +10824,7 @@ synonym: "internal limiting lamina of retina" EXACT []
 synonym: "internal limiting membrane of retina" EXACT []
 synonym: "retina inner limiting membrane" EXACT [MP:0010235]
 synonym: "retina internal limiting lamina" EXACT []
-synonym: "stratum limitans internum retinae" EXACT LATIN [FMA:58689, FMA:TA]
+synonym: "stratum limitans internum retinae" EXACT OMO:0003011 [FMA:58689, FMA:TA]
 xref: EMAPA:36519
 xref: FMA:58689
 xref: MA:0001313
@@ -10850,7 +10859,7 @@ synonym: "retinal inner plexiform layer" EXACT []
 synonym: "retinal internal plexiform layer" RELATED [NLXANAT:1005032]
 synonym: "stratum plexifome internum" RELATED [BTO:0003175]
 synonym: "stratum plexiforme internum" EXACT [FMA:58704]
-synonym: "stratum plexiforme internum retinae" RELATED LATIN [Wikipedia:Inner_plexiform_layer]
+synonym: "stratum plexiforme internum retinae" RELATED OMO:0003011 [Wikipedia:Inner_plexiform_layer]
 xref: BAMS:Ripl
 xref: BTO:0003175
 xref: EMAPA:35741
@@ -10893,7 +10902,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "aqueous humor" EXACT []
 synonym: "aqueous humour" EXACT [EHDAA2:0000139]
-synonym: "humor aquosus" EXACT LATIN [FMA:58819, FMA:TA]
+synonym: "humor aquosus" EXACT OMO:0003011 [FMA:58819, FMA:TA]
 xref: EHDAA2:0000139
 xref: EHDAA:10196
 xref: EMAPA:18232
@@ -10926,7 +10935,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "humor vitreous" EXACT []
-synonym: "humor vitreus" EXACT LATIN [FMA:58822, FMA:TA]
+synonym: "humor vitreus" EXACT OMO:0003011 [FMA:58822, FMA:TA]
 synonym: "humoral fluid" RELATED [BTO:0001451]
 synonym: "ocular fluid" RELATED [BTO:0001451]
 synonym: "portion of vitreous humor" BROAD [FMA:67388]
@@ -10941,6 +10950,7 @@ xref: ENVO:02000032
 xref: EV:0100344
 xref: FMA:58822
 xref: MA:0001286
+xref: MESH:D014822 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: NCIT:C13323
 xref: UMLS:C0229096 {source="ncithesaurus:Vitreous_Humor"}
 xref: VHOG:0000795
@@ -10982,7 +10992,7 @@ namespace: uberon
 def: "The chamber in the eyeball enclosing the vitreous humor, bounded anteriorly by the lens and ciliary body and posteriorly by the posterior wall of the eyeball[BTO,modified]." [BTO:0002087]
 subset: uberon_slim
 synonym: "camera postrema" EXACT [FMA:58848]
-synonym: "camera postrema bulbi oculi" EXACT LATIN [FMA:58848, FMA:TA]
+synonym: "camera postrema bulbi oculi" EXACT OMO:0003011 [FMA:58848, FMA:TA]
 synonym: "camera vitrea" EXACT [FMA:58848]
 synonym: "camera vitrea bulbi" EXACT [FMA:58848]
 synonym: "postremal chamber" EXACT [FMA:58848]
@@ -11014,7 +11024,7 @@ synonym: "anterior segment of eye" EXACT []
 synonym: "anterior segment of the eye" EXACT []
 synonym: "eye anterior segment" EXACT []
 synonym: "segmentum anterius (bulbus oculi)" EXACT []
-synonym: "segmentum anterius bulbi oculi" RELATED LATIN [Wikipedia:Anterior_segment_of_eyeball]
+synonym: "segmentum anterius bulbi oculi" RELATED OMO:0003011 [Wikipedia:Anterior_segment_of_eyeball]
 xref: EMAPA:36594
 xref: FMA:58865
 xref: MA:0002484
@@ -11045,7 +11055,7 @@ synonym: "posterior segment eye" EXACT [ZFA:0005567]
 synonym: "posterior segment of eye" EXACT []
 synonym: "posterior segment of the eye" EXACT []
 synonym: "segmentum posterius (bulbus oculi)" EXACT []
-synonym: "segmentum posterius bulbi oculi" RELATED LATIN [Wikipedia:Posterior_segment_of_eyeball]
+synonym: "segmentum posterius bulbi oculi" RELATED OMO:0003011 [Wikipedia:Posterior_segment_of_eyeball]
 xref: EMAPA:36595
 xref: FMA:58868
 xref: MA:0002485
@@ -11071,7 +11081,7 @@ subset: pheno_slim
 subset: uberon_slim
 synonym: "conjunctivae" EXACT OMO:0003004 [XAO:0000182]
 synonym: "conjunctivas" EXACT OMO:0003004 [XAO:0000182]
-synonym: "tunica conjunctiva" EXACT LATIN [FMA:TA]
+synonym: "tunica conjunctiva" EXACT OMO:0003011 [FMA:TA]
 synonym: "wall of conjunctival sac" EXACT [FMA:59011]
 xref: AAO:0010343
 xref: BTO:0003415
@@ -11162,7 +11172,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "MB" BROAD OMO:0003000 [BIRNLEX:1667, NIFSTD:NeuroNames_abbrevSource]
-synonym: "mesencephalon" RELATED LATIN [Wikipedia:Midbrain]
+synonym: "mesencephalon" RELATED OMO:0003011 [Wikipedia:Midbrain]
 xref: AAO:0010149
 xref: BAMS:MES
 xref: BIRNLEX:1667
@@ -11222,7 +11232,7 @@ subset: vertebrate_core
 synonym: "between brain" EXACT []
 synonym: "betweenbrain" RELATED [BTO:0000342]
 synonym: "DiE" BROAD OMO:0003000 [BIRNLEX:1503, NIFSTD:NeuroNames_abbrevSource]
-synonym: "diencephalon" RELATED LATIN [Wikipedia:Diencephalon]
+synonym: "diencephalon" RELATED OMO:0003011 [Wikipedia:Diencephalon]
 synonym: "interbrain" EXACT [Swanson:2004]
 synonym: "mature diencephalon" EXACT [FMA:62001]
 synonym: "thalamencephalon" EXACT [MGI:anna]
@@ -11291,9 +11301,9 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "bulb" BROAD []
-synonym: "bulbus" EXACT LATIN [FMA:62004, FMA:TA]
+synonym: "bulbus" EXACT OMO:0003011 [FMA:62004, FMA:TA]
 synonym: "medulla" BROAD [ABA:MY]
-synonym: "medulla oblonzata" RELATED LATIN [Wikipedia:Medulla_oblongata]
+synonym: "medulla oblonzata" RELATED OMO:0003011 [Wikipedia:Medulla_oblongata]
 synonym: "metepencephalon" RELATED [FMA:62004]
 xref: AAO:0010486
 xref: BAMS:Md
@@ -11349,8 +11359,8 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "optic lemniscus" EXACT []
 synonym: "optic tracts" RELATED OMO:0003004 [ZFA:0000252]
-synonym: "tractus optici" RELATED LATIN [NeuroNames:460]
-synonym: "tractus opticus" RELATED LATIN [Wikipedia:Optic_tract]
+synonym: "tractus optici" RELATED OMO:0003011 [NeuroNames:460]
+synonym: "tractus opticus" RELATED OMO:0003011 [Wikipedia:Optic_tract]
 synonym: "visual pathway" RELATED [GAID:735]
 xref: BAMS:opt
 xref: BIRNLEX:1684
@@ -11401,8 +11411,8 @@ subset: vertebrate_core
 synonym: "mesencephalic tegmentum" RELATED [VHOG:0001367]
 synonym: "MTg" BROAD OMO:0003000 [BIRNLEX:1200, NIFSTD:NeuroNames_abbrevSource]
 synonym: "tegmentum" BROAD [ISBN:0471888893]
-synonym: "tegmentum mesencephali" EXACT LATIN [Wikipedia:Midbrain_tegmentum]
-synonym: "tegmentum mesencephalicum" RELATED LATIN [NeuroNames:491]
+synonym: "tegmentum mesencephali" EXACT OMO:0003011 [Wikipedia:Midbrain_tegmentum]
+synonym: "tegmentum mesencephalicum" RELATED OMO:0003011 [NeuroNames:491]
 synonym: "tegmentum of midbrain" EXACT []
 xref: BAMS:MTg
 xref: BIRNLEX:1200
@@ -11415,6 +11425,7 @@ xref: FMA:62393
 xref: HBA:9002
 xref: MA:0000212
 xref: MAT:0000452
+xref: MESH:D013681 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: neuronames:491 {source="BIRNLEX:1200"}
 xref: SCTID:362392007
 xref: TAO:0000160
@@ -11478,7 +11489,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "region of vascular tree organ" EXACT [FMA:50722]
-synonym: "vas sanguineum" RELATED LATIN [Wikipedia:Blood_vessel]
+synonym: "vas sanguineum" RELATED OMO:0003011 [Wikipedia:Blood_vessel]
 synonym: "vascular element" BROAD [EMAPA:35993]
 synonym: "vascular tree organ region" EXACT [FMA:50722]
 xref: AAO:0011004
@@ -11535,7 +11546,7 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "cornea endothelium" EXACT [OBOL:automatic]
 synonym: "endothelium of cornea" EXACT [OBOL:automatic]
-synonym: "epithelium posterius corneae" RELATED LATIN [Wikipedia:Corneal_endothelium]
+synonym: "epithelium posterius corneae" RELATED OMO:0003011 [Wikipedia:Corneal_endothelium]
 xref: CALOHA:TS-0172
 xref: EMAPA:35935
 xref: FMA:63882
@@ -11602,9 +11613,9 @@ synonym: "gray matter of neuraxis" EXACT [FMA:67242]
 synonym: "grey matter" EXACT []
 synonym: "grey matter of neuraxis" EXACT []
 synonym: "grey substance" EXACT []
-synonym: "grisea" RELATED LATIN []
+synonym: "grisea" RELATED OMO:0003011 []
 synonym: "neuronal grey matter" EXACT [AEO:0001012]
-synonym: "substantia grisea" EXACT LATIN [FMA:67242, FMA:TA]
+synonym: "substantia grisea" EXACT OMO:0003011 [FMA:67242, FMA:TA]
 xref: AEO:0001012
 xref: EHDAA2:0003136
 xref: EHDAA2_RETIRED:0004658
@@ -11612,7 +11623,7 @@ xref: EMAPA:37596 {source="MA:th"}
 xref: FMA:67242
 xref: HBA:4006
 xref: MA:0001112
-xref: MESH:D066128
+xref: MESH:D066128 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C32695
 xref: neuronames:2869
 xref: TAO:0002197
@@ -11723,7 +11734,7 @@ xref: BILA:0000034
 xref: BTO:0000174
 xref: CALOHA:TS-2110
 xref: EFO:0000461
-xref: FBbt:00004208
+xref: FBbt:00004208 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69067
 xref: GAID:407
 xref: MESH:D004628
@@ -11799,6 +11810,7 @@ xref: EMAPA:37721 {source="MA:th"}
 xref: FMA:71221
 xref: MA:0002986
 xref: MAT:0000148
+xref: MESH:D013131 {mapping:provider="https://github.com/biopragmatics/biomappings", mapping:justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: MIAA:0000148
 xref: TAO:0000317
 xref: VHOG:0000317
@@ -11993,7 +12005,7 @@ namespace: uberon
 def: "The part of the coelemic cavity lumen that is enclosed by the walls of the thorax." [UBERON:cjm, Wikipedia:Thoracic_cavity]
 subset: pheno_slim
 subset: uberon_slim
-synonym: "cavitas thoracis" EXACT LATIN [Wikipedia:Thoracic_cavity]
+synonym: "cavitas thoracis" EXACT OMO:0003011 [Wikipedia:Thoracic_cavity]
 synonym: "cavity of chest" EXACT []
 synonym: "cavity of thorax" EXACT []
 synonym: "chest cavity" EXACT []
@@ -12034,9 +12046,9 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "cerebro-cerebellar fissure" RELATED [NeuroNames:22]
 synonym: "cerebrocerebellar fissure" RELATED [NeuroNames:22]
-synonym: "fissura cerebro-cerebellaris" RELATED LATIN [NeuroNames:22]
-synonym: "fissura cerebrocerebellaris" RELATED LATIN [NeuroNames:22]
-synonym: "medulla spinalis" RELATED LATIN [BTO:0001279, Wikipedia:Spinal_cord]
+synonym: "fissura cerebro-cerebellaris" RELATED OMO:0003011 [NeuroNames:22]
+synonym: "fissura cerebrocerebellaris" RELATED OMO:0003011 [NeuroNames:22]
+synonym: "medulla spinalis" RELATED OMO:0003011 [BTO:0001279, Wikipedia:Spinal_cord]
 synonym: "SpC" RELATED OMO:0003000 []
 synonym: "spinal cord structure" RELATED [ZFA:0000075]
 synonym: "spinal medulla" RELATED [BTO:0001279]
@@ -12099,12 +12111,12 @@ subset: uberon_slim
 subset: vertebrate_core
 synonym: "accessory medullary lamina of pallidum" RELATED [NeuroNames:236]
 synonym: "brain stem" EXACT [ABA:BS]
-synonym: "lamella pallidi incompleta" RELATED LATIN [NeuroNames:236]
-synonym: "lamina medullaris accessoria" RELATED LATIN [NeuroNames:236]
-synonym: "lamina medullaris incompleta pallidi" RELATED LATIN [NeuroNames:236]
-synonym: "lamina pallidi incompleta" RELATED LATIN [NeuroNames:236]
-synonym: "truncus encephali" EXACT LATIN [Wikipedia:Brainstem]
-synonym: "truncus encephalicus" RELATED LATIN [BTO:0000146]
+synonym: "lamella pallidi incompleta" RELATED OMO:0003011 [NeuroNames:236]
+synonym: "lamina medullaris accessoria" RELATED OMO:0003011 [NeuroNames:236]
+synonym: "lamina medullaris incompleta pallidi" RELATED OMO:0003011 [NeuroNames:236]
+synonym: "lamina pallidi incompleta" RELATED OMO:0003011 [NeuroNames:236]
+synonym: "truncus encephali" EXACT OMO:0003011 [Wikipedia:Brainstem]
+synonym: "truncus encephalicus" RELATED OMO:0003011 [BTO:0000146]
 xref: BAMS:BS
 xref: BIRNLEX:1565
 xref: BTO:0000146
@@ -12148,7 +12160,7 @@ synonym: "CNS tract/commissure" EXACT [ZFA:0001682]
 synonym: "CNS tracts and commissures" RELATED [TAO:0000145]
 synonym: "CNS white matter" RELATED [TAO:0002143]
 synonym: "neuronal white matter" EXACT [AEO:0001011]
-synonym: "substantia alba" RELATED LATIN [Wikipedia:White_matter]
+synonym: "substantia alba" RELATED OMO:0003011 [Wikipedia:White_matter]
 synonym: "white mater" RELATED [VHOG:0001764]
 synonym: "white matter of neuraxis" EXACT [FMA:83929]
 synonym: "white substance" EXACT []
@@ -12158,7 +12170,7 @@ xref: EMAPA:35927
 xref: FMA:83929
 xref: HBA:9218
 xref: MA:0001135
-xref: MESH:D066127
+xref: MESH:D066127 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C33892
 xref: neuronames:2870
 xref: NLX:412
@@ -12202,7 +12214,7 @@ synonym: "ventral body cavity" NARROW [NCBITaxon:7742]
 xref: AEO:0000186
 xref: BTO:0001707
 xref: EHDAA2:0000267
-xref: FBbt:00005060
+xref: FBbt:00005060 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:85006
 xref: galen:BodyCavity
 xref: NCIT:C25444
@@ -12228,7 +12240,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "embryonic notocord" EXACT []
-synonym: "notochorda" RELATED LATIN [Wikipedia:Notochord]
+synonym: "notochorda" RELATED OMO:0003011 [Wikipedia:Notochord]
 synonym: "notocord" EXACT [ZFA:0000135]
 xref: AAO:0000327
 xref: BTO:0001768
@@ -12287,7 +12299,7 @@ synonym: "epithelial somite" RELATED [https://github.com/obophenotype/uberon/wik
 synonym: "mesodermal cluster" BROAD [GO:0001756]
 synonym: "somites" RELATED OMO:0003004 []
 synonym: "somitic mesoderm" RELATED []
-synonym: "somitus" RELATED LATIN [Wikipedia:Somite]
+synonym: "somitus" RELATED OMO:0003011 [Wikipedia:Somite]
 xref: AAO:0010569
 xref: AEO:0001015
 xref: BTO:0001558
@@ -12331,7 +12343,7 @@ comment: Gene notes: Many factors and genes, such as Pax3 (Tremblay et al., 1995
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "crista neuralis" RELATED LATIN [Wikipedia:Neural_crest]
+synonym: "crista neuralis" RELATED OMO:0003011 [Wikipedia:Neural_crest]
 synonym: "NC" EXACT OMO:0003000 [XAO:0000048]
 synonym: "neural crest material" RELATED [VHOG:0000057]
 xref: AAO:0010578
@@ -12377,7 +12389,7 @@ namespace: uberon
 def: "Embryonic ectoderm that gives rise to nervous tissue." [Wikipedia:Neuroectoderm]
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "epithelium tubi neuralis; neuroectoderma" RELATED LATIN [Wikipedia:Neuroectoderm]
+synonym: "epithelium tubi neuralis; neuroectoderma" RELATED OMO:0003011 [Wikipedia:Neuroectoderm]
 synonym: "neuaral ectoderm" RELATED []
 synonym: "neural ectoderm" EXACT []
 synonym: "neuroectoderm" EXACT []
@@ -12391,7 +12403,7 @@ xref: EHDAA:1498
 xref: EHDAA:255
 xref: EMAPA:16073
 xref: EV:0100004
-xref: FBbt:00001057
+xref: FBbt:00001057 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:87657
 xref: MAT:0000176
 xref: MIAA:0000176
@@ -12543,7 +12555,7 @@ subset: pheno_slim
 synonym: "epithelial tissue of iris" EXACT [OBOL:automatic]
 synonym: "epithelium of iris" EXACT [OBOL:automatic]
 synonym: "epithelium pigmentosum (iris)" EXACT [FMA:58517]
-synonym: "epithelium pigmentosum iridis" EXACT LATIN [FMA:58517, FMA:TA]
+synonym: "epithelium pigmentosum iridis" EXACT OMO:0003011 [FMA:58517, FMA:TA]
 synonym: "iris epithelial tissue" EXACT [OBOL:automatic]
 synonym: "iris epithelium" EXACT [FMA:58517]
 synonym: "iris pigmented epithelium" RELATED [MA:0002826]
@@ -12572,7 +12584,7 @@ subset: vertebrate_core
 synonym: "blastocyst" RELATED []
 synonym: "ectoblast" RELATED [MP:0003886]
 synonym: "epiblast" EXACT [VHOG:0000243]
-synonym: "epiblastus" RELATED LATIN [Wikipedia:Epiblast]
+synonym: "epiblastus" RELATED OMO:0003011 [Wikipedia:Epiblast]
 synonym: "primitive ectoderm" RELATED [VHOG:0000243]
 xref: BTO:0004593
 xref: FMA:296704
@@ -12883,7 +12895,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "lens placodes" RELATED OMO:0003004 [ZFA:0000122]
-synonym: "placoda lentis" RELATED LATIN [Wikipedia:Lens_placode]
+synonym: "placoda lentis" RELATED OMO:0003011 [Wikipedia:Lens_placode]
 xref: AAO:0011055
 xref: EFO:0003494
 xref: EHDAA2:0000982
@@ -12918,7 +12930,7 @@ def: "A region of embryonic ectodermal cells that lie directly above the notocho
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "lamina neuralis" RELATED LATIN [Wikipedia:Neural_plate]
+synonym: "lamina neuralis" RELATED OMO:0003011 [Wikipedia:Neural_plate]
 synonym: "presumptive central nervous system" RELATED []
 xref: AAO:0011072
 xref: BTO:0001765
@@ -12928,7 +12940,7 @@ xref: EHDAA:346
 xref: EHDAA:902
 xref: EMAPA:35593
 xref: FMA:293879
-xref: MESH:D054258
+xref: MESH:D054258 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: NCIT:C34225
 xref: neuronames:1362
 xref: RETIRED_EHDAA2:0001252
@@ -12971,7 +12983,7 @@ def: "The paraxial mesoderm is the mesoderm located bilaterally adjacent to the 
 subset: efo_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "mesoderma paraxiale" RELATED LATIN [Wikipedia:Paraxial_mesoderm]
+synonym: "mesoderma paraxiale" RELATED OMO:0003011 [Wikipedia:Paraxial_mesoderm]
 synonym: "paraxial mesenchyme" EXACT [https://github.com/obophenotype/uberon/issues/30, https://github.com/obophenotype/uberon/wiki/The-neural-crest, ZFA:0000255]
 synonym: "somitic mesoderm" EXACT [ISBN:9780878932504]
 xref: AAO:0010568
@@ -13025,7 +13037,7 @@ synonym: "lateral mesoderm" EXACT [GO:0048368]
 synonym: "lateral plate" RELATED []
 synonym: "lateral plate mesenchyme" RELATED [EHDAA2:0000919]
 synonym: "LPM" EXACT OMO:0003000 [ZFA:0000121]
-synonym: "mesoderma laminae lateralis" RELATED LATIN [Wikipedia:Lateral_plate_mesoderm]
+synonym: "mesoderma laminae lateralis" RELATED OMO:0003011 [Wikipedia:Lateral_plate_mesoderm]
 xref: AAO:0010574
 xref: EHDAA2:0000919
 xref: EHDAA:379
@@ -13086,10 +13098,10 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "sclerotomes" EXACT OMO:0003004 [TAO:0001080]
-synonym: "sclerotomus" RELATED LATIN [Wikipedia:Sclerotome]
+synonym: "sclerotomus" RELATED OMO:0003011 [Wikipedia:Sclerotome]
 xref: AAO:0010571
 xref: AEO:0000212
-xref: BTO:0006255 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: BTO:0006255 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: EHDAA2:0003439
 xref: EMAPA:31159
 xref: FMA:295652
@@ -13118,7 +13130,7 @@ subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
 synonym: "optic stalks" RELATED OMO:0003004 [ZFA:0000137]
-synonym: "pedunculus opticus" RELATED LATIN [Wikipedia:Optic_stalk]
+synonym: "pedunculus opticus" RELATED OMO:0003011 [Wikipedia:Optic_stalk]
 xref: AAO:0011077
 xref: EHDAA2:0001318
 xref: EHDAA:3816
@@ -13150,7 +13162,7 @@ subset: vertebrate_core
 synonym: "cephalic neural crest" EXACT [EMAPA:16091]
 synonym: "CNC" EXACT OMO:0003000 [XAO:0001001]
 synonym: "cranial NCC population" EXACT []
-synonym: "crista neuralis cranialis" RELATED LATIN [Wikipedia:Cranial_neural_crest]
+synonym: "crista neuralis cranialis" RELATED OMO:0003011 [Wikipedia:Cranial_neural_crest]
 synonym: "head crest" RELATED []
 synonym: "head NCC population" EXACT []
 synonym: "head neural crest" RELATED []
@@ -13201,7 +13213,7 @@ def: "Portion of tissue composed of mesenchymal cells (motile cells that develop
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
-synonym: "mesenchyma" RELATED LATIN [Wikipedia:Mesenchyme]
+synonym: "mesenchyma" RELATED OMO:0003011 [Wikipedia:Mesenchyme]
 synonym: "mesenchymal tissue" EXACT []
 synonym: "mesenchyme tissue" EXACT []
 synonym: "portion of mesenchymal tissue" EXACT []
@@ -13512,7 +13524,7 @@ synonym: "neural retina" EXACT [XAO:0003216, ZFA:0000046]
 synonym: "neural retinal epithelium" RELATED [MA:000027]
 synonym: "neuroretina" EXACT [ZFA:0000046]
 synonym: "stratum nervosum (retina)" EXACT [FMA:58628]
-synonym: "stratum nervosum retinae" EXACT LATIN [FMA:58628, FMA:TA]
+synonym: "stratum nervosum retinae" EXACT OMO:0003011 [FMA:58628, FMA:TA]
 xref: AAO:0011095
 xref: BTO:0000929
 xref: CALOHA:TS-0685
@@ -13546,7 +13558,7 @@ def: "Epithelial tubes transport gases, liquids and cells from one site to anoth
 synonym: "epithelial or endothelial tube" EXACT []
 xref: AEO:0000114
 xref: EHDAA2:0003114
-xref: FBbt:00007474
+xref: FBbt:00007474 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
@@ -13913,7 +13925,7 @@ subset: vertebrate_core
 synonym: "Descemet membrane" EXACT []
 synonym: "Descemet's posterior elastic lamina" EXACT [FMA:58309]
 synonym: "lamina limitans posterior" EXACT [FMA:58309]
-synonym: "lamina limitans posterior corneae" EXACT LATIN [FMA:58309, FMA:TA]
+synonym: "lamina limitans posterior corneae" EXACT OMO:0003011 [FMA:58309, FMA:TA]
 synonym: "posterior limiting lamina" EXACT [MA:0001246]
 synonym: "posterior limiting lamina of cornea" EXACT [FMA:58309]
 synonym: "posterior limiting membrane" EXACT [ZFA:0001686]
@@ -13957,8 +13969,8 @@ synonym: "Bowman's anterior elastic lamina" EXACT [FMA:58273]
 synonym: "Bowman's layer" EXACT [FMA:58273]
 synonym: "Bowman's membrane" EXACT [FMA:58273]
 synonym: "lamina limitans anterior (cornea)" EXACT [FMA:58273]
-synonym: "lamina limitans anterior corneae" EXACT LATIN [FMA:58273, FMA:TA]
-synonym: "Reichert's membrane" RELATED DUBIOUS [http://sourceforge.net/tracker/?func=detail&aid=2956371&group_id=76834&atid=974957]
+synonym: "lamina limitans anterior corneae" EXACT OMO:0003011 [FMA:58273, FMA:TA]
+synonym: "Reichert's membrane" RELATED OMO:0003002 [http://sourceforge.net/tracker/?func=detail&aid=2956371&group_id=76834&atid=974957]
 xref: FMA:58273
 xref: MA:0001240
 xref: NCIT:C32226
@@ -14066,6 +14078,7 @@ id: UBERON:0004638
 name: blood vessel endothelium
 namespace: uberon
 def: "An endothelium that lines the blood vasculature. Other endothelia may line lymph vessels, the heart." [https://orcid.org/0000-0002-6601-2165]
+subset: human_reference_atlas
 subset: pheno_slim
 subset: vertebrate_core
 xref: BTO:0000766
@@ -14080,6 +14093,7 @@ is_a: UBERON:0004852 ! cardiovascular system endothelium
 intersection_of: UBERON:0001986 ! endothelium
 intersection_of: part_of UBERON:0001981 ! blood vessel
 relationship: part_of UBERON:0001981 ! blood vessel
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: UBERON:0004716
@@ -14148,7 +14162,7 @@ synonym: "trilaminar disk" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "trilaminar germ" RELATED [https://orcid.org/0000-0002-6601-2165]
 xref: BILA:0000060
 xref: BTO:0001403
-xref: FBbt:00005317
+xref: FBbt:00005317 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:293108
 xref: GAID:1302
 xref: MESH:D005775
@@ -14279,7 +14293,7 @@ namespace: uberon
 def: "Anatomical structure that connects two or more adjacent skeletal elements or hardened body parts." [http://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "joint" NARROW []
-xref: FBbt:00005811
+xref: FBbt:00005811 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: part_of UBERON:0004770 ! articular system
 
@@ -14295,7 +14309,7 @@ synonym: "gut section" RELATED [FBbt:00100315]
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED [FMA:71131]
-xref: FBbt:00100315
+xref: FBbt:00100315 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:71131
 is_a: UBERON:0013522 ! subdivision of tube
 intersection_of: UBERON:0013522 ! subdivision of tube
@@ -14418,7 +14432,7 @@ synonym: "multi-cell-component structure" EXACT [CARO:0001000]
 synonym: "multi-cell-part structure" EXACT [CARO:0001000]
 xref: AAO:0011000
 xref: CARO:0001000
-xref: FBbt:00007060
+xref: FBbt:00007060 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:83115
 is_a: UBERON:0000061 ! anatomical structure
 relationship: composed_primarily_of GO:0005575 ! cellular_component
@@ -14551,7 +14565,7 @@ xref: EHDAA:5526
 xref: EMAPA:17082
 xref: HBA:9512
 xref: MA:0000205
-xref: MESH:D054024
+xref: MESH:D054024 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0001-9439-5346", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: VHOG:0000456
 xref: Wikipedia:Myelencephalon
 is_a: UBERON:0004121 ! ectoderm-derived structure
@@ -14584,7 +14598,7 @@ name: photoreceptor array
 namespace: uberon
 def: "An array of photoreceptors and any supporting cells found in an eye." [https://orcid.org/0000-0002-6601-2165]
 synonym: "light-sensitive tissue" EXACT []
-xref: FBbt:00004200
+xref: FBbt:00004200 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0004923 ! organ component layer
 intersection_of: UBERON:0004923 ! organ component layer
 intersection_of: composed_primarily_of CL:0000210 ! photoreceptor cell
@@ -14616,7 +14630,7 @@ synonym: "developmental tissue" RELATED [MIAA:0000019]
 xref: AEO:0000125
 xref: CALOHA:TS-2122
 xref: EHDAA2:0003125
-xref: FBbt:00007006
+xref: FBbt:00007006 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:292313
 xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
@@ -14724,7 +14738,7 @@ def: "Multi-tissue structure that arises from the heart rudiment and will become
 subset: vertebrate_core
 synonym: "early primitive heart tube" NARROW [EMAPA:16208]
 synonym: "primitive heart tube" EXACT [EMAPA:16215]
-xref: BTO:0006179 {http://purl.org/dc/terms/contributor="https://orcid.org/0000-0003-4423-4370"}
+xref: BTO:0006179 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration", author:id="https://orcid.org/0000-0003-4423-4370", mapping:provider="https://github.com/biopragmatics/biomappings"}
 xref: EHDAA2:0001512
 xref: EHDAA:424
 xref: EHDAA:436
@@ -14776,7 +14790,7 @@ namespace: uberon
 def: "An acellular membrane that is part of the epithelium, lies adjacent to the epithelial cells, and is the fusion of the the basal lamina and the reticular lamina." [http://orcid.org/0000-0002-6601-2165, Wikipedia:Basement_membrane]
 synonym: "basement membrane" RELATED [FMA:63872]
 synonym: "basement membrane of connective tissue" EXACT [FMA:63872]
-synonym: "membrana basalis" EXACT LATIN [Wikipedia:Basement_membrane]
+synonym: "membrana basalis" EXACT OMO:0003011 [Wikipedia:Basement_membrane]
 xref: AAO:0010596
 xref: FMA:63872
 xref: GAID:915
@@ -14843,7 +14857,7 @@ def: "Subdivision of skeleton which consists of cranial skeleton, set of all ver
 subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
-synonym: "skeleton axiale" RELATED LATIN [Wikipedia:Axial_skeleton]
+synonym: "skeleton axiale" RELATED OMO:0003011 [Wikipedia:Axial_skeleton]
 xref: AAO:0000963
 xref: EMAPA:17214
 xref: EMAPA:18043
@@ -14871,8 +14885,8 @@ def: "A threadlike extension of a nerve cell and consists of an axon and myelin 
 subset: human_reference_atlas
 synonym: "nerve fibers" RELATED OMO:0003004 [BAMS:nfi]
 synonym: "nerve fibre" EXACT [FMA:5914]
-synonym: "neurofibra" EXACT LATIN [FMA:5914, FMA:TA]
-synonym: "neurofibra" RELATED LATIN [Wikipedia:Nerve_fiber]
+synonym: "neurofibra" EXACT OMO:0003011 [FMA:5914, FMA:TA]
+synonym: "neurofibra" RELATED OMO:0003011 [Wikipedia:Nerve_fiber]
 synonym: "neurofibrum" EXACT [FMA:5914]
 xref: BAMS:nfi
 xref: FMA:5914
@@ -15620,7 +15634,7 @@ synonym: "organ field" RELATED []
 xref: AEO:0000170
 xref: EFO:0001649
 xref: EHDAA2:0003170
-xref: FBbt:00005426
+xref: FBbt:00005426 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: Wikipedia:Anlage_(biology)
 is_a: UBERON:0000479 {source="FBbt"} ! tissue
 is_a: UBERON:0005423 {source="AEO", source="FBbt"} ! developing anatomical structure
@@ -15824,7 +15838,7 @@ subset: common_anatomy
 subset: upper_level
 synonym: "multicellular structure" EXACT [FBbt:00100313]
 xref: CARO:0010000
-xref: FBbt:00100313
+xref: FBbt:00100313 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
 intersection_of: has_quality PATO:0001993 ! multicellular
@@ -15990,8 +16004,8 @@ def: "The ciliary processes are formed by the inward folding of the various laye
 synonym: "ciliary process" RELATED [Wikipedia:Ciliary_processes]
 synonym: "ciliary processes" EXACT [FMA:76551]
 synonym: "ciliary processes set" EXACT [FMA:76551]
-synonym: "processus ciliares" EXACT LATIN [FMA:TA]
-synonym: "processus ciliares" RELATED LATIN [Wikipedia:Ciliary_processes]
+synonym: "processus ciliares" EXACT OMO:0003011 [FMA:TA]
+synonym: "processus ciliares" RELATED OMO:0003011 [Wikipedia:Ciliary_processes]
 synonym: "set of ciliary processes" EXACT [FMA:76551]
 xref: FMA:76551
 xref: SCTID:280860001
@@ -16062,8 +16076,9 @@ name: organ system subdivision
 namespace: uberon
 def: "A subdivision of an anatomical system." [http://orcid.org/0000-0002-6601-2165]
 subset: common_anatomy
+subset: human_reference_atlas
 subset: upper_level
-xref: FBbt:00007330
+xref: FBbt:00007330 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67509
 xref: SCTID:91690000
 is_a: UBERON:0010000 {source="FBbt"} ! multicellular anatomical structure
@@ -16071,6 +16086,7 @@ relationship: part_of UBERON:0000467 ! anatomical system
 relationship: present_in_taxon NCBITaxon:33090
 relationship: present_in_taxon NCBITaxon:33208 ! Metazoa
 relationship: present_in_taxon NCBITaxon:4751
+relationship: present_in_taxon NCBITaxon:9606
 
 [Term]
 id: UBERON:0011222
@@ -16156,8 +16172,8 @@ id: UBERON:0011825
 name: loose connective tissue
 namespace: uberon
 def: "Irregular connective tissue, the intercellular matrix of which contains a sparse irregular network of collagen and elastic fiber bundles. Examples: areolar tissue, neuroglial tissue, mucoid tissue." [FMA:19783]
-synonym: "textus connectivus collagenosus laxus" EXACT LATIN [FMA:19783, FMA:TA]
-synonym: "textus connectivus laxus" EXACT LATIN [FMA:19783, FMA:TA]
+synonym: "textus connectivus collagenosus laxus" EXACT OMO:0003011 [FMA:19783, FMA:TA]
+synonym: "textus connectivus laxus" EXACT OMO:0003011 [FMA:19783, FMA:TA]
 xref: FMA:19783
 xref: NCIT:C33007
 xref: UMLS:C1253917 {source="ncithesaurus:Loose_Connective_Tissue"}
@@ -16290,7 +16306,6 @@ id: UBERON:0013702
 name: body proper
 namespace: uberon
 def: "The region of the organism associated with the visceral organs." [AEO:0000103]
-subset: human_reference_atlas
 subset: non_informative
 synonym: "body" RELATED [AEO:0000103]
 synonym: "whole body" RELATED [BTO:0001489]
@@ -16300,7 +16315,6 @@ xref: EMAPA:36031
 xref: FMA:231424
 is_a: UBERON:0000475 {source="AEO"} ! organism subdivision
 relationship: part_of UBERON:0013701 ! main body axis
-relationship: present_in_taxon NCBITaxon:9606
 property_value: UBPROP:0000001 "Cardinal body part, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the vertebral column and ribcage. Examples: There is only one body proper[FMA:231424]." xsd:string {source="FMA:231424"}
 
 [Term]
@@ -16341,7 +16355,7 @@ name: non-connected functional system
 namespace: uberon
 def: "An anatomical group whose component structures share a common function." [AEO:0000093, AEO:JB, FBbt:00007278, FBC:DOS]
 xref: AEO:0000093
-xref: FBbt:00007278
+xref: FBbt:00007278 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0034923 ! disconnected anatomical group
 
 [Term]
@@ -16581,7 +16595,7 @@ namespace: uberon
 def: "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other." [CARO:0020000]
 subset: common_anatomy
 xref: CARO:0020000
-xref: FBbt:00007276
+xref: FBbt:00007276 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000465 {source="CARO"} ! material anatomical entity
 relationship: composed_primarily_of UBERON:0000061 ! anatomical structure
 relationship: has_component UBERON:0000061 {minCardinality="2"} ! anatomical structure
@@ -16611,13 +16625,13 @@ def: "The parts of the orbital region that are outside of the the eyeball, inclu
 synonym: "accessory parts of orbital region" RELATED []
 synonym: "accessory visual structures" RELATED [FMA:76554, Wikipedia:Accessory_visual_structures]
 synonym: "accessory visual structures set" RELATED [FMA:76554]
-synonym: "adnexa oculi" EXACT LATIN [http://medical-dictionary.thefreedictionary.com/ocular+adnexa]
+synonym: "adnexa oculi" EXACT OMO:0003011 [http://medical-dictionary.thefreedictionary.com/ocular+adnexa]
 synonym: "adnexal parts of orbital region" RELATED []
 synonym: "appendage of eye" RELATED [http://medical-dictionary.thefreedictionary.com/ocular+adnexa]
 synonym: "appendages of the eye" RELATED OMO:0003004 [http://medical-dictionary.thefreedictionary.com/ocular+adnexa]
 synonym: "eye adnexa" RELATED []
 synonym: "set of accessory visual structures" RELATED [FMA:76554]
-synonym: "structurae oculi accessoriae" RELATED LATIN [Wikipedia:Accessory_visual_structures]
+synonym: "structurae oculi accessoriae" RELATED OMO:0003011 [Wikipedia:Accessory_visual_structures]
 xref: FMA:76554
 xref: NCIT:C32574
 xref: SCTID:120612006
@@ -17057,20 +17071,6 @@ is_a: RO:0002323 ! mereotopologically related to
 expand_expression_to: "BFO_0000051 exactly 0 (BFO_0000050 some ?Y)" []
 
 [Typedef]
-id: RO:0002203
-name: develops into
-def: "inverse of develops from" []
-subset: RO:0002259
-property_value: IAO:0000114 IAO:0000125
-property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
-property_value: IAO:0000117 https://orcid.org/0000-0003-1980-3228
-is_transitive: true
-is_a: has_potential_to_develop_into ! has potential to develop into
-is_a: RO:0002286 ! developmentally succeeded by
-is_a: RO:0002388 ! has potential to directly develop into
-
-[Typedef]
 id: RO:0002206
 name: expressed in
 def: "x expressed in y if and only if there is a gene expression process (GO:0010467) that occurs in y, and one of the following holds: (i) x is a gene, and x is transcribed into a transcript as part of the gene expression process (ii) x is a transcript, and the transcription of x is part of the gene expression process (iii) x is a mature gene product such as a protein, and x was translated or otherwise processes from a transcript that was transcribed as part of this gene expression process" []
@@ -17090,7 +17090,7 @@ def: "inverse of directly develops from" []
 subset: RO:0002259
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000118 "developmental precursor of" xsd:string
-is_a: RO:0002203 ! develops into
+is_a: develops_into ! develops into
 
 [Typedef]
 id: RO:0002222
@@ -17120,7 +17120,7 @@ def: "inverse of has developmental contribution from" []
 subset: RO:0002259
 property_value: IAO:0000114 IAO:0000125
 property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
-holds_over_chain: RO:0002203 part_of
+holds_over_chain: develops_into part_of
 is_a: has_potential_to_developmentally_contribute_to ! has potential to developmentally contribute to
 is_a: RO:0002286 ! developmentally succeeded by
 
@@ -18406,7 +18406,7 @@ range: BFO:0000004 ! independent continuant
 is_transitive: true
 is_a: has_developmental_contribution_from ! has developmental contribution from
 is_a: RO:0002258 ! developmentally preceded by
-inverse_of: RO:0002203 ! develops into
+inverse_of: develops_into ! develops into
 
 [Typedef]
 id: develops_from_part_of
@@ -18432,6 +18432,22 @@ property_value: IAO:0000119 "Jonathan Bard, EHDAA2" xsd:string
 domain: UBERON:0001062 ! anatomical entity
 holds_over_chain: directly_develops_from located_in
 is_a: RO:0002258 ! developmentally preceded by
+
+[Typedef]
+id: develops_into
+name: develops into
+namespace: uberon
+def: "inverse of develops from" []
+subset: RO:0002259
+xref: RO:0002203
+property_value: IAO:0000114 IAO:0000125
+property_value: IAO:0000117 https://orcid.org/0000-0002-6601-2165
+property_value: IAO:0000117 https://orcid.org/0000-0002-7073-9172
+property_value: IAO:0000117 https://orcid.org/0000-0003-1980-3228
+is_transitive: true
+is_a: has_potential_to_develop_into ! has potential to develop into
+is_a: RO:0002286 ! developmentally succeeded by
+is_a: RO:0002388 ! has potential to directly develop into
 
 [Typedef]
 id: directly_develops_from
@@ -18767,7 +18783,7 @@ is_a: RO:0002479 ! has part that occurs in
 id: has_high_plasma_membrane_amount
 name: obsolete has_high_plasma_membrane_amount
 def: "OBSOLETE A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617)." [PMID:19243617]
-comment: Replaced with RO:0015015, see https://github.com/obophenotype/cell-ontology/issues/1481
+property_value: term_tracker_item https://github.com/obophenotype/cell-ontology/issues/1481
 is_obsolete: true
 replaced_by: RO:0015015
 
@@ -18794,7 +18810,7 @@ inverse_of: input_of ! input of
 id: has_low_plasma_membrane_amount
 name: obsolete has_low_plasma_membrane_amount
 def: "OBSOLETE A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617)." [PMID:19243617]
-comment: Replaced with RO:0015016, see https://github.com/obophenotype/cell-ontology/issues/1481
+property_value: term_tracker_item https://github.com/obophenotype/cell-ontology/issues/1481
 is_obsolete: true
 replaced_by: RO:0015016
 
@@ -20183,21 +20199,21 @@ is_a: develops_from ! develops from
 id: transitively_anteriorly_connected_to
 name: transitively anteriorly connected to
 namespace: uberon
-def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" xsd:anyURI
 is_transitive: true
 
 [Typedef]
 id: transitively_distally_connected_to
 name: transitively distally connected to
 namespace: uberon
-def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" xsd:anyURI
 is_transitive: true
 
 [Typedef]
 id: transitively_proximally_connected_to
 name: transitively proximally connected to
 namespace: uberon
-def: "." [http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern]
+property_value: seeAlso "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" xsd:anyURI
 is_transitive: true
 
 [Typedef]
