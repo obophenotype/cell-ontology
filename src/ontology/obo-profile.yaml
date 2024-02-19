@@ -158,7 +158,7 @@ classes:
             - slot_conditions:
                 consider:
                   required: true
-      - description: if a term is not deprecated it should have neither consider nor replaced by
+      - description: if a term is not deprecated it should have neither consider nor replaced by nor label start with obsolete
         preconditions:
           none_of:
             - slot_conditions:
@@ -172,6 +172,8 @@ classes:
             - slot_conditions:
                 consider:
                   required: true
+                label:
+                  pattern: "^obsolete"
       - description: if a term is deprecated its label should start with the string obsolete
         preconditions:
           slot_conditions:
@@ -538,7 +540,7 @@ slots:
   definition:
     is_a: core_property
     slot_uri: IAO:0000115
-    multivalued: true
+    multivalued: false
     range: narrative text
     exact_mappings:
       - skos:definition
@@ -733,8 +735,7 @@ slots:
     domain: ObsoleteAspect
     comments:
       - RULE: subject must be deprecated
-    todos:
-    - restrict range
+    range: NamedObject
   consider:
     is_a: obsoletion_related_property
     slot_uri: oio:consider
@@ -784,7 +785,7 @@ slots:
     is_a: provenance_property
     slot_uri: dcterms:contributor
     multivalued: true
-    range: Agent
+    range: NamedObject
     close_mappings:
       - prov:wasAttributedTo
     pattern: "^orcid:[0-9]{4}-[0-9]{4}-[0-9]{4}-[0-9]{3}(?:[0-9]|X)|^<https:\/\/www.wikidata.org\/entity\/(Q|P)[0-9]+>$|^<https:\/\/github.com\/orgs\/[a-z-_]+\/teams\/>$|^(<https:\/\/ror.org\/)[0-9a-z]{9}>$"
@@ -861,7 +862,7 @@ slots:
     is_a: provenance_property
     slot_uri: IAO:0000233
     multivalued: true
-    range: Thing
+    range: NamedObject
   ontology_term_requester:
     is_a: provenance_property
     slot_uri: IAO:0000234
