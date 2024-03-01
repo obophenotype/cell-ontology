@@ -307,3 +307,4 @@ $(REPORTDIR)/general_cell_types_upper_slim_report.csv: $(TEMPLATEDIR)/general_ce
 $(REPORTDIR)/kidney_upper_slim_report.csv: $(TEMPLATEDIR)/kidney_upper_slim.csv
 	$(eval TERM_ID := $(TERM_kidney))
 	$(COVERAGECMD)
+
