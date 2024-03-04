@@ -287,9 +287,7 @@ SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
 
 .PHONY: slim_coverage
 slim_coverage: $(SLIM_REPORTS)
-xxx:
-	echo $(SLIM_REPORTS)
-	echo $(REPORTDIR)
+
 COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@ -c makefile
 
 $(REPORTDIR)/blood_and_immune_upper_slim_report.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv
