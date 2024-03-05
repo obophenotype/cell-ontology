@@ -4,9 +4,9 @@
     "meta" : {
       "basicPropertyValues" : [ {
         "pred" : "http://www.w3.org/2002/07/owl#versionInfo",
-        "val" : "2023-12-05"
+        "val" : "2024-02-13"
       } ],
-      "version" : "http://purl.obolibrary.org/obo/cl/releases/2023-12-05/subsets/eye_upper_slim.owl"
+      "version" : "http://purl.obolibrary.org/obo/cl/releases/2024-02-13/subsets/eye_upper_slim.owl"
     },
     "nodes" : [ {
       "id" : "http://purl.obolibrary.org/obo/BFO_0000002",
@@ -731,7 +731,7 @@
           "xrefs" : [ "CARO:mah" ]
         },
         "comments" : [ "The definition of cell is intended to represent all cells, and thus a cell is defined as a material entity and not an anatomical structure, which implies that it is part of an organism (or the entirety of one)." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/ubprop#_upper_level" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/ubprop#_upper_level" ],
         "xrefs" : [ {
           "val" : "CALOHA:TS-2035"
         }, {
@@ -767,6 +767,7 @@
       "lbl" : "neuronal receptor cell",
       "type" : "CLASS",
       "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "neuronal receptor cell (sensu Animalia)"
@@ -795,7 +796,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000030",
       "lbl" : "glioblast",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000031",
       "lbl" : "neuroblast (sensu Vertebrata)",
@@ -805,6 +809,7 @@
           "val" : "A cell that will develop into a neuron often after a migration phase.",
           "xrefs" : [ "GOC:NV", "http://en.wikipedia.org/wiki/Neuroblast" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "neuroblast"
@@ -825,7 +830,7 @@
           "xrefs" : [ "GOC:tfm", "MESH:D013234" ]
         },
         "comments" : [ "This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "animal stem cell"
@@ -850,7 +855,7 @@
           "xrefs" : [ "GOC:add", "GOC:dsd", "GOC:tfm", "PMID:19022770", "http://en.wikipedia.org/wiki/Hematopoietic_stem_cell" ]
         },
         "comments" : [ "Markers differ between species, and two sets of markers have been described for mice. HSCs are reportedly CD34-positive, CD45-positive, CD48-negative, CD150-positive, CD133-positive, and CD244-negative." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "blood forming stem cell"
@@ -890,7 +895,7 @@
           "val" : "A progenitor cell committed to the erythroid lineage.",
           "xrefs" : [ "GOC:add", "ISBN:0721601464" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasRelatedSynonym",
@@ -952,7 +957,7 @@
           "xrefs" : [ "GOC:add", "ISBN:0878932437", "MESH:D023461" ]
         },
         "comments" : [ "This cell type is intended to be compatible with any vertebrate common myeloid progenitor.  For mammalian CMP known to be CD34-positive, please use the term 'common myeloid progenitor, CD34-positive' (CL_0001059)." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "common myeloid precursor"
@@ -1006,7 +1011,7 @@
           "xrefs" : [ "GOC:add", "GOC:dsd", "GOC:tfm", "MESH:D055015", "PMID:16647566", "http://en.wikipedia.org/wiki/Megakaryocyte-erythroid_progenitor_cell" ]
         },
         "comments" : [ "MEPs are reportedly CD19-negative, CD34-negative, CD45RA-negative, CD110-positive, CD117-positive, and SCA1-negative and reportedly express the transcription factors GATA-1 and NF-E2." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "CFU-EM"
@@ -1063,6 +1068,7 @@
           "xrefs" : [ "SANBI:mhl" ]
         },
         "comments" : [ "define using PATO mulit-potent or oligopotent?" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "blast cell"
@@ -1104,7 +1110,7 @@
           "xrefs" : [ "ISBN:0517223651", "MESH:D005347", "http://en.wikipedia.org/wiki/Fibroblast" ]
         },
         "comments" : [ "These cells may be vimentin-positive, fibronectin-positive, fsp1-positive, MMP-1-positive, collagen I-positive, collagen III-positive, and alpha-SMA-negative." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "xrefs" : [ {
           "val" : "BTO:0000452"
         }, {
@@ -1130,7 +1136,7 @@
           "val" : "A cell that is usually found in a two-dimensional sheet with a free surface. The cell has a cytoskeleton that allows for tight cell to cell contact and for cell polarity where apical part is directed towards the lumen and the basal part to the basal lamina.",
           "xrefs" : [ "FB:ma", "GOC:tfm", "MESH:D004847" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "epitheliocyte"
@@ -1165,7 +1171,7 @@
           "val" : "An endothelial cell that lines the vasculature.",
           "xrefs" : [ "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "cuboidal endothelial cell of vascular tree"
@@ -1184,7 +1190,7 @@
           "val" : "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube.",
           "xrefs" : [ "GO:0002065", "https://orcid.org/0000-0001-5208-3432" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
@@ -1195,6 +1201,7 @@
       "lbl" : "squamous epithelial cell",
       "type" : "CLASS",
       "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "CALOHA:TS-1249"
         } ]
@@ -1208,7 +1215,7 @@
           "val" : "A flattened epithelial cell of mesenchymal origin that lines the serous cavity.",
           "xrefs" : [ "GOC:tfm", "ISBN:0721662544" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "mesotheliocyte"
@@ -1230,7 +1237,7 @@
           "val" : "A cell found predominately in the blood.",
           "xrefs" : [ "GOC:add", "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim" ],
         "xrefs" : [ {
           "val" : "FMA:62844"
         }, {
@@ -1240,7 +1247,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000095",
       "lbl" : "neuron associated cell",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000099",
       "lbl" : "interneuron",
@@ -1250,7 +1260,7 @@
           "val" : "Most generally any neuron which is not motor or sensory. Interneurons may also refer to neurons whose axons remain within a particular brain region as contrasted with projection neurons which have axons projecting to other brain regions.",
           "xrefs" : [ "GOC:tfm", "MESH:D007395" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "xrefs" : [ {
           "val" : "BTO:0003811"
         }, {
@@ -1295,7 +1305,7 @@
           "val" : "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body.",
           "xrefs" : [ "GOC:tfm", "ISBN:0444009442" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#BDS_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#BDS_subset", "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "FMA:67282"
         } ]
@@ -1310,7 +1320,7 @@
           "xrefs" : [ "GOC:tfm", "MESH:D042783", "PMID:21275341", "http://en.wikipedia.org/wiki/Endothelial_cell", "https://sourceforge.net/tracker/?func=detail&atid=440764&aid=3364936&group_id=36855" ]
         },
         "comments" : [ "From FMA: 9.07.2001: Endothelial cell has always been classified as a kind of epithelial cell, specifically a squamous cell but that is not true. First, endothelial cell can either be squamous or cuboidal (e.g. high-endothelial cell) and secondly, it has different embryological derivation (mesodermal) than a true epithelial cell (ectodermal and endodermal). The basis for present classification is the fact that it comprises the outermost layer or lining of anatomical structures (location-based) but a better structural basis for the differentia is the cytoskeleton of the cell. Endothelial cell has vimentin filaments while an epithelial cell has keratin filaments. [Onard]." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "endotheliocyte"
@@ -1334,7 +1344,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000123",
       "lbl" : "neuron associated cell (sensu Vertebrata)",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000125",
       "lbl" : "glial cell",
@@ -1345,7 +1358,7 @@
           "xrefs" : [ "MESH:D009457" ]
         },
         "comments" : [ "Not all glial cells develop from glioblasts, with microglia developing from the mesoderm instead. See https://github.com/obophenotype/cell-ontology/issues/1571" ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "neuroglial cell"
@@ -1361,10 +1374,6 @@
           "val" : "FBbt:00005144"
         }, {
           "val" : "FMA:54536"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
-          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         } ]
       }
     }, {
@@ -1376,6 +1385,7 @@
           "val" : "A neuroglial cell of ectodermal origin, i.e., the astrocytes and oligodendrocytes considered together.",
           "xrefs" : [ "GOC:tfm", "ISBN:0721662544" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "macrogliocyte"
@@ -1403,7 +1413,7 @@
           "xrefs" : [ "GOC:dsd", "GOC:tfm", "MESH:D001253", "PMID:11746784", "PMID:12162730", "PMID:12898703", "PMID:20942978", "http://en.wikipedia.org/wiki/Astrocyte" ]
         },
         "comments" : [ "Astrocytes are reportedly CD68-negative, CD121a-positive, CD184-positive, CD192-positive, CRF-positive, EGFR-positive, GFAP-positive, GLUT1-positive, MBP-negative, and NGFR-positive." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "astrocytic glia"
@@ -1429,7 +1439,7 @@
           "val" : "An hexagonal, flattened, mitochondria-rich endothelial cell that forms a monolayer on the posterior surface of the cornea (the corneal endothelium). Corneal endothelial cells are derived from the neural crest and are responsible for keeping the cornea transparent by maintaining the tissue in a semi-dry state through the action of their ionic pumps and tight junction barrier.",
           "xrefs" : [ "GOC:tfm", "PMID:21976958", "PMID:23284695", "PMID:34741068", "PMID:36769303" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "xrefs" : [ {
           "val" : "CALOHA:TS-0172"
         }, {
@@ -1464,6 +1474,7 @@
           "xrefs" : [ "FB:ma", "GOC:dsd", "PMCID:PMC2613570", "PMID:10102814", "PMID:16923606", "PMID:17986482", "PMID:19960544", "http://en.wikipedia.org/wiki/Mesenchymal_stem_cell", "http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells" ]
         },
         "comments" : [ "Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
           "val" : "bone marrow stromal cells"
@@ -1552,7 +1563,7 @@
           "val" : "A pigment cell derived from the neural crest. Contains melanin-filled pigment granules, which gives a brown to black appearance.",
           "xrefs" : [ "SANBI:mhl" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
           "val" : "melanophore"
@@ -1592,6 +1603,7 @@
           "val" : "A cell that specializes in controlled release of one or more substances.",
           "xrefs" : [ "GOC:tfm", "ISBN:0721662544" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "BTO:0003659"
         }, {
@@ -1606,7 +1618,8 @@
         "definition" : {
           "val" : "A cell whose primary function is to shorten.",
           "xrefs" : [ "FB:ma" ]
-        }
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000187",
@@ -1617,6 +1630,7 @@
           "val" : "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns.",
           "xrefs" : [ "MESH:D032342" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "muscle fiber"
@@ -1651,7 +1665,7 @@
           "val" : "A non-striated, elongated, spindle-shaped cell found lining the digestive tract, uterus, and blood vessels. They develop from specialized myoblasts (smooth muscle myoblast).",
           "xrefs" : [ "MESH:D032389", "PMID:9315361", "http://en.wikipedia.org/wiki/Smooth_muscle_cell" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "non-striated muscle cell"
@@ -1704,6 +1718,7 @@
           "val" : "A cell specialized to detect and transduce light.",
           "xrefs" : [ "MESH:D010786" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "BTO:0001060"
         }, {
@@ -1786,6 +1801,7 @@
           "val" : "A cell of the middle germ layer of the embryo.",
           "xrefs" : [ "MESH:D008648" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "mesoblast"
@@ -1823,7 +1839,7 @@
           "val" : "A red blood cell. In mammals, mature erythrocytes are biconcave disks containing hemoglobin whose function is to transport oxygen.",
           "xrefs" : [ "GOC:tfm", "MESH:D004912" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "RBC"
@@ -1848,6 +1864,7 @@
       "lbl" : "eukaryotic cell",
       "type" : "CLASS",
       "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "MESH:D005057"
         } ]
@@ -1857,7 +1874,7 @@
       "lbl" : "eye photoreceptor cell",
       "type" : "CLASS",
       "meta" : {
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
@@ -2047,6 +2064,7 @@
           "val" : "A precursor cell destined to differentiate into smooth muscle myocytes.",
           "xrefs" : [ "GOC:tfm", "MESH:D032390" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "myoblast, smooth muscle",
@@ -2084,7 +2102,10 @@
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000529",
       "lbl" : "pigmented epithelial cell",
-      "type" : "CLASS"
+      "type" : "CLASS",
+      "meta" : {
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
+      }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000540",
       "lbl" : "neuron",
@@ -2095,7 +2116,7 @@
           "xrefs" : [ "MESH:D009474", "http://en.wikipedia.org/wiki/Neuron" ]
         },
         "comments" : [ "These cells are also reportedly CD4-negative and CD200-positive. They are also capable of producing CD40L and IFN-gamma." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "nerve cell"
@@ -2146,7 +2167,7 @@
           "val" : "An immature, nucleated erythrocyte occupying the stage of erythropoeisis that follows formation of erythroid progenitor cells. This cell is CD71-positive, has both a nucleus and a nucleolus, and lacks hematopoeitic lineage markers.",
           "xrefs" : [ "ISBN:0721601464", "PMID:1638021" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "rubriblast",
@@ -2270,7 +2291,7 @@
           "xrefs" : [ "GOC:dsd", "GOC:tfm", "ISBN:0721601464" ]
         },
         "comments" : [ "Lineage negative is described here as CD2-negative, CD3-negative, CD4-negative, CD5-negative, CD8a-negative, CD14-negative, CD19-negative, CD20-negative, CD56-negative, Ly6g-negative, and Ter119-negative." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "CFU-Meg",
@@ -2330,7 +2351,7 @@
           "xrefs" : [ "ISBN:0721601464", "MESH:D008533", "PMID:31043076", "http://en.wikipedia.org/wiki/Megakaryocyte" ]
         },
         "comments" : [ "Megakaryocytes are reportedly CD181-positive and CD182-positive." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "megacaryocyte"
@@ -2362,7 +2383,7 @@
           "val" : "An immature erythrocyte that changes the protein composition of its plasma membrane by exosome formation and extrusion. The types of protein removed differ between species though removal of the transferrin receptor is apparent in mammals and birds.",
           "xrefs" : [ "GOC:add", "GOC:tfm", "PMID:15946868", "PMID:2037622" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "BTO:0001173"
         }, {
@@ -2380,7 +2401,7 @@
           "val" : "Interneuron of the vertebrate retina. They integrate, modulate, and interpose a temporal domain in the visual message presented to the retinal ganglion cells, with which they synapse in the inner plexiform layer. They lack large axons.",
           "xrefs" : [ "GOC:tfm", "MESH:D025042", "WikipediaVersioned:Amacrine_cell&oldid=1023572246" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "amacrine neuron"
@@ -2432,7 +2453,7 @@
           "val" : "One of the two photoreceptor cell types in the vertebrate retina. In cones the photopigment is in invaginations of the cell membrane of the outer segment. Cones are less sensitive to light than rods, but they provide vision with higher spatial and temporal acuity, and the combination of signals from cones with different pigments allows color vision.",
           "xrefs" : [ "MESH:D017949" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "cone",
@@ -2459,7 +2480,7 @@
           "val" : "An epithelial cell of the cornea.",
           "xrefs" : [ "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "epithelial cell of cornea",
@@ -2486,7 +2507,7 @@
           "val" : "One of the two photoreceptor cell types of the vertebrate retina. In rods the photopigment is in stacks of membranous disks separate from the outer cell membrane. Rods are more sensitive to light than cones, but rod mediated vision has less spatial and temporal resolution than cone vision.",
           "xrefs" : [ "MESH:D017948" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "rod",
@@ -2513,7 +2534,7 @@
           "val" : "Astrocyte-like radial glial cell that extends vertically throughout the retina, with the nucleus are usually in the middle of the inner nuclear layer.",
           "xrefs" : [ "GOC:NV", "PMID:21911394" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#MISSPELLING",
           "pred" : "hasExactSynonym",
@@ -2542,7 +2563,7 @@
         "definition" : {
           "val" : "A neuron that is capable of some neurotansmission by glutamate secretion."
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "xrefs" : [ {
           "val" : "FBbt:00100291"
         }, {
@@ -2561,7 +2582,8 @@
         "definition" : {
           "val" : "A non-terminally differentiated cell that is capable of developing into a muscle cell.",
           "xrefs" : [ "GOC:add" ]
-        }
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0000681",
@@ -2573,6 +2595,7 @@
           "xrefs" : [ "GOC:dph" ]
         },
         "comments" : [ "Unlike that of mammals, the brain of adult teleost fish exhibits an intense and widespread neurogenic activity as a result of the persistence of\nradial glial cells acting as neural progenitors throughout life." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
           "val" : "forebrain radial glial cell"
@@ -2622,7 +2645,7 @@
           "val" : "The set of neurons that receives neural inputs via bipolar, horizontal and amacrine cells. The axons of these cells make up the optic nerve.",
           "xrefs" : [ "GOC:dph" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "gangliocyte"
@@ -2661,7 +2684,7 @@
           "val" : "A neuron that laterally connects other neurons in the inner nuclear layer of the retina.",
           "xrefs" : [ "ISBN:0195088433" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "horizontal cell"
@@ -2693,7 +2716,7 @@
           "val" : "A bipolar neuron found in the retina and having connections with photoreceptors cells and neurons in the inner plexiform layer.",
           "xrefs" : [ "PMID:14689473" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasRelatedSynonym",
@@ -2724,6 +2747,7 @@
           "val" : "A cell of the monocyte, granulocyte, mast cell, megakaryocyte, or erythroid lineage.",
           "xrefs" : [ "GOC:add" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "BTO:0001441"
         }, {
@@ -2742,7 +2766,7 @@
           "xrefs" : [ "GOC:add", "GOC:tfm" ]
         },
         "comments" : [ "Note that in FMA erythropoietic cells are types of nucleated erythrocytes and thus don't include erythrocytes." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "erythropoietic cell"
@@ -2768,7 +2792,7 @@
           "val" : "A nucleated precursor of an erythrocyte that lacks hematopoietic lineage markers.",
           "xrefs" : [ "GOC:add", "ISBN:0721601464", "PMID:18174176" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "normoblast"
@@ -2793,7 +2817,7 @@
           "xrefs" : [ "GOC:add", "GOC:tfm", "PMID:19022770" ]
         },
         "comments" : [ "Markers differ between mouse and human." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim", "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "MPP"
@@ -2821,6 +2845,7 @@
           "xrefs" : [ "GOC:add", "GOC:tfm", "PMID:19022770" ]
         },
         "comments" : [ "Note that this is a class of cell types, not an identified single cell type." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "myeloid progenitor cell"
@@ -2831,6 +2856,10 @@
           "val" : "CALOHA:TS-2099"
         }, {
           "val" : "FMA:70339"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         } ]
       }
     }, {
@@ -2842,6 +2871,7 @@
           "val" : "A cell of a hematopoietic lineage.",
           "xrefs" : [ "GOC:add", "GO_REF:0000031" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "haematopoietic cell"
@@ -2953,6 +2983,7 @@
           "xrefs" : [ "GOC:dsd", "GOC:tfm", "PMID:12768659" ]
         },
         "comments" : [ "These cells are reportedly CD31-positive, CD34-positive, CD144-positive, TAL1-positive." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "vascular endothelial cell"
@@ -3046,7 +3077,7 @@
           "xrefs" : [ "PMID:15106942" ]
         },
         "comments" : [ "In a consensus model of unidirectional secretion, aqueous humour is formed by transferring solute, principally NaCl, from stroma to posterior chamber, with water passively following the osmotic gradient. Unidirectional secretion comprises three sequential steps. First, NaCl is transferred from the stromal interstitium into the pigmented ciliary epithelial (PE) cells. Second, solute passes from the PE into the non-pigmented ciliary epithelial (NPE) cells through gap junctions. Finally, NPE cells release Na+ and Cl− into the aqueous humour." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "PE cell",
@@ -3076,7 +3107,7 @@
           "xrefs" : [ "GOC:tfm", "PMID:15106942" ]
         },
         "comments" : [ "In a consensus model of unidirectional secretion, aqueous humour is formed by transferring solute, principally NaCl, from stroma to posterior chamber, with water passively following the osmotic gradient. Unidirectional secretion comprises three sequential steps. First, NaCl is transferred from the stromal interstitium into the pigmented ciliary epithelial (PE) cells. Second, solute passes from the PE into the non-pigmented ciliary epithelial (NPE) cells through gap junctions. Finally, NPE cells release Na+ and Cl− into the aqueous humour." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "NPE cell",
@@ -3109,6 +3140,7 @@
           "val" : "A cell that is part of the nervous system.",
           "xrefs" : [ "GOC:tfm", "ISBN:0618947256" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "CALOHA:TS-2040"
         }, {
@@ -3131,6 +3163,7 @@
           "val" : "A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone.",
           "xrefs" : [ "GOC:tfm", "ISBN:0618947256" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "xrefs" : [ {
           "val" : "CALOHA:TS-2096"
         }, {
@@ -3176,10 +3209,10 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A keratocyte is a specialized fibroblastÂ residing in the cornea stroma that has a flattened, dendritic cell located between the lamellae with a large flattened nucleus and lengthy processes which communicate with neighboring cells. ThisÂ cornealÂ layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratin sulfate.",
-          "xrefs" : [ "GOC:tfm", "ISBN:978-0-7020-2958-5" ]
+          "val" : "A keratocyte is a specialized fibroblast residing in the cornea stroma that has a flattened, dendritic morphology; located between the lamellae with a large flattened nucleus, and lengthy processes which communicate with neighboring cells. This corneal layer, representing about 85-90% of corneal thickness, is built up from highly regular collagenous lamellae and extracellular matrix components. Keratocytes play the major role in keeping it transparent, healing its wounds, and synthesizing its components. This cell type secretes collagen I, V, VI, and keratan sulfate.",
+          "xrefs" : [ "GOC:tfm", "ISBN:9780702029585" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "corneal fibroblast"
@@ -3295,7 +3328,7 @@
           "val" : "A blood vessel endothelial cell that is part of the retina.",
           "xrefs" : [ "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
@@ -3316,7 +3349,7 @@
           "val" : "An epithelial cell of the retinal pigmented epithelium.",
           "xrefs" : [ "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "xrefs" : [ {
           "val" : "BTO:0004910"
         }, {
@@ -3396,7 +3429,8 @@
         "definition" : {
           "val" : "Any hematopoietic cell that is a precursor of some other hematopoietic cell type.",
           "xrefs" : [ "GOC:dos" ]
-        }
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0008007",
@@ -3419,7 +3453,7 @@
         "definition" : {
           "val" : "A non-polarised cell precursor cell that is part of some mesenchyme, is associated with the cell matrix but is not connected to other cells and is capable of migration."
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "mesenchyme cell"
@@ -3490,7 +3524,8 @@
         "definition" : {
           "val" : "A cell of the neural crest. Neural crest cells are multipotent. Premigratory neural crest cells are found at the neural plate boarder, some of which will undergo ectomesynchymal transition and delamination to form migratory neural crest cells.",
           "xrefs" : [ "https://orcid.org/0000-0001-5208-3432", "https://orcid.org/0000-0002-9900-7880" ]
-        }
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0011026",
@@ -3501,6 +3536,7 @@
           "val" : "A precursor cell that has a tendency to differentiate into a specific type of cell. They are descendants of stem cells, only they are more constrained in their differentiation potential or capacity for self-renewal, and are often more limited in both senses.",
           "xrefs" : [ "ISBN:978-1-62808-994-3", "https://doi.org/10.1016/B978-0-12-409503-8.00002-0" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.org/dc/terms/contributor",
           "val" : "https://orcid.org/0000-0001-5208-3432"
@@ -3527,7 +3563,8 @@
           "val" : "A cell that, by division or terminal differentiation, can give rise to other cell types.",
           "xrefs" : [ "GOC:dos" ]
         },
-        "comments" : [ "Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell." ]
+        "comments" : [ "Work is needed on GO 'cell differentiation' before it is clear whether the equivalent class definition 'native cell' that capable_of some 'cell differentiation' works. Also, may want to consider merging this with non-terminally differentiated cell." ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset" ]
       }
     }, {
       "id" : "http://purl.obolibrary.org/obo/CL_0017502",
@@ -3585,23 +3622,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/CL_0017505",
-      "lbl" : "increased nucleus size",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A nucleus size quality which is relatively high compared to the amount of cytoplasm present in the same cell.",
-          "xrefs" : [ "GOC:tfm" ]
-        },
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.org/dc/terms/contributor",
-          "val" : "https://orcid.org/0000-0003-1980-3228"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2009-12-23T10:53:24Z"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/CL_1000432",
       "lbl" : "conjunctival epithelial cell",
       "type" : "CLASS",
@@ -3610,7 +3630,7 @@
           "val" : "An epithelial cell that is part of the conjunctiva.",
           "xrefs" : [ "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "epithelial cell of conjunctiva",
@@ -3629,7 +3649,7 @@
           "val" : "A smooth muscle cell that is part of the ciliary body.",
           "xrefs" : [ "GOC:tfm" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/cl#eye_upper_slim" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/cl#cellxgene_subset", "http://purl.obolibrary.org/obo/cl#eye_upper_slim" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "smooth muscle cell of ciliary body",
@@ -4215,34 +4235,12 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/GO_0003016",
-      "lbl" : "respiratory system process",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A process carried out by the organs or tissues of the respiratory system. The respiratory system is an organ system responsible for respiratory gaseous exchange.",
-          "xrefs" : [ "GOC:dph", "GOC:mtg_cardio", "GOC:tb" ]
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_generic" ],
-        "synonyms" : [ {
-          "pred" : "hasExactSynonym",
-          "val" : "respiratory gaseous exchange"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
-          "val" : "GO:0010802"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "biological_process"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/GO_0005575",
       "lbl" : "cellular_component",
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of  cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex).",
+          "val" : "A location, relative to cellular compartments and structures, occupied by a macromolecular machine. There are three types of cellular components described in the gene ontology: (1) the cellular anatomical entity where a gene product carries out a molecular function (e.g., plasma membrane, cytoskeleton) or membrane-enclosed compartments (e.g., mitochondrion); (2) virion components, where viral proteins act, and (3) the stable macromolecular complexes of which gene product are parts (e.g., the clathrin complex).",
           "xrefs" : [ "GOC:pdt" ]
         },
         "comments" : [ "Note that, in addition to forming the root of the cellular component ontology, this term is recommended for the annotation of gene products whose cellular component is unknown. When this term is used for annotation, it indicates that no information was available about the cellular component of the gene product annotated as of the date the annotation was made; the evidence code 'no data' (ND), is used to indicate this." ],
@@ -4282,7 +4280,7 @@
           "xrefs" : [ "GOC:go_curators" ]
         },
         "comments" : [ "Note that this term is intended to annotate gene products that are not attached to the cell surface. For gene products from multicellular organisms which are secreted from a cell but retained within the organism (i.e. released into the interstitial fluid or blood), consider the cellular component term 'extracellular space ; GO:0005615'." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_yeast", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "extracellular"
@@ -4400,7 +4398,7 @@
           "xrefs" : [ "ISBN:0198547684" ]
         },
         "comments" : [ "Note that for multicellular organisms, the extracellular space refers to everything outside a cell, but still within the organism (excluding the extracellular matrix). Gene products from a multi-cellular organism that are secreted from a cell into the interstitial fluid or blood can therefore be annotated to this term." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "intercellular space"
@@ -4490,7 +4488,7 @@
           "xrefs" : [ "ISBN:0198547684" ]
         },
         "comments" : [ "Chromosomes include parts that are not part of the chromatin. Examples include the kinetochore." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_yeast", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_prokaryote", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
           "val" : "interphase chromosome"
@@ -4538,7 +4536,7 @@
           "val" : "The contents of a cell excluding the plasma membrane and nucleus, but including other subcellular structures.",
           "xrefs" : [ "ISBN:0198547684" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_yeast", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "xrefs" : [ {
           "val" : "Wikipedia:Cytoplasm"
         } ],
@@ -4559,7 +4557,7 @@
           "val" : "An intracellular organelle, about 200 A in diameter, consisting of RNA and protein. It is the site of protein biosynthesis resulting from translation of messenger RNA (mRNA). It consists of two subunits, one large and one small, each containing only protein and RNA. Both the ribosome and its subunits are characterized by their sedimentation coefficients, expressed in Svedberg units (symbol: S). Hence, the prokaryotic ribosome (70S) comprises a large (50S) subunit and a small (30S) subunit, while the eukaryotic ribosome (80S) comprises a large (60S) subunit and a small (40S) subunit. Two sites on the ribosomal large subunit are involved in translation, namely the aminoacyl site (A site) and peptidyl site (P site). Ribosomes from prokaryotes, eukaryotes, mitochondria, and chloroplasts have characteristically distinct ribosomal proteins.",
           "xrefs" : [ "ISBN:0198506732" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_yeast", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasNarrowSynonym",
           "val" : "free ribosome",
@@ -4594,7 +4592,7 @@
           "val" : "The membrane surrounding a cell that separates the cell from its external environment. It consists of a phospholipid bilayer and associated proteins.",
           "xrefs" : [ "ISBN:0716731363" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_yeast", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "juxtamembrane"
@@ -4684,7 +4682,7 @@
           "val" : "The cellular metabolic process in which a protein is formed, using the sequence of a mature mRNA or circRNA molecule to specify the sequence of amino acids in a polypeptide chain. Translation is mediated by the ribosome, and begins with the formation of a ternary complex between aminoacylated initiator methionine tRNA, GTP, and initiation factor 2, which subsequently associates with the small subunit of the ribosome and an mRNA or circRNA. Translation ends with the release of a polypeptide chain from the ribosome.",
           "xrefs" : [ "GOC:go_curators" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "protein anabolism"
@@ -4823,7 +4821,7 @@
           "xrefs" : [ "GOC:dos", "GOC:dph", "GOC:jl", "GOC:mah" ]
         },
         "comments" : [ "Note that this term should not be used for direct annotation. It should be possible to make a more specific annotation to one of the children of this term, for e.g. to transmembrane transport, to microtubule-based transport or to vesicle-mediated transport." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate", "http://purl.obolibrary.org/obo/go#goslim_candida", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "single-organism transport"
@@ -5621,7 +5619,7 @@
           "val" : "Any biological process that results in permanent cessation of all vital functions of a cell. A cell should be considered dead when any one of the following molecular or morphological criteria is met: (1) the cell has lost the integrity of its plasma membrane; (2) the cell, including its nucleus, has undergone complete fragmentation into discrete bodies (frequently referred to as apoptotic bodies). The cell corpse (or its fragments) may be engulfed by an adjacent cell in vivo, but engulfment of whole cells should not be considered a strict criteria to define cell death as, under some circumstances, live engulfed cells can be released from phagosomes (see PMID:18045538).",
           "xrefs" : [ "GOC:mah", "GOC:mtg_apoptosis", "PMID:25236395" ]
         },
-        "comments" : [ "This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO.  When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms." ],
+        "comments" : [ "This term should not be used for direct annotation, it is currently kept in GO as a placeholder for describing cell death phenotypes in uPHENO. When information is provided on a programmed cell death mechanism, annotations should be made to the appropriate descendant of 'cell death' (such as, but not limited to, GO:0097300 'programmed necrotic cell death' or GO:0006915 'apoptotic process'). Unintentional cell death, i.e. cell death caused by injury, ageing, or cell phenotypes observed as a result of a pathological mutation in an essential gene should NOT be annotated using GO terms." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
@@ -6091,7 +6089,7 @@
           "xrefs" : [ "GOC:lr", "GOC:mtg_apoptosis" ]
         },
         "comments" : [ "Note that this term should be used to annotate gene products in the organism undergoing the programmed cell death. To annotate genes in another organism whose products modulate programmed cell death in a host organism, consider the term 'modulation by symbiont of host programmed cell death ; GO:0052040'. Also, note that 'programmed cell death ; GO:0012501' should be used to refer to instances of caspase-independent cell death mechanisms, in the absence of further indications on the process taking place. At present, caspase-independent cell death is not yet represented in GO due to the lack of consensus and in-depth research on the topic. 'programmed cell death ; GO:0012501' may also be used to annotate gene products in taxa where apoptosis as defined in GO:0006915 does not occur, such as plants. You may also consider these specific children: GO:0097468 'programmed cell death in response to reactive oxygen species' (with descendants GO:0010421 'hydrogen peroxide-mediated programmed cell death' and GO:0010343 'singlet oxygen-mediated programmed cell death'), and GO:0009626 'plant-type hypersensitive response' and its children." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_plant", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "regulated cell death"
@@ -6581,7 +6579,7 @@
           "xrefs" : [ "GOC:mtg_signal", "GOC:mtg_signaling_feb11", "GOC:signaling" ]
         },
         "comments" : [ "Note that a signal is any variable property or parameter that serves to convey information, and may be a physical entity such as a gene product or small molecule, a photon, or a change in state such as movement or voltage change." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pombe", "http://purl.obolibrary.org/obo/go#goslim_yeast", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pombe", "http://purl.obolibrary.org/obo/go#goslim_prokaryote", "http://purl.obolibrary.org/obo/go#goslim_yeast" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "biological signaling"
@@ -6647,7 +6645,7 @@
           "val" : "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a prolongation or process extending from a cell, e.g. a flagellum or axon.",
           "xrefs" : [ "GOC:jl", "GOC:mah", "http://www.cogsci.princeton.edu/~wn/" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "cell projection organisation"
@@ -6962,7 +6960,7 @@
           "val" : "A structure lying external to one or more cells, which provides structural support, biochemical or biomechanical cues for cells or tissues.",
           "xrefs" : [ "GOC:BHF", "GOC:mah", "GOC:rph", "NIF_Subcellular:nlx_subcell_20090513", "PMID:21123617", "PMID:28089324" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "proteinaceous extracellular matrix"
@@ -7587,7 +7585,7 @@
           "val" : "A prolongation or process extending from a cell, e.g. a flagellum or axon.",
           "xrefs" : [ "GOC:jl", "http://www.cogsci.princeton.edu/~wn/" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasBroadSynonym",
           "val" : "cell process"
@@ -7693,7 +7691,7 @@
           "val" : "The chemical reactions and pathways involving macromolecules, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass.",
           "xrefs" : [ "GOC:mah" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_pir" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate", "http://purl.obolibrary.org/obo/go#goslim_pir" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "biopolymer metabolic process",
@@ -7709,6 +7707,9 @@
           "val" : "multicellular organismal macromolecule metabolic process"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/26424"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
           "val" : "GO:0034960"
         }, {
@@ -7764,7 +7765,7 @@
           "val" : "Organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton, and prokaryotic structures such as anammoxosomes and pirellulosomes. Excludes the plasma membrane.",
           "xrefs" : [ "GOC:go_curators" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "xrefs" : [ {
           "val" : "NIF_Subcellular:sao1539965131"
         }, {
@@ -8092,12 +8093,15 @@
           "val" : "The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism.",
           "xrefs" : [ "GOC:go_curators", "http://www.metacyc.org" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_pir" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate", "http://purl.obolibrary.org/obo/go#goslim_pir" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "primary metabolism"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/26424"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "biological_process"
         } ]
@@ -8422,12 +8426,15 @@
           "val" : "The biological process whose specific outcome is the progression of an anatomical structure from an initial condition to its mature state. This process begins with the formation of the structure and ends with the mature structure, whatever form that may be including its natural destruction. An anatomical structure is any biological entity that occupies space and is distinguished from its surroundings. Anatomical structures can be macroscopic such as a carpel, or microscopic such as an acrosome.",
           "xrefs" : [ "GO_REF:0000021" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_plant" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate", "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_plant" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "development of an anatomical structure"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/26424"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "biological_process"
         } ]
@@ -8455,7 +8462,7 @@
           "val" : "Any process involved in the controlled self-propelled movement of a cell that results in translocation of the cell from one place to another.",
           "xrefs" : [ "GOC:dgh", "GOC:dph", "GOC:isa_complete", "GOC:mlg" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "cell locomotion"
@@ -8595,7 +8602,7 @@
           "xrefs" : [ "GOC:ai", "GOC:bf" ]
         },
         "comments" : [ "Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC." ],
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_manually_annotate", "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_manually_annotate", "http://purl.obolibrary.org/obo/go#goslim_agr", "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon", "http://purl.obolibrary.org/obo/go#goslim_mouse", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "physiological response to stimulus"
@@ -9217,7 +9224,7 @@
           "val" : "The aggregation, arrangement and bonding together of a set of macromolecules to form a protein-containing complex.",
           "xrefs" : [ "GOC:jl" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_pombe", "http://purl.obolibrary.org/obo/go#prokaryote_subset" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_chembl", "http://purl.obolibrary.org/obo/go#goslim_drosophila", "http://purl.obolibrary.org/obo/go#goslim_generic", "http://purl.obolibrary.org/obo/go#goslim_metagenomics", "http://purl.obolibrary.org/obo/go#goslim_pir", "http://purl.obolibrary.org/obo/go#goslim_pombe", "http://purl.obolibrary.org/obo/go#goslim_prokaryote" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "cellular protein complex assembly"
@@ -9383,6 +9390,7 @@
           "val" : "The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon.",
           "xrefs" : [ "GOC:mah" ]
         },
+        "subsets" : [ "http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "organic molecular entity metabolic process"
@@ -9394,6 +9402,9 @@
           "val" : "organic substance metabolism"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/26424"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "mah"
         }, {
@@ -9485,7 +9496,7 @@
       "type" : "CLASS",
       "meta" : {
         "definition" : {
-          "val" : "The broad region around and including the plasma membrane of a cell,  encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures.",
+          "val" : "The broad region around and including the plasma membrane of a cell, encompassing the cell cortex (inside the cell), the plasma membrane, and any external encapsulating structures.",
           "xrefs" : [ "GOC:pdt" ]
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon" ],
@@ -9995,6 +10006,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
           "val" : "https://github.com/geneontology/go-ontology/issues/24200"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/geneontology/go-ontology/issues/26424"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
           "val" : "kmv"
@@ -10828,11 +10842,11 @@
           "pred" : "hasExactSynonym",
           "val" : "Mus"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "mice"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "mouse"
         } ],
@@ -10857,7 +10871,7 @@
           "pred" : "hasExactSynonym",
           "val" : "house mouse"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "mouse"
         } ],
@@ -11009,7 +11023,7 @@
           "pred" : "hasExactSynonym",
           "val" : "eucaryotes"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "eukaryotes"
         }, {
@@ -11197,7 +11211,7 @@
           "pred" : "hasExactSynonym",
           "val" : "metazoans"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "multicellular animals"
         }, {
@@ -11242,7 +11256,7 @@
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "deuterostomes"
         } ],
@@ -11480,11 +11494,11 @@
       "type" : "CLASS",
       "meta" : {
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "eutherian mammals"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/ncbitaxon#common_name",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003003",
           "pred" : "hasExactSynonym",
           "val" : "placental mammals"
         }, {
@@ -11680,47 +11694,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0000068",
-      "lbl" : "qualitative",
-      "type" : "CLASS",
-      "meta" : {
-        "comments" : [ "TODO: define this or obsolete it and move children somewhere else." ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0000069",
-      "lbl" : "deviation (from_normal)",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A quality inhering in a bearer by virtue of the whether the bearer differs from normal or average.",
-          "xrefs" : [ "PATOC:GVG" ]
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim" ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0000117",
-      "lbl" : "size",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A morphology quality inhering in a bearer by virtue of the bearer's physical magnitude.",
-          "xrefs" : [ "WordNet:WordNet" ]
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/pato#attribute_slim", "http://purl.obolibrary.org/obo/pato#scalar_slim" ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0000136",
       "lbl" : "closure",
       "type" : "CLASS",
@@ -11804,65 +11777,6 @@
           "val" : "rounded"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0000461",
-      "lbl" : "normal",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A quality inhering in a bearer by virtue of the bearer's exhibiting no deviation from normal or average.",
-          "xrefs" : [ "PATOC:GVG" ]
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/pato#abnormal_slim", "http://purl.obolibrary.org/obo/pato#mpath_slim", "http://purl.obolibrary.org/obo/pato#value_slim" ],
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "average"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
-          "val" : "http://purl.obolibrary.org/obo/PATO_0000460"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0000586",
-      "lbl" : "increased size",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A size quality which is relatively high.",
-          "xrefs" : [ "PATOC:GVG" ]
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
-        "synonyms" : [ {
-          "pred" : "hasRelatedSynonym",
-          "val" : "big"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "enlarged"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "expanded"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "great"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "large"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
-          "val" : "http://purl.obolibrary.org/obo/PATO_0000587"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasAlternativeId",
-          "val" : "PATO:0001202"
-        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "quality"
         } ]
@@ -12635,52 +12549,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0002300",
-      "lbl" : "increased quality",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A quality that has a value that is increased compared to normal or average.",
-          "xrefs" : [ "PATOC:GVG" ]
-        },
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
-          "val" : "http://purl.obolibrary.org/obo/PATO_0002301"
-        }, {
-          "pred" : "http://purl.org/dc/terms/contributor",
-          "val" : "https://orcid.org/0000-0002-2061-091X"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2011-06-16T06:39:43Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
-      "id" : "http://purl.obolibrary.org/obo/PATO_0002305",
-      "lbl" : "increased object quality",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "A quality of an object that has a value that is increased compared to normal or average.",
-          "xrefs" : [ "PATOC:GVG" ]
-        },
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002604",
-          "val" : "http://purl.obolibrary.org/obo/PATO_0002303"
-        }, {
-          "pred" : "http://purl.org/dc/terms/contributor",
-          "val" : "https://orcid.org/0000-0002-2061-091X"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#creation_date",
-          "val" : "2011-06-16T06:54:01Z"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "quality"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/PATO_0002309",
       "lbl" : "fiber shaped",
       "type" : "CLASS",
@@ -12826,6 +12694,28 @@
         "comments" : [ "A complete coverage of this domain would subclasses homopolymeric, copolymeric, crystalline." ],
         "subsets" : [ "http://purl.obolibrary.org/obo/pato#value_slim" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "quality"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/PATO_0040072",
+      "lbl" : "high nuclear/cytoplasmic ratio",
+      "type" : "CLASS",
+      "meta" : {
+        "definition" : {
+          "val" : "A quality inhering in a cell by virtue of the cell having a high nuclear/cytoplasmic ratio.",
+          "xrefs" : [ "Wikipedia:NC_ratio&oldid=931936284", "http://lymerick.net/blood-cells.pdf" ]
+        },
+        "comments" : [ "A high nuclear/cytolasmic ratio is 70% or higher." ],
+        "synonyms" : [ {
+          "pred" : "hasExactSynonym",
+          "val" : "high N:C ratio"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#created_by",
+          "val" : "http://orcid.org/0000-0001-5208-3432"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "quality"
         } ]
@@ -15675,6 +15565,9 @@
           "val" : "inverse of develops from"
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/RO_0002259" ],
+        "xrefs" : [ {
+          "val" : "RO:0002203"
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000114",
           "val" : "http://purl.obolibrary.org/obo/IAO_0000125"
@@ -15687,6 +15580,12 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0000117",
           "val" : "https://orcid.org/0000-0003-1980-3228"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "develops_into"
         } ]
       }
     }, {
@@ -16385,6 +16284,48 @@
         }, {
           "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
           "val" : "https://wiki.geneontology.org/Has_output"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002252",
+      "lbl" : "connecting branch of",
+      "type" : "PROPERTY",
+      "meta" : {
+        "definition" : {
+          "val" : "b connecting-branch-of s iff b is connected to s, and there exists some tree-like structure t such that the mereological sum of b plus s is either the same as t or a branching-part-of t."
+        },
+        "xrefs" : [ {
+          "val" : "RO:0002252"
+        } ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000112",
+          "val" : "In the tree T depicted in https://oborel.github.io/obo-relations/branching_part_of.png, B1 is connecting branch of S, and B1-1 as a connecting branch of B1."
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0004036",
+          "val" : "http://purl.obolibrary.org/obo/BFO_0000050"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
+          "val" : "uberon"
+        }, {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#shorthand",
+          "val" : "connecting_branch_of"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "https://github.com/obophenotype/uberon/issues/2212"
+        } ]
+      }
+    }, {
+      "id" : "http://purl.obolibrary.org/obo/RO_0002253",
+      "lbl" : "has connecting branch",
+      "type" : "PROPERTY",
+      "meta" : {
+        "definition" : {
+          "val" : "inverse of connecting branch of"
+        },
+        "subsets" : [ "http://purl.obolibrary.org/obo/RO_0002259" ],
+        "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0004036",
+          "val" : "http://purl.obolibrary.org/obo/BFO_0000051"
         } ]
       }
     }, {
@@ -19955,6 +19896,9 @@
           "xrefs" : [ "span:ProcessualEntity" ]
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "xrefs" : [ {
+          "val" : "BFO:0000003"
+        } ],
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_33090"
@@ -19984,7 +19928,7 @@
           "val" : "eye",
           "xrefs" : [ "FMA:54448" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "regio orbitalis",
           "xrefs" : [ "FMA:54448", "FMA:TA" ]
@@ -20284,7 +20228,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "tunica serosa",
           "xrefs" : [ "FMA:9581" ]
@@ -21101,7 +21045,7 @@
           "val" : "zygote",
           "xrefs" : [ "VHOG:0000745" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "zygotum",
           "xrefs" : [ "Wikipedia:Zygote" ]
@@ -21433,7 +21377,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#major_organ", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "regio oralis",
           "xrefs" : [ "BTO:0004698", "FMA:49184", "FMA:TA" ]
@@ -21441,7 +21385,7 @@
           "pred" : "hasNarrowSynonym",
           "val" : "adult mouth"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "cavital oralis",
           "xrefs" : [ "Wikipedia:Mouth" ]
@@ -22459,8 +22403,6 @@
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
         "xrefs" : [ {
           "val" : "FBbt:00007277"
-        }, {
-          "val" : "IDOMAL:0002461"
         }, {
           "val" : "VHOG:0001737"
         } ],
@@ -23510,11 +23452,11 @@
           "pred" : "hasExactSynonym",
           "val" : "cranial II"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "nervus opticus"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "nervus opticus [II]",
           "xrefs" : [ "FMA:50863", "FMA:TA" ]
@@ -23908,7 +23850,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "chiasma opticum",
           "xrefs" : [ "Wikipedia:Optic_chiasm" ]
@@ -23921,12 +23863,12 @@
           "val" : "optic chiasm",
           "xrefs" : [ "Wikipedia:Optic_chiasm" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "chiasma",
           "xrefs" : [ "NeuroNames:459" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "chiasma nervorum opticorum",
           "xrefs" : [ "NeuroNames:459" ]
@@ -24441,116 +24383,6 @@
         } ]
       }
     }, {
-      "id" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "lbl" : "respiratory system",
-      "type" : "CLASS",
-      "meta" : {
-        "definition" : {
-          "val" : "Functional system which consists of structures involved in respiration.",
-          "xrefs" : [ "Wikipedia:Respiratory_system", "http://orcid.org/0000-0002-6601-2165" ]
-        },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#functional_classification", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
-        "synonyms" : [ {
-          "pred" : "hasExactSynonym",
-          "val" : "apparatus respiratorius"
-        }, {
-          "pred" : "hasExactSynonym",
-          "val" : "respiratory system"
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "Atmungssystem",
-          "xrefs" : [ "BTO:0000203" ]
-        }, {
-          "pred" : "hasRelatedSynonym",
-          "val" : "apparatus respiratorius",
-          "xrefs" : [ "BTO:0000203" ]
-        }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
-          "pred" : "hasRelatedSynonym",
-          "val" : "systema respiratorium",
-          "xrefs" : [ "Wikipedia:Respiratory_system" ]
-        } ],
-        "xrefs" : [ {
-          "val" : "AAO:0000541"
-        }, {
-          "val" : "BTO:0000203"
-        }, {
-          "val" : "CALOHA:TS-1319"
-        }, {
-          "val" : "EFO:0000804"
-        }, {
-          "val" : "EHDAA2:0001604"
-        }, {
-          "val" : "EHDAA:2203"
-        }, {
-          "val" : "EMAPA:16727"
-        }, {
-          "val" : "EV:0100036"
-        }, {
-          "val" : "FMA:7158"
-        }, {
-          "val" : "GAID:78"
-        }, {
-          "val" : "MA:0000327"
-        }, {
-          "val" : "MAT:0000030"
-        }, {
-          "val" : "MESH:D012137"
-        }, {
-          "val" : "MIAA:0000030"
-        }, {
-          "val" : "NCIT:C12779"
-        }, {
-          "val" : "SCTID:278197002"
-        }, {
-          "val" : "TAO:0000272"
-        }, {
-          "val" : "UMLS:C0035237"
-        }, {
-          "val" : "VHOG:0000202"
-        }, {
-          "val" : "Wikipedia:Respiratory_system"
-        }, {
-          "val" : "XAO:0000117"
-        }, {
-          "val" : "ZFA:0000272"
-        } ],
-        "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
-          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_147099"
-        }, {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
-          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-        }, {
-          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
-          "val" : "The anatomical system in which the exchange of oxygen and carbon dioxide between the organism and its environment.[AAO]"
-        }, {
-          "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000003",
-          "val" : "There is no doubt that the primitive pattern of vertebrate air-breathing is the buccal pulse pump found in actinopterygian fishes.[well established][VHOG]"
-        }, {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
-          "val" : "uberon"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "http://upload.wikimedia.org/wikipedia/commons/5/5e/Respiratory_system_complete_en.svg"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.0/VH_F_Lung.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Lung.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Lung.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-lung.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-m-lung.glb"
-        } ]
-      }
-    }, {
       "id" : "http://purl.obolibrary.org/obo/UBERON_0001007",
       "lbl" : "digestive system",
       "type" : "CLASS",
@@ -24646,7 +24478,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "systema cardiovasculare",
           "xrefs" : [ "Wikipedia:Circulatory_system" ]
@@ -24655,6 +24487,8 @@
           "val" : "AAO:0000959"
         }, {
           "val" : "CALOHA:TS-2103"
+        }, {
+          "val" : "MESH:D002319"
         }, {
           "val" : "VHOG:0001248"
         }, {
@@ -24712,7 +24546,7 @@
           "pred" : "hasExactSynonym",
           "val" : "musculature"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "musculi",
           "xrefs" : [ "FMA:32558", "FMA:TA" ]
@@ -24786,7 +24620,7 @@
           "val" : "The nervous system is an organ system containing predominantly neuron and glial cells. In bilaterally symmetrical organism, it is arranged in a network of tree-like structures connected to a central body. The main functions of the nervous system are to regulate and control body functions, and to receive sensory input, process this information, and generate behavior [CUMBO].",
           "xrefs" : [ "BIRNLEX:844", "ISBN:0-14-051288-8", "ISBN:3110148986", "NLM:nervous+system", "WB:rynl", "Wikipedia:Nervous_system", "ZFIN:curator" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#cumbo", "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#cumbo", "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "pred" : "hasExactSynonym",
           "val" : "neurological system",
@@ -24796,7 +24630,7 @@
           "val" : "nerve net",
           "xrefs" : [ "Wikipedia:Nerve_net" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "systema nervosum",
           "xrefs" : [ "Wikipedia:Nervous_system" ]
@@ -24860,6 +24694,9 @@
           "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_6040"
         }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "A regulatory system of the body that consists of neurons and neuroglial cells. The nervous system is divided into two parts, the central nervous system (CNS) and the peripheral nervous system (PNS). (Source: BioGlossary, www.Biology-Text.com)[TAO]"
         }, {
@@ -24894,13 +24731,13 @@
           "val" : "The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.",
           "xrefs" : [ "GO:0021551", "http://www.frontiersinzoology.com/content/7/1/29", "https://sourceforge.net/p/geneontology/ontology-requests/11422/" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#cumbo", "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#cumbo", "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
           "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003000",
           "pred" : "hasExactSynonym",
           "val" : "CNS"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "systema nervosum centrale",
           "xrefs" : [ "FMA:55675", "FMA:TA" ]
@@ -24971,6 +24808,9 @@
         "basicPropertyValues" : [ {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002161",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_147099"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Part of the nervous system which includes the brain and spinal cord.[AAO]"
@@ -25056,7 +24896,7 @@
           "val" : "fascicle",
           "xrefs" : [ "FBbt:00005101" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "fasciculus"
         }, {
@@ -25109,7 +24949,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#efo_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "organa sensuum",
           "xrefs" : [ "FMA:75259", "FMA:TA" ]
@@ -25133,7 +24973,7 @@
           "val" : "sensory systems",
           "xrefs" : [ "TAO:0000282" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "organa sensuum",
           "xrefs" : [ "Wikipedia:Sensory_system" ]
@@ -25268,7 +25108,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "presumptive central nervous system"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "tubus neuralis",
           "xrefs" : [ "Wikipedia:Neural_tube" ]
@@ -25353,6 +25193,8 @@
         }, {
           "val" : "AEO:0000000"
         }, {
+          "val" : "BFO:0000004"
+        }, {
           "val" : "BILA:0000000"
         }, {
           "val" : "BIRNLEX:6"
@@ -25417,7 +25259,7 @@
           "pred" : "hasExactSynonym",
           "val" : "smooth muscle"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "textus muscularis nonstriatus",
           "xrefs" : [ "FMA:14070", "FMA:TA" ]
@@ -25430,7 +25272,7 @@
           "pred" : "hasNarrowSynonym",
           "val" : "visceral muscle tissue"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "textus muscularis levis; textus muscularis nonstriatus",
           "xrefs" : [ "Wikipedia:Smooth_muscle_tissue" ]
@@ -25737,7 +25579,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "facia/facies",
           "xrefs" : [ "Wikipedia:Face" ]
@@ -25848,6 +25690,8 @@
         }, {
           "val" : "MA:0000917"
         }, {
+          "val" : "MESH:D041981"
+        }, {
           "val" : "NCIT:C34082"
         }, {
           "val" : "TAO:0000112"
@@ -25916,7 +25760,7 @@
           "val" : "ciliaris",
           "xrefs" : [ "Wikipedia:Ciliary_muscle" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "musculus ciliaris",
           "xrefs" : [ "Wikipedia:Ciliary_muscle" ]
@@ -26116,7 +25960,7 @@
           "val" : "camera anterior bulbi",
           "xrefs" : [ "BTO:0002084" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "camera anterior bulbi oculi",
           "xrefs" : [ "Wikipedia:Anterior_chamber_of_eyeball" ]
@@ -26197,7 +26041,7 @@
           "val" : "tunica vasculatis oculi",
           "xrefs" : [ "Wikipedia:Uvea" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "tunica vasculosa bulbi",
           "xrefs" : [ "Wikipedia:Uvea" ]
@@ -26353,7 +26197,7 @@
           "pred" : "hasExactSynonym",
           "val" : "epithelium anterius (cornea)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "epithelium anterius corneae",
           "xrefs" : [ "FMA:58263", "FMA:TA" ]
@@ -26371,7 +26215,7 @@
           "val" : "anterior endothelium of cornea",
           "xrefs" : [ "BTO:0000287" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "e. anterius corneae",
           "xrefs" : [ "Wikipedia:Corneal_epithelium" ]
@@ -26543,7 +26387,7 @@
           "val" : "ciliary bodies",
           "xrefs" : [ "VHOG:0000102" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "corpus ciliare",
           "xrefs" : [ "Wikipedia:Ciliary_body" ]
@@ -26630,7 +26474,7 @@
           "val" : "chorioid",
           "xrefs" : [ "BTO:0001829" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "choroidea",
           "xrefs" : [ "Wikipedia:Choroid" ]
@@ -26711,7 +26555,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stroma of cornea"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "substantia propria corneae",
           "xrefs" : [ "FMA:58306", "FMA:TA" ]
@@ -26893,7 +26737,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum pigmentosum (retina)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum pigmentosum retinae",
           "xrefs" : [ "FMA:58627", "FMA:TA" ]
@@ -26908,7 +26752,7 @@
           "val" : "epithelium, retinal pigment",
           "xrefs" : [ "BTO:0001177" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "p. pigmentosa retinae",
           "xrefs" : [ "Wikipedia:Retinal_pigment_epithelium" ]
@@ -26923,7 +26767,7 @@
           "val" : "retinal pigment layer",
           "xrefs" : [ "VHOG:0000536" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "stratum pigmentosa retinae",
           "xrefs" : [ "Wikipedia:Retinal_pigment_epithelium" ]
@@ -27006,7 +26850,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum segmentorum externorum et internorum (retina)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum segmentorum externorum et internorum retinae",
           "xrefs" : [ "FMA:58680", "FMA:TA" ]
@@ -27092,7 +26936,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum limitans externum (retina)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum limitans externum retinae",
           "xrefs" : [ "FMA:58683", "FMA:TA" ]
@@ -27164,7 +27008,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum nucleare externum (retina)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum nucleare externum retinae",
           "xrefs" : [ "FMA:58684", "FMA:TA" ]
@@ -27255,7 +27099,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum plexiforme externum"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum plexiforme externum retinae",
           "xrefs" : [ "FMA:58685", "FMA:TA" ]
@@ -27343,7 +27187,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum nucleare internum"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum nucleare internum retinae",
           "xrefs" : [ "FMA:58686", "FMA:TA" ]
@@ -27450,7 +27294,7 @@
           "val" : "retina, ganglion cell layer",
           "xrefs" : [ "BAMS:Rgcl" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "stratum ganglionicum retinae",
           "xrefs" : [ "Wikipedia:Ganglion_cell_layer" ]
@@ -27537,7 +27381,7 @@
           "pred" : "hasExactSynonym",
           "val" : "stratum neurofibrarum (retina)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum neurofibrarum retinae",
           "xrefs" : [ "FMA:58688", "FMA:TA" ]
@@ -27558,7 +27402,7 @@
           "val" : "optic fiber layers",
           "xrefs" : [ "TAO:0002212" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "stratum neurofibrum retinae",
           "xrefs" : [ "Wikipedia:Nerve_fiber_layer" ]
@@ -27631,7 +27475,7 @@
           "pred" : "hasExactSynonym",
           "val" : "retina internal limiting lamina"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum limitans internum retinae",
           "xrefs" : [ "FMA:58689", "FMA:TA" ]
@@ -27718,7 +27562,7 @@
           "val" : "stratum plexifome internum",
           "xrefs" : [ "BTO:0003175" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "stratum plexiforme internum retinae",
           "xrefs" : [ "Wikipedia:Inner_plexiform_layer" ]
@@ -27792,7 +27636,7 @@
           "val" : "aqueous humour",
           "xrefs" : [ "EHDAA2:0000139" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "humor aquosus",
           "xrefs" : [ "FMA:58819", "FMA:TA" ]
@@ -27861,7 +27705,7 @@
           "pred" : "hasExactSynonym",
           "val" : "humor vitreous"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "humor vitreus",
           "xrefs" : [ "FMA:58822", "FMA:TA" ]
@@ -27903,6 +27747,8 @@
           "val" : "FMA:58822"
         }, {
           "val" : "MA:0001286"
+        }, {
+          "val" : "MESH:D014822"
         }, {
           "val" : "NCIT:C13323"
         }, {
@@ -27975,7 +27821,7 @@
           "val" : "camera postrema",
           "xrefs" : [ "FMA:58848" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "camera postrema bulbi oculi",
           "xrefs" : [ "FMA:58848", "FMA:TA" ]
@@ -28050,7 +27896,7 @@
           "pred" : "hasExactSynonym",
           "val" : "segmentum anterius (bulbus oculi)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "segmentum anterius bulbi oculi",
           "xrefs" : [ "Wikipedia:Anterior_segment_of_eyeball" ]
@@ -28115,7 +27961,7 @@
           "pred" : "hasExactSynonym",
           "val" : "segmentum posterius (bulbus oculi)"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "segmentum posterius bulbi oculi",
           "xrefs" : [ "Wikipedia:Posterior_segment_of_eyeball" ]
@@ -28166,7 +28012,7 @@
           "val" : "conjunctivas",
           "xrefs" : [ "XAO:0000182" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "tunica conjunctiva",
           "xrefs" : [ "FMA:TA" ]
@@ -28334,7 +28180,7 @@
           "val" : "MB",
           "xrefs" : [ "BIRNLEX:1667", "NIFSTD:NeuroNames_abbrevSource" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "mesencephalon",
           "xrefs" : [ "Wikipedia:Midbrain" ]
@@ -28470,7 +28316,7 @@
           "val" : "betweenbrain",
           "xrefs" : [ "BTO:0000342" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "diencephalon",
           "xrefs" : [ "Wikipedia:Diencephalon" ]
@@ -28600,12 +28446,12 @@
           "val" : "medulla",
           "xrefs" : [ "ABA:MY" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "bulbus",
           "xrefs" : [ "FMA:62004", "FMA:TA" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "medulla oblonzata",
           "xrefs" : [ "Wikipedia:Medulla_oblongata" ]
@@ -28716,12 +28562,12 @@
           "val" : "optic tracts",
           "xrefs" : [ "ZFA:0000252" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "tractus optici",
           "xrefs" : [ "NeuroNames:460" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "tractus opticus",
           "xrefs" : [ "Wikipedia:Optic_tract" ]
@@ -28816,7 +28662,7 @@
           "val" : "tegmentum",
           "xrefs" : [ "ISBN:0471888893" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "tegmentum mesencephali",
           "xrefs" : [ "Wikipedia:Midbrain_tegmentum" ]
@@ -28828,7 +28674,7 @@
           "val" : "mesencephalic tegmentum",
           "xrefs" : [ "VHOG:0001367" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "tegmentum mesencephalicum",
           "xrefs" : [ "NeuroNames:491" ]
@@ -28855,6 +28701,8 @@
           "val" : "MA:0000212"
         }, {
           "val" : "MAT:0000452"
+        }, {
+          "val" : "MESH:D013681"
         }, {
           "val" : "SCTID:362392007"
         }, {
@@ -28966,7 +28814,7 @@
           "val" : "vascular tree organ region",
           "xrefs" : [ "FMA:50722" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "vas sanguineum",
           "xrefs" : [ "Wikipedia:Blood_vessel" ]
@@ -29068,7 +28916,7 @@
           "val" : "endothelium of cornea",
           "xrefs" : [ "OBOL:automatic" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "epithelium posterius corneae",
           "xrefs" : [ "Wikipedia:Corneal_endothelium" ]
@@ -29183,7 +29031,7 @@
           "val" : "neuronal grey matter",
           "xrefs" : [ "AEO:0001012" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "substantia grisea",
           "xrefs" : [ "FMA:67242", "FMA:TA" ]
@@ -29192,7 +29040,7 @@
           "val" : "gray mater",
           "xrefs" : [ "ZFA:0001681" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "grisea"
         } ],
@@ -29576,6 +29424,8 @@
           "val" : "MA:0002986"
         }, {
           "val" : "MAT:0000148"
+        }, {
+          "val" : "MESH:D013131"
         }, {
           "val" : "MIAA:0000148"
         }, {
@@ -29966,7 +29816,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "cavitas thoracis",
           "xrefs" : [ "Wikipedia:Thoracic_cavity" ]
@@ -30046,17 +29896,17 @@
           "val" : "cerebrocerebellar fissure",
           "xrefs" : [ "NeuroNames:22" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "fissura cerebro-cerebellaris",
           "xrefs" : [ "NeuroNames:22" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "fissura cerebrocerebellaris",
           "xrefs" : [ "NeuroNames:22" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "medulla spinalis",
           "xrefs" : [ "BTO:0001279", "Wikipedia:Spinal_cord" ]
@@ -30173,7 +30023,7 @@
           "val" : "brain stem",
           "xrefs" : [ "ABA:BS" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "truncus encephali",
           "xrefs" : [ "Wikipedia:Brainstem" ]
@@ -30182,27 +30032,27 @@
           "val" : "accessory medullary lamina of pallidum",
           "xrefs" : [ "NeuroNames:236" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "lamella pallidi incompleta",
           "xrefs" : [ "NeuroNames:236" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "lamina medullaris accessoria",
           "xrefs" : [ "NeuroNames:236" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "lamina medullaris incompleta pallidi",
           "xrefs" : [ "NeuroNames:236" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "lamina pallidi incompleta",
           "xrefs" : [ "NeuroNames:236" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "truncus encephalicus",
           "xrefs" : [ "BTO:0000146" ]
@@ -30306,7 +30156,7 @@
           "val" : "CNS white matter",
           "xrefs" : [ "TAO:0002143" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "substantia alba",
           "xrefs" : [ "Wikipedia:White_matter" ]
@@ -30488,7 +30338,7 @@
           "val" : "notocord",
           "xrefs" : [ "ZFA:0000135" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "notochorda",
           "xrefs" : [ "Wikipedia:Notochord" ]
@@ -30601,7 +30451,7 @@
           "pred" : "hasRelatedSynonym",
           "val" : "somitic mesoderm"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "somitus",
           "xrefs" : [ "Wikipedia:Somite" ]
@@ -30697,7 +30547,7 @@
           "val" : "NC",
           "xrefs" : [ "XAO:0000048" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "crista neuralis",
           "xrefs" : [ "Wikipedia:Neural_crest" ]
@@ -30791,7 +30641,7 @@
           "pred" : "hasExactSynonym",
           "val" : "neuroectoderm"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "epithelium tubi neuralis; neuroectoderma",
           "xrefs" : [ "Wikipedia:Neuroectoderm" ]
@@ -31121,7 +30971,7 @@
           "val" : "epithelium pigmentosum (iris)",
           "xrefs" : [ "FMA:58517" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "epithelium pigmentosum iridis",
           "xrefs" : [ "FMA:58517", "FMA:TA" ]
@@ -31179,7 +31029,7 @@
           "val" : "ectoblast",
           "xrefs" : [ "MP:0003886" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "epiblastus",
           "xrefs" : [ "Wikipedia:Epiblast" ]
@@ -31817,7 +31667,7 @@
           "val" : "lens placodes",
           "xrefs" : [ "ZFA:0000122" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "placoda lentis",
           "xrefs" : [ "Wikipedia:Lens_placode" ]
@@ -31877,7 +31727,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "lamina neuralis",
           "xrefs" : [ "Wikipedia:Neural_plate" ]
@@ -31979,7 +31829,7 @@
           "val" : "somitic mesoderm",
           "xrefs" : [ "ISBN:9780878932504" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "mesoderma paraxiale",
           "xrefs" : [ "Wikipedia:Paraxial_mesoderm" ]
@@ -32082,7 +31932,7 @@
           "val" : "lateral plate mesenchyme",
           "xrefs" : [ "EHDAA2:0000919" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "mesoderma laminae lateralis",
           "xrefs" : [ "Wikipedia:Lateral_plate_mesoderm" ]
@@ -32203,7 +32053,7 @@
           "val" : "sclerotomes",
           "xrefs" : [ "TAO:0001080" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "sclerotomus",
           "xrefs" : [ "Wikipedia:Sclerotome" ]
@@ -32268,7 +32118,7 @@
           "val" : "optic stalks",
           "xrefs" : [ "ZFA:0000137" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "pedunculus opticus",
           "xrefs" : [ "Wikipedia:Optic_stalk" ]
@@ -32338,7 +32188,7 @@
           "pred" : "hasExactSynonym",
           "val" : "head NCC population"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "crista neuralis cranialis",
           "xrefs" : [ "Wikipedia:Cranial_neural_crest" ]
@@ -32452,7 +32302,7 @@
           "pred" : "hasExactSynonym",
           "val" : "portion of mesenchyme tissue"
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "mesenchyma",
           "xrefs" : [ "Wikipedia:Mesenchyme" ]
@@ -33075,7 +32925,7 @@
           "val" : "stratum nervosum (retina)",
           "xrefs" : [ "FMA:58628" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "stratum nervosum retinae",
           "xrefs" : [ "FMA:58628", "FMA:TA" ]
@@ -33887,7 +33737,7 @@
           "val" : "lamina limitans posterior",
           "xrefs" : [ "FMA:58309" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "lamina limitans posterior corneae",
           "xrefs" : [ "FMA:58309", "FMA:TA" ]
@@ -33977,12 +33827,12 @@
           "val" : "lamina limitans anterior (cornea)",
           "xrefs" : [ "FMA:58273" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "lamina limitans anterior corneae",
           "xrefs" : [ "FMA:58273", "FMA:TA" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#DUBIOUS",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003002",
           "pred" : "hasRelatedSynonym",
           "val" : "Reichert's membrane",
           "xrefs" : [ "http://sourceforge.net/tracker/?func=detail&aid=2956371&group_id=76834&atid=974957" ]
@@ -34184,7 +34034,7 @@
           "val" : "An endothelium that lines the blood vasculature. Other endothelia may line lymph vessels, the heart.",
           "xrefs" : [ "https://orcid.org/0000-0002-6601-2165" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#vertebrate_core" ],
         "xrefs" : [ {
           "val" : "BTO:0000766"
         }, {
@@ -34203,6 +34053,9 @@
           "val" : "ZFA:0005257"
         } ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
+        }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
         } ]
@@ -35589,7 +35442,7 @@
           "val" : "basement membrane of connective tissue",
           "xrefs" : [ "FMA:63872" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "membrana basalis",
           "xrefs" : [ "Wikipedia:Basement_membrane" ]
@@ -35710,7 +35563,7 @@
         },
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#pheno_slim", "http://purl.obolibrary.org/obo/uberon/core#uberon_slim" ],
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "skeleton axiale",
           "xrefs" : [ "Wikipedia:Axial_skeleton" ]
@@ -35768,7 +35621,7 @@
           "val" : "nerve fibre",
           "xrefs" : [ "FMA:5914" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "neurofibra",
           "xrefs" : [ "FMA:5914", "FMA:TA" ]
@@ -35782,7 +35635,7 @@
           "val" : "nerve fibers",
           "xrefs" : [ "BAMS:nfi" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "neurofibra",
           "xrefs" : [ "Wikipedia:Nerve_fiber" ]
@@ -37869,7 +37722,7 @@
           "val" : "ciliary processes set",
           "xrefs" : [ "FMA:76551" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "processus ciliares",
           "xrefs" : [ "FMA:TA" ]
@@ -37882,7 +37735,7 @@
           "val" : "ciliary process",
           "xrefs" : [ "Wikipedia:Ciliary_processes" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "processus ciliares",
           "xrefs" : [ "Wikipedia:Ciliary_processes" ]
@@ -37900,18 +37753,6 @@
         }, {
           "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "http://upload.wikimedia.org/wikipedia/commons/b/b2/Gray875.png"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_L.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Eye_R.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_L.glb"
-        }, {
-          "pred" : "http://xmlns.com/foaf/0.1/depiction",
-          "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Eye_R.glb"
         }, {
           "pred" : "http://xmlns.com/foaf/0.1/depiction",
           "val" : "https://ccf-ontology.hubmapconsortium.org/objects/v1.4/3d-vh-f-eye-l.glb"
@@ -38044,7 +37885,7 @@
           "val" : "A subdivision of an anatomical system.",
           "xrefs" : [ "http://orcid.org/0000-0002-6601-2165" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy", "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#upper_level" ],
         "xrefs" : [ {
           "val" : "FBbt:00007330"
         }, {
@@ -38061,6 +37902,9 @@
         }, {
           "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
           "val" : "http://purl.obolibrary.org/obo/NCBITaxon_4751"
+        }, {
+          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
+          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
         }, {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
@@ -38238,12 +38082,12 @@
           "xrefs" : [ "FMA:19783" ]
         },
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "textus connectivus collagenosus laxus",
           "xrefs" : [ "FMA:19783", "FMA:TA" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "textus connectivus laxus",
           "xrefs" : [ "FMA:19783", "FMA:TA" ]
@@ -38509,7 +38353,7 @@
           "val" : "The region of the organism associated with the visceral organs.",
           "xrefs" : [ "AEO:0000103" ]
         },
-        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas", "http://purl.obolibrary.org/obo/uberon/core#non_informative" ],
+        "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#non_informative" ],
         "synonyms" : [ {
           "pred" : "hasRelatedSynonym",
           "val" : "body",
@@ -38529,9 +38373,6 @@
           "val" : "FMA:231424"
         } ],
         "basicPropertyValues" : [ {
-          "pred" : "http://purl.obolibrary.org/obo/RO_0002175",
-          "val" : "http://purl.obolibrary.org/obo/NCBITaxon_9606"
-        }, {
           "pred" : "http://purl.obolibrary.org/obo/UBPROP_0000001",
           "val" : "Cardinal body part, which consists of a maximal set of diverse subclasses of organ and organ part spatially associated with the vertebral column and ribcage. Examples: There is only one body proper[FMA:231424]."
         }, {
@@ -39108,7 +38949,7 @@
           "xrefs" : [ "HPO:pr", "UBERON:cjm", "http://medical-dictionary.thefreedictionary.com/ocular+adnexa", "https://github.com/obophenotype/uberon/issues/1132" ]
         },
         "synonyms" : [ {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasExactSynonym",
           "val" : "adnexa oculi",
           "xrefs" : [ "http://medical-dictionary.thefreedictionary.com/ocular+adnexa" ]
@@ -39143,7 +38984,7 @@
           "val" : "set of accessory visual structures",
           "xrefs" : [ "FMA:76554" ]
         }, {
-          "synonymType" : "http://purl.obolibrary.org/obo/uberon/core#LATIN",
+          "synonymType" : "http://purl.obolibrary.org/obo/OMO_0003011",
           "pred" : "hasRelatedSynonym",
           "val" : "structurae oculi accessoriae",
           "xrefs" : [ "Wikipedia:Accessory_visual_structures" ]
@@ -39215,8 +39056,6 @@
         "subsets" : [ "http://purl.obolibrary.org/obo/uberon/core#common_anatomy" ],
         "xrefs" : [ {
           "val" : "AAO:0010270"
-        }, {
-          "val" : "AEO:0000154"
         }, {
           "val" : "ZFA:0005594"
         } ],
@@ -39293,8 +39132,10 @@
           "val" : "OBSOLETE A relation between a cell and molecule or complex such that every instance of the cell has a high number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).",
           "xrefs" : [ "PMID:19243617" ]
         },
-        "comments" : [ "Replaced with RO:0015015, see https://github.com/obophenotype/cell-ontology/issues/1481" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/obophenotype/cell-ontology/issues/1481"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
           "val" : "http://purl.obolibrary.org/obo/RO_0015015"
         } ],
@@ -39309,8 +39150,10 @@
           "val" : "OBSOLETE A relation between a cell and molecule or complex such that every instance of the cell has a low number of instances of that molecule expressed on the cell surface. For the formal definition, see Masci et al (PMID:19243617).",
           "xrefs" : [ "PMID:19243617" ]
         },
-        "comments" : [ "Replaced with RO:0015016, see https://github.com/obophenotype/cell-ontology/issues/1481" ],
         "basicPropertyValues" : [ {
+          "pred" : "http://purl.obolibrary.org/obo/IAO_0000233",
+          "val" : "https://github.com/obophenotype/cell-ontology/issues/1481"
+        }, {
           "pred" : "http://purl.obolibrary.org/obo/IAO_0100001",
           "val" : "http://purl.obolibrary.org/obo/RO_0015016"
         } ],
@@ -39540,13 +39383,12 @@
       "lbl" : "transitively anteriorly connected to",
       "type" : "PROPERTY",
       "meta" : {
-        "definition" : {
-          "val" : ".",
-          "xrefs" : [ "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" ]
-        },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern"
         } ]
       }
     }, {
@@ -39554,13 +39396,12 @@
       "lbl" : "transitively distally connected to",
       "type" : "PROPERTY",
       "meta" : {
-        "definition" : {
-          "val" : ".",
-          "xrefs" : [ "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" ]
-        },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern"
         } ]
       }
     }, {
@@ -39568,13 +39409,12 @@
       "lbl" : "transitively proximally connected to",
       "type" : "PROPERTY",
       "meta" : {
-        "definition" : {
-          "val" : ".",
-          "xrefs" : [ "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern" ]
-        },
         "basicPropertyValues" : [ {
           "pred" : "http://www.geneontology.org/formats/oboInOwl#hasOBONamespace",
           "val" : "uberon"
+        }, {
+          "pred" : "http://www.w3.org/2000/01/rdf-schema#seeAlso",
+          "val" : "http://purl.obolibrary.org/obo/uberon/docs/Connectivity-Design-Pattern"
         } ]
       }
     }, {
@@ -40645,10 +40485,6 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/CL_0000547",
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
-      "obj" : "http://purl.obolibrary.org/obo/CL_0017505"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/CL_0000547",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/GO_0005730"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/CL_0000547",
@@ -40694,6 +40530,10 @@
       "sub" : "http://purl.obolibrary.org/obo/CL_0000547",
       "pred" : "http://purl.obolibrary.org/obo/CL_4030046",
       "obj" : "http://purl.obolibrary.org/obo/PR_000002978"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/CL_0000547",
+      "pred" : "http://purl.obolibrary.org/obo/RO_0000053",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0040072"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/CL_0000547",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002104",
@@ -41653,14 +41493,6 @@
       "pred" : "http://purl.obolibrary.org/obo/RO_0000053",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0070047"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/CL_0017505",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0005634"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/CL_0017505",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0000053",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000586"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/CL_1000432",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/CL_0000066",
@@ -41900,14 +41732,6 @@
       "sub" : "http://purl.obolibrary.org/obo/GO_0003015",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/GO_0003013"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GO_0003016",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0003008"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/GO_0003016",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0007585"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/GO_0005575",
       "pred" : "is_a",
@@ -43979,18 +43803,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000068",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000001"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000069",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000068"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000117",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000136",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000051"
@@ -44006,18 +43818,6 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000411",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000947"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000461",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000068"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000586",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000117"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0000586",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0002305"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0000608",
       "pred" : "is_a",
@@ -44183,22 +43983,6 @@
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002078"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002300",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000069"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002300",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0015007",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0000461"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002305",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0001241"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/PATO_0002305",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/PATO_0002300"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0002309",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0002226"
@@ -44226,6 +44010,10 @@
       "sub" : "http://purl.obolibrary.org/obo/PATO_0015006",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/PATO_0000141"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/PATO_0040072",
+      "pred" : "is_a",
+      "obj" : "http://purl.obolibrary.org/obo/PATO_0001396"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/PATO_0070006",
       "pred" : "is_a",
@@ -44864,22 +44652,8 @@
       }
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000165",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000050",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000033"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000165",
       "pred" : "http://purl.obolibrary.org/obo/BSPO_0001106",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0001555"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0000165",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002131",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "meta" : {
-        "basicPropertyValues" : [ {
-          "pred" : "http://www.geneontology.org/formats/oboInOwl#notes",
-          "val" : "exceptions in some taxa"
-        } ]
-      }
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000165",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
@@ -45105,7 +44879,13 @@
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000483",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_6072"
+      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_33208",
+      "meta" : {
+        "basicPropertyValues" : [ {
+          "pred" : "http://www.geneontology.org/formats/oboInOwl#source",
+          "val" : "http://palaeos.com/metazoa/porifera/homoscleromorpha.html"
+        } ]
+      }
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000483",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002473",
@@ -45598,26 +45378,6 @@
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0000982",
       "pred" : "http://purl.obolibrary.org/obo/RO_0002433",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0001434"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "pred" : "is_a",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000467"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002160",
-      "obj" : "http://purl.obolibrary.org/obo/NCBITaxon_33213"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002215",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0003016"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002215",
-      "obj" : "http://purl.obolibrary.org/obo/GO_0007585"
-    }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "pred" : "http://purl.obolibrary.org/obo/RO_0002492",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0000066"
     }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0001007",
       "pred" : "is_a",
@@ -50562,10 +50322,6 @@
       "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000982"
     }, {
-      "sub" : "http://purl.obolibrary.org/obo/UBERON_0011137",
-      "pred" : "http://purl.obolibrary.org/obo/BFO_0000051",
-      "obj" : "http://purl.obolibrary.org/obo/UBERON_0005944"
-    }, {
       "sub" : "http://purl.obolibrary.org/obo/UBERON_0011138",
       "pred" : "is_a",
       "obj" : "http://purl.obolibrary.org/obo/UBERON_0000075",
@@ -51536,6 +51292,18 @@
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0000057"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002252",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002170"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002252",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002375"
+    }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002253",
+      "pred" : "subPropertyOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002375"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002254",
       "pred" : "subPropertyOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002258"
@@ -52492,6 +52260,10 @@
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002353"
     }, {
+      "sub" : "http://purl.obolibrary.org/obo/RO_0002252",
+      "pred" : "inverseOf",
+      "obj" : "http://purl.obolibrary.org/obo/RO_0002253"
+    }, {
       "sub" : "http://purl.obolibrary.org/obo/RO_0002254",
       "pred" : "inverseOf",
       "obj" : "http://purl.obolibrary.org/obo/RO_0002255"
@@ -52803,9 +52575,6 @@
         "fillerId" : "http://purl.obolibrary.org/obo/CL_0017503"
       }, {
         "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000051",
-        "fillerId" : "http://purl.obolibrary.org/obo/CL_0017505"
-      }, {
-        "propertyId" : "http://purl.obolibrary.org/obo/BFO_0000051",
         "fillerId" : "http://purl.obolibrary.org/obo/GO_0005730"
       }, {
         "propertyId" : "http://purl.obolibrary.org/obo/CL_4030046",
@@ -52843,6 +52612,9 @@
       }, {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0000053",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0002505"
+      }, {
+        "propertyId" : "http://purl.obolibrary.org/obo/RO_0000053",
+        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0040072"
       }, {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0002104",
         "fillerId" : "http://purl.obolibrary.org/obo/PR_000001945"
@@ -53296,13 +53068,6 @@
       "restrictions" : [ {
         "propertyId" : "http://purl.obolibrary.org/obo/RO_0000053",
         "fillerId" : "http://purl.obolibrary.org/obo/PATO_0070047"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/CL_0017505",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/GO_0005634" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0000053",
-        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000586"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/CL_1000432",
@@ -54073,27 +53838,6 @@
         "fillerId" : "http://purl.obolibrary.org/obo/GO_0005576"
       } ]
     }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0000586",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000117" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0015007",
-        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002300",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0000001" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0015007",
-        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/PATO_0002305",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/PATO_0001241" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0015007",
-        "fillerId" : "http://purl.obolibrary.org/obo/PATO_0000461"
-      } ]
-    }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/PR_000029032",
       "genusIds" : [ "http://purl.obolibrary.org/obo/PR_000000001" ],
       "restrictions" : [ {
@@ -54244,13 +53988,6 @@
       }, {
         "propertyId" : "http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into",
         "fillerId" : "http://purl.obolibrary.org/obo/UBERON_0001908"
-      } ]
-    }, {
-      "definedClassId" : "http://purl.obolibrary.org/obo/UBERON_0001004",
-      "genusIds" : [ "http://purl.obolibrary.org/obo/UBERON_0000467" ],
-      "restrictions" : [ {
-        "propertyId" : "http://purl.obolibrary.org/obo/RO_0002215",
-        "fillerId" : "http://purl.obolibrary.org/obo/GO_0007585"
       } ]
     }, {
       "definedClassId" : "http://purl.obolibrary.org/obo/UBERON_0001007",

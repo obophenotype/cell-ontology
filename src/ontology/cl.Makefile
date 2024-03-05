@@ -233,7 +233,12 @@ $(TMPDIR)/hra_subset.owl:
 
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-	
+
+## Download CellXGene reference subset
+
+CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
+$(TEMPLATEDIR)/cellxgene_subset.tsv:
+	wget $(CELLXGENE_SUBSET_URL) -O $@
 
 # Make CL-plus (CL + PCL product)
 
@@ -282,9 +287,7 @@ SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
 
 .PHONY: slim_coverage
 slim_coverage: $(SLIM_REPORTS)
-xxx:
-	echo $(SLIM_REPORTS)
-	echo $(REPORTDIR)
+
 COVERAGECMD= ./$(SCRIPTSDIR)/generic_coverage.py -s $(TERM_ID) -f $< -o $@ -c makefile
 
 $(REPORTDIR)/blood_and_immune_upper_slim_report.csv: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv

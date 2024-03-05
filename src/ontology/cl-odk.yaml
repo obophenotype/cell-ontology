@@ -35,6 +35,10 @@ subset_group:
 import_group:
   use_base_merging: TRUE
   slme_individuals: exclude
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - oboInOwl:is_metadata_tag
   exclude_iri_patterns:
     - <http://www.informatics.jax.org/marker/MGI:*>
     - <http://purl.obolibrary.org/obo/OBA_*>
@@ -114,4 +118,8 @@ components:
       use_template: True
       templates:
         - kidney_upper_slim.csv
+    - filename: cellxgene_subset.owl
+      use_template: True
+      templates:
+        - cellxgene_subset.tsv
 

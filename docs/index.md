@@ -10,9 +10,9 @@ The recommended way to browse the ontology is through the [ontology lookup servi
 
 ### Accessing CL
 
-The main release files can be found in our [GitHub repository](https://github.com/obophenotype/cell-ontology).
+The main release files can be found in our [GitHub repository](https://github.com/obophenotype/cell-ontology/releases).
 
-The main release file can also be found [here](https://raw.githubusercontent.com/obophenotype/cell-ontology/master/cl.owl). 
+The main release file can also be found [here](http://purl.obolibrary.org/obo/cl.owl). 
 
 ### Contributing 
 
@@ -26,6 +26,6 @@ For general guidance on editing OBO-(ish) ontologies, please see the [obook](htt
 
 ### Cell Ontology Website
 
-You can also access our front facing website at https://cell-ontology.github.io/
+You can also access our front facing website at [https://cell-ontology.github.io/](https://cell-ontology.github.io/)
 
 
