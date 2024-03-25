@@ -50,7 +50,7 @@ jobs:
         id: gh-script-issue
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
             const issue_number = context.issue.number
             const repo = context.repo.owner+"/"+context.repo.repo
@@ -60,7 +60,7 @@ jobs:
         id: gh-script-repo
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
             const repo = context.repo.owner+"/"+context.repo.repo
             return repo
@@ -87,7 +87,7 @@ jobs:
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }}
+          -g ${{ secrets.ONTOBOT_TOKEN }}
 
       - name: Clean-up
         run: rm -rf robot-plugins
@@ -104,4 +104,4 @@ jobs:
           title: ${{ env.PR_TITLE }}
           base: ${{ github.head_ref }}
           branch: ${{ env.branch-name }}
-          # token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.ONTOBOT_TOKEN }}
