@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                ee91b54debe0347ec7c9a7d0d389aba4d06efd50e19dbf350e604e2b5200120b
+CONFIG_HASH=                37ad849527e9ed7f3d1f2bebed0aa11cde61bba1c6ce61562e0d92e4d20d5365
 
 
 # ----------------------------------------
@@ -81,7 +81,7 @@ endif
 all: all_odk
 
 .PHONY: all_odk
-all_odk: odkversion config_check test custom_reports all_assets
+all_odk: odkversion config_check test custom_reports all_assets release_diff
 
 .PHONY: test
 test: odkversion dosdp_validation reason_test sparql_test robot_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
