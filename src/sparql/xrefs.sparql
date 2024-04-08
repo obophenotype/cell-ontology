@@ -4,5 +4,6 @@ prefix owl: <http://www.w3.org/2002/07/owl#>
 SELECT ?cls ?xref WHERE 
 {
   ?cls a owl:Class ; 
-     oio:hasDbXref ?xref
+     oio:hasDbXref ?xref .
+    FILTER(isIRI(?cls) && (STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/cl#")))
 }

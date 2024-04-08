@@ -15,4 +15,5 @@ WHERE {
   }
   ?x a owl:Class .
   ?y a owl:Class .
+  FILTER(isIRI(?x) && (STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/cl#")))
 }
