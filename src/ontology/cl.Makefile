@@ -258,12 +258,12 @@ DEPLOY_GH=true
 .PHONY: cl
 cl:
 	$(MAKE) prepare_release IMP=false PAT=false 
-	$(MAKE) release-diff
+	$(MAKE) release-simple-diff
 	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
-.PHONY: release-diff
-release-diff:
-	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
+.PHONY: release-simple-diff
+release-simple-diff:
+	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl-simple.owl --right ../../cl-simple.owl --output reports/$(ONT)-simple-diff.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
