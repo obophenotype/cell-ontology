@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                37ad849527e9ed7f3d1f2bebed0aa11cde61bba1c6ce61562e0d92e4d20d5365
+CONFIG_HASH=                9e64d605ecef0561ef21514f7e29c77f21bb4e9066eaa404b9476237e8f67fd3
 
 
 # ----------------------------------------
@@ -45,7 +45,7 @@ REPORT_LABEL =
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy 
-SPARQL_EXPORTS =            basic-report 
+SPARQL_EXPORTS =            cl_terms edges synonyms xrefs 
 ODK_VERSION_MAKEFILE =      v1.5
 
 TODAY ?=                    $(shell date +%Y-%m-%d)
