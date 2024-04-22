@@ -74,6 +74,11 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
 
 
+# Preprocessing: automatically generate text definitions from logical definitions
+$(EDIT_PREPROCESSED): $(SRC) all_robot_plugins
+	$(ROBOT) flybase:rewrite-def -i $< --dot-definitions --null-definitions --filter-prefix CL_ -o $@
+
+
 ##############################################
 ##### CL Template pipeline ###################
 ##############################################
