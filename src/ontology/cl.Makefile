@@ -76,7 +76,8 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 
 # Preprocessing: automatically generate text definitions from logical definitions
 $(EDIT_PREPROCESSED): $(SRC) all_robot_plugins
-	$(ROBOT) flybase:rewrite-def -i $< --dot-definitions --null-definitions --filter-prefix CL_ -o $@
+	$(ROBOT) flybase:rewrite-def -i $< --dot-definitions --null-definitions \
+		                     --no-ids --filter-prefix CL_ -o $@
 
 
 ##############################################

@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                cfa6a149c2eeb497b4ec43446494a82bd888d07c0d00f6d49de7edcc705d6b97
+CONFIG_HASH=                da74e3b5a21dbaa4ef31c6eaafba87e8609df31ad83cfaa45ab22956d6504c81
 
 
 # ----------------------------------------
@@ -147,7 +147,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 # Specific rules for supplementary plugins defined in configuration
 
 $(ROBOT_PLUGINS_DIRECTORY)/flybase.jar:
-	curl -L -o $@ https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.0/flybase.jar
+	curl -L -o $@ https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.1/flybase.jar
 
 
 # ----------------------------------------
