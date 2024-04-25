@@ -146,6 +146,19 @@ $(MAPPINGDIR)/zfa.sssom.tsv: .FORCE
 
 endif
 
+# Mappings component
+# ------------------
+# The mappings.owl component is derived from the remote mapping sets
+# (as fetched above). It contains old-style cross-references to make
+# those mappings "visible" to CL editors and users in the usual way.
+$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) | all_robot_plugins
+	$(ROBOT) sssom:inject -i $< \
+			      $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+			      --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
+			      --error-on-unshortenable-iris \
+			      --no-merge --bridge-file $@ \
+			      --bridge-iri http://purl.obolibrary.org/obo/cl/components/mappings.owl
+
 
 ##############################################
 ##### CL Template pipeline ###################
@@ -281,12 +294,6 @@ gs_dosdp_%:
 
 gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
 
-
-## FBbt mappings component
-
-# Generate cross-reference component from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: $(MAPPINGDIR)/fbbt.sssom.tsv ../scripts/sssom2xrefs.awk
-	awk -f ../scripts/sssom2xrefs.awk $< > $@
 
 ## Download human reference atlas subset
 
