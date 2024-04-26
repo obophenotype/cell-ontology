@@ -104,6 +104,7 @@ $(MAPPINGDIR)/cl-local.sssom.tsv: $(SRC) | all_robot_plugins
 		                    --map-prefix-to-predicate 'WBbt https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
 		                    --map-prefix-to-predicate 'XAO https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
 		                    --map-prefix-to-predicate 'ZFA https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --set-id http://purl.obolibrary.org/obo/cl/cl.sssom.tsv \
 	> $(REPORTDIR)/cl-xrefs-extraction.txt
 
 # CL's "meta" mapping set, made by compiling the "local" set above
@@ -142,6 +143,7 @@ $(MAPPINGDIR)/zfa.sssom.tsv: .FORCE
 		                    --mapping-file $@ -v --drop-duplicates \
 		                    --ignore-treat-xrefs \
 		                    --map-prefix-to-predicate 'CL https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --set-id http://purl.obolibrary.org/obo/zfa/zfa.sssom.tsv \
 	> $(REPORTDIR)/xfa-xrefs-extraction
 
 endif
