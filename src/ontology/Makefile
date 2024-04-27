@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                2ecc363eabe4a626ae05ced0fd68a6f84a48fbc2cdf56df6ee5d7fa7feb7fd14
+CONFIG_HASH=                3ef44073feb4dd21f093356b564a51bd94638e4a757ed43c0c9ff69e9599cac2
 
 
 # ----------------------------------------
@@ -60,6 +60,12 @@ PATTERNDIR=                 ../patterns
 PATTERN_TESTER=             dosdp validate -i
 DOSDPT=                     dosdp-tools
 PATTERN_RELEASE_FILES=      $(PATTERNDIR)/definitions.owl $(PATTERNDIR)/pattern.owl
+
+MAPPINGDIR=                 ../mappings
+MAPPING_TESTER=             sssom validate
+SSSOMPY=                    sssom
+MAPPINGS=                   cl-local cl fbbt zfa 
+MAPPING_RELEASE_FILES=      $(foreach n,$(MAPPINGS), $(MAPPINGDIR)/$(n).sssom.tsv)
 
 
 FORMATS = $(sort  owl obo json owl)
@@ -195,7 +201,7 @@ all_subsets: $(SUBSET_FILES)
 # ----------------------------------------
 
 
-MAPPINGS = 
+MAPPINGS =  cl-local cl fbbt zfa
 
 MAPPING_FILES = $(patsubst %, $(MAPPINGDIR)/%.sssom.tsv, $(MAPPINGS))
 
@@ -734,6 +740,34 @@ $(PATTERNDIR)/definitions.owl: $(DOSDP_OWL_FILES_DEFAULT)   $(DOSDP_OWL_FILES_CL
 	if [ $(PAT) = true ] && [ "${DOSDP_PATTERN_NAMES_DEFAULT}" ]   || [ "${DOSDP_PATTERN_NAMES_CLUSTERING}" ] && [ $(PAT) = true ]; then $(ROBOT) merge $(addprefix -i , $^) \
 		annotate --ontology-iri $(ONTBASE)/patterns/definitions.owl  --version-iri $(ONTBASE)/releases/$(TODAY)/patterns/definitions.owl \
       --annotation owl:versionInfo $(VERSION) -o definitions.ofn && mv definitions.ofn $@; fi
+
+
+# ----------------------------------------
+# SSSOM Mapping Files
+# ----------------------------------------
+
+validate-sssom-%:
+	tsvalid $(MAPPINGDIR)/$*.sssom.tsv --comment "#"
+	sssom validate $(MAPPINGDIR)/$*.sssom.tsv
+
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(MAPPINGDIR)/cl-local.sssom.tsv:
+	test -f $@
+
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(MAPPINGDIR)/cl.sssom.tsv:
+	test -f $@
+
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(MAPPINGDIR)/fbbt.sssom.tsv:
+	test -f $@
+
+# This mappingset is manually curated, so we only check that the file actually exists.
+$(MAPPINGDIR)/zfa.sssom.tsv:
+	test -f $@
+
+validate_mappings:
+	$(MAKE_FAST) $(foreach n,$(MAPPINGS), validate-sssom-$(n))
 
 
 
