@@ -74,6 +74,94 @@ tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
 # Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
 
 
+# ----------------------------------------
+# SSSOM MAPPINGS
+# ----------------------------------------
+
+# CL's "local" mapping set (extracted from cross-references).
+# The long list of "prefix-to-predicate" mapping is necessary because CL
+# does not contain the oboInOwl:treat-xrefs-as-... annotations that are
+# supposed to provide those mappings.
+$(MAPPINGDIR)/cl-local.sssom.tsv: $(SRC) | all_robot_plugins
+	$(ROBOT) sssom:xref-extract -i $< --mapping-file $@ -v --drop-duplicates \
+		                    --prefix 'FMA:   http://purl.org/sig/ont/fma/fma' \
+		                    --prefix 'KUPO:  http://purl.obolibrary.org/obo/KUPO_'  \
+		                    --prefix 'SCTID: http://purl.obolibrary.org/obo/SCTID_' \
+		                    --map-prefix-to-predicate 'AEO http://www.w3.org/2004/02/skos/core#exactMatch' \
+		                    --map-prefix-to-predicate 'CARO http://www.w3.org/2004/02/skos/core#exactMatch' \
+		                    --map-prefix-to-predicate 'GO http://www.w3.org/2004/02/skos/core#exactMatch' \
+		                    --map-prefix-to-predicate 'VSAO http://www.w3.org/2004/02/skos/core#exactMatch' \
+		                    --map-prefix-to-predicate 'VHOG http://www.w3.org/2004/02/skos/core#broadMatch' \
+		                    --map-prefix-to-predicate 'EV http://www.w3.org/2004/02/skos/core#narrowMatch' \
+		                    --map-prefix-to-predicate 'NCIT http://www.w3.org/2004/02/skos/core#narrowMatch' \
+		                    --map-prefix-to-predicate 'SCTID http://www.w3.org/2004/02/skos/core#narrowMatch' \
+		                    --map-prefix-to-predicate 'AAO https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'EHDAA2 https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'EMAPA https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'FMA https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'KUPO https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'MA https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'WBbt https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'XAO https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --map-prefix-to-predicate 'ZFA https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --set-id http://purl.obolibrary.org/obo/cl/cl.sssom.tsv \
+	> $(REPORTDIR)/cl-xrefs-extraction.txt
+
+# CL's "meta" mapping set, made by compiling the "local" set above
+# with the sets obtained from FBbt and ZFA below.
+$(MAPPINGDIR)/cl.sssom.tsv: $(MAPPINGDIR)/cl-local.sssom.tsv \
+			    $(MAPPINGDIR)/fbbt.sssom.tsv \
+			    $(MAPPINGDIR)/zfa.sssom.tsv
+	sssom-cli $(foreach src, $^, -i $(src)) \
+		  --prefix-map-from-input \
+		  --rule 'object==CL:* -> invert()' \
+		  --rule 'subject==CL:* -> include()' \
+		  --output $@
+
+# Remote mapping sets
+# -------------------
+
+EXTERNAL_SSSOM_PROVIDERS = fbbt zfa
+EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
+
+# We only refresh external resources under IMP=true
+ifeq ($(strip $(IMP)),true)
+
+# FBbt mapping set
+$(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
+	wget -O - "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" | \
+		sssom-cli --prefix-map-from-input \
+		          --rule 'object==CL:* -> include()' \
+		          --output $@
+
+# ZFA mapping set (extracted from ZFA cross-references).
+# ZFA does contain oboInOwl:treat-xrefs-as-... annotations, but here
+# it's easier to ignore them, as this automatically filters out all the
+# xrefs that point to anything else than CL.
+$(MAPPINGDIR)/zfa.sssom.tsv: .FORCE
+	$(ROBOT) sssom:xref-extract -I http://purl.obolibrary.org/obo/zfa.owl \
+		                    --mapping-file $@ -v --drop-duplicates \
+		                    --ignore-treat-xrefs \
+		                    --map-prefix-to-predicate 'CL https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
+		                    --set-id http://purl.obolibrary.org/obo/zfa/zfa.sssom.tsv \
+	> $(REPORTDIR)/xfa-xrefs-extraction
+
+endif
+
+# Mappings component
+# ------------------
+# The mappings.owl component is derived from the remote mapping sets
+# (as fetched above). It contains old-style cross-references to make
+# those mappings "visible" to CL editors and users in the usual way.
+$(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) | all_robot_plugins
+	$(ROBOT) sssom:inject -i $< \
+			      $(foreach set, $(EXTERNAL_SSSOM_SETS), --sssom $(set)) \
+			      --ruleset $(SCRIPTSDIR)/mappings-to-xrefs.rules \
+			      --error-on-unshortenable-iris \
+			      --no-merge --bridge-file $@ \
+			      --bridge-iri http://purl.obolibrary.org/obo/cl/components/mappings.owl
+
+
 ##############################################
 ##### CL Template pipeline ###################
 ##############################################
@@ -209,22 +297,6 @@ gs_dosdp_%:
 gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
 
 
-## FBbt mappings component
-
-# Download the FBbt mapping file
-.PHONY: $(TMPDIR)/fbbt-mappings.sssom.tsv
-$(TMPDIR)/fbbt-mappings.sssom.tsv:
-	if [ $(IMP) = true ]; then wget -O $@ http://purl.obolibrary.org/obo/fbbt/fbbt-mappings.sssom.tsv ; fi
-
-# Attempt to update the canonical FBbt mapping file from a freshly downloaded one
-# (no update if the downloaded file is absent or identical to the one we already have)
-mappings/fbbt-mappings.sssom.tsv: $(TMPDIR)/fbbt-mappings.sssom.tsv
-	if [ -f $< ]; then if ! cmp $< $@ ; then cat $< > $@ ; fi ; fi
-
-# Generate cross-reference component from the FBbt mapping file
-$(COMPONENTSDIR)/mappings.owl: mappings/fbbt-mappings.sssom.tsv ../scripts/sssom2xrefs.awk
-	awk -f ../scripts/sssom2xrefs.awk $< > $@
-
 ## Download human reference atlas subset
 
 HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
@@ -266,7 +338,8 @@ release-diff:
 	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n))
+MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
+		     $(MAPPINGDIR)/cl.sssom.tsv
 
 deploy_release:
 	@test $(GHVERSION)
