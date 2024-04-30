@@ -146,7 +146,7 @@ $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 # ZFA does contain oboInOwl:treat-xrefs-as-... annotations, but here
 # it's easier to ignore them, as this automatically filters out all the
 # xrefs that point to anything else than CL.
-$(MAPPINGDIR)/zfa.sssom.tsv: .FORCE
+$(MAPPINGDIR)/zfa.sssom.tsv: .FORCE | all_robot_plugins
 	$(ROBOT) sssom:xref-extract -I http://purl.obolibrary.org/obo/zfa.owl \
 		                    --mapping-file $@ -v --drop-duplicates \
 		                    --ignore-treat-xrefs \
