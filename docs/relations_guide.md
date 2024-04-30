@@ -125,7 +125,7 @@ Cellular function is recorded by linking GO biological process terms with the ob
 
 ###  [<u>'capable of'</u>](http://purl.obolibrary.org/obo/RO_0002215)
 
-Use this relationships where the cell is capable of carrying out the entirety of the process
+Use this relation where the cell is capable of carrying out the entirety of the process
 
 For example, ['hilus cell of ovary'](http://purl.obolibrary.org/obo/CL_0002095) has the following subclass:
 
@@ -136,6 +136,14 @@ For example, ['hilus cell of ovary'](http://purl.obolibrary.org/obo/CL_0002095) 
 Use this relationship where only part of the process occurs in the cell type.
 
 e.g.  'retinal bipolar neuron' 'capable of part of' some 'visual perception'
+
+### Recording neurotransmitter for neurons
+
+To record which neurotransmitter a neuron releases, use a [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) relation to link the neuron to a  to a subclass of GO [neurotransmitter secretion](http://purl.obolibrary.org/obo/GO_0007269).  This should be sufficient for autoclassification.
+
+[**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215)
+
+[**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215)
 
 ## Recording developmental lineage
 
