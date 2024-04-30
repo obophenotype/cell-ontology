@@ -139,7 +139,7 @@ e.g.  'retinal bipolar neuron' 'capable of part of' some 'visual perception'
 
 ### Recording neurotransmitter for neurons
 
-To record which neurotransmitter a neuron releases, use a [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) relation to link the neuron to a  to a subclass of GO [neurotransmitter secretion](http://purl.obolibrary.org/obo/GO_0007269).  This should be sufficient for autoclassification.
+To record which neurotransmitter a neuron releases, use a [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) relation to link the neuron to a subclass of GO [neurotransmitter secretion](http://purl.obolibrary.org/obo/GO_0007269). This should be sufficient for autoclassification.
 
 [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215)
 
