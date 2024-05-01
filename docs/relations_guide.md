@@ -131,19 +131,17 @@ For example, ['hilus cell of ovary'](http://purl.obolibrary.org/obo/CL_0002095) 
 
 [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) *some* ['androgen secretion'](http://purl.obolibrary.org/obo/GO_0035935)
 
+### Recording neurotransmitter for neurons
+
+To record which neurotransmitter a neuron releases, use a [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) relation to link the neuron to a subclass of GO [neurotransmitter secretion](http://purl.obolibrary.org/obo/GO_0007269) that references a neurotransmitter type. This should be sufficient for autoclassification.
+
+e.g. ['medium spiny neuron'](http://purl.obolibrary.org/obo/CL_1001474) [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) some ['gamma-aminobutyric acid secretion, neurotransmission'](http://purl.obolibrary.org/obo/GO_0061534)
+
 ### ‘capable of part of’
 
 Use this relationship where only part of the process occurs in the cell type.
 
 e.g.  'retinal bipolar neuron' 'capable of part of' some 'visual perception'
-
-### Recording neurotransmitter for neurons
-
-To record which neurotransmitter a neuron releases, use a [**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215) relation to link the neuron to a subclass of GO [neurotransmitter secretion](http://purl.obolibrary.org/obo/GO_0007269). This should be sufficient for autoclassification.
-
-[**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215)
-
-[**'capable of'**](http://purl.obolibrary.org/obo/RO_0002215)
 
 ## Recording developmental lineage
 
