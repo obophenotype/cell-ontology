@@ -31,7 +31,7 @@ jobs:
     needs: check
     if: needs.check.outputs.phraseExists == 'true'
     runs-on: ${{ matrix.os }}
-    container: obolibrary/odkfull:v1.4.3
+    container: obolibrary/odkfull:v1.5
     strategy:
       matrix:
         python-version: ["3.9"]
@@ -71,11 +71,9 @@ jobs:
           echo "resource=src/ontology/cl-edit.owl" >> $GITHUB_ENV
           echo "branch-name=kgcl_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
       
-      - name: Get jar & enable plugin.
+      - name: Enable KGCL plugin
         run: |
-          mkdir -p robot-plugins
-          wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O robot-plugins/kgcl.jar
-          echo "ROBOT_PLUGINS_DIRECTORY=$(pwd)/robot-plugins/" >> "$GITHUB_ENV"
+          echo "ROBOT_PLUGINS_DIRECTORY=/tools/robot-plugins/" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: |
@@ -88,9 +86,6 @@ jobs:
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
           -g ${{ secrets.ONTOBOT_TOKEN }}
-
-      - name: Clean-up
-        run: rm -rf robot-plugins
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
