@@ -3017,6 +3017,7 @@ Declaration(Class(obo:CL_4033061))
 Declaration(Class(obo:CL_4033062))
 Declaration(Class(obo:CL_4033063))
 Declaration(Class(obo:CL_4033064))
+Declaration(Class(obo:CL_4033065))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3030,6 +3031,11 @@ Declaration(Class(obo:CL_4042003))
 Declaration(Class(obo:CL_4042004))
 Declaration(Class(obo:CL_4042005))
 Declaration(Class(obo:CL_4042006))
+Declaration(Class(obo:CL_4042007))
+Declaration(Class(obo:CL_4042008))
+Declaration(Class(obo:CL_4042009))
+Declaration(Class(obo:CL_4042010))
+Declaration(Class(obo:CL_4042011))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -5234,7 +5240,6 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000185 "myoepitheliocyte")
 AnnotationAssertion(rdfs:label obo:CL_0000185 "myoepithelial cell")
 SubClassOf(obo:CL_0000185 obo:CL_0000075)
 SubClassOf(obo:CL_0000185 obo:CL_0000183)
-SubClassOf(obo:CL_0000185 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000222))
 
 # Class: obo:CL_0000186 (myofibroblast cell)
 
@@ -9365,6 +9370,9 @@ EquivalentClasses(obo:CL_0000691 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "JB:jb") Annotation(oboInOwl:hasDbXref "PMID:16136171") obo:IAO_0000115 obo:CL_0000692 "A neuroglial cell of the peripheral nervous system inside the basal lamina of the neuromuscular junction providing chemical and physical support to the synapse.")
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0000692 "Schwann cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18803315") oboInOwl:hasExactSynonym obo:CL_0000692 "perisynaptic Schwann cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18803315") oboInOwl:hasExactSynonym obo:CL_0000692 "teloglia")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18803315") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0000692 "tSC")
 AnnotationAssertion(rdfs:label obo:CL_0000692 "terminal Schwann cell")
 SubClassOf(obo:CL_0000692 obo:CL_0000630)
 SubClassOf(obo:CL_0000692 obo:CL_0002376)
@@ -9487,8 +9495,8 @@ SubClassOf(obo:CL_0000706 obo:CL_0000627)
 
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000707 "R7 cell")
 AnnotationAssertion(rdfs:label obo:CL_0000707 "R7 photoreceptor cell")
-SubClassOf(obo:CL_0000707 obo:CL_0000287)
 SubClassOf(obo:CL_0000707 obo:CL_0000494)
+SubClassOf(obo:CL_0000707 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000971))
 
 # Class: obo:CL_0000708 (leptomeningeal cell)
 
@@ -14342,13 +14350,13 @@ AnnotationAssertion(rdfs:label obo:CL_0002074 "myocardial endocrine cell")
 SubClassOf(obo:CL_0002074 obo:CL_0000163)
 SubClassOf(obo:CL_0002074 obo:CL_0002086)
 
-# Class: obo:CL_0002075 (brush cell of trachebronchial tree)
+# Class: obo:CL_0002075 (brush cell of tracheobronchial tree)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") Annotation(oboInOwl:hasDbXref "PMID:15817800") obo:IAO_0000115 obo:CL_0002075 "Infrequent type of columnar epithelial cell. This cell is characterized by the presence of a tuft of blunt, squat microvilli (approximately 120-140/cell) on the cell surface. The microvilli contain filaments that stretch into the underlying cytoplasm. They have a distinctive pear shape with a wide base and a narrow microvillous apex. Function not known.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_0002075 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002075 "2010-06-29T03:22:46Z")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002075 "pulmonary brush cell")
-AnnotationAssertion(rdfs:label obo:CL_0002075 "brush cell of trachebronchial tree")
+AnnotationAssertion(rdfs:label obo:CL_0002075 "brush cell of tracheobronchial tree")
 EquivalentClasses(obo:CL_0002075 ObjectIntersectionOf(obo:CL_0002204 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0007196)))
 
 # Class: obo:CL_0002076 (endo-epithelial cell)
@@ -28445,12 +28453,14 @@ EquivalentClasses(obo:CL_2000044 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 
 # Class: obo:CL_2000045 (foreskin melanocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000045 "Any melanocyte that is part of a prepuce of penis.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000045 "Any melanocyte of skin that is part of a skin of prepuce of penis.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_2000045 <https://orcid.org/0009-0000-8480-9277>)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_2000045 <https://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000045 "2014-07-09T00:45:07Z")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000045 "melanocyte of foreskin")
 AnnotationAssertion(oboInOwl:id obo:CL_2000045 "CL:2000045")
 AnnotationAssertion(rdfs:label obo:CL_2000045 "foreskin melanocyte")
-EquivalentClasses(obo:CL_2000045 ObjectIntersectionOf(obo:CL_0000148 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001332)))
+EquivalentClasses(obo:CL_2000045 ObjectIntersectionOf(obo:CL_1000458 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001471)))
 
 # Class: obo:CL_2000046 (ventricular cardiac muscle cell)
 
@@ -28811,14 +28821,17 @@ AnnotationAssertion(oboInOwl:id obo:CL_2000081 "CL:2000081")
 AnnotationAssertion(rdfs:label obo:CL_2000081 "melanocyte of skin of face")
 EquivalentClasses(obo:CL_2000081 ObjectIntersectionOf(obo:CL_1000458 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_1000021)))
 
-# Class: obo:CL_2000082 (melanocyte of foreskin)
+# Class: obo:CL_2000082 (obsolete melanocyte of foreskin)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000082 "Any melanocyte of skin that is part of a skin of prepuce of penis.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000082 "OBSOLETE. Any melanocyte of skin that is part of a skin of prepuce of penis.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_2000082 <https://github.com/obophenotype/cell-ontology/issues/1562>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_2000082 obo:CL_2000045)
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_2000082 <https://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000082 "2014-12-02T19:10:45Z")
 AnnotationAssertion(oboInOwl:id obo:CL_2000082 "CL:2000082")
-AnnotationAssertion(rdfs:label obo:CL_2000082 "melanocyte of foreskin")
-EquivalentClasses(obo:CL_2000082 ObjectIntersectionOf(obo:CL_1000458 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001471)))
+AnnotationAssertion(rdfs:comment obo:CL_2000082 "Term was merged into foreskin melanocyte CL_2000045")
+AnnotationAssertion(rdfs:label obo:CL_2000082 "obsolete melanocyte of foreskin")
+AnnotationAssertion(owl:deprecated obo:CL_2000082 "true"^^xsd:boolean)
 
 # Class: obo:CL_2000083 (hair follicle dermal papilla cell of scalp)
 
@@ -29135,7 +29148,7 @@ SubClassOf(obo:CL_4023010 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000005460))
 # Class: obo:CL_4023011 (lamp5 GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023011 "Lamp5 cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30382198") obo:IAO_0000115 obo:CL_4023011 "A GABAergic neuron located in the cerebral cortex that expresses Lamp5")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30382198") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023011 "A GABAergic neuron located in the cerebral cortex that expresses Lamp5")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023011 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023011 "ILX:0770149")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023011 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
@@ -29180,7 +29193,7 @@ SubClassOf(obo:CL_4023014 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P32648))
 # Class: obo:CL_4023015 (sncg GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023015 "sncg cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33186530") obo:IAO_0000115 obo:CL_4023015 "A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33186530") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023015 "A GABAergic neuron located in the cerebral cortex that expresses Gamma-synuclein")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023015 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023015 "ILX:0770150")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023015 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
@@ -29190,7 +29203,7 @@ EquivalentClasses(obo:CL_4023015 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 # Class: obo:CL_4023016 (vip GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023016 "vip cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33186530") obo:IAO_0000115 obo:CL_4023016 "A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33186530") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023016 "A GABAergic neuron located in the cerebral cortex that expresses vasoactive intestinal polypeptide")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023016 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023016 "ILX:0770151")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023016 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
@@ -29200,7 +29213,7 @@ EquivalentClasses(obo:CL_4023016 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 # Class: obo:CL_4023017 (sst GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023017 "sst cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") obo:IAO_0000115 obo:CL_4023017 "A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023017 "A GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst)")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023017 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023017 "ILX:0770152")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023017 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
@@ -29210,7 +29223,7 @@ EquivalentClasses(obo:CL_4023017 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 # Class: obo:CL_4023018 (pvalb GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023018 "pvalb cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") obo:IAO_0000115 obo:CL_4023018 "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023018 "A GABAergic interneuron located in the cerebral cortex that expresses Parvalbumin.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023018 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023018 "ILX:0770154")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023018 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
@@ -29434,7 +29447,7 @@ SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000013502))
 # Class: obo:CL_4023038 (L6b glutamatergic cortical neuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023038 "L6b glut")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.10.19.34312") Annotation(oboInOwl:hasDbXref "PMID:30382198") obo:IAO_0000115 obo:CL_4023038 "A glutamatergic neuron with a soma found in cortical layer 6b. They are transcriptomically related to corticothalamic-projecting neurons but have differential projections to the thalamus or anterior cingulate.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.10.19.34312") Annotation(oboInOwl:hasDbXref "PMID:30382198") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023038 "A glutamatergic neuron with a soma found in cortical layer 6b. They are transcriptomically related to corticothalamic-projecting neurons but have differential projections to the thalamus or anterior cingulate.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023038 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023038 "ILX:0770163")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023038 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
@@ -29461,10 +29474,10 @@ SubClassOf(obo:CL_4023040 obo:CL_4023008)
 # Class: obo:CL_4023041 (L5 extratelencephalic projecting glutamatergic cortical neuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023041 "L5 ET glut")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.10.19.343129") obo:IAO_0000115 obo:CL_4023041 "A glutamatergic neuron, with a soma found in the deeper portion of L5, that has long-range axonal projections including deep subcortical targets outside of the telencephalon and, in some cases, the spinal cord. While the L5 ET neuron projections are not limited to ET targets, they are clearly differentiated from the neuron subclasses whose projections are constrained to intratelencephalic (IT) targets.  L5 ET neurons are generally the largest excitatory cortical neurons, typically having a thick apical dendrite with a prominent dendritic tuft in layer 1 and displaying burst-firing physiological characteristics.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34616075") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023041 "A glutamatergic neuron, with a soma found in the deeper portion of L5, that has long-range axonal projections including deep subcortical targets outside of the telencephalon and, in some cases, the spinal cord. While the L5 ET neuron projections are not limited to ET targets, they are clearly differentiated from the neuron subclasses whose projections are constrained to intratelencephalic (IT) targets.  L5 ET neurons are generally the largest excitatory cortical neurons, typically having a thick apical dendrite with a prominent dendritic tuft in layer 1 and displaying burst-firing physiological characteristics.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023041 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/j.neuron.2005.08.030") oboInOwl:hasBroadSynonym obo:CL_4023041 "subcerebral projection (SCPN) neuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/j.cell.2019.09.023") Annotation(rdfs:comment "pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord.") oboInOwl:hasExactSynonym obo:CL_4023041 "Pyramidal tract-like (PT-l)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31626774") Annotation(rdfs:comment "pyramidal tract-like is used because, unlike pyramidal tract neurons in the motor cortex, neurons in the structures like the auditory cortex do not project to the spinal cord.") oboInOwl:hasExactSynonym obo:CL_4023041 "Pyramidal tract-like (PT-l)")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.3389/fncel.2011.00001") oboInOwl:hasExactSynonym obo:CL_4023041 "burst-firing layer 5 neuron")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.3389/fncel.2015.00233") oboInOwl:hasExactSynonym obo:CL_4023041 "thick-tufted layer 5 (TTL5) pyramidal neuron")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1038/nrn3469") oboInOwl:hasNarrowSynonym obo:CL_4023041 "pyramidal tract (PT) neuron")
@@ -29477,9 +29490,9 @@ SubClassOf(obo:CL_4023041 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070015))
 # Class: obo:CL_4023042 (L6 corticothalamic-projecting glutamatergic cortical neuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023042 "L6 CT glut")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.10.19.343129") obo:IAO_0000115 obo:CL_4023042 "A corticothalamic-projecting neuron with a soma found in cortical layer 6.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34616075") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023042 "A corticothalamic-projecting neuron with a soma found in cortical layer 6.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023042 <https://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023042 "L6 CT")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28625486") Annotation(oboInOwl:hasDbXref "PMID:34616075") oboInOwl:hasExactSynonym obo:CL_4023042 "L6 CT")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023042 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
 AnnotationAssertion(rdfs:label obo:CL_4023042 "L6 corticothalamic-projecting glutamatergic cortical neuron")
 EquivalentClasses(obo:CL_4023042 ObjectIntersectionOf(obo:CL_4023013 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005395)))
@@ -29488,7 +29501,7 @@ SubClassOf(obo:CL_4023042 ObjectSomeValuesFrom(obo:RO_0013001 obo:UBERON_0010225
 # Class: obo:CL_4023043 (L5/6 near-projecting glutamatergic neuron of the primary motor cortex)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023043 "L5/6 NP glut MOp")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.10.19.343129") Annotation(oboInOwl:hasDbXref "PMID:31209381") obo:IAO_0000115 obo:CL_4023043 "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31209381") Annotation(oboInOwl:hasDbXref "PMID:34616075") obo:IAO_0000115 obo:CL_4023043 "A near-projecting glutamatergic neuron with a soma found in layer 5/6 of the primary motor cortex.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023043 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023043 "ILX:0770161")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023043 "L5/6 NP M1")
@@ -29538,10 +29551,10 @@ SubClassOf(obo:CL_4023046 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384
 # Class: obo:CL_4023047 (L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023047 "L2/3 IT glut MOp")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.10.19.343129") obo:IAO_0000115 obo:CL_4023047 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3 of the primary motor cortex.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34616075") obo:IAO_0000115 obo:CL_4023047 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3 of the primary motor cortex.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023047 <https://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023047 "L2/3 IT M1")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023047 "L2/3 IT MOp")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34616075") oboInOwl:hasExactSynonym obo:CL_4023047 "L2/3 IT M1")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34616075") oboInOwl:hasExactSynonym obo:CL_4023047 "L2/3 IT MOp")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023047 <http://purl.obolibrary.org/obo/cl#BDS_subset>)
 AnnotationAssertion(rdfs:label obo:CL_4023047 "L2/3 intratelencephalic projecting glutamatergic neuron of the primary motor cortex")
 EquivalentClasses(obo:CL_4023047 ObjectIntersectionOf(obo:CL_4030059 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384)))
@@ -29585,7 +29598,7 @@ SubClassOf(obo:CL_4023050 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070019))
 
 # Class: obo:CL_4023051 (vascular leptomeningeal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasDbXref "PMID:29443965") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_4023051 "A type of mesothelial fibroblast that is derived from the neural crest, is localized on blood vessels, and is a key component of the pia and arachnoid membranes surrounding the brain.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasDbXref "PMID:29443965") Annotation(oboInOwl:hasDbXref "PMID:30096314") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023051 "A type of mesothelial fibroblast that is derived from the neural crest, is localized on blood vessels, and is a key component of the pia and arachnoid membranes surrounding the brain.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023051 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023051 "ILX:0770143")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023051 "VLMC")
@@ -29884,7 +29897,7 @@ SubClassOf(obo:CL_4023081 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070021))
 
 # Class: obo:CL_4023083 (chandelier cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15378039") Annotation(oboInOwl:hasDbXref "PMID:27199673") obo:IAO_0000115 obo:CL_4023083 "A GABAergic interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling the candlesticks and candles of a chandelier. Chandelier cells can be multipolar or bitufted.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15378039") Annotation(oboInOwl:hasDbXref "PMID:27199673") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023083 "A GABAergic interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling the candlesticks and candles of a chandelier. Chandelier cells can be multipolar or bitufted.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023083 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27199673") Annotation(oboInOwl:hasDbXref "PMID:33862423") oboInOwl:hasBroadSynonym obo:CL_4023083 "axo-axonic cell")
 AnnotationAssertion(Annotation(obo:IAO_0000116 "Interlex cross reference refers specifically to Markram 2015 rat chandelier cell.") oboInOwl:hasDbXref obo:CL_4023083 "ILX:0777213")
@@ -30195,7 +30208,7 @@ EquivalentClasses(obo:CL_4023120 ObjectIntersectionOf(obo:CL_0000202 ObjectSomeV
 # Class: obo:CL_4023121 (sst chodl GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023121 "sst chodl cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15845086") Annotation(oboInOwl:hasDbXref "PMID:31209381") Annotation(oboInOwl:hasDbXref "PMID:33372656") obo:IAO_0000115 obo:CL_4023121 "A sst GABAergic cortical interneuron that also expresses Chodl. These neurons are rare and correspond to the only known cortical interneurons with long-range projection.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15845086") Annotation(oboInOwl:hasDbXref "PMID:31209381") Annotation(oboInOwl:hasDbXref "PMID:33372656") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023121 "A sst GABAergic cortical interneuron that also expresses Chodl. These neurons are rare and correspond to the only known cortical interneurons with long-range projection.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4023121 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_4023121 "long-range GABAergic interneuron")
 AnnotationAssertion(rdfs:label obo:CL_4023121 "sst chodl GABAergic cortical interneuron")
@@ -31086,7 +31099,7 @@ EquivalentClasses(obo:CL_4030058 ObjectIntersectionOf(obo:CL_0000235 ObjectSomeV
 
 # Class: obo:CL_4030059 (L2/3 intratelencephalic projecting glutamatergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") obo:IAO_0000115 obo:CL_4030059 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4030059 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 2/3.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030059 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030059 "2023-10-10T14:10:21Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030059 "L2/3 IT")
@@ -31122,7 +31135,7 @@ EquivalentClasses(obo:CL_4030062 ObjectIntersectionOf(obo:CL_4023040 ObjectSomeV
 
 # Class: obo:CL_4030063 (L4 intratelencephalic projecting glutamatergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") obo:IAO_0000115 obo:CL_4030063 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 4.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4030063 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 4.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030063 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030063 "2023-10-10T14:11:25Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030063 "L4 IT")
@@ -31131,7 +31144,7 @@ EquivalentClasses(obo:CL_4030063 ObjectIntersectionOf(obo:CL_4023040 ObjectSomeV
 
 # Class: obo:CL_4030064 (L5 intratelencephalic projecting glutamatergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") obo:IAO_0000115 obo:CL_4030064 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 5.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4030064 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 5.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030064 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030064 "2023-10-10T14:11:59Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:SynonymTypeProperty obo:OMO_0003000) Annotation(oboInOwl:hasDbXref "PMID:37292694") oboInOwl:hasRelatedSynonym obo:CL_4030064 "L5 IT")
@@ -31140,7 +31153,7 @@ EquivalentClasses(obo:CL_4030064 ObjectIntersectionOf(obo:CL_4023040 ObjectSomeV
 
 # Class: obo:CL_4030065 (L6 intratelencephalic projecting glutamatergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") obo:IAO_0000115 obo:CL_4030065 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 6.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4030065 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 6.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030065 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030065 "2023-10-10T14:12:23Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030065 "L6 IT")
@@ -31159,7 +31172,7 @@ SubClassOf(Annotation(oboInOwl:hasDbXref "PMID:9374839") obo:CL_4030066 ObjectSo
 
 # Class: obo:CL_4030067 (L5/6 near-projecting glutamatergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") obo:IAO_0000115 obo:CL_4030067 "A near-projecting glutamatergic neuron with a soma found in cortical layer 5/6.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4030067 "A near-projecting glutamatergic neuron with a soma found in cortical layer 5/6.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030067 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030067 "2023-11-17T11:35:06Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030067 "L5/6 NP")
@@ -31168,7 +31181,7 @@ EquivalentClasses(obo:CL_4030067 ObjectIntersectionOf(obo:CL_4023012 ObjectSomeV
 
 # Class: obo:CL_4030068 (L6 intratelencephalic projecting Car3 glutamatergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cell.2021.04.021") Annotation(oboInOwl:hasDbXref "doi:10.1101/2022.11.06.515349") Annotation(oboInOwl:hasDbXref "doi:10.1101/2022.11.30.518285") obo:IAO_0000115 obo:CL_4030068 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 6 that expresses Car3.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "doi:10.1101/2022.11.30.518285") obo:IAO_0000115 obo:CL_4030068 "An intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 6 that expresses Car3.")
 AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4030068 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4030068 "2023-11-23T09:16:14Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0003-4389-9821>) Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasExactSynonym obo:CL_4030068 "L6 IT Car3 glutamatergic neuron")
@@ -31870,6 +31883,20 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36113384") rdfs:comment 
 AnnotationAssertion(rdfs:label obo:CL_4033064 "uterine resident macrophage")
 EquivalentClasses(obo:CL_4033064 ObjectIntersectionOf(obo:CL_0000864 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000995)))
 
+# Class: obo:CL_4033065 (preplasmablast)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21918187") Annotation(oboInOwl:hasDbXref "PMID:30755708") Annotation(oboInOwl:hasDbXref "PMID:33150420") obo:IAO_0000115 obo:CL_4033065 "A mature B cell that serves as an intermediate stage in the differentiation of naive B cells into a plasmablast. A preplasmablast expresses CD30 and IL-6R and lacks expression of CD20, CD23, CD38 and CD138.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033065 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4033065 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4033065 "2024-04-25T09:14:58Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23613519") oboInOwl:hasExactSynonym obo:CL_4033065 "pre-plasmablast")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33661294") oboInOwl:hasExactSynonym obo:CL_4033065 "preplasmablastic cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21918187") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033065 "prePB")
+AnnotationAssertion(rdfs:label obo:CL_4033065 "preplasmablast")
+SubClassOf(obo:CL_4033065 obo:CL_0000785)
+SubClassOf(obo:CL_4033065 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000788))
+SubClassOf(obo:CL_4033065 ObjectSomeValuesFrom(obo:RO_0002203 obo:CL_0000980))
+
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10719353") obo:IAO_0000115 obo:CL_4040000 "A glial precursor cell that generates oligodendrocytes and type-1 and type-2 astrocytes. It has been shown in some mammals that this cell type may express A2B5, nestin, FGFR-1, FGFR-2, FGFR-3, PLP, and DM-20 antigens. Unlike oligodendrocyte precursor cell, it does not initially express PDGFR-alpha and can differentiate into both type-1 and type-2 astrocytes.")
@@ -32018,6 +32045,56 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37232741") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4042006 "dural macrophage"@en)
 SubClassOf(obo:CL_4042006 obo:CL_4042003)
 SubClassOf(obo:CL_4042006 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002092))
+
+# Class: obo:CL_4042007 (protoplasmic astrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19279265") Annotation(oboInOwl:hasDbXref "PMID:25904839") Annotation(oboInOwl:hasDbXref "PMID:34616062") Annotation(oboInOwl:hasDbXref "PMID:37139179") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4042007 "An astrocyte with highly branched protrusions, found in neocortex layers 2-6. It is involved with the formation and elimination of synapses, glutamate clearance, modulation of synaptic functions and regulation of blood flow in response to synaptic activity.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4042007 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4042007 "2024-04-08T16:01:24Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19279265") Annotation(oboInOwl:hasDbXref "PMID:20012068") rdfs:comment obo:CL_4042007 "This astrocyte extends its branches to several hundred of dendrites to multiple neurons to envelope 100,000 or more synapses. In humans, a protoplasmic astrocyte has an average diameter of 142 µm, and its diameter ranges between 100 and 400 µm. In rodents the average diameter of a protoplasmic astrocites is 56 µm.")
+AnnotationAssertion(rdfs:label obo:CL_4042007 "protoplasmic astrocyte"@en)
+SubClassOf(obo:CL_4042007 obo:CL_0002605)
+SubClassOf(obo:CL_4042007 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001950))
+SubClassOf(obo:CL_4042007 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001950))
+
+# Class: obo:CL_4042008 (fibrous astrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19279265") Annotation(oboInOwl:hasDbXref "PMID:22144298") Annotation(oboInOwl:hasDbXref "PMID:28280934") Annotation(oboInOwl:hasDbXref "PMID:31435019") Annotation(oboInOwl:hasDbXref "PMID:34616062") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4042008 "A cell type located in the first layer of the neocortex with radial protrusions extending transversely into the deeper cortex layers, herby facilitating communication across neurons, astrocytes, capillaries, meninges and cerebrospinal fluid through contact with neurons, pia mater and capillaries.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4042008 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4042008 "2024-04-08T16:29:28Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28280934") rdfs:comment obo:CL_4042008 "In humans, a fibrous astrocyte diameter is circa 182 µm. In rodents, a fibrous astrocyte diameter is circa 85 µm.")
+AnnotationAssertion(rdfs:label obo:CL_4042008 "fibrous astrocyte"@en)
+SubClassOf(obo:CL_4042008 obo:CL_0000127)
+SubClassOf(obo:CL_4042008 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002316))
+SubClassOf(obo:CL_4042008 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002316))
+
+# Class: obo:CL_4042009 (interlaminar astrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19279265") Annotation(oboInOwl:hasDbXref "PMID:30552685") Annotation(oboInOwl:hasDbXref "PMID:31435019") Annotation(oboInOwl:hasDbXref "PMID:32930323") Annotation(oboInOwl:hasDbXref "PMID:34616062") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4042009 "An astrocyte type that presents radial protrusions across the layers of a cortex. The soma of this astrocyte is part of the first layer of a neocortex. This astrocyte extents its protrusions transversally to the deeper layers of a cortex and it creates contact with neurons, the pia matter and capillaries. This astrocyte is involved in facilitating the communication across neurons, astrocytes, capillaries, meninges and the cerebrospinal fluid.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4042009 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4042009 "2024-04-08T16:33:45Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30552685") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042009 "ILA")
+AnnotationAssertion(rdfs:label obo:CL_4042009 "interlaminar astrocyte"@en)
+SubClassOf(obo:CL_4042009 obo:CL_0002605)
+SubClassOf(obo:CL_4042009 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001950))
+SubClassOf(obo:CL_4042009 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001950))
+
+# Class: obo:CL_4042010 (pial interlaminar astrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32930323") Annotation(oboInOwl:hasDbXref "PMID:37139179") obo:IAO_0000115 obo:CL_4042010 "An interlaminar astrocyte whose soma is part of the first layer of a neocortex and is in contact with a pia surface.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4042010 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4042010 "2024-04-08T16:37:57Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4042010 "pial interlaminar astrocyte"@en)
+SubClassOf(obo:CL_4042010 obo:CL_4042009)
+
+# Class: obo:CL_4042011 (subpial interlaminar astrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32930323") Annotation(oboInOwl:hasDbXref "PMID:37139179") obo:IAO_0000115 obo:CL_4042011 "An interlaminar astrocyte type whose soma is part of the upper first layer of the neocortex and its processes extend to a pia surface.")
+AnnotationAssertion(<http://purl.org/dc/terms/contributor> obo:CL_4042011 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(<http://purl.org/dc/terms/date> obo:CL_4042011 "2024-04-08T16:39:09Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4042011 "subpial interlaminar astrocyte"@en)
+SubClassOf(obo:CL_4042011 obo:CL_4042009)
+SubClassOf(obo:CL_4042011 ObjectSomeValuesFrom(obo:RO_0002170 obo:UBERON_0002361))
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
