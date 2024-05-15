@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2024-04-05/subsets/kidney_upper_slim.owl
+data-version: cl/releases/2024-05-15/subsets/kidney_upper_slim.owl
 subsetdef: abnormal_slim ""
 subsetdef: added_for_HCA ""
 subsetdef: attribute_slim ""
@@ -19,19 +19,21 @@ subsetdef: eye_upper_slim "a subset of general classes related to specific cell 
 subsetdef: functional_classification ""
 subsetdef: general_cell_types_upper_slim "a subset of general classes of cell types in the cell ontology."
 subsetdef: gocheck_do_not_annotate ""
-subsetdef: gocheck_do_not_manually_annotate ""
 subsetdef: goslim_agr ""
 subsetdef: goslim_candida ""
 subsetdef: goslim_chembl ""
 subsetdef: goslim_drosophila ""
+subsetdef: goslim_euk_cellular_processes_ribbon ""
 subsetdef: goslim_flybase_ribbon ""
 subsetdef: goslim_generic ""
 subsetdef: goslim_metagenomics ""
 subsetdef: goslim_mouse ""
 subsetdef: goslim_pir ""
 subsetdef: goslim_plant ""
+subsetdef: goslim_plant_ribbon ""
 subsetdef: goslim_pombe ""
 subsetdef: goslim_prokaryote ""
+subsetdef: goslim_prokaryote_ribbon ""
 subsetdef: goslim_synapse ""
 subsetdef: goslim_yeast ""
 subsetdef: grouping_class ""
@@ -88,56 +90,7 @@ synonymtypedef: synonym ""
 synonymtypedef: SYSTEMATIC ""
 synonymtypedef: systematic_synonym ""
 ontology: cl/subsets/kidney_upper_slim
-property_value: owl:versionInfo "2024-04-05" xsd:string
-
-[Term]
-id: BFO:0000002
-name: continuant
-def: "An entity that exists in full at any time in which it exists at all, persists through time while maintaining its identity and has no temporal parts." []
-disjoint_from: BFO:0000003 ! occurrent
-relationship: part_of BFO:0000002 {all_only="true"} ! continuant
-
-[Term]
-id: BFO:0000003
-name: occurrent
-def: "An entity that has temporal parts and that happens, unfolds or develops through time." []
-relationship: part_of BFO:0000003 {all_only="true"} ! occurrent
-
-[Term]
-id: BFO:0000004
-name: independent continuant
-def: "b is an independent continuant = Def. b is a continuant which is such that there is no c and no t such that b s-depends_on c at t. (axiom label in BFO2 Reference: [017-002])" []
-comment: A continuant that is a bearer of quality and realizable entity entities, in which other entities inhere and which itself cannot inhere in anything.
-is_a: BFO:0000002 ! continuant
-disjoint_from: BFO:0000020 ! specifically dependent continuant
-relationship: part_of BFO:0000004 {all_only="true"} ! independent continuant
-
-[Term]
-id: BFO:0000015
-name: process
-def: "p is a process = Def. p is an occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t. (axiom label in BFO2 Reference: [083-003])" []
-comment: An occurrent that has temporal proper parts and for some time t, p s-depends_on some material entity at t.
-is_a: BFO:0000003 ! occurrent
-
-[Term]
-id: BFO:0000020
-name: specifically dependent continuant
-def: "b is a specifically dependent continuant = Def. b is a continuant & there is some independent continuant c which is not a spatial region and which is such that b s-depends_on c at every time t during the course of b’s existence. (axiom label in BFO2 Reference: [050-003])" []
-comment: A continuant that inheres in or is borne by other entities. Every instance of A requires some specific instance of B which must always be the same.
-is_a: BFO:0000002 ! continuant
-relationship: part_of BFO:0000020 {all_only="true"} ! specifically dependent continuant
-
-[Term]
-id: BFO:0000040
-name: material entity
-def: "An independent continuant that is spatially extended whose identity is independent of that of other entities and can be maintained through time." []
-is_a: BFO:0000004 ! independent continuant
-disjoint_from: BFO:0000141 ! immaterial entity
-
-[Term]
-id: BFO:0000141
-name: immaterial entity
-is_a: BFO:0000004 ! independent continuant
+property_value: owl:versionInfo "2024-05-15" xsd:string
 
 [Term]
 id: CL:0000000
@@ -147,7 +100,7 @@ comment: The definition of cell is intended to represent all cells, and thus a c
 subset: cellxgene_subset
 subset: ubprop:upper_level
 xref: CALOHA:TS-2035
-xref: FBbt:00007002
+xref: FBbt:00007002 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:68646
 xref: GO:0005623
 xref: KUPO:0000002
@@ -155,6 +108,7 @@ xref: MESH:D002477
 xref: VHOG:0001533
 xref: WBbt:0004017
 xref: XAO:0003012
+xref: ZFA:0009000 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: UBERON:0000061 ! anatomical structure
 disjoint_from: GO:0031012 ! extracellular matrix
 disjoint_from: GO:0032991 ! protein-containing complex
@@ -165,6 +119,7 @@ relationship: RO:0002160 NCBITaxon:131567 ! only in taxon cellular organisms
 id: CL:0000007
 name: early embryonic cell (metazoa)
 def: "A cell found in the embryo before the formation of all the gem layers is complete." [GOC:tfm]
+xref: ZFA:0009002 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 
 [Term]
@@ -178,6 +133,7 @@ subset: human_reference_atlas
 synonym: "animal stem cell" EXACT []
 xref: CALOHA:TS-2086
 xref: FMA:63368
+xref: ZFA:0005957 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0017145 ! stem cell division
@@ -202,6 +158,7 @@ xref: CALOHA:TS-0448
 xref: FMA:86475
 xref: MESH:D006412
 xref: VHOG:0001485
+xref: ZFA:0009014 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000723 ! somatic stem cell
 is_a: CL:0008001 ! hematopoietic precursor cell
 is_a: CL:0011026 ! progenitor cell
@@ -249,6 +206,7 @@ synonym: "CFU-E" RELATED OMO:0003000 []
 synonym: "colony forming unit erythroid" RELATED []
 synonym: "erythroid stem cell" RELATED []
 xref: BTO:0004911
+xref: ZFA:0009015 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000764 ! erythroid lineage cell
 is_a: CL:0000839 {is_inferred="true"} ! myeloid lineage restricted progenitor cell
 relationship: RO:0002202 CL:0000050 ! develops from megakaryocyte-erythroid progenitor cell
@@ -260,6 +218,7 @@ def: "A cell that is within the developmental lineage of gametes and is able to 
 comment: Originally this term had some plant germ line cell children.
 subset: general_cell_types_upper_slim
 subset: ubprop:upper_level
+xref: ZFA:0009016 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 relationship: capable_of GO:0022414 ! reproductive process
 
@@ -272,6 +231,7 @@ synonym: "multifate stem cell" EXACT []
 synonym: "multipotent cell" EXACT []
 synonym: "multipotent stem cell" EXACT []
 xref: FMA:84789
+xref: ZFA:0009020 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000034 ! stem cell
 intersection_of: CL:0000000 ! cell
 intersection_of: bearer_of PATO:0001402 ! multipotent
@@ -294,6 +254,7 @@ synonym: "multipotential myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "myeloid stem cell" RELATED [ISBN:0878932437]
 synonym: "pluripotent stem cell (bone marrow)" RELATED [ISBN:0878932437]
 xref: BTO:0004730
+xref: ZFA:0009021 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002032 {is_inferred="true"} ! hematopoietic oligopotent progenitor cell
 disjoint_from: CL:0000050 ! megakaryocyte-erythroid progenitor cell
 property_value: RO:0002175 NCBITaxon:9606
@@ -312,6 +273,7 @@ synonym: "Meg/E progenitor" EXACT []
 synonym: "megakaryocyte/erythrocyte progenitor" EXACT []
 synonym: "megakaryocyte/erythroid progenitor cell" EXACT []
 synonym: "MEP" EXACT []
+xref: ZFA:0009022 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000763 ! myeloid cell
 is_a: CL:0002032 {is_inferred="true"} ! hematopoietic oligopotent progenitor cell
 is_a: CL:0011026 ! progenitor cell
@@ -329,6 +291,7 @@ def: "A stem cell from which all cells of the body can form." [GOC:add, GOC:tfm]
 synonym: "totipotential stem cell" EXACT []
 xref: FMA:84790
 xref: MESH:D039901
+xref: ZFA:0009024 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000723 ! somatic stem cell
 
 [Term]
@@ -348,9 +311,10 @@ name: myoblast
 def: "A cell that is commited to differentiating into a muscle cell.  Embryonic myoblasts develop from the mesoderm. They undergo proliferation, migrate to their various sites, and then differentiate into the appropriate form of myocytes.  Myoblasts also occur as transient populations of cells in muscles undergoing repair." [GOC:tfm, MESH:D032446, PMID:21849021]
 xref: BTO:0000222
 xref: CALOHA:TS-0650
-xref: FBbt:00005083
+xref: FBbt:00005083 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:70335
 xref: VHOG:0001529
+xref: ZFA:0009025 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000680 ! muscle precursor cell
 
 [Term]
@@ -366,6 +330,7 @@ xref: CALOHA:TS-0362
 xref: FMA:63877
 xref: NCIT:C12482
 xref: VHOG:0001482
+xref: ZFA:0009026 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002320 ! connective tissue cell
 relationship: RO:0002202 CL:0000134 ! develops from mesenchymal stem cell
 property_value: RO:0002175 NCBITaxon:9606
@@ -377,8 +342,8 @@ def: "A cell that has a filiform extrusion of the cell surface." [GOC:tfm]
 subset: cellxgene_subset
 xref: VHOG:0001532
 xref: XAO:0000031
+xref: ZFA:0009032 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000000 ! cell
 intersection_of: has_part GO:0005929 ! cilium
 relationship: has_part GO:0005929 ! cilium
@@ -394,9 +359,10 @@ synonym: "epitheliocyte" EXACT []
 xref: BTO:0000414
 xref: CALOHA:TS-2026
 xref: CARO:0000077
-xref: FBbt:00000124
+xref: FBbt:00000124 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:66768
 xref: WBbt:0003672
+xref: ZFA:0009034 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 relationship: part_of UBERON:0000483 ! epithelium
 property_value: http://xmlns.com/foaf/0.1/depiction "https://www.swissbiopics.org/api/image/Epithelial_cells.svg" xsd:anyURI
@@ -408,6 +374,7 @@ name: ciliated epithelial cell
 def: "An epithelial cell that has a cilia." [GOC:tfm]
 subset: cellxgene_subset
 xref: FMA:70605
+xref: ZFA:0009035 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000064 ! ciliated cell
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
@@ -418,6 +385,7 @@ id: CL:0000068
 name: duct epithelial cell
 def: "An epithelial cell that is part of a duct." [https://orcid.org/0000-0001-5208-3432]
 subset: cellxgene_subset
+xref: ZFA:0009372 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: part_of UBERON:0000058 ! duct
@@ -430,6 +398,7 @@ def: "An endothelial cell that lines the vasculature." [GOC:tfm]
 subset: cellxgene_subset
 subset: human_reference_atlas
 synonym: "cuboidal endothelial cell of vascular tree" EXACT []
+xref: ZFA:0009036 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000076 {is_inferred="true"} ! squamous epithelial cell
 is_a: CL:0002139 ! endothelial cell of vascular tree
 intersection_of: CL:0000076 ! squamous epithelial cell
@@ -450,6 +419,7 @@ name: columnar/cuboidal epithelial cell
 def: "A columnar/cuboidal epithelial cell is a cell usually found in a two dimensional sheet with a free surface. Columnar/cuboidal epithelial cells take on the shape of a column or cube." [GO:0002065, https://orcid.org/0000-0001-5208-3432]
 subset: cellxgene_subset
 subset: human_reference_atlas
+xref: ZFA:0009038 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -458,6 +428,7 @@ id: CL:0000076
 name: squamous epithelial cell
 subset: cellxgene_subset
 xref: CALOHA:TS-1249
+xref: ZFA:0009039 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 
 [Term]
@@ -468,6 +439,7 @@ subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 xref: FMA:62844
 xref: MESH:D001773
+xref: ZFA:0009044 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: capable_of GO:0008015 ! blood circulation
@@ -484,6 +456,7 @@ synonym: "endotheliocyte" EXACT []
 xref: BTO:0001176
 xref: CALOHA:TS-0278
 xref: FMA:66772
+xref: ZFA:0009065 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000213 ! lining cell
 is_a: CL:0002078 ! meso-epithelial cell
 property_value: RO:0002175 NCBITaxon:9606
@@ -493,6 +466,7 @@ id: CL:0000133
 name: neurectodermal cell
 def: "Ectoderm destined to be nervous tissue." [GOC:tfm, ISBN:068340007X]
 synonym: "neurectoderm cell" EXACT []
+xref: ZFA:0009080 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000221 ! ectodermal cell
 
 [Term]
@@ -516,6 +490,7 @@ synonym: "stem cells, mesenchymal" RELATED OMO:0003004 [MESH:D044982]
 xref: BTO:0002625
 xref: BTO:0003298
 xref: FMA:70546
+xref: ZFA:0009081 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002320 {is_inferred="true"} ! connective tissue cell
 property_value: seeAlso "https://github.com/obophenotype/cell-ontology/issues/474" xsd:string
@@ -535,6 +510,7 @@ relationship: capable_of GO:0032940 ! secretion by cell
 [Term]
 id: CL:0000154
 name: protein secreting cell
+def: "Any secretory cell that is capable of some protein secretion." [FBC:Autogenerated]
 is_a: CL:0000151 ! secretory cell
 intersection_of: CL:0000151 ! secretory cell
 intersection_of: capable_of GO:0009306 ! protein secretion
@@ -557,9 +533,10 @@ synonym: "myocyte" EXACT []
 xref: BTO:0000888
 xref: BTO:0000902
 xref: CALOHA:TS-2032
-xref: FBbt:00005074
+xref: FBbt:00005074 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67328
 xref: WBbt:0003675
+xref: ZFA:0009114 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000393 ! electrically responsive cell
 relationship: RO:0002202 CL:0000056 ! develops from myoblast
@@ -579,6 +556,7 @@ synonym: "smooth muscle fiber" EXACT []
 xref: BTO:0004576
 xref: CALOHA:TS-2159
 xref: FMA:14072
+xref: ZFA:0009118 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0008000 ! non-striated muscle cell
 is_a: CL:0008007 ! visceral muscle cell
 relationship: RO:0002202 CL:0000514 ! develops from smooth muscle myoblast
@@ -588,6 +566,7 @@ property_value: RO:0002175 NCBITaxon:9606
 id: CL:0000211
 name: electrically active cell
 def: "A cell whose function is determined by the generation or the reception of an electric signal." [FB:ma]
+xref: ZFA:0009128 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 
 [Term]
@@ -595,18 +574,21 @@ id: CL:0000213
 name: lining cell
 def: "A cell within an epithelial cell sheet whose main function is to act as an internal or external covering for a tissue or an organism." [JB:jb]
 synonym: "boundary cell" EXACT []
+xref: ZFA:0009130 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000215 ! barrier cell
 
 [Term]
 id: CL:0000215
 name: barrier cell
 def: "A cell whose primary function is to prevent the transport of stuff across compartments." [JB:jb]
+xref: ZFA:0009132 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 
 [Term]
 id: CL:0000219
 name: motile cell
 def: "A cell that moves by its own activities." [FB:ma]
+xref: ZFA:0009136 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0048870 ! cell motility
@@ -618,6 +600,7 @@ name: ectodermal cell
 def: "A cell of the outer of the three germ layers of the embryo." [MESH:D004475]
 synonym: "ectoderm cell" EXACT []
 xref: FMA:72549
+xref: ZFA:0009137 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: part_of UBERON:0000924 ! ectoderm
 
@@ -629,6 +612,7 @@ subset: cellxgene_subset
 synonym: "mesoblast" EXACT []
 synonym: "mesoderm cell" EXACT []
 xref: FMA:72554
+xref: ZFA:0009138 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: part_of UBERON:0000926 ! mesoderm
 
@@ -638,6 +622,7 @@ name: endodermal cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:D004707]
 synonym: "endoderm cell" EXACT []
 xref: FMA:72555
+xref: ZFA:0009139 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002321 ! embryonic cell (metazoa)
 relationship: part_of UBERON:0000925 ! endoderm
 
@@ -671,12 +656,14 @@ property_value: RO:0002175 NCBITaxon:9606
 [Term]
 id: CL:0000239
 name: brush border epithelial cell
+xref: ZFA:0009143 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000067 ! ciliated epithelial cell
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 
 [Term]
 id: CL:0000255
 name: eukaryotic cell
+def: "Any cell that only exists in Eukaryota." [FBC:Autogenerated]
 subset: cellxgene_subset
 xref: MESH:D005057
 is_a: CL:0000000 ! cell
@@ -687,6 +674,8 @@ relationship: RO:0002160 NCBITaxon:2759 ! only in taxon Eukaryota
 [Term]
 id: CL:0000329
 name: oxygen accumulating cell
+def: "Any cell that is capable of some oxygen transport." [FBC:Autogenerated]
+xref: ZFA:0009164 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: capable_of GO:0015671 ! oxygen transport
@@ -697,6 +686,7 @@ id: CL:0000333
 name: migratory neural crest cell
 def: "A cell derived from the specialized ectoderm flanking each side of the embryonic neural plate, which after the closure of the neural tube, forms masses of cells that migrate out from the dorsal aspect of the neural tube to spread throughout the body." [doi:10.1016/j.stem.2015.02.017]
 xref: FMA:86667
+xref: ZFA:0007086 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000219 ! motile cell
 is_a: CL:0011012 ! neural crest cell
 is_a: CL:0011026 ! progenitor cell
@@ -706,6 +696,7 @@ relationship: RO:0002202 CL:0007004 ! develops from premigratory neural crest ce
 id: CL:0000335
 name: mesenchyme condensation cell
 def: "A mesenchymal cell in embryonic development found in a contracting mass and that gives rise to osteoprogenitors." [GOC:tfm, PMID:5025404]
+xref: ZFA:0009166 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0008019 ! mesenchymal cell
 
 [Term]
@@ -733,12 +724,14 @@ relationship: RO:0002160 NCBITaxon:33208 ! only in taxon Metazoa
 id: CL:0000393
 name: electrically responsive cell
 def: "A cell whose function is determined by its response to an electric signal." [FB:ma]
+xref: ZFA:0009190 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000211 ! electrically active cell
 
 [Term]
 id: CL:0000404
 name: electrically signaling cell
 def: "A cell that initiates an electrical signal and passes that signal to another cell." [FB:ma]
+xref: ZFA:0009193 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000211 ! electrically active cell
 
 [Term]
@@ -749,6 +742,7 @@ subset: cellxgene_subset
 synonym: "myoblast, smooth muscle" EXACT [MESH:D032390]
 synonym: "satellite cell" RELATED []
 xref: FMA:84798
+xref: ZFA:0009235 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000056 ! myoblast
 intersection_of: CL:0000056 ! myoblast
 intersection_of: RO:0002203 CL:0000192 ! develops into smooth muscle cell
@@ -765,10 +759,11 @@ subset: human_reference_atlas
 synonym: "nerve cell" EXACT []
 xref: BTO:0000938
 xref: CALOHA:TS-0683
-xref: FBbt:00005106
+xref: FBbt:00005106 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:54527
 xref: VHOG:0001483
 xref: WBbt:0003679
+xref: ZFA:0009248 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000393 ! electrically responsive cell
 is_a: CL:0000404 ! electrically signaling cell
 is_a: CL:0002319 ! neural cell
@@ -787,7 +782,6 @@ synonym: "rubriblast" EXACT [ISBN:0721601464]
 xref: FMA:83518
 is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
 is_a: CL:0002242 ! nucleate cell
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000764 ! erythroid lineage cell
 intersection_of: bearer_of PATO:0002505 ! nucleated
 intersection_of: bearer_of PATO:0040072 ! high nuclear/cytoplasmic ratio
@@ -831,8 +825,8 @@ synonym: "early erythroblast" EXACT [ISBN:0721601464]
 synonym: "early normoblast" EXACT [ISBN:0721601464]
 synonym: "prorubricyte" EXACT [ISBN:0721601464]
 xref: FMA:83505
+xref: ZFA:0005236 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000765 {is_inferred="true"} ! erythroblast
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000765 ! erythroblast
 intersection_of: has_part CL:0017503 ! basophilic cytoplasm
 intersection_of: has_part GO:0000792 ! heterochromatin
@@ -852,8 +846,8 @@ synonym: "polychromatic normoblast" EXACT [ISBN:0721601464]
 synonym: "polychromatophilic normoblast" EXACT [ISBN:0721601464]
 synonym: "rubricyte" EXACT [ISBN:0721601464]
 xref: FMA:83506
+xref: ZFA:0005241 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000765 {is_inferred="true"} ! erythroblast
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000765 ! erythroblast
 intersection_of: has_part CL:0017504 ! polychromatophilic cytoplasm
 intersection_of: has_part GO:0000792 ! heterochromatin
@@ -965,8 +959,8 @@ subset: cellxgene_subset
 xref: BTO:0001173
 xref: CALOHA:TS-0864
 xref: MESH:D012156
+xref: ZFA:0009252 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000764 ! erythroid lineage cell
 intersection_of: capable_of GO:0071971 ! extracellular exosome assembly
 intersection_of: CL:4030046 PR:000001002 ! lacks_plasma_membrane_part CD19 molecule
@@ -1003,9 +997,9 @@ def: "A mesenchymal stem cell capable of developing into blood vessel endotheliu
 comment: These cells are reportedly CD31-positive, CD34-positive, CD144-positive, CD309-positive, and TAL1-positive.
 synonym: "angioblast" EXACT []
 synonym: "chondroplast" EXACT []
+xref: ZFA:0009258 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000134 {is_inferred="true"} ! mesenchymal stem cell
 is_a: CL:0011026 ! progenitor cell
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000134 ! mesenchymal stem cell
 intersection_of: RO:0002104 PR:000001444 ! has plasma membrane part cadherin-5
 intersection_of: RO:0002104 PR:000002112 ! has plasma membrane part vascular endothelial growth factor receptor 2
@@ -1034,6 +1028,7 @@ def: "A cell whose primary function is to support other cell types." [FB:ma, GOC
 subset: cellxgene_subset
 synonym: "supportive cell" EXACT []
 xref: BTO:0002315
+xref: ZFA:0009387 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 
 [Term]
@@ -1045,6 +1040,7 @@ synonym: "JG cell" EXACT []
 synonym: "juxtaglomerular cell" BROAD []
 synonym: "renin secreting cell" EXACT []
 xref: FMA:84138
+xref: ZFA:0005238 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000154 ! protein secreting cell
 is_a: CL:0000192 ! smooth muscle cell
 is_a: CL:1000618 ! juxtaglomerular complex cell
@@ -1065,6 +1061,7 @@ xref: BTO:0000853
 xref: CALOHA:TS-0617
 xref: FMA:70972
 xref: MESH:D050527
+xref: ZFA:0009283 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000669 ! pericyte
 relationship: RO:0002202 CL:0000134 ! develops from mesenchymal stem cell
 
@@ -1073,6 +1070,7 @@ id: CL:0000666
 name: fenestrated cell
 subset: cellxgene_subset
 synonym: "window cell" EXACT []
+xref: ZFA:0009286 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 
 [Term]
@@ -1090,6 +1088,7 @@ synonym: "pericyte cell" EXACT []
 synonym: "pericyte of Rouget" EXACT []
 xref: BTO:0002441
 xref: FMA:63174
+xref: ZFA:0009112 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000183 ! contractile cell
 is_a: CL:0000630 ! supporting cell
 is_a: CL:0002320 ! connective tissue cell
@@ -1101,6 +1100,7 @@ id: CL:0000680
 name: muscle precursor cell
 def: "A non-terminally differentiated cell that is capable of developing into a muscle cell." [GOC:add]
 subset: cellxgene_subset
+xref: ZFA:0009291 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000055 ! non-terminally differentiated cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
@@ -1113,6 +1113,7 @@ name: somatic stem cell
 def: "A stem cell that can give rise to cell types of the body other than those of the germ-line." [GO:0048103]
 xref: CALOHA:TS-2086
 xref: MESH:D053687
+xref: ZFA:0009307 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000034 ! stem cell
 intersection_of: CL:0000034 ! stem cell
 intersection_of: capable_of GO:0048103 ! somatic stem cell division
@@ -1126,6 +1127,7 @@ subset: cellxgene_subset
 xref: BTO:0001441
 xref: CALOHA:TS-0647
 xref: MESH:D022423
+xref: ZFA:0009324 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000988 {is_inferred="true"} ! hematopoietic cell
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: RO:0002202 CL:0000049 ! develops from common myeloid progenitor
@@ -1142,6 +1144,7 @@ synonym: "erythropoietic cell" EXACT []
 xref: CALOHA:TS-0290
 xref: FMA:62845
 xref: FMA:83516
+xref: ZFA:0009325 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000763 ! myeloid cell
 property_value: RO:0002175 NCBITaxon:9606
 
@@ -1156,6 +1159,7 @@ xref: BTO:0001571
 xref: CALOHA:TS-0289
 xref: FMA:83504
 xref: MESH:D004900
+xref: ZFA:0005237 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000764 {is_inferred="true"} ! erythroid lineage cell
 is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0000764 ! erythroid lineage cell
@@ -1201,8 +1205,8 @@ synonym: "hemopoietic progenitor cell" EXACT []
 synonym: "MPP" EXACT []
 xref: BTO:0000725
 xref: CALOHA:TS-0448
+xref: ZFA:0009354 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0008001 ! hematopoietic precursor cell
-is_a: PR:000050567 ! protein-containing material entity
 intersection_of: CL:0000988 ! hematopoietic cell
 intersection_of: bearer_of PATO:0001402 ! multipotent
 intersection_of: CL:4030046 PR:000001002 ! lacks_plasma_membrane_part CD19 molecule
@@ -1249,6 +1253,7 @@ synonym: "myeloid progenitor cell" BROAD []
 xref: BTO:0004730
 xref: CALOHA:TS-2099
 xref: FMA:70339
+xref: ZFA:0009356 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0002031 {is_inferred="true"} ! hematopoietic lineage restricted progenitor cell
 is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0002031 ! hematopoietic lineage restricted progenitor cell
@@ -1268,6 +1273,7 @@ xref: BTO:0000574
 xref: CALOHA:TS-2017
 xref: FMA:70366
 xref: FMA:83598
+xref: ZFA:0005830 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 
 [Term]
@@ -1303,6 +1309,7 @@ id: CL:0002077
 name: ecto-epithelial cell
 def: "An epithelial cell derived from ectoderm." [FMA:69074, GOC:tfm]
 xref: FMA:69074
+xref: ZFA:0009385 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: RO:0002202 CL:0000221 ! develops from ectodermal cell
@@ -1316,6 +1323,7 @@ name: meso-epithelial cell
 def: "Epithelial cell derived from mesoderm or mesenchyme." [FMA:69076, GOC:tfm]
 synonym: "epithelial mesenchymal cell" EXACT []
 xref: FMA:69076
+xref: ZFA:0009388 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 intersection_of: CL:0000066 ! epithelial cell
 intersection_of: RO:0002202 CL:0000222 ! develops from mesodermal cell
@@ -1440,6 +1448,7 @@ subset: cellxgene_subset
 xref: CALOHA:TS-2096
 xref: FMA:63875
 xref: MESH:D003239
+xref: ZFA:0009392 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0002384 ! connective tissue
@@ -1454,6 +1463,7 @@ def: "A cell of the embryo." [FMA:0618947256]
 xref: CALOHA:TS-0263
 xref: FMA:82840
 xref: WBbt:0007028
+xref: ZFA:0007089 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2010-09-15T03:39:21Z
@@ -1481,6 +1491,7 @@ name: kidney epithelial cell
 def: "An epithelial cell of the kidney." [GOC:tfm, KUPO:SJ]
 subset: cellxgene_subset
 xref: KUPO:0001019
+xref: ZFA:0009374 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
 is_a: CL:1000497 {is_inferred="true"} ! kidney cell
 intersection_of: CL:0000066 ! epithelial cell
@@ -1493,6 +1504,7 @@ id: CL:0002546
 name: embryonic blood vessel endothelial progenitor cell
 def: "An endothelial progenitor cell that participates in angiogenesis during development." [GOC:tfm]
 comment: See CL:0002619.
+xref: ZFA:0005773 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000222 ! mesodermal cell
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-1980-3228
 creation_date: 2011-02-28T04:20:39Z
@@ -1523,6 +1535,7 @@ id: CL:0005009
 name: renal principal cell
 def: "A cuboidal epithelial cell of the kidney which regulates sodium and potassium balance. The activity of sodium and potassium channels on the apical membrane of the cell is regulated by aldosterone and vasopressin. In mammals this cell type is located in the renal collecting duct system." [CL:CVS]
 subset: cellxgene_subset
+xref: ZFA:0005322 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000075 ! columnar/cuboidal epithelial cell
 is_a: CL:0002518 ! kidney epithelial cell
 
@@ -1530,6 +1543,7 @@ is_a: CL:0002518 ! kidney epithelial cell
 id: CL:0007004
 name: premigratory neural crest cell
 def: "Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells." [UBERONREF:0000002]
+xref: ZFA:0007084 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0011012 ! neural crest cell
 relationship: part_of UBERON:0002342 ! neural crest
 relationship: RO:0002202 CL:0000133 ! develops from neurectodermal cell
@@ -1553,7 +1567,7 @@ is_a: CL:0000988 ! hematopoietic cell
 id: CL:0008007
 name: visceral muscle cell
 def: "A muscle cell that is part of some visceral muscle." [GOC:dos]
-xref: FBbt:00005070
+xref: FBbt:00005070 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: CL:0000187 ! muscle cell
 intersection_of: CL:0000187 ! muscle cell
 intersection_of: part_of UBERON:8600004 ! visceral muscle tissue
@@ -1578,6 +1592,7 @@ def: "Mural cells are pericytes and the vascular smooth muscle cells (vSMCs) of 
 subset: added_for_HCA
 subset: cellxgene_subset
 subset: human_reference_atlas
+xref: ZFA:0005944 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:4033054 ! perivascular cell
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-7073-9172
 property_value: RO:0002175 NCBITaxon:9606
@@ -1719,6 +1734,7 @@ name: kidney cell
 def: "A cell that is part of a kidney." []
 subset: cellxgene_subset
 xref: KUPO:0001010
+xref: ZFA:0009389 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: part_of UBERON:0002113 ! kidney
@@ -1731,6 +1747,7 @@ def: "A cell that is part of kidney interstitium." []
 subset: cellxgene_subset
 subset: kidney_upper_slim
 xref: KUPO:0001013
+xref: ZFA:0009390 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:1000497 ! kidney cell
 is_a: CL:4030031 ! interstitial cell
 intersection_of: CL:1000497 ! kidney cell
@@ -1742,6 +1759,7 @@ id: CL:1000504
 name: kidney medulla cell
 def: "A cell that is part of a renal medulla." [PMID:22343825]
 xref: KUPO:0001017
+xref: ZFA:0009391 {mapping:justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:1000497 ! kidney cell
 intersection_of: CL:1000497 ! kidney cell
 intersection_of: part_of UBERON:0000362 ! renal medulla
@@ -1772,6 +1790,7 @@ relationship: part_of UBERON:0001231 ! nephron tubule
 [Term]
 id: CL:1000510
 name: kidney glomerular epithelial cell
+def: "Any kidney epithelial cell that is part of some glomerular epithelium." [FBC:Autogenerated]
 subset: cellxgene_subset
 xref: KUPO:0001023
 is_a: CL:1000746 ! glomerular cell
@@ -1794,6 +1813,7 @@ relationship: part_of UBERON:0005185 ! renal medulla collecting duct
 [Term]
 id: CL:1000550
 name: kidney papillary duct principal epithelial cell
+def: "Any kidney cell that is part of some papillary duct." [FBC:Autogenerated]
 subset: kidney_upper_slim
 xref: KUPO:0001064
 is_a: CL:1001225 ! kidney collecting duct cell
@@ -1804,6 +1824,7 @@ relationship: part_of UBERON:0005167 ! papillary duct
 [Term]
 id: CL:1000612
 name: kidney corpuscule cell
+def: "Any renal cortical epithelial cell that is part of some renal corpuscle." [FBC:Autogenerated]
 subset: kidney_upper_slim
 xref: KUPO:0001021
 is_a: CL:0002584 {is_inferred="true"} ! renal cortical epithelial cell
@@ -1815,6 +1836,7 @@ relationship: part_of UBERON:0001229 ! renal corpuscle
 [Term]
 id: CL:1000615
 name: kidney cortex tubule cell
+def: "Any kidney tubule cell that is part of some renal cortex tubule." [FBC:Autogenerated]
 subset: cellxgene_subset
 xref: KUPO:0001024
 is_a: CL:0002584 ! renal cortical epithelial cell
@@ -1827,6 +1849,7 @@ relationship: part_of UBERON:0006853 ! renal cortex tubule
 [Term]
 id: CL:1000618
 name: juxtaglomerular complex cell
+def: "Any kidney cortical cell that is part of some juxtaglomerular apparatus." [FBC:Autogenerated]
 subset: kidney_upper_slim
 synonym: "juxtaglomerulus cell" EXACT [GO:0072052]
 xref: KUPO:0001028
@@ -1851,6 +1874,7 @@ property_value: RO:0002175 NCBITaxon:9606
 [Term]
 id: CL:1000746
 name: glomerular cell
+def: "Any kidney corpuscule cell that is part of some renal glomerulus." [FBC:Autogenerated]
 xref: KUPO:0001036
 is_a: CL:1000612 {is_inferred="true"} ! kidney corpuscule cell
 intersection_of: CL:1000612 ! kidney corpuscule cell
@@ -1860,6 +1884,7 @@ relationship: part_of UBERON:0000074 ! renal glomerulus
 [Term]
 id: CL:1000768
 name: kidney connecting tubule epithelial cell
+def: "Any nephron tubule epithelial cell that is part of some renal connecting tubule." [FBC:Autogenerated]
 subset: cellxgene_subset
 subset: human_reference_atlas
 subset: kidney_upper_slim
@@ -1874,6 +1899,7 @@ property_value: RO:0002175 NCBITaxon:9606
 [Term]
 id: CL:1000849
 name: kidney distal convoluted tubule epithelial cell
+def: "Any epithelial cell of distal tubule that is part of some distal convoluted tubule." [FBC:Autogenerated]
 subset: cellxgene_subset
 subset: human_reference_atlas
 subset: kidney_upper_slim
@@ -1899,6 +1925,7 @@ relationship: participates_in GO:0008015 ! blood circulation
 [Term]
 id: CL:1000891
 name: kidney arterial blood vessel cell
+def: "Any kidney blood vessel cell that is part of some kidney arterial blood vessel." [FBC:Autogenerated]
 subset: kidney_upper_slim
 xref: KUPO:0001029
 is_a: CL:1000854 {is_inferred="true"} ! kidney blood vessel cell
@@ -1909,6 +1936,7 @@ relationship: part_of UBERON:0003644 ! kidney arterial blood vessel
 [Term]
 id: CL:1000892
 name: kidney capillary endothelial cell
+def: "Any kidney blood vessel cell that is part of some kidney capillary." [FBC:Autogenerated]
 subset: cellxgene_subset
 subset: kidney_upper_slim
 xref: KUPO:0001030
@@ -1921,6 +1949,7 @@ relationship: part_of UBERON:0003527 ! kidney capillary
 [Term]
 id: CL:1000893
 name: kidney venous blood vessel cell
+def: "Any kidney blood vessel cell that is part of some renal vein." [FBC:Autogenerated]
 subset: kidney_upper_slim
 xref: KUPO:0001031
 is_a: CL:1000854 {is_inferred="true"} ! kidney blood vessel cell
@@ -1931,6 +1960,7 @@ relationship: part_of UBERON:0001140 ! renal vein
 [Term]
 id: CL:1000909
 name: kidney loop of Henle epithelial cell
+def: "Any nephron tubule epithelial cell that is part of some loop of Henle." [FBC:Autogenerated]
 subset: cellxgene_subset
 xref: KUPO:0001047
 is_a: CL:1000494 {is_inferred="true"} ! nephron tubule epithelial cell
@@ -1941,6 +1971,7 @@ relationship: part_of UBERON:0001288 ! loop of Henle
 [Term]
 id: CL:1001016
 name: kidney loop of Henle ascending limb epithelial cell
+def: "Any kidney loop of Henle epithelial cell that is part of some ascending limb of loop of Henle." [FBC:Autogenerated]
 subset: cellxgene_subset
 subset: kidney_upper_slim
 xref: KUPO:0001048
@@ -1953,6 +1984,7 @@ relationship: part_of UBERON:0005164 ! ascending limb of loop of Henle
 [Term]
 id: CL:1001021
 name: kidney loop of Henle descending limb epithelial cell
+def: "Any kidney loop of Henle epithelial cell that is part of some descending limb of loop of Henle." [FBC:Autogenerated]
 subset: kidney_upper_slim
 xref: KUPO:0001053
 is_a: CL:1000909 {is_inferred="true"} ! kidney loop of Henle epithelial cell
@@ -2005,22 +2037,6 @@ intersection_of: adjacent_to UBERON:0002049 ! vasculature
 relationship: adjacent_to UBERON:0002049 ! vasculature
 property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-6677-8489
 property_value: http://purl.org/dc/terms/date "2023-08-22T13:40:28Z" xsd:dateTime
-
-[Term]
-id: GO:0000003
-name: reproduction
-namespace: biological_process
-alt_id: GO:0019952
-alt_id: GO:0050876
-def: "The production of new individuals that contain some portion of genetic material inherited from one or more parent organisms." [GOC:go_curators, GOC:isa_complete, GOC:jl, ISBN:0198506732]
-subset: goslim_agr
-subset: goslim_chembl
-subset: goslim_flybase_ribbon
-subset: goslim_pir
-subset: goslim_plant
-synonym: "reproductive physiological process" EXACT []
-xref: Wikipedia:Reproduction
-is_a: GO:0008150 ! biological_process
 
 [Term]
 id: GO:0000226
@@ -2450,7 +2466,6 @@ synonym: "cell or subcellular entity" EXACT []
 synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
 xref: NIF_Subcellular:sao1337158144
-is_a: BFO:0000040 ! material entity
 disjoint_from: GO:0008150 ! biological_process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/17729" xsd:anyURI
 
@@ -2463,13 +2478,16 @@ comment: Note that this term is intended to annotate gene products that are not 
 subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 subset: goslim_yeast
 synonym: "extracellular" EXACT []
 xref: Wikipedia:Extracellular
@@ -2529,7 +2547,6 @@ comment: Note that for multicellular organisms, the extracellular space refers t
 subset: goslim_chembl
 subset: goslim_drosophila
 subset: goslim_generic
-subset: goslim_prokaryote
 synonym: "intercellular space" RELATED []
 xref: NIF_Subcellular:sao1425028079
 is_a: GO:0110165 ! cellular anatomical entity
@@ -2563,12 +2580,14 @@ subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_yeast
 synonym: "cell nucleus" EXACT []
 synonym: "horsetail nucleus" NARROW [GOC:al, GOC:mah, GOC:vw, PMID:15030757]
@@ -2594,6 +2613,7 @@ subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 subset: goslim_yeast
 synonym: "chromatid" RELATED []
 synonym: "interphase chromosome" NARROW []
@@ -2628,7 +2648,9 @@ subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 subset: goslim_yeast
 xref: Wikipedia:Cytoplasm
 is_a: GO:0110165 ! cellular anatomical entity
@@ -2644,11 +2666,13 @@ subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_yeast
 synonym: "vacuolar carboxypeptidase Y" RELATED []
 xref: Wikipedia:Vacuole
@@ -2665,10 +2689,12 @@ subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_yeast
 synonym: "Golgi" BROAD []
 synonym: "Golgi complex" EXACT []
@@ -2700,11 +2726,14 @@ alt_id: GO:0033279
 def: "An intracellular organelle, about 200 A in diameter, consisting of RNA and protein. It is the site of protein biosynthesis resulting from translation of messenger RNA (mRNA). It consists of two subunits, one large and one small, each containing only protein and RNA. Both the ribosome and its subunits are characterized by their sedimentation coefficients, expressed in Svedberg units (symbol: S). Hence, the prokaryotic ribosome (70S) comprises a large (50S) subunit and a small (30S) subunit, while the eukaryotic ribosome (80S) comprises a large (60S) subunit and a small (40S) subunit. Two sites on the ribosomal large subunit are involved in translation, namely the aminoacyl site (A site) and peptidyl site (P site). Ribosomes from prokaryotes, eukaryotes, mitochondria, and chloroplasts have characteristically distinct ribosomal proteins." [ISBN:0198506732]
 subset: goslim_candida
 subset: goslim_chembl
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 subset: goslim_yeast
 synonym: "free ribosome" NARROW [NIF_Subcellular:sao1139385046]
 synonym: "membrane bound ribosome" NARROW [NIF_Subcellular:sao1291545653]
@@ -2712,8 +2741,8 @@ synonym: "ribosomal RNA" RELATED []
 xref: NIF_Subcellular:sao1429207766
 xref: Wikipedia:Ribosome
 is_a: GO:0043232 ! intracellular non-membrane-bounded organelle
-is_a: PR:000050567 ! protein-containing material entity
 relationship: capable_of_part_of GO:0006412 ! translation
+relationship: has_part PR:000000001 ! protein
 
 [Term]
 id: GO:0005856
@@ -2724,11 +2753,13 @@ subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
 subset: goslim_yeast
 xref: Wikipedia:Cytoskeleton
@@ -2759,11 +2790,14 @@ subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_metagenomics
 subset: goslim_mouse
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 subset: goslim_yeast
 synonym: "bacterial inner membrane" NARROW []
 synonym: "cell membrane" EXACT []
@@ -2812,7 +2846,6 @@ xref: NIF_Subcellular:sao787716553
 xref: Wikipedia:Cilium
 is_a: GO:0043227 ! membrane-bounded organelle
 is_a: GO:0120025 ! plasma membrane bounded cell projection
-is_a: PR:000050567 ! protein-containing material entity
 relationship: has_part GO:0030990 ! intraciliary transport particle
 relationship: RO:0002160 NCBITaxon:2759 ! only in taxon Eukaryota
 relationship: RO:0002162 NCBITaxon:2759 {all_only="true"} ! in taxon Eukaryota
@@ -2853,10 +2886,12 @@ def: "The cellular metabolic process in which a protein is formed, using the seq
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 synonym: "protein anabolism" EXACT []
 synonym: "protein biosynthesis" EXACT []
 synonym: "protein biosynthetic process" EXACT []
@@ -2928,7 +2963,9 @@ subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 synonym: "single-organism transport" RELATED []
 is_a: GO:0051234 ! establishment of localization
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/20292" xsd:anyURI
@@ -3023,6 +3060,8 @@ name: organelle organization
 namespace: biological_process
 alt_id: GO:1902589
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of an organelle within a cell. An organelle is an organized structure of distinctive morphology and function. Includes the nucleus, mitochondria, plastids, vacuoles, vesicles, ribosomes and the cytoskeleton. Excludes the plasma membrane." [GOC:mah]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
 subset: goslim_candida
 subset: goslim_pir
 synonym: "organelle organisation" EXACT []
@@ -3033,6 +3072,7 @@ is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: results_in_organization_of GO:0043226 ! organelle
 relationship: results_in_organization_of GO:0043226 ! organelle
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 created_by: jl
 creation_date: 2013-12-19T15:25:51Z
 
@@ -3082,13 +3122,14 @@ id: GO:0007049
 name: cell cycle
 namespace: biological_process
 def: "The progression of biochemical and morphological phases and events that occur in a cell during successive cell replication or nuclear replication events. Canonically, the cell cycle comprises the replication and segregation of genetic material followed by the division of the cell, but in endocycles or syncytial cells nuclear replication or nuclear division may not be followed by cell division." [GOC:go_curators, GOC:mtg_cell_cycle]
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_flybase_ribbon
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 synonym: "cell-division cycle" EXACT []
 xref: Wikipedia:Cell_cycle
 is_a: GO:0009987 ! cellular process
@@ -3128,14 +3169,11 @@ subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_plant
-synonym: "signal transduction by cis-phosphorylation" NARROW []
-synonym: "signal transduction by conformational transition" NARROW []
-synonym: "signal transduction by protein phosphorylation" NARROW []
-synonym: "signal transduction by trans-phosphorylation" NARROW []
+subset: goslim_plant_ribbon
 synonym: "signaling cascade" NARROW []
 synonym: "signaling pathway" RELATED []
 synonym: "signalling cascade" NARROW []
-synonym: "signalling pathway" RELATED [GOC:mah]
+synonym: "signalling pathway" RELATED []
 xref: Wikipedia:Signal_transduction
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050794 ! regulation of cellular process
@@ -3323,7 +3361,6 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
-is_a: BFO:0000015 ! process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/24968" xsd:anyURI
 created_by: jl
 creation_date: 2012-09-19T15:05:24Z
@@ -3336,11 +3373,13 @@ alt_id: GO:0044236
 alt_id: GO:0044710
 def: "The chemical reactions and pathways, including anabolism and catabolism, by which living organisms transform chemical substances. Metabolic processes typically transform small molecules, but also include macromolecular processes such as DNA repair and replication, and protein synthesis and degradation." [GOC:go_curators, ISBN:0198547684]
 comment: Note that metabolic processes do not include single functions or processes such as protein-protein interactions, protein-nucleic acids, nor receptor-ligand interactions.
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 subset: goslim_chembl
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_metagenomics
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_prokaryote_ribbon
 synonym: "metabolic process resulting in cell growth" NARROW []
 synonym: "metabolism" EXACT []
 synonym: "metabolism resulting in cell growth" NARROW []
@@ -3349,6 +3388,7 @@ synonym: "single-organism metabolic process" RELATED []
 xref: Wikipedia:Metabolism
 is_a: GO:0008150 ! biological_process
 disjoint_from: GO:0051179 ! localization
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: jl
 creation_date: 2012-10-17T15:46:40Z
 
@@ -3386,6 +3426,7 @@ def: "The chemical reactions and pathways resulting in the formation of substanc
 subset: goslim_chembl
 subset: goslim_metagenomics
 subset: goslim_plant
+subset: goslim_plant_ribbon
 synonym: "anabolism" EXACT []
 synonym: "biosynthesis" EXACT []
 synonym: "formation" BROAD []
@@ -3403,6 +3444,8 @@ name: macromolecule biosynthetic process
 namespace: biological_process
 alt_id: GO:0043284
 def: "The chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass." [GOC:mah]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "biopolymer biosynthetic process" EXACT [GOC:mtg_chebi_dec09]
 synonym: "macromolecule anabolism" EXACT []
@@ -3414,6 +3457,7 @@ is_a: GO:0044249 ! cellular biosynthetic process
 is_a: GO:1901576 ! organic substance biosynthetic process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/15249" xsd:anyURI
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/25418" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 
 [Term]
 id: GO:0009306
@@ -3466,7 +3510,7 @@ name: embryo development
 namespace: biological_process
 alt_id: GO:0009795
 def: "The process whose specific outcome is the progression of an embryo from its formation until the end of its embryonic life stage. The end of the embryonic stage is organism-specific. For example, for mammals, the process would begin with zygote formation and end with birth. For insects, the process would begin at zygote formation and end with larval hatching. For plant zygotic embryos, this would be from zygote formation to the end of seed dormancy. For plant vegetative embryos, this would be from the initial determination of the cell or group of cells to form an embryo until the point when the embryo becomes independent of the parent plant." [GOC:go_curators, GOC:isa_complete, GOC:mtg_sensu]
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 subset: goslim_chembl
 subset: goslim_plant
 synonym: "embryogenesis" EXACT []
@@ -3574,9 +3618,11 @@ comment: Note that this term should be used to annotate gene products in the org
 subset: goslim_agr
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_plant
+subset: goslim_plant_ribbon
 subset: goslim_prokaryote
 synonym: "caspase-independent apoptosis" RELATED []
 synonym: "caspase-independent cell death" NARROW []
@@ -3677,10 +3723,12 @@ namespace: biological_process
 alt_id: GO:0044235
 alt_id: GO:0071842
 def: "A process that results in the assembly, arrangement of constituent parts, or disassembly of a cellular component." [GOC:ai, GOC:jl, GOC:mah]
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 synonym: "cell organisation" EXACT []
 synonym: "cell organization and biogenesis" RELATED [GOC:mah]
 synonym: "cellular component organisation at cellular level" EXACT [GOC:mah]
@@ -3715,6 +3763,7 @@ def: "A cellular transport process in which transported substances are moved in 
 subset: goslim_candida
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_pir
 subset: goslim_pombe
@@ -3779,11 +3828,14 @@ alt_id: GO:0006411
 alt_id: GO:0044267
 alt_id: GO:0044268
 def: "The chemical reactions and pathways involving a protein. Includes protein modification." [GOC:ma]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_plant
+subset: goslim_plant_ribbon
 synonym: "cellular protein metabolic process" EXACT []
 synonym: "cellular protein metabolism" EXACT []
 synonym: "multicellular organismal protein metabolic process" NARROW []
@@ -3796,6 +3848,7 @@ intersection_of: GO:0008152 ! metabolic process
 intersection_of: has_primary_input_or_output PR:000000001 ! protein
 relationship: has_primary_input_or_output PR:000000001 ! protein
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/23112" xsd:anyURI
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 
 [Term]
 id: GO:0019953
@@ -3804,7 +3857,7 @@ namespace: biological_process
 def: "A type of reproduction that combines the genetic material of two gametes (such as a sperm or egg cell or fungal spores). The gametes have an haploid genome (with a single set of chromosomes, the product of a meiotic division) and combines with one another to produce a zygote (diploid)." [Wikipedia:Sexual_reproduction]
 comment: Note that gametes may come from two organisms or from a single organism in the case of self-fertilizing hermaphrodites, e.g. C. elegans, or self-fertilization in plants. Note also that sexual reproduction may be seen as the regular alternation, in the life cycle of haplontic, diplontic and diplohaplontic organisms, of meiosis and fertilization which provides for the production offspring. In diplontic organisms there is a life cycle in which the products of meiosis behave directly as gametes, fusing to form a zygote from which the diploid, or sexually reproductive polyploid, adult organism will develop. In diplohaplontic organisms a haploid phase (gametophyte) exists in the life cycle between meiosis and fertilization (e.g. higher plants, many algae and Fungi); the products of meiosis are spores that develop as haploid individuals from which haploid gametes develop to form a diploid zygote; diplohaplontic organisms show an alternation of haploid and diploid generations. In haplontic organisms meiosis occurs in the zygote, giving rise to four haploid cells (e.g. many algae and protozoa), only the zygote is diploid and this may form a resistant spore, tiding organisms over hard times.
 xref: Wikipedia:Sexual_reproduction
-is_a: GO:0000003 ! reproduction
+is_a: GO:0022414 ! reproductive process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22929" xsd:anyURI
 
 [Term]
@@ -3826,6 +3879,7 @@ name: cell cycle process
 namespace: biological_process
 def: "The cellular process that ensures successive accurate and complete genome replication and chromosome segregation." [GOC:isa_complete, GOC:mtg_cell_cycle]
 subset: gocheck_do_not_annotate
+subset: goslim_euk_cellular_processes_ribbon
 is_a: GO:0009987 ! cellular process
 intersection_of: GO:0009987 ! cellular process
 intersection_of: part_of GO:0007049 ! cell cycle
@@ -3845,6 +3899,8 @@ name: cellular component disassembly
 namespace: biological_process
 alt_id: GO:0071845
 def: "A cellular process that results in the breakdown of a cellular component." [GOC:isa_complete]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "cell structure disassembly" EXACT []
 synonym: "cellular component disassembly at cellular level" EXACT []
@@ -3853,6 +3909,7 @@ intersection_of: GO:0009987 ! cellular process
 intersection_of: results_in_disassembly_of GO:0005575 ! cellular_component
 disjoint_from: GO:0022607 ! cellular component assembly
 relationship: results_in_disassembly_of GO:0005575 ! cellular_component
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 
 [Term]
 id: GO:0022414
@@ -3860,12 +3917,18 @@ name: reproductive process
 namespace: biological_process
 alt_id: GO:0044702
 def: "A biological process that directly contributes to the process of producing new individuals by one or two organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:dph, GOC:isa_complete]
+subset: gocheck_do_not_annotate
+subset: goslim_agr
+subset: goslim_chembl
+subset: goslim_flybase_ribbon
 subset: goslim_generic
+subset: goslim_pir
+subset: goslim_plant
+subset: goslim_plant_ribbon
 synonym: "single organism reproductive process" RELATED []
+xref: Wikipedia:Reproduction
 is_a: GO:0008150 ! biological_process
-intersection_of: GO:0008150 ! biological_process
-intersection_of: part_of GO:0000003 ! reproduction
-relationship: part_of GO:0000003 ! reproduction
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27054" xsd:anyURI
 created_by: jl
 creation_date: 2012-09-19T15:56:06Z
 
@@ -3887,6 +3950,7 @@ namespace: biological_process
 alt_id: GO:0071844
 def: "The aggregation, arrangement and bonding together of a cellular component." [GOC:isa_complete]
 subset: goslim_chembl
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_pir
 synonym: "cell structure assembly" EXACT []
 synonym: "cellular component assembly at cellular level" EXACT []
@@ -3930,11 +3994,13 @@ alt_id: GO:0044700
 def: "The entirety of a process in which information is transmitted within a biological system. This process begins with an active signal and ends when a cellular response has been triggered." [GOC:mtg_signal, GOC:mtg_signaling_feb11, GOC:signaling]
 comment: Note that a signal is any variable property or parameter that serves to convey information, and may be a physical entity such as a gene product or small molecule, a photon, or a change in state such as movement or voltage change.
 subset: goslim_agr
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_pombe
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 subset: goslim_yeast
 synonym: "biological signaling" EXACT []
 synonym: "signaling process" EXACT []
@@ -4011,6 +4077,8 @@ is_a: GO:0048468 ! cell development
 intersection_of: GO:0032502 ! developmental process
 intersection_of: results_in_development_of CL:0000988 ! hematopoietic cell
 relationship: results_in_development_of CL:0000988 ! hematopoietic cell
+relationship: RO:0002160 NCBITaxon:6072 ! only in taxon Eumetazoa
+relationship: RO:0002162 NCBITaxon:6072 {all_only="true"} ! in taxon Eumetazoa
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/22178" xsd:anyURI
 
 [Term]
@@ -4035,6 +4103,7 @@ subset: goslim_drosophila
 subset: goslim_generic
 subset: goslim_mouse
 subset: goslim_plant
+subset: goslim_plant_ribbon
 xref: Wikipedia:Cellular_differentiation
 is_a: GO:0048869 ! cellular developmental process
 intersection_of: GO:0048869 ! cellular developmental process
@@ -4146,6 +4215,7 @@ alt_id: GO:0005578
 def: "A structure lying external to one or more cells, which provides structural support, biochemical or biomechanical cues for cells or tissues." [GOC:BHF, GOC:mah, GOC:rph, NIF_Subcellular:nlx_subcell_20090513, PMID:21123617, PMID:28089324]
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_pir
 subset: goslim_prokaryote
@@ -4258,6 +4328,7 @@ namespace: biological_process
 alt_id: GO:0044707
 alt_id: GO:0050874
 def: "Any biological process, occurring at the level of a multicellular organism, pertinent to its function." [GOC:curators, GOC:dph, GOC:isa_complete, GOC:tb]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
 subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "organismal physiological process" EXACT []
@@ -4267,6 +4338,7 @@ property_value: RO:0002161 NCBITaxon:2
 property_value: RO:0002161 NCBITaxon:2157
 property_value: RO:0002161 NCBITaxon:4896
 property_value: RO:0002161 NCBITaxon:4932
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 created_by: jl
 creation_date: 2012-09-19T16:07:47Z
 
@@ -4284,15 +4356,6 @@ synonym: "single-organism developmental process" RELATED []
 is_a: GO:0008150 ! biological_process
 created_by: jl
 creation_date: 2012-12-19T12:21:31Z
-
-[Term]
-id: GO:0032504
-name: multicellular organism reproduction
-namespace: biological_process
-def: "The biological process in which new individuals are produced by one or two multicellular organisms. The new individuals inherit some proportion of their genetic material from the parent or parents." [GOC:isa_complete, GOC:jid]
-subset: goslim_drosophila
-is_a: GO:0000003 ! reproduction
-is_a: GO:0032501 ! multicellular organismal process
 
 [Term]
 id: GO:0032838
@@ -4342,6 +4405,7 @@ def: "A stable assembly of two or more macromolecules, i.e. proteins, nucleic ac
 comment: A protein complex in this context is meant as a stable set of interacting proteins which can be co-purified by an acceptable method, and where the complex has been shown to exist as an isolated, functional unit in vivo. Acceptable experimental methods include stringent protein purification followed by detection of protein interaction. The following methods should be considered non-acceptable: simple immunoprecipitation, pull-down experiments from cell extracts without further purification, colocalization and 2-hybrid screening. Interactions that should not be captured as protein complexes include: 1) enzyme/substrate, receptor/ligand or any similar transient interactions, unless these are a critical part of the complex assembly or are required e.g. for the receptor to be functional; 2) proteins associated in a pull-down/co-immunoprecipitation assay with no functional link or any evidence that this is a defined biological entity rather than a loose-affinity complex; 3) any complex where the only evidence is based on genetic interaction data; 4) partial complexes, where some subunits (e.g. transmembrane ones) cannot be expressed as recombinant proteins and are excluded from experiments (in this case, independent evidence is necessary to find out the composition of the full complex, if known). Interactions that may be captured as protein complexes include: 1) enzyme/substrate or receptor/ligand if the complex can only assemble and become functional in the presence of both classes of subunits; 2) complexes where one of the members has not been shown to be physically linked to the other(s), but is a homologue of, and has the same functionality as, a protein that has been experimentally demonstrated to form a complex with the other member(s); 3) complexes whose existence is accepted based on localization and pharmacological studies, but for which experimental evidence is not yet available for the complex as a whole.
 subset: goslim_agr
 subset: goslim_chembl
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
@@ -4351,8 +4415,8 @@ synonym: "protein complex" NARROW []
 synonym: "protein containing complex" EXACT []
 synonym: "protein-protein complex" NARROW []
 is_a: GO:0005575 ! cellular_component
-is_a: PR:000050567 ! protein-containing material entity
 disjoint_from: GO:0110165 ! cellular anatomical entity
+relationship: has_part PR:000000001 ! protein
 
 [Term]
 id: GO:0032993
@@ -4571,7 +4635,6 @@ id: GO:0042391
 name: regulation of membrane potential
 namespace: biological_process
 def: "Any process that modulates the establishment or extent of a membrane potential, the electric potential existing across any membrane arising from charges in the membrane itself and from the charges present in the media on either side of the membrane." [GOC:jl, GOC:mtg_cardio, GOC:tb, ISBN:0198506732]
-is_a: BFO:0000003 ! occurrent
 relationship: has_part GO:0034220 ! monoatomic ion transmembrane transport
 
 [Term]
@@ -4599,10 +4662,12 @@ name: cell projection
 namespace: cellular_component
 def: "A prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, http://www.cogsci.princeton.edu/~wn/]
 subset: goslim_agr
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 synonym: "cell process" BROAD []
 synonym: "cellular process" BROAD []
 synonym: "cellular projection" EXACT []
@@ -4655,6 +4720,7 @@ subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_pir
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 xref: NIF_Subcellular:sao1539965131
 xref: Wikipedia:Organelle
 is_a: GO:0110165 ! cellular anatomical entity
@@ -4817,7 +4883,10 @@ name: primary metabolic process
 namespace: biological_process
 def: "The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism." [GOC:go_curators, http://www.metacyc.org]
 subset: gocheck_do_not_annotate
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_pir
+subset: goslim_plant_ribbon
+subset: goslim_prokaryote_ribbon
 synonym: "primary metabolism" EXACT []
 is_a: GO:0008152 ! metabolic process
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
@@ -4827,12 +4896,15 @@ id: GO:0044249
 name: cellular biosynthetic process
 namespace: biological_process
 def: "The chemical reactions and pathways resulting in the formation of substances, carried out by individual cells." [GOC:jl]
+comment: This term should not be used for direct annotation. It should be possible to make a more specific annotation to one of the children of this term.
+subset: gocheck_do_not_annotate
 synonym: "cellular anabolism" EXACT []
 synonym: "cellular biosynthesis" EXACT []
 synonym: "cellular formation" EXACT []
 synonym: "cellular synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0044237 ! cellular metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27052" xsd:anyURI
 
 [Term]
 id: GO:0044782
@@ -4871,6 +4943,7 @@ namespace: cellular_component
 def: "The junction between an axon of one neuron and a dendrite of another neuron, a muscle fiber or a glial cell. As the axon approaches the synapse it enlarges into a specialized structure, the presynaptic terminal bouton, which contains mitochondria and synaptic vesicles. At the tip of the terminal bouton is the presynaptic membrane; facing it, and separated from it by a minute cleft (the synaptic cleft) is a specialized area of membrane on the receiving cell, known as the postsynaptic membrane. In response to the arrival of nerve impulses, the presynaptic terminal bouton secretes molecules of neurotransmitters into the synaptic cleft. These diffuse across the cleft and transmit the signal to the postsynaptic membrane." [GOC:aruk, ISBN:0198506732, PMID:24619342, PMID:29383328, PMID:31998110]
 subset: goslim_agr
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
@@ -5012,10 +5085,12 @@ id: GO:0048609
 name: multicellular organismal reproductive process
 namespace: biological_process
 def: "The process, occurring above the cellular level, that is pertinent to the reproductive function of a multicellular organism. This includes the integrated processes at the level of tissues and organs." [GOC:dph, GOC:jid, GOC:tb]
+subset: gocheck_do_not_annotate
+subset: goslim_drosophila
 synonym: "organismal reproductive process" BROAD []
 synonym: "reproductive process in a multicellular organism" EXACT []
 is_a: GO:0022414 ! reproductive process
-relationship: part_of GO:0032504 ! multicellular organism reproduction
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27054" xsd:anyURI
 
 [Term]
 id: GO:0048646
@@ -5072,6 +5147,7 @@ subset: gocheck_do_not_annotate
 subset: goslim_chembl
 subset: goslim_generic
 subset: goslim_plant
+subset: goslim_plant_ribbon
 synonym: "development of an anatomical structure" EXACT []
 is_a: GO:0032502 ! developmental process
 intersection_of: GO:0032502 ! developmental process
@@ -5094,12 +5170,14 @@ namespace: biological_process
 def: "Any process involved in the controlled self-propelled movement of a cell that results in translocation of the cell from one place to another." [GOC:dgh, GOC:dph, GOC:isa_complete, GOC:mlg]
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_prokaryote
 synonym: "cell locomotion" EXACT []
 synonym: "cell movement" RELATED []
 synonym: "movement of a cell" EXACT []
 is_a: GO:0009987 ! cellular process
+property_value: RO:0002161 NCBITaxon:4890
 property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/19809" xsd:anyURI
 
 [Term]
@@ -5205,12 +5283,13 @@ namespace: biological_process
 alt_id: GO:0051869
 def: "Any process that results in a change in state or activity of a cell or an organism (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus and ends with a change in state or activity or the cell or organism." [GOC:ai, GOC:bf]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_flybase_ribbon
 subset: goslim_mouse
 subset: goslim_pir
 subset: goslim_prokaryote
+subset: goslim_prokaryote_ribbon
 synonym: "physiological response to stimulus" EXACT []
 is_a: GO:0008150 ! biological_process
 
@@ -5220,6 +5299,7 @@ name: localization
 namespace: biological_process
 alt_id: GO:1902578
 def: "Any process in which a cell, a substance, or a cellular entity, such as a protein complex or organelle, is transported, tethered to or otherwise maintained in a specific location. In the case of substances, localization may also be achieved via selective degradation." [GOC:ai, GOC:dos]
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "establishment and maintenance of cellular component location" NARROW []
 synonym: "establishment and maintenance of localization" EXACT []
@@ -5230,6 +5310,7 @@ synonym: "localisation" EXACT [GOC:mah]
 synonym: "single organism localization" RELATED [GOC:TermGenie]
 synonym: "single-organism localization" RELATED []
 is_a: GO:0008150 ! biological_process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27052" xsd:anyURI
 created_by: jl
 creation_date: 2013-12-18T13:51:04Z
 
@@ -5315,6 +5396,8 @@ name: cellular localization
 namespace: biological_process
 alt_id: GO:1902580
 def: "A cellular localization process whereby a substance or cellular entity, such as a protein complex or organelle, is transported to, and/or maintained in, a specific location within a cell including the localization of substances or cellular entities to the cell membrane." [GOC:tb, GOC:vw]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
 subset: goslim_pir
 synonym: "cellular localisation" EXACT [GOC:mah]
 synonym: "establishment and maintenance of cellular localization" EXACT []
@@ -5325,6 +5408,7 @@ synonym: "single organism cellular localization" EXACT [GOC:TermGenie]
 synonym: "single-organism cellular localization" RELATED []
 is_a: GO:0009987 ! cellular process
 is_a: GO:0051179 ! localization
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 created_by: jl
 creation_date: 2013-12-18T14:04:32Z
 
@@ -5388,7 +5472,7 @@ name: cellular response to stimulus
 namespace: biological_process
 def: "Any process that results in a change in state or activity of a cell (in terms of movement, secretion, enzyme production, gene expression, etc.) as a result of a stimulus. The process begins with detection of the stimulus by a cell and ends with a change in state or activity or the cell." [GOC:bf, GOC:jl]
 comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 is_a: GO:0009987 ! cellular process
 is_a: GO:0050896 ! response to stimulus
 
@@ -5401,6 +5485,7 @@ def: "The process in which a solute is transported across a lipid bilayer, from 
 comment: Transmembrane transport is the transport of a solute across a lipid bilayer. Note that transport through the nuclear pore complex is not transmembrane because the nuclear membrane is a double membrane and is not traversed. For transport through the nuclear pore, consider instead the term 'nucleocytoplasmic transport ; GO:0006913' and its children. Note also that this term is not intended for use in annotating lateral movement within membranes.
 subset: goslim_chembl
 subset: goslim_drosophila
+subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_generic
 subset: goslim_pombe
 subset: goslim_yeast
@@ -5717,12 +5802,15 @@ name: cellular component organization or biogenesis
 namespace: biological_process
 alt_id: GO:0071841
 def: "A process that results in the biosynthesis of constituent macromolecules, assembly, arrangement of constituent parts, or disassembly of a cellular component." [GOC:mah]
+comment: Note that this term is in the subset of terms that should not be used for direct gene product annotation. Instead, select a child term or, if no appropriate child term exists, please request a new term. Direct annotations to this term may be amended during annotation QC.
+subset: gocheck_do_not_annotate
 subset: goslim_flybase_ribbon
 subset: goslim_metagenomics
 synonym: "cellular component organisation or biogenesis" EXACT [GOC:mah]
 synonym: "cellular component organisation or biogenesis at cellular level" EXACT [GOC:mah]
 synonym: "cellular component organization or biogenesis at cellular level" EXACT []
 is_a: GO:0009987 ! cellular process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/27189" xsd:anyURI
 created_by: mah
 creation_date: 2010-09-10T01:39:16Z
 
@@ -5902,7 +5990,7 @@ name: plasma membrane region
 namespace: cellular_component
 def: "A membrane that is a (regional) part of the plasma membrane." [GOC:dos]
 comment: Note that this term should not be used for direct manual annotation as it should always be possible to choose a more specific subclass.
-subset: gocheck_do_not_manually_annotate
+subset: gocheck_do_not_annotate
 synonym: "region of plasma membrane" EXACT []
 is_a: GO:0016020 ! membrane
 intersection_of: GO:0016020 ! membrane
@@ -5929,7 +6017,6 @@ def: "A complex of collagen trimers such as a fibril or collagen network." [GOC:
 synonym: "Supramolecular aggregate of collagen" EXACT [PMID:19693541]
 synonym: "Supramolecular collagen assembly" EXACT [PMID:21421911]
 is_a: GO:0099080 ! supramolecular complex
-is_a: PR:000050567 ! protein-containing material entity
 relationship: has_part GO:0005581 ! collagen trimer
 relationship: part_of GO:0062023 ! collagen-containing extracellular matrix
 
@@ -6192,6 +6279,7 @@ id: GO:1901576
 name: organic substance biosynthetic process
 namespace: biological_process
 def: "The chemical reactions and pathways resulting in the formation of an organic substance, any molecular entity containing carbon." [GOC:pr, GOC:TermGenie]
+subset: gocheck_do_not_annotate
 synonym: "organic molecular entity anabolism" EXACT [GOC:TermGenie]
 synonym: "organic molecular entity biosynthesis" EXACT [GOC:TermGenie]
 synonym: "organic molecular entity biosynthetic process" EXACT []
@@ -6203,6 +6291,7 @@ synonym: "organic substance formation" EXACT []
 synonym: "organic substance synthesis" EXACT []
 is_a: GO:0009058 ! biosynthetic process
 is_a: GO:0071704 ! organic substance metabolic process
+property_value: term_tracker_item "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 created_by: pr
 creation_date: 2012-11-05T11:04:40Z
 
@@ -6563,7 +6652,6 @@ name: quality
 namespace: quality
 alt_id: PATO:0000072
 def: "A dependent entity that inheres in a bearer by virtue of how the bearer is related to other entities" [PATOC:GVG]
-is_a: BFO:0000020 ! specifically dependent continuant
 
 [Term]
 id: PATO:0000051
@@ -7487,21 +7575,6 @@ synonym: "fam:angiotensinogenase" EXACT PRO-short-label [PRO:DAN]
 is_a: PR:000000001 ! protein
 
 [Term]
-id: PR:000050567
-name: protein-containing material entity
-namespace: protein
-def: "A material entity that minimally consists of a protein." [PRO:DAN]
-comment: Note: This includes single proteins and derivatives thereof (PR:000000001), protein-containing complexes (GO:0032991), and protein aggregates (PR:000050566).
-synonym: "protein" NARROW [PRO:DAN]
-synonym: "protein aggregate" NARROW [PRO:DAN]
-synonym: "protein complex" NARROW [PRO:DAN]
-synonym: "protein-containing complex" NARROW [PRO:DAN]
-is_a: BFO:0000040 ! material entity
-intersection_of: BFO:0000040 ! material entity
-intersection_of: has_part PR:000000001 ! protein
-relationship: has_part PR:000000001 ! protein
-
-[Term]
 id: UBERON:0000000
 name: processual entity
 namespace: uberon
@@ -7548,6 +7621,7 @@ xref: EFO:0000799
 xref: EHDAA2:0003193
 xref: EMAPA:37283 {source="MA:th"}
 xref: EV:0100155
+xref: FBbt:00007000 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000144
 xref: MAT:0000023
 xref: MESH:D005121
@@ -7668,6 +7742,7 @@ synonym: "ducts" RELATED OMO:0003004 [XAO:0004000]
 synonym: "exocrine duct" NARROW []
 synonym: "exocrine gland duct" NARROW []
 xref: AAO:0011123
+xref: FBbt:00100314 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:30320
 xref: galen:Duct
 xref: NCIT:C12948
@@ -7677,7 +7752,6 @@ xref: UMLS:C0687028 {source="ncithesaurus:Duct"}
 xref: Wikipedia:Duct_(anatomy)
 xref: XAO:0004000
 xref: ZFA:0005171
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000063 ! organ subunit
 relationship: has_part UBERON:0034969 ! epithelial layer of duct
 relationship: RO:0000086 PATO:0002299 ! has quality tubular
@@ -7714,6 +7788,7 @@ xref: BILA:0000003
 xref: CARO:0000003
 xref: EHDAA2:0003003
 xref: EMAPA:0
+xref: FBbt:00007001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:305751
 xref: FMA:67135
 xref: GAID:781
@@ -7816,7 +7891,6 @@ xref: EFO:0001272
 xref: FBdv:00005369
 xref: WBls:0000041
 xref: XtroDO:0000084
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000092 ! post-embryonic stage
 relationship: preceded_by UBERON:0000111 ! organogenesis stage
@@ -7843,7 +7917,6 @@ xref: WBls:0000003
 xref: WBls:0000092
 xref: WBls:0000102
 xref: XAO:1000012
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 disjoint_from: UBERON:0000092 ! post-embryonic stage
 relationship: precedes UBERON:0000066 ! fully formed stage
@@ -7859,7 +7932,6 @@ subset: common_anatomy
 synonym: "death" RELATED []
 xref: XAO:0000437
 xref: XtroDO:0000085
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: RO:0002229 UBERON:0000104 ! ends life cycle
 property_value: RO:0002175 NCBITaxon:33090
@@ -8068,7 +8140,6 @@ xref: OGES:000024
 xref: WBls:0000022
 xref: WBls:0000093
 xref: WBls:0000103
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: preceded_by UBERON:0000068 ! embryo stage
 relationship: RO:0002082 GO:0009791 ! simultaneous with post-embryonic development
@@ -8090,7 +8161,6 @@ xref: HsapDv:0000001
 xref: MmusDv:0000001
 xref: ncithesaurus:Life
 xref: OGES:000011
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000000 ! processual entity
 relationship: ends_with UBERON:0000071 ! death stage
 relationship: has_part UBERON:0000105 ! life cycle stage
@@ -8154,7 +8224,6 @@ xref: VHOG:0000745
 xref: Wikipedia:Zygote
 xref: XAO:1000001
 xref: ZFS:0000001
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: RO:0002223 UBERON:0000104 ! starts life cycle
@@ -8178,7 +8247,6 @@ xref: PdumDv:0000200
 xref: Wikipedia:Cleavage_(embryo)
 xref: XAO:1000004
 xref: ZFS:0000046
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 intersection_of: UBERON:0000105 ! life cycle stage
 intersection_of: RO:0002082 GO:0040016 ! simultaneous with embryonic cleavage
@@ -8204,7 +8272,6 @@ xref: WBls:0000005
 xref: Wikipedia:Blastula
 xref: XAO:1000003
 xref: ZFS:0000045
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000107 ! cleavage stage
@@ -8234,7 +8301,6 @@ xref: OGES:000019
 xref: WBls:0000010
 xref: XAO:1000005
 xref: ZFS:0000047
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000108 {source="BILS"} ! blastula stage
@@ -8251,7 +8317,6 @@ xref: BILS:0000110
 xref: HsapDv:0000012
 xref: MmusDv:0000017
 xref: XAO:1000006
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: preceded_by UBERON:0000109 ! gastrula stage
@@ -8273,7 +8338,6 @@ xref: MmusDv:0000018
 xref: OGES:000005
 xref: OGES:000032
 xref: Wikipedia:Organogenesis
-is_a: BFO:0000003 ! occurrent
 is_a: UBERON:0000105 ! life cycle stage
 relationship: part_of UBERON:0000068 ! embryo stage
 relationship: RO:0002082 GO:0048513 ! simultaneous with animal organ development
@@ -8427,6 +8491,7 @@ xref: EFO:0000825
 xref: EHDAA2:0001326
 xref: EHDAA:542
 xref: EMAPA:16262
+xref: FBbt:00003126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:49184
 xref: GAID:75
 xref: galen:Mouth
@@ -8510,7 +8575,6 @@ xref: VHOG:0000224
 xref: Wikipedia:Blood
 xref: XAO:0000124
 xref: ZFA:0000007
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000179 ! haemolymphatic fluid
 relationship: has_part CL:0000232 {source="CL:tm"} ! erythrocyte
 relationship: has_part UBERON:0001969 ! blood plasma
@@ -8684,6 +8748,7 @@ xref: CALOHA:TS-2101
 xref: CARO:0000004
 xref: EHDAA2:0003004
 xref: EMAPA:35178
+xref: FBbt:00007019 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9669
 xref: galen:BodySubstance
 xref: HAO:0000004
@@ -8718,6 +8783,7 @@ xref: AEO:0000005
 xref: BILA:0000005
 xref: CARO:0000005
 xref: EHDAA2:0003005
+xref: FBbt:00007017 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:5897
 xref: HAO:0000005
 xref: NCIT:C94478
@@ -8745,12 +8811,12 @@ xref: AEO:0000006
 xref: BILA:0000006
 xref: CARO:0000006
 xref: EHDAA2:0003006
+xref: FBbt:00007016 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67165
 xref: HAO:0000006
 xref: TAO:0001836
 xref: TGMA:0001826
 xref: VHOG:0001721
-is_a: BFO:0000040 ! material entity
 is_a: UBERON:0001062 ! anatomical entity
 disjoint_from: UBERON:0000466 ! immaterial anatomical entity
 property_value: RO:0002175 NCBITaxon:33090
@@ -8770,12 +8836,12 @@ xref: AEO:0000007
 xref: BILA:0000007
 xref: CARO:0000007
 xref: EHDAA2:0003007
+xref: FBbt:00007015 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67112
 xref: HAO:0000007
 xref: TAO:0001835
 xref: TGMA:0001827
 xref: VHOG:0001727
-is_a: BFO:0000141 ! immaterial entity
 is_a: UBERON:0001062 ! anatomical entity
 property_value: RO:0002175 NCBITaxon:33090
 property_value: RO:0002175 NCBITaxon:33208
@@ -8807,6 +8873,7 @@ xref: EHDAA2:0003011
 xref: EHDAA:392
 xref: EMAPA:16103
 xref: EV:0100000
+xref: FBbt:00004856 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7149
 xref: galen:AnatomicalSystem
 xref: HAO:0000011
@@ -8860,6 +8927,7 @@ xref: EHDAA2:0003191
 xref: EHDAA:1
 xref: EMAPA:25765
 xref: EV:0100016
+xref: FBbt:00000001 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:256135
 xref: galen:Organism
 xref: HAO:0000012
@@ -8923,6 +8991,7 @@ xref: CARO:0000032
 xref: EFO:0000808
 xref: EHDAA2:0003032
 xref: EMAPA:36031
+xref: FBbt:00007009 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7153
 xref: galen:BodyPart
 xref: HAO:0000032
@@ -8958,6 +9027,7 @@ xref: AEO:0000040
 xref: BILA:0000040
 xref: CARO:0000040
 xref: EHDAA2:0003040
+xref: FBbt:00007013 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:63863
 xref: HAO:0000040
 xref: TAO:0000382
@@ -8977,6 +9047,7 @@ namespace: uberon
 def: "Anatomical group whose component anatomical structures lie in close proximity to each other." [FBbt:00007277]
 subset: common_anatomy
 subset: upper_level
+xref: FBbt:00007277 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: VHOG:0001737
 is_a: UBERON:0034923 ! disconnected anatomical group
 property_value: RO:0002175 NCBITaxon:33090
@@ -9003,6 +9074,7 @@ xref: CALOHA:TS-2090
 xref: CARO:0000043
 xref: EHDAA2:0003043
 xref: EMAPA:35868
+xref: FBbt:00007003 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9637
 xref: galen:Tissue
 xref: HAO:0000043
@@ -9037,6 +9109,7 @@ xref: AEO:0000055
 xref: BILA:0000055
 xref: CARO:0000055
 xref: EHDAA2:0003055
+xref: FBbt:00007010 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: HAO:0000055
 xref: TAO:0001488
 xref: TGMA:0001847
@@ -9069,6 +9142,7 @@ xref: CALOHA:TS-0288
 xref: CARO:0000066
 xref: EHDAA2:0003066
 xref: EMAPA:32738
+xref: FBbt:00007005 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:9639
 xref: GAID:402
 xref: HAO:0000066
@@ -9082,7 +9156,6 @@ xref: VHOG:0000387
 xref: Wikipedia:Epithelium
 xref: XAO:0003045
 xref: ZFA:0001486
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000479 ! tissue
 intersection_of: UBERON:0000479 ! tissue
 intersection_of: RO:0002473 CL:0000066 ! composed primarily of epithelial cell
@@ -9109,6 +9182,7 @@ xref: AEO:0000068
 xref: BILA:0000068
 xref: CARO:0000068
 xref: EHDAA2_RETIRED:0003068
+xref: FBbt:00007027 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45567
 xref: HAO:0000068
 xref: NCIT:C33552
@@ -9278,6 +9352,7 @@ xref: EHDAA2:0000002
 xref: EHDAA2_RETIRED:0003236
 xref: EHDAA:38
 xref: EMAPA:16039
+xref: FBbt:00000052 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69068
 xref: GAID:963
 xref: http://neurolex.org/wiki/Category\:Embryonic_organism
@@ -9318,6 +9393,7 @@ xref: AAO:0000480
 xref: BILA:0000035
 xref: BTO:0000556
 xref: EMAPA:36033
+xref: FBbt:00000110 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69069
 xref: GAID:1303
 xref: MESH:D005855
@@ -9351,6 +9427,7 @@ xref: EFO:0000414
 xref: EHDAA2:0000428
 xref: EMAPA:16069
 xref: EV:0100003
+xref: FBbt:00000111 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69070
 xref: GAID:1304
 xref: MAT:0000155
@@ -9388,6 +9465,7 @@ xref: EFO:0002545
 xref: EHDAA2:0000436
 xref: EMAPA:16062
 xref: EV:0100005
+xref: FBbt:00000125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69071
 xref: GAID:1305
 xref: MAT:0000175
@@ -9431,6 +9509,7 @@ xref: EHDAA:160
 xref: EHDAA:183
 xref: EMAPA:16083
 xref: EV:0100006
+xref: FBbt:00000126 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69072
 xref: GAID:522
 xref: MAT:0000174
@@ -9470,6 +9549,7 @@ synonym: "stomodeal-hypophyseal primordium" BROAD [XAO:0000269]
 xref: BTO:0004224
 xref: EHDAA2:0001929
 xref: EMAPA:16263
+xref: FBbt:00000439 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:295846
 xref: NCIT:C34306
 xref: TAO:0001290
@@ -9499,6 +9579,7 @@ synonym: "proctodaeum" EXACT []
 xref: AAO:0011087
 xref: EHDAA2:0000121
 xref: EMAPA:25038
+xref: FBbt:00000123 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: NCIT:C34278
 xref: TAO:0000066
 xref: UMLS:C0231054 {source="ncithesaurus:Proctodeum"}
@@ -9673,6 +9754,7 @@ xref: EHDAA2:0001603
 xref: EHDAA:5923
 xref: EMAPA:17381
 xref: EV:0100100
+xref: FBbt:00004857 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7160
 xref: GAID:363
 xref: HAO:0000374
@@ -9690,7 +9772,7 @@ xref: XAO:0000142
 xref: ZFA:0000632
 is_a: UBERON:0000467 ! anatomical system
 intersection_of: UBERON:0000467 ! anatomical system
-intersection_of: capable_of_part_of GO:0000003 ! reproduction
+intersection_of: capable_of_part_of GO:0022414 ! reproductive process
 disjoint_from: UBERON:0001007 ! digestive system
 disjoint_from: UBERON:0001009 ! circulatory system
 disjoint_from: UBERON:0001016 ! nervous system
@@ -9698,7 +9780,7 @@ disjoint_from: UBERON:0001434 ! skeletal system
 disjoint_from: UBERON:0002204 ! musculoskeletal system
 disjoint_from: UBERON:0002390 ! hematopoietic system
 disjoint_from: UBERON:8450002 ! excretory system
-relationship: capable_of_part_of GO:0000003 ! reproduction
+relationship: capable_of_part_of GO:0022414 ! reproductive process
 relationship: has_part UBERON:0000991 ! gonad
 relationship: RO:0002492 UBERON:0000066 ! existence ends during fully formed stage
 property_value: http://purl.org/dc/terms/date "2022-06-10T18:22:34Z" xsd:dateTime
@@ -9763,6 +9845,7 @@ xref: BILA:0000082
 xref: BTO:0000058
 xref: CALOHA:TS-1293
 xref: EFO:0000793
+xref: FBbt:00005055 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7152
 xref: GAID:278
 xref: galen:DigestiveSystem
@@ -9819,6 +9902,7 @@ xref: EHDAA2:0001601
 xref: EHDAA:5901
 xref: EMAPA:17366
 xref: EV:0100095
+xref: FBbt:00005056 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7159
 xref: GAID:391
 xref: galen:UrinaryTract
@@ -9932,6 +10016,7 @@ xref: EHDAA2:0001246
 xref: EHDAA:826
 xref: EMAPA:16469
 xref: EV:0100162
+xref: FBbt:00005093 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:7157
 xref: GAID:466
 xref: MA:0000016
@@ -9991,6 +10076,7 @@ xref: EHDAA:828
 xref: EMAPA:16470
 xref: EMAPA:16754
 xref: EV:0100163
+xref: FBbt:00005094 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:55675
 xref: GAID:570
 xref: MA:0000167
@@ -10029,6 +10115,7 @@ xref: BTO:0000507
 xref: EHDAA2:0000557
 xref: EHDAA:520
 xref: EMAPA:16548
+xref: FBbt:00005379 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45616
 xref: MA:0001526
 xref: NCIT:C34180
@@ -10058,6 +10145,7 @@ xref: EFO:0001950
 xref: EHDAA2:0001185
 xref: EHDAA:983
 xref: EMAPA:16255
+xref: FBbt:00005383 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45617
 xref: MA:0001564
 xref: NCIT:C34210
@@ -10087,6 +10175,7 @@ xref: BTO:0000510
 xref: EHDAA2:0000779
 xref: EHDAA:975
 xref: EMAPA:16715
+xref: FBbt:00005384 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45618
 xref: MA:0001527
 xref: NCIT:C34188
@@ -10119,6 +10208,7 @@ xref: AEO:0000171
 xref: BTO:0001886
 xref: EFO:0001652
 xref: EHDAA2:0003171
+xref: FBbt:00005495 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:86589
 xref: MAT:0000482
 xref: NCIT:C34275
@@ -10181,6 +10271,7 @@ xref: BILA:0000000
 xref: BIRNLEX:6
 xref: CARO:0000000
 xref: EHDAA2:0002229
+xref: FBbt:10000000 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:62955
 xref: HAO:0000000
 xref: MA:0000001
@@ -10538,6 +10629,7 @@ synonym: "proctodeum" RELATED []
 xref: BTO:0001680
 xref: CALOHA:TS-2005
 xref: EV:0100082
+xref: FBbt:00047153 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:15711
 xref: GAID:312
 xref: galen:Anus
@@ -10956,6 +11048,7 @@ xref: BTO:0000545
 xref: EHDAA2:0000726
 xref: EHDAA:518
 xref: EMAPA:16247
+xref: FBbt:00003125 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:45615
 xref: galen:AlimentaryTract
 xref: MA:0000917
@@ -11151,7 +11244,6 @@ xref: MIAA:0000052
 xref: NCIT:C13356
 xref: UMLS:C0032105 {source="ncithesaurus:Plasma"}
 xref: Wikipedia:Blood_plasma
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000179 ! haemolymphatic fluid
 intersection_of: UBERON:0000463 ! organism substance
 intersection_of: has_part GO:0005577 ! fibrinogen complex
@@ -11261,7 +11353,6 @@ xref: VHOG:0001250
 xref: Wikipedia:Blood_vessel
 xref: XAO:0001011
 xref: ZFA:0005314
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000055 ! vessel
 is_a: UBERON:0004120 ! mesoderm-derived structure
 relationship: capable_of_part_of GO:0008015 ! blood circulation
@@ -11383,6 +11474,7 @@ xref: BILA:0000034
 xref: BTO:0000174
 xref: CALOHA:TS-2110
 xref: EFO:0000461
+xref: FBbt:00004208 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:69067
 xref: GAID:407
 xref: MESH:D004628
@@ -11803,7 +11895,6 @@ xref: NCIT:C32891
 xref: SCTID:362219002
 xref: UMLS:C0022445 {source="ncithesaurus:Juxtaglomerular_Apparatus"}
 xref: Wikipedia:Juxtaglomerular_apparatus
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000061 ! anatomical structure
 relationship: capable_of GO:0003093 {source="GO"} ! regulation of glomerular filtration
 relationship: has_part CL:0000648 ! kidney granular cell
@@ -11877,6 +11968,7 @@ synonym: "ventral body cavity" NARROW [NCBITaxon:7742]
 xref: AEO:0000186
 xref: BTO:0001707
 xref: EHDAA2:0000267
+xref: FBbt:00005060 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:85006
 xref: galen:BodyCavity
 xref: NCIT:C25444
@@ -12061,6 +12153,7 @@ xref: EHDAA:1498
 xref: EHDAA:255
 xref: EMAPA:16073
 xref: EV:0100004
+xref: FBbt:00001057 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:87657
 xref: MAT:0000176
 xref: MIAA:0000176
@@ -12680,8 +12773,8 @@ xref: WBbt:0008422
 is_a: UBERON:0000062 ! organ
 is_a: UBERON:0005156 ! reproductive structure
 intersection_of: UBERON:0000062 ! organ
-intersection_of: capable_of_part_of GO:0000003 ! reproduction
-relationship: capable_of_part_of GO:0000003 ! reproduction
+intersection_of: capable_of_part_of GO:0022414 ! reproductive process
+relationship: capable_of_part_of GO:0022414 ! reproductive process
 
 [Term]
 id: UBERON:0003220
@@ -12921,6 +13014,7 @@ def: "Epithelial tubes transport gases, liquids and cells from one site to anoth
 synonym: "epithelial or endothelial tube" EXACT []
 xref: AEO:0000114
 xref: EHDAA2:0003114
+xref: FBbt:00007474 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000025 ! tube
 is_a: UBERON:0000483 ! epithelium
 intersection_of: UBERON:0000483 ! epithelium
@@ -13524,7 +13618,6 @@ xref: WikipediaCategory:Cardiovascular_system
 xref: XAO:0000100
 xref: XAO:0001010
 xref: ZFA:0000010
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0000467 ! anatomical system
 intersection_of: UBERON:0000467 ! anatomical system
 intersection_of: has_part UBERON:0000948 ! heart
@@ -13548,7 +13641,6 @@ synonym: "blood vessels" RELATED [TAO:0001079]
 synonym: "set of blood vessels" EXACT []
 xref: TAO:0001079
 xref: ZFA:0001079
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0002049 ! vasculature
 intersection_of: UBERON:0002049 ! vasculature
 intersection_of: RO:0002473 UBERON:0001981 ! composed primarily of blood vessel
@@ -13572,7 +13664,6 @@ xref: EMAPA:16371
 xref: MA:0002719
 xref: SCTID:362030008
 xref: VHOG:0000273
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0007798 {source="MA"} ! vascular system
 relationship: RO:0002351 UBERON:0001637 ! has member artery
 property_value: RO:0002175 NCBITaxon:9606
@@ -13593,7 +13684,6 @@ xref: NCIT:C33858
 xref: SCTID:362060003
 xref: UMLS:C1267406 {source="ncithesaurus:Venous_System"}
 xref: VHOG:0000277
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0007798 {source="MA"} ! vascular system
 relationship: RO:0002473 UBERON:0001638 ! composed primarily of vein
 property_value: RO:0002175 NCBITaxon:9606
@@ -13720,6 +13810,7 @@ synonym: "trilaminar disk" RELATED [https://orcid.org/0000-0002-6601-2165]
 synonym: "trilaminar germ" RELATED [https://orcid.org/0000-0002-6601-2165]
 xref: BILA:0000060
 xref: BTO:0001403
+xref: FBbt:00005317 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:293108
 xref: GAID:1302
 xref: MESH:D005775
@@ -13936,6 +14027,7 @@ namespace: uberon
 def: "Anatomical structure that connects two or more adjacent skeletal elements or hardened body parts." [http://orcid.org/0000-0002-6601-2165]
 subset: grouping_class
 synonym: "joint" NARROW []
+xref: FBbt:00005811 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0034921 ! multi organ part structure
 relationship: part_of UBERON:0004770 ! articular system
 
@@ -13951,6 +14043,7 @@ synonym: "gut section" RELATED [FBbt:00100315]
 synonym: "intestinal tract" RELATED []
 synonym: "segment of intestinal tract" RELATED []
 synonym: "subdivision of alimentary system" RELATED [FMA:71131]
+xref: FBbt:00100315 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:71131
 is_a: UBERON:0013522 ! subdivision of tube
 intersection_of: UBERON:0013522 ! subdivision of tube
@@ -14386,6 +14479,7 @@ synonym: "developmental tissue" RELATED [MIAA:0000019]
 xref: AEO:0000125
 xref: CALOHA:TS-2122
 xref: EHDAA2:0003125
+xref: FBbt:00007006 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:292313
 xref: MIAA:0000019
 is_a: UBERON:0000465 ! material anatomical entity
@@ -14532,7 +14626,6 @@ xref: NCIT:C13191
 xref: SCTID:68989006
 xref: UMLS:C0004799 {source="ncithesaurus:Basement_Membrane"}
 xref: Wikipedia:Basement_membrane
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0005764 {source="FMA"} ! acellular membrane
 relationship: adjacent_to CL:0000066 ! epithelial cell
 relationship: has_part GO:0005587 ! collagen type IV trimer
@@ -14886,6 +14979,7 @@ def: "The distalmost portion of the digestive tract, derived from the hindgut, a
 synonym: "rectal part of digestive tract" RELATED []
 synonym: "rectum" NARROW [FBbt:00005756]
 synonym: "terminal section of digestive tract" RELATED []
+xref: FBbt:00005756 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: WBbt:0005773
 is_a: UBERON:0004921 ! subdivision of digestive tract
 relationship: RO:0002150 UBERON:0001245 ! continuous with anus
@@ -14929,7 +15023,6 @@ subset: efo_slim
 xref: EFO:0003709
 xref: TAO:0005077
 xref: ZFA:0005077
-is_a: PR:000050567 ! protein-containing material entity
 is_a: UBERON:0005423 ! developing anatomical structure
 relationship: has_part CL:0000115 ! endothelial cell
 relationship: has_part CL:0000566 ! angioblastic mesenchymal cell
@@ -15218,6 +15311,7 @@ synonym: "organ field" RELATED []
 xref: AEO:0000170
 xref: EFO:0001649
 xref: EHDAA2:0003170
+xref: FBbt:00005426 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: Wikipedia:Anlage_(biology)
 is_a: UBERON:0000479 {source="FBbt"} ! tissue
 is_a: UBERON:0005423 {source="AEO", source="FBbt"} ! developing anatomical structure
@@ -15500,6 +15594,7 @@ subset: common_anatomy
 subset: upper_level
 synonym: "multicellular structure" EXACT [FBbt:00100313]
 xref: CARO:0010000
+xref: FBbt:00100313 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000061 ! anatomical structure
 intersection_of: UBERON:0000061 ! anatomical structure
 intersection_of: RO:0000086 PATO:0001993 ! has quality multicellular
@@ -15741,6 +15836,7 @@ def: "A subdivision of an anatomical system." [http://orcid.org/0000-0002-6601-2
 subset: common_anatomy
 subset: human_reference_atlas
 subset: upper_level
+xref: FBbt:00007330 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 xref: FMA:67509
 xref: SCTID:91690000
 is_a: UBERON:0010000 {source="FBbt"} ! multicellular anatomical structure
@@ -16133,6 +16229,7 @@ namespace: uberon
 def: "Material anatomical entity consisting of multiple anatomical structures that are not connected to each other." [CARO:0020000]
 subset: common_anatomy
 xref: CARO:0020000
+xref: FBbt:00007276 {mapping:justification="https://w3id.org/semapv/vocab/ManualMappingCuration"}
 is_a: UBERON:0000465 {source="CARO"} ! material anatomical entity
 relationship: has_component UBERON:0000061 {minCardinality="2"} ! anatomical structure
 relationship: RO:0000086 PATO:0010001 ! has quality disconnected
@@ -16318,15 +16415,6 @@ is_a: RO:0002314 ! characteristic of part of
 inverse_of: bearer_of ! bearer of
 
 [Typedef]
-id: RO:0000079
-name: function of
-def: "a relation between a function and an independent continuant (the bearer), in which the function specifically depends on the bearer for its existence" []
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-property_value: IAO:0000116 "A function inheres in its bearer at all times for which the function exists, however the function need not be realized at all the times that the function exists." xsd:string
-is_a: RO:0000052 ! characteristic of
-inverse_of: RO:0000085 ! has function
-
-[Typedef]
 id: RO:0000080
 name: quality of
 def: "a relation between a quality and an independent continuant (the bearer), in which the quality specifically depends on the bearer for its existence" []
@@ -16336,52 +16424,11 @@ is_a: RO:0000052 ! characteristic of
 inverse_of: RO:0000086 ! has quality
 
 [Typedef]
-id: RO:0000081
-name: role of
-def: "a relation between a role and an independent continuant (the bearer), in which the role specifically depends on the bearer for its existence" []
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-property_value: IAO:0000116 "A role inheres in its bearer at all times for which the role exists, however the role need not be realized at all the times that the role exists." xsd:string
-is_a: RO:0000052 ! characteristic of
-inverse_of: RO:0000087 ! has role
-
-[Typedef]
-id: RO:0000085
-name: has function
-def: "a relation between an independent continuant (the bearer) and a function, in which the function specifically depends on the bearer for its existence" []
-property_value: IAO:0000116 "A bearer can have many functions, and its functions can exist for different periods of time, but none of its functions can exist when the bearer does not exist. A function need not be realized at all the times that the function exists." xsd:string
-domain: BFO:0000004 ! independent continuant
-is_a: bearer_of ! bearer of
-
-[Typedef]
 id: RO:0000086
 name: has quality
 def: "a relation between an independent continuant (the bearer) and a quality, in which the quality specifically depends on the bearer for its existence" []
 property_value: IAO:0000116 "A bearer can have many qualities, and its qualities can exist for different periods of time, but none of its qualities can exist when the bearer does not exist." xsd:string
 is_a: bearer_of ! bearer of
-
-[Typedef]
-id: RO:0000087
-name: has role
-def: "a relation between an independent continuant (the bearer) and a role, in which the role specifically depends on the bearer for its existence" []
-property_value: IAO:0000116 "A bearer can have many roles, and its roles can exist for different periods of time, but none of its roles can exist when the bearer does not exist. A role need not be realized at all the times that the role exists." xsd:string
-domain: BFO:0000004 ! independent continuant
-is_a: bearer_of ! bearer of
-
-[Typedef]
-id: RO:0000091
-name: has disposition
-def: "a relation between an independent continuant (the bearer) and a disposition, in which the disposition specifically depends on the bearer for its existence" []
-domain: BFO:0000004 ! independent continuant
-is_a: bearer_of ! bearer of
-inverse_of: RO:0000092 ! disposition of
-
-[Typedef]
-id: RO:0000092
-name: disposition of
-def: "inverse of has disposition" []
-comment: This relation is modeled after the BFO relation of the same name which was in BFO2, but is used in a more restricted sense - specifically, we model this relation as functional (inherited from characteristic-of). Note that this relation is now removed from BFO2020.
-subset: RO:0002259
-is_a: RO:0000052 ! characteristic of
 
 [Typedef]
 id: RO:0001000
@@ -16414,8 +16461,6 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: IAO:0000116 "Location as a relation between instances: The primitive instance-level relation c located_in r at t reflects the fact that each continuant is at any given time associated with exactly one spatial region, namely its exact location. Following we can use this relation to define a further instance-level location relation - not between a continuant and the region which it exactly occupies, but rather between one continuant and another. c is located in c1, in this sense, whenever the spatial region occupied by c is part_of the spatial region occupied by c1.    Note that this relation comprehends both the relation of exact location between one continuant and another which obtains when r and r1 are identical (for example, when a portion of fluid exactly fills a cavity), as well as those sorts of inexact location relations which obtain, for example, between brain and head or between ovum and uterus" xsd:string
 property_value: IAO:0000116 "Most location relations will only hold at certain times, but this is difficult to specify in OWL. See http://purl.obolibrary.org/obo/ro/docs/temporal-semantics/" xsd:string
 property_value: seeAlso "https://wiki.geneontology.org/Located_in" xsd:anyURI
-domain: BFO:0000004 {IAO:0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
-range: BFO:0000004 {IAO:0000116="This is redundant with the more specific 'independent and not spatial region' constraint. We leave in the redundant axiom for use with reasoners that do not use negation."} ! independent continuant
 is_transitive: true
 transitive_over: part_of ! part of
 
@@ -16434,8 +16479,6 @@ name: has 2D boundary
 def: "a relation between a material entity and a 2D immaterial entity (the boundary), in which the boundary delimits the material entity" []
 property_value: IAO:0000116 "A 2D boundary may have holes and gaps, but it must be a single connected entity, not an aggregate of several disconnected parts." xsd:string
 property_value: IAO:0000116 "Although the boundary is two-dimensional, it exists in three-dimensional space and thus has a 3D shape." xsd:string
-domain: BFO:0000040 ! material entity
-range: BFO:0000141 ! immaterial entity
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
@@ -16451,77 +16494,12 @@ is_a: overlaps ! overlaps
 inverse_of: RO:0002130 ! has synaptic terminal in
 
 [Typedef]
-id: RO:0002015
-name: has positive regulatory component activity
-def: "A relationship that holds between a GO molecular function and a component of that molecular function that positively regulates the activity of the whole.  More formally, A 'has regulatory component activity' B iff :A and B are GO molecular functions (GO_0003674), A has_component B and A is positively regulated by B." []
-comment: By convention GO molecular functions are classified by their effector function and internal regulatory functions are treated as components.  So, for example calmodulin has a protein binding activity that has positive regulatory component activity calcium binding activity. Receptor tyrosine kinase activity is a tyrosine kinase activity that has positive regulatory component 'ligand binding'.
-is_a: has_regulatory_component_activity ! has regulatory component activity
-is_a: positively_regulated_by ! positively regulated by
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-05-24T09:31:17Z
-
-[Typedef]
-id: RO:0002017
-name: has component activity
-comment: A 'has component activity' B if A is A and B are molecular functions (GO_0003674) and A has_component B.
-is_a: RO:0002018 ! has component process
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-05-24T09:44:33Z
-
-[Typedef]
-id: RO:0002018
-name: has component process
-def: "w 'has process component' p if p and w are processes,  w 'has part' p and w is such that it can be directly disassembled into into n parts p, p2, p3, ..., pn, where these parts are of similar type." []
-domain: BFO:0000015 ! process
-range: BFO:0000015 ! process
-is_a: has_component ! has component
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-05-24T09:49:21Z
-
-[Typedef]
 id: RO:0002021
 name: occurs across
 def: "A relationship between a process and a barrier, where the process occurs in a region spanning the barrier. For cellular processes the barrier is typically a membrane. Examples include transport across a membrane and membrane depolarization." []
 is_a: RO:0002479 ! has part that occurs in
 created_by: https://orcid.org/0000-0002-7073-9172
 creation_date: 2017-07-20T17:19:37Z
-
-[Typedef]
-id: RO:0002022
-name: directly regulated by
-comment: Process(P2) is directly regulated by process(P1) iff: P1 regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  regulates the kinase activity (P2) of protein B then P1 directly regulates P2. {xref="https://orcid.org/0000-0002-7073-9172"}
-is_a: regulated_by ! regulated by
-inverse_of: directly_regulates ! directly regulates
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-09-17T13:52:24Z
-
-[Typedef]
-id: RO:0002023
-name: directly negatively regulated by
-def: "Process(P2) is directly negatively regulated by process(P1) iff: P1 negatively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding  negatively regulates the kinase activity (P2) of protein B then P2 directly negatively regulated by P1." [https://orcid.org/0000-0002-7073-9172]
-is_a: RO:0002022 ! directly regulated by
-inverse_of: directly_negatively_regulates ! directly negatively regulates
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-09-17T13:52:38Z
-
-[Typedef]
-id: RO:0002024
-name: directly positively regulated by
-def: "Process(P2) is directly postively regulated by process(P1) iff: P1 positively regulates P2 via direct physical interaction between an agent executing P1 (or some part of P1) and an agent executing P2 (or some part of P2).  For example, if protein A has protein binding activity(P1) that targets protein B and this binding positively regulates the kinase activity (P2) of protein B then P2 is directly postively regulated by P1." [https://orcid.org/0000-0002-7073-9172]
-is_a: RO:0002022 ! directly regulated by
-inverse_of: directly_positively_regulates ! directly positively regulates
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-09-17T13:52:47Z
-
-[Typedef]
-id: RO:0002025
-name: has effector activity
-def: "A 'has effector activity' B if A and B are GO molecular functions (GO_0003674),  A 'has component activity' B and B is the effector (output function) of B.  Each compound function has only one effector activity." [https://orcid.org/0000-0002-7073-9172]
-comment: This relation is designed for constructing compound molecular functions, typically in combination with one or more regulatory component activity relations.
-is_functional: true
-is_a: RO:0002017 ! has component activity
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-09-22T14:14:36Z
 
 [Typedef]
 id: RO:0002081
@@ -16646,8 +16624,6 @@ id: RO:0002150
 name: continuous with
 def: "X continuous_with Y if and only if X and Y share a fiat boundary." []
 property_value: seeAlso "FMA:85972" xsd:string
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000004 ! independent continuant
 is_symmetric: true
 is_a: RO:0002323 ! mereotopologically related to
 
@@ -16710,7 +16686,6 @@ name: connects
 def: "c connects a if and only if there exist some b such that a and b are similar parts of the same system, and c connects b, specifically, c connects a with b. When one structure connects two others it unites some aspect of the function or role they play within the system." []
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Connectivity-Design-Pattern" xsd:anyURI
 property_value: seeAlso "https://github.com/obophenotype/uberon/wiki/Modeling-articulations-Design-Pattern" xsd:anyURI
-domain: BFO:0000004 ! independent continuant
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
@@ -16741,8 +16716,6 @@ id: RO:0002202
 name: develops from
 def: "x develops from y if and only if either (a) x directly develops from y or (b) there exists some z such that x directly develops from z and z develops from y" []
 comment: This is the transitive form of the develops from relation
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000004 ! independent continuant
 is_transitive: true
 is_a: RO:0002254 ! has developmental contribution from
 is_a: RO:0002258 ! developmentally preceded by
@@ -16762,7 +16735,6 @@ is_a: RO:0002388 ! has potential to directly develop into
 id: RO:0002206
 name: expressed in
 def: "x expressed in y if and only if there is a gene expression process (GO:0010467) that occurs in y, and one of the following holds: (i) x is a gene, and x is transcribed into a transcript as part of the gene expression process (ii) x is a transcript, and the transcription of x is part of the gene expression process (iii) x is a mature gene product such as a protein, and x was translated or otherwise processes from a transcript that was transcribed as part of this gene expression process" []
-domain: BFO:0000002 ! continuant
 range: UBERON:0000465 ! material anatomical entity
 is_a: RO:0002330 ! genomically related to
 inverse_of: RO:0002292 ! expresses
@@ -16803,8 +16775,6 @@ id: RO:0002222
 name: temporally related to
 comment: A relation that holds between two occurrents. This is a grouping relation that collects together all the Allen relations.
 subset: ro-eco
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
 
 [Typedef]
 id: RO:0002223
@@ -16896,8 +16866,6 @@ name: developmentally preceded by
 def: "Candidate definition: x developmentally related to y if and only if there exists some developmental process (GO:0032502) p such that x and y both participates in p, and x is the output of p and y is the input of p" []
 comment: This relation groups together various other developmental relations. It is fairly generic, encompassing induction, developmental contribution and direct and transitive develops from
 property_value: IAO:0000116 "false" xsd:boolean
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
 is_a: RO:0002324 ! developmentally related to
 inverse_of: RO:0002286 ! developmentally succeeded by
 
@@ -16907,7 +16875,6 @@ name: acts upstream of
 def: "c acts upstream of p if and only if c enables some f that is involved in p' and p' occurs chronologically before p, is not part of p, and affects the execution of p. c is a material entity and f, p, p' are processes." []
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 property_value: seeAlso http://wiki.geneontology.org/index.php/Acts_upstream_of
-holds_over_chain: RO:0002327 causally_upstream_of
 is_a: RO:0002264 ! acts upstream of or within
 
 [Typedef]
@@ -16917,7 +16884,6 @@ def: "c acts upstream of or within p if c is enables f, and f is causally upstre
 subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
 synonym: "affects" RELATED []
 property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of_or_within" xsd:anyURI
-holds_over_chain: RO:0002327 causally_upstream_of_or_within
 is_a: RO:0002500 ! causal agent in process
 
 [Typedef]
@@ -16970,17 +16936,6 @@ name: developmentally related to
 def: "A relationship that holds between entities participating in some developmental process (GO:0032502)" []
 
 [Typedef]
-id: RO:0002327
-name: enables
-def: "c enables p iff c is capable of p and c acts to execute p." []
-subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
-property_value: seeAlso "https://wiki.geneontology.org/Enables" xsd:anyURI
-is_a: capable_of ! capable of
-inverse_of: RO:0002333 ! enabled by
-transitive_over: has_part ! has part
-transitive_over: RO:0002017 ! has component activity
-
-[Typedef]
 id: RO:0002328
 name: functionally related to
 def: "A grouping relationship for any relationship directly involving a function, or that holds because of a function of one of the related entities." []
@@ -16995,34 +16950,11 @@ is_a: RO:0002328 ! functionally related to
 id: RO:0002330
 name: genomically related to
 def: "holds between two entities when some genome-level process such as gene expression is involved. This includes transcriptional, spliceosomal events. These relations can be used between either macromolecule entities (such as regions of nucleic acid) or between their abstract informational counterparts." []
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
-
-[Typedef]
-id: RO:0002331
-name: involved in
-def: "c involved_in p if and only if c enables some process p', and p' is part of p" []
-property_value: seeAlso "https://wiki.geneontology.org/Involved_in" xsd:anyURI
-holds_over_chain: RO:0002327 part_of
-is_a: participates_in ! participates in
-is_a: RO:0002431 ! involved in or involved in regulation of
-transitive_over: part_of ! part of
-
-[Typedef]
-id: RO:0002333
-name: enabled by
-def: "inverse of enables" []
-subset: http://purl.obolibrary.org/obo/valid_for_gocam
-property_value: seeAlso "https://wiki.geneontology.org/Enabled_by" xsd:anyURI
-is_a: has_participant ! has participant
-is_a: RO:0002328 ! functionally related to
 
 [Typedef]
 id: RO:0002337
 name: related via localization to
 def: "A relationship that holds via some process of localization" []
-domain: BFO:0000015 ! process
-range: BFO:0000002 ! continuant
 
 [Typedef]
 id: RO:0002350
@@ -17089,8 +17021,6 @@ name: in branching relationship with
 def: "A relationship that holds between two material entities in a system of connected structures, where the branching relationship holds based on properties of the connecting network." []
 property_value: seeAlso http://purl.obolibrary.org/obo/ro/docs/branching_part_of.png
 property_value: seeAlso "https://github.com/obophenotype/uberon/issues/170" xsd:anyURI
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 is_a: RO:0002323 ! mereotopologically related to
 
 [Typedef]
@@ -17153,31 +17083,6 @@ def: "x has potential to directly develop into y iff x directly develops into y 
 is_a: RO:0002387 ! has potential to develop into
 
 [Typedef]
-id: RO:0002407
-name: indirectly positively regulates
-def: "p indirectly positively regulates q iff p is indirectly causally upstream of q and p positively regulates q." []
-property_value: seeAlso "https://wiki.geneontology.org/Indirectly_positively_regulates" xsd:anyURI
-holds_over_chain: directly_positively_regulates directly_positively_regulates
-holds_over_chain: directly_positively_regulates RO:0002407
-holds_over_chain: RO:0002409 RO:0002409
-is_transitive: true
-is_a: positively_regulates ! positively regulates
-is_a: RO:0012012 ! indirectly regulates
-transitive_over: directly_positively_regulates ! directly positively regulates
-
-[Typedef]
-id: RO:0002409
-name: indirectly negatively regulates
-def: "p indirectly negatively regulates q iff p is indirectly causally upstream of q and p negatively regulates q." []
-property_value: seeAlso "https://wiki.geneontology.org/Indirectly_negatively_regulates" xsd:anyURI
-holds_over_chain: directly_negatively_regulates directly_negatively_regulates
-holds_over_chain: directly_negatively_regulates RO:0002409
-is_transitive: true
-is_a: negatively_regulates ! negatively regulates
-is_a: RO:0012012 ! indirectly regulates
-transitive_over: directly_negatively_regulates ! directly negatively regulates
-
-[Typedef]
 id: RO:0002410
 name: causally related to
 def: "relation that links two events, processes, states, or objects such that one event, process, state, or object (a cause) contributes to the production of another event, process, state, or object (an effect) where the cause is partly or wholly responsible for the effect, and the effect is partly or wholly dependent on the cause." [https://en.wikipedia.org/wiki/Causality]
@@ -17187,27 +17092,8 @@ property_value: IAO:0000116 "This branch of the ontology deals with causal relat
 id: RO:0002428
 name: involved in regulation of
 def: "c involved in regulation of p if c is involved in some p' and p' regulates some p" []
-holds_over_chain: RO:0002327 regulates
-holds_over_chain: RO:0002331 regulates
 is_a: RO:0002263 ! acts upstream of
 is_a: RO:0002431 ! involved in or involved in regulation of
-
-[Typedef]
-id: RO:0002429
-name: involved in positive regulation of
-def: "c involved in regulation of p if c is involved in some p' and p' positively regulates some p" []
-holds_over_chain: RO:0002327 positively_regulates
-holds_over_chain: RO:0002331 positively_regulates
-is_a: RO:0002428 ! involved in regulation of
-
-[Typedef]
-id: RO:0002430
-name: involved in negative regulation of
-def: "c involved in regulation of p if c is involved in some p' and p' negatively regulates some p" []
-property_value: RO:0004050 RO:0002428
-holds_over_chain: RO:0002327 negatively_regulates
-holds_over_chain: RO:0002331 negatively_regulates
-is_a: RO:0002428 ! involved in regulation of
 
 [Typedef]
 id: RO:0002431
@@ -17219,86 +17105,16 @@ is_a: RO:0002328 ! functionally related to
 is_a: RO:0002500 ! causal agent in process
 
 [Typedef]
-id: RO:0002432
-name: is active in
-def: "c executes activity in d if and only if c enables p and p occurs_in d.  Assuming no action at a distance by gene products, if a gene product enables (is capable of) a process that occurs in some structure, it must have at least some part in that structure." [https://orcid.org/0000-0002-6601-2165, https://orcid.org/0000-0002-7073-9172]
-synonym: "enables activity in" EXACT []
-property_value: seeAlso "https://wiki.geneontology.org/Is_active_in" xsd:anyURI
-is_a: overlaps ! overlaps
-is_a: RO:0002328 ! functionally related to
-
-[Typedef]
 id: RO:0002433
 name: contributes to morphology of
 def: "p contributes to morphology of w if and only if a change in the morphology of p entails a change in the morphology of w. Examples: every skull contributes to morphology of the head which it is a part of. Counter-example: nuclei do not generally contribute to the morphology of the cell they are part of, as they are buffered by cytoplasm." []
 is_a: overlaps ! overlaps
 
 [Typedef]
-id: RO:0002434
-name: interacts with
-def: "A relationship that holds between two entities in which the processes executed by the two entities are causally connected." []
-subset: ro-eco
-synonym: "in pairwise interaction with" EXACT []
-property_value: IAO:0000116 "Considering relabeling as 'pairwise interacts with'" xsd:anyURI
-property_value: IAO:0000116 "This relation and all sub-relations can be applied to either (1) pairs of entities that are interacting at any moment of time (2) populations or species of entity whose members have the disposition to interact (3) classes whose members have the disposition to interact." xsd:string
-property_value: seeAlso "http://purl.obolibrary.org/obo/ro/docs/interaction-relations/" xsd:anyURI
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
-is_symmetric: true
-
-[Typedef]
-id: RO:0002436
-name: molecularly interacts with
-def: "An interaction relationship in which the two partners are molecular entities that directly physically interact with each other for example via a stable binding interaction or a brief interaction during which one modifies the other." []
-property_value: seeAlso ECO:0000353
-is_symmetric: true
-is_a: RO:0002434 ! interacts with
-
-[Typedef]
-id: RO:0002447
-name: phosphorylates
-property_value: IAO:0000116 "Axiomatization to GO to be added later" xsd:string
-is_a: RO:0002436 ! molecularly interacts with
-
-[Typedef]
-id: RO:0002448
-name: directly regulates activity of
-def: "The entity A, immediately upstream of the entity B, has an activity that regulates an activity performed by B. For example, A and B may be gene products and binding of B by A regulates the kinase activity of B.\n\nA and B can be physically interacting but not necessarily. Immediately upstream means there are no intermediate entity between A and B." []
-synonym: "molecularly controls" EXACT []
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
-is_a: RO:0002436 ! molecularly interacts with
-is_a: RO:0011002 ! regulates activity of
-
-[Typedef]
-id: RO:0002449
-name: directly negatively regulates activity of
-def: "The entity A, immediately upstream of the entity B, has an activity that negatively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A negatively regulates the kinase activity of B." []
-synonym: "molecularly decreases activity of" EXACT []
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
-is_a: RO:0002448 ! directly regulates activity of
-
-[Typedef]
-id: RO:0002450
-name: directly positively regulates activity of
-def: "The entity A, immediately upstream of the entity B, has an activity that positively regulates an activity performed by B. \nFor example, A and B may be gene products and binding of B by A positively regulates the kinase activity of B." []
-synonym: "molecularly increases activity of" EXACT []
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
-is_a: RO:0002448 ! directly regulates activity of
-
-[Typedef]
-id: RO:0002464
-name: helper property (not for use in curation)
-
-[Typedef]
 id: RO:0002473
 name: composed primarily of
 def: "x composed_primarily_of y if and only if more than half of the mass of x is made from y or units of the same type as y." []
 subset: ro-eco
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 is_a: has_part ! has part
 
 [Typedef]
@@ -17306,13 +17122,6 @@ id: RO:0002479
 name: has part that occurs in
 def: "p has part that occurs in c if and only if there exists some p1, such that p has_part p1, and p1 occurs in c." []
 subset: ro-eco
-domain: BFO:0000003 ! occurrent
-range: BFO:0000004 ! independent continuant
-
-[Typedef]
-id: RO:0002481
-name: is kinase activity
-is_a: RO:0002564 ! molecular interaction relation helper property
 
 [Typedef]
 id: RO:0002485
@@ -17330,8 +17139,6 @@ is_a: RO:0002170 ! connected to
 [Typedef]
 id: RO:0002487
 name: relation between physical entity and a process or stage
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000003 ! occurrent
 
 [Typedef]
 id: RO:0002488
@@ -17428,22 +17235,12 @@ inverse_of: process_has_causal_agent ! process has causal agent
 id: RO:0002501
 name: causal relation between processes
 def: "p is causally related to q if and only if p or any part of p and q or any part of q are linked by a chain of events where each event pair is one where the execution of p influences the execution of q. p may be upstream, downstream, part of, or a container of q." []
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: RO:0002502
 name: depends on
 property_value: seeAlso BFO:0000169
-
-[Typedef]
-id: RO:0002506
-name: causal relation between entities
-property_value: IAO:0000116 "The intent is that the process branch of the causal property hierarchy is primary (causal relations hold between occurrents/processes), and that the material branch is defined in terms of the process branch" xsd:string
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
-is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: RO:0002551
@@ -17454,32 +17251,6 @@ range: UBERON:0000465 {IAO:0000116="This should be to a more restricted class, b
 is_a: has_part ! has part
 inverse_of: RO:0002576 ! skeleton of
 is_asymmetric: true
-
-[Typedef]
-id: RO:0002559
-name: causally influenced by
-is_a: RO:0002506 ! causal relation between entities
-inverse_of: RO:0002566 ! causally influences
-
-[Typedef]
-id: RO:0002563
-name: interaction relation helper property
-property_value: seeAlso http://ontologydesignpatterns.org/wiki/Submissions:N-Ary_Relation_Pattern_%28OWL_2%29
-property_value: seeAlso "http://purl.obolibrary.org/obo/ro/docs/interaction-relations/" xsd:anyURI
-is_a: RO:0002464 ! helper property (not for use in curation)
-
-[Typedef]
-id: RO:0002564
-name: molecular interaction relation helper property
-is_a: RO:0002563 ! interaction relation helper property
-
-[Typedef]
-id: RO:0002566
-name: causally influences
-def: "The entity or characteristic A is causally upstream of the entity or characteristic B, A having an effect on B. An entity corresponds to any biological type of entity as long as a mass is measurable. A characteristic corresponds to a particular specificity of an entity (e.g., phenotype, shape, size)." []
-domain: BFO:0000002 ! continuant
-range: BFO:0000002 ! continuant
-is_a: RO:0002506 ! causal relation between entities
 
 [Typedef]
 id: RO:0002567
@@ -17510,8 +17281,6 @@ id: RO:0002570
 name: conduit for
 def: "x is a conduit for y iff y overlaps through the lumen_of of x, and y has parts on either side of the lumen of x." []
 subset: ro-eco
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 is_a: overlaps ! overlaps
 
 [Typedef]
@@ -17519,7 +17288,6 @@ id: RO:0002571
 name: lumen of
 def: "x lumen_of y iff x is the space or substance that is part of y and does not cross any of the inner membranes or boundaries of y that is maximal with respect to the volume of the convex hull." []
 subset: ro-eco
-range: BFO:0000040 ! material entity
 is_a: part_of ! part of
 
 [Typedef]
@@ -17527,7 +17295,6 @@ id: RO:0002572
 name: luminal space of
 def: "s is luminal space of x iff s is lumen_of x and s is an immaterial entity" []
 subset: ro-eco
-domain: BFO:0000141 ! immaterial entity
 is_a: RO:0002571 ! lumen of
 
 [Typedef]
@@ -17558,8 +17325,6 @@ id: RO:0002595
 name: causal relation between material entity and a process
 def: "A relationship that holds between a material entity and a process in which causality is involved, with either the material entity or some part of the material entity exerting some influence over the process, or the process influencing some aspect of the material entity." []
 property_value: IAO:0000116 "Do not use this relation directly. It is intended as a grouping for a diverse set of relations, all involving cause and effect." xsd:string
-domain: BFO:0000040 ! material entity
-range: BFO:0000015 ! process
 is_a: RO:0002410 ! causally related to
 
 [Typedef]
@@ -17584,61 +17349,6 @@ holds_over_chain: capable_of positively_regulates
 is_a: RO:0002596 ! capable of regulating
 
 [Typedef]
-id: RO:0004031
-name: enables subfunction
-def: "Holds between an entity and an process P where the entity enables some larger compound process, and that larger process has-part P." []
-holds_over_chain: RO:0002327 has_part
-is_a: RO:0002328 ! functionally related to
-created_by: https://orcid.org/0000-0002-6601-2165
-creation_date: 2018-01-25T23:20:13Z
-
-[Typedef]
-id: RO:0004032
-name: acts upstream of or within, positive effect
-subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
-property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of_or_within,_positive_effect" xsd:anyURI
-holds_over_chain: RO:0002327 RO:0004047
-is_a: RO:0002264 ! acts upstream of or within
-created_by: https://orcid.org/0000-0002-6601-2165
-creation_date: 2018-01-26T23:49:30Z
-
-[Typedef]
-id: RO:0004033
-name: acts upstream of or within, negative effect
-subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
-property_value: RO:0004050 RO:0002264
-property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of_or_within,_negative_effect" xsd:anyURI
-holds_over_chain: RO:0002327 RO:0004046
-is_a: RO:0002264 ! acts upstream of or within
-created_by: https://orcid.org/0000-0002-6601-2165
-creation_date: 2018-01-26T23:49:51Z
-
-[Typedef]
-id: RO:0004034
-name: acts upstream of, positive effect
-def: "c 'acts upstream of, positive effect' p if c is enables f, and f is causally upstream of p, and the direction of f is positive" []
-subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
-property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of,_positive_effect" xsd:anyURI
-holds_over_chain: RO:0002327 causally_upstream_of,_positive_effect
-is_a: RO:0002263 ! acts upstream of
-is_a: RO:0004032 ! acts upstream of or within, positive effect
-created_by: https://orcid.org/0000-0002-6601-2165
-creation_date: 2018-01-26T23:53:14Z
-
-[Typedef]
-id: RO:0004035
-name: acts upstream of, negative effect
-def: "c 'acts upstream of, negative effect' p if c is enables f, and f is causally upstream of p, and the direction of f is negative" []
-subset: http://purl.obolibrary.org/obo/valid_for_go_gp2term
-property_value: RO:0004050 RO:0002263
-property_value: seeAlso "https://wiki.geneontology.org/Acts_upstream_of,_negative_effect" xsd:anyURI
-holds_over_chain: RO:0002327 causally_upstream_of,_negative_effect
-is_a: RO:0002263 ! acts upstream of
-is_a: RO:0004033 ! acts upstream of or within, negative effect
-created_by: https://orcid.org/0000-0002-6601-2165
-creation_date: 2018-01-26T23:53:22Z
-
-[Typedef]
 id: RO:0004046
 name: causally upstream of or within, negative effect
 property_value: RO:0004050 RO:0002418
@@ -17654,14 +17364,6 @@ property_value: seeAlso https://wiki.geneontology.org/Causally_upstream_of_or_wi
 is_a: causally_upstream_of_or_within ! causally upstream of or within
 created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-03-13T23:55:19Z
-
-[Typedef]
-id: RO:0011002
-name: regulates activity of
-def: "The entity A has an activity that regulates an activity of the entity B. For example, A and B are gene products where the catalytic activity of A regulates the kinase activity of B." []
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
-is_a: RO:0002566 ! causally influences
 
 [Typedef]
 id: RO:0012000
@@ -17689,23 +17391,6 @@ is_a: RO:0002598 ! capable of positively regulating
 is_a: RO:0012004 ! is small molecule regulator of
 created_by: https://orcid.org/0000-0003-1813-6857
 creation_date: 2020-06-24T13:15:26Z
-
-[Typedef]
-id: RO:0012011
-name: indirectly causally upstream of
-def: "p is indirectly causally upstream of q iff p is causally upstream of q and there exists some process r such that p is causally upstream of r and r is causally upstream of q." []
-is_a: causally_upstream_of ! causally upstream of
-created_by: https://orcid.org/0000-0003-1813-6857
-creation_date: 2022-09-26T06:07:17Z
-
-[Typedef]
-id: RO:0012012
-name: indirectly regulates
-def: "p indirectly regulates q iff p is indirectly causally upstream of q and p regulates q." []
-is_a: regulates ! regulates
-is_a: RO:0012011 ! indirectly causally upstream of
-created_by: https://orcid.org/0000-0003-1813-6857
-creation_date: 2022-09-26T06:08:01Z
 
 [Typedef]
 id: RO:0013001
@@ -17787,6 +17472,8 @@ id: RO:0017001
 name: device utilizes material
 def: "X device utilizes material Y means X and Y are material entities, and X is capable of some process P that has input Y." []
 synonym: "utilizes" BROAD []
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0001-9625-1899
+property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0003-2620-0345
 holds_over_chain: capable_of has_input
 creation_date: 2021-11-08T12:00:00Z
 
@@ -17813,8 +17500,6 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002220
 property_value: IAO:0000116 "This relation acts as a join point with BSPO" xsd:string
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000004 ! independent continuant
 is_a: RO:0002163 ! spatially disjoint from
 
 [Typedef]
@@ -17833,7 +17518,6 @@ namespace: external
 def: "Inverse of characteristic_of" []
 xref: RO:0000053
 property_value: IAO:0000116 "A bearer can have many dependents, and its dependents can exist for different periods of time, but none of its dependents can exist when the bearer does not exist." xsd:string
-range: BFO:0000020 ! specifically dependent continuant
 is_inverse_functional: true
 
 [Typedef]
@@ -17844,7 +17528,6 @@ def: "X outer_layer_of Y iff:\n. X :continuant that bearer_of some PATO:laminar\
 comment: A relationship that applies between a continuant and its outer, bounding layer.  Examples include the relationship between a multicellular organism and its integument, between an animal cell and its plasma membrane, and between a membrane bound organelle and its outer/bounding membrane.
 subset: ro-eco
 xref: RO:0002007
-range: BFO:0000040 ! material entity
 is_a: part_of ! part of
 
 [Typedef]
@@ -17854,8 +17537,6 @@ namespace: external
 def: "A relation between a material entity (such as a cell) and a process, in which the material entity has the ability to carry out the process. " []
 subset: ro-eco
 xref: RO:0002215
-domain: BFO:0000004 ! independent continuant
-range: BFO:0000015 ! process
 is_a: capable_of_part_of ! capable of part of
 
 [Typedef]
@@ -17955,45 +17636,6 @@ name: channels_into
 namespace: uberon
 
 [Typedef]
-id: directly_negatively_regulates
-name: directly negatively regulates
-namespace: external
-def: "p directly negatively regulates q iff p is immediately causally upstream of q, and p negatively regulates q." []
-subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
-subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
-subset: http://purl.obolibrary.org/obo/valid_for_gocam
-xref: RO:0002630
-property_value: RO:0004050 RO:0002578
-property_value: seeAlso "https://wiki.geneontology.org/Directly_negatively_regulates" xsd:anyURI
-is_a: directly_regulates ! directly regulates
-is_a: negatively_regulates ! negatively regulates
-
-[Typedef]
-id: directly_positively_regulates
-name: directly positively regulates
-namespace: external
-def: "p directly positively regulates q iff p is immediately causally upstream of q, and p positively regulates q." []
-subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
-subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
-subset: http://purl.obolibrary.org/obo/valid_for_gocam
-xref: RO:0002629
-property_value: seeAlso "https://wiki.geneontology.org/Directly_positively_regulates" xsd:anyURI
-is_a: directly_regulates ! directly regulates
-is_a: positively_regulates ! positively regulates
-
-[Typedef]
-id: directly_regulates
-name: directly regulates
-namespace: external
-def: "p directly regulates q iff p is immediately causally upstream of q and p regulates q." []
-subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
-subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
-subset: http://purl.obolibrary.org/obo/valid_for_gocam
-xref: RO:0002578
-is_a: immediately_causally_upstream_of ! immediately causally upstream of
-is_a: regulates ! regulates
-
-[Typedef]
 id: distally_connected_to
 name: distally connected to
 namespace: uberon
@@ -18044,8 +17686,6 @@ namespace: external
 def: "x 'has end location' y if and only if there exists some process z such that x 'ends with' z and z 'occurs in' y" []
 subset: ro-eco
 xref: RO:0002232
-domain: BFO:0000015 ! process
-range: BFO:0000004 ! independent continuant
 holds_over_chain: ends_with occurs_in
 is_a: RO:0002479 ! has part that occurs in
 
@@ -18068,7 +17708,6 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 subset: ro-eco
 xref: RO:0002233
 property_value: seeAlso "https://wiki.geneontology.org/Has_input" xsd:anyURI
-domain: BFO:0000015 ! process
 holds_over_chain: starts_with has_input
 is_a: has_participant ! has participant
 inverse_of: RO:0002352 ! input of
@@ -18080,18 +17719,6 @@ def: "OBSOLETE A relation between a cell and molecule or complex such that every
 property_value: term_tracker_item https://github.com/obophenotype/cell-ontology/issues/1481
 is_obsolete: true
 replaced_by: RO:0015016
-
-[Typedef]
-id: has_negative_regulatory_component_activity
-name: has negative regulatory component activity
-namespace: external
-def: "A relationship that holds between a GO molecular function and a component of that molecular function that negatively regulates the activity of the whole.  More formally, A 'has regulatory component activity' B iff :A and B are GO molecular functions (GO_0003674), A has_component B and A is negatively regulated by B." []
-comment: By convention GO molecular functions are classified by their effector function.  Internal regulatory functions are treated as components.  For example, NMDA glutmate receptor activity is a cation channel activity with positive regulatory component 'glutamate binding' and negative regulatory components including 'zinc binding' and 'magnesium binding'.
-xref: RO:0002014
-is_a: has_regulatory_component_activity ! has regulatory component activity
-is_a: negatively_regulated_by ! negatively regulated by
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-05-24T09:31:01Z
 
 [Typedef]
 id: has_ontology_root_term
@@ -18141,8 +17768,6 @@ namespace: external
 def: "a relation between a process and a continuant, in which the continuant is somehow involved in the process" []
 xref: RO:0000057
 property_value: IAO:0000116 "Has_participant is a primitive instance-level relation between a process, a continuant, and a time at which the continuant participates in some way in the process. The relation obtains, for example, when this particular process of oxygen exchange across this particular alveolar membrane has_participant this particular sample of hemoglobin at this particular time." xsd:string
-domain: BFO:0000003 ! occurrent
-range: BFO:0000002 ! continuant
 holds_over_chain: has_part has_participant
 
 [Typedef]
@@ -18181,17 +17806,6 @@ created_by: https://orcid.org/0000-0002-6601-2165
 creation_date: 2018-12-13T11:26:32Z
 
 [Typedef]
-id: has_regulatory_component_activity
-name: has regulatory component activity
-namespace: external
-def: "A 'has regulatory component activity' B if A and B are GO molecular functions (GO_0003674), A has_component B and A is regulated by B." []
-xref: RO:0002013
-is_a: regulated_by ! regulated by
-is_a: RO:0002017 ! has component activity
-created_by: https://orcid.org/0000-0002-7073-9172
-creation_date: 2017-05-24T09:30:46Z
-
-[Typedef]
 id: has_small_molecule_activator
 name: has small molecule activator
 namespace: external
@@ -18209,8 +17823,6 @@ namespace: external
 def: "x 'has starts location' y if and only if there exists some process z such that x 'starts with' z and z 'occurs in' y" []
 subset: ro-eco
 xref: RO:0002231
-domain: BFO:0000015 ! process
-range: BFO:0000004 ! independent continuant
 holds_over_chain: starts_with occurs_in
 is_a: RO:0002479 ! has part that occurs in
 
@@ -18237,24 +17849,6 @@ subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002338
 is_a: results_in_transport_to_from_or_in ! results in transport to from or in
 transitive_over: part_of ! part of
-
-[Typedef]
-id: immediately_causally_downstream_of
-name: immediately causally downstream of
-namespace: external
-xref: RO:0002405
-is_a: causally_downstream_of ! causally downstream of
-is_a: immediately_preceded_by ! immediately preceded by
-inverse_of: immediately_causally_upstream_of ! immediately causally upstream of
-
-[Typedef]
-id: immediately_causally_upstream_of
-name: immediately causally upstream of
-namespace: external
-def: "p is immediately causally upstream of q iff p is causally upstream of q, and the end of p is coincident with the beginning of q." []
-xref: RO:0002412
-is_a: causally_upstream_of ! causally upstream of
-is_a: immediately_precedes ! immediately precedes
 
 [Typedef]
 id: immediately_preceded_by
@@ -18315,17 +17909,6 @@ is_a: regulates ! regulates
 inverse_of: negatively_regulated_by ! negatively regulated by
 
 [Typedef]
-id: negatively_regulates_characteristic
-name: negatively regulates characteristic
-namespace: gene_ontology
-def: "A relationship that holds between a process and a characteristic in which process (P) negatively regulates characteristic (C) iff: P results in a decrease in the intensity or magnitude of C." []
-xref: RO:0019002
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
-holds_over_chain: negatively_regulates positively_regulates_characteristic
-holds_over_chain: positively_regulates negatively_regulates_characteristic
-is_a: regulates_characteristic ! regulates characteristic
-
-[Typedef]
 id: occurs_in
 name: occurs in
 namespace: external
@@ -18336,8 +17919,6 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: BFO:0000066
 property_value: seeAlso "https://wiki.geneontology.org/Occurs_in" xsd:anyURI
-domain: BFO:0000003 ! occurrent
-range: BFO:0000004 ! independent continuant
 holds_over_chain: part_of occurs_in
 inverse_of: BFO:0000067 ! contains process
 transitive_over: part_of ! part of
@@ -18398,8 +17979,6 @@ name: participates in
 namespace: external
 def: "a relation between a continuant and a process, in which the continuant is somehow involved in the process" []
 xref: RO:0000056
-domain: BFO:0000002 ! continuant
-range: BFO:0000003 ! occurrent
 inverse_of: has_participant ! has participant
 
 [Typedef]
@@ -18428,16 +18007,6 @@ is_a: regulates ! regulates
 inverse_of: positively_regulated_by ! positively regulated by
 
 [Typedef]
-id: positively_regulates_characteristic
-name: positively regulates characteristic
-namespace: gene_ontology
-def: "A relationship that holds between a process and a characteristic in which process (P) positively regulates characteristic (C) iff: P results in an increase in the intensity or magnitude of C." []
-xref: RO:0019001
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
-holds_over_chain: positively_regulates positively_regulates_characteristic
-is_a: regulates_characteristic ! regulates characteristic
-
-[Typedef]
 id: posteriorly_connected_to
 name: posteriorly connected to
 namespace: uberon
@@ -18452,8 +18021,6 @@ def: "x is preceded by y if and only if the time point at which y ends is before
 subset: ro-eco
 xref: BFO:0000062
 property_value: IAO:0000116 "An example is: translation preceded_by transcription; aging preceded_by development (not however death preceded_by aging). Where derives_from links classes of continuants, preceded_by links classes of processes. Clearly, however, these two relations are not independent of each other. Thus if cells of type C1 derive_from cells of type C, then any cell division involving an instance of C1 in a given lineage is preceded_by cellular processes involving an instance of C.    The assertion P preceded_by P1 tells us something about Ps in general: that is, it tells us something about what happened earlier, given what we know about what happened later. Thus it does not provide information pointing in the opposite direction, concerning instances of P1 in general; that is, that each is such as to be succeeded by some instance of P. Note that an assertion to the effect that P preceded_by P1 is rather weak; it tells us little about the relations between the underlying instances in virtue of which the preceded_by relation obtains. Typically we will be interested in stronger relations, for example in the relation immediately_preceded_by, or in relations which combine preceded_by with a condition to the effect that the corresponding instances of P and P1 share participants, or that their participants are connected by relations of derivation, or (as a first step along the road to a treatment of causality) that the one process in some way affects (for example, initiates or regulates) the other." xsd:string
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
 holds_over_chain: part_of preceded_by
 is_transitive: true
 is_a: RO:0002086 ! ends after
@@ -18466,8 +18033,6 @@ namespace: external
 def: "x precedes y if and only if the time point at which x ends is before or equivalent to the time point at which y starts. Formally: x precedes y iff ω(x) <= α(y), where α is a function that maps a process to a start point, and ω is a function that maps a process to an end point." []
 subset: ro-eco
 xref: BFO:0000063
-domain: BFO:0000003 ! occurrent
-range: BFO:0000003 ! occurrent
 holds_over_chain: part_of precedes
 is_transitive: true
 is_a: RO:0002222 ! temporally related to
@@ -18487,8 +18052,6 @@ namespace: external
 def: "a produced_by b iff some process that occurs_in b has_output a." []
 subset: ro-eco
 xref: RO:0003001
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 
 [Typedef]
 id: produces
@@ -18498,8 +18061,6 @@ def: "a produces b if some process that occurs_in a has_output b, where a and b 
 comment: Note that this definition doesn't quite distinguish the output of a transformation process from a production process, which is related to the identity/granularity issue.
 subset: ro-eco
 xref: RO:0003000
-domain: BFO:0000040 ! material entity
-range: BFO:0000040 ! material entity
 inverse_of: produced_by ! produced by
 
 [Typedef]
@@ -18522,8 +18083,6 @@ namespace: external
 def: "inverse of regulates" []
 subset: RO:0002259
 xref: RO:0002334
-domain: BFO:0000015 ! process
-range: BFO:0000015 ! process
 is_transitive: true
 is_a: causally_downstream_of_or_within ! causally downstream of or within
 
@@ -18536,26 +18095,10 @@ subset: http://purl.obolibrary.org/obo/valid_for_go_annotation_extension
 subset: http://purl.obolibrary.org/obo/valid_for_go_ontology
 subset: http://purl.obolibrary.org/obo/valid_for_gocam
 xref: RO:0002211
-domain: BFO:0000015 ! process
-range: BFO:0000015 ! process
-holds_over_chain: directly_regulates directly_regulates
 holds_over_chain: ends_with regulates
 is_transitive: true
 is_a: causally_upstream_of ! causally upstream of
 inverse_of: regulated_by ! regulated by
-transitive_over: RO:0002025 ! has effector activity
-
-[Typedef]
-id: regulates_characteristic
-name: regulates characteristic
-namespace: gene_ontology
-def: "A relationship that holds between a process and a characteristic in which process (P) regulates characteristic (C) iff: P results in the existence of C OR affects the intensity or magnitude of C." []
-xref: RO:0019000
-property_value: http://purl.org/dc/terms/contributor https://orcid.org/0000-0002-8688-6599
-domain: BFO:0000015 ! process
-range: PATO:0000001 ! quality
-holds_over_chain: regulates regulates_characteristic
-is_a: RO:0002410 ! causally related to
 
 [Typedef]
 id: regulates_levels_of
@@ -18563,8 +18106,6 @@ name: regulates levels of
 namespace: external
 def: "p regulates levels of c if p regulates some amount (PATO:0000070) of c" []
 xref: RO:0002332
-domain: BFO:0000015 ! process
-range: BFO:0000040 ! material entity
 is_a: RO:0002328 ! functionally related to
 
 [Typedef]
