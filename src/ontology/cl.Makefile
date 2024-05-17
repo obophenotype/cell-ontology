@@ -337,17 +337,17 @@ DEPLOY_GH=true
 
 .PHONY: cl
 cl:
-	$(MAKE) prepare_release IMP=false PAT=false 
-	$(MAKE) release-simple-diff
+	$(MAKE) prepare_release IMP=false PAT=false MIR=false
+	$(MAKE) release-base-diff
 	$(MAKE) prepare_content_summary
 	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
-.PHONY: release-simple-diff
-release-simple-diff:
-	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl/cl-simple.owl --right ../../cl-simple.owl --output reports/$(ONT)-simple-diff.md
+.PHONY: release-base-diff
+release-base-diff:
+	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl/cl-base.owl --right ../../cl-base.owl --output reports/$(ONT)-base-diff.md
 
 .PHONY: prepare_content_summary
-prepare_content_summary: $(RELEASEDIR)/cl-simple.owl
+prepare_content_summary: $(RELEASEDIR)/cl-base.owl custom_reports
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > reports/summary_release.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
