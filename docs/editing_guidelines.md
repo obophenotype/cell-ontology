@@ -66,7 +66,7 @@ Guidelines on the type of synonyms:
 
 Example: the terms “leukocyte”, “leucocyte” (spelling variation”) and “white blood cell” (layman’s term) all refer to the exact same concept (a specific cell type) and would be considered exact synonyms.
 
-2. Terms that may refer to other concepts, especially within the biomedical domain, should NOT be annotated as exact synonyms, including abbreviations. A synonym that is an abbreviation should be annotated using `has_related_synonym`and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/cl#abbreviation`).
+2. Terms that may refer to more than one concept, especially within the biomedical domain, should NOT be annotated as exact synonyms, including abbreviations. A synonym that is an abbreviation should be annotated using `has_related_synonym`and with property type “abbreviation” (technically: the synonym annotation assertion axiom should itself be annotated with a `http://www.geneontology.org/formats/oboInOwl#hasSynonymType` property with value `http://purl.obolibrary.org/obo/OMO_0003000`).
 
 Example: “WBC” can stand for “white blood cell” and refer to “leukocyte”, but within the biomedical domain it can also represent “white blood cell count” or, perhaps less frequently, “whole-body counting”, two distinct concepts with separate OBO ontology terms.
 

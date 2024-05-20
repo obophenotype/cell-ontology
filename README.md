@@ -11,10 +11,11 @@
 
 # Cell Ontology 
 
+This repository contains the source for the Cell Ontology. Most users do not need to edit content in this repo directly.  However we are happy to train new editors.
 
-An ontology of cell types
+<b>Request changes to the ontology</b><br>
 
-This is the repository that contains the source for the cell ontology. Most users do not need to use this repo directly.
+We welcome edit requests from anyone - especially if you plan to use the Cell Ontology for annotation.  To request a new term, please use our [new term request template](https://github.com/obophenotype/cell-ontology/issues/new?assignees=&labels=new+term+request&projects=&template=a_adding_term.md&title=%5BNTR%5D). For any other requests please choose one of our [other templates](https://github.com/obophenotype/cell-ontology/issues/new/choose)), or open a blank ticket.  If you wish to request a set of related terms, you may link a [MIRACL sheet](https://docs.google.com/spreadsheets/d/1FBbarq3aCM3CUGd9oIOuYY5Sljzt2Pegl-sdx8OwbfI/edit#gid=0) ([Lubiana _et al_., 2022](https://arxiv.org/abs/2204.09673)) to a ticket containing a general description of the requested set of terms. 
 
 <b>Browse the ontology using OLS</b><br>
 https://www.ebi.ac.uk/ols4/ontologies/cl
@@ -56,6 +57,14 @@ To trigger an automated human readable diff, add the following tag to a comment 
 ## Applications
 
 CL is used in a number of applications including: 
+
+**CellxGene**
+
+The Cell ontology is used to annotate cell types on the single cell transcriptomics platform CellxGene.  All datasets on CellXGene are annotated according to a standard schema that specifies the use of CL to record Cell Type.  Uses in CellXgene tools:
+ - In the [Discover](https://cellxgene.cziscience.com/) tool, the structure of CL is used to drive faceted searching for datasets and collections by Cell Type.
+ - In the [Gene Expression](https://cellxgene.cziscience.com/gene-expression), CL annotation is used to aggregate expression data.
+ - In [CellGuide](https://cellxgene.cziscience.com/cellguide) CL provides content and CL term names and synonyms drive search and graphical browsing.
+ - The [Cell Census](https://chanzuckerberg.github.io/cellxgene-census/) API supports retrieval of cross-dataset matrices containing transcriptmics data for cells annotated with specified terms from CL and other ontologies.
 
 **HuBMAP**
 

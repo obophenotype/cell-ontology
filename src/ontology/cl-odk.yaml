@@ -6,6 +6,7 @@ repo: cell-ontology
 #report_fail_on: ERROR
 report_fail_on: None
 use_dosdps: TRUE
+use_mappings: True
 use_edit_file_imports: FALSE
 export_formats:
   - owl
@@ -25,15 +26,34 @@ release_artefacts:
   - custom-cl-plus
 documentation:
   documentation_system: mkdocs
+robot_plugins:
+  plugins:
+    - name: flybase
+      mirror_from: https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.2/flybase.jar
 subset_group:
   products:
     - id: BDS_subset
     - id: blood_and_immune_upper_slim
     - id: eye_upper_slim
     - id: general_cell_types_upper_slim
+    - id: kidney_upper_slim
+sssom_mappingset_group:
+  products:
+    - id: cl-local
+      maintainance: manual
+    - id: cl
+      maintainance: manual
+    - id: fbbt
+      maintenance: manual
+    - id: zfa
+      maintenance: manual
 import_group:
   use_base_merging: TRUE
   slme_individuals: exclude
+  annotation_properties:
+    - rdfs:label
+    - IAO:0000115
+    - oboInOwl:is_metadata_tag
   exclude_iri_patterns:
     - <http://www.informatics.jax.org/marker/MGI:*>
     - <http://purl.obolibrary.org/obo/OBA_*>
@@ -58,8 +78,6 @@ import_group:
         - http://purl.obolibrary.org/obo/GO_
         - http://purl.obolibrary.org/obo/GOREL_
         - http://purl.obolibrary.org/obo/GOCHE_
-    - id: caro
-      use_base: TRUE
     - id: uberon 
       use_base: TRUE
     - id: ro
@@ -112,4 +130,12 @@ components:
       use_template: True
       templates:
         - general_cell_types_upper_slim.csv
+    - filename: kidney_upper_slim.owl
+      use_template: True
+      templates:
+        - kidney_upper_slim.csv
+    - filename: cellxgene_subset.owl
+      use_template: True
+      templates:
+        - cellxgene_subset.tsv
 
