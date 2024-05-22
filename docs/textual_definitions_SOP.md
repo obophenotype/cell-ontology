@@ -30,7 +30,7 @@ Text in the definition field should be no longer than one short paragraph and sh
 ### Extended description text.
 
 This is an optional additional field in which text should be referenced following standard academic practice (minirefs in text, e.g. Avola et al, 2004). It can include:
- - Descriptions of marker gene sets.  These MUST include provenance, and ideally evidence (e.g. identified in scRNAseq or by in-situ hybridization) and confidence.
+ - Descriptions of marker gene sets.  These MUST include provenance, and ideally includes evidence (e.g. identified by use of the NS-Forest algorithm on dataset x; identified by in-situ hybridization) and confidence.
  - Information specific to only some species or subtypes (where the applicability is known this should be made clear).
  - Information about the role of the cell type more broadly in disease and physiology.
  - Species specific markers (?)
