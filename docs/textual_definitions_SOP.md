@@ -19,8 +19,6 @@ A second use of ontologies is to encode knowledge in the form of useful formal l
 
 We can't of course, include every known piece of information about a cell in a definition (e.g. all genes expressed). However extended information is useful to our users - especially where it includes potential marker sets and information relevant to human physiology and disease. To support this, we have an additioal extended description field which can contain information about additional marker sets, minor (secondary) functions and disease.  It can also contain information about properties that may not apply to all subclasses - this is especially useful for t-types in the brain where there is typically sparse knowledge of the extent of variation in morphology and function under each t-type.  In these cases, information should be included about where these proporites do apply.
 
-![image](https://github.com/obophenotype/cell-ontology/assets/112839/eeb45ba5-96c7-4a3e-b68c-62530c043798)
-
 ### SOP
 
 #### Defiition
