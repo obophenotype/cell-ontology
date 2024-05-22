@@ -1,10 +1,9 @@
 ## Guide to writing textual definitions on CL
 
-Links to relevant background material:
+### Relevant background material
 
 - Chris Mungall's [blog on post ontology definitions](https://douroucouli.wordpress.com/2019/07/08/ontotip-write-simple-concise-clear-operational-textual-definitions/)
-- [OBO foundry reference paper](https://philpapers.org/archive/SEPGFW.pdf);
-- DOS slides on the problem of defining cell types (TBA)
+- [OBO foundry reference paper](https://philpapers.org/archive/SEPGFW.pdf)
 
 ### Background
 
