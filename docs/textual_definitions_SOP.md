@@ -21,7 +21,7 @@ We can't of course, include every known piece of information about a cell in a d
 
 ### SOP
 
-#### Defiition
+#### Definition
 
 Text in the definition field should be no longer than one short paragraph and should follow a classic genus, diffentia and gloss type structure:
    - _genus_: what type of cell is it (e.g. epithelial cell)
