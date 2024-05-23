@@ -66,3 +66,8 @@ Given the limited knowledge we have about how  and whether they are unique to a 
 
 We have a standard pattern that can be used to convert transcriptomic heirarchies into SubClassOf hierarchies - using equivalence axioms with a 'has_examplar' clause with value cell set (see Tan et al., 2023 for details).  However care should be taken in using this given the potential for inheritance of properties that don't apply to all subclusters in a transcriptomic hierarchy.  A formal link to a defining cell set can be represented using subClassOf in order to avoid this.
 
+## References
+
+- Harris, Kenneth D., and Gordon M. G. Shepherd. 2015. “The Neocortical Circuit: Themes and Variations.” Nature Neuroscience 18 (2): 170–81. https://doi.org/10.1038/nn.3917.
+- Jorstad, Nikolas L., Jennie Close, Nelson Johansen, Anna Marie Yanny, Eliza R. Barkan, Kyle J. Travaglini, Darren Bertagnolli, et al. 2023. “Transcriptomic Cytoarchitecture Reveals Principles of Human Neocortex Organization.” Science 382 (6667): eadf6812. https://doi.org/10.1126/science.adf6812.
+- Tan, Shawn Zheng Kai, Huseyin Kir, Brian D. Aevermann, Tom Gillespie, Nomi Harris, Michael J. Hawrylycz, Nikolas L. Jorstad, et al. 2023. “Brain Data Standards - A Method for Building Data-Driven Cell-Type Ontologies.” Scientific Data 10 (1): 50. https://doi.org/10.1038/s41597-022-01886-2.
