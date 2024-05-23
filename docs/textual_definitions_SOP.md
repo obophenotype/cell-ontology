@@ -29,17 +29,28 @@ Text in the definition field should be no longer than one short paragraph and sh
 
 ### Extended description text.
 
-This is an optional additional field in which text should be referenced following standard academic practice (minirefs in text, e.g. Avola et al, 2004). It can include:
- - Descriptions of marker gene sets.  These MUST include provenance, and ideally includes evidence (e.g. identified by use of the NS-Forest algorithm on dataset x; identified by in-situ hybridization) and confidence.
+This is optional descriptive information in the rdfs:comment value (although we may switch to a dedicated annotation property in future).  The text should be referenced following standard academic practice (minirefs in text, e.g. Avola _et al_., 2024). It can include:
+ - Descriptions of marker genes and marker gene sets.  These MUST include species and provenance, and ideally evidence (e.g. identified by use of the NS-Forest algorithm on dataset x; identified by in-situ hybridization) and confidence.
  - Information specific to only some species or subtypes (where the applicability is known this should be made clear).
  - Information about the role of the cell type more broadly in disease and physiology.
- - Species specific markers (?)
+
+The comment section may also be used to record evidence and and name/synonym disambiguation.
 
 ### Defining t-types:
- - Some cell types are defined with reference to transcriptomic data.  Definitions for these follow a different pattern. { details TBA }
 
+Some cell types are defined with reference to transcriptomic data.  This is especially common in brain datasets.  In these cases, naming is often based on semi-automated transfer of names that are based on some specific set of properties.  We do not always know how widely those properties apply so need to be careful in choosing them for differentia.  Extended multi-modal descriptions may be available, for example based on patch-seq data, but this is typically derived from very sparse data, so such information belongs in the extended definition, along with details of the brain regions where these properties have been assayed.
 
+Definitions for these follow a different pattern:
+ - First sentence: "A transcriptomically distinct { genus } with { description of primary differentia here }.  Second sentence may include more differentia.  
+ - Gloss: see above
+ - Last sentence:  The standard transcriptomic reference data for this cell type can be found on the { site } under { human readable details of how to access dataset }, { human readable details of annotation key/value pair that marks the reference cell set.
 
+_Example_:
 
+label: 
+A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found between cortical layer 2-4. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: "Transcriptomic cytoarchitecture reveals principles of human neocortex organization", dataset: "Supercluster: IT-projecting excitatory neurons", Author Categories: "CrossArea_subclass", value: L2/3 IT.
 
+Comment: In the barrel cortex (of rodents), these neurons have thin-tufted apical dendrites, extend their axonal projections into L5 in the neocortex and have a hyperpolarised resting membrane potential (Harris & Shepherd 2016). Historically, these neurons were identified in cortical layer 2/3. MERFISH data shows that this intratelencephalic-projecting glutametergic neuron can have its soma in layer 2/3, 4B, 4C (Jorstad et al., 2023). The position of the soma in layer 4b and 4C is less frequent for this neuronal type in comparison to cortical layer 2/3.
+
+Note: the reference dataset should MUST also be referenced directly via an xref.
 
