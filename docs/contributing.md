@@ -39,8 +39,12 @@ People reviewing pull requests must:
 1. Make sure that if a pull request is referencing bare IRIs, the request is tagged with `update-imports-required` .
 2. Make sure that imports have indeed been updated (either by the author of the pull request or by someone from the tech support group if requested) before allowing the request to be merged.
 
-Additional details on imports are available in the [OBO Training docs](https://oboacademy.github.io/obook/howto/update-import/) and the [CL-specific import documentation](odk-workflows/UpdateImports.md).
+Additional details on imports are available in:
+* the general CL guideline called ["Adding classes from another ontology"](https://obophenotype.github.io/cell-ontology/Adding_classes_from_another_ontology/).
+* [OBO Training docs](https://oboacademy.github.io/obook/howto/update-import/) 
+* the [CL-specific ODK workflow documentation](odk-workflows/UpdateImports.md).
 
 ### Why the Cell Ontology does not pull all terms by default?
 
 If the Cell Ontology pulled all terms by default (from UBERON or the Gene Ontology, for example), that would lead to a tremendous increase in ontology size and the resources needed to run it. Thus, it is necessary to import only a subset of terms from each foreign resource. 
+
