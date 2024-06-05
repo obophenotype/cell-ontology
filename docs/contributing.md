@@ -24,12 +24,23 @@ If you want a new term added, or want edits to a current term, or spot any mista
 - Give a short summary of the pull request - that way we can find suitable reviewers much quicker. Say which terms you are adding or what kinds of changes you are proposing.
 - It is most of the time a good idea to use `squash merge` rather than `merge` for your pull request, to keep the git history short and useful.
 
-## Pull requests that require imports to be refreshed
+## Contributions that use terms from other ontologies not yet referenced in CL
 
-If your pull request references foreign terms from an external ontology that are not yet present in the import module for that ontology (for example, you’re adding a logical definition that makes use of a GO term for the first time), imports needs to be refreshed for the foreign terms to be available to use.
+(in jargon, PRs that need imports to be refreshed)
 
-If you have the technical skills and/or the required computer resources (refreshing imports can be a memory-intensive task), you may refresh the imports yourself before submitting the pull request, by following the [appropriate procedure](odk-workflows/UpdateImports.md).
+Pull requests to the Cell Ontology often include terms from other external ontologies, such as [UBERON](https://github.com/obophenotype/uberon) or the [Gene Ontology](https://github.com/geneontology/go-ontology). If these terms do not yet exist, they need to be proposed, created, and released by the external source. 
 
-If you can’t apply the imports refreshing procedure for any reason, you may instead opt for using “bare IRIs” when editing the ontology, everywhere you need a reference to a foreign term. Then, when submitting your pull request, label it with the tag `update-imports-required` to ask that a member of the tech support group refresh the imports before the pull request can be merged.
+If the foreign term exists but is not yet present in the import module of CL (for example, you’re adding a logical definition that makes use of a GO term for the first time), it is necessary to make them available. This requires ''refreshing the imports'', a technical task. 
+The easiest way to add the imports is by using what is called a Protége-based declaration, or a “bare IRIs” approach. Details on how to do so are available in the [OBO Training documentation](https://oboacademy.github.io/obook/howto/update-import/?h=import#protege-based-declaration). When submitting your pull request, you should label it with the tag `update-imports-required` to ask a member of the tech support group to refresh the imports before the pull request can be merged.
 
-People reviewing pull requests must 1) make sure that if a pull request is referencing bare IRIs, the request is tagged with `update-imports-required` (adding the label themselves if needed); and 2) make sure that imports have indeed been updated (either by the author of the pull request, or by someone from the tech support group if requested) before allowing the request to be merged.
+If you have the technical skills and/or the required computer resources (refreshing imports can be a memory-intensive task), you may refresh the imports yourself before submitting the pull request by following the [appropriate procedure](odk-workflows/UpdateImports.md). This approach is generally preferred, as it streamlines updates and reviews, but either is acceptable.
+
+People reviewing pull requests must:
+1. Make sure that if a pull request is referencing bare IRIs, the request is tagged with `update-imports-required` .
+2. Make sure that imports have indeed been updated (either by the author of the pull request or by someone from the tech support group if requested) before allowing the request to be merged.
+
+Additional details on imports are available in the [OBO Training docs](https://oboacademy.github.io/obook/howto/update-import/) and the [CL-specific import documentation](odk-workflows/UpdateImports.md).
+
+### Why the Cell Ontology does not pull all terms by default?
+
+If the Cell Ontology pulled all terms by default (from UBERON or the Gene Ontology, for example), that would lead to a tremendous increase in ontology size and the resources needed to run it. Thus, it is necessary to import only a subset of terms from each foreign resource. 
