@@ -59,7 +59,7 @@ https://github.com/obophenotype/cl/releases/tag/untagged-8935f3432525b27a0d84
 ``` 
 Copy the link and paste it in your browser, this should show you a draft release. 
 1. Click the edit button (the pencil button on the top right corner) and change the tag to the GHVERSION you entered above (eg v2022-06-20)
-1. Change the `TBD.` in the main text to a summary of the main changes in the release if needed. Copy and paste the text and table from the `reports/summary_release.md` file. This file is in `.gitignore` and will only be available to those who ran the release.
-1. Scroll down all the way and click the `update release` button. 
+2. Change the `TBD.` in the main text to a summary of the main changes in the release if needed. Copy and paste the text and table from the `reports/summary_release.md` file. This file is in `.gitignore` and will only be available to those who ran the release. The section `Classes added` needs to be manually updated because of a [known issue](https://github.com/INCATools/ontology-access-kit/issues/732) in the OAK diff command. Remove the duplicated classes and update the number of new classes created.
+3. Scroll down all the way and click the `update release` button. 
 
 
