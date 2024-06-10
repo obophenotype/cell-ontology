@@ -346,9 +346,16 @@ cl:
 release-base-diff:
 	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl/cl-base.owl --right ../../cl-base.owl --output reports/$(ONT)-base-diff.md
 
+CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
+
+$(TMPDIR)/current-base-release.obo:
+	wget $(CURRENT_BASE_RELEASE) -O $@
+
 .PHONY: prepare_content_summary
-prepare_content_summary: $(RELEASEDIR)/cl-base.owl custom_reports
-	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > reports/summary_release.md
+prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(TMPDIR)/current-base-release.obo custom_reports
+	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
+	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
+	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
