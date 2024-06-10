@@ -88,7 +88,7 @@ Papatheodorou,I., Moreno,P., Manning,J., Fuentes,A.M.-P., George,N., Fexova,S., 
 
 The BICCN created a high-resolution atlas of cell types in the primary motor based on single cell transcriptomics. These cell types are represented in the brain data standards ontology which anchors to cell types in the cell ontology.
 
-Tan,S.Z.K., Kir,H., Aevermann,B., Gillespie,T., Hawrylycz,M., Lein,E., Matentzoglu,N., Miller,J., Mollenkopf,T.S., Mungall,C.J., et al. (2021) Brain Data Standards Ontology: A data-driven ontology of transcriptomically defined cell types in the primary motor cortex. bioRxiv, 10.1101/2021.10.10.463703.
+Tan, S.Z.K., Kir, H., Aevermann, B.D. et al. Brain Data Standards - A method for building data-driven cell-type ontologies. Sci Data 10, 50 (2023). https://doi.org/10.1038/s41597-022-01886-2
 
 **ENCODE**
 
