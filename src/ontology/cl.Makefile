@@ -342,14 +342,14 @@ cl:
 	$(MAKE) prepare_content_summary
 	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
-.PHONY: release-base-diff
-release-base-diff:
-	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl/cl-base.owl --right ../../cl-base.owl --output reports/$(ONT)-base-diff.md
-
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
 
 $(TMPDIR)/current-base-release.obo:
 	wget $(CURRENT_BASE_RELEASE) -O $@
+
+.PHONY: release-base-diff
+release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
+	$(ROBOT) diff --labels True -f markdown --left $(TMPDIR)/current-base-release.obo --right $(RELEASEDIR)/cl-base.obo --output reports/$(ONT)-base-diff.md
 
 .PHONY: prepare_content_summary
 prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports
