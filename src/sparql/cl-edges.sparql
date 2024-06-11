@@ -1,6 +1,7 @@
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?x ?p ?y
 WHERE {
@@ -15,5 +16,6 @@ WHERE {
   }
   ?x a owl:Class .
   ?y a owl:Class .
-  FILTER(isIRI(?x) && (STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/cl#")))
+  FILTER NOT EXISTS { ?x owl:deprecated "true"^^xsd:boolean . }
+  FILTER(isIRI(?x) && STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?x), "http://purl.obolibrary.org/obo/cl#"))
 }

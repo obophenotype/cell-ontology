@@ -1,6 +1,7 @@
 prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
 prefix owl: <http://www.w3.org/2002/07/owl#>
-PREFIX definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?cls ?xref WHERE 
 {
@@ -10,5 +11,6 @@ SELECT ?cls ?xref WHERE
     owl:annotatedProperty definition:;
     owl:annotatedTarget ?def;
     oio:hasDbXref ?xref .
-    FILTER(isIRI(?cls) && (STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/cl#")))
+    FILTER NOT EXISTS { ?cls owl:deprecated "true"^^xsd:boolean . }
+    FILTER(isIRI(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/cl#"))
 }

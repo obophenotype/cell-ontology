@@ -1,6 +1,7 @@
 prefix owl: <http://www.w3.org/2002/07/owl#>
 prefix oboInOwl: <http://www.geneontology.org/formats/oboInOwl#>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
 
 SELECT ?cls ?pred ?val ?synType
 WHERE 
@@ -23,5 +24,6 @@ WHERE
          oboInOwl:hasSynonymType ?synType
       ]
     }
-    FILTER(isIRI(?cls) && (STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CP_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/cl#")))
+    FILTER NOT EXISTS { ?cls owl:deprecated "true"^^xsd:boolean . }
+    FILTER(isIRI(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/cl#"))
   }
