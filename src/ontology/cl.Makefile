@@ -337,13 +337,25 @@ DEPLOY_GH=true
 
 .PHONY: cl
 cl:
-	$(MAKE) prepare_release IMP=false PAT=false 
-	$(MAKE) release-diff
+	$(MAKE) prepare_release IMP=false PAT=false MIR=false
+	$(MAKE) release-base-diff
+	$(MAKE) prepare_content_summary
 	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
 
-.PHONY: release-diff
-release-diff:
-	$(ROBOT) diff --labels True -f markdown --left-iri http://purl.obolibrary.org/obo/cl.owl --right ../../cl.owl --output diffs/$(ONT)-diff.md
+CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
+
+$(TMPDIR)/current-base-release.obo:
+	wget $(CURRENT_BASE_RELEASE) -O $@
+
+.PHONY: release-base-diff
+release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
+	$(ROBOT) diff --labels True -f markdown --left $(TMPDIR)/current-base-release.obo --right $(RELEASEDIR)/cl-base.obo --output reports/$(ONT)-base-diff.md
+
+.PHONY: prepare_content_summary
+prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports
+	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
+	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
+	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
 		
 FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
 MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
