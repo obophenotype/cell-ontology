@@ -8,6 +8,7 @@ report_fail_on: None
 use_dosdps: TRUE
 use_mappings: True
 use_edit_file_imports: FALSE
+release_diff: TRUE
 export_formats:
   - owl
   - obo
@@ -112,8 +113,12 @@ robot_report:
     - illegal-annotation-property
     - label-synonym-polysemy
     - illegal-date
-  custom_sparql_exports :
-    - basic-report
+  custom_sparql_exports:
+    - cl_terms
+    - cl-edges
+    - cl-synonyms
+    - cl-xrefs
+    - cl-def-xrefs
 components:
   products:
     - filename: hra_subset.owl

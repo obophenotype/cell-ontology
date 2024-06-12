@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                8b5b779b91f8bb931caf3512d6c7fcb325ef83bafc7ba409b86058a9dae7f67f
+CONFIG_HASH=                b786b0d7cbd09184896d55b42fe68a40981419e0c9d848963a74348b7bb955b7
 
 
 # ----------------------------------------
@@ -45,7 +45,7 @@ REPORT_LABEL =
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        
 SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy illegal-date 
-SPARQL_EXPORTS =            basic-report 
+SPARQL_EXPORTS =            cl_terms cl-edges cl-synonyms cl-xrefs cl-def-xrefs 
 ODK_VERSION_MAKEFILE =      v1.5
 
 TODAY ?=                    $(shell date +%Y-%m-%d)
@@ -87,7 +87,7 @@ endif
 all: all_odk
 
 .PHONY: all_odk
-all_odk: odkversion config_check test custom_reports all_assets
+all_odk: odkversion config_check test custom_reports all_assets release_diff
 
 .PHONY: test
 test: odkversion dosdp_validation reason_test sparql_test robot_reports $(REPORTDIR)/validate_profile_owl2dl_$(ONT).owl.txt
