@@ -45,6 +45,9 @@ Annotation(terms:contributor <https://orcid.org/0000-0003-1980-3228>)
 Annotation(terms:license <http://creativecommons.org/licenses/by/4.0/>)
 Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo.")
 
+Declaration(Class(<http://purl.obolibrary.org/obo#proximal_tubule_segment_1>))
+Declaration(Class(<http://purl.obolibrary.org/obo#proximal_tubule_segment_2>))
+Declaration(Class(<http://purl.obolibrary.org/obo#proximal_tubule_segment_3>))
 Declaration(Class(obo:CL_0000000))
 Declaration(Class(obo:CL_0000001))
 Declaration(Class(obo:CL_0000002))
@@ -3414,6 +3417,31 @@ AnnotationAssertion(owl:deprecated cl:has_low_plasma_membrane_amount "true"^^xsd
 ############################
 #   Classes
 ############################
+
+# Class: <http://purl.obolibrary.org/obo#proximal_tubule_segment_1> (<http://purl.obolibrary.org/obo#proximal_tubule_segment_1>)
+
+AnnotationAssertion(terms:contributor <http://purl.obolibrary.org/obo#proximal_tubule_segment_1> <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date <http://purl.obolibrary.org/obo#proximal_tubule_segment_1> "2024-06-12T10:04:44Z"^^xsd:dateTime)
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_1> obo:UBERON_0007685)
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_1> ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287))
+
+# Class: <http://purl.obolibrary.org/obo#proximal_tubule_segment_2> (<http://purl.obolibrary.org/obo#proximal_tubule_segment_2>)
+
+AnnotationAssertion(terms:contributor <http://purl.obolibrary.org/obo#proximal_tubule_segment_2> <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date <http://purl.obolibrary.org/obo#proximal_tubule_segment_2> "2024-06-12T10:04:44Z"^^xsd:dateTime)
+AnnotationAssertion(terms:date <http://purl.obolibrary.org/obo#proximal_tubule_segment_2> "2024-06-12T10:19:20Z"^^xsd:dateTime)
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_2> obo:UBERON_0007685)
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_2> ObjectSomeValuesFrom(obo:RO_0002131 obo:UBERON_0001287))
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_2> ObjectSomeValuesFrom(obo:RO_0002131 obo:UBERON_0001290))
+
+# Class: <http://purl.obolibrary.org/obo#proximal_tubule_segment_3> (<http://purl.obolibrary.org/obo#proximal_tubule_segment_3>)
+
+AnnotationAssertion(terms:contributor <http://purl.obolibrary.org/obo#proximal_tubule_segment_3> <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date <http://purl.obolibrary.org/obo#proximal_tubule_segment_3> "2024-06-12T10:04:44Z"^^xsd:dateTime)
+AnnotationAssertion(terms:date <http://purl.obolibrary.org/obo#proximal_tubule_segment_3> "2024-06-12T10:19:20Z"^^xsd:dateTime)
+AnnotationAssertion(terms:date <http://purl.obolibrary.org/obo#proximal_tubule_segment_3> "2024-06-12T10:20:37Z"^^xsd:dateTime)
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_3> obo:UBERON_0007685)
+SubClassOf(<http://purl.obolibrary.org/obo#proximal_tubule_segment_3> ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001290))
 
 # Class: obo:CL_0000000 (cell)
 
@@ -16896,8 +16924,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002307 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002307 "2010-09-14T11:29:20Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:comment obo:CL_0002307 "The vast majority of proximal tubule epithelial cells have a brush border, but there are rare exceptions.")
 AnnotationAssertion(rdfs:label obo:CL_0002307 "brush border cell of the proximal tubule")
-SubClassOf(obo:CL_0002307 obo:CL_0002306)
-SubClassOf(obo:CL_0002307 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903))
+EquivalentClasses(obo:CL_0002307 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004134) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 
 # Class: obo:CL_0002308 (epithelial cell of skin gland)
 
@@ -27027,7 +27054,7 @@ SubClassOf(obo:CL_1000804 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000521
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000838 "KUPO:0001045")
 AnnotationAssertion(rdfs:label obo:CL_1000838 "kidney proximal convoluted tubule epithelial cell")
-EquivalentClasses(obo:CL_1000838 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287)))
+EquivalentClasses(obo:CL_1000838 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000838 obo:CL_0002306)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000838 obo:CL_1000615)
 SubClassOf(obo:CL_1000838 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287))
@@ -27036,7 +27063,7 @@ SubClassOf(obo:CL_1000838 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000128
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000839 "KUPO:0001046")
 AnnotationAssertion(rdfs:label obo:CL_1000839 "kidney proximal straight tubule epithelial cell")
-EquivalentClasses(obo:CL_1000839 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001290)))
+EquivalentClasses(obo:CL_1000839 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001290) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000839 obo:CL_0002306)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000839 obo:CL_1000615)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000839 obo:CL_1000616)
@@ -30674,7 +30701,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_00001
 AnnotationAssertion(terms:date obo:CL_4030009 "2022-05-10T13:14:00Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030009 "epithelial cell of segment 1 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030009 "epithelial cell of proximal tubule segment 1")
-SubClassOf(obo:CL_4030009 obo:CL_0002307)
+EquivalentClasses(obo:CL_4030009 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 <http://purl.obolibrary.org/obo#proximal_tubule_segment_1>) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 
 # Class: obo:CL_4030010 (epithelial cell of proximal tubule segment 2)
 
@@ -30682,6 +30709,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_00001
 AnnotationAssertion(terms:date obo:CL_4030010 "2022-05-10T13:26:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030010 "epithelial cell of segment 2 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030010 "epithelial cell of proximal tubule segment 2")
+EquivalentClasses(obo:CL_4030010 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 <http://purl.obolibrary.org/obo#proximal_tubule_segment_2>) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_4030010 obo:CL_0002307)
 
 # Class: obo:CL_4030011 (epithelial cell of proximal tubule segment 3)
@@ -30690,6 +30718,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_00001
 AnnotationAssertion(terms:date obo:CL_4030011 "2022-05-10T13:31:06Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030011 "epithelial cell of segment 3 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030011 "epithelial cell of proximal tubule segment 3")
+EquivalentClasses(obo:CL_4030011 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 <http://purl.obolibrary.org/obo#proximal_tubule_segment_3>) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_4030011 obo:CL_0002307)
 
 # Class: obo:CL_4030012 (kidney loop of Henle short descending thin limb epithelial cell)
