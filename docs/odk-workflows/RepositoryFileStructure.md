@@ -41,3 +41,4 @@ These are the components in CL
 | eye_upper_slim.owl | None |
 | general_cell_types_upper_slim.owl | None |
 | kidney_upper_slim.owl | None |
+| cellxgene_subset.owl | None |
