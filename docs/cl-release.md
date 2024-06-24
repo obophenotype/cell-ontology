@@ -41,7 +41,7 @@ Preparation:
 1. Make sure that all changes to master are committed to Github (`git status` should say that there are no modified files)
 1. Locally make sure you have the latest changes from master (`git pull`)
 1. Checkout a new branch (e.g. `git checkout -b release-2021-01-01`)
-1. You may or may not want to refresh your imports as part of your release strategy (see [here](UpdateImports.md))(Note: in CL we decouple our imports and releases - we hence advice that you do not update imports)
+1. You may or may not want to refresh your imports as part of your release strategy (see second section [here](Adding_classes_from_another_ontology.md))(Note: in CL we decouple our imports and releases - we hence advice that you do not update imports)
 1. Make sure you have the latest ODK installed by running `docker pull obolibrary/odkfull`
 
 To actually run the release, you:
@@ -54,12 +54,10 @@ To actually run the release, you:
 1. Deploy release on GitHub by running `make deploy_release GHVERSION="v2022-06-20"` on the release branch (DO NOTE CHANGE TO MAIN BRANCH!), replacing the date with the date of release (NOTE: no `sh run.sh`)
 Editors note: ODK 1.3.2 will have a feature to run the release from inside the docker container. For now deploy_release has to be run outside.
 1. This should end with a GitHub release link that looks something like:
-```
-https://github.com/obophenotype/cl/releases/tag/untagged-8935f3432525b27a0d84
-``` 
+`https://github.com/obophenotype/cl/releases/tag/untagged-8935f3432525b27a0d84` 
 Copy the link and paste it in your browser, this should show you a draft release. 
 1. Click the edit button (the pencil button on the top right corner) and change the tag to the GHVERSION you entered above (eg v2022-06-20)
-1. Change the `TBD.` in the main text to a summary of the main changes in the release if needed.
+1. Change the `TBD.` in the main text to a summary of the main changes in the release if needed. Copy and paste the text and table from the `reports/summary_release.md` file. This file is in `.gitignore` and will only be available to those who have run the release. The section `Classes added` needs to be manually amended due a [known issue](https://github.com/INCATools/ontology-access-kit/issues/732) in the OAK diff command. Remove the duplicated classes and update the number of new classes created.
 1. Scroll down all the way and click the `update release` button. 
 
 
