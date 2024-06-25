@@ -3031,6 +3031,8 @@ Declaration(Class(obo:CL_4033062))
 Declaration(Class(obo:CL_4033063))
 Declaration(Class(obo:CL_4033064))
 Declaration(Class(obo:CL_4033065))
+Declaration(Class(obo:CL_4033066))
+Declaration(Class(obo:CL_4033067))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3061,6 +3063,7 @@ Declaration(Class(obo:CP_0000039))
 Declaration(Class(obo:CP_0000040))
 Declaration(Class(obo:CP_0000043))
 Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
+Declaration(Class(obo:GO_0005903))
 Declaration(Class(obo:GO_0031045))
 Declaration(Class(obo:GO_0042599))
 Declaration(Class(obo:GO_0044316))
@@ -5724,9 +5727,13 @@ SubClassOf(obo:CL_0000238 obo:CL_0000240)
 
 # Class: obo:CL_0000239 (brush border epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000239 "An epithelial cell characterized by the presence of a brush border on its apical surface, which increases the surface area for absorption.")
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000239 <https://doi.org/10.1152/ajpgi.00005.2011>)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000239 "PMID:25422372")
+AnnotationAssertion(rdfs:comment obo:CL_0000239 "All brush border cells are columnar-cuboidal.  The formal logical definition of this term asserts this. Brush border epithelial cells are predominantly found lining the small intestine and the proximal tubules of the kidneys.")
 AnnotationAssertion(rdfs:label obo:CL_0000239 "brush border epithelial cell")
+EquivalentClasses(obo:CL_0000239 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_0000239 obo:CL_0000075)
-SubClassOf(obo:CL_0000239 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005929))
 
 # Class: obo:CL_0000240 (stratified squamous epithelial cell)
 
@@ -7638,6 +7645,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000501 "granulosa cell of o
 AnnotationAssertion(rdfs:label obo:CL_0000501 "granulosa cell")
 SubClassOf(obo:CL_0000501 obo:CL_0000174)
 SubClassOf(obo:CL_0000501 obo:CL_0002174)
+SubClassOf(obo:CL_0000501 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_4033066))
 
 # Class: obo:CL_0000502 (type D enteroendocrine cell)
 
@@ -9711,11 +9719,11 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1242/dev.00702") obo:I
 AnnotationAssertion(rdfs:label obo:CL_0000735 "lymph gland hemocyte")
 SubClassOf(obo:CL_0000735 obo:CL_0000387)
 
-# Class: obo:CL_0000736 (embryonic gland hemocyte)
+# Class: obo:CL_0000736 (obsolete embryonic gland hemocyte)
 
 AnnotationAssertion(obo:IAO_0100001 obo:CL_0000736 obo:CL_0011008)
 AnnotationAssertion(rdfs:comment obo:CL_0000736 "Obsoleted as this term probably resulted from a confusion. Hemocytes are either derived from the embryonic head mesoderm (\"embryonic hemocytes\") or from the larval lymph gland (\"lymph gland hemocytes\"), not from an \"embryonic gland\".")
-AnnotationAssertion(rdfs:label obo:CL_0000736 "embryonic gland hemocyte")
+AnnotationAssertion(rdfs:label obo:CL_0000736 "obsolete embryonic gland hemocyte")
 AnnotationAssertion(owl:deprecated obo:CL_0000736 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000737 (striated muscle cell)
@@ -14444,9 +14452,9 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo
 AnnotationAssertion(terms:contributor obo:CL_0002082 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002082 "2010-07-14T09:41:42Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002082 "FMA:69322")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002082 "adremergic chromaffin cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002082 "adrenal secreting cell of the adrenal medulla")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002082 "epiniphrine secreting cell of the adrenal medulla")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002082 "adrenergic chromaffin cell")
 AnnotationAssertion(rdfs:label obo:CL_0002082 "type II cell of adrenal medulla")
 EquivalentClasses(obo:CL_0002082 ObjectIntersectionOf(obo:CL_0000336 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001236) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0048242)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002082 obo:CL_0000336)
@@ -16877,9 +16885,9 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002306 "FMA:70973")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002306 "KUPO:0001044")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002306 "kidney proximal tubule epithelial cell")
+AnnotationAssertion(rdfs:comment obo:CL_0002306 "The vast majority of proximal tubule epithelial cells have a brush border, but there are rare exceptions.")
 AnnotationAssertion(rdfs:label obo:CL_0002306 "epithelial cell of proximal tubule")
 EquivalentClasses(obo:CL_0002306 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004134)))
-SubClassOf(obo:CL_0002306 obo:CL_0000239)
 SubClassOf(obo:CL_0002306 obo:CL_0002078)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002306 obo:CL_1000494)
 SubClassOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004134))
@@ -16889,9 +16897,10 @@ SubClassOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000413
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:1-4160-2328-3") obo:IAO_0000115 obo:CL_0002307 "A brush border epithelial cell located in the proximal tubule of the kidney that detects fluid flow.")
 AnnotationAssertion(terms:contributor obo:CL_0002307 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002307 "2010-09-14T11:29:20Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:comment obo:CL_0002307 "The vast majority of proximal tubule epithelial cells have a brush border, but there are rare exceptions.")
 AnnotationAssertion(rdfs:label obo:CL_0002307 "brush border cell of the proximal tubule")
-SubClassOf(obo:CL_0002307 obo:CL_0000239)
 SubClassOf(obo:CL_0002307 obo:CL_0002306)
+SubClassOf(obo:CL_0002307 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903))
 
 # Class: obo:CL_0002308 (epithelial cell of skin gland)
 
@@ -24183,8 +24192,8 @@ SubClassOf(obo:CL_0011024 obo:CL_0002489)
 
 # Class: obo:CL_0011025 (exhausted T cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26544946") obo:IAO_0000115 obo:CL_0011025 "An effector T cell that displays impaired effector functions (e.g., rapid production of effector cytokines, cytotoxicity) and has limited proliferative potential.")
 AnnotationAssertion(terms:contributor obo:CL_0011025 <https://orcid.org/0000-0001-5208-3432>)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26544946") oboInOwl:hasExactSynonym obo:CL_0011025 "An effector T cell that displays impaired effector functions (e.g., rapid production of effector cytokines, cytotoxicity) and has limited proliferative potential.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011025 "Tex cell")
 AnnotationAssertion(rdfs:label obo:CL_0011025 "exhausted T cell")
 SubClassOf(obo:CL_0011025 obo:CL_0000911)
@@ -24208,9 +24217,9 @@ SubClassOf(obo:CL_0011027 obo:CL_0000057)
 
 # Class: obo:CL_0011028 (olfactory ensheathing cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22456085") obo:IAO_0000115 obo:CL_0011028 "A neural-crest derived glial cell that supports the growth and survival of primary olfactory neuroons from the neuroepithelium in the nasal cavity to the brain by encasing large bundles of numerous unmyelinated axons.")
 AnnotationAssertion(terms:contributor obo:CL_0011028 <https://orcid.org/0000-0001-5208-3432>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0011028 "BTO:0002771")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22456085") oboInOwl:hasExactSynonym obo:CL_0011028 "A neural-crest derived glial cell that supports the growth and survival of primary olfactory neuroons from the neuroepithelium in the nasal cavity to the brain by encasing large bundles of numerous unmyelinated axons.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011028 "OEC")
 AnnotationAssertion(rdfs:label obo:CL_0011028 "olfactory ensheathing cell")
 SubClassOf(obo:CL_0011028 obo:CL_0000125)
@@ -28060,7 +28069,7 @@ EquivalentClasses(obo:CL_1001611 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_2000000 (epidermal melanocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000000 "Any melanocyte that is part of a epidermis.")
-AnnotationAssertion(terms:contributor obo:CL_2000000 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000000 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000000 "2014-02-03T23:03:09Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000000 "CL:2000000")
 AnnotationAssertion(rdfs:comment obo:CL_2000000 "These cells are found primarily, but not exclusively, in primates including humans")
@@ -28070,7 +28079,7 @@ EquivalentClasses(obo:CL_2000000 ObjectIntersectionOf(obo:CL_0000148 ObjectSomeV
 # Class: obo:CL_2000001 (peripheral blood mononuclear cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000001 "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.")
-AnnotationAssertion(terms:contributor obo:CL_2000001 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000001 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000001 "2014-02-11T17:29:04Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000001 "CL:2000001")
 AnnotationAssertion(rdfs:label obo:CL_2000001 "peripheral blood mononuclear cell")
@@ -28094,7 +28103,7 @@ SubClassOf(obo:CL_2000002 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002255))
 # Class: obo:CL_2000004 (pituitary gland cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000004 "Any cell that is part of a pituitary gland.")
-AnnotationAssertion(terms:contributor obo:CL_2000004 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000004 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000004 "2014-03-26T22:14:56Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000004 "CL:2000004")
 AnnotationAssertion(rdfs:label obo:CL_2000004 "pituitary gland cell")
@@ -28103,7 +28112,7 @@ EquivalentClasses(obo:CL_2000004 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeV
 # Class: obo:CL_2000005 (brain macroglial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000005 "Any macroglial cell that is part of a brain.")
-AnnotationAssertion(terms:contributor obo:CL_2000005 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000005 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000005 "2014-03-28T21:35:27Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000005 "CL:2000005")
 AnnotationAssertion(rdfs:label obo:CL_2000005 "brain macroglial cell")
@@ -28112,7 +28121,7 @@ EquivalentClasses(obo:CL_2000005 ObjectIntersectionOf(obo:CL_0000126 ObjectSomeV
 # Class: obo:CL_2000006 (tonsil germinal center B cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000006 "Any germinal center B cell that is part of a tonsil.")
-AnnotationAssertion(terms:contributor obo:CL_2000006 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000006 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000006 "2014-03-28T21:35:33Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000006 "CL:2000006")
 AnnotationAssertion(rdfs:label obo:CL_2000006 "tonsil germinal center B cell")
@@ -28121,7 +28130,7 @@ EquivalentClasses(obo:CL_2000006 ObjectIntersectionOf(obo:CL_0000844 ObjectSomeV
 # Class: obo:CL_2000007 (articular chondrocyte of knee joint)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000007 "Chondrocyte forming the hyaline cartilage found in the knee joint.")
-AnnotationAssertion(terms:contributor obo:CL_2000007 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000007 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000007 "2014-06-04T14:40:11Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000007 "CL:2000007")
 AnnotationAssertion(rdfs:label obo:CL_2000007 "articular chondrocyte of knee joint")
@@ -28130,7 +28139,7 @@ EquivalentClasses(obo:CL_2000007 ObjectIntersectionOf(obo:CL_1001607 ObjectSomeV
 # Class: obo:CL_2000008 (microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000008 "Any blood vessel endothelial cell that is part of a microvascular endothelium.")
-AnnotationAssertion(terms:contributor obo:CL_2000008 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000008 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000008 "2014-06-04T15:07:42Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000008 "CL:2000008")
 AnnotationAssertion(rdfs:label obo:CL_2000008 "microvascular endothelial cell")
@@ -28140,7 +28149,7 @@ EquivalentClasses(obo:CL_2000008 ObjectIntersectionOf(obo:CL_0000071 ObjectSomeV
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000009 "Any blood vessel endothelial cell that is part of a microvascular endothelium.")
 AnnotationAssertion(obo:IAO_0100001 obo:CL_2000009 obo:CL_2000008)
-AnnotationAssertion(terms:contributor obo:CL_2000009 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000009 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000009 "2014-06-04T15:09:18Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000009 "CL:2000009")
 AnnotationAssertion(rdfs:label obo:CL_2000009 "obsolete microvascular endothelium blood vessel endothelial cell")
@@ -28149,7 +28158,7 @@ AnnotationAssertion(owl:deprecated obo:CL_2000009 "true"^^xsd:boolean)
 # Class: obo:CL_2000010 (dermis blood vessel endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000010 "Any blood vessel endothelial cell that is part of a dermis.")
-AnnotationAssertion(terms:contributor obo:CL_2000010 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000010 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000010 "2014-06-04T15:12:06Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000010 "CL:2000010")
 AnnotationAssertion(rdfs:label obo:CL_2000010 "dermis blood vessel endothelial cell")
@@ -28158,7 +28167,7 @@ EquivalentClasses(obo:CL_2000010 ObjectIntersectionOf(obo:CL_0000071 ObjectSomeV
 # Class: obo:CL_2000011 (dermis lymphatic vessel endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000011 "Any endothelial cell of lymphatic vessel that is part of a dermis.")
-AnnotationAssertion(terms:contributor obo:CL_2000011 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000011 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000011 "2014-06-04T15:15:08Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000011 "CL:2000011")
 AnnotationAssertion(rdfs:label obo:CL_2000011 "dermis lymphatic vessel endothelial cell")
@@ -28167,7 +28176,7 @@ EquivalentClasses(obo:CL_2000011 ObjectIntersectionOf(obo:CL_0002138 ObjectSomeV
 # Class: obo:CL_2000012 (fibroblast of pedal digit skin)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000012 "Any skin fibroblast that is part of a pedal digit skin.")
-AnnotationAssertion(terms:contributor obo:CL_2000012 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000012 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000012 "2014-06-04T15:16:44Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000012 "CL:2000012")
 AnnotationAssertion(rdfs:label obo:CL_2000012 "fibroblast of pedal digit skin")
@@ -28176,7 +28185,7 @@ EquivalentClasses(obo:CL_2000012 ObjectIntersectionOf(obo:CL_0002620 ObjectSomeV
 # Class: obo:CL_2000013 (fibroblast of skin of abdomen)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000013 "Any skin fibroblast that is part of a skin of abdomen.")
-AnnotationAssertion(terms:contributor obo:CL_2000013 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000013 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000013 "2014-06-04T15:18:16Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000013 "CL:2000013")
 AnnotationAssertion(rdfs:label obo:CL_2000013 "fibroblast of skin of abdomen")
@@ -28185,7 +28194,7 @@ EquivalentClasses(obo:CL_2000013 ObjectIntersectionOf(obo:CL_0002620 ObjectSomeV
 # Class: obo:CL_2000014 (fibroblast of upper leg skin)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000014 "Any skin fibroblast that is part of a upper leg skin.")
-AnnotationAssertion(terms:contributor obo:CL_2000014 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000014 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000014 "2014-06-04T15:19:44Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000014 "CL:2000014")
 AnnotationAssertion(rdfs:label obo:CL_2000014 "fibroblast of upper leg skin")
@@ -28194,7 +28203,7 @@ EquivalentClasses(obo:CL_2000014 ObjectIntersectionOf(obo:CL_0002620 ObjectSomeV
 # Class: obo:CL_2000015 (fibroblast of arm)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000015 "Any skin fibroblast that is part of a arm.")
-AnnotationAssertion(terms:contributor obo:CL_2000015 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000015 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000015 "2014-06-04T15:29:06Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000015 "CL:2000015")
 AnnotationAssertion(rdfs:label obo:CL_2000015 "fibroblast of arm")
@@ -28203,7 +28212,7 @@ EquivalentClasses(obo:CL_2000015 ObjectIntersectionOf(obo:CL_0002620 ObjectSomeV
 # Class: obo:CL_2000016 (lung microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000016 "Any lung endothelial cell that is part of a microvascular endothelium.")
-AnnotationAssertion(terms:contributor obo:CL_2000016 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000016 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000016 "2014-06-04T16:00:56Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000016 "CL:2000016")
 AnnotationAssertion(rdfs:label obo:CL_2000016 "lung microvascular endothelial cell")
@@ -28213,7 +28222,7 @@ SubClassOf(obo:CL_2000016 obo:CL_2000008)
 # Class: obo:CL_2000017 (fibroblast of peridontal ligament)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000017 "Any fibroblast that is part of a periodontal ligament.")
-AnnotationAssertion(terms:contributor obo:CL_2000017 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000017 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000017 "2014-06-04T16:50:33Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000017 "CL:2000017")
 AnnotationAssertion(rdfs:label obo:CL_2000017 "fibroblast of peridontal ligament")
@@ -28222,7 +28231,7 @@ EquivalentClasses(obo:CL_2000017 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000018 (endothelial cell of coronary artery)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000018 "Any endothelial cell of artery that is part of a coronary artery.")
-AnnotationAssertion(terms:contributor obo:CL_2000018 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000018 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000018 "2014-06-04T17:08:47Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000018 "CL:2000018")
 AnnotationAssertion(rdfs:label obo:CL_2000018 "endothelial cell of coronary artery")
@@ -28231,7 +28240,7 @@ EquivalentClasses(obo:CL_2000018 ObjectIntersectionOf(obo:CL_1000413 ObjectSomeV
 # Class: obo:CL_2000019 (compound eye photoreceptor cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000019 "Any photoreceptor cell that is part of a compound eye.")
-AnnotationAssertion(terms:contributor obo:CL_2000019 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000019 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000019 "2014-06-24T23:16:45Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000019 "CL:2000019")
 AnnotationAssertion(rdfs:label obo:CL_2000019 "compound eye photoreceptor cell")
@@ -28240,7 +28249,7 @@ EquivalentClasses(obo:CL_2000019 ObjectIntersectionOf(obo:CL_0000210 ObjectSomeV
 # Class: obo:CL_2000020 (inner cell mass cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000020 "Any native cell that is part of a inner cell mass.")
-AnnotationAssertion(terms:contributor obo:CL_2000020 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000020 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000020 "2014-06-24T23:16:53Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000020 "CL:2000020")
 AnnotationAssertion(rdfs:label obo:CL_2000020 "inner cell mass cell")
@@ -28249,7 +28258,7 @@ EquivalentClasses(obo:CL_2000020 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeV
 # Class: obo:CL_2000021 (sebaceous gland cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000021 "Any native cell that is part of a sebaceous gland.")
-AnnotationAssertion(terms:contributor obo:CL_2000021 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000021 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000021 "2014-06-24T23:17:00Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000021 "CL:2000021")
 AnnotationAssertion(rdfs:label obo:CL_2000021 "sebaceous gland cell")
@@ -28258,7 +28267,7 @@ EquivalentClasses(obo:CL_2000021 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeV
 # Class: obo:CL_2000022 (cardiac septum cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000022 "Any native cell that is part of a cardiac septum.")
-AnnotationAssertion(terms:contributor obo:CL_2000022 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000022 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000022 "2014-06-24T23:17:07Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000022 "CL:2000022")
 AnnotationAssertion(rdfs:label obo:CL_2000022 "cardiac septum cell")
@@ -28267,7 +28276,7 @@ EquivalentClasses(obo:CL_2000022 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeV
 # Class: obo:CL_2000023 (spinal cord ventral column interneuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000023 "Any interneuron that is part of a spinal cord ventral column.")
-AnnotationAssertion(terms:contributor obo:CL_2000023 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000023 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000023 "2014-06-25T00:23:36Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000023 "CL:2000023")
 AnnotationAssertion(rdfs:label obo:CL_2000023 "spinal cord ventral column interneuron")
@@ -28276,7 +28285,7 @@ EquivalentClasses(obo:CL_2000023 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 # Class: obo:CL_2000024 (spinal cord medial motor column neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000024 "Any neuron that is part of a spinal cord medial motor column.")
-AnnotationAssertion(terms:contributor obo:CL_2000024 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000024 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000024 "2014-06-25T00:23:43Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000024 "CL:2000024")
 AnnotationAssertion(rdfs:label obo:CL_2000024 "spinal cord medial motor column neuron")
@@ -28285,7 +28294,7 @@ EquivalentClasses(obo:CL_2000024 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_2000025 (spinal cord oligodendrocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000025 "Any oligodendrocyte that is part of a spinal cord.")
-AnnotationAssertion(terms:contributor obo:CL_2000025 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000025 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000025 "2014-06-25T00:23:50Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000025 "CL:2000025")
 AnnotationAssertion(rdfs:label obo:CL_2000025 "spinal cord oligodendrocyte")
@@ -28294,7 +28303,7 @@ EquivalentClasses(obo:CL_2000025 ObjectIntersectionOf(obo:CL_0000128 ObjectSomeV
 # Class: obo:CL_2000026 (obsolete cerebellum Golgi cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000026 "Any Golgi cell that is part of a cerebellum.")
-AnnotationAssertion(terms:contributor obo:CL_2000026 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000026 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000026 "2014-06-25T00:23:57Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000026 "CL:2000026")
 AnnotationAssertion(rdfs:label obo:CL_2000026 "obsolete cerebellum Golgi cell")
@@ -28303,7 +28312,7 @@ AnnotationAssertion(owl:deprecated obo:CL_2000026 "true"^^xsd:boolean)
 # Class: obo:CL_2000027 (cerebellum basket cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000027 "Any basket cell that is part of a cerebellum.")
-AnnotationAssertion(terms:contributor obo:CL_2000027 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000027 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000027 "2014-06-25T00:24:03Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000027 "CL:2000027")
 AnnotationAssertion(rdfs:label obo:CL_2000027 "cerebellum basket cell")
@@ -28312,7 +28321,7 @@ EquivalentClasses(obo:CL_2000027 ObjectIntersectionOf(obo:CL_0000118 ObjectSomeV
 # Class: obo:CL_2000028 (cerebellum glutamatergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000028 "Any glutamatergic neuron that is part of a cerebellum.")
-AnnotationAssertion(terms:contributor obo:CL_2000028 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000028 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000028 "2014-06-25T00:24:10Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000028 "CL:2000028")
 AnnotationAssertion(rdfs:label obo:CL_2000028 "cerebellum glutamatergic neuron")
@@ -28321,7 +28330,7 @@ EquivalentClasses(obo:CL_2000028 ObjectIntersectionOf(obo:CL_0000679 ObjectSomeV
 # Class: obo:CL_2000029 (central nervous system neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000029 "Any neuron that is part of a central nervous system.")
-AnnotationAssertion(terms:contributor obo:CL_2000029 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000029 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000029 "2014-06-25T01:17:43Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000029 "CL:2000029")
 AnnotationAssertion(rdfs:label obo:CL_2000029 "central nervous system neuron")
@@ -28330,7 +28339,7 @@ EquivalentClasses(obo:CL_2000029 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_2000030 (hypothalamus cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000030 "Any native cell that is part of a hypothalamus.")
-AnnotationAssertion(terms:contributor obo:CL_2000030 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000030 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000030 "2014-06-25T01:17:50Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000030 "CL:2000030")
 AnnotationAssertion(rdfs:label obo:CL_2000030 "hypothalamus cell")
@@ -28339,7 +28348,7 @@ EquivalentClasses(obo:CL_2000030 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeV
 # Class: obo:CL_2000031 (lateral line ganglion neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000031 "Any neuron that is part of a lateral line ganglion.")
-AnnotationAssertion(terms:contributor obo:CL_2000031 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000031 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000031 "2014-06-25T01:17:57Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000031 "CL:2000031")
 AnnotationAssertion(rdfs:label obo:CL_2000031 "lateral line ganglion neuron")
@@ -28348,7 +28357,7 @@ EquivalentClasses(obo:CL_2000031 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_2000032 (peripheral nervous system neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") Annotation(oboInOwl:hasDbXref "ISBN:0721662544") obo:IAO_0000115 obo:CL_2000032 "A neuron that is part of a peripheral nervous system.")
-AnnotationAssertion(terms:contributor obo:CL_2000032 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000032 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000032 "2014-06-25T02:28:17Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000032 "FMA:84664")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000032 "PNS neuron")
@@ -28360,7 +28369,7 @@ EquivalentClasses(obo:CL_2000032 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_2000033 (limb basal cell of epidermis)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000033 "Any basal cell of epidermis that is part of a limb.")
-AnnotationAssertion(terms:contributor obo:CL_2000033 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000033 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000033 "2014-06-25T02:28:25Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000033 "CL:2000033")
 AnnotationAssertion(rdfs:label obo:CL_2000033 "limb basal cell of epidermis")
@@ -28369,7 +28378,7 @@ EquivalentClasses(obo:CL_2000033 ObjectIntersectionOf(obo:CL_0002187 ObjectSomeV
 # Class: obo:CL_2000034 (anterior lateral line neuromast hair cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000034 "Any neuromast hair cell that is part of a anterior lateral line.")
-AnnotationAssertion(terms:contributor obo:CL_2000034 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000034 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000034 "2014-06-25T03:44:37Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000034 "CL:2000034")
 AnnotationAssertion(rdfs:label obo:CL_2000034 "anterior lateral line neuromast hair cell")
@@ -28378,7 +28387,7 @@ EquivalentClasses(obo:CL_2000034 ObjectIntersectionOf(obo:CL_0000856 ObjectSomeV
 # Class: obo:CL_2000035 (anterior lateral line neuromast mantle cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000035 "Any neuromast mantle cell that is part of an anterior lateral line.")
-AnnotationAssertion(terms:contributor obo:CL_2000035 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000035 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000035 "2014-06-25T03:44:44Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000035 "CL:2000035")
 AnnotationAssertion(rdfs:label obo:CL_2000035 "anterior lateral line neuromast mantle cell")
@@ -28387,7 +28396,7 @@ EquivalentClasses(obo:CL_2000035 ObjectIntersectionOf(obo:CL_0000851 ObjectSomeV
 # Class: obo:CL_2000036 (anterior lateral line neuromast supporting cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000036 "Any neuromast support cell that is part of a anterior lateral line.")
-AnnotationAssertion(terms:contributor obo:CL_2000036 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000036 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000036 "2014-06-25T03:44:51Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000036 "anterior lateral line neuromast support cell")
 AnnotationAssertion(oboInOwl:id obo:CL_2000036 "CL:2000036")
@@ -28397,7 +28406,7 @@ EquivalentClasses(obo:CL_2000036 ObjectIntersectionOf(obo:CL_0000852 ObjectSomeV
 # Class: obo:CL_2000037 (posterior lateral line neuromast hair cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000037 "Any neuromast hair cell that is part of a posterior lateral line.")
-AnnotationAssertion(terms:contributor obo:CL_2000037 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000037 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000037 "2014-06-25T03:44:57Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000037 "CL:2000037")
 AnnotationAssertion(rdfs:label obo:CL_2000037 "posterior lateral line neuromast hair cell")
@@ -28406,7 +28415,7 @@ EquivalentClasses(obo:CL_2000037 ObjectIntersectionOf(obo:CL_0000856 ObjectSomeV
 # Class: obo:CL_2000038 (posterior lateral line neuromast mantle cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000038 "Any neuromast mantle cell that is part of a posterior lateral line.")
-AnnotationAssertion(terms:contributor obo:CL_2000038 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000038 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000038 "2014-06-25T03:45:04Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000038 "CL:2000038")
 AnnotationAssertion(rdfs:label obo:CL_2000038 "posterior lateral line neuromast mantle cell")
@@ -28415,7 +28424,7 @@ EquivalentClasses(obo:CL_2000038 ObjectIntersectionOf(obo:CL_0000851 ObjectSomeV
 # Class: obo:CL_2000039 (posterior lateral line neuromast supporting cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000039 "Any neuromast support cell that is part of a posterior lateral line.")
-AnnotationAssertion(terms:contributor obo:CL_2000039 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000039 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000039 "2014-06-25T03:45:11Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000039 "posterior lateral line neuromast support cell")
 AnnotationAssertion(oboInOwl:id obo:CL_2000039 "CL:2000039")
@@ -28425,7 +28434,7 @@ EquivalentClasses(obo:CL_2000039 ObjectIntersectionOf(obo:CL_0000852 ObjectSomeV
 # Class: obo:CL_2000040 (bladder microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000040 "Any microvascular endothelial cell that is part of a urinary bladder.")
-AnnotationAssertion(terms:contributor obo:CL_2000040 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000040 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000040 "2014-07-09T00:04:47Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000040 "CL:2000040")
 AnnotationAssertion(rdfs:label obo:CL_2000040 "bladder microvascular endothelial cell")
@@ -28434,7 +28443,7 @@ EquivalentClasses(obo:CL_2000040 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000041 (dermis microvascular lymphatic vessel endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000041 "Any dermis lymphatic vessel endothelial cell that is part of a microvascular endothelium.")
-AnnotationAssertion(terms:contributor obo:CL_2000041 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000041 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000041 "2014-07-09T00:09:54Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000041 "CL:2000041")
 AnnotationAssertion(rdfs:label obo:CL_2000041 "dermis microvascular lymphatic vessel endothelial cell")
@@ -28443,7 +28452,7 @@ EquivalentClasses(obo:CL_2000041 ObjectIntersectionOf(obo:CL_2000011 ObjectSomeV
 # Class: obo:CL_2000042 (embryonic fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000042 "Any fibroblast that is part of a embryo.")
-AnnotationAssertion(terms:contributor obo:CL_2000042 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000042 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000042 "2014-07-09T00:12:00Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000042 "CL:2000042")
 AnnotationAssertion(rdfs:label obo:CL_2000042 "embryonic fibroblast")
@@ -28452,7 +28461,7 @@ EquivalentClasses(obo:CL_2000042 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000043 (brain pericyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000043 "Any pericyte cell that is part of a brain.")
-AnnotationAssertion(terms:contributor obo:CL_2000043 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000043 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000043 "2014-07-09T00:18:22Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000043 "CL:2000043")
 AnnotationAssertion(rdfs:label obo:CL_2000043 "brain pericyte")
@@ -28461,7 +28470,7 @@ EquivalentClasses(obo:CL_2000043 ObjectIntersectionOf(obo:CL_0000669 ObjectSomeV
 # Class: obo:CL_2000044 (brain microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000044 "Any microvascular endothelial cell that is part of a brain.")
-AnnotationAssertion(terms:contributor obo:CL_2000044 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000044 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000044 "2014-07-09T00:24:53Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000044 "CL:2000044")
 AnnotationAssertion(rdfs:label obo:CL_2000044 "brain microvascular endothelial cell")
@@ -28470,8 +28479,8 @@ EquivalentClasses(obo:CL_2000044 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000045 (foreskin melanocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000045 "Any melanocyte of skin that is part of a skin of prepuce of penis.")
+AnnotationAssertion(terms:contributor obo:CL_2000045 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(terms:contributor obo:CL_2000045 <https://orcid.org/0009-0000-8480-9277>)
-AnnotationAssertion(terms:contributor obo:CL_2000045 <https://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000045 "2014-07-09T00:45:07Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000045 "melanocyte of foreskin")
 AnnotationAssertion(oboInOwl:id obo:CL_2000045 "CL:2000045")
@@ -28481,7 +28490,7 @@ EquivalentClasses(obo:CL_2000045 ObjectIntersectionOf(obo:CL_1000458 ObjectSomeV
 # Class: obo:CL_2000046 (ventricular cardiac muscle cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000046 "Any cardiac muscle cell that is part of a cardiac ventricle.")
-AnnotationAssertion(terms:contributor obo:CL_2000046 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000046 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000046 "2014-08-12T20:50:28Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000046 "CL:2000046")
 AnnotationAssertion(rdfs:label obo:CL_2000046 "ventricular cardiac muscle cell")
@@ -28490,7 +28499,7 @@ EquivalentClasses(obo:CL_2000046 ObjectIntersectionOf(obo:CL_0000746 ObjectSomeV
 # Class: obo:CL_2000047 (brainstem motor neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000047 "Any motor neuron that is part of a brainstem.")
-AnnotationAssertion(terms:contributor obo:CL_2000047 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000047 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000047 "2014-10-02T23:52:53Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000047 "CL:2000047")
 AnnotationAssertion(rdfs:label obo:CL_2000047 "brainstem motor neuron")
@@ -28499,7 +28508,7 @@ EquivalentClasses(obo:CL_2000047 ObjectIntersectionOf(obo:CL_0000100 ObjectSomeV
 # Class: obo:CL_2000048 (anterior horn motor neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-12-817962-8.00025-1") obo:IAO_0000115 obo:CL_2000048 "A lower motor neuron whose soma is located in the anterior horn. Anterior horn motor neurons project from the anterior portion of the grey matter in the spinal cord to some skeletal muscles.")
-AnnotationAssertion(terms:contributor obo:CL_2000048 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000048 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000048 "2014-10-03T00:26:27Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000048 "NCIT:C12645")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000048 "anterior horn cell")
@@ -28513,7 +28522,7 @@ SubClassOf(obo:CL_2000048 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002257
 # Class: obo:CL_2000049 (primary motor cortex pyramidal cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000049 "Any pyramidal cell that is part of a primary motor cortex.")
-AnnotationAssertion(terms:contributor obo:CL_2000049 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000049 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000049 "2014-10-06T17:39:04Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000049 "CL:2000049")
 AnnotationAssertion(rdfs:comment obo:CL_2000049 "http://www.ncbi.nlm.nih.gov/pubmed/12524689")
@@ -28523,7 +28532,7 @@ EquivalentClasses(obo:CL_2000049 ObjectIntersectionOf(obo:CL_0000598 ObjectSomeV
 # Class: obo:CL_2000050 (obsolete retina retinal ganglion cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000050 "Any retinal ganglion cell that is part of a retina.")
-AnnotationAssertion(terms:contributor obo:CL_2000050 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000050 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000050 "2014-10-06T17:43:59Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000050 "CL:2000050")
 AnnotationAssertion(rdfs:comment obo:CL_2000050 "http://www.ncbi.nlm.nih.gov/pubmed/2889210")
@@ -28533,7 +28542,7 @@ AnnotationAssertion(owl:deprecated obo:CL_2000050 "true"^^xsd:boolean)
 # Class: obo:CL_2000051 (splenic fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000051 "Any fibroblast that is part of a spleen.")
-AnnotationAssertion(terms:contributor obo:CL_2000051 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000051 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000051 "2014-10-06T18:58:47Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000051 "CL:2000051")
 AnnotationAssertion(rdfs:label obo:CL_2000051 "splenic fibroblast")
@@ -28542,7 +28551,7 @@ EquivalentClasses(obo:CL_2000051 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000052 (umbilical artery endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000052 "Any endothelial cell of artery that is part of a umbilical cord.")
-AnnotationAssertion(terms:contributor obo:CL_2000052 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000052 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000052 "2014-10-06T19:01:48Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000052 "CL:2000052")
 AnnotationAssertion(rdfs:comment obo:CL_2000052 "http://www.sciencellonline.com/site/productInformation.php?keyword=8010")
@@ -28552,7 +28561,7 @@ EquivalentClasses(obo:CL_2000052 ObjectIntersectionOf(obo:CL_1000413 ObjectSomeV
 # Class: obo:CL_2000053 (splenic endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000053 "Any endothelial cell that is part of a spleen.")
-AnnotationAssertion(terms:contributor obo:CL_2000053 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000053 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000053 "2014-10-06T19:06:04Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000053 "CL:2000053")
 AnnotationAssertion(rdfs:comment obo:CL_2000053 "http://www.sciencellonline.com/site/productInformation.php?keyword=5500")
@@ -28570,7 +28579,7 @@ SubClassOf(obo:CL_2000054 ObjectSomeValuesFrom(obo:RO_0001025 obo:UBERON_0001281
 # Class: obo:CL_2000055 (liver dendritic cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000055 "Any dendritic cell that is part of a liver.")
-AnnotationAssertion(terms:contributor obo:CL_2000055 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000055 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000055 "2014-10-06T19:16:11Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000055 "hepatic dendritic cell")
 AnnotationAssertion(oboInOwl:id obo:CL_2000055 "CL:2000055")
@@ -28581,7 +28590,7 @@ EquivalentClasses(obo:CL_2000055 ObjectIntersectionOf(obo:CL_0000451 ObjectSomeV
 # Class: obo:CL_2000056 (Meynert cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000056 "Any pyramidal cell that is part of a regional part of cerebral cortex.")
-AnnotationAssertion(terms:contributor obo:CL_2000056 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000056 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000056 "2014-10-06T19:20:41Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000056 "CL:2000056")
 AnnotationAssertion(rdfs:label obo:CL_2000056 "Meynert cell")
@@ -28591,7 +28600,7 @@ SubClassOf(obo:CL_2000056 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384
 # Class: obo:CL_2000057 (femural osteoblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000057 "Any osteoblast that is part of a femur.")
-AnnotationAssertion(terms:contributor obo:CL_2000057 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000057 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000057 "2014-10-06T19:29:45Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000057 "CL:2000057")
 AnnotationAssertion(rdfs:comment obo:CL_2000057 "http://www.sciencellonline.com/site/productInformation.php?keyword=4610")
@@ -28601,7 +28610,7 @@ EquivalentClasses(obo:CL_2000057 ObjectIntersectionOf(obo:CL_0000062 ObjectSomeV
 # Class: obo:CL_2000058 (calvarial osteoblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000058 "Any osteoblast that is part of a skull.")
-AnnotationAssertion(terms:contributor obo:CL_2000058 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000058 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000058 "2014-10-06T19:48:30Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000058 "CL:2000058")
 AnnotationAssertion(rdfs:comment obo:CL_2000058 "http://www.sciencellonline.com/site/productInformation.php?keyword=4600")
@@ -28611,7 +28620,7 @@ EquivalentClasses(obo:CL_2000058 ObjectIntersectionOf(obo:CL_0000062 ObjectSomeV
 # Class: obo:CL_2000059 (prostate gland microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000059 "Any microvascular endothelial cell that is part of a prostate gland.")
-AnnotationAssertion(terms:contributor obo:CL_2000059 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000059 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000059 "2014-10-07T17:46:27Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000059 "CL:2000059")
 AnnotationAssertion(rdfs:comment obo:CL_2000059 "http://www.sciencellonline.com/site/productInformation.php?keyword=4400")
@@ -28621,7 +28630,7 @@ EquivalentClasses(obo:CL_2000059 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000060 (placental villous trophoblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31049600") obo:IAO_0000115 obo:CL_2000060 "A trophoblast of placental villi.  These cells fuse to form synctial  trophoplast - the placental side of the interface between the placenta and maternal blood sinusoids in the decidua.")
-AnnotationAssertion(terms:contributor obo:CL_2000060 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000060 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000060 "2014-10-07T17:48:27Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000060 "BTO:0006119")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_2000060 "BTO:0006208")
@@ -28636,7 +28645,7 @@ EquivalentClasses(obo:CL_2000060 ObjectIntersectionOf(obo:CL_0000351 ObjectSomeV
 # Class: obo:CL_2000061 (placental amniotic mesenchymal stromal cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000061 "Any mesenchymal stem cell that is part of a placenta.")
-AnnotationAssertion(terms:contributor obo:CL_2000061 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000061 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000061 "2014-10-07T17:51:11Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000061 "CL:2000061")
 AnnotationAssertion(rdfs:comment obo:CL_2000061 "http://www.sciencellonline.com/site/productInformation.php?keyword=7140")
@@ -28646,7 +28655,7 @@ EquivalentClasses(obo:CL_2000061 ObjectIntersectionOf(obo:CL_0000134 ObjectSomeV
 # Class: obo:CL_2000062 (placental villus capillary endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000062 "Any capillary endothelial cell that is part of a placenta.")
-AnnotationAssertion(terms:contributor obo:CL_2000062 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000062 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000062 "2014-10-07T17:55:56Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000062 "CL:2000062")
 AnnotationAssertion(rdfs:comment obo:CL_2000062 "http://www.ncbi.nlm.nih.gov/books/NBK53245/")
@@ -28656,7 +28665,7 @@ EquivalentClasses(obo:CL_2000062 ObjectIntersectionOf(obo:CL_0002144 ObjectSomeV
 # Class: obo:CL_2000063 (ovarian fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000063 "Any fibroblast that is part of a female gonad.")
-AnnotationAssertion(terms:contributor obo:CL_2000063 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000063 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000063 "2014-10-07T17:57:42Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000063 "CL:2000063")
 AnnotationAssertion(rdfs:comment obo:CL_2000063 "http://www.sciencellonline.com/site/productInformation.php?keyword=7330")
@@ -28666,7 +28675,7 @@ EquivalentClasses(obo:CL_2000063 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000064 (ovarian surface epithelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000064 "Any epithelial cell that is part of a female gonad.")
-AnnotationAssertion(terms:contributor obo:CL_2000064 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000064 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000064 "2014-10-07T17:59:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000064 "CL:2000064")
 AnnotationAssertion(rdfs:comment obo:CL_2000064 "http://www.sciencellonline.com/site/productInformation.php?keyword=7310")
@@ -28676,7 +28685,7 @@ EquivalentClasses(obo:CL_2000064 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeV
 # Class: obo:CL_2000065 (ovarian microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000065 "Any microvascular endothelial cell that is part of a female urethra.")
-AnnotationAssertion(terms:contributor obo:CL_2000065 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000065 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000065 "2014-10-07T18:18:01Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000065 "CL:2000065")
 AnnotationAssertion(rdfs:comment obo:CL_2000065 "http://www.sciencellonline.com/site/productInformation.php?keyword=7300")
@@ -28686,7 +28695,7 @@ EquivalentClasses(obo:CL_2000065 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000066 (cardiac ventricle fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000066 "Any fibroblast that is part of a cardiac ventricle.")
-AnnotationAssertion(terms:contributor obo:CL_2000066 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000066 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000066 "2014-10-07T18:35:38Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000066 "CL:2000066")
 AnnotationAssertion(rdfs:comment obo:CL_2000066 "http://www.sciencellonline.com/site/productInformation.php?keyword=6310")
@@ -28696,7 +28705,7 @@ EquivalentClasses(obo:CL_2000066 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000067 (cardiac atrium fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000067 "Any fibroblast that is part of a cardiac atrium.")
-AnnotationAssertion(terms:contributor obo:CL_2000067 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000067 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000067 "2014-10-07T18:36:54Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000067 "CL:2000067")
 AnnotationAssertion(rdfs:comment obo:CL_2000067 "http://www.sciencellonline.com/site/productInformation.php?keyword=6320")
@@ -28706,7 +28715,7 @@ EquivalentClasses(obo:CL_2000067 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000068 (pericardium fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000068 "Any fibroblast that is part of a pericardium.")
-AnnotationAssertion(terms:contributor obo:CL_2000068 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000068 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000068 "2014-10-07T18:38:06Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000068 "CL:2000068")
 AnnotationAssertion(rdfs:comment obo:CL_2000068 "http://www.sciencellonline.com/site/productInformation.php?keyword=6430")
@@ -28716,7 +28725,7 @@ EquivalentClasses(obo:CL_2000068 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000069 (gallbladder fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000069 "Any fibroblast that is part of a gallbladder.")
-AnnotationAssertion(terms:contributor obo:CL_2000069 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000069 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000069 "2014-10-07T18:41:43Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000069 "CL:2000069")
 AnnotationAssertion(rdfs:comment obo:CL_2000069 "http://www.sciencellonline.com/site/productInformation.php?keyword=5430")
@@ -28726,7 +28735,7 @@ EquivalentClasses(obo:CL_2000069 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000070 (optic choroid fibroblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000070 "Any fibroblast that is part of a optic choroid.")
-AnnotationAssertion(terms:contributor obo:CL_2000070 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000070 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000070 "2014-10-07T18:50:43Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000070 "CL:2000070")
 AnnotationAssertion(rdfs:comment obo:CL_2000070 "http://www.sciencellonline.com/site/productInformation.php?keyword=6620")
@@ -28736,7 +28745,7 @@ EquivalentClasses(obo:CL_2000070 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000071 (mammary microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000071 "Any microvascular endothelial cell that is part of a breast.")
-AnnotationAssertion(terms:contributor obo:CL_2000071 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000071 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000071 "2014-10-07T19:55:30Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000071 "CL:2000071")
 AnnotationAssertion(rdfs:comment obo:CL_2000071 "http://www.sciencellonline.com/site/productInformation.php?keyword=7600")
@@ -28746,7 +28755,7 @@ EquivalentClasses(obo:CL_2000071 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000072 (adipose microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000072 "Any microvascular endothelial cell that is part of a adipose tissue.")
-AnnotationAssertion(terms:contributor obo:CL_2000072 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000072 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000072 "2014-10-07T22:13:45Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000072 "CL:2000072")
 AnnotationAssertion(rdfs:comment obo:CL_2000072 "http://www.sciencellonline.com/site/productInformation.php?keyword=7200")
@@ -28756,7 +28765,7 @@ EquivalentClasses(obo:CL_2000072 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000073 (migratory cardiac neural crest cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000073 "Any migratory neural crest cell that is part of a cardiac neural crest.")
-AnnotationAssertion(terms:contributor obo:CL_2000073 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000073 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000073 "2014-11-05T01:18:43Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33060096") oboInOwl:hasExactSynonym obo:CL_2000073 "cardiac neural crest cell")
 AnnotationAssertion(oboInOwl:id obo:CL_2000073 "CL:2000073")
@@ -28766,7 +28775,7 @@ EquivalentClasses(obo:CL_2000073 ObjectIntersectionOf(obo:CL_0000333 ObjectSomeV
 # Class: obo:CL_2000074 (splenocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000074 "Any leukocyte that is part of a spleen.")
-AnnotationAssertion(terms:contributor obo:CL_2000074 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000074 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000074 "2014-11-05T01:26:50Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000074 "CL:2000074")
 AnnotationAssertion(rdfs:comment obo:CL_2000074 "Splenocytes is a vague term that refers to any one of the different white blood cell types in the spleen. This name is seen many references as such and is not explained further, necessitating a need for this terminology.")
@@ -28776,7 +28785,7 @@ EquivalentClasses(obo:CL_2000074 ObjectIntersectionOf(obo:CL_0000738 ObjectSomeV
 # Class: obo:CL_2000075 (anterior visceral endoderm cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000075 "Any endodermal cell that is part of a anterior visceral endoderm.")
-AnnotationAssertion(terms:contributor obo:CL_2000075 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000075 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000075 "2014-11-05T01:34:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000075 "CL:2000075")
 AnnotationAssertion(rdfs:label obo:CL_2000075 "anterior visceral endoderm cell")
@@ -28785,7 +28794,7 @@ EquivalentClasses(obo:CL_2000075 ObjectIntersectionOf(obo:CL_0000223 ObjectSomeV
 # Class: obo:CL_2000076 (hindlimb stylopod vein endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000076 "Any vein endothelial cell that is part of a hindlimb stylopod.")
-AnnotationAssertion(terms:contributor obo:CL_2000076 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000076 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000076 "2014-12-02T18:40:47Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000076 "CL:2000076")
 AnnotationAssertion(rdfs:label obo:CL_2000076 "hindlimb stylopod vein endothelial cell")
@@ -28794,7 +28803,7 @@ EquivalentClasses(obo:CL_2000076 ObjectIntersectionOf(obo:CL_0002543 ObjectSomeV
 # Class: obo:CL_2000077 (skeletal muscle tissue of pectoralis major striated muscle cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000077 "Any striated muscle cell that is part of a skeletal muscle tissue of pectoralis major.")
-AnnotationAssertion(terms:contributor obo:CL_2000077 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000077 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000077 "2014-12-02T18:48:17Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000077 "CL:2000077")
 AnnotationAssertion(rdfs:label obo:CL_2000077 "skeletal muscle tissue of pectoralis major striated muscle cell")
@@ -28803,7 +28812,7 @@ EquivalentClasses(obo:CL_2000077 ObjectIntersectionOf(obo:CL_0000737 ObjectSomeV
 # Class: obo:CL_2000078 (placental pericyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000078 "Any pericyte cell that is part of a placenta.")
-AnnotationAssertion(terms:contributor obo:CL_2000078 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000078 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000078 "2014-12-02T18:51:03Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000078 "CL:2000078")
 AnnotationAssertion(rdfs:label obo:CL_2000078 "placental pericyte")
@@ -28812,7 +28821,7 @@ EquivalentClasses(obo:CL_2000078 ObjectIntersectionOf(obo:CL_0000669 ObjectSomeV
 # Class: obo:CL_2000079 (mesenchymal stem cell of femoral bone marrow)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000079 "Any mesenchymal stem cell of the bone marrow that is part of a femur.")
-AnnotationAssertion(terms:contributor obo:CL_2000079 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000079 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000079 "2014-12-02T19:07:31Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000079 "CL:2000079")
 AnnotationAssertion(rdfs:label obo:CL_2000079 "mesenchymal stem cell of femoral bone marrow")
@@ -28821,7 +28830,7 @@ EquivalentClasses(obo:CL_2000079 ObjectIntersectionOf(obo:CL_0002540 ObjectSomeV
 # Class: obo:CL_2000080 (mesenchymal stem cell of abdominal adipose tissue)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000080 "Any mesenchymal stem cell of adipose tissue that is part of an abdomen.")
-AnnotationAssertion(terms:contributor obo:CL_2000080 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000080 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000080 "2014-12-02T19:10:34Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000080 "mesenchymal stem cell of abdominal adipose")
 AnnotationAssertion(oboInOwl:id obo:CL_2000080 "CL:2000080")
@@ -28831,7 +28840,7 @@ EquivalentClasses(obo:CL_2000080 ObjectIntersectionOf(obo:CL_0002570 ObjectSomeV
 # Class: obo:CL_2000081 (melanocyte of skin of face)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000081 "Any melanocyte of skin that is part of a skin of face.")
-AnnotationAssertion(terms:contributor obo:CL_2000081 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000081 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000081 "2014-12-02T19:10:40Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000081 "CL:2000081")
 AnnotationAssertion(rdfs:label obo:CL_2000081 "melanocyte of skin of face")
@@ -28842,7 +28851,7 @@ EquivalentClasses(obo:CL_2000081 ObjectIntersectionOf(obo:CL_1000458 ObjectSomeV
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000082 "OBSOLETE. Any melanocyte of skin that is part of a skin of prepuce of penis.")
 AnnotationAssertion(obo:IAO_0000233 obo:CL_2000082 <https://github.com/obophenotype/cell-ontology/issues/1562>)
 AnnotationAssertion(obo:IAO_0100001 obo:CL_2000082 obo:CL_2000045)
-AnnotationAssertion(terms:contributor obo:CL_2000082 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000082 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000082 "2014-12-02T19:10:45Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000082 "CL:2000082")
 AnnotationAssertion(rdfs:comment obo:CL_2000082 "Term was merged into foreskin melanocyte CL_2000045")
@@ -28852,7 +28861,7 @@ AnnotationAssertion(owl:deprecated obo:CL_2000082 "true"^^xsd:boolean)
 # Class: obo:CL_2000083 (hair follicle dermal papilla cell of scalp)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000083 "Any hair follicle dermal papilla cell that is part of a scalp.")
-AnnotationAssertion(terms:contributor obo:CL_2000083 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000083 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000083 "2014-12-02T19:10:50Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000083 "CL:2000083")
 AnnotationAssertion(rdfs:label obo:CL_2000083 "hair follicle dermal papilla cell of scalp")
@@ -28861,7 +28870,7 @@ EquivalentClasses(obo:CL_2000083 ObjectIntersectionOf(obo:CL_0000346 ObjectSomeV
 # Class: obo:CL_2000084 (conjunctiva goblet cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000084 "Any goblet cell that is part of a conjunctiva.")
-AnnotationAssertion(terms:contributor obo:CL_2000084 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000084 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000084 "2014-12-02T19:28:38Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000084 "CL:2000084")
 AnnotationAssertion(rdfs:label obo:CL_2000084 "conjunctiva goblet cell")
@@ -28870,7 +28879,7 @@ EquivalentClasses(obo:CL_2000084 ObjectIntersectionOf(obo:CL_0000160 ObjectSomeV
 # Class: obo:CL_2000085 (mononuclear cell of umbilical cord)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000085 "Any mononuclear cell that is part of a umbilical cord.")
-AnnotationAssertion(terms:contributor obo:CL_2000085 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000085 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000085 "2014-12-02T20:14:16Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000085 "CL:2000085")
 AnnotationAssertion(rdfs:label obo:CL_2000085 "mononuclear cell of umbilical cord")
@@ -28879,7 +28888,7 @@ EquivalentClasses(obo:CL_2000085 ObjectIntersectionOf(obo:CL_0000842 ObjectSomeV
 # Class: obo:CL_2000086 (neocortex basket cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000086 "Any basket cell that is part of a neocortex.")
-AnnotationAssertion(terms:contributor obo:CL_2000086 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000086 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000086 "2014-12-24T00:37:19Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000086 "CL:2000086")
 AnnotationAssertion(rdfs:label obo:CL_2000086 "neocortex basket cell")
@@ -28888,7 +28897,7 @@ EquivalentClasses(obo:CL_2000086 ObjectIntersectionOf(obo:CL_0000118 ObjectSomeV
 # Class: obo:CL_2000087 (dentate gyrus of hippocampal formation basket cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000087 "Any basket cell that is part of a dentate gyrus of hippocampal formation.")
-AnnotationAssertion(terms:contributor obo:CL_2000087 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000087 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000087 "2014-12-24T00:37:24Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000087 "CL:2000087")
 AnnotationAssertion(rdfs:label obo:CL_2000087 "dentate gyrus of hippocampal formation basket cell")
@@ -28897,7 +28906,7 @@ EquivalentClasses(obo:CL_2000087 ObjectIntersectionOf(obo:CL_0000118 ObjectSomeV
 # Class: obo:CL_2000088 (Ammon's horn basket cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000088 "Any basket cell that is part of a Ammon's horn.")
-AnnotationAssertion(terms:contributor obo:CL_2000088 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000088 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000088 "2014-12-24T00:37:30Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000088 "CL:2000088")
 AnnotationAssertion(rdfs:label obo:CL_2000088 "Ammon's horn basket cell")
@@ -28906,7 +28915,7 @@ EquivalentClasses(obo:CL_2000088 ObjectIntersectionOf(obo:CL_0000118 ObjectSomeV
 # Class: obo:CL_2000089 (dentate gyrus granule cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") Annotation(oboInOwl:hasDbXref "PMID:17765709") obo:IAO_0000115 obo:CL_2000089 "A granule cell that has soma location in the dentate gyrus cell layer of the hippocampal formation and has an elliptical cell body and characteristic cone-shaped tree of spiny apical dendrites. The branches extend throughout the molecular layer and the distal tips of the dendritic tree end just at the hippocampal fissure or at the ventricular surface. The dentate gyrus granule cell is the principal cell type of the dentate gyrus.")
-AnnotationAssertion(terms:contributor obo:CL_2000089 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000089 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000089 "2015-02-23T05:48:23Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_2000089 "dentate gyrus of hippocampal formation granule cell")
 AnnotationAssertion(oboInOwl:id obo:CL_2000089 "CL:2000089")
@@ -28917,7 +28926,7 @@ EquivalentClasses(obo:CL_2000089 ObjectIntersectionOf(obo:CL_0001033 ObjectSomeV
 # Class: obo:CL_2000090 (dentate gyrus of hippocampal formation stellate cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000090 "Any stellate cell that is part of a dentate gyrus of hippocampal formation.")
-AnnotationAssertion(terms:contributor obo:CL_2000090 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000090 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000090 "2015-02-23T05:48:40Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000090 "CL:2000090")
 AnnotationAssertion(rdfs:label obo:CL_2000090 "dentate gyrus of hippocampal formation stellate cell")
@@ -28926,7 +28935,7 @@ EquivalentClasses(obo:CL_2000090 ObjectIntersectionOf(obo:CL_0000122 ObjectSomeV
 # Class: obo:CL_2000091 (endometrial microvascular endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000091 "Any microvascular endothelial cell that is part of a endometrial blood vessel.")
-AnnotationAssertion(terms:contributor obo:CL_2000091 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000091 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000091 "2015-03-31T21:02:36Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000091 "CL:2000091")
 AnnotationAssertion(rdfs:label obo:CL_2000091 "endometrial microvascular endothelial cell")
@@ -28935,7 +28944,7 @@ EquivalentClasses(obo:CL_2000091 ObjectIntersectionOf(obo:CL_2000008 ObjectSomeV
 # Class: obo:CL_2000092 (hair follicular keratinocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000092 "Any keratinocyte that is part of a hair follicle.")
-AnnotationAssertion(terms:contributor obo:CL_2000092 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000092 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000092 "2015-03-31T21:07:02Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000092 "CL:2000092")
 AnnotationAssertion(rdfs:label obo:CL_2000092 "hair follicular keratinocyte")
@@ -28944,7 +28953,7 @@ EquivalentClasses(obo:CL_2000092 ObjectIntersectionOf(obo:CL_0000312 ObjectSomeV
 # Class: obo:CL_2000093 (bronchus fibroblast of lung)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000093 "Any fibroblast of lung that is part of a bronchus.")
-AnnotationAssertion(terms:contributor obo:CL_2000093 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000093 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000093 "2015-03-31T21:16:22Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000093 "CL:2000093")
 AnnotationAssertion(rdfs:label obo:CL_2000093 "bronchus fibroblast of lung")
@@ -28953,7 +28962,7 @@ EquivalentClasses(obo:CL_2000093 ObjectIntersectionOf(obo:CL_0002553 ObjectSomeV
 # Class: obo:CL_2000094 (nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000094 "Any epithelial cell of viscerocranial mucosa that is part of a nasal cavity respiratory epithelium.")
-AnnotationAssertion(terms:contributor obo:CL_2000094 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000094 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000094 "2015-03-31T22:25:17Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000094 "CL:2000094")
 AnnotationAssertion(rdfs:label obo:CL_2000094 "nasal cavity respiratory epithelium epithelial cell of viscerocranial mucosa")
@@ -28962,7 +28971,7 @@ EquivalentClasses(obo:CL_2000094 ObjectIntersectionOf(obo:CL_1000441 ObjectSomeV
 # Class: obo:CL_2000095 (cord blood hematopoietic stem cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000095 "Any hematopoietic stem cell that is part of a umbilical cord blood.")
-AnnotationAssertion(terms:contributor obo:CL_2000095 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000095 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000095 "2015-05-26T18:58:34Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000095 "CL:2000095")
 AnnotationAssertion(rdfs:label obo:CL_2000095 "cord blood hematopoietic stem cell")
@@ -28971,7 +28980,7 @@ EquivalentClasses(obo:CL_2000095 ObjectIntersectionOf(obo:CL_0000037 ObjectSomeV
 # Class: obo:CL_2000096 (fibroblast of the reticular layer of dermis)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000096 "Any fibroblast that is part of a reticular layer of dermis.")
-AnnotationAssertion(terms:contributor obo:CL_2000096 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000096 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000096 "2015-08-11T16:28:16Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000096 "CL:2000096")
 AnnotationAssertion(rdfs:label obo:CL_2000096 "fibroblast of the reticular layer of dermis")
@@ -28980,7 +28989,7 @@ EquivalentClasses(obo:CL_2000096 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 # Class: obo:CL_2000097 (midbrain dopaminergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000097 "Any dopaminergic neuron that is part of a midbrain.")
-AnnotationAssertion(terms:contributor obo:CL_2000097 <https://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000097 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000097 "2015-12-03T16:42:40Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000097 "CL:2000097")
 AnnotationAssertion(rdfs:label obo:CL_2000097 "midbrain dopaminergic neuron")
@@ -28989,7 +28998,7 @@ EquivalentClasses(obo:CL_2000097 ObjectIntersectionOf(obo:CL_0000700 ObjectSomeV
 # Class: obo:CL_3000000 (ciliated epithelial cell of esophagus)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:29802404") obo:IAO_0000115 obo:CL_3000000 "A ciliated epithelial cell of the esophagus.")
-AnnotationAssertion(terms:contributor obo:CL_3000000 <https://www.wikidata.org/entity/Q97529981>)
+AnnotationAssertion(terms:contributor obo:CL_3000000 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000000 "2019-02-09T16:40:30Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_3000000 "CL:3000000")
 AnnotationAssertion(rdfs:label obo:CL_3000000 "ciliated epithelial cell of esophagus")
@@ -28998,8 +29007,8 @@ EquivalentClasses(obo:CL_3000000 ObjectIntersectionOf(obo:CL_0000067 ObjectSomeV
 # Class: obo:CL_3000001 (Hofbauer cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30429548") Annotation(oboInOwl:hasDbXref "PMID:30498493") Annotation(oboInOwl:hasDbXref "PMID:34745147") Annotation(oboInOwl:hasDbXref "PMID:35438172") obo:IAO_0000115 obo:CL_3000001 "A tissue-resident macrophage that is part of the placenta. A Hofbauer cell expresses high levels of growth factors and metalloproteinases that support vasculogenesis, angiogenesis, branching morphogenesis and tissue remodeling. A Hofbauer cell has a fetal origin and is present throughout pregnancy.")
+AnnotationAssertion(terms:contributor obo:CL_3000001 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(terms:contributor obo:CL_3000001 <https://orcid.org/0000-0001-6677-8489>)
-AnnotationAssertion(terms:contributor obo:CL_3000001 <https://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000001 "2019-02-18T19:41:20Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_3000001 "HBC")
 AnnotationAssertion(oboInOwl:id obo:CL_3000001 "CL:3000001")
@@ -29011,7 +29020,7 @@ SubClassOf(obo:CL_3000001 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000198
 # Class: obo:CL_3000002 (sympathetic noradrenergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_3000002 "Sympathetic noradrenergic neuron.")
-AnnotationAssertion(terms:contributor obo:CL_3000002 <https://www.wikidata.org/entity/Q97529981>)
+AnnotationAssertion(terms:contributor obo:CL_3000002 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000002 "2019-02-25T19:30:14Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_3000002 "CL:3000002")
 AnnotationAssertion(rdfs:label obo:CL_3000002 "sympathetic noradrenergic neuron")
@@ -29020,7 +29029,7 @@ EquivalentClasses(obo:CL_3000002 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeV
 # Class: obo:CL_3000003 (sympathetic cholinergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_3000003 "Sympathetic cholinergic neuron.")
-AnnotationAssertion(terms:contributor obo:CL_3000003 <https://www.wikidata.org/entity/Q97529981>)
+AnnotationAssertion(terms:contributor obo:CL_3000003 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000003 "2019-02-25T19:32:20Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_3000003 "CL:3000003")
 AnnotationAssertion(rdfs:label obo:CL_3000003 "sympathetic cholinergic neuron")
@@ -29029,7 +29038,7 @@ EquivalentClasses(obo:CL_3000003 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeV
 # Class: obo:CL_3000004 (peripheral sensory neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_3000004 "Peripheral sensory neuron.")
-AnnotationAssertion(terms:contributor obo:CL_3000004 <https://www.wikidata.org/entity/Q97529981>)
+AnnotationAssertion(terms:contributor obo:CL_3000004 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000004 "2019-02-25T19:34:33Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_3000004 "CL:3000004")
 AnnotationAssertion(rdfs:label obo:CL_3000004 "peripheral sensory neuron")
@@ -29169,7 +29178,8 @@ AnnotationAssertion(terms:contributor obo:CL_4023011 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023011 "ILX:0770149")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023011 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023011 "lamp5 GABAergic cortical interneuron")
-SubClassOf(obo:CL_4023011 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004026) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000032148)))
+EquivalentClasses(obo:CL_4023011 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000032148)))
+SubClassOf(obo:CL_4023011 obo:CL_4023064)
 
 # Class: obo:CL_4023012 (near-projecting glutamatergic cortical neuron)
 
@@ -29215,6 +29225,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023015 "ILX:0770150")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023015 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023015 "sncg GABAergic cortical interneuron")
 EquivalentClasses(obo:CL_4023015 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000015325)))
+SubClassOf(obo:CL_4023015 obo:CL_4023064)
 
 # Class: obo:CL_4023016 (vip GABAergic cortical interneuron)
 
@@ -29225,6 +29236,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023016 "ILX:0770151")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023016 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023016 "vip GABAergic cortical interneuron")
 EquivalentClasses(obo:CL_4023016 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000017299)))
+SubClassOf(obo:CL_4023016 obo:CL_4023064)
 
 # Class: obo:CL_4023017 (sst GABAergic cortical interneuron)
 
@@ -29738,11 +29750,19 @@ EquivalentClasses(obo:CL_4023063 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeV
 # Class: obo:CL_4023064 (caudal ganglionic eminence derived interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023064 "CGE interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") obo:IAO_0000115 obo:CL_4023064 "An interneuron that is derived from the caudal ganglionic eminence.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "PMID:37824663") obo:IAO_0000115 obo:CL_4023064 "An interneuron that is derived from the caudal ganglionic eminence.")
 AnnotationAssertion(terms:contributor obo:CL_4023064 <http://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023064 "CGE interneuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37824663") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasExactSynonym obo:CL_4023064 "CGE interneuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") oboInOwl:hasExactSynonym obo:CL_4023064 "caudal ganglionic eminence derived GABAergic cortical interneuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023064 "CGE cortical interneuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37824663") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023064 "CGE interneuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27034423") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023064 "CGE-derived GABAergic IN")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27034423") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023064 "CGE-derived cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023064 "CGE-derived interneuron")
 AnnotationAssertion(rdfs:label obo:CL_4023064 "caudal ganglionic eminence derived interneuron")
 EquivalentClasses(obo:CL_4023064 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004026)))
+SubClassOf(obo:CL_4023064 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956))
+SubClassOf(obo:CL_4023064 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_4023065 (meis2 expressing cortical GABAergic cell)
 
@@ -29790,14 +29810,21 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023069 "MGE cortical intern
 AnnotationAssertion(rdfs:label obo:CL_4023069 "medial ganglionic eminence derived GABAergic cortical interneuron")
 EquivalentClasses(obo:CL_4023069 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
 
-# Class: obo:CL_4023070 (caudal ganglionic eminence derived GABAergic cortical interneuron)
+# Class: obo:CL_4023070 (obsolete caudal ganglionic eminence derived GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023070 "CGE gaba cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") obo:IAO_0000115 obo:CL_4023070 "A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") obo:IAO_0000115 obo:CL_4023070 "OBSOLETE. A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_4023070 <https://github.com/obophenotype/cell-ontology/pull/2374>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_4023070 obo:CL_4023064)
 AnnotationAssertion(terms:contributor obo:CL_4023070 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023070 "CGE cortical interneuron")
-AnnotationAssertion(rdfs:label obo:CL_4023070 "caudal ganglionic eminence derived GABAergic cortical interneuron")
-EquivalentClasses(obo:CL_4023070 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004026) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
+AnnotationAssertion(rdfs:comment obo:CL_4023070 "caudal ganglionic eminence derived GABAergic interneuron
+and caudal ganglionic eminence derived interneuron are the same cell type. 
+The two must be merged and one needs to be defined as obsolete. 
+We decided to deprecate the entity with the more specific term and redundant qualities 
+in the label. See comments in issue 2357.")
+AnnotationAssertion(rdfs:label obo:CL_4023070 "obsolete caudal ganglionic eminence derived GABAergic cortical interneuron")
+AnnotationAssertion(owl:deprecated obo:CL_4023070 "true"^^xsd:boolean)
 
 # Class: obo:CL_4023071 (L5/6 cck GABAergic interneuron (Mmus))
 
@@ -30646,27 +30673,27 @@ SubClassOf(obo:CL_4030008 obo:CL_0000653)
 
 # Class: obo:CL_4030009 (epithelial cell of proximal tubule segment 1)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030009 "Epithelial cell that is part of segment 1 (S1) of the proximal tubule epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030009 "A brush border cell that is part of segment 1 (S1) of the proximal tubule epithelium.")
 AnnotationAssertion(terms:date obo:CL_4030009 "2022-05-10T13:14:00Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030009 "epithelial cell of segment 1 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030009 "epithelial cell of proximal tubule segment 1")
-SubClassOf(obo:CL_4030009 obo:CL_0002306)
+SubClassOf(obo:CL_4030009 obo:CL_0002307)
 
 # Class: obo:CL_4030010 (epithelial cell of proximal tubule segment 2)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030010 "Epithelial cell that is part of segment 2 (S2) of the proximal tubule epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030010 "A brush border cell that is part of segment 2 (S2) of the proximal tubule epithelium.")
 AnnotationAssertion(terms:date obo:CL_4030010 "2022-05-10T13:26:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030010 "epithelial cell of segment 2 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030010 "epithelial cell of proximal tubule segment 2")
-SubClassOf(obo:CL_4030010 obo:CL_0002306)
+SubClassOf(obo:CL_4030010 obo:CL_0002307)
 
 # Class: obo:CL_4030011 (epithelial cell of proximal tubule segment 3)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030011 "Epithelial cell that is part of segment 3 (S3) of the proximal tubule epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030011 "A brush border cell that is part of segment 3 (S3) of the proximal tubule epithelium.")
 AnnotationAssertion(terms:date obo:CL_4030011 "2022-05-10T13:31:06Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030011 "epithelial cell of segment 3 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030011 "epithelial cell of proximal tubule segment 3")
-SubClassOf(obo:CL_4030011 obo:CL_0002306)
+SubClassOf(obo:CL_4030011 obo:CL_0002307)
 
 # Class: obo:CL_4030012 (kidney loop of Henle short descending thin limb epithelial cell)
 
@@ -31925,6 +31952,34 @@ AnnotationAssertion(rdfs:label obo:CL_4033065 "preplasmablast")
 SubClassOf(obo:CL_4033065 obo:CL_0000785)
 SubClassOf(obo:CL_4033065 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000788))
 SubClassOf(obo:CL_4033065 ObjectSomeValuesFrom(obo:RO_0002203 obo:CL_0000980))
+
+# Class: obo:CL_4033066 (pre-granulosa cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17639032") Annotation(oboInOwl:hasDbXref "PMID:32759216") Annotation(oboInOwl:hasDbXref "PMID:33970370") Annotation(oboInOwl:hasDbXref "PMID:38178246") obo:IAO_0000115 obo:CL_4033066 "A supporting cell that is part of the ovary and differentiates into a granulosa cell. A pre-granulosa cell develops from an early supporting gonadal cell by repressing testis determination, which can then proliferate to form primordial follicles.")
+AnnotationAssertion(terms:contributor obo:CL_4033066 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033066 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(terms:date obo:CL_4033066 "2024-06-07T12:04:57Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32759216") oboInOwl:hasExactSynonym obo:CL_4033066 "ovarian pregranulosa cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17639032") Annotation(oboInOwl:hasDbXref "PMID:32759216") oboInOwl:hasExactSynonym obo:CL_4033066 "pregranulosa cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32759216") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033066 "PG cell")
+AnnotationAssertion(rdfs:label obo:CL_4033066 "pre-granulosa cell")
+SubClassOf(obo:CL_4033066 obo:CL_0000630)
+SubClassOf(obo:CL_4033066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000992))
+SubClassOf(obo:CL_4033066 ObjectSomeValuesFrom(obo:RO_0002210 obo:CL_0000501))
+
+# Class: obo:CL_4033067 (mural granulosa cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27815559") Annotation(oboInOwl:hasDbXref "PMID:33970370") Annotation(oboInOwl:hasDbXref "PMID:34198768") obo:IAO_0000115 obo:CL_4033067 "A follicular cell of ovary that differentiates from a granulosa cell during the secondary follicle stage. Mural granulosa cells line the inner surface of the follicle wall, surrounding the fluid-filled antral cavity. These cells produce oestrogen during the follicular phase in response to follicle-stimulating hormone (FSH), and progesterone after ovulation in response to luteinizing hormone (LH).")
+AnnotationAssertion(terms:contributor obo:CL_4033067 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033067 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(terms:date obo:CL_4033067 "2024-06-07T12:15:13Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4033067 "EFO:0005289")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1530/REP-16-0500") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033067 "MGC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34198768") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033067 "mural GC")
+AnnotationAssertion(rdfs:label obo:CL_4033067 "mural granulosa cell")
+SubClassOf(obo:CL_4033067 obo:CL_0002174)
+SubClassOf(obo:CL_4033067 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000992))
+SubClassOf(obo:CL_4033067 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_0000501))
 
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
