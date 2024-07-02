@@ -3138,6 +3138,8 @@ Declaration(Class(obo:UBERON_0003677))
 Declaration(Class(obo:UBERON_0003718))
 Declaration(Class(obo:UBERON_0004024))
 Declaration(Class(obo:UBERON_0004026))
+Declaration(Class(obo:UBERON_0004196))
+Declaration(Class(obo:UBERON_0004197))
 Declaration(Class(obo:UBERON_0005101))
 Declaration(Class(obo:UBERON_0005102))
 Declaration(Class(obo:UBERON_0005378))
@@ -3254,7 +3256,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3348,11 +3350,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -16898,13 +16900,13 @@ SubClassOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000413
 
 # Class: obo:CL_0002307 (brush border cell of the proximal tubule)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:1-4160-2328-3") obo:IAO_0000115 obo:CL_0002307 "A brush border epithelial cell located in the proximal tubule of the kidney that detects fluid flow.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:1-4160-2328-3") Annotation(oboInOwl:hasDbXref "PMID:23799132") obo:IAO_0000115 obo:CL_0002307 "A brush border epithelial cell located in the proximal tubule of the kidney, essential for reabsorbing substances like glucose and amino acids from the glomerular filtrate. These cells also secrete organic ions, playing a crucial role in maintaining kidney homeostasis, including electrolyte and acid-base balance, and excreting metabolic waste.")
 AnnotationAssertion(terms:contributor obo:CL_0002307 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002307 "2010-09-14T11:29:20Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:comment obo:CL_0002307 "The vast majority of proximal tubule epithelial cells have a brush border, but there are rare exceptions.")
 AnnotationAssertion(rdfs:label obo:CL_0002307 "brush border cell of the proximal tubule")
+EquivalentClasses(obo:CL_0002307 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_0002307 obo:CL_0002306)
-SubClassOf(obo:CL_0002307 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903))
 
 # Class: obo:CL_0002308 (epithelial cell of skin gland)
 
@@ -27035,10 +27037,9 @@ SubClassOf(obo:CL_1000804 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000521
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000838 "KUPO:0001045")
 AnnotationAssertion(rdfs:label obo:CL_1000838 "kidney proximal convoluted tubule epithelial cell")
-EquivalentClasses(obo:CL_1000838 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287)))
+EquivalentClasses(obo:CL_1000838 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000838 obo:CL_0002306)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000838 obo:CL_1000615)
-SubClassOf(obo:CL_1000838 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001287))
 
 # Class: obo:CL_1000839 (kidney proximal straight tubule epithelial cell)
 
@@ -27048,7 +27049,6 @@ EquivalentClasses(obo:CL_1000839 ObjectIntersectionOf(obo:CL_0002306 ObjectSomeV
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000839 obo:CL_0002306)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000839 obo:CL_1000615)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000839 obo:CL_1000616)
-SubClassOf(obo:CL_1000839 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001290))
 
 # Class: obo:CL_1000849 (kidney distal convoluted tubule epithelial cell)
 
@@ -30680,26 +30680,30 @@ SubClassOf(obo:CL_4030008 obo:CL_0000653)
 
 # Class: obo:CL_4030009 (epithelial cell of proximal tubule segment 1)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030009 "A brush border cell that is part of segment 1 (S1) of the proximal tubule epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23799132") Annotation(oboInOwl:hasDbXref "PMID:23897681") Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030009 "A brush border cell that is part of segment 1 (S1) of the proximal tubule epithelium, located in the renal cortex.")
 AnnotationAssertion(terms:date obo:CL_4030009 "2022-05-10T13:14:00Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030009 "epithelial cell of segment 1 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030009 "epithelial cell of proximal tubule segment 1")
+EquivalentClasses(obo:CL_4030009 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004196) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_4030009 obo:CL_0002307)
 
 # Class: obo:CL_4030010 (epithelial cell of proximal tubule segment 2)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030010 "A brush border cell that is part of segment 2 (S2) of the proximal tubule epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23799132") Annotation(oboInOwl:hasDbXref "PMID:23897681") Annotation(oboInOwl:hasDbXref "PMID:31249312") Annotation(oboInOwl:hasDbXref "PMID:31253652") obo:IAO_0000115 obo:CL_4030010 "A brush border cell that is part of segment 2 (S2) of the proximal tubule epithelium, located in the renal cortex. In addition to its reabsorptive functions, it is also specialized in the secretion of organic anions and cations, including para-aminohippurate.")
 AnnotationAssertion(terms:date obo:CL_4030010 "2022-05-10T13:26:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030010 "epithelial cell of segment 2 of proximal tubule")
 AnnotationAssertion(rdfs:label obo:CL_4030010 "epithelial cell of proximal tubule segment 2")
+EquivalentClasses(obo:CL_4030010 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004197) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_4030010 obo:CL_0002307)
 
 # Class: obo:CL_4030011 (epithelial cell of proximal tubule segment 3)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030011 "A brush border cell that is part of segment 3 (S3) of the proximal tubule epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23799132") Annotation(oboInOwl:hasDbXref "PMID:31249312") obo:IAO_0000115 obo:CL_4030011 "A brush border cell that is part of segment 3 (S3) of the proximal tubule epithelium, which extends from the medullary rays of the renal cortex into the outer medulla.")
 AnnotationAssertion(terms:date obo:CL_4030011 "2022-05-10T13:31:06Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030011 "epithelial cell of segment 3 of proximal tubule")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31249312") rdfs:comment obo:CL_4030011 "The epithelial cell of proximal tubule segment 3 operates under relatively hypoxic conditions and is particularly susceptible to ischemic injury.")
 AnnotationAssertion(rdfs:label obo:CL_4030011 "epithelial cell of proximal tubule segment 3")
+EquivalentClasses(obo:CL_4030011 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001290) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903)))
 SubClassOf(obo:CL_4030011 obo:CL_0002307)
 
 # Class: obo:CL_4030012 (kidney loop of Henle short descending thin limb epithelial cell)
