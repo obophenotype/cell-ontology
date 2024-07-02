@@ -178,3 +178,21 @@ The textual definition of a logically defined class should be a plain English eq
 ### Asserting relationships
 
 Please refer to the [relations guide](relations_guide.md) for detailled guidelines about which relations to use for most cases.
+
+## Design Pattern Usage with DOSDP
+
+
+The cell ontology is composed of a large number of terms, classifications and relationships, which continue to increase. As maintaining manually all these classifications and relationships would be an arduous task, a substantial portion of the maintenance is automated. This automation depends, to a significant extent, on the systematic application of design patterns.
+
+CL uses **Dead simple OWL design patterns** (DOSDP, [Osumi-Sutherland *et al.*, 2017](https://doi.org/10.1186/s13326-017-0126-0)) to document simple patterns, as they require minimal programming expertise, and once implemented, it is easy to edit.
+
+All patterns are stored in [/src/patterns/dosdp-patterns](https://github.com/obophenotype/cell-ontology/tree/master/src/patterns/dosdp-patterns), while the editable tables are located in [/src/patterns/data/default](https://github.com/obophenotype/cell-ontology/tree/master/src/patterns/data/default).
+
+### Cycling cell states
+Pattern name: cyclingCellStates.yaml
+
+Cell cycling is a fundamental biological mechanism that leads to cell division and duplication into two daughter cells. This process is carried out by a large number of cells, which have a distinct transcriptional profile compared with non cycling cells. There has been an increasing number of single-cell transcriptional datasets that identify cycling cells, which need to be annotated to CL terms. 
+
+The terms created with this pattern are labeled as **'cycling X'**, being *X* the parent term, and have an exact synonym **'proliferating X'**. These cell terms can be logically defined as a `'cell' and 'participates in' some 'M phase'`. Ex:
+
+'cycling B cell' *SubClassOf* ['B cell](http://purl.obolibrary.org/obo/CL_0000236) and ['participates in'](http://purl.obolibrary.org/obo/RO_0000056) some ['M phase'](http://purl.obolibrary.org/obo/GO_0000279)
