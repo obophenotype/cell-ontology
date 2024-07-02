@@ -7,15 +7,15 @@ contributors:
 
 classes:
   cell: "CL:0000000"
-  M phase: "'GO:0000279'"
+  M phase: "GO:0000279"
 
 relations:
   participates in: "RO:0000056"
 
 annotationProperties:
-  xref: oio:hasDbXref
+  xref: "oio:hasDbXref"
   contributor: "http://purl.org/dc/terms/contributor"
-  hasExactSynonym: "oboInOwl:hasExactSynonym"
+  hasExactSynonym: "oio:hasExactSynonym"
   date: "http://purl.org/dc/terms/date"
 
 vars:
@@ -24,6 +24,7 @@ vars:
 
 data_list_vars:
   pubs: "xsd:string"
+  synonym: "xsd:string"
   synonym_xrefs: "xsd:string"
   # Use this for recording reference using PMID/DOIS
 
@@ -36,16 +37,13 @@ name:
     - cell
 
 exact_synonym:
-  text: "proliferating %s"
-  vars:
-    - cell
+  value: synonym
   xrefs: synonym_xrefs
 
 def:
   text: "A(n) %s that is cycling"
   vars:
     - cell
-    - anatomical_entity
   annotations:
     - annotationProperty: xref
       value: pubs
