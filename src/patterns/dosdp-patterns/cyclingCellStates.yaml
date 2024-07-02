@@ -1,0 +1,64 @@
+pattern_name: cyclingCellStates
+pattern_iri: http://purl.obolibrary.org/obo/cl/cyclingCellStates.yaml
+description: "This pattern is for cells that are cycling/proliferating."
+
+contributors:
+  - https://orcid.org/0000-0001-6677-8489
+
+classes:
+  cell: "CL:0000000"
+  M phase: "'GO:0000279'"
+
+relations:
+  participates in: "RO:0000056"
+
+annotationProperties:
+  xref: oio:hasDbXref
+  contributor: "http://purl.org/dc/terms/contributor"
+  hasExactSynonym: "oboInOwl:hasExactSynonym"
+  date: "http://purl.org/dc/terms/date"
+
+vars:
+  cell: "'cell'"
+  creator: "'thing'"
+
+data_list_vars:
+  pubs: "xsd:string"
+  synonym_xrefs: "xsd:string"
+  # Use this for recording reference using PMID/DOIS
+
+data_vars:
+  date_created: "xsd:string"
+
+name:
+  text: "cycling %s"
+  vars:
+    - cell
+
+exact_synonym:
+  text: "proliferating %s"
+  vars:
+    - cell
+  xrefs: synonym_xrefs
+
+def:
+  text: "A(n) %s that is cycling"
+  vars:
+    - cell
+    - anatomical_entity
+  annotations:
+    - annotationProperty: xref
+      value: pubs
+
+equivalentTo:
+  text: "%s and ('participates in' some 'M phase')"
+  vars:
+    - cell
+
+annotations:
+  - annotationProperty: contributor
+    var: creator
+  - annotationProperty: date
+    text: "%s"
+    vars: 
+      - date_created
