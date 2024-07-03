@@ -2010,6 +2010,7 @@ Declaration(Class(obo:CL_0008036))
 Declaration(Class(obo:CL_0008037))
 Declaration(Class(obo:CL_0008038))
 Declaration(Class(obo:CL_0008039))
+Declaration(Class(obo:CL_0008040))
 Declaration(Class(obo:CL_0008046))
 Declaration(Class(obo:CL_0008047))
 Declaration(Class(obo:CL_0008048))
@@ -3256,7 +3257,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3350,11 +3351,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -9185,7 +9186,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000665 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000666 (fenestrated endothelial cell)
 
-AnnotationAssertion(obo:IAO_0000115 obo:CL_0000666 "An endothelial cell that has small pores, or fenestrations, which allow for the efficient exchange of substances between the blood and surrounding tissues.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1007/978-3-211-99390-3_133") obo:IAO_0000115 obo:CL_0000666 "An endothelial cell that has small pores, or fenestrations, which allow for the efficient exchange of substances between the blood and surrounding tissues.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000666 "window cell")
 AnnotationAssertion(rdfs:label obo:CL_0000666 "fenestrated endothelial cell")
 EquivalentClasses(obo:CL_0000666 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002064)))
@@ -15148,7 +15149,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002144 "CALOHA:TS-0112")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002144 "FMA:67756")
 AnnotationAssertion(rdfs:label obo:CL_0002144 "capillary endothelial cell")
 EquivalentClasses(obo:CL_0002144 ObjectIntersectionOf(obo:CL_0000071 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001915)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002144 obo:CL_0000071)
+SubClassOf(obo:CL_0002144 obo:CL_0002653)
 
 # Class: obo:CL_0002145 (ciliated columnar cell of tracheobronchial tree)
 
@@ -20285,12 +20286,11 @@ EquivalentClasses(obo:CL_0002652 ObjectIntersectionOf(obo:CL_0002139 ObjectSomeV
 
 # Class: obo:CL_0002653 (squamous endothelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002653 "A endothelial cell of the venule that is squamous shaped. This is in contrast to the cubodial shape of high endothelial venule cells.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0002653 "A squamous shaped endothelial cell.")
 AnnotationAssertion(terms:contributor obo:CL_0002653 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002653 "2011-07-08T03:31:25Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002653 "squamous endothelial cell")
-SubClassOf(obo:CL_0002653 obo:CL_0000076)
-SubClassOf(obo:CL_0002653 obo:CL_1000414)
+SubClassOf(obo:CL_0002653 obo:CL_0000115)
 
 # Class: obo:CL_0002654 (epithelial cell of stratum corneum of esophageal epithelium)
 
@@ -22601,6 +22601,16 @@ AnnotationAssertion(rdfs:label obo:CL_0008039 "lower motor neuron"@en)
 SubClassOf(obo:CL_0008039 obo:CL_0000100)
 SubClassOf(obo:CL_0008039 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_0008002))
 SubClassOf(obo:CL_0008039 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_7742))
+
+# Class: obo:CL_0008040 (squamous endothelial cell of venule)
+
+AnnotationAssertion(Annotation(rdfs:comment "GOC:tfm") obo:IAO_0000115 obo:CL_0008040 "A endothelial cell of the venule that is squamous shaped. This is in contrast to the cubodial shape of high endothelial venule cells.")
+AnnotationAssertion(dc:contributor obo:CL_0008040 "https://orcid.org/0000-0002-7073-9172")
+AnnotationAssertion(dc:date obo:CL_0008040 "2024-07-03T19:52:47Z")
+AnnotationAssertion(rdfs:label obo:CL_0008040 "squamous endothelial cell of venule"@en)
+SubClassOf(obo:CL_0008040 obo:CL_0002139)
+SubClassOf(obo:CL_0008040 obo:CL_0002653)
+SubClassOf(obo:CL_0008040 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001979))
 
 # Class: obo:CL_0008046 (extrafusal muscle fiber)
 
@@ -25892,6 +25902,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:62911") oboInOwl:hasExact
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30348985") oboInOwl:hasExactSynonym obo:CL_1000398 "liver sinusoidal endothelial cell")
 AnnotationAssertion(rdfs:label obo:CL_1000398 "endothelial cell of hepatic sinusoid")
 EquivalentClasses(obo:CL_1000398 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001281)))
+SubClassOf(obo:CL_1000398 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002064))
 
 # Class: obo:CL_1000399 (obo:CL_1000399)
 
@@ -26753,8 +26764,6 @@ SubClassOf(obo:CL_1000606 obo:CL_2000032)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000612 "KUPO:0001021")
 AnnotationAssertion(rdfs:label obo:CL_1000612 "kidney corpuscule cell")
 EquivalentClasses(obo:CL_1000612 ObjectIntersectionOf(obo:CL_0002584 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001229)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000612 obo:CL_0002584)
-SubClassOf(obo:CL_1000612 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001229))
 
 # Class: obo:CL_1000615 (kidney cortex tubule cell)
 
@@ -26998,9 +27007,6 @@ SubClassOf(obo:CL_1000742 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070252))
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000746 "KUPO:0001036")
 AnnotationAssertion(rdfs:label obo:CL_1000746 "glomerular cell")
 EquivalentClasses(obo:CL_1000746 ObjectIntersectionOf(obo:CL_1000612 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000074)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000746 obo:CL_0002584)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000746 obo:CL_1000612)
-SubClassOf(obo:CL_1000746 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000074))
 
 # Class: obo:CL_1000768 (kidney connecting tubule epithelial cell)
 
@@ -27072,7 +27078,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34843404") obo:IAO_00001
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000854 "KUPO:0001014")
 AnnotationAssertion(rdfs:label obo:CL_1000854 "kidney blood vessel cell")
 EquivalentClasses(obo:CL_1000854 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003517)))
-SubClassOf(obo:CL_1000854 obo:CL_0002584)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000854 obo:CL_1000504)
 SubClassOf(obo:CL_1000854 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003517))
 SubClassOf(obo:CL_1000854 ObjectSomeValuesFrom(obo:RO_0000056 obo:GO_0008015))
@@ -27129,16 +27134,12 @@ SubClassOf(obo:CL_1000979 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000685
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001005 "KUPO:0001037")
 AnnotationAssertion(rdfs:label obo:CL_1001005 "glomerular capillary endothelial cell")
 EquivalentClasses(obo:CL_1001005 ObjectIntersectionOf(obo:CL_1000892 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004294)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001005 obo:CL_1000746)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001005 obo:CL_1000892)
-SubClassOf(obo:CL_1001005 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004294))
 
 # Class: obo:CL_1001006 (kidney afferent arteriole cell)
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001006 "KUPO:0001038")
 AnnotationAssertion(rdfs:label obo:CL_1001006 "kidney afferent arteriole cell")
 EquivalentClasses(obo:CL_1001006 ObjectIntersectionOf(obo:CL_1000891 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004639)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001006 obo:CL_0002584)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001006 obo:CL_1000891)
 SubClassOf(obo:CL_1001006 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004639))
 
@@ -27147,9 +27148,6 @@ SubClassOf(obo:CL_1001006 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000463
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001009 "KUPO:0001041")
 AnnotationAssertion(rdfs:label obo:CL_1001009 "kidney efferent arteriole cell")
 EquivalentClasses(obo:CL_1001009 ObjectIntersectionOf(obo:CL_1000891 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004640)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001009 obo:CL_0002584)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001009 obo:CL_1000891)
-SubClassOf(obo:CL_1001009 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004640))
 
 # Class: obo:CL_1001016 (kidney loop of Henle ascending limb epithelial cell)
 
@@ -27192,8 +27190,6 @@ SubClassOf(obo:CL_1001036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000472
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001045 "KUPO:0001077")
 AnnotationAssertion(rdfs:label obo:CL_1001045 "kidney cortex artery cell")
 EquivalentClasses(obo:CL_1001045 ObjectIntersectionOf(obo:CL_1000891 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005268)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001045 obo:CL_0002584)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001045 obo:CL_1000891)
 SubClassOf(obo:CL_1001045 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005268))
 
 # Class: obo:CL_1001052 (kidney cortex vein cell)
@@ -27201,7 +27197,6 @@ SubClassOf(obo:CL_1001045 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000526
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001052 "KUPO:0001084")
 AnnotationAssertion(rdfs:label obo:CL_1001052 "kidney cortex vein cell")
 EquivalentClasses(obo:CL_1001052 ObjectIntersectionOf(obo:CL_1000893 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005269)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001052 obo:CL_0002584)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001052 obo:CL_1000893)
 SubClassOf(obo:CL_1001052 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005269))
 
@@ -27252,9 +27247,6 @@ SubClassOf(obo:CL_1001097 obo:CL_1001066)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001099 "KUPO:0001042")
 AnnotationAssertion(rdfs:label obo:CL_1001099 "kidney efferent arteriole endothelial cell")
 EquivalentClasses(obo:CL_1001099 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004640)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001099 obo:CL_0000071)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001099 obo:CL_1000412)
-SubClassOf(obo:CL_1001099 obo:CL_1001009)
 
 # Class: obo:CL_1001100 (kidney efferent arteriole smooth muscle cell)
 
@@ -27329,9 +27321,6 @@ SubClassOf(obo:CL_1001123 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000634
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001124 "KUPO:0001067")
 AnnotationAssertion(rdfs:label obo:CL_1001124 "kidney cortex peritubular capillary cell")
 EquivalentClasses(obo:CL_1001124 ObjectIntersectionOf(obo:CL_1001033 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006851)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001124 obo:CL_0002584)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001124 obo:CL_1001033)
-SubClassOf(obo:CL_1001124 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006851))
 
 # Class: obo:CL_1001126 (inner renal medulla vasa recta cell)
 
