@@ -24,7 +24,6 @@ vars:
 
 data_list_vars:
   pubs: "xsd:string"
-  synonym: "xsd:string"
   synonym_xrefs: "xsd:string"
   # Use this for recording reference using PMID/DOIS
 
@@ -36,9 +35,12 @@ name:
   vars:
     - cell
 
-exact_synonym:
-  value: synonym
-  xrefs: synonym_xrefs
+generated_synonyms:
+  -
+    text: "proliferating %s"
+    vars:
+      - cell
+    xrefs: synonym_xrefs
 
 def:
   text: "A(n) %s that is cycling."
