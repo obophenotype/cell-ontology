@@ -22,8 +22,8 @@
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#"
      xmlns:ncbitaxon="http://purl.obolibrary.org/obo/ncbitaxon#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/blood_and_immune_upper_slim.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2024-05-15/subsets/blood_and_immune_upper_slim.owl"/>
-        <owl:versionInfo>2024-05-15</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2024-07-10/subsets/blood_and_immune_upper_slim.owl"/>
+        <owl:versionInfo>2024-07-10</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -1041,6 +1041,12 @@ WHERE {
     <!-- http://purl.org/dc/terms/license -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/license"/>
+    
+
+
+    <!-- http://purl.org/dc/terms/title -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/terms/title"/>
     
 
 
@@ -4511,6 +4517,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#channel_for -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#channel_for">
+        <rdfs:domain rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004111"/>
+        <rdfs:range rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000463"/>
         <oboInOwl:hasBroadSynonym>carries</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>channel_for</oboInOwl:id>
@@ -4522,6 +4530,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#channels_from -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#channels_from">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>channels_from</oboInOwl:id>
         <rdfs:label>channels_from</rdfs:label>
@@ -4532,6 +4541,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#channels_into -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#channels_into">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>channels_into</oboInOwl:id>
         <rdfs:label>channels_into</rdfs:label>
@@ -4544,6 +4554,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#distally_connected_to">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/uberon/core#transitively_distally_connected_to"/>
+        <owl:inverseOf rdf:resource="http://purl.obolibrary.org/obo/uberon/core#proximally_connected_to"/>
         <obo:IAO_0000115>x distally_connected_to y iff the distal part of x is connected to y. i.e. x connected_to y and x proximal_to y.</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>distally_connected_to</oboInOwl:id>
@@ -4562,6 +4573,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#extends_fibers_into">
         <rdfs:subPropertyOf rdf:resource="http://purl.obolibrary.org/obo/RO_0002170"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
         <obo:IAO_0000115>X extends_fibers into Y iff there exists some neuron (N) and N has_soma_location X and N &apos;has synaptic IO in region&apos; some Y</obo:IAO_0000115>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>extends_fibers_into</oboInOwl:id>
@@ -4591,6 +4603,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#indirectly_supplies -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#indirectly_supplies">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <owl:propertyChainAxiom rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/RO_0002569"/>
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/uberon/core#indirectly_supplies"/>
@@ -4699,6 +4712,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_anteriorly_connected_to -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_anteriorly_connected_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>transitively_anteriorly_connected_to</oboInOwl:id>
         <rdfs:label>transitively anteriorly connected to</rdfs:label>
@@ -4710,6 +4724,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_distally_connected_to -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_distally_connected_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>transitively_distally_connected_to</oboInOwl:id>
         <rdfs:label>transitively distally connected to</rdfs:label>
@@ -4721,6 +4736,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/uberon/core#transitively_proximally_connected_to -->
 
     <owl:ObjectProperty rdf:about="http://purl.obolibrary.org/obo/uberon/core#transitively_proximally_connected_to">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
         <oboInOwl:id>transitively_proximally_connected_to</oboInOwl:id>
         <rdfs:label>transitively proximally connected to</rdfs:label>
@@ -5710,15 +5726,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:equivalentClass>
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000076"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000115"/>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004638"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000076"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002139"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -5735,17 +5750,10 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>An endothelial cell that lines the vasculature.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref>ZFA:0009036</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>cuboidal endothelial cell of vascular tree</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>blood vessel endothelial cell</rdfs:label>
     </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:resource="http://purl.obolibrary.org/obo/CL_0000076"/>
-        <oboInOwl:is_inferred>true</oboInOwl:is_inferred>
-    </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
@@ -6468,7 +6476,12 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000115">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000213"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0002078"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>An endothelial cell comprises the outermost layer or lining of anatomical structures and can be squamous or cuboidal. In mammals, endothelial cell has vimentin filaments and is derived from the mesoderm.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref>BTO:0001176</oboInOwl:hasDbXref>
@@ -12441,7 +12454,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <obo:IAO_0000115>A connective tissue cell found in bone.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9990-8331"/>
-        <oboInOwl:creation_date>2011-11-16T04:28:16Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-11-16T04:28:16Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>bone cell</rdfs:label>
@@ -12593,7 +12606,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities. Cell lacks hematopoeitic lineage markers.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-01-06T03:43:27Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-01-06T03:43:27Z</oboInOwl:creation_date>
         <rdfs:label>hematopoietic oligopotent progenitor cell, lineage-negative</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -12816,7 +12829,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A progenitor cell that can give rise to plasmacytoid and myeloid dendritic cells, and to monocytes and macrophages.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-01-19T02:51:58Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-01-19T02:51:58Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym>MDP</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <rdfs:label>macrophage dendritic cell progenitor</rdfs:label>
@@ -12937,7 +12950,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell type that can give rise to basophil and mast cells. This cell is CD34-positive, CD117-positive, CD125-positive, FceRIa-negative, and T1/ST2-negative, and expresses Gata-1, Gata-2, C/EBPa</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-04-27T12:46:33Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-04-27T12:46:33Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym>BMCP</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <rdfs:comment>There may be an intermediate cell type. These cells also CD13-positive, CD16-positive, CD32-positive, and integrin beta 7-positive. Transcription factors: GATA1-positive, MCP-1-positive, mitf-positive, PU.1-positive, and CEBP/a-low.</rdfs:comment>
@@ -12985,7 +12998,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/CL_0002032"/>
         <obo:IAO_0000115>A hematopoietic progenitor cell that is capable of developing into only one lineage of hematopoietic cells.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-01-06T03:43:20Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-01-06T03:43:20Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
         <rdfs:label>hematopoietic lineage restricted progenitor cell</rdfs:label>
     </owl:Class>
@@ -13028,7 +13041,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A hematopoietic oligopotent progenitor cell that has the ability to differentiate into limited cell types but lacks lineage cell markers and self renewal capabilities.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-01-06T03:43:27Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-01-06T03:43:27Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
         <rdfs:comment>This cell type is intended to be compatible with any vertebrate hematopoietic oligopotent progenitor cell.  For mammalian hematopoietic oligopotent progenitor cells known to be lineage-negative, please use the term &apos;hematopoietic oligopotent progenitor cell&apos; (CL_0001060).</rdfs:comment>
         <rdfs:label>hematopoietic oligopotent progenitor cell</rdfs:label>
@@ -13067,7 +13080,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>An epithelial cell derived from ectoderm.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-06-29T03:38:22Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-06-29T03:38:22Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>FMA:69074</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0009385</oboInOwl:hasDbXref>
         <rdfs:label>ecto-epithelial cell</rdfs:label>
@@ -13083,51 +13096,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002077"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>ZFA:0009385</owl:annotatedTarget>
-        <sssom:mapping_justification rdf:resource="https://w3id.org/semapv/vocab/UnspecifiedMatching"/>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/CL_0002078 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0002078">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:intersectionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000066"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
-                    </owl:Restriction>
-                </owl:intersectionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000066"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <obo:IAO_0000115>Epithelial cell derived from mesoderm or mesenchyme.</obo:IAO_0000115>
-        <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-06-29T03:49:14Z</oboInOwl:creation_date>
-        <oboInOwl:hasDbXref>FMA:69076</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ZFA:0009388</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>epithelial mesenchymal cell</oboInOwl:hasExactSynonym>
-        <rdfs:label>meso-epithelial cell</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002078"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Epithelial cell derived from mesoderm or mesenchyme.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>FMA:69076</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:tfm</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0002078"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-        <owl:annotatedTarget>ZFA:0009388</owl:annotatedTarget>
         <sssom:mapping_justification rdf:resource="https://w3id.org/semapv/vocab/UnspecifiedMatching"/>
     </owl:Axiom>
     
@@ -13156,7 +13124,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A leukocyte that lacks granules.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-07-22T11:30:33Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-22T11:30:33Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>FMA:62855</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>agranular leukocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
@@ -13200,7 +13168,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell found in the bone marrow. This can include fibroblasts, macrophages, adipocytes, osteoblasts, osteoclasts, endothelial cells and hematopoietic cells.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-07-22T04:48:15Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-07-22T04:48:15Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>BTO:0004850</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:83621</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D001854</oboInOwl:hasDbXref>
@@ -13230,7 +13198,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000115"/>
         <obo:IAO_0000115>An endothelial cell of the vascular tree, which includes blood vessels and lymphatic vessels.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-08-24T02:06:40Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-08-24T02:06:40Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>BTO:0001854</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-1106</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:67755</oboInOwl:hasDbXref>
@@ -13274,7 +13242,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell involved in the formation of a granulocyte.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-08-30T12:54:27Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-08-30T12:54:27Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>FMA:83519</oboInOwl:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <rdfs:label>granulocytopoietic cell</rdfs:label>
@@ -13317,7 +13285,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell involved in the formation of a monocyte (monopoiesis).</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-08-30T01:27:48Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-08-30T01:27:48Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>FMA:83552</oboInOwl:hasDbXref>
         <rdfs:label>monopoietic cell</rdfs:label>
     </owl:Class>
@@ -13359,7 +13327,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell containing at least one nucleus.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-09-07T03:32:33Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-07T03:32:33Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>FMA:67513</oboInOwl:hasDbXref>
         <rdfs:label>nucleate cell</rdfs:label>
     </owl:Class>
@@ -13395,7 +13363,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell type that secretes histamine.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-09-10T03:04:42Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-10T03:04:42Z</oboInOwl:creation_date>
         <rdfs:label>histamine secreting cell</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -13430,7 +13398,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell that is part of the nervous system.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-09-15T01:34:57Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-15T01:34:57Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>CALOHA:TS-2040</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:70333</oboInOwl:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
@@ -13469,7 +13437,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell of the supporting or framework tissue of the body, arising chiefly from the embryonic mesoderm and including adipose tissue, cartilage, and bone.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-09-15T03:01:54Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-15T03:01:54Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>CALOHA:TS-2096</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:63875</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MESH:D003239</oboInOwl:hasDbXref>
@@ -13499,7 +13467,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000115>A cell of the embryo.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-09-15T03:39:21Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-09-15T03:39:21Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>CALOHA:TS-0263</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:82840</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>WBbt:0007028</oboInOwl:hasDbXref>
@@ -13544,7 +13512,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A T cell that has not completed T cell selection.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-10-12T01:56:17Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-10-12T01:56:17Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>BTO:0001372</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-1042</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>immature T-cell</oboInOwl:hasExactSynonym>
@@ -13590,7 +13558,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A cell located in the heart, including both muscle and non muscle cells.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-12-07T09:37:22Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-12-07T09:37:22Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>BTO:0001539</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-0115</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:83808</oboInOwl:hasDbXref>
@@ -13614,7 +13582,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
         <obo:IAO_0000115>An endothelial progenitor cell that participates in angiogenesis during development.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2011-02-28T04:20:39Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-02-28T04:20:39Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>ZFA:0005773</oboInOwl:hasDbXref>
         <rdfs:comment>See CL:0002619.</rdfs:comment>
         <rdfs:label>embryonic blood vessel endothelial progenitor cell</rdfs:label>
@@ -13747,7 +13715,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>A lymphocyte found in adipose tissue that lacks lineage markers of other lymphocytes but is capable of mediating TH2 cytokine responses. This cell type is found in fat associated lymphoid clusters, proliferates in response to IL2 and produce large amounts of TH2 cytokines such as IL5, IL6 and IL13</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2011-08-29T10:08:02Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2011-08-29T10:08:02Z</oboInOwl:creation_date>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#blood_and_immune_upper_slim"/>
         <rdfs:label>natural helper lymphocyte</rdfs:label>
     </owl:Class>
@@ -13773,7 +13741,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000000"/>
         <obo:IAO_0000115>Cell that has the potential to form a skeletal cell type (e.g. cells in periosteum, cells in marrow) and produce extracellular matrix (often mineralized) and skeletal tissue (often mineralized).</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9114-8737"/>
-        <oboInOwl:creation_date>2012-06-15T02:51:27Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-06-15T02:51:27Z</oboInOwl:creation_date>
         <oboInOwl:hasExactSynonym>scleroblast</oboInOwl:hasExactSynonym>
         <rdfs:comment>Needs logical definition. Should be capable_of skeletal system morphogenesis? or skeletal tissue development? needs to be added to GO. NOTES:a cell type of the early embryo (see also: mesenchymal cells) that will give rise to mineralized connective tissue. Scleroblasts can differentiate into osteoblasts (bone-forming cells), chondroblasts (cartilage-forming cells), odontoblasts (dentin-forming cells), ameloblasts (enamel-forming cells). The mesenchymal cells developing into osteoblasts and chondroblasts are derived from the mesoderm. Those developing into odontoblasts are neural crest cells. Those developing into ameloblasts are derived from the ectoderm. (http://www.copewithcytokines.de/cope.cgi?key=scleroblasts)</rdfs:comment>
         <rdfs:label>skeletogenic cell</rdfs:label>
@@ -13811,7 +13779,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>Cell that is part of the neural crest region of the neuroepithelium, prior to migration. Note that not all premigratory neural crest cells may become migratory neural crest cells.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0001-9114-8737"/>
-        <oboInOwl:creation_date>2012-06-27T08:27:35Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2012-06-27T08:27:35Z</oboInOwl:creation_date>
         <oboInOwl:hasDbXref>ZFA:0007084</oboInOwl:hasDbXref>
         <rdfs:label>premigratory neural crest cell</rdfs:label>
     </owl:Class>
@@ -14050,7 +14018,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>Cytoplasm that exhibits a characteristic staining and color, pale-pink, with Wright-Giemsa stain.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2010-05-25T01:36:34Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2010-05-25T01:36:34Z</oboInOwl:creation_date>
         <rdfs:label>neutrophillic cytoplasm</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14085,7 +14053,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>Cytoplasm that exhibits a characteristic staining and color, red or pink, with Eosin stain.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2009-12-22T04:23:25Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-12-22T04:23:25Z</oboInOwl:creation_date>
         <oboInOwl:hasNarrowSynonym>eosinophilic</oboInOwl:hasNarrowSynonym>
         <rdfs:label>acidophilic cytoplasm</rdfs:label>
     </owl:Class>
@@ -14121,7 +14089,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>Cytoplasm that exhibits molecular interaction for basic dyes under specific pH conditions.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2009-12-22T04:24:54Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-12-22T04:24:54Z</oboInOwl:creation_date>
         <rdfs:label>basophilic cytoplasm</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14156,7 +14124,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </rdfs:subClassOf>
         <obo:IAO_0000115>Cytoplasm that exhibits affinity for both basic and acid stains under specific pH conditions.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2009-12-28T04:25:23Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-12-28T04:25:23Z</oboInOwl:creation_date>
         <rdfs:label>polychromatophilic cytoplasm</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14174,7 +14142,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0000792"/>
         <obo:IAO_0000115>Heterochromatin that is arranged in a carthwheel pattern.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0003-1980-3228"/>
-        <oboInOwl:creation_date>2009-12-28T04:28:35Z</oboInOwl:creation_date>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2009-12-28T04:28:35Z</oboInOwl:creation_date>
         <rdfs:label>cartwheel heterochromatin</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -14258,8 +14226,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.</obo:IAO_0000115>
-        <terms:contributor rdf:resource="https://www.wikidata.org/entity/Q35563349"/>
-        <oboInOwl:creation_date>2014-02-11T17:29:04Z</oboInOwl:creation_date>
+        <terms:contributor rdf:resource="http://www.wikidata.org/entity/Q35563349"/>
+        <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-11T17:29:04Z</oboInOwl:creation_date>
         <oboInOwl:id>CL:2000001</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <rdfs:label>peripheral blood mononuclear cell</rdfs:label>
@@ -14355,7 +14323,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedTarget>Progression through the phases of the mitotic cell cycle, the most common eukaryotic cell cycle, which canonically comprises four successive phases called G1, S, G2, and M and includes replication of the genome and the subsequent segregation of chromosomes into daughter cells. In some variant cell cycles nuclear replication or nuclear division may not be followed by cell division, or G1 and G2 phases may be absent.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0815316194</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Reactome:69278</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -17325,7 +17292,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedTarget>Combining with an extracellular signal and transmitting the signal across the membrane by activating an associated G-protein; promotes the exchange of GDP for GTP on the alpha subunit of a heterotrimeric G-protein complex.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:bf</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Wikipedia:GPCR</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.iuphar-db.org</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0004930"/>
@@ -17458,32 +17424,32 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005581">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
-        <rdfs:subClassOf rdf:nodeID="genid2236"/>
-        <rdfs:subClassOf rdf:nodeID="genid2238"/>
+        <rdfs:subClassOf rdf:nodeID="genid2229"/>
+        <rdfs:subClassOf rdf:nodeID="genid2231"/>
         <obo:IAO_0000115>A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>Wikipedia:Collagen</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0005581</oboInOwl:id>
         <rdfs:label>collagen trimer</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid2236">
+    <owl:Restriction rdf:nodeID="genid2229">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid2238">
+    <owl:Restriction rdf:nodeID="genid2231">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
         <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2236"/>
+        <owl:annotatedTarget rdf:nodeID="genid2229"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0005581"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid2238"/>
+        <owl:annotatedTarget rdf:nodeID="genid2231"/>
         <oboInOwl:source>PMID:12382326</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -18407,7 +18373,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0070382"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <obo:IAO_0000115>A process of secretion by a cell that results in the release of intracellular molecules (e.g. hormones, matrix proteins) contained within a membrane-bounded vesicle. Exocytosis can occur either by full fusion, when the vesicle collapses into the plasma membrane, or by a kiss-and-run mechanism that involves the formation of a transient contact, a pore, between a granule (for exemple of chromaffin cells) and the plasma membrane. The latter process most of the time leads to only partial secretion of the granule content. Exocytosis begins with steps that prepare vesicles for fusion with the membrane (tethering and docking) and ends when molecules are secreted from the cell.</obo:IAO_0000115>
+        <obo:IAO_0000115>A process of secretion by a cell that results in the release of intracellular molecules (e.g. hormones, matrix proteins) contained within a membrane-bounded vesicle. Exocytosis can occur either by full fusion, when the vesicle collapses into the plasma membrane, or by a kiss-and-run mechanism that involves the formation of a transient contact, a pore, between a granule (for example of chromaffin cells) and the plasma membrane. The latter process most of the time leads to only partial secretion of the granule content. Exocytosis begins with steps that prepare vesicles for fusion with the membrane (tethering and docking) and ends when molecules are secreted from the cell.</obo:IAO_0000115>
         <oboInOwl:hasAlternativeId>GO:0016194</oboInOwl:hasAlternativeId>
         <oboInOwl:hasAlternativeId>GO:0016195</oboInOwl:hasAlternativeId>
         <oboInOwl:hasDbXref>Wikipedia:Exocytosis</oboInOwl:hasDbXref>
@@ -18421,7 +18387,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0006887"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>A process of secretion by a cell that results in the release of intracellular molecules (e.g. hormones, matrix proteins) contained within a membrane-bounded vesicle. Exocytosis can occur either by full fusion, when the vesicle collapses into the plasma membrane, or by a kiss-and-run mechanism that involves the formation of a transient contact, a pore, between a granule (for exemple of chromaffin cells) and the plasma membrane. The latter process most of the time leads to only partial secretion of the granule content. Exocytosis begins with steps that prepare vesicles for fusion with the membrane (tethering and docking) and ends when molecules are secreted from the cell.</owl:annotatedTarget>
+        <owl:annotatedTarget>A process of secretion by a cell that results in the release of intracellular molecules (e.g. hormones, matrix proteins) contained within a membrane-bounded vesicle. Exocytosis can occur either by full fusion, when the vesicle collapses into the plasma membrane, or by a kiss-and-run mechanism that involves the formation of a transient contact, a pore, between a granule (for example of chromaffin cells) and the plasma membrane. The latter process most of the time leads to only partial secretion of the granule content. Exocytosis begins with steps that prepare vesicles for fusion with the membrane (tethering and docking) and ends when molecules are secreted from the cell.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ISBN:0716731363</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:22323285</oboInOwl:hasDbXref>
@@ -19662,7 +19628,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009059">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0043170"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0044249"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_1901576"/>
         <obo:IAO_0000115>The chemical reactions and pathways resulting in the formation of a macromolecule, any molecule of high relative molecular mass, the structure of which essentially comprises the multiple repetition of units derived, actually or conceptually, from molecules of low relative molecular mass.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/15249</obo:IAO_0000233>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/25418</obo:IAO_0000233>
@@ -21234,7 +21199,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedTarget>A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a prolongation or process extending from a cell, e.g. a flagellum or axon.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.cogsci.princeton.edu/~wn/</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:16318917</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0030030"/>
@@ -21286,7 +21251,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedTarget>Formation of a prolongation or process extending from a cell, e.g. a flagellum or axon.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.cogsci.princeton.edu/~wn/</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:18391171</oboInOwl:hasDbXref>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0030031"/>
@@ -21321,7 +21286,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:hasDbXref>ISBN:0198506732</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:26820516</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>PMID:28096264</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.vivo.colostate.edu/hbooks/cmb/cells/pmemb/junctions_a.html</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -23996,7 +23960,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A prolongation or process extending from a cell, e.g. a flagellum or axon.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.cogsci.princeton.edu/~wn/</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:16318917</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -24561,6 +24525,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008152"/>
         <obo:IAO_0000115>The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/26424</obo:IAO_0000233>
+        <oboInOwl:hasDbXref>Wikipedia:Primary_metabolite</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>primary metabolism</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0044238</oboInOwl:id>
@@ -24576,7 +24541,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>The chemical reactions and pathways involving those compounds which are formed as a part of the normal anabolic and catabolic processes. These processes take place in most, if not all, cells of the organism.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:go_curators</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>http://www.metacyc.org</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -27603,31 +27567,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
-    <!-- http://purl.obolibrary.org/obo/GO_0071704 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0071704">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008152"/>
-        <obo:IAO_0000115>The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon.</obo:IAO_0000115>
-        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/26424</obo:IAO_0000233>
-        <oboInOwl:created_by>mah</oboInOwl:created_by>
-        <oboInOwl:creation_date>2010-03-08T03:32:18Z</oboInOwl:creation_date>
-        <oboInOwl:hasExactSynonym>organic molecular entity metabolic process</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic molecular entity metabolism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic substance metabolism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:0071704</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
-        <rdfs:label>organic substance metabolic process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0071704"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The chemical reactions and pathways involving an organic substance, any molecular entity containing carbon.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:mah</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.obolibrary.org/obo/GO_0071707 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0071707">
@@ -29153,63 +29092,6 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>Reactions triggered in response to the presence of a symbiont that act to protect or prevent damage to the host.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:pg</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    
-
-
-    <!-- http://purl.obolibrary.org/obo/GO_1901576 -->
-
-    <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_1901576">
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009058"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0071704"/>
-        <obo:IAO_0000115>The chemical reactions and pathways resulting in the formation of an organic substance, any molecular entity containing carbon.</obo:IAO_0000115>
-        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/26424</obo:IAO_0000233>
-        <oboInOwl:created_by>pr</oboInOwl:created_by>
-        <oboInOwl:creation_date>2012-11-05T11:04:40Z</oboInOwl:creation_date>
-        <oboInOwl:hasExactSynonym>organic molecular entity anabolism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic molecular entity biosynthesis</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic molecular entity biosynthetic process</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic molecular entity formation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic molecular entity synthesis</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic substance anabolism</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic substance biosynthesis</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic substance formation</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasExactSynonym>organic substance synthesis</oboInOwl:hasExactSynonym>
-        <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
-        <oboInOwl:id>GO:1901576</oboInOwl:id>
-        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
-        <rdfs:label>organic substance biosynthetic process</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_1901576"/>
-        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>The chemical reactions and pathways resulting in the formation of an organic substance, any molecular entity containing carbon.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:TermGenie</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>GOC:pr</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_1901576"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>organic molecular entity anabolism</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:TermGenie</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_1901576"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>organic molecular entity biosynthesis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:TermGenie</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_1901576"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>organic molecular entity formation</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:TermGenie</oboInOwl:hasDbXref>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_1901576"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
-        <owl:annotatedTarget>organic molecular entity synthesis</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:TermGenie</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -31497,6 +31379,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/PR_000000001 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000000001">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PR_000064867"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0006412"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>An amino acid chain that is produced de novo by ribosome-mediated translation of a genetically-encoded mRNA, and any derivatives thereof.</obo:IAO_0000115>
         <oboInOwl:hasExactSynonym>natural protein</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>native protein</oboInOwl:hasNarrowSynonym>
@@ -34411,6 +34301,39 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PR_000018263 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000018263">
+        <obo:IAO_0000115>An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>peptide</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>polypeptide</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000018263</oboInOwl:id>
+        <rdfs:comment>Category=polymer.</rdfs:comment>
+        <rdfs:label>amino acid chain</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>An organic amino compound that consists of amino acid residues (unmodified amino-acid residues and/or modified amino-acid residues) linked by peptide bonds or derivatives of such bonds.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PRO:JSG</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>peptide</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000018263"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>polypeptide</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PR_000025796 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000025796">
@@ -34611,6 +34534,58 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000040662"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
         <owl:annotatedTarget>cathepsin</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PR_000064867 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PR_000064867">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PR_000000001"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>A molecular entity that minimally consists of a protein.</obo:IAO_0000115>
+        <oboInOwl:hasNarrowSynonym>protein</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>protein aggregate</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>protein complex</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasNarrowSynonym>protein-containing complex</oboInOwl:hasNarrowSynonym>
+        <oboInOwl:hasOBONamespace>protein</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PR:000064867</oboInOwl:id>
+        <rdfs:comment>Note: This includes single proteins and derivatives thereof (PR:000000001), protein-containing complexes (GO:0032991), and protein aggregates (PR:000050565).</rdfs:comment>
+        <rdfs:label>protein-containing molecular entity</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000064867"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A molecular entity that minimally consists of a protein.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000064867"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>protein</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000064867"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>protein aggregate</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000064867"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>protein complex</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PR_000064867"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasNarrowSynonym"/>
+        <owl:annotatedTarget>protein-containing complex</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PRO:DAN</oboInOwl:hasDbXref>
     </owl:Axiom>
     
@@ -35469,7 +35444,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4018"/>
+        <rdfs:subClassOf rdf:nodeID="genid4015"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002082"/>
@@ -35505,14 +35480,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>gastrula stage</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4018">
+    <owl:Restriction rdf:nodeID="genid4015">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4018"/>
+        <owl:annotatedTarget rdf:nodeID="genid4015"/>
         <oboInOwl:source>BILS</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -35828,15 +35803,15 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4055"/>
+        <rdfs:subClassOf rdf:nodeID="genid4052"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001969"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4058"/>
-        <rdfs:subClassOf rdf:nodeID="genid4060"/>
+        <rdfs:subClassOf rdf:nodeID="genid4055"/>
+        <rdfs:subClassOf rdf:nodeID="genid4057"/>
         <obo:IAO_0000115>A fluid that is composed of blood plasma and erythrocytes.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref>AAO:0000046</oboInOwl:hasDbXref>
@@ -35873,34 +35848,34 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>blood</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4055">
+    <owl:Restriction rdf:nodeID="genid4052">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4058">
+    <owl:Restriction rdf:nodeID="genid4055">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002049"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4060">
+    <owl:Restriction rdf:nodeID="genid4057">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006596"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4055"/>
+        <owl:annotatedTarget rdf:nodeID="genid4052"/>
         <oboInOwl:source>CL:tm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4058"/>
+        <owl:annotatedTarget rdf:nodeID="genid4055"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1330</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4060"/>
+        <owl:annotatedTarget rdf:nodeID="genid4057"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -36985,7 +36960,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005769"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4164"/>
+        <rdfs:subClassOf rdf:nodeID="genid4161"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -37027,14 +37002,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>epithelium</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Illu_epithelium.jpg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4164">
+    <owl:Restriction rdf:nodeID="genid4161">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000483"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4164"/>
+        <owl:annotatedTarget rdf:nodeID="genid4161"/>
         <oboInOwl:source>http://palaeos.com/metazoa/porifera/homoscleromorpha.html</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -37454,7 +37429,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000221"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4213"/>
+        <rdfs:subClassOf rdf:nodeID="genid4210"/>
         <obo:IAO_0000115>Primary germ layer that is the outer of the embryo&apos;s three germ layers and gives rise to epidermis and neural tissue.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0000137</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BILA:0000036</oboInOwl:hasDbXref>
@@ -37489,14 +37464,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>ectoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4213">
+    <owl:Restriction rdf:nodeID="genid4210">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006601"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4213"/>
+        <owl:annotatedTarget rdf:nodeID="genid4210"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -37536,7 +37511,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000223"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4220"/>
+        <rdfs:subClassOf rdf:nodeID="genid4217"/>
         <obo:IAO_0000115>Primary germ layer that lies remote from the surface of the embryo and gives rise to internal tissues such as gut.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0000139</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BILA:0000038</oboInOwl:hasDbXref>
@@ -37571,14 +37546,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4220">
+    <owl:Restriction rdf:nodeID="genid4217">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006595"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000925"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4220"/>
+        <owl:annotatedTarget rdf:nodeID="genid4217"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -37619,7 +37594,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4227"/>
+        <rdfs:subClassOf rdf:nodeID="genid4224"/>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <oboInOwl:hasAlternativeId>UBERON:0003263</oboInOwl:hasAlternativeId>
@@ -37660,14 +37635,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>mesoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4227">
+    <owl:Restriction rdf:nodeID="genid4224">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006603"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4227"/>
+        <owl:annotatedTarget rdf:nodeID="genid4224"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -37841,7 +37816,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005181"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
-        <rdfs:subClassOf rdf:nodeID="genid4251"/>
+        <rdfs:subClassOf rdf:nodeID="genid4248"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -37913,14 +37888,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_F_Heart.glb</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://ccf-ontology.hubmapconsortium.org/objects/v1.2/VH_M_Heart.glb</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4251">
+    <owl:Restriction rdf:nodeID="genid4248">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015410"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000948"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4251"/>
+        <owl:annotatedTarget rdf:nodeID="genid4248"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38323,7 +38298,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4296"/>
+        <rdfs:subClassOf rdf:nodeID="genid4293"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
@@ -38373,14 +38348,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4296">
+    <owl:Restriction rdf:nodeID="genid4293">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016880"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4296"/>
+        <owl:annotatedTarget rdf:nodeID="genid4293"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38446,7 +38421,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33213"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4307"/>
+        <rdfs:subClassOf rdf:nodeID="genid4304"/>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -38491,7 +38466,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>central nervous system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4307">
+    <owl:Restriction rdf:nodeID="genid4304">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
     </owl:Restriction>
@@ -38505,7 +38480,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4307"/>
+        <owl:annotatedTarget rdf:nodeID="genid4304"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -38893,7 +38868,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4351"/>
+        <rdfs:subClassOf rdf:nodeID="genid4348"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001630"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005090"/>
         <obo:IAO_0000115>Skeletal element that is composed of bone tissue.</obo:IAO_0000115>
@@ -38935,14 +38910,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>bone element</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4351">
+    <owl:Restriction rdf:nodeID="genid4348">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002481"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4351"/>
+        <owl:annotatedTarget rdf:nodeID="genid4348"/>
         <oboInOwl:source>VSAO-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -39008,7 +38983,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4361"/>
+        <rdfs:subClassOf rdf:nodeID="genid4358"/>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
@@ -39045,14 +39020,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>digestive tract</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4361">
+    <owl:Restriction rdf:nodeID="genid4358">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007026"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4361"/>
+        <owl:annotatedTarget rdf:nodeID="genid4358"/>
         <oboInOwl:source>NCBIBook:NBK10107</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -39279,8 +39254,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4397"/>
-        <rdfs:subClassOf rdf:nodeID="genid4399"/>
+        <rdfs:subClassOf rdf:nodeID="genid4394"/>
+        <rdfs:subClassOf rdf:nodeID="genid4396"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -39293,7 +39268,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004872"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4403"/>
+        <rdfs:subClassOf rdf:nodeID="genid4400"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
@@ -39347,34 +39322,34 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>blood vessel</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4397">
+    <owl:Restriction rdf:nodeID="genid4394">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4399">
+    <owl:Restriction rdf:nodeID="genid4396">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007500"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4403">
+    <owl:Restriction rdf:nodeID="genid4400">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006965"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4397"/>
+        <owl:annotatedTarget rdf:nodeID="genid4394"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4399"/>
+        <owl:annotatedTarget rdf:nodeID="genid4396"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4403"/>
+        <owl:annotatedTarget rdf:nodeID="genid4400"/>
         <oboInOwl:source>GO:0072360</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40208,9 +40183,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011137"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4500"/>
-        <rdfs:subClassOf rdf:nodeID="genid4502"/>
-        <rdfs:subClassOf rdf:nodeID="genid4504"/>
+        <rdfs:subClassOf rdf:nodeID="genid4497"/>
+        <rdfs:subClassOf rdf:nodeID="genid4499"/>
+        <rdfs:subClassOf rdf:nodeID="genid4501"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
@@ -40258,15 +40233,15 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>notochord</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4500">
+    <owl:Restriction rdf:nodeID="genid4497">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4502">
+    <owl:Restriction rdf:nodeID="genid4499">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004880"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4504">
+    <owl:Restriction rdf:nodeID="genid4501">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
     </owl:Restriction>
@@ -40285,19 +40260,19 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4500"/>
+        <owl:annotatedTarget rdf:nodeID="genid4497"/>
         <oboInOwl:source>http://tolweb.org/Chordata/2499</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4502"/>
+        <owl:annotatedTarget rdf:nodeID="genid4499"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4504"/>
+        <owl:annotatedTarget rdf:nodeID="genid4501"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40337,8 +40312,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002329">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007503"/>
-        <rdfs:subClassOf rdf:nodeID="genid4513"/>
-        <rdfs:subClassOf rdf:nodeID="genid4515"/>
+        <rdfs:subClassOf rdf:nodeID="genid4510"/>
+        <rdfs:subClassOf rdf:nodeID="genid4512"/>
         <obo:IAO_0000115>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
         <oboInOwl:hasBroadSynonym>mesodermal cluster</oboInOwl:hasBroadSynonym>
@@ -40376,11 +40351,11 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>somite</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4513">
+    <owl:Restriction rdf:nodeID="genid4510">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4515">
+    <owl:Restriction rdf:nodeID="genid4512">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
     </owl:Restriction>
@@ -40393,13 +40368,13 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4513"/>
+        <owl:annotatedTarget rdf:nodeID="genid4510"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4515"/>
+        <owl:annotatedTarget rdf:nodeID="genid4512"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40461,22 +40436,22 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010316"/>
-        <rdfs:subClassOf rdf:nodeID="genid4525"/>
+        <rdfs:subClassOf rdf:nodeID="genid4522"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_89593"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4528"/>
-        <rdfs:subClassOf rdf:nodeID="genid4530"/>
+        <rdfs:subClassOf rdf:nodeID="genid4525"/>
+        <rdfs:subClassOf rdf:nodeID="genid4527"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4533"/>
+        <rdfs:subClassOf rdf:nodeID="genid4530"/>
         <obo:IAO_0000115>A specialized region of ectoderm found between the neural ectoderm (neural plate) and non-neural ectoderm and composed of highly migratory pluripotent cells that delaminate in early embryonic development from the dorsal neural tube and give rise to an astounding variety of differentiated cell types[MP].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010578</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0001764</oboInOwl:hasDbXref>
@@ -40509,45 +40484,45 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4525">
+    <owl:Restriction rdf:nodeID="genid4522">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4528">
+    <owl:Restriction rdf:nodeID="genid4525">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4530">
+    <owl:Restriction rdf:nodeID="genid4527">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005062"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4533">
+    <owl:Restriction rdf:nodeID="genid4530">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4525"/>
+        <owl:annotatedTarget rdf:nodeID="genid4522"/>
         <oboInOwl:source>XAO</oboInOwl:source>
         <oboInOwl:source>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4528"/>
+        <owl:annotatedTarget rdf:nodeID="genid4525"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4530"/>
+        <owl:annotatedTarget rdf:nodeID="genid4527"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4533"/>
+        <owl:annotatedTarget rdf:nodeID="genid4530"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40688,7 +40663,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4553"/>
+        <rdfs:subClassOf rdf:nodeID="genid4550"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -40744,14 +40719,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>bone marrow</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/7/74/Gray72-en.svg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4553">
+    <owl:Restriction rdf:nodeID="genid4550">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002371"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4553"/>
+        <owl:annotatedTarget rdf:nodeID="genid4550"/>
         <oboInOwl:source>FMA</oboInOwl:source>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
@@ -40963,7 +40938,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002390">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
-        <rdfs:subClassOf rdf:nodeID="genid4580"/>
+        <rdfs:subClassOf rdf:nodeID="genid4577"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -41016,14 +40991,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>hematopoietic system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4580">
+    <owl:Restriction rdf:nodeID="genid4577">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002193"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4580"/>
+        <owl:annotatedTarget rdf:nodeID="genid4577"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41336,7 +41311,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4618"/>
+        <rdfs:subClassOf rdf:nodeID="genid4615"/>
         <obo:IAO_0000115>Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0011086</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001982</oboInOwl:hasDbXref>
@@ -41359,14 +41334,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>presomitic mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4618">
+    <owl:Restriction rdf:nodeID="genid4615">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007282"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4618"/>
+        <owl:annotatedTarget rdf:nodeID="genid4615"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41520,9 +41495,9 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
-        <rdfs:subClassOf rdf:nodeID="genid4634"/>
-        <rdfs:subClassOf rdf:nodeID="genid4636"/>
-        <rdfs:subClassOf rdf:nodeID="genid4638"/>
+        <rdfs:subClassOf rdf:nodeID="genid4631"/>
+        <rdfs:subClassOf rdf:nodeID="genid4633"/>
+        <rdfs:subClassOf rdf:nodeID="genid4635"/>
         <obo:IAO_0000115>A region of embryonic ectodermal cells that lie directly above the notochord. During neurulation, they change shape and produce an infolding of the neural plate (the neural fold) that then seals to form the neural tube[XAO]. The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium[ZFA].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0011072</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0001765</oboInOwl:hasDbXref>
@@ -41551,34 +41526,34 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>neural plate</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4634">
+    <owl:Restriction rdf:nodeID="genid4631">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4636">
+    <owl:Restriction rdf:nodeID="genid4633">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002256"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4638">
+    <owl:Restriction rdf:nodeID="genid4635">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007284"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4634"/>
+        <owl:annotatedTarget rdf:nodeID="genid4631"/>
         <oboInOwl:source>GOTAX:0000352</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4636"/>
+        <owl:annotatedTarget rdf:nodeID="genid4633"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4638"/>
+        <owl:annotatedTarget rdf:nodeID="genid4635"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41618,7 +41593,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4645"/>
+        <rdfs:subClassOf rdf:nodeID="genid4642"/>
         <obo:IAO_0000115>The paraxial mesoderm is the mesoderm located bilaterally adjacent to the notochord and neural tube[GO].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010568</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0003515</oboInOwl:hasDbXref>
@@ -41644,7 +41619,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>paraxial mesoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4645">
+    <owl:Restriction rdf:nodeID="genid4642">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
     </owl:Restriction>
@@ -41657,7 +41632,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4645"/>
+        <owl:annotatedTarget rdf:nodeID="genid4642"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41704,7 +41679,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
-        <rdfs:subClassOf rdf:nodeID="genid4653"/>
+        <rdfs:subClassOf rdf:nodeID="genid4650"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -41744,7 +41719,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>lateral plate mesoderm</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4653">
+    <owl:Restriction rdf:nodeID="genid4650">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
@@ -41757,7 +41732,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4653"/>
+        <owl:annotatedTarget rdf:nodeID="genid4650"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
         <oboInOwl:source>VHOG</oboInOwl:source>
     </owl:Axiom>
@@ -41807,15 +41782,15 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003084">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001048"/>
-        <rdfs:subClassOf rdf:nodeID="genid4664"/>
-        <rdfs:subClassOf rdf:nodeID="genid4666"/>
+        <rdfs:subClassOf rdf:nodeID="genid4661"/>
+        <rdfs:subClassOf rdf:nodeID="genid4663"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4669"/>
+        <rdfs:subClassOf rdf:nodeID="genid4666"/>
         <obo:IAO_0000115>Bilateral groups of cells consisting of three rows: one row of endocardial precursors medially and two rows of myocardical precursors laterally. The two populations fuse at the midline to form the heart rudiment or cone.</obo:IAO_0000115>
         <obo:IAO_0000116>should probably be merged with heart rudiment.</obo:IAO_0000116>
         <oboInOwl:hasDbXref>AAO:0011044</oboInOwl:hasDbXref>
@@ -41832,15 +41807,15 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>heart primordium</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4664">
+    <owl:Restriction rdf:nodeID="genid4661">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4666">
+    <owl:Restriction rdf:nodeID="genid4663">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4669">
+    <owl:Restriction rdf:nodeID="genid4666">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007005"/>
     </owl:Restriction>
@@ -41853,19 +41828,19 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4664"/>
+        <owl:annotatedTarget rdf:nodeID="genid4661"/>
+        <oboInOwl:source>ZFA</oboInOwl:source>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget rdf:nodeID="genid4663"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:nodeID="genid4666"/>
-        <oboInOwl:source>ZFA</oboInOwl:source>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4669"/>
         <oboInOwl:source>XAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -41894,8 +41869,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003089">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007530"/>
-        <rdfs:subClassOf rdf:nodeID="genid4676"/>
-        <rdfs:subClassOf rdf:nodeID="genid4678"/>
+        <rdfs:subClassOf rdf:nodeID="genid4673"/>
+        <rdfs:subClassOf rdf:nodeID="genid4675"/>
         <obo:IAO_0000115>Ventral somitic compartment that is a precursor of the axial skeleton[XAO]. Sclerotomes eventually differentiate into the vertebrae and most of the skull. The caudal (posterior) half of one sclerotome fuses with the rostral (anterior) half of the adjacent one to form each vertebra. From their initial location within the somite, the sclerotome cells migrate medially towards the notochord. These cells meet the sclerotome cells from the other side to form the vertebral body. From this vertebral body, sclerotome cells move dorsally and surround the developing spinal cord, forming the vertebral arch[WP].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010571</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>AEO:0000212</oboInOwl:hasDbXref>
@@ -41919,11 +41894,11 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>sclerotome</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4676">
+    <owl:Restriction rdf:nodeID="genid4673">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4678">
+    <owl:Restriction rdf:nodeID="genid4675">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
     </owl:Restriction>
@@ -41942,13 +41917,13 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4676"/>
+        <owl:annotatedTarget rdf:nodeID="genid4673"/>
         <oboInOwl:source>VHOG:0000680</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4678"/>
+        <owl:annotatedTarget rdf:nodeID="genid4675"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42167,7 +42142,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011997"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4705"/>
+        <rdfs:subClassOf rdf:nodeID="genid4702"/>
         <obo:IAO_0000115>The part of the coelom in the embryo between the somatopleuric and splanchnopleuric mesoderm; the principal body cavities of the trunk (thoracic, abdominal, and pelvic) arise from this embryonic part of the coelom.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with coelom. TODO - add spatial relationships to halves of LPM. Note the OG places XAO and ZFA coelem terms here. editor note: TODO check ZFA, which appears to be a structure present in adults</obo:IAO_0000116>
         <oboInOwl:hasDbXref>EHDAA:251</oboInOwl:hasDbXref>
@@ -42182,14 +42157,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>intraembryonic coelom</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4705">
+    <owl:Restriction rdf:nodeID="genid4702">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4705"/>
+        <owl:annotatedTarget rdf:nodeID="genid4702"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42484,8 +42459,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007688"/>
-        <rdfs:subClassOf rdf:nodeID="genid4748"/>
-        <rdfs:subClassOf rdf:nodeID="genid4750"/>
+        <rdfs:subClassOf rdf:nodeID="genid4745"/>
+        <rdfs:subClassOf rdf:nodeID="genid4747"/>
         <obo:IAO_0000115>A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>XAO:0004185</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>first heart field</oboInOwl:hasExactSynonym>
@@ -42497,24 +42472,24 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0004140</oboInOwl:id>
         <rdfs:label>primary heart field</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4748">
+    <owl:Restriction rdf:nodeID="genid4745">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4750">
+    <owl:Restriction rdf:nodeID="genid4747">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0036146"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4748"/>
+        <owl:annotatedTarget rdf:nodeID="genid4745"/>
         <oboInOwl:source>GO:0003128</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4750"/>
+        <owl:annotatedTarget rdf:nodeID="genid4747"/>
         <oboInOwl:source>https://orcid.org/0000-0003-3308-6245</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42567,7 +42542,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003914"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012275"/>
-        <rdfs:subClassOf rdf:nodeID="genid4758"/>
+        <rdfs:subClassOf rdf:nodeID="genid4755"/>
         <obo:IAO_0000115>An epithelial tube that will give rise to the mature heart.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010411</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0003526</oboInOwl:hasDbXref>
@@ -42586,14 +42561,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>heart tube</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4758">
+    <owl:Restriction rdf:nodeID="genid4755">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004141"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4758"/>
+        <owl:annotatedTarget rdf:nodeID="genid4755"/>
         <oboInOwl:source>ZFA-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43217,7 +43192,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004765">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
-        <rdfs:subClassOf rdf:nodeID="genid4833"/>
+        <rdfs:subClassOf rdf:nodeID="genid4830"/>
         <obo:IAO_0000115>Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0011129</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001890</oboInOwl:hasDbXref>
@@ -43231,14 +43206,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#uberon_slim"/>
         <rdfs:label>skeletal element</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4833">
+    <owl:Restriction rdf:nodeID="genid4830">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4833"/>
+        <owl:annotatedTarget rdf:nodeID="genid4830"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43265,7 +43240,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
-        <rdfs:subClassOf rdf:nodeID="genid4840"/>
+        <rdfs:subClassOf rdf:nodeID="genid4837"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
@@ -43304,14 +43279,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0004770</oboInOwl:id>
         <rdfs:label>articular system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4840">
+    <owl:Restriction rdf:nodeID="genid4837">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004770"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4840"/>
+        <owl:annotatedTarget rdf:nodeID="genid4837"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44025,7 +44000,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002100"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4932"/>
+        <rdfs:subClassOf rdf:nodeID="genid4929"/>
         <obo:IAO_0000115>Mesenchyme that is part of a developing trunk.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EFO:0003485</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0002092</oboInOwl:hasDbXref>
@@ -44041,14 +44016,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>trunk mesenchyme</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4932">
+    <owl:Restriction rdf:nodeID="genid4929">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4932"/>
+        <owl:annotatedTarget rdf:nodeID="genid4929"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44165,7 +44140,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4947"/>
+        <rdfs:subClassOf rdf:nodeID="genid4944"/>
         <obo:IAO_0000115>Multi-tissue structure that arises from the heart rudiment and will become the heart tube.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001512</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:424</oboInOwl:hasDbXref>
@@ -44183,14 +44158,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#vertebrate_core"/>
         <rdfs:label>primitive heart tube</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4947">
+    <owl:Restriction rdf:nodeID="genid4944">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004291"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4947"/>
+        <owl:annotatedTarget rdf:nodeID="genid4944"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44356,7 +44331,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005856">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011585"/>
-        <rdfs:subClassOf rdf:nodeID="genid4972"/>
+        <rdfs:subClassOf rdf:nodeID="genid4969"/>
         <obo:IAO_0000115>A delimited region of dense mesenchyme within looser mesenchyme.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000148</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2_RETIRED:0003148</oboInOwl:hasDbXref>
@@ -44366,7 +44341,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0005856</oboInOwl:id>
         <rdfs:label>developing mesenchymal condensation</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4972">
+    <owl:Restriction rdf:nodeID="genid4969">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000335"/>
     </owl:Restriction>
@@ -44385,7 +44360,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4972"/>
+        <owl:annotatedTarget rdf:nodeID="genid4969"/>
         <oboInOwl:source>AEO-modified-relation</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44479,7 +44454,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
-        <rdfs:subClassOf rdf:nodeID="genid4983"/>
+        <rdfs:subClassOf rdf:nodeID="genid4980"/>
         <obo:IAO_0000115>The notochordal plate is the dorsal part of the notochordal process when the ventral portion breaks down. It is continuous laterally with the endoderm that composes the roof of the primitive foregut and is in contact dorsally with the neural tube. The folding off of the notochordal plate gives rise to the notochord.</obo:IAO_0000115>
         <obo:IAO_0000116>TODO - check ordering; awaiting confirmation from JB</obo:IAO_0000116>
         <oboInOwl:hasDbXref>EHDAA2:0001278</oboInOwl:hasDbXref>
@@ -44493,7 +44468,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#emapa_ehdaa2"/>
         <rdfs:label>notochordal plate</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4983">
+    <owl:Restriction rdf:nodeID="genid4980">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
     </owl:Restriction>
@@ -44506,7 +44481,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4983"/>
+        <owl:annotatedTarget rdf:nodeID="genid4980"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44534,7 +44509,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4988"/>
+        <rdfs:subClassOf rdf:nodeID="genid4985"/>
         <obo:IAO_0000115>A midline cellular cord formed from the migration of mesenchymal cells from the primitive knot.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001279</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:224</oboInOwl:hasDbXref>
@@ -44551,14 +44526,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:comment>The notochordal process grows cranially until it reaches the prechordal plate, the future site of the mouth. In this area the ectoderm is attached directly to the endoderm without intervening mesoderm. This area is known as the oropharyngeal membrane, and it will break down to become the mouth. At the other end of the primitive streak the ectoderm is also fused directly to the endoderm; this is known as the cloacal membrane (proctodeum), or primordial anus.</rdfs:comment>
         <rdfs:label>notochordal process</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4988">
+    <owl:Restriction rdf:nodeID="genid4985">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4988"/>
+        <owl:annotatedTarget rdf:nodeID="genid4985"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45447,7 +45422,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <!-- http://purl.obolibrary.org/obo/UBERON_0007285 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007285">
-        <owl:equivalentClass rdf:nodeID="genid5118"/>
+        <owl:equivalentClass rdf:nodeID="genid5115"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006598"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -45473,7 +45448,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>presumptive paraxial mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid5118">
+    <owl:Class rdf:nodeID="genid5115">
         <owl:intersectionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006598"/>
             <owl:Restriction>
@@ -45489,7 +45464,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid5118"/>
+        <owl:annotatedTarget rdf:nodeID="genid5115"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1277</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45565,7 +45540,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003104"/>
-        <rdfs:subClassOf rdf:nodeID="genid5134"/>
+        <rdfs:subClassOf rdf:nodeID="genid5131"/>
         <obo:IAO_0000115>Mesenchyme with little extracellular matrix.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000146</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0003146</oboInOwl:hasDbXref>
@@ -45573,7 +45548,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0007524</oboInOwl:id>
         <rdfs:label>dense mesenchyme tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5134">
+    <owl:Restriction rdf:nodeID="genid5131">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000057"/>
     </owl:Restriction>
@@ -45586,7 +45561,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5134"/>
+        <owl:annotatedTarget rdf:nodeID="genid5131"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45689,7 +45664,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007798">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
-        <rdfs:subClassOf rdf:nodeID="genid5147"/>
+        <rdfs:subClassOf rdf:nodeID="genid5144"/>
         <obo:IAO_0000115>Anatomical system that consists of all blood and lymph vessels.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with vasculature</obo:IAO_0000116>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -45706,14 +45681,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#pheno_slim"/>
         <rdfs:label>vascular system</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5147">
+    <owl:Restriction rdf:nodeID="genid5144">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007798"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5147"/>
+        <owl:annotatedTarget rdf:nodeID="genid5144"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45741,7 +45716,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5152"/>
+        <rdfs:subClassOf rdf:nodeID="genid5149"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -45758,14 +45733,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0009142</oboInOwl:id>
         <rdfs:label>entire embryonic mesenchyme</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5152">
+    <owl:Restriction rdf:nodeID="genid5149">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5152"/>
+        <owl:annotatedTarget rdf:nodeID="genid5149"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45821,7 +45796,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5160"/>
+        <rdfs:subClassOf rdf:nodeID="genid5157"/>
         <oboInOwl:hasDbXref>EHDAA2:0002094</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>trunk and cervical paraxial mesenchyme</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>uberon</oboInOwl:hasOBONamespace>
@@ -45829,14 +45804,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0009618</oboInOwl:id>
         <rdfs:label>trunk paraxial mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5160">
+    <owl:Restriction rdf:nodeID="genid5157">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5160"/>
+        <owl:annotatedTarget rdf:nodeID="genid5157"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45859,7 +45834,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009881">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
-        <rdfs:subClassOf rdf:nodeID="genid5164"/>
+        <rdfs:subClassOf rdf:nodeID="genid5161"/>
         <oboInOwl:hasDbXref>EFO:0003704</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0005041</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0005041</oboInOwl:hasDbXref>
@@ -45869,14 +45844,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#efo_slim"/>
         <rdfs:label>anterior lateral plate mesoderm</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5164">
+    <owl:Restriction rdf:nodeID="genid5161">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009881"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5164"/>
+        <owl:annotatedTarget rdf:nodeID="genid5161"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46015,7 +45990,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005577"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5186"/>
+        <rdfs:subClassOf rdf:nodeID="genid5183"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -46035,14 +46010,14 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0010210</oboInOwl:id>
         <rdfs:label>blood clot</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5186">
+    <owl:Restriction rdf:nodeID="genid5183">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010210"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5186"/>
+        <owl:annotatedTarget rdf:nodeID="genid5183"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46163,8 +46138,8 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010912">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
-        <rdfs:subClassOf rdf:nodeID="genid5206"/>
-        <rdfs:subClassOf rdf:nodeID="genid5208"/>
+        <rdfs:subClassOf rdf:nodeID="genid5203"/>
+        <rdfs:subClassOf rdf:nodeID="genid5205"/>
         <obo:IAO_0000115>Anatomical cluster consisting of the skeletal elements (i.e. bone elements, cartilage elements, cartilage condensations) that are part of an individual subdivision of the organism. Excludes joints.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:23879</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:129140006</oboInOwl:hasDbXref>
@@ -46176,11 +46151,11 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#non_informative"/>
         <rdfs:label>subdivision of skeleton</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5206">
+    <owl:Restriction rdf:nodeID="genid5203">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5208">
+    <owl:Restriction rdf:nodeID="genid5205">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004288"/>
     </owl:Restriction>
@@ -46193,13 +46168,13 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5206"/>
+        <owl:annotatedTarget rdf:nodeID="genid5203"/>
         <oboInOwl:source>UBERONREF:0000003</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5208"/>
+        <owl:annotatedTarget rdf:nodeID="genid5205"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46260,7 +46235,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
-        <rdfs:subClassOf rdf:nodeID="genid5217"/>
+        <rdfs:subClassOf rdf:nodeID="genid5214"/>
         <obo:IAO_0000115>Subdivision of the skeletal system which consists of the postcranial axial skeleton plus associated joints.</obo:IAO_0000115>
         <oboInOwl:hasBroadSynonym>axial skeletal system</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasDbXref>FMA:302077</oboInOwl:hasDbXref>
@@ -46270,7 +46245,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <rdfs:label>postcranial axial skeletal system</rdfs:label>
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton</rdfs:seeAlso>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5217">
+    <owl:Restriction rdf:nodeID="genid5214">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
     </owl:Restriction>
@@ -46283,7 +46258,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011138"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5217"/>
+        <owl:annotatedTarget rdf:nodeID="genid5214"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46556,7 +46531,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034769"/>
-        <rdfs:subClassOf rdf:nodeID="genid5251"/>
+        <rdfs:subClassOf rdf:nodeID="genid5248"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#site_of"/>
@@ -46577,7 +46552,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0012429</oboInOwl:id>
         <rdfs:label>hematopoietic tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5251">
+    <owl:Restriction rdf:nodeID="genid5248">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
@@ -46590,7 +46565,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012429"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5251"/>
+        <owl:annotatedTarget rdf:nodeID="genid5248"/>
         <oboInOwl:source>defitional</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47141,7 +47116,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0016887">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000481"/>
-        <rdfs:subClassOf rdf:nodeID="genid5317"/>
+        <rdfs:subClassOf rdf:nodeID="genid5314"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -47164,7 +47139,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
         <oboInOwl:id>UBERON:0016887</oboInOwl:id>
         <rdfs:label>entire extraembryonic component</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5317">
+    <owl:Restriction rdf:nodeID="genid5314">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004716"/>
     </owl:Restriction>
@@ -47177,7 +47152,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5317"/>
+        <owl:annotatedTarget rdf:nodeID="genid5314"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47701,5 +47676,5 @@ Each of these 3 primitives can be composed to yield a cross-product of different
 
 
 
-<!-- Generated by the OWL API (version 4.5.26) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.5.29) https://github.com/owlcs/owlapi -->
 
