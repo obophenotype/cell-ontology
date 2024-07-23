@@ -193,6 +193,6 @@ Pattern name: cyclingCellStates.yaml
 
 Cell cycling is a fundamental biological mechanism that brings a cell to divide and duplicate into two daughter cells. This process is carried out by a large number of cells, and cells undergoing cell cycling have a distinct transcriptional profile compared to non cycling cells. Cycling cells need to be annotated and described by CL terms as these cells have been identified in a multitude of single-cell transcriptional datasets.
 
-The terms created with this pattern are labeled as **'cycling X'**, being *X* the parent term, and have an exact synonym **'proliferating X'**. These cell terms can be logically defined as a `'cell' and 'participates in' some 'M phase'`. Ex:
+The terms created with this pattern are labeled as **'cycling X'**, being *X* the parent term, and have an exact synonym **'proliferating X'**. These cell terms can be logically defined as a `'cell' and 'participates in' some 'cell cycle process' and 'has quality' some 'active'`. Ex:
 
-'cycling B cell' *SubClassOf* ['B cell](http://purl.obolibrary.org/obo/CL_0000236) and ['participates in'](http://purl.obolibrary.org/obo/RO_0000056) some ['M phase'](http://purl.obolibrary.org/obo/GO_0000279)
+'cycling B cell' *SubClassOf* ['B cell](http://purl.obolibrary.org/obo/CL_0000236) and ['participates in'](http://purl.obolibrary.org/obo/RO_0000056) some ['cell cycle process'](http://purl.obolibrary.org/obo/GO_0022402) and ['has quality'](http://purl.obolibrary.org/obo/RO_0000086) some ['active'](http://purl.obolibrary.org/obo/PATO_0002354)
