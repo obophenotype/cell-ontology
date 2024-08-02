@@ -3073,6 +3073,7 @@ Declaration(Class(obo:GO_0042599))
 Declaration(Class(obo:GO_0044316))
 Declaration(Class(obo:GO_0070278))
 Declaration(Class(obo:GO_0070483))
+Declaration(Class(obo:GO_0097729))
 Declaration(Class(obo:NCBITaxon_4896))
 Declaration(Class(obo:NCBITaxon_6157))
 Declaration(Class(obo:NCBITaxon_6237))
@@ -7737,11 +7738,12 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO:tfm") obo:IAO_0000115 obo:
 AnnotationAssertion(rdfs:label obo:CL_0000511 "androgen binding protein secreting cell")
 SubClassOf(obo:CL_0000511 obo:CL_0000154)
 
-# Class: obo:CL_0000512 (paracrine cell)
+# Class: obo:CL_0000512 (obsolete paracrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0198529171") obo:IAO_0000115 obo:CL_0000512 "A paracrine cell is a secretory cell that secretes an agonist into intercellular spaces in which it diffuses to a target cell other than that which produced it.")
-AnnotationAssertion(rdfs:label obo:CL_0000512 "paracrine cell")
-SubClassOf(obo:CL_0000512 obo:CL_0000151)
+AnnotationAssertion(oboInOwl:consider obo:CL_0000512 obo:CL_0000151)
+AnnotationAssertion(rdfs:comment obo:CL_0000512 "The term paracrine describes a role of a secreted hormone. There are a vast number of cell types that could fit this description, however it is difficult to know every case where a secreted hormone has paracrine effects.")
+AnnotationAssertion(rdfs:label obo:CL_0000512 "obsolete paracrine cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000512 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000513 (cardiac muscle myoblast)
 
@@ -8975,7 +8977,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.23937/2572-407X.151000
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34734454") oboInOwl:hasRelatedSynonym obo:CL_0000642 "Sox2-positive stem cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18287078") Annotation(oboInOwl:hasDbXref "PMID:31620083") Annotation(oboInOwl:hasDbXref "PMID:34734454") Annotation(oboInOwl:hasDbXref "doi:10.23937/2572-407X.1510006") rdfs:comment obo:CL_0000642 "Folliculostellate cells are a heterogeneous group of cells rather than a single cell type, with different morphology and gene expression profiles. Due to this heterogeneity, it is unclear if different properties that have been attributed to folliculostellate cells (pluripotent, proliferative, phagocytic) are common in all folliculostellate cells or limited to particular subsets.")
 AnnotationAssertion(rdfs:label obo:CL_0000642 "folliculostellate cell")
-SubClassOf(obo:CL_0000642 obo:CL_0000512)
 SubClassOf(obo:CL_0000642 obo:CL_0000630)
 SubClassOf(obo:CL_0000642 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002196))
 
@@ -15157,14 +15158,16 @@ SubClassOf(obo:CL_0002144 obo:CL_0002653)
 
 # Class: obo:CL_0002145 (ciliated columnar cell of tracheobronchial tree)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0002145 "A ciliated columnar cell found in the trachea and bronchus. Vary from low to tall columnar; possesses up to 300 cilia at its surface, interspersed with long irregular microvilli with the cilia varying in length from about 6um in the trachea to about 4um in the terminal bronchioles; driving force of the ciliary current in the bronchial tree.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:28400610") obo:IAO_0000115 obo:CL_0002145 "A multi-ciliated epithelial cell located in the trachea and bronchi, characterized by a columnar shape and motile cilia on its apical surface. These cilia facilitate mucociliary clearance by moving mucus and trapped particles toward the pharynx.")
 AnnotationAssertion(terms:contributor obo:CL_0002145 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002145 "2010-08-24T03:38:29Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002145 "FMA:70542")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://doi.org/10.1016/B978-032304048-8.50071-2>) Annotation(oboInOwl:hasDbXref "PMID:25386990") rdfs:comment obo:CL_0002145 "These cells possess numerous cilia on their surface, typically ranging from 200 to 300 per cell. The cilia vary in length, measuring between 6 to 7 μm in the upper airways (trachea) and becoming shorter, around 4 μm, in the smaller airways (terminal bronchioles). These cells form a two-layered 'coat' in the airway: the lower 'sol' layer is watery, allowing the cilia to beat in coordinated waves, while the upper 'gel' layer is thick and sticky, trapping inhaled particles.")
 AnnotationAssertion(rdfs:label obo:CL_0002145 "ciliated columnar cell of tracheobronchial tree")
 SubClassOf(obo:CL_0002145 obo:CL_0002202)
 SubClassOf(obo:CL_0002145 obo:CL_0005012)
 SubClassOf(obo:CL_0002145 obo:CL_4030034)
+SubClassOf(obo:CL_0002145 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0031514))
 SubClassOf(obo:CL_0002145 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002209))
 
 # Class: obo:CL_0002146 (clear cell of eccrine sweat gland)
@@ -15205,7 +15208,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002149 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002149 "2010-08-24T10:45:54Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002149 "FMA:256161")
 AnnotationAssertion(rdfs:label obo:CL_0002149 "epithelial cell of uterus")
-EquivalentClasses(obo:CL_0002149 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000995)))
+EquivalentClasses(obo:CL_0002149 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006955)))
 SubClassOf(obo:CL_0002149 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000222))
 
 # Class: obo:CL_0002150 (epithelioid macrophage)
@@ -15232,13 +15235,12 @@ SubClassOf(obo:CL_0002151 obo:CL_0000836)
 
 # Class: obo:CL_0002152 (columnar cell of endocervix)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0721662544") obo:IAO_0000115 obo:CL_0002152 "A columnar cell of the cervix uteri.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0721662544") Annotation(oboInOwl:hasDbXref "doi:/10.1016/j.autneu.2015.04.008") obo:IAO_0000115 obo:CL_0002152 "A simple columnar epithelial cell located in the endocervix.")
 AnnotationAssertion(terms:contributor obo:CL_0002152 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002152 "2010-08-24T10:47:47Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002152 "FMA:86486")
 AnnotationAssertion(rdfs:label obo:CL_0002152 "columnar cell of endocervix")
-SubClassOf(obo:CL_0002152 obo:CL_0002149)
-SubClassOf(obo:CL_0002152 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000458))
+EquivalentClasses(obo:CL_0002152 ObjectIntersectionOf(obo:CL_0000146 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0012252)))
 
 # Class: obo:CL_0002153 (corneocyte)
 
@@ -16194,14 +16196,13 @@ SubClassOf(obo:CL_0002243 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000133))
 
 # Class: obo:CL_0002244 (squamous cell of ectocervix)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "http://www.bu.edu/histology/p/19404loa.htm") obo:IAO_0000115 obo:CL_0002244 "A nonstratified squamous cell located in the ectocervix.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:32644501") Annotation(oboInOwl:hasDbXref "doi:/10.1016/j.autneu.2015.04.008") Annotation(oboInOwl:hasDbXref "http://www.bu.edu/histology/p/19404loa.htm") obo:IAO_0000115 obo:CL_0002244 "A stratified squamous epithelial cell located in the ectocervix.")
 AnnotationAssertion(terms:contributor obo:CL_0002244 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002244 "2010-09-08T09:12:23Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002244 "FMA:86483")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002244 "ectocervical squamous cell")
 AnnotationAssertion(rdfs:label obo:CL_0002244 "squamous cell of ectocervix")
-SubClassOf(obo:CL_0002244 obo:CL_0000076)
-SubClassOf(obo:CL_0002244 obo:CL_0002149)
+EquivalentClasses(obo:CL_0002244 ObjectIntersectionOf(obo:CL_0000076 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0012251)))
 
 # Class: obo:CL_0002245 (obsolete null lymphocyte)
 
@@ -20316,7 +20317,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002656 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002656 "2011-07-08T03:54:08Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002656 "FMA:86489")
 AnnotationAssertion(rdfs:label obo:CL_0002656 "glandular cell of endometrium")
-EquivalentClasses(obo:CL_0002656 ObjectIntersectionOf(obo:CL_0000150 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001295)))
+EquivalentClasses(obo:CL_0002656 ObjectIntersectionOf(obo:CL_0000150 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004811)))
 SubClassOf(obo:CL_0002656 obo:CL_0000150)
 
 # Class: obo:CL_0002657 (glandular cell of esophagus)
@@ -30946,7 +30947,7 @@ SubClassOf(obo:CL_4030039 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070006))
 
 # Class: obo:CL_4030040 (endometrial ciliated epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41591-020-1040-z") Annotation(oboInOwl:hasDbXref "https://www.proteinatlas.org/humanproteome/single+cell+type/Glandular+epithelial+cells#endometrialciliatedcells") obo:IAO_0000115 obo:CL_4030040 "A ciliated cell of the endometrial epithelium. The cilia of this cell type help move mucus from glandular tissue of the endometrium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31290979") Annotation(oboInOwl:hasDbXref "PMID:37999981") Annotation(oboInOwl:hasDbXref "doi:10.1016/j.coemr.2024.100503") Annotation(oboInOwl:hasDbXref "doi:10.1038/s41591-020-1040-z") Annotation(oboInOwl:hasDbXref "https://www.proteinatlas.org/humanproteome/single+cell+type/Glandular+epithelial+cells#endometrialciliatedcells") obo:IAO_0000115 obo:CL_4030040 "A multi-ciliated cell of the endometrial epithelium. This cell is characterized by the presence of 9+2 motile cilia on its apical surface, which facilitates the movement of mucus across the endometrial surface.")
 AnnotationAssertion(terms:date obo:CL_4030040 "2023-02-09T11:25:14Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_4030040 "ciliated cell of the uterus")
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_4030040 "uterine ciliated cell")
@@ -30954,11 +30955,11 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030040 "ciliated cell of th
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030040 "endometrium ciliated epithelial cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "ttps://www.nature.com/articles/s41591-020-1040-z") rdfs:comment obo:CL_4030040 "In human samples, the expression of FOXJ1 protein, a regulator for motile cilia with epithelial lineage identity, has been noted.")
 AnnotationAssertion(rdfs:label obo:CL_4030040 "endometrial ciliated epithelial cell")
-EquivalentClasses(obo:CL_4030040 ObjectIntersectionOf(obo:CL_0000064 obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004811)))
+EquivalentClasses(obo:CL_4030040 ObjectIntersectionOf(obo:CL_0005012 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004811) ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097729)))
 
 # Class: obo:CL_4030041 (luminal endometrial ciliated epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41591-020-1040-z") obo:IAO_0000115 obo:CL_4030041 "A ciliated cell of the endometrial luminal epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41591-020-1040-z") obo:IAO_0000115 obo:CL_4030041 "A ciliated cell of the endometrial luminal epithelium. This cell is characterized by the presence of motile cilia on its apical surface.")
 AnnotationAssertion(terms:date obo:CL_4030041 "2023-02-09T11:34:42Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4030041 "luminal endometrial ciliated epithelial cell")
 SubClassOf(obo:CL_4030041 obo:CL_4030040)
@@ -30966,7 +30967,7 @@ SubClassOf(obo:CL_4030041 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_001194
 
 # Class: obo:CL_4030042 (glandular endometrial ciliated epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41591-020-1040-z") obo:IAO_0000115 obo:CL_4030042 "A ciliated cell of the endometrial glandular epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41591-020-1040-z") obo:IAO_0000115 obo:CL_4030042 "A ciliated cell of the endometrial glandular epithelium. This cell is characterized by the presence of motile cilia on its apical surface.")
 AnnotationAssertion(terms:date obo:CL_4030042 "2023-02-09T11:37:30Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4030042 "glandular endometrial ciliated epithelial cell")
 SubClassOf(obo:CL_4030042 obo:CL_4030040)
@@ -31860,7 +31861,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0001-6
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37380767") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033058 "LumHR")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26390871") Annotation(oboInOwl:hasDbXref "PMID:34156490") Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0003-4969-670X") rdfs:comment obo:CL_4033058 "Following lineage specification, a luminal hormone-sensing cell expresses receptors for one or more hormones, such as estrogens, progesterone, androgens, and prolactin. In response to progesterone, luminal hormone-sensing cells express TNFSF11, WNT4, and RSPO1, among other factors, which cause branching, proliferation, and partial differentiation in LASP and B-Myo cells during luteal phases of the estrous/menstrual cycle and during gestation. During ductal elongation, ER activity drives expression of AREG in LHS cells, which is necessary for proliferation of the epithelium to fill the mammary fat pad.")
 AnnotationAssertion(rdfs:label obo:CL_4033058 "luminal hormone-sensing cell of mammary gland")
-SubClassOf(obo:CL_4033058 obo:CL_0000512)
 SubClassOf(obo:CL_4033058 obo:CL_0002326)
 SubClassOf(obo:CL_4033058 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000007204))
 
