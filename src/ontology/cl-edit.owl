@@ -3074,6 +3074,7 @@ Declaration(Class(obo:GO_0042599))
 Declaration(Class(obo:GO_0044316))
 Declaration(Class(obo:GO_0070278))
 Declaration(Class(obo:GO_0070483))
+Declaration(Class(obo:GO_0098594))
 Declaration(Class(obo:GO_0097729))
 Declaration(Class(obo:NCBITaxon_4896))
 Declaration(Class(obo:NCBITaxon_6157))
@@ -5011,13 +5012,16 @@ SubClassOf(obo:CL_0000159 obo:CL_0000151)
 
 # Class: obo:CL_0000160 (goblet cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D020397") obo:IAO_0000115 obo:CL_0000160 "A cell of the epithelial lining that produce and secrete mucins.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D020397") Annotation(oboInOwl:hasDbXref "http://en.wikipedia.org/wiki/Goblet_cell") obo:IAO_0000115 obo:CL_0000160 "A specialized, columnar, mucus secreting epithelial cell shaped like a flask or goblet. A narrow basal end contains the nucleus while the apical end is swollen by the accumulation of mucus laden secretory granules.  Short microvilli project from the apical plasma membrane.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000160 "BTO:0001540")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000160 "FMA:13148")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000160 "http://en.wikipedia.org/wiki/Goblet_cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000160 "chalice cell")
 AnnotationAssertion(rdfs:label obo:CL_0000160 "goblet cell")
-SubClassOf(obo:CL_0000160 obo:CL_0000150)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref <http://cnx.org/content/col11496/1.6/>) Annotation(oboInOwl:hasDbXref <https://commons.wikimedia.org/w/index.php?curid=30131227>) foaf:depiction obo:CL_0000160 "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/404_Goblet_Cell_new.jpg/800px-404_Goblet_Cell_new.jpg")
+SubClassOf(obo:CL_0000160 obo:CL_0000066)
+SubClassOf(obo:CL_0000160 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005902))
+SubClassOf(obo:CL_0000160 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0098594))
 SubClassOf(obo:CL_0000160 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254))
 
 # Class: obo:CL_0000161 (obsolete acid secreting cell)
@@ -7738,11 +7742,12 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO:tfm") obo:IAO_0000115 obo:
 AnnotationAssertion(rdfs:label obo:CL_0000511 "androgen binding protein secreting cell")
 SubClassOf(obo:CL_0000511 obo:CL_0000154)
 
-# Class: obo:CL_0000512 (paracrine cell)
+# Class: obo:CL_0000512 (obsolete paracrine cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0198529171") obo:IAO_0000115 obo:CL_0000512 "A paracrine cell is a secretory cell that secretes an agonist into intercellular spaces in which it diffuses to a target cell other than that which produced it.")
-AnnotationAssertion(rdfs:label obo:CL_0000512 "paracrine cell")
-SubClassOf(obo:CL_0000512 obo:CL_0000151)
+AnnotationAssertion(oboInOwl:consider obo:CL_0000512 obo:CL_0000151)
+AnnotationAssertion(rdfs:comment obo:CL_0000512 "The term paracrine describes a role of a secreted hormone. There are a vast number of cell types that could fit this description, however it is difficult to know every case where a secreted hormone has paracrine effects.")
+AnnotationAssertion(rdfs:label obo:CL_0000512 "obsolete paracrine cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000512 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000513 (cardiac muscle myoblast)
 
@@ -8976,7 +8981,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.23937/2572-407X.151000
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34734454") oboInOwl:hasRelatedSynonym obo:CL_0000642 "Sox2-positive stem cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18287078") Annotation(oboInOwl:hasDbXref "PMID:31620083") Annotation(oboInOwl:hasDbXref "PMID:34734454") Annotation(oboInOwl:hasDbXref "doi:10.23937/2572-407X.1510006") rdfs:comment obo:CL_0000642 "Folliculostellate cells are a heterogeneous group of cells rather than a single cell type, with different morphology and gene expression profiles. Due to this heterogeneity, it is unclear if different properties that have been attributed to folliculostellate cells (pluripotent, proliferative, phagocytic) are common in all folliculostellate cells or limited to particular subsets.")
 AnnotationAssertion(rdfs:label obo:CL_0000642 "folliculostellate cell")
-SubClassOf(obo:CL_0000642 obo:CL_0000512)
 SubClassOf(obo:CL_0000642 obo:CL_0000630)
 SubClassOf(obo:CL_0000642 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002196))
 
@@ -31864,7 +31868,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0001-6
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37380767") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033058 "LumHR")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26390871") Annotation(oboInOwl:hasDbXref "PMID:34156490") Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0003-4969-670X") rdfs:comment obo:CL_4033058 "Following lineage specification, a luminal hormone-sensing cell expresses receptors for one or more hormones, such as estrogens, progesterone, androgens, and prolactin. In response to progesterone, luminal hormone-sensing cells express TNFSF11, WNT4, and RSPO1, among other factors, which cause branching, proliferation, and partial differentiation in LASP and B-Myo cells during luteal phases of the estrous/menstrual cycle and during gestation. During ductal elongation, ER activity drives expression of AREG in LHS cells, which is necessary for proliferation of the epithelium to fill the mammary fat pad.")
 AnnotationAssertion(rdfs:label obo:CL_4033058 "luminal hormone-sensing cell of mammary gland")
-SubClassOf(obo:CL_4033058 obo:CL_0000512)
 SubClassOf(obo:CL_4033058 obo:CL_0002326)
 SubClassOf(obo:CL_4033058 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000007204))
 
