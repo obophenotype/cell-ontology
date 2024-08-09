@@ -1,0 +1,57 @@
+pattern_name: NSForestMarkers
+pattern_iri: http://purl.obolibrary.org/obo/cl/NSForestMarkers.yaml
+description: "Characterizing marker sets template for cell terms."
+
+classes:
+  "thing": "owl:Thing"
+  "sequence_feature": "SO:0000110"
+
+relations:
+  has_part: "BFO:0000051"
+#  has_anatomical_context: "PCL:0010063"
+
+vars:
+  Organ_region: "'regional part of brain'"
+  Parent: "'thing'"
+
+list_vars:
+  Minimal_markers: "'sequence_feature'"
+
+data_vars:
+  Marker_set_of: "xsd:string"
+  Organ: "xsd:string"
+  Species_abbv: "xsd:string"
+  FBeta_confidence_score: "xsd:double"
+
+annotationProperties:
+  fbetaConfidenceScore: "PCL:0010062"
+
+name:
+   text: "NS forest marker set of %s (%s %s)."
+   vars:
+      - Marker_set_of
+      - Species_abbv
+      - Organ
+
+logical_axioms:
+   - axiom_type: subClassOf
+     multi_clause:
+      sep: " and "
+      clauses:
+        - text: "'has_part' some %s"
+          vars:
+            - Minimal_markers
+   - axiom_type: subClassOf
+     text: "%s"
+     vars:
+        - Parent
+#   - axiom_type: subClassOf
+#     text: "'has_anatomical_context' some %s"
+#     vars:
+#        - Brain_region
+
+annotations:
+  - annotationProperty: fbetaConfidenceScore
+    text: "%s"
+    vars:
+      - FBeta_confidence_score
