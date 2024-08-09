@@ -178,3 +178,21 @@ The textual definition of a logically defined class should be a plain English eq
 ### Asserting relationships
 
 Please refer to the [relations guide](relations_guide.md) for detailled guidelines about which relations to use for most cases.
+
+## Design Pattern Usage with DOSDP
+
+
+The cell ontology contains a large number of terms, classifications, and relationships that are constantly expanding. Manually maintaining all these elements would be a daunting task, so a substantial portion of the maintenance is automated. This automation heavily relies on the systematic use of design patterns.
+
+CL uses **Dead simple OWL design patterns** (DOSDP, [Osumi-Sutherland *et al.*, 2017](https://doi.org/10.1186/s13326-017-0126-0)) to document simple patterns, as they require minimal programming expertise, and once implemented, it is easy to edit.
+
+All patterns are stored in [/src/patterns/dosdp-patterns](https://github.com/obophenotype/cell-ontology/tree/master/src/patterns/dosdp-patterns), while the editable tables are located in [/src/patterns/data/default](https://github.com/obophenotype/cell-ontology/tree/master/src/patterns/data/default).
+
+### Cycling cell states
+Pattern name: cyclingCellStates.yaml
+
+Cell cycling is a fundamental biological mechanism that brings a cell to divide and duplicate into two daughter cells. This process is carried out by a large number of cells, and cells undergoing cell cycling have a distinct transcriptional profile compared to non cycling cells. Cycling cells need to be annotated and described by CL terms as these cells have been identified in a multitude of single-cell transcriptional datasets.
+
+The terms created with this pattern are labeled as **'cycling X'**, being *X* the parent term, and have an exact synonym **'proliferating X'**. These cell terms can be logically defined as a `'cell' and 'participates in' some 'cell cycle process' and 'has quality' some 'active'`. Ex:
+
+'cycling B cell' *SubClassOf* ['B cell](http://purl.obolibrary.org/obo/CL_0000236) and ['participates in'](http://purl.obolibrary.org/obo/RO_0000056) some ['cell cycle process'](http://purl.obolibrary.org/obo/GO_0022402) and ['has quality'](http://purl.obolibrary.org/obo/RO_0000086) some ['active'](http://purl.obolibrary.org/obo/PATO_0002354)
