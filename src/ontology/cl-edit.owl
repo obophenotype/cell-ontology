@@ -30,6 +30,7 @@ Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/kidney_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/mappings.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/merged_import.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/patterns/definitions.owl>)
 Annotation(obo:IAO_0000700 obo:CL_0000000)
 Annotation(dc:description "An ontology of cell types.")
 Annotation(dc:title "Cell Ontology")
@@ -3131,6 +3132,7 @@ Declaration(Class(obo:PR_Q9D387))
 Declaration(Class(obo:PR_Q9Y5Y4))
 Declaration(Class(obo:PR_Q9Z0F7))
 Declaration(Class(obo:UBERON_0000371))
+Declaration(Class(obo:UBERON_0000424))
 Declaration(Class(obo:UBERON_0001004))
 Declaration(Class(obo:UBERON_0001335))
 Declaration(Class(obo:UBERON_0001786))
@@ -15518,13 +15520,12 @@ SubClassOf(obo:CL_0002179 obo:CL_0002178)
 
 # Class: obo:CL_0002180 (mucous cell of stomach)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002180 "A mucous cell in the epithelium of the stomach.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002180 "An epithelial cell of the stomach. This cell produces mucous.")
 AnnotationAssertion(terms:contributor obo:CL_0002180 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002180 "2010-08-25T03:38:51Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002180 "FMA:63464")
 AnnotationAssertion(rdfs:label obo:CL_0002180 "mucous cell of stomach")
-EquivalentClasses(obo:CL_0002180 ObjectIntersectionOf(obo:CL_0002178 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001199)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002180 obo:CL_0002178)
+EquivalentClasses(obo:CL_0002180 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000945) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254)))
 SubClassOf(obo:CL_0002180 obo:CL_0002659)
 
 # Class: obo:CL_0002181 (mucous neck cell of gastric gland)
@@ -15536,8 +15537,6 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002181 "FMA:62954")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002181 "mucus neck cell of gastric gland")
 AnnotationAssertion(rdfs:label obo:CL_0002181 "mucous neck cell of gastric gland")
 EquivalentClasses(obo:CL_0002181 ObjectIntersectionOf(obo:CL_0000651 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000325)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002181 obo:CL_0000651)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002181 obo:CL_0002180)
 
 # Class: obo:CL_0002182 (surface mucosal cell of stomach)
 
@@ -15546,7 +15545,8 @@ AnnotationAssertion(terms:contributor obo:CL_0002182 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002182 "2010-08-25T03:45:10Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002182 "FMA:62949")
 AnnotationAssertion(rdfs:label obo:CL_0002182 "surface mucosal cell of stomach")
-SubClassOf(obo:CL_0002182 obo:CL_0002180)
+SubClassOf(obo:CL_0002182 obo:CL_0000075)
+SubClassOf(obo:CL_0002182 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001276))
 SubClassOf(obo:CL_0002182 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254))
 
 # Class: obo:CL_0002183 (stem cell of gastric gland)
@@ -19546,6 +19546,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002573 "2011-03-02T01:19:27Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "BTO:0001220")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "CALOHA:TS-0898")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002573 "MESH:D012583")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32119275") Annotation(oboInOwl:hasDbXref "PMID:38638689") oboInOwl:hasExactSynonym obo:CL_0002573 "neurolemmocyte")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16807057") rdfs:comment obo:CL_0002573 "A myelinating Schwann cell wraps around a single axon. Myelination occurs in larger diameter axons, while a process called ensheathment occurs on smaller diameter axons in which a single cell wraps around multiple small, unmyelinated axons separating them with a thin layer of cytoplasm. The structure formed is called a Remak bundle.")
 AnnotationAssertion(rdfs:label obo:CL_0002573 "Schwann cell")
 SubClassOf(obo:CL_0002573 obo:CL_0000125)
@@ -20346,16 +20347,16 @@ AnnotationAssertion(rdfs:label obo:CL_0002658 "glandular cell of the large intes
 EquivalentClasses(obo:CL_0002658 ObjectIntersectionOf(obo:CL_0000150 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000059)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002658 obo:CL_0000150)
 
-# Class: obo:CL_0002659 (glandular cell of stomach)
+# Class: obo:CL_0002659 (glandular epithelial cell of stomach)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002659 "A glandular epithelial cell that is part of the stomach.")
 AnnotationAssertion(terms:contributor obo:CL_0002659 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002659 "2011-07-11T01:20:35Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002659 "CALOHA:TS-1284")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002659 "FMA:86554")
-AnnotationAssertion(rdfs:label obo:CL_0002659 "glandular cell of stomach")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002659 "glandular cell of stomach")
+AnnotationAssertion(rdfs:label obo:CL_0002659 "glandular epithelial cell of stomach")
 EquivalentClasses(obo:CL_0002659 ObjectIntersectionOf(obo:CL_0000150 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000945)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002659 obo:CL_0000150)
 
 # Class: obo:CL_0002660 (luminal cell of acinus of lactiferous gland)
 
@@ -27142,6 +27143,7 @@ EquivalentClasses(obo:CL_1001005 ObjectIntersectionOf(obo:CL_1000892 ObjectSomeV
 
 # Class: obo:CL_1001006 (kidney afferent arteriole cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16990493") Annotation(oboInOwl:hasDbXref "PMID:22733355") Annotation(oboInOwl:hasDbXref "PMID:24066938") Annotation(oboInOwl:hasDbXref "PMID:25834230") obo:IAO_0000115 obo:CL_1001006 "An endothelial cell which is part of the afferent arteriole in the kidney. This cell is  responsible for maintaining renal blood flow and glomerular filtration rate.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001006 "KUPO:0001038")
 AnnotationAssertion(rdfs:label obo:CL_1001006 "kidney afferent arteriole cell")
 EquivalentClasses(obo:CL_1001006 ObjectIntersectionOf(obo:CL_1000891 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004639)))
@@ -27229,6 +27231,7 @@ SubClassOf(obo:CL_1001068 obo:CL_1000893)
 
 # Class: obo:CL_1001096 (kidney afferent arteriole endothelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16990493") Annotation(oboInOwl:hasDbXref "PMID:22733355") Annotation(oboInOwl:hasDbXref "PMID:24066938") Annotation(oboInOwl:hasDbXref "PMID:25834230") obo:IAO_0000115 obo:CL_1001096 "An endothelial cell that lines the interior surface of the afferent arteriole and maintains vascular tone. This cell responds to changing ion concentrations and blood pressure by releasing vasoactive substances, in order to regulate blood flow into the glomeruli, which is essential for glomerular filtration.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001096 "KUPO:0001039")
 AnnotationAssertion(rdfs:label obo:CL_1001096 "kidney afferent arteriole endothelial cell")
 EquivalentClasses(obo:CL_1001096 ObjectIntersectionOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004639)))
@@ -27238,6 +27241,7 @@ SubClassOf(obo:CL_1001096 obo:CL_1001006)
 
 # Class: obo:CL_1001097 (kidney afferent arteriole smooth muscle cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16990493") Annotation(oboInOwl:hasDbXref "PMID:22733355") Annotation(oboInOwl:hasDbXref "PMID:24066938") Annotation(oboInOwl:hasDbXref "PMID:25834230") obo:IAO_0000115 obo:CL_1001097 "A smooth muscle cell found in the wall of the afferent arteriole. This cell contracts and relaxes in response to changes in blood pressure, a process known as a myogenic response, to alter artery diameter and regulate blood flow into the glomeruli.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001097 "KUPO:0001040")
 AnnotationAssertion(rdfs:label obo:CL_1001097 "kidney afferent arteriole smooth muscle cell")
 EquivalentClasses(obo:CL_1001097 ObjectIntersectionOf(obo:CL_0000192 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004639)))
