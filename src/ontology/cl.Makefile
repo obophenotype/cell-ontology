@@ -344,6 +344,7 @@ cl:
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
 
+.PHONY: $(TMPDIR)/current-base-release.obo
 $(TMPDIR)/current-base-release.obo:
 	wget $(CURRENT_BASE_RELEASE) -O $@
 
