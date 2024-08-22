@@ -7,7 +7,7 @@
 
 ## Right
 - Ontology IRI: `http://purl.obolibrary.org/obo/cl/cl-base.owl`
-- Version IRI: `http://purl.obolibrary.org/obo/cl/cl-base/cl/releases/2024-07-10/cl-base.owl/cl/cl-base.owl`
+- Version IRI: `http://purl.obolibrary.org/obo/cl/cl-base/cl/releases/2024-08-16/cl-base.owl/cl/cl-base.owl`
 - Loaded from: `file:/work/src/ontology/../../cl-base.obo`
 
 ### Ontology imports 
@@ -21,7 +21,7 @@
 - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, University at Buffalo."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2024-07-10"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [versionInfo](http://www.w3.org/2002/07/owl#versionInfo) "2024-08-16"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, university at buffalo."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
@@ -154,6 +154,36 @@
 - Class: [GO_0005903](http://purl.obolibrary.org/obo/GO_0005903) 
 
 
+### GO_0022402 `http://purl.obolibrary.org/obo/GO_0022402`
+
+#### Added
+- Class: [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+
+### GO_0031514 `http://purl.obolibrary.org/obo/GO_0031514`
+
+#### Added
+- Class: [GO_0031514](http://purl.obolibrary.org/obo/GO_0031514) 
+
+
+### GO_0036053 `http://purl.obolibrary.org/obo/GO_0036053`
+
+#### Added
+- Class: [GO_0036053](http://purl.obolibrary.org/obo/GO_0036053) 
+
+
+### GO_0097729 `http://purl.obolibrary.org/obo/GO_0097729`
+
+#### Added
+- Class: [GO_0097729](http://purl.obolibrary.org/obo/GO_0097729) 
+
+
+### GO_0098594 `http://purl.obolibrary.org/obo/GO_0098594`
+
+#### Added
+- Class: [GO_0098594](http://purl.obolibrary.org/obo/GO_0098594) 
+
+
 ### Hofbauer cell `http://purl.obolibrary.org/obo/CL_3000001`
 #### Removed
 - [Hofbauer cell](http://purl.obolibrary.org/obo/CL_3000001) [contributor](http://purl.org/dc/terms/contributor) [Q97529981](https://www.wikidata.org/entity/Q97529981) 
@@ -213,6 +243,60 @@
 - Class: [L2 marginal neuron](http://purl.obolibrary.org/obo/CL_4042012) 
 
 - [L2 marginal neuron](http://purl.obolibrary.org/obo/CL_4042012) SubClassOf [L2 intratelencephalic projecting glutamatergic neuron](http://purl.obolibrary.org/obo/CL_4030060) 
+
+
+### L2/3 bipolar VIP GABAergic interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023007`
+#### Removed
+- [L2/3 bipolar VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3 bipolar vip GABAergic interneuron (Mmus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L2/3 bipolar VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A vip GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar vip cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer vip cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 bipolar vip cells have great variability in firing patterns, though most are continuous adapting. L2/3 bipolar vip cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper vip cells."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26420784"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L2/3 bipolar VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [IAO_0000028](http://purl.obolibrary.org/obo/IAO_0000028) "L2/3 bipolar vip interneuron (Mus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [L2/3 bipolar VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [IAO_0000028](http://purl.obolibrary.org/obo/IAO_0000028) "L2/3 bipolar VIP interneuron (Mus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L2/3 bipolar VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A VIP GABAergic cortical interneuron with bipolar morphology, with a soma found in L2/3. L2/3 bipolar VIP cells have extending axons across all layers (with preferences for layers II/III and Va) and a dendritic tree that is vertically more restricted than deeper layer VIP cells and extend fewer dendrites into the layers outside their home layer (location of soma). L2/3 bipolar VIP cells have great variability in firing patterns, though most are continuous adapting. L2/3 bipolar VIP cells are more depolarized in their resting state, had less fast rectification, and had smaller after hyperpolarization than deeper VIP cells."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26420784"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L2/3 bipolar VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023007) [label](http://www.w3.org/2000/01/rdf-schema#label) "L2/3 bipolar VIP GABAergic interneuron (Mmus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### L5 VIP GABAergic interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023014`
+#### Removed
+- [L5 VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [IAO_0000028](http://purl.obolibrary.org/obo/IAO_0000028) "L5 vip interneuron (Mus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L5 VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 vip GABAergic interneuron (Mmus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L5 VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A vip GABAergic cortical interneuron with a soma found in L5. L5 vip cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of sst subclass and unlike typical Vip subclass cells that tend to show high input resistance. L5 vip cells show particularly low resting membrane potential."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26420784"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26612957"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [L5 VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [IAO_0000028](http://purl.obolibrary.org/obo/IAO_0000028) "L5 VIP interneuron (Mus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L5 VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A VIP GABAergic cortical interneuron with a soma found in L5. L5 VIP cells have mostly local morphology with some deep-projecting axons. They show only moderate resistance, comparable to that of sst subclass and unlike typical VIP subclass cells that tend to show high input resistance. L5 VIP cells show particularly low resting membrane potential."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26420784"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:26612957"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L5 VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023014) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5 VIP GABAergic interneuron (Mmus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### L5/6 cck, VIP GABAergic interneuron (Mmus) `http://purl.obolibrary.org/obo/CL_4023019`
+#### Removed
+- [L5/6 cck, VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023019) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 cck, vip GABAergic interneuron (Mmus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L5/6 cck, VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023019) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A vip GABAergic cortical interneuron that expresses cck. L5/6 cck cells have soma found mainly in L5 and L6 and have large axonal arborization."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33184512"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [L5/6 cck, VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023019) [label](http://www.w3.org/2000/01/rdf-schema#label) "L5/6 cck, VIP GABAergic interneuron (Mmus)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [L5/6 cck, VIP GABAergic interneuron (Mmus)](http://purl.obolibrary.org/obo/CL_4023019) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A VIP GABAergic cortical interneuron that expresses cck. L5/6 cck cells have soma found mainly in L5 and L6 and have large axonal arborization."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33184512"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### Lamp5 Lhx6 neuron `http://purl.obolibrary.org/obo/CL_4042013`
@@ -342,14 +426,69 @@
 - Class: [PATO_0002064](http://purl.obolibrary.org/obo/PATO_0002064) 
 
 
+### PATO_0002354 `http://purl.obolibrary.org/obo/PATO_0002354`
+
+#### Added
+- Class: [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+
 ### Purkinje cell `http://purl.obolibrary.org/obo/CL_0000121`
 #### Removed
 - [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009071"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](http://purl.obolibrary.org/obo/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "cerebellum Purkinje cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Purkinje's cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "The output neuron of the cerebellar cortex."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011689"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "cerebellar Purkinje cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Purkinje neuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 #### Added
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "cerebellar Purkinje cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://doi.org/10.1016/j.proghi.2004.07.002"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An inhibitory neuron and the sole output neuron of the cerebellar cortex, the Purkinje cell's soma is located between the granular and molecular layers of the cerebellum. It is one of the largest neural cells in the mammalian brain, ranging from 50 to 80 micrometres in diameter. Purkinje cells have planar, fan-shaped dendrites that branch extensively with little overlap. This cell type receives synaptic input from parallel fibres, which modulate high-frequency spike activity known as &quot;simple spikes,&quot; and climbing fibres, which modulate infrequent calcium spike activity known as &quot;complex spikes&quot;. Purkinje cells are involved in motor coordination, particularly in correcting movements in progress."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:12907269"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33288911"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:14568361"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31424738"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D011689"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:38168772"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Neurodegenerative disorders affecting Purkinje cells disrupt motor functions. Some of the neurodegenerative disorders that causes loss and degeration of Purkinje cells are Spinocerebellar ataxias (SCAs) (Josef P Kapfhammer and Etsuko Shimobayashi 2023), Friedreich's ataxia (FRDA) (Kevin C Kemp et al., 2016), Fetal alcohol syndrome (Laurent Servais et al., 2016), Dandy-Walker malformation (Alexander Atamian et al., 2024)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:17535929"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:27215193"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://doi.org/10.1016/j.stem.2023.11.013"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37426070"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009071"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "Purkinje neuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:28821816"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "PC"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:38168772"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [Purkinje cell](http://purl.obolibrary.org/obo/CL_0000121) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "PN"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:28821816"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### R1 photoreceptor cell `http://purl.obolibrary.org/obo/CL_0000687`
@@ -442,6 +581,15 @@
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### Schwann cell `http://purl.obolibrary.org/obo/CL_0002573`
+
+#### Added
+- [Schwann cell](http://purl.obolibrary.org/obo/CL_0002573) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "neurolemmocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32119275"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:38638689"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### Schwann cell precursor `http://purl.obolibrary.org/obo/CL_0002375`
 #### Removed
 - [Schwann cell precursor](http://purl.obolibrary.org/obo/CL_0002375) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A giioblast cell that develops from a migratory neural crest cell. The SCP is embedded among neurons (axons) with minimal extracellular spaces separating them from nerve cell membranes and has no basal lamina. In rodents SCPs are the only cells in the Schwann cell linage that expresses Cdh19."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -478,6 +626,24 @@
 
 
 
+### UBERON_0000358 `http://purl.obolibrary.org/obo/UBERON_0000358`
+#### Removed
+- Class: [UBERON_0000358](http://purl.obolibrary.org/obo/UBERON_0000358) 
+
+
+
+### UBERON_0000458 `http://purl.obolibrary.org/obo/UBERON_0000458`
+#### Removed
+- Class: [UBERON_0000458](http://purl.obolibrary.org/obo/UBERON_0000458) 
+
+
+
+### UBERON_0001199 `http://purl.obolibrary.org/obo/UBERON_0001199`
+#### Removed
+- Class: [UBERON_0001199](http://purl.obolibrary.org/obo/UBERON_0001199) 
+
+
+
 ### UBERON_0001557 `http://purl.obolibrary.org/obo/UBERON_0001557`
 #### Removed
 - Class: [UBERON_0001557](http://purl.obolibrary.org/obo/UBERON_0001557) 
@@ -494,6 +660,12 @@
 
 #### Added
 - Class: [UBERON_0002051](http://purl.obolibrary.org/obo/UBERON_0002051) 
+
+
+### UBERON_0003889 `http://purl.obolibrary.org/obo/UBERON_0003889`
+
+#### Added
+- Class: [UBERON_0003889](http://purl.obolibrary.org/obo/UBERON_0003889) 
 
 
 ### UBERON_0004196 `http://purl.obolibrary.org/obo/UBERON_0004196`
@@ -526,10 +698,46 @@
 - Class: [UBERON_0004903](http://purl.obolibrary.org/obo/UBERON_0004903) 
 
 
+### UBERON_0005272 `http://purl.obolibrary.org/obo/UBERON_0005272`
+#### Removed
+- Class: [UBERON_0005272](http://purl.obolibrary.org/obo/UBERON_0005272) 
+
+
+
+### UBERON_0006955 `http://purl.obolibrary.org/obo/UBERON_0006955`
+
+#### Added
+- Class: [UBERON_0006955](http://purl.obolibrary.org/obo/UBERON_0006955) 
+
+
 ### UBERON_0008397 `http://purl.obolibrary.org/obo/UBERON_0008397`
 
 #### Added
 - Class: [UBERON_0008397](http://purl.obolibrary.org/obo/UBERON_0008397) 
+
+
+### UBERON_0011148 `http://purl.obolibrary.org/obo/UBERON_0011148`
+
+#### Added
+- Class: [UBERON_0011148](http://purl.obolibrary.org/obo/UBERON_0011148) 
+
+
+### UBERON_0012251 `http://purl.obolibrary.org/obo/UBERON_0012251`
+
+#### Added
+- Class: [UBERON_0012251](http://purl.obolibrary.org/obo/UBERON_0012251) 
+
+
+### UBERON_0012252 `http://purl.obolibrary.org/obo/UBERON_0012252`
+
+#### Added
+- Class: [UBERON_0012252](http://purl.obolibrary.org/obo/UBERON_0012252) 
+
+
+### UBERON_8850000 `http://purl.obolibrary.org/obo/UBERON_8850000`
+
+#### Added
+- Class: [UBERON_8850000](http://purl.obolibrary.org/obo/UBERON_8850000) 
 
 
 ### UV sensitive photoreceptor cell `http://purl.obolibrary.org/obo/CL_0000494`
@@ -540,6 +748,70 @@
 #### Added
 - [UV sensitive photoreceptor cell](http://purl.obolibrary.org/obo/CL_0000494) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009221"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### VIP GABAergic cortical interneuron `http://purl.obolibrary.org/obo/CL_4023016`
+#### Removed
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) [label](http://www.w3.org/2000/01/rdf-schema#label) "vip GABAergic cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) [IAO_0000028](http://purl.obolibrary.org/obo/IAO_0000028) "vip cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) SubClassOf [cerebral cortex GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0010011) 
+
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
+#### Added
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) [IAO_0000028](http://purl.obolibrary.org/obo/IAO_0000028) "VIP cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) [label](http://www.w3.org/2000/01/rdf-schema#label) "VIP GABAergic cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) SubClassOf [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
+
+
+### VIP-ChAT interneuron `http://purl.obolibrary.org/obo/CL_4042015`
+
+#### Added
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [date](http://purl.org/dc/terms/date) "2024-07-11T12:22:48Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [label](http://www.w3.org/2000/01/rdf-schema#label) "VIP-ChAT interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VIP+/ChAT+ interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33301603"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Work in the mouse barrel cortex and somatosensory cortex shows that a VIP-ChAT interneuron is predominantely located in L2/3 and more rarely in the deeper layers of the cortex (Dudai et al., 2021; Dudai et al., 2020). This neuronal type could be transcriptomically distinct as transcriptomic studies have identified VIP neurons expressing ChAT in a whole brain mouse transcriptomic study (Tasic et al., 2018)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33301603"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30382198"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32027647"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4042015"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "VChI"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32027647"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-0098-8958](https://orcid.org/0000-0002-0098-8958) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A VIP GABAergic cortical interneuron expressing vasoactive intestinal polypeptide and choline acetyltransferase in the Mmus neocortex. This interneuron releases both &gamma;-aminobutyric acid and acetylcholine."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33301603"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:30382198"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32027647"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31754098"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "VIP/ChAT interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32027647"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "VIP+/ChAT+ cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33301603"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) 
+
+- [VIP-ChAT interneuron](http://purl.obolibrary.org/obo/CL_4042015) SubClassOf [cholinergic neuron](http://purl.obolibrary.org/obo/CL_0000108) 
 
 
 ### absorptive cell `http://purl.obolibrary.org/obo/CL_0000212`
@@ -668,6 +940,21 @@
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### alveolar adventitial fibroblast `http://purl.obolibrary.org/obo/CL_4028006`
+#### Removed
+- [alveolar adventitial fibroblast](http://purl.obolibrary.org/obo/CL_4028006) [label](http://www.w3.org/2000/01/rdf-schema#label) "alveolar type 2 fibroblast cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [alveolar adventitial fibroblast](http://purl.obolibrary.org/obo/CL_4028006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AdvF"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33208946"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [alveolar adventitial fibroblast](http://purl.obolibrary.org/obo/CL_4028006) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "alveolar type 2 fibroblast cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [alveolar adventitial fibroblast](http://purl.obolibrary.org/obo/CL_4028006) [label](http://www.w3.org/2000/01/rdf-schema#label) "alveolar adventitial fibroblast"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### alveolar capillary type 1 endothelial cell `http://purl.obolibrary.org/obo/CL_4028002`
 #### Removed
 - [alveolar capillary type 1 endothelial cell](http://purl.obolibrary.org/obo/CL_4028002) SubClassOf [epithelial cell of alveolus of lung](http://purl.obolibrary.org/obo/CL_0010003) 
@@ -684,19 +971,16 @@
 - [alveolar capillary type 2 endothelial cell](http://purl.obolibrary.org/obo/CL_4028003) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0002299](http://purl.obolibrary.org/obo/UBERON_0002299) 
 
 
-### alveolar type 2 fibroblast cell `http://purl.obolibrary.org/obo/CL_4028006`
+### alveolar macrophage `http://purl.obolibrary.org/obo/CL_0000583`
 #### Removed
-- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [label](http://www.w3.org/2000/01/rdf-schema#label) "alveolar type 2 fibroblast cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [alveolar macrophage](http://purl.obolibrary.org/obo/CL_0000583) EquivalentTo [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [PR_000001206](http://purl.obolibrary.org/obo/PR_000001206)) and ([RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [UBERON_0002299](http://purl.obolibrary.org/obo/UBERON_0002299)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001013](http://purl.obolibrary.org/obo/PR_000001013)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001807](http://purl.obolibrary.org/obo/PR_000001807)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001813](http://purl.obolibrary.org/obo/PR_000001813)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001931](http://purl.obolibrary.org/obo/PR_000001931)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000002064](http://purl.obolibrary.org/obo/PR_000002064)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000002972](http://purl.obolibrary.org/obo/PR_000002972)) and ([RO_0002215](http://purl.obolibrary.org/obo/RO_0002215) some [GO_0019882](http://purl.obolibrary.org/obo/GO_0019882)) and ([RO_0015016](http://purl.obolibrary.org/obo/RO_0015016) some [PR_000001012](http://purl.obolibrary.org/obo/PR_000001012)) 
+
+- [alveolar macrophage](http://purl.obolibrary.org/obo/CL_0000583) SubClassOf [RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [UBERON_0002299](http://purl.obolibrary.org/obo/UBERON_0002299) 
 
 #### Added
-- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AdvF"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+- [alveolar macrophage](http://purl.obolibrary.org/obo/CL_0000583) EquivalentTo [tissue-resident macrophage](http://purl.obolibrary.org/obo/CL_0000864) and ([lacks_plasma_membrane_part](http://purl.obolibrary.org/obo/CL_4030046) some [PR_000001206](http://purl.obolibrary.org/obo/PR_000001206)) and ([RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [UBERON_8850000](http://purl.obolibrary.org/obo/UBERON_8850000)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001013](http://purl.obolibrary.org/obo/PR_000001013)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001807](http://purl.obolibrary.org/obo/PR_000001807)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001813](http://purl.obolibrary.org/obo/PR_000001813)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000001931](http://purl.obolibrary.org/obo/PR_000001931)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000002064](http://purl.obolibrary.org/obo/PR_000002064)) and ([RO_0002104](http://purl.obolibrary.org/obo/RO_0002104) some [PR_000002972](http://purl.obolibrary.org/obo/PR_000002972)) and ([RO_0002215](http://purl.obolibrary.org/obo/RO_0002215) some [GO_0019882](http://purl.obolibrary.org/obo/GO_0019882)) and ([RO_0015016](http://purl.obolibrary.org/obo/RO_0015016) some [PR_000001012](http://purl.obolibrary.org/obo/PR_000001012)) 
 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33208946"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "alveolar type 2 fibroblast cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [alveolar type 2 fibroblast cell](http://purl.obolibrary.org/obo/CL_4028006) [label](http://www.w3.org/2000/01/rdf-schema#label) "alveolar adventitial fibroblast"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [alveolar macrophage](http://purl.obolibrary.org/obo/CL_0000583) SubClassOf [RO_0001025](http://purl.obolibrary.org/obo/RO_0001025) some [UBERON_8850000](http://purl.obolibrary.org/obo/UBERON_8850000) 
 
 
 ### amacrine cell `http://purl.obolibrary.org/obo/CL_0000561`
@@ -767,6 +1051,23 @@
 
 #### Added
 - [anterior visceral endoderm cell](http://purl.obolibrary.org/obo/CL_2000075) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
+
+
+### appendix goblet cell `http://purl.obolibrary.org/obo/CL_1000327`
+#### Removed
+- [appendix goblet cell](http://purl.obolibrary.org/obo/CL_1000327) SubClassOf [appendix glandular cell](http://purl.obolibrary.org/obo/CL_1001585) 
+
+#### Added
+- [appendix goblet cell](http://purl.obolibrary.org/obo/CL_1000327) SubClassOf [epithelial cell of appendix](http://purl.obolibrary.org/obo/CL_1000405) 
+
+
+### arcuate artery endothelial cell `http://purl.obolibrary.org/obo/CL_1001213`
+#### Removed
+- [arcuate artery endothelial cell](http://purl.obolibrary.org/obo/CL_1001213) SubClassOf [endothelial cell of artery](http://purl.obolibrary.org/obo/CL_1000413) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [arcuate artery endothelial cell](http://purl.obolibrary.org/obo/CL_1001213) SubClassOf [endothelial cell of artery](http://purl.obolibrary.org/obo/CL_1000413) 
 
 
 ### articular chondrocyte of knee joint `http://purl.obolibrary.org/obo/CL_2000007`
@@ -1217,38 +1518,6 @@
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/ManualMappingCuration"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### caudal ganglionic eminence derived GABAergic cortical interneuron `http://purl.obolibrary.org/obo/CL_4023070`
-#### Removed
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20130169"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [label](http://www.w3.org/2000/01/rdf-schema#label) "caudal ganglionic eminence derived GABAergic cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) EquivalentTo [interneuron](http://purl.obolibrary.org/obo/CL_0000099) and ([RO_0002100](http://purl.obolibrary.org/obo/RO_0002100) some [UBERON_0000956](http://purl.obolibrary.org/obo/UBERON_0000956)) and ([RO_0002202](http://purl.obolibrary.org/obo/RO_0002202) some [UBERON_0004026](http://purl.obolibrary.org/obo/UBERON_0004026)) and ([RO_0002215](http://purl.obolibrary.org/obo/RO_0002215) some [GO_0061534](http://purl.obolibrary.org/obo/GO_0061534)) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) SubClassOf [cerebral cortex GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0010011) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) SubClassOf [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
-
-#### Added
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) [2374](https://github.com/obophenotype/cell-ontology/pull/2374) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "caudal ganglionic eminence derived GABAergic interneuron
-and caudal ganglionic eminence derived interneuron are the same cell type. 
-The two must be merged and one needs to be defined as obsolete. 
-We decided to deprecate the entity with the more specific term and redundant qualities 
-in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "OBSOLETE. A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20130169"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete caudal ganglionic eminence derived GABAergic cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### caudal ganglionic eminence derived interneuron `http://purl.obolibrary.org/obo/CL_4023064`
 #### Removed
 - [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "CGE interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1520,6 +1789,27 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### ciliated columnar cell of tracheobronchial tree `http://purl.obolibrary.org/obo/CL_0002145`
+#### Removed
+- [ciliated columnar cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002145) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated columnar cell found in the trachea and bronchus. Vary from low to tall columnar; possesses up to 300 cilia at its surface, interspersed with long irregular microvilli with the cilia varying in length from about 6um in the trachea to about 4um in the terminal bronchioles; driving force of the ciliary current in the bronchial tree."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0517223651"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [ciliated columnar cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002145) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "These cells possess numerous cilia on their surface, typically ranging from 200 to 300 per cell. The cilia vary in length, measuring between 6 to 7 &mu;m in the upper airways (trachea) and becoming shorter, around 4 &mu;m, in the smaller airways (terminal bronchioles). These cells form a two-layered 'coat' in the airway: the lower 'sol' layer is watery, allowing the cilia to beat in coordinated waves, while the upper 'gel' layer is thick and sticky, trapping inhaled particles."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://doi.org/10.1016/B978-032304048-8.50071-2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25386990"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [ciliated columnar cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002145) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A multi-ciliated epithelial cell located in the trachea and bronchi, characterized by a columnar shape and motile cilia on its apical surface. These cilia facilitate mucociliary clearance by moving mucus and trapped particles toward the pharynx."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:28400610"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [ciliated columnar cell of tracheobronchial tree](http://purl.obolibrary.org/obo/CL_0002145) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [GO_0031514](http://purl.obolibrary.org/obo/GO_0031514) 
+
+
 ### ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_0000067`
 #### Removed
 - [ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0000067) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009035"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1558,6 +1848,14 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### club-like cell of the urethral epithelium `http://purl.obolibrary.org/obo/CL_4032000`
+#### Removed
+- [club-like cell of the urethral epithelium](http://purl.obolibrary.org/obo/CL_4032000) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [club-like cell of the urethral epithelium](http://purl.obolibrary.org/obo/CL_4032000) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/cl/cl-base#human_reference_atlas) 
+
+
+
 ### collagen secreting cell `http://purl.obolibrary.org/obo/CL_0000667`
 #### Removed
 - [collagen secreting cell](http://purl.obolibrary.org/obo/CL_0000667) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009287"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1572,6 +1870,42 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Removed
 - [colon endothelial cell](http://purl.obolibrary.org/obo/CL_1001572) SubClassOf [colon epithelial cell](http://purl.obolibrary.org/obo/CL_0011108) 
 
+
+
+### colon goblet cell `http://purl.obolibrary.org/obo/CL_0009039`
+#### Removed
+- [colon goblet cell](http://purl.obolibrary.org/obo/CL_0009039) SubClassOf [colon glandular cell](http://purl.obolibrary.org/obo/CL_1001588) 
+
+#### Added
+- [colon goblet cell](http://purl.obolibrary.org/obo/CL_0009039) SubClassOf [colon epithelial cell](http://purl.obolibrary.org/obo/CL_0011108) 
+
+
+### columnar cell of endocervix `http://purl.obolibrary.org/obo/CL_0002152`
+#### Removed
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A columnar cell of the cervix uteri."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721662544"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0000458](http://purl.obolibrary.org/obo/UBERON_0000458) 
+
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) SubClassOf [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) 
+
+#### Added
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A simple columnar epithelial cell located in the endocervix."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:/10.1016/j.autneu.2015.04.008"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0721662544"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) EquivalentTo [simple columnar epithelial cell](http://purl.obolibrary.org/obo/CL_0000146) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0012252](http://purl.obolibrary.org/obo/UBERON_0012252)) 
+
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) SubClassOf [simple columnar epithelial cell](http://purl.obolibrary.org/obo/CL_0000146) 
+
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) SubClassOf [epithelial cell of cervix](http://purl.obolibrary.org/obo/CL_0002535) 
+
+- [columnar cell of endocervix](http://purl.obolibrary.org/obo/CL_0002152) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0012252](http://purl.obolibrary.org/obo/UBERON_0012252) 
 
 
 ### columnar chondrocyte `http://purl.obolibrary.org/obo/CL_0000744`
@@ -1742,6 +2076,560 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### cycling B cell `http://purl.obolibrary.org/obo/CL_4033068`
+
+#### Added
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating B cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31348891"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling B cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033068"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) B cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31348891"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) EquivalentTo [B cell](http://purl.obolibrary.org/obo/CL_0000236) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling B cell](http://purl.obolibrary.org/obo/CL_4033068) SubClassOf [B cell](http://purl.obolibrary.org/obo/CL_0000236) 
+
+
+### cycling CD4-positive, alpha-beta T cell `http://purl.obolibrary.org/obo/CL_4033075`
+
+#### Added
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) CD4-positive, alpha-beta T cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34062119"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating CD4-positive, alpha-beta T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34062119"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling CD4-positive, alpha-beta T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033075"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) EquivalentTo [CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000624) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) SubClassOf [CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000624) 
+
+- [cycling CD4-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033075) SubClassOf [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) 
+
+
+### cycling CD8-positive, alpha-beta T cell `http://purl.obolibrary.org/obo/CL_4033074`
+
+#### Added
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) CD8-positive, alpha-beta T cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34062119"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033074"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating CD8-positive, alpha-beta T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34062119"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling CD8-positive, alpha-beta T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) EquivalentTo [CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000625) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) SubClassOf [CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_0000625) 
+
+- [cycling CD8-positive, alpha-beta T cell](http://purl.obolibrary.org/obo/CL_4033074) SubClassOf [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) 
+
+
+### cycling T cell `http://purl.obolibrary.org/obo/CL_4033069`
+
+#### Added
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033069"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) T cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) EquivalentTo [T cell](http://purl.obolibrary.org/obo/CL_0000084) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) SubClassOf [T cell](http://purl.obolibrary.org/obo/CL_0000084) 
+
+
+### cycling alveolar macrophage `http://purl.obolibrary.org/obo/CL_4033077`
+
+#### Added
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling alveolar macrophage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033077"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating alveolar macrophage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) alveolar macrophage that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- Class: [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) EquivalentTo [alveolar macrophage](http://purl.obolibrary.org/obo/CL_0000583) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) SubClassOf [alveolar macrophage](http://purl.obolibrary.org/obo/CL_0000583) 
+
+- [cycling alveolar macrophage](http://purl.obolibrary.org/obo/CL_4033077) SubClassOf [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) 
+
+
+### cycling basal cell `http://purl.obolibrary.org/obo/CL_4033082`
+
+#### Added
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling basal cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) basal cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33208946"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033082"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating basal cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33208946"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) EquivalentTo [basal cell](http://purl.obolibrary.org/obo/CL_0000646) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) SubClassOf [basal cell](http://purl.obolibrary.org/obo/CL_0000646) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling basal cell](http://purl.obolibrary.org/obo/CL_4033082) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
+
+### cycling dendritic cell `http://purl.obolibrary.org/obo/CL_4033070`
+
+#### Added
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) dendritic cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32066951"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling dendritic cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033070"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating dendritic cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32066951"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) EquivalentTo [dendritic cell](http://purl.obolibrary.org/obo/CL_0000451) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) SubClassOf [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) 
+
+- [cycling dendritic cell](http://purl.obolibrary.org/obo/CL_4033070) SubClassOf [dendritic cell](http://purl.obolibrary.org/obo/CL_0000451) 
+
+
+### cycling endothelial cell of lymphatic vessel `http://purl.obolibrary.org/obo/CL_4033079`
+
+#### Added
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) endothelial cell of lymphatic vessel that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating endothelial cell of lymphatic vessel"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033079"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling endothelial cell of lymphatic vessel"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- Class: [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) EquivalentTo [endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_0002138) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_4033079) SubClassOf [endothelial cell of lymphatic vessel](http://purl.obolibrary.org/obo/CL_0002138) 
+
+
+### cycling gamma-delta T cell `http://purl.obolibrary.org/obo/CL_4033072`
+
+#### Added
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033072"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) gamma-delta T cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32066951"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling gamma-delta T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating gamma-delta T cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32066951"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) EquivalentTo [gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000798) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) SubClassOf [gamma-delta T cell](http://purl.obolibrary.org/obo/CL_0000798) 
+
+- [cycling gamma-delta T cell](http://purl.obolibrary.org/obo/CL_4033072) SubClassOf [cycling T cell](http://purl.obolibrary.org/obo/CL_4033069) 
+
+
+### cycling glial cell `http://purl.obolibrary.org/obo/CL_4047002`
+
+#### Added
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating glial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4047002"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) [date](http://purl.org/dc/terms/date) "2024-07-19T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) glial cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) [contributor](http://purl.org/dc/terms/contributor) [0009-0005-7919-4905](https://orcid.org/0009-0005-7919-4905) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling glial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) EquivalentTo [glial cell](http://purl.obolibrary.org/obo/CL_0000125) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling glial cell](http://purl.obolibrary.org/obo/CL_4047002) SubClassOf [glial cell](http://purl.obolibrary.org/obo/CL_0000125) 
+
+
+### cycling macrophage `http://purl.obolibrary.org/obo/CL_4033076`
+
+#### Added
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033076"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling macrophage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating macrophage"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33208946"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) macrophage that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33208946"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) EquivalentTo [macrophage](http://purl.obolibrary.org/obo/CL_0000235) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) SubClassOf [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) SubClassOf [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) 
+
+- [cycling macrophage](http://purl.obolibrary.org/obo/CL_4033076) SubClassOf [macrophage](http://purl.obolibrary.org/obo/CL_0000235) 
+
+
+### cycling monocyte `http://purl.obolibrary.org/obo/CL_4033073`
+
+#### Added
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033073"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating monocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31348891"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling monocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) monocyte that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31348891"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) EquivalentTo [monocyte](http://purl.obolibrary.org/obo/CL_0000576) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) SubClassOf [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) SubClassOf [monocyte](http://purl.obolibrary.org/obo/CL_0000576) 
+
+- [cycling monocyte](http://purl.obolibrary.org/obo/CL_4033073) SubClassOf [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) 
+
+
+### cycling mononuclear phagocyte `http://purl.obolibrary.org/obo/CL_4033078`
+
+#### Added
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling mononuclear phagocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) mononuclear phagocyte that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37468583"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating mononuclear phagocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37468583"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033078"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) EquivalentTo [mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_0000113) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_4033078) SubClassOf [mononuclear phagocyte](http://purl.obolibrary.org/obo/CL_0000113) 
+
+
+### cycling myeloid cell `http://purl.obolibrary.org/obo/CL_4033081`
+
+#### Added
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033081"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating myeloid cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:38301653"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) myeloid cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:38301653"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling myeloid cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) EquivalentTo [myeloid cell](http://purl.obolibrary.org/obo/CL_0000763) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) SubClassOf [myeloid cell](http://purl.obolibrary.org/obo/CL_0000763) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling myeloid cell](http://purl.obolibrary.org/obo/CL_4033081) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+
+### cycling natural killer cell `http://purl.obolibrary.org/obo/CL_4033071`
+
+#### Added
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033071"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) natural killer cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34062119"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating natural killer cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34062119"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling natural killer cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) EquivalentTo [natural killer cell](http://purl.obolibrary.org/obo/CL_0000623) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling natural killer cell](http://purl.obolibrary.org/obo/CL_4033071) SubClassOf [natural killer cell](http://purl.obolibrary.org/obo/CL_0000623) 
+
+
+### cycling neuroblast (sensu Vertebrata) `http://purl.obolibrary.org/obo/CL_4047005`
+
+#### Added
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4047005"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling neuroblast (sensu Vertebrata)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) [contributor](http://purl.org/dc/terms/contributor) [0009-0005-7919-4905](https://orcid.org/0009-0005-7919-4905) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) neuroblast (sensu Vertebrata) that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating neuroblast (sensu Vertebrata)"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) [date](http://purl.org/dc/terms/date) "2024-07-19T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) EquivalentTo [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) SubClassOf [neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_0000031) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
+- [cycling neuroblast (sensu Vertebrata)](http://purl.obolibrary.org/obo/CL_4047005) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+
+### cycling plasma cell `http://purl.obolibrary.org/obo/CL_4047003`
+
+#### Added
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) [date](http://purl.org/dc/terms/date) "2024-07-19T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling plasma cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4047003"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) [contributor](http://purl.org/dc/terms/contributor) [0009-0005-7919-4905](https://orcid.org/0009-0005-7919-4905) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating plasma cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) plasma cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) EquivalentTo [plasma cell](http://purl.obolibrary.org/obo/CL_0000786) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) SubClassOf [plasma cell](http://purl.obolibrary.org/obo/CL_0000786) 
+
+- [cycling plasma cell](http://purl.obolibrary.org/obo/CL_4047003) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+
+### cycling pulmonary alveolar type 2 cell `http://purl.obolibrary.org/obo/CL_4033080`
+
+#### Added
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) pulmonary alveolar type 2 cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating pulmonary alveolar type 2 cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling pulmonary alveolar type 2 cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) [date](http://purl.org/dc/terms/date) "2024-07-02T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4033080"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) [contributor](http://purl.org/dc/terms/contributor) [0000-0001-6677-8489](https://orcid.org/0000-0001-6677-8489) 
+
+- Class: [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) EquivalentTo [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_4033080) SubClassOf [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) 
+
+
+### cycling stromal cell `http://purl.obolibrary.org/obo/CL_4047001`
+
+#### Added
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) [date](http://purl.org/dc/terms/date) "2024-07-19T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling stromal cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating stromal cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) [contributor](http://purl.org/dc/terms/contributor) [0009-0005-7919-4905](https://orcid.org/0009-0005-7919-4905) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4047001"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) stromal cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) EquivalentTo [stromal cell](http://purl.obolibrary.org/obo/CL_0000499) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) SubClassOf [stromal cell](http://purl.obolibrary.org/obo/CL_0000499) 
+
+- [cycling stromal cell](http://purl.obolibrary.org/obo/CL_4047001) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+
+### cycling type EC enteroendocrine cell `http://purl.obolibrary.org/obo/CL_4047004`
+
+#### Added
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4047004"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "proliferating type EC enteroendocrine cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) [label](http://www.w3.org/2000/01/rdf-schema#label) "cycling type EC enteroendocrine cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A(n) type EC enteroendocrine cell that is cycling."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:34497389"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) [contributor](http://purl.org/dc/terms/contributor) [0009-0005-7919-4905](https://orcid.org/0009-0005-7919-4905) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) [date](http://purl.org/dc/terms/date) "2024-07-19T09:14:23Z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) EquivalentTo [type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000577) and ([RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402)) and ([RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354)) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) SubClassOf [type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000577) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) SubClassOf [RO_0000056](http://purl.obolibrary.org/obo/RO_0000056) some [GO_0022402](http://purl.obolibrary.org/obo/GO_0022402) 
+
+- [cycling type EC enteroendocrine cell](http://purl.obolibrary.org/obo/CL_4047004) SubClassOf [RO_0000086](http://purl.obolibrary.org/obo/RO_0000086) some [PATO_0002354](http://purl.obolibrary.org/obo/PATO_0002354) 
+
+
 ### dendritic cell `http://purl.obolibrary.org/obo/CL_0000451`
 #### Removed
 - [dendritic cell](http://purl.obolibrary.org/obo/CL_0000451) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009209"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -1854,6 +2742,14 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [duct epithelial cell](http://purl.obolibrary.org/obo/CL_0000068) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009372"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### duodenal goblet cell `http://purl.obolibrary.org/obo/CL_1000324`
+#### Removed
+- [duodenal goblet cell](http://purl.obolibrary.org/obo/CL_1000324) SubClassOf [duodenum glandular cell](http://purl.obolibrary.org/obo/CL_1001589) 
+
+#### Added
+- [duodenal goblet cell](http://purl.obolibrary.org/obo/CL_1000324) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0008346](http://purl.obolibrary.org/obo/UBERON_0008346) 
 
 
 ### early embryonic cell (metazoa) `http://purl.obolibrary.org/obo/CL_0000007`
@@ -1980,14 +2876,6 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [embryonic fibroblast](http://purl.obolibrary.org/obo/CL_2000042) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
 
 
-### embryonic gland hemocyte `http://purl.obolibrary.org/obo/CL_0000736`
-#### Removed
-- [embryonic gland hemocyte](http://purl.obolibrary.org/obo/CL_0000736) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic gland hemocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [embryonic gland hemocyte](http://purl.obolibrary.org/obo/CL_0000736) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete embryonic gland hemocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
 ### endo-epithelial cell `http://purl.obolibrary.org/obo/CL_0002076`
 #### Removed
 - [endo-epithelial cell](http://purl.obolibrary.org/obo/CL_0002076) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009383"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2018,6 +2906,38 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [endodermal cell](http://purl.obolibrary.org/obo/CL_0000223) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009139"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### endometrial ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_4030040`
+#### Removed
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated cell of the endometrial epithelium. The cilia of this cell type help move mucus from glandular tissue of the endometrium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://www.proteinatlas.org/humanproteome/single+cell+type/Glandular+epithelial+cells#endometrialciliatedcells"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41591-020-1040-z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) EquivalentTo [ciliated cell](http://purl.obolibrary.org/obo/CL_0000064) and [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0004811](http://purl.obolibrary.org/obo/UBERON_0004811)) 
+
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) SubClassOf [ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0000067) 
+
+#### Added
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A multi-ciliated cell of the endometrial epithelium. This cell is characterized by the presence of 9+2 motile cilia on its apical surface, which facilitates the movement of mucus across the endometrial surface."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://www.proteinatlas.org/humanproteome/single+cell+type/Glandular+epithelial+cells#endometrialciliatedcells"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:31290979"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1016/j.coemr.2024.100503"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37999981"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41591-020-1040-z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) EquivalentTo [multi-ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0005012) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0004811](http://purl.obolibrary.org/obo/UBERON_0004811)) and ([BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [GO_0097729](http://purl.obolibrary.org/obo/GO_0097729)) 
+
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) SubClassOf [multi-ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_0005012) 
+
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) SubClassOf [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) 
+
+- [endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030040) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [GO_0097729](http://purl.obolibrary.org/obo/GO_0097729) 
 
 
 ### endometrial microvascular endothelial cell `http://purl.obolibrary.org/obo/CL_2000091`
@@ -2095,7 +3015,7 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 ### endothelial cell of hepatic sinusoid `http://purl.obolibrary.org/obo/CL_1000398`
 
 #### Added
-- [endothelial cell of hepatic sinusoid](http://purl.obolibrary.org/obo/CL_1000398) SubClassOf [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) 
+- [endothelial cell of hepatic sinusoid](http://purl.obolibrary.org/obo/CL_1000398) SubClassOf [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) 
 
 
 ### endothelial cell of high endothelial venule `http://purl.obolibrary.org/obo/CL_0002652`
@@ -2165,6 +3085,12 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [endothelial tip cell](http://purl.obolibrary.org/obo/CL_0000704) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009303"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### endovascular extravillous trophoblast cell `http://purl.obolibrary.org/obo/CL_4033063`
+#### Removed
+- [endovascular extravillous trophoblast cell](http://purl.obolibrary.org/obo/CL_4033063) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
 
 
 ### enkephalin secreting cell `http://purl.obolibrary.org/obo/CL_0000506`
@@ -2304,6 +3230,22 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [epithelial cell of alveolus of lung](http://purl.obolibrary.org/obo/CL_0010003) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+
+
+### epithelial cell of cervix `http://purl.obolibrary.org/obo/CL_0002535`
+#### Removed
+- [epithelial cell of cervix](http://purl.obolibrary.org/obo/CL_0002535) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+
+#### Added
+- [epithelial cell of cervix](http://purl.obolibrary.org/obo/CL_0002535) SubClassOf [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) 
+
+
+### epithelial cell of endometrial gland `http://purl.obolibrary.org/obo/CL_0009084`
+#### Removed
+- [epithelial cell of endometrial gland](http://purl.obolibrary.org/obo/CL_0009084) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+
+#### Added
+- [epithelial cell of endometrial gland](http://purl.obolibrary.org/obo/CL_0009084) SubClassOf [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) 
 
 
 ### epithelial cell of esophagus `http://purl.obolibrary.org/obo/CL_0002252`
@@ -2481,6 +3423,35 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [epithelial cell of upper respiratory tract](http://purl.obolibrary.org/obo/CL_0002631) SubClassOf [respiratory epithelial cell](http://purl.obolibrary.org/obo/CL_0002368) 
 
 
+### epithelial cell of uterus `http://purl.obolibrary.org/obo/CL_0002149`
+#### Removed
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell of the uterus."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) EquivalentTo [endo-epithelial cell](http://purl.obolibrary.org/obo/CL_0002076) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0000995](http://purl.obolibrary.org/obo/UBERON_0000995)) 
+
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0000995](http://purl.obolibrary.org/obo/UBERON_0000995) 
+
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) SubClassOf [endo-epithelial cell](http://purl.obolibrary.org/obo/CL_0002076) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell of the uterus. This cell has a mesodermal origin."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:16960017"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11331626"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:21698266"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0006955](http://purl.obolibrary.org/obo/UBERON_0006955)) 
+
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) SubClassOf [meso-epithelial cell](http://purl.obolibrary.org/obo/CL_0002078) 
+
+- [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0006955](http://purl.obolibrary.org/obo/UBERON_0006955) 
+
+
 ### erythroblast `http://purl.obolibrary.org/obo/CL_0000765`
 #### Removed
 - [erythroblast](http://purl.obolibrary.org/obo/CL_0000765) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0005237"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2609,6 +3580,18 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [eye_upper_slim](http://purl.obolibrary.org/obo/cl/cl-base#eye_upper_slim) SubPropertyOf: [subset_property](http://www.geneontology.org/formats/oboInOwl#SubsetProperty) 
 
 
+### fallopian tube ciliated cell `http://purl.obolibrary.org/obo/CL_4030007`
+
+#### Added
+- [fallopian tube ciliated cell](http://purl.obolibrary.org/obo/CL_4030007) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0003889](http://purl.obolibrary.org/obo/UBERON_0003889) 
+
+
+### fallopian tube secretory epithelial cell `http://purl.obolibrary.org/obo/CL_4030006`
+
+#### Added
+- [fallopian tube secretory epithelial cell](http://purl.obolibrary.org/obo/CL_4030006) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0003889](http://purl.obolibrary.org/obo/UBERON_0003889) 
+
+
 ### fast muscle cell `http://purl.obolibrary.org/obo/CL_0000190`
 #### Removed
 - [fast muscle cell](http://purl.obolibrary.org/obo/CL_0000190) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009117"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2647,43 +3630,43 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [femural osteoblast](http://purl.obolibrary.org/obo/CL_2000057) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
 
 
-### fenestrated cell `http://purl.obolibrary.org/obo/CL_0000666`
+### fenestrated endothelial cell `http://purl.obolibrary.org/obo/CL_0000666`
 #### Removed
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) [label](http://www.w3.org/2000/01/rdf-schema#label) "fenestrated cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) [label](http://www.w3.org/2000/01/rdf-schema#label) "fenestrated cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009286"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009286"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](http://purl.obolibrary.org/obo/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
 
 #### Added
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that has small pores, or fenestrations, which allow for the efficient exchange of substances between the blood and surrounding tissues."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that has small pores, or fenestrations, which allow for the efficient exchange of substances between the blood and surrounding tissues."^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "DOI:10.1007/978-3-211-99390-3_133"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) [label](http://www.w3.org/2000/01/rdf-schema#label) "fenestrated endothelial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) [label](http://www.w3.org/2000/01/rdf-schema#label) "fenestrated endothelial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009286"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009286"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) EquivalentTo [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) and ([RO_0000053](http://purl.obolibrary.org/obo/RO_0000053) some [PATO_0002064](http://purl.obolibrary.org/obo/PATO_0002064)) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) EquivalentTo [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) and ([RO_0000053](http://purl.obolibrary.org/obo/RO_0000053) some [PATO_0002064](http://purl.obolibrary.org/obo/PATO_0002064)) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [RO_0000053](http://purl.obolibrary.org/obo/RO_0000053) some [PATO_0002064](http://purl.obolibrary.org/obo/PATO_0002064) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [RO_0000053](http://purl.obolibrary.org/obo/RO_0000053) some [PATO_0002064](http://purl.obolibrary.org/obo/PATO_0002064) 
 
-- [fenestrated cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) 
+- [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) SubClassOf [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) 
 
 
-### fetal pre-type II pneumocyte `http://purl.obolibrary.org/obo/CL_4040003`
+### fetal pre-type II pulmonary alveolar epithelial cell `http://purl.obolibrary.org/obo/CL_4040003`
 #### Removed
-- [fetal pre-type II pneumocyte](http://purl.obolibrary.org/obo/CL_4040003) [label](http://www.w3.org/2000/01/rdf-schema#label) "fetal pre-type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fetal pre-type II pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_4040003) [label](http://www.w3.org/2000/01/rdf-schema#label) "fetal pre-type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fetal pre-type II pneumocyte](http://purl.obolibrary.org/obo/CL_4040003) [note](http://purl.obolibrary.org/obo/cl/cl-base#note) "According to PMID:1316350 this cell type does not yet produce surfactant. According to PMID:9109447 and PMID:12114192 this cell type produces low levels of surfactant that can be increased by administration of very low-density lipoproteins. This cell type is of medical relevance, as a central feature of the fetal respiratory distress syndrome seems to be the presence in the lung of abundant pre-type II alveolar epithelial cells (PMID:1316350)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fetal pre-type II pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_4040003) [note](http://purl.obolibrary.org/obo/cl/cl-base#note) "According to PMID:1316350 this cell type does not yet produce surfactant. According to PMID:9109447 and PMID:12114192 this cell type produces low levels of surfactant that can be increased by administration of very low-density lipoproteins. This cell type is of medical relevance, as a central feature of the fetal respiratory distress syndrome seems to be the presence in the lung of abundant pre-type II alveolar epithelial cells (PMID:1316350)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
-- [fetal pre-type II pneumocyte](http://purl.obolibrary.org/obo/CL_4040003) [note](http://www.geneontology.org/formats/oboInOwl#note) "According to PMID:1316350 this cell type does not yet produce surfactant. According to PMID:9109447 and PMID:12114192 this cell type produces low levels of surfactant that can be increased by administration of very low-density lipoproteins. This cell type is of medical relevance, as a central feature of the fetal respiratory distress syndrome seems to be the presence in the lung of abundant pre-type II alveolar epithelial cells (PMID:1316350)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fetal pre-type II pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_4040003) [note](http://www.geneontology.org/formats/oboInOwl#note) "According to PMID:1316350 this cell type does not yet produce surfactant. According to PMID:9109447 and PMID:12114192 this cell type produces low levels of surfactant that can be increased by administration of very low-density lipoproteins. This cell type is of medical relevance, as a central feature of the fetal respiratory distress syndrome seems to be the presence in the lung of abundant pre-type II alveolar epithelial cells (PMID:1316350)."^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fetal pre-type II pneumocyte](http://purl.obolibrary.org/obo/CL_4040003) [label](http://www.w3.org/2000/01/rdf-schema#label) "fetal pre-type II pulmonary alveolar epithelial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fetal pre-type II pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_4040003) [label](http://www.w3.org/2000/01/rdf-schema#label) "fetal pre-type II pulmonary alveolar epithelial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
-- [fetal pre-type II pneumocyte](http://purl.obolibrary.org/obo/CL_4040003) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "fetal pre-type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [fetal pre-type II pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_4040003) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "fetal pre-type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### fibroblast `http://purl.obolibrary.org/obo/CL_0000057`
@@ -2768,6 +3751,8 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Removed
 - [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009281"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](http://purl.obolibrary.org/obo/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) SubClassOf [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) 
 
 #### Added
 - [folliculostellate cell](http://purl.obolibrary.org/obo/CL_0000642) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009281"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2900,6 +3885,45 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### glandular cell of endometrium `http://purl.obolibrary.org/obo/CL_0002656`
+#### Removed
+- [glandular cell of endometrium](http://purl.obolibrary.org/obo/CL_0002656) EquivalentTo [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001295](http://purl.obolibrary.org/obo/UBERON_0001295)) 
+
+- [glandular cell of endometrium](http://purl.obolibrary.org/obo/CL_0002656) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001295](http://purl.obolibrary.org/obo/UBERON_0001295) 
+
+#### Added
+- [glandular cell of endometrium](http://purl.obolibrary.org/obo/CL_0002656) EquivalentTo [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0004811](http://purl.obolibrary.org/obo/UBERON_0004811)) 
+
+- [glandular cell of endometrium](http://purl.obolibrary.org/obo/CL_0002656) SubClassOf [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) 
+
+- [glandular cell of endometrium](http://purl.obolibrary.org/obo/CL_0002656) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0004811](http://purl.obolibrary.org/obo/UBERON_0004811) 
+
+
+### glandular endometrial ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_4030042`
+#### Removed
+- [glandular endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030042) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated cell of the endometrial glandular epithelium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41591-020-1040-z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [glandular endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030042) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated cell of the endometrial glandular epithelium. This cell is characterized by the presence of motile cilia on its apical surface."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41591-020-1040-z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### glandular epithelial cell of stomach `http://purl.obolibrary.org/obo/CL_0002659`
+#### Removed
+- [glandular epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002659) [label](http://www.w3.org/2000/01/rdf-schema#label) "glandular cell of stomach"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [glandular epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002659) SubClassOf [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [glandular epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002659) [label](http://www.w3.org/2000/01/rdf-schema#label) "glandular epithelial cell of stomach"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [glandular epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002659) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "glandular cell of stomach"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [glandular epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002659) SubClassOf [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) 
+
+
 ### glial cell `http://purl.obolibrary.org/obo/CL_0000125`
 #### Removed
 - [glial cell](http://purl.obolibrary.org/obo/CL_0000125) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00005144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -2948,12 +3972,19 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 ### glomerular capillary endothelial cell `http://purl.obolibrary.org/obo/CL_1001005`
 #### Removed
+- [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any kidney capillary endothelial cell that is part of some glomerular capillary endothelium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) SubClassOf [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) 
   - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) SubClassOf [capillary endothelial cell](http://purl.obolibrary.org/obo/CL_0002144) 
 
 - [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) SubClassOf [kidney glomerular epithelial cell](http://purl.obolibrary.org/obo/CL_1000510) 
 
 #### Added
+- [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of the glomerular capillary of the kidney."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [glomerular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001005) SubClassOf [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) 
 
 
@@ -2968,15 +3999,34 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 ### glomerular endothelial cell `http://purl.obolibrary.org/obo/CL_0002188`
 #### Removed
+- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell found in the glomerulus of the kidney. This cell is flattened, highly fenestrated, and plays a vital role in the formation of glomerular ultrafiltrate."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15840009"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) SubClassOf [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) 
   - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) SubClassOf [glomerular cell](http://purl.obolibrary.org/obo/CL_1000746) 
 
 #### Added
-- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) SubClassOf [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) 
+- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of the glomerulus of the kidney. This cell is flattened, highly fenestrated, and plays a vital role in the formation of glomerular ultrafiltrate."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:15840009"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Glomerular endothelial cells have 60-80 nm fenestrations typically lacking diaphragms in adults but present during embryonic development. Some studies found diaphragms in 2-6% of mature rat glomerular capillaries. Their presence may depend on fixation techniques, developmental stage, or dynamic cell changes. Additionally, these cells help maintain the structural integrity of glomerular capillaries through interactions with the basement membrane and podocytes."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:18480313"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19129259"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:33123011"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0000074](http://purl.obolibrary.org/obo/UBERON_0000074) 
+
+- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [GO_0036053](http://purl.obolibrary.org/obo/GO_0036053) 
+
+- [glomerular endothelial cell](http://purl.obolibrary.org/obo/CL_0002188) SubClassOf [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) 
 
 
 ### glucagon secreting cell `http://purl.obolibrary.org/obo/CL_0000170`
@@ -3046,9 +4096,34 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009094"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](http://purl.obolibrary.org/obo/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell of the epithelial lining that produce and secrete mucins."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D020397"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) SubClassOf [mucus secreting cell](http://purl.obolibrary.org/obo/CL_0000319) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) SubClassOf [glandular epithelial cell](http://purl.obolibrary.org/obo/CL_0000150) 
+
 #### Added
 - [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009094"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) [depiction](http://xmlns.com/foaf/0.1/depiction) "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/404_Goblet_Cell_new.jpg/800px-404_Goblet_Cell_new.jpg"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://cnx.org/content/col11496/1.6/"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://commons.wikimedia.org/w/index.php?curid=30131227"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A specialized, columnar, mucus secreting epithelial cell shaped like a flask or goblet. A narrow basal end contains the nucleus while the apical end is swollen by the accumulation of mucus laden secretory granules.  Short microvilli project from the apical plasma membrane."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://en.wikipedia.org/wiki/Goblet_cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D020397"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [GO_0098594](http://purl.obolibrary.org/obo/GO_0098594) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) SubClassOf [RO_0002215](http://purl.obolibrary.org/obo/RO_0002215) some [GO_0070254](http://purl.obolibrary.org/obo/GO_0070254) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) SubClassOf [BFO_0000051](http://purl.obolibrary.org/obo/BFO_0000051) some [GO_0005902](http://purl.obolibrary.org/obo/GO_0005902) 
+
+- [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) SubClassOf [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) 
 
 
 ### gonadtroph `http://purl.obolibrary.org/obo/CL_0000437`
@@ -3141,12 +4216,28 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [hair follicle dermal papilla cell of scalp](http://purl.obolibrary.org/obo/CL_2000083) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
 
 
+### hair follicle melanocyte `http://purl.obolibrary.org/obo/CL_0002483`
+
+#### Added
+- [hair follicle melanocyte](http://purl.obolibrary.org/obo/CL_0002483) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/cl/cl-base#human_reference_atlas) 
+
+- [hair follicle melanocyte](http://purl.obolibrary.org/obo/CL_0002483) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+
 ### hair follicular keratinocyte `http://purl.obolibrary.org/obo/CL_2000092`
 #### Removed
 - [hair follicular keratinocyte](http://purl.obolibrary.org/obo/CL_2000092) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](https://www.wikidata.org/entity/Q35563349) 
 
 #### Added
 - [hair follicular keratinocyte](http://purl.obolibrary.org/obo/CL_2000092) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
+
+
+### hair germinal matrix cell `http://purl.obolibrary.org/obo/CL_0002562`
+
+#### Added
+- [hair germinal matrix cell](http://purl.obolibrary.org/obo/CL_0002562) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/cl/cl-base#human_reference_atlas) 
+
+- [hair germinal matrix cell](http://purl.obolibrary.org/obo/CL_0002562) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
 
 
 ### hatching gland cell `http://purl.obolibrary.org/obo/CL_0000249`
@@ -3217,6 +4308,14 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [hepatocyte](http://purl.obolibrary.org/obo/CL_0000182) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009111"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### hillock cell of prostatic urethral epithelium `http://purl.obolibrary.org/obo/CL_0017011`
+#### Removed
+- [hillock cell of prostatic urethral epithelium](http://purl.obolibrary.org/obo/CL_0017011) [RO_0002175](http://purl.obolibrary.org/obo/RO_0002175) [NCBITaxon_9606](http://purl.obolibrary.org/obo/NCBITaxon_9606) 
+
+- [hillock cell of prostatic urethral epithelium](http://purl.obolibrary.org/obo/CL_0017011) [in_subset](http://www.geneontology.org/formats/oboInOwl#inSubset) [human_reference_atlas](http://purl.obolibrary.org/obo/cl/cl-base#human_reference_atlas) 
+
 
 
 ### hindlimb stylopod vein endothelial cell `http://purl.obolibrary.org/obo/CL_2000076`
@@ -3353,6 +4452,12 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [inner cell mass cell](http://purl.obolibrary.org/obo/CL_2000020) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
 
 
+### inner renal medulla vasa recta cell `http://purl.obolibrary.org/obo/CL_1001126`
+
+#### Added
+- [inner renal medulla vasa recta cell](http://purl.obolibrary.org/obo/CL_1001126) SubClassOf [kidney venous blood vessel cell](http://purl.obolibrary.org/obo/CL_1000893) 
+
+
 ### insect flight muscle cell `http://purl.obolibrary.org/obo/CL_0000196`
 #### Removed
 - [insect flight muscle cell](http://purl.obolibrary.org/obo/CL_0000196) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00003360"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -3417,6 +4522,12 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 - [interneuron](http://purl.obolibrary.org/obo/CL_0000099) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00005125"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/ManualMappingCuration"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### interstitial extravillous trophoblast cell `http://purl.obolibrary.org/obo/CL_4033062`
+#### Removed
+- [interstitial extravillous trophoblast cell](http://purl.obolibrary.org/obo/CL_4033062) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
 
 
 ### intestinal epithelial cell `http://purl.obolibrary.org/obo/CL_0002563`
@@ -3511,10 +4622,59 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 ### kidney afferent arteriole cell `http://purl.obolibrary.org/obo/CL_1001006`
 #### Removed
+- [kidney afferent arteriole cell](http://purl.obolibrary.org/obo/CL_1001006) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any kidney arterial blood vessel cell that is part of some renal afferent arteriole."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [kidney afferent arteriole cell](http://purl.obolibrary.org/obo/CL_1001006) SubClassOf [kidney corpuscule cell](http://purl.obolibrary.org/obo/CL_1000612) 
 
 #### Added
+- [kidney afferent arteriole cell](http://purl.obolibrary.org/obo/CL_1001006) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell which is part of the afferent arteriole in the kidney. This cell is  responsible for maintaining renal blood flow and glomerular filtration rate."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24066938"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22733355"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25834230"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:16990493"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [kidney afferent arteriole cell](http://purl.obolibrary.org/obo/CL_1001006) SubClassOf [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) 
+
+
+### kidney afferent arteriole endothelial cell `http://purl.obolibrary.org/obo/CL_1001096`
+#### Removed
+- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any endothelial cell that is part of some renal afferent arteriole."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) SubClassOf [endothelial cell of arteriole](http://purl.obolibrary.org/obo/CL_1000412) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that lines the interior surface of the afferent arteriole and maintains vascular tone. This cell responds to changing ion concentrations and blood pressure by releasing vasoactive substances, in order to regulate blood flow into the glomeruli, which is essential for glomerular filtration."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24066938"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22733355"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25834230"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:16990493"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney afferent arteriole endothelial cell](http://purl.obolibrary.org/obo/CL_1001096) SubClassOf [endothelial cell of arteriole](http://purl.obolibrary.org/obo/CL_1000412) 
+
+
+### kidney afferent arteriole smooth muscle cell `http://purl.obolibrary.org/obo/CL_1001097`
+#### Removed
+- [kidney afferent arteriole smooth muscle cell](http://purl.obolibrary.org/obo/CL_1001097) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any smooth muscle cell that is part of some renal afferent arteriole."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [kidney afferent arteriole smooth muscle cell](http://purl.obolibrary.org/obo/CL_1001097) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A smooth muscle cell found in the wall of the afferent arteriole. This cell contracts and relaxes in response to changes in blood pressure, a process known as a myogenic response, to alter artery diameter and regulate blood flow into the glomeruli."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:24066938"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:22733355"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:25834230"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:16990493"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### kidney arteriole smooth muscle cell `http://purl.obolibrary.org/obo/CL_1001066`
@@ -3533,6 +4693,23 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Removed
 - [kidney blood vessel cell](http://purl.obolibrary.org/obo/CL_1000854) SubClassOf [renal cortical epithelial cell](http://purl.obolibrary.org/obo/CL_0002584) 
 
+
+
+### kidney capillary endothelial cell `http://purl.obolibrary.org/obo/CL_1000892`
+#### Removed
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any kidney blood vessel cell that is part of some kidney capillary."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) EquivalentTo [kidney blood vessel cell](http://purl.obolibrary.org/obo/CL_1000854) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0003527](http://purl.obolibrary.org/obo/UBERON_0003527)) 
+
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) SubClassOf [blood vessel endothelial cell](http://purl.obolibrary.org/obo/CL_0000071) 
+
+#### Added
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of the capillary of the kidney."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) EquivalentTo [endothelial cell](http://purl.obolibrary.org/obo/CL_0000115) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0003527](http://purl.obolibrary.org/obo/UBERON_0003527)) 
+
+- [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) SubClassOf [capillary endothelial cell](http://purl.obolibrary.org/obo/CL_0002144) 
 
 
 ### kidney cell `http://purl.obolibrary.org/obo/CL_1000497`
@@ -3567,10 +4744,15 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 ### kidney cortex peritubular capillary cell `http://purl.obolibrary.org/obo/CL_1001124`
 #### Removed
+- [kidney cortex peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001124) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any peritubular capillary endothelial cell that is part of some renal cortex peritubular capillary."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [kidney cortex peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001124) SubClassOf [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) 
   - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 #### Added
+- [kidney cortex peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001124) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of the peritubular capillary of the renal cortex."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
 - [kidney cortex peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001124) SubClassOf [kidney cortical cell](http://purl.obolibrary.org/obo/CL_0002681) 
 
 - [kidney cortex peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001124) SubClassOf [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) 
@@ -3644,6 +4826,25 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### kidney outer medulla peritubular capillary cell `http://purl.obolibrary.org/obo/CL_1001123`
+#### Removed
+- [kidney outer medulla peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001123) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any peritubular capillary endothelial cell that is part of some outer renal medulla peritubular capillary."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney outer medulla peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001123) SubClassOf [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney outer medulla peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001123) SubClassOf [kidney outer medulla cell](http://purl.obolibrary.org/obo/CL_1000616) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [kidney outer medulla peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001123) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of the peritubular capillary of the outer renal medulla."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [kidney outer medulla peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001123) SubClassOf [kidney outer medulla cell](http://purl.obolibrary.org/obo/CL_1000616) 
+
+- [kidney outer medulla peritubular capillary cell](http://purl.obolibrary.org/obo/CL_1001123) SubClassOf [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) 
+
+
 ### kidney proximal convoluted tubule epithelial cell `http://purl.obolibrary.org/obo/CL_1000838`
 #### Removed
 - [kidney proximal convoluted tubule epithelial cell](http://purl.obolibrary.org/obo/CL_1000838) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any epithelial cell of proximal tubule that is part of some proximal convoluted tubule."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -3695,6 +4896,14 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [lamp5 GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023011) SubClassOf [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
+
+
+### large intestine goblet cell `http://purl.obolibrary.org/obo/CL_1000320`
+#### Removed
+- [large intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000320) SubClassOf [glandular cell of the large intestine](http://purl.obolibrary.org/obo/CL_0002658) 
+
+#### Added
+- [large intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000320) SubClassOf [epithelial cell of large intestine](http://purl.obolibrary.org/obo/CL_0002253) 
 
 
 ### lateral line ganglion neuron `http://purl.obolibrary.org/obo/CL_2000031`
@@ -3791,6 +5000,24 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [liver dendritic cell](http://purl.obolibrary.org/obo/CL_2000055) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
 
 
+### luminal endometrial ciliated epithelial cell `http://purl.obolibrary.org/obo/CL_4030041`
+#### Removed
+- [luminal endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030041) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated cell of the endometrial luminal epithelium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41591-020-1040-z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [luminal endometrial ciliated epithelial cell](http://purl.obolibrary.org/obo/CL_4030041) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A ciliated cell of the endometrial luminal epithelium. This cell is characterized by the presence of motile cilia on its apical surface."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1038/s41591-020-1040-z"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### luminal hormone-sensing cell of mammary gland `http://purl.obolibrary.org/obo/CL_4033058`
+#### Removed
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) 
+
+- [luminal hormone-sensing cell of mammary gland](http://purl.obolibrary.org/obo/CL_4033058) SubClassOf [exocrine cell](http://purl.obolibrary.org/obo/CL_0000152) 
+
+
+
 ### lung endothelial cell `http://purl.obolibrary.org/obo/CL_1001567`
 #### Removed
 - [lung endothelial cell](http://purl.obolibrary.org/obo/CL_1001567) SubClassOf [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) 
@@ -3803,6 +5030,8 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBC:Autogenerated"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 - [lung goblet cell](http://purl.obolibrary.org/obo/CL_1000143) EquivalentTo [goblet cell](http://purl.obolibrary.org/obo/CL_0000160) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0002048](http://purl.obolibrary.org/obo/UBERON_0002048)) 
+
+- [lung goblet cell](http://purl.obolibrary.org/obo/CL_1000143) SubClassOf [lung secretory cell](http://purl.obolibrary.org/obo/CL_1000272) 
 
 #### Added
 - [lung goblet cell](http://purl.obolibrary.org/obo/CL_1000143) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "Any goblet cell that is part of some lung epithelium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -4347,6 +5576,38 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/ManualMappingCuration"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### mucous cell of stomach `http://purl.obolibrary.org/obo/CL_0002180`
+#### Removed
+- [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A mucous cell in the epithelium of the stomach."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) EquivalentTo [epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002178) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001199](http://purl.obolibrary.org/obo/UBERON_0001199)) 
+
+- [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001199](http://purl.obolibrary.org/obo/UBERON_0001199) 
+
+#### Added
+- [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell of the stomach. This cell produces mucous."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) EquivalentTo [epithelial cell](http://purl.obolibrary.org/obo/CL_0000066) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0000945](http://purl.obolibrary.org/obo/UBERON_0000945)) and ([RO_0002215](http://purl.obolibrary.org/obo/RO_0002215) some [GO_0070254](http://purl.obolibrary.org/obo/GO_0070254)) 
+
+- [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) SubClassOf [mucus secreting cell](http://purl.obolibrary.org/obo/CL_0000319) 
+
+
+### mucous neck cell of gastric gland `http://purl.obolibrary.org/obo/CL_0002181`
+#### Removed
+- [mucous neck cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002181) SubClassOf [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [mucous neck cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002181) SubClassOf [mucous neck cell](http://purl.obolibrary.org/obo/CL_0000651) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [mucous neck cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002181) SubClassOf [mucous neck cell](http://purl.obolibrary.org/obo/CL_0000651) 
+
+- [mucous neck cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002181) SubClassOf [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) 
+
+
 ### mucus secreting cell `http://purl.obolibrary.org/obo/CL_0000319`
 #### Removed
 - [mucus secreting cell](http://purl.obolibrary.org/obo/CL_0000319) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009159"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -4584,6 +5845,36 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [nasal mucosa goblet cell](http://purl.obolibrary.org/obo/CL_0002480) SubClassOf [epithelial cell of upper respiratory tract](http://purl.obolibrary.org/obo/CL_0002631) 
+
+
+### nasal serous secreting cell `http://purl.obolibrary.org/obo/CL_4042016`
+
+#### Added
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A serous secreting cell that is part of a submucosal gland in the nasal cavity respiratory epithelium."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37291214"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "nasal mucous secretory cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:11005715"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [date](http://purl.org/dc/terms/date) "2024-07-12T10:58:06Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "https://cellxgene.cziscience.com/e/9f222629-9e39-47d0-b83f-e08d610c7479.cxg/"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [label](http://www.w3.org/2000/01/rdf-schema#label) "nasal serous secreting cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-0098-8958](https://orcid.org/0000-0002-0098-8958) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4042016"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0011148](http://purl.obolibrary.org/obo/UBERON_0011148) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) SubClassOf [serous secreting cell](http://purl.obolibrary.org/obo/CL_0000313) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0005385](http://purl.obolibrary.org/obo/UBERON_0005385) 
+
+- [nasal serous secreting cell](http://purl.obolibrary.org/obo/CL_4042016) SubClassOf [exocrine cell](http://purl.obolibrary.org/obo/CL_0000152) 
 
 
 ### natural killer cell `http://purl.obolibrary.org/obo/CL_0000623`
@@ -4892,12 +6183,52 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### obsolete caudal ganglionic eminence derived GABAergic cortical interneuron `http://purl.obolibrary.org/obo/CL_4023070`
+#### Removed
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20130169"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [label](http://www.w3.org/2000/01/rdf-schema#label) "caudal ganglionic eminence derived GABAergic cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) EquivalentTo [interneuron](http://purl.obolibrary.org/obo/CL_0000099) and ([RO_0002100](http://purl.obolibrary.org/obo/RO_0002100) some [UBERON_0000956](http://purl.obolibrary.org/obo/UBERON_0000956)) and ([RO_0002202](http://purl.obolibrary.org/obo/RO_0002202) some [UBERON_0004026](http://purl.obolibrary.org/obo/UBERON_0004026)) and ([RO_0002215](http://purl.obolibrary.org/obo/RO_0002215) some [GO_0061534](http://purl.obolibrary.org/obo/GO_0061534)) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) SubClassOf [cerebral cortex GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0010011) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) SubClassOf [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
+
+#### Added
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [IAO_0000233](http://purl.obolibrary.org/obo/IAO_0000233) [2374](https://github.com/obophenotype/cell-ontology/pull/2374) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [term replaced by](http://purl.obolibrary.org/obo/IAO_0100001) [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "caudal ganglionic eminence derived GABAergic interneuron
+and caudal ganglionic eminence derived interneuron are the same cell type. 
+The two must be merged and one needs to be defined as obsolete. 
+We decided to deprecate the entity with the more specific term and redundant qualities 
+in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "OBSOLETE. A GABAergic cortical interneuron that develops from the caudal ganglionic eminence and has migrated to the cerebral cortex."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20130169"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete caudal ganglionic eminence derived GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023070) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete caudal ganglionic eminence derived GABAergic cortical interneuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### obsolete cerebellum Golgi cell `http://purl.obolibrary.org/obo/CL_2000026`
 #### Removed
 - [obsolete cerebellum Golgi cell](http://purl.obolibrary.org/obo/CL_2000026) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](https://www.wikidata.org/entity/Q35563349) 
 
 #### Added
 - [obsolete cerebellum Golgi cell](http://purl.obolibrary.org/obo/CL_2000026) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
+
+
+### obsolete embryonic gland hemocyte `http://purl.obolibrary.org/obo/CL_0000736`
+#### Removed
+- [obsolete embryonic gland hemocyte](http://purl.obolibrary.org/obo/CL_0000736) [label](http://www.w3.org/2000/01/rdf-schema#label) "embryonic gland hemocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [obsolete embryonic gland hemocyte](http://purl.obolibrary.org/obo/CL_0000736) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete embryonic gland hemocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
 ### obsolete melanocyte of foreskin `http://purl.obolibrary.org/obo/CL_2000082`
@@ -4914,6 +6245,30 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [obsolete microvascular endothelium blood vessel endothelial cell](http://purl.obolibrary.org/obo/CL_2000009) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
+
+
+### obsolete paracrine cell `http://purl.obolibrary.org/obo/CL_0000512`
+#### Removed
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009233"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [mapping_justification](http://purl.obolibrary.org/obo/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [label](http://www.w3.org/2000/01/rdf-schema#label) "paracrine cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A paracrine cell is a secretory cell that secretes an agonist into intercellular spaces in which it diffuses to a target cell other than that which produced it."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0198529171"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) SubClassOf [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) 
+
+#### Added
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "The term paracrine describes a role of a secreted hormone. There are a vast number of cell types that could fit this description, however it is difficult to know every case where a secreted hormone has paracrine effects."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [consider](http://www.geneontology.org/formats/oboInOwl#consider) [secretory cell](http://purl.obolibrary.org/obo/CL_0000151) 
+
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [label](http://www.w3.org/2000/01/rdf-schema#label) "obsolete paracrine cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [obsolete paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [deprecated](http://www.w3.org/2002/07/owl#deprecated) true 
 
 
 ### obsolete retina retinal ganglion cell `http://purl.obolibrary.org/obo/CL_2000050`
@@ -5088,6 +6443,12 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### outer renal medulla vasa recta cell `http://purl.obolibrary.org/obo/CL_1001127`
+
+#### Added
+- [outer renal medulla vasa recta cell](http://purl.obolibrary.org/obo/CL_1001127) SubClassOf [kidney venous blood vessel cell](http://purl.obolibrary.org/obo/CL_1000893) 
+
+
 ### ovarian fibroblast `http://purl.obolibrary.org/obo/CL_2000063`
 #### Removed
 - [ovarian fibroblast](http://purl.obolibrary.org/obo/CL_2000063) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](https://www.wikidata.org/entity/Q35563349) 
@@ -5206,14 +6567,12 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### paracrine cell `http://purl.obolibrary.org/obo/CL_0000512`
+### pancreatic goblet cell `http://purl.obolibrary.org/obo/CL_1000322`
 #### Removed
-- [paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009233"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [mapping_justification](http://purl.obolibrary.org/obo/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [pancreatic goblet cell](http://purl.obolibrary.org/obo/CL_1000322) SubClassOf [pancreas exocrine glandular cell](http://purl.obolibrary.org/obo/CL_1001599) 
 
 #### Added
-- [paracrine cell](http://purl.obolibrary.org/obo/CL_0000512) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009233"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [pancreatic goblet cell](http://purl.obolibrary.org/obo/CL_1000322) SubClassOf [epithelial cell of exocrine pancreas](http://purl.obolibrary.org/obo/CL_1001433) 
 
 
 ### parafollicular cell `http://purl.obolibrary.org/obo/CL_0000570`
@@ -5364,6 +6723,31 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### peritubular capillary endothelial cell `http://purl.obolibrary.org/obo/CL_1001033`
+#### Removed
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of some peritubular capillary."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) EquivalentTo [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0005272](http://purl.obolibrary.org/obo/UBERON_0005272)) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) SubClassOf [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) SubClassOf [capillary endothelial cell](http://purl.obolibrary.org/obo/CL_0002144) 
+
+#### Added
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) [comment](http://www.w3.org/2000/01/rdf-schema#comment) "Peritubular capillary endothelial cells feature fenestrations measuring 60-70 nm in diameter, each traversed by a thin diaphragm."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19129259"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An endothelial cell that is part of the peritubular capillary of the kidney. This cell is highly fenestrated and plays a vital role in the kidney's filtration process, enabling the exchange of materials between the blood and the renal tubules."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:19129259"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) EquivalentTo [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0012441](http://purl.obolibrary.org/obo/UBERON_0012441)) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) SubClassOf [fenestrated endothelial cell](http://purl.obolibrary.org/obo/CL_0000666) 
+
+- [peritubular capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1001033) SubClassOf [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) 
+
+
 ### phagocyte `http://purl.obolibrary.org/obo/CL_0000234`
 #### Removed
 - [phagocyte](http://purl.obolibrary.org/obo/CL_0000234) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009140"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -5502,8 +6886,14 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Removed
 - [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](https://www.wikidata.org/entity/Q35563349) 
 
+- [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) EquivalentTo [capillary endothelial cell](http://purl.obolibrary.org/obo/CL_0002144) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0010005](http://purl.obolibrary.org/obo/UBERON_0010005)) 
+
+- [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0010005](http://purl.obolibrary.org/obo/UBERON_0010005) 
+
 #### Added
 - [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
+
+- [placental villus capillary endothelial cell](http://purl.obolibrary.org/obo/CL_2000062) EquivalentTo [capillary endothelial cell](http://purl.obolibrary.org/obo/CL_0002144) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001987](http://purl.obolibrary.org/obo/UBERON_0001987)) 
 
 
 ### plasma cell `http://purl.obolibrary.org/obo/CL_0000786`
@@ -5524,31 +6914,6 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [plasmatocyte](http://purl.obolibrary.org/obo/CL_0000394) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "FBbt:00001685"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/ManualMappingCuration"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### pneumocyte `http://purl.obolibrary.org/obo/CL_0000322`
-#### Removed
-- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) [label](http://www.w3.org/2000/01/rdf-schema#label) "pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that lines the peripheral gas exchange region of the lungs of air-breathing vertebrates."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-#### Added
-- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that lines the peripheral gas exchange region of the lungs of air-breathing vertebrates."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29463737"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary alveolar epithelial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32491474"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [pneumocyte](http://purl.obolibrary.org/obo/CL_0000322) SubClassOf [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) 
 
 
 ### podocyte `http://purl.obolibrary.org/obo/CL_0000653`
@@ -5843,6 +7208,123 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [pseudounipolar neuron](http://purl.obolibrary.org/obo/CL_0000105) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009057"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### pulmonary alveolar epithelial cell `http://purl.obolibrary.org/obo/CL_0000322`
+#### Removed
+- [pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_0000322) [label](http://www.w3.org/2000/01/rdf-schema#label) "pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_0000322) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that lines the peripheral gas exchange region of the lungs of air-breathing vertebrates."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_0000322) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An epithelial cell that lines the peripheral gas exchange region of the lungs of air-breathing vertebrates."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29463737"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_0000322) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary alveolar epithelial cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_0000322) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32491474"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar epithelial cell](http://purl.obolibrary.org/obo/CL_0000322) SubClassOf [epithelial cell of lung](http://purl.obolibrary.org/obo/CL_0000082) 
+
+
+### pulmonary alveolar type 1 cell `http://purl.obolibrary.org/obo/CL_0002062`
+#### Removed
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A type I pneumocyte is a flattened, branched pneumocyte that covers more than 98% of the alveolar surface. This large cell has thin (50-100 nm) cytoplasmic extensions to form the air-blood barrier essential for normal gas exchange."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "AT1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ATI"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [label](http://www.w3.org/2000/01/rdf-schema#label) "type I pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type 1 pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+#### Added
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A squamous pulmonary alveolar epithelial cell that is flattened and branched. A pulmonary alveolar type 1 cell covers more than 98% of the alveolar surface. This large cell has thin (50-100 nm) cytoplasmic extensions to form the air-blood barrier essential for normal gas exchange."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29463737"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AT1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29463737"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ATI"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type 1 pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32491474"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type I pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 1 cell](http://purl.obolibrary.org/obo/CL_0002062) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary alveolar type 1 cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### pulmonary alveolar type 2 cell `http://purl.obolibrary.org/obo/CL_0002063`
+#### Removed
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "TII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [label](http://www.w3.org/2000/01/rdf-schema#label) "type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ATII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A type II pneumocyte is a pneumocyte that modulates the fluid surrounding the alveolar epithelium by secreting and recycling surfactants. This cell type also contributes to tissue repair and can differentiate after injury into a type I pneumocyte. Thicker than squamous alveolar cells, have a rounded apical surface that projects above the level of surrounding epithelium. The free surface is covered by short microvilli."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:8540632"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0412046911"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "AT2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
+#### Added
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary alveolar type 2 cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A pulmonary alveolar epithelial cell that modulates the fluid surrounding the alveolar epithelium by secreting and recycling surfactants. This cell type also contributes to tissue repair and can differentiate after injury into a pulmonary alveolar type 1 cell. This cuboidal cell is thicker than squamous alveolar cells, have a rounded apical surface that projects above the level of surrounding epithelium. The free surface is covered by short microvilli."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:8540632"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0412046911"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36138472"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32491474"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AT2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36138472"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "TII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [pulmonary alveolar type 2 cell](http://purl.obolibrary.org/obo/CL_0002063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ATII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### pulmonary ionocyte `http://purl.obolibrary.org/obo/CL_0017000`
@@ -6262,6 +7744,16 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### small intestine goblet cell `http://purl.obolibrary.org/obo/CL_1000495`
+#### Removed
+- [small intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000495) SubClassOf [small intestine glandular cell](http://purl.obolibrary.org/obo/CL_1001598) 
+
+#### Added
+- [small intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000495) SubClassOf [epithelial cell of small intestine](http://purl.obolibrary.org/obo/CL_0002254) 
+
+- [small intestine goblet cell](http://purl.obolibrary.org/obo/CL_1000495) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001902](http://purl.obolibrary.org/obo/UBERON_0001902) 
+
+
 ### smooth muscle cell `http://purl.obolibrary.org/obo/CL_0000192`
 #### Removed
 - [smooth muscle cell](http://purl.obolibrary.org/obo/CL_0000192) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009118"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -6456,6 +7948,33 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 - [spinal cord ventral column interneuron](http://purl.obolibrary.org/obo/CL_2000023) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
 
 
+### spiny VIP neuron `http://purl.obolibrary.org/obo/CL_4042014`
+
+#### Added
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A VIP GABAergic cortical interneuron with a soma located in L1-3 of some neocortex in Mmus. This neuron has a multipolar morphology with spiny dendrites concentrating on L1 of the cortex, and has a burst firing electrophysiological signature with highly dynamic dendritic spines."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35418660"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [date](http://purl.org/dc/terms/date) "2024-07-11T12:09:53Z"^^[dateTime](http://www.w3.org/2001/XMLSchema#dateTime) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "multipolar VIP neuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35418660"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "superficial VIP-positive spiny neuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:35418660"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [contributor](http://purl.org/dc/terms/contributor) [0000-0002-0098-8958](https://orcid.org/0000-0002-0098-8958) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [id](http://www.geneontology.org/formats/oboInOwl#id) "CL:4042014"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) [label](http://www.w3.org/2000/01/rdf-schema#label) "spiny VIP neuron"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- Class: [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) SubClassOf [VIP GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) 
+
+- [spiny VIP neuron](http://purl.obolibrary.org/obo/CL_4042014) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001950](http://purl.obolibrary.org/obo/UBERON_0001950) 
+
+
 ### splenic endothelial cell `http://purl.obolibrary.org/obo/CL_2000053`
 #### Removed
 - [splenic endothelial cell](http://purl.obolibrary.org/obo/CL_2000053) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](https://www.wikidata.org/entity/Q35563349) 
@@ -6478,6 +7997,34 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [splenocyte](http://purl.obolibrary.org/obo/CL_2000074) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
+
+
+### squamous cell of ectocervix `http://purl.obolibrary.org/obo/CL_0002244`
+#### Removed
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A nonstratified squamous cell located in the ectocervix."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.bu.edu/histology/p/19404loa.htm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) SubClassOf [epithelial cell of uterus](http://purl.obolibrary.org/obo/CL_0002149) 
+
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) SubClassOf [squamous epithelial cell](http://purl.obolibrary.org/obo/CL_0000076) 
+
+#### Added
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A stratified squamous epithelial cell located in the ectocervix."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32644501"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.bu.edu/histology/p/19404loa.htm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:/10.1016/j.autneu.2015.04.008"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) EquivalentTo [squamous epithelial cell](http://purl.obolibrary.org/obo/CL_0000076) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0012251](http://purl.obolibrary.org/obo/UBERON_0012251)) 
+
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) SubClassOf [uterine cervix squamous cell](http://purl.obolibrary.org/obo/CL_1001575) 
+
+- [squamous cell of ectocervix](http://purl.obolibrary.org/obo/CL_0002244) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0012251](http://purl.obolibrary.org/obo/UBERON_0012251) 
 
 
 ### squamous endothelial cell `http://purl.obolibrary.org/obo/CL_0002653`
@@ -6565,6 +8112,16 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [stem cell of epidermis](http://purl.obolibrary.org/obo/CL_1000428) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0007122"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### stem cell of gastric gland `http://purl.obolibrary.org/obo/CL_0002183`
+#### Removed
+- [stem cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002183) SubClassOf [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) 
+
+- [stem cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002183) SubClassOf [exocrine cell](http://purl.obolibrary.org/obo/CL_0000152) 
+
+#### Added
+- [stem cell of gastric gland](http://purl.obolibrary.org/obo/CL_0002183) SubClassOf [epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002178) 
 
 
 ### steroid hormone secreting cell `http://purl.obolibrary.org/obo/CL_0000174`
@@ -6693,6 +8250,16 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 #### Added
 - [supporting cell](http://purl.obolibrary.org/obo/CL_0000630) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009387"^^[string](http://www.w3.org/2001/XMLSchema#string) 
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
+### surface mucosal cell of stomach `http://purl.obolibrary.org/obo/CL_0002182`
+#### Removed
+- [surface mucosal cell of stomach](http://purl.obolibrary.org/obo/CL_0002182) SubClassOf [mucus secreting cell](http://purl.obolibrary.org/obo/CL_0000319) 
+
+#### Added
+- [surface mucosal cell of stomach](http://purl.obolibrary.org/obo/CL_0002182) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0001276](http://purl.obolibrary.org/obo/UBERON_0001276) 
+
+- [surface mucosal cell of stomach](http://purl.obolibrary.org/obo/CL_0002182) SubClassOf [columnar/cuboidal epithelial cell](http://purl.obolibrary.org/obo/CL_0000075) 
 
 
 ### sustentacular cell `http://purl.obolibrary.org/obo/CL_0000703`
@@ -6917,6 +8484,35 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/ManualMappingCuration"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### trophoblast cell `http://purl.obolibrary.org/obo/CL_0000351`
+#### Removed
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "trophoblastic cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A cell lining the outside of the blastocyst. After binding to the endometrium, trophoblast cells develop into two distinct layers, an inner layer of mononuclear cytotrophoblast cells and an outer layer of continuous multinuclear cytoplasm, the syncytiotrophoblast cells, which form the early fetal-maternal interface."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014327"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) SubClassOf [BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0000358](http://purl.obolibrary.org/obo/UBERON_0000358) 
+
+#### Added
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "An extraembryonic cell that develops from a trophectodermal cell. This cell is found in the outer layer of the blastocyst and can invade other structures in the uterus once the blastocyst implants into the uterine wall. A trophoblast cell is involved in the implantation of the embryo into the uterine wall, placental formation, remodelling of maternal vasculature in the uterus, nutrient and gas exchange, hormone production, and immune modulation to support fetal development."^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "MESH:D014327"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [comment](http://www.w3.org/2000/01/rdf-schema#comment) "doi:10.1007/978-3-030-84725-8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:37630754"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "trophoblastic cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "doi:10.1007/978-3-030-84725-8"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
+
+- [trophoblast cell](http://purl.obolibrary.org/obo/CL_0000351) SubClassOf [RO_0002202](http://purl.obolibrary.org/obo/RO_0002202) some [trophectodermal cell](http://purl.obolibrary.org/obo/CL_1000274) 
+
+
 ### type B pancreatic cell `http://purl.obolibrary.org/obo/CL_0000169`
 #### Removed
 - [type B pancreatic cell](http://purl.obolibrary.org/obo/CL_0000169) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009102"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -6937,47 +8533,12 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
-### type I pneumocyte `http://purl.obolibrary.org/obo/CL_0002062`
+### type G enteroendocrine cell `http://purl.obolibrary.org/obo/CL_0000508`
 #### Removed
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A type I pneumocyte is a flattened, branched pneumocyte that covers more than 98% of the alveolar surface. This large cell has thin (50-100 nm) cytoplasmic extensions to form the air-blood barrier essential for normal gas exchange."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "AT1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ATI"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [label](http://www.w3.org/2000/01/rdf-schema#label) "type I pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type 1 pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [type G enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000508) SubClassOf [mucous cell of stomach](http://purl.obolibrary.org/obo/CL_0002180) 
 
 #### Added
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A squamous pulmonary alveolar epithelial cell that is flattened and branched. A pulmonary alveolar type 1 cell covers more than 98% of the alveolar surface. This large cell has thin (50-100 nm) cytoplasmic extensions to form the air-blood barrier essential for normal gas exchange."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29463737"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:20054144"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AT1"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:29463737"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ATI"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type 1 pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32491474"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type I pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type I pneumocyte](http://purl.obolibrary.org/obo/CL_0002062) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary alveolar type 1 cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+- [type G enteroendocrine cell](http://purl.obolibrary.org/obo/CL_0000508) SubClassOf [glandular epithelial cell of stomach](http://purl.obolibrary.org/obo/CL_0002659) 
 
 
 ### type II cell of adrenal medulla `http://purl.obolibrary.org/obo/CL_0002082`
@@ -6986,55 +8547,6 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [type II cell of adrenal medulla](http://purl.obolibrary.org/obo/CL_0002082) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "adrenergic chromaffin cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-
-### type II pneumocyte `http://purl.obolibrary.org/obo/CL_0002063`
-#### Removed
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "TII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [label](http://www.w3.org/2000/01/rdf-schema#label) "type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "ATII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A type II pneumocyte is a pneumocyte that modulates the fluid surrounding the alveolar epithelium by secreting and recycling surfactants. This cell type also contributes to tissue repair and can differentiate after injury into a type I pneumocyte. Thicker than squamous alveolar cells, have a rounded apical surface that projects above the level of surrounding epithelium. The free surface is covered by short microvilli."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:8540632"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0412046911"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "AT2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
-
-#### Added
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [label](http://www.w3.org/2000/01/rdf-schema#label) "pulmonary alveolar type 2 cell"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [definition](http://purl.obolibrary.org/obo/IAO_0000115) "A pulmonary alveolar epithelial cell that modulates the fluid surrounding the alveolar epithelium by secreting and recycling surfactants. This cell type also contributes to tissue repair and can differentiate after injury into a pulmonary alveolar type 1 cell. This cuboidal cell is thicker than squamous alveolar cells, have a rounded apical surface that projects above the level of surrounding epithelium. The free surface is covered by short microvilli."^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:8540632"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "http://www.copewithcytokines.de"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ISBN:0412046911"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "GOC:tfm"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36138472"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_exact_synonym](http://www.geneontology.org/formats/oboInOwl#hasExactSynonym) "type II pneumocyte"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:32491474"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "AT2"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
-
-  - [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "PMID:36138472"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "TII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-
-- [type II pneumocyte](http://purl.obolibrary.org/obo/CL_0002063) [has_related_synonym](http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym) "ATII"^^[string](http://www.w3.org/2001/XMLSchema#string) 
-  - [has_synonym_type](http://www.geneontology.org/formats/oboInOwl#hasSynonymType) [OMO_0003000](http://purl.obolibrary.org/obo/OMO_0003000) 
 
 
 ### umbilical artery endothelial cell `http://purl.obolibrary.org/obo/CL_2000052`
@@ -7065,6 +8577,24 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
   - [mapping_justification](https://w3id.org/sssom/mapping_justification) "https://w3id.org/semapv/vocab/UnspecifiedMatching"^^[string](http://www.w3.org/2001/XMLSchema#string) 
 
 
+### vasa recta cell `http://purl.obolibrary.org/obo/CL_1001036`
+#### Removed
+- [vasa recta cell](http://purl.obolibrary.org/obo/CL_1001036) EquivalentTo [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0004726](http://purl.obolibrary.org/obo/UBERON_0004726)) 
+
+- [vasa recta cell](http://purl.obolibrary.org/obo/CL_1001036) SubClassOf [kidney capillary endothelial cell](http://purl.obolibrary.org/obo/CL_1000892) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+- [vasa recta cell](http://purl.obolibrary.org/obo/CL_1001036) SubClassOf [kidney venous blood vessel cell](http://purl.obolibrary.org/obo/CL_1000893) 
+
+#### Added
+- [vasa recta cell](http://purl.obolibrary.org/obo/CL_1001036) EquivalentTo [microvascular endothelial cell](http://purl.obolibrary.org/obo/CL_2000008) and ([BFO_0000050](http://purl.obolibrary.org/obo/BFO_0000050) some [UBERON_0004726](http://purl.obolibrary.org/obo/UBERON_0004726)) 
+
+- [vasa recta cell](http://purl.obolibrary.org/obo/CL_1001036) SubClassOf [microvascular endothelial cell](http://purl.obolibrary.org/obo/CL_2000008) 
+
+- [vasa recta cell](http://purl.obolibrary.org/obo/CL_1001036) SubClassOf [kidney medulla cell](http://purl.obolibrary.org/obo/CL_1000504) 
+  - [is_inferred](http://www.geneontology.org/formats/oboInOwl#is_inferred) "true"^^[string](http://www.w3.org/2001/XMLSchema#string) 
+
+
 ### vascular associated smooth muscle cell `http://purl.obolibrary.org/obo/CL_0000359`
 #### Removed
 - [vascular associated smooth muscle cell](http://purl.obolibrary.org/obo/CL_0000359) [database_cross_reference](http://www.geneontology.org/formats/oboInOwl#hasDbXref) "ZFA:0009181"^^[string](http://www.w3.org/2001/XMLSchema#string) 
@@ -7091,16 +8621,6 @@ in the label. See comments in issue 2357."^^[string](http://www.w3.org/2001/XMLS
 
 #### Added
 - [ventricular cardiac muscle cell](http://purl.obolibrary.org/obo/CL_2000046) [contributor](http://purl.org/dc/terms/contributor) [Q35563349](http://www.wikidata.org/entity/Q35563349) 
-
-
-### vip GABAergic cortical interneuron `http://purl.obolibrary.org/obo/CL_4023016`
-#### Removed
-- [vip GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) SubClassOf [cerebral cortex GABAergic interneuron](http://purl.obolibrary.org/obo/CL_0010011) 
-
-- [vip GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) SubClassOf [BFO_0000002](http://purl.obolibrary.org/obo/BFO_0000002) 
-
-#### Added
-- [vip GABAergic cortical interneuron](http://purl.obolibrary.org/obo/CL_4023016) SubClassOf [caudal ganglionic eminence derived interneuron](http://purl.obolibrary.org/obo/CL_4023064) 
 
 
 ### visceral muscle cell `http://purl.obolibrary.org/obo/CL_0008007`
