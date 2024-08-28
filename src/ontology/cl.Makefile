@@ -352,9 +352,16 @@ $(TEMPLATEDIR)/cellxgene_subset.tsv:
 	wget $(CELLXGENE_SUBSET_URL) -O $@
 
 # Make CL-plus (CL + PCL product)
+# HACK: We have to remove the disjointness axioms between taxa, because
+# PCL does not enforce taxon constraints and may contain TC violations
+# that would be revealed here due to the presence of those axioms
+# (thereby causing that step to fail). The proper fix would be for PCL
+# to enforce TC.
+# See <https://github.com/obophenotype/provisional_cell_ontology/issues/59>
 
 cl-plus.owl: $(ONT)-full.owl
 	$(ROBOT) merge --input-iri http://purl.obolibrary.org/obo/pcl/pcl-base.owl --input $(ONT)-full.owl \
+		unmerge --input-iri http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl \
 		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
 		relax \
 		reduce -r ELK \
