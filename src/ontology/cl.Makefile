@@ -170,6 +170,37 @@ $(COMPONENTSDIR)/mappings.owl: $(SRC) $(EXTERNAL_SSSOM_SETS) | all_robot_plugins
 			      --bridge-iri http://purl.obolibrary.org/obo/cl/components/mappings.owl
 
 
+# ----------------------------------------
+# TAXON CONSTRAINTS CHECK
+# ----------------------------------------
+
+# The TC check requires te taxslim-disjoint-over-in-taxon.owl ontology,
+# which is declared as an ODK mirror (under the name ncbitaxondisjoints)
+# and as such should already have been downloaded into the mirror
+# directory by the standard ODK-generated rule. But the QC checks are
+# typically run under MIR=false, so while the standard rule would be
+# invoked by Make it would not result in the mirror being downloaded.
+# So instead, we make the TC check depend on another file, and here we
+# 1. force the download of the mirror if it is not already there;
+# 2. create a link to that mirror.
+$(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
+	if [ ! -f $(MIRRORDIR)/ncbitaxondisjoints.owl ]; then \
+		$(MAKE) $(MIRRORDIR)/ncbitaxondisjoints.owl MIR=true IMP=true ; \
+	fi && \
+	ln -f -s ../$(MIRRORDIR)/ncbitaxondisjoints.owl $@
+
+# Actual TC check: we add the taxon disjointness axioms into the
+# ontology, make sure to expand all macros, then try to reason over the
+# resulting product.
+$(REPORTDIR)/taxon-constraint-check.txt: $(EDIT_PREPROCESSED) $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl
+	$(ROBOT) merge $(foreach src,$^,-i $(src)) \
+		 expand -o $(TMPDIR)/cl-plus-taxon-djsoints.ofn \
+		 reason -r ELK > $@
+
+# Include the TC check in the routine tests
+test: $(REPORTDIR)/taxon-constraint-check.txt
+
+
 ##############################################
 ##### CL Template pipeline ###################
 ##############################################
