@@ -194,7 +194,7 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 # resulting product.
 $(REPORTDIR)/taxon-constraint-check.txt: $(EDIT_PREPROCESSED) $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) \
-		 expand -o $(TMPDIR)/cl-plus-taxon-djsoints.ofn \
+		 expand -o $(TMPDIR)/cl-plus-taxon-disjoints.ofn \
 		 reason -r ELK > $@
 
 # Include the TC check in the routine tests
