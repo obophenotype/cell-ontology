@@ -1,0 +1,66 @@
+pattern_name: cyclingCellStates
+pattern_iri: http://purl.obolibrary.org/obo/cl/cyclingCellStates.yaml
+description: "This pattern is for cells that are cycling/proliferating."
+
+contributors:
+  - https://orcid.org/0000-0001-6677-8489  # Aleix Puig
+
+classes:
+  cell: "CL:0000000"
+  cell cycle process: "GO:0022402"
+  active: "PATO:0002354"
+
+relations:
+  participates in: "RO:0000056"
+  has quality: "RO:0000086"
+
+annotationProperties:
+  xref: "oio:hasDbXref"
+  contributor: "http://purl.org/dc/terms/contributor"
+  hasExactSynonym: "oio:hasExactSynonym"
+  date: "http://purl.org/dc/terms/date"
+
+vars:
+  cell: "'cell'"
+  creator: "'thing'"
+
+data_list_vars:
+  pubs: "xsd:string"
+  synonym_xrefs: "xsd:string"
+  # Use this for recording reference using PMID/DOIS
+
+data_vars:
+  date_created: "xsd:string"
+
+name:
+  text: "cycling %s"
+  vars:
+    - cell
+
+generated_synonyms:
+  -
+    text: "proliferating %s"
+    vars:
+      - cell
+    xrefs: synonym_xrefs
+
+def:
+  text: "A(n) %s that is cycling."
+  vars:
+    - cell
+  annotations:
+    - annotationProperty: xref
+      value: pubs
+
+equivalentTo:
+  text: "%s and ('participates in' some 'cell cycle process') and ('has quality' some active)"
+  vars:
+    - cell
+
+annotations:
+  - annotationProperty: contributor
+    var: creator
+  - annotationProperty: date
+    text: "%s"
+    vars:
+      - date_created
