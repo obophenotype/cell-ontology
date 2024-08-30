@@ -17,4 +17,4 @@ for i,r in cg_desc.iterrows():
     row['pubs'] = '|'.join(pub_list)
     rows.append(row)
 out = pd.DataFrame.from_records(rows)
-out.to_csv('../../default/ExtendedDescription.tsv', sep='\t')
+out.to_csv('../../default/ExtendedDescription.tsv', sep='\t', index=False)
