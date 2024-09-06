@@ -55,7 +55,7 @@ The release is done in two parts:
 
 ### Generate the release artefacts
 
-1. Ensure you have locally the latest changes from master (`git pull`)
+1. Ensure you are on the master branch and have locally the latest changes from master (`git pull`)
 1. Checkout a new branch (e.g. `git checkout -b 20240904-release`)
 1. Run the release using `sh run.sh make cl DEPLOY_GH=false`. This will build all files and copy them to the correct place.
 1. Review the release as per the `Review the release` section in [ODK-workflow release document](odk-workflows/ReleaseWorkflow.md#review-the-release)
