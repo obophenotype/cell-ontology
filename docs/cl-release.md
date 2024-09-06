@@ -41,7 +41,7 @@ The release is done in two parts:
 
 1. Ensure that all pull requests to be included in the release are merged
 1. Ensure that no other pull requests are merged during the release process
-1. Ensure you have locally the latest changes from master (`git pull`)
+1. Ensure you are on the master branch and have locally the latest changes from master (`git pull`)
 1. Ensure you have the latest ODK installed by running `docker pull obolibrary/odkfull`
 1. Navigate to the cell-ontology/src/ontology directory (`cd src/ontology`)
 
