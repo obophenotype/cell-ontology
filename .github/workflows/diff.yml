@@ -152,13 +152,13 @@ jobs:
         if: steps.check.outputs.triggered == 'true'
       - name: Download master classification
         if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v2
         with:
           name: cl-simple-master.owl
           path: src/ontology/cl-simple-master.owl
       - name: Download PR classification
         if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v2
         with:
           name: cl-simple-pr.owl
           path: src/ontology/cl-simple-pr.owl
@@ -185,7 +185,7 @@ jobs:
         if: steps.check.outputs.triggered == 'true'
       - name: Download reasoned diff
         if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v2
         with:
           name: classification-diff.md
           path: classification-diff.md
@@ -204,7 +204,7 @@ jobs:
         if: steps.check.outputs.triggered == 'true'
       - name: Download edit diff
         if: steps.check.outputs.triggered == 'true'
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v2
         with:
           name: edit-diff.md
           path: edit-diff.md
