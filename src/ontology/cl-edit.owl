@@ -3063,9 +3063,9 @@ Declaration(Class(obo:CL_4042017))
 Declaration(Class(obo:CL_4042018))
 Declaration(Class(obo:CL_4042019))
 Declaration(Class(obo:CL_4042020))
+Declaration(Class(obo:CL_4047006))
 Declaration(Class(obo:CL_4052001))
 Declaration(Class(obo:CL_4052002))
-Declaration(Class(obo:CL_4047006))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -4940,12 +4940,13 @@ AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0000149 "pigment cell")
 AnnotationAssertion(rdfs:label obo:CL_0000149 "visual pigment cell")
 SubClassOf(obo:CL_0000149 obo:CL_0000147)
 
-# Class: obo:CL_0000150 (glandular epithelial cell)
+# Class: obo:CL_0000150 (glandular secretory epithelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ORCID:0000-0002-7073-9172") obo:IAO_0000115 obo:CL_0000150 "An epithelial cell, located in a gland, that is specialised for the synthesis and secretion of specific biomolecules, such as hormones, or mucous.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000150 "CALOHA:TS-2085")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000150 "FMA:86494")
-AnnotationAssertion(rdfs:label obo:CL_0000150 "glandular epithelial cell")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000150 "glandular epithelial cell")
+AnnotationAssertion(rdfs:label obo:CL_0000150 "glandular secretory epithelial cell")
 EquivalentClasses(obo:CL_0000150 ObjectIntersectionOf(obo:CL_0000066 obo:CL_0000151 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002530)))
 
 # Class: obo:CL_0000151 (secretory cell)
@@ -5072,6 +5073,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000164 "BTO:0003865")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000164 "FMA:62930")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000164 "MESH:D019858")
 AnnotationAssertion(rdfs:label obo:CL_0000164 "enteroendocrine cell")
+SubClassOf(obo:CL_0000164 obo:CL_0000066)
 SubClassOf(obo:CL_0000164 obo:CL_0000163)
 
 # Class: obo:CL_0000165 (neuroendocrine cell)
@@ -7239,8 +7241,9 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000446 "parathyroid gland c
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000446 "parathyroid hormone secreting cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000446 "principal cell of parathyroid gland")
 AnnotationAssertion(rdfs:label obo:CL_0000446 "chief cell of parathyroid gland")
-SubClassOf(obo:CL_0000446 obo:CL_0000167)
-SubClassOf(obo:CL_0000446 obo:CL_0002260)
+SubClassOf(obo:CL_0000446 obo:CL_0000066)
+SubClassOf(obo:CL_0000446 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0011197))
+SubClassOf(obo:CL_0000446 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0035898))
 
 # Class: obo:CL_0000447 (carbohydrate secreting cell)
 
@@ -16400,9 +16403,8 @@ AnnotationAssertion(terms:contributor obo:CL_0002260 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002260 "2010-09-08T02:29:38Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002260 "FMA:70547")
 AnnotationAssertion(rdfs:label obo:CL_0002260 "epithelial cell of parathyroid gland")
-EquivalentClasses(obo:CL_0002260 ObjectIntersectionOf(obo:CL_0002076 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001132)))
-SubClassOf(obo:CL_0002260 obo:CL_0000150)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002260 obo:CL_0002076)
+EquivalentClasses(obo:CL_0002260 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001132)))
+SubClassOf(obo:CL_0002260 obo:CL_0002076)
 
 # Class: obo:CL_0002261 (endothelial cell of viscerocranial mucosa)
 
@@ -27937,13 +27939,12 @@ SubClassOf(obo:CL_1001592 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000202
 
 # Class: obo:CL_1001593 (parathyroid glandular cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "HPA:HPA") Annotation(oboInOwl:hasDbXref "NPX:PDR") obo:IAO_0000115 obo:CL_1001593 "Glandular cell of parathyroid epithelium. Example: Parathyroid chief cell and parathyroid oxyphil cells.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "HPA:HPA") Annotation(oboInOwl:hasDbXref "NPX:PDR") obo:IAO_0000115 obo:CL_1001593 "Glandular (secretory) cell of parathyroid epithelium.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001593 "CALOHA:TS-1279")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1279") oboInOwl:hasRelatedSynonym obo:CL_1001593 "parathyroid gland glandular cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1279") oboInOwl:hasRelatedSynonym obo:CL_1001593 "parathyroid gland glandular cells")
 AnnotationAssertion(rdfs:label obo:CL_1001593 "parathyroid glandular cell")
 EquivalentClasses(obo:CL_1001593 ObjectIntersectionOf(obo:CL_0000150 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001132)))
-SubClassOf(obo:CL_1001593 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0011197))
 
 # Class: obo:CL_1001595 (rectum glandular cell)
 
@@ -32314,6 +32315,17 @@ SubClassOf(obo:CL_4042020 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000625
 SubClassOf(obo:CL_4042020 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000007479))
 SubClassOf(obo:CL_4042020 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000007489))
 
+# Class: obo:CL_4047006 (fetal artery endothelial cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_4047006 "An endothelial cell that lines an artery in the fetal circulatory system.")
+AnnotationAssertion(terms:contributor obo:CL_4047006 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047006 "2024-08-16T13:52:25Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "endothelial cell of fetal artery")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "fetal arterial EC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "fetal artery EC")
+AnnotationAssertion(rdfs:label obo:CL_4047006 "fetal artery endothelial cell")
+SubClassOf(obo:CL_4047006 obo:CL_1000413)
+
 # Class: obo:CL_4052001 (multiciliated ependymal cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25045600") Annotation(oboInOwl:hasDbXref "PMID:28067220") Annotation(oboInOwl:hasDbXref "PMID:37008045") obo:IAO_0000115 obo:CL_4052001 "An ependymal cell that lines the lateral, third, and fourth ventricles of the brain. The cell is characterized by multiple motile cilia on its apical surface, which beats in a coordinated manner to facilitate the movement of cerebrospinal fluid (CSF), contributing to brain homeostasis.")
@@ -32337,17 +32349,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WBbt:0008074") oboInOwl:hasEx
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:9067520") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052002 "SC")
 AnnotationAssertion(rdfs:label obo:CL_4052002 "syncytial cell")
 EquivalentClasses(obo:CL_4052002 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001908) ObjectSomeValuesFrom(obo:RO_0000056 obo:GO_0000768)))
-
-# Class: obo:CL_4047006 (fetal artery endothelial cell)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_4047006 "An endothelial cell that lines an artery in the fetal circulatory system.")
-AnnotationAssertion(terms:contributor obo:CL_4047006 <https://orcid.org/0009-0005-7919-4905>)
-AnnotationAssertion(terms:date obo:CL_4047006 "2024-08-16T13:52:25Z"^^xsd:dateTime)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "endothelial cell of fetal artery")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "fetal arterial EC")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "fetal artery EC")
-AnnotationAssertion(rdfs:label obo:CL_4047006 "fetal artery endothelial cell")
-SubClassOf(obo:CL_4047006 obo:CL_1000413)
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
