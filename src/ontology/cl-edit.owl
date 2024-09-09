@@ -3063,6 +3063,8 @@ Declaration(Class(obo:CL_4042018))
 Declaration(Class(obo:CL_4042019))
 Declaration(Class(obo:CL_4042020))
 Declaration(Class(obo:CL_4047006))
+Declaration(Class(obo:CL_4047007))
+Declaration(Class(obo:CL_4047011))
 Declaration(Class(obo:CL_4052001))
 Declaration(Class(obo:CL_4052002))
 Declaration(Class(obo:CP_0000000))
@@ -17661,13 +17663,17 @@ EquivalentClasses(obo:CL_0002374 ObjectIntersectionOf(obo:CL_0000855 ObjectSomeV
 
 # Class: obo:CL_0002375 (Schwann cell precursor)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002375 "A glioblast cell that develops from a migratory neural crest cell. The SCP is embedded among neurons (axons) with minimal extracellular spaces separating them from nerve cell membranes and has no basal lamina. In rodents SCPs are the only cells in the Schwann cell linage that expresses Cdh19.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:15580626") Annotation(oboInOwl:hasDbXref "PMID:30971890") Annotation(oboInOwl:hasDbXref "PMID:35815410") obo:IAO_0000115 obo:CL_0002375 "A multipotent progenitor cell that develops from a migratory neural crest cell. The schwann cell precursor is embedded among axons, with minimal extracellular space separating them from nerve cell membranes. This cell lacks a basal lamina, which distinguishes it from more mature Schwann cells. In rodents, cadherin-19 (Cdh19) serves as a specific marker for this developmental stage.")
 AnnotationAssertion(terms:contributor obo:CL_0002375 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002375 "2010-09-24T02:06:10Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002375 "Schwann cell precursor cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35815410") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002375 "SCP")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35815410") rdfs:comment obo:CL_0002375 "Schwann cell precursor are capable of differentiating into Schwann cells and other cell types such as melanocytes, neurons, and mesenchymal cells.")
 AnnotationAssertion(rdfs:label obo:CL_0002375 "Schwann cell precursor")
-SubClassOf(obo:CL_0002375 obo:CL_0000030)
+SubClassOf(obo:CL_0002375 obo:CL_0011026)
+SubClassOf(obo:CL_0002375 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001402))
 SubClassOf(obo:CL_0002375 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
+SubClassOf(obo:CL_0002375 ObjectSomeValuesFrom(obo:RO_0002387 obo:CL_0002573))
 
 # Class: obo:CL_0002376 (non-myelinating Schwann cell)
 
@@ -32341,6 +32347,27 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasE
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") oboInOwl:hasExactSynonym obo:CL_4047006 "fetal artery EC")
 AnnotationAssertion(rdfs:label obo:CL_4047006 "fetal artery endothelial cell")
 SubClassOf(obo:CL_4047006 obo:CL_1000413)
+
+# Class: obo:CL_4047007 (immature pericyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21839917") Annotation(oboInOwl:hasDbXref "PMID:28564607") Annotation(oboInOwl:hasDbXref "PMID:32466671") Annotation(oboInOwl:hasDbXref "PMID:34497389") Annotation(oboInOwl:hasDbXref "PMID:36685855") obo:IAO_0000115 obo:CL_4047007 "A pericyte that is in an early stage of development, found in newly forming or remodeling blood vessels. An immature pericyte is characterized by it's mesenchymal stem cell-like properties and high proliferative capacity, which allows it to differentiate into various types of pericytes and contribute to the structural and functional maturation of the vasculature. Immature pericytes are stellate in new vessels and elongated with less protrusions in remodeling vessels.")
+AnnotationAssertion(terms:contributor obo:CL_4047007 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047007 "2024-08-19T11:32:32Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28564607") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4047007 "imPCs")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28564607") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4047007 "immature PCs")
+AnnotationAssertion(rdfs:label obo:CL_4047007 "immature pericyte")
+SubClassOf(obo:CL_4047007 obo:CL_0000669)
+
+# Class: obo:CL_4047011 (fetal vein endothelial cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2021.04.07.438755") obo:IAO_0000115 obo:CL_4047011 "An endothelial cell that lines the veins in the fetal circulatory system.")
+AnnotationAssertion(terms:contributor obo:CL_4047011 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047011 "2024-09-05T15:45:32Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2021.04.07.438755") oboInOwl:hasExactSynonym obo:CL_4047011 "fetal venous endothelial cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2021.04.07.438755") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4047011 "fetal vein EC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2021.04.07.438755") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4047011 "fetal venous EC")
+AnnotationAssertion(rdfs:label obo:CL_4047011 "fetal vein endothelial cell"@en)
+SubClassOf(obo:CL_4047011 obo:CL_0002543)
 
 # Class: obo:CL_4052001 (multiciliated ependymal cell)
 
