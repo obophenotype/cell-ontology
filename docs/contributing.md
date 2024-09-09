@@ -1,6 +1,6 @@
 # How to contribute to CL
 
-We welcome your contributions to CL! Generally, you can follow the editors workflow instructions [here](odk-workflows/EditorsWorklow.md).
+We welcome your contributions to CL! Generally, you can follow the editors workflow instructions [here](odk-workflows/EditorsWorkflow.md).
 
 However, if you aren't confident in directly editing the ontology, you can contribute by writing up an issue and one of our curators/developers will pick it up and address it.
 
@@ -13,7 +13,7 @@ If you want a new term added, or want edits to a current term, or spot any mista
 3. Fill up the form as best you can, giving a descriptive title to your issue name and leaving the bracketed [] tag in the title: eg.`Add new term` is bad name, while `[NTR] larval stage X` is good name.
 4. When writing up more complex issues that include multiple items or steps, make sure you include the use of `- [ ]` to denote action items. These turn into checkboxes which makes it much faster to assess which comments have been addressed. (Note: it is better to write up multiple issues than one big one with multiple items, e.g. write up one issue for each term you want added rather than an issue with all the terms you want added.)
 5. If you know a specific curator/editor that you want handling your ticket, you can assign them to your ticket in the assignee tab on the right, if not, someone from our team will assign an appropriate person to handle your ticket. If, however, your ticket has not been looked at in more than 10 days, and you suspect that it might have been missed, please assign it to `gouttegd` and they will assign it appropriately.
-6. If you know how to edit the ontology directly, please then proceed to making a Pull request with the guidelines below, following the editors workflow instructions [here](odk-workflows/EditorsWorklow.md).
+6. If you know how to edit the ontology directly, please then proceed to making a Pull request with the guidelines below, following the editors workflow instructions [here](odk-workflows/EditorsWorkflow.md).
 
 ## Pull request guidelines
 
