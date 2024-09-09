@@ -55,10 +55,11 @@ sh run.sh make normalize_obo_src
    >      <img width="603" alt="image" src="https://github.com/user-attachments/assets/345a9671-f3bf-4d69-a534-2995b19a09ab">
    >      
    >    * For trivial ordering problems, either manually delete the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) and ensure all necessary declarations are retained, or click on **Accept Both Changes**. This will automatically merge all term declarations from both the HEAD and incoming changes, removing the conflict markers.
+   >    * **Important** - Always check that the change does look trivial before making any changes.
    >
    > 3) **Reserialise OWL Files:**
    >
-   >    * It's essential to reserialise after resolving conflicts to ensure consistency and proper formatting:
+   >    * It is essential to reserialise after resolving conflicts to ensure consistency and proper formatting:
    >
    >      ```
    >      sh run.sh make normalize_src
