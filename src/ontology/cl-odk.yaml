@@ -55,6 +55,7 @@ import_group:
     - rdfs:label
     - IAO:0000115
     - oboInOwl:is_metadata_tag
+    - OMO:0002000
   exclude_iri_patterns:
     - <http://www.informatics.jax.org/marker/MGI:*>
     - <http://purl.obolibrary.org/obo/OBA_*>
@@ -87,6 +88,8 @@ import_group:
       use_base: TRUE
     - id: ncbitaxon
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl
+    - id: ncbitaxondisjoints
+      mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
     - id: omo
       module_type: mirror
 pattern_pipelines_group:
@@ -113,6 +116,7 @@ robot_report:
     - illegal-annotation-property
     - label-synonym-polysemy
     - illegal-date
+    - def-not-only-xref
   custom_sparql_exports:
     - cl_terms
     - cl-edges
