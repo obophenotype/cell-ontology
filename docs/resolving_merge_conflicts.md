@@ -35,15 +35,38 @@ sh run.sh make normalize_obo_src
 
 4. In CL, edits sometimes result in creating a large amount of uninteded differences involving ^^xsd:string. If you see these differences after running the command above, they can be resolved by following [the instructions here](https://obophenotype.github.io/cell-ontology/Fixing_xsdstring_diffs/).
 
-5. In GitHub Desktop:
-
-   * Checkout Master and pull to make sure your Master branch is up to date.
-   * Checkout the branch for the pull request and make sure it is up to date.
-   * Choose Branch > Update from master: ![image](https://user-images.githubusercontent.com/112839/112127621-89af9f00-8bbd-11eb-8613-f3a2b8166085.png)
-
-   * GitHub desktop should detect the clash and ask you if you want to open in your text editor of choice (e.g., Atom).
-   * If clashes are due to trivial ordering problems, delete the conflict marks (<<<<<<<, =======, >>>>>>>), commit and push back to GitHub.
-   * Check the resulting diffs on the Pull Request on GitHub.
-   * Once the checks have run and are successful, merge and delete the branch.
-  
-  
+5. Resolving conflicts in GitHub Desktop and VSCode:
+   
+  > 1) **Update Branches in GitHub Desktop:**
+   >
+   >    * **Checkout Master** and pull to make sure your Master branch is up to date.
+   >    * **Checkout the branch** for the pull request and make sure it is up to date.
+   >    * Choose `Branch > Update from Master` to integrate the latest changes from the master branch.
+   >     
+   >      ![Update from Master](https://user-images.githubusercontent.com/112839/112127621-89af9f00-8bbd-11eb-8613-f3a2b8166085.png)
+   >    
+   >    * GitHub Desktop will detect the clash and suggest opening it in your text editor of choice (e.g., Atom, VSCode).
+   > 
+   > 2) **Resolve Conflicts in VSCode:**
+   >
+   >    * Open the conflicting file in VSCode.
+   >    * VSCode will highlight the conflicting areas with markers:
+   >      
+   >      <img width="603" alt="image" src="https://github.com/user-attachments/assets/345a9671-f3bf-4d69-a534-2995b19a09ab">
+   >      
+   >    * For trivial ordering problems, either manually delete the conflict markers (`<<<<<<<`, `=======`, `>>>>>>>`) and ensure all necessary declarations are retained, or click on **Accept Both Changes**. This will automatically merge all term declarations from both the HEAD and incoming changes, removing the conflict markers.
+   >    * **Important** - Always check that the change does look trivial before making any changes.
+   >
+   > 3) **Reserialise OWL Files:**
+   >
+   >    * It is essential to reserialise after resolving conflicts to ensure consistency and proper formatting:
+   >
+   >      ```
+   >      sh run.sh make normalize_src
+   >      ```
+   >
+   > 4) **Complete the Resolution Process:**
+   >
+   >    * In GitHub Desktop, review the changes, commit the resolved conflict, and push the updates back to GitHub.
+   >    * Check the resulting diffs on the Pull Request on GitHub.
+   >    * Once the checks have run and are successful, merge and delete the branch.
