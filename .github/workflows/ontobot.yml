@@ -31,7 +31,7 @@ jobs:
     needs: check
     if: needs.check.outputs.phraseExists == 'true'
     runs-on: ${{ matrix.os }}
-    container: obolibrary/odkfull:v1.4.3
+    container: obolibrary/odkfull:v1.5
     strategy:
       matrix:
         python-version: ["3.9"]
@@ -50,7 +50,7 @@ jobs:
         id: gh-script-issue
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
             const issue_number = context.issue.number
             const repo = context.repo.owner+"/"+context.repo.repo
@@ -60,7 +60,7 @@ jobs:
         id: gh-script-repo
         uses: actions/github-script@v6
         with:
-          # github-token: ${{ secrets.GH_TOKEN }}
+          github-token: ${{ secrets.ONTOBOT_TOKEN }}
           script: |
             const repo = context.repo.owner+"/"+context.repo.repo
             return repo
@@ -71,11 +71,9 @@ jobs:
           echo "resource=src/ontology/cl-edit.owl" >> $GITHUB_ENV
           echo "branch-name=kgcl_automation_"${{ steps.gh-script-issue.outputs.result }} >> $GITHUB_ENV
       
-      - name: Get jar & enable plugin.
+      - name: Enable KGCL plugin
         run: |
-          mkdir -p robot-plugins
-          wget https://github.com/gouttegd/kgcl-java/releases/download/kgcl-0.2.0/kgcl-robot-plugin-0.2.0.jar -O robot-plugins/kgcl.jar
-          echo "ROBOT_PLUGINS_DIRECTORY=$(pwd)/robot-plugins/" >> "$GITHUB_ENV"
+          echo "ROBOT_PLUGINS_DIRECTORY=/tools/robot-plugins/" >> "$GITHUB_ENV"
 
       - name: Install dependencies
         run: |
@@ -87,10 +85,7 @@ jobs:
           ochange process-issue ${{ env.resource }} \
           -r ${{ steps.gh-script-repo.outputs.result }} \
           -n ${{ steps.gh-script-issue.outputs.result }} \
-          -g ${{ secrets.GH_TOKEN }}
-
-      - name: Clean-up
-        run: rm -rf robot-plugins
+          -g ${{ secrets.ONTOBOT_TOKEN }}
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v5
@@ -104,4 +99,4 @@ jobs:
           title: ${{ env.PR_TITLE }}
           base: ${{ github.head_ref }}
           branch: ${{ env.branch-name }}
-          # token: ${{ secrets.GH_TOKEN }}
+          token: ${{ secrets.ONTOBOT_TOKEN }}

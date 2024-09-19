@@ -1,0 +1,16 @@
+prefix oio: <http://www.geneontology.org/formats/oboInOwl#>
+prefix owl: <http://www.w3.org/2002/07/owl#>
+prefix definition: <http://purl.obolibrary.org/obo/IAO_0000115>
+prefix xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT ?cls ?xref WHERE 
+{
+  ?cls definition: ?def .
+  ?ax a owl:Axiom;
+    owl:annotatedSource ?cls;
+    owl:annotatedProperty definition:;
+    owl:annotatedTarget ?def;
+    oio:hasDbXref ?xref .
+    FILTER NOT EXISTS { ?cls owl:deprecated "true"^^xsd:boolean . }
+    FILTER(isIRI(?cls) && STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?cls), "http://purl.obolibrary.org/obo/cl#"))
+}

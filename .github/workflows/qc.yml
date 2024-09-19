@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+# Basic ODK workflow
 
 name: CI
 
@@ -19,7 +19,7 @@ jobs:
   ontology_qc:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.3.0
+    container: obolibrary/odkfull:v1.5.2
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -27,6 +27,37 @@ jobs:
       - uses: actions/checkout@v3
 
       - name: Run ontology QC checks
+        id: check
+        continue-on-error: true
         env:
           DEFAULT_BRANCH: master
-        run: cd src/ontology && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' test IMP=false PAT=false
+        run: cd src/ontology && make ROBOT_ENV='ROBOT_JAVA_ARGS=-Xmx6G' test IMP=false PAT=false MIR=false
+
+      - name: Reason over taxon constraints
+        id: explaintc
+        continue-on-error: true
+        if: steps.check.outcome == 'failure'
+        run: |
+          if [ -s src/ontology/reports/taxon-constraint-check.txt ]; then
+            robot explain -i src/ontology/tmp/cl-plus-taxon-disjoints.ofn -M unsatisfiability -u all -r ELK -e taxon-unsats.md
+            echo "<details>\n<summary>This PR violates some taxon constraints. Here is what the reasoner has to say:</summary>\n" > comments.md
+            cat taxon-unsats.md >> comment.md
+            echo "</details>" >> comment.md
+            exit 1
+          fi
+
+      - name: Post explanation for taxon constraint violations
+        if: steps.explaintc.outcome == 'failure'
+        uses: NejcZdovc/comment-pr@v2
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          file: "../../comment.md"
+          identifier: "TAXON_CONSTRAINTS_REASONING"
+
+      # If the check failed, then the entire job should fail, even if we
+      # allowed it to continue so that we could post the message with
+      # the explanations.
+      - name: Fail on error
+        if: steps.check.outcome == 'failure'
+        run: exit 1
+
