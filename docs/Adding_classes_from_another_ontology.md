@@ -1,5 +1,7 @@
 # How to add (import) classes to the Cell Ontology (CL) from another ontology
 
+**NOTE** To add PRO terms, please follow first the instructions to add the terms into [pro obo slim](https://github.com/obophenotype/pro_obo_slim).
+
 ## 1. Follow steps 1 - 5 under the heading [Protege-based declaration.](https://obophenotype.github.io/cell-ontology/odk-workflows/UpdateImports/#protege-based-declaration)
 
 _NB: Even though the instructions state that this workflow is to be avoided, the other solutions in the current documentation are out of date._
