@@ -4,12 +4,6 @@
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
 
-non_native_classes.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/non-native-classes.sparql $@.tmp &&\
-	cat $@.tmp | sort | uniq >  $@
-	rm -f $@.tmp
-
-# TODO add back: 		remove --term-file non_native_classes.txt \
 
 # Preprocessing: automatically generate text definitions from logical definitions
 $(EDIT_PREPROCESSED): $(SRC) all_robot_plugins
