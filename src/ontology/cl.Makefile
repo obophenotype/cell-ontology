@@ -132,49 +132,6 @@ $(REPORTDIR)/taxon-constraint-check.txt: $(EDIT_PREPROCESSED) $(TMPDIR)/taxslim-
 test: $(REPORTDIR)/taxon-constraint-check.txt
 
 
-##############################################
-##### CL Template pipeline ###################
-##############################################
-
-TEMPLATESDIR=../templates
-DEPENDENCY_TEMPLATE=dependencies.tsv
-TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv)))
-TEMPLATES_OWL=$(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(TEMPLATES))
-TEMPLATES_TSV=$(patsubst %.tsv, $(TEMPLATESDIR)/%.tsv, $(TEMPLATES))
-
-p:
-	echo $(TEMPLATES)
-	echo $(TEMPLATES_TSV)
-	echo $(TEMPLATES_OWL)
-
-templates: prepare_templates $(TEMPLATES_OWL)
-
-remove_template_classes_from_edit.txt: $(TEMPLATES_TSV)
-	for f in $^; do \
-			cut -f1 $${f} >> tmp.txt; \
-			cat tmp.txt | grep 'CL:' | sort | uniq > $@; \
-	done \
-	rm tmp.txt
-
-remove_template_classes_from_edit: remove_template_classes_from_edit.txt $(SRC)
-	$(ROBOT) remove -i $(SRC) -T $< --preserve-structure false -o $(SRC).ofn && mv $(SRC).ofn $(SRC)
-
-prepare_templates: ../templates/config.txt
-	sh ../scripts/download_templates.sh $<
-
-#components/all_templates.owl: $(TEMPLATES_OWL)
-#	$(ROBOT) merge $(patsubst %, -i %, $^) \
-#		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-#		--output $@.tmp.owl && mv $@.tmp.owl $@
-
-$(TEMPLATESDIR)/dependencies.owl: $(TEMPLATESDIR)/dependencies.tsv
-	$(ROBOT) merge -i $(SRC) template --template $< --prefix "CP: http://purl.obolibrary.org/obo/CP_" --output $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
-
-$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies.owl
-	$(ROBOT) merge -i $(SRC) -i $(TEMPLATESDIR)/dependencies.owl template --template $< --output $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
-
 CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
 
 tmp/src-noimports.owl: $(SRC)
