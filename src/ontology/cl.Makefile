@@ -11,69 +11,6 @@ non_native_classes.txt: $(SRC)
 
 # TODO add back: 		remove --term-file non_native_classes.txt \
 
-#####################################################################################
-### Run ontology-release-runner instead of ROBOT as long as ROBOT is broken.      ###
-#####################################################################################
-
-# The reason command (and the reduce command) removed some of the very crucial asserted axioms at this point.
-# That is why we first need to extract all logical axioms (i.e. subsumptions) and merge them back in after
-# The reasoning step is completed. This will be a big problem when we switch to ROBOT completely..
-
-tmp/cl_terms.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/cl_terms.sparql $@
-
-tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
-	$(ROBOT) merge --input $< \
-		filter --term-file tmp/cl_terms.txt --axioms "logical" --preserve-structure false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && mv $@.tmp.obo $@
-
-# All this terrible OBO file hacking is necessary to make sure downstream tools can actually compile something resembling valid OBO (oort!).
-#http://purl.obolibrary.org/obo/UBERON_0004370 EquivalentTo basement membrane needs fixing
-# Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
-# into existentials on roundtrip
-
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
-	$(ROBOT) merge --input $(SRC) \
-		reason --reasoner ELK \
-		relax \
-		remove --axioms equivalent \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		remove -T config/remove_annotations.txt --axioms annotation \
-		query --update ../sparql/remove-op-definitions.ru \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
-		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
-		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
-		grep -v '^relationship[:][ ]drains[ ]CARO' tmp/source-stripped3.obo > tmp/source-stripped.obo &&\
-		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/created_by[:].*\ncreated_by[:]/created_by:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
-		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
-
-oort: tmp/source-merged.obo
-	ontology-release-runner --reasoner elk tmp/source-merged.obo --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
-
-# With the new OWLAPI 4.5.26, which allows arbitrary annotation properties in the OBO parser and oort using a previous OWLAPI version, 
-# we are having conflicts when converting it. Also, the oort step is not used in any release artefact.
-#test: oort
-
-tmp/$(ONT)-stripped.owl: oort
-	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
-		convert -o $@
-
-# cl_signature.txt should contain all CL terms and all properties (and subsets) used by the ontology.
-# It serves like a proper signature, but including annotation properties
-tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
-	$(ROBOT) query -f csv -i $< --query ../sparql/object-properties.sparql $@_prop.tmp &&\
-	cat tmp/cl_terms.txt $@_prop.tmp | sort | uniq > $@ &&\
-	rm $@_prop.tmp
-
-# The standard simple artefacts keeps a bunch of irrelevant Typedefs which are a result of the merge. The following steps takes the result
-# of the oort simple version, and then removes them. A second problem is that oort does not deal well with cycles and removes some of the
-# asserted CL subsumptions. This can hopefully be solved once we can move all the way to ROBOT, but for now, it requires merging in
-# the asserted hierarchy and reducing again.
-
-
-# Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
-
-
 # Preprocessing: automatically generate text definitions from logical definitions
 $(EDIT_PREPROCESSED): $(SRC) all_robot_plugins
 	$(ROBOT) flybase:rewrite-def -i $< --dot-definitions --null-definitions \
