@@ -243,20 +243,26 @@ $(REPORTDIR)/obo-diff.txt: $(TMPDIR)/cl-lastbuild.owl $(TMPDIR)/cl-current.owl
 all_reports: $(REPORTDIR)/obo-diff.txt
 
 
-normalise_xsd_string: $(SRC)
-	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
-	rm $<.bak
+# ----------------------------------------
+# UTILITY COMMANDS
+# ----------------------------------------
 
+# Remove alternative ID from the -edit file
 rm-altid:
-	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
-	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl
+	$(ROBOT) query -i $(SRC) --format ttl \
+		       --query $(SPARQLDIR)/rm-obsolete-alt-id.ru \
+		       $(TMPDIR)/cl-updated.ttl
+	$(ROBOT) unmerge -i $(SRC) -i $(TMPDIR)/cl-updated.ttl \
+		 convert -f ofn -o $(SRC)
 
-merge-constructed:
-	$(ROBOT) merge -i $(SRC) -i tmp/cl-construct-replaced-by.ttl --collapse-import-closure false convert -f ofn -o $(SRC)
-
-construct-replaced-by:
-	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
-
+# Inject replaced_by (IAO:0100001) annotations in the -edit file
+add-replacedby:
+	$(ROBOT) query -i $(SRC) --format ttl \
+		       --query $(SPARQLDIR)/construct-replaced-by.sparql \
+		       $(TMPDIR)/cl-construct-replaced-by.ttl
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/cl-construct-replaced-by.ttl \
+		       --collapse-import-closure false \
+		 convert -f ofn -o $(SRC)
 
 
 .PHONY: obocheck
