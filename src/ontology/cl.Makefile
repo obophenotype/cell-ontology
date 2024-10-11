@@ -305,8 +305,14 @@ add-replacedby:
 		 convert -f ofn -o $(SRC)
 
 
-## Download human reference atlas subset
+# ----------------------------------------
+# EXTERNAL RESOURCES
+# ----------------------------------------
 
+# Human reference atlas subset
+# FIXME: Refreshing of this resource should be uncoupled from the
+# release/QC pipelines.
+# See <https://github.com/obophenotype/cell-ontology/issues/2644>
 HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
 $(TMPDIR)/hra_subset.owl:
 	wget $(HRA_SUBSET_URL) -O $@
@@ -314,8 +320,11 @@ $(TMPDIR)/hra_subset.owl:
 $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
-## Download CellXGene reference subset
-
+# CellXGene reference subset
+# FIXME: Never actually downloaded again, unless the
+# $(TEMPLATEDIR)/cellxgene_subset.tsv file is manually removed; probably
+# not what was intended.
+# See <https://github.com/obophenotype/cell-ontology/issues/2644>
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
 $(TEMPLATEDIR)/cellxgene_subset.tsv:
 	wget $(CELLXGENE_SUBSET_URL) -O $@
