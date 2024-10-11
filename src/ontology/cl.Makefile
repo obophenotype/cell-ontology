@@ -133,6 +133,24 @@ test: $(REPORTDIR)/taxon-constraint-check.txt
 
 
 # ----------------------------------------
+# OTHER CUSTOM CHECKS
+# ----------------------------------------
+
+.PHONY: obocheck
+obocheck: $(SRC)
+	$(ROBOT) merge -i $(SRC) \
+		 remove --base-iri $(URIBASE)/CL_ --axioms external --trim false \
+		 convert -f obo --check false -o $(TMPDIR)/cl-check.obo
+	fastobo-validator $(TMPDIR)/cl-check.obo
+
+test_obsolete: $(ONT).obo
+	! grep "! obsolete" $<
+
+test: obocheck \
+      test_obsolete
+
+
+# ----------------------------------------
 # DOSDP PATTERNS HACKS
 # ----------------------------------------
 
@@ -263,19 +281,6 @@ add-replacedby:
 	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/cl-construct-replaced-by.ttl \
 		       --collapse-import-closure false \
 		 convert -f ofn -o $(SRC)
-
-
-.PHONY: obocheck
-obocheck:
-	$(ROBOT) merge -i cl-edit.owl remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external --trim false convert -f obo --check false -o cl-check.obo
-	fastobo-validator cl-check.obo
-	
-test: obocheck
-
-test_obsolete: cl.obo
-	! grep "! obsolete" cl.obo
-
-test: test_obsolete
 
 
 ## Download human reference atlas subset
