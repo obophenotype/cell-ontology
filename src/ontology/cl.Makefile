@@ -132,6 +132,57 @@ $(REPORTDIR)/taxon-constraint-check.txt: $(EDIT_PREPROCESSED) $(TMPDIR)/taxslim-
 test: $(REPORTDIR)/taxon-constraint-check.txt
 
 
+# ----------------------------------------
+# DOSDP PATTERNS HACKS
+# ----------------------------------------
+
+# Finding matches for DOSDP patterns. We can't use the ODK-generated
+# workflow for that, because we need to exclude the ExtendedDescription
+# pattern (which does not contain any logical definition to query
+# against), something that the ODK does not allow to do.
+# So we use the following convention: we find matches only for patterns
+# whose filename starts with a lowercase letter (hereafter called the
+# "queryable patterns"), instead of all patterns found in the patterns
+# directory.
+# See <https://github.com/obophenotype/cell-ontology/issues/2639>.
+QUERYABLE_PATTERN_FILES=$(wildcard $(PATTERNDIR)/dosdp-patterns/[a-z]*.yaml)
+QUERYABLE_PATTERN_NAMES=$(foreach f,$(QUERYABLE_PATTERN_FILES),$(basename $(notdir $f)))
+.PHONY: matches
+matches: $(SRC) $(QUERYABLE_PATTERN_FILES)
+	$(DOSDPT) query --ontology=$< --catalog=$(CATALOG) \
+		        --reasoner=elk --obo-prefixes=true \
+		        --batch-patterns="$(QUERYABLE_PATTERN_NAMES)" \
+		        --template="$(PATTERNDIR)/dosdp-patterns" \
+		        --outfile="$(PATTERNDIR)/data/matches/"
+
+# Generating documentation for the DOSDP patterns
+# FIXME: This is currently broken, see
+# <https://github.com/obophenotype/cell-ontology/issues/2636>.
+# Also, ideally this should be provided by the ODK, see
+# <https://github.com/INCATools/ontology-development-kit/issues/1101>.
+.PHONY: pattern_docs
+pattern_docs: $(ALL_PATTERN_FILES)
+	dosdp document -i $(PATTERNDIR)/dosdp-patterns/ \
+		       -d $(PATTERNDIR)/data/matches/ \
+		       -o ../../docs/patterns/
+
+# DOSDP on Google Sheets
+# FIXME: What is that exactly? Is the cellPartOfAnatomicalEntity pattern
+# supposed to be maintained on GoogleDocs rather than directly in this
+# repository? If so, it is weird that (1) the rule below has never been
+# invoked, so we never filled the pattern table with the contents of the
+# GoogleDocs sheet, and (2) as of October 2024 (3 years after the rule
+# below was added) that sheet contains only ONE row.
+# See <https://github.com/obophenotype/cell-ontology/issues/2638>
+DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
+
+.PHONY: gs_dosdp_%
+gs_dosdp_%:
+	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
+
+gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
+
+
 CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
 
 tmp/src-noimports.owl: $(SRC)
@@ -183,23 +234,7 @@ merge-constructed:
 construct-replaced-by:
 	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
 
-ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
-DOSDPT=dosdp-tools
 
-tmp/edit-merged.owl: $(SRC)
-	$(ROBOT) merge -i $< -o $@
-
-.PHONY: matches
-matches: tmp/edit-merged.owl
-	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
-
-.PHONY: install_dosdp
-install_dosdp:
-	pip install -i https://test.pypi.org/simple/ dosdp==0.1.7.dev1
-
-.PHONY: pattern_docs
-pattern_docs:
-	dosdp document -i ../patterns/dosdp-patterns/ -o ../../docs/patterns/ -d ../patterns/data/matches/
 
 .PHONY: obocheck
 obocheck:
@@ -212,16 +247,6 @@ test_obsolete: cl.obo
 	! grep "! obsolete" cl.obo
 
 test: test_obsolete
-
-## DOSDP on Google Sheets
-
-DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
-
-.PHONY: gs_dosdp_%
-gs_dosdp_%:
-	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
-
-gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
 
 
 ## Download human reference atlas subset
