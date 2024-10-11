@@ -183,41 +183,64 @@ gs_dosdp_%:
 gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
 
 
-CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
+# ----------------------------------------
+# DIFFS/REPORTS
+# ----------------------------------------
 
-tmp/src-noimports.owl: $(SRC)
+# Diffs against the master branch on GitHub
+# -----------------------------------------
+# Two variants: with and without the imports.
+# Not automatically generated from amywhere, but available on demand
+# by calling `make branch_diffs`.
+
+CL_EDIT_GITHUB_MASTER = https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
+
+$(TMPDIR)/src-noimports.owl: $(SRC)
 	$(ROBOT) remove -i $< --select imports -o $@
 
-tmp/src-imports.owl: $(SRC)
+$(TMPDIR)/src-imports.owl: $(SRC)
 	$(ROBOT) merge -i $< -o $@
 
-tmp/src-master-noimports.owl:
+$(TMPDIR)/src-master-noimports.owl:
 	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
 
-tmp/src-master-imports.owl:
+$(TMPDIR)/src-master-imports.owl:
 	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
 
-reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
-	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
+$(TMPDIR)/diff_edit_%.md: $(TMPDIR)/src-master-%.owl $(TMPDIR)/src-%.owl
+	$(ROBOT) diff --left $(TMPDIR)/src-master-$*.owl --right $(TMPDIR)/src-$*.owl -f markdown -o $@
 
-reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
-	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -o $@
+$(TMPDIR)/diff_edit_%.txt: $(TMPDIR)/src-master-%.owl $(TMPDIR)/src-%.owl
+	$(ROBOT) diff --left $(TMPDIR)/src-master-$*.owl --right $(TMPDIR)/src-$*.owl -o $@
 
-branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
+branch_diffs: $(REPORTDIR)/diff_edit_imports.md \
+	      $(REPORTDIR)/diff_edit_noimports.md \
+	      $(REPORTDIR)/diff_edit_imports.txt \
+	      $(REPORTDIR)/diff_edit_noimports.txt
 
-tmp/cl-current.owl: $(ONT).owl
-	$(ROBOT) remove -i $< --term rdfs:label --select complement --select annotation-properties \
-		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
 
-tmp/cl-lastbuild.owl: .FORCE
-	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label --select complement --select annotation-properties \
-		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
+# Diff against the latest released version
+# ----------------------------------------
+# FIXME: It's unclear whether this diff is still desired. It is only
+# generated when `all_reports` is explicitly invoked. Upon releasing, we
+# now produce more complete diffs against the latest public base (see
+# RELEASE DEPLOYMENT below), likely making this diff no longer relevant.
+# See <https://github.com/obophenotype/cell-ontology/issues/2641>.
 
-reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
-	$(ROBOT) diff --left $< --right tmp/cl-current.owl -f markdown -o $@
-	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
+$(TMPDIR)/cl-current.owl: $(ONT).owl
+	$(ROBOT) remove -i $< --term rdfs:label \
+		        --select complement --select annotation-properties \
+		 remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
 
-all_reports: reports/obo-diff.txt
+$(TMPDIR)/cl-lastbuild.owl: .FORCE
+	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label \
+		        --select complement --select annotation-properties \
+		 remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
+
+$(REPORTDIR)/obo-diff.txt: $(TMPDIR)/cl-lastbuild.owl $(TMPDIR)/cl-current.owl
+	$(ROBOT) diff --left $< --right $(TMPDIR)/cl-current.owl -f markdown -o $@
+
+all_reports: $(REPORTDIR)/obo-diff.txt
 
 
 normalise_xsd_string: $(SRC)
