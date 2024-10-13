@@ -206,22 +206,6 @@ pattern_docs: $(ALL_PATTERN_FILES)
 		       -d $(PATTERNDIR)/data/matches/ \
 		       -o ../../docs/patterns/
 
-# DOSDP on Google Sheets
-# FIXME: What is that exactly? Is the cellPartOfAnatomicalEntity pattern
-# supposed to be maintained on GoogleDocs rather than directly in this
-# repository? If so, it is weird that (1) the rule below has never been
-# invoked, so we never filled the pattern table with the contents of the
-# GoogleDocs sheet, and (2) as of October 2024 (3 years after the rule
-# below was added) that sheet contains only ONE row.
-# See <https://github.com/obophenotype/cell-ontology/issues/2638>
-DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
-
-.PHONY: gs_dosdp_%
-gs_dosdp_%:
-	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
-
-gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
-
 
 # ----------------------------------------
 # DIFFS/REPORTS
