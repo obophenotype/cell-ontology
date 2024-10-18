@@ -44,7 +44,7 @@ Annotation(terms:contributor <https://orcid.org/0000-0002-8688-6599>)
 Annotation(terms:contributor <https://orcid.org/0000-0002-9900-7880>)
 Annotation(terms:contributor <https://orcid.org/0000-0003-1980-3228>)
 Annotation(terms:license <http://creativecommons.org/licenses/by/4.0/>)
-Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, university at buffalo.")
+Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl"@buffalo.edu, university at buffalo.)
 
 Declaration(Class(obo:CL_0000000))
 Declaration(Class(obo:CL_0000001))
@@ -3206,7 +3206,6 @@ Declaration(Class(obo:UBERON_0002707))
 Declaration(Class(obo:UBERON_0003209))
 Declaration(Class(obo:UBERON_0003677))
 Declaration(Class(obo:UBERON_0003718))
-Declaration(Class(obo:UBERON_0003884))
 Declaration(Class(obo:UBERON_0004024))
 Declaration(Class(obo:UBERON_0004026))
 Declaration(Class(obo:UBERON_0004196))
@@ -3334,7 +3333,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3428,11 +3427,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -4548,7 +4547,7 @@ SubClassOf(obo:CL_0000101 obo:CL_0000526)
 # Class: obo:CL_0000102 (polymodal neuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000102 "polymodal neuron")
-SubClassOf(obo:CL_0000102 obo:CL_0000540)
+SubClassOf(obo:CL_0000102 obo:CL_2000032)
 
 # Class: obo:CL_0000103 (bipolar neuron)
 
@@ -4564,14 +4563,14 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:67287") Annotation(oboInO
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000104 "FMA:67287")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000104 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_0000104 "multipolar neuron")
-EquivalentClasses(obo:CL_0000104 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070026) ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017)))
+EquivalentClasses(obo:CL_0000104 obo:CL_0000540)
 
 # Class: obo:CL_0000105 (pseudounipolar neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:67305") Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0000105 "Neuron with two neurites that are fused grossly when they protrude from the soma and bifurcate a short distance from the soma.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000105 "FMA:67305")
 AnnotationAssertion(rdfs:label obo:CL_0000105 "pseudounipolar neuron")
-SubClassOf(obo:CL_0000105 obo:CL_0000540)
+SubClassOf(obo:CL_0000105 obo:CL_2000032)
 
 # Class: obo:CL_0000106 (unipolar neuron)
 
@@ -4579,7 +4578,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:67278") Annotation(oboInO
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000106 "FMA:67278")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000106 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_0000106 "unipolar neuron")
-SubClassOf(obo:CL_0000106 obo:CL_0000540)
+SubClassOf(obo:CL_0000106 obo:CL_2000032)
 
 # Class: obo:CL_0000107 (autonomic neuron)
 
@@ -4691,7 +4690,7 @@ SubClassOf(obo:CL_0000119 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://medical-dictionary.thefreedictionary.com/granule+cell>) obo:IAO_0000115 obo:CL_0000120 "A neuron of the vertebrate central nervous system that is small in size. This general class includes small neurons in the granular layer of the cerebellar cortex, cerebral cortex neurons that are not pyramidal cells and small neurons without axons found in the olfactory bulb.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000120 "BTO:0003393")
 AnnotationAssertion(rdfs:label obo:CL_0000120 "granule cell")
-SubClassOf(obo:CL_0000120 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956)))
+SubClassOf(obo:CL_0000120 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017)))
 
 # Class: obo:CL_0000121 (Purkinje cell)
 
@@ -4706,7 +4705,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28821816") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17535929") Annotation(oboInOwl:hasDbXref "PMID:27215193") Annotation(oboInOwl:hasDbXref "PMID:37426070") Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.stem.2023.11.013") rdfs:comment obo:CL_0000121 "Neurodegenerative disorders affecting Purkinje cells disrupt motor functions. Some of the neurodegenerative disorders that causes loss and degeration of Purkinje cells are Spinocerebellar ataxias (SCAs) (Josef P Kapfhammer and Etsuko Shimobayashi 2023), Friedreich's ataxia (FRDA) (Kevin C Kemp et al., 2016), Fetal alcohol syndrome (Laurent Servais et al., 2016), Dandy-Walker malformation (Alexander Atamian et al., 2024).")
 AnnotationAssertion(rdfs:label obo:CL_0000121 "Purkinje cell")
 SubClassOf(obo:CL_0000121 obo:CL_0000527)
-SubClassOf(obo:CL_0000121 obo:CL_0000540)
+SubClassOf(obo:CL_0000121 obo:CL_2000029)
 SubClassOf(obo:CL_0000121 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129))
 
 # Class: obo:CL_0000122 (stellate neuron)
@@ -4716,6 +4715,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000122 "BTO:0002316")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000122 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_0000122 "stellate neuron")
 EquivalentClasses(obo:CL_0000122 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070010)))
+SubClassOf(obo:CL_0000122 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_0000123 (neuron associated cell (sensu Vertebrata))
 
@@ -5542,7 +5542,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000210 "CALOHA:TS-0868")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000210 "FMA:86740")
 AnnotationAssertion(rdfs:label obo:CL_0000210 "photoreceptor cell")
 AnnotationAssertion(foaf:depiction obo:CL_0000210 "https://www.swissbiopics.org/api/image/Photoreceptor_cell.svg"^^xsd:anyURI)
-EquivalentClasses(obo:CL_0000210 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050908)))
+EquivalentClasses(obo:CL_0000210 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050908)))
 SubClassOf(obo:CL_0000210 obo:CL_0008028)
 
 # Class: obo:CL_0000211 (electrically active cell)
@@ -6817,7 +6817,7 @@ SubClassOf(obo:CL_0000378 obo:CL_0000630)
 # Class: obo:CL_0000379 (sensory processing neuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000379 "sensory processing neuron")
-SubClassOf(obo:CL_0000379 obo:CL_0000540)
+SubClassOf(obo:CL_0000379 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000010)))
 
 # Class: obo:CL_0000380 (thecogen cell)
 
@@ -8657,7 +8657,9 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000598 "projection neuron")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000598 "pyramidal cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000598 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_0000598 "pyramidal neuron")
-EquivalentClasses(obo:CL_0000598 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070015) ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017)))
+EquivalentClasses(obo:CL_0000598 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070015)))
+SubClassOf(obo:CL_0000598 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070015))
+SubClassOf(obo:CL_0000598 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_0000599 (conidium)
 
@@ -9376,7 +9378,7 @@ SubClassOf(obo:CL_0000677 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000127
 # Class: obo:CL_0000678 (commissural neuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000678 "commissural neuron")
-SubClassOf(obo:CL_0000678 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017)))
+SubClassOf(obo:CL_0000678 obo:CL_0000540)
 
 # Class: obo:CL_0000679 (glutamatergic neuron)
 
@@ -9518,6 +9520,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Cajal–Re
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "WikipediaVersioned:Cajal–Retzius_cell&oldid=1032081753") oboInOwl:hasExactSynonym obo:CL_0000695 "Horizontal cells of Cajal")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10600995") rdfs:comment obo:CL_0000695 "While previously called 'pioneer neurons' of the marginal zone, Cajal-Retzius cells are differentiated from pioneer neurons (which are Reln-negative) by their Reln-immunoreactivity.")
 AnnotationAssertion(rdfs:label obo:CL_0000695 "Cajal-Retzius cell")
+SubClassOf(obo:CL_0000695 obo:CL_0000540)
 SubClassOf(obo:CL_0000695 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070006))
 SubClassOf(obo:CL_0000695 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0010403))
 
@@ -9940,7 +9943,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41598-020-66092-
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41598-020-66092-9") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) Annotation(oboInOwl:hasSynonymType obo:OMO_0003004) oboInOwl:hasRelatedSynonym obo:CL_0000748 "BCs")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GSE137537") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) Annotation(oboInOwl:hasSynonymType obo:OMO_0003004) oboInOwl:hasRelatedSynonym obo:CL_0000748 "BPs")
 AnnotationAssertion(rdfs:label obo:CL_0000748 "retinal bipolar neuron")
-EquivalentClasses(obo:CL_0000748 ObjectIntersectionOf(obo:CL_0000103 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001791)))
+EquivalentClasses(obo:CL_0000748 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001791)))
 SubClassOf(obo:CL_0000748 obo:CL_0009004)
 SubClassOf(obo:CL_0000748 ObjectSomeValuesFrom(obo:RO_0002215 ObjectIntersectionOf(obo:GO_0061535 ObjectSomeValuesFrom(obo:BFO_0000050 obo:GO_0098976))))
 SubClassOf(obo:CL_0000748 ObjectSomeValuesFrom(obo:RO_0002216 obo:GO_0007601))
@@ -19980,6 +19983,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002610 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002610 "2011-03-06T07:42:06Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002610 "raphe nuclei neuron")
 EquivalentClasses(obo:CL_0002610 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0004684)))
+SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002610 obo:CL_2000029)
 
 # Class: obo:CL_0002611 (neuron of the dorsal spinal cord)
 
@@ -19988,6 +19992,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002611 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002611 "2011-03-06T07:43:34Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002611 "neuron of the dorsal spinal cord")
 EquivalentClasses(obo:CL_0002611 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002256)))
+SubClassOf(obo:CL_0002611 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_0002612 (neuron of the ventral spinal cord)
 
@@ -20003,7 +20008,8 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo
 AnnotationAssertion(terms:contributor obo:CL_0002613 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002613 "2011-03-06T07:47:12Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002613 "striatum neuron")
-EquivalentClasses(obo:CL_0002613 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002435)))
+EquivalentClasses(obo:CL_0002613 ObjectIntersectionOf(obo:CL_2000029 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002435)))
+SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002613 obo:CL_2000029)
 
 # Class: obo:CL_0002614 (neuron of the substantia nigra)
 
@@ -24098,7 +24104,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:12486170") Annotation(ob
 AnnotationAssertion(rdfs:comment obo:CL_0010022 "This term is used in 3 GO terms that were created as part of the heart development focus project.")
 AnnotationAssertion(rdfs:label obo:CL_0010022 "cardiac neuron")
 AnnotationAssertion(rdfs:seeAlso obo:CL_0010022 "https://github.com/obophenotype/cell-ontology/pull/1488")
-EquivalentClasses(obo:CL_0010022 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000948)))
+EquivalentClasses(obo:CL_0010022 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000948)))
 
 # Class: obo:CL_0011000 (dorsal horn interneuron)
 
@@ -24478,7 +24484,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0011112 "true"^^xsd:boolean)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:NV") obo:IAO_0000115 obo:CL_0011113 "Neuron found in the spiral ganglion.")
 AnnotationAssertion(rdfs:label obo:CL_0011113 "spiral ganglion neuron")
-EquivalentClasses(obo:CL_0011113 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000395)))
+EquivalentClasses(obo:CL_0011113 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000395)))
 SubClassOf(obo:CL_0011113 obo:CL_0000540)
 
 # Class: obo:CL_0011114 (segmented neutrophil of bone marrow)
@@ -27726,7 +27732,7 @@ SubClassOf(obo:CL_1001502 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0004186
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0009955") obo:IAO_0000115 obo:CL_1001503 "The principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala.")
 AnnotationAssertion(rdfs:label obo:CL_1001503 "olfactory bulb tufted cell")
-SubClassOf(obo:CL_1001503 obo:CL_2000029)
+SubClassOf(obo:CL_1001503 obo:CL_0000540)
 SubClassOf(obo:CL_1001503 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005376))
 
 # Class: obo:CL_1001505 (parvocellular neurosecretory cell)
@@ -29558,7 +29564,7 @@ AnnotationAssertion(terms:contributor obo:CL_4023035 "https://orcid.org/0000-000
 AnnotationAssertion(terms:contributor obo:CL_4023035 "https://orcid.org/0000-0002-7073-9172")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10377350") oboInOwl:hasExactSynonym obo:CL_4023035 "LGE-derived neuron")
 AnnotationAssertion(rdfs:label obo:CL_4023035 "lateral ganglionic eminence derived neuron"@en)
-EquivalentClasses(obo:CL_4023035 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017) ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004025)))
+EquivalentClasses(obo:CL_4023035 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004025)))
 
 # Class: obo:CL_4023036 (chandelier pvalb GABAergic cortical interneuron)
 
@@ -29592,7 +29598,7 @@ EquivalentClasses(obo:CL_4023038 ObjectIntersectionOf(obo:CL_0000679 ObjectSomeV
 AnnotationAssertion(terms:contributor obo:CL_4023039 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") rdfs:comment obo:CL_4023039 "An excitatory neuron that is located in the amygdala.")
 AnnotationAssertion(rdfs:label obo:CL_4023039 "amygdala excitatory neuron")
-EquivalentClasses(obo:CL_4023039 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017) ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001876) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535)))
+EquivalentClasses(obo:CL_4023039 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001876) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535)))
 
 # Class: obo:CL_4023040 (L2/3-6 intratelencephalic projecting glutamatergic neuron)
 
@@ -29834,7 +29840,7 @@ SubClassOf(obo:CL_4023060 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001954
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") obo:IAO_0000115 obo:CL_4023061 "A neuron that has its soma located in CA4 of the hippocampus.")
 AnnotationAssertion(terms:contributor obo:CL_4023061 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(rdfs:label obo:CL_4023061 "hippocampal CA4 neuron")
-SubClassOf(obo:CL_4023061 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0003884)))
+SubClassOf(obo:CL_4023061 obo:CL_0000540)
 
 # Class: obo:CL_4023062 (dentate gyrus neuron)
 
@@ -29886,6 +29892,7 @@ AnnotationAssertion(terms:contributor obo:CL_4023066 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023066 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023066 "horizontal pyramidal neuron")
 EquivalentClasses(obo:CL_4023066 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070016)))
+SubClassOf(obo:CL_4023066 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_4023067 (obsolete Martinotti morphology L2/3 pvalb-like sst GABAergic cortical interneuron (Mus musculus))
 
@@ -30019,7 +30026,7 @@ AnnotationAssertion(owl:deprecated obo:CL_4023078 "true"^^xsd:boolean)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") obo:IAO_0000115 obo:CL_4023079 "A GABAergic inhibitory neuron that is derived from the midbrain.")
 AnnotationAssertion(terms:contributor obo:CL_4023079 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(rdfs:label obo:CL_4023079 "midbrain-derived inhibitory neuron")
-EquivalentClasses(obo:CL_4023079 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017) ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0001891)))
+EquivalentClasses(obo:CL_4023079 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0001891)))
 
 # Class: obo:CL_4023080 (stellate L6 intratelencephalic projecting glutamatergic neuron of the primary motor cortex (Mmus))
 
@@ -30102,7 +30109,8 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30715238") obo:IAO_00001
 AnnotationAssertion(terms:contributor obo:CL_4023092 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023092 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023092 "inverted pyramidal neuron")
-EquivalentClasses(obo:CL_4023092 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
+EquivalentClasses(obo:CL_4023092 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070021)))
+SubClassOf(obo:CL_4023092 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_4023093 (stellate pyramidal neuron)
 
@@ -30111,6 +30119,7 @@ AnnotationAssertion(terms:contributor obo:CL_4023093 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023093 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023093 "stellate pyramidal neuron")
 EquivalentClasses(obo:CL_4023093 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070020)))
+SubClassOf(obo:CL_4023093 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_4023094 (tufted pyramidal neuron)
 
@@ -30118,7 +30127,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30715238") obo:IAO_00001
 AnnotationAssertion(terms:contributor obo:CL_4023094 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023094 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023094 "tufted pyramidal neuron")
-EquivalentClasses(obo:CL_4023094 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070018) ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956)))
+EquivalentClasses(obo:CL_4023094 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070018)))
 
 # Class: obo:CL_4023095 (untufted pyramidal neuron)
 
@@ -30126,7 +30135,8 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30715238") obo:IAO_00001
 AnnotationAssertion(terms:contributor obo:CL_4023095 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023095 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_4023095 "untufted pyramidal neuron")
-EquivalentClasses(obo:CL_4023095 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070019) ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956)))
+EquivalentClasses(obo:CL_4023095 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070019)))
+SubClassOf(obo:CL_4023095 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_4023097 (arachnoid barrier cell)
 
@@ -30443,7 +30453,7 @@ AnnotationAssertion(terms:contributor obo:CL_4023130 <https://orcid.org/0000-000
 AnnotationAssertion(terms:contributor obo:CL_4023130 <https://orcid.org/0000-0002-0819-0473>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30042117") rdfs:comment obo:CL_4023130 "Gonadal sex steroids stimulate kisspeptin neurons in the RP3V, but inhibit kisspeptin neurons in the ARC.")
 AnnotationAssertion(rdfs:label obo:CL_4023130 "kisspeptin neuron")
-EquivalentClasses(obo:CL_4023130 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000009344)))
+EquivalentClasses(obo:CL_4023130 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000009344)))
 
 # Class: obo:CL_4023154 (myelinating glial cell)
 
@@ -30523,7 +30533,7 @@ SubClassOf(obo:CL_4023164 obo:CL_4023162)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22865660") obo:IAO_0000115 obo:CL_4023168 "A neuron that is part of the somatic sensory system. Somatosensory neurons innervate the skin or integument to detect different types of thermal, chemical, and mechanical touch stimuli.")
 AnnotationAssertion(terms:contributor obo:CL_4023168 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(rdfs:label obo:CL_4023168 "somatosensory neuron")
-EquivalentClasses(obo:CL_4023168 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003942)))
+EquivalentClasses(obo:CL_4023168 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003942) ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000010)))
 
 # Class: obo:CL_4023169 (trigeminal neuron)
 
@@ -30531,7 +30541,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22190641") Annotation(ob
 AnnotationAssertion(terms:contributor obo:CL_4023169 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(rdfs:label obo:CL_4023169 "trigeminal neuron")
 SubClassOf(obo:CL_4023169 obo:CL_0000540)
-SubClassOf(obo:CL_4023169 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002240))
 
 # Class: obo:CL_4023170 (trigeminal sensory neuron)
 
