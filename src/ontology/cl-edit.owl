@@ -3037,6 +3037,7 @@ Declaration(Class(obo:CL_4033066))
 Declaration(Class(obo:CL_4033067))
 Declaration(Class(obo:CL_4033083))
 Declaration(Class(obo:CL_4033084))
+Declaration(Class(obo:CL_4033086))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3071,6 +3072,8 @@ Declaration(Class(obo:CL_4042024))
 Declaration(Class(obo:CL_4042025))
 Declaration(Class(obo:CL_4042026))
 Declaration(Class(obo:CL_4042027))
+Declaration(Class(obo:CL_4042028))
+Declaration(Class(obo:CL_4042029))
 Declaration(Class(obo:CL_4042031))
 Declaration(Class(obo:CL_4042032))
 Declaration(Class(obo:CL_4047006))
@@ -3103,6 +3106,8 @@ Declaration(Class(obo:CL_4052018))
 Declaration(Class(obo:CL_4052019))
 Declaration(Class(obo:CL_4052020))
 Declaration(Class(obo:CL_4052021))
+Declaration(Class(obo:CL_4052022))
+Declaration(Class(obo:CL_4052023))
 Declaration(Class(obo:CL_4052048))
 Declaration(Class(obo:CL_4052049))
 Declaration(Class(obo:CP_0000000))
@@ -3336,7 +3341,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3430,11 +3435,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -5046,16 +5051,16 @@ EquivalentClasses(obo:CL_0000154 ObjectIntersectionOf(obo:CL_0000151 ObjectSomeV
 
 # Class: obo:CL_0000155 (peptic cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0000155 "A cell that is usually basal in position, cuboidal with round nucleus, short microvilli, secretes pepsinogen.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:21907708") Annotation(oboInOwl:hasDbXref "PMID:30571046") Annotation(oboInOwl:hasDbXref "Wikipedia:Gastric_chief_cell") obo:IAO_0000115 obo:CL_0000155 "An epithelial cell of the stomach that is part of the fundic gastric gland. This cell is characterized by a basally located nucleus, abundant rough endoplasmic reticulum, and large apical secretory granules. It produces and secretes pepsinogen, the inactive precursor of the digestive enzyme pepsin.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000155 "FMA:62902")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000155 "chief cell of stomach")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000155 "gastric chief cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Chief_cell") oboInOwl:hasExactSynonym obo:CL_0000155 "gastric chief cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000155 "pepsinogen secreting cell")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000155 "zymogenic cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Chief_cell") oboInOwl:hasExactSynonym obo:CL_0000155 "zymogenic cell")
 AnnotationAssertion(rdfs:label obo:CL_0000155 "peptic cell")
 SubClassOf(obo:CL_0000155 obo:CL_0000154)
 SubClassOf(obo:CL_0000155 obo:CL_0002178)
-SubClassOf(obo:CL_0000155 obo:CL_0002659)
+SubClassOf(obo:CL_0000155 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010038))
 
 # Class: obo:CL_0000156 (obsolete antibody secreting cell)
 
@@ -5112,15 +5117,18 @@ AnnotationAssertion(owl:deprecated obo:CL_0000161 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000162 (parietal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0000162 "A large, oval stomach epithelial cell with a central nucleus; source of gastric acid. Secretes HCl.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") Annotation(oboInOwl:hasDbXref "PMID:31613538") Annotation(oboInOwl:hasDbXref "PMID:31670611") obo:IAO_0000115 obo:CL_0000162 "An epithelial cell of the stomach that is part of the fundic gastric gland. This cell is characterized by its pyramidal shape, abundant mitochondria, and a complex network of secretory canaliculi lined with microvilli. It secretes hydrochloric acid into the stomach lumen and produces intrinsic factor, essential for vitamin B12 absorption.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000162 "BTO:0001780")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000162 "FMA:62901")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000162 "oxyntic cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Parietal_cell") oboInOwl:hasExactSynonym obo:CL_0000162 "oxyntic cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29263912") oboInOwl:hasExactSynonym obo:CL_0000162 "gastric parietal cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29263912") Annotation(oboInOwl:hasDbXref "PMID:31613538") rdfs:comment obo:CL_0000162 "Parietal cells have dynamic, actin-supported microvilli that increase in number during active secretion, playing a crucial role in secreting hydrochloric acid and intrinsic factor. The structure and regulation of these microvilli are influenced by proteins such as ASAP3, which modulates Arf6 activity and actin assembly, thereby controlling microvilli formation and parietal cell function.")
 AnnotationAssertion(rdfs:label obo:CL_0000162 "parietal cell")
-SubClassOf(obo:CL_0000162 obo:CL_0000150)
 SubClassOf(obo:CL_0000162 obo:CL_0000151)
 SubClassOf(obo:CL_0000162 obo:CL_0002178)
-SubClassOf(obo:CL_0000162 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046717))
+SubClassOf(obo:CL_0000162 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010038))
+SubClassOf(obo:CL_0000162 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005902))
+SubClassOf(obo:CL_0000162 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001696))
 
 # Class: obo:CL_0000163 (endocrine cell)
 
@@ -28000,8 +28008,8 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "HPA:HPA") Annotation(oboInOwl
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001591 "CALOHA:TS-1277")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1277") oboInOwl:hasRelatedSynonym obo:CL_1001591 "fallopian tube glandular cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1277") oboInOwl:hasRelatedSynonym obo:CL_1001591 "fallopian tube glandular cells")
-AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_1001591 "oviduct glandular cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CALOHA:TS-1277") oboInOwl:hasRelatedSynonym obo:CL_1001591 "uterine tube glandular cell")
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_1001591 "oviduct glandular cell")
 AnnotationAssertion(rdfs:label obo:CL_1001591 "oviduct secretory cell")
 EquivalentClasses(obo:CL_1001591 ObjectIntersectionOf(obo:CL_1100001 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000993)))
 SubClassOf(obo:CL_1001591 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004804))
@@ -32134,6 +32142,18 @@ SubClassOf(obo:CL_4033084 obo:CL_0000501)
 SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001305))
 SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_4033083))
 
+# Class: obo:CL_4033086 (lipid-associated macrophage)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31257031") Annotation(oboInOwl:hasDbXref "PMID:34876704") Annotation(oboInOwl:hasDbXref "PMID:35712121") obo:IAO_0000115 obo:CL_4033086 "A tissue-resident macrophage that is associated with lipids. This cell responsible of anti-inflammatory functions, lipid accumulation and enhancing phagocytosis (Wculek et al., 2022, Liu et al., 2022). In mice and humans, a lipid-associated macrophage is characterized by the marker Trem2 (Jaitlin et al., 2019).")
+AnnotationAssertion(terms:contributor obo:CL_4033086 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033086 <https://orcid.org/0000-0001-8134-3037>)
+AnnotationAssertion(terms:date obo:CL_4033086 "2024-10-17T10:20:13Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31257031") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033086 "LAM")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35021063") Annotation(oboInOwl:hasDbXref "PMID:37153549") rdfs:comment obo:CL_4033086 "Distinct from “adipose macrophage” in Trem2 expression, and is not limited to adipose tissue. Guilliams et al. describe these cells as being distinct from Kupffer cells.")
+AnnotationAssertion(rdfs:label obo:CL_4033086 "lipid-associated macrophage")
+SubClassOf(obo:CL_4033086 obo:CL_0000235)
+SubClassOf(obo:CL_4033086 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000016626))
+
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10719353") obo:IAO_0000115 obo:CL_4040000 "A glial precursor cell that generates oligodendrocytes and type-1 and type-2 astrocytes. It has been shown in some mammals that this cell type may express A2B5, nestin, FGFR-1, FGFR-2, FGFR-3, PLP, and DM-20 antigens. Unlike oligodendrocyte precursor cell, it does not initially express PDGFR-alpha and can differentiate into both type-1 and type-2 astrocytes.")
@@ -32525,6 +32545,26 @@ AnnotationAssertion(rdfs:label obo:CL_4042027 "GABAergic interneuron of the post
 SubClassOf(obo:CL_4042027 obo:CL_0002614)
 SubClassOf(obo:CL_4042027 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001903))
 
+# Class: obo:CL_4042028 (immature neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31096632") Annotation(oboInOwl:hasDbXref "PMID:32116519") Annotation(oboInOwl:hasDbXref "PMID:37833544") obo:IAO_0000115 obo:CL_4042028 "A neuron in the central nervous system that is not committed to a differentiated fate, has not been newly derived from neurogenesis, and does not integrate into any circuit.")
+AnnotationAssertion(terms:contributor obo:CL_4042028 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042028 "2024-10-10T09:14:45Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32116519") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042028 "IN")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32116519") rdfs:comment obo:CL_4042028 "It is hypothesised that immature neurons can be utilised as a neurogenic reserve and that they can be involved in circuit plasticity.")
+AnnotationAssertion(rdfs:label obo:CL_4042028 "immature neuron"@en)
+SubClassOf(obo:CL_4042028 obo:CL_0000117)
+
+# Class: obo:CL_4042029 (cortical immature neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37833544") obo:IAO_0000115 obo:CL_4042029 "An immature neuron of a cerebral cortex. This neuron develops prenatally and remains in an immature state throughout the lifespan of the organism.")
+AnnotationAssertion(terms:contributor obo:CL_4042029 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042029 "2024-10-10T09:14:54Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37833544") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042029 "cIN")
+AnnotationAssertion(rdfs:label obo:CL_4042029 "cortical immature neuron"@en)
+SubClassOf(obo:CL_4042029 obo:CL_4042028)
+SubClassOf(obo:CL_4042029 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000956))
+
 # Class: obo:CL_4042031 (immune oligodendroglia)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30747918") Annotation(oboInOwl:hasDbXref "PMID:35301426") Annotation(oboInOwl:hasDbXref "PMID:35615276") Annotation(oboInOwl:hasDbXref "PMID:35662200") obo:IAO_0000115 obo:CL_4042031 "An oligodendrocyte of the central nervous system that exhibits immune properties such as self-presentation and non-self antigen presentation to T cells, phagocytosis of debris, and cytokine and chemokine production. Immune oligodendroglia is immunoreactive during inflammation, neurodegenerative disorders, chronic stress and major depressive disorder.")
@@ -32880,6 +32920,28 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:/10.1101/2022.06.17.49620
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35704599") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052021 "TteK CD8 cell")
 AnnotationAssertion(rdfs:label obo:CL_4052021 "granzyme K-associated CD8 T cell")
 EquivalentClasses(obo:CL_4052021 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000003472)))
+
+# Class: obo:CL_4052022 (fallopian tube smooth muscle cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31183831") Annotation(oboInOwl:hasDbXref "PMID:31613440") obo:IAO_0000115 obo:CL_4052022 "A smooth muscle cell that is part of the fallopian tube. This cell is responsible for peristaltic contractions that facilitate gamete and embryo transport, fluid mixing, and embryo admission to the uterus.")
+AnnotationAssertion(terms:contributor obo:CL_4052022 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052022 "2024-10-21T12:16:54Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31613440") oboInOwl:hasBroadSynonym obo:CL_4052022 "oviduct smooth muscle cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31613440") oboInOwl:hasExactSynonym obo:CL_4052022 "uterine tube smooth muscle cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18621753") rdfs:comment obo:CL_4052022 "The fallopian tube smooth muscle cell in the human contracts dynamically in response to hormones and signaling molecules. Prostaglandins, particularly PGF2α and PGE2, have been shown to increase muscular contractions, while progesterone, levonorgestrel, mifepristone, oxytocin, and human chorionic gonadotropin (hCG) decrease them. These contractile responses are crucial for regulating gamete and embryo transport through the fallopian tube.")
+AnnotationAssertion(rdfs:label obo:CL_4052022 "fallopian tube smooth muscle cell")
+EquivalentClasses(obo:CL_4052022 ObjectIntersectionOf(obo:CL_0000192 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003889)))
+
+# Class: obo:CL_4052023 (luminal endometrial unciliated epithelial cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32929266") Annotation(oboInOwl:hasDbXref "PMID:36581776") Annotation(oboInOwl:hasDbXref "PMID:38559249") Annotation(oboInOwl:hasDbXref "PMID:39198675") obo:IAO_0000115 obo:CL_4052023 "An epithelial cell that is part of the endometrial luminal epithelium, forming a continuous layer lining the uterine cavity. This cell undergoes cyclical changes during the menstrual cycle, proliferating under estrogen in the proliferative phase, and differentiating under progesterone in the secretory phase to prepare for potential implantation. During the window of implantation, this cell changes from a tall columnar shape to a shorter columnar or cuboidal form, loses polarity, and becomes receptive to blastocyst implantation.")
+AnnotationAssertion(terms:contributor obo:CL_4052023 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052023 "2024-10-22T12:02:23Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31317179") oboInOwl:hasBroadSynonym obo:CL_4052023 "endometrial luminal epithelial cell")
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_4052023 "luminal cell of endometrium")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39198675") rdfs:comment obo:CL_4052023 "The luminal endometrial unciliated epithelial cell expresses WNT7A, and LGR5 during the proliferative phase, transitioning to express VTCN1 and SULT1E1 in the early secretory phase, and LEFTY1, IL6, and PTGS1 in the mid- to late-secretory phases.")
+AnnotationAssertion(rdfs:label obo:CL_4052023 "luminal endometrial unciliated epithelial cell")
+EquivalentClasses(obo:CL_4052023 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0011949) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940)))
 
 # Class: obo:CL_4052048 (intercalated cell of salivary gland)
 
