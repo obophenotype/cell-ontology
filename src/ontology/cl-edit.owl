@@ -3076,6 +3076,7 @@ Declaration(Class(obo:CL_4042026))
 Declaration(Class(obo:CL_4042027))
 Declaration(Class(obo:CL_4042028))
 Declaration(Class(obo:CL_4042029))
+Declaration(Class(obo:CL_4042030))
 Declaration(Class(obo:CL_4042031))
 Declaration(Class(obo:CL_4042032))
 Declaration(Class(obo:CL_4047006))
@@ -3344,7 +3345,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3438,11 +3439,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -3806,6 +3807,7 @@ SubClassOf(obo:CL_0000029 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002676))
 
 # Class: obo:CL_0000030 (glioblast)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37824650") Annotation(oboInOwl:hasDbXref "Wikipedia:Glioblast") obo:IAO_0000115 obo:CL_0000030 "A non-terminally differentiated cell that develops form the neuroectoderm. Glioblast has the potential to differentiate into various types of glial cells, including astrocytes and oligodendrocytes.")
 AnnotationAssertion(rdfs:label obo:CL_0000030 "glioblast")
 SubClassOf(obo:CL_0000030 obo:CL_0000055)
 SubClassOf(obo:CL_0000030 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000133))
@@ -24177,6 +24179,7 @@ SubClassOf(obo:CL_0011005 obo:CL_0000498)
 # Class: obo:CL_0011006 (Lugaro cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011006 "An inhibitory GABAergic interneuron found in the cerebellar cortex.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34194302") oboInOwl:hasRelatedSynonym obo:CL_0011006 "globular cell")
 AnnotationAssertion(rdfs:label obo:CL_0011006 "Lugaro cell")
 SubClassOf(obo:CL_0011006 obo:CL_0011005)
 SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129))
@@ -24990,8 +24993,12 @@ EquivalentClasses(obo:CL_1000217 ObjectIntersectionOf(obo:CL_0000138 ObjectSomeV
 
 # Class: obo:CL_1000222 (stomach neuroendocrine cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15153415") obo:IAO_0000115 obo:CL_1000222 "A specialised neuroendocrine cell located in the gastric mucosa that regulates digestive processes including acid secretion and gut motility. This cell stores hormones in large dense core vesicles and synaptic-like microvesicles.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15153415") oboInOwl:hasBroadSynonym obo:CL_1000222 "DES cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15153415") oboInOwl:hasBroadSynonym obo:CL_1000222 "diffuse endocrine system cell")
 AnnotationAssertion(rdfs:label obo:CL_1000222 "stomach neuroendocrine cell")
 EquivalentClasses(obo:CL_1000222 ObjectIntersectionOf(obo:CL_0000165 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000945)))
+SubClassOf(obo:CL_1000222 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046717))
 
 # Class: obo:CL_1000223 (lung neuroendocrine cell)
 
@@ -32581,6 +32588,17 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37833544") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4042029 "cortical immature neuron"@en)
 SubClassOf(obo:CL_4042029 obo:CL_4042028)
 SubClassOf(obo:CL_4042029 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000956))
+
+# Class: obo:CL_4042030 (candelabrum cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35578131") obo:IAO_0000115 obo:CL_4042030 "A GABAergic interneuron located in the cerebellar cortex. This GABAergic interneuron type has a distinct morphology, it presents a small cell soma near the Purkinje cell layer (PCL), dendrites that extend to the surface of the molecular layer, and beaded axons that make local synapses contacts within the molecular layer. A candelabrum cell is excited by mossy fibers and granule cells but inhibited by Purkinje cells, and it inhibits molecular layer interneurons, which leads to the disinhibition of Purkinje cells.")
+AnnotationAssertion(terms:contributor obo:CL_4042030 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042030 "2024-10-15T11:06:31Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35578131") oboInOwl:hasExactSynonym obo:CL_4042030 "candelabrum interneuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35578131") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042030 "CC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35578131") rdfs:comment obo:CL_4042030 "Candelabrum cells are the most abundant interneurons in the Purkinje cell layer and are present in all cerebellar lobules.")
+AnnotationAssertion(rdfs:label obo:CL_4042030 "candelabrum cell"@en)
+SubClassOf(obo:CL_4042030 obo:CL_1001611)
 
 # Class: obo:CL_4042031 (immune oligodendroglia)
 
