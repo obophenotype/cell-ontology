@@ -26,10 +26,10 @@ $(EDIT_PREPROCESSED): $(SRC) all_robot_plugins
 cl-plus.owl: $(ONT)-full.owl
 	$(ROBOT) merge -i $< -I $(OBOBASE)/pcl/pcl-base.owl \
 		 unmerge -I $(OBOBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl \
-		 reason --reasoner ELK --equivalent-classes-allowed asserted-only \
+		 reason --reasoner WHELK --equivalent-classes-allowed asserted-only \
 		        --exclude-tautologies structural \
 		 relax \
-		 reduce --reasoner ELK \
+		 reduce --reasoner WHELK \
 		 $(SHARED_ROBOT_COMMANDS) \
 		 annotate --ontology-iri $(ONTBASE)/$@ \
 		 $(ANNOTATE_ONTOLOGY_VERSION) --output $@
@@ -148,7 +148,7 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 $(REPORTDIR)/taxon-constraint-check.txt: $(EDIT_PREPROCESSED) $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) \
 		 expand -o $(TMPDIR)/cl-plus-taxon-disjoints.ofn \
-		 reason -r ELK > $@
+		 reason -r WHELK > $@
 
 # Include the TC check in the routine tests
 test: $(REPORTDIR)/taxon-constraint-check.txt
