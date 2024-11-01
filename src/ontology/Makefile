@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                5726a8effc41f60465bcbc0d3b62fc006af7e9379ed79932a5b119ca0ad5039f
+CONFIG_HASH=                9b733c5ec38a935d574d153b99b0d69d2e8f730b562d33d8ece39a3917e022b7
 
 
 # ----------------------------------------
@@ -728,6 +728,10 @@ $(PATTERNDIR)/data/default/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERND
 $(PATTERNDIR)/data/clustering/%.txt: $(PATTERNDIR)/dosdp-patterns/%.yaml $(PATTERNDIR)/data/clustering/%.tsv
 	if [ $(PAT) = true ]; then $(DOSDPT) terms --infile=$(word 2, $^) --template=$< --obo-prefixes=true --outfile=$@; fi
 
+
+dosdp-matches-matches: $(SRC) $(ALL_PATTERN_FILES)
+	if [ $(PAT) = true ]; then $(DOSDPT) query --ontology=$< --catalog=$(CATALOG) --reasoner=elk --obo-prefixes=true \
+    --batch-patterns="$(ALL_PATTERN_NAMES)" --template="$(PATTERNDIR)/dosdp-patterns" --outfile="$(PATTERNDIR)/data/matches/"; fi
 # Generating the seed file from all the TSVs. If Pattern generation is deactivated, we still extract a seed from definitions.owl
 $(TMPDIR)/all_pattern_terms.txt: $(DOSDP_TERM_FILES_DEFAULT)   $(DOSDP_TERM_FILES_CLUSTERING) $(TMPDIR)/pattern_owl_seed.txt
 	if [ $(PAT) = true ]; then cat $^ | sort | uniq > $@; else $(ROBOT) query --use-graphs true -f csv -i $(PATTERNDIR)/definitions.owl \
