@@ -3040,6 +3040,10 @@ Declaration(Class(obo:CL_4033083))
 Declaration(Class(obo:CL_4033084))
 Declaration(Class(obo:CL_4033085))
 Declaration(Class(obo:CL_4033086))
+Declaration(Class(obo:CL_4033087))
+Declaration(Class(obo:CL_4033088))
+Declaration(Class(obo:CL_4033089))
+Declaration(Class(obo:CL_4033090))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3085,8 +3089,10 @@ Declaration(Class(obo:CL_4047006))
 Declaration(Class(obo:CL_4047007))
 Declaration(Class(obo:CL_4047011))
 Declaration(Class(obo:CL_4047012))
+Declaration(Class(obo:CL_4047017))
 Declaration(Class(obo:CL_4047018))
 Declaration(Class(obo:CL_4047019))
+Declaration(Class(obo:CL_4047023))
 Declaration(Class(obo:CL_4047025))
 Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
@@ -3114,6 +3120,7 @@ Declaration(Class(obo:CL_4052020))
 Declaration(Class(obo:CL_4052021))
 Declaration(Class(obo:CL_4052022))
 Declaration(Class(obo:CL_4052023))
+Declaration(Class(obo:CL_4052024))
 Declaration(Class(obo:CL_4052025))
 Declaration(Class(obo:CL_4052048))
 Declaration(Class(obo:CL_4052049))
@@ -3128,6 +3135,7 @@ Declaration(Class(obo:CP_0000040))
 Declaration(Class(obo:CP_0000043))
 Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
 Declaration(Class(obo:GO_0005903))
+Declaration(Class(obo:GO_0005927))
 Declaration(Class(obo:GO_0031045))
 Declaration(Class(obo:GO_0036053))
 Declaration(Class(obo:GO_0036376))
@@ -4565,6 +4573,8 @@ SubClassOf(obo:CL_0000101 obo:CL_0000526)
 
 # Class: obo:CL_0000102 (polymodal neuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23749412") Annotation(oboInOwl:hasDbXref "PMID:36381588") obo:IAO_0000115 obo:CL_0000102 "A neuron type that respond to multiple stimuli such as mechanical, thermal and chemical. This neuron type is responsible for integrating different types of sensory inputs, allowing organisms to respond appropriately to diverse environmental challenges.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23749412") oboInOwl:hasRelatedSynonym obo:CL_0000102 "polymodal sensory neuron")
 AnnotationAssertion(rdfs:label obo:CL_0000102 "polymodal neuron")
 SubClassOf(obo:CL_0000102 obo:CL_2000032)
 
@@ -4646,10 +4656,12 @@ AnnotationAssertion(owl:deprecated obo:CL_0000111 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000112 (columnar neuron)
 
-AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000112 "columnar neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34696823") Annotation(oboInOwl:hasDbXref "PMID:37608556") obo:IAO_0000115 obo:CL_0000112 "A neuron of the invertebrate central nervous system. This neuron innervates the central complex (CX) of an invertebrate brain and it forms columnar patterns with its dendrites. It is involved in navigation and spatial processing.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18837039") Annotation(oboInOwl:hasDbXref "PMID:32374034") Annotation(oboInOwl:hasDbXref "PMID:34696823") Annotation(oboInOwl:hasDbXref "PMID:37608556") Annotation(oboInOwl:hasDbXref "PMID:9153131") rdfs:comment obo:CL_0000112 "Columnar neurons have been widely studied in Diptera, locusts, honey bees and other insects. In the mammalian brain, a \"columnar organisation\" is referred to neurons of the neocortex, however these differ from columnar neurons which are found in the insects central nervous system.")
 AnnotationAssertion(rdfs:label obo:CL_0000112 "columnar neuron")
 SubClassOf(obo:CL_0000112 obo:CL_0000540)
-SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
+SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002100 obo:CL_0000028))
+SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007601))
 
 # Class: obo:CL_0000113 (mononuclear phagocyte)
 
@@ -6379,12 +6391,12 @@ AnnotationAssertion(obo:IAO_0100001 obo:CL_0000316 obo:PO_0000082)
 AnnotationAssertion(rdfs:label obo:CL_0000316 "obsolete ray initial")
 AnnotationAssertion(owl:deprecated obo:CL_0000316 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000317 (sebum secreting cell)
+# Class: obo:CL_0000317 (sebocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D012629") obo:IAO_0000115 obo:CL_0000317 "A cell secreting sebun, an oily substance secreted by sebaceous glands, composed of keratin, fat, and cellular debris.")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000317 "sebocyte")
-AnnotationAssertion(rdfs:label obo:CL_0000317 "sebum secreting cell")
-EquivalentClasses(obo:CL_0000317 ObjectIntersectionOf(obo:CL_0000151 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001821)))
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D012629") Annotation(oboInOwl:hasDbXref "PMID:19944183") obo:IAO_0000115 obo:CL_0000317 "An epithelial cell that is part of a sebaceous gland. This cell produces and secretes sebum, an oily, lipid-rich substance, through holocrine secretion where the entire cell ruptures to release its contents.")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000317 "sebum secreting cell")
+AnnotationAssertion(rdfs:label obo:CL_0000317 "sebocyte")
+EquivalentClasses(obo:CL_0000317 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001821)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000317 obo:CL_0000151)
 
 # Class: obo:CL_0000318 (sweat secreting cell)
@@ -9411,6 +9423,8 @@ SubClassOf(obo:CL_0000677 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000127
 
 # Class: obo:CL_0000678 (commissural neuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17560562") Annotation(oboInOwl:hasDbXref "PMID:31693445") obo:IAO_0000115 obo:CL_0000678 "A neuron with soma location in the central nervous system that project its axon to the contralateral side of a central nervous system. This neuron can have its soma in the spinal cord, in the hemisphere of the brain, in the retina or in the ventral nerve cord of invertebrates.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25960414") Annotation(oboInOwl:hasDbXref "PMID:27532244") Annotation(oboInOwl:hasDbXref "PMID:31514748") Annotation(oboInOwl:hasDbXref "PMID:33438755") rdfs:comment obo:CL_0000678 "Historically, commissural neurons, particularly in the spinal cord, have been used as a model to understand axon guidance during development.")
 AnnotationAssertion(rdfs:label obo:CL_0000678 "commissural neuron")
 SubClassOf(obo:CL_0000678 obo:CL_0000540)
 SubClassOf(obo:CL_0000678 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
@@ -15224,19 +15238,18 @@ AnnotationAssertion(rdfs:comment obo:CL_0002139 "These cells are reportedly CD31
 AnnotationAssertion(rdfs:label obo:CL_0002139 "endothelial cell of vascular tree")
 SubClassOf(obo:CL_0002139 obo:CL_0000115)
 
-# Class: obo:CL_0002140 (acinar cell of sebaceous gland)
+# Class: obo:CL_0002140 (skin sebocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002140 "A sebum secreting cell of the skin that secretes sebum into the hair follicles.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:37205445") obo:IAO_0000115 obo:CL_0002140 "An acinar cell that is part of a skin sebaceous gland. This cell produces and secretes sebum into hair follicles.")
 AnnotationAssertion(terms:contributor obo:CL_0002140 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002140 "2010-08-24T09:27:52Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002140 "sebocyte")
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002140 "acinar cell of sebaceous gland")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002140 "BTO:0004613")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002140 "FMA:70953")
-AnnotationAssertion(rdfs:label obo:CL_0002140 "acinar cell of sebaceous gland")
-EquivalentClasses(obo:CL_0002140 ObjectIntersectionOf(obo:CL_0000317 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003487)))
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002140 "acinar cell of skin sebaceous gland")
+AnnotationAssertion(rdfs:label obo:CL_0002140 "skin sebocyte")
+EquivalentClasses(obo:CL_0002140 ObjectIntersectionOf(obo:CL_0000622 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003487)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002140 obo:CL_0000317)
-SubClassOf(obo:CL_0002140 obo:CL_0000622)
-SubClassOf(obo:CL_0002140 obo:CL_1000448)
 
 # Class: obo:CL_0002141 (active chief cell of parathyroid gland)
 
@@ -22907,7 +22920,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009011 "transit amplifying 
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009011 "transit-amplifying cell of colon")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0009011 pato:location_grouping)
 AnnotationAssertion(rdfs:label obo:CL_0009011 "transit amplifying cell of colon")
-EquivalentClasses(obo:CL_0009011 ObjectIntersectionOf(obo:CL_0009010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013485)))
+EquivalentClasses(obo:CL_0009011 ObjectIntersectionOf(obo:CL_4047017 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013485)))
 SubClassOf(obo:CL_0009011 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002250))
 
 # Class: obo:CL_0009012 (transit amplifying cell of small intestine)
@@ -22921,7 +22934,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009012 "transit amplifying 
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009012 "transit-amplifying cell of small intestine")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0009012 pato:location_grouping)
 AnnotationAssertion(rdfs:label obo:CL_0009012 "transit amplifying cell of small intestine")
-EquivalentClasses(obo:CL_0009012 ObjectIntersectionOf(obo:CL_0009010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001241)))
+EquivalentClasses(obo:CL_0009012 ObjectIntersectionOf(obo:CL_4047017 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001241)))
 SubClassOf(obo:CL_0009012 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002250))
 
 # Class: obo:CL_0009013 (fetal hepatobiliary progenitor cell)
@@ -23068,7 +23081,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009027 "transit amplifying 
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009027 "transit amplifying cell of vermiform appendix")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0009027 pato:location_grouping)
 AnnotationAssertion(rdfs:label obo:CL_0009027 "transit amplifying cell of appendix")
-EquivalentClasses(obo:CL_0009027 ObjectIntersectionOf(obo:CL_0009010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013486)))
+EquivalentClasses(obo:CL_0009027 ObjectIntersectionOf(obo:CL_4047017 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013486)))
 SubClassOf(obo:CL_0009027 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0009028))
 
 # Class: obo:CL_0009028 (intestinal crypt stem cell of appendix)
@@ -23365,7 +23378,7 @@ AnnotationAssertion(terms:contributor obo:CL_0009056 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0009056 "anorectum transit amplifying cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0009056 pato:location_grouping)
 AnnotationAssertion(rdfs:label obo:CL_0009056 "transit amplifying cell of anorectum")
-EquivalentClasses(obo:CL_0009056 ObjectIntersectionOf(obo:CL_0009010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_8410050)))
+EquivalentClasses(obo:CL_0009056 ObjectIntersectionOf(obo:CL_4047017 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_8410050)))
 
 # Class: obo:CL_0009057 (anorectum goblet cell)
 
@@ -29125,16 +29138,16 @@ EquivalentClasses(obo:CL_3000000 ObjectIntersectionOf(obo:CL_0000067 ObjectSomeV
 
 # Class: obo:CL_3000001 (Hofbauer cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30429548") Annotation(oboInOwl:hasDbXref "PMID:30498493") Annotation(oboInOwl:hasDbXref "PMID:34745147") Annotation(oboInOwl:hasDbXref "PMID:35438172") obo:IAO_0000115 obo:CL_3000001 "A tissue-resident macrophage that is part of the placenta. A Hofbauer cell expresses high levels of growth factors and metalloproteinases that support vasculogenesis, angiogenesis, branching morphogenesis and tissue remodeling. A Hofbauer cell has a fetal origin and is present throughout pregnancy.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30429548") Annotation(oboInOwl:hasDbXref "PMID:30498493") Annotation(oboInOwl:hasDbXref "PMID:34745147") Annotation(oboInOwl:hasDbXref "PMID:35438172") obo:IAO_0000115 obo:CL_3000001 "A tissue-resident macrophage that is part of the placenta. A Hofbauer cell expresses high levels of growth factors and metalloproteinases that support vasculogenesis, angiogenesis, branching morphogenesis and tissue remodeling. A Hofbauer cell has a fetal origin, is found in the villous stroma, chorion, and amnion, and is present throughout pregnancy.")
 AnnotationAssertion(terms:contributor obo:CL_3000001 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(terms:contributor obo:CL_3000001 <https://orcid.org/0000-0001-6677-8489>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000001 "2019-02-18T19:41:20Z"^^xsd:dateTime)
-AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_3000001 "HBC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") oboInOwl:hasExactSynonym obo:CL_3000001 "fetal Hofbauer cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_3000001 "HBC")
 AnnotationAssertion(oboInOwl:id obo:CL_3000001 "CL:3000001")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30498493") rdfs:comment obo:CL_3000001 "Hofbauer cells are a heterogenic group of macrophages that resemble M2-like cells. Initially described in chorionic villi in humans, a Hofbauer cell is now often used to describe any fetal-derived placental macrophage that resides within the placental villous core, amnion, and chorion laeve.")
 AnnotationAssertion(rdfs:label obo:CL_3000001 "Hofbauer cell")
-SubClassOf(obo:CL_3000001 obo:CL_0000864)
-SubClassOf(obo:CL_3000001 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001987))
+SubClassOf(obo:CL_3000001 obo:CL_4033087)
 
 # Class: obo:CL_3000002 (sympathetic noradrenergic neuron)
 
@@ -29156,10 +29169,11 @@ EquivalentClasses(obo:CL_3000003 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeV
 
 # Class: obo:CL_3000004 (peripheral sensory neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_3000004 "Peripheral sensory neuron.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") Annotation(oboInOwl:hasDbXref "PMID:31554486") Annotation(oboInOwl:hasDbXref "PMID:35858549") Annotation(oboInOwl:hasDbXref "Wikipedia:Sensory_neuron") Annotation(oboInOwl:hasDbXref "https://www.britannica.com/science/sensory-neuron") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK539846/") obo:IAO_0000115 obo:CL_3000004 "A neuron type that is located in a peripheral nervous system and it transmits sensory information from the peripheral (PNS) to the central nervous system (CNS). A sensory neuron converts physical (light, sound, touch) or chemical (such as taste and smell) stimuli into an electrical signal through a process known as sensory transduction. The function of a sensory neuron is to carry informations from the external environment and internal body conditions to the central nervous system for further processing.")
 AnnotationAssertion(terms:contributor obo:CL_3000004 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000004 "2019-02-25T19:34:33Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_3000004 "CL:3000004")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Sensory_neuron") rdfs:comment obo:CL_3000004 "Typically, a sensory neuron has a pseudounipolar morphology.")
 AnnotationAssertion(rdfs:label obo:CL_3000004 "peripheral sensory neuron")
 EquivalentClasses(obo:CL_3000004 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
 
@@ -32184,6 +32198,46 @@ AnnotationAssertion(rdfs:label obo:CL_4033086 "lipid-associated macrophage")
 SubClassOf(obo:CL_4033086 obo:CL_0000235)
 SubClassOf(obo:CL_4033086 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000016626))
 
+# Class: obo:CL_4033087 (placental resident macrophage)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") obo:IAO_0000115 obo:CL_4033087 "A tissue-resident macrophage that is part of the placenta. This cell helps preventing immunological rejection of the fetus by modulating the immune environment. A placental resident macrophage has high plasticity to adapt to the changing needs of each phase of pregnancy.")
+AnnotationAssertion(terms:contributor obo:CL_4033087 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033087 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(terms:date obo:CL_4033087 "2024-10-31T10:24:21Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") oboInOwl:hasBroadSynonym obo:CL_4033087 "placental macrophage")
+AnnotationAssertion(rdfs:label obo:CL_4033087 "placental resident macrophage")
+EquivalentClasses(obo:CL_4033087 ObjectIntersectionOf(obo:CL_0000864 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001987)))
+
+# Class: obo:CL_4033088 (decidual resident macrophage)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") obo:IAO_0000115 obo:CL_4033088 "A resident macrophage that is part of the decidua. Some decidual macrophages are derived from maternal blood monocytes that are recruited to the uterus shortly after conception. The main functions of a decidual macrophage are implantation, placental development, immune regulation and vascular remodeling.")
+AnnotationAssertion(terms:contributor obo:CL_4033088 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033088 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(terms:date obo:CL_4033088 "2024-10-31T10:33:04Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") oboInOwl:hasBroadSynonym obo:CL_4033088 "decidual macrophage")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39007150") oboInOwl:hasBroadSynonym obo:CL_4033088 "maternal decidual macrophage")
+AnnotationAssertion(rdfs:label obo:CL_4033088 "decidual resident macrophage")
+SubClassOf(obo:CL_4033088 obo:CL_4033087)
+SubClassOf(obo:CL_4033088 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002450))
+
+# Class: obo:CL_4033089 (atretic follicular cell of ovary)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38069168") obo:IAO_0000115 obo:CL_4033089 "A follicular cell of ovary that has begun to degenerate and undergo atresia, a specialized apoptosis. This cell is found in an atretic follicle, which is an ovarian follicle that started to mature but failed to reach full development and instead regresses.")
+AnnotationAssertion(terms:contributor obo:CL_4033089 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:date obo:CL_4033089 "2024-11-05T11:23:25Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4033089 "atretic follicular cell of ovary")
+EquivalentClasses(obo:CL_4033089 ObjectIntersectionOf(obo:CL_0002174 ObjectSomeValuesFrom(obo:RO_0000056 obo:GO_0001552)))
+
+# Class: obo:CL_4033090 (atretic granulosa cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15353131") Annotation(oboInOwl:hasDbXref "PMID:38069168") obo:IAO_0000115 obo:CL_4033090 "A granulosa cell that is undergoing atresia. This cell type displays distinct morphological alterations compared with a healthy granulosa cell, including pyknosis (nuclear condensation) and cellular shrinkage.")
+AnnotationAssertion(terms:contributor obo:CL_4033090 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:date obo:CL_4033090 "2024-11-05T11:25:28Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15353131") oboInOwl:hasRelatedSynonym obo:CL_4033090 "apoptotic granulosa cell")
+AnnotationAssertion(rdfs:label obo:CL_4033090 "atretic granulosa cell")
+SubClassOf(obo:CL_4033090 obo:CL_4033089)
+SubClassOf(obo:CL_4033090 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000501))
+
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10719353") obo:IAO_0000115 obo:CL_4040000 "A glial precursor cell that generates oligodendrocytes and type-1 and type-2 astrocytes. It has been shown in some mammals that this cell type may express A2B5, nestin, FGFR-1, FGFR-2, FGFR-3, PLP, and DM-20 antigens. Unlike oligodendrocyte precursor cell, it does not initially express PDGFR-alpha and can differentiate into both type-1 and type-2 astrocytes.")
@@ -32704,6 +32758,18 @@ AnnotationAssertion(terms:date obo:CL_4047012 "2024-09-06T08:41:39Z"^^xsd:dateTi
 AnnotationAssertion(rdfs:label obo:CL_4047012 "angiogenic pericyte"@en)
 SubClassOf(obo:CL_4047012 obo:CL_0000669)
 
+# Class: obo:CL_4047017 (transit amplifying cell of gut)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20683682") Annotation(oboInOwl:hasDbXref "PMID:33195268") Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_4047017 "A transit amplifying cell of the gut epithelium, located in the wall of the intestinal crypt, just above intestinal stem cells from which they derive. These are rapidly dividing cells, capable of multiple rounds of division before differentiating into the various cell types of the gut epithelium (enterocyte, goblet, eneterodendocrine, paneth cells).")
+AnnotationAssertion(terms:contributor obo:CL_4047017 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047017 "2024-09-24T10:48:47Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24813615") oboInOwl:hasBroadSynonym obo:CL_4047017 "transit-amplifying cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20683682") oboInOwl:hasRelatedSynonym obo:CL_4047017 "TA cell")
+AnnotationAssertion(rdfs:label obo:CL_4047017 "transit amplifying cell of gut"@en)
+EquivalentClasses(obo:CL_4047017 ObjectIntersectionOf(obo:CL_0009010 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013740)))
+SubClassOf(obo:CL_4047017 obo:CL_0009010)
+SubClassOf(obo:CL_4047017 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_0002250))
+
 # Class: obo:CL_4047018 (early colonocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28049136") Annotation(oboInOwl:hasDbXref "PMID:36060223") obo:IAO_0000115 obo:CL_4047018 "An enterocyte that is part of the colon, in the early stages of differentiation, located in the intestinal crypt-villus axis.")
@@ -32720,6 +32786,15 @@ AnnotationAssertion(terms:contributor obo:CL_4047019 <https://orcid.org/0009-000
 AnnotationAssertion(terms:date obo:CL_4047019 "2024-09-24T12:11:09Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4047019 "early enterocyte"@en)
 EquivalentClasses(obo:CL_4047019 ObjectIntersectionOf(obo:CL_0000584 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013740)))
+
+# Class: obo:CL_4047023 (intestinal lamina propria fibroblast)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21252048") Annotation(oboInOwl:hasDbXref "PMID:36032088") obo:IAO_0000115 obo:CL_4047023 "A fibroblast located in the lamina propria of the intestinal mucosa. This cell expresses PDGFRα and CD81 and is negative for α-smooth muscle actin (α-SMA). This cell is predominantly located in the small intestine adjacent to myofibroblasts surrounding the crypts. It is capable of synthesizing extracellular matrix components and structural proteins such as collagen and elastin.")
+AnnotationAssertion(terms:contributor obo:CL_4047023 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047023 "2024-09-24T15:45:18Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30270042") oboInOwl:hasRelatedSynonym obo:CL_4047023 "S1 fibroblast")
+AnnotationAssertion(rdfs:label obo:CL_4047023 "intestinal lamina propria fibroblast"@en)
+EquivalentClasses(obo:CL_4047023 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004780) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070278)))
 
 # Class: obo:CL_4047025 (type G cell of stomach)
 
@@ -33020,6 +33095,18 @@ AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_4052023 "luminal cell of end
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39198675") rdfs:comment obo:CL_4052023 "The luminal endometrial unciliated epithelial cell expresses WNT7A, and LGR5 during the proliferative phase, transitioning to express VTCN1 and SULT1E1 in the early secretory phase, and LEFTY1, IL6, and PTGS1 in the mid- to late-secretory phases.")
 AnnotationAssertion(rdfs:label obo:CL_4052023 "luminal endometrial unciliated epithelial cell")
 EquivalentClasses(obo:CL_4052023 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0011949) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940)))
+
+# Class: obo:CL_4052024 (myotendinous junction nucleus)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33311457") Annotation(oboInOwl:hasDbXref "PMID:33311464") Annotation(oboInOwl:hasDbXref "PMID:38398025") obo:IAO_0000115 obo:CL_4052024 "A specialized muscle nucleus that is part of an extrafusal muscle fiber and overlaps the muscle-tendon junction, where muscle fibers connect to tendons. Characterized by a distinct transcriptional profile with the expression of genes like COL22A1, this myonucleus supports the structural integrity and function of the junction, playing a key role in transmitting the force generated by muscle contraction to the tendon.")
+AnnotationAssertion(terms:contributor obo:CL_4052024 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:contributor obo:CL_4052024 <https://orcid.org/0009-0001-6947-615X>)
+AnnotationAssertion(terms:date obo:CL_4052024 "2024-10-30T13:47:39Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33311464") Annotation(oboInOwl:hasSynonymType obo:OMO_0003004) oboInOwl:hasExactSynonym obo:CL_4052024 "myotendinous junction myonuclei")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33311457") Annotation(oboInOwl:hasSynonymType obo:OMO_0003004) oboInOwl:hasExactSynonym obo:CL_4052024 "myotendinous junction nuclei")
+AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052024 "MTJ nucleus")
+AnnotationAssertion(rdfs:label obo:CL_4052024 "myotendinous junction nucleus")
+EquivalentClasses(obo:CL_4052024 ObjectIntersectionOf(obo:GO_0005634 ObjectSomeValuesFrom(obo:BFO_0000050 obo:CL_0008046) ObjectSomeValuesFrom(obo:RO_0002131 obo:GO_0005927)))
 
 # Class: obo:CL_4052025 (neuromuscular junction nucleus)
 
