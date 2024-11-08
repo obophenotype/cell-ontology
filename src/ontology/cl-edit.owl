@@ -3085,6 +3085,8 @@ Declaration(Class(obo:CL_4042031))
 Declaration(Class(obo:CL_4042032))
 Declaration(Class(obo:CL_4042033))
 Declaration(Class(obo:CL_4042034))
+Declaration(Class(obo:CL_4042035))
+Declaration(Class(obo:CL_4042036))
 Declaration(Class(obo:CL_4047006))
 Declaration(Class(obo:CL_4047007))
 Declaration(Class(obo:CL_4047011))
@@ -3364,7 +3366,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3458,11 +3460,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -27043,12 +27045,10 @@ SubClassOf(obo:CL_1000703 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000478
 
 # Class: obo:CL_1000706 (ureter urothelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36180582") obo:IAO_0000115 obo:CL_1000706 "A urothelial cell that is part of the urothelium of ureter.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000706 "KUPO:0001117")
 AnnotationAssertion(rdfs:label obo:CL_1000706 "ureter urothelial cell")
 EquivalentClasses(obo:CL_1000706 ObjectIntersectionOf(obo:CL_0000731 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001254)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000706 obo:CL_0000731)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000706 obo:CL_1000601)
-SubClassOf(obo:CL_1000706 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001254))
 
 # Class: obo:CL_1000708 (ureter adventitial cell)
 
@@ -27677,12 +27677,10 @@ EquivalentClasses(obo:CL_1001428 ObjectIntersectionOf(obo:CL_0000731 ObjectSomeV
 
 # Class: obo:CL_1001430 (urethra urothelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23589830") Annotation(oboInOwl:hasDbXref "PMID:36180582") obo:IAO_0000115 obo:CL_1001430 "A urothelial cell that is part of the urethra urothelium. This cell plays a crucial role in maintaining the urethral barrier function, protecting against toxic substances in urine, sensing environmental changes, and defending against pathogen entry.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001430 "KUPO:0001124")
 AnnotationAssertion(rdfs:label obo:CL_1001430 "urethra urothelial cell")
 EquivalentClasses(obo:CL_1001430 ObjectIntersectionOf(obo:CL_0000731 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004787)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001430 obo:CL_0000731)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001430 obo:CL_1001320)
-SubClassOf(obo:CL_1001430 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004787))
 
 # Class: obo:CL_1001431 (kidney collecting duct principal cell)
 
@@ -32722,6 +32720,25 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34061020") oboInOwl:hasR
 AnnotationAssertion(rdfs:label obo:CL_4042034 "CGRP-expressing neuron"@en)
 SubClassOf(obo:CL_4042034 obo:CL_0000526)
 SubClassOf(obo:CL_4042034 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
+
+# Class: obo:CL_4042035 (molecular layer interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30742002") Annotation(oboInOwl:hasDbXref "PMID:33075461") Annotation(oboInOwl:hasDbXref "PMID:34616064") Annotation(oboInOwl:hasDbXref "PMID:38692278") obo:IAO_0000115 obo:CL_4042035 "A type of cerebellar inhibitory GABAergic interneuron that is located in the molecular layer of the cerebellum. This cell type inhibits Purkinje cells and other molecular layer interneurons. This interneuron plays a crucial role in regulating cerebellar output through feedforward inhibition and is characterized by its fast-spiking properties.")
+AnnotationAssertion(terms:contributor obo:CL_4042035 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042035 "2024-10-31T15:55:31Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33075461") Annotation(oboInOwl:hasRelatedSynonym obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042035 "MLI")
+AnnotationAssertion(rdfs:label obo:CL_4042035 "molecular layer interneuron"@en)
+SubClassOf(obo:CL_4042035 obo:CL_1001611)
+
+# Class: obo:CL_4042036 (melanin-concentrating hormone neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30284033") Annotation(oboInOwl:hasDbXref "PMID:38020069") Annotation(oboInOwl:hasDbXref "PMID:39035036") obo:IAO_0000115 obo:CL_4042036 "A neuron of the central nervous system with its soma primarily located in the lateral hypothalamic area and surrounding regions, including the zona incerta. This neuron type expresses melanin-concentrating hormone and is involved in regulating various physiological processes, including sleep, feeding behavior, and energy homeostasis.")
+AnnotationAssertion(terms:contributor obo:CL_4042036 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042036 "2024-10-31T16:03:26Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30284033") oboInOwl:hasRelatedSynonym obo:CL_4042036 "MCH neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38020069") rdfs:comment obo:CL_4042036 "Nearly all melanin-concentrating hormone neurons express the glutamate transporter VGlut2, however a small subset of them expresses the machinery for GABA release and neurotransmission.")
+AnnotationAssertion(rdfs:label obo:CL_4042036 "melanin-concentrating hormone neuron"@en)
+SubClassOf(obo:CL_4042036 obo:CL_2000029)
 
 # Class: obo:CL_4047006 (fetal artery endothelial cell)
 
