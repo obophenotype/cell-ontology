@@ -3085,6 +3085,8 @@ Declaration(Class(obo:CL_4042031))
 Declaration(Class(obo:CL_4042032))
 Declaration(Class(obo:CL_4042033))
 Declaration(Class(obo:CL_4042034))
+Declaration(Class(obo:CL_4042035))
+Declaration(Class(obo:CL_4042036))
 Declaration(Class(obo:CL_4047006))
 Declaration(Class(obo:CL_4047007))
 Declaration(Class(obo:CL_4047011))
@@ -3094,6 +3096,7 @@ Declaration(Class(obo:CL_4047018))
 Declaration(Class(obo:CL_4047019))
 Declaration(Class(obo:CL_4047023))
 Declaration(Class(obo:CL_4047025))
+Declaration(Class(obo:CL_4047030))
 Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
 Declaration(Class(obo:CL_4047101))
@@ -3122,6 +3125,7 @@ Declaration(Class(obo:CL_4052022))
 Declaration(Class(obo:CL_4052023))
 Declaration(Class(obo:CL_4052024))
 Declaration(Class(obo:CL_4052025))
+Declaration(Class(obo:CL_4052026))
 Declaration(Class(obo:CL_4052027))
 Declaration(Class(obo:CL_4052048))
 Declaration(Class(obo:CL_4052049))
@@ -3138,6 +3142,7 @@ Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
 Declaration(Class(obo:GO_0001552))
 Declaration(Class(obo:GO_0005903))
 Declaration(Class(obo:GO_0005927))
+Declaration(Class(obo:GO_0019626))
 Declaration(Class(obo:GO_0031045))
 Declaration(Class(obo:GO_0036053))
 Declaration(Class(obo:GO_0036376))
@@ -3330,7 +3335,6 @@ Declaration(AnnotationProperty(oboInOwl:SubsetProperty))
 Declaration(AnnotationProperty(oboInOwl:SynonymTypeProperty))
 Declaration(AnnotationProperty(oboInOwl:consider))
 Declaration(AnnotationProperty(oboInOwl:creation_date))
-Declaration(AnnotationProperty(oboInOwl:hasAlternativeId))
 Declaration(AnnotationProperty(oboInOwl:hasBroadSynonym))
 Declaration(AnnotationProperty(oboInOwl:hasDbXref))
 Declaration(AnnotationProperty(oboInOwl:hasExactSynonym))
@@ -3361,7 +3365,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3443,10 +3447,6 @@ AnnotationAssertion(rdfs:label oboInOwl:SynonymTypeProperty "synonym_type_proper
 
 AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
-# Annotation Property: oboInOwl:hasAlternativeId (has_alternative_id)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasAlternativeId "has_alternative_id")
-
 # Annotation Property: oboInOwl:hasBroadSynonym (has_broad_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
@@ -3455,11 +3455,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -9963,7 +9963,6 @@ SubClassOf(obo:CL_0000745 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0003902
 # Class: obo:CL_0000746 (cardiac muscle cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:mtg_cardiacconduct_nov11") Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0323052908") Annotation(oboInOwl:hasDbXref "PMID:22426062") Annotation(oboInOwl:hasDbXref "PMID:4711263") obo:IAO_0000115 obo:CL_0000746 "Cardiac muscle cells are striated muscle cells that are responsible for heart contraction. In mammals, the contractile fiber resembles those of skeletal muscle but are only one third as large in diameter, are richer in sarcoplasm, and contain centrally located instead of peripheral nuclei.")
-AnnotationAssertion(oboInOwl:hasAlternativeId obo:CL_0000746 "FMA:83808")
 AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0000746 "cardiocyte")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000746 "BTO:0001539")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000746 "CALOHA:TS-0115")
@@ -25651,13 +25650,14 @@ SubClassOf(obo:CL_1000346 obo:CL_0002071)
 
 # Class: obo:CL_1000347 (colonocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_1000347 "A columnar cell of the colon that is part of the colonic epithelium.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:16870803") Annotation(oboInOwl:hasDbXref "PMID:23821742") Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_1000347 "An enterocyte (absorptive epithelial cell) of the colonic epithelium, characterized by a columnar shape. This cell is responsible for the absorption, transport, and metabolization of short-chain fatty acids (SCFAs) produced by gut bacteria, as well as the transport and absorption of water and electrolytes.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000347 "FMA:263114")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_1000347 "enterocyte of colon")
 AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CL_1000347 "vacuolar absorptive cell of epithelium of colon")
 AnnotationAssertion(rdfs:label obo:CL_1000347 "colonocyte")
 EquivalentClasses(obo:CL_1000347 ObjectIntersectionOf(obo:CL_0002071 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000397)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000347 obo:CL_0002071)
+SubClassOf(obo:CL_1000347 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0019626))
+SubClassOf(obo:CL_1000347 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0035377))
 
 # Class: obo:CL_1000348 (basal cell of epithelium of trachea)
 
@@ -27039,12 +27039,10 @@ SubClassOf(obo:CL_1000703 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000478
 
 # Class: obo:CL_1000706 (ureter urothelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36180582") obo:IAO_0000115 obo:CL_1000706 "A urothelial cell that is part of the urothelium of ureter.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000706 "KUPO:0001117")
 AnnotationAssertion(rdfs:label obo:CL_1000706 "ureter urothelial cell")
 EquivalentClasses(obo:CL_1000706 ObjectIntersectionOf(obo:CL_0000731 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001254)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000706 obo:CL_0000731)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000706 obo:CL_1000601)
-SubClassOf(obo:CL_1000706 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001254))
 
 # Class: obo:CL_1000708 (ureter adventitial cell)
 
@@ -27673,12 +27671,10 @@ EquivalentClasses(obo:CL_1001428 ObjectIntersectionOf(obo:CL_0000731 ObjectSomeV
 
 # Class: obo:CL_1001430 (urethra urothelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23589830") Annotation(oboInOwl:hasDbXref "PMID:36180582") obo:IAO_0000115 obo:CL_1001430 "A urothelial cell that is part of the urethra urothelium. This cell plays a crucial role in maintaining the urethral barrier function, protecting against toxic substances in urine, sensing environmental changes, and defending against pathogen entry.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001430 "KUPO:0001124")
 AnnotationAssertion(rdfs:label obo:CL_1001430 "urethra urothelial cell")
 EquivalentClasses(obo:CL_1001430 ObjectIntersectionOf(obo:CL_0000731 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004787)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001430 obo:CL_0000731)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1001430 obo:CL_1001320)
-SubClassOf(obo:CL_1001430 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004787))
 
 # Class: obo:CL_1001431 (kidney collecting duct principal cell)
 
@@ -32719,6 +32715,25 @@ AnnotationAssertion(rdfs:label obo:CL_4042034 "CGRP-expressing neuron"@en)
 SubClassOf(obo:CL_4042034 obo:CL_0000526)
 SubClassOf(obo:CL_4042034 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
+# Class: obo:CL_4042035 (molecular layer interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30742002") Annotation(oboInOwl:hasDbXref "PMID:33075461") Annotation(oboInOwl:hasDbXref "PMID:34616064") Annotation(oboInOwl:hasDbXref "PMID:38692278") obo:IAO_0000115 obo:CL_4042035 "A type of cerebellar inhibitory GABAergic interneuron that is located in the molecular layer of the cerebellum. This cell type inhibits Purkinje cells and other molecular layer interneurons. This interneuron plays a crucial role in regulating cerebellar output through feedforward inhibition and is characterized by its fast-spiking properties.")
+AnnotationAssertion(terms:contributor obo:CL_4042035 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042035 "2024-10-31T15:55:31Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33075461") Annotation(oboInOwl:hasRelatedSynonym obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042035 "MLI")
+AnnotationAssertion(rdfs:label obo:CL_4042035 "molecular layer interneuron"@en)
+SubClassOf(obo:CL_4042035 obo:CL_1001611)
+
+# Class: obo:CL_4042036 (melanin-concentrating hormone neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30284033") Annotation(oboInOwl:hasDbXref "PMID:38020069") Annotation(oboInOwl:hasDbXref "PMID:39035036") obo:IAO_0000115 obo:CL_4042036 "A neuron of the central nervous system with its soma primarily located in the lateral hypothalamic area and surrounding regions, including the zona incerta. This neuron type expresses melanin-concentrating hormone and is involved in regulating various physiological processes, including sleep, feeding behavior, and energy homeostasis.")
+AnnotationAssertion(terms:contributor obo:CL_4042036 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042036 "2024-10-31T16:03:26Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30284033") oboInOwl:hasRelatedSynonym obo:CL_4042036 "MCH neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38020069") rdfs:comment obo:CL_4042036 "Nearly all melanin-concentrating hormone neurons express the glutamate transporter VGlut2, however a small subset of them expresses the machinery for GABA release and neurotransmission.")
+AnnotationAssertion(rdfs:label obo:CL_4042036 "melanin-concentrating hormone neuron"@en)
+SubClassOf(obo:CL_4042036 obo:CL_2000029)
+
 # Class: obo:CL_4047006 (fetal artery endothelial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_4047006 "An endothelial cell that lines an artery in the fetal circulatory system.")
@@ -32803,6 +32818,15 @@ AnnotationAssertion(terms:contributor obo:CL_4047025 <https://orcid.org/0009-000
 AnnotationAssertion(terms:date obo:CL_4047025 "2024-10-24T10:43:22Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4047025 "type G cell of stomach"@en)
 EquivalentClasses(obo:CL_4047025 ObjectIntersectionOf(obo:CL_0000508 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001276)))
+
+# Class: obo:CL_4047030 (pre-venule capillary cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1038/s41467-022-33324-7") Annotation(oboInOwl:hasDbXref "PMID:23620236") obo:IAO_0000115 obo:CL_4047030 "A specialized endothelial cell located in the transition zone between capillaries and small venules in the microvascular system. It exhibits characteristics of both capillary and venous cells, expressing markers from both types. This cell plays a role in regulating blood flow and substance exchange between blood and tissues.")
+AnnotationAssertion(terms:contributor obo:CL_4047030 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047030 "2024-11-07T13:22:16Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1038/s41467-022-33324-7") oboInOwl:hasExactSynonym obo:CL_4047030 "Cap-Venous endothelial cell")
+AnnotationAssertion(rdfs:label obo:CL_4047030 "pre-venule capillary cell"@en)
+SubClassOf(obo:CL_4047030 obo:CL_0002144)
 
 # Class: obo:CL_4047051 (small intestine BEST4+ enterocyte)
 
@@ -33120,6 +33144,20 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33311457") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052025 "NMJ nuclues")
 AnnotationAssertion(rdfs:label obo:CL_4052025 "neuromuscular junction nucleus")
 EquivalentClasses(obo:CL_4052025 ObjectIntersectionOf(obo:GO_0005634 ObjectSomeValuesFrom(obo:BFO_0000050 obo:CL_0008046) ObjectSomeValuesFrom(obo:RO_0002131 obo:GO_0098522)))
+
+# Class: obo:CL_4052026 (type IIx muscle cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") Annotation(oboInOwl:hasDbXref "PMID:35908794") Annotation(oboInOwl:hasDbXref "PMID:36361732") Annotation(oboInOwl:hasDbXref "doi:10.1101/2024.05.15.594276") obo:IAO_0000115 obo:CL_4052026 "A fast type II muscle cell that is part of the skeletal muscle tissue. This cell is characterized by its intermediate metabolic profile, utilizing both glycolytic and oxidative pathways for energy production. In humans, it is distinguished by the expression of myosin heavy chain 1 (MYH1).")
+AnnotationAssertion(terms:contributor obo:CL_4052026 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052026 "2024-11-04T10:26:29Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x muscle cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x muscle fiber")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2024.05.15.594276") oboInOwl:hasExactSynonym obo:CL_4052026 "type IIx muscle fiber")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x fiber")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") Annotation(oboInOwl:hasDbXref "PMID:27199166") rdfs:comment obo:CL_4052026 "In humans, type IIx fiber contains high levels of MYLK2, enhancing contraction speed and force via myosin phosphorylation, especially under low calcium. This mechanism supports post-activation potentiation, increasing force output in fast-twitch muscles. Additionally, this fiber has abundant ACTN3 (α-actinin-3), linked to muscle power, and exhibits the highest shortening velocity among human muscle fiber types. Notably, type IIx fiber is selectively lost in aging-related sarcopenia, increases in proportion in type 2 diabetes and obesity, and is the first to degenerate in Duchenne Muscular Dystrophy, impacting muscle function across various conditions.")
+AnnotationAssertion(rdfs:label obo:CL_4052026 "type IIx muscle cell")
+SubClassOf(obo:CL_4052026 obo:CL_0002212)
+SubClassOf(obo:CL_4052026 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001134))
 
 # Class: obo:CL_4052027 (atretic theca cell)
 
