@@ -95,8 +95,10 @@ import_group:
 pattern_pipelines_group:
   products:
     - id: clustering
-      dosdp_tools_options: "--obo-prefixes=true"
+  matches:
+    - id: matches
 robot_java_args: '-Xmx16G'
+reasoner: WHELK
 allow_equivalents: asserted-only
 robot_report:
   release_reports: False
@@ -117,6 +119,7 @@ robot_report:
     - label-synonym-polysemy
     - illegal-date
     - def-not-only-xref
+    - id-format
   custom_sparql_exports:
     - cl_terms
     - cl-edges
