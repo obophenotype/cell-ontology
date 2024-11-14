@@ -92,20 +92,26 @@ ifeq ($(strip $(IMP)),true)
 $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 	wget -O - "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" | \
 		sssom-cli --prefix-map-from-input \
-		          --rule 'object==CL:* -> include()' \
+		          --include 'object==CL:*' \
+		          --update-from-ontology $(SRC):object,label,existence \
 		          --output $@
 
 # ZFA mapping set (extracted from ZFA cross-references).
 # ZFA does contain oboInOwl:treat-xrefs-as-... annotations, but here
 # it's easier to ignore them, as this automatically filters out all the
 # xrefs that point to anything else than CL.
-$(MAPPINGDIR)/zfa.sssom.tsv: .FORCE | all_robot_plugins
+# 1. Create intermediate set from ZFA.
+$(TMPDIR)/zfa.sssom.tsv: .FORCE | all_robot_plugins
 	$(ROBOT) sssom:xref-extract -I http://purl.obolibrary.org/obo/zfa.owl \
 		                    --mapping-file $@ -v --drop-duplicates \
 		                    --ignore-treat-xrefs \
 		                    --map-prefix-to-predicate 'CL https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
 		                    --set-id http://purl.obolibrary.org/obo/zfa/zfa.sssom.tsv \
 	> $(REPORTDIR)/xfa-xrefs-extraction
+
+# 2. Create definitive ZFA set by checking against CL's contents
+$(MAPPINGDIR)/zfa.sssom.tsv: $(TMPDIR)/zfa.sssom.tsv $(SRC)
+	sssom-cli -i $< --update-from-ontology $(SRC):object,label,existence,source -o $@
 
 endif
 
