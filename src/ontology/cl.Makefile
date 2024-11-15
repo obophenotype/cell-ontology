@@ -313,6 +313,14 @@ CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-
 $(TEMPLATEDIR)/cellxgene_subset.tsv:
 	wget $(CELLXGENE_SUBSET_URL) -O $@
 
+# CellMark reference subset
+CLM_CL_URL="https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl"
+$(TMPDIR)/clm-cl.owl:
+	wget $(CLM_CL_URL) -O $@
+
+$(COMPONENTSDIR)/clm-cl.owl: $(TMPDIR)/clm-cl.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+
 
 # ----------------------------------------
 # RELEASE DEPLOYMENT
