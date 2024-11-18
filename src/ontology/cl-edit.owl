@@ -3087,6 +3087,7 @@ Declaration(Class(obo:CL_4042033))
 Declaration(Class(obo:CL_4042034))
 Declaration(Class(obo:CL_4042035))
 Declaration(Class(obo:CL_4042036))
+Declaration(Class(obo:CL_4042039))
 Declaration(Class(obo:CL_4047006))
 Declaration(Class(obo:CL_4047007))
 Declaration(Class(obo:CL_4047011))
@@ -3099,6 +3100,7 @@ Declaration(Class(obo:CL_4047025))
 Declaration(Class(obo:CL_4047029))
 Declaration(Class(obo:CL_4047030))
 Declaration(Class(obo:CL_4047022))
+Declaration(Class(obo:CL_4047032))
 Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
 Declaration(Class(obo:CL_4047101))
@@ -3369,7 +3371,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3459,11 +3461,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -3813,7 +3815,7 @@ SubClassOf(obo:CL_0000027 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 # Class: obo:CL_0000028 (CNS neuron (sensu Nematoda and Protostomia))
 
 AnnotationAssertion(rdfs:label obo:CL_0000028 "CNS neuron (sensu Nematoda and Protostomia)")
-SubClassOf(obo:CL_0000028 obo:CL_0000540)
+SubClassOf(obo:CL_0000028 obo:CL_2000029)
 SubClassOf(obo:CL_0000028 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017))
 SubClassOf(obo:CL_0000028 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000338))
 
@@ -4665,8 +4667,9 @@ AnnotationAssertion(owl:deprecated obo:CL_0000111 "true"^^xsd:boolean)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34696823") Annotation(oboInOwl:hasDbXref "PMID:37608556") obo:IAO_0000115 obo:CL_0000112 "A neuron of the invertebrate central nervous system. This neuron innervates the central complex (CX) of an invertebrate brain and it forms columnar patterns with its dendrites. It is involved in navigation and spatial processing.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18837039") Annotation(oboInOwl:hasDbXref "PMID:32374034") Annotation(oboInOwl:hasDbXref "PMID:34696823") Annotation(oboInOwl:hasDbXref "PMID:37608556") Annotation(oboInOwl:hasDbXref "PMID:9153131") rdfs:comment obo:CL_0000112 "Columnar neurons have been widely studied in Diptera, locusts, honey bees and other insects. In the mammalian brain, a \"columnar organisation\" is referred to neurons of the neocortex, however these differ from columnar neurons which are found in the insects central nervous system.")
 AnnotationAssertion(rdfs:label obo:CL_0000112 "columnar neuron")
-SubClassOf(obo:CL_0000112 obo:CL_0000540)
-SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002100 obo:CL_0000028))
+SubClassOf(obo:CL_0000112 obo:CL_0000028)
+SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
+SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000338))
 SubClassOf(obo:CL_0000112 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007601))
 
 # Class: obo:CL_0000113 (mononuclear phagocyte)
@@ -4707,9 +4710,8 @@ SubClassOf(obo:CL_0000116 obo:CL_0000540)
 # Class: obo:CL_0000117 (CNS neuron (sensu Vertebrata))
 
 AnnotationAssertion(rdfs:label obo:CL_0000117 "CNS neuron (sensu Vertebrata)")
-SubClassOf(obo:CL_0000117 obo:CL_0000540)
+SubClassOf(obo:CL_0000117 obo:CL_2000029)
 SubClassOf(obo:CL_0000117 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017))
-SubClassOf(obo:CL_0000117 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000031))
 
 # Class: obo:CL_0000118 (basket cell)
 
@@ -8016,6 +8018,7 @@ SubClassOf(obo:CL_0000529 obo:CL_0000710)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:1842357") Annotation(oboInOwl:hasDbXref "doi:10.1242/dev.108.1.121") obo:IAO_0000115 obo:CL_0000530 "A neuron that develops during the early segmentation stages in teleosts, before the neural tube is formed.")
 AnnotationAssertion(rdfs:label obo:CL_0000530 "primary neuron (sensu Teleostei)")
 SubClassOf(obo:CL_0000530 obo:CL_0000540)
+SubClassOf(obo:CL_0000530 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 SubClassOf(Annotation(obo:IAO_0000233 "https://github.com/obophenotype/cell-ontology/pull/1950") obo:CL_0000530 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_32443))
 
 # Class: obo:CL_0000531 (primary sensory neuron (sensu Teleostei))
@@ -8048,6 +8051,7 @@ SubClassOf(obo:CL_0000534 obo:CL_0000530)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:1842357") Annotation(oboInOwl:hasDbXref "doi:10.1242/dev.108.1.121") obo:IAO_0000115 obo:CL_0000535 "A neuron of teleosts that develops later than a primary neuron, typically during the larval stages.")
 AnnotationAssertion(rdfs:label obo:CL_0000535 "secondary neuron (sensu Teleostei)")
 SubClassOf(obo:CL_0000535 obo:CL_0000540)
+SubClassOf(obo:CL_0000535 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 SubClassOf(Annotation(obo:IAO_0000233 "https://github.com/obophenotype/cell-ontology/pull/1950") obo:CL_0000535 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_32443))
 
 # Class: obo:CL_0000536 (secondary motor neuron (sensu Teleostei))
@@ -22589,7 +22593,7 @@ SubClassOf(obo:CL_0008020 ObjectSomeValuesFrom(obo:RO_0002203 obo:CL_0008017))
 # Class: obo:CL_0008021 (anterior lateral line ganglion neuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0008021 "anterior lateral line ganglion neuron")
-EquivalentClasses(obo:CL_0008021 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_2001391)))
+EquivalentClasses(obo:CL_0008021 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_2001391)))
 
 # Class: obo:CL_0008022 (endocardial cushion cell)
 
@@ -25053,7 +25057,7 @@ EquivalentClasses(obo:CL_1000239 ObjectIntersectionOf(obo:CL_0000125 ObjectSomeV
 # Class: obo:CL_1000245 (posterior lateral line ganglion neuron)
 
 AnnotationAssertion(rdfs:label obo:CL_1000245 "posterior lateral line ganglion neuron")
-EquivalentClasses(obo:CL_1000245 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_2001314)))
+EquivalentClasses(obo:CL_1000245 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_2001314)))
 
 # Class: obo:CL_1000271 (lung ciliated cell)
 
@@ -28485,7 +28489,8 @@ AnnotationAssertion(terms:contributor obo:CL_2000031 <http://www.wikidata.org/en
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000031 "2014-06-25T01:17:57Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000031 "CL:2000031")
 AnnotationAssertion(rdfs:label obo:CL_2000031 "lateral line ganglion neuron")
-EquivalentClasses(obo:CL_2000031 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_2000120)))
+EquivalentClasses(obo:CL_2000031 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_2000120)))
+SubClassOf(obo:CL_2000031 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_32443))
 
 # Class: obo:CL_2000032 (peripheral nervous system neuron)
 
@@ -29912,6 +29917,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27034423") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20130169") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023064 "CGE-derived interneuron")
 AnnotationAssertion(rdfs:label obo:CL_4023064 "caudal ganglionic eminence derived cortical interneuron")
 EquivalentClasses(obo:CL_4023064 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004026)))
+SubClassOf(obo:CL_4023064 obo:CL_4042039)
 SubClassOf(obo:CL_4023064 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956))
 SubClassOf(obo:CL_4023064 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
@@ -30984,11 +30990,11 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16230044") rdfs:comment 
 AnnotationAssertion(rdfs:label obo:CL_4030025 "renal cortical fibroblast")
 EquivalentClasses(obo:CL_4030025 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005270)))
 
-# Class: obo:CL_4030026 (BEST4+ enteroycte)
+# Class: obo:CL_4030026 (BEST4+ enterocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref <https://orcid.org/0000-0002-7431-4139>) Annotation(oboInOwl:hasDbXref "PMID:24223998") Annotation(oboInOwl:hasDbXref "PMID:35176508") obo:IAO_0000115 obo:CL_4030026 "An enterocyte of the human intestine expressing bestrophin-4 (BEST4) calcium-activated ion channels.")
 AnnotationAssertion(terms:date obo:CL_4030026 "2022-09-07T12:34:20Z"^^xsd:dateTime)
-AnnotationAssertion(rdfs:label obo:CL_4030026 "BEST4+ enteroycte")
+AnnotationAssertion(rdfs:label obo:CL_4030026 "BEST4+ enterocyte")
 EquivalentClasses(obo:CL_4030026 ObjectIntersectionOf(obo:CL_0000584 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q8NFU0)))
 SubClassOf(obo:CL_4030026 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 
@@ -32644,7 +32650,7 @@ AnnotationAssertion(terms:date obo:CL_4042028 "2024-10-10T09:14:45Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32116519") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042028 "IN")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32116519") rdfs:comment obo:CL_4042028 "It is hypothesised that immature neurons can be utilised as a neurogenic reserve and that they can be involved in circuit plasticity.")
 AnnotationAssertion(rdfs:label obo:CL_4042028 "immature neuron"@en)
-SubClassOf(obo:CL_4042028 obo:CL_0000117)
+SubClassOf(obo:CL_4042028 obo:CL_2000029)
 
 # Class: obo:CL_4042029 (cortical immature neuron)
 
@@ -32737,6 +32743,16 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30284033") oboInOwl:hasR
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38020069") rdfs:comment obo:CL_4042036 "Nearly all melanin-concentrating hormone neurons express the glutamate transporter VGlut2, however a small subset of them expresses the machinery for GABA release and neurotransmission.")
 AnnotationAssertion(rdfs:label obo:CL_4042036 "melanin-concentrating hormone neuron"@en)
 SubClassOf(obo:CL_4042036 obo:CL_2000029)
+
+# Class: obo:CL_4042039 (caudal ganglionic eminence derived neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:12593982") Annotation(oboInOwl:hasDbXref "PMID:12637172") Annotation(oboInOwl:hasDbXref "PMID:20130169") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK98190/") obo:IAO_0000115 obo:CL_4042039 "A neuron of the central nervous system that develops from a caudal ganglionic eminence.")
+AnnotationAssertion(terms:contributor obo:CL_4042039 <https://orcid.org/0000-0002-0098-8958>)
+AnnotationAssertion(terms:date obo:CL_4042039 "2024-11-14T11:27:25Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:12593982") Annotation(oboInOwl:hasDbXref "PMID:12637172") Annotation(oboInOwl:hasDbXref "PMID:20130169") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK98190/") rdfs:comment obo:CL_4042039 "Neurons derived from the caudal ganglionic eminence consist mostly of neurons populating the cortical layers of the brain and some subcortical areas such as the globus pallidus, the striatus and the hippocampus. Amongst neurons derived from the caudal ganglionic eminence there are cortical GABAergic neurons such as Pax6, Lamp5, VIP, sncg, GABAergic; in the hippocampus, mossy fibers, pyramidal neurons, granule neurons and interneurons; in the striatum and globus pallidus, medium spiny projection neurons.")
+AnnotationAssertion(rdfs:label obo:CL_4042039 "caudal ganglionic eminence derived neuron"@en)
+SubClassOf(obo:CL_4042039 obo:CL_2000029)
+SubClassOf(obo:CL_4042039 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004026))
 
 # Class: obo:CL_4047006 (fetal artery endothelial cell)
 
@@ -32849,6 +32865,17 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1038/s41467-019-09728-
 AnnotationAssertion(rdfs:label obo:CL_4047022 "mesenchymal lymphoid tissue organizer cell"@en)
 EquivalentClasses(obo:CL_4047022 ObjectIntersectionOf(obo:CL_0000134 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001962)))
 SubClassOf(obo:CL_4047022 obo:CL_0000134)
+
+# Class: obo:CL_4047032 (secretory pericyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.3389/fncel.2019.00282") obo:IAO_0000115 obo:CL_4047032 "A specialized pericyte located within the basement membrane of a blood capillary. This cell is characterized by its ability to produce and release a variety of bioactive molecules, collectively known as the pericyte secretome, including cytokines and regulators of angiogenesis.")
+AnnotationAssertion(terms:contributor obo:CL_4047032 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047032 "2024-11-07T15:36:16Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4047032 "secretory pericyte"@en)
+SubClassOf(obo:CL_4047032 obo:CL_0000669)
+SubClassOf(obo:CL_4047032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001816))
+SubClassOf(obo:CL_4047032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940))
+SubClassOf(obo:CL_4047032 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0045765))
 
 # Class: obo:CL_4047051 (small intestine BEST4+ enterocyte)
 
@@ -33172,11 +33199,11 @@ EquivalentClasses(obo:CL_4052025 ObjectIntersectionOf(obo:GO_0005634 ObjectSomeV
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") Annotation(oboInOwl:hasDbXref "PMID:35908794") Annotation(oboInOwl:hasDbXref "PMID:36361732") Annotation(oboInOwl:hasDbXref "doi:10.1101/2024.05.15.594276") obo:IAO_0000115 obo:CL_4052026 "A fast type II muscle cell that is part of the skeletal muscle tissue. This cell is characterized by its intermediate metabolic profile, utilizing both glycolytic and oxidative pathways for energy production. In humans, it is distinguished by the expression of myosin heavy chain 1 (MYH1).")
 AnnotationAssertion(terms:contributor obo:CL_4052026 <https://orcid.org/0009-0000-8480-9277>)
 AnnotationAssertion(terms:date obo:CL_4052026 "2024-11-04T10:26:29Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x fiber")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x muscle cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x muscle fiber")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2024.05.15.594276") oboInOwl:hasExactSynonym obo:CL_4052026 "type IIx muscle fiber")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") oboInOwl:hasExactSynonym obo:CL_4052026 "type 2x fiber")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727990") Annotation(oboInOwl:hasDbXref "PMID:27199166") rdfs:comment obo:CL_4052026 "In humans, type IIx fiber contains high levels of MYLK2, enhancing contraction speed and force via myosin phosphorylation, especially under low calcium. This mechanism supports post-activation potentiation, increasing force output in fast-twitch muscles. Additionally, this fiber has abundant ACTN3 (α-actinin-3), linked to muscle power, and exhibits the highest shortening velocity among human muscle fiber types. Notably, type IIx fiber is selectively lost in aging-related sarcopenia, increases in proportion in type 2 diabetes and obesity, and is the first to degenerate in Duchenne Muscular Dystrophy, impacting muscle function across various conditions.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27199166") Annotation(oboInOwl:hasDbXref "PMID:34727990") rdfs:comment obo:CL_4052026 "In humans, type IIx fiber contains high levels of MYLK2, enhancing contraction speed and force via myosin phosphorylation, especially under low calcium. This mechanism supports post-activation potentiation, increasing force output in fast-twitch muscles. Additionally, this fiber has abundant ACTN3 (α-actinin-3), linked to muscle power, and exhibits the highest shortening velocity among human muscle fiber types. Notably, type IIx fiber is selectively lost in aging-related sarcopenia, increases in proportion in type 2 diabetes and obesity, and is the first to degenerate in Duchenne Muscular Dystrophy, impacting muscle function across various conditions.")
 AnnotationAssertion(rdfs:label obo:CL_4052026 "type IIx muscle cell")
 SubClassOf(obo:CL_4052026 obo:CL_0002212)
 SubClassOf(obo:CL_4052026 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001134))
