@@ -1,96 +1,57 @@
 import csv
-from SPARQLWrapper import SPARQLWrapper, JSON
+import requests
 
-# Define SPARQL endpoint and query (from https://github.com/hubmapconsortium/ccf-grlc/blob/main/hra/ftu-parts.rq)
-SPARQL_ENDPOINT = "https://lod.humanatlas.io/sparql"  # Update if necessary
-SPARQL_QUERY = """
-PREFIX dcat: <http://www.w3.org/ns/dcat#>
-PREFIX prov: <http://www.w3.org/ns/prov#>
-PREFIX schema: <http://schema.org/>
-PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
-PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-PREFIX ccf: <http://purl.org/ccf/>
-PREFIX UBERON: <http://purl.obolibrary.org/obo/UBERON_>
-PREFIX obo: <http://purl.obolibrary.org/obo/>
-PREFIX HRA: <https://purl.humanatlas.io/collection/hra>
-PREFIX LOD: <https://lod.humanatlas.io>
+# Define the API URL
+API_URL = "https://grlc.io/api-git/hubmapconsortium/ccf-grlc/subdir/hra/ftu-parts"
 
-SELECT DISTINCT ?ftu_digital_object ?ftu_digital_object_doi ?image_url ?organ_iri ?ftu_iri ?ftu_part_iri
-FROM HRA:
-WHERE {
-  ?ftu_illustration a ccf:FtuIllustration ;
-  	a ?ftu_iri ;
-  	ccf:ccf_located_in ?organ_id ;
-    ccf:illustration_node [ a ?ftu_part_iri ] ;
-    ccf:image_file [
-      ccf:file_format ?format ;
-      ccf:file_url ?image_url
-    ] .
+# Function to fetch CSV data from the API
+def fetch_api_data(url):
+    headers = {"Accept": "text/csv"}  # Request CSV format
+    response = requests.get(url, headers=headers)
+    if response.status_code == 200:
+        # Return the CSV data as text
+        return response.text
+    else:
+        print(f"Failed to fetch data from the API. Status code: {response.status_code}")
+        return None
 
-  HRA: prov:hadMember ?versioned_ftu .
+# Function to parse CSV data into a list of rows
+def parse_csv_data(csv_data):
+    rows = []
+    # Use csv.reader to parse the CSV content
+    for row in csv.reader(csv_data.splitlines()):
+        rows.append(row)
+    return rows
 
-  GRAPH LOD: {
-    ?versioned_ftu prov:wasDerivedFrom [
-      ccf:doi ?ftu_digital_object_doi
-    ] .
-  }
-
-  BIND(IRI(REPLACE(?organ_id, 'UBERON:', STR(UBERON:))) as ?organ_iri)
-  BIND(IRI(REPLACE(STR(?ftu_illustration), "#primary", "")) as ?ftu_digital_object)
-  
-  FILTER(?format = "image/png") # or "image/svg+xml"
-  FILTER(STRSTARTS(STR(?ftu_iri), STR(obo:)))
-  FILTER(STRSTARTS(STR(?ftu_part_iri), STR(obo:)))
-  FILTER(STRSTARTS(STR(?versioned_ftu), STR(?ftu_digital_object)))
-}
-"""
-
-# Function to run SPARQL query and fetch results
-def fetch_sparql_results(endpoint, query):
-    sparql = SPARQLWrapper(endpoint)
-    sparql.setQuery(query)
-    sparql.setReturnFormat(JSON)
-    results = sparql.query().convert()
-    return results["results"]["bindings"]
-
-# Function to generate ROBOT template CSV
-def generate_robot_template(data, output_file):
+# Function to generate ROBOT template CSV from API data
+def generate_robot_template(data, header, output_file):
     with open(output_file, mode='w', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
-        # Write header for ROBOT template
-        writer.writerow([
-            "FTU_IRI", "FTU_part_IRI", "Organ_IRI", "FTU_digital_object", "DOI", 
-            "Image_URL",
-        ])
-        # Process each row in data
+        # Write the header directly from the API response to the ROBOT template
+        writer.writerow(header)
+        
+        # Process each row in the API data
         for row in data:
-            ftu_iri = row["ftu_iri"]["value"]
-            ftu_part_iri = row["ftu_part_iri"]["value"]
-            organ_iri = row["organ_iri"]["value"]
-            image_url = row["image_url"]["value"]
-            doi = row["ftu_digital_object_doi"]["value"]
-            ftu_digital_object = row["ftu_digital_object"]["value"]
-            
-            # Add to ROBOT template
-            writer.writerow([
-                ftu_iri,  # ID
-                ftu_part_iri,  # Label (last part of IRI)
-                organ_iri,  # Definition
-                ftu_digital_object,  # Comment
-                doi,  # Annotation:source
-                image_url,  # Annotation:image_url
-            ])
+            writer.writerow(row)  # Write the row without modification
 
 # Main execution
 def main():
-    print("Fetching SPARQL results...")
-    data = fetch_sparql_results(SPARQL_ENDPOINT, SPARQL_QUERY)
-    print(f"Fetched {len(data)} records.")
-    
-    output_file = "robot_template.csv"
-    print(f"Generating ROBOT template: {output_file}")
-    generate_robot_template(data, output_file)
-    print(f"Template saved to {output_file}")
+    print("Fetching data from the API...")
+    csv_data = fetch_api_data(API_URL)
+    if csv_data:
+        # Parse the CSV data into rows
+        rows = parse_csv_data(csv_data)
+        print(f"Fetched {len(rows)} rows from the API.")
+        
+        # The first row is the header, so we use it directly
+        header = rows[0]
+        # All the remaining rows are the data
+        data = rows[1:]
+        
+        output_file = "robot_template.csv"
+        print(f"Generating ROBOT template: {output_file}")
+        generate_robot_template(data, header, output_file)
+        print(f"Template saved to {output_file}")
 
 if __name__ == "__main__":
     main()
