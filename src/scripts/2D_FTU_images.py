@@ -1,14 +1,5 @@
 import csv
-import sys
-
-print("Python version:", sys.version)
-print("Python executable:", sys.executable)
-
-try:
-    import requests
-    print("Requests imported successfully!")
-except ModuleNotFoundError as e:
-    print("Error:", e)
+from SPARQLWrapper import SPARQLWrapper, JSON
 
 # Define SPARQL endpoint and query (from https://github.com/hubmapconsortium/ccf-grlc/blob/main/hra/ftu-parts.rq)
 SPARQL_ENDPOINT = "https://lod.humanatlas.io/sparql"  # Update if necessary
@@ -25,10 +16,11 @@ PREFIX HRA: <https://purl.humanatlas.io/collection/hra>
 PREFIX LOD: <https://lod.humanatlas.io>
 
 SELECT DISTINCT ?ftu_digital_object ?ftu_digital_object_doi ?image_url ?organ_iri ?ftu_iri ?ftu_part_iri
+FROM HRA:
 WHERE {
   ?ftu_illustration a ccf:FtuIllustration ;
-      a ?ftu_iri ;
-      ccf:ccf_located_in ?organ_id ;
+  	a ?ftu_iri ;
+  	ccf:ccf_located_in ?organ_id ;
     ccf:illustration_node [ a ?ftu_part_iri ] ;
     ccf:image_file [
       ccf:file_format ?format ;
@@ -67,8 +59,8 @@ def generate_robot_template(data, output_file):
         writer = csv.writer(file)
         # Write header for ROBOT template
         writer.writerow([
-            "ID", "Label", "Definition", "Comment", "Annotation:source", 
-            "Annotation:image_url", "Related To"
+            "FTU_IRI", "FTU_part_IRI", "Organ_IRI", "FTU_digital_object", "DOI", 
+            "Image_URL",
         ])
         # Process each row in data
         for row in data:
@@ -82,12 +74,11 @@ def generate_robot_template(data, output_file):
             # Add to ROBOT template
             writer.writerow([
                 ftu_iri,  # ID
-                ftu_part_iri.split("/")[-1],  # Label (last part of IRI)
-                f"FTU illustration for {organ_iri}",  # Definition
-                f"Associated digital object: {ftu_digital_object}",  # Comment
+                ftu_part_iri,  # Label (last part of IRI)
+                organ_iri,  # Definition
+                ftu_digital_object,  # Comment
                 doi,  # Annotation:source
                 image_url,  # Annotation:image_url
-                organ_iri  # Related To
             ])
 
 # Main execution
