@@ -34,6 +34,16 @@ cl-plus.owl: $(ONT)-full.owl
 		 annotate --ontology-iri $(ONTBASE)/$@ \
 		 $(ANNOTATE_ONTOLOGY_VERSION) --output $@
 
+# Main release artefact (cl.owl)
+# We override the standard ODK-generate rule so that we can merge in the
+# tags for the taxon subsets.
+POSTPROCESS_ADDITIONS = subsets/human-tags.ofn \
+                        subsets/mouse-tags.ofn
+$(ONT).owl: $(ONT)-full.owl $(POSTPROCESS_ADDITIONS)
+	$(ROBOT) merge -i $< $(foreach add,$(POSTPROCESS_ADDITIONS),-i $(add)) \
+		 annotate --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		 convert -o $@
+
 
 # ----------------------------------------
 # SSSOM MAPPINGS
@@ -192,7 +202,7 @@ TAXON_ID_mouse = NCBITaxon:10090
 #     terms that belong to the subset (subsets/%-tags.ofn); that file
 #     can then be combined with a CL release product.
 .PRECIOUS: subsets/%-view.owl
-subsets/%-view.owl subsets/%-tags.ofn: $(ONT).owl | all_robot_plugins
+subsets/%-view.owl subsets/%-tags.ofn: $(ONT)-full.owl | all_robot_plugins
 	$(ROBOT) expand --input $< --expand-term RO:0002161 \
 		 uberon:create-species-subset --taxon $(TAXON_ID_$*) \
 		                              --strategy precise \
