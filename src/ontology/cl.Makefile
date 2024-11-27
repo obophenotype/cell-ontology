@@ -179,6 +179,41 @@ test: obocheck \
 
 
 # ----------------------------------------
+# TAXON SUBSETS
+# ----------------------------------------
+
+TAXON_ID_human = NCBITaxon:9606
+TAXON_ID_mouse = NCBITaxon:10090
+
+# Create a taxon-specific subset. This rule creates two distinct files:
+# (1) the subset proper (subsets/%-view.owl), which can be used on its
+#     own (and can be published as a release artifact if desired);
+# (2) a small containing oboInOwl:inSubset annotations to "tag" all
+#     terms that belong to the subset (subsets/%-tags.ofn); that file
+#     can then be combined with a CL release product.
+.PRECIOUS: subsets/%-view.owl
+subsets/%-view.owl subsets/%-tags.ofn: $(ONT).owl | all_robot_plugins
+	$(ROBOT) expand --input $< --expand-term RO:0002161 \
+		 uberon:create-species-subset --taxon $(TAXON_ID_$*) \
+		                              --strategy precise \
+		                              --reasoner WHELK \
+		                              --root CL:0000000 \
+		                              --prefix 'cl: http://purl.obolibrary.org/cl#' \
+		                              --subset-name cl:$*_subset \
+		                              --only-tag-in CL: \
+		                              --write-tags-to subsets/$*-tags.ofn \
+		 reason --reasoner WHELK --equivalent-classes-allowed all \
+		        --exclude-tautologies structural \
+		 relax \
+		 remove --axioms equivalent \
+		 reduce --reasoner WHELK \
+		 annotate --ontology-iri $(ONTBASE)/subsets/$*-view.owl \
+		          --version-iri $(ONTBASE)/releases/$(VERSION)/subsets/$*-view.owl \
+		          --annotation owl:versionInfo $(VERSION) \
+		 convert --format ofn --output subsets/$*-view.owl
+
+
+# ----------------------------------------
 # DOSDP PATTERNS HACKS
 # ----------------------------------------
 
