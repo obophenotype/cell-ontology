@@ -95,8 +95,8 @@ $(MAPPINGDIR)/cl.sssom.tsv: $(MAPPINGDIR)/cl-local.sssom.tsv \
 EXTERNAL_SSSOM_PROVIDERS = fbbt zfa
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
 
-# We only refresh external resources under IMP=true
-ifeq ($(strip $(IMP)),true)
+# We only refresh external resources under MIR=true
+ifeq ($(strip $(MIR)),true)
 
 # FBbt mapping set
 $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
@@ -344,10 +344,9 @@ add-replacedby:
 # EXTERNAL RESOURCES
 # ----------------------------------------
 
+ifeq ($(strip $(MIR)),true)
+
 # Human reference atlas subset
-# FIXME: Refreshing of this resource should be uncoupled from the
-# release/QC pipelines.
-# See <https://github.com/obophenotype/cell-ontology/issues/2644>
 HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
 $(TMPDIR)/hra_subset.owl:
 	wget $(HRA_SUBSET_URL) -O $@
@@ -356,13 +355,19 @@ $(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
 	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
 # CellXGene reference subset
-# FIXME: Never actually downloaded again, unless the
-# $(TEMPLATEDIR)/cellxgene_subset.tsv file is manually removed; probably
-# not what was intended.
-# See <https://github.com/obophenotype/cell-ontology/issues/2644>
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
-$(TEMPLATEDIR)/cellxgene_subset.tsv:
+$(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
+
+# CellMark reference subset
+CLM_CL_URL="https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl"
+$(TMPDIR)/clm-cl.owl:
+	wget $(CLM_CL_URL) -O $@
+
+$(COMPONENTSDIR)/clm-cl.owl: $(TMPDIR)/clm-cl.owl
+	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+
+endif
 
 
 # ----------------------------------------
