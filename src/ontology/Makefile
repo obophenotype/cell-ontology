@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                f7d9e8d156ea19124c47084171b68728b3f6cf2fddba07984f7985402bfc2b36
+CONFIG_HASH=                d4e868f8bbec3ce7b0d7656c824520ab0b96d8901a8c2b9cf400c27c3fb3dac2
 
 
 # ----------------------------------------
@@ -132,7 +132,7 @@ custom_robot_plugins:
 
 
 .PHONY: extra_robot_plugins
-extra_robot_plugins:  $(ROBOT_PLUGINS_DIRECTORY)/flybase.jar 
+extra_robot_plugins:  $(ROBOT_PLUGINS_DIRECTORY)/flybase.jar  $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar 
 
 
 # Install all ROBOT plugins to the runtime plugins directory
@@ -154,6 +154,9 @@ $(ROBOT_PLUGINS_DIRECTORY)/%.jar:
 
 $(ROBOT_PLUGINS_DIRECTORY)/flybase.jar:
 	curl -L -o $@ https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.2/flybase.jar
+
+$(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
+	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.1/uberon.jar
 
 
 # ----------------------------------------
@@ -188,7 +191,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim kidney_upper_slim
+SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim kidney_upper_slim human-view mouse-view
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
