@@ -9,6 +9,8 @@ use_dosdps: TRUE
 use_mappings: True
 use_edit_file_imports: FALSE
 release_diff: TRUE
+workflows:
+  - docs
 export_formats:
   - owl
   - obo
@@ -31,6 +33,8 @@ robot_plugins:
   plugins:
     - name: flybase
       mirror_from: https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.2/flybase.jar
+    - name: uberon
+      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.1/uberon.jar
 subset_group:
   products:
     - id: BDS_subset
@@ -38,6 +42,8 @@ subset_group:
     - id: eye_upper_slim
     - id: general_cell_types_upper_slim
     - id: kidney_upper_slim
+    - id: human-view
+    - id: mouse-view
 sssom_mappingset_group:
   products:
     - id: cl-local
@@ -98,6 +104,7 @@ pattern_pipelines_group:
   matches:
     - id: matches
 robot_java_args: '-Xmx16G'
+reasoner: WHELK
 allow_equivalents: asserted-only
 robot_report:
   release_reports: False
@@ -118,6 +125,7 @@ robot_report:
     - label-synonym-polysemy
     - illegal-date
     - def-not-only-xref
+    - id-format
   custom_sparql_exports:
     - cl_terms
     - cl-edges
@@ -148,4 +156,5 @@ components:
       use_template: True
       templates:
         - cellxgene_subset.tsv
+    - filename: clm-cl.owl
 
