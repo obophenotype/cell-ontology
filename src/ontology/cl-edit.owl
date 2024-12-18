@@ -449,7 +449,6 @@ Declaration(Class(obo:CL_0000398))
 Declaration(Class(obo:CL_0000399))
 Declaration(Class(obo:CL_0000400))
 Declaration(Class(obo:CL_0000401))
-Declaration(Class(obo:CL_0000402))
 Declaration(Class(obo:CL_0000403))
 Declaration(Class(obo:CL_0000404))
 Declaration(Class(obo:CL_0000405))
@@ -4559,8 +4558,10 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "BTO:0003811")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "FMA:67313")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "WBbt:0005113")
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000099 "CNS interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0000099 "interneuron")
 SubClassOf(obo:CL_0000099 obo:CL_0000540)
+SubClassOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_0000100 (motor neuron)
 
@@ -7028,13 +7029,6 @@ AnnotationAssertion(rdfs:comment obo:CL_0000401 "Obsoleted as plasmatocytes are 
 AnnotationAssertion(rdfs:label obo:CL_0000401 "obsolete macrophage (sensu Diptera)")
 AnnotationAssertion(owl:deprecated obo:CL_0000401 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000402 (CNS interneuron)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-0-12-817424-1.00001-X") obo:IAO_0000115 obo:CL_0000402 "An interneuron that has its cell body in a central nervous system.")
-AnnotationAssertion(rdfs:comment obo:CL_0000402 "Interneurons are commonly described as being only found in the central nervous system. However, in CL we define 'interneuron' more broadly as any neuron that is neither a motor neuron nor a sensory neuron, regardless of its location, so we need this term to refer strictly to interneurons of the central nervous system.")
-AnnotationAssertion(rdfs:label obo:CL_0000402 "CNS interneuron")
-EquivalentClasses(obo:CL_0000402 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017)))
-
 # Class: obo:CL_0000403 (obo:CL_0000403)
 
 AnnotationAssertion(obo:IAO_0000231 obo:CL_0000403 obo:IAO_0000227)
@@ -7057,7 +7051,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000405 "true"^^xsd:boolean)
 # Class: obo:CL_0000406 (CNS short range interneuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000406 "CNS short range interneuron")
-SubClassOf(obo:CL_0000406 obo:CL_0000402)
+SubClassOf(obo:CL_0000406 obo:CL_0000099)
 
 # Class: obo:CL_0000407 (scolopidial ligament cell)
 
@@ -7085,7 +7079,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000409 "true"^^xsd:boolean)
 # Class: obo:CL_0000410 (CNS long range interneuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000410 "CNS long range interneuron")
-SubClassOf(obo:CL_0000410 obo:CL_0000402)
+SubClassOf(obo:CL_0000410 obo:CL_0000099)
 
 # Class: obo:CL_0000411 (Caenorhabditis hypodermal cell)
 
@@ -21351,7 +21345,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0004001 "cell")
 AnnotationAssertion(oboInOwl:id obo:CL_0004001 "CL:0004001")
 AnnotationAssertion(rdfs:comment obo:CL_0004001 "Local interneurons form the category of interneurons whose axon stays entirely within the gray matter region where the cell body resides (Swanson, 2003, p. 245; Bota and Swanson, 2007, Fig. 3).")
 AnnotationAssertion(rdfs:label obo:CL_0004001 "local interneuron")
-SubClassOf(obo:CL_0004001 obo:CL_0000402)
+SubClassOf(obo:CL_0004001 obo:CL_0000099)
 SubClassOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002020))
 
 # Class: obo:CL_0004115 (retinal ganglion cell B)
@@ -22021,7 +22015,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS") obo:IAO_0000115 obo:
 AnnotationAssertion(rdfs:comment obo:CL_0005000 "Is_a interneuron, part_of UBERON:0002240.")
 AnnotationAssertion(rdfs:label obo:CL_0005000 "spinal cord interneuron")
 EquivalentClasses(obo:CL_0005000 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002240)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0005000 obo:CL_0000402)
+SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0005000 obo:CL_0000099)
 
 # Class: obo:CL_0005001 (iridoblast)
 
