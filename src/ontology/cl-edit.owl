@@ -449,7 +449,6 @@ Declaration(Class(obo:CL_0000398))
 Declaration(Class(obo:CL_0000399))
 Declaration(Class(obo:CL_0000400))
 Declaration(Class(obo:CL_0000401))
-Declaration(Class(obo:CL_0000402))
 Declaration(Class(obo:CL_0000403))
 Declaration(Class(obo:CL_0000404))
 Declaration(Class(obo:CL_0000405))
@@ -3047,6 +3046,7 @@ Declaration(Class(obo:CL_4033089))
 Declaration(Class(obo:CL_4033090))
 Declaration(Class(obo:CL_4033091))
 Declaration(Class(obo:CL_4033092))
+Declaration(Class(obo:CL_4033093))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3242,6 +3242,7 @@ Declaration(Class(obo:UBERON_0000156))
 Declaration(Class(obo:UBERON_0000157))
 Declaration(Class(obo:UBERON_0000371))
 Declaration(Class(obo:UBERON_0000424))
+Declaration(Class(obo:UBERON_0000482))
 Declaration(Class(obo:UBERON_0001004))
 Declaration(Class(obo:UBERON_0001335))
 Declaration(Class(obo:UBERON_0001786))
@@ -4564,8 +4565,10 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "BTO:0003811")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "FMA:67313")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "WBbt:0005113")
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000099 "CNS interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0000099 "interneuron")
 SubClassOf(obo:CL_0000099 obo:CL_0000540)
+SubClassOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
 # Class: obo:CL_0000100 (motor neuron)
 
@@ -7033,13 +7036,6 @@ AnnotationAssertion(rdfs:comment obo:CL_0000401 "Obsoleted as plasmatocytes are 
 AnnotationAssertion(rdfs:label obo:CL_0000401 "obsolete macrophage (sensu Diptera)")
 AnnotationAssertion(owl:deprecated obo:CL_0000401 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000402 (CNS interneuron)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-0-12-817424-1.00001-X") obo:IAO_0000115 obo:CL_0000402 "An interneuron that has its cell body in a central nervous system.")
-AnnotationAssertion(rdfs:comment obo:CL_0000402 "Interneurons are commonly described as being only found in the central nervous system. However, in CL we define 'interneuron' more broadly as any neuron that is neither a motor neuron nor a sensory neuron, regardless of its location, so we need this term to refer strictly to interneurons of the central nervous system.")
-AnnotationAssertion(rdfs:label obo:CL_0000402 "CNS interneuron")
-EquivalentClasses(obo:CL_0000402 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017)))
-
 # Class: obo:CL_0000403 (obo:CL_0000403)
 
 AnnotationAssertion(obo:IAO_0000231 obo:CL_0000403 obo:IAO_0000227)
@@ -7062,7 +7058,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000405 "true"^^xsd:boolean)
 # Class: obo:CL_0000406 (CNS short range interneuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000406 "CNS short range interneuron")
-SubClassOf(obo:CL_0000406 obo:CL_0000402)
+SubClassOf(obo:CL_0000406 obo:CL_0000099)
 
 # Class: obo:CL_0000407 (scolopidial ligament cell)
 
@@ -7090,7 +7086,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000409 "true"^^xsd:boolean)
 # Class: obo:CL_0000410 (CNS long range interneuron)
 
 AnnotationAssertion(rdfs:label obo:CL_0000410 "CNS long range interneuron")
-SubClassOf(obo:CL_0000410 obo:CL_0000402)
+SubClassOf(obo:CL_0000410 obo:CL_0000099)
 
 # Class: obo:CL_0000411 (Caenorhabditis hypodermal cell)
 
@@ -21365,7 +21361,7 @@ AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0004001 "cell")
 AnnotationAssertion(oboInOwl:id obo:CL_0004001 "CL:0004001")
 AnnotationAssertion(rdfs:comment obo:CL_0004001 "Local interneurons form the category of interneurons whose axon stays entirely within the gray matter region where the cell body resides (Swanson, 2003, p. 245; Bota and Swanson, 2007, Fig. 3).")
 AnnotationAssertion(rdfs:label obo:CL_0004001 "local interneuron")
-SubClassOf(obo:CL_0004001 obo:CL_0000402)
+SubClassOf(obo:CL_0004001 obo:CL_0000099)
 SubClassOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002020))
 
 # Class: obo:CL_0004115 (retinal ganglion cell B)
@@ -22035,7 +22031,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS") obo:IAO_0000115 obo:
 AnnotationAssertion(rdfs:comment obo:CL_0005000 "Is_a interneuron, part_of UBERON:0002240.")
 AnnotationAssertion(rdfs:label obo:CL_0005000 "spinal cord interneuron")
 EquivalentClasses(obo:CL_0005000 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002240)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0005000 obo:CL_0000402)
+SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0005000 obo:CL_0000099)
 
 # Class: obo:CL_0005001 (iridoblast)
 
@@ -32381,6 +32377,22 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37468586") oboInOwl:hasE
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37468586") rdfs:comment obo:CL_4033092 "While CD57 is traditionally associated with immune cells (e.g., NK cells), its expression on enterocytes marks unique epithelial subsets with specific functions or maturation states. These cells are speciallyenriched in areas of the duodenum within submucosal glands.")
 AnnotationAssertion(rdfs:label obo:CL_4033092 "CD57-positive enterocyte")
 EquivalentClasses(obo:CL_4033092 ObjectIntersectionOf(obo:CL_0000584 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0008346) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001440)))
+
+# Class: obo:CL_4033093 (limbal epithelial stem cell of cornea)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20614614") Annotation(oboInOwl:hasDbXref "PMID:29105366") Annotation(oboInOwl:hasDbXref "PMID:36983561") Annotation(oboInOwl:hasDbXref "PMID:37768272") obo:IAO_0000115 obo:CL_4033093 "A stem cell that is part of the corneo-scleral limbus. This cell type resides at the basal layer of the epithelium and has a small size and high nuclear to cytoplasmatic ratio (Secker and Daniels, 2009). A limbal stem cell is responsible for corneal epithelial renewal and repair (Li et al., 2023), and to help maintain a clear corneal surface by preventing conjunctival epithelial cells from migrating onto the cornea (Wang et al., 2023).")
+AnnotationAssertion(terms:contributor obo:CL_4033093 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033093 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(terms:date obo:CL_4033093 "2024-12-11T13:59:19Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20614614") oboInOwl:hasExactSynonym obo:CL_4033093 "limbal epithelial stem cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17562792") oboInOwl:hasExactSynonym obo:CL_4033093 "limbal stem cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20614614") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033093 "LESC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:36983561") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033093 "LSC")
+AnnotationAssertion(rdfs:label obo:CL_4033093 "limbal epithelial stem cell of cornea")
+EquivalentClasses(obo:CL_4033093 ObjectIntersectionOf(obo:CL_0000034 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006761)))
+SubClassOf(obo:CL_4033093 obo:CL_0000036)
+SubClassOf(obo:CL_4033093 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000482))
+SubClassOf(obo:CL_4033093 ObjectSomeValuesFrom(obo:RO_0002203 obo:CL_0000575))
 
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
