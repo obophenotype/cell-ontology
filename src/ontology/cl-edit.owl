@@ -3048,6 +3048,7 @@ Declaration(Class(obo:CL_4033090))
 Declaration(Class(obo:CL_4033091))
 Declaration(Class(obo:CL_4033092))
 Declaration(Class(obo:CL_4033093))
+Declaration(Class(obo:CL_4033094))
 Declaration(Class(obo:CL_4040000))
 Declaration(Class(obo:CL_4040001))
 Declaration(Class(obo:CL_4040002))
@@ -3387,7 +3388,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3473,15 +3474,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -24396,10 +24397,11 @@ SubClassOf(obo:CL_0011019 obo:CL_0000077)
 
 # Class: obo:CL_0011020 (neural progenitor cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30574073") obo:IAO_0000115 obo:CL_0011020 "An undifferentiated cell that originates from a neural stem cell and has the capacity to generate multiple types of lineage-restricted progenitors but not to self-renew.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23064725") Annotation(oboInOwl:hasDbXref "PMID:30574073") Annotation(oboInOwl:hasDbXref "PMID:37508487") obo:IAO_0000115 obo:CL_0011020 "An undifferentiated cell derived from a neural stem cell, with a limited capacity to self-renew (Dibajnia and Morshead, 2013) and the ability to generate multiple types of lineage-restricted progenitors, contributing to the formation of neurons, astrocytes, and oligodendrocytes.")
 AnnotationAssertion(terms:contributor obo:CL_0011020 <https://orcid.org/0000-0001-5208-3432>)
 AnnotationAssertion(rdfs:label obo:CL_0011020 "neural progenitor cell")
 SubClassOf(obo:CL_0011020 obo:CL_0000055)
+SubClassOf(obo:CL_0011020 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000047))
 
 # Class: obo:CL_0011021 (fibroblast of upper back skin)
 
@@ -28851,14 +28853,13 @@ AnnotationAssertion(rdfs:label obo:CL_2000056 "Meynert cell")
 SubClassOf(obo:CL_2000056 obo:CL_0000598)
 SubClassOf(obo:CL_2000056 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001384))
 
-# Class: obo:CL_2000057 (femural osteoblast)
+# Class: obo:CL_2000057 (femoral osteoblast)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000057 "Any osteoblast that is part of a femur.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") Annotation(oboInOwl:hasDbXref "PMID:34565180") Annotation(oboInOwl:hasDbXref "PMID:34569806") obo:IAO_0000115 obo:CL_2000057 "Any osteoblast that is part of a femur.")
 AnnotationAssertion(terms:contributor obo:CL_2000057 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000057 "2014-10-06T19:29:45Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000057 "CL:2000057")
-AnnotationAssertion(rdfs:comment obo:CL_2000057 "http://www.sciencellonline.com/site/productInformation.php?keyword=4610")
-AnnotationAssertion(rdfs:label obo:CL_2000057 "femural osteoblast")
+AnnotationAssertion(rdfs:label obo:CL_2000057 "femoral osteoblast")
 EquivalentClasses(obo:CL_2000057 ObjectIntersectionOf(obo:CL_0000062 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000981)))
 
 # Class: obo:CL_2000058 (calvarial osteoblast)
@@ -32413,6 +32414,16 @@ EquivalentClasses(obo:CL_4033093 ObjectIntersectionOf(obo:CL_0000034 ObjectSomeV
 SubClassOf(obo:CL_4033093 obo:CL_0000036)
 SubClassOf(obo:CL_4033093 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000482))
 SubClassOf(obo:CL_4033093 ObjectSomeValuesFrom(obo:RO_0002203 obo:CL_0000575))
+
+# Class: obo:CL_4033094 (age-associated B cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30873171") Annotation(oboInOwl:hasDbXref "PMID:31986068") Annotation(oboInOwl:hasDbXref "PMID:35298565") Annotation(oboInOwl:hasDbXref "PMID:35798993") obo:IAO_0000115 obo:CL_4033094 "A transcriptionally distinct memory B cell whose presence increases with age, during infections, and in autoimmune diseases. In humans and mice, this cell type can be identified by the expression of T-bet, CD11c, CD11b, and the lack of CD21. An age-associated B cell responds to TLR stimuli, may produce autoantibodies, and participates in antiviral responses and pathogen clearance.")
+AnnotationAssertion(terms:contributor obo:CL_4033094 <https://orcid.org/0000-0001-6677-8489>)
+AnnotationAssertion(terms:contributor obo:CL_4033094 <https://orcid.org/0000-0001-7655-4833>)
+AnnotationAssertion(terms:date obo:CL_4033094 "2025-01-08T14:44:57Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35798993") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033094 "ABC")
+AnnotationAssertion(rdfs:label obo:CL_4033094 "age-associated B cell")
+SubClassOf(obo:CL_4033094 obo:CL_0000787)
 
 # Class: obo:CL_4040000 (glial restricted tripotential precursor cell)
 
