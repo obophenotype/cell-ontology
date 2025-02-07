@@ -45,7 +45,7 @@ Annotation(terms:contributor <https://orcid.org/0000-0002-8688-6599>)
 Annotation(terms:contributor <https://orcid.org/0000-0002-9900-7880>)
 Annotation(terms:contributor <https://orcid.org/0000-0003-1980-3228>)
 Annotation(terms:license <http://creativecommons.org/licenses/by/4.0/>)
-Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, university at buffalo.")
+Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl"@buffalo.edu, university at buffalo.)
 
 Declaration(Class(obo:CL_0000000))
 Declaration(Class(obo:CL_0000001))
@@ -156,7 +156,6 @@ Declaration(Class(obo:CL_0000105))
 Declaration(Class(obo:CL_0000106))
 Declaration(Class(obo:CL_0000107))
 Declaration(Class(obo:CL_0000108))
-Declaration(Class(obo:CL_0000109))
 Declaration(Class(obo:CL_0000110))
 Declaration(Class(obo:CL_0000111))
 Declaration(Class(obo:CL_0000112))
@@ -4668,13 +4667,6 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000108 "WBbt:0006840")
 AnnotationAssertion(rdfs:label obo:CL_0000108 "cholinergic neuron")
 EquivalentClasses(obo:CL_0000108 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014055)))
 
-# Class: obo:CL_0000109 (adrenergic neuron)
-
-AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000109 "MESH:D059331")
-AnnotationAssertion(rdfs:label obo:CL_0000109 "adrenergic neuron")
-SubClassOf(obo:CL_0000109 obo:CL_0000540)
-SubClassOf(obo:CL_0000109 obo:CL_4033050)
-
 # Class: obo:CL_0000110 (peptidergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23040809") Annotation(oboInOwl:hasDbXref "doi:10.1016/B978-012589762-4/50021-9") obo:IAO_0000115 obo:CL_0000110 "A neuron that uses neuropeptides as transmitters.")
@@ -5946,8 +5938,10 @@ AnnotationAssertion(owl:deprecated obo:CL_0000245 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000246 (Mauthner neuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11163687") obo:IAO_0000115 obo:CL_0000246 "A reticulospinal neuron with soma location in the hindbrain of fish and amphibians. This neuron type is responsible for the rapid escape response known as C-start escape.")
 AnnotationAssertion(rdfs:label obo:CL_0000246 "Mauthner neuron")
 SubClassOf(obo:CL_0000246 obo:CL_0000099)
+SubClassOf(obo:CL_0000246 obo:CL_4023107)
 
 # Class: obo:CL_0000247 (Rohon-Beard neuron)
 
@@ -6901,6 +6895,7 @@ SubClassOf(obo:CL_0000378 obo:CL_0000630)
 
 # Class: obo:CL_0000379 (sensory processing neuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Sensory_neuron") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK547656/") obo:IAO_0000115 obo:CL_0000379 "A neuron of the central nervous system capable of processing external sensory stimuli.")
 AnnotationAssertion(rdfs:label obo:CL_0000379 "sensory processing neuron")
 SubClassOf(obo:CL_0000379 obo:CL_0000540)
 SubClassOf(obo:CL_0000379 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
@@ -7088,6 +7083,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000405 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000406 (CNS short range interneuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23394773") obo:IAO_0000115 obo:CL_0000406 "A type of interneuron with its soma located in a central nervous system. This neuronal type extends their axons locally within the same circuit.")
 AnnotationAssertion(rdfs:label obo:CL_0000406 "CNS short range interneuron")
 SubClassOf(obo:CL_0000406 obo:CL_0000099)
 
@@ -7116,6 +7112,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000409 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000410 (CNS long range interneuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34322002") Annotation(oboInOwl:hasDbXref "PMID:35392440") obo:IAO_0000115 obo:CL_0000410 "A type of interneuron with its soma located in a cerebral cortex. This neuronal type extends their axons to remote cortical and subcortical areas.")
 AnnotationAssertion(rdfs:label obo:CL_0000410 "CNS long range interneuron")
 SubClassOf(obo:CL_0000410 obo:CL_0000099)
 
@@ -7728,11 +7725,17 @@ SubClassOf(obo:CL_0000488 obo:CL_0000210)
 
 # Class: obo:CL_0000489 (scotopic photoreceptor cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK542177/") obo:IAO_0000115 obo:CL_0000489 "A type of photoreceptor cell that is capable of detecting very low light levels (i.e. in darkness).")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38589506") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK542177/") oboInOwl:hasRelatedSynonym obo:CL_0000489 "rod cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38589506") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK542177/") oboInOwl:hasRelatedSynonym obo:CL_0000489 "rod photoreceptor")
 AnnotationAssertion(rdfs:label obo:CL_0000489 "scotopic photoreceptor cell")
 SubClassOf(obo:CL_0000489 obo:CL_0000210)
 
 # Class: obo:CL_0000490 (photopic photoreceptor cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK542177/") obo:IAO_0000115 obo:CL_0000490 "A type of photoreceptor cell that is capable of detecting light under well light and bright condition (i.e. daylight). This cell type is responsible for colour vision.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38589506") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK542177/") oboInOwl:hasRelatedSynonym obo:CL_0000490 "cone cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK542177/") oboInOwl:hasRelatedSynonym obo:CL_0000490 "cone photoreceptor")
 AnnotationAssertion(rdfs:label obo:CL_0000490 "photopic photoreceptor cell")
 SubClassOf(obo:CL_0000490 obo:CL_0000488)
 
@@ -8454,6 +8457,7 @@ SubClassOf(obo:CL_0000566 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000134))
 
 # Class: obo:CL_0000567 (polymodal nocireceptor)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21041958") Annotation(oboInOwl:hasDbXref "PMID:37006298") Annotation(oboInOwl:hasDbXref "PMID:38806708") Annotation(oboInOwl:hasDbXref "https://www.ncbi.nlm.nih.gov/books/NBK551562/") obo:IAO_0000115 obo:CL_0000567 "A type of pain receptor cell with soma in the peripheral nervous system. This cell type responds to a multiple type of noxious stimuli and its soma is located in the trigeminal root ganglia in the facial nerves and in the dorsal root ganglia in the rest of the body.")
 AnnotationAssertion(rdfs:label obo:CL_0000567 "polymodal nocireceptor")
 SubClassOf(obo:CL_0000567 obo:CL_0000198)
 
@@ -22707,8 +22711,12 @@ SubClassOf(obo:CL_0008024 obo:CL_0000163)
 # Class: obo:CL_0008025 (noradrenergic neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0008025 "A neuron that release noradrenaline (noriphinephrine) as a neurotransmitter.")
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0008025 "MESH:D059331")
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0008025 "adrenergic neuron")
 AnnotationAssertion(rdfs:label obo:CL_0008025 "noradrenergic neuron")
 EquivalentClasses(obo:CL_0008025 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061533)))
+SubClassOf(obo:CL_0008025 obo:CL_0000540)
+SubClassOf(obo:CL_0008025 obo:CL_4033050)
 
 # Class: obo:CL_0008026 (open tracheal system tracheocyte)
 
