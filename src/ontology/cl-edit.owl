@@ -3194,6 +3194,7 @@ Declaration(Class(obo:PATO_0000405))
 Declaration(Class(obo:PATO_0001377))
 Declaration(Class(obo:PATO_0001408))
 Declaration(Class(obo:PATO_0001870))
+Declaration(Class(obo:PATO_0001872))
 Declaration(Class(obo:PATO_0001979))
 Declaration(Class(obo:PATO_0002064))
 Declaration(Class(obo:PATO_0010007))
@@ -3400,7 +3401,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3486,15 +3487,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -4345,7 +4346,7 @@ SubClassOf(obo:CL_0000075 obo:CL_0000066)
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000076 "CALOHA:TS-1249")
 AnnotationAssertion(rdfs:label obo:CL_0000076 "squamous epithelial cell")
-EquivalentClasses(obo:CL_0000076 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006914)))
+SubClassOf(obo:CL_0000076 obo:CL_0000066)
 
 # Class: obo:CL_0000077 (mesothelial cell)
 
@@ -4362,7 +4363,7 @@ SubClassOf(obo:CL_0000077 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000222))
 # Class: obo:CL_0000078 (peridermal cell)
 
 AnnotationAssertion(rdfs:label obo:CL_0000078 "peridermal cell")
-SubClassOf(obo:CL_0000078 obo:CL_0000076)
+EquivalentClasses(obo:CL_0000078 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003055)))
 
 # Class: obo:CL_0000079 (stratified epithelial cell)
 
@@ -5186,7 +5187,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000162 "BTO:0001780")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000162 "FMA:62901")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29263912") oboInOwl:hasExactSynonym obo:CL_0000162 "gastric parietal cell")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Parietal_cell") oboInOwl:hasExactSynonym obo:CL_0000162 "oxyntic cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Parietal_cell") oboInOwl:hasExactSynonym obo:CL_0000162 "oxyntic cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29263912") Annotation(oboInOwl:hasDbXref "PMID:31613538") rdfs:comment obo:CL_0000162 "Parietal cells have dynamic, actin-supported microvilli that increase in number during active secretion, playing a crucial role in secreting hydrochloric acid and intrinsic factor. The structure and regulation of these microvilli are influenced by proteins such as ASAP3, which modulates Arf6 activity and actin assembly, thereby controlling microvilli formation and parietal cell function.")
 AnnotationAssertion(rdfs:label obo:CL_0000162 "parietal cell")
@@ -7125,7 +7125,7 @@ AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0000411 "roundworm hypoderma
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000411 "WBbt:0007846")
 AnnotationAssertion(rdfs:comment obo:CL_0000411 "This term was originally added to CL for parity with the Worm anatomy ontology, which is dedicated to C elegans. It is not clear if it makes sense to try and generalize the concept and include in CL, and this term may be obsoleted in future. Note there is no similarity to the hypodermis in vertebrates.")
 AnnotationAssertion(rdfs:label obo:CL_0000411 "Caenorhabditis hypodermal cell")
-SubClassOf(obo:CL_0000411 obo:CL_0000076)
+SubClassOf(obo:CL_0000411 obo:CL_0000066)
 SubClassOf(obo:CL_0000411 obo:CL_0000228)
 SubClassOf(obo:CL_0000411 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_6237))
 
@@ -14418,6 +14418,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29463737") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002062 "ATI")
 AnnotationAssertion(rdfs:label obo:CL_0002062 "pulmonary alveolar type 1 cell")
 EquivalentClasses(obo:CL_0002062 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007585)))
+SubClassOf(obo:CL_0002062 obo:CL_0000076)
 
 # Class: obo:CL_0002063 (pulmonary alveolar type 2 cell)
 
@@ -14443,7 +14444,7 @@ AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "TII")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "lung type II cell")
 AnnotationAssertion(rdfs:label obo:CL_0002063 "pulmonary alveolar type 2 cell")
 EquivalentClasses(obo:CL_0002063 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
-SubClassOf(obo:CL_0002063 obo:CL_0000076)
+SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_4040003))
 
 # Class: obo:CL_0002064 (pancreatic acinar cell)
