@@ -3118,6 +3118,7 @@ Declaration(Class(obo:CL_4047037))
 Declaration(Class(obo:CL_4047040))
 Declaration(Class(obo:CL_4047042))
 Declaration(Class(obo:CL_4047043))
+Declaration(Class(obo:CL_4047045))
 Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
 Declaration(Class(obo:CL_4047101))
@@ -3161,6 +3162,8 @@ Declaration(Class(obo:CL_4052037))
 Declaration(Class(obo:CL_4052038))
 Declaration(Class(obo:CL_4052039))
 Declaration(Class(obo:CL_4052040))
+Declaration(Class(obo:CL_4052041))
+Declaration(Class(obo:CL_4052042))
 Declaration(Class(obo:CL_4052048))
 Declaration(Class(obo:CL_4052049))
 Declaration(Class(obo:CP_0000000))
@@ -3202,6 +3205,7 @@ Declaration(Class(obo:PATO_0000405))
 Declaration(Class(obo:PATO_0001377))
 Declaration(Class(obo:PATO_0001408))
 Declaration(Class(obo:PATO_0001870))
+Declaration(Class(obo:PATO_0001872))
 Declaration(Class(obo:PATO_0001979))
 Declaration(Class(obo:PATO_0002064))
 Declaration(Class(obo:PATO_0010007))
@@ -3303,6 +3307,7 @@ Declaration(Class(obo:UBERON_0009739))
 Declaration(Class(obo:UBERON_0009841))
 Declaration(Class(obo:UBERON_0009851))
 Declaration(Class(obo:UBERON_0009852))
+Declaration(Class(obo:UBERON_0010062))
 Declaration(Class(obo:UBERON_0010397))
 Declaration(Class(obo:UBERON_0011184))
 Declaration(Class(obo:UBERON_0011949))
@@ -4355,7 +4360,7 @@ SubClassOf(obo:CL_0000075 obo:CL_0000066)
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000076 "CALOHA:TS-1249")
 AnnotationAssertion(rdfs:label obo:CL_0000076 "squamous epithelial cell")
-EquivalentClasses(obo:CL_0000076 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006914)))
+SubClassOf(obo:CL_0000076 obo:CL_0000066)
 
 # Class: obo:CL_0000077 (mesothelial cell)
 
@@ -4372,7 +4377,7 @@ SubClassOf(obo:CL_0000077 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000222))
 # Class: obo:CL_0000078 (peridermal cell)
 
 AnnotationAssertion(rdfs:label obo:CL_0000078 "peridermal cell")
-SubClassOf(obo:CL_0000078 obo:CL_0000076)
+EquivalentClasses(obo:CL_0000078 ObjectIntersectionOf(obo:CL_0000076 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003055)))
 
 # Class: obo:CL_0000079 (stratified epithelial cell)
 
@@ -5340,14 +5345,13 @@ EquivalentClasses(obo:CL_0000174 ObjectIntersectionOf(obo:CL_0000151 ObjectSomeV
 
 # Class: obo:CL_0000175 (luteal cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D008184") obo:IAO_0000115 obo:CL_0000175 "A progesterone secreting cell in the corpus luteum. The large luteal cells develop from the granulosa cells. The small luteal cells develop from the theca cells.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MESH:D008184") Annotation(oboInOwl:hasDbXref "PMID:31849844") obo:IAO_0000115 obo:CL_0000175 "A progesterone secreting cell in the corpus luteum. The large luteal cells develop from the granulosa cells. The small luteal cells develop from the theca cells.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000175 "BTO:0003939")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000175 "FMA:18688")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16790079") oboInOwl:hasExactSynonym obo:CL_0000175 "corpus luteum cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000175 "lutein cell")
 AnnotationAssertion(rdfs:label obo:CL_0000175 "luteal cell")
 SubClassOf(obo:CL_0000175 obo:CL_0000174)
-SubClassOf(obo:CL_0000175 obo:CL_0002132)
 SubClassOf(obo:CL_0000175 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002512))
 SubClassOf(obo:CL_0000175 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0042701))
 
@@ -5912,6 +5916,7 @@ SubClassOf(obo:CL_0000239 obo:CL_0000075)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30422572") Annotation(oboInOwl:hasDbXref "Wikipedia:Epithelium") Annotation(oboInOwl:hasDbXref "Wikipedia:Stratified_squamous_epithelium") obo:IAO_0000115 obo:CL_0000240 "A stratified epithelial cell that is part of squamous epithelium, characterized by multiple layers of cells. The basal layer is directly attached to the basement membrane and the apical layer consists of flattened squamous cells. This provides a protective barrier, commonly found in areas subject to abrasion, such as the skin, oral cavity, and esophagus.")
 AnnotationAssertion(rdfs:label obo:CL_0000240 "stratified squamous epithelial cell")
 EquivalentClasses(obo:CL_0000240 ObjectIntersectionOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006915)))
+SubClassOf(obo:CL_0000240 obo:CL_0000076)
 
 # Class: obo:CL_0000241 (stratified cuboidal epithelial cell)
 
@@ -7134,7 +7139,7 @@ AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0000411 "roundworm hypoderma
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000411 "WBbt:0007846")
 AnnotationAssertion(rdfs:comment obo:CL_0000411 "This term was originally added to CL for parity with the Worm anatomy ontology, which is dedicated to C elegans. It is not clear if it makes sense to try and generalize the concept and include in CL, and this term may be obsoleted in future. Note there is no similarity to the hypodermis in vertebrates.")
 AnnotationAssertion(rdfs:label obo:CL_0000411 "Caenorhabditis hypodermal cell")
-SubClassOf(obo:CL_0000411 obo:CL_0000076)
+SubClassOf(obo:CL_0000411 obo:CL_0000066)
 SubClassOf(obo:CL_0000411 obo:CL_0000228)
 SubClassOf(obo:CL_0000411 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_6237))
 
@@ -7849,7 +7854,6 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000503 "BTO:0002850")
 AnnotationAssertion(rdfs:label obo:CL_0000503 "theca cell")
 SubClassOf(obo:CL_0000503 obo:CL_0000499)
 SubClassOf(obo:CL_0000503 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000155))
-SubClassOf(obo:CL_0000503 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001305))
 
 # Class: obo:CL_0000504 (enterochromaffin-like cell)
 
@@ -14426,6 +14430,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29463737") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002062 "ATI")
 AnnotationAssertion(rdfs:label obo:CL_0002062 "pulmonary alveolar type 1 cell")
 EquivalentClasses(obo:CL_0002062 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007585)))
+SubClassOf(obo:CL_0002062 obo:CL_0000076)
 
 # Class: obo:CL_0002063 (pulmonary alveolar type 2 cell)
 
@@ -14451,7 +14456,7 @@ AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "TII")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "lung type II cell")
 AnnotationAssertion(rdfs:label obo:CL_0002063 "pulmonary alveolar type 2 cell")
 EquivalentClasses(obo:CL_0002063 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
-SubClassOf(obo:CL_0002063 obo:CL_0000076)
+SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_4040003))
 
 # Class: obo:CL_0002064 (pancreatic acinar cell)
@@ -15656,9 +15661,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002174 "2010-08-25T03:01:27Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002174 "EMAPA:31247")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002174 "FMA:70589")
 AnnotationAssertion(rdfs:label obo:CL_0002174 "follicular cell of ovary")
-SubClassOf(obo:CL_0002174 obo:CL_0000500)
-SubClassOf(obo:CL_0002174 obo:CL_0002078)
-SubClassOf(obo:CL_0002174 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001305))
+EquivalentClasses(obo:CL_0002174 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001305)))
 
 # Class: obo:CL_0002175 (primary follicular cell of ovary)
 
@@ -20210,7 +20213,7 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002620 obo:CL_0000057
 AnnotationAssertion(terms:contributor obo:CL_0002621 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002621 "2011-03-14T12:46:28Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002621 "gingival epithelial cell")
-EquivalentClasses(obo:CL_0002621 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001949)))
+EquivalentClasses(obo:CL_0002621 ObjectIntersectionOf(obo:CL_0000240 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001949)))
 
 # Class: obo:CL_0002622 (prostate stromal cell)
 
@@ -31029,6 +31032,7 @@ AnnotationAssertion(terms:date obo:CL_4030012 "2022-05-13T11:00:29Z"^^xsd:dateTi
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4030012 "epithelial cell of the descending thin limb of the short loop of Henle")
 AnnotationAssertion(rdfs:label obo:CL_4030012 "kidney loop of Henle short descending thin limb epithelial cell")
 EquivalentClasses(obo:CL_4030012 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005099)))
+SubClassOf(obo:CL_4030012 obo:CL_0000076)
 SubClassOf(obo:CL_4030012 obo:CL_1001111)
 
 # Class: obo:CL_4030013 (kidney loop of Henle long descending thin limb outer medulla epithelial cell)
@@ -33199,6 +33203,15 @@ AnnotationAssertion(rdfs:label obo:CL_4047043 "type 1 submucosal plexus glia")
 SubClassOf(obo:CL_4047043 obo:CL_4040002)
 SubClassOf(obo:CL_4047043 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0009566))
 
+# Class: obo:CL_4047045 (type 3 mucosal glia)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25161129") Annotation(oboInOwl:hasDbXref "PMID:33731961") Annotation(oboInOwl:hasDbXref "PMID:37153631") Annotation(oboInOwl:hasDbXref "PMID:38957473") obo:IAO_0000115 obo:CL_4047045 "An enteric glial cell located in the lamina propria of the intestinal mucosa. This cell plays important roles in maintaining gut barrier function, regulating intestinal homeostasis, and mediating interactions between the enteric nervous system and the immune system.")
+AnnotationAssertion(terms:contributor obo:CL_4047045 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047045 "2025-02-11T12:39:11Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4047045 "type 3 mucosal glia")
+SubClassOf(obo:CL_4047045 obo:CL_4040002)
+SubClassOf(obo:CL_4047045 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000030))
+
 # Class: obo:CL_4047051 (small intestine BEST4+ enterocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24223998") Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_4047051 "An enterocyte of the human small intestine expressing bestrophin-4 (BEST4) calcium-activated ion channels.  These enterocytes have a disinctive transcriptomic profile and are scattered through the small intestine epithelium.")
@@ -33676,6 +33689,28 @@ AnnotationAssertion(terms:date obo:CL_4052040 "2025-02-12T11:24:56Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38117182") oboInOwl:hasExactSynonym obo:CL_4052040 "gastric tuft cell")
 AnnotationAssertion(rdfs:label obo:CL_4052040 "tuft cell of stomach")
 EquivalentClasses(obo:CL_4052040 ObjectIntersectionOf(obo:CL_0002204 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001276)))
+
+# Class: obo:CL_4052041 (tuft cell of auditory tube)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30379593") Annotation(oboInOwl:hasDbXref "PMID:32733896") obo:IAO_0000115 obo:CL_4052041 "A tuft cell that is part of the epithelium of the pharyngotympanic (auditory) tube. This chemosensory cell is often positioned near cholinoreceptive sensory nerve fibers, suggesting a role in neuroimmune communication. It detects chemical signals and releases neuropeptides, such as acetylcholine (ACh) and CGRP, which contribute to inflammatory responses that help protect deeper tissues from harmful substances.")
+AnnotationAssertion(terms:contributor obo:CL_4052041 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052041 "2025-02-12T12:00:10Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052041 "tuft cell of auditory tube")
+EquivalentClasses(obo:CL_4052041 ObjectIntersectionOf(obo:CL_0002204 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010062)))
+SubClassOf(obo:CL_4052041 obo:CL_0002491)
+
+# Class: obo:CL_4052042 (tuft cell of urethra)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30379593") Annotation(oboInOwl:hasDbXref "PMID:36993541") Annotation(oboInOwl:hasDbXref "PMID:38548667") obo:IAO_0000115 obo:CL_4052042 "A tuft cell that is part of the epithelium of the urethra. This cell monitors urethral contents by detecting chemical stimuli, such as bitter compounds and sugars. Upon activation, it stimulates sensory nerve fibres and triggers detrusor muscle contraction, likely aiding in pathogen clearance by promoting bladder emptying.")
+AnnotationAssertion(terms:contributor obo:CL_4052042 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052042 "2025-02-12T14:39:03Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38548667") oboInOwl:hasExactSynonym obo:CL_4052042 "urethral brush cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38548667") oboInOwl:hasExactSynonym obo:CL_4052042 "urethral cholinergic chemosensory cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38548667") oboInOwl:hasExactSynonym obo:CL_4052042 "urethral tuft cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27680547") rdfs:comment obo:CL_4052042 "Urethral tuft cells are heterogeneous, with both cholinergic and non-cholinergic populations present.")
+AnnotationAssertion(rdfs:label obo:CL_4052042 "tuft cell of urethra")
+EquivalentClasses(obo:CL_4052042 ObjectIntersectionOf(obo:CL_0002204 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002325)))
+SubClassOf(obo:CL_4052042 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_1904320))
 
 # Class: obo:CL_4052048 (intercalated cell of salivary gland)
 
