@@ -44,6 +44,7 @@ The release is done in two parts:
 1. Ensure you are on the master branch and have locally the latest changes from master (`git pull`)
 1. Ensure you have the latest ODK installed by running `docker pull obolibrary/odkfull`
 1. Navigate to the cell-ontology/src/ontology directory (`cd src/ontology`)
+1. Delete all temporary files (e.g., outdated plugins) by running `sh run.sh make clean`
 
 ### Refresh imports and components
 
