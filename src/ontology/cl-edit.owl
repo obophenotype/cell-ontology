@@ -2021,6 +2021,7 @@ Declaration(Class(obo:CL_0008046))
 Declaration(Class(obo:CL_0008047))
 Declaration(Class(obo:CL_0008048))
 Declaration(Class(obo:CL_0008049))
+Declaration(Class(obo:CL_0008055))
 Declaration(Class(obo:CL_0009000))
 Declaration(Class(obo:CL_0009001))
 Declaration(Class(obo:CL_0009002))
@@ -3178,6 +3179,9 @@ Declaration(Class(obo:CL_4052047))
 Declaration(Class(obo:CL_4052048))
 Declaration(Class(obo:CL_4052049))
 Declaration(Class(obo:CL_4052050))
+Declaration(Class(obo:CL_4052051))
+Declaration(Class(obo:CL_4052052))
+Declaration(Class(obo:CL_4052053))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -3266,13 +3270,16 @@ Declaration(Class(obo:PR_000017299))
 Declaration(Class(obo:PR_000032148))
 Declaration(Class(obo:PR_000032533))
 Declaration(Class(obo:PR_O95944))
+Declaration(Class(obo:PR_O95971))
 Declaration(Class(obo:PR_P09240))
 Declaration(Class(obo:PR_P11087))
 Declaration(Class(obo:PR_P24529))
 Declaration(Class(obo:PR_P26618))
 Declaration(Class(obo:PR_P32648))
 Declaration(Class(obo:PR_P32848))
+Declaration(Class(obo:PR_P49961))
 Declaration(Class(obo:PR_P51885))
+Declaration(Class(obo:PR_P56199))
 Declaration(Class(obo:PR_P60041))
 Declaration(Class(obo:PR_P97367))
 Declaration(Class(obo:PR_Q12918))
@@ -3412,6 +3419,7 @@ Declaration(AnnotationProperty(oboInOwl:id))
 Declaration(AnnotationProperty(oboInOwl:inSubset))
 Declaration(AnnotationProperty(oboInOwl:is_inferred))
 Declaration(AnnotationProperty(oboInOwl:shorthand))
+Declaration(AnnotationProperty(<http://www.geneontology.org/formats/oboInOwl#http://purl.org/dc/terms/contributor>))
 Declaration(AnnotationProperty(rdfs:comment))
 Declaration(AnnotationProperty(rdfs:label))
 Declaration(AnnotationProperty(rdfs:seeAlso))
@@ -3432,7 +3440,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3518,15 +3526,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -5320,16 +5328,14 @@ EquivalentClasses(obo:CL_0000170 ObjectIntersectionOf(obo:CL_0000151 ObjectSomeV
 
 # Class: obo:CL_0000171 (pancreatic A cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0721662544") obo:IAO_0000115 obo:CL_0000171 "A type of enteocrine cell found in the periphery of the islets of Langerhans that secretes glucagon.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0721662544") obo:IAO_0000115 obo:CL_0000171 "A type A enteroendocrine cell found in the periphery of the islets of Langerhans that secretes glucagon.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000171 "BTO:0000990")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000171 "FMA:70585")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000171 "MESH:D050416")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000171 "alpha cell of islet of Langerhans")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000171 "pancreatic alpha cell")
 AnnotationAssertion(rdfs:label obo:CL_0000171 "pancreatic A cell")
-EquivalentClasses(obo:CL_0000171 ObjectIntersectionOf(obo:CL_0002067 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001264)))
-SubClassOf(obo:CL_0000171 obo:CL_0002067)
-SubClassOf(obo:CL_0000171 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000006))
+EquivalentClasses(obo:CL_0000171 ObjectIntersectionOf(obo:CL_0002067 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000006)))
 SubClassOf(obo:CL_0000171 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002351))
 SubClassOf(obo:CL_0000171 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070091))
 
@@ -22899,6 +22905,14 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23649873") oboInOwl:hasE
 AnnotationAssertion(rdfs:label obo:CL_0008045 "tanycyte of subcommissural organ")
 EquivalentClasses(obo:CL_0008045 ObjectIntersectionOf(obo:CL_0002085 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002139)))
 
+# Class: obo:CL_0008055 (respiratory tract secretory epithelial cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1038/s41591-023-02327-2.") obo:IAO_0000115 obo:CL_0008055 "A secretory epithelial cell of the respiratory tract epithelium.  These cells have an endodermal origin.")
+AnnotationAssertion(terms:contributor obo:CL_0008055 "https://orcid.org/0000-0002-7073-9172")
+AnnotationAssertion(terms:date obo:CL_0008055 "2025-02-19T16:01:02Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_0008055 "respiratory tract secretory epithelial cell")
+EquivalentClasses(obo:CL_0008055 ObjectIntersectionOf(obo:CL_1100001 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004802)))
+
 # Class: obo:CL_0008046 (extrafusal muscle fiber)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1016/B978-0-443-10321-6.00004-7") Annotation(oboInOwl:hasDbXref "Wikipedia:Extrafusal_muscle_fiber&oldid=978415293") obo:IAO_0000115 obo:CL_0008046 "A skeletal muscle fiber that is innervated by alpha motor neuron and generates tension by contracting, thereby allowing for skeletal movement. These fibers make up the large mass of skeletal muscle tissue and are attached to bones by tendons.")
@@ -33889,6 +33903,36 @@ AnnotationAssertion(terms:date obo:CL_4052050 "2025-03-13T13:46:13Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31317179") oboInOwl:hasExactSynonym obo:CL_4052050 "endometrial luminal epithelial cell")
 AnnotationAssertion(rdfs:label obo:CL_4052050 "luminal epithelial cell of endometrium")
 EquivalentClasses(obo:CL_4052050 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0011949)))
+
+# Class: obo:CL_4052051 (uterine natural killer cell 1, human)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30429548") Annotation(oboInOwl:hasDbXref "PMID:34512661") Annotation(oboInOwl:hasDbXref "PMID:34857954") Annotation(oboInOwl:hasDbXref "PMID:35784314") Annotation(oboInOwl:hasDbXref "PMID:39198675") obo:IAO_0000115 obo:CL_4052051 "​​A uterine natural killer subset that is present in the endometrial lining during the non-pregnant state (Garcia-Alonso et al., 2021) and in the decidua during pregnancy (Vento-Tormo et al., 2018). It expresses the uterine resident marker CD49a and is distinguished from uNK2 and uNK3 by CD39 expression and the absence of CD103 (Whettlock et al., 2022) and CD160 (Marečková et al., 2024). It also expresses higher levels of killer-cell immunoglobulin-like receptors (KIRs) and leukocyte immunoglobulin-like receptor B1 (LILRB1), which facilitate interaction with human leukocyte antigens (HLAs) on extravillous trophoblast cells, promoting immune tolerance and implantation. Enriched in the endometrium post-ovulation (Marečková et al., 2024) and prominent in early pregnancy (Whettlock et al., 2022), uNK1 regulates trophoblast invasion and spiral artery remodeling (Zhang & Wei, 2021).")
+AnnotationAssertion(terms:contributor obo:CL_4052051 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052051 "2025-03-14T10:48:38Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30429548") oboInOwl:hasNarrowSynonym obo:CL_4052051 "decidual natural killer cell 1")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39198675") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052051 "uNK1")
+AnnotationAssertion(rdfs:label obo:CL_4052051 "uterine natural killer cell 1, human")
+EquivalentClasses(obo:CL_4052051 ObjectIntersectionOf(obo:CL_4052028 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_O95971) ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_P38570) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_P49961) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_P56199) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
+
+# Class: obo:CL_4052052 (uterine natural killer cell 2, human)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30429548") Annotation(oboInOwl:hasDbXref "PMID:34857954") Annotation(oboInOwl:hasDbXref "PMID:35784314") Annotation(oboInOwl:hasDbXref "PMID:39198675") obo:IAO_0000115 obo:CL_4052052 "A uterine natural killer subset that is present in the endometrial lining during the non-pregnant state (Garcia-Alonso et al., 2021) and in the decidua during pregnancy (Vento-Tormo et al., 2018), peaking in the first trimester. It expresses the uterine resident marker CD49a and is distinguished from uNK1 and uNK3 by the absence of CD39, CD103 (Whettlock et al., 2022), and CD160 (Marečková et al., 2024), with ITGB2 serving as a defining marker (Vento-Tormo et al., 2018). Functionally, it produces more cytokines upon stimulation than uNK1, suggesting a role in immune defense, and secretes XCL1 chemokines, facilitating interactions with maternal dendritic cells and fetal extravillous trophoblasts (Vento-Tormo et al., 2018).")
+AnnotationAssertion(terms:contributor obo:CL_4052052 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052052 "2025-03-14T14:31:03Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30429548") oboInOwl:hasNarrowSynonym obo:CL_4052052 "decidual natural killer cell 2")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39198675") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052052 "uNK2")
+AnnotationAssertion(rdfs:label obo:CL_4052052 "uterine natural killer cell 2, human")
+EquivalentClasses(obo:CL_4052052 ObjectIntersectionOf(obo:CL_4052028 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_O95971) ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_P38570) ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_P49961) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_P56199) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
+
+# Class: obo:CL_4052053 (uterine natural killer cell 3, human)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30429548") Annotation(oboInOwl:hasDbXref "PMID:31959757") Annotation(oboInOwl:hasDbXref "PMID:34857954") Annotation(oboInOwl:hasDbXref "PMID:35784314") Annotation(oboInOwl:hasDbXref "PMID:39198675") obo:IAO_0000115 obo:CL_4052053 "A uterine natural killer subset found in the endometrial lining during the non-pregnant state (Garcia-Alonso et al., 2021) and in the decidua during pregnancy (Vento-Tormo et al., 2018), becoming the dominant uNK subset late in pregnancy. It expresses the uterine resident marker CD49a and is distinguished from uNK1 and uNK2 by CD160 (Marečková et al., 2024) and CD103 expression, the absence of CD39, and low KIR levels (Whettlock et al., 2022). Resembling intraepithelial ILC1 cells, uNK3 primarily supports uterine immune defense (Huhn et al., 2020) and indirectly influences trophoblast behavior through chemokine secretion, such as CCL5 (Vento-Tormo et al., 2018).")
+AnnotationAssertion(terms:contributor obo:CL_4052053 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052053 "2025-03-14T16:15:39Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30429548") oboInOwl:hasNarrowSynonym obo:CL_4052053 "decidual natural killer cell 3")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39198675") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4052053 "uNK3")
+AnnotationAssertion(rdfs:label obo:CL_4052053 "uterine natural killer cell 3, human")
+EquivalentClasses(obo:CL_4052053 ObjectIntersectionOf(obo:CL_4052028 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_P49961) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_O95971) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_P38570) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_P56199) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
