@@ -3131,6 +3131,7 @@ Declaration(Class(obo:CL_4047047))
 Declaration(Class(obo:CL_4047048))
 Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
+Declaration(Class(obo:CL_4047054))
 Declaration(Class(obo:CL_4047101))
 Declaration(Class(obo:CL_4052001))
 Declaration(Class(obo:CL_4052002))
@@ -3534,6 +3535,10 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 # Annotation Property: oboInOwl:hasBroadSynonym (has_broad_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
+
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
 # Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
@@ -23740,9 +23745,13 @@ SubClassOf(obo:CL_0009072 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000384
 
 # Class: obo:CL_0009073 (medullary thymic epithelial cell type 3)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16121185") Annotation(oboInOwl:hasDbXref "PMID:17067941") Annotation(oboInOwl:hasDbXref "PMID:20861360") Annotation(oboInOwl:hasDbXref "PMID:24084687") Annotation(oboInOwl:hasDbXref "PMID:32079746") Annotation(oboInOwl:hasDbXref "PMID:33597545") obo:IAO_0000115 obo:CL_0009073 "A thymic medullary epithelial cell considered to be a post-AIRE cell. This group of AIRE-mTECs is heterogeneous and also includes mTECs within Hassall's Corpuscles.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:16121185") Annotation(oboInOwl:hasDbXref "PMID:17067941") Annotation(oboInOwl:hasDbXref "PMID:20861360") Annotation(oboInOwl:hasDbXref "PMID:24084687") Annotation(oboInOwl:hasDbXref "PMID:32079746") Annotation(oboInOwl:hasDbXref "PMID:33597545") Annotation(oboInOwl:hasDbXref "PMID:33868260") obo:IAO_0000115 obo:CL_0009073 "A thymic medullary epithelial cell considered to be a post-AIRE cell. This group of AIRE-mTECs is heterogeneous and also includes mTECs within Hassall's Corpuscles.")
 AnnotationAssertion(obo:RO_0002175 obo:CL_0009073 obo:NCBITaxon_9606)
 AnnotationAssertion(terms:contributor obo:CL_0009073 <https://orcid.org/0000-0002-2825-0621>)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33868260") oboInOwl:hasExactSynonym obo:CL_0009073 "corneocyte-like mTECs")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33868260") oboInOwl:hasExactSynonym obo:CL_0009073 "corneocyte-like medullary thymic epithelial cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33868260") oboInOwl:hasExactSynonym obo:CL_0009073 "post-Aire cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33868260") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0009073 "mTEC III")
 AnnotationAssertion(rdfs:label obo:CL_0009073 "medullary thymic epithelial cell type 3")
 SubClassOf(obo:CL_0009073 obo:CL_0002365)
 SubClassOf(obo:CL_0009073 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003846))
@@ -24411,11 +24420,13 @@ SubClassOf(obo:CL_0011005 obo:CL_0000498)
 
 # Class: obo:CL_0011006 (Lugaro cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011006 "An inhibitory GABAergic interneuron found in the cerebellar cortex.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "PMID:18677503") Annotation(oboInOwl:hasDbXref "PMID:2273099") obo:IAO_0000115 obo:CL_0011006 "A cerebellar interneuron characterized by a spindle-shaped or triangular soma, parasagittally oriented and located at the border between the granular layer and the Purkinje cell layer. The Lugaro cell extends dendrites predominantly in the parasagittal plane, forming synaptic interactions with basket, stellate, and Golgi cells. Its axonal projections extend upward into the molecular layer, where they form a parasagittal plexus and emit long transverse collaterals that run parallel to the long axis of the cerebellar folia. The Lugaro cell is capable of co-releasing GABA and glycine, as evidenced by the expression of glutamate decarboxylase (GAD65/67) and the glycine transporter GlyT2.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34194302") oboInOwl:hasRelatedSynonym obo:CL_0011006 "globular cell")
 AnnotationAssertion(rdfs:label obo:CL_0011006 "Lugaro cell")
-SubClassOf(obo:CL_0011006 obo:CL_0011005)
-SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129))
+SubClassOf(obo:CL_0011006 obo:CL_0000099)
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002974))
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061537))
 
 # Class: obo:CL_0011007 (paraxial cell)
 
@@ -29051,13 +29062,12 @@ EquivalentClasses(obo:CL_2000063 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 
 # Class: obo:CL_2000064 (ovarian surface epithelial cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000064 "Any epithelial cell that is part of a female gonad.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") Annotation(oboInOwl:hasDbXref "PMID:12052228") Annotation(oboInOwl:hasDbXref "PMID:15749958") Annotation(oboInOwl:hasDbXref "PMID:23467088") Annotation(oboInOwl:hasDbXref "PMID:31672973") Annotation(oboInOwl:hasDbXref "PMID:36205477") obo:IAO_0000115 obo:CL_2000064 "A meso-epithelial cell of the ovarian surface epithelium, varying in shape from flat to cuboidal to pseudostratified columnar. This cell plays a crucial role in ovulation by producing proteolytic enzymes in response to gonadotropins, facilitating follicle rupture through tissue breakdown and TNF-alpha signaling. Additionally, this cell contributes to post-ovulatory wound repair (Morris et al., 2022) and exhibits stem cell-like properties (Flesken-Nikitin et al., 2013; Wang et al., 2019).")
 AnnotationAssertion(terms:contributor obo:CL_2000064 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000064 "2014-10-07T17:59:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_2000064 "CL:2000064")
-AnnotationAssertion(rdfs:comment obo:CL_2000064 "http://www.sciencellonline.com/site/productInformation.php?keyword=7310")
 AnnotationAssertion(rdfs:label obo:CL_2000064 "ovarian surface epithelial cell")
-EquivalentClasses(obo:CL_2000064 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000992)))
+EquivalentClasses(obo:CL_2000064 ObjectIntersectionOf(obo:CL_0002078 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001304)))
 
 # Class: obo:CL_2000065 (ovarian microvascular endothelial cell)
 
@@ -29406,7 +29416,7 @@ EquivalentClasses(obo:CL_3000002 ObjectIntersectionOf(obo:CL_0011103 ObjectSomeV
 
 # Class: obo:CL_3000003 (sympathetic cholinergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_3000003 "Sympathetic cholinergic neuron.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:IAO_0000115 obo:CL_3000003 "A type of autonomic neuron that releases acetylcholine.")
 AnnotationAssertion(terms:contributor obo:CL_3000003 <http://www.wikidata.org/entity/Q97529981>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_3000003 "2019-02-25T19:32:20Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:id obo:CL_3000003 "CL:3000003")
@@ -33373,6 +33383,16 @@ AnnotationAssertion(terms:contributor obo:CL_4047052 <https://orcid.org/0009-000
 AnnotationAssertion(terms:date obo:CL_4047052 "2024-07-25T13:21:19Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4047052 "BEST4+ colonocyte")
 EquivalentClasses(obo:CL_4047052 ObjectIntersectionOf(obo:CL_1000347 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q8NFU0)))
+
+# Class: obo:CL_4047054 (migratory dendtritic cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28845904") Annotation(oboInOwl:hasDbXref "PMID:33681216") Annotation(oboInOwl:hasDbXref "PMID:34302064") obo:IAO_0000115 obo:CL_4047054 "A dendritic cell capable of capturing antigens in peripheral tissues and migrating through blood or lymphatic vessels to secondary lymphoid organs, where it presents processed antigens to T cells. It expresses MHC class II molecules and lacks lineage markers associated with other leukocyte populations, distinguishing it as a member of the dendritic cell lineage. This cell plays a pivotal role in initiating and regulating adaptive immune responses by linking peripheral antigen capture with T cell activation in lymphoid tissues.")
+AnnotationAssertion(terms:contributor obo:CL_4047054 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047054 "2025-03-17T17:37:37Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4047054 "migratory dendtritic cell")
+SubClassOf(obo:CL_4047054 obo:CL_0000451)
+SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002407))
+SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002468))
 
 # Class: obo:CL_4047101 (liver-resident natural killer cell)
 
