@@ -3221,6 +3221,7 @@ Declaration(Class(obo:GO_0050893))
 Declaration(Class(obo:GO_0070278))
 Declaration(Class(obo:GO_0070483))
 Declaration(Class(obo:GO_0097729))
+Declaration(Class(obo:GO_0097730))
 Declaration(Class(obo:GO_0098535))
 Declaration(Class(obo:GO_0098594))
 Declaration(Class(obo:GO_1990573))
@@ -3450,7 +3451,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3540,11 +3541,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -27453,13 +27454,16 @@ SubClassOf(obo:CL_1000849 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000129
 
 # Class: obo:CL_1000850 (macula densa epithelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33491562") Annotation(oboInOwl:hasDbXref "PMID:36142420") Annotation(oboInOwl:hasDbXref "Wikipedia:Macula_densa") obo:IAO_0000115 obo:CL_1000850 "An epithelial cell that is part of the macula densa, characterized by a tightly packed arrangement, apically positioned nuclei, and prominent primary cilia, creating a distinctive 'dense spot' appearance under microscopy. It is involved in regulating renal blood flow, glomerular filtration rate, and renin release.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000850 "KUPO:0001057")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33491562") oboInOwl:hasExactSynonym obo:CL_1000850 "macula densa cell")
 AnnotationAssertion(rdfs:label obo:CL_1000850 "macula densa epithelial cell")
-EquivalentClasses(obo:CL_1000850 ObjectIntersectionOf(obo:CL_0002305 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002335)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000850 obo:CL_0002305)
+EquivalentClasses(obo:CL_1000850 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002335)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000850 obo:CL_0002584)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000850 obo:CL_1000618)
-SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002335))
+SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097730))
+SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0003093))
+SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_1900133))
 
 # Class: obo:CL_1000854 (kidney blood vessel cell)
 
