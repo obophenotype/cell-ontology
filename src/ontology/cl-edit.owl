@@ -3133,8 +3133,8 @@ Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
 Declaration(Class(obo:CL_4047053))
 Declaration(Class(obo:CL_4047054))
-Declaration(Class(obo:CL_4047056))
 Declaration(Class(obo:CL_4047055))
+Declaration(Class(obo:CL_4047056))
 Declaration(Class(obo:CL_4047101))
 Declaration(Class(obo:CL_4052001))
 Declaration(Class(obo:CL_4052002))
@@ -3261,6 +3261,7 @@ Declaration(Class(obo:PR_000002123))
 Declaration(Class(obo:PR_000003264))
 Declaration(Class(obo:PR_000003472))
 Declaration(Class(obo:PR_000003490))
+Declaration(Class(obo:PR_000004621))
 Declaration(Class(obo:PR_000004691))
 Declaration(Class(obo:PR_000004919))
 Declaration(Class(obo:PR_000005444))
@@ -33411,16 +33412,6 @@ SubClassOf(obo:CL_4047054 obo:CL_0000451)
 SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002407))
 SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002468))
 
-# Class: obo:CL_4047056 (large mucus secreting cholangiocyte)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26273695") Annotation(oboInOwl:hasDbXref "doi:10.1002/hep.25595") Annotation(oboInOwl:hasDbXref "doi:10.1152/ajpgi.00227.2012") Annotation(oboInOwl:hasDbXref "PMID:15579435") Annotation(oboInOwl:hasDbXref "PMID:28261592") obo:IAO_0000115 obo:CL_4047056 "A columnar, mucin-producing cholangiocyte that lines large bile ducts, including the hilar bile duct, right and left hepatic bile ducts, and large intrahepatic bile ducts. This cell expresses phosphorylated STAT3 and TFF-3 in humans and mice.")
-AnnotationAssertion(terms:contributor obo:CL_4047056 <https://orcid.org/0009-0005-7919-4905>)
-AnnotationAssertion(terms:date obo:CL_4047056 "2025-03-20T14:21:41Z"^^xsd:dateTime)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1152/ajpgi.00227.2012") oboInOwl:hasNarrowSynonym obo:CL_4047056 "mucin-secreting cholangiocyte")
-AnnotationAssertion(rdfs:label obo:CL_4047056 "large mucus secreting cholangiocyte")
-SubClassOf(obo:CL_4047056 obo:CL_1000488)
-SubClassOf(obo:CL_4047056 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254))
-
 # Class: obo:CL_4047055 (BAG3-positive monocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20018251") Annotation(oboInOwl:hasDbXref "doi:10.21203/rs.3.rs-3229780/v1") obo:IAO_0000115 obo:CL_4047055 "A circulating mononuclear phagocyte characterized by the expression of BCL-2-associated athanogene 3 (BAG3) protein, a co-chaperone involved in protein quality control and anti-apoptotic processes. (Fontanella, 2009). It undergoes cellular stress during the differentiation into M2 macrophages and is linked to poor survival rates in multiple cancer types. (Park, 2023)")
@@ -33428,7 +33419,17 @@ AnnotationAssertion(terms:contributor obo:CL_4047055 <https://orcid.org/0009-000
 AnnotationAssertion(terms:date obo:CL_4047055 "2025-03-17T17:52:32Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.21203/rs.3.rs-3229780/v1") rdfs:comment obo:CL_4047055 "BAG3+ monocyte")
 AnnotationAssertion(rdfs:label obo:CL_4047055 "BAG3-positive monocyte")
-SubClassOf(obo:CL_4047055 obo:CL_0000576)
+EquivalentClasses(obo:CL_4047055 ObjectIntersectionOf(obo:CL_0000576 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000004621)))
+
+# Class: obo:CL_4047056 (large mucus secreting cholangiocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15579435") Annotation(oboInOwl:hasDbXref "PMID:26273695") Annotation(oboInOwl:hasDbXref "PMID:28261592") Annotation(oboInOwl:hasDbXref "doi:10.1002/hep.25595") Annotation(oboInOwl:hasDbXref "doi:10.1152/ajpgi.00227.2012") obo:IAO_0000115 obo:CL_4047056 "A columnar, mucin-producing cholangiocyte that lines large bile ducts, including the hilar bile duct, right and left hepatic bile ducts, and large intrahepatic bile ducts. This cell expresses phosphorylated STAT3 and TFF-3 in humans and mice.")
+AnnotationAssertion(terms:contributor obo:CL_4047056 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047056 "2025-03-20T14:21:41Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1152/ajpgi.00227.2012") oboInOwl:hasNarrowSynonym obo:CL_4047056 "mucin-secreting cholangiocyte")
+AnnotationAssertion(rdfs:label obo:CL_4047056 "large mucus secreting cholangiocyte")
+SubClassOf(obo:CL_4047056 obo:CL_1000488)
+SubClassOf(obo:CL_4047056 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254))
 
 # Class: obo:CL_4047101 (liver-resident natural killer cell)
 
@@ -34196,6 +34197,10 @@ AnnotationAssertion(owl:deprecated obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 "tru
 # Class: obo:GO_0051932 (synaptic transmission, GABAergic)
 
 EquivalentClasses(obo:GO_0051932 ObjectIntersectionOf(obo:GO_0007268 ObjectSomeValuesFrom(obo:RO_0000057 obo:CHEBI_59888) ObjectSomeValuesFrom(obo:RO_0000057 obo:CL_0000617)))
+
+# Class: obo:PR_000004621 (BAG family molecular chaperone regulator 3)
+
+AnnotationAssertion(rdfs:label obo:PR_000004621 "BAG family molecular chaperone regulator 3")
 
 
 SubClassOf(ObjectIntersectionOf(obo:CL_0000163 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000160)) obo:CL_0000164)
