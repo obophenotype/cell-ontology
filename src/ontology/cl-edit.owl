@@ -3221,6 +3221,7 @@ Declaration(Class(obo:GO_0050893))
 Declaration(Class(obo:GO_0070278))
 Declaration(Class(obo:GO_0070483))
 Declaration(Class(obo:GO_0097729))
+Declaration(Class(obo:GO_0097730))
 Declaration(Class(obo:GO_0098535))
 Declaration(Class(obo:GO_0098594))
 Declaration(Class(obo:GO_1990573))
@@ -3450,7 +3451,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
+# Annotation Property: obo:IAO_0000700 (preferred_root)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3536,15 +3537,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -4836,7 +4837,8 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28821816") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17535929") Annotation(oboInOwl:hasDbXref "PMID:27215193") Annotation(oboInOwl:hasDbXref "PMID:37426070") Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.stem.2023.11.013") rdfs:comment obo:CL_0000121 "Neurodegenerative disorders affecting Purkinje cells disrupt motor functions. Some of the neurodegenerative disorders that causes loss and degeration of Purkinje cells are Spinocerebellar ataxias (SCAs) (Josef P Kapfhammer and Etsuko Shimobayashi 2023), Friedreich's ataxia (FRDA) (Kevin C Kemp et al., 2016), Fetal alcohol syndrome (Laurent Servais et al., 2016), Dandy-Walker malformation (Alexander Atamian et al., 2024).")
 AnnotationAssertion(rdfs:label obo:CL_0000121 "Purkinje cell")
 SubClassOf(obo:CL_0000121 obo:CL_0000540)
-SubClassOf(obo:CL_0000121 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129))
+SubClassOf(obo:CL_0000121 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979))
+SubClassOf(obo:CL_0000121 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_0000122 (stellate neuron)
 
@@ -24417,11 +24419,13 @@ SubClassOf(obo:CL_0011005 obo:CL_0000498)
 
 # Class: obo:CL_0011006 (Lugaro cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011006 "An inhibitory GABAergic interneuron found in the cerebellar cortex.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "PMID:18677503") Annotation(oboInOwl:hasDbXref "PMID:2273099") obo:IAO_0000115 obo:CL_0011006 "A cerebellar interneuron characterized by a spindle-shaped or triangular soma, parasagittally oriented and located at the border between the granular layer and the Purkinje cell layer. The Lugaro cell extends dendrites predominantly in the parasagittal plane, forming synaptic interactions with basket, stellate, and Golgi cells. Its axonal projections extend upward into the molecular layer, where they form a parasagittal plexus and emit long transverse collaterals that run parallel to the long axis of the cerebellar folia. The Lugaro cell is capable of co-releasing GABA and glycine, as evidenced by the expression of glutamate decarboxylase (GAD65/67) and the glycine transporter GlyT2.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34194302") oboInOwl:hasRelatedSynonym obo:CL_0011006 "globular cell")
 AnnotationAssertion(rdfs:label obo:CL_0011006 "Lugaro cell")
-SubClassOf(obo:CL_0011006 obo:CL_0011005)
-SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129))
+SubClassOf(obo:CL_0011006 obo:CL_0000099)
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002974))
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_0011006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061537))
 
 # Class: obo:CL_0011007 (paraxial cell)
 
@@ -27451,13 +27455,16 @@ SubClassOf(obo:CL_1000849 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000129
 
 # Class: obo:CL_1000850 (macula densa epithelial cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33491562") Annotation(oboInOwl:hasDbXref "PMID:36142420") Annotation(oboInOwl:hasDbXref "Wikipedia:Macula_densa") obo:IAO_0000115 obo:CL_1000850 "An epithelial cell that is part of the macula densa, characterized by a tightly packed arrangement, apically positioned nuclei, and prominent primary cilia, creating a distinctive 'dense spot' appearance under microscopy. It is involved in regulating renal blood flow, glomerular filtration rate, and renin release.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000850 "KUPO:0001057")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33491562") oboInOwl:hasExactSynonym obo:CL_1000850 "macula densa cell")
 AnnotationAssertion(rdfs:label obo:CL_1000850 "macula densa epithelial cell")
-EquivalentClasses(obo:CL_1000850 ObjectIntersectionOf(obo:CL_0002305 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002335)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000850 obo:CL_0002305)
+EquivalentClasses(obo:CL_1000850 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002335)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000850 obo:CL_0002584)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000850 obo:CL_1000618)
-SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002335))
+SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097730))
+SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0003093))
+SubClassOf(obo:CL_1000850 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_1900133))
 
 # Class: obo:CL_1000854 (kidney blood vessel cell)
 
