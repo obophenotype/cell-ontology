@@ -3131,7 +3131,9 @@ Declaration(Class(obo:CL_4047047))
 Declaration(Class(obo:CL_4047048))
 Declaration(Class(obo:CL_4047051))
 Declaration(Class(obo:CL_4047052))
+Declaration(Class(obo:CL_4047053))
 Declaration(Class(obo:CL_4047054))
+Declaration(Class(obo:CL_4047056))
 Declaration(Class(obo:CL_4047101))
 Declaration(Class(obo:CL_4052001))
 Declaration(Class(obo:CL_4052002))
@@ -3537,7 +3539,7 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
@@ -4406,7 +4408,6 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000077 "mesotheliocyte")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26106328") rdfs:comment obo:CL_0000077 "Mesothelial cells, which morphologically resemble squamous epithelial cells, express both epithelial markers (cytokeratins) and mesenchymal markers (vimentin), reflecting their mesodermal origin. They feature surface microvilli and apical-basal polarity. Under certain conditions, they can undergo mesothelial-to-mesenchymal transition. These cells also produce extracellular matrix proteins, maintain serosal homeostasis, and facilitate fluid transport.")
 AnnotationAssertion(rdfs:label obo:CL_0000077 "mesothelial cell")
 SubClassOf(obo:CL_0000077 obo:CL_0000076)
-SubClassOf(obo:CL_0000077 obo:CL_0000213)
 SubClassOf(obo:CL_0000077 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001136))
 SubClassOf(obo:CL_0000077 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000222))
 
@@ -4781,7 +4782,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000115 "FMA:66772")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000115 "endotheliocyte")
 AnnotationAssertion(rdfs:comment obo:CL_0000115 "From FMA: 9.07.2001: Endothelial cell has always been classified as a kind of epithelial cell, specifically a squamous cell but that is not true. First, endothelial cell can either be squamous or cuboidal (e.g. high-endothelial cell) and secondly, it has different embryological derivation (mesodermal) than a true epithelial cell (ectodermal and endodermal). The basis for present classification is the fact that it comprises the outermost layer or lining of anatomical structures (location-based) but a better structural basis for the differentia is the cytoskeleton of the cell. Endothelial cell has vimentin filaments while an epithelial cell has keratin filaments. [Onard].")
 AnnotationAssertion(rdfs:label obo:CL_0000115 "endothelial cell")
-SubClassOf(obo:CL_0000115 obo:CL_0000213)
+SubClassOf(obo:CL_0000115 obo:CL_0000000)
 SubClassOf(obo:CL_0000115 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000222))
 
 # Class: obo:CL_0000116 (pioneer neuron)
@@ -5691,12 +5692,14 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS") obo:IAO_0000115 obo:
 AnnotationAssertion(rdfs:label obo:CL_0000212 "absorptive cell")
 SubClassOf(obo:CL_0000212 obo:CL_0000000)
 
-# Class: obo:CL_0000213 (lining cell)
+# Class: obo:CL_0000213 (obsolete lining cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "JB:jb") obo:IAO_0000115 obo:CL_0000213 "A cell within an epithelial cell sheet whose main function is to act as an internal or external covering for a tissue or an organism.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "JB:jb") obo:IAO_0000115 obo:CL_0000213 "OBSOLETE. A cell within an epithelial cell sheet whose main function is to act as an internal or external covering for a tissue or an organism.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000213 <https://github.com/obophenotype/cell-ontology/issues/3014>)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000213 "boundary cell")
-AnnotationAssertion(rdfs:label obo:CL_0000213 "lining cell")
-SubClassOf(obo:CL_0000213 obo:CL_0000215)
+AnnotationAssertion(rdfs:comment obo:CL_0000213 "Obsoleted term because redundant")
+AnnotationAssertion(rdfs:label obo:CL_0000213 "obsolete lining cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000213 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000214 (synovial cell)
 
@@ -5704,7 +5707,6 @@ AnnotationAssertion(obo:IAO_0000115 obo:CL_0000214 "A cell located in the synovi
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000214 "CALOHA:TS-0995")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000214 "synoviocyte")
 AnnotationAssertion(rdfs:label obo:CL_0000214 "synovial cell")
-SubClassOf(obo:CL_0000214 obo:CL_0000213)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000214 obo:CL_0002078)
 SubClassOf(obo:CL_0000214 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002217))
 
@@ -33076,7 +33078,9 @@ AnnotationAssertion(terms:contributor obo:CL_4042035 <https://orcid.org/0000-000
 AnnotationAssertion(terms:date obo:CL_4042035 "2024-10-31T15:55:31Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33075461") Annotation(oboInOwl:hasRelatedSynonym obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042035 "MLI")
 AnnotationAssertion(rdfs:label obo:CL_4042035 "molecular layer interneuron"@en)
-SubClassOf(obo:CL_4042035 obo:CL_1001611)
+SubClassOf(obo:CL_4042035 obo:CL_0000099)
+SubClassOf(obo:CL_4042035 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002974))
+SubClassOf(obo:CL_4042035 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_4042036 (melanin-concentrating hormone neuron)
 
@@ -33384,6 +33388,16 @@ AnnotationAssertion(terms:date obo:CL_4047052 "2024-07-25T13:21:19Z"^^xsd:dateTi
 AnnotationAssertion(rdfs:label obo:CL_4047052 "BEST4+ colonocyte")
 EquivalentClasses(obo:CL_4047052 ObjectIntersectionOf(obo:CL_1000347 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q8NFU0)))
 
+# Class: obo:CL_4047053 (TREM2-positive macrophage)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33033253") Annotation(oboInOwl:hasDbXref "PMID:33628208") Annotation(oboInOwl:hasDbXref "PMID:35746551") Annotation(oboInOwl:hasDbXref "PMID:36750615") Annotation(oboInOwl:hasDbXref "PMID:39369473") obo:IAO_0000115 obo:CL_4047053 "A macrophage characterized by high expression of Triggering Receptor Expressed on Myeloid cells 2 (TREM2), found in various tissues including the liver, adipose tissue, bone, gut (Colonna, 2023), and tumor microenvironments, where it is associated with immunosuppressive and anti-inflammatory activity (Colmenares, 2024; Khantakova, 2022). This cell exhibits a distinct gene expression profile in the tumor microenvironment, including overexpression of complement system genes (C1QA, C1QB, C1QC, C3), and SPP1 in both mice and humans (Xiong, 2020; Khantakova, 2022). It is involved in phagocytosis, tissue repair, and modulation of immune responses (Coeho, 2021).")
+AnnotationAssertion(terms:contributor obo:CL_4047053 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047053 "2025-03-17T17:20:08Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39369473") oboInOwl:hasNarrowSynonym obo:CL_4047053 "TREM-2 + resident macrophage")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35746551") oboInOwl:hasNarrowSynonym obo:CL_4047053 "TREM2+ macrophage")
+AnnotationAssertion(rdfs:label obo:CL_4047053 "TREM2-positive macrophage")
+EquivalentClasses(obo:CL_4047053 ObjectIntersectionOf(obo:CL_0000235 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000016626)))
+
 # Class: obo:CL_4047054 (migratory dendtritic cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28845904") Annotation(oboInOwl:hasDbXref "PMID:33681216") Annotation(oboInOwl:hasDbXref "PMID:34302064") obo:IAO_0000115 obo:CL_4047054 "A dendritic cell capable of capturing antigens in peripheral tissues and migrating through blood or lymphatic vessels to secondary lymphoid organs, where it presents processed antigens to T cells. It expresses MHC class II molecules and lacks lineage markers associated with other leukocyte populations, distinguishing it as a member of the dendritic cell lineage. This cell plays a pivotal role in initiating and regulating adaptive immune responses by linking peripheral antigen capture with T cell activation in lymphoid tissues.")
@@ -33393,6 +33407,16 @@ AnnotationAssertion(rdfs:label obo:CL_4047054 "migratory dendtritic cell")
 SubClassOf(obo:CL_4047054 obo:CL_0000451)
 SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002407))
 SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002468))
+
+# Class: obo:CL_4047056 (large mucus secreting cholangiocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26273695") Annotation(oboInOwl:hasDbXref "doi:10.1002/hep.25595") Annotation(oboInOwl:hasDbXref "doi:10.1152/ajpgi.00227.2012") Annotation(oboInOwl:hasDbXref "PMID:15579435") Annotation(oboInOwl:hasDbXref "PMID:28261592") obo:IAO_0000115 obo:CL_4047056 "A columnar, mucin-producing cholangiocyte that lines large bile ducts, including the hilar bile duct, right and left hepatic bile ducts, and large intrahepatic bile ducts. This cell expresses phosphorylated STAT3 and TFF-3 in humans and mice.")
+AnnotationAssertion(terms:contributor obo:CL_4047056 <https://orcid.org/0009-0005-7919-4905>)
+AnnotationAssertion(terms:date obo:CL_4047056 "2025-03-20T14:21:41Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1152/ajpgi.00227.2012") oboInOwl:hasNarrowSynonym obo:CL_4047056 "mucin-secreting cholangiocyte")
+AnnotationAssertion(rdfs:label obo:CL_4047056 "large mucus secreting cholangiocyte")
+SubClassOf(obo:CL_4047056 obo:CL_1000488)
+SubClassOf(obo:CL_4047056 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254))
 
 # Class: obo:CL_4047101 (liver-resident natural killer cell)
 
