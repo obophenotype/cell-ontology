@@ -389,7 +389,7 @@ TERM_general = CL:0000000
 TERM_kidney= UBERON:0002113
 
 SLIM_TEMPLATES= blood_and_immune eye general_cell_types kidney
-SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim_report.csv)
 
 .PHONY: slim_coverage
 slim_coverage: $(SLIM_REPORTS)
