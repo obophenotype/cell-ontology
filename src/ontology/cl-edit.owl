@@ -3195,9 +3195,9 @@ Declaration(Class(obo:CL_4070014))
 Declaration(Class(obo:CL_4070015))
 Declaration(Class(obo:CL_4070016))
 Declaration(Class(obo:CL_4070017))
-Declaration(Class(obo:CL_4072003))
 Declaration(Class(obo:CL_4072001))
 Declaration(Class(obo:CL_4072002))
+Declaration(Class(obo:CL_4072003))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -3545,7 +3545,7 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
@@ -4185,10 +4185,13 @@ AnnotationAssertion(obo:IAO_0000231 obo:CL_0000053 obo:IAO_0000227)
 AnnotationAssertion(obo:IAO_0100001 obo:CL_0000053 obo:CL_0000059)
 AnnotationAssertion(owl:deprecated obo:CL_0000053 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000054 (bone matrix secreting cell)
+# Class: obo:CL_0000054 (obsolete bone matrix secreting cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000054 "bone matrix secreting cell")
-SubClassOf(obo:CL_0000054 obo:CL_0000151)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000054 "https://github.com/obophenotype/cell-ontology/issues/2698")
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000054 obo:CL_0000062)
+AnnotationAssertion(rdfs:comment obo:CL_0000054 "synonymous with 'osteoblast'")
+AnnotationAssertion(rdfs:label obo:CL_0000054 "obsolete bone matrix secreting cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000054 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000055 (non-terminally differentiated cell)
 
@@ -34133,15 +34136,6 @@ SubClassOf(obo:CL_4070017 obo:CL_0000100)
 SubClassOf(obo:CL_4070017 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_8910001))
 SubClassOf(obo:CL_4070017 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_6657))
 
-# Class: obo:CL_4072003 (mature myelinating oligodendrocyte)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasDbXref "PMID:33203872") obo:IAO_0000115 obo:CL_4072003 "A post-mitotic oligodendrocyte derived from a myelin-forming oligodendrocyte (MFOL). A mature Myelinating Oligodendrocyte is a fully differentiated cell that is actively engaged in myelination. In addition to high expression of canonical myelin genes (e.g., Mbp, Plp1, Mog), a MOL can be distinguished by the expression of stage-enriched genes Grm3, Klk6, Ptgds, Anxa5, and Hopx in mice. These markers reflect the functional specialization of a mature oligodendrocyte, including roles in signalling, lipid metabolism, and myelin maintenance.")
-AnnotationAssertion(terms:contributor obo:CL_4072003 <https://orcid.org/0000-0002-5507-2103>)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072003 "MOL")
-AnnotationAssertion(rdfs:label obo:CL_4072003 "mature myelinating oligodendrocyte")
-SubClassOf(obo:CL_4072003 obo:CL_0000128)
-SubClassOf(obo:CL_4072003 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0043209))
-SubClassOf(obo:CL_4072003 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032289))
 # Class: obo:CL_4072001 (newly formed oligodendrocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasDbXref "PMID:39233334") obo:IAO_0000115 obo:CL_4072001 "A post-mitotic oligodendrocyte that has exited the cell cycle and begun early stage differentiation. The cell begins to acquire oligodendrocyte-like characteristics but has not yet initiated myelination. In mice, NFOL is marked by the expression of Tcf7l2 and Cemip2 (also known as Tmem2), among other early myelin-related genes. These markers highlight cells transitioning from a precursor to a more differentiated, pre-myelinating state.")
@@ -34162,6 +34156,16 @@ AnnotationAssertion(rdfs:label obo:CL_4072002 "Myelin-Forming oligodendrocyte"@e
 SubClassOf(obo:CL_4072002 obo:CL_0000128)
 SubClassOf(obo:CL_4072002 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017))
 SubClassOf(obo:CL_4072002 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032289))
+
+# Class: obo:CL_4072003 (mature myelinating oligodendrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasDbXref "PMID:33203872") obo:IAO_0000115 obo:CL_4072003 "A post-mitotic oligodendrocyte derived from a myelin-forming oligodendrocyte (MFOL). A mature Myelinating Oligodendrocyte is a fully differentiated cell that is actively engaged in myelination. In addition to high expression of canonical myelin genes (e.g., Mbp, Plp1, Mog), a MOL can be distinguished by the expression of stage-enriched genes Grm3, Klk6, Ptgds, Anxa5, and Hopx in mice. These markers reflect the functional specialization of a mature oligodendrocyte, including roles in signalling, lipid metabolism, and myelin maintenance.")
+AnnotationAssertion(terms:contributor obo:CL_4072003 <https://orcid.org/0000-0002-5507-2103>)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27284195") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072003 "MOL")
+AnnotationAssertion(rdfs:label obo:CL_4072003 "mature myelinating oligodendrocyte")
+SubClassOf(obo:CL_4072003 obo:CL_0000128)
+SubClassOf(obo:CL_4072003 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0043209))
+SubClassOf(obo:CL_4072003 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032289))
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
