@@ -289,66 +289,6 @@ cl-plus.obo: cl-plus.owl | all_robot_plugins
 
 
 # ----------------------------------------
-# DIFFS/REPORTS
-# ----------------------------------------
-
-# Diffs against the master branch on GitHub
-# -----------------------------------------
-# Two variants: with and without the imports.
-# Not automatically generated from amywhere, but available on demand
-# by calling `make branch_diffs`.
-
-CL_EDIT_GITHUB_MASTER = https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
-
-$(TMPDIR)/src-noimports.owl: $(SRC)
-	$(ROBOT) remove -i $< --select imports -o $@
-
-$(TMPDIR)/src-imports.owl: $(SRC)
-	$(ROBOT) merge -i $< -o $@
-
-$(TMPDIR)/src-master-noimports.owl:
-	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
-
-$(TMPDIR)/src-master-imports.owl:
-	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
-
-$(TMPDIR)/diff_edit_%.md: $(TMPDIR)/src-master-%.owl $(TMPDIR)/src-%.owl
-	$(ROBOT) diff --left $(TMPDIR)/src-master-$*.owl --right $(TMPDIR)/src-$*.owl -f markdown -o $@
-
-$(TMPDIR)/diff_edit_%.txt: $(TMPDIR)/src-master-%.owl $(TMPDIR)/src-%.owl
-	$(ROBOT) diff --left $(TMPDIR)/src-master-$*.owl --right $(TMPDIR)/src-$*.owl -o $@
-
-branch_diffs: $(REPORTDIR)/diff_edit_imports.md \
-	      $(REPORTDIR)/diff_edit_noimports.md \
-	      $(REPORTDIR)/diff_edit_imports.txt \
-	      $(REPORTDIR)/diff_edit_noimports.txt
-
-
-# Diff against the latest released version
-# ----------------------------------------
-# FIXME: It's unclear whether this diff is still desired. It is only
-# generated when `all_reports` is explicitly invoked. Upon releasing, we
-# now produce more complete diffs against the latest public base (see
-# RELEASE DEPLOYMENT below), likely making this diff no longer relevant.
-# See <https://github.com/obophenotype/cell-ontology/issues/2641>.
-
-$(TMPDIR)/cl-current.owl: $(ONT).owl
-	$(ROBOT) remove -i $< --term rdfs:label \
-		        --select complement --select annotation-properties \
-		 remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
-
-$(TMPDIR)/cl-lastbuild.owl: .FORCE
-	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label \
-		        --select complement --select annotation-properties \
-		 remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
-
-$(REPORTDIR)/obo-diff.txt: $(TMPDIR)/cl-lastbuild.owl $(TMPDIR)/cl-current.owl
-	$(ROBOT) diff --left $< --right $(TMPDIR)/cl-current.owl -f markdown -o $@
-
-all_reports: $(REPORTDIR)/obo-diff.txt
-
-
-# ----------------------------------------
 # UTILITY COMMANDS
 # ----------------------------------------
 
@@ -449,7 +389,7 @@ TERM_general = CL:0000000
 TERM_kidney= UBERON:0002113
 
 SLIM_TEMPLATES= blood_and_immune eye general_cell_types kidney
-SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim_report.csv)
 
 .PHONY: slim_coverage
 slim_coverage: $(SLIM_REPORTS)
