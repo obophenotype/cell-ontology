@@ -3198,6 +3198,7 @@ Declaration(Class(obo:CL_4070017))
 Declaration(Class(obo:CL_4072001))
 Declaration(Class(obo:CL_4072002))
 Declaration(Class(obo:CL_4072003))
+Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CL_4072007))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
@@ -4187,10 +4188,13 @@ AnnotationAssertion(obo:IAO_0000231 obo:CL_0000053 obo:IAO_0000227)
 AnnotationAssertion(obo:IAO_0100001 obo:CL_0000053 obo:CL_0000059)
 AnnotationAssertion(owl:deprecated obo:CL_0000053 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000054 (bone matrix secreting cell)
+# Class: obo:CL_0000054 (obsolete bone matrix secreting cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000054 "bone matrix secreting cell")
-SubClassOf(obo:CL_0000054 obo:CL_0000151)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000054 <https://github.com/obophenotype/cell-ontology/issues/2698>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000054 obo:CL_0000062)
+AnnotationAssertion(rdfs:comment obo:CL_0000054 "synonymous with 'osteoblast'")
+AnnotationAssertion(rdfs:label obo:CL_0000054 "obsolete bone matrix secreting cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000054 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000055 (non-terminally differentiated cell)
 
@@ -4648,6 +4652,7 @@ AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000099 "CNS interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0000099 "interneuron")
 SubClassOf(obo:CL_0000099 obo:CL_0000540)
 SubClassOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
+SubClassOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014051))
 
 # Class: obo:CL_0000100 (motor neuron)
 
@@ -9238,6 +9243,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000644 "Bergmann astrocyte"
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000644 "Bergmann glial cell of cerebellum")
 AnnotationAssertion(rdfs:label obo:CL_0000644 "Bergmann glial cell")
 SubClassOf(obo:CL_0000644 obo:CL_0000127)
+SubClassOf(obo:CL_0000644 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002979))
 
 # Class: obo:CL_0000645 (pituicyte)
 
@@ -34171,6 +34177,15 @@ AnnotationAssertion(rdfs:label obo:CL_4072003 "mature myelinating oligodendrocyt
 SubClassOf(obo:CL_4072003 obo:CL_0000128)
 SubClassOf(obo:CL_4072003 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0043209))
 SubClassOf(obo:CL_4072003 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032289))
+
+# Class: obo:CL_4072102 (Purkinje layer interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") obo:IAO_0000115 obo:CL_4072102 "A type of GABAergic interneuron residing in the Purkinje cell layer of the cerebellar cortex.")
+AnnotationAssertion(terms:date obo:CL_4072102 "2025-04-29T13:06:36Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072102 "PLI")
+AnnotationAssertion(rdfs:label obo:CL_4072102 "Purkinje layer interneuron")
+EquivalentClasses(obo:CL_4072102 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979)))
+SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_4072007 (A10 dopaminergic neuron)
 
