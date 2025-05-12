@@ -22,6 +22,7 @@ These are the current imports in CL
 | ro | http://purl.obolibrary.org/obo/ro.owl | None |
 | pato | http://purl.obolibrary.org/obo/pato.owl | None |
 | ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
+| ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | None |
 | omo | http://purl.obolibrary.org/obo/omo.owl | mirror |
 
 ## Components
@@ -42,3 +43,4 @@ These are the components in CL
 | general_cell_types_upper_slim.owl | None |
 | kidney_upper_slim.owl | None |
 | cellxgene_subset.owl | None |
+| clm-cl.owl | None |
