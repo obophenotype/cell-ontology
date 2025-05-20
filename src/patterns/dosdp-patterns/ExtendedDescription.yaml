@@ -9,6 +9,11 @@ contributors:
 annotationProperties:
   description: dct:description
   xref: oio:hasDbXref
+  seeAlso: rdfs:seeAlso
+  label: rdfs:label
+
+vars:
+  cell: CL:0000000
 
 data_vars:
   desc: xsd:string
@@ -31,10 +36,13 @@ annotations:
         value: pubs
 
   -
-    annotationProperty: xref
-    text: "https://cellxgene.cziscience.com/cellguide/%s"  # better if we can make this type IRI?
+    annotationProperty: seeAlso
+    text: "https://cellxgene.cziscience.com/cellguide/%s"  
     vars:
       - CL_short_form
+    annotations:
+      value: cell
+      
 
 
 
