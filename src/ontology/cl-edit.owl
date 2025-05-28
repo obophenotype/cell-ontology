@@ -45,7 +45,7 @@ Annotation(terms:contributor <https://orcid.org/0000-0002-8688-6599>)
 Annotation(terms:contributor <https://orcid.org/0000-0002-9900-7880>)
 Annotation(terms:contributor <https://orcid.org/0000-0003-1980-3228>)
 Annotation(terms:license <http://creativecommons.org/licenses/by/4.0/>)
-Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl@buffalo.edu, university at buffalo.")
+Annotation(rdfs:comment "See PMID:15693950, PMID:12799354, PMID:20123131, PMID:21208450; Contact Alexander Diehl, addiehl[at]buffalo.edu, university at buffalo.")
 
 Declaration(Class(obo:CL_0000000))
 Declaration(Class(obo:CL_0000001))
@@ -3973,9 +3973,10 @@ SubClassOf(obo:CL_0000035 obo:CL_0000723)
 
 # Class: obo:CL_0000036 (epithelial fate stem cell)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17289566") Annotation(oboInOwl:hasDbXref "doi:/10.1038/sj.eye.6700575") obo:IAO_0000115 obo:CL_0000036 "A somatic stem cell that is committed to an epithelial fate, possessing the capacity for self-renewal and the ability to differentiate into one or more distinct mature cell types of the epithelial lineage. This cell is crucial for the development, homeostasis, repair, and regeneration of epithelial tissues.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000036 "epithelial stem cell")
 AnnotationAssertion(rdfs:label obo:CL_0000036 "epithelial fate stem cell")
-SubClassOf(obo:CL_0000036 obo:CL_0000035)
+EquivalentClasses(obo:CL_0000036 ObjectIntersectionOf(obo:CL_0000723 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030855)))
 
 # Class: obo:CL_0000037 (hematopoietic stem cell)
 
@@ -9078,11 +9079,13 @@ SubClassOf(obo:CL_0000626 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_1001502))
 SubClassOf(obo:CL_0000626 ObjectSomeValuesFrom(obo:RO_0002120 obo:CL_1001503))
 SubClassOf(obo:CL_0000626 ObjectSomeValuesFrom(obo:RO_0002428 obo:GO_0007608))
 
-# Class: obo:CL_0000627 (transporting cell)
+# Class: obo:CL_0000627 (obsolete transporting cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000627 "A cell involved in transporting nutrients, minerals, water, gases and other chemicals between cells for a variety of purposes including conveying nutrition to other tissues, removing waste products from the tissues, conveying gases for respiration, distributing heat and repelling invasion of foreign substances.")
-AnnotationAssertion(rdfs:label obo:CL_0000627 "transporting cell")
-SubClassOf(obo:CL_0000627 obo:CL_0000000)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000627 "OBSOLETE. A cell involved in transporting nutrients, minerals, water, gases and other chemicals between cells for a variety of purposes including conveying nutrition to other tissues, removing waste products from the tissues, conveying gases for respiration, distributing heat and repelling invasion of foreign substances.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000627 <https://github.com/obophenotype/cell-ontology/issues/2990>)
+AnnotationAssertion(rdfs:comment obo:CL_0000627 "Unsustainable functional grouping term of dubious utility.")
+AnnotationAssertion(rdfs:label obo:CL_0000627 "obsolete transporting cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000627 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000628 (photosynthetic cell)
 
@@ -9590,7 +9593,6 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000682 "microfold cell")
 AnnotationAssertion(rdfs:comment obo:CL_0000682 "Should double check and see if M cells are particular to a specific region.")
 AnnotationAssertion(rdfs:label obo:CL_0000682 "M cell of gut")
 SubClassOf(obo:CL_0000682 obo:CL_0000066)
-SubClassOf(obo:CL_0000682 obo:CL_0000627)
 SubClassOf(obo:CL_0000682 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004693))
 
 # Class: obo:CL_0000683 (ependymoglial cell)
@@ -9779,7 +9781,6 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000706 "epithelial cell of 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25729351") rdfs:comment obo:CL_0000706 "A choroid plexus epithelial cell possesses non-motile 9+0 cilia. While these cilia can exhibit transient motility during development, they generally do not contribute significantly to the directional flow of cerebrospinal fluid (CSF). Instead, they are primarily involved in sensory functions.")
 AnnotationAssertion(rdfs:label obo:CL_0000706 "choroid plexus epithelial cell")
 EquivalentClasses(obo:CL_0000706 ObjectIntersectionOf(obo:CL_0000065 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003911)))
-SubClassOf(obo:CL_0000706 obo:CL_0000627)
 SubClassOf(obo:CL_0000706 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005903))
 SubClassOf(obo:CL_0000706 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0033326))
 
@@ -15851,14 +15852,16 @@ AnnotationAssertion(owl:deprecated obo:CL_0002186 "true"^^xsd:boolean)
 
 # Class: obo:CL_0002187 (basal cell of epidermis)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0002187 "A basally situated, mitotically active, columnar-shaped keratinocyte attached to the basement membrane.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") Annotation(oboInOwl:hasDbXref "PMID:16824012") Annotation(oboInOwl:hasDbXref "PMID:32187560") Annotation(oboInOwl:hasDbXref "WIKIPEDIA:Basal_cell") Annotation(oboInOwl:hasDbXref "doi:/10.1073/pnas.1734203100") obo:IAO_0000115 obo:CL_0002187 "A mitotically active, columnar-shaped keratinocyte located in the stratum basale of the epidermis and attached to the basement membrane. This cell exhibits heterogeneity, encompassing stem and progenitor subpopulations with distinct molecular and proliferative characteristics (Haensel et al., 2020), and serves as the primary source of new keratinocytes for epidermal renewal, homeostasis, and regeneration.")
 AnnotationAssertion(terms:contributor obo:CL_0002187 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002187 "2010-08-26T03:12:49Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002187 "FMA:70571")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32187560") oboInOwl:hasExactSynonym obo:CL_0002187 "epidermal basal cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:7058342") oboInOwl:hasExactSynonym obo:CL_0002187 "epidermal basal keratinocyte")
 AnnotationAssertion(rdfs:label obo:CL_0002187 "basal cell of epidermis")
-EquivalentClasses(obo:CL_0002187 ObjectIntersectionOf(obo:CL_0000646 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001003)))
+EquivalentClasses(obo:CL_0002187 ObjectIntersectionOf(obo:CL_0000646 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002025)))
 SubClassOf(obo:CL_0002187 obo:CL_0000312)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002187 obo:CL_0000646)
+SubClassOf(obo:CL_0002187 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0030216))
 
 # Class: obo:CL_0002188 (glomerular endothelial cell)
 
@@ -17521,13 +17524,14 @@ SubClassOf(obo:CL_0002336 obo:CL_0002261)
 
 # Class: obo:CL_0002337 (keratinocyte stem cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15339667") obo:IAO_0000115 obo:CL_0002337 "A stem cell located in the bulge of the hair follicle that can give rise to regenerate the new follicle with each hair cycle and to reepithelialize the epidermis during wound repair.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15339667") Annotation(oboInOwl:hasDbXref "PMID:20568222") Annotation(oboInOwl:hasDbXref "PMID:9520465") obo:IAO_0000115 obo:CL_0002337 "A stem cell found in the basal layer of the epidermis, hair follicle, and sebaceous gland, characterised by its quiescent nature, high proliferative potential, and capacity for long-term self-renewal. This cell maintains epidermal homeostasis by producing transit-amplifying cells that differentiate to replenish the stratified squamous epithelium.")
 AnnotationAssertion(terms:contributor obo:CL_0002337 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002337 "2010-09-20T03:07:03Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002337 "bulge keratinocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:9520465") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002337 "KSC")
 AnnotationAssertion(rdfs:label obo:CL_0002337 "keratinocyte stem cell")
 SubClassOf(obo:CL_0002337 obo:CL_0000048)
 SubClassOf(obo:CL_0002337 obo:CL_0000312)
+SubClassOf(obo:CL_0002337 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0036334))
 
 # Class: obo:CL_0002338 (CD56-positive, CD161-positive immature natural killer cell, human)
 
