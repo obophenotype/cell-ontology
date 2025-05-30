@@ -259,36 +259,6 @@ pattern_docs: $(ALL_PATTERN_FILES)
 
 
 # ----------------------------------------
-# CUSTOM OBO OUTPUT
-# ----------------------------------------
-OBO_EXPORT_OPTIONS = --merge-comments --strip-gci-axioms --strip-owl-axioms
-
-$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT).obo: $(ONT).owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-base.obo: $(ONT)-base.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-full.obo: $(ONT)-full.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-simple.obo: $(ONT)-simple.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-basic.obo: $(ONT)-basic.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-non-classified.obo: $(ONT)-non-classified.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-cl-plus.obo: cl-plus.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-
-# ----------------------------------------
 # UTILITY COMMANDS
 # ----------------------------------------
 

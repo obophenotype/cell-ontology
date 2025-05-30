@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                b8fef012ac2d7e3df8e8871cfa305bf6b9d5b6a56394a042bdf48a83d3d2e019
+CONFIG_HASH=                4393a63775ffe47dfbb71e11b94bace5fbdacdbaec4fc4670d7eafc10a6a926b
 
 
 # ----------------------------------------
@@ -45,7 +45,7 @@ COMPONENTSDIR =             components
 REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
-OBO_FORMAT_OPTIONS =        --clean-obo "strict drop-untranslatable-axioms"
+OBO_FORMAT_OPTIONS =        --clean-obo 'simple merge-comments'
 SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy illegal-date def-not-only-xref id-format 
 SPARQL_EXPORTS =            cl_terms cl-edges cl-synonyms cl-xrefs cl-def-xrefs 
 ODK_VERSION_MAKEFILE =      v1.6
