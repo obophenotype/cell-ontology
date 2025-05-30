@@ -286,26 +286,10 @@ add-replacedby:
 
 ifeq ($(strip $(MIR)),true)
 
-# Human reference atlas subset
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 # CellXGene reference subset
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
 $(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
-
-# CellMark reference subset
-CLM_CL_URL="https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl"
-$(TMPDIR)/clm-cl.owl:
-	wget $(CLM_CL_URL) -O $@
-
-$(COMPONENTSDIR)/clm-cl.owl: $(TMPDIR)/clm-cl.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
 endif
 

@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                491f7fd1e39cb22455ba2094f27fc7564dcc284825a56c8117c089488c5d434a
+CONFIG_HASH=                6192ec51b538ce0a87b4c154540f9d62a99c17c66191f0f15db6eccf88f12a12
 
 
 # ----------------------------------------
@@ -527,6 +527,25 @@ $(TMPDIR)/stamp-component-%.owl: | $(TMPDIR)
 	touch $@
 .PRECIOUS: $(TMPDIR)/stamp-component-%.owl
 
+ifeq ($(MIR),true)
+.PHONY: component-download-hra_subset.owl
+component-download-hra_subset.owl: | $(TMPDIR)
+	$(ROBOT) merge -I https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl \
+		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
+
+$(COMPONENTSDIR)/hra_subset.owl: component-download-hra_subset.owl $(TMPDIR)/stamp-component-hra_subset.owl
+	@if cmp -s $(TMPDIR)/component-download-hra_subset.owl.owl $(TMPDIR)/component-download-hra_subset.owl.tmp.owl ; then \
+	        echo "Component identical." ; \
+	else \
+	        echo "Component different, updating." && \
+	        cp $(TMPDIR)/component-download-hra_subset.owl.owl $(TMPDIR)/component-download-hra_subset.owl.tmp.owl && \
+	        $(ROBOT) annotate --input $(TMPDIR)/component-download-hra_subset.owl.owl \
+	                          --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+	                          --output $@ ; \
+	fi
+.PRECIOUS: $(COMPONENTSDIR)/hra_subset.owl
+endif # MIR=true
+
 $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl: $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv $(TMPDIR)/stamp-component-blood_and_immune_upper_slim.owl
 	$(ROBOT) template  \
 		 --template $(TEMPLATEDIR)/blood_and_immune_upper_slim.csv \
@@ -556,6 +575,25 @@ $(COMPONENTSDIR)/cellxgene_subset.owl: $(TEMPLATEDIR)/cellxgene_subset.tsv $(TMP
 		 --template $(TEMPLATEDIR)/cellxgene_subset.tsv \
 		 $(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/cellxgene_subset.owl
+
+ifeq ($(MIR),true)
+.PHONY: component-download-clm-cl.owl
+component-download-clm-cl.owl: | $(TMPDIR)
+	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl \
+		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
+
+$(COMPONENTSDIR)/clm-cl.owl: component-download-clm-cl.owl $(TMPDIR)/stamp-component-clm-cl.owl
+	@if cmp -s $(TMPDIR)/component-download-clm-cl.owl.owl $(TMPDIR)/component-download-clm-cl.owl.tmp.owl ; then \
+	        echo "Component identical." ; \
+	else \
+	        echo "Component different, updating." && \
+	        cp $(TMPDIR)/component-download-clm-cl.owl.owl $(TMPDIR)/component-download-clm-cl.owl.tmp.owl && \
+	        $(ROBOT) annotate --input $(TMPDIR)/component-download-clm-cl.owl.owl \
+	                          --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+	                          --output $@ ; \
+	fi
+.PRECIOUS: $(COMPONENTSDIR)/clm-cl.owl
+endif # MIR=true
 
 endif # COMP=true
 # ----------------------------------------
