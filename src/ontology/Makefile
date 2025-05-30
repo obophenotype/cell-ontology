@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                4393a63775ffe47dfbb71e11b94bace5fbdacdbaec4fc4670d7eafc10a6a926b
+CONFIG_HASH=                491f7fd1e39cb22455ba2094f27fc7564dcc284825a56c8117c089488c5d434a
 
 
 # ----------------------------------------
@@ -234,6 +234,7 @@ all_subsets: $(SUBSET_FILES)
 
 MAPPINGS =  cl-local cl fbbt zfa
 
+RELEASED_MAPPINGS =  cl
 
 MAPPING_FILES = $(foreach p, $(MAPPINGS), $(MAPPINGDIR)/$(p).sssom.tsv)
 RELEASED_MAPPING_FILES = $(foreach p, $(RELEASED_MAPPINGS), $(MAPPINGDIR)/$(p).sssom.tsv)
@@ -355,9 +356,12 @@ prepare_release_fast:
 .PHONY: copy_release_files
 copy_release_files:
 	rsync -R $(RELEASE_ASSETS) $(RELEASEDIR)
+	mkdir -p $(RELEASEDIR)/mappings
+	cp -rf $(RELEASED_MAPPING_FILES) $(RELEASEDIR)/mappings
 
 # All released assets, in their final location within the release
-RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), $(RELEASEDIR)/$(n))
+RELEASE_ASSETS_AFTER_RELEASE=$(foreach n,$(RELEASE_ASSETS), $(RELEASEDIR)/$(n)) \
+			     $(foreach n,$(RELEASED_MAPPINGS), $(RELEASEDIR)/mappings/$(n).sssom.tsv)
 
 .PHONY: show_release_assets
 show_release_assets:
