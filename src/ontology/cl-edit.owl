@@ -3202,8 +3202,8 @@ Declaration(Class(obo:CL_4072003))
 Declaration(Class(obo:CL_4072006))
 Declaration(Class(obo:CL_4072008))
 Declaration(Class(obo:CL_4072009))
-Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CL_4072010))
+Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -3372,6 +3372,7 @@ Declaration(Class(obo:UBERON_0014727))
 Declaration(Class(obo:UBERON_0014729))
 Declaration(Class(obo:UBERON_0027368))
 Declaration(Class(obo:UBERON_0027371))
+Declaration(Class(obo:UBERON_0036007))
 Declaration(Class(obo:UBERON_8400006))
 Declaration(Class(obo:UBERON_8400007))
 Declaration(Class(obo:UBERON_8400008))
@@ -3467,7 +3468,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3553,15 +3554,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -34211,7 +34212,7 @@ SubClassOf(obo:CL_4072006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535))
 
 # Class: obo:CL_4072008 (A11 dopaminergic neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25343491") Annotation(oboInOwl:hasDbXref "PMID:8978475") Annotation(oboInOwl:hasDbXref "PMID:37522391") obo:IAO_0000115 obo:CL_4072008 "A type of hypothalamic dopaminergic neuron found in the posterior hypothalamus, projecting to the spinal cord where it modulates pain, motor activity (Koblinger et al., 2014), and somatosensory processing (Zhang et a., 2023).")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25343491") Annotation(oboInOwl:hasDbXref "PMID:37522391") Annotation(oboInOwl:hasDbXref "PMID:8978475") obo:IAO_0000115 obo:CL_4072008 "A type of hypothalamic dopaminergic neuron found in the posterior hypothalamus, projecting to the spinal cord where it modulates pain, motor activity (Koblinger et al., 2014), and somatosensory processing (Zhang et a., 2023).")
 AnnotationAssertion(terms:date obo:CL_4072008 "2025-05-02T10:33:56Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4072008 "A11 dopaminergic neuron")
 SubClassOf(obo:CL_4072008 obo:CL_0000700)
@@ -34228,6 +34229,16 @@ SubClassOf(obo:CL_4072009 obo:CL_0000700)
 SubClassOf(obo:CL_4072009 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001932))
 SubClassOf(obo:CL_4072009 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061527))
 
+# Class: obo:CL_4072010 (A13 Dopaminergic Neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33318433") Annotation(oboInOwl:hasDbXref "PMID:37816347") obo:IAO_0000115 obo:CL_4072010 "A type of dopaminergic neuron located in the rostro-medial part of the zona incerta. It is involved in nociception and prehensile movement.")
+AnnotationAssertion(terms:date obo:CL_4072010 "2025-05-02T14:46:33Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4072010 "A13 Dopaminergic Neuron")
+SubClassOf(obo:CL_4072010 obo:CL_0000700)
+SubClassOf(obo:CL_4072010 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0036007))
+SubClassOf(obo:CL_4072010 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061527))
+SubClassOf(obo:CL_4072010 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0160043))
+
 # Class: obo:CL_4072102 (Purkinje layer interneuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") obo:IAO_0000115 obo:CL_4072102 "A type of GABAergic interneuron residing in the Purkinje cell layer of the cerebellar cortex.")
@@ -34236,16 +34247,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4072102 "Purkinje layer interneuron")
 EquivalentClasses(obo:CL_4072102 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979)))
 SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
-
-# Class: obo:CL_4072010 (A13 Dopaminergic Neuron)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33318433") Annotation(oboInOwl:hasDbXref "PMID:37816347") obo:IAO_0000115 obo:CL_4072010 "A type of dopaminergic neuron located in the rostro-medial part of the zona incerta. It is involved in nociception and prehensile movement.")
-AnnotationAssertion(terms:date obo:CL_4072010 "2025-05-02T14:46:33Z"^^xsd:dateTime)
-AnnotationAssertion(rdfs:label obo:CL_4072010 "A13 Dopaminergic Neuron")
-SubClassOf(obo:CL_4072010 obo:CL_2000097)
-SubClassOf(obo:CL_4072010 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001891))
-SubClassOf(obo:CL_4072010 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061527))
-SubClassOf(obo:CL_4072010 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0160043))
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
