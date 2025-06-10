@@ -53,7 +53,7 @@ jobs:
     needs: [branch_status]
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.3
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
@@ -87,7 +87,7 @@ jobs:
     needs: [branch_status]
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.3
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
@@ -115,7 +115,7 @@ jobs:
     needs: [branch_status]
     if: ${{ github.event.issue.pull_request }}
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.3
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
@@ -140,7 +140,7 @@ jobs:
   diff_classification:
     needs:  [classify_branch, classify_main]
     runs-on: ubuntu-latest
-    container: obolibrary/odkfull:v1.5.3
+    container: obolibrary/odkfull:v1.6
     steps:
       - uses: khan/pull-request-comment-trigger@v1.1.0
         id: check
