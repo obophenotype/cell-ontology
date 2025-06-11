@@ -178,7 +178,8 @@ test: $(REPORTDIR)/taxon-constraint-check.txt
 obocheck: $(SRC) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) \
 		 remove --base-iri $(URIBASE)/CL_ --axioms external --trim false \
-		 uberon:obo-export --merge-comments --obo-output $(TMPDIR)/cl-check.obo
+		 convert --check false -f obo $(OBO_FORMAT_OPTIONS) \
+		         --output $(TMPDIR)/cl-check.obo
 	fastobo-validator $(TMPDIR)/cl-check.obo
 
 test_obsolete: $(ONT).obo
