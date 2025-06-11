@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                6192ec51b538ce0a87b4c154540f9d62a99c17c66191f0f15db6eccf88f12a12
+CONFIG_HASH=                04550e78d8d725271f6c54a2da3913c557d10b73608bba23bf7ca4fd3c77d4d3
 
 
 # ----------------------------------------
@@ -184,7 +184,7 @@ $(ROBOT_PLUGINS_DIRECTORY)/flybase.jar:
 	curl -L -o $@ https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.2/flybase.jar
 
 $(ROBOT_PLUGINS_DIRECTORY)/uberon.jar:
-	curl -L -o $@ https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.3/uberon.jar
+	curl -L -o $@ https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.4.0/uberon.jar
 
 
 # ----------------------------------------
