@@ -15,7 +15,6 @@ export_formats:
   - owl
   - obo
   - json
-obo_format_options: --clean-obo 'simple merge-comments'
 namespaces: 
   - http://purl.obolibrary.org/obo/CP_
   - http://purl.obolibrary.org/obo/CL_
@@ -35,7 +34,7 @@ robot_plugins:
     - name: flybase
       mirror_from: https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.2/flybase.jar
     - name: uberon
-      mirror_from: https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.4.0/uberon.jar
+      mirror_from: https://github.com/gouttegd/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.3.3/uberon.jar
 subset_group:
   products:
     - id: BDS_subset
@@ -51,7 +50,6 @@ sssom_mappingset_group:
       maintainance: manual
     - id: cl
       maintainance: manual
-      release_mappings: true
     - id: fbbt
       maintenance: manual
     - id: zfa
@@ -137,7 +135,6 @@ robot_report:
 components:
   products:
     - filename: hra_subset.owl
-      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl
     - filename: mappings.owl
     - filename: blood_and_immune_upper_slim.owl
       use_template: True
@@ -160,5 +157,4 @@ components:
       templates:
         - cellxgene_subset.tsv
     - filename: clm-cl.owl
-      source: https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl
 
