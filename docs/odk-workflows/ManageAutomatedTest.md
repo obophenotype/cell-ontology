@@ -25,3 +25,4 @@ We can define custom checks using [SPARQL](https://www.w3.org/TR/rdf-sparql-quer
 ```shell
 sh run.sh make update_repo
 ```
+
