@@ -178,7 +178,8 @@ test: $(REPORTDIR)/taxon-constraint-check.txt
 obocheck: $(SRC) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) \
 		 remove --base-iri $(URIBASE)/CL_ --axioms external --trim false \
-		 uberon:obo-export --merge-comments --obo-output $(TMPDIR)/cl-check.obo
+		 convert --check false -f obo $(OBO_FORMAT_OPTIONS) \
+		         --output $(TMPDIR)/cl-check.obo
 	fastobo-validator $(TMPDIR)/cl-check.obo
 
 test_obsolete: $(ONT).obo
@@ -259,96 +260,6 @@ pattern_docs: $(ALL_PATTERN_FILES)
 
 
 # ----------------------------------------
-# CUSTOM OBO OUTPUT
-# ----------------------------------------
-OBO_EXPORT_OPTIONS = --merge-comments --strip-gci-axioms --strip-owl-axioms
-
-$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT).obo: $(ONT).owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-base.obo: $(ONT)-base.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-full.obo: $(ONT)-full.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-simple.obo: $(ONT)-simple.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-basic.obo: $(ONT)-basic.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-non-classified.obo: $(ONT)-non-classified.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-cl-plus.obo: cl-plus.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-
-# ----------------------------------------
-# DIFFS/REPORTS
-# ----------------------------------------
-
-# Diffs against the master branch on GitHub
-# -----------------------------------------
-# Two variants: with and without the imports.
-# Not automatically generated from amywhere, but available on demand
-# by calling `make branch_diffs`.
-
-CL_EDIT_GITHUB_MASTER = https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
-
-$(TMPDIR)/src-noimports.owl: $(SRC)
-	$(ROBOT) remove -i $< --select imports -o $@
-
-$(TMPDIR)/src-imports.owl: $(SRC)
-	$(ROBOT) merge -i $< -o $@
-
-$(TMPDIR)/src-master-noimports.owl:
-	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
-
-$(TMPDIR)/src-master-imports.owl:
-	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
-
-$(TMPDIR)/diff_edit_%.md: $(TMPDIR)/src-master-%.owl $(TMPDIR)/src-%.owl
-	$(ROBOT) diff --left $(TMPDIR)/src-master-$*.owl --right $(TMPDIR)/src-$*.owl -f markdown -o $@
-
-$(TMPDIR)/diff_edit_%.txt: $(TMPDIR)/src-master-%.owl $(TMPDIR)/src-%.owl
-	$(ROBOT) diff --left $(TMPDIR)/src-master-$*.owl --right $(TMPDIR)/src-$*.owl -o $@
-
-branch_diffs: $(REPORTDIR)/diff_edit_imports.md \
-	      $(REPORTDIR)/diff_edit_noimports.md \
-	      $(REPORTDIR)/diff_edit_imports.txt \
-	      $(REPORTDIR)/diff_edit_noimports.txt
-
-
-# Diff against the latest released version
-# ----------------------------------------
-# FIXME: It's unclear whether this diff is still desired. It is only
-# generated when `all_reports` is explicitly invoked. Upon releasing, we
-# now produce more complete diffs against the latest public base (see
-# RELEASE DEPLOYMENT below), likely making this diff no longer relevant.
-# See <https://github.com/obophenotype/cell-ontology/issues/2641>.
-
-$(TMPDIR)/cl-current.owl: $(ONT).owl
-	$(ROBOT) remove -i $< --term rdfs:label \
-		        --select complement --select annotation-properties \
-		 remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
-
-$(TMPDIR)/cl-lastbuild.owl: .FORCE
-	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label \
-		        --select complement --select annotation-properties \
-		 remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
-
-$(REPORTDIR)/obo-diff.txt: $(TMPDIR)/cl-lastbuild.owl $(TMPDIR)/cl-current.owl
-	$(ROBOT) diff --left $< --right $(TMPDIR)/cl-current.owl -f markdown -o $@
-
-all_reports: $(REPORTDIR)/obo-diff.txt
-
-
-# ----------------------------------------
 # UTILITY COMMANDS
 # ----------------------------------------
 
@@ -376,26 +287,10 @@ add-replacedby:
 
 ifeq ($(strip $(MIR)),true)
 
-# Human reference atlas subset
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 # CellXGene reference subset
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
 $(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
-
-# CellMark reference subset
-CLM_CL_URL="https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl"
-$(TMPDIR)/clm-cl.owl:
-	wget $(CLM_CL_URL) -O $@
-
-$(COMPONENTSDIR)/clm-cl.owl: $(TMPDIR)/clm-cl.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
 endif
 
@@ -411,7 +306,7 @@ cl:
 	$(MAKE) prepare_release IMP=false PAT=false MIR=false
 	$(MAKE) release-base-diff
 	$(MAKE) prepare_content_summary
-	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
 
@@ -429,15 +324,6 @@ prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(T
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
 		
-FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
-		     $(MAPPINGDIR)/cl.sssom.tsv
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(MAIN_FILES_RELEASE)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
-
 
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS
@@ -449,7 +335,7 @@ TERM_general = CL:0000000
 TERM_kidney= UBERON:0002113
 
 SLIM_TEMPLATES= blood_and_immune eye general_cell_types kidney
-SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim_report.csv)
 
 .PHONY: slim_coverage
 slim_coverage: $(SLIM_REPORTS)
