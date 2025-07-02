@@ -3387,6 +3387,7 @@ Declaration(Class(obo:UBERON_0011172))
 Declaration(Class(obo:UBERON_0011184))
 Declaration(Class(obo:UBERON_0011949))
 Declaration(Class(obo:UBERON_0012186))
+Declaration(Class(obo:UBERON_0012363))
 Declaration(Class(obo:UBERON_0012398))
 Declaration(Class(obo:UBERON_0012399))
 Declaration(Class(obo:UBERON_0012419))
@@ -3492,7 +3493,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3578,15 +3579,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -7548,10 +7549,13 @@ SubClassOf(obo:CL_0000451 obo:CL_0000113)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000451 obo:CL_0000738)
 DisjointClasses(obo:CL_0000451 obo:CL_0000542)
 
-# Class: obo:CL_0000452 (thyroid hormone secreting cell)
+# Class: obo:CL_0000452 (obsolete thyroid hormone secreting cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000452 "thyroid hormone secreting cell")
-SubClassOf(obo:CL_0000452 obo:CL_0000163)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000452 <https://github.com/obophenotype/cell-ontology/issues/3161>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000452 obo:CL_0002258)
+AnnotationAssertion(rdfs:comment obo:CL_0000452 "This term is redundant and has been merged with thyroid follicular cell")
+AnnotationAssertion(rdfs:label obo:CL_0000452 "obsolete thyroid hormone secreting cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000452 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000453 (Langerhans cell)
 
@@ -8591,6 +8595,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:68653") oboInOwl:hasExact
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:68653") oboInOwl:hasExactSynonym obo:CL_0000570 "thyroid parafollicular cell")
 AnnotationAssertion(rdfs:label obo:CL_0000570 "parafollicular cell")
 EquivalentClasses(obo:CL_0000570 ObjectIntersectionOf(obo:CL_0000710 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001024) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001820) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014046) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0036161)))
+SubClassOf(obo:CL_0000570 obo:CL_0000163)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000570 obo:CL_0000443)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000570 obo:CL_0000710)
 SubClassOf(obo:CL_0000570 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001747))
@@ -9277,11 +9282,11 @@ AnnotationAssertion(owl:deprecated obo:CL_0000643 "true"^^xsd:boolean)
 # Class: obo:CL_0000644 (Bergmann glial cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "http://www.neurolex.org/wiki/Category:Bergmann_Glial_Cell") obo:IAO_0000115 obo:CL_0000644 "Type of radial astrocyte in the cerebellar cortex that have their cell bodies in the Purkinje cell layer and processes that extend into the molecular layer, terminating with bulbous endfeet at the pial surface. Bergmann glia express high densities of glutamate transporters that limit diffusion of the neurotransmitter glutamate during its release from synaptic terminals. Besides their role in early development of the cerebellum, Bergmann glia are also required for the pruning or addition of synapses.")
-AnnotationAssertion(Annotation(dc:license <https://creativecommons.org/licenses/by-nc-nd/4.0/>) Annotation(oboInOwl:hasDbXref "doi:10.3389/fnins.2020.00293") foaf:depiction obo:CL_0000644 <http://purl.obolibrary.org/obo/cl/images/Candelabrum_cell.jpg>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000644 "FMA:54559")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000644 "Bergmann astrocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000644 "Bergmann glial cell of cerebellum")
 AnnotationAssertion(rdfs:label obo:CL_0000644 "Bergmann glial cell")
+AnnotationAssertion(Annotation(dc:license <https://creativecommons.org/licenses/by-nc-nd/4.0/>) Annotation(oboInOwl:hasDbXref "doi:10.3389/fnins.2020.00293") foaf:depiction obo:CL_0000644 <http://purl.obolibrary.org/obo/cl/images/Candelabrum_cell.jpg>)
 SubClassOf(obo:CL_0000644 obo:CL_0000127)
 SubClassOf(obo:CL_0000644 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002979))
 
@@ -16667,14 +16672,15 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002257 "2010-09-08T01:46:51Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002257 "FMA:256167")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002257 "MESH:D000072637")
 AnnotationAssertion(rdfs:label obo:CL_0002257 "epithelial cell of thyroid gland")
-EquivalentClasses(obo:CL_0002257 ObjectIntersectionOf(obo:CL_0002076 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002046)))
+EquivalentClasses(obo:CL_0002257 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002046)))
 SubClassOf(obo:CL_0002257 obo:CL_0000150)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002257 obo:CL_0002076)
+SubClassOf(obo:CL_0002257 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000223))
 
 # Class: obo:CL_0002258 (thyroid follicular cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0002258 "A cell type that varies from squamous to columnar, depending on their activity with microvillus directed luminally. This cell produces and secretes thyroid hormones.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") Annotation(oboInOwl:hasDbXref "PMID:31869123") obo:IAO_0000115 obo:CL_0002258 "An epithelial cell that is part of the thyroid follicle epithelium, with a shape that ranges from squamous when inactive to cuboidal or columnar when active, reflecting its hormonal activity. Its apical surface is lined with microvilli projecting into the colloid-filled lumen, where it synthesizes, stores, and secretes the thyroid hormones thyroxine (T4) and triiodothyronine (T3), releasing them into the bloodstream in response to thyroid-stimulating hormone (TSH).")
 AnnotationAssertion(terms:contributor obo:CL_0002258 <https://orcid.org/0000-0003-1980-3228>)
+AnnotationAssertion(terms:contributor obo:CL_0002258 <https://orcid.org/0009-0000-8480-9277>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002258 "2010-09-08T01:50:08Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002258 "BTO:0003736")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002258 "CALOHA:TS-1285")
@@ -16682,8 +16688,11 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002258 "FMA:68782")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "follicular cell of thyroid gland")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "principal cell of thyroid gland")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "thyroid gland follicular cell")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "thyroid hormone secreting cell")
 AnnotationAssertion(rdfs:label obo:CL_0002258 "thyroid follicular cell")
-SubClassOf(obo:CL_0002258 obo:CL_0002257)
+EquivalentClasses(obo:CL_0002258 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0012363)))
+SubClassOf(obo:CL_0002258 obo:CL_0000163)
+SubClassOf(obo:CL_0002258 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005902))
 
 # Class: obo:CL_0002259 (neuroepithelial stem cell)
 
