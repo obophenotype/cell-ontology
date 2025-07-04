@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                3d7e69d4b80923f6bb9a82c108d124a86ee24574d7afcc93639fe5cd8f2b848b
+CONFIG_HASH=                e744763d6d1d82ea13f804d55c841f2877663b8c1868a3555e2c1f91aa840d21
 
 
 # ----------------------------------------
@@ -600,7 +600,7 @@ endif # MIR=true
 ifeq ($(MIR),true)
 .PHONY: component-download-wmbo-cl-comp.owl
 component-download-wmbo-cl-comp.owl: | $(TMPDIR)
-	$(ROBOT) merge -I https://purl.brain-bican.org/ontology/wmbo/wmbo-cl-comp.owl \
+	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/cl_product/wmbo-cl-comp.owl \
 		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
 
 $(COMPONENTSDIR)/wmbo-cl-comp.owl: component-download-wmbo-cl-comp.owl $(TMPDIR)/stamp-component-wmbo-cl-comp.owl
@@ -691,7 +691,7 @@ mirror-omo: | $(TMPDIR)
 .PHONY: mirror-mbao
 .PRECIOUS: $(MIRRORDIR)/mbao.owl
 mirror-mbao: | $(TMPDIR)
-	$(ROBOT) convert -I https://purl.brain-bican.org/ontology/mbao/mbao-base.owl -o $(TMPDIR)/$@.owl
+	$(ROBOT) convert -I https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao-base.owl -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
