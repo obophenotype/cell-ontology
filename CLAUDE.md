@@ -26,6 +26,7 @@ This includes instructions for editing the cl ontology.
 
 ## Editors guide
 - design patterns are in docs/patterns
+- a guide to what relations to use for recording locations, properties etc can be found in docs/relations_guide.md
 
 
 ## OBO Guidelines
