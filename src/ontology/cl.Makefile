@@ -178,7 +178,8 @@ test: $(REPORTDIR)/taxon-constraint-check.txt
 obocheck: $(SRC) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) \
 		 remove --base-iri $(URIBASE)/CL_ --axioms external --trim false \
-		 uberon:obo-export --merge-comments --obo-output $(TMPDIR)/cl-check.obo
+		 convert --check false -f obo $(OBO_FORMAT_OPTIONS) \
+		         --output $(TMPDIR)/cl-check.obo
 	fastobo-validator $(TMPDIR)/cl-check.obo
 
 test_obsolete: $(ONT).obo
@@ -259,36 +260,6 @@ pattern_docs: $(ALL_PATTERN_FILES)
 
 
 # ----------------------------------------
-# CUSTOM OBO OUTPUT
-# ----------------------------------------
-OBO_EXPORT_OPTIONS = --merge-comments --strip-gci-axioms --strip-owl-axioms
-
-$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT).obo: $(ONT).owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-base.obo: $(ONT)-base.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-full.obo: $(ONT)-full.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-simple.obo: $(ONT)-simple.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-basic.obo: $(ONT)-basic.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-non-classified.obo: $(ONT)-non-classified.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-cl-plus.obo: cl-plus.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-
-# ----------------------------------------
 # UTILITY COMMANDS
 # ----------------------------------------
 
@@ -316,26 +287,10 @@ add-replacedby:
 
 ifeq ($(strip $(MIR)),true)
 
-# Human reference atlas subset
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 # CellXGene reference subset
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
 $(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
-
-# CellMark reference subset
-CLM_CL_URL="https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl"
-$(TMPDIR)/clm-cl.owl:
-	wget $(CLM_CL_URL) -O $@
-
-$(COMPONENTSDIR)/clm-cl.owl: $(TMPDIR)/clm-cl.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
 
 endif
 
@@ -351,7 +306,7 @@ cl:
 	$(MAKE) prepare_release IMP=false PAT=false MIR=false
 	$(MAKE) release-base-diff
 	$(MAKE) prepare_content_summary
-	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
 
@@ -369,15 +324,6 @@ prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(T
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
 		
-FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
-		     $(MAPPINGDIR)/cl.sssom.tsv
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(MAIN_FILES_RELEASE)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
-
 
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS
