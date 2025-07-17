@@ -43,3 +43,4 @@ These are the components in CL
 | kidney_upper_slim.owl | None |
 | cellxgene_subset.owl | None |
 | clm-cl.owl | https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl |
+| 2DFTU_HRA_illustrations.owl | None |

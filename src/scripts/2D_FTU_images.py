@@ -56,7 +56,7 @@ def process_and_filter_csv(csv_text, processed_output_file):
 
 # Main execution
 def main():
-    processed_file = "../templates/robot_template_2DFTU.csv"
+    processed_file = "../templates/2DFTU_HRA_illustrations.csv"
 
     print("Downloading and processing CSV...")
     csv_text = download_csv(API_URL)
