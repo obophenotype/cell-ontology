@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                e744763d6d1d82ea13f804d55c841f2877663b8c1868a3555e2c1f91aa840d21
+CONFIG_HASH=                b74714d84758208c4e245678c62cb837f30e81f74cd10fde4d144a9ad501f327
 
 
 # ----------------------------------------
@@ -204,7 +204,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao
+IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao stato
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -600,7 +600,7 @@ endif # MIR=true
 ifeq ($(MIR),true)
 .PHONY: component-download-wmbo-cl-comp.owl
 component-download-wmbo-cl-comp.owl: | $(TMPDIR)
-	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/cl_product/wmbo-cl-comp.owl \
+	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/main/wmbo-cl-comp.owl \
 		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
 
 $(COMPONENTSDIR)/wmbo-cl-comp.owl: component-download-wmbo-cl-comp.owl $(TMPDIR)/stamp-component-wmbo-cl-comp.owl
@@ -692,6 +692,14 @@ mirror-omo: | $(TMPDIR)
 .PRECIOUS: $(MIRRORDIR)/mbao.owl
 mirror-mbao: | $(TMPDIR)
 	$(ROBOT) convert -I https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao-base.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: stato
+.PHONY: mirror-stato
+.PRECIOUS: $(MIRRORDIR)/stato.owl
+mirror-stato: | $(TMPDIR)
+	curl -L $(OBOBASE)/stato.owl --create-dirs -o $(TMPDIR)/stato-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) remove -i $(TMPDIR)/stato-download.owl --base-iri http://purl.obolibrary.org/obo/STATO --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
