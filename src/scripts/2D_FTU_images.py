@@ -58,7 +58,7 @@ def process_and_filter_csv(csv_text, output_file, curated_urls):
 
         if not file_exists:
             # Write headers only if the file is new
-            writer.writerow(["ftu_part_id", "ftu_digital_object_doi", "image_url", "license", "label"])
+            writer.writerow(["ftu_part_id", "image_url", "ftu_digital_object_doi", "license", "label"])
             writer.writerow(["ID", "A foaf:depiction", ">A oboInOwl:hasDbXref", ">AI dc:licence", ""])
 
         for row in new_rows:
