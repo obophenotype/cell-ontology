@@ -25,14 +25,14 @@ def process_and_filter_csv(csv_text, processed_output_file):
         if iri.startswith("http://purl.obolibrary.org/obo/CL_"):
             cl_id = iri.replace("http://purl.obolibrary.org/obo/CL_", "CL:")
             
-            image_url = row.get("image_url", "")
-            if image_url.startswith("https://doi.org/"):
-                image_url = image_url.replace("https://doi.org/", "doi:")
+            ftu_digital_object_doi = row.get("ftu_digital_object_doi", "").strip()
+            if ftu_digital_object_doi.startswith("https://doi.org/"):
+                ftu_digital_object_doi = ftu_digital_object_doi.replace("https://doi.org/", "doi:")
 
             filtered_rows.append({
                 "ftu_part_id": cl_id,
-                "ftu_digital_object_doi": row.get("ftu_digital_object_doi", ""),
-                "image_url": image_url
+                "image_url": row.get("image_url", ""),
+                "ftu_digital_object_doi": ftu_digital_object_doi
             })
 
     with open(processed_output_file, mode='w', newline='', encoding='utf-8') as file:
