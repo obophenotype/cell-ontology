@@ -295,7 +295,10 @@ $(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 endif
 
 # Update the list of terms with 2D FTU images from HRA
-HRAFTU= ./$(SCRIPTSDIR)/2D_FTU_images.py
+.PHONY: update-HRA-illustrations
+
+update-HRA-illustrations:
+	python3 ./$(SCRIPTSDIR)/2D_FTU_images.py
 
 # ----------------------------------------
 # RELEASE DEPLOYMENT
