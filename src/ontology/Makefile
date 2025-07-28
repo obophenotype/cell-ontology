@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                55021dedb74d178fd6de6460969a55b367ce8b82149a38517ebf4fd198176941
+CONFIG_HASH=                6f1a766372040766b28beb0fcedd73c024f977d65c04b8d77418bb372ce472b2
 
 
 # ----------------------------------------
@@ -57,7 +57,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -219,7 +219,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim kidney_upper_slim human-view mouse-view PNS_neurons
+SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim kidney_upper_slim human-view mouse-view PNS_neurons 2DFTU_HRA_illustrations
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
@@ -496,6 +496,7 @@ recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-cellxgene_subset.owl \
 		--assume-new=$(TMPDIR)/stamp-component-PNS_neurons.owl \
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
+		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
 		--assume-new=$(TMPDIR)/stamp-component-wmbo-cl-comp.owl \
 		COMP=true IMP=false MIR=true PAT=true all_components
 
@@ -510,6 +511,7 @@ no-mirror-recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-cellxgene_subset.owl \
 		--assume-new=$(TMPDIR)/stamp-component-PNS_neurons.owl \
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
+		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
 		--assume-new=$(TMPDIR)/stamp-component-wmbo-cl-comp.owl \
 		COMP=true IMP=false MIR=false PAT=true all_components
 
@@ -604,6 +606,12 @@ $(COMPONENTSDIR)/clm-cl.owl: component-download-clm-cl.owl $(TMPDIR)/stamp-compo
 	fi
 .PRECIOUS: $(COMPONENTSDIR)/clm-cl.owl
 endif # MIR=true
+
+$(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl: $(TEMPLATEDIR)/2DFTU_HRA_illustrations.csv $(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/2DFTU_HRA_illustrations.csv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl
 
 ifeq ($(MIR),true)
 .PHONY: component-download-wmbo-cl-comp.owl
