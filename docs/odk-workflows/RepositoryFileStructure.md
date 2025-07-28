@@ -44,6 +44,7 @@ These are the components in CL
 | general_cell_types_upper_slim.owl | None |
 | kidney_upper_slim.owl | None |
 | cellxgene_subset.owl | None |
+| PNS_neurons.owl | None |
 | clm-cl.owl | https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl |
 | 2DFTU_HRA_illustrations.owl | None |
 | wmbo-cl-comp.owl | https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/main/wmbo-cl-comp.owl |
