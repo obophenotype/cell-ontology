@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                6f1a766372040766b28beb0fcedd73c024f977d65c04b8d77418bb372ce472b2
+CONFIG_HASH=                6e93c5342d83d66041ce747e0df055a69241fe42a17d5554ba47d553f5458331
 
 
 # ----------------------------------------
@@ -219,7 +219,7 @@ all_imports: $(IMPORT_FILES)
 # ----------------------------------------
 
 
-SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim kidney_upper_slim human-view mouse-view PNS_neurons 2DFTU_HRA_illustrations
+SUBSETS =  BDS_subset blood_and_immune_upper_slim eye_upper_slim general_cell_types_upper_slim kidney_upper_slim human-view mouse-view
 
 SUBSET_ROOTS = $(patsubst %, $(SUBSETDIR)/%, $(SUBSETS))
 SUBSET_FILES = $(foreach n,$(SUBSET_ROOTS), $(foreach f,$(FORMATS_INCL_TSV), $(n).$(f)))
