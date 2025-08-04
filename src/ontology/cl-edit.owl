@@ -22,6 +22,7 @@ Prefix(ncbitaxon:=<http://purl.obolibrary.org/obo/ncbitaxon#>)
 
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
+Import(<http://purl.obolibrary.org/obo/cl/components/PNS_neurons.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/cellxgene_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/clm-cl.owl>)
@@ -30,6 +31,8 @@ Import(<http://purl.obolibrary.org/obo/cl/components/general_cell_types_upper_sl
 Import(<http://purl.obolibrary.org/obo/cl/components/hra_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/kidney_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/mappings.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/wmbo-cl-comp.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/2DFTU_HRA_illustrations.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/imports/merged_import.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/patterns/definitions.owl>)
 Annotation(obo:IAO_0000700 obo:CL_0000000)
@@ -3197,6 +3200,8 @@ Declaration(Class(obo:CL_4052055))
 Declaration(Class(obo:CL_4052058))
 Declaration(Class(obo:CL_4052060))
 Declaration(Class(obo:CL_4052061))
+Declaration(Class(obo:CL_4052062))
+Declaration(Class(obo:CL_4052064))
 Declaration(Class(obo:CL_4070010))
 Declaration(Class(obo:CL_4070011))
 Declaration(Class(obo:CL_4070012))
@@ -3218,6 +3223,7 @@ Declaration(Class(obo:CL_4072011))
 Declaration(Class(obo:CL_4072012))
 Declaration(Class(obo:CL_4072013))
 Declaration(Class(obo:CL_4072014))
+Declaration(Class(obo:CL_4072015))
 Declaration(Class(obo:CL_4072019))
 Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CP_0000000))
@@ -3353,6 +3359,7 @@ Declaration(Class(obo:UBERON_0002162))
 Declaration(Class(obo:UBERON_0002197))
 Declaration(Class(obo:UBERON_0002219))
 Declaration(Class(obo:UBERON_0002222))
+Declaration(Class(obo:UBERON_0002283))
 Declaration(Class(obo:UBERON_0002339))
 Declaration(Class(obo:UBERON_0002439))
 Declaration(Class(obo:UBERON_0002548))
@@ -3392,6 +3399,7 @@ Declaration(Class(obo:UBERON_0011172))
 Declaration(Class(obo:UBERON_0011184))
 Declaration(Class(obo:UBERON_0011949))
 Declaration(Class(obo:UBERON_0012186))
+Declaration(Class(obo:UBERON_0012363))
 Declaration(Class(obo:UBERON_0012398))
 Declaration(Class(obo:UBERON_0012399))
 Declaration(Class(obo:UBERON_0012419))
@@ -3497,7 +3505,7 @@ AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
 
 AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
 
-# Annotation Property: obo:IAO_0000700 (preferred_root)
+# Annotation Property: obo:IAO_0000700 (has ontology root term)
 
 AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
 
@@ -3583,15 +3591,15 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -7548,10 +7556,13 @@ SubClassOf(obo:CL_0000451 obo:CL_0000113)
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000451 obo:CL_0000738)
 DisjointClasses(obo:CL_0000451 obo:CL_0000542)
 
-# Class: obo:CL_0000452 (thyroid hormone secreting cell)
+# Class: obo:CL_0000452 (obsolete thyroid hormone secreting cell)
 
-AnnotationAssertion(rdfs:label obo:CL_0000452 "thyroid hormone secreting cell")
-SubClassOf(obo:CL_0000452 obo:CL_0000163)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000452 <https://github.com/obophenotype/cell-ontology/issues/3161>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000452 obo:CL_0002258)
+AnnotationAssertion(rdfs:comment obo:CL_0000452 "This term is redundant and has been merged with thyroid follicular cell")
+AnnotationAssertion(rdfs:label obo:CL_0000452 "obsolete thyroid hormone secreting cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000452 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000453 (Langerhans cell)
 
@@ -8581,7 +8592,7 @@ SubClassOf(obo:CL_0000569 obo:CL_2000073)
 
 # Class: obo:CL_0000570 (parafollicular cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0000570 "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. Expresses a form of the neural cell adhesion molecule (N-CAM) on their surface. Secretes calcitonin, 5-hydroxytryptamine and dopamine.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0000570 "A neuroepithelial cells that occurs singly or in small groups, close to the outer follicular borders but within the follicular basement membrane of the thyroid. This cell expresses a form of the neural cell adhesion molecule (N-CAM) on its surface and secretes calcitonin and serotonin (5-hydroxytryptamine).")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000570 "FMA:68653")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000570 "SCTID:176770005")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000570 "C cell")
@@ -8590,8 +8601,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:68653") oboInOwl:hasExact
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:68653") oboInOwl:hasExactSynonym obo:CL_0000570 "parafollicular cell of thyroid gland")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "FMA:68653") oboInOwl:hasExactSynonym obo:CL_0000570 "thyroid parafollicular cell")
 AnnotationAssertion(rdfs:label obo:CL_0000570 "parafollicular cell")
-EquivalentClasses(obo:CL_0000570 ObjectIntersectionOf(obo:CL_0000710 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001024) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001820) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0014046) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0036161)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000570 obo:CL_0000443)
+EquivalentClasses(obo:CL_0000570 ObjectIntersectionOf(obo:CL_0000710 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001024) ObjectSomeValuesFrom(obo:RO_0002215 ObjectIntersectionOf(obo:GO_0001820 ObjectSomeValuesFrom(obo:RO_0002339 obo:UBERON_0001009))) ObjectSomeValuesFrom(obo:RO_0002215 ObjectIntersectionOf(obo:GO_0036161 ObjectSomeValuesFrom(obo:RO_0002339 obo:UBERON_0001009)))))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000570 obo:CL_0000710)
 SubClassOf(obo:CL_0000570 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001747))
 SubClassOf(obo:CL_0000570 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
@@ -11308,7 +11318,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000844 "germinal center B-c
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000844 "germinal center B-lymphocyte")
 AnnotationAssertion(rdfs:comment obo:CL_0000844 "Germinal center B cells are also reportedly CD10-positive, CD19-positive, CD20-positive, CD38-positive, CD44-low, CD45-positive, CD48-positive, CD95-positive, CD352-positive, and HLA-DR-positive. Transcription factors: BCL6-positive, Ets1-positive, IRF8-positive, MTA3-positive, OBF1-positive, PAX5-positive, SpiB-positive, and STAT3-positive.")
 AnnotationAssertion(rdfs:label obo:CL_0000844 "germinal center B cell")
-EquivalentClasses(obo:CL_0000844 ObjectIntersectionOf(obo:CL_0000785 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001745) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001289)))
+EquivalentClasses(obo:CL_0000844 ObjectIntersectionOf(obo:CL_0000785 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010754) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001289)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000844 obo:CL_0000785)
 SubClassOf(obo:CL_0000844 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000843))
 
@@ -13345,7 +13355,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001043 "activated CD4-posit
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001043 "activated CD4-positive, alpha-beta T-lymphocyte, human")
 AnnotationAssertion(rdfs:comment obo:CL_0001043 "This cell type is compatible with the HIPC Lyoplate markers for 'activated CD4+ T cell', but includes via logical inference from its parent additional markers known to be expressed on activated CD4+ T cells.  The inclusion of HLA-DRA in the definition restricts this definition to human activated CD4+ T cells, as activated mouse T cells do not express MHC class II.")
 AnnotationAssertion(rdfs:label obo:CL_0001043 "activated CD4-positive, alpha-beta T cell, human")
-EquivalentClasses(obo:CL_0001043 ObjectIntersectionOf(obo:CL_0000896 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001408) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015)))
+EquivalentClasses(obo:CL_0001043 ObjectIntersectionOf(obo:CL_0000896 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001408) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001043 obo:CL_0000896)
 
 # Class: obo:CL_0001044 (effector CD4-positive, alpha-beta T cell)
@@ -13405,7 +13415,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001048 "activated CD4-posit
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001048 "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T-lymphocyte")
 AnnotationAssertion(rdfs:comment obo:CL_0001048 "This cell type is compatible with the HIPC Lyoplate markers for 'activated CCR4+ Treg'.  The inclusion of HLA-DRA in the definition restricts this definition to human activated CD4+ T cells, as activated mouse T cells do not express MHC class II.")
 AnnotationAssertion(rdfs:label obo:CL_0001048 "activated CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell, human")
-EquivalentClasses(obo:CL_0001048 ObjectIntersectionOf(obo:CL_0001047 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015)))
+EquivalentClasses(obo:CL_0001048 ObjectIntersectionOf(obo:CL_0001047 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001048 obo:CL_0001047)
 
 # Class: obo:CL_0001049 (activated CD8-positive, alpha-beta T cell, human)
@@ -13417,7 +13427,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001049 "activated CD8-posit
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001049 "activated CD8-positive, alpha-beta T-lymphocyte, human")
 AnnotationAssertion(rdfs:comment obo:CL_0001049 "This cell type is compatible with the HIPC Lyoplate markers for 'activated CD8+ T cell', but includes via logical inference from its parent additional markers known to be expressed on activated CD8+ T cells.  The inclusion of HLA-DRA in the definition restricts this definition to human activated CD8+ T cells, as activated mouse T cells do not express MHC class II.")
 AnnotationAssertion(rdfs:label obo:CL_0001049 "activated CD8-positive, alpha-beta T cell, human")
-EquivalentClasses(obo:CL_0001049 ObjectIntersectionOf(obo:CL_0000906 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001408) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015)))
+EquivalentClasses(obo:CL_0001049 ObjectIntersectionOf(obo:CL_0000906 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001408) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001049 obo:CL_0000906)
 
 # Class: obo:CL_0001050 (effector CD8-positive, alpha-beta T cell)
@@ -13489,7 +13499,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001056 "dendritic cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001056 "This cell type is compatible with the HIPC Lyoplate markers for 'dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human dendritic cells.")
 AnnotationAssertion(rdfs:label obo:CL_0001056 "dendritic cell, human")
-EquivalentClasses(obo:CL_0001056 ObjectIntersectionOf(obo:CL_0000451 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015)))
+EquivalentClasses(obo:CL_0001056 ObjectIntersectionOf(obo:CL_0000451 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001056 obo:CL_0000451)
 
 # Class: obo:CL_0001057 (myeloid dendritic cell, human)
@@ -13498,7 +13508,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001057 "myeloid dendritic cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001057 "This cell type is compatible with the HIPC Lyoplate markers for 'myeloid dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human myeloid dendritic cells.")
 AnnotationAssertion(rdfs:label obo:CL_0001057 "myeloid dendritic cell, human")
-EquivalentClasses(obo:CL_0001057 ObjectIntersectionOf(obo:CL_0000782 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015)))
+EquivalentClasses(obo:CL_0001057 ObjectIntersectionOf(obo:CL_0000782 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001057 obo:CL_0000782)
 
 # Class: obo:CL_0001058 (plasmacytoid dendritic cell, human)
@@ -13507,7 +13517,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001058 "plasmacytoid dendritic cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001058 "This cell type is compatible with the HIPC Lyoplate markers for 'plasmacytoid dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human plasmacytoid dendritic cells.")
 AnnotationAssertion(rdfs:label obo:CL_0001058 "plasmacytoid dendritic cell, human")
-EquivalentClasses(obo:CL_0001058 ObjectIntersectionOf(obo:CL_0000784 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001013) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001865) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015)))
+EquivalentClasses(obo:CL_0001058 ObjectIntersectionOf(obo:CL_0000784 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001013) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001865) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001058 obo:CL_0000784)
 
 # Class: obo:CL_0001059 (common myeloid progenitor, CD34-positive)
@@ -16667,14 +16677,15 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002257 "2010-09-08T01:46:51Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002257 "FMA:256167")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002257 "MESH:D000072637")
 AnnotationAssertion(rdfs:label obo:CL_0002257 "epithelial cell of thyroid gland")
-EquivalentClasses(obo:CL_0002257 ObjectIntersectionOf(obo:CL_0002076 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002046)))
+EquivalentClasses(obo:CL_0002257 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002046)))
 SubClassOf(obo:CL_0002257 obo:CL_0000150)
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002257 obo:CL_0002076)
+SubClassOf(obo:CL_0002257 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000223))
 
 # Class: obo:CL_0002258 (thyroid follicular cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") obo:IAO_0000115 obo:CL_0002258 "A cell type that varies from squamous to columnar, depending on their activity with microvillus directed luminally. This cell produces and secretes thyroid hormones.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0517223651") Annotation(oboInOwl:hasDbXref "PMID:31869123") obo:IAO_0000115 obo:CL_0002258 "An epithelial cell that is part of the thyroid follicle epithelium, with a shape that ranges from squamous when inactive to cuboidal or columnar when active, reflecting its hormonal activity. Its apical surface is lined with microvilli projecting into the colloid-filled lumen, where it synthesizes, stores, and secretes the thyroid hormones thyroxine (T4) and triiodothyronine (T3), releasing them into the bloodstream in response to thyroid-stimulating hormone (TSH).")
 AnnotationAssertion(terms:contributor obo:CL_0002258 <https://orcid.org/0000-0003-1980-3228>)
+AnnotationAssertion(terms:contributor obo:CL_0002258 <https://orcid.org/0009-0000-8480-9277>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002258 "2010-09-08T01:50:08Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002258 "BTO:0003736")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002258 "CALOHA:TS-1285")
@@ -16682,8 +16693,10 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002258 "FMA:68782")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "follicular cell of thyroid gland")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "principal cell of thyroid gland")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "thyroid gland follicular cell")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002258 "thyroid hormone secreting cell")
 AnnotationAssertion(rdfs:label obo:CL_0002258 "thyroid follicular cell")
-SubClassOf(obo:CL_0002258 obo:CL_0002257)
+EquivalentClasses(obo:CL_0002258 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0012363) ObjectSomeValuesFrom(obo:RO_0002215 ObjectIntersectionOf(obo:GO_0070460 ObjectSomeValuesFrom(obo:RO_0002339 obo:UBERON_0001009)))))
+SubClassOf(obo:CL_0002258 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0005902))
 
 # Class: obo:CL_0002259 (neuroepithelial stem cell)
 
@@ -23940,32 +23953,32 @@ SubClassOf(obo:CL_0009080 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000190
 # Class: obo:CL_0009081 (specified double negative thymocyte (Homo sapiens))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32304633") obo:IAO_0000115 obo:CL_0009081 "The human equivalent of a DN2 thymocyte; typically contains two phases, in the latter of which these thymocytes begin the process of beta selection.")
-AnnotationAssertion(obo:RO_0002175 obo:CL_0009081 obo:NCBITaxon_9606)
 AnnotationAssertion(terms:contributor obo:CL_0009081 <https://orcid.org/0000-0002-2825-0621>)
 AnnotationAssertion(terms:date obo:CL_0009081 "2021-11-25T09:26:32Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:comment obo:CL_0009081 "There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.")
 AnnotationAssertion(rdfs:label obo:CL_0009081 "specified double negative thymocyte (Homo sapiens)")
 SubClassOf(obo:CL_0009081 obo:CL_0002489)
+SubClassOf(obo:CL_0009081 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 
 # Class: obo:CL_0009082 (committed double negative thymocyte (Homo sapiens))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32304633") obo:IAO_0000115 obo:CL_0009082 "The human equivalent of a DN3 thymocyte; these thymocytes finish the process of beta selection.")
-AnnotationAssertion(obo:RO_0002175 obo:CL_0009082 obo:NCBITaxon_9606)
 AnnotationAssertion(terms:contributor obo:CL_0009082 <https://orcid.org/0000-0002-2825-0621>)
 AnnotationAssertion(terms:date obo:CL_0009082 "2021-11-25T09:30:45Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:comment obo:CL_0009082 "There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.")
 AnnotationAssertion(rdfs:label obo:CL_0009082 "committed double negative thymocyte (Homo sapiens)")
 SubClassOf(obo:CL_0009082 obo:CL_0002489)
+SubClassOf(obo:CL_0009082 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 
 # Class: obo:CL_0009083 (rearranging double negative thymocyte (Homo sapiens))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32304633") obo:IAO_0000115 obo:CL_0009083 "The human equivalent of a DN4 thymocyte.")
-AnnotationAssertion(obo:RO_0002175 obo:CL_0009083 obo:NCBITaxon_9606)
 AnnotationAssertion(terms:contributor obo:CL_0009083 <https://orcid.org/0000-0002-2825-0621>)
 AnnotationAssertion(terms:date obo:CL_0009083 "2021-11-25T09:32:13Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:comment obo:CL_0009083 "There is growing evidence that molecular markers characterizing double negative thymocytes are different across species, especially in human versus mouse thymus. This term is restricted for use with human data.")
 AnnotationAssertion(rdfs:label obo:CL_0009083 "rearranging double negative thymocyte (Homo sapiens)")
 SubClassOf(obo:CL_0009083 obo:CL_0002489)
+SubClassOf(obo:CL_0009083 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 
 # Class: obo:CL_0009084 (glandular epithelial cell of endometrium)
 
@@ -24992,6 +25005,7 @@ AnnotationAssertion(terms:date obo:CL_0017009 "2022-08-25T14:18:37Z"^^xsd:dateTi
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0017009 "AS DC, human")
 AnnotationAssertion(rdfs:label obo:CL_0017009 "Axl+ dendritic cell, human")
 SubClassOf(obo:CL_0017009 obo:CL_0001056)
+SubClassOf(obo:CL_0017009 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 SubClassOf(obo:CL_0017009 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_O43699))
 SubClassOf(obo:CL_0017009 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P30530))
 
@@ -32388,7 +32402,7 @@ EquivalentClasses(obo:CL_4033055 ObjectIntersectionOf(obo:CL_0000075 ObjectSomeV
 
 # Class: obo:CL_4033056 (onychocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24079581") obo:IAO_0000115 obo:CL_4033056 "A differentiated flat keratinocyte that is part of a nail plate. An onychocyte is firmly adherent and does not desquamate.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24079581") Annotation(oboInOwl:hasDbXref "PMID:28098391") Annotation(oboInOwl:hasDbXref "PMID:30969555") Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:39451193") obo:IAO_0000115 obo:CL_4033056 "A terminally differentiated, specialized keratinocyte originating primarily from the nail matrix. During onychokeratinization, these cells undergo progressive flattening and produce high levels of hard, disulfide cross-linked keratins (Eckhart et al., 2024) that form the rigid, compact nail plate. Unlike epidermal keratinocytes, onychocytes are firmly integrated into the nail plate and do not desquamate.")
 AnnotationAssertion(terms:contributor obo:CL_4033056 <https://orcid.org/0000-0001-6677-8489>)
 AnnotationAssertion(terms:date obo:CL_4033056 "2023-10-03T12:49:46Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4033056 "onychocyte")
@@ -33553,12 +33567,12 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35746551") oboInOwl:hasN
 AnnotationAssertion(rdfs:label obo:CL_4047053 "TREM2-positive macrophage")
 EquivalentClasses(obo:CL_4047053 ObjectIntersectionOf(obo:CL_0000235 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000016626)))
 
-# Class: obo:CL_4047054 (migratory dendtritic cell)
+# Class: obo:CL_4047054 (migratory dendritic cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28845904") Annotation(oboInOwl:hasDbXref "PMID:33681216") Annotation(oboInOwl:hasDbXref "PMID:34302064") obo:IAO_0000115 obo:CL_4047054 "A dendritic cell capable of capturing antigens in peripheral tissues and migrating through blood or lymphatic vessels to secondary lymphoid organs, where it presents processed antigens to T cells. It expresses MHC class II molecules and lacks lineage markers associated with other leukocyte populations, distinguishing it as a member of the dendritic cell lineage. This cell plays a pivotal role in initiating and regulating adaptive immune responses by linking peripheral antigen capture with T cell activation in lymphoid tissues.")
 AnnotationAssertion(terms:contributor obo:CL_4047054 <https://orcid.org/0009-0005-7919-4905>)
 AnnotationAssertion(terms:date obo:CL_4047054 "2025-03-17T17:37:37Z"^^xsd:dateTime)
-AnnotationAssertion(rdfs:label obo:CL_4047054 "migratory dendtritic cell")
+AnnotationAssertion(rdfs:label obo:CL_4047054 "migratory dendritic cell")
 SubClassOf(obo:CL_4047054 obo:CL_0000451)
 SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002407))
 SubClassOf(obo:CL_4047054 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0002468))
@@ -34211,6 +34225,24 @@ AnnotationAssertion(rdfs:label obo:CL_4052061 "epidermal keratinocyte")
 EquivalentClasses(obo:CL_4052061 ObjectIntersectionOf(obo:CL_0000312 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001003)))
 SubClassOf(obo:CL_4052061 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0090023))
 
+# Class: obo:CL_4052062 (onychofibroblast)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:35853486") Annotation(oboInOwl:hasDbXref "PMID:39044464") obo:IAO_0000115 obo:CL_4052062 "A specialized fibroblast located in the onychodermis that play a key role in nail growth and regeneration by interacting with LGR6-positive nail matrix keratinocytes. These interactions mediate essential signaling pathways, particularly WNT signaling, which is critical for epithelial–mesenchymal communication and coordinated nail development. In humans, this cell expresses key markers, including RSPO4, MSX1, WIF1, and BMP5, all involved in nail differentiation.")
+AnnotationAssertion(terms:contributor obo:CL_4052062 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052062 "2025-07-22T14:35:00Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052062 "onychofibroblast")
+SubClassOf(obo:CL_4052062 obo:CL_0000057)
+SubClassOf(obo:CL_4052062 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001705))
+
+# Class: obo:CL_4052064 (nail matrix keratinocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28098391") Annotation(oboInOwl:hasDbXref "PMID:30969555") Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:39044464") Annotation(oboInOwl:hasDbXref "PMID:7679137") obo:IAO_0000115 obo:CL_4052064 "A keratinocyte that is part of the nail matrix epithelium, distinguished by its high proliferative capacity and its role in nail plate formation via onychokeratinization, a differentiation process that uniquely bypasses the formation of a granular layer, resulting in the production of hard, compact keratin. Unlike skin epidermal keratinocytes, this cell expresses a distinctive mix of hard (hair-type) and select epidermal keratins (Kitahara and Ogawa, 1993). In humans, LGR6 and WNT6 are enriched in the basal compartment, with LGR6 marking nail stem cells in both mice and humans, and exhibiting strong expression in the human proximal nail matrix (Kim et al., 2021).")
+AnnotationAssertion(terms:contributor obo:CL_4052064 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052064 "2025-07-22T15:30:00Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39044464") oboInOwl:hasExactSynonym obo:CL_4052064 "nail matrix epithelial keratinocyte")
+AnnotationAssertion(rdfs:label obo:CL_4052064 "nail matrix keratinocyte")
+EquivalentClasses(obo:CL_4052064 ObjectIntersectionOf(obo:CL_0000312 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002283)))
+
 # Class: obo:CL_4070010 (gastric mill neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1007/978-3-642-71516-7_2") obo:IAO_0000115 obo:CL_4070010 "A motor neuron that moves the medial tooth forward")
@@ -34440,6 +34472,16 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32071335") oboInOwl:hasE
 AnnotationAssertion(rdfs:label obo:CL_4072014 "tanycyte of vascular organ of lamina terminalis")
 SubClassOf(obo:CL_4072014 obo:CL_0002085)
 SubClassOf(obo:CL_4072014 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002689))
+
+# Class: obo:CL_4072015 (monocyte-derived Kupffer cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:26813785") Annotation(oboInOwl:hasDbXref "PMID:31561945") Annotation(oboInOwl:hasDbXref "PMID:37740916") obo:IAO_0000115 obo:CL_4072015 "A Kupffer cell located within the hepatic sinusoids, derived from circulating bone marrow monocytes that acquire the phenotypic markers and functional properties of resident Kupffer cells through niche-dependent imprinting, typically following depletion of the embryonically derived Kupffer cell population. During liver injury, MoKCs become the dominant Kupffer cell subset, exhibiting enhanced proliferation, resistance to apoptosis, and key roles in tissue repair and fibrosis attenuation.")
+AnnotationAssertion(terms:date obo:CL_4072015 "2025-07-11T00:00:00Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37740916") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072015 "MoKC")
+AnnotationAssertion(rdfs:label obo:CL_4072015 "monocyte-derived Kupffer cell")
+SubClassOf(obo:CL_4072015 obo:CL_0000091)
+SubClassOf(obo:CL_4072015 ObjectSomeValuesFrom(obo:RO_0001025 obo:UBERON_0001281))
+SubClassOf(obo:CL_4072015 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000860))
 
 # Class: obo:CL_4072019 (SCN pacemaker neuron)
 
