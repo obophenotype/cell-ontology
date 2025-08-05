@@ -3239,6 +3239,7 @@ Declaration(Class(obo:GO_0001552))
 Declaration(Class(obo:GO_0002491))
 Declaration(Class(obo:GO_0005903))
 Declaration(Class(obo:GO_0005927))
+Declaration(Class(obo:GO_0017156))
 Declaration(Class(obo:GO_0019626))
 Declaration(Class(obo:GO_0030057))
 Declaration(Class(obo:GO_0031045))
@@ -3589,7 +3590,7 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
@@ -20368,12 +20369,17 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002622 obo:CL_0000499
 
 # Class: obo:CL_0002623 (acinar cell of salivary gland)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002623 "An acinar cell of salivary gland.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:24646566") Annotation(oboInOwl:hasDbXref "PMID:25843887") Annotation(oboInOwl:hasDbXref "PMID:28623666") Annotation(oboInOwl:hasDbXref "PMID:34989394") Annotation(oboInOwl:hasDbXref "PMID:35343828") obo:IAO_0000115 obo:CL_0002623 "An acinar cell that is part of the salivary gland, responsible for synthesizing and secreting the primary saliva essential for oral digestion and health. It features apical-basal polarity with apical secretory granules, and tight junctions that maintain polarity and regulate calcium-dependent saliva exocytosis triggered by parasympathetic and sympathetic signals (Ambudkar, 2015). This cell functions in coordination with contractile myoepithelial cells, which aid saliva flow through the ducts into the oral cavity (Khan et al., 2022). In mice and humans, acinar cell development relies on the transcription factor SOX2 (Emmerson et al., 2017), with self-renewal achieved primarily through acinar cell self-duplication and supported by progenitor populations during injury and regeneration (Aure et al., 2016).")
 AnnotationAssertion(terms:contributor obo:CL_0002623 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002623 "2011-03-14T02:22:22Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24646566") oboInOwl:hasExactSynonym obo:CL_0002623 "salivary acinar cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24646566") oboInOwl:hasExactSynonym obo:CL_0002623 "salivary gland acinar cell")
 AnnotationAssertion(rdfs:label obo:CL_0002623 "acinar cell of salivary gland")
 EquivalentClasses(obo:CL_0002623 ObjectIntersectionOf(obo:CL_0000622 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001044)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002623 obo:CL_0000622)
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0030141))
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0017156))
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046541))
 
 # Class: obo:CL_0002624 (paneth cell of the appendix)
 
