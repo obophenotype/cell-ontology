@@ -3227,6 +3227,7 @@ Declaration(Class(obo:CL_4072014))
 Declaration(Class(obo:CL_4072015))
 Declaration(Class(obo:CL_4072016))
 Declaration(Class(obo:CL_4072019))
+Declaration(Class(obo:CL_4072021))
 Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
@@ -6378,11 +6379,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000292 "stomatal guard cell
 AnnotationAssertion(rdfs:label obo:CL_0000292 "obsolete guard cell")
 AnnotationAssertion(owl:deprecated obo:CL_0000292 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000293 (structural cell)
+# Class: obo:CL_0000293 (obsolete structural cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000293 "A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism.")
-AnnotationAssertion(rdfs:label obo:CL_0000293 "structural cell")
-SubClassOf(obo:CL_0000293 obo:CL_0000000)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000293 "OBSOLETE. A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000293 <https://github.com/obophenotype/cell-ontology/issues/3010>)
+AnnotationAssertion(rdfs:comment obo:CL_0000293 "Unsustainable grouping term.")
+AnnotationAssertion(rdfs:label obo:CL_0000293 "obsolete structural cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000293 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000294 (obsolete sieve cell)
 
@@ -6786,14 +6789,14 @@ SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000347 "A cell of the sclera of the eye.")
 AnnotationAssertion(rdfs:label obo:CL_0000347 "scleral cell")
-EquivalentClasses(obo:CL_0000347 ObjectIntersectionOf(obo:CL_0000293 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001773)))
+EquivalentClasses(obo:CL_0000347 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001773)))
 SubClassOf(obo:CL_0000347 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000348 (choroidal cell of the eye)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000348 "A structural cell that is part of optic choroid.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000348 "A cell that is part of optic choroid.")
 AnnotationAssertion(rdfs:label obo:CL_0000348 "choroidal cell of the eye")
-EquivalentClasses(obo:CL_0000348 ObjectIntersectionOf(obo:CL_0000293 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001776)))
+EquivalentClasses(obo:CL_0000348 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001776)))
 SubClassOf(obo:CL_0000348 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000349 (extraembryonic cell)
@@ -34514,6 +34517,16 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20148688") oboInOwl:hasE
 AnnotationAssertion(rdfs:label obo:CL_4072019 "SCN pacemaker neuron")
 SubClassOf(obo:CL_4072019 obo:CL_0000540)
 SubClassOf(obo:CL_4072019 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002034))
+
+# Class: obo:CL_4072021 (corticotropin-releasing neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasDbXref "PMID:2785663") Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasDbXref "PMID:9662138") Annotation(oboInOwl:hasDbXref "PMID:28790896") obo:IAO_0000115 obo:CL_4072021 "A specialised type of interneuron defined by the secretion of corticotropin-releasing hormone (CRH), a key peptide in activating the hypothalamic–pituitary–adrenal (HPA) axis during stress. It is primarily located in the paraventricular nucleus (PVN) of the hypothalamus, with additional presence in the hippocampus, piriform area, central amygdalar nucleus, Barrington’s nucleus, and inferior olivary complex (Peng et al., 2017).")
+AnnotationAssertion(terms:date obo:CL_4072021 "2025-07-14T12:17:35Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRF neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRH neuron")
+AnnotationAssertion(rdfs:label obo:CL_4072021 "corticotropin-releasing neuron")
+SubClassOf(obo:CL_4072021 obo:CL_0000099)
+SubClassOf(obo:CL_4072021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0051458))
 
 # Class: obo:CL_4072102 (Purkinje layer interneuron)
 
