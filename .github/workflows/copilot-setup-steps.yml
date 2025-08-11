@@ -28,10 +28,6 @@ jobs:
       # If you want to clone the repository as part of your setup steps, for example to install dependencies, you'll need the `contents: read` permission. If you don't clone the repository in your setup steps, Copilot will do this for you automatically after the steps complete.
       contents: read
 
-    env:
-      # Use input if provided (workflow_dispatch), otherwise fall back to default
-      OBOT_VERSION: ${{ github.event.inputs.robot-version || 'v1.9.7' }}
-
     # You can define any steps you want, and they will run before the agent starts.
     # If you do not check out your code, Copilot will do this for you.
     steps:
@@ -46,21 +42,21 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.jar-cache
-        key: ${{ runner.os }}-robot-${{ env.ROBOT_VERSION }}
+        key: ${{ runner.os }}-robot-${{inputs.robot-version}}
         restore-keys: ${{ runner.os }}-robot-
 
     - name: Download ROBOT JAR if not cached
       run: |
         mkdir -p ~/.jar-cache
         if [ ! -f ~/.jar-cache/robot.jar ]; then
-          curl -L https://github.com/ontodev/robot/releases/download/${{ env.ROBOT_VERSION }}/robot.jar -o ~/.jar-cache/robot.jar
+          curl -L https://github.com/ontodev/robot/releases/download/${{inputs.robot-version}}/robot.jar -o ~/.jar-cache/robot.jar
         fi
       shell: bash
     
     - name: Setup ROBOT tools
       run: |
         cp ~/.jar-cache/robot.jar ${{ github.workspace }}/tools/robot.jar
-        curl -L https://raw.githubusercontent.com/ontodev/robot/${{ env.ROBOT_VERSION }}/bin/robot -o ${{ github.workspace }}/tools/robot
+        curl -L https://raw.githubusercontent.com/ontodev/robot/${{inputs.robot-version}}/bin/robot -o ${{ github.workspace }}/tools/robot
         chmod +x ${{ github.workspace }}/tools/robot
         ${{ github.workspace }}/tools/robot --help
       shell: bash
