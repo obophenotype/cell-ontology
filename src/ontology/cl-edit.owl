@@ -3201,6 +3201,7 @@ Declaration(Class(obo:CL_4052058))
 Declaration(Class(obo:CL_4052060))
 Declaration(Class(obo:CL_4052061))
 Declaration(Class(obo:CL_4052062))
+Declaration(Class(obo:CL_4052063))
 Declaration(Class(obo:CL_4052064))
 Declaration(Class(obo:CL_4070010))
 Declaration(Class(obo:CL_4070011))
@@ -3224,8 +3225,10 @@ Declaration(Class(obo:CL_4072012))
 Declaration(Class(obo:CL_4072013))
 Declaration(Class(obo:CL_4072014))
 Declaration(Class(obo:CL_4072015))
+Declaration(Class(obo:CL_4072016))
 Declaration(Class(obo:CL_4072018))
 Declaration(Class(obo:CL_4072019))
+Declaration(Class(obo:CL_4072021))
 Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
@@ -3380,6 +3383,7 @@ Declaration(Class(obo:UBERON_0004197))
 Declaration(Class(obo:UBERON_0004903))
 Declaration(Class(obo:UBERON_0005101))
 Declaration(Class(obo:UBERON_0005102))
+Declaration(Class(obo:UBERON_0005273))
 Declaration(Class(obo:UBERON_0005378))
 Declaration(Class(obo:UBERON_0005382))
 Declaration(Class(obo:UBERON_0005403))
@@ -6376,11 +6380,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000292 "stomatal guard cell
 AnnotationAssertion(rdfs:label obo:CL_0000292 "obsolete guard cell")
 AnnotationAssertion(owl:deprecated obo:CL_0000292 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000293 (structural cell)
+# Class: obo:CL_0000293 (obsolete structural cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000293 "A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism.")
-AnnotationAssertion(rdfs:label obo:CL_0000293 "structural cell")
-SubClassOf(obo:CL_0000293 obo:CL_0000000)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000293 "OBSOLETE. A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000293 <https://github.com/obophenotype/cell-ontology/issues/3010>)
+AnnotationAssertion(rdfs:comment obo:CL_0000293 "Unsustainable grouping term.")
+AnnotationAssertion(rdfs:label obo:CL_0000293 "obsolete structural cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000293 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000294 (obsolete sieve cell)
 
@@ -6784,14 +6790,14 @@ SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000347 "A cell of the sclera of the eye.")
 AnnotationAssertion(rdfs:label obo:CL_0000347 "scleral cell")
-EquivalentClasses(obo:CL_0000347 ObjectIntersectionOf(obo:CL_0000293 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001773)))
+EquivalentClasses(obo:CL_0000347 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001773)))
 SubClassOf(obo:CL_0000347 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000348 (choroidal cell of the eye)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000348 "A structural cell that is part of optic choroid.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000348 "A cell that is part of optic choroid.")
 AnnotationAssertion(rdfs:label obo:CL_0000348 "choroidal cell of the eye")
-EquivalentClasses(obo:CL_0000348 ObjectIntersectionOf(obo:CL_0000293 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001776)))
+EquivalentClasses(obo:CL_0000348 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001776)))
 SubClassOf(obo:CL_0000348 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000349 (extraembryonic cell)
@@ -34235,6 +34241,15 @@ AnnotationAssertion(rdfs:label obo:CL_4052062 "onychofibroblast")
 SubClassOf(obo:CL_4052062 obo:CL_0000057)
 SubClassOf(obo:CL_4052062 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001705))
 
+# Class: obo:CL_4052063 (nail bed keratinocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10651700") Annotation(oboInOwl:hasDbXref "PMID:30969555") Annotation(oboInOwl:hasDbXref "PMID:33799809") Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:39044464") obo:IAO_0000115 obo:CL_4052063 "A keratinocyte that resides in the nail bed, responsible for tightly attaching the nail plate to the underlying dermis. Unlike typical epidermal keratinocytes, it exhibits limited proliferation, undergoes modified differentiation that skips the granular layer and conventional cornification, and primarily ensures adhesion and maintenance of the nail plate. In humans, this cell expresses characteristic markers, including the protease inhibitor SPINK6 and the differentiation-associated protein KRT16.")
+AnnotationAssertion(terms:contributor obo:CL_4052063 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052063 "2024-07-22T15:30:00Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052063 "nail bed keratinocyte")
+SubClassOf(obo:CL_4052063 obo:CL_0000312)
+SubClassOf(obo:CL_4052063 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005273))
+
 # Class: obo:CL_4052064 (nail matrix keratinocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28098391") Annotation(oboInOwl:hasDbXref "PMID:30969555") Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:39044464") Annotation(oboInOwl:hasDbXref "PMID:7679137") obo:IAO_0000115 obo:CL_4052064 "A keratinocyte that is part of the nail matrix epithelium, distinguished by its high proliferative capacity and its role in nail plate formation via onychokeratinization, a differentiation process that uniquely bypasses the formation of a granular layer, resulting in the production of hard, compact keratin. Unlike skin epidermal keratinocytes, this cell expresses a distinctive mix of hard (hair-type) and select epidermal keratins (Kitahara and Ogawa, 1993). In humans, LGR6 and WNT6 are enriched in the basal compartment, with LGR6 marking nail stem cells in both mice and humans, and exhibiting strong expression in the human proximal nail matrix (Kim et al., 2021).")
@@ -34484,6 +34499,17 @@ SubClassOf(obo:CL_4072015 obo:CL_0000091)
 SubClassOf(obo:CL_4072015 ObjectSomeValuesFrom(obo:RO_0001025 obo:UBERON_0001281))
 SubClassOf(obo:CL_4072015 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000860))
 
+# Class: obo:CL_4072016 (NPY interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19295167") Annotation(oboInOwl:hasDbXref "PMID:32376782") obo:IAO_0000115 obo:CL_4072016 "An interneuron that expresses neuropeptide Y (NPY) and is mainly located in cortical layers II–III and VI, as well as in various brain regions such as the medial geniculate and inferior colliculus. The NPY cell population is physiologically diverse, displaying a range of firing behaviors, including adapting, fast-spiking, and accelerating patterns.")
+AnnotationAssertion(terms:date obo:CL_4072016 "2025-07-07T09:04:45Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32376782") oboInOwl:hasExactSynonym obo:CL_4072016 "NPY-expressing neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19295167") oboInOwl:hasRelatedSynonym obo:CL_4072016 "NPY-expressing neocortical interneuron")
+AnnotationAssertion(rdfs:label obo:CL_4072016 "NPY interneuron")
+SubClassOf(obo:CL_4072016 obo:CL_0000099)
+SubClassOf(obo:CL_4072016 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_4072016 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011387))
+
 # Class: obo:CL_4072018 (pacemaker neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39303139") Annotation(oboInOwl:hasDbXref "PMID:31982322") obo:IAO_0000115 obo:CL_4072018 "A neuron that generates rhythmic bursts of action potentials independently of synaptic input. This intrinsic property enables it to maintain oscillatory activity even when isolated from other neurons. It populates the brainstem, hypothalamus, basal ganglia, spinal cord, and cerebellum. It plays a crucial role in regulating circadian rhythms in the suprachiasmatic nucleus, generating respiratory rhythms in the preBötzinger complex, and synchronizing neural networks.")
@@ -34500,6 +34526,16 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20148688") oboInOwl:hasE
 AnnotationAssertion(rdfs:label obo:CL_4072019 "SCN pacemaker neuron")
 SubClassOf(obo:CL_4072019 obo:CL_0000540)
 SubClassOf(obo:CL_4072019 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002034))
+
+# Class: obo:CL_4072021 (corticotropin-releasing neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasDbXref "PMID:2785663") Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasDbXref "PMID:9662138") Annotation(oboInOwl:hasDbXref "PMID:28790896") obo:IAO_0000115 obo:CL_4072021 "A specialised type of interneuron defined by the secretion of corticotropin-releasing hormone (CRH), a key peptide in activating the hypothalamic–pituitary–adrenal (HPA) axis during stress. It is primarily located in the paraventricular nucleus (PVN) of the hypothalamus, with additional presence in the hippocampus, piriform area, central amygdalar nucleus, Barrington’s nucleus, and inferior olivary complex (Peng et al., 2017).")
+AnnotationAssertion(terms:date obo:CL_4072021 "2025-07-14T12:17:35Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRF neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRH neuron")
+AnnotationAssertion(rdfs:label obo:CL_4072021 "corticotropin-releasing neuron")
+SubClassOf(obo:CL_4072021 obo:CL_0000099)
+SubClassOf(obo:CL_4072021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0051458))
 
 # Class: obo:CL_4072102 (Purkinje layer interneuron)
 
@@ -34584,6 +34620,7 @@ AnnotationAssertion(owl:deprecated obo:D96882F1-8709-49AB-BCA9-772A67EA6C33 "tru
 
 EquivalentClasses(obo:GO_0051932 ObjectIntersectionOf(obo:GO_0007268 ObjectSomeValuesFrom(obo:RO_0000057 obo:CHEBI_59888) ObjectSomeValuesFrom(obo:RO_0000057 obo:CL_0000617)))
 
+# Class: obo:UBERON_0005273 (nail bed)
 
 SubClassOf(ObjectIntersectionOf(obo:CL_0000163 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000160)) obo:CL_0000164)
 SubClassOf(ObjectIntersectionOf(obo:CL_0000163 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000945)) obo:CL_0000164)
