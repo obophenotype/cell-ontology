@@ -1,15 +1,9 @@
 name: "Copilot Setup Steps"
-on:
-  workflow_dispatch:
-    inputs:
-      robot-version:
-        description: 'Version of ROBOT tool to install'
-        required: false
-        default: 'v1.9.7'
-
 
 # Automatically run the setup steps when they are changed to allow for easy validation, and
 # allow manual testing through the repository's "Actions" tab
+on:
+  workflow_dispatch:
   push:
     paths:
       - .github/workflows/copilot-setup-steps.yml
@@ -42,21 +36,21 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.jar-cache
-        key: ${{ runner.os }}-robot-${{inputs.robot-version}}
+        key: ${{ runner.os }}-robot-1.7
         restore-keys: ${{ runner.os }}-robot-
 
     - name: Download ROBOT JAR if not cached
       run: |
         mkdir -p ~/.jar-cache
         if [ ! -f ~/.jar-cache/robot.jar ]; then
-          curl -L https://github.com/ontodev/robot/releases/download/${{inputs.robot-version}}/robot.jar -o ~/.jar-cache/robot.jar
+          curl -L https://github.com/ontodev/robot/releases/download/1.7/robot.jar -o ~/.jar-cache/robot.jar
         fi
       shell: bash
     
     - name: Setup ROBOT tools
       run: |
         cp ~/.jar-cache/robot.jar ${{ github.workspace }}/tools/robot.jar
-        curl -L https://raw.githubusercontent.com/ontodev/robot/${{inputs.robot-version}}/bin/robot -o ${{ github.workspace }}/tools/robot
+        curl -L https://raw.githubusercontent.com/ontodev/robot/1.7/bin/robot -o ${{ github.workspace }}/tools/robot
         chmod +x ${{ github.workspace }}/tools/robot
         ${{ github.workspace }}/tools/robot --help
       shell: bash
