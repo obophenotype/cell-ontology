@@ -3201,7 +3201,12 @@ Declaration(Class(obo:CL_4052058))
 Declaration(Class(obo:CL_4052060))
 Declaration(Class(obo:CL_4052061))
 Declaration(Class(obo:CL_4052062))
+Declaration(Class(obo:CL_4052063))
 Declaration(Class(obo:CL_4052064))
+Declaration(Class(obo:CL_4052065))
+Declaration(Class(obo:CL_4052066))
+Declaration(Class(obo:CL_4052067))
+Declaration(Class(obo:CL_4052069))
 Declaration(Class(obo:CL_4052070))
 Declaration(Class(obo:CL_4070010))
 Declaration(Class(obo:CL_4070011))
@@ -3225,7 +3230,9 @@ Declaration(Class(obo:CL_4072012))
 Declaration(Class(obo:CL_4072013))
 Declaration(Class(obo:CL_4072014))
 Declaration(Class(obo:CL_4072015))
+Declaration(Class(obo:CL_4072016))
 Declaration(Class(obo:CL_4072019))
+Declaration(Class(obo:CL_4072021))
 Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
@@ -3241,6 +3248,8 @@ Declaration(Class(obo:GO_0001552))
 Declaration(Class(obo:GO_0002491))
 Declaration(Class(obo:GO_0005903))
 Declaration(Class(obo:GO_0005927))
+Declaration(Class(obo:GO_0017156))
+Declaration(Class(obo:GO_0005983))
 Declaration(Class(obo:GO_0019626))
 Declaration(Class(obo:GO_0030057))
 Declaration(Class(obo:GO_0031045))
@@ -3380,6 +3389,7 @@ Declaration(Class(obo:UBERON_0004197))
 Declaration(Class(obo:UBERON_0004903))
 Declaration(Class(obo:UBERON_0005101))
 Declaration(Class(obo:UBERON_0005102))
+Declaration(Class(obo:UBERON_0005273))
 Declaration(Class(obo:UBERON_0005378))
 Declaration(Class(obo:UBERON_0005382))
 Declaration(Class(obo:UBERON_0005403))
@@ -6376,11 +6386,13 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000292 "stomatal guard cell
 AnnotationAssertion(rdfs:label obo:CL_0000292 "obsolete guard cell")
 AnnotationAssertion(owl:deprecated obo:CL_0000292 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000293 (structural cell)
+# Class: obo:CL_0000293 (obsolete structural cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000293 "A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism.")
-AnnotationAssertion(rdfs:label obo:CL_0000293 "structural cell")
-SubClassOf(obo:CL_0000293 obo:CL_0000000)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "TAIR:sr") obo:IAO_0000115 obo:CL_0000293 "OBSOLETE. A cell whose primary function is to provide structural support, to provide strength and physical integrity to the organism.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000293 <https://github.com/obophenotype/cell-ontology/issues/3010>)
+AnnotationAssertion(rdfs:comment obo:CL_0000293 "Unsustainable grouping term.")
+AnnotationAssertion(rdfs:label obo:CL_0000293 "obsolete structural cell")
+AnnotationAssertion(owl:deprecated obo:CL_0000293 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000294 (obsolete sieve cell)
 
@@ -6784,14 +6796,14 @@ SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000347 "A cell of the sclera of the eye.")
 AnnotationAssertion(rdfs:label obo:CL_0000347 "scleral cell")
-EquivalentClasses(obo:CL_0000347 ObjectIntersectionOf(obo:CL_0000293 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001773)))
+EquivalentClasses(obo:CL_0000347 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001773)))
 SubClassOf(obo:CL_0000347 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000348 (choroidal cell of the eye)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000348 "A structural cell that is part of optic choroid.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") obo:IAO_0000115 obo:CL_0000348 "A cell that is part of optic choroid.")
 AnnotationAssertion(rdfs:label obo:CL_0000348 "choroidal cell of the eye")
-EquivalentClasses(obo:CL_0000348 ObjectIntersectionOf(obo:CL_0000293 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001776)))
+EquivalentClasses(obo:CL_0000348 ObjectIntersectionOf(obo:CL_0000000 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001776)))
 SubClassOf(obo:CL_0000348 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000349 (extraembryonic cell)
@@ -20371,12 +20383,18 @@ SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002622 obo:CL_0000499
 
 # Class: obo:CL_0002623 (acinar cell of salivary gland)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_0002623 "An acinar cell of salivary gland.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:24646566") Annotation(oboInOwl:hasDbXref "PMID:25843887") Annotation(oboInOwl:hasDbXref "PMID:28623666") Annotation(oboInOwl:hasDbXref "PMID:34989394") Annotation(oboInOwl:hasDbXref "PMID:35343828") obo:IAO_0000115 obo:CL_0002623 "An acinar cell that is part of the salivary gland epithelium, responsible for synthesizing and secreting the primary saliva essential for oral digestion, antimicrobial defense, and mucosal immunity. It features apical-basal polarity with apical secretory granules, and tight junctions that maintain polarity and regulate calcium-dependent saliva exocytosis triggered by parasympathetic and sympathetic signals (Ambudkar, 2015). This cell functions in coordination with contractile myoepithelial cells, which aid saliva flow through the ducts into the oral cavity (Khan et al., 2022). In mice and humans, acinar cell development relies on the transcription factor SOX2 (Emmerson et al., 2017), with self-renewal achieved primarily through acinar cell self-duplication and supported by progenitor populations during injury and regeneration (Aure et al., 2016).")
 AnnotationAssertion(terms:contributor obo:CL_0002623 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002623 "2011-03-14T02:22:22Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24646566") oboInOwl:hasExactSynonym obo:CL_0002623 "salivary acinar cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24646566") oboInOwl:hasExactSynonym obo:CL_0002623 "salivary gland acinar cell")
 AnnotationAssertion(rdfs:label obo:CL_0002623 "acinar cell of salivary gland")
-EquivalentClasses(obo:CL_0002623 ObjectIntersectionOf(obo:CL_0000622 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001044)))
+EquivalentClasses(obo:CL_0002623 ObjectIntersectionOf(obo:CL_0000622 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004809)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002623 obo:CL_0000622)
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0030141))
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0017156))
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0045087))
+SubClassOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0046541))
 
 # Class: obo:CL_0002624 (paneth cell of the appendix)
 
@@ -31822,7 +31840,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2022.11.30.518285") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030068 "L6-IT-Car3")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030068 "L6-IT-Car3 cell")
 AnnotationAssertion(rdfs:label obo:CL_4030068 "L6 intratelencephalic projecting Car3 glutamatergic neuron")
-EquivalentClasses(obo:CL_4030068 ObjectIntersectionOf(obo:CL_4030065 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005395) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000004919)))
+EquivalentClasses(obo:CL_4030068 ObjectIntersectionOf(obo:CL_4023040 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005395) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000004919)))
 
 # Class: obo:CL_4032000 (club-like cell of the urethral epithelium)
 
@@ -34235,6 +34253,15 @@ AnnotationAssertion(rdfs:label obo:CL_4052062 "onychofibroblast")
 SubClassOf(obo:CL_4052062 obo:CL_0000057)
 SubClassOf(obo:CL_4052062 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001705))
 
+# Class: obo:CL_4052063 (nail bed keratinocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10651700") Annotation(oboInOwl:hasDbXref "PMID:30969555") Annotation(oboInOwl:hasDbXref "PMID:33799809") Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:39044464") obo:IAO_0000115 obo:CL_4052063 "A keratinocyte that resides in the nail bed, responsible for tightly attaching the nail plate to the underlying dermis. Unlike typical epidermal keratinocytes, it exhibits limited proliferation, undergoes modified differentiation that skips the granular layer and conventional cornification, and primarily ensures adhesion and maintenance of the nail plate. In humans, this cell expresses characteristic markers, including the protease inhibitor SPINK6 and the differentiation-associated protein KRT16.")
+AnnotationAssertion(terms:contributor obo:CL_4052063 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052063 "2024-07-22T15:30:00Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052063 "nail bed keratinocyte")
+SubClassOf(obo:CL_4052063 obo:CL_0000312)
+SubClassOf(obo:CL_4052063 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005273))
+
 # Class: obo:CL_4052064 (nail matrix keratinocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28098391") Annotation(oboInOwl:hasDbXref "PMID:30969555") Annotation(oboInOwl:hasDbXref "PMID:34099859") Annotation(oboInOwl:hasDbXref "PMID:39044464") Annotation(oboInOwl:hasDbXref "PMID:7679137") obo:IAO_0000115 obo:CL_4052064 "A keratinocyte that is part of the nail matrix epithelium, distinguished by its high proliferative capacity and its role in nail plate formation via onychokeratinization, a differentiation process that uniquely bypasses the formation of a granular layer, resulting in the production of hard, compact keratin. Unlike skin epidermal keratinocytes, this cell expresses a distinctive mix of hard (hair-type) and select epidermal keratins (Kitahara and Ogawa, 1993). In humans, LGR6 and WNT6 are enriched in the basal compartment, with LGR6 marking nail stem cells in both mice and humans, and exhibiting strong expression in the human proximal nail matrix (Kim et al., 2021).")
@@ -34243,6 +34270,45 @@ AnnotationAssertion(terms:date obo:CL_4052064 "2025-07-22T15:30:00Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39044464") oboInOwl:hasExactSynonym obo:CL_4052064 "nail matrix epithelial keratinocyte")
 AnnotationAssertion(rdfs:label obo:CL_4052064 "nail matrix keratinocyte")
 EquivalentClasses(obo:CL_4052064 ObjectIntersectionOf(obo:CL_0000312 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002283)))
+
+# Class: obo:CL_4052065 (serous acinar cell of salivary gland)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29383862") Annotation(oboInOwl:hasDbXref "PMID:32829674") Annotation(oboInOwl:hasDbXref "PMID:35343828") obo:IAO_0000115 obo:CL_4052065 "An acinar cell of the salivary gland, characterized by a pyramidal or triangular shape with a spherical nucleus and abundant eosinophilic zymogen granules. This cell secretes watery, enzyme‐rich fluid containing α-amylase, proline-rich proteins, and secretory immunoglobulins for starch digestion and antimicrobial defence. In humans and mice, serous acinar cell predominates in the parotid gland and to a lesser extent in the submandibular gland, where it exists alongside mucous acinar cells (Maruyama et al., 2019).")
+AnnotationAssertion(terms:contributor obo:CL_4052065 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052065 "2025-08-05T15:24:46Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052065 "serous acinar cell of salivary gland")
+EquivalentClasses(obo:CL_4052065 ObjectIntersectionOf(obo:CL_0000313 obo:CL_0002623 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0013232)))
+SubClassOf(obo:CL_4052065 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0042588))
+SubClassOf(obo:CL_4052065 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0005983))
+
+# Class: obo:CL_4052066 (mucous acinar cell of salivary gland)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29383862") Annotation(oboInOwl:hasDbXref "PMID:32829674") Annotation(oboInOwl:hasDbXref "PMID:35343828") obo:IAO_0000115 obo:CL_4052066 "An acinar cell of the salivary gland, responsible for producing a viscous, mucin‐rich solution, thereby facilitating lubrication and protection of the oral mucosa. This cell is characterized by an elongated shape, clear cytoplasm filled with mucin granules, and a basally compressed nucleus (Barrows et al., 2020). In humans and mice, the mucous acinar cell predominates in the sublingual gland and minor salivary glands, while also being present in mixed glands such as the submandibular gland, where it coexists with serous acinar cells (Maruyama et al., 2019).")
+AnnotationAssertion(terms:contributor obo:CL_4052066 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052066 "2025-08-05T15:33:46Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052066 "mucous acinar cell of salivary gland")
+EquivalentClasses(obo:CL_4052066 ObjectIntersectionOf(obo:CL_0002623 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0014717)))
+SubClassOf(obo:CL_4052066 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0098594))
+SubClassOf(obo:CL_4052066 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070254))
+
+# Class: obo:CL_4052067 (seromucous acinar cell of salivary gland)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29383862") Annotation(oboInOwl:hasDbXref "PMID:35343828") Annotation(oboInOwl:hasDbXref "PMID:36726292") obo:IAO_0000115 obo:CL_4052067 "An acinar cell of the salivary gland, with a hybrid seromucous phenotype, co-expressing serous and mucous markers and producing a mixed secretion of enzymes-containing serous fluid and mucins essential for lubrication, digestion, and antimicrobial defense. Predominant in the submandibular glands of humans and mice, its differentiation and secretory gene expression are regulated by FGFR2b–MAPK signaling, driven by paracrine FGF7 from adjacent myoepithelial cells, which provides a key niche signal for seromucous identity.")
+AnnotationAssertion(terms:contributor obo:CL_4052067 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052067 "2025-08-06T11:26:37Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4052067 "seromucous acinar cell of salivary gland")
+SubClassOf(obo:CL_4052067 obo:CL_0000159)
+SubClassOf(obo:CL_4052067 obo:CL_0002623)
+
+# Class: obo:CL_4052069 (excretory duct cell of salivary gland)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28192873") Annotation(oboInOwl:hasDbXref "PMID:31194408") Annotation(oboInOwl:hasDbXref "doi:/10.1007/978-3-030-35784-9_2") Annotation(oboInOwl:hasDbXref "doi:10.5772/intechopen.75538") obo:IAO_0000115 obo:CL_4052069 "A duct epithelial cell that is part of the excretory duct of the salivary gland, which transports saliva from the intralobular ductal system to the oral cavity. While primarily serving as a conduit, this cell may play a role in the saliva modification, contributing to its hypotonicity. In humans, this cell has a pseudostratified columnar shape.")
+AnnotationAssertion(terms:contributor obo:CL_4052069 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052069 "2025-08-08T11:20:00Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:/10.1007/978-3-030-35784-9_2") oboInOwl:hasExactSynonym obo:CL_4052069 "salivary excretory duct cell")
+AnnotationAssertion(rdfs:label obo:CL_4052069 "excretory duct cell of salivary gland")
+SubClassOf(obo:CL_4052069 obo:CL_1001596)
+SubClassOf(obo:CL_4052069 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0035049))
 
 # Class: obo:CL_4052070 (dual-feature fallopian tube progenitor cell)
 
@@ -34499,6 +34565,17 @@ SubClassOf(obo:CL_4072015 obo:CL_0000091)
 SubClassOf(obo:CL_4072015 ObjectSomeValuesFrom(obo:RO_0001025 obo:UBERON_0001281))
 SubClassOf(obo:CL_4072015 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000860))
 
+# Class: obo:CL_4072016 (NPY interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19295167") Annotation(oboInOwl:hasDbXref "PMID:32376782") obo:IAO_0000115 obo:CL_4072016 "An interneuron that expresses neuropeptide Y (NPY) and is mainly located in cortical layers II–III and VI, as well as in various brain regions such as the medial geniculate and inferior colliculus. The NPY cell population is physiologically diverse, displaying a range of firing behaviors, including adapting, fast-spiking, and accelerating patterns.")
+AnnotationAssertion(terms:date obo:CL_4072016 "2025-07-07T09:04:45Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32376782") oboInOwl:hasExactSynonym obo:CL_4072016 "NPY-expressing neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:19295167") oboInOwl:hasRelatedSynonym obo:CL_4072016 "NPY-expressing neocortical interneuron")
+AnnotationAssertion(rdfs:label obo:CL_4072016 "NPY interneuron")
+SubClassOf(obo:CL_4072016 obo:CL_0000099)
+SubClassOf(obo:CL_4072016 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_4072016 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011387))
+
 # Class: obo:CL_4072019 (SCN pacemaker neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20148688") Annotation(oboInOwl:hasDbXref "PMID:32066983") obo:IAO_0000115 obo:CL_4072019 "A type of neuron located in the suprachiasmatic nucleus (SCN) that possesses intrinsic circadian rhythmicity, characterized by strong and rhythmic expression of core clock genes and the ability to independently generate and sustain circadian oscillations. In mice, the specific subtypes Avp+/Nms+, Vip+/Nms+, and Cck+/C1ql3+ neurons have the most robust circadian gene expression and contribute to synchronizing and maintaining rhythmicity within the SCN network (Wen et al., 2020).")
@@ -34507,6 +34584,16 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20148688") oboInOwl:hasE
 AnnotationAssertion(rdfs:label obo:CL_4072019 "SCN pacemaker neuron")
 SubClassOf(obo:CL_4072019 obo:CL_0000540)
 SubClassOf(obo:CL_4072019 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002034))
+
+# Class: obo:CL_4072021 (corticotropin-releasing neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasDbXref "PMID:2785663") Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasDbXref "PMID:9662138") Annotation(oboInOwl:hasDbXref "PMID:28790896") obo:IAO_0000115 obo:CL_4072021 "A specialised type of interneuron defined by the secretion of corticotropin-releasing hormone (CRH), a key peptide in activating the hypothalamic–pituitary–adrenal (HPA) axis during stress. It is primarily located in the paraventricular nucleus (PVN) of the hypothalamus, with additional presence in the hippocampus, piriform area, central amygdalar nucleus, Barrington’s nucleus, and inferior olivary complex (Peng et al., 2017).")
+AnnotationAssertion(terms:date obo:CL_4072021 "2025-07-14T12:17:35Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRF neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRH neuron")
+AnnotationAssertion(rdfs:label obo:CL_4072021 "corticotropin-releasing neuron")
+SubClassOf(obo:CL_4072021 obo:CL_0000099)
+SubClassOf(obo:CL_4072021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0051458))
 
 # Class: obo:CL_4072102 (Purkinje layer interneuron)
 
