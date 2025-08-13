@@ -3208,6 +3208,7 @@ Declaration(Class(obo:CL_4052066))
 Declaration(Class(obo:CL_4052067))
 Declaration(Class(obo:CL_4052069))
 Declaration(Class(obo:CL_4052070))
+Declaration(Class(obo:CL_4052071))
 Declaration(Class(obo:CL_4070010))
 Declaration(Class(obo:CL_4070011))
 Declaration(Class(obo:CL_4070012))
@@ -3231,8 +3232,8 @@ Declaration(Class(obo:CL_4072013))
 Declaration(Class(obo:CL_4072014))
 Declaration(Class(obo:CL_4072015))
 Declaration(Class(obo:CL_4072016))
-Declaration(Class(obo:CL_4072018))
 Declaration(Class(obo:CL_4072017))
+Declaration(Class(obo:CL_4072018))
 Declaration(Class(obo:CL_4072019))
 Declaration(Class(obo:CL_4072021))
 Declaration(Class(obo:CL_4072102))
@@ -3604,7 +3605,7 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
@@ -34325,6 +34326,16 @@ SubClassOf(obo:CL_4052070 obo:CL_0011026)
 SubClassOf(obo:CL_4052070 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_8600124))
 SubClassOf(obo:CL_4052070 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 
+# Class: obo:CL_4052071 (quiescent fibroblast)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21049082") Annotation(oboInOwl:hasDbXref "PMID:35701396") Annotation(oboInOwl:hasDbXref "PMID:40538750") Annotation(oboInOwl:hasDbXref "Wikipedia:Fibroblast") Annotation(oboInOwl:hasDbXref "doi:/10.1038/s41427-020-0226-7") obo:IAO_0000115 obo:CL_4052071 "A fibroblast in a quiescent state, characterized by a smaller, spindle-shaped morphology with a relatively small cytoplasm, modest rough endoplasmic reticulum and condensed chromatin. Despite low proliferation and contractility, it maintains high metabolic activity for extracellular-matrix homeostasis through continuous matrix protein turnover and mechanosensitive signaling. This cell can rapidly differentiate into contractile myofibroblasts under injury or inflammatory cues to drive tissue repair.")
+AnnotationAssertion(terms:contributor obo:CL_4052071 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_4052071 "2025-08-13T15:42:37Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22529592") oboInOwl:hasExactSynonym obo:CL_4052071 "inactive fibroblast")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID: 35701396") rdfs:comment obo:CL_4052071 "Historically, quiescent fibroblasts in uninjured tissues were often called “fibrocytes”, but this distinction faded over time, and the term “fibroblast” came to be used universally, regardless of activation state. Fibrocyte has been repurposed to describe a distinct population of bone marrow–derived, circulating cells that home to sites of injury and contribute to tissue repair and fibrosis.")
+AnnotationAssertion(rdfs:label obo:CL_4052071 "quiescent fibroblast")
+SubClassOf(obo:CL_4052071 obo:CL_0000057)
+
 # Class: obo:CL_4070010 (gastric mill neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1007/978-3-642-71516-7_2") obo:IAO_0000115 obo:CL_4070010 "A motor neuron that moves the medial tooth forward")
@@ -34576,14 +34587,6 @@ SubClassOf(obo:CL_4072016 obo:CL_0000099)
 SubClassOf(obo:CL_4072016 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 SubClassOf(obo:CL_4072016 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011387))
 
-# Class: obo:CL_4072018 (pacemaker neuron)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31982322") Annotation(oboInOwl:hasDbXref "PMID:39303139") obo:IAO_0000115 obo:CL_4072018 "A neuron that generates rhythmic bursts of action potentials independently of synaptic input. This intrinsic property enables it to maintain oscillatory activity even when isolated from other neurons. It populates the brainstem, hypothalamus, basal ganglia, spinal cord, and cerebellum. It plays a crucial role in regulating circadian rhythms in the suprachiasmatic nucleus, generating respiratory rhythms in the preBötzinger complex, and synchronizing neural networks.")
-AnnotationAssertion(terms:date obo:CL_4072018 "2025-07-07T12:37:16Z"^^xsd:dateTime)
-AnnotationAssertion(rdfs:label obo:CL_4072018 "pacemaker neuron")
-SubClassOf(obo:CL_4072018 obo:CL_0000540)
-SubClassOf(obo:CL_4072018 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0019226))
-
 # Class: obo:CL_4072017 (agouti-related protein expressing neuron)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34469623") Annotation(oboInOwl:hasDbXref "PMID:37957320") Annotation(oboInOwl:hasDbXref "PMID:39719709") obo:IAO_0000115 obo:CL_4072017 "A GABAergic neuron located in the arcuate nucleus of the hypothalamus that expresses agouti-related protein (AgRP). This neuron can coexpress AgRP, GABA, and neuropeptide Y (NPY) in mice, and plays a key role in integrating metabolic signals. It is activated by hunger-related hormones such as ghrelin and inhibited by satiety signals like leptin.")
@@ -34594,6 +34597,14 @@ SubClassOf(obo:CL_4072017 obo:CL_0000617)
 SubClassOf(obo:CL_4072017 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001932))
 SubClassOf(obo:CL_4072017 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000003846))
 SubClassOf(obo:CL_4072017 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011387))
+
+# Class: obo:CL_4072018 (pacemaker neuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31982322") Annotation(oboInOwl:hasDbXref "PMID:39303139") obo:IAO_0000115 obo:CL_4072018 "A neuron that generates rhythmic bursts of action potentials independently of synaptic input. This intrinsic property enables it to maintain oscillatory activity even when isolated from other neurons. It populates the brainstem, hypothalamus, basal ganglia, spinal cord, and cerebellum. It plays a crucial role in regulating circadian rhythms in the suprachiasmatic nucleus, generating respiratory rhythms in the preBötzinger complex, and synchronizing neural networks.")
+AnnotationAssertion(terms:date obo:CL_4072018 "2025-07-07T12:37:16Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_4072018 "pacemaker neuron")
+SubClassOf(obo:CL_4072018 obo:CL_0000540)
+SubClassOf(obo:CL_4072018 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0019226))
 
 # Class: obo:CL_4072019 (SCN pacemaker neuron)
 
