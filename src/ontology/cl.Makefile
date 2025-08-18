@@ -314,6 +314,7 @@ cl:
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
+CROSSLINKS_MD?=$(REPORTDIR)/crosslinks_release.md
 
 .PHONY: $(TMPDIR)/current-base-release.obo
 $(TMPDIR)/current-base-release.obo:
@@ -328,7 +329,16 @@ prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(T
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
+	@printf "\n\n---\n\n" >> $(REPORTDIR)/summary_release.md
+	cat $(CROSSLINKS_MD) >> $(REPORTDIR)/summary_release.md
 		
+.PHONY: crosslinks_report
+crosslinks_report:
+	@echo "Building CL cross-ontology tables (HP/GO/MONDO/UBERON → CL)…"
+	python ./$(SCRIPTSDIR)/build_cl_crosslinks.py \
+		--outdir $(REPORTDIR) \
+		--markdown \
+		--markdown-file $(notdir $(CROSSLINKS_MD))
 
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS
