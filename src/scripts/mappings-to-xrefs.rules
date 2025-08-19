@@ -6,14 +6,12 @@ object==CL:* -> invert();
 !subject==CL:* -> stop();
 
 # Ignore any mapping to an inexistent or obsolete CL class.
-predicate==* -> check_subject_existence();
+!exists(%{subject_id}) -> stop();
 
 # Ignore any mapping where the same foreign term is mapped to more than one CL class.
 !cardinality==1:* -> stop();
 
 # Create the hasDbXref annotation and annotate it with a subset of the mapping metadata
-subject==CL:* -> annotate_subject(oboInOwl:hasDbXref, "%object_curie",
-                                  "direct:mapping_justification,
-                                          author_id,
-                                          creator_id,
-                                          mapping_provider");
+subject==CL:* -> annotate(%{subject_id}, oboInOwl:hasDbXref, %{object_id|short},
+                          /annots="mapping_justification,author_id,creator_id,mapping_provider,see_also",
+                          /annots_uris="standard_map");

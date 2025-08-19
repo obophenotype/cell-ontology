@@ -9,10 +9,13 @@ use_dosdps: TRUE
 use_mappings: True
 use_edit_file_imports: FALSE
 release_diff: TRUE
+workflows:
+  - docs
 export_formats:
   - owl
   - obo
   - json
+obo_format_options: --clean-obo 'simple merge-comments'
 namespaces: 
   - http://purl.obolibrary.org/obo/CP_
   - http://purl.obolibrary.org/obo/CL_
@@ -31,6 +34,8 @@ robot_plugins:
   plugins:
     - name: flybase
       mirror_from: https://github.com/FlyBase/flybase-robot-plugin/releases/download/flybase-robot-plugin-0.2.2/flybase.jar
+    - name: uberon
+      mirror_from: https://github.com/obophenotype/uberon-robot-plugin/releases/download/uberon-robot-plugin-0.4.0/uberon.jar
 subset_group:
   products:
     - id: BDS_subset
@@ -38,12 +43,15 @@ subset_group:
     - id: eye_upper_slim
     - id: general_cell_types_upper_slim
     - id: kidney_upper_slim
+    - id: human-view
+    - id: mouse-view
 sssom_mappingset_group:
   products:
     - id: cl-local
       maintainance: manual
     - id: cl
       maintainance: manual
+      release_mappings: true
     - id: fbbt
       maintenance: manual
     - id: zfa
@@ -92,6 +100,10 @@ import_group:
       mirror_from: http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl
     - id: omo
       module_type: mirror
+    - id: mbao
+      mirror_from: https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao-base.owl
+    - id: stato
+      make_base: TRUE
 pattern_pipelines_group:
   products:
     - id: clustering
@@ -129,6 +141,7 @@ robot_report:
 components:
   products:
     - filename: hra_subset.owl
+      source: https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl
     - filename: mappings.owl
     - filename: blood_and_immune_upper_slim.owl
       use_template: True
@@ -150,4 +163,16 @@ components:
       use_template: True
       templates:
         - cellxgene_subset.tsv
+    - filename: PNS_neurons.owl
+      use_template: True
+      templates:
+        - PNS_neurons.csv
+    - filename: clm-cl.owl
+      source: https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl
+    - filename: 2DFTU_HRA_illustrations.owl
+      use_template: True
+      templates:
+        - 2DFTU_HRA_illustrations.csv
+    - filename: wmbo-cl-comp.owl
+      source: https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/main/wmbo-cl-comp.owl
 
