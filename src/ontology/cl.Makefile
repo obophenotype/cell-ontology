@@ -314,7 +314,7 @@ cl:
 	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
-CROSSLINKS_MD?=$(REPORTDIR)/crosslinks_release.md
+CROSSLINKS_MD=$(REPORTDIR)/crosslinks_release.md
 
 .PHONY: $(TMPDIR)/current-base-release.obo
 $(TMPDIR)/current-base-release.obo:
@@ -325,7 +325,7 @@ release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
 	$(ROBOT) diff --labels True -f markdown --left $(TMPDIR)/current-base-release.obo --right $(RELEASEDIR)/cl-base.obo --output reports/$(ONT)-base-diff.md
 
 .PHONY: prepare_content_summary
-prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports
+prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports crosslinks_report
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
