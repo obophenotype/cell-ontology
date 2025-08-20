@@ -124,7 +124,7 @@ def write_markdown(dfs: Dict[str, pd.DataFrame], md_path: str) -> None:
       md_path: Output path for the Markdown file.
     """
     with open(md_path, "w", encoding="utf-8") as f:
-        f.write("## CL cross-ontology links\n\n")
+        f.write("## CL Links to External Ontologies\n\n")
         for item in CONFIG:
             key, title, short = item["key"], item["title"], item["short"]
             df = dfs[key]
