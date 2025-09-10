@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                6e93c5342d83d66041ce747e0df055a69241fe42a17d5554ba47d553f5458331
+CONFIG_HASH=                e584d2d6e23caeef045397b6870989b94f7ed5fc973e3b51769514058f55c54d
 
 
 # ----------------------------------------
@@ -247,8 +247,8 @@ all_mappings: $(MAPPING_FILES)
 # QC Reports & Utilities
 # ----------------------------------------
 
-OBO_REPORT =  $(SRC)-obo-report
-ALIGNMENT_REPORT =  $(SRC)-align-report
+OBO_REPORT =  $(SRC)-obo-report cl-full.owl-obo-report
+ALIGNMENT_REPORT =  $(SRC)-align-report cl-full.owl-align-report
 REPORTS = $(OBO_REPORT)
 REPORT_FILES = $(patsubst %, $(REPORTDIR)/%.tsv, $(REPORTS))
 
@@ -280,10 +280,12 @@ validate_profile_%: $(REPORTDIR)/validate_profile_owl2dl_%.txt
 
 SPARQL_VALIDATION_QUERIES = $(foreach V,$(SPARQL_VALIDATION_CHECKS),$(SPARQLDIR)/$(V)-violation.sparql)
 
-sparql_test:  $(SRCMERGED) | $(REPORTDIR)
+sparql_test:  $(SRCMERGED) cl-full.owl | $(REPORTDIR)
 ifneq ($(SPARQL_VALIDATION_QUERIES),)
   
 	$(ROBOT) verify -i $(SRCMERGED) --queries $(SPARQL_VALIDATION_QUERIES) -O $(REPORTDIR)
+  
+	$(ROBOT) verify -i cl-full.owl --queries $(SPARQL_VALIDATION_QUERIES) -O $(REPORTDIR)
 endif
 
 # ----------------------------------------
@@ -291,10 +293,10 @@ endif
 # ----------------------------------------
 
 $(REPORTDIR)/$(SRC)-obo-report.tsv: $(SRCMERGED) | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri http://purl.obolibrary.org/obo/CP_ --base-iri http://purl.obolibrary.org/obo/CL_ --base-iri http://purl.obolibrary.org/obo/cl# --print 5 -o $@
 
 $(REPORTDIR)/%-obo-report.tsv: % | $(REPORTDIR)
-	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --print 5 -o $@
+	$(ROBOT) report -i $< $(REPORT_LABEL) $(REPORT_PROFILE_OPTS) --fail-on $(REPORT_FAIL_ON) --base-iri http://purl.obolibrary.org/obo/CP_ --base-iri http://purl.obolibrary.org/obo/CL_ --base-iri http://purl.obolibrary.org/obo/cl# --print 5 -o $@
 
 check_for_robot_updates:
 	echo "You are not using a custom profile, so you are getting the joy of the latest ROBOT report!"
