@@ -27,10 +27,12 @@ SELECT ?entity ?property ?value WHERE {
       BIND(UCASE((?name)) AS ?iname)
       FILTER (!isBlank(?entity) && !BOUND(?abbr))
       FILTER NOT EXISTS { ?entity owl:deprecated true }
+      FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/CL_"))
     } GROUP BY ?iname HAVING (?cnt > 1)
   }
   ?entity ?property ?value .
   FILTER (!isBlank(?entity))
   FILTER NOT EXISTS { ?entity owl:deprecated true }
+  FILTER (isIRI(?entity) && STRSTARTS(str(?entity), "http://purl.obolibrary.org/obo/CL_"))
   FILTER (UCASE(?value) = ?iname)
 } ORDER BY ?entity
