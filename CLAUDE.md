@@ -32,8 +32,7 @@ This includes instructions for editing the cl ontology.
 ## OBO Guidelines
 - Term ID format: CL_NNNNNNN (7-digit number)
 - Handling New Term Requests (NTRs):
-  - New terms start  CL_777xxxx
-  - Do `grep CL_777 src/ontology/cl-edit.owl` to check for clashes
+  - New terms start  CL_99xxxxx
 - Each term requires: id, name, definition with references
 - Never guess CL IDs, or ontology term IDs, use search tools above to determine actual term
 - Never guess PMIDs for references, do a web search if needed

@@ -280,6 +280,14 @@ add-replacedby:
 		       --collapse-import-closure false \
 		 convert -f ofn -o $(SRC)
 
+# Allocating definitive IDs
+.PHONY: allocate-definitive-ids
+allocate-definitive-ids: | all_robot_plugins
+	$(ROBOT) kgcl:mint -i $(SRC) \
+		           --temp-id-prefix http://purl.obolibrary.org/obo/CL_99 \
+		           --id-range-name Automation \
+		 convert -f ofn -o $(SRC)
+
 
 # ----------------------------------------
 # EXTERNAL RESOURCES
