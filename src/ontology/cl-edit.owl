@@ -3236,16 +3236,22 @@ Declaration(Class(obo:CL_4072017))
 Declaration(Class(obo:CL_4072018))
 Declaration(Class(obo:CL_4072019))
 Declaration(Class(obo:CL_4072021))
+Declaration(Class(obo:CL_4072027))
 Declaration(Class(obo:CL_4072029))
 Declaration(Class(obo:CL_4072031))
 Declaration(Class(obo:CL_4072032))
 Declaration(Class(obo:CL_4072034))
 Declaration(Class(obo:CL_4072035))
 Declaration(Class(obo:CL_4072036))
+Declaration(Class(obo:CL_4072037))
 Declaration(Class(obo:CL_4072038))
+Declaration(Class(obo:CL_4072039))
+Declaration(Class(obo:CL_4072041))
 Declaration(Class(obo:CL_4072045))
 Declaration(Class(obo:CL_4072102))
 Declaration(Class(obo:CL_7770002))
+Declaration(Class(obo:CL_7770003))
+Declaration(Class(obo:CL_7770004))
 Declaration(Class(obo:CL_7770005))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
@@ -3300,6 +3306,7 @@ Declaration(Class(obo:PATO_0000405))
 Declaration(Class(obo:PATO_0001365))
 Declaration(Class(obo:PATO_0001377))
 Declaration(Class(obo:PATO_0001408))
+Declaration(Class(obo:PATO_0001701))
 Declaration(Class(obo:PATO_0001870))
 Declaration(Class(obo:PATO_0001872))
 Declaration(Class(obo:PATO_0001979))
@@ -3523,22 +3530,6 @@ Declaration(AnnotationProperty(owl:deprecated))
 
 AnnotationAssertion(rdfs:label obo:IAO_0000028 "symbol")
 
-# Annotation Property: obo:IAO_0000115 (definition)
-
-AnnotationAssertion(rdfs:label obo:IAO_0000115 "definition")
-
-# Annotation Property: obo:IAO_0000424 (expand expression to)
-
-AnnotationAssertion(rdfs:label obo:IAO_0000424 "expand expression to")
-
-# Annotation Property: obo:IAO_0000700 (has ontology root term)
-
-AnnotationAssertion(rdfs:label obo:IAO_0000700 "preferred_root")
-
-# Annotation Property: obo:IAO_0100001 (term replaced by)
-
-AnnotationAssertion(rdfs:label obo:IAO_0100001 "term replaced by")
-
 # Annotation Property: cl:BDS_subset (cl:BDS_subset)
 
 SubAnnotationPropertyOf(cl:BDS_subset oboInOwl:SubsetProperty)
@@ -3605,45 +3596,13 @@ SubAnnotationPropertyOf(ubprop:_upper_level oboInOwl:SubsetProperty)
 
 AnnotationAssertion(rdfs:label oboInOwl:SubsetProperty "subset_property")
 
-# Annotation Property: oboInOwl:SynonymTypeProperty (synonym_type_property)
-
-AnnotationAssertion(rdfs:label oboInOwl:SynonymTypeProperty "synonym_type_property")
-
 # Annotation Property: oboInOwl:consider (consider)
 
 AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
-# Annotation Property: oboInOwl:hasBroadSynonym (has_broad_synonym)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
-
-# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
-
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
-
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
-
-# Annotation Property: oboInOwl:hasRelatedSynonym (has_related_synonym)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasRelatedSynonym "has_related_synonym")
-
-# Annotation Property: oboInOwl:hasSynonymType (has_synonym_type)
-
-AnnotationAssertion(rdfs:label oboInOwl:hasSynonymType "has_synonym_type")
-
 # Annotation Property: oboInOwl:inSubset (in_subset)
 
 AnnotationAssertion(rdfs:label oboInOwl:inSubset "in_subset")
-
-# Annotation Property: oboInOwl:shorthand (shorthand)
-
-AnnotationAssertion(rdfs:label oboInOwl:shorthand "shorthand")
 
 # Annotation Property: rdfs:seeAlso (see also)
 
@@ -11118,6 +11077,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:14685782") oboInOwl:hasB
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:14685782") oboInOwl:hasBroadSynonym obo:CL_0000824 "lymphokine activated killer cell")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000824 "mature NK cell")
 AnnotationAssertion(rdfs:label obo:CL_0000824 "mature natural killer cell")
+EquivalentClasses(obo:CL_0000824 ObjectIntersectionOf(obo:CL_0000623 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001701)))
 SubClassOf(obo:CL_0000824 obo:CL_0000623)
 SubClassOf(obo:CL_0000824 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000823))
 
@@ -18441,6 +18401,7 @@ AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002419 "CD3epsilon T cell
 AnnotationAssertion(rdfs:label obo:CL_0002419 "mature T cell")
 EquivalentClasses(obo:CL_0002419 ObjectIntersectionOf(obo:CL_0000084 ObjectSomeValuesFrom(obo:RO_0002104 obo:GO_0042101) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002419 obo:CL_0000084)
+SubClassOf(obo:CL_0002419 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001701))
 
 # Class: obo:CL_0002420 (immature T cell)
 
@@ -18453,6 +18414,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002420 "immature T-cell")
 AnnotationAssertion(rdfs:label obo:CL_0002420 "immature T cell")
 EquivalentClasses(obo:CL_0002420 ObjectIntersectionOf(obo:CL_0000084 ObjectSomeValuesFrom(obo:CL_4030044 obo:GO_0045058)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0002420 obo:CL_0000084)
+SubClassOf(obo:CL_0002420 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001501))
 
 # Class: obo:CL_0002421 (nucleated reticulocyte)
 
@@ -29823,16 +29785,16 @@ SubClassOf(obo:CL_4023016 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000017299))
 # Class: obo:CL_4023017 (sst GABAergic cortical interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023017 "sst cortical interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:33742131") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023017 "A transcriptomically distinct GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst). The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: MGE-derived interneurons', Author Categories: 'CrossArea_subclass', cluster Sst.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:33742131") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023017 "A transcriptomically distinct GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst) and derived from the MGE.")
 AnnotationAssertion(terms:contributor obo:CL_4023017 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023017 "ILX:0770152")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30001424") oboInOwl:hasRelatedSynonym obo:CL_4023017 "SOM+ inhibitory interneuron")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33742131") oboInOwl:hasRelatedSynonym obo:CL_4023017 "SST+ IN")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30001424") oboInOwl:hasRelatedSynonym obo:CL_4023017 "somatostatin-expressing inhibitory interneuron")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023017 cl:BDS_subset)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28821651") Annotation(oboInOwl:hasDbXref "PMID:30792151") Annotation(oboInOwl:hasDbXref "PMID:32494634") Annotation(oboInOwl:hasDbXref "PMID:33742131") rdfs:comment obo:CL_4023017 "In the mouse cortex, sst GABAergic cortical interneurons show heterogeneous electrophysiological signatures varying between low-threshold spiking (LTS), regular-spiking and fast-spiking (Song, Y. H., Yoon, J., & Lee, S. H. 2021). Sst GABAergic cortical interneurons have multiple functional roles in the brain. In the mouse, they involved in the generation of slow-waves during the sleep phase of non-rapid eye-movement (NREM) (Funk, C. M. et al., 2017), they maintain synaptic plasticity during motor learning (Adler, A., Zhao, R., et al., 2021), they enhance visual perception in the V1 cortical area by suppressing the activity of pyramidal excitatory neurons (Song, YH. et al., 2020). In humans, malfunctioning of sst GABAergic cortical interneurons is associated with neurodegenerative and psychiatric disorders such as Parkinson's disease, Alzheimer's disease, major depressive disorder, bipolar disorder and schizophrenia as individuals affected by these pathologies show a decrease of expression of SST in the brain (Song YH., Yoon J. et al., 2021).")
 AnnotationAssertion(rdfs:label obo:CL_4023017 "sst GABAergic cortical interneuron")
 EquivalentClasses(obo:CL_4023017 ObjectIntersectionOf(obo:CL_4023069 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000015665)))
+SubClassOf(obo:CL_4023017 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000203))
 SubClassOf(obo:CL_4023017 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024))
 
 # Class: obo:CL_4023018 (pvalb GABAergic cortical interneuron)
@@ -31765,7 +31727,7 @@ EquivalentClasses(obo:CL_4030058 ObjectIntersectionOf(obo:CL_0000235 ObjectSomeV
 # Class: obo:CL_4030059 (L2/3 intratelencephalic projecting glutamatergic neuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4030059 "L2/3 IT")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25622573") Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4030059 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found between cortical layer 2-4. This intratelencephalic-projecting glutamatergic neuron has thin-tufted apical dendrites and extends its axonal projection into L5 in the neocortex. This neuronal type has a hyperpolarised resting membrane potential. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: IT-projecting excitatory neurons', Author Categories: 'CrossArea_subclass', clusters L2/3 IT.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25622573") Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4030059 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found between cortical layer 2-4. This intratelencephalic-projecting glutamatergic neuron has thin-tufted apical dendrites and extends its axonal projection into L5 in the neocortex. This neuronal type has a hyperpolarised resting membrane potential.")
 AnnotationAssertion(terms:contributor obo:CL_4030059 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(terms:date obo:CL_4030059 "2023-10-10T14:10:21Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4030059 "ILX:0770156")
@@ -31807,7 +31769,7 @@ EquivalentClasses(obo:CL_4030062 ObjectIntersectionOf(obo:CL_4023040 ObjectSomeV
 # Class: obo:CL_4030063 (L4 intratelencephalic projecting glutamatergic neuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4030063 "L4 IT")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4030063 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 3-4. This neuron type can have a pyramidal, star-pyramidal or spiny stellate morphology and projects its output to L2/3 and L5A/B. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: IT-projecting excitatory neurons', Author Categories: 'CrossArea_subclass', L4 IT.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4030063 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 3-4. This neuron type can have a pyramidal, star-pyramidal or spiny stellate morphology and projects its output to L2/3 and L5A/B.")
 AnnotationAssertion(terms:contributor obo:CL_4030063 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(terms:date obo:CL_4030063 "2023-10-10T14:11:25Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030063 "L4 IT")
@@ -31829,7 +31791,7 @@ EquivalentClasses(obo:CL_4030064 ObjectIntersectionOf(obo:CL_4023040 ObjectSomeV
 # Class: obo:CL_4030065 (L6 intratelencephalic projecting glutamatergic neuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4030065 "L6 IT")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4030065 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted.  The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: IT-projecting excitatory neurons', Author Categories: 'CrossArea_subclass', L6 IT.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4030065 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted.")
 AnnotationAssertion(terms:contributor obo:CL_4030065 <https://orcid.org/0000-0003-4389-9821>)
 AnnotationAssertion(terms:date obo:CL_4030065 "2023-10-10T14:12:23Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4030065 "ILX:0770158")
@@ -31994,6 +31956,7 @@ AnnotationAssertion(terms:contributor obo:CL_4033013 <http://orcid.org/0000-0001
 AnnotationAssertion(oboInOwl:creation_date obo:CL_4033013 "2023-02-02T11:17:04Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_4033013 "suprabasal keratinocyte")
 EquivalentClasses(obo:CL_4033013 ObjectIntersectionOf(obo:CL_0000312 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0010402)))
+SubClassOf(obo:CL_4033013 obo:CL_7770004)
 
 # Class: obo:CL_4033014 (peg cell)
 
@@ -32370,8 +32333,8 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4033048 "respiratory supraba
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25658372") oboInOwl:hasExactSynonym obo:CL_4033048 "respiratory suprabasal progenitor cell")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25658372") Annotation(oboInOwl:hasDbXref "PMID:32726565") Annotation(oboInOwl:hasDbXref "doi:10.1101/2023.04.20.537495") rdfs:comment obo:CL_4033048 "In humans, respiratory tract suprabasal cells have been noted to have enriched expression of the following: CK8, KRT13, IVL, and SERPINB3. Single-cell sequencing indicates that suprabasal cells derived from the nasal epithelium are distinct from those in the tracheobronchial epithelium.")
 AnnotationAssertion(rdfs:label obo:CL_4033048 "respiratory tract suprabasal cell")
-SubClassOf(obo:CL_4033048 obo:CL_0000066)
 SubClassOf(obo:CL_4033048 obo:CL_0011026)
+SubClassOf(obo:CL_4033048 obo:CL_7770004)
 SubClassOf(obo:CL_4033048 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0004802))
 SubClassOf(obo:CL_4033048 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0002633))
 
@@ -34651,6 +34614,24 @@ AnnotationAssertion(rdfs:label obo:CL_4072021 "corticotropin-releasing neuron")
 SubClassOf(obo:CL_4072021 obo:CL_0000099)
 SubClassOf(obo:CL_4072021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0051458))
 
+# Class: obo:CL_4072027 (sst GABAergic cortical interneuron (Homo sapiens))
+
+AnnotationAssertion(obo:IAO_0000028 obo:CL_4072027 "sst cortical interneuron (Homo sapiens)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:33742131") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4072027 "A transcriptomically distinct GABAergic neuron located in the cerebral cortex that expresses somatostatin (sst). The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: MGE-derived interneurons', Author Categories: 'CrossArea_subclass', cluster Sst.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4072027 obo:NCBITaxon_9606)
+AnnotationAssertion(terms:contributor obo:CL_4072027 "https://orcid.org/0000-0002-5507-2103")
+AnnotationAssertion(terms:date obo:CL_4072027 "2025-08-12T10:45:41Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4072027 "ILX:0770152")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30001424") oboInOwl:hasRelatedSynonym obo:CL_4072027 "SOM+ inhibitory interneuron (Homo sapiens)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33742131") oboInOwl:hasRelatedSynonym obo:CL_4072027 "SST+ IN (Homo sapiens)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30001424") oboInOwl:hasRelatedSynonym obo:CL_4072027 "somatostatin-expressing inhibitory interneuron (Homo sapiens)")
+AnnotationAssertion(oboInOwl:inSubset obo:CL_4072027 cl:BDS_subset)
+AnnotationAssertion(oboInOwl:inSubset obo:CL_4072027 cl:cellxgene_subset)
+AnnotationAssertion(rdfs:label obo:CL_4072027 "sst GABAergic cortical interneuron (Homo sapiens)")
+SubClassOf(obo:CL_4072027 obo:CL_4023017)
+SubClassOf(obo:CL_4072027 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
+SubClassOf(obo:CL_4072027 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000082))
+
 # Class: obo:CL_4072029 (pvalb GABAergic cortical interneuron (Homo sapiens))
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4072029 "pvalb cortical interneuron (Homo sapiens)")
@@ -34746,6 +34727,22 @@ SubClassOf(obo:CL_4072036 obo:CL_4042032)
 SubClassOf(obo:CL_4072036 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 SubClassOf(obo:CL_4072036 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000079))
 
+# Class: obo:CL_4072037 (L2/3 intratelencephalic projecting glutamatergic neuron (Homo sapiens))
+
+AnnotationAssertion(obo:IAO_0000028 obo:CL_4072037 "L2/3 IT (Homo sapiens)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25622573") Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4072037 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found between cortical layer 2-4. This intratelencephalic-projecting glutamatergic neuron has thin-tufted apical dendrites and extends its axonal projection into L5 in the neocortex. This neuronal type has a hyperpolarised resting membrane potential. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: IT-projecting excitatory neurons', Author Categories: 'CrossArea_subclass', clusters L2/3 IT.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4072037 obo:NCBITaxon_9606)
+AnnotationAssertion(terms:contributor obo:CL_4072037 "https://orcid.org/0000-0002-5507-2103")
+AnnotationAssertion(terms:date obo:CL_4072037 "2025-09-10T09:15:51Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4072037 "ILX:0770156")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34004146") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072037 "L2/3 IT (Homo sapiens)")
+AnnotationAssertion(oboInOwl:inSubset obo:CL_4072037 cl:cellxgene_subset)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.5281/zenodo.11165918") rdfs:comment obo:CL_4072037 "The marker set ONECUT2, COL5A2 can identify the Human cell type L2/3 intratelencephalic projecting glutamatergic neuron in the neocortex with a confidence of 0.670149932 (NS-Forest FBeta value).")
+AnnotationAssertion(rdfs:label obo:CL_4072037 "L2/3 intratelencephalic projecting glutamatergic neuron (Homo sapiens)")
+SubClassOf(obo:CL_4072037 obo:CL_4030059)
+SubClassOf(obo:CL_4072037 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
+SubClassOf(obo:CL_4072037 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000065))
+
 # Class: obo:CL_4072038 (L5 intratelencephalic projecting glutamatergic neuron (Homo sapiens))
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4072038 "L5 IT (Homo sapiens)")
@@ -34761,6 +34758,36 @@ AnnotationAssertion(rdfs:label obo:CL_4072038 "L5 intratelencephalic projecting 
 SubClassOf(obo:CL_4072038 obo:CL_4030064)
 SubClassOf(obo:CL_4072038 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 SubClassOf(obo:CL_4072038 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000068))
+
+# Class: obo:CL_4072039 (L4 intratelencephalic projecting glutamatergic neuron (Homo sapiens))
+
+AnnotationAssertion(obo:IAO_0000028 obo:CL_4072039 "L4 IT (Homo sapiens)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4072039 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found in cortical layer 3-4. This neuron type can have a pyramidal, star-pyramidal or spiny stellate morphology and projects its output to L2/3 and L5A/B. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: IT-projecting excitatory neurons', Author Categories: 'CrossArea_subclass', L4 IT.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4072039 obo:NCBITaxon_9606)
+AnnotationAssertion(terms:date obo:CL_4072039 "2025-09-10T10:05:26Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072039 "L4 IT (Homo sapiens)")
+AnnotationAssertion(oboInOwl:inSubset obo:CL_4072039 cl:cellxgene_subset)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.5281/zenodo.11165918") rdfs:comment obo:CL_4072039 "The marker set RORB, ST8SIA4 can identify the Human cell type L4 intratelencephalic projecting glutamatergic neuron in the neocortex with a confidence of 0.720108696 (NS-Forest FBeta value).")
+AnnotationAssertion(rdfs:label obo:CL_4072039 "L4 intratelencephalic projecting glutamatergic neuron (Homo sapiens)")
+SubClassOf(obo:CL_4072039 obo:CL_4030063)
+SubClassOf(obo:CL_4072039 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
+SubClassOf(obo:CL_4072039 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000066))
+
+# Class: obo:CL_4072041 (L6 intratelencephalic projecting glutamatergic neuron (Homo sapiens))
+
+AnnotationAssertion(obo:IAO_0000028 obo:CL_4072041 "L6 IT (Homo sapiens)")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasDbXref "PMID:37609206") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/c3aa4f95-7a18-4a7d-8dd8-ca324d714363.cxg/") obo:IAO_0000115 obo:CL_4072041 "A transcriptomically distinct intratelencephalic-projecting glutamatergic neuron with a soma found in L6 of the primary motor cortex. These cells are short untufted pyramidal cells, which could be stellate or inverted.  The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: IT-projecting excitatory neurons', Author Categories: 'CrossArea_subclass', L6 IT.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_4072041 obo:NCBITaxon_9606)
+AnnotationAssertion(terms:contributor obo:CL_4072041 "https://orcid.org/0000-0002-5507-2103")
+AnnotationAssertion(terms:date obo:CL_4072041 "2025-09-11T14:38:02Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4072041 "ILX:0770158")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37292694") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072041 "L6 IT (Homo sapiens)")
+AnnotationAssertion(oboInOwl:inSubset obo:CL_4072041 cl:cellxgene_subset)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.5281/zenodo.11165918") rdfs:comment obo:CL_4072041 "The marker set LINC00507, THEMIS can identify the Human cell type L6 intratelencephalic projecting glutamatergic neuron in the neocortex with a confidence of 0.641695703 (NS-Forest FBeta value).")
+AnnotationAssertion(rdfs:label obo:CL_4072041 "L6 intratelencephalic projecting glutamatergic neuron (Homo sapiens)")
+SubClassOf(obo:CL_4072041 obo:CL_4030065)
+SubClassOf(obo:CL_4072041 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
+SubClassOf(obo:CL_4072041 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000071))
 
 # Class: obo:CL_4072045 (L6b glutamatergic cortical neuron (Homo sapiens))
 
@@ -34796,6 +34823,23 @@ AnnotationAssertion(rdfs:label obo:CL_7770002 "juxtacanalicular tissue cell")
 SubClassOf(obo:CL_7770002 obo:CL_0000327)
 SubClassOf(obo:CL_7770002 obo:CL_0002367)
 SubClassOf(obo:CL_7770002 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070278))
+
+# Class: obo:CL_7770003 (beam A cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27443500") Annotation(oboInOwl:hasDbXref "PMID:32341164") Annotation(oboInOwl:hasDbXref "PMID:39829808") obo:IAO_0000115 obo:CL_7770003 "A beam cell within the eye's trabecular meshwork, molecularly distinguished by FABP4 expression in humans and spatially intermingled with Beam B cells throughout the uveal and corneoscleral meshwork regions. In mice, a transcriptionally analogous Beam A–like cluster (mC14) exists, sharing core TM markers (Myoc, Mgp, Pdpn, Chil1) and functional attributes.")
+AnnotationAssertion(terms:contributor obo:CL_7770003 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_7770003 "2025-08-29T08:53:47Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_7770003 "beam A cell")
+AnnotationAssertion(Annotation(dc:license <http://creativecommons.org/licenses/by/4.0/>) Annotation(oboInOwl:hasDbXref "PMID:35836364") Annotation(rdfs:comment "Trabecular meshwork (TM) structure. The TM consists of uveal (blue), corneoscleral (red), and juxtacanalicular (green) regions. TM beam cells (blue/red) line the uveal and corneoscleral regions, while JCT cells (green) occupy the juxtacanalicular region.") foaf:depiction obo:CL_7770003 "http://purl.obolibrary.org/obo/cl/images/Trabecular_meshowk_cells_PMID35836364.jpg")
+SubClassOf(obo:CL_7770003 obo:CL_7770005)
+
+# Class: obo:CL_7770004 (suprabasal cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17020902") Annotation(oboInOwl:hasDbXref "PMID:30837987") Annotation(oboInOwl:hasDbXref "PMID:32187560") Annotation(oboInOwl:hasDbXref "PMID:32726565") Annotation(oboInOwl:hasDbXref "PMID:37672481") obo:IAO_0000115 obo:CL_7770004 "An epithelial cell that resides in the layer(s) immediately above the basal layer in stratified or pseudostratified epithelia. This cell mainly originates from basal cells and is found across various tissues, including skin, esophagus, oral mucosa, airway, and cornea.")
+AnnotationAssertion(terms:contributor obo:CL_7770004 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:date obo:CL_7770004 "2025-09-05T07:59:28Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_7770004 "suprabasal cell")
+SubClassOf(obo:CL_7770004 obo:CL_0000066)
 
 # Class: obo:CL_7770005 (beam cell)
 
