@@ -348,6 +348,26 @@ crosslinks_report:
 		--markdown \
 		--markdown-file $(notdir $(CROSSLINKS_MD))
 
+# ----------------------------------------
+# LUNGMAP INTEGRATION
+# ----------------------------------------
+
+# Add LungMap Cell Cards links to the ontology
+.PHONY: lungmap_links
+lungmap_links: $(SRC)
+	@echo "Adding LungMap Cell Cards links to CL terms..."
+	python ./$(SCRIPTSDIR)/build_lungmap_links.py \
+		--cl-edit-path $(SRC) \
+		--clean
+
+# Preview what LungMap links would be added
+.PHONY: lungmap_preview
+lungmap_preview:
+	@echo "Preview of LungMap Cell Cards links:"
+	python ./$(SCRIPTSDIR)/build_lungmap_links.py \
+		--cl-edit-path $(SRC) \
+		--dry-run
+
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS
 # -------------------------------------------
