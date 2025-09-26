@@ -57,7 +57,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/lungmap_links.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -496,6 +496,7 @@ recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-general_cell_types_upper_slim.owl \
 		--assume-new=$(TMPDIR)/stamp-component-kidney_upper_slim.owl \
 		--assume-new=$(TMPDIR)/stamp-component-cellxgene_subset.owl \
+		--assume-new=$(TMPDIR)/stamp-component-lungmap_links.owl \
 		--assume-new=$(TMPDIR)/stamp-component-PNS_neurons.owl \
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
 		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
@@ -511,6 +512,7 @@ no-mirror-recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-general_cell_types_upper_slim.owl \
 		--assume-new=$(TMPDIR)/stamp-component-kidney_upper_slim.owl \
 		--assume-new=$(TMPDIR)/stamp-component-cellxgene_subset.owl \
+		--assume-new=$(TMPDIR)/stamp-component-lungmap_links.owl \
 		--assume-new=$(TMPDIR)/stamp-component-PNS_neurons.owl \
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
 		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
@@ -583,6 +585,12 @@ $(COMPONENTSDIR)/cellxgene_subset.owl: $(TEMPLATEDIR)/cellxgene_subset.tsv $(TMP
 		 --template $(TEMPLATEDIR)/cellxgene_subset.tsv \
 		 $(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/cellxgene_subset.owl
+
+$(COMPONENTSDIR)/lungmap_links.owl: $(TEMPLATEDIR)/lungmap_links.tsv $(TMPDIR)/stamp-component-lungmap_links.owl
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/lungmap_links.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/lungmap_links.owl
 
 $(COMPONENTSDIR)/PNS_neurons.owl: $(TEMPLATEDIR)/PNS_neurons.csv $(TMPDIR)/stamp-component-PNS_neurons.owl
 	$(ROBOT) template  \
