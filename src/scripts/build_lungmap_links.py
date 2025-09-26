@@ -21,19 +21,52 @@ import re
 LUNGMAP_BASE_URL = "https://www.lungmap.net/research/cell-cards/"
 LUNGMAP_API_URL = "https://www.lungmap.net/api/cell-cards/"  # Hypothetical API endpoint
 
-def fetch_lungmap_data() -> List[Dict]:
+def extract_lung_related_cl_terms(cl_edit_path: str) -> List[Dict]:
     """
-    Fetch LungMap Cell Cards data.
+    Extract lung-related CL terms from the ontology file.
     
-    For now, we'll use a mock data structure based on the example from the issue.
-    In production, this would fetch from the actual LungMap API or scrape the website.
-    
+    Args:
+        cl_edit_path: Path to cl-edit.owl file
+        
     Returns:
-        List of cell card dictionaries containing id, name, cl_id, cl_label, match_type
+        List of dictionaries with cl_id, cl_label for lung-related terms
     """
-    # Mock data based on the example in the issue
-    # This should be replaced with actual API calls when the LungMap API is accessible
-    mock_data = [
+    lung_terms = []
+    
+    with open(cl_edit_path, 'r', encoding='utf-8') as f:
+        content = f.read()
+    
+    # Find all label assertions for lung-related terms
+    import re
+    label_pattern = r'AnnotationAssertion\(rdfs:label (obo:CL_\d+) "([^"]*(?:lung|pulmonary|alveolar|bronchial|pneumocyte)[^"]*)"\)'
+    
+    matches = re.findall(label_pattern, content, re.IGNORECASE)
+    
+    for cl_iri, label in matches:
+        cl_id = cl_iri.replace('obo:CL_', 'CL:')
+        lung_terms.append({
+            'cl_id': cl_id,
+            'cl_label': label,
+            'cl_iri': cl_iri
+        })
+    
+    return lung_terms
+
+def discover_potential_lungmap_matches(lung_terms: List[Dict]) -> List[Dict]:
+    """
+    Create potential LungMap matches based on lung-related CL terms.
+    
+    Since we can't access LungMap directly, this creates a framework for
+    potential matches that could be validated when access becomes available.
+    
+    Args:
+        lung_terms: List of lung-related CL terms
+        
+    Returns:
+        List of potential cell card matches (currently hypothetical)
+    """
+    # Start with the known exact match
+    known_matches = [
         {
             "id": "LMCC0000000003",
             "name": "alveolar type 1 epithelial cell",
@@ -41,45 +74,210 @@ def fetch_lungmap_data() -> List[Dict]:
             "cl_label": "pulmonary alveolar type 1 cell",
             "match_type": "Exact"
         }
-        # TODO: Add more entries from actual LungMap data
-        # Additional entries would be automatically fetched from the LungMap API
-        # when that becomes available. The structure should follow:
-        # {
-        #     "id": "LMCC...",
-        #     "name": "cell type name from LungMap",
-        #     "cl_id": "CL:NNNNNNN",
-        #     "cl_label": "official CL term label",
-        #     "match_type": "Exact" | "Related" | etc.
-        # }
     ]
     
-    # TODO: Replace with actual API call when LungMap provides programmatic access
-    # Example implementation:
+    # Add potential matches based on common lung cell types
+    # These are hypothetical LungMap IDs that would need to be verified
+    potential_matches = []
+    
+    for term in lung_terms:
+        # Skip the known match
+        if term['cl_id'] == 'CL:0002062':
+            continue
+            
+        # Create hypothetical matches for common lung cell types
+        # In reality, these would be discovered by browsing LungMap
+        if 'alveolar type 2' in term['cl_label'].lower() or 'type ii pneumocyte' in term['cl_label'].lower():
+            potential_matches.append({
+                "id": f"LMCC_HYPOTHETICAL_AT2",  # Would need to find actual ID
+                "name": term['cl_label'].replace('pulmonary ', ''),
+                "cl_id": term['cl_id'],
+                "cl_label": term['cl_label'],
+                "match_type": "Potential"  # Mark as potential until verified
+            })
+        elif 'club cell' in term['cl_label'].lower():
+            potential_matches.append({
+                "id": f"LMCC_HYPOTHETICAL_CLUB",
+                "name": term['cl_label'],
+                "cl_id": term['cl_id'],
+                "cl_label": term['cl_label'],
+                "match_type": "Potential"
+            })
+        elif 'lung endothelial' in term['cl_label'].lower():
+            potential_matches.append({
+                "id": f"LMCC_HYPOTHETICAL_ENDO",
+                "name": term['cl_label'],
+                "cl_id": term['cl_id'],
+                "cl_label": term['cl_label'],
+                "match_type": "Potential"
+            })
+    
+    return known_matches + potential_matches
+
+def create_lungmap_browsing_guide(lung_terms: List[Dict]) -> str:
+    """
+    Create a guide for manually browsing LungMap to find more matches.
+    
+    Args:
+        lung_terms: List of lung-related CL terms
+        
+    Returns:
+        String with browsing instructions
+    """
+    guide = """
+# LungMap Browsing Guide
+
+To find more CL term matches in LungMap Cell Cards:
+
+1. Visit https://www.lungmap.net/research/cell-cards/
+2. Browse through the cell cards or use search functionality
+3. For each cell card, check if it has a "Cell Ontology" section
+4. Look for "Cell Ontology Match Type: Exact" entries
+5. Record the mapping between:
+   - LungMap Cell Card ID (e.g., LMCC0000000003)
+   - Cell name in LungMap
+   - CL term ID (e.g., CL:0002062)
+
+## Candidate CL terms to look for:
+"""
+    
+    # Add the most likely candidates
+    priority_terms = []
+    for term in lung_terms:
+        label_lower = term['cl_label'].lower()
+        if any(keyword in label_lower for keyword in [
+            'alveolar', 'pneumocyte', 'club cell', 'endothelial',
+            'fibroblast', 'macrophage', 'epithelial', 'goblet'
+        ]):
+            priority_terms.append(term)
+    
+    for term in sorted(priority_terms, key=lambda x: x['cl_label']):
+        guide += f"- {term['cl_id']}: {term['cl_label']}\n"
+    
+    guide += f"""
+## All {len(lung_terms)} lung-related CL terms:
+"""
+    
+    for term in sorted(lung_terms, key=lambda x: x['cl_label']):
+        guide += f"- {term['cl_id']}: {term['cl_label']}\n"
+    
+    return guide
+
+def browse_lungmap_for_matches(lung_terms: List[Dict]) -> List[Dict]:
+    """
+    Browse LungMap website to find additional cell card matches.
+    
+    This function would implement web scraping or API calls to discover
+    more LungMap cell cards that match CL terms.
+    
+    Args:
+        lung_terms: List of lung-related CL terms to search for
+        
+    Returns:
+        List of discovered cell card matches
+    """
+    # TODO: When LungMap access becomes available, implement:
+    # 
+    # import requests
+    # from bs4 import BeautifulSoup
+    # 
+    # discovered_matches = []
+    # base_url = "https://www.lungmap.net/research/cell-cards/"
+    # 
     # try:
-    #     # Try different potential API endpoints
-    #     api_endpoints = [
-    #         LUNGMAP_API_URL,
-    #         "https://www.lungmap.net/api/v1/cell-cards/",
-    #         "https://lungmap.net/api/cell-cards.json"
-    #     ]
+    #     # Get the main cell cards page
+    #     response = requests.get(base_url, timeout=30)
+    #     soup = BeautifulSoup(response.content, 'html.parser')
     #     
-    #     for endpoint in api_endpoints:
-    #         try:
-    #             response = urllib.request.urlopen(endpoint, timeout=30)
-    #             data = json.loads(response.read().decode('utf-8'))
-    #             # Process and normalize the data structure
-    #             return normalize_lungmap_data(data)
-    #         except:
-    #             continue
+    #     # Find all cell card links
+    #     card_links = soup.find_all('a', href=re.compile(r'cell_cards_id='))
+    #     
+    #     for link in card_links:
+    #         card_url = link.get('href')
+    #         if not card_url.startswith('http'):
+    #             card_url = "https://www.lungmap.net" + card_url
     #             
-    #     print("Warning: Could not access LungMap API, using mock data")
-    #     return mock_data
+    #         # Visit each cell card page
+    #         card_response = requests.get(card_url, timeout=30)
+    #         card_soup = BeautifulSoup(card_response.content, 'html.parser')
+    #         
+    #         # Look for Cell Ontology section
+    #         ontology_section = card_soup.find(text=re.compile(r'Cell Ontology'))
+    #         if ontology_section:
+    #             # Extract CL term and match type
+    #             cl_link = card_soup.find('a', href=re.compile(r'CL_\d+'))
+    #             if cl_link:
+    #                 cl_id_match = re.search(r'CL_(\d+)', cl_link.get('href'))
+    #                 if cl_id_match:
+    #                     cl_id = f"CL:{cl_id_match.group(1)}"
+    #                     
+    #                     # Check if it's an exact match
+    #                     exact_match = card_soup.find(text=re.compile(r'Match Type.*Exact'))
+    #                     if exact_match:
+    #                         # Extract cell card ID from URL
+    #                         card_id_match = re.search(r'cell_cards_id=([^&]+)', card_url)
+    #                         if card_id_match:
+    #                             card_id = card_id_match.group(1)
+    #                             
+    #                             # Find the cell name
+    #                             cell_name = card_soup.find('h1') or card_soup.find('title')
+    #                             cell_name_text = cell_name.get_text().strip() if cell_name else ""
+    #                             
+    #                             # Find corresponding CL term
+    #                             matching_term = next((t for t in lung_terms if t['cl_id'] == cl_id), None)
+    #                             if matching_term:
+    #                                 discovered_matches.append({
+    #                                     "id": card_id,
+    #                                     "name": cell_name_text,
+    #                                     "cl_id": cl_id,
+    #                                     "cl_label": matching_term['cl_label'],
+    #                                     "match_type": "Exact"
+    #                                 })
+    #     
+    #     return discovered_matches
     #     
     # except Exception as e:
-    #     print(f"Warning: Could not fetch LungMap data: {e}")
-    #     return mock_data
+    #     print(f"Error browsing LungMap: {e}")
+    #     return []
     
-    return mock_data
+    print("Warning: Cannot access LungMap website directly due to network restrictions.")
+    print("Using discovery based on known CL lung terms instead.")
+    print("\nTo manually discover more matches, use --browsing-guide option.")
+    
+    # For now, return the potential matches we can discover
+    return discover_potential_lungmap_matches(lung_terms)
+
+def fetch_lungmap_data(cl_edit_path: str = None) -> List[Dict]:
+    """
+    Fetch LungMap Cell Cards data by browsing the website or using known mappings.
+    
+    Args:
+        cl_edit_path: Path to cl-edit.owl file for extracting lung terms
+        
+    Returns:
+        List of cell card dictionaries containing id, name, cl_id, cl_label, match_type
+    """
+    if cl_edit_path and os.path.exists(cl_edit_path):
+        # Extract lung-related CL terms from the ontology
+        lung_terms = extract_lung_related_cl_terms(cl_edit_path)
+        print(f"Found {len(lung_terms)} lung-related CL terms")
+        
+        # Try to discover more matches by browsing LungMap
+        try:
+            return browse_lungmap_for_matches(lung_terms)
+        except Exception as e:
+            print(f"Warning: Could not browse LungMap: {e}")
+    
+    # Fallback to known data
+    return [
+        {
+            "id": "LMCC0000000003",
+            "name": "alveolar type 1 epithelial cell",
+            "cl_id": "CL:0002062",
+            "cl_label": "pulmonary alveolar type 1 cell",
+            "match_type": "Exact"
+        }
+    ]
 
 def cl_id_to_iri(cl_id: str) -> str:
     """Convert CL:NNNNNNN to IRI format."""
@@ -212,6 +410,16 @@ def main() -> None:
         help="Show what would be added without modifying files"
     )
     parser.add_argument(
+        "--show-potential",
+        action="store_true",
+        help="Also show potential matches that need verification"
+    )
+    parser.add_argument(
+        "--browsing-guide",
+        action="store_true",
+        help="Generate a guide for manually browsing LungMap to find more matches"
+    )
+    parser.add_argument(
         "--clean",
         action="store_true",
         help="Remove existing LungMap annotations before adding new ones"
@@ -221,15 +429,37 @@ def main() -> None:
     
     # Fetch LungMap data
     print("Fetching LungMap Cell Cards data...")
-    lungmap_data = fetch_lungmap_data()
+    lungmap_data = fetch_lungmap_data(args.cl_edit_path)
     print(f"Found {len(lungmap_data)} cell cards")
+    
+    # If browsing guide requested, generate and show it
+    if args.browsing_guide:
+        if os.path.exists(args.cl_edit_path):
+            lung_terms = extract_lung_related_cl_terms(args.cl_edit_path)
+            guide = create_lungmap_browsing_guide(lung_terms)
+            print(guide)
+        return
     
     # Filter for exact matches only
     exact_matches = [card for card in lungmap_data if card["match_type"] == "Exact"]
+    potential_matches = [card for card in lungmap_data if card["match_type"] == "Potential"]
+    
     print(f"Found {len(exact_matches)} exact matches")
+    if potential_matches:
+        print(f"Found {len(potential_matches)} potential matches")
+        
+    # Show potential matches if requested
+    if args.show_potential and potential_matches:
+        print("\nPotential matches (need verification on LungMap):")
+        for card in potential_matches:
+            print(f"  {card['cl_id']} ({card['cl_label']}) -> {card['name']}")
+        print("\nTo use these, verify the matches on LungMap and update the script with actual cell card IDs.")
     
     if not exact_matches:
-        print("No exact matches found. Nothing to do.")
+        if potential_matches and not args.show_potential:
+            print("No exact matches found. Use --show-potential to see potential matches.")
+        else:
+            print("No exact matches found. Nothing to do.")
         return
     
     # Generate annotations

@@ -366,7 +366,15 @@ lungmap_preview:
 	@echo "Preview of LungMap Cell Cards links:"
 	python ./$(SCRIPTSDIR)/build_lungmap_links.py \
 		--cl-edit-path $(SRC) \
-		--dry-run
+		--dry-run --show-potential
+
+# Generate browsing guide for finding more LungMap matches
+.PHONY: lungmap_guide
+lungmap_guide:
+	@echo "Generating LungMap browsing guide..."
+	python ./$(SCRIPTSDIR)/build_lungmap_links.py \
+		--cl-edit-path $(SRC) \
+		--browsing-guide
 
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS
