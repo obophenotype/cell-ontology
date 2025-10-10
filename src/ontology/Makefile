@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                e584d2d6e23caeef045397b6870989b94f7ed5fc973e3b51769514058f55c54d
+CONFIG_HASH=                7c52f5008a057fcbc43f540f4936bc4a0b27aa3d80e756ee2b993823d925a7ac
 
 
 # ----------------------------------------
@@ -57,7 +57,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl $(COMPONENTSDIR)/bgo-cl-comp.owl 
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -204,7 +204,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao stato
+IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao dhbao stato
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -500,6 +500,7 @@ recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
 		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
 		--assume-new=$(TMPDIR)/stamp-component-wmbo-cl-comp.owl \
+		--assume-new=$(TMPDIR)/stamp-component-bgo-cl-comp.owl \
 		COMP=true IMP=false MIR=true PAT=true all_components
 
 .PHONY: no-mirror-recreate-components
@@ -515,6 +516,7 @@ no-mirror-recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
 		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
 		--assume-new=$(TMPDIR)/stamp-component-wmbo-cl-comp.owl \
+		--assume-new=$(TMPDIR)/stamp-component-bgo-cl-comp.owl \
 		COMP=true IMP=false MIR=false PAT=true all_components
 
 .PHONY: recreate-%
@@ -634,6 +636,25 @@ $(COMPONENTSDIR)/wmbo-cl-comp.owl: component-download-wmbo-cl-comp.owl $(TMPDIR)
 .PRECIOUS: $(COMPONENTSDIR)/wmbo-cl-comp.owl
 endif # MIR=true
 
+ifeq ($(MIR),true)
+.PHONY: component-download-bgo-cl-comp.owl
+component-download-bgo-cl-comp.owl: | $(TMPDIR)
+	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/hmba_basal_ganglia_ontology/main/bgo-cl-comp.owl \
+		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
+
+$(COMPONENTSDIR)/bgo-cl-comp.owl: component-download-bgo-cl-comp.owl $(TMPDIR)/stamp-component-bgo-cl-comp.owl
+	@if cmp -s $(TMPDIR)/component-download-bgo-cl-comp.owl.owl $(TMPDIR)/component-download-bgo-cl-comp.owl.tmp.owl ; then \
+	        echo "Component identical." ; \
+	else \
+	        echo "Component different, updating." && \
+	        cp $(TMPDIR)/component-download-bgo-cl-comp.owl.owl $(TMPDIR)/component-download-bgo-cl-comp.owl.tmp.owl && \
+	        $(ROBOT) annotate --input $(TMPDIR)/component-download-bgo-cl-comp.owl.owl \
+	                          --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+	                          --output $@ ; \
+	fi
+.PRECIOUS: $(COMPONENTSDIR)/bgo-cl-comp.owl
+endif # MIR=true
+
 endif # COMP=true
 # ----------------------------------------
 # Mirroring upstream ontologies
@@ -710,6 +731,13 @@ mirror-omo: | $(TMPDIR)
 .PRECIOUS: $(MIRRORDIR)/mbao.owl
 mirror-mbao: | $(TMPDIR)
 	$(ROBOT) convert -I https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao-base.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: dhbao
+.PHONY: mirror-dhbao
+.PRECIOUS: $(MIRRORDIR)/dhbao.owl
+mirror-dhbao: | $(TMPDIR)
+	$(ROBOT) convert -I https://raw.githubusercontent.com/brain-bican/developing_human_brain_atlas_ontology/main/dhbao-base.owl -o $(TMPDIR)/$@.owl
 
 
 ## ONTOLOGY: stato
