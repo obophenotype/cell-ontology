@@ -58,7 +58,9 @@ Try to be consistent in how you phrase the various types of comments. For exampl
 
 
 ## Synonyms
-Extensive addition of synonyms helps “findability” of terms when search. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
+Extensive addition of synonyms helps "findability" of terms when search. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
+
+**IMPORTANT: Always preserve existing synonyms.** When adding new synonyms to a term, existing synonyms must never be removed or overwritten. This ensures backward compatibility and preserves the historical semantic annotations that users and tools may depend upon.
 
 Guidelines on the type of synonyms:
 
