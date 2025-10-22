@@ -221,7 +221,7 @@ subsets/%-view.owl subsets/%-tags.ofn: $(ONT)-full.owl | all_robot_plugins
 		 annotate --ontology-iri $(ONTBASE)/subsets/$*-view.owl \
 		          --version-iri $(ONTBASE)/releases/$(VERSION)/subsets/$*-view.owl \
 		          --annotation owl:versionInfo $(VERSION) \
-		 convert --format ofn --output subsets/$*-view.owl
+		          --output subsets/$*-view.owl
 
 
 # ----------------------------------------
