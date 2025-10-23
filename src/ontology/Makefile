@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                2566b3b0aecd78983d50bf49e62631a8eb95a153d416c6f4113d2843fd69d7fe
+CONFIG_HASH=                e584d2d6e23caeef045397b6870989b94f7ed5fc973e3b51769514058f55c54d
 
 
 # ----------------------------------------
@@ -73,7 +73,7 @@ MAPPINGS=                   cl-local cl fbbt zfa
 MAPPING_RELEASE_FILES=      $(foreach n,$(MAPPINGS), $(MAPPINGDIR)/$(n).sssom.tsv)
 
 
-FORMATS = $(sort  owl obo json db owl)
+FORMATS = $(sort  owl obo json owl)
 FORMATS_INCL_TSV = $(sort $(FORMATS) tsv)
 RELEASE_ARTEFACTS = $(sort $(ONT)-base $(ONT)-full $(ONT)-simple $(ONT)-basic $(ONT)-non-classified cl-plus )
 
@@ -988,11 +988,6 @@ cl-plus.json: cl-plus.owl
 	$(ROBOT) annotate --input $< --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 		convert --check false -f json -o $@.tmp.json &&\
 		mv $@.tmp.json $@
-%.db: %.owl
-	@rm -f $*.db $*-relation-graph.tsv.gz .template.db .template.db.tmp
-	semsql make $*.db
-	@rm -f $*-relation-graph.tsv.gz .template.db .template.db.tmp
-	@test -f $*.db || (echo "SQLite/SemSQL generation failed" && exit 1)
 # ----------------------------------------
 # Release artefacts: main release artefacts
 # ----------------------------------------
