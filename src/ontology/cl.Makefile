@@ -308,6 +308,25 @@ endif
 update-HRA-illustrations:
 	python3 ./$(SCRIPTSDIR)/2D_FTU_images.py
 
+
+# ----------------------------------------
+# SemSQL release artefacts
+# ----------------------------------------
+# We do _not_ use the ODK builtin feature for now because it only
+# creates _uncompressed_ DB files, which are way too large to be
+# practical.
+
+DB_FILES = cl.db.gz $(foreach f, $(RELEASE_ARTEFACTS), $f.db.gz)
+RELEASE_ASSETS += $(DB_FILES)
+all_assets: $(DB_FILES)
+
+%.db.gz: %.owl
+	@rm -f $*.db $*.db.gz $*-relation-graph.tsv.gz .template.db .template.db.tmp
+	semsql make $*.db
+	@test -f $*.db || (echo "SQLite/SemSQL generation failed" && exit 1)
+	gzip $*.db
+	@rm -f $*-relation-graph.tsv.gz .template.db .template.db.tmp
+
 # ----------------------------------------
 # RELEASE DEPLOYMENT
 # ----------------------------------------
