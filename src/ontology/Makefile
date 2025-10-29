@@ -539,7 +539,6 @@ ifeq ($(MIR),true)
 .PHONY: component-download-hra_subset.owl
 component-download-hra_subset.owl: | $(TMPDIR)
 	$(ROBOT) merge -I https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl \
-		 remove --term obo:CL_0002042 --trim true \
 		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
 
 $(COMPONENTSDIR)/hra_subset.owl: component-download-hra_subset.owl $(TMPDIR)/stamp-component-hra_subset.owl
