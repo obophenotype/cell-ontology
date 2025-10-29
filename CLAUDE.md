@@ -23,6 +23,7 @@ This includes instructions for editing the cl ontology.
 - if a PMID is mentioned in the issue, ALWAYS try and read it
 - ALWAYS check proposed parent terms for consistency
 - For terms that are compositional, check `src/patterns/dosdp-patterns/*.yaml`
+- When generating a textual definition for a term, make sure to include in-line references if there are in the text on the ticket.
 
 ## Editors guide
 - design patterns are in docs/patterns
