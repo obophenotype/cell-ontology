@@ -2260,6 +2260,7 @@ Declaration(Class(obo:CL_0020001))
 Declaration(Class(obo:CL_0020002))
 Declaration(Class(obo:CL_0020003))
 Declaration(Class(obo:CL_0020004))
+Declaration(Class(obo:CL_0020005))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -25398,6 +25399,16 @@ SubClassOf(obo:CL_0020004 obo:CL_0000617)
 SubClassOf(obo:CL_0020004 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002477))
 SubClassOf(obo:CL_0020004 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000015665))
 
+# Class: obo:CL_0020005 (spiral ligament fibrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:10675641") Annotation(oboInOwl:hasDbXref "PMID:33193034") obo:IAO_0000115 obo:CL_0020005 "An otic fibrocyte that is part of the spiral ligament. This cell is crucial in maintaining the endocochlear potential, regulating blood flow, participating in immune responses by secreting chemokines including MCP-1 and MIP-2, and producing extracellular matrix proteins such as collagen and cochlin.")
+AnnotationAssertion(terms:contributor obo:CL_0020005 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0020005 "2025-10-27T15:56:54Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020005 "SLF")
+AnnotationAssertion(rdfs:label obo:CL_0020005 "spiral ligament fibrocyte")
+SubClassOf(obo:CL_0020005 obo:CL_0002665)
+SubClassOf(obo:CL_0020005 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
+
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24051376") Annotation(oboInOwl:hasDbXref "PMID:31300091") Annotation(oboInOwl:hasDbXref "PMID:32016094") obo:IAO_0000115 obo:CL_0700009 "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type.")
@@ -25837,11 +25848,13 @@ SubClassOf(obo:CL_1000307 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000252
 
 # Class: obo:CL_1000308 (fibrocyte of adventitia of ureter)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") obo:IAO_0000115 obo:CL_1000308 "A fibrocyte that is part of the adventitia of ureter.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:28028137") obo:IAO_0000115 obo:CL_1000308 "A stromal cell that is part of the outer adventitial layer of the ureter. This cell type is marked by expression of periostin (POSTN) in mice, and it is derived from Foxd1+ mesenchymal progenitors around embryonic day 12.5. The adventitial fibrocyte initiates differentiation earlier than smooth muscle cells and becomes terminally differentiated by E16.5-18.5 in mice, exhibiting low proliferative capacity in adulthood.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000308 "FMA:261289")
 AnnotationAssertion(rdfs:label obo:CL_1000308 "fibrocyte of adventitia of ureter")
-EquivalentClasses(obo:CL_1000308 ObjectIntersectionOf(obo:CL_0000135 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001252)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_1000308 obo:CL_0000135)
+SubClassOf(obo:CL_1000308 obo:CL_0000499)
+SubClassOf(obo:CL_1000308 obo:CL_0002503)
+SubClassOf(obo:CL_1000308 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001252))
+SubClassOf(obo:CL_1000308 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000013031))
 
 # Class: obo:CL_1000309 (epicardial adipocyte)
 
@@ -27501,7 +27514,6 @@ EquivalentClasses(obo:CL_1000692 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeV
 
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000693 "KUPO:0001103")
 AnnotationAssertion(rdfs:label obo:CL_1000693 "kidney interstitial fibrocyte")
-SubClassOf(obo:CL_1000693 obo:CL_0000135)
 SubClassOf(obo:CL_1000693 obo:CL_1000500)
 
 # Class: obo:CL_1000695 (kidney interstitial alternatively activated macrophage)
@@ -30388,8 +30400,8 @@ SubClassOf(Annotation(oboInOwl:hasDbXref "PMID:30096314") obo:CL_4023056 ObjectS
 
 # Class: obo:CL_4023057 (cerebellar inhibitory GABAergic interneuron)
 
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") obo:IAO_0000115 obo:CL_4023057 "A GABAergic interneuron whose soma is located in the cerebellar cortex.")
 AnnotationAssertion(terms:contributor obo:CL_4023057 <http://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") rdfs:comment obo:CL_4023057 "A GABAergic interneuron whose soma is located in the cerebellar cortex.")
 AnnotationAssertion(rdfs:label obo:CL_4023057 "cerebellar inhibitory GABAergic interneuron")
 EquivalentClasses(obo:CL_4023057 ObjectIntersectionOf(obo:CL_0011005 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002129)))
 
