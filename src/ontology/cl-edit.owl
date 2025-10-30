@@ -2261,6 +2261,7 @@ Declaration(Class(obo:CL_0020002))
 Declaration(Class(obo:CL_0020003))
 Declaration(Class(obo:CL_0020004))
 Declaration(Class(obo:CL_0020005))
+Declaration(Class(obo:CL_0020006))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -3619,6 +3620,30 @@ AnnotationAssertion(rdfs:label oboInOwl:SubsetProperty "subset_property")
 # Annotation Property: oboInOwl:consider (consider)
 
 AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
+
+# Annotation Property: oboInOwl:hasBroadSynonym (has_broad_synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
+
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
+
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
+
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
+
+# Annotation Property: oboInOwl:hasRelatedSynonym (has_related_synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasRelatedSynonym "has_related_synonym")
+
+# Annotation Property: oboInOwl:hasSynonymType (has_synonym_type)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasSynonymType "has_synonym_type")
 
 # Annotation Property: oboInOwl:inSubset (in_subset)
 
@@ -25388,6 +25413,16 @@ AnnotationAssertion(rdfs:label obo:CL_0020005 "spiral ligament fibrocyte")
 SubClassOf(obo:CL_0020005 obo:CL_0002665)
 SubClassOf(obo:CL_0020005 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
 
+# Class: obo:CL_0020006 (OB-Dopa-GABA)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35322231") obo:IAO_0000115 obo:CL_0020006 "A transcriptomically defined GABAergic neuron coexpressing dopamine located in the olfactory bulb and part of the striatum.")
+AnnotationAssertion(terms:contributor obo:CL_0020006 "https://orcid.org/0000-0002-5507-2103")
+AnnotationAssertion(rdfs:label obo:CL_0020006 "OB-Dopa-GABA")
+SubClassOf(obo:CL_0020006 obo:CL_0000617)
+SubClassOf(obo:CL_0020006 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002435))
+SubClassOf(obo:CL_0020006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061527))
+SubClassOf(obo:CL_0020006 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24051376") Annotation(oboInOwl:hasDbXref "PMID:31300091") Annotation(oboInOwl:hasDbXref "PMID:32016094") obo:IAO_0000115 obo:CL_0700009 "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type.")
@@ -29927,13 +29962,17 @@ SubClassOf(obo:CL_4023017 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024
 # Class: obo:CL_4023018 (pvalb GABAergic interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023018 "pvalb interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023018 "A transcriptomically distinct GABAergic interneuron with a soma located in a cerebral cortex and it expresses Parvalbumin.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023018 "A transcriptomically distinct GABAergic interneuron with a soma located in the pallium. These neurons express Parvalbumin.")
 AnnotationAssertion(terms:contributor obo:CL_4023018 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023018 "ILX:0770154")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023018 cl:BDS_subset)
+AnnotationAssertion(rdfs:comment obo:CL_4023018 "Historically this term was used to refer to all Pvalb expressing GABAergic interneurons, but transcriptomic classification separates out some Pvalb expressing GABAergic interneurons as sibling classes (e.g. Pvalb chandelier).  We follow the transcriptomic classifications.")
 AnnotationAssertion(rdfs:label obo:CL_4023018 "pvalb GABAergic interneuron")
-EquivalentClasses(obo:CL_4023018 ObjectIntersectionOf(obo:CL_4023069 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534) ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000013502)))
+SubClassOf(obo:CL_4023018 obo:CL_0000099)
+SubClassOf(obo:CL_4023018 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000203))
 SubClassOf(obo:CL_4023018 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024))
+SubClassOf(obo:CL_4023018 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+SubClassOf(obo:CL_4023018 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000013502))
 
 # Class: obo:CL_4023019 (L5/6 cck, VIP GABAergic interneuron (Mmus))
 
@@ -30134,21 +30173,24 @@ AnnotationAssertion(rdfs:label obo:CL_4023035 "lateral ganglionic eminence deriv
 EquivalentClasses(obo:CL_4023035 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004025)))
 SubClassOf(obo:CL_4023035 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001017))
 
-# Class: obo:CL_4023036 (chandelier pvalb GABAergic interneuron)
+# Class: obo:CL_4023036 (pvalb chandelier GABAergic interneuron)
 
-AnnotationAssertion(obo:IAO_0000028 obo:CL_4023036 "chandelier PV interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023036 "A transcriptomically distinct pvalb GABAergic interneuron that is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner.")
+AnnotationAssertion(obo:IAO_0000028 obo:CL_4023036 "Pvalb Chandelier")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "PMID:15378039") Annotation(oboInOwl:hasDbXref "PMID:27199673") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023036 "A transcriptomically distinct pvalb GABAergic interneuron located in the pallium. It is recognizable by the straight terminal axonal 'cartridges' of vertically oriented strings of synaptic boutons. Chandelier PV cells' boutons target exclusively the axon initial segment (AIS) of pyramidal cells, with a single cell innervating hundreds of pyramidal cells in a clustered manner.  These cells are fast-spiking.")
 AnnotationAssertion(terms:contributor obo:CL_4023036 <https://orcid.org/0000-0001-7258-9596>)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27199673") Annotation(oboInOwl:hasDbXref "PMID:33862423") Annotation(oboInOwl:hasDbXref "PMID:39012795") oboInOwl:hasBroadSynonym obo:CL_4023036 "axo-axonic cell")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4023036 "ILX:0107356")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023036 "Chandelier PV")
+AnnotationAssertion(Annotation(obo:IAO_0000116 "Interlex cross reference refers specifically to Markram 2015 rat chandelier cell.") oboInOwl:hasDbXref obo:CL_4023036 "ILX:0777213")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023036 "chandelier PV")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023036 "chandelier cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15378039") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023036 "ChC")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4023036 cl:BDS_subset)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") rdfs:comment obo:CL_4023036 "In mice, Chandelier PV cells have soma found in in upper L2/3, with some in deep L5 and exhibit fast-spiking but lower firing rate compared to basket cells, and have practically absent hyperpolarization sag.")
-AnnotationAssertion(rdfs:label obo:CL_4023036 "chandelier pvalb GABAergic interneuron")
+AnnotationAssertion(rdfs:label obo:CL_4023036 "pvalb chandelier GABAergic interneuron")
+EquivalentClasses(obo:CL_4023036 ObjectIntersectionOf(obo:CL_0011005 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070011)))
 SubClassOf(obo:CL_4023036 obo:CL_0000099)
 SubClassOf(obo:CL_4023036 obo:CL_4023069)
 SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070011))
-SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956))
-SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024))
+SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000203))
 SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 SubClassOf(obo:CL_4023036 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000013502))
 
@@ -30621,16 +30663,12 @@ AnnotationAssertion(rdfs:label obo:CL_4023081 "inverted L6 intratelencephalic pr
 SubClassOf(obo:CL_4023081 obo:CL_4023050)
 SubClassOf(obo:CL_4023081 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070021))
 
-# Class: obo:CL_4023083 (chandelier cell)
+# Class: obo:CL_4023083 (obsolete chandelier cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15378039") Annotation(oboInOwl:hasDbXref "PMID:27199673") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4023083 "A GABAergic interneuron that selectively innervates the axon initial segment of pyramidal cells. Their local axonal clusters are formed by high-frequency branching at shallow angles, often ramifying around, above or below their somata with a high bouton density. The characteristic terminal portions of the axon form short vertical rows of boutons, resembling the candlesticks and candles of a chandelier. Chandelier cells can be multipolar or bitufted.")
-AnnotationAssertion(terms:contributor obo:CL_4023083 <https://orcid.org/0000-0001-7258-9596>)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27199673") Annotation(oboInOwl:hasDbXref "PMID:33862423") oboInOwl:hasBroadSynonym obo:CL_4023083 "axo-axonic cell")
-AnnotationAssertion(Annotation(obo:IAO_0000116 "Interlex cross reference refers specifically to Markram 2015 rat chandelier cell.") oboInOwl:hasDbXref obo:CL_4023083 "ILX:0777213")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15378039") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4023083 "ChC")
-AnnotationAssertion(oboInOwl:inSubset obo:CL_4023083 cl:BDS_subset)
-AnnotationAssertion(rdfs:label obo:CL_4023083 "chandelier cell")
-EquivalentClasses(obo:CL_4023083 ObjectIntersectionOf(obo:CL_0011005 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070011)))
+AnnotationAssertion(obo:IAO_0100001 obo:CL_4023083 obo:CL_4023036)
+AnnotationAssertion(rdfs:comment obo:CL_4023083 "Duplicate term")
+AnnotationAssertion(rdfs:label obo:CL_4023083 "obsolete chandelier cell")
+AnnotationAssertion(owl:deprecated obo:CL_4023083 "true"^^xsd:boolean)
 
 # Class: obo:CL_4023086 (T Martinotti neuron)
 
@@ -31792,14 +31830,15 @@ SubClassOf(obo:CL_4030053 obo:CL_0000120)
 SubClassOf(obo:CL_4030053 ObjectSomeValuesFrom(obo:RO_0002100 ObjectIntersectionOf(obo:UBERON_0001881 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005403))))
 SubClassOf(obo:CL_4030053 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001175))
 
-# Class: obo:CL_4030054 (RXFP1-positive interface island D1-medium spiny neuron)
+# Class: obo:CL_4030054 (D1-NUDAP medium spiny neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") obo:IAO_0000115 obo:CL_4030054 "A DRD1-expressing medium spiny neuron that is part of dense, RXFP1-positive cell islands throughout the nucleus accumbens, putamen, and near the adjacent septal nuclei.")
+AnnotationAssertion(obo:IAO_0000028 obo:CL_4030054 "STRv D1 NUDAP MSN")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727523") obo:IAO_0000115 obo:CL_4030054 "A DRD1-expressing medium spiny neuron that is part of dense, RXFP1-positive cell islands throughout the nucleus accumbens, putamen, and near the adjacent septal nuclei.")
 AnnotationAssertion(terms:date obo:CL_4030054 "2023-06-14T14:46:08Z"^^xsd:dateTime)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") oboInOwl:hasExactSynonym obo:CL_4030054 "RXFP1-positive island D1-medium spiny neuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030054 "D1-NUDAP")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") rdfs:comment obo:CL_4030054 "Regarding the abbreviation D1-NUDAP, NUDAP stands for \"neurochemically unique domains in the accumbens and putamen\". In Rhesus macaques, the RXFP1-positive interface island D1-medium spiny neuron (D1-NUDAP) has been noted to have upregulation of OPRM1 compared to DRD1-expressing medium spiny neurons located outside of the D1-exclusive island and in Islands of Calleja. Kappa-opioid receptor gene (OPRK1) has been noted to be absent from D1-NUDAP cells. Many striosome-specific markers have been noted to be upregulated in D1-NUDAP cells, including KCNIP1, KCNT1, KHDRBS3, and BACH2. PDYN, an acknowledged D1-striosome marker gene, has also been noted to be expressed in D1-NUDAPs. D1-NUDAPs also express some genes found to be selectively expressed in the matrix, including STXBP6, GDA, and SEMA3E. Gene enrichment analysis has revealed that D1-NUDAP neurons express genes that have been implicated in drug addiction and many other functions.")
-AnnotationAssertion(rdfs:label obo:CL_4030054 "RXFP1-positive interface island D1-medium spiny neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727523") oboInOwl:hasExactSynonym obo:CL_4030054 "RXFP1-positive interface island D1-medium spiny neuron")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727523") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030054 "D1-NUDAP")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34727523") rdfs:comment obo:CL_4030054 "Regarding the abbreviation D1-NUDAP, NUDAP stands for \"neurochemically unique domains in the accumbens and putamen\". In Rhesus macaques, the RXFP1-positive interface island D1-medium spiny neuron (D1-NUDAP) has been noted to have upregulation of OPRM1 compared to DRD1-expressing medium spiny neurons located outside of the D1-exclusive island and in Islands of Calleja. Kappa-opioid receptor gene (OPRK1) has been noted to be absent from D1-NUDAP cells. Many striosome-specific markers have been noted to be upregulated in D1-NUDAP cells, including KCNIP1, KCNT1, KHDRBS3, and BACH2. PDYN, an acknowledged D1-striosome marker gene, has also been noted to be expressed in D1-NUDAPs. D1-NUDAPs also express some genes found to be selectively expressed in the matrix, including STXBP6, GDA, and SEMA3E. Gene enrichment analysis has revealed that D1-NUDAP neurons express genes that have been implicated in drug addiction and many other functions.")
+AnnotationAssertion(rdfs:label obo:CL_4030054 "D1-NUDAP medium spiny neuron")
 SubClassOf(obo:CL_4030054 obo:CL_1001474)
 SubClassOf(obo:CL_4030054 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005403))
 SubClassOf(obo:CL_4030054 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001175))
@@ -34789,8 +34828,7 @@ AnnotationAssertion(terms:date obo:CL_4072029 "2025-08-12T14:31:10Z"^^xsd:dateTi
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4072029 cl:BDS_subset)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4072029 cl:cellxgene_subset)
 AnnotationAssertion(rdfs:label obo:CL_4072029 "pvalb GABAergic interneuron (Homo sapiens)")
-SubClassOf(obo:CL_4072029 obo:CL_4023018)
-SubClassOf(obo:CL_4072029 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
+EquivalentClasses(obo:CL_4072029 ObjectIntersectionOf(obo:CL_4023018 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_4072029 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000080))
 
 # Class: obo:CL_4072031 (sst chodl GABAergic interneuron (Homo sapiens))
@@ -35020,19 +35058,20 @@ AnnotationAssertion(rdfs:label obo:CL_4072045 "L6b glutamatergic cortical neuron
 SubClassOf(obo:CL_4072045 obo:CL_4023038)
 SubClassOf(obo:CL_4072045 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 
-# Class: obo:CL_4072046 (chandelier pvalb GABAergic interneuron (Homo sapiens))
+# Class: obo:CL_4072046 (pvalb chandelier GABAergic interneuron (Homo sapiens))
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4072046 "chandelier PV interneuron (Homo sapiens)")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4072046 "A transcriptomically definined chandelierl pvalb GABAergic interneuron in humans. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: CGE-derived interneurons', Author Categories: 'CrossArea_subclass', clusters Chandelier.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27477017") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") Annotation(oboInOwl:hasDbXref "PMID:37824655") obo:IAO_0000115 obo:CL_4072046 "A transcriptomically definined GABAergic interneuron of the human pallium.  These cells correspond to the classically defined pvalb chandelier neuron type. The standard transcriptomic reference data for this cell type can be found on the CellxGene census under the collection: 'Transcriptomic cytoarchitecture reveals principles of human neocortex organization', dataset: 'Supercluster: CGE-derived interneurons', Author Categories: 'CrossArea_subclass', clusters Chandelier.")
 AnnotationAssertion(obo:RO_0002175 obo:CL_4072046 obo:NCBITaxon_9606)
 AnnotationAssertion(terms:contributor obo:CL_4072046 "https://orcid.org/0000-0002-5507-2103")
 AnnotationAssertion(terms:date obo:CL_4072046 "2025-09-29T10:07:47Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_4072046 "ILX:0107356")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4072046 "Chandelier PV (Homo sapiens)")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4072046 "chandelier pvalb GABAergic interneuron (Homo sapiens)")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4072046 cl:BDS_subset)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4072046 cl:cellxgene_subset)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.5281/zenodo.11165918") rdfs:comment obo:CL_4072046 "The marker set GPR149, CA8 can identify the Human cell type chandelier pvalb GABAergic cortical interneuron in the neocortex with a confidence of 0.799748111 (NS-Forest FBeta value).")
-AnnotationAssertion(rdfs:label obo:CL_4072046 "chandelier pvalb GABAergic interneuron (Homo sapiens)")
+AnnotationAssertion(rdfs:label obo:CL_4072046 "pvalb chandelier GABAergic interneuron (Homo sapiens)")
 SubClassOf(obo:CL_4072046 obo:CL_4023036)
 SubClassOf(obo:CL_4072046 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 SubClassOf(obo:CL_4072046 ObjectSomeValuesFrom(obo:RO_0015004 obo:CLM_1000063))
