@@ -73,6 +73,7 @@ This includes instructions for editing the cl ontology.
 obsolete terms should have no logical axioms (e.g. SubClassOf, EquivalentClasses) on them. Obsolete terms may be replaced by a single
 term (so-called obsoletion with exact replacement), or by zero to many `consider` tags.
 
+**IMPORTANT: DO NOT EDIT OBSOLETE TERMS** except to add mappings and comments. Obsolete terms are marked with `owl:deprecated "true"` and their labels start with "obsolete". They should not be modified during routine edits like species naming standardization or other systematic updates.
 
 Synonyms and xrefs can be migrated judiciously,
 

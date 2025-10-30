@@ -14,6 +14,68 @@ For classes that refer to cell types in specific anatomical structures, the labe
 
 Try to maintain consistent patterns of naming where possible. However, it may make sense to override this in order to conform to common usage.
 
+## Species-specific terms
+
+### Species naming convention
+Cell types that are specific to particular species should follow a standardized naming convention to ensure consistency and clarity.
+
+**Species naming format:**
+- Species-specific terms should include a species indicator in parentheses at the end of the label
+- Use the format `(Gsss)` where `G` is the first letter of the genus and `sss` are the first three letters of the species name
+- For taxa above the species level, use the full taxonomic name
+
+**Examples:**
+- **Homo sapiens** → `(Hsap)`
+- **Mus musculus** → `(Mmus)`
+- **Callithrix jacchus** → `(Cjac)`
+- **Primates** → `(Primates)` (supra-species taxon)
+
+**Note on sensu terms:**
+- **Purpose**: Use "sensu" notation when the same cell type name refers to different concepts in different taxa
+- **Example**: "neuroblast" refers to a stem cell in arthropods but to an immature neuron in vertebrates, requiring separate terms like "neuroblast (sensu Arthropoda)" and "neuroblast (sensu Vertebrata)"
+- **When to use**: Apply sensu notation when homonymous cell type names have distinct biological meanings across taxonomic groups
+- **Existing terms**: Current sensu terms follow this principle and are maintained
+- **Future use**: Continue using sensu notation for new terms when taxonomic disambiguation is needed
+- **Standard format**: For species-specific cell types that are truly the same concept across related species, use the standardized `(Gsss)` format above
+
+**Complete example:**
+```
+"L2/3 intratelencephalic projecting glutamatergic neuron (Hsap)"
+"immature NK T cell stage I (Mmus)"
+```
+
+### Relationship to in_taxon restrictions
+Species-specific naming and logical axioms must be consistent:
+
+1. **All species-specific terms must have corresponding in_taxon axioms:**
+   - Every term with a species indicator in its name MUST have a corresponding `SubClassOf` axiom using the `in_taxon` (`RO_0002162`) property
+   - The taxon specified in the axiom must match the species indicated in the name
+
+2. **Required axiom format:**
+   ```
+   SubClassOf(obo:CL_XXXXXXX ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_YYYYY))
+   ```
+
+3. **Examples:**
+   - Human terms: `ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)`
+   - Mouse terms: `ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090)`
+
+4. **Inheritance considerations:**
+   - Terms inherit in_taxon restrictions from their parent classes
+   - If a parent class already has the appropriate species restriction, child classes may not need explicit restrictions
+   - However, species-specific names should still be used when the cell type is found only in that species
+
+### Historical synonyms
+When standardizing species naming:
+- **Always preserve original labels as exact synonyms** to maintain backward compatibility
+- Original labels using formats like `, human`, `, mouse`, or `(Homo sapiens)` should be retained as `hasExactSynonym` annotations
+- This ensures existing tools and users can still find terms using historical naming conventions
+
+**Example:**
+```
+AnnotationAssertion(rdfs:label obo:CL_XXXXXXX "activated CD4-positive, alpha-beta T cell (Hsap)")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_XXXXXXX "activated CD4-positive, alpha-beta T cell, human")
+```
 
 ## Defining terms
 This section is about the _textual_ definition of terms. Logically consistent classification is important, but an ontology is only useful (and maintainable) if all humans that interact with it (users, curators and editors) can quickly find the terms they need and understand what they refer to. This requires clear, unambiguous, human-readable definitions.
@@ -58,7 +120,9 @@ Try to be consistent in how you phrase the various types of comments. For exampl
 
 
 ## Synonyms
-Extensive addition of synonyms helps “findability” of terms when search. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
+Extensive addition of synonyms helps "findability" of terms when searching. Synonyms can and should be added liberally. Of note, the intention of the ontology is not meant to record how a synonym is used in all specific sources in which it appears. Rather an editor, after doing due diligence in researching the terms/synonyms, must determine how a term is used at the present moment in the scientific community.
+
+**IMPORTANT: Always preserve existing synonyms.** When adding new synonyms to a term, existing synonyms must never be removed or overwritten. This ensures backward compatibility and preserves the historical semantic annotations that users and tools may depend upon.
 
 Guidelines on the type of synonyms:
 
