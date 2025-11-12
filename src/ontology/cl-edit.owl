@@ -2267,6 +2267,7 @@ Declaration(Class(obo:CL_0020008))
 Declaration(Class(obo:CL_0020009))
 Declaration(Class(obo:CL_0020010))
 Declaration(Class(obo:CL_0020011))
+Declaration(Class(obo:CL_0020012))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -3267,6 +3268,7 @@ Declaration(Class(obo:CL_4072044))
 Declaration(Class(obo:CL_4072045))
 Declaration(Class(obo:CL_4072046))
 Declaration(Class(obo:CL_4072102))
+Declaration(Class(obo:CL_4072103))
 Declaration(Class(obo:CL_7770002))
 Declaration(Class(obo:CL_7770003))
 Declaration(Class(obo:CL_7770004))
@@ -3441,6 +3443,7 @@ Declaration(Class(obo:UBERON_0005273))
 Declaration(Class(obo:UBERON_0005378))
 Declaration(Class(obo:UBERON_0005382))
 Declaration(Class(obo:UBERON_0005403))
+Declaration(Class(obo:UBERON_0006005))
 Declaration(Class(obo:UBERON_0006841))
 Declaration(Class(obo:UBERON_0008198))
 Declaration(Class(obo:UBERON_0008304))
@@ -3634,11 +3637,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -6812,12 +6815,14 @@ SubClassOf(obo:CL_0000345 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000008))
 
 # Class: obo:CL_0000346 (hair follicle dermal papilla cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:9893172") obo:IAO_0000115 obo:CL_0000346 "A specialized mesenchymal cell that resides in the dermal papilla located at the bottom of hair follicles. This cell plays a pivotal roles in hair formation, growth, and cycling.")
-AnnotationAssertion(rdfs:comment obo:CL_0000346 "Are these really all stem cells?")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28418596") Annotation(oboInOwl:hasDbXref "PMID:39798934") Annotation(oboInOwl:hasDbXref "PMID:40867641") obo:IAO_0000115 obo:CL_0000346 "A specialized fibroblast that resides in the dermal papilla located at the bottom of hair follicles. This cell orchestrates reciprocal epithelial-mesenchymal signaling essential for hair follicle morphogenesis and cycling, regulating matrix cell proliferation and differentiation to control hair shaft size, shape, and growth. The dermal papilla cell is replenished each hair cycle from bipotent hair follicle dermal stem cells in the dermal sheath that simultaneously self-renew and contribute progeny to the papilla, particularly during anagen.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:39798934") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0000346 "hair follicle DPC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21444748") rdfs:comment obo:CL_0000346 "The dermal papilla contains functionally heterogeneous Sox2-positive subpopulations that serve as a niche for multipotent stem cells. These cells exhibit progenitor properties, generate skin-derived precursors (SKPs), and can differentiate into adipogenic and osteogenic lineages.")
 AnnotationAssertion(rdfs:label obo:CL_0000346 "hair follicle dermal papilla cell")
-EquivalentClasses(obo:CL_0000346 ObjectIntersectionOf(obo:CL_0000134 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000412)))
-SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000346 obo:CL_0000134)
-SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000333))
+EquivalentClasses(obo:CL_0000346 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000412)))
+SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0042634))
+SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0060638))
+SubClassOf(obo:CL_0000346 ObjectSomeValuesFrom(obo:RO_0002596 obo:GO_0031069))
 
 # Class: obo:CL_0000347 (scleral cell)
 
@@ -25490,6 +25495,13 @@ AnnotationAssertion(rdfs:label obo:CL_0020011 "hair follicle associated fibrobla
 EquivalentClasses(obo:CL_0020011 ObjectIntersectionOf(obo:CL_0002620 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002073)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0020011 obo:CL_0002620)
 
+# Class: obo:CL_0020012 (hair follicle isthmus-associated fibroblast)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:40993240") obo:IAO_0000115 obo:CL_0020012 "A fibroblast that is part of the hair follicle isthmus (mid-hair shaft). In humans, this cell expresses CRABP1/COCH/RSPO4 and tendon-associated genes (MKX, TNMD).")
+AnnotationAssertion(terms:contributor obo:CL_0020012 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(rdfs:label obo:CL_0020012 "hair follicle isthmus-associated fibroblast")
+EquivalentClasses(obo:CL_0020012 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006005)))
+
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24051376") Annotation(oboInOwl:hasDbXref "PMID:31300091") Annotation(oboInOwl:hasDbXref "PMID:32016094") obo:IAO_0000115 obo:CL_0700009 "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type.")
@@ -35154,6 +35166,17 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4072102 "Purkinje layer interneuron")
 EquivalentClasses(obo:CL_4072102 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979)))
 SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+
+# Class: obo:CL_4072103 (hair follicle dermal stem cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25465495") Annotation(oboInOwl:hasDbXref "PMID:29691589") Annotation(oboInOwl:hasDbXref "PMID:35036581") Annotation(oboInOwl:hasDbXref "PMID:35069694") obo:IAO_0000115 obo:CL_4072103 "A bipotent mesenchymal stem cell that resides in the dermal sheath, specifically within the dermal sheath cup at the base of the hair follicle, characterized by its capacity for self-renewal and differentiation into both dermal sheath and dermal papilla cells throughout hair cycling. In humans, this cell is marked by enriched expression of gremlin-2 (GREM2) and dipeptidase-1 (DPEP1), and acts as a progenitor reservoir sustaining and regenerating the follicle's mesenchymal compartments.")
+AnnotationAssertion(terms:contributor obo:CL_4072103 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(oboInOwl:creation_date obo:CL_4072103 "2025-11-05T11:49:53Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38016881") oboInOwl:hasNarrowSynonym obo:CL_4072103 "dermal sheath cup cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:25465495") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072103 "hfDSC")
+AnnotationAssertion(rdfs:label obo:CL_4072103 "hair follicle dermal stem cell")
+EquivalentClasses(obo:CL_4072103 ObjectIntersectionOf(obo:CL_0000134 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002073)))
+SubClassOf(obo:CL_4072103 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0042634))
 
 # Class: obo:CL_7770002 (juxtacanalicular tissue cell)
 
