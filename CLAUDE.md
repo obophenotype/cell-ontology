@@ -122,3 +122,63 @@ SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 The reasoner can find the most specific `is_a`, so it's OK to leave this off.
 
+## Adding ROBOT Templates
+
+ROBOT templates allow bulk addition of annotations and other axioms from TSV files. Follow these steps to add a new template:
+
+### 1. Create the template file
+- Place TSV file in `src/templates/` directory
+- Use descriptive filename (e.g., `lungmap_links.tsv`)
+- First row: column headers (for reference only)
+- Second row: ROBOT template specification
+
+### 2. Template syntax
+- `ID`: Term identifier column (always required)
+- `AI <property>`: Annotation with IRI value
+- `A <property>`: Annotation with string value
+- `>A <property>`: Axiom annotation (annotation on annotation)
+- `SPLIT=|`: Allow multiple values separated by pipes
+
+For more details see [ROBOT template documentation](https://robot.obolibrary.org/template).
+
+Example template structure:
+```tsv
+ID	External_link	Link_label	Synonyms	Dbxref
+ID	AI rdfs:seeAlso	>A rdfs:label	A oboInOwl:hasExactSynonym SPLIT=|	>A oboInOwl:hasDbXref
+CL:0002062	https://example.com/cell123	cell - on Database	synonym1|synonym2	Database:123
+```
+
+### 3. Add to Makefile
+Add template to `src/ontology/Makefile`:
+- Add `{template_name}.owl` to `OTHER_SRC` variable
+- Add build rule following existing pattern:
+```make
+components/{template_name}.owl: ../templates/{template_name}.tsv
+	$(ROBOT) template --template $< --output $@
+```
+- Add to `.PRECIOUS` targets
+
+### 4. Add import statement
+Add import to `src/ontology/cl-edit.owl` (alphabetically):
+```
+Import(<http://purl.obolibrary.org/obo/cl/components/{template_name}.owl>)
+```
+
+### 5. Update catalog
+Add URI resolution to `src/ontology/catalog-v001.xml` within "odk-managed-catalog" group:
+```xml
+<uri name="http://purl.obolibrary.org/obo/cl/components/{template_name}.owl" uri="components/{template_name}.owl" />
+```
+
+### 6. Build and test
+Test template generation:
+```bash
+./run.sh make components/{template_name}.owl
+```
+
+### Common template patterns
+- **External links**: `AI rdfs:seeAlso` with `>A rdfs:label` for custom labels
+- **Synonyms**: `A oboInOwl:hasExactSynonym SPLIT=|` for multiple synonyms
+- **Database refs**: `>A oboInOwl:hasDbXref` as axiom annotations
+- **Definitions**: `A obo:IAO_0000115` with `>A oboInOwl:hasDbXref` for sources
+
