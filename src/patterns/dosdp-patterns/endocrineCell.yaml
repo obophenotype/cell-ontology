@@ -1,0 +1,41 @@
+pattern_name: endocrineCell
+pattern_iri: http://purl.obolibrary.org/obo/cl/endocrineCell
+
+description: A pattern for endocrine cells - cells that are capable of hormone secretion that targets the circulatory system and are part of the endocrine system.
+
+classes:
+  cell: "CL:0000000"
+  hormone secretion: "GO:0046879"
+  circulatory system: "UBERON:0001009"
+  endocrine system: "UBERON:0000949"
+
+relations:
+  capable of: "RO:0002215"
+  has target end location: "RO:0002339"
+  part of: "BFO:0000050"
+
+vars:
+  secretion: "'hormone secretion'"
+  cell: "'cell'"
+
+name:
+  text: "%s %s"
+  vars:
+    - secretion
+    - cell
+
+def:
+  text: "A %s that is capable of %s with a target end location in the circulatory system."
+  vars:
+    - cell
+    - secretion
+
+equivalentTo:
+  text: "%s and ('capable of' some (%s and ('has target end location' some 'circulatory system')))"
+  vars:
+    - cell
+    - secretion
+
+subClassOf:
+  text: "'part of' some 'endocrine system'"
+  vars: []
