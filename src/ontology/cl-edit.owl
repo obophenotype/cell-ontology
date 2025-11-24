@@ -23,6 +23,7 @@ Prefix(ncbitaxon:=<http://purl.obolibrary.org/obo/ncbitaxon#>)
 
 Ontology(<http://purl.obolibrary.org/obo/cl.owl>
 Import(<http://purl.obolibrary.org/obo/cl/components/PNS_neurons.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/bgo-cl-comp.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/cellxgene_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/clm-cl.owl>)
@@ -2269,6 +2270,8 @@ Declaration(Class(obo:CL_0020010))
 Declaration(Class(obo:CL_0020011))
 Declaration(Class(obo:CL_0020012))
 Declaration(Class(obo:CL_0020013))
+Declaration(Class(obo:CL_0020014))
+Declaration(Class(obo:CL_0020015))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -3638,7 +3641,7 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
@@ -25522,6 +25525,32 @@ SubClassOf(obo:CL_0020013 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000003675))
 SubClassOf(obo:CL_0020013 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000005694))
 SubClassOf(obo:CL_0020013 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_P16444))
 
+# Class: obo:CL_0020014 (intrinsically photosensitive retinal ganglion cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11834834") Annotation(oboInOwl:hasDbXref "PMID:20959623") Annotation(oboInOwl:hasDbXref "Wikipedia:Intrinsically_photosensitive_retinal_ganglion_cell") obo:IAO_0000115 obo:CL_0020014 "A retinal ganglion cell that is intrinsically photosensitive, functioning as a non-image-forming photoreceptor, distinguished from rod and cone photoreceptors by the expression of the photopigment melanopsin in mice and humans (Hattar et al., 2002; Tri Hoang Do & Yau, 2015). Located primarily in the ganglion cell layer with some displaced somata in the inner nuclear layer, this neuron depolarises directly in response to environmental irradiance (Tri Hoang Do & Yau, 2015). It projects via the retinohypothalamic tract to central targets, including the suprachiasmatic nucleus (SCN) for circadian photoentrainment and the olivary pretectal nucleus (OPN) for the pupillary light reflex.")
+AnnotationAssertion(dc:creator obo:CL_0020014 "GitHub Copilot")
+AnnotationAssertion(terms:contributor obo:CL_0020014 <https://orcid.org/0000-0003-2473-2313>)
+AnnotationAssertion(terms:contributor obo:CL_0020014 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "http://www.wikidata.org/entity/Q934475") oboInOwl:hasBroadSynonym obo:CL_0020014 "photosensitive ganglion cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:20959623") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020014 "ipRGC")
+AnnotationAssertion(rdfs:label obo:CL_0020014 "intrinsically photosensitive retinal ganglion cell")
+SubClassOf(obo:CL_0020014 obo:CL_0000210)
+SubClassOf(obo:CL_0020014 obo:CL_0000740)
+SubClassOf(obo:CL_0020014 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000966))
+SubClassOf(obo:CL_0020014 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001243))
+
+# Class: obo:CL_0020015 (transitional principal-intercalated cell of kidney collecting duct)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33893305") Annotation(oboInOwl:hasDbXref "PMID:37468583") obo:IAO_0000115 obo:CL_0020015 "A transitional cell located in the renal collecting duct that co-expresses markers of both principal cell (PC) and intercalated cell (IC). This hybrid cell is enriched in Chronic Kidney Disease (CKD).")
+AnnotationAssertion(dc:creator obo:CL_0020015 "GitHub Copilot")
+AnnotationAssertion(terms:contributor obo:CL_0020015 <https://orcid.org/0000-0002-2999-0103>)
+AnnotationAssertion(terms:contributor obo:CL_0020015 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37468583") oboInOwl:hasBroadSynonym obo:CL_0020015 "hybrid principal-intercalated cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:37468583") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020015 "tPC-IC cell")
+AnnotationAssertion(rdfs:label obo:CL_0020015 "transitional principal-intercalated cell of kidney collecting duct")
+SubClassOf(obo:CL_0020015 obo:CL_1000454)
+SubClassOf(obo:CL_0020015 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001232))
+
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24051376") Annotation(oboInOwl:hasDbXref "PMID:31300091") Annotation(oboInOwl:hasDbXref "PMID:32016094") obo:IAO_0000115 obo:CL_0700009 "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type.")
@@ -29773,12 +29802,17 @@ EquivalentClasses(obo:CL_2000095 ObjectIntersectionOf(obo:CL_0000037 ObjectSomeV
 
 # Class: obo:CL_2000096 (fibroblast of the reticular layer of dermis)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000096 "Any fibroblast that is part of a reticular layer of dermis.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") Annotation(oboInOwl:hasDbXref "PMID:29266210") Annotation(oboInOwl:hasDbXref "PMID:35212000") Annotation(oboInOwl:hasDbXref "PMID:36232952") Annotation(oboInOwl:hasDbXref "PMID:37646029") obo:IAO_0000115 obo:CL_2000096 "A fibroblast of dermis that resides in the deep reticular layer, characterised by robust extracellular matrix production with high type I collagen deposition forming densely packed, organised fibrillar networks (Ghetti et al., 2018). This cell exhibits pro-fibrotic properties during wound healing, entering wounds early where it proliferates and deposits collagen to restore dermal architecture (Knoedler et al., 2023; McAndrews et al., 2022). It is distinguished from papillary dermal fibroblasts by expression of COL11A1, POSTN, and SPP1 in humans (Wu et al., 2022).")
 AnnotationAssertion(terms:contributor obo:CL_2000096 <http://www.wikidata.org/entity/Q35563349>)
+AnnotationAssertion(terms:contributor obo:CL_2000096 <https://orcid.org/0009-0000-8480-9277>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000096 "2015-08-11T16:28:16Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29266210") oboInOwl:hasRelatedSynonym obo:CL_2000096 "reticular fibroblast")
 AnnotationAssertion(oboInOwl:id obo:CL_2000096 "CL:2000096")
 AnnotationAssertion(rdfs:label obo:CL_2000096 "fibroblast of the reticular layer of dermis")
 EquivalentClasses(obo:CL_2000096 ObjectIntersectionOf(obo:CL_0000057 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001993)))
+SubClassOf(obo:CL_2000096 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0070278))
+SubClassOf(obo:CL_2000096 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q15063))
+SubClassOf(obo:CL_2000096 ObjectSomeValuesFrom(obo:RO_0003000 obo:GO_0005584))
 
 # Class: obo:CL_2000097 (midbrain dopaminergic neuron)
 
@@ -31921,14 +31955,16 @@ SubClassOf(obo:CL_4030052 obo:CL_1001474)
 SubClassOf(obo:CL_4030052 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005403))
 SubClassOf(obo:CL_4030052 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001177))
 
-# Class: obo:CL_4030053 (Island of Calleja granule cell)
+# Class: obo:CL_4030053 (Islands of Calleja granule cell)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") obo:IAO_0000115 obo:CL_4030053 "A DRD1-expressing, medium spiny neuron-like granule cell that is part of an Island of Calleja.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34795450") Annotation(oboInOwl:hasDbXref "PMID:37898623") Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") obo:IAO_0000115 obo:CL_4030053 "A GABAergic neuron that resides in the islands of calleja and shows the cytoarchitectural and molecular features characteristic of this granule-like cell population. In mice and primates, it expresses D1 and D3 dopamine receptors (Drd1; Drd3), GABAergic markers (GAD1/2) and form densely packed granule cell clusters in the olfactory tubercle within the ventral striatum. Moreover it receives dense dopaminergic input from the VTA, and functionally associated with self-grooming behaviors and depression-like behaviors.")
+AnnotationAssertion(terms:contributor obo:CL_4030053 "https://orcid.org/0000-0002-5507-2103")
 AnnotationAssertion(terms:date obo:CL_4030053 "2023-06-14T13:37:45Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4030053 "D1-ICj")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cub.2021.10.015") rdfs:comment obo:CL_4030053 "In Rhesus macaques, the Island of Calleja granule cell type has been noted to have enriched gene expression of CPNE4.")
-AnnotationAssertion(rdfs:label obo:CL_4030053 "Island of Calleja granule cell")
+AnnotationAssertion(rdfs:label obo:CL_4030053 "Islands of Calleja granule cell")
 SubClassOf(obo:CL_4030053 obo:CL_0000120)
+SubClassOf(obo:CL_4030053 obo:CL_0000617)
 SubClassOf(obo:CL_4030053 ObjectSomeValuesFrom(obo:RO_0002100 ObjectIntersectionOf(obo:UBERON_0001881 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0005403))))
 SubClassOf(obo:CL_4030053 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000001175))
 
