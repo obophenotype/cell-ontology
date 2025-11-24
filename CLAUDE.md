@@ -99,7 +99,7 @@ terms to "skip" the obsoleted term.
 
 - Link back to the issue you are dealing with using the `term_tracker_item`
 - All terms should have definitions, with at least one definition xref, ideally a PMID
-- You can sign terms as `dc:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms.
+- You can sign terms as `terms:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms. (Note: terms: is the prefix for http://purl.org/dc/terms/)
 
 ## Relationships
 
