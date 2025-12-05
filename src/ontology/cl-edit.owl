@@ -2274,6 +2274,7 @@ Declaration(Class(obo:CL_0020014))
 Declaration(Class(obo:CL_0020015))
 Declaration(Class(obo:CL_0020016))
 Declaration(Class(obo:CL_0020017))
+Declaration(Class(obo:CL_0020018))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -3281,7 +3282,6 @@ Declaration(Class(obo:CL_7770003))
 Declaration(Class(obo:CL_7770004))
 Declaration(Class(obo:CL_7770005))
 Declaration(Class(obo:CL_7770006))
-Declaration(Class(obo:CL_9900002))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -3656,11 +3656,11 @@ AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
-# Annotation Property: oboInOwl:hasExactSynonym (has exact synonym)
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
 
-# Annotation Property: oboInOwl:hasNarrowSynonym (has narrow synonym)
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
 
@@ -25588,6 +25588,20 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1186/s12885-022-09872-
 AnnotationAssertion(rdfs:label obo:CL_0020017 "M0 macrophage")
 SubClassOf(obo:CL_0020017 obo:CL_0000235)
 
+# Class: obo:CL_0020018 (proliferative fibrochondrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31871141") Annotation(oboInOwl:hasDbXref "PMID:39759119") obo:IAO_0000115 obo:CL_0020018 "A fibrochondrocyte located in fibrocartilage that exhibits active proliferation capacity and is in S phase of the cell cycle. It functions as a progenitor cell positioned at the root of developmental trajectories alongside fibrochondrocyte progenitors (FCP), with the capacity to diverge toward one of two developmental fates: (1) fibrochondrocytes and prehypertrophic chondrocytes, or (2) regulatory chondrocytes and prehypertrophic chondrocytes. It is characterised by co-expression of COL1A1, the growth factors FGF7 and CTGF, and the cell-cycle genes STMN1, KIAA0101, and MCM3 in humans. During early progenitor differentiation, FGF7 and COL1A1 expression increases and then declines as the cell commits to terminal fates.")
+AnnotationAssertion(terms:contributor obo:CL_0020018 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:creator obo:CL_0020018 "GitHub Copilot")
+AnnotationAssertion(terms:date obo:CL_0020018 "2025-11-27T12:48:39Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31871141") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020018 "ProFC")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31871141") rdfs:comment obo:CL_0020018 "Lineage relationships are inferred from single-cell RNA-seq trajectories and validated through experimental approaches, including FACS isolation, functional differentiation assays, and in vivo developmental gene expression analysis.")
+AnnotationAssertion(rdfs:label obo:CL_0020018 "proliferative fibrochondrocyte")
+SubClassOf(obo:CL_0020018 obo:CL_4072104)
+SubClassOf(obo:CL_0020018 ObjectSomeValuesFrom(obo:RO_0000056 obo:GO_0022402))
+SubClassOf(obo:CL_0020018 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000003264))
+SubClassOf(obo:CL_0020018 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000007498))
+
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24051376") Annotation(oboInOwl:hasDbXref "PMID:31300091") Annotation(oboInOwl:hasDbXref "PMID:32016094") obo:IAO_0000115 obo:CL_0700009 "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type.")
@@ -35335,20 +35349,6 @@ AnnotationAssertion(Annotation(dc:license <http://creativecommons.org/licenses/b
 SubClassOf(obo:CL_7770006 obo:CL_0002367)
 SubClassOf(obo:CL_7770006 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 SubClassOf(obo:CL_7770006 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q9UIK5))
-
-# Class: obo:CL_9900002 (proliferative fibrochondrocyte)
-
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31871141") Annotation(oboInOwl:hasDbXref "PMID:39759119") obo:IAO_0000115 obo:CL_9900002 "A fibrochondrocyte located in fibrocartilage that exhibits active proliferation capacity and is in S phase of the cell cycle. It functions as a progenitor cell positioned at the root of developmental trajectories alongside fibrochondrocyte progenitors (FCP), with the capacity to diverge toward one of two developmental fates: (1) fibrochondrocytes and prehypertrophic chondrocytes, or (2) regulatory chondrocytes and prehypertrophic chondrocytes. It is characterised by co-expression of COL1A1, the growth factors FGF7 and CTGF, and the cell-cycle genes STMN1, KIAA0101, and MCM3 in humans. During early progenitor differentiation, FGF7 and COL1A1 expression increases and then declines as the cell commits to terminal fates.")
-AnnotationAssertion(terms:contributor obo:CL_9900002 <https://orcid.org/0009-0000-8480-9277>)
-AnnotationAssertion(terms:creator obo:CL_9900002 "GitHub Copilot")
-AnnotationAssertion(terms:date obo:CL_9900002 "2025-11-27T12:48:39Z"^^xsd:dateTime)
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31871141") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_9900002 "ProFC")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31871141") rdfs:comment obo:CL_9900002 "Lineage relationships are inferred from single-cell RNA-seq trajectories and validated through experimental approaches, including FACS isolation, functional differentiation assays, and in vivo developmental gene expression analysis.")
-AnnotationAssertion(rdfs:label obo:CL_9900002 "proliferative fibrochondrocyte")
-SubClassOf(obo:CL_9900002 obo:CL_4072104)
-SubClassOf(obo:CL_9900002 ObjectSomeValuesFrom(obo:RO_0000056 obo:GO_0022402))
-SubClassOf(obo:CL_9900002 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000003264))
-SubClassOf(obo:CL_9900002 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000007498))
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
