@@ -16,15 +16,17 @@ These are the current imports in CL
 
 | Import | URL | Type |
 | ------ | --- | ---- |
-| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | None |
-| go | http://purl.obolibrary.org/obo/go.owl | None |
-| uberon | http://purl.obolibrary.org/obo/uberon.owl | None |
-| ro | http://purl.obolibrary.org/obo/ro.owl | None |
-| pato | http://purl.obolibrary.org/obo/pato.owl | None |
-| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | None |
-| ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | None |
+| pr | https://raw.githubusercontent.com/obophenotype/pro_obo_slim/master/pr_slim.owl | slme |
+| go | http://purl.obolibrary.org/obo/go.owl | slme |
+| uberon | http://purl.obolibrary.org/obo/uberon.owl | slme |
+| ro | http://purl.obolibrary.org/obo/ro.owl | slme |
+| pato | http://purl.obolibrary.org/obo/pato.owl | slme |
+| ncbitaxon | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim.owl | slme |
+| ncbitaxondisjoints | http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl | slme |
 | omo | http://purl.obolibrary.org/obo/omo.owl | mirror |
-
+| mbao | https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao-base.owl | slme |
+| dhbao | https://raw.githubusercontent.com/brain-bican/developing_human_brain_atlas_ontology/main/dhbao-base.owl | slme |
+| stato | http://purl.obolibrary.org/obo/stato.owl | slme |
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:
 
@@ -36,11 +38,15 @@ These are the components in CL
 
 | Filename | URL |
 | -------- | --- |
-| hra_subset.owl | None |
+| hra_subset.owl | https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl |
 | mappings.owl | None |
 | blood_and_immune_upper_slim.owl | None |
 | eye_upper_slim.owl | None |
 | general_cell_types_upper_slim.owl | None |
 | kidney_upper_slim.owl | None |
 | cellxgene_subset.owl | None |
-| clm-cl.owl | None |
+| PNS_neurons.owl | None |
+| clm-cl.owl | https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl |
+| 2DFTU_HRA_illustrations.owl | None |
+| wmbo-cl-comp.owl | https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/main/wmbo-cl-comp.owl |
+| bgo-cl-comp.owl | https://raw.githubusercontent.com/Cellular-Semantics/hmba_basal_ganglia_ontology/main/bgo-cl-comp.owl |
