@@ -87,7 +87,7 @@ terms to "skip" the obsoleted term.
 
 - Link back to the issue you are dealing with using the `term_tracker_item`
 - All terms should have definitions, with at least one definition xref, ideally a PMID
-- All new terms MUST have a timestamp using Dublin core terms date date, e.g.
+- All new terms MUST have a timestamp using Dublin Core terms date, e.g.
   `AnnotationAssertion(terms:date obo:CL_4072102 "2025-04-29T13:06:36Z"^^xsd:dateTime)` (where terms: is a prefix for http://purl.org/dc/terms/)
 - You can sign terms as `dc:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms.
 - If one or more ORCID are provided these MUST be added as Dublin Core Terms contributor axioms, e.g. `terms:contributor obo:CL_0000118 <https://orcid.org/0000-0002-2825-0621>`
