@@ -89,7 +89,6 @@ terms to "skip" the obsoleted term.
 - You can sign terms as `dc:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms.
 - If one or more ORCID are provided these MUST be added as Dublin Core Terms contributor axioms, e.g. `AnnotationAssertion(terms:contributor obo:CL_0000118 <https://orcid.org/0000-0002-2825-0621>)`
 
-
 ```
 # Class: obo:CL_4072102 (Purkinje layer interneuron)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") obo:IAO_0000115 obo:CL_4072102 "A type of GABAergic interneuron residing in the Purkinje cell layer of the cerebellar cortex.")
@@ -99,6 +98,17 @@ AnnotationAssertion(rdfs:label obo:CL_4072102 "Purkinje layer interneuron")
 EquivalentClasses(obo:CL_4072102 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979)))
 SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 ```
+
+
+No relationship should point to an obsolete term - when you obsolete a term, you may need to also rewire
+terms to "skip" the obsoleted term.
+
+## Other metadata
+
+- Link back to the issue you are dealing with using the `term_tracker_item`
+- All terms should have definitions, with at least one definition xref, ideally a PMID
+- You can sign terms as `terms:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms. (Note: terms: is the prefix for http://purl.org/dc/terms/)
+
 
 ## Relationships
 
