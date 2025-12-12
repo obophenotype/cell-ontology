@@ -9,10 +9,8 @@ This includes instructions for editing the cl ontology.
 ## Querying ontology
 
 - Use grep/rg to find terms. Exploit the fact that typically it is one axiom per line
-    - `grep -i neuron src/ontology/cl-edit.owl` - all axioms that mention neuron
-    - `grep 'AnnotationAssertion(rdfs:label.*neuron' src/ontology/cl-edit.owl` - all label axioms that mention neuron
-- All mentions of an ID
-    - `obo-grep.pl -r 'CL_0004177' src/ontology/cl-edit.owl`
+    - `grep -i CL_0004177 src/ontology/cl-edit.owl` - all axioms that mention CL_0004177
+    - `grep 'AnnotationAssertion(rdfs:label "neuron"' src/ontology/cl-edit.owl` - the label axiom for neuron can be used to find the ID of neuron.
 - Only search over `src/ontology/cl-edit.owl`
 - DO NOT bother doing your own greps over the file, or looking for other files, unless otherwise asked, you will just waste time.
 - ONLY use the methods above for searching the ontology
@@ -33,7 +31,7 @@ This includes instructions for editing the cl ontology.
 ## OBO Guidelines
 - Term ID format: CL_NNNNNNN (7-digit number)
 - Handling New Term Requests (NTRs):
-  - New terms start  CL_99xxxxx
+  - New term IDs MUST start with CL_99xxxxx (as specified in Datatype: idrange:81 in src/ontology/cl-idranges.owl)
 - Each term requires: id, name, definition with references
 - Never guess CL IDs, or ontology term IDs, use search tools above to determine actual term
 - Never guess PMIDs for references, do a web search if needed
@@ -72,7 +70,6 @@ This includes instructions for editing the cl ontology.
 
 obsolete terms should have no logical axioms (e.g. SubClassOf, EquivalentClasses) on them. Obsolete terms may be replaced by a single
 term (so-called obsoletion with exact replacement), or by zero to many `consider` tags.
-
 
 Synonyms and xrefs can be migrated judiciously,
 
