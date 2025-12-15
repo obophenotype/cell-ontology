@@ -2278,6 +2278,8 @@ Declaration(Class(obo:CL_0020018))
 Declaration(Class(obo:CL_0020019))
 Declaration(Class(obo:CL_0020020))
 Declaration(Class(obo:CL_0020021))
+Declaration(Class(obo:CL_0020022))
+Declaration(Class(obo:CL_0020023))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -3298,6 +3300,7 @@ Declaration(Class(obo:CP_0000043))
 Declaration(Class(obo:D96882F1-8709-49AB-BCA9-772A67EA6C33))
 Declaration(Class(obo:GO_0001552))
 Declaration(Class(obo:GO_0001649))
+Declaration(Class(obo:GO_0001958))
 Declaration(Class(obo:GO_0002491))
 Declaration(Class(obo:GO_0005903))
 Declaration(Class(obo:GO_0005927))
@@ -3380,6 +3383,7 @@ Declaration(Class(obo:PR_000004691))
 Declaration(Class(obo:PR_000004919))
 Declaration(Class(obo:PR_000005444))
 Declaration(Class(obo:PR_000005460))
+Declaration(Class(obo:PR_000005693))
 Declaration(Class(obo:PR_000005694))
 Declaration(Class(obo:PR_000007204))
 Declaration(Class(obo:PR_000007479))
@@ -3468,6 +3472,7 @@ Declaration(Class(obo:UBERON_0005382))
 Declaration(Class(obo:UBERON_0005403))
 Declaration(Class(obo:UBERON_0006005))
 Declaration(Class(obo:UBERON_0006841))
+Declaration(Class(obo:UBERON_0008187))
 Declaration(Class(obo:UBERON_0008198))
 Declaration(Class(obo:UBERON_0008304))
 Declaration(Class(obo:UBERON_0008305))
@@ -3657,7 +3662,7 @@ AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
 
 AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
 
-# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+# Annotation Property: oboInOwl:hasDbXref (has cross-reference)
 
 AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
 
@@ -10181,10 +10186,12 @@ SubClassOf(obo:CL_0000742 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_001099
 
 # Class: obo:CL_0000743 (hypertrophic chondrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "PMID:15951842") obo:IAO_0000115 obo:CL_0000743 "Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification).")
-AnnotationAssertion(rdfs:comment obo:CL_0000743 "is hypertrophic pathological or normal? and can it be described using a pato term?")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO_REF:0000034") Annotation(oboInOwl:hasDbXref "PMID:15951842") Annotation(oboInOwl:hasDbXref "PMID:25321476") Annotation(oboInOwl:hasDbXref "PMID:35179487") obo:IAO_0000115 obo:CL_0000743 "A chondrocyte that is part of the hypertrophic cartilage zone. This cell is significantly enlarged and characterised by high expression of type X collagen (COL10A1) in both humans and mice. It actively coordinates endochondral ossification by mineralising the extracellular matrix, attracting blood vessels via angiogenic signalling, and mediating the transition from cartilage to bone - often by transdifferentiating into an osteoblast rather than undergoing apoptosis.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35179487") rdfs:comment obo:CL_0000743 "Despite historical descriptions as 'terminally differentiated,' hypertrophic chondrocytes survive and transdifferentiate into osteoblasts. Genetic lineage tracing shows that hypertrophic chondrocytes do not simply undergo apoptosis but cross the cartilage–bone boundary, dedifferentiate into skeletal stem/progenitor cells, and then redifferentiate into osteoblasts and osteocytes. Single-cell RNA-seq further indicates that these chondrocyte-derived SSPCs are a major source of trabecular osteoblasts and marrow adipocytes.")
 AnnotationAssertion(rdfs:label obo:CL_0000743 "hypertrophic chondrocyte")
-SubClassOf(obo:CL_0000743 obo:CL_0000138)
+EquivalentClasses(obo:CL_0000743 ObjectIntersectionOf(obo:CL_0000138 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0008187)))
+SubClassOf(obo:CL_0000743 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0001958))
+SubClassOf(obo:CL_0000743 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000005693))
 
 # Class: obo:CL_0000744 (columnar chondrocyte)
 
@@ -25641,6 +25648,25 @@ AnnotationAssertion(rdfs:label obo:CL_0020021 "fibrochondrocyte progenitor cell"
 SubClassOf(obo:CL_0020021 obo:CL_0008019)
 SubClassOf(obo:CL_0020021 obo:CL_0011026)
 SubClassOf(obo:CL_0020021 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001995))
+
+# Class: obo:CL_0020022 (prehypertrophic chondrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29985449") Annotation(oboInOwl:hasDbXref "PMID:31871141") Annotation(oboInOwl:hasDbXref "PMID:34137454") obo:IAO_0000115 obo:CL_0020022 "A post-proliferative chondrocyte in the prehypertrophic zone of the cartilage tissue, located between the proliferative and hypertrophic zones. This cell is characterised by increased cell volume and expression of Indian Hedgehog (Ihh), PTH1R, and Runx2/3 in both humans and mice (Hallett et al., 2021). It coordinates the PTHrP-Ihh feedback loop that regulates chondrocyte differentiation and functions as a signalling hub for communication between proliferative chondrocytes, hypertrophic chondrocytes, and periosteal osteoblasts (Hallett et al., 2021).")
+AnnotationAssertion(terms:contributor obo:CL_0020022 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020022 "preHTC")
+AnnotationAssertion(rdfs:label obo:CL_0020022 "prehypertrophic chondrocyte")
+SubClassOf(obo:CL_0020022 obo:CL_0000138)
+SubClassOf(obo:CL_0020022 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_0000743))
+
+# Class: obo:CL_0020023 (effector chondrocyte)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21652695") Annotation(oboInOwl:hasDbXref "PMID:30026257") Annotation(oboInOwl:hasDbXref "PMID:34400611") Annotation(oboInOwl:hasDbXref "PMID:38868774") Annotation(oboInOwl:hasDbXref "PMID:40753276") obo:IAO_0000115 obo:CL_0020023 "A metabolically highly active chondrocyte that is identified in the cartilaginous tissues, including articular cartilage and intervertebral disc cartilage. In the human articular cartilage, this cell is marked by genes such as CYTL1, FRZB, CLEC3A, and S100B (Ji et al., 2018; Raut et al.,2025). This cell demonstrates strong metabolic activity and is implicated in extracellular matrix regulation and adaptive responses (Ji et al., 2018; Gan et al., 2021; Raut et al.,2025).")
+AnnotationAssertion(terms:contributor obo:CL_0020023 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:creator obo:CL_0020023 "GitHub Copilot")
+AnnotationAssertion(oboInOwl:creation_date obo:CL_0020023 "2025-12-01T11:46:23Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38868774") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020023 "EC")
+AnnotationAssertion(rdfs:label obo:CL_0020023 "effector chondrocyte")
+SubClassOf(obo:CL_0020023 obo:CL_0000138)
 
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
