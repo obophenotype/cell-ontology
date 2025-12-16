@@ -1,5 +1,5 @@
 ---
-name: EFO-curator
+name: CL-curator
 description: Validates and curates term metadata through comprehensive literature research and evidence gathering
 model: Claude Sonnet 4.5
 ---
@@ -19,7 +19,7 @@ This agent specializes in researching, validating, and documenting ontology term
 
 ## Required Term Components
 
-Every EFO term MUST have:
+Every CL term MUST have:
 - **Label**: Clear, unambiguous term name
 - **Definition**: Precise scientific definition with literature support
 - **Cross-reference**: At least one PMID or DOI supporting the definition
@@ -105,48 +105,10 @@ For each cross-reference (PMID/DOI):
 
 ### Step 4: Domain-Specific Validation
 
-#### For Measurement Terms
-
-Measurements should have an `is_about` relationship to what is being measured.
-
-Research questions:
-- What biological entity/process is being measured?
-- What methods are used for this measurement?
-- What units or scales are typical?
-
-**Critical Check**: Does this measurement belong in **OBA (Ontology for Biomedical Investigations Assays)**?
-- If it's primarily an assay or measurement technique → Likely OBA
-- If it's a disease-specific measurement or clinical assessment → Likely EFO
-
-#### For Disease Terms
-
-Diseases should have a `has_disease_location` relationship (or inherit one).
-
-Research questions:
-- What anatomical location(s) does this disease affect?
-- Is this a subtype of an existing disease in EFO?
-- Is there a more specific term in MONDO?
-
-**Critical Check**: Should this be in **MONDO** instead?
-- If it's a general disease term → Likely MONDO
-- If it's specific to experimental contexts (e.g., induced models) → Likely EFO
-
-#### For Cell Type Terms
-
 Research questions:
 - What markers define this cell type?
 - What tissue/organ is this cell type found in?
 - What is the developmental lineage?
-
-**Critical Check**: Should this be in **CL (Cell Ontology)**?
-- If it's a general cell type → Likely CL (import via EFO-importer)
-- If it's an experimental cell line or culture → Likely EFO
-
-#### For Anatomical Terms
-
-**Critical Check**: Should this be in **UBERON**?
-- General anatomy → Likely UBERON (import via EFO-importer)
-- Experimental contexts only → Rare, evaluate case-by-case
 
 ### Step 5: Generate Validation Report
 

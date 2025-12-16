@@ -78,3 +78,6 @@ jobs:
         uv pip install aurelian jinja2-cli "wrapt>=1.17.2"
       shell: bash
       
+   # Optional: warm the cache so the first MCP start is faster
+    - name: Pre-fetch artl-mcp
+      run: uvx --from artl-mcp artl-mcp --help
