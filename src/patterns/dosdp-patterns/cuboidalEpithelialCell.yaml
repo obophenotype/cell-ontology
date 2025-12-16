@@ -8,28 +8,28 @@ contributors:
   - https://orcid.org/0000-0002-6601-2165
 
 classes: 
-  epithelial cell: "CL:0000066"
+  cell: "CL:0000000"
   cuboidal: "PATO:0002312"
 
 relations: 
-  has characteristic: "RO:0000053"
+  bearer of: "RO:0000053"
 
 vars:
-  epithelial_cell: "'epithelial cell'"
-  cell_type: "'cell type'"
+  cell: "'cell'"
+  cuboidal: "'cuboidal'"
 
 name:
   text: "cuboidal %s"
   vars:
-    - cell_type
+    - cell
 
 def:
   text: "A %s that has a cuboidal morphology."
   vars:
-    - cell_type
+    - cell
 
 equivalentTo:
-  text: "%s and ('has characteristic' some %s)"
+  text: "%s and ('bearer of' some %s)"
   vars:
-    - cell_type
+    - cell
     - cuboidal
