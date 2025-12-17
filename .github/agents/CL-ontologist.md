@@ -25,7 +25,7 @@ This agent is a specialized ontology editor focused exclusively on technical int
 2. **Term integration** - adding new terms with proper formatting
 3. **Term modification** - editing labels, definitions, relationships
 4. **Term obsoletion** - proper deprecation workflow
-5. **Relationship management** - SubClassOf, part_of, is_about, etc.
+5. **Relationship management** - SubClassOf, part_of
 6. **Logical definitions** - genus-differentia patterns
 7. **Ontology consistency** - maintaining proper structure
 
@@ -64,12 +64,14 @@ This agent should be called when you need to:
 **Process**:
 ```
 1. Verify all required components are present
-2. Generate new CL ID (check for clashes: grep CL_092 src/ontology/cl-edit.owl)
+2. Generate new CL ID 
+     - New term IDs MUST start with CL_99xxxxx (as specified in Datatype: idrange:81 in src/ontology/cl-idranges.owl)
+     (check for clashes: grep CL_99... src/ontology/cl-edit.owl)
 3. Format term in OWL/OFN following CL patterns
-4. Add to appropriate location in cl-edit.owl
+4. Add to appropriate location in cl-edit.owl (terms are ordered by IRI)
 5. Add SubClassOf relationships
-6. Add logical definitions if applicable (genus-differentia)
-7. Add  relationships (part_of, has_soma_location, capable_of, develops_from, etc.)
+6. Add logical definitions if applicable (genus-differentia).  BE SPARING WITH THESE, CHECK EXISTING PATTERNS FIRST.
+7. Add  relationships (part_of, has_soma_location, capable_of, develops_from, etc.) - use docs/relations_guide.md for guidance.
 8. Run: make normalize_src
 9. Verify no errors
 10. Commit with descriptive message
@@ -89,7 +91,7 @@ This agent should be called when you need to:
 **Process**:
 ```
 1. Locate term in cl-edit.owl
-2. Make requested changes following OWL/XML patterns
+2. Make requested changes following OWL/OFN patterns
 3. Update metadata (dc:date, obo:IAO_0000117 if significant change)
 4. Verify relationships are valid
 5. Run: make normalize_src
@@ -141,7 +143,7 @@ This agent should be called when you need to:
 
 ### Critical Implementation Requirements
 
-Bclre proceeding with any term integration, ensure comBeforepliance with these mandatory specifications:
+Before proceeding with any term integration, ensure compliance with these mandatory specifications:
 
 #### 1. Synonym Type Implementation
 
@@ -172,13 +174,8 @@ When adding synonyms, use the correct annotation property based on curator categ
 
 **MINIMUM 2 PMID REFERENCES REQUIRED for all new terms**
 
-PMIDs must be embedded as nested `<oboInOwl:hasDbXref>` within the definition element:
+PMIDs must be embedded as axiom annotations on the defintions using `<oboInOwl:hasDbXref>`
 
-```xml
-<obo:IAO_0000115 rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Definition text here.
-    <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:12345678</oboInOwl:hasDbXref>
-    <oboInOwl:hasDbXref rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PMID:87654321</oboInOwl:hasDbXref>
-</obo:IAO_0000115>
 ```
 
 **Reference**: See CL:0700018 for working example
@@ -220,40 +217,16 @@ robot convert -vvv -i cl-edit.owl -o /dev/null
 robot reason -i cl-edit.owl -r ELK
 ```
 
-## Domain-Specific Requirements
-
-### Measurement Terms Must Have
-
-1. **Parent**: At least one measurement class
-2. **is_about**: What is being measured (unless inherited)
-3. **Definition**: Should include what, how, and units if applicable
-
-**If missing is_about**:
-- Check if curator report identifies what's measured
-- Add logical definition with is_about restriction
-- If not clear, ask for clarification in PR
-
-### Disease Terms Must Have
-
-1. **Parent**: Disease classification
-2. **has_disease_location**: Anatomical location (can be inherited)
-3. **Definition**: Should include pathology, affected anatomy, and characteristics
-
 **If missing location**:
 - Check parent terms for inherited location
 - If genuinely missing, ask curator to research or add comment in PR
 
-### Cell Type Terms
-
-1. **Parent**: Cell type classification
-2. Consider **part_of**: Tissue or organ (if from CL)
-3. **Definition**: Should include markers, lineage, or functional characteristics
 
 ## Special Procedures
 
 ### Checking Existing Terms
 
-Bclre adding a new term, check for duplicates:
+Before adding a new term, check for duplicates:
 
 ```bash
 # Search by label
@@ -265,12 +238,11 @@ obo-grep.pl -r 'pattern' src/ontology/cl-edit.owl
 
 ### Finding Parent Terms
 
-1. Search in CL first:
+Search in CL first:
    ```bash
    grep -i "PARENT_CONCEPT" src/ontology/cl-edit.owl
    ```
 
-2. If not found in CL, verify it exists in imported ontologies (check imports/ directory)
 
 ### Handling Synonyms
 
@@ -279,15 +251,6 @@ Types of synonyms in CL:
 - `oboInOwl:hasNarrowSynonym`: Synonym is more specific
 - `oboInOwl:hasBroadSynonym`: Synonym is more general
 - `oboInOwl:hasRelatedSynonym`: Related but not equivalent
-
-### Version Management
-
-Current version location: Line 14 of `ExFactor Ontology release notes.txt`
-
-When obsoleting terms:
-- Get current version (e.g., 3.80.0)
-- Set `cl:obsoleted_in_version` to next minor version (e.g., 3.81)
-- Only update when newly obsoleting (not when editing already obsolete terms)
 
 ## GitHub Workflow
 
@@ -352,7 +315,7 @@ Bclre committing, verify:
 - Verify subclasses.csv syntax is correct
 
 ### If ID collision detected:
-- Grep for next available CL_092xxxx ID
+- Grep for next available CL_999xxxx ID
 - Ensure 7-digit format maintained
 
 ## Best Practices

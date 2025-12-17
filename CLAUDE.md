@@ -131,10 +131,12 @@ SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 The reasoner can find the most specific `is_a`, so it's OK to leave this off.
 
-## DELEGATION 
+## DELEGATION
 
-**Research - before making decisions about edits - always call on @CL-curator** to research, validate and extend the information provided before proceeding with edits.
+**Research**
+
+- before making decisions about edits - always call on @CL-curator** to research, validate and extend the information provided before proceeding with edits.
 
 **ALL IMPORTS MUST BE DELEGATED TO @CL-importer**
 
-- **NEVER perform imports yourself** - always call @CL-importer
+- **NEVER** perform imports yourself - always call @CL-importer

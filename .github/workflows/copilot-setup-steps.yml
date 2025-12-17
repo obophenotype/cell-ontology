@@ -15,6 +15,7 @@ jobs:
   # The job MUST be called `copilot-setup-steps` or it will not be picked up by Copilot.
   copilot-setup-steps:
     runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
 
     # Set the permissions to the lowest permissions possible needed for your steps.
     # Copilot will be given its own token for its operations.
@@ -77,4 +78,9 @@ jobs:
         source .venv/bin/activate
         uv pip install aurelian jinja2-cli "wrapt>=1.17.2"
       shell: bash
+
+     # Optional: warm the cache so the first MCP start is faster
+      
+    - name: Pre-fetch artl-mcp
+      run: uvx --from artl-mcp artl-mcp --help
       
