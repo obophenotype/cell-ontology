@@ -65,7 +65,10 @@ When given a term to import (e.g., "club cell"):
 
 ### Step 3: Add IRI to Dependencies
 
-Once validated, add the full IRI to the appropriate file in `src/ontology/imports/`:
+Once validated, first confirm CL does not already contain the term. Search either `src/ontology/cl-edit.owl`(native CL classes) or `src/ontology/imports/merged_import.owl` (imported classes). If the IRI exists, stop here and use the existing term instead of re-importing it.
+
+
+If the IRI does not exist in CL, add the full IRI to the appropriate file in `src/ontology/imports/`:
 
 1. Identify the correct dependency file:
    - UBERON terms → `uberon_terms.txt`
@@ -81,23 +84,23 @@ Once validated, add the full IRI to the appropriate file in `src/ontology/import
 
 4. Ensure each IRI is on its own line
 
-### Step 4: Environment-Aware Next Steps
+### Step 4: Refresh CL Imports
 
-Continue with mirror update and import regeneration:
+CL uses the base-merging import workflow (see `docs/Adding_classes_from_another_ontology.md`). After you update the dependency list:
 
-1. Update the specific ontology mirror. The complete list of mirrors can be found in `./get_mirrors.sh`. For example, to update the GO mirror:
+1. Make sure Docker is running locally and you have ≥8 GB RAM available.
+2. From the repo root change into the ontology workdir and run the ODK wrapper:
    ```bash
    cd src/ontology
-   mkdir -p mirror
-   curl -L http://purl.obolibrary.org/obo/go.owl > mirror/go.owl
+   sh run.sh make imports/merged_import.owl
    ```
-   IMPORTANT: always check the correct url in `./get_mirrors.sh` before running the command.
-
-2. Regenerate the specific import (force rebuild):
+   This single command refreshes mirrors and rebuilds the unified `merged_import.owl` module that CL imports. Let it run to completion without interruption, even if it appears busy for several minutes.
+3. If mirrors were refreshed recently you can use the faster target instead:
    ```bash
-   make imports/[ontology]_import.owl -B
+   sh run.sh make no-mirror-refresh-merged
    ```
-   Example: `make imports/go_import.owl -B`
+
+If the import refresh fails because the machine cannot allocate enough memory, document the requested term(s) in a GitHub issue so another editor can run the pipeline.
 
 
 ## Best Practices
@@ -142,10 +145,10 @@ Continue with mirror update and import regeneration:
 2. Finds GO:0042599 with label "lamellar body"
 3. Fetches GO:0042599 to validate
 4. Confirms: "A membrane-bounded organelle, specialized for the storage and secretion..."
-5. Adds `http://purl.obolibrary.org/obo/GO_0042599` to `src/ontology/iri_dependencies/go_terms.txt`
-6. Runs `./get_mirrors.sh`
-7. Runs `make imports/go_import.owl -B`
-8. Reports success: "✓ Successfully imported GO:0042599 (lamellar body) and regenerated go_import.owl"
+5. Confirms that the term does not already exist in CL
+6. Adds `http://purl.obolibrary.org/obo/GO_0042599` to `src/ontology/imports/go_terms.txt`
+7. Runs `cd src/ontology && sh run.sh make imports/merged_import.owl`
+8. Reports success: "✓ Successfully imported GO:0042599 (lamellar body) and refreshed merged_import.owl"
 
 ## Limitations
 
