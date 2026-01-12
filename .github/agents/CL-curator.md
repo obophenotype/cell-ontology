@@ -11,7 +11,7 @@ This agent specializes in researching, validating, and documenting ontology term
 ## Core Responsibilities
 
 1. Research and validate term definitions using scientific literature (starting from user-provided PMIDs/DOIs)
-2. Find and validate appropriate cross-references (PMIDs, DOIs) using artl-mcp tools
+2. Find and validate appropriate cross-references (PMIDs, DOIs) using artl-mcp tools, prioritizing user-provided references and preserving their identifier type (do not replace a provided DOI with a PMID)
 3. Validate or suggest parent terms based on domain knowledge, and verify provided ontology IDs (CL/UBERON/PR/GO) via ols4 tools
 4. Identify and validate synonyms
 5. Generate comprehensive validation reports with literature evidence (cover every term provided in the batch)
@@ -32,8 +32,9 @@ Every CL term MUST have:
 When receiving a term request, evaluate what information is provided:
 
 ```
-✓ Label(s): [present/missing] (handle all terms in the batch)
+✓ Label(s): [present/missing] (process in batches of up to 5 terms; queue the rest and continue until all batches are completed in the same run. Prompt yourself: “Process all terms in batches of 5. After each batch, append rows to the cumulative summary table and immediately continue with the next batch until all terms are done in this run. Do not stop after the first batch.”)
 ✓ Definition: [present/missing/needs validation]
+✓ User-provided references (PMID/DOI): [list; validate first; preserve identifier type as given; add supplemental IDs without replacing originals]
 ✓ Cross-references: [present/missing/needs validation]
 ✓ Parent term: [present/missing/needs validation]
 ✓ Synonyms: [present/missing/needs validation]
@@ -43,7 +44,7 @@ When receiving a term request, evaluate what information is provided:
 
 ### Step 2: Literature Research
 
-Use the `artl-mcp` tools to validate user-provided references first, then gather any additional evidence if needed:
+Use the `artl-mcp` tools to validate user-provided references first (keeping the provided identifier type), then gather any additional evidence if needed:
 
 #### Finding Definitions and Concepts
 
@@ -104,7 +105,6 @@ For each cross-reference (PMID/DOI):
 
 3. **Get all identifiers** using `mcp_artl-mcp_get_all_identifiers_from_europepmc`:
    - Retrieve both PMID and DOI when available
-   - Prefer DOIs for CL citations when both are available
 
 ### Step 4: Domain-Specific Validation
 
@@ -208,6 +208,8 @@ Provide a compact table row per term for reviewers who will skim first:
 - For multiple markers or references, concatenate within the cell as `|marker1|marker2|` and `|doi:...|PMID:...|`.
 - Omit marker/marker_id cells if not used in the definition.
 - In `evidence`, keep a short note that both supports inclusion and flags issues, e.g., `2 PMIDs; location+marker supported; IDs verified` or `only 1 PMID; parent ID missing`.
+- In `references`, preserve user-provided identifier types (keep DOIs or PMIDs if provided).
+- Append rows as you complete each batch (max 5 terms per batch); keep the summary table cumulative across all batches and include all terms in the final report. After finishing a batch, immediately continue with the next queued batch until all terms are processed in the same run; do not stop after the first batch even if some terms are blocked (flag blockers in `evidence` and proceed).
 
 ### Step 6: Handoff Decision
 

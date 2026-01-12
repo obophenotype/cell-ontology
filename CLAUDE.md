@@ -17,7 +17,7 @@ This includes instructions for editing the cl ontology.
 
 ## Before making edits
 - Read the request carefully and make a plan, especially if there is nuance
-- If related issues are mentioned read them: `gh issue view GITHUB-ISSUE-NUMBER`
+- If related issues are mentioned read them: `gh issue view GITHUB-ISSUE-NUMBER`. If it does not work, try this approach `gh issue view GITHUB-ISSUE-NUMBER --json title,body,number,url,author,labels,comments --jq '{title,body,number,url,author: .author.login,labels: [.labels[].name],comments: [.comments[] | {author: .author.login, body}]}'`
 - if a PMID is mentioned in the issue, ALWAYS try and read it
 - ALWAYS check proposed parent terms for consistency
 - For terms that are compositional, check `src/patterns/dosdp-patterns/*.yaml`
@@ -136,7 +136,10 @@ The reasoner can find the most specific `is_a`, so it's OK to leave this off.
 **Research**
 
 - before making decisions about edits - always call on @CL-curator** to research, validate and extend the information provided before proceeding with edits.
+- When you call @CL-curator, point it at `.github/agents/CL-curator.md` and expect per-term output (even for batches): validated IDs (via ols4), per-term report + summary table row as listed in the CL-curator.md.
 
 **ALL IMPORTS MUST BE DELEGATED TO @CL-importer**
 
 - **NEVER** perform imports yourself - always call @CL-importer
+- @CL-ontologist should only edit `cl-edit.owl` once curator output is complete and imports (if any) are confirmed by @CL-importer.
+- For large term sets, instruct @CL-curator to work in batches of up to 5 terms, appending summary-table rows as each batch finishes; the final summary table must include all terms across batches. Make clear the curator should continue through all batches in the same run (do not stop after the first batch), flagging blockers in the evidence column but proceeding with remaining terms.
