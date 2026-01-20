@@ -4,82 +4,45 @@
 ## changes here rather than in the main Makefile
 # railing-whitespace  xref-syntax
 
-non_native_classes.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/non-native-classes.sparql $@.tmp &&\
-	cat $@.tmp | sort | uniq >  $@
-	rm -f $@.tmp
 
-# TODO add back: 		remove --term-file non_native_classes.txt \
-
-#####################################################################################
-### Run ontology-release-runner instead of ROBOT as long as ROBOT is broken.      ###
-#####################################################################################
-
-# The reason command (and the reduce command) removed some of the very crucial asserted axioms at this point.
-# That is why we first need to extract all logical axioms (i.e. subsumptions) and merge them back in after
-# The reasoning step is completed. This will be a big problem when we switch to ROBOT completely..
-
-tmp/cl_terms.txt: $(SRC)
-	$(ROBOT) query --use-graphs true -f csv -i $< --query ../sparql/cl_terms.sparql $@
-
-tmp/asserted-subclass-of-axioms.obo: $(SRC) tmp/cl_terms.txt
-	$(ROBOT) merge --input $< \
-		filter --term-file tmp/cl_terms.txt --axioms "logical" --preserve-structure false \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o $@.tmp.obo && mv $@.tmp.obo $@
-
-# All this terrible OBO file hacking is necessary to make sure downstream tools can actually compile something resembling valid OBO (oort!).
-#http://purl.obolibrary.org/obo/UBERON_0004370 EquivalentTo basement membrane needs fixing
-# Removing drains CARO relationship is a necessary hack because of an OBO bug that turns universals
-# into existentials on roundtrip
-
-tmp/source-merged.obo: $(SRC) tmp/asserted-subclass-of-axioms.obo config/remove_annotations.txt
-	$(ROBOT) merge --input $(SRC) \
-		reason --reasoner ELK \
-		relax \
-		remove --axioms equivalent \
-		merge -i tmp/asserted-subclass-of-axioms.obo \
-		remove -T config/remove_annotations.txt --axioms annotation \
-		query --update ../sparql/remove-op-definitions.ru \
-		convert --check false -f obo $(OBO_FORMAT_OPTIONS) -o tmp/source-merged.owl.obo &&\
-		grep -v ^owl-axioms tmp/source-merged.owl.obo > tmp/source-stripped2.obo &&\
-		grep -v '^def[:][ ]["]x[ ]only[ ]in[ ]taxon' tmp/source-stripped2.obo > tmp/source-stripped3.obo &&\
-		grep -v '^relationship[:][ ]drains[ ]CARO' tmp/source-stripped3.obo > tmp/source-stripped.obo &&\
-		cat tmp/source-stripped.obo | perl -0777 -e '$$_ = <>; s/name[:].*\nname[:]/name:/g; print' | perl -0777 -e '$$_ = <>; s/range[:].*\nrange[:]/range:/g; print' | perl -0777 -e '$$_ = <>; s/domain[:].*\ndomain[:]/domain:/g; print' | perl -0777 -e '$$_ = <>; s/comment[:].*\ncomment[:]/comment:/g; print' | perl -0777 -e '$$_ = <>; s/created_by[:].*\ncreated_by[:]/created_by:/g; print' | perl -0777 -e '$$_ = <>; s/def[:].*\ndef[:]/def:/g; print' > $@ &&\
-		rm tmp/source-merged.owl.obo tmp/source-stripped.obo tmp/source-stripped2.obo tmp/source-stripped3.obo
-
-oort: tmp/source-merged.obo
-	ontology-release-runner --reasoner elk tmp/source-merged.obo --no-subsets --skip-ontology-checks --allow-equivalent-pairs --simple --relaxed --asserted --allow-overwrite --outdir oort
-
-# With the new OWLAPI 4.5.26, which allows arbitrary annotation properties in the OBO parser and oort using a previous OWLAPI version, 
-# we are having conflicts when converting it. Also, the oort step is not used in any release artefact.
-#test: oort
-
-tmp/$(ONT)-stripped.owl: oort
-	$(ROBOT) filter --input oort/$(ONT)-simple.owl --term-file tmp/cl_terms.txt --trim false \
-		convert -o $@
-
-# cl_signature.txt should contain all CL terms and all properties (and subsets) used by the ontology.
-# It serves like a proper signature, but including annotation properties
-tmp/cl_signature.txt: tmp/$(ONT)-stripped.owl tmp/cl_terms.txt
-	$(ROBOT) query -f csv -i $< --query ../sparql/object-properties.sparql $@_prop.tmp &&\
-	cat tmp/cl_terms.txt $@_prop.tmp | sort | uniq > $@ &&\
-	rm $@_prop.tmp
-
-# The standard simple artefacts keeps a bunch of irrelevant Typedefs which are a result of the merge. The following steps takes the result
-# of the oort simple version, and then removes them. A second problem is that oort does not deal well with cycles and removes some of the
-# asserted CL subsumptions. This can hopefully be solved once we can move all the way to ROBOT, but for now, it requires merging in
-# the asserted hierarchy and reducing again.
-
-
-# Note that right now, TypeDefs that are CL native (like has_age) are included in the release!
-
+# ----------------------------------------
+# BUILDING RELEASE PRODUCTS
+# ----------------------------------------
 
 # Preprocessing: automatically generate text definitions from logical definitions
-$(EDIT_PREPROCESSED): $(SRC) all_robot_plugins
+$(EDIT_PREPROCESSED): $(SRC) | all_robot_plugins
 	$(ROBOT) flybase:rewrite-def -i $< --dot-definitions --null-definitions \
 		                     --no-ids --filter-prefix CL_ \
 		                     --add-annotation "oboInOwl:hasDbXref FBC:Autogenerated" \
 		                     -o $@
+
+# Building CL-plus (CL + PCL product)
+# HACK: We have to remove the disjointness axioms between taxa, because
+# PCL does not enforce taxon constraints and may contain TC violations
+# that would be revealed here due to the presence of those axioms
+# (thereby causing that step to fail). The proper fix would be for PCL
+# to enforce TC.
+# See <https://github.com/obophenotype/provisional_cell_ontology/issues/59>
+cl-plus.owl: $(ONT)-full.owl
+	$(ROBOT) merge -i $< -I $(OBOBASE)/pcl/pcl-base.owl \
+		 unmerge -I $(OBOBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl \
+		 reason --reasoner WHELK --equivalent-classes-allowed asserted-only \
+		        --exclude-tautologies structural \
+		 relax \
+		 reduce --reasoner WHELK \
+		 $(SHARED_ROBOT_COMMANDS) \
+		 annotate --ontology-iri $(ONTBASE)/$@ \
+		 $(ANNOTATE_ONTOLOGY_VERSION) --output $@
+
+# Main release artefact (cl.owl)
+# We override the standard ODK-generate rule so that we can merge in the
+# tags for the taxon subsets.
+POSTPROCESS_ADDITIONS = subsets/human-tags.ofn \
+                        subsets/mouse-tags.ofn
+$(ONT).owl: $(ONT)-full.owl $(POSTPROCESS_ADDITIONS)
+	$(ROBOT) merge -i $< $(foreach add,$(POSTPROCESS_ADDITIONS),-i $(add)) \
+		 annotate --ontology-iri $(URIBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
+		 convert -o $@
 
 
 # ----------------------------------------
@@ -132,27 +95,33 @@ $(MAPPINGDIR)/cl.sssom.tsv: $(MAPPINGDIR)/cl-local.sssom.tsv \
 EXTERNAL_SSSOM_PROVIDERS = fbbt zfa
 EXTERNAL_SSSOM_SETS = $(foreach provider, $(EXTERNAL_SSSOM_PROVIDERS), $(MAPPINGDIR)/$(provider).sssom.tsv)
 
-# We only refresh external resources under IMP=true
-ifeq ($(strip $(IMP)),true)
+# We only refresh external resources under MIR=true
+ifeq ($(strip $(MIR)),true)
 
 # FBbt mapping set
 $(MAPPINGDIR)/fbbt.sssom.tsv: .FORCE
 	wget -O - "http://purl.obolibrary.org/obo/fbbt/fbbt.sssom.tsv" | \
 		sssom-cli --prefix-map-from-input \
-		          --rule 'object==CL:* -> include()' \
+		          --include 'object==CL:*' \
+		          --update-from-ontology $(SRC):object,label,existence \
 		          --output $@
 
 # ZFA mapping set (extracted from ZFA cross-references).
 # ZFA does contain oboInOwl:treat-xrefs-as-... annotations, but here
 # it's easier to ignore them, as this automatically filters out all the
 # xrefs that point to anything else than CL.
-$(MAPPINGDIR)/zfa.sssom.tsv: .FORCE | all_robot_plugins
+# 1. Create intermediate set from ZFA.
+$(TMPDIR)/zfa.sssom.tsv: .FORCE | all_robot_plugins
 	$(ROBOT) sssom:xref-extract -I http://purl.obolibrary.org/obo/zfa.owl \
 		                    --mapping-file $@ -v --drop-duplicates \
 		                    --ignore-treat-xrefs \
 		                    --map-prefix-to-predicate 'CL https://w3id.org/semapv/vocab/crossSpeciesExactMatch' \
 		                    --set-id http://purl.obolibrary.org/obo/zfa/zfa.sssom.tsv \
 	> $(REPORTDIR)/xfa-xrefs-extraction
+
+# 2. Create definitive ZFA set by checking against CL's contents
+$(MAPPINGDIR)/zfa.sssom.tsv: $(TMPDIR)/zfa.sssom.tsv $(SRC)
+	sssom-cli -i $< --update-from-ontology $(SRC):object,label,existence,source -o $@
 
 endif
 
@@ -195,177 +164,168 @@ $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl:
 $(REPORTDIR)/taxon-constraint-check.txt: $(EDIT_PREPROCESSED) $(TMPDIR)/taxslim-disjoint-over-in-taxon.owl
 	$(ROBOT) merge $(foreach src,$^,-i $(src)) \
 		 expand -o $(TMPDIR)/cl-plus-taxon-disjoints.ofn \
-		 reason -r ELK > $@
+		 reason -r WHELK > $@
 
 # Include the TC check in the routine tests
 test: $(REPORTDIR)/taxon-constraint-check.txt
 
 
-##############################################
-##### CL Template pipeline ###################
-##############################################
-
-TEMPLATESDIR=../templates
-DEPENDENCY_TEMPLATE=dependencies.tsv
-TEMPLATES=$(filter-out $(DEPENDENCY_TEMPLATE), $(notdir $(wildcard $(TEMPLATESDIR)/*.tsv)))
-TEMPLATES_OWL=$(patsubst %.tsv, $(TEMPLATESDIR)/%.owl, $(TEMPLATES))
-TEMPLATES_TSV=$(patsubst %.tsv, $(TEMPLATESDIR)/%.tsv, $(TEMPLATES))
-
-p:
-	echo $(TEMPLATES)
-	echo $(TEMPLATES_TSV)
-	echo $(TEMPLATES_OWL)
-
-templates: prepare_templates $(TEMPLATES_OWL)
-
-remove_template_classes_from_edit.txt: $(TEMPLATES_TSV)
-	for f in $^; do \
-			cut -f1 $${f} >> tmp.txt; \
-			cat tmp.txt | grep 'CL:' | sort | uniq > $@; \
-	done \
-	rm tmp.txt
-
-remove_template_classes_from_edit: remove_template_classes_from_edit.txt $(SRC)
-	$(ROBOT) remove -i $(SRC) -T $< --preserve-structure false -o $(SRC).ofn && mv $(SRC).ofn $(SRC)
-
-prepare_templates: ../templates/config.txt
-	sh ../scripts/download_templates.sh $<
-
-#components/all_templates.owl: $(TEMPLATES_OWL)
-#	$(ROBOT) merge $(patsubst %, -i %, $^) \
-#		annotate --ontology-iri $(ONTBASE)/$@ --version-iri $(ONTBASE)/releases/$(TODAY)/$@ \
-#		--output $@.tmp.owl && mv $@.tmp.owl $@
-
-$(TEMPLATESDIR)/dependencies.owl: $(TEMPLATESDIR)/dependencies.tsv
-	$(ROBOT) merge -i $(SRC) template --template $< --prefix "CP: http://purl.obolibrary.org/obo/CP_" --output $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
-
-$(TEMPLATESDIR)/%.owl: $(TEMPLATESDIR)/%.tsv $(SRC) $(TEMPLATESDIR)/dependencies.owl
-	$(ROBOT) merge -i $(SRC) -i $(TEMPLATESDIR)/dependencies.owl template --template $< --output $@ && \
-	$(ROBOT) annotate --input $@ --ontology-iri $(ONTBASE)/components/$*.owl -o $@
-
-CL_EDIT_GITHUB_MASTER=https://raw.githubusercontent.com/obophenotype/cell-ontology/master/src/ontology/cl-edit.owl
-
-tmp/src-noimports.owl: $(SRC)
-	$(ROBOT) remove -i $< --select imports -o $@
-
-tmp/src-imports.owl: $(SRC)
-	$(ROBOT) merge -i $< -o $@
-
-tmp/src-master-noimports.owl:
-	$(ROBOT) remove -I $(CL_EDIT_GITHUB_MASTER) --select imports -o $@
-
-tmp/src-master-imports.owl:
-	$(ROBOT) merge -I $(CL_EDIT_GITHUB_MASTER) -o $@
-
-reports/diff_edit_%.md: tmp/src-master-%.owl tmp/src-%.owl
-	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -f markdown -o $@
-
-reports/diff_edit_%.txt: tmp/src-master-%.owl tmp/src-%.owl
-	$(ROBOT) diff --left tmp/src-master-$*.owl --right tmp/src-$*.owl -o $@
-
-branch_diffs: reports/diff_edit_imports.md reports/diff_edit_noimports.md reports/diff_edit_imports.txt reports/diff_edit_noimports.txt
-
-tmp/cl-current.owl: $(ONT).owl
-	$(ROBOT) remove -i $< --term rdfs:label --select complement --select annotation-properties \
-		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
-
-tmp/cl-lastbuild.owl: .FORCE
-	$(ROBOT) remove -I $(URIBASE)/$(ONT).owl --term rdfs:label --select complement --select annotation-properties \
-		remove --base-iri $(URIBASE)/CL_ --axioms external -o $@
-
-reports/obo-diff.txt: tmp/cl-lastbuild.owl tmp/cl-current.owl
-	$(ROBOT) diff --left $< --right tmp/cl-current.owl -f markdown -o $@
-	#perl ../scripts/obo-simple-diff.pl $^ > $@.tmp && mv $@.tmp $@
-
-all_reports: reports/obo-diff.txt
-
-
-normalise_xsd_string: $(SRC)
-	sed -i.bak -E "s/Annotation[(](oboInOwl[:]hasDbXref [\"][^\"]*[\"])[)]/Annotation(\1^^xsd:string)/g" $<
-	rm $<.bak
-
-rm-altid:
-	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/rm-obsolete-alt-id.ru tmp/cl-updated.ttl
-	$(ROBOT) unmerge -i cl-edit.owl -i tmp/cl-updated.ttl convert -f ofn -o cl-edit.owl
-
-merge-constructed:
-	$(ROBOT) merge -i $(SRC) -i tmp/cl-construct-replaced-by.ttl --collapse-import-closure false convert -f ofn -o $(SRC)
-
-construct-replaced-by:
-	$(ROBOT) query -i cl-edit.owl --format ttl --query ../sparql/construct-replaced-by.sparql tmp/cl-construct-replaced-by.ttl
-
-ALL_PATTERNS=$(patsubst ../patterns/dosdp-patterns/%.yaml,%,$(wildcard ../patterns/dosdp-patterns/[a-z]*.yaml))
-DOSDPT=dosdp-tools
-
-tmp/edit-merged.owl: $(SRC)
-	$(ROBOT) merge -i $< -o $@
-
-.PHONY: matches
-matches: tmp/edit-merged.owl
-	$(DOSDPT) query --ontology=$< --catalog=catalog-v001.xml --reasoner=elk --obo-prefixes=true --batch-patterns="$(ALL_PATTERNS)" --template="../patterns/dosdp-patterns" --outfile="../patterns/data/matches/"
-
-.PHONY: install_dosdp
-install_dosdp:
-	pip install -i https://test.pypi.org/simple/ dosdp==0.1.7.dev1
-
-.PHONY: pattern_docs
-pattern_docs:
-	dosdp document -i ../patterns/dosdp-patterns/ -o ../../docs/patterns/ -d ../patterns/data/matches/
+# ----------------------------------------
+# OTHER CUSTOM CHECKS
+# ----------------------------------------
 
 .PHONY: obocheck
-obocheck:
-	$(ROBOT) merge -i cl-edit.owl remove --base-iri http://purl.obolibrary.org/obo/CL_ --axioms external --trim false convert -f obo --check false -o cl-check.obo
-	fastobo-validator cl-check.obo
-	
-test: obocheck
+obocheck: $(SRC) | all_robot_plugins
+	$(ROBOT) merge -i $(SRC) \
+		 remove --base-iri $(URIBASE)/CL_ --axioms external --trim false \
+		 convert --check false -f obo $(OBO_FORMAT_OPTIONS) \
+		         --output $(TMPDIR)/cl-check.obo
+	fastobo-validator $(TMPDIR)/cl-check.obo
 
-test_obsolete: cl.obo
-	! grep "! obsolete" cl.obo
+test_obsolete: $(ONT).obo
+	! grep "! obsolete" $<
 
-test: test_obsolete
-
-## DOSDP on Google Sheets
-
-DOSDP_URL=https://docs.google.com/spreadsheets/d/e/2PACX-1vQpgUhGLXgSov-w4xu_7jaI-e5AS0MNLVVhd6omHBEh20UHcBbZHOM4m8lepzBPN4ErD6TjxaKRTX4A/pub?gid=0&single=true&output=tsv
-
-.PHONY: gs_dosdp_%
-gs_dosdp_%:
-	wget "$(DOSDP_URL)" -O ../patterns/data/default/$*.tsv
-
-gs_dosdp: gs_dosdp_cellPartOfAnatomicalEntity
+test: obocheck \
+      test_obsolete
 
 
-## Download human reference atlas subset
+# ----------------------------------------
+# TAXON SUBSETS
+# ----------------------------------------
 
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
+TAXON_ID_human = NCBITaxon:9606
+TAXON_ID_mouse = NCBITaxon:10090
 
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
+# Create a taxon-specific subset. This rule creates two distinct files:
+# (1) the subset proper (subsets/%-view.owl), which can be used on its
+#     own (and can be published as a release artifact if desired);
+# (2) a small containing oboInOwl:inSubset annotations to "tag" all
+#     terms that belong to the subset (subsets/%-tags.ofn); that file
+#     can then be combined with a CL release product.
+.PRECIOUS: subsets/%-view.owl
+subsets/%-view.owl subsets/%-tags.ofn: $(ONT)-full.owl | all_robot_plugins
+	$(ROBOT) expand --input $< --expand-term RO:0002161 \
+		 uberon:create-species-subset --taxon $(TAXON_ID_$*) \
+		                              --strategy precise \
+		                              --reasoner WHELK \
+		                              --root CL:0000000 \
+		                              --prefix 'cl: http://purl.obolibrary.org/obo/cl#' \
+		                              --subset-name cl:$*_subset \
+		                              --only-tag-in CL: \
+		                              --write-tags-to subsets/$*-tags.ofn \
+		 reason --reasoner WHELK --equivalent-classes-allowed all \
+		        --exclude-tautologies structural \
+		 relax \
+		 remove --axioms equivalent \
+		 reduce --reasoner WHELK \
+		 annotate --ontology-iri $(ONTBASE)/subsets/$*-view.owl \
+		          --version-iri $(ONTBASE)/releases/$(VERSION)/subsets/$*-view.owl \
+		          --annotation owl:versionInfo $(VERSION) \
+		 convert --format ofn --output subsets/$*-view.owl
 
-## Download CellXGene reference subset
 
+# ----------------------------------------
+# DOSDP PATTERNS HACKS
+# ----------------------------------------
+
+# Finding matches for DOSDP patterns. We can't use the ODK-generated
+# workflow for that, because we need to exclude the ExtendedDescription
+# pattern (which does not contain any logical definition to query
+# against), something that the ODK does not allow to do.
+# So we use the following convention: we find matches only for patterns
+# whose filename starts with a lowercase letter (hereafter called the
+# "queryable patterns"), instead of all patterns found in the patterns
+# directory.
+# See <https://github.com/obophenotype/cell-ontology/issues/2639>.
+QUERYABLE_PATTERN_FILES=$(wildcard $(PATTERNDIR)/dosdp-patterns/[a-z]*.yaml)
+QUERYABLE_PATTERN_NAMES=$(foreach f,$(QUERYABLE_PATTERN_FILES),$(basename $(notdir $f)))
+.PHONY: matches
+matches: $(SRC) $(QUERYABLE_PATTERN_FILES)
+	$(DOSDPT) query --ontology=$< --catalog=$(CATALOG) \
+		        --reasoner=elk --obo-prefixes=true \
+		        --batch-patterns="$(QUERYABLE_PATTERN_NAMES)" \
+		        --template="$(PATTERNDIR)/dosdp-patterns" \
+		        --outfile="$(PATTERNDIR)/data/matches/"
+
+# Generating documentation for the DOSDP patterns
+# FIXME: This is currently broken, see
+# <https://github.com/obophenotype/cell-ontology/issues/2636>.
+# Also, ideally this should be provided by the ODK, see
+# <https://github.com/INCATools/ontology-development-kit/issues/1101>.
+.PHONY: pattern_docs
+pattern_docs: $(ALL_PATTERN_FILES)
+	dosdp document -i $(PATTERNDIR)/dosdp-patterns/ \
+		       -d $(PATTERNDIR)/data/matches/ \
+		       -o ../../docs/patterns/
+
+
+# ----------------------------------------
+# UTILITY COMMANDS
+# ----------------------------------------
+
+# Remove alternative ID from the -edit file
+rm-altid:
+	$(ROBOT) query -i $(SRC) --format ttl \
+		       --query $(SPARQLDIR)/rm-obsolete-alt-id.ru \
+		       $(TMPDIR)/cl-updated.ttl
+	$(ROBOT) unmerge -i $(SRC) -i $(TMPDIR)/cl-updated.ttl \
+		 convert -f ofn -o $(SRC)
+
+# Inject replaced_by (IAO:0100001) annotations in the -edit file
+add-replacedby:
+	$(ROBOT) query -i $(SRC) --format ttl \
+		       --query $(SPARQLDIR)/construct-replaced-by.sparql \
+		       $(TMPDIR)/cl-construct-replaced-by.ttl
+	$(ROBOT) merge -i $(SRC) -i $(TMPDIR)/cl-construct-replaced-by.ttl \
+		       --collapse-import-closure false \
+		 convert -f ofn -o $(SRC)
+
+# Allocating definitive IDs
+.PHONY: allocate-definitive-ids
+allocate-definitive-ids: | all_robot_plugins
+	$(ROBOT) kgcl:mint -i $(SRC) \
+		           --temp-id-prefix http://purl.obolibrary.org/obo/CL_99 \
+		           --id-range-name Automation \
+		 convert -f ofn -o $(SRC)
+
+
+# ----------------------------------------
+# EXTERNAL RESOURCES
+# ----------------------------------------
+
+ifeq ($(strip $(MIR)),true)
+
+# CellXGene reference subset
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
-$(TEMPLATEDIR)/cellxgene_subset.tsv:
+$(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
 
-# Make CL-plus (CL + PCL product)
-# HACK: We have to remove the disjointness axioms between taxa, because
-# PCL does not enforce taxon constraints and may contain TC violations
-# that would be revealed here due to the presence of those axioms
-# (thereby causing that step to fail). The proper fix would be for PCL
-# to enforce TC.
-# See <https://github.com/obophenotype/provisional_cell_ontology/issues/59>
+endif
 
-cl-plus.owl: $(ONT)-full.owl
-	$(ROBOT) merge --input-iri http://purl.obolibrary.org/obo/pcl/pcl-base.owl --input $(ONT)-full.owl \
-		unmerge --input-iri http://purl.obolibrary.org/obo/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl \
-		reason --reasoner ELK --equivalent-classes-allowed asserted-only --exclude-tautologies structural \
-		relax \
-		reduce -r ELK \
-		$(SHARED_ROBOT_COMMANDS) annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) --output $@.tmp.owl && mv $@.tmp.owl $@
+# Update the list of terms with 2D FTU images from HRA
+.PHONY: update-HRA-illustrations
+
+update-HRA-illustrations:
+	python3 ./$(SCRIPTSDIR)/2D_FTU_images.py
+
+
+# ----------------------------------------
+# SemSQL release artefacts
+# ----------------------------------------
+# We do _not_ use the ODK builtin feature for now because it only
+# creates _uncompressed_ DB files, which are way too large to be
+# practical.
+
+DB_FILES = cl.db.gz $(foreach f, $(RELEASE_ARTEFACTS), $f.db.gz)
+RELEASE_ASSETS += $(DB_FILES)
+all_assets: $(DB_FILES)
+
+%.db.gz: %.owl
+	@rm -f $*.db $*.db.gz $*-relation-graph.tsv.gz .template.db .template.db.tmp
+	semsql make $*.db
+	@test -f $*.db || (echo "SQLite/SemSQL generation failed" && exit 1)
+	gzip $*.db
+	@rm -f $*-relation-graph.tsv.gz .template.db .template.db.tmp
 
 # ----------------------------------------
 # RELEASE DEPLOYMENT
@@ -378,9 +338,10 @@ cl:
 	$(MAKE) prepare_release IMP=false PAT=false MIR=false
 	$(MAKE) release-base-diff
 	$(MAKE) prepare_content_summary
-	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
+CROSSLINKS_MD=$(REPORTDIR)/crosslinks_release.md
 
 .PHONY: $(TMPDIR)/current-base-release.obo
 $(TMPDIR)/current-base-release.obo:
@@ -391,19 +352,20 @@ release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
 	$(ROBOT) diff --labels True -f markdown --left $(TMPDIR)/current-base-release.obo --right $(RELEASEDIR)/cl-base.obo --output reports/$(ONT)-base-diff.md
 
 .PHONY: prepare_content_summary
-prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports
+prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports crosslinks_report
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
+	@printf "\n\n---\n\n" >> $(REPORTDIR)/summary_release.md
+	cat $(CROSSLINKS_MD) >> $(REPORTDIR)/summary_release.md
 		
-FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
-		     $(MAPPINGDIR)/cl.sssom.tsv
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(MAIN_FILES_RELEASE)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
+.PHONY: crosslinks_report
+crosslinks_report:
+	@echo "Building CL cross-ontology tables (HP/GO/MONDO/UBERON → CL)…"
+	python ./$(SCRIPTSDIR)/build_cl_crosslinks.py \
+		--outdir $(REPORTDIR) \
+		--markdown \
+		--markdown-file $(notdir $(CROSSLINKS_MD))
 
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS
@@ -415,7 +377,7 @@ TERM_general = CL:0000000
 TERM_kidney= UBERON:0002113
 
 SLIM_TEMPLATES= blood_and_immune eye general_cell_types kidney
-SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim.csv)
+SLIM_REPORTS = $(foreach n,$(SLIM_TEMPLATES),$(REPORTDIR)/$(n)_upper_slim_report.csv)
 
 .PHONY: slim_coverage
 slim_coverage: $(SLIM_REPORTS)
