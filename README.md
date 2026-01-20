@@ -42,8 +42,8 @@ Training materials from the 2020 CL Training Workshop are available at https://g
 
 ## Twice monthly calls
   
-Third Wednesday of month, 8am PT/11 am ET (CL)  
-Fourth Monday of month, 10am PT/1pm ET (CL & Uberon)  
+Third Wednesday of the month, 8am PT/11am ET (CL)  
+Third Monday of the month, 8am PT/11am ET (Uberon)  
 [Agenda here.](https://docs.google.com/document/d/1XvMbNvr0FEsdqGhg79BYCYEHSqUxRHMcvhbGizEAht8/edit)  
 
 ## Cite
@@ -64,7 +64,7 @@ The Cell ontology is used to annotate cell types on the single cell transcriptom
  - In the [Discover](https://cellxgene.cziscience.com/) tool, the structure of CL is used to drive faceted searching for datasets and collections by Cell Type.
  - In the [Gene Expression](https://cellxgene.cziscience.com/gene-expression), CL annotation is used to aggregate expression data.
  - In [CellGuide](https://cellxgene.cziscience.com/cellguide) CL provides content and CL term names and synonyms drive search and graphical browsing.
- - The [Cell Census](https://chanzuckerberg.github.io/cellxgene-census/) API supports retrieval of cross-dataset matrices containing transcriptmics data for cells annotated with specified terms from CL and other ontologies.
+ - The [Cell Census](https://chanzuckerberg.github.io/cellxgene-census/) API supports retrieval of cross-dataset matrices containing transcriptomics data for cells annotated with specified terms from CL and other ontologies.
 
 **HuBMAP**
 
