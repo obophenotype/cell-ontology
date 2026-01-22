@@ -1,0 +1,35 @@
+pattern_name: squamousEpithelialCell
+pattern_iri: http://purl.obolibrary.org/obo/cl/squamousEpithelialCell
+
+description: An epithelial cell type characterized by a flattened (squamous) morphology.
+
+contributors:
+  - https://orcid.org/0000-0001-5208-3432
+  - https://orcid.org/0000-0002-6601-2165
+
+classes: 
+  cell: "CL:0000000"
+  flattened: "PATO:0002254"
+
+relations: 
+  bearer of: "RO:0000053"
+
+vars:
+  cell: "'cell'"
+  flattened: "'flattened'"
+
+name:
+  text: "squamous %s"
+  vars:
+    - cell
+
+def:
+  text: "A %s that has a flattened morphology."
+  vars:
+    - cell
+
+equivalentTo:
+  text: "%s and ('bearer of' some %s)"
+  vars:
+    - cell
+    - flattened

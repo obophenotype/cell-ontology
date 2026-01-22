@@ -3292,6 +3292,7 @@ Declaration(Class(obo:CL_7770003))
 Declaration(Class(obo:CL_7770004))
 Declaration(Class(obo:CL_7770005))
 Declaration(Class(obo:CL_7770006))
+Declaration(Class(obo:CL_9900001))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -3356,6 +3357,8 @@ Declaration(Class(obo:PATO_0001870))
 Declaration(Class(obo:PATO_0001872))
 Declaration(Class(obo:PATO_0001979))
 Declaration(Class(obo:PATO_0002064))
+Declaration(Class(obo:PATO_0002254))
+Declaration(Class(obo:PATO_0002312))
 Declaration(Class(obo:PATO_0010007))
 Declaration(Class(obo:PATO_0070002))
 Declaration(Class(obo:PATO_0070003))
@@ -4497,9 +4500,11 @@ SubClassOf(obo:CL_0000075 obo:CL_0000066)
 
 # Class: obo:CL_0000076 (squamous epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000076 "An epithelial cell that has a flattened morphology.")
+AnnotationAssertion(terms:date obo:CL_0000076 "2025-12-16T15:56:39Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000076 "CALOHA:TS-1249")
 AnnotationAssertion(rdfs:label obo:CL_0000076 "squamous epithelial cell")
-SubClassOf(obo:CL_0000076 obo:CL_0000066)
+EquivalentClasses(obo:CL_0000076 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254)))
 
 # Class: obo:CL_0000077 (mesothelial cell)
 
@@ -4521,6 +4526,7 @@ EquivalentClasses(obo:CL_0000078 ObjectIntersectionOf(obo:CL_0000076 ObjectSomeV
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Epithelium") Annotation(oboInOwl:hasDbXref "doi:/10.1016/B978-0-12-410424-2.00003-2") Annotation(oboInOwl:hasDbXref "https://www.biologyonline.com/dictionary/stratified-epithelium") obo:IAO_0000115 obo:CL_0000079 "An epithelial cell, organized into multiple layers, with only the basal layer being in contact with the basement membrane.")
 AnnotationAssertion(rdfs:label obo:CL_0000079 "stratified epithelial cell")
+EquivalentClasses(obo:CL_0000079 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000486)))
 SubClassOf(obo:CL_0000079 obo:CL_0000066)
 SubClassOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000357))
 
@@ -6067,7 +6073,7 @@ SubClassOf(obo:CL_0000239 obo:CL_0000075)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30422572") Annotation(oboInOwl:hasDbXref "Wikipedia:Epithelium") Annotation(oboInOwl:hasDbXref "Wikipedia:Stratified_squamous_epithelium") obo:IAO_0000115 obo:CL_0000240 "A stratified epithelial cell that is part of squamous epithelium, characterized by multiple layers of cells. The basal layer is directly attached to the basement membrane and the apical layer consists of flattened squamous cells. This provides a protective barrier, commonly found in areas subject to abrasion, such as the skin, oral cavity, and esophagus.")
 AnnotationAssertion(rdfs:label obo:CL_0000240 "stratified squamous epithelial cell")
-EquivalentClasses(obo:CL_0000240 ObjectIntersectionOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006915)))
+EquivalentClasses(obo:CL_0000240 ObjectIntersectionOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000486) ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254)))
 SubClassOf(obo:CL_0000240 obo:CL_0000076)
 
 # Class: obo:CL_0000241 (stratified cuboidal epithelial cell)
@@ -9250,6 +9256,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000634 "cell of Claudius")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000634 "external supporting cell of Claudius")
 AnnotationAssertion(rdfs:label obo:CL_0000634 "Claudius cell")
 SubClassOf(obo:CL_0000634 obo:CL_0002315)
+SubClassOf(obo:CL_0000634 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 
 # Class: obo:CL_0000635 (Deiter's cell)
 
@@ -14616,7 +14623,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29463737") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002062 "ATI")
 AnnotationAssertion(rdfs:label obo:CL_0002062 "pulmonary alveolar type 1 cell")
 EquivalentClasses(obo:CL_0002062 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007585)))
-SubClassOf(obo:CL_0002062 obo:CL_0000076)
+SubClassOf(obo:CL_0002062 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002063 (pulmonary alveolar type 2 cell)
 
@@ -14641,9 +14648,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "TII")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "lung type II cell")
 AnnotationAssertion(rdfs:label obo:CL_0002063 "pulmonary alveolar type 2 cell")
-EquivalentClasses(obo:CL_0002063 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
-SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097208))
-SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
+EquivalentClasses(obo:CL_0002063 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097208) ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
 SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_4040003))
 
 # Class: obo:CL_0002064 (pancreatic acinar cell)
@@ -16024,6 +16029,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002190 "FMA:86925")
 AnnotationAssertion(rdfs:label obo:CL_0002190 "squamous cell of epidermis")
 SubClassOf(obo:CL_0002190 obo:CL_0000312)
 SubClassOf(obo:CL_0002190 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001003))
+SubClassOf(obo:CL_0002190 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002191 (granulocytopoietic cell)
 
@@ -16366,6 +16372,7 @@ AnnotationAssertion(rdfs:label obo:CL_0002221 "keratinized squamous cell of esop
 SubClassOf(obo:CL_0002221 obo:CL_0000237)
 SubClassOf(obo:CL_0002221 obo:CL_0002252)
 SubClassOf(obo:CL_0002221 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001976))
+SubClassOf(obo:CL_0002221 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002222 (vertebrate lens cell)
 
@@ -16386,6 +16393,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002223 "2010-09-07T10:45:45Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002223 "FMA:63181")
 AnnotationAssertion(rdfs:label obo:CL_0002223 "anterior lens cell")
 SubClassOf(obo:CL_0002223 obo:CL_0002224)
+SubClassOf(obo:CL_0002223 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 
 # Class: obo:CL_0002224 (lens epithelial cell)
 
@@ -20740,6 +20748,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002653 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002653 "2011-07-08T03:31:25Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002653 "squamous endothelial cell")
 SubClassOf(obo:CL_0002653 obo:CL_0000115)
+SubClassOf(obo:CL_0002653 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002654 (epithelial cell of stratum corneum of esophageal epithelium)
 
@@ -20829,6 +20838,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002662 "2011-07-11T01:44:48Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002662 "FMA:74504")
 AnnotationAssertion(rdfs:label obo:CL_0002662 "luminal cell of lactiferous duct")
 SubClassOf(obo:CL_0002662 obo:CL_0002326)
+SubClassOf(obo:CL_0002662 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 
 # Class: obo:CL_0002663 (myocardial endocrine cell of atrium)
 
@@ -33044,6 +33054,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0001-6
 AnnotationAssertion(rdfs:label obo:CL_4033083 "squamous granulosa cell")
 SubClassOf(obo:CL_4033083 obo:CL_0000501)
 SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003981))
+SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_4033066))
 SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:RO_0002210 obo:CL_4033084))
 
@@ -33059,6 +33070,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33914868") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4033084 "cuboidal granulosa cell")
 SubClassOf(obo:CL_4033084 obo:CL_0000501)
 SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001305))
+SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002312))
 SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_4033083))
 
 # Class: obo:CL_4033085 (diffuse bipolar 5 cell)
@@ -35464,6 +35476,16 @@ AnnotationAssertion(Annotation(dc:license <http://creativecommons.org/licenses/b
 SubClassOf(obo:CL_7770006 obo:CL_0002367)
 SubClassOf(obo:CL_7770006 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606))
 SubClassOf(obo:CL_7770006 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q9UIK5))
+
+# Class: obo:CL_9900001 (cuboidal epithelial cell)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_9900001 "An epithelial cell that has a cuboidal morphology.")
+AnnotationAssertion(terms:contributor obo:CL_9900001 <https://orcid.org/0009-0006-9765-6788>)
+AnnotationAssertion(terms:creator obo:CL_9900001 "GitHub Copilot")
+AnnotationAssertion(terms:date obo:CL_9900001 "2025-12-16T15:56:39Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_9900001 "cuboidal epithelial cell")
+EquivalentClasses(obo:CL_9900001 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872)))
+SubClassOf(obo:CL_9900001 obo:CL_0000075)
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
