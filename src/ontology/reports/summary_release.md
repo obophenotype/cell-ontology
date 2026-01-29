@@ -1,452 +1,260 @@
-# Release Notes 2025-11-25
+# Release Notes 2025-12-17
 ## Ontology content summary
 | Metric                                          |   Value |
 |:------------------------------------------------|--------:|
-| Number of subclasses of root                    |    3214 |
-| Number of annotations on CL terms               |   16504 |
-| Number of synonyms                              |    6821 |
+| Number of subclasses of root                    |    3228 |
+| Number of annotations on CL terms               |   16661 |
+| Number of synonyms                              |    6859 |
 | Number of unique references                     |    1960 |
-| Number of unique references in definitions      |    1978 |
-| Number of relationships with CL term as subject |    4754 |
-| Number of cellxgene classes                     |     955 |
+| Number of unique references in definitions      |    2015 |
+| Number of relationships with CL term as subject |    4826 |
+| Number of cellxgene classes                     |    1026 |
 | Number of HRA classes                           |     515 |
 <details>
-<summary>Classes added: 50</summary>
+<summary>Nodes added to subset: 77</summary>
 
-| Term |
-----|
-| STRv D2 medium spiny neuron (Primate) (CL:4310138) |
-| SN-VTR-HTH GATA3-TCF7L2 GABA GABAergic interneuron (Primate) (CL:4310117) |
-| GPi Core neuron (Primate) (CL:4310095) |
-| SN GATA3-PAX8 GABA GABAergic interneuron (Primate) (CL:4310112) |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) |
-| transitional principal-intercalated cell of kidney collecting duct (CL:0020015) |
-| striatal SST-LYPD6-RSPO2 GABAergic interneuron (Primate) (CL:4310121) |
-| STRv D1 medium spiny neuron (Primate) (CL:4310136) |
-| GPin-BF cholinergic-GABAergic neuron (Primate) (CL:4310083) |
-| VTR-HTH Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310144) |
-| hair follicle isthmus-associated fibroblast (CL:0020012) |
-| prototypic neuron (Primate) (CL:4310094) |
-| SN SOX6 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310115) |
-| STRv D1-NUDAP medium spiny neuron (Primate) (CL:4310137) |
-| SN-VTR CALB1 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310109) |
-| SN SEMA5A GABA GABAergic interneuron (Primate) (CL:4310114) |
-| striatal SST-ADARB2 GABAergic interneuron (Primate) (CL:4310122) |
-| SN-VTR GAD2 Dopa dopaminergic neuron (Primate) (CL:4310111) |
-| SN EBF2 GABA GABAergic interneuron (Primate) (CL:4310110) |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) |
-| striatal SST-CHODL GABAergic interneuron (Primate) (CL:4310123) |
-| STR TAC3-PLPP4 GABA TAC3-positive striatal interneuron (Primate) (CL:4310125) |
-| STR cholinergic-GABAergic neuron (Primate) (CL:4310135) |
-| GPi Shell neuron (Primate) (CL:4310096) |
-| Islands of Calleja granule cell (Primate) (CL:4310104) |
-| hair follicle associated fibroblast (CL:0020011) |
-| BF SKOR1 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310088) |
-| STRd D1 Matrix medium spiny neuron (Primate) (CL:4310129) |
-| striosomal D1 medium spiny neuron (Primate) (CL:4310130) |
-| STR-BF TAC3-PLPP4-LHX8 GABA TAC3-positive striatal interneuron (Primate) (CL:4310126) |
-| STRd cholinergic-GABAergic neuron (Primate) (CL:4310128) |
-| OB Dopa-GABA neuron (Primate) (CL:4310147) |
-| GPe-NDB-SI LHX6-LHX8-GBX1 GABA GABAergic interneuron (Primate) (CL:4310100) |
-| striatal SST-RSPO2 GABAergic interneuron (Primate) (CL:4310124) |
-| AMY-SLEA-BNST D1 GABA GABAergic interneuron (Primate) (CL:4310145) |
-| striatal VIP GABAergic interneuron (Primate) (CL:4310127) |
-| OB FRMD7 GABA GABAergic neuron (Primate) (CL:4310148) |
-| hair follicle dermal stem cell (CL:4072103) |
-| STRd D2 Matrix medium spiny neuron (Primate) (CL:4310132) |
-| STRd D2 Striomat hybrid medium spiny neuron (Primate) (CL:4310133) |
-| AMY-SLEA-BNST GABA GABAergic interneuron (Primate) (CL:4310146) |
-| striatal LAMP5 LHX6 GABAergic interneuron (Primate) (CL:4310085) |
-| arkypallidal neuron (Primate) (CL:4310093) |
-| ZI-HTH GABA GABAergic interneuron (Primate) (CL:4310143) |
-| STH PVALB-PITX2 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310118) |
-| dermal sheath fibroblast (CL:0020013) |
-| striatal LAMP5 CXCL14 GABAergic interneuron (Primate) (CL:4310084) |
-| striosomal D2 medium spiny neuron (Primate) (CL:4310134) |
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) |
-| striatal pthlh-expressing interneuron (Primate) (CL:4310120) |
+| Term | Subset |
+----|----|
+| epithelial cell of early distal convoluted tubule (CL:4030016) | cellxgene_subset |
+| TREM2-positive macrophage (CL:4047053) | cellxgene_subset |
+| cycling stromal cell (CL:4047001) | cellxgene_subset |
+| pre-theca cell (CL:4052010) | cellxgene_subset |
+| diffuse bipolar 5 cell (CL:4033085) | cellxgene_subset |
+| immature microglial cell (CL:0002628) | cellxgene_subset |
+| epithelial cell of proximal tubule segment 2 (CL:4030010) | cellxgene_subset |
+| glioblast (sensu Vertebrata) (CL:0000339) | cellxgene_subset |
+| mesothelial cell of dura mater (CL:1000298) | cellxgene_subset |
+| afferent neuron (CL:0000526) | cellxgene_subset |
+| L6b glutamatergic neuron of the primary motor cortex (CL:4023046) | cellxgene_subset |
+| memory CCR4-positive regulatory T cell (CL:0001046) | cellxgene_subset |
+| mucosa-associated lymphoid tissue macrophage (CL:0000884) | cellxgene_subset |
+| TAC3-positive striatal interneuron (CL:4042001) | cellxgene_subset |
+| metamyelocyte (CL:0002192) | cellxgene_subset |
+| adventitial fibroblast (CL:4052030) | cellxgene_subset |
+| type X enteroendocrine cell (CL:0002284) | cellxgene_subset |
+| cycling myeloid cell (CL:4033081) | cellxgene_subset |
+| granzyme K-associated CD8 T cell (CL:4052021) | cellxgene_subset |
+| retinal cell (CL:0009004) | cellxgene_subset |
+| gastrointestinal tract (lamina propria) macrophage (CL:0000865) | cellxgene_subset |
+| CD8aa(I) thymocyte (CL:0009068) | cellxgene_subset |
+| mesenchyme condensation cell (CL:0000335) | cellxgene_subset |
+| angiogenic pericyte (CL:4047012) | cellxgene_subset |
+| metanephric nephron tubule epithelial cell (CL:1000123) | cellxgene_subset |
+| neuromuscular junction nucleus (CL:4052025) | cellxgene_subset |
+| mucous neck cell of gastric gland (CL:0002181) | cellxgene_subset |
+| BEST4+ colonocyte (CL:4047052) | cellxgene_subset |
+| neuroendocrine cell of epithelium of lobar bronchus (CL:4033010) | cellxgene_subset |
+| kidney collecting duct alpha-intercalated cell (CL:4030015) | cellxgene_subset |
+| Be cell (CL:0000968) | cellxgene_subset |
+| fibroblast of gingiva (CL:0002552) | cellxgene_subset |
+| Axl+ dendritic cell, human (CL:0017009) | cellxgene_subset |
+| cycling plasma cell (CL:4047003) | cellxgene_subset |
+| immature pericyte (CL:4047007) | cellxgene_subset |
+| trabecular meshwork cell (CL:0002367) | cellxgene_subset |
+| germinal center T cell (CL:0009062) | cellxgene_subset |
+| cycling pulmonary alveolar type 2 cell (CL:4033080) | cellxgene_subset |
+| medial ganglionic eminence derived interneuron (CL:4023063) | cellxgene_subset |
+| CD34-negative, CD117-positive innate lymphoid cell, human (CL:0001072) | cellxgene_subset |
+| intratelencephalic-projecting glutamatergic cortical neuron (CL:4023008) | cellxgene_subset |
+| arachnoid barrier cell (CL:4023097) | cellxgene_subset |
+| choroid plexus macrophage (CL:0000880) | cellxgene_subset |
+| diffuse bipolar 4b cell (CL:4033096) | cellxgene_subset |
+| endodermal cell (CL:0000223) | cellxgene_subset |
+| glycinergic neuron (CL:1001509) | cellxgene_subset |
+| mechanoreceptor cell (CL:0000199) | cellxgene_subset |
+| myotendinous junction nucleus (CL:4052024) | cellxgene_subset |
+| club-like cell of the urethral epithelium (CL:4032000) | cellxgene_subset |
+| early colonocyte (CL:4047018) | cellxgene_subset |
+| striated cell of salivary gland (CL:4052049) | cellxgene_subset |
+| intermediate muscle cell (CL:0002216) | cellxgene_subset |
+| CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell (CL:0001047) | cellxgene_subset |
+| L3 intratelencephalic projecting glutamatergic neuron (CL:4030061) | cellxgene_subset |
+| tip cell (CL:0000423) | cellxgene_subset |
+| intercalated cell of salivary gland (CL:4052048) | cellxgene_subset |
+| cycling basal cell (CL:4033082) | cellxgene_subset |
+| migratory dendritic cell (CL:4047054) | cellxgene_subset |
+| somatic stem cell (CL:0000723) | cellxgene_subset |
+| kidney outer medulla collecting duct intercalated cell (CL:1000717) | cellxgene_subset |
+| fibroblastic reticular cell (CL:0009101) | cellxgene_subset |
+| diffuse bipolar 4a cell (CL:4033095) | cellxgene_subset |
+| prostate neuroendocrine cell (CL:0017002) | cellxgene_subset |
+| cardiac ventricle fibroblast (CL:2000066) | cellxgene_subset |
+| type IIx muscle cell (CL:4052026) | cellxgene_subset |
+| effector T cell (CL:0000911) | cellxgene_subset |
+| interstitial cell (CL:4030031) | cellxgene_subset |
+| spinal cord radial glial cell (CL:1000073) | cellxgene_subset |
+| fetal pre-type II pulmonary alveolar epithelial cell (CL:4040003) | cellxgene_subset |
+| neuronal-restricted precursor (CL:4042021) | cellxgene_subset |
+| cycling T cell (CL:4033069) | cellxgene_subset |
+| paraxial cell (CL:0011007) | cellxgene_subset |
+| stromal cell of pancreas (CL:0002574) | cellxgene_subset |
+| serotonergic neuron (CL:0000850) | cellxgene_subset |
+| endothelial cell of high endothelial venule (CL:0002652) | cellxgene_subset |
+| luminal endometrial multiciliated epithelial cell (CL:4030041) | cellxgene_subset |
+| cycling macrophage (CL:4033076) | cellxgene_subset |
 
 </details>
 
 <details>
-<summary>Relationships added: 73</summary>
+<summary>Relationships added: 75</summary>
 
 | Subject | Predicate | Object|
 ----|----|----|
-| striatal SST-LYPD6-RSPO2 GABAergic interneuron (Primate) (CL:4310121) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| STRd D1 Matrix medium spiny neuron (Primate) (CL:4310129) | subClassOf (rdfs:subClassOf) |                matrix D1 medium spiny neuron (CL:4030043) |
-| STRd D2 Striomat hybrid medium spiny neuron (Primate) (CL:4310133) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| hair follicle associated fibroblast (CL:0020011) | subClassOf (rdfs:subClassOf) |                skin fibroblast (CL:0002620) |
-| GPi Core neuron (Primate) (CL:4310095) | subClassOf (rdfs:subClassOf) |                internal globus pallidus core projecting neuron (CL:0020003) |
-| OB FRMD7 GABA GABAergic neuron (Primate) (CL:4310148) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| STRd cholinergic-GABAergic neuron (Primate) (CL:4310128) | subClassOf (rdfs:subClassOf) |                dorso-striatal cholinergic-GABAergic neuron (CL:0020007) |
-| GPi Shell neuron (Primate) (CL:4310096) | RO:0002162 |                NCBITaxon:9443 |
-| SN GATA3-PAX8 GABA GABAergic interneuron (Primate) (CL:4310112) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| GPi Shell neuron (Primate) (CL:4310096) | subClassOf (rdfs:subClassOf) |                internal globus pallidus shell projection neuron (CL:0020004) |
-| ZI-HTH GABA GABAergic interneuron (Primate) (CL:4310143) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| STR cholinergic-GABAergic neuron (Primate) (CL:4310135) | subClassOf (rdfs:subClassOf) |                striatal cholinergic-GABAergic neuron (CL:0020008) |
-| SN SEMA5A GABA GABAergic interneuron (Primate) (CL:4310114) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| dermal sheath fibroblast (CL:0020013) | subClassOf (rdfs:subClassOf) |                hair follicle associated fibroblast (CL:0020011) |
-| hair follicle dermal papilla cell (CL:0000346) | RO:0002215 |                GO:0060638 |
-| fibroblast of the reticular layer of dermis (CL:2000096) | subClassOf (rdfs:subClassOf) |                secretory cell (CL:0000151) |
-| VTR-HTH Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310144) | subClassOf (rdfs:subClassOf) |                glutamatergic neuron of the basal ganglia (CL:4042040) |
-| SN-VTR GAD2 Dopa dopaminergic neuron (Primate) (CL:4310111) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| SN SOX6 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310115) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| arkypallidal neuron (Primate) (CL:4310093) | subClassOf (rdfs:subClassOf) |                arkypallidal neuron (CL:0020010) |
-| SN-VTR CALB1 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310109) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| STR TAC3-PLPP4 GABA TAC3-positive striatal interneuron (Primate) (CL:4310125) | subClassOf (rdfs:subClassOf) |                TAC3-positive striatal interneuron (CL:4042001) |
-| STR-BF TAC3-PLPP4-LHX8 GABA TAC3-positive striatal interneuron (Primate) (CL:4310126) | subClassOf (rdfs:subClassOf) |                TAC3-positive striatal interneuron (CL:4042001) |
-| hair follicle associated fibroblast (CL:0020011) | subClassOf (rdfs:subClassOf) |                hair follicle cell (CL:0002559) |
-| SN EBF2 GABA GABAergic interneuron (Primate) (CL:4310110) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| STRv D1-NUDAP medium spiny neuron (Primate) (CL:4310137) | subClassOf (rdfs:subClassOf) |                D1-NUDAP medium spiny neuron (CL:4030054) |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell (CL:0000740) |
-| GPin-BF cholinergic-GABAergic neuron (Primate) (CL:4310083) | subClassOf (rdfs:subClassOf) |                GABA-Chol neuron (CL:0008061) |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) | subClassOf (rdfs:subClassOf) |                photoreceptor cell (CL:0000210) |
-| dermal sheath fibroblast (CL:0020013) | RO:0002292 |                PR:P16444 |
-| OB Dopa-GABA neuron (Primate) (CL:4310147) | subClassOf (rdfs:subClassOf) |                OB-Dopa-GABA (CL:0020006) |
-| striatal SST-RSPO2 GABAergic interneuron (Primate) (CL:4310124) | subClassOf (rdfs:subClassOf) |                sst GABAergic interneuron (CL:4023017) |
-| AMY-SLEA-BNST GABA GABAergic interneuron (Primate) (CL:4310146) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| prototypic neuron (Primate) (CL:4310094) | subClassOf (rdfs:subClassOf) |                prototypic neuron (CL:0020009) |
-| fibroblast of the reticular layer of dermis (CL:2000096) | RO:0002292 |                PR:Q15063 |
-| striosomal D2 medium spiny neuron (Primate) (CL:4310134) | subClassOf (rdfs:subClassOf) |                striosomal D2 medium spiny neuron (CL:4030049) |
-| pvalb chandelier GABAergic interneuron (CL:4023036) | RO:0015004 |                CLM:1000063 |
-| fibroblast of the reticular layer of dermis (CL:2000096) | RO:0003000 |                GO:0005584 |
-| dermal sheath fibroblast (CL:0020013) | RO:0002215 |                GO:0006936 |
-| striatal SST-CHODL GABAergic interneuron (Primate) (CL:4310123) | subClassOf (rdfs:subClassOf) |                sst chodl GABAergic interneuron (CL:4023121) |
-| striatal LAMP5 CXCL14 GABAergic interneuron (Primate) (CL:4310084) | subClassOf (rdfs:subClassOf) |                lamp5 GABAergic interneuron (CL:4023011) |
-| STRv D2 medium spiny neuron (Primate) (CL:4310138) | subClassOf (rdfs:subClassOf) |                nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron (CL:4030052) |
-| SN-VTR-HTH GATA3-TCF7L2 GABA GABAergic interneuron (Primate) (CL:4310117) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| hair follicle dermal stem cell (CL:4072103) | subClassOf (rdfs:subClassOf) |                mesenchymal stem cell (CL:0000134) |
-| dermal sheath fibroblast (CL:0020013) | RO:0002292 |                PR:000005694 |
-| hair follicle isthmus-associated fibroblast (CL:0020012) | subClassOf (rdfs:subClassOf) |                hair follicle associated fibroblast (CL:0020011) |
-| STH PVALB-PITX2 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310118) | subClassOf (rdfs:subClassOf) |                glutamatergic neuron of the basal ganglia (CL:4042040) |
-| striatal SST-ADARB2 GABAergic interneuron (Primate) (CL:4310122) | subClassOf (rdfs:subClassOf) |                sst GABAergic interneuron (CL:4023017) |
-| striosomal D1 medium spiny neuron (Primate) (CL:4310130) | subClassOf (rdfs:subClassOf) |                striosomal D1 medium spiny neuron (CL:4030048) |
-| CD11c-negative plasmacytoid dendritic cell (CL:0000991) | lacks_plasma_membrane_part (CL:4030046) |                PR:000001013 |
-| hair follicle dermal papilla cell (CL:0000346) | RO:0002215 |                GO:0042634 |
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| AMY-SLEA-BNST D1 GABA GABAergic interneuron (Primate) (CL:4310145) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| striatal pthlh-expressing interneuron (Primate) (CL:4310120) | subClassOf (rdfs:subClassOf) |                striatal pthlh-expressing interneuron (CL:4042023) |
-| dermal sheath fibroblast (CL:0020013) | RO:0002292 |                PR:000003675 |
-| striatal VIP GABAergic interneuron (Primate) (CL:4310127) | subClassOf (rdfs:subClassOf) |                VIP GABAergic interneuron (CL:4023016) |
-| Islands of Calleja granule cell (CL:4030053) | subClassOf (rdfs:subClassOf) |                GABAergic neuron (CL:0000617) |
-| CD8-positive, CXCR3-positive, alpha-beta regulatory T cell (CL:0001041) | RO:0002104 |                PR:000001207 |
-| transitional principal-intercalated cell of kidney collecting duct (CL:0020015) | subClassOf (rdfs:subClassOf) |                kidney collecting duct epithelial cell (CL:1000454) |
-| hair follicle dermal stem cell (CL:4072103) | subClassOf (rdfs:subClassOf) |                hair follicle cell (CL:0002559) |
-| STRd D2 Matrix medium spiny neuron (Primate) (CL:4310132) | subClassOf (rdfs:subClassOf) |                matrix D2 medium spiny neuron (CL:4030047) |
-| striatal LAMP5 LHX6 GABAergic interneuron (Primate) (CL:4310085) | subClassOf (rdfs:subClassOf) |                Lamp5 Lhx6 neuron (CL:4042013) |
-| fibroblast of the reticular layer of dermis (CL:2000096) | RO:0002215 |                GO:0070278 |
-| BF SKOR1 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310088) | subClassOf (rdfs:subClassOf) |                glutamatergic neuron of the basal ganglia (CL:4042040) |
-| STRv D1 medium spiny neuron (Primate) (CL:4310136) | subClassOf (rdfs:subClassOf) |                nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron (CL:4030051) |
-| Islands of Calleja granule cell (Primate) (CL:4310104) | subClassOf (rdfs:subClassOf) |                Islands of Calleja granule cell (CL:4030053) |
-| hair follicle dermal papilla cell (CL:0000346) | subClassOf (rdfs:subClassOf) |                fibroblast of papillary layer of dermis (CL:1000302) |
-| GPe-NDB-SI LHX6-LHX8-GBX1 GABA GABAergic interneuron (Primate) (CL:4310100) | subClassOf (rdfs:subClassOf) |                GABAergic interneuron (CL:0011005) |
-| hair follicle dermal papilla cell (CL:0000346) | RO:0002596 |                GO:0031069 |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) | RO:0002292 |                PR:000001243 |
-| hair follicle dermal stem cell (CL:4072103) | RO:0002215 |                GO:0042634 |
-| hair follicle isthmus-associated fibroblast (CL:0020012) | BFO:0000050 |                UBERON:0006005 |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
+| giant bipolar cell (CL:4033035) | RO:0015004 |                CLM:1001265 |
+| cone retinal bipolar cell (CL:0000752) | RO:0015004 |                CLM:1001261 |
+| IgA memory B cell (CL:0000973) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
+| diffuse bipolar 4a cell (CL:4033095) | RO:0015004 |                CLM:1001246 |
+| IgD-negative class switched memory B cell (CL:4052108) | subClassOf (rdfs:subClassOf) |                IgD-negative memory B cell (CL:0001053) |
+| OFFx cell (CL:4033036) | RO:0015004 |                CLM:1001240 |
+| osteochondral skeletal stem cell (CL:0020016) | subClassOf (rdfs:subClassOf) |                stem cell (CL:0000034) |
+| IgD-negative CD38-positive IgG memory B cell (CL:0002107) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
+| fibrochondrocyte (CL:4072104) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
+| homeostatic chondrocyte (CL:0020020) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
+| fibrochondrocyte progenitor cell (CL:0020021) | subClassOf (rdfs:subClassOf) |                mesenchymal cell (CL:0008019) |
+| fibrochondrocyte (CL:4072104) | RO:0002292 |                PR:000003353 |
+| fibrochondrocyte progenitor cell (CL:0020021) | subClassOf (rdfs:subClassOf) |                progenitor cell (CL:0011026) |
+| ON-blue cone bipolar cell (CL:4033019) | RO:0015004 |                CLM:1001250 |
+| flat midget bipolar cell (CL:4033033) | RO:0015004 |                CLM:1001262 |
+| effector chondrocyte (CL:0020023) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
+| osteochondral skeletal stem cell (CL:0020016) | RO:0002215 |                GO:0001649 |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | subClassOf (rdfs:subClassOf) |                ON retinal ganglion cell (CL:4023032) |
+| rod bipolar cell (CL:0000751) | RO:0015004 |                CLM:1001251 |
+| ON-blue cone bipolar cell (CL:4033019) | RO:0015004 |                CLM:1001259 |
+| chondrocyte (CL:0000138) | subClassOf (rdfs:subClassOf) |                skeletogenic cell (CL:0007001) |
+| M2 macrophage (CL:0000890) | RO:0002202 |                M0 macrophage (CL:0020017) |
+| diffuse bipolar 6 cell (CL:4033032) | RO:0015004 |                CLM:1001257 |
+| fibrochondrocyte (CL:4072104) | RO:0002292 |                PR:000003264 |
+| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | subClassOf (rdfs:subClassOf) |                OFF retinal ganglion cell (CL:4023033) |
+| giant bipolar cell (CL:4033035) | RO:0015004 |                CLM:1001248 |
+| M0 macrophage (CL:0020017) | subClassOf (rdfs:subClassOf) |                macrophage (CL:0000235) |
+| diffuse bipolar 3b cell (CL:4033030) | RO:0015004 |                CLM:1001253 |
+| hypertrophic chondrocyte (CL:0000743) | RO:0002292 |                PR:000005693 |
+| hypertrophic chondrocyte (CL:0000743) | BFO:0000050 |                UBERON:0008187 |
+| proliferative fibrochondrocyte (CL:0020018) | subClassOf (rdfs:subClassOf) |                fibrochondrocyte (CL:4072104) |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | subClassOf (rdfs:subClassOf) |                ON retinal ganglion cell (CL:4023032) |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
+| diffuse bipolar 4a cell (CL:4033095) | RO:0015004 |                CLM:1001239 |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
+| cone retinal bipolar cell (CL:0000752) | RO:0015004 |                CLM:1001241 |
+| homeostatic chondrocyte (CL:0020020) | RO:0002215 |                GO:1990079 |
+| hypertrophic chondrocyte (CL:0000743) | RO:0002215 |                GO:0001958 |
+| fibrochondrocyte (CL:4072104) | BFO:0000050 |                UBERON:0001995 |
+| diffuse bipolar 2 cell (CL:4033028) | RO:0015004 |                CLM:1001245 |
+| regulatory chondrocyte (CL:0020019) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
+| flat midget bipolar cell (CL:4033033) | RO:0015004 |                CLM:1001247 |
+| fibrochondrocyte (CL:4072104) | RO:0002202 |                fibrochondrocyte progenitor cell (CL:0020021) |
+| fibrochondrocyte progenitor cell (CL:0020021) | BFO:0000050 |                UBERON:0001995 |
+| fibrochondrocyte progenitor cell (CL:0020021) | subClassOf (rdfs:subClassOf) |                connective tissue cell (CL:0002320) |
+| diffuse bipolar 3a cell (CL:4033029) | RO:0015004 |                CLM:1001260 |
+| prehypertrophic chondrocyte (CL:0020022) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
+| diffuse bipolar 1 cell (CL:4033027) | RO:0015004 |                CLM:1001254 |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | subClassOf (rdfs:subClassOf) |                OFF retinal ganglion cell (CL:4023033) |
+| fibrochondrocyte (CL:4072104) | RO:0002292 |                PR:000003328 |
+| diffuse bipolar 4a cell (CL:4033095) | RO:0015004 |                CLM:1001263 |
+| invaginating midget bipolar cell (CL:4033034) | RO:0015004 |                CLM:1001264 |
+| IgG-negative class switched memory B cell (CL:0002117) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
+| diffuse bipolar 2 cell (CL:4033028) | RO:0015004 |                CLM:1001258 |
+| IgD-negative class switched memory B cell (CL:4052108) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
+| osteochondral skeletal stem cell (CL:0020016) | RO:0002215 |                GO:0051216 |
+| prehypertrophic chondrocyte (CL:0020022) | RO:0002207 |                hypertrophic chondrocyte (CL:0000743) |
+| invaginating midget bipolar cell (CL:4033034) | RO:0015004 |                CLM:1001252 |
+| diffuse bipolar 4b cell (CL:4033096) | RO:0015004 |                CLM:1001256 |
+| diffuse bipolar 3b cell (CL:4033030) | RO:0015004 |                CLM:1001242 |
+| hypertrophic chondrocyte (CL:0000743) | subClassOf (rdfs:subClassOf) |                bone cell (CL:0001035) |
+| proliferative fibrochondrocyte (CL:0020018) | RO:0002292 |                PR:000007498 |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
+| OFFx cell (CL:4033036) | RO:0015004 |                CLM:1001255 |
+| M1 macrophage (CL:0000863) | RO:0002202 |                M0 macrophage (CL:0020017) |
+| homeostatic chondrocyte (CL:0020020) | RO:0002215 |                GO:0070278 |
+| rod bipolar cell (CL:0000751) | RO:0015004 |                CLM:1001266 |
+| osteochondral skeletal stem cell (CL:0020016) | BFO:0000050 |                UBERON:0001434 |
+| IgE memory B cell (CL:0000948) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
+| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
+| diffuse bipolar 3a cell (CL:4033029) | RO:0015004 |                CLM:1001249 |
+| CD38-negative IgG memory B cell (CL:0002108) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
+| proliferative fibrochondrocyte (CL:0020018) | RO:0000056 |                GO:0022402 |
+| diffuse bipolar 6 cell (CL:4033032) | RO:0015004 |                CLM:1001244 |
+| diffuse bipolar 1 cell (CL:4033027) | RO:0015004 |                CLM:1001243 |
 
 </details>
 
 <details>
-<summary>Text definitions added: 50</summary>
+<summary>Classes added: 14</summary>
 
-| Term | New Text Definition |
-----|----|
-| arkypallidal neuron (Primate) (CL:4310093) | A arkypallidal neuron of the Primates brain. These cells are located in the striatum, external segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:GPe MEIS2-SOX6 GABA. |
-| striosomal D1 medium spiny neuron (Primate) (CL:4310130) | A striosomal D1 medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRd D1 Striosome MSN. |
-| ZI-HTH GABA GABAergic interneuron (Primate) (CL:4310143) | A GABAergic interneuron of the Primates brain. These cells are located in the substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:ZI-HTH GABA. |
-| SN EBF2 GABA GABAergic interneuron (Primate) (CL:4310110) | A GABAergic interneuron of the Primates brain. These cells are located in the striatum, substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN EBF2 GABA. |
-| GPe-NDB-SI LHX6-LHX8-GBX1 GABA GABAergic interneuron (Primate) (CL:4310100) | A GABAergic interneuron of the Primates brain. These cells are located in the striatum, external segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:GPe-NDB-SI LHX6-LHX8-GBX1 GABA. |
-| OB FRMD7 GABA GABAergic neuron (Primate) (CL:4310148) | A GABAergic neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:OB FRMD7 GABA. |
-| AMY-SLEA-BNST GABA GABAergic interneuron (Primate) (CL:4310146) | A GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:AMY-SLEA-BNST GABA. |
-| STH PVALB-PITX2 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310118) | A glutamatergic neuron of the basal ganglia of the Primates brain. These cells are located in the subthalamic nucleus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STH PVALB-PITX2 Glut. |
-| STRv D2 medium spiny neuron (Primate) (CL:4310138) | A nucleus accumbens shell and olfactory tubercle D2 medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRv D2 MSN. |
-| striatal LAMP5 LHX6 GABAergic interneuron (Primate) (CL:4310085) | A Lamp5 Lhx6 neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:LAMP5-LHX6 GABA. |
-| GPi Shell neuron (Primate) (CL:4310096) | A internal globus pallidus shell projection neuron of the Primates brain. These cells are located in the striatum, external segment of globus pallidus, internal segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:GPi Shell. |
-| striatal LAMP5 CXCL14 GABAergic interneuron (Primate) (CL:4310084) | A lamp5 GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:LAMP5-CXCL14 GABA. |
-| SN-VTR GAD2 Dopa dopaminergic neuron (Primate) (CL:4310111) | A dopaminergic neuron of the Primates brain. These cells are located in the striatum, substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN-VTR GAD2 Dopa. |
-| SN-VTR CALB1 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310109) | A substantia nigra dopaminergic neuron of the Primates brain. These cells are located in the substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN-VTR CALB1 Dopa. |
-| striatal SST-ADARB2 GABAergic interneuron (Primate) (CL:4310122) | A sst GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR SST-ADARB2 GABA. |
-| SN-VTR-HTH GATA3-TCF7L2 GABA GABAergic interneuron (Primate) (CL:4310117) | A GABAergic interneuron of the Primates brain. These cells are located in the substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN-VTR-HTH GATA3-TCF7L2 GABA. |
-| STR-BF TAC3-PLPP4-LHX8 GABA TAC3-positive striatal interneuron (Primate) (CL:4310126) | A TAC3-positive striatal interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR-BF TAC3-PLPP4-LHX8 GABA. |
-| GPi Core neuron (Primate) (CL:4310095) | A internal globus pallidus core projecting neuron of the Primates brain. These cells are located in the internal segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:GPi Core. |
-| SN GATA3-PAX8 GABA GABAergic interneuron (Primate) (CL:4310112) | A GABAergic interneuron of the Primates brain. These cells are located in the substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN GATA3-PAX8 GABA. |
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) | A GABAergic neuron of the Primates brain. These cells are located in the substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN GATA3-PVALB GABA. |
-| STRd D2 Striomat hybrid medium spiny neuron (Primate) (CL:4310133) | A indirect pathway medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRd D2 StrioMat Hybrid MSN. |
-| SN SEMA5A GABA GABAergic interneuron (Primate) (CL:4310114) | A GABAergic interneuron of the Primates brain. These cells are located in the striatum, subthalamic nucleus, substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN SEMA5A GABA. |
-| hair follicle isthmus-associated fibroblast (CL:0020012) | A fibroblast that is part of the hair follicle isthmus (mid-hair shaft). In humans, this cell expresses CRABP1/COCH/RSPO4 and tendon-associated genes (MKX, TNMD). |
-| hair follicle dermal stem cell (CL:4072103) | A bipotent mesenchymal stem cell that resides in the dermal sheath, specifically within the dermal sheath cup at the base of the hair follicle, characterized by its capacity for self-renewal and differentiation into both dermal sheath and dermal papilla cells throughout hair cycling. In humans, this cell is marked by enriched expression of gremlin-2 (GREM2) and dipeptidase-1 (DPEP1), and acts as a progenitor reservoir sustaining and regenerating the follicle's mesenchymal compartments. |
-| striosomal D2 medium spiny neuron (Primate) (CL:4310134) | A striosomal D2 medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRd D2 Striosome MSN. |
-| BF SKOR1 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310088) | A glutamatergic neuron of the basal ganglia of the Primates brain. These cells are located in the striatum, external segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:BF SKOR1 Glut. |
-| STRv D1 medium spiny neuron (Primate) (CL:4310136) | A nucleus accumbens shell and olfactory tubercle D1 medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRv D1 MSN. |
-| SN SOX6 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310115) | A substantia nigra dopaminergic neuron of the Primates brain. These cells are located in the substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:SN SOX6 Dopa. |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) | A retinal ganglion cell that is intrinsically photosensitive, functioning as a non-image-forming photoreceptor, distinguished from rod and cone photoreceptors by the expression of the photopigment melanopsin in mice and humans (Hattar et al., 2002; Tri Hoang Do & Yau, 2015). Located primarily in the ganglion cell layer with some displaced somata in the inner nuclear layer, this neuron depolarises directly in response to environmental irradiance (Tri Hoang Do & Yau, 2015). It projects via the retinohypothalamic tract to central targets, including the suprachiasmatic nucleus (SCN) for circadian photoentrainment and the olivary pretectal nucleus (OPN) for the pupillary light reflex. |
-| STRd D1 Matrix medium spiny neuron (Primate) (CL:4310129) | A matrix D1 medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRd D1 Matrix MSN. |
-| STR TAC3-PLPP4 GABA TAC3-positive striatal interneuron (Primate) (CL:4310125) | A TAC3-positive striatal interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR TAC3-PLPP4 GABA. |
-| striatal SST-CHODL GABAergic interneuron (Primate) (CL:4310123) | A sst chodl GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR SST-CHODL GABA. |
-| hair follicle associated fibroblast (CL:0020011) | A specialized dermal fibroblast within the hair follicle mesenchymal compartment that participates in epithelial-mesenchymal signaling to regulate hair morphogenesis, cycling, and homeostasis through production of inductive signals and extracellular matrix maintenance. |
-| dermal sheath fibroblast (CL:0020013) | A fibroblast forming the connective tissue sheath that encloses the hair follicle epithelium from the level of the bulge downward to the hair bulb. This cell expresses characteristic markers, including DPEP1 in humans and COL11A1 and ACTA2 (alpha-smooth muscle actin) in mice and humans. Dermal sheath fibroblast possesses contractile properties mediated by calcium-calmodulin-myosin light chain kinase signalling, generating centripetal force during hair follicle catagen that relocates the dermal papilla to the stem cell niche. |
-| Islands of Calleja granule cell (Primate) (CL:4310104) | A Island of Calleja granule cell of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:OT D1 ICj. |
-| transitional principal-intercalated cell of kidney collecting duct (CL:0020015) | A transitional cell located in the renal collecting duct that co-expresses markers of both principal cell (PC) and intercalated cell (IC). This hybrid cell is enriched in Chronic Kidney Disease (CKD). |
-| striatal pthlh-expressing interneuron (Primate) (CL:4310120) | A striatal pthlh-expressing interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR FS PTHLH-PVALB GABA. |
-| VTR-HTH Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310144) | A glutamatergic neuron of the basal ganglia of the Primates brain. These cells are located in the striatum, subthalamic nucleus, substantia nigra . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:VTR-HTH Glut. |
-| OB Dopa-GABA neuron (Primate) (CL:4310147) | A OB-Dopa-GABA of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:OB Dopa-GABA. |
-| striatal SST-LYPD6-RSPO2 GABAergic interneuron (Primate) (CL:4310121) | A GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR LYPD6-RSPO2 GABA. |
-| prototypic neuron (Primate) (CL:4310094) | A prototypic neuron of the Primates brain. These cells are located in the striatum, external segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:GPe SOX6-CTXND1 GABA. |
-| STR cholinergic-GABAergic neuron (Primate) (CL:4310135) | A striatal cholinergic-GABAergic neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR Cholinergic GABA. |
-| GPin-BF cholinergic-GABAergic neuron (Primate) (CL:4310083) | A GABA-Chol neuron of the Primates brain. These cells are located in the striatum, external segment of globus pallidus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:GPin-BF Cholinergic GABA. |
-| striatal SST-RSPO2 GABAergic interneuron (Primate) (CL:4310124) | A sst GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR SST-RSPO2 GABA. |
-| STRd D2 Matrix medium spiny neuron (Primate) (CL:4310132) | A matrix D2 medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRd D2 Matrix MSN. |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) | A D1/D2-hybrid medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STR D1D2 Hybrid MSN. |
-| striatal VIP GABAergic interneuron (Primate) (CL:4310127) | A VIP GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:VIP GABA. |
-| STRd cholinergic-GABAergic neuron (Primate) (CL:4310128) | A dorso-striatal cholinergic-GABAergic neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRd Cholinergic GABA. |
-| AMY-SLEA-BNST D1 GABA GABAergic interneuron (Primate) (CL:4310145) | A GABAergic interneuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:AMY-SLEA-BNST D1 GABA. |
-| STRv D1-NUDAP medium spiny neuron (Primate) (CL:4310137) | A D1-NUDAP medium spiny neuron of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:STRv D1 NUDAP MSN. |
+| Term |
+----|
+| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) |
+| regulatory chondrocyte (CL:0020019) |
+| homeostatic chondrocyte (CL:0020020) |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) |
+| effector chondrocyte (CL:0020023) |
+| prehypertrophic chondrocyte (CL:0020022) |
+| proliferative fibrochondrocyte (CL:0020018) |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) |
+| IgD-negative class switched memory B cell (CL:4052108) |
+| fibrochondrocyte (CL:4072104) |
+| M0 macrophage (CL:0020017) |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) |
+| osteochondral skeletal stem cell (CL:0020016) |
+| fibrochondrocyte progenitor cell (CL:0020021) |
 
 </details>
 
 <details>
-<summary>Synonyms added: 81</summary>
+<summary>Synonyms added: 28</summary>
 
 | Term | New Synonym | Predicate |
 ----|----|----|
-| striosomal D1 medium spiny neuron (Primate) (CL:4310130) | STRd D1 Striosome MSN | oio:hasExactSynonym |
-| STRd D2 Striomat hybrid medium spiny neuron (Primate) (CL:4310133) | STRd D2 StrioMat Hybrid MSN | oio:hasExactSynonym |
-| GPi Shell neuron (Primate) (CL:4310096) | GPi Shell | oio:hasExactSynonym |
-| striatal VIP GABAergic interneuron (Primate) (CL:4310127) | VIP | oio:hasExactSynonym |
-| SN SOX6 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310115) | SN SOX6 Dopa | oio:hasExactSynonym |
-| SN EBF2 GABA GABAergic interneuron (Primate) (CL:4310110) | SN EBF2 GABA | oio:hasExactSynonym |
-| striosomal D2 medium spiny neuron (Primate) (CL:4310134) | STRd D2 Striosome MSN | oio:hasExactSynonym |
-| BF SKOR1 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310088) | BF SKOR1 Glut | oio:hasExactSynonym |
-| dermal sheath fibroblast (CL:0020013) | DS fibroblast | oio:hasRelatedSynonym |
-| prototypic neuron (Primate) (CL:4310094) | GPe SOX6-CTXND1 GABA | oio:hasExactSynonym |
-| SN SEMA5A GABA GABAergic interneuron (Primate) (CL:4310114) | SN SEMA5A GABA | oio:hasExactSynonym |
-| fibroblast of the reticular layer of dermis (CL:2000096) | reticular fibroblast | oio:hasRelatedSynonym |
-| striatal SST-CHODL GABAergic interneuron (Primate) (CL:4310123) | STR SST-CHODL GABA | oio:hasExactSynonym |
-| STR-BF TAC3-PLPP4-LHX8 GABA TAC3-positive striatal interneuron (Primate) (CL:4310126) | STR-BF TAC3-PLPP4-LHX8 GABA | oio:hasExactSynonym |
-| striosomal D1 medium spiny neuron (Primate) (CL:4310130) | D1-Striosome | oio:hasExactSynonym |
-| striatal LAMP5 CXCL14 GABAergic interneuron (Primate) (CL:4310084) | LAMP5-CXCL14 GABA | oio:hasExactSynonym |
-| SN-VTR CALB1 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310109) | SN-VTR CALB1 Dopa | oio:hasExactSynonym |
-| striatal LAMP5 LHX6 GABAergic interneuron (Primate) (CL:4310085) | LAMP5-LHX6 GABA | oio:hasExactSynonym |
-| SN GATA3-PAX8 GABA GABAergic interneuron (Primate) (CL:4310112) | SN GATA3-PAX8 GABA | oio:hasExactSynonym |
-| STR TAC3-PLPP4 GABA TAC3-positive striatal interneuron (Primate) (CL:4310125) | LHX6 TAC3 | oio:hasExactSynonym |
-| striatal SST-CHODL GABAergic interneuron (Primate) (CL:4310123) | LTS | oio:hasExactSynonym |
-| striatal pthlh-expressing interneuron (Primate) (CL:4310120) | Pvalb Pthlh | oio:hasExactSynonym |
-| GPi Core neuron (Primate) (CL:4310095) | CN ONECUT1 GABA | oio:hasExactSynonym |
-| transitional principal-intercalated cell of kidney collecting duct (CL:0020015) | hybrid principal-intercalated cell | oio:hasBroadSynonym |
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) | SN GATA3-PVALB GABA | oio:hasExactSynonym |
-| SN-VTR-HTH GATA3-TCF7L2 GABA GABAergic interneuron (Primate) (CL:4310117) | SN-VTR-HTH GATA3-TCF7L2 GABA | oio:hasExactSynonym |
-| STRd D1 Matrix medium spiny neuron (Primate) (CL:4310129) | STRd D1 Matrix MSN | oio:hasExactSynonym |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) | ipRGC | oio:hasRelatedSynonym |
-| intrinsically photosensitive retinal ganglion cell (CL:0020014) | photosensitive ganglion cell | oio:hasBroadSynonym |
-| STR TAC3-PLPP4 GABA TAC3-positive striatal interneuron (Primate) (CL:4310125) | STR TAC3-PLPP4 GABA | oio:hasExactSynonym |
-| SN GATA3-PAX8 GABA GABAergic interneuron (Primate) (CL:4310112) | pSNpr | oio:hasExactSynonym |
-| VTR-HTH Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310144) | F M Glut | oio:hasExactSynonym |
-| striatal LAMP5 CXCL14 GABAergic interneuron (Primate) (CL:4310084) | CN LAMP5-CXCL14 GABA | oio:hasExactSynonym |
-| striatal LAMP5 CXCL14 GABAergic interneuron (Primate) (CL:4310084) | LAMP5 | oio:hasExactSynonym |
-| GPi Shell neuron (Primate) (CL:4310096) | CN GABA-Glut | oio:hasExactSynonym |
-| GPi Shell neuron (Primate) (CL:4310096) | Subpallium GABA-Glut | oio:hasExactSynonym |
-| striatal VIP GABAergic interneuron (Primate) (CL:4310127) | CN VIP GABA | oio:hasExactSynonym |
-| hair follicle dermal stem cell (CL:4072103) | dermal sheath cup cell | oio:hasNarrowSynonym |
-| striatal SST-LYPD6-RSPO2 GABAergic interneuron (Primate) (CL:4310121) | STR LYPD6-RSPO2 GABA | oio:hasExactSynonym |
-| STRv D1-NUDAP medium spiny neuron (Primate) (CL:4310137) | STRv D1 NUDAP MSN | oio:hasExactSynonym |
-| STRd D2 Matrix medium spiny neuron (Primate) (CL:4310132) | STRd D2 Matrix MSN | oio:hasExactSynonym |
-| STRd D2 Matrix medium spiny neuron (Primate) (CL:4310132) | D2-Matrix | oio:hasExactSynonym |
-| GPe-NDB-SI LHX6-LHX8-GBX1 GABA GABAergic interneuron (Primate) (CL:4310100) | GPe-NDB-SI LHX6-LHX8-GBX1 GABA | oio:hasExactSynonym |
-| STH PVALB-PITX2 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310118) | STH PVALB-PITX2 Glut | oio:hasExactSynonym |
-| STRv D2 medium spiny neuron (Primate) (CL:4310138) | D2-Shell/OT | oio:hasExactSynonym |
-| OB FRMD7 GABA GABAergic neuron (Primate) (CL:4310148) | OB FRMD7 GABA | oio:hasExactSynonym |
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) | aSNpr | oio:hasExactSynonym |
-| ZI-HTH GABA GABAergic interneuron (Primate) (CL:4310143) | ZI-HTH GABA | oio:hasExactSynonym |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) | STR D1D2 Hybrid MSN | oio:hasExactSynonym |
-| striatal pthlh-expressing interneuron (Primate) (CL:4310120) | FS | oio:hasExactSynonym |
-| STRv D1 medium spiny neuron (Primate) (CL:4310136) | D1-Shell/OT | oio:hasExactSynonym |
-| striosomal D2 medium spiny neuron (Primate) (CL:4310134) | D2-Striosome | oio:hasExactSynonym |
-| STRv D1 medium spiny neuron (Primate) (CL:4310136) | STRv D1 MSN | oio:hasExactSynonym |
-| AMY-SLEA-BNST GABA GABAergic interneuron (Primate) (CL:4310146) | AMY-SLEA-BNST GABA | oio:hasExactSynonym |
-| striatal VIP GABAergic interneuron (Primate) (CL:4310127) | VIP GABA | oio:hasExactSynonym |
-| transitional principal-intercalated cell of kidney collecting duct (CL:0020015) | tPC-IC cell | oio:hasRelatedSynonym |
-| striatal SST-CHODL GABAergic interneuron (Primate) (CL:4310123) | Sst Chodl | oio:hasExactSynonym |
-| Islands of Calleja granule cell (Primate) (CL:4310104) | OT D1 ICj | oio:hasExactSynonym |
-| OB Dopa-GABA neuron (Primate) (CL:4310147) | OB Dopa-GABA | oio:hasExactSynonym |
-| STRd D1 Matrix medium spiny neuron (Primate) (CL:4310129) | D1-Matrix | oio:hasExactSynonym |
-| GPin-BF cholinergic-GABAergic neuron (Primate) (CL:4310083) | GPin-BF Cholinergic GABA | oio:hasExactSynonym |
-| VTR-HTH Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310144) | VTR-HTH Glut | oio:hasExactSynonym |
-| striatal LAMP5 LHX6 GABAergic interneuron (Primate) (CL:4310085) | CN LAMP5-LHX6 GABA | oio:hasExactSynonym |
-| STR cholinergic-GABAergic neuron (Primate) (CL:4310135) | STR Cholinergic GABA | oio:hasExactSynonym |
-| striatal SST-ADARB2 GABAergic interneuron (Primate) (CL:4310122) | STR SST-ADARB2 GABA | oio:hasExactSynonym |
-| striatal SST-RSPO2 GABAergic interneuron (Primate) (CL:4310124) | STR SST-RSPO2 GABA | oio:hasExactSynonym |
-| striatal pthlh-expressing interneuron (Primate) (CL:4310120) | STR FS PTHLH-PVALB GABA | oio:hasExactSynonym |
-| striatal SST-ADARB2 GABAergic interneuron (Primate) (CL:4310122) | STR SST GABA | oio:hasExactSynonym |
-| hair follicle dermal papilla cell (CL:0000346) | hair follicle DPC | oio:hasRelatedSynonym |
-| STRv D1-NUDAP medium spiny neuron (Primate) (CL:4310137) | D1-NUDAP | oio:hasExactSynonym |
-| AMY-SLEA-BNST D1 GABA GABAergic interneuron (Primate) (CL:4310145) | AMY-SLEA-BNST D1 GABA | oio:hasExactSynonym |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) | D1/D2 Hybrid | oio:hasExactSynonym |
-| SN-VTR GAD2 Dopa dopaminergic neuron (Primate) (CL:4310111) | SN-VTR GAD2 Dopa | oio:hasExactSynonym |
-| arkypallidal neuron (Primate) (CL:4310093) | GPe MEIS2-SOX6 GABA | oio:hasExactSynonym |
-| arkypallidal neuron (Primate) (CL:4310093) | CN MEIS2 GABA | oio:hasExactSynonym |
-| Islands of Calleja granule cell (Primate) (CL:4310104) | OT Granular GABA | oio:hasExactSynonym |
-| hair follicle dermal stem cell (CL:4072103) | hfDSC | oio:hasRelatedSynonym |
-| STRd cholinergic-GABAergic neuron (Primate) (CL:4310128) | STRd Cholinergic GABA | oio:hasExactSynonym |
-| GPi Core neuron (Primate) (CL:4310095) | GPi Core | oio:hasExactSynonym |
-| Islands of Calleja granule cell (Primate) (CL:4310104) | D1-ICj (Islands of Calleja) | oio:hasExactSynonym |
-| STRv D2 medium spiny neuron (Primate) (CL:4310138) | STRv D2 MSN | oio:hasExactSynonym |
+| regulatory chondrocyte (CL:0020019) | RegC | oio:hasRelatedSynonym |
+| proliferative fibrochondrocyte (CL:0020018) | ProFC | oio:hasRelatedSynonym |
+| direct pathway medium spiny neuron (CL:4023026) | dSPN | oio:hasRelatedSynonym |
+| homeostatic chondrocyte (CL:0020020) | HomC | oio:hasRelatedSynonym |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | G19 | oio:hasExactSynonym |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | alpha retinal ganglion cell ON-s | oio:hasRelatedSynonym |
+| M0 macrophage (CL:0020017) | naive macrophage | oio:hasExactSynonym |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | alpha retinal ganglion cell OFF-s | oio:hasRelatedSynonym |
+| effector chondrocyte (CL:0020023) | EC | oio:hasRelatedSynonym |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | G24 | oio:hasExactSynonym |
+| fibrochondrocyte (CL:4072104) | meniscus fibrochondrocyte | oio:hasNarrowSynonym |
+| M2 macrophage (CL:0000890) | alternatively activated macrophage | oio:hasExactSynonym |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | C42 | oio:hasExactSynonym |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | G5 | oio:hasExactSynonym |
+| fibrochondrocyte (CL:4072104) | fibrocartilage chondrocyte | oio:hasExactSynonym |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | C43 | oio:hasExactSynonym |
+| M0 macrophage (CL:0020017) | resting-state macrophages | oio:hasExactSynonym |
+| M0 macrophage (CL:0020017) | non-activated macrophage | oio:hasExactSynonym |
+| fibrochondrocyte progenitor cell (CL:0020021) | FCP | oio:hasRelatedSynonym |
+| M1 macrophage (CL:0000863) | inflammatory macrophage | oio:hasExactSynonym |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | C41 | oio:hasExactSynonym |
+| osteochondral skeletal stem cell (CL:0020016) | ocSSC | oio:hasRelatedSynonym |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | alpha retinal ganglion cell ON-t | oio:hasRelatedSynonym |
+| fibrochondrocyte (CL:4072104) | FC | oio:hasRelatedSynonym |
+| direct pathway medium spiny neuron (CL:4023026) | D1-MSN | oio:hasRelatedSynonym |
+| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | alpha retinal ganglion cell OFF-t | oio:hasRelatedSynonym |
+| prehypertrophic chondrocyte (CL:0020022) | preHTC | oio:hasRelatedSynonym |
+| M2 macrophage (CL:0000890) | anti-inflammatory macrophage | oio:hasRelatedSynonym |
 
 </details>
 
 <details>
-<summary>Synonyms removed: 126</summary>
+<summary>Text definitions added: 14</summary>
 
-| Term | Removed Synonym |
+| Term | New Text Definition |
 ----|----|
-| olfactory areas astrocyte (Mmus) (CL:4300360) | Gja1 (Mmus), Hs3st3a1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-NT NN_2 astrocyte (Mmus) (CL:4301590) | Gja1 (Mmus), A330076C08Rik (Mmus), Itih3 (Mmus), Gria2 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-TE NN_3 Crym astrocyte (Mmus) (CL:4307047) | S1pr1 (Mmus), Crym (Mmus), Grin2c (Mmus) expressing astrocyte of brain (Mus musculus) |
-| olfactory ensheathing cell (Mmus) (CL:4301615) | Apod (Mmus), Npy (Mmus) expressing olfactory ensheathing cell of brain (Mus musculus) |
-| mature myelinating oligodendrocyte (Mmus) (CL:4301614) | Cldn11 (Mmus), Anln (Mmus) expressing mature myelinating oligodendrocyte of brain (Mus musculus) |
-| cerebellar Golgi cell (Mmus) (CL:4301578) | Zfp385c (Mmus), Tfap2b (Mmus) expressing cerebellar Golgi cell of brain (Mus musculus) |
-| beta1-tancyte (Mmus) (CL:4307069) | Gpr50 (Mmus), Frzb (Mmus), Foxd2os (Mmus) expressing beta1-tanycyte of brain (Mus musculus) |
-| ependymal cell (Mmus) (CL:4300363) | Tmem212 (Mmus), Rarres2 (Mmus) expressing ependymal cell of brain (Mus musculus) |
-| Astro-TE NN_5 astrocyte (Mmus) (CL:4301595) | Gja1 (Mmus), Thbs4 (Mmus), Kcnk10 (Mmus), Pak1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-OLF NN_1 astrocyte (Mmus) (CL:4301596) | Aqp4 (Mmus), Prss23 (Mmus), Igfbp2 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| STR D1 Gaba direct pathway medium spiny neuron (Mmus) (CL:4300101) | Prkch (Mmus), Slc32a1 (Mmus), Drd1 (Mmus) expressing direct pathway medium spiny neuron of brain (Mus musculus) |
-| CHOR NN_1 Tbc1d1 choroid plexus epithelial cell (Mmus) (CL:4307084) | 2900040C04Rik (Mmus), Tbc1d1 (Mmus) expressing choroid plexus epithelial cell of brain (Mus musculus) |
-| Astro-TE NN_5 Hs3st3a1 astrocyte (Mmus) (CL:4307049) | S1pr1 (Mmus), Thbs4 (Mmus), Hs3st3a1 (Mmus), Sfrp1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| myelin-forming oligodendrocyte (Mmus) (CL:4301613) | Cldn11 (Mmus), Sec14l5 (Mmus), 9630013A20Rik (Mmus) expressing myelin-forming oligodendrocyte of brain (Mus musculus) |
-| alpha2-tanycyte (Mmus) (CL:4307067) | Pdzph1 (Mmus), Wdr63 (Mmus), Dscaml1 (Mmus), P3h2 (Mmus) expressing alpha2-tanycyte of brain (Mus musculus) |
-| CB PLI Gly-Gaba_1 Purkinje layer interneuron (Mmus) (CL:4301574) | Hmga2 (Mmus), Afap1l2 (Mmus) expressing Purkinje layer interneuron of brain (Mus musculus) |
-| arachnoid barrier cell (Mmus) (CL:4301616) | Thbd (Mmus), Ccn3 (Mmus) expressing arachnoid barrier cell of brain (Mus musculus) |
-| NFOL NN_2 Dbx2 newly formed oligodendrocyte (Mmus) (CL:4307099) | 9630013A20Rik (Mmus), Dbx2 (Mmus), Rassf10 (Mmus) expressing newly formed oligodendrocyte of brain (Mus musculus) |
-| OPC NN_1 Col27a1 oligodendrocyte precursor cell (Mmus) (CL:4307089) | Pdgfra (Mmus), Olig1 (Mmus), Col27a1 (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| subcortical astrocyte (Mmus) (CL:4300358) | Aqp4 (Mmus), Cd38 (Mmus), Agt (Mmus), Itih3 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| OEC NN_1 A330076C08Rik olfactory ensheathing cell (Mmus) (CL:4307111) | Apod (Mmus), Mybpc1 (Mmus), Syk (Mmus) expressing olfactory ensheathing cell of brain (Mus musculus) |
-| NFOL NN_2 Rgs16 newly formed oligodendrocyte (Mmus) (CL:4307100) | 9630013A20Rik (Mmus), Rgs16 (Mmus), Rhbdl2 (Mmus) expressing newly formed oligodendrocyte of brain (Mus musculus) |
-| Astro-TE NN_3 astrocyte (Mmus) (CL:4301593) | Gja1 (Mmus), Grin2c (Mmus), Dcc (Mmus), Slc7a10 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| CHOR NN_1 Slc17a8 choroid plexus epithelial cell (Mmus) (CL:4307085) | 2900040C04Rik (Mmus), Slc17a8 (Mmus) expressing choroid plexus epithelial cell of brain (Mus musculus) |
-| Tanycyte NN_2 tanycyte (Mmus) (CL:4301603) | Gpr50 (Mmus), Ccdc170 (Mmus), Nkx2-4 (Mmus) expressing tanycyte of brain (Mus musculus) |
-| OPC NN_1 Rmi2 oligodendrocyte precursor cell (Mmus) (CL:4307090) | Pdgfra (Mmus), Olig1 (Mmus), Rmi2 (Mmus), Col27a1 (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| CBX MLI Cdh22 Gaba molecular layer interneuron (Mmus) (CL:4307012) | Cdh1 (Mmus), Acvr1c (Mmus), Adamts15 (Mmus), Pax2 (Mmus) expressing molecular layer interneuron of brain (Mus musculus) |
-| MOL NN_4 Il33 mature myelinating oligodendrocyte (Mmus) (CL:4307107) | Opalin (Mmus), Grm3 (Mmus), Gm5087 (Mmus) expressing mature myelinating oligodendrocyte of brain (Mus musculus) |
-| Astro-NT NN_1 Slc36a2 astrocyte (Mmus) (CL:4307029) | Gfap (Mmus), Slc36a2 (Mmus), Sfrp5 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-OLF NN_3 Sfrp1 astrocyte (Mmus) (CL:4307056) | S1pr1 (Mmus), 6530411M01Rik (Mmus), Sfrp1 (Mmus), Aqp4 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Lugaro cell (Mmus) (CL:4301575) | Pthlh (Mmus), Tfap2b (Mmus), Rspo2 (Mmus) expressing Lugaro cell of brain (Mus musculus) |
-| hypothalamic gonadotropin-releasing hormone neuron (Mmus) (CL:4304384) | Gnrh1 (Mmus) expressing hypothalamic gonadotropin-releasing hormone neuron of brain (Mus musculus) |
-| Astro-NT NN_1 Mecom astrocyte (Mmus) (CL:4307033) | Dao (Mmus), Mecom (Mmus), Fbln5 (Mmus), Prelp (Mmus) expressing astrocyte of brain (Mus musculus) |
-| COP NN_1 Bmp4 committed oligodendrocyte precursor (Mmus) (CL:4307095) | 9630013A20Rik (Mmus), Bmp4 (Mmus), Mob3b (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| tanycyte (Mmus) (CL:4300362) | Gpr50 (Mmus), Apoe (Mmus) expressing tanycyte of brain (Mus musculus) |
-| DCO Il22 Gly-Gaba cerebellar neuron (Mmus) (CL:4300348) | Tmem204 (Mmus), Slc6a5 (Mmus) expressing cerebellar neuron of brain (Mus musculus) |
-| OEC NN_1 Gdpd4 olfactory ensheathing cell (Mmus) (CL:4307110) | Apod (Mmus), Aqp1 (Mmus), Cldn5 (Mmus) expressing olfactory ensheathing cell of brain (Mus musculus) |
-| Astro-TE NN_1 Jph4 astrocyte (Mmus) (CL:4307041) | Myoc (Mmus), Sptbn2 (Mmus), Alpk1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-NT NN_1 astrocyte (Mmus) (CL:4301589) | Gfap (Mmus), Lhfpl3 (Mmus), Gria1 (Mmus), Hopx (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-NT NN_2 Gm30524 astrocyte (Mmus) (CL:4307037) | Aqp4 (Mmus), A330076C08Rik (Mmus), Fbln5 (Mmus), Mdga2 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| ABC NN_1 Cubn arachnoid barrier cell (Mmus) (CL:4307115) | Prg4 (Mmus), Cubn (Mmus) expressing arachnoid barrier cell of brain (Mus musculus) |
-| CB PLI Gly-Gaba_3 Purkinje layer interneuron (Mmus) (CL:4301576) | Pax2 (Mmus), C1ql3 (Mmus), Tfap2b (Mmus), Gabrb1 (Mmus) expressing Purkinje layer interneuron of brain (Mus musculus) |
-| Bergmann glial cell (Mmus) (CL:4307026) | Gpr37l1 (Mmus), Ctxn3 (Mmus) expressing Bergmann glial cell of brain (Mus musculus) |
-| pinealocyte (Mmus) (CL:4306426) | Cngb3 (Mmus), Ush2a (Mmus) expressing pinealocyte of brain (Mus musculus) |
-| Astro-TE NN_3 Cxcl5 astrocyte (Mmus) (CL:4307044) | Gja1 (Mmus), Cxcl5 (Mmus), Ddn (Mmus) expressing astrocyte of brain (Mus musculus) |
-| OEC NN_1 Adamts12 olfactory ensheathing cell (Mmus) (CL:4307109) | Cldn5 (Mmus), Adamts12 (Mmus) expressing olfactory ensheathing cell of brain (Mus musculus) |
-| NFOL NN_2 Il23a newly formed oligodendrocyte (Mmus) (CL:4307101) | 9630013A20Rik (Mmus), Piezo2 (Mmus), Ptprb (Mmus) expressing newly formed oligodendrocyte of brain (Mus musculus) |
-| OPC NN_1 Mms22l oligodendrocyte precursor cell (Mmus) (CL:4307088) | Pdgfra (Mmus), Olig1 (Mmus), Mms22l (Mmus), Top2a (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| Astro-NT NN_2 Fzd2 astrocyte (Mmus) (CL:4307034) | Gja1 (Mmus), A330076C08Rik (Mmus), Sfrp5 (Mmus), Gria2 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-OLF NN_2 Alk astrocyte (Mmus) (CL:4307054) | S1pr1 (Mmus), Chrdl1 (Mmus), Sfrp1 (Mmus), Atp13a4 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| MOL NN_4 Plin3 mature myelinating oligodendrocyte (Mmus) (CL:4307104) | Prr5l (Mmus), Hapln2 (Mmus), Enpp6 (Mmus), Grm7 (Mmus) expressing mature myelinating oligodendrocyte of brain (Mus musculus) |
-| Astro-OLF NN_2 Slc25a34 astrocyte (Mmus) (CL:4307053) | Aqp4 (Mmus), Hs3st3a1 (Mmus), Slc25a34 (Mmus), C4b (Mmus) expressing astrocyte of brain (Mus musculus) |
-| BAM NN_1 Fos border associated macrophage (Mmus) (CL:4307134) | Mrc1 (Mmus), Pf4 (Mmus), Fos (Mmus) expressing border associated macrophage of brain (Mus musculus) |
-| STR D2 Gaba indirect pathway medium spiny neuron (Mmus) (CL:4300102) | Adora2a (Mmus), Phactr1 (Mmus), Pcp4l1 (Mmus) expressing indirect pathway medium spiny neuron of brain (Mus musculus) |
-| Tanycyte NN_1 tanycyte (Mmus) (CL:4301602) | Cnmd (Mmus), Lpl (Mmus) expressing tanycyte of brain (Mus musculus) |
-| CBX MLI Megf11 Gaba molecular layer interneuron (Mmus) (CL:4300351) | Homer3 (Mmus), Tfap2b (Mmus), Sorcs3 (Mmus), Cacna1e (Mmus) expressing molecular layer interneuron of brain (Mus musculus) |
-| CBX MLI Megf11 Gaba_2 molecular layer interneuron (Mmus) (CL:4301580) | Gabra6 (Mmus), Pvalb (Mmus) expressing molecular layer interneuron of brain (Mus musculus) |
-| Astro-TE NN_3 Fam163a astrocyte (Mmus) (CL:4307045) | S1pr1 (Mmus), Fam163a (Mmus), Kcnq3 (Mmus), Kcnq1ot1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| COP NN_1 Cck committed oligodendrocyte precursor (Mmus) (CL:4307097) | 9630013A20Rik (Mmus), Bmp4 (Mmus), Cck (Mmus), Ptger1 (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| OPC NN_1 Irx2 oligodendrocyte precursor cell (Mmus) (CL:4307087) | Pdgfra (Mmus), Pclaf (Mmus), Irx2 (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| Astro-TE NN_1 Myoc astrocyte (Mmus) (CL:4307038) | Myoc (Mmus), Lhx2 (Mmus), Kcne1l (Mmus), Alpk1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| newly formed oligodendrocyte (Mmus) (CL:4301612) | 9630013A20Rik (Mmus), Ptprb (Mmus) expressing newly formed oligodendrocyte of brain (Mus musculus) |
-| CB PLI GABA Ly6d Purkinje layer interneuron (CL:4307005) | Ly6d (Mmus), Kit (Mmus) expressing Purkinje layer interneuron of brain (Mus musculus) |
-| COP NN_1 Vwc2 committed oligodendrocyte precursor (Mmus) (CL:4307096) | 9630013A20Rik (Mmus), Rab32 (Mmus), Opalin (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| beta-2 tanycyte (Mmus) (CL:4307070) | Fndc3c1 (Mmus), Ecrg4 (Mmus) expressing beta2-tanycyte of brain (Mus musculus) |
-| Purkinje layer interneuron (Mmus) (CL:4300349) | Rgs6 (Mmus), Slc6a5 (Mmus), Shisa9 (Mmus), Zic1 (Mmus), Bmp6 (Mmus) expressing Purkinje layer interneuron of brain (Mus musculus) |
-| oligodendrocyte (Mmus) (CL:4300367) | Cldn11 (Mmus), Gjc3 (Mmus) expressing oligodendrocyte of brain (Mus musculus) |
-| Astro-NT NN_1 Six3os1 astrocyte (Mmus) (CL:4307031) | Myoc (Mmus), Six3os1 (Mmus), Slc36a2 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-TE NN_2 Clstn2 astrocyte (Mmus) (CL:4307042) | Gm6145 (Mmus), E330013P04Rik (Mmus), Slc39a12 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Tanycyte NN_2 Otx2 tanycyte (Mmus) (CL:4307068) | Ccdc146 (Mmus), Tbx3 (Mmus), Otx2 (Mmus) expressing tanycyte of brain (Mus musculus) |
-| ABC NN_1 Pde11a arachnoid barrier cell (Mmus) (CL:4307113) | Slc47a1 (Mmus), Pde11a (Mmus) expressing arachnoid barrier cell of brain (Mus musculus) |
-| Tanycyte NN_2 Mroh5 alpha1-tanycyte (Mmus) (CL:4307066) | Ccdc170 (Mmus), Nkx2-4 (Mmus), Dock8 (Mmus) expressing alpha1-tanycyte of brain (Mus musculus) |
-| CBX MLI Megf11 Gaba_1 molecular layer interneuron (Mmus) (CL:4301579) | Dnah11 (Mmus), Sla (Mmus), Gldc (Mmus), Sdk2 (Mmus) expressing molecular layer interneuron of brain (Mus musculus) |
-| CBX Purkinje Gaba_1 Purkinje cell (Mmus) (CL:4301582) | Pcp2 (Mmus), Stk17b (Mmus) expressing Purkinje cell of brain (Mus musculus) |
-| astrocyte of cerebrum (Mmus) (CL:4300359) | Gja1 (Mmus), Lhx2 (Mmus), Gpc5 (Mmus), Nr2f1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| MFOL NN_3 Il23a myelin-forming oligodendrocyte (Mmus) (CL:4307103) | 9630013A20Rik (Mmus), Ppp1r14a (Mmus), Mroh3 (Mmus) expressing myelin-forming oligodendrocyte of brain (Mus musculus) |
-| Astro-TE NN_1 astrocyte (Mmus) (CL:4301591) | Myoc (Mmus), Camk2a (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Tanycyte NN_2 Mylk3 alpha1-tanycyte (Mmus) (CL:4307065) | Dynlrb2 (Mmus), Mylk3 (Mmus), Sfta3-ps (Mmus) expressing alpha1-tanycyte of brain (Mus musculus) |
-| DCO Il22 Gly-Gaba_2 cerebellar neuron (Mmus) (CL:4306992) | Il22 (Mmus), Edaradd (Mmus) expressing cerebellar neuron of brain (Mus musculus) |
-| Astro-TE NN_3 Zic4 astrocyte (Mmus) (CL:4307046) | S1pr1 (Mmus), Ranbp3l (Mmus), Emx2os (Mmus), Zic4 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| MOL NN_4 Spock3 mature myelinating oligodendrocyte (Mmus) (CL:4307105) | Cldn11 (Mmus), A230001M10Rik (Mmus), Spock3 (Mmus), Rhoj (Mmus) expressing mature myelinating oligodendrocyte of brain (Mus musculus) |
-| Astro-NT NN_1 Nuf2 astrocyte (Mmus) (CL:4307030) | Gfap (Mmus), Sfrp5 (Mmus), Cldn10 (Mmus), Riiad1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| DCO Il22 Gly-Gaba_3 cerebellar neuron (Mmus) (CL:4301573) | Fat2 (Mmus), Slc6a5 (Mmus), Cgnl1 (Mmus) expressing cerebellar neuron of brain (Mus musculus) |
-| Astro-TE NN_4 astrocyte (Mmus) (CL:4307048) | S1pr1 (Mmus), Thbs4 (Mmus), Gm29683 (Mmus), Slc39a12 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-NT NN_2 Fam227b astrocyte (Mmus) (CL:4307036) | Slc7a10 (Mmus), Cyp26b1 (Mmus), Igfbp2 (Mmus), Shroom3 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| cerebellar granule cell (Mmus) (CL:4300354) | Gabra6 (Mmus), Ror1 (Mmus) expressing cerebellar granule cell of brain (Mus musculus) |
-| NFOL NN_2 9630013A20Rik newly formed oligodendrocyte (Mmus) (CL:4307098) | 9630013A20Rik (Mmus), Grin2b (Mmus) expressing newly formed oligodendrocyte of brain (Mus musculus) |
-| COP NN_1 C1ql1 committed oligodendrocyte precursor (Mmus) (CL:4307094) | Gpr17 (Mmus), Bgn (Mmus), Gstp1 (Mmus), C1ql1 (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| OPC NN_1 Neil3 oligodendrocyte precursor cell (Mmus) (CL:4307086) | Pdgfra (Mmus), Pclaf (Mmus), Mki67 (Mmus), Foxg1 (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| border associated macrophage (Mmus) (CL:4301625) | Mrc1 (Mmus), Maf (Mmus) expressing border associated macrophage of brain (Mus musculus) |
-| unipolar brush cell (Mmus) (CL:4301586) | Sln (Mmus), Lmx1a (Mmus) expressing unipolar brush cell of brain (Mus musculus) |
-| Astro-TE NN_5 Adamts18 astrocyte (Mmus) (CL:4307050) | S1pr1 (Mmus), Adamts18 (Mmus), Crym (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-NT NN_1 Galnt15 astrocyte (Mmus) (CL:4307028) | Gfap (Mmus), Galnt15 (Mmus), Agt (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-OLF NN_1 Greb1 astrocyte (Mmus) (CL:4307051) | Gja1 (Mmus), Chrdl1 (Mmus), Ano1 (Mmus), Il33 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| MFOL NN_3 Cxcl12 myelin-forming oligodendrocyte (Mmus) (CL:4307102) | Opalin (Mmus), Cxcl12 (Mmus), Efhd1 (Mmus) expressing myelin-forming oligodendrocyte of brain (Mus musculus) |
-| cerebellar astrocyte (Mmus) (CL:4307027) | Dao (Mmus), Efemp1 (Mmus) expressing astrocyte of the cerebellum of brain (Mus musculus) |
-| ABC NN_1 Dapl1 arachnoid barrier cell (Mmus) (CL:4307114) | Slc47a1 (Mmus), Dapl1 (Mmus) expressing arachnoid barrier cell of brain (Mus musculus) |
-| Tanycyte NN_1 Cnmd tanycyte of subfornical organ (Mmus) (CL:4307063) | Cnmd (Mmus), Sfta3-ps (Mmus) expressing tanycyte of subfornical organ of brain (Mus musculus) |
-| Astro-NT NN_1 Kcnk10 astrocyte (Mmus) (CL:4307032) | Agt (Mmus), Prss35 (Mmus), C4b (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-TE NN_1 Rasl10b astrocyte (Mmus) (CL:4307039) | Gfap (Mmus), Ddn (Mmus), Myoc (Mmus), Rasl10b (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Tanycyte NN_1 Glp1r tanycyte (Mmus) (CL:4307064) | C230072F16Rik (Mmus), Glp1r (Mmus) expressing tanycyte of brain (Mus musculus) |
-| OEC NN_1 Rasgef1c olfactory ensheathing cell (Mmus) (CL:4307112) | Apod (Mmus), Mybpc1 (Mmus), Rasgef1c (Mmus) expressing olfactory ensheathing cell of brain (Mus musculus) |
-| Astro-OLF NN_3 Ecrg4 astrocyte (Mmus) (CL:4307055) | C230072F16Rik (Mmus), Dipk1c (Mmus), Ecrg4 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| oligodendrocyte precursor cell (Mmus) (CL:4300366) | Pdgfra (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| Astro-TE NN_1 Lncpint astrocyte (Mmus) (CL:4307040) | Myoc (Mmus), Dio2 (Mmus), Lncpint (Mmus) expressing astrocyte of brain (Mus musculus) |
-| hypendemal cell (Mmus) (CL:4307083) | Sspo (Mmus), Wfdc2 (Mmus) expressing hypendymal cell of brain (Mus musculus) |
-| choroid plexus epithelial cell (Mmus) (CL:4301608) | 2900040C04Rik (Mmus) expressing choroid plexus epithelial cell of brain (Mus musculus) |
-| CB Granule Glut_2 cerebellar granule cell (Mmus) (CL:4301585) | Gabra6 (Mmus), Gap43 (Mmus), Rab37 (Mmus) expressing cerebellar granule cell of brain (Mus musculus) |
-| commited oligodendrocyte precursor (Mmus) (CL:4301611) | Gpr17 (Mmus), Bmp4 (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| DCO Il22 Gly-Gaba_1 cerebellar neuron (Mmus) (CL:4301571) | Il22 (Mmus), Rftn1 (Mmus) expressing cerebellar neuron of brain (Mus musculus) |
-| COP NN_1 9130019P16Rik committed oligodendrocyte precursor (Mmus) (CL:4307093) | Gpr17 (Mmus), Gp1bb (Mmus), Pdzd2 (Mmus), Plekhg1 (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| MOL NN_4 Sspo mature myelinating oligodendrocyte (Mmus) (CL:4307108) | Mog (Mmus), Anln (Mmus), Gm32633 (Mmus) expressing mature myelinating oligodendrocyte of brain (Mus musculus) |
-| Astro-NT NN_2 Sez6l astrocyte (Mmus) (CL:4307035) | Gja1 (Mmus), A330076C08Rik (Mmus), Otx2 (Mmus), Unc13c (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-TE NN_2 Mcm6 astrocyte (Mmus) (CL:4307043) | Mcm6 (Mmus), Egfr (Mmus), Pcsk6 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| COP NN_1 Rgcc committed oligodendrocyte precursor (Mmus) (CL:4307092) | Gpr17 (Mmus), Bmp4 (Mmus), Zfp36l1 (Mmus) expressing committed oligodendrocyte precursor of brain (Mus musculus) |
-| microglial cell (Mmus) (CL:4307132) | C1qa (Mmus), Tmem119 (Mmus) expressing microglial cell of brain (Mus musculus) |
-| OPC NN_2 oligodendrocyte precursor cell (Mmus) (CL:4307091) | Pdgfra (Mmus), Cenpf (Mmus), Cenpa (Mmus) expressing oligodendrocyte precursor cell of brain (Mus musculus) |
-| Astro-TE NN_2 astrocyte (Mmus) (CL:4301592) | Hepacam (Mmus), E330013P04Rik (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Astro-OLF NN_1 Stk32a astrocyte (Mmus) (CL:4307052) | Aqp4 (Mmus), Prss23 (Mmus), Stk32a (Mmus) expressing astrocyte of brain (Mus musculus) |
-| MOL NN_4 Art3 mature myelinating oligodendrocyte (Mmus) (CL:4307106) | Apod (Mmus), Klk6 (Mmus), Dlc1 (Mmus) expressing mature myelinating oligodendrocyte of brain (Mus musculus) |
-| Astro-OLF NN_2 astrocyte (Mmus) (CL:4301597) | Gja1 (Mmus), Hs3st3a1 (Mmus), Slco1c1 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| Purkinje cell (Mmus) (CL:4300353) | Pcp2 (Mmus) expressing Purkinje cell of brain (Mus musculus) |
-| Astro-OLF NN_3 astrocyte (Mmus) (CL:4301598) | Ednrb (Mmus), Hs3st3a1 (Mmus), C230072F16Rik (Mmus), Gria2 (Mmus) expressing astrocyte of brain (Mus musculus) |
-| BAM NN_1 Mrc1 border associated macrophage (Mmus) (CL:4307133) | Mrc1 (Mmus), Pf4 (Mmus) expressing border associated macrophage of brain (Mus musculus) |
-| CB Granule Glut_1 cerebellar granule cell (Mmus) (CL:4301584) | Gabra6 (Mmus), Lmx1a (Mmus) expressing cerebellar granule cell of brain (Mus musculus) |
-| VLMC NN vascular leptomeningeal cell (Mmus) (CL:4300370) | Apod (Mmus), Slc6a13 (Mmus) expressing vascular leptomeningeal cell of brain (Mus musculus) |
-
-</details>
-
-<details>
-<summary>Text definitions changed: 12</summary>
-
-| Term | Old Text Definition | New Text Definition |
-----|----|----|
-| CB PLI GABA Ly6d Purkinje layer interneuron (CL:4307005) | A Purkinje layer interneuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Ly6d (Mmus), Kit (Mmus). It is distinguished from other CB PLI Gly-Gaba cells by expression of Ly6d. It is GABAergic. These cells are located in the Cerebellum, brain , in or close to the regions: arbor vitae, Interposed nucleus, Nodulus (X) . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5185 CB PLI Gly-Gaba_4. |                  A Purkinje layer interneuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Ly6d (Mmus), Kit (Mmus). It is distinguished from other CB PLI Gly-Gaba cells by expression of Ly6d. It is GABAergic (inferred from expression of Gad1, Gad2, Slc32a1). These cells are located in the Cerebellum, brain , in or close to the regions: arbor vitae, Interposed nucleus, Nodulus (X) . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5185 CB PLI Gly-Gaba_4. |
-| Islands of Calleja granule cell (CL:4030053) | A DRD1-expressing, medium spiny neuron-like granule cell that is part of an Island of Calleja. |                  A GABAergic neuron that resides in the islands of calleja and shows the cytoarchitectural and molecular features characteristic of this granule-like cell population. In mice and primates, it expresses D1 and D3 dopamine receptors (Drd1; Drd3), GABAergic markers (GAD1/2) and form densely packed granule cell clusters in the olfactory tubercle within the ventral striatum. Moreover it receives dense dopaminergic input from the VTA, and functionally associated with self-grooming behaviors and depression-like behaviors. |
-| CHOR NN_1 Slc17a8 choroid plexus epithelial cell (Mmus) (CL:4307085) | A choroid plexus epithelial cell of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of 2900040C04Rik (Mmus), Slc17a8 (Mmus). It is distinguished from other CHOR NN cells by expression of Slc17a8. It is glutamatergic. These cells are located in the brain , in or close to the regions: choroid plexus, lateral ventricle . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5265 CHOR NN_1. |                  A choroid plexus epithelial cell of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of 2900040C04Rik (Mmus), Slc17a8 (Mmus). It is distinguished from other CHOR NN cells by expression of Slc17a8. It is glutamatergic (inferred from expression of Slc17a8). These cells are located in the brain , in or close to the regions: choroid plexus, lateral ventricle . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5265 CHOR NN_1. |
-| OEC NN_1 Rasgef1c olfactory ensheathing cell (Mmus) (CL:4307112) | A olfactory ensheathing cell of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Apod (Mmus), Mybpc1 (Mmus), Rasgef1c (Mmus). It is distinguished from other OEC cells by expression of Rasgef1c. It is glutamatergic. These cells are located in the brain . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5292 OEC NN_1. |                  A olfactory ensheathing cell of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Apod (Mmus), Mybpc1 (Mmus), Rasgef1c (Mmus). It is distinguished from other OEC cells by expression of Rasgef1c. It is glutamatergic (inferred from expression of Slc17a7). These cells are located in the brain . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5292 OEC NN_1. |
-| pinealocyte (Mmus) (CL:4306426) | A pinealocyte of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Cngb3 (Mmus), Ush2a (Mmus). It is glutamatergic. These cells are located in the brain , in or close to the regions: third ventricle . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:4606 Pineal Crx Glut_1. |                  A pinealocyte of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Cngb3 (Mmus), Ush2a (Mmus). It is glutamatergic (inferred from expression of Ddc, Slc17a6, Slc17a7). These cells are located in the brain , in or close to the regions: third ventricle . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:4606 Pineal Crx Glut_1. |
-| DCO Il22 Gly-Gaba_2 cerebellar neuron (Mmus) (CL:4306992) | A cerebellar neuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Il22 (Mmus), Edaradd (Mmus). It is distinguished from other DCO Il22 Gly-Gaba cells by expression of Ppp1r17. It is GABAergic and glycinergic. These cells are located in the Medulla, Cerebellum, brain , in or close to the regions: Paraflocculus, arbor vitae, Dorsal cochlear nucleus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5172 DCO Il22 Gly-Gaba_2. |                  A cerebellar neuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Il22 (Mmus), Edaradd (Mmus). It is distinguished from other DCO Il22 Gly-Gaba cells by expression of Ppp1r17. It is GABAergic and glycinergic (inferred from expression of Slc32a1, Hdc, Slc6a5, Gad2, Gad1). These cells are located in the Medulla, Cerebellum, brain , in or close to the regions: Paraflocculus, arbor vitae, Dorsal cochlear nucleus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5172 DCO Il22 Gly-Gaba_2. |
-| fibroblast of the reticular layer of dermis (CL:2000096) | Any fibroblast that is part of a reticular layer of dermis. |                  A fibroblast of dermis that resides in the deep reticular layer, characterised by robust extracellular matrix production with high type I collagen deposition forming densely packed, organised fibrillar networks (Ghetti et al., 2018). This cell exhibits pro-fibrotic properties during wound healing, entering wounds early where it proliferates and deposits collagen to restore dermal architecture (Knoedler et al., 2023; McAndrews et al., 2022). It is distinguished from papillary dermal fibroblasts by expression of COL11A1, POSTN, and SPP1 in humans (Wu et al., 2022). |
-| hair follicle dermal papilla cell (CL:0000346) | A specialized mesenchymal cell that resides in the dermal papilla located at the bottom of hair follicles. This cell plays a pivotal roles in hair formation, growth, and cycling. |                  A specialized fibroblast that resides in the dermal papilla located at the bottom of hair follicles. This cell orchestrates reciprocal epithelial-mesenchymal signaling essential for hair follicle morphogenesis and cycling, regulating matrix cell proliferation and differentiation to control hair shaft size, shape, and growth. The dermal papilla cell is replenished each hair cycle from bipotent hair follicle dermal stem cells in the dermal sheath that simultaneously self-renew and contribute progeny to the papilla, particularly during anagen. |
-| CBX MLI Cdh22 Gaba molecular layer interneuron (Mmus) (CL:4307012) | A molecular layer interneuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Cdh1 (Mmus), Acvr1c (Mmus), Adamts15 (Mmus), Pax2 (Mmus). It is distinguished from other CB GABA cells by expression of Cdh1, Acvr1c, Adamts15, Pax2. It is GABAergic. These cells are located in the Cerebellum, brain . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5192 CBX MLI Cdh22 Gaba_1. |                  A molecular layer interneuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Cdh1 (Mmus), Acvr1c (Mmus), Adamts15 (Mmus), Pax2 (Mmus). It is distinguished from other CB GABA cells by expression of Cdh1, Acvr1c, Adamts15, Pax2. It is GABAergic (inferred from expression of Gad1, Gad2, Slc32a1). These cells are located in the Cerebellum, brain . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5192 CBX MLI Cdh22 Gaba_1. |
-| Tanycyte NN_2 Mylk3 alpha1-tanycyte (Mmus) (CL:4307065) | A alpha1-tanycyte of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Dynlrb2 (Mmus), Mylk3 (Mmus), Sfta3-ps (Mmus). It is distinguished from other Tanycyte NN_2 cells by expression of Mylk3. It is glutamatergic. These cells are located in the Hypothalamus , in or close to the regions: Periventricular hypothalamic nucleus, intermediate part . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5245 Tanycyte NN_2. |                  A alpha1-tanycyte of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Dynlrb2 (Mmus), Mylk3 (Mmus), Sfta3-ps (Mmus). It is distinguished from other Tanycyte NN_2 cells by expression of Mylk3. It is glutamatergic (inferred from expression of Slc17a8). These cells are located in the Hypothalamus , in or close to the regions: Periventricular hypothalamic nucleus, intermediate part . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5245 Tanycyte NN_2. |
-| Astro-TE NN_1 Jph4 astrocyte (Mmus) (CL:4307041) | A astrocyte of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Myoc (Mmus), Sptbn2 (Mmus), Alpk1 (Mmus). It is distinguished from other Astro-TE NN_1 cells by expression of Myoc, Jph4, Alpk1. It is glutamatergic. These cells are located in the Isocortex, brain . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5221 Astro-TE NN_1. |                  A astrocyte of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Myoc (Mmus), Sptbn2 (Mmus), Alpk1 (Mmus). It is distinguished from other Astro-TE NN_1 cells by expression of Myoc, Jph4, Alpk1. It is glutamatergic (inferred from expression of Aldh1a1, Slc17a7). These cells are located in the Isocortex, brain . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:5221 Astro-TE NN_1. |
-| hypothalamic gonadotropin-releasing hormone neuron (Mmus) (CL:4304384) | A hypothalamic gonadotropin-releasing hormone neuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Gnrh1 (Mmus). It is glutamatergic. These cells are located in the Hypothalamus, Olfactory areas, Pallidum, brain , in or close to the regions: Lateral septal nucleus, rostral (rostroventral) part, Medial septal nucleus, Diagonal band nucleus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:2564 HY Gnrh1 Glut_1. |                  A hypothalamic gonadotropin-releasing hormone neuron of the Mus musculus brain. It is distinguished from other cells in the brain by selective expression of Gnrh1 (Mmus). It is glutamatergic (inferred from expression of Gad1, Slc17a6, Gad2). These cells are located in the Hypothalamus, Olfactory areas, Pallidum, brain , in or close to the regions: Lateral septal nucleus, rostral (rostroventral) part, Medial septal nucleus, Diagonal band nucleus . Reference transcriptomic data for this type can be found in the dataset/taxonomy - Yao et al. (2023), Whole Mouse Brain in cell set Cluster:2564 HY Gnrh1 Glut_1. |
+| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | A retinal ganglion cell type that has a large soma and a wide, monostratified dendritic arbor that stratifies in the inner sublamina of the inner plexiform layer, with dendrites located just proximal to the inner ChAT band (Krieger et al., 2017). It shows a sustained increase in firing rate to ON stimuli (Krieger et al., 2017). It corresponds to the G24 functional type (Baden et al., 2016; Goetz et al., 2022), the C43 transcriptomic cluster (Tran et al., 2019), and is considered the mouse ortholog of the primate ON midget retinal ganglion cell (Hahn et al., 2023). It is molecularly defined by expression of Spp1, Smi32, Brn3b, Calbindin, and Tbr2 (Krieger et al., 2017; Tran et al., 2019). |
+| fibrochondrocyte (CL:4072104) | A chondrocyte with hybrid fibroblastic-chondrogenic characteristics found in fibrocartilage, particularly in the avascular inner zone and transitional middle zone of the meniscus. In humans, fibrochondrocytes are marked by predominant expression of type I collagen (COL1A1) and fibril-associated collagens (COL3A1, COL6A1), while retaining type II collagen (COL2A1) expression and exhibiting lower SOX9 than hyaline chondrocytes. This molecular profile underlies the synthesis of abundant type I collagen essential for fibrocartilage matrix and reflects an intermediate phenotype between fibroblast and chondrocyte. |
+| regulatory chondrocyte (CL:0020019) | A chondrocyte located mainly in the superficial zone of articular cartilage. In healthy human cartilage, regulatory chondrocytes are characterized by expression of EIF5A, PGK1, ANXA1, and TUBA1A. During osteoarthritis, a distinct subpopulation expands, marked by high expression of CHI3L1, CHI3L2, CRTAC1, and AEBP1, with enrichment for signaling pathway regulation (including Toll-like receptor, mTOR, and TGF-beta signaling) and antigen-processing gene expression, with a small proportion expressing MHC class II genes, suggesting potential immune cell-like regulatory functions during osteoarthritis progression. |
+| prehypertrophic chondrocyte (CL:0020022) | A post-proliferative chondrocyte in the prehypertrophic zone of the cartilage tissue, located between the proliferative and hypertrophic zones. This cell is characterised by increased cell volume and expression of Indian Hedgehog (Ihh), PTH1R, and Runx2/3 in both humans and mice (Hallett et al., 2021). It coordinates the PTHrP-Ihh feedback loop that regulates chondrocyte differentiation and functions as a signalling hub for communication between proliferative chondrocytes, hypertrophic chondrocytes, and periosteal osteoblasts (Hallett et al., 2021). |
+| IgD-negative class switched memory B cell (CL:4052108) | A class switched memory B cell that lacks IgD on the cell surface. |
+| homeostatic chondrocyte (CL:0020020) | A chondrocyte identified in both healthy and osteoarthritic human articular cartilage, and in intervertebral disc tissue. In healthy articular cartilage, a homeostatic chondrocyte is characterised by the expression of TXNIP, IFITM3, GDF15, and TIMP1 (Wang et al., 2021), among other extracellular matrix and regulatory molecules. This cell maintains cartilage integrity by producing key ECM components and supporting baseline tissue homeostasis. In OA cartilage, this cell is enriched for genes related to cellular homeostasis modulation, including regulation of the cell cycle, development, and RNA metabolism (Ji et al., 2018). |
+| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | A mouse retinal ganglion cell type defined by a large soma and a wide, monostratified dendritic arbor that stratifies just distal to the outer ChAT band of the inner plexiform layer (Krieger et al., 2017). It corresponds to the G5 physiological type (Baden et al., 2016; Goetz et al., 2022) and the C42 transcriptomic cluster (Tran et al., 2019), and is considered the evolutionary ortholog of the primate OFF midget RGC (Hahn et al., 2023). The cell projects a thick, fast-conducting axon to the dorsal lateral geniculate nucleus and superior colliculus. It shows a sustained increase in firing to light decrements with a slow decay time constant of roughly 250 ms and a large receptive field center with weak surround antagonism (Krieger et al., 2017). Its molecular profile includes expression of Spp1 and Neurofilament (Smi32) together with Brn3a (Pou4f1) and Brn3b (Pou4f2), absence of Brn3c (Pou4f3) and Calbindin (Calb1), and strong enrichment of Fes (Krieger et al., 2017; Tran et al., 2019). |
+| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | An alpha retinal ganglion cell subtype in the mouse retina that responds selectively and transiently to increases in light intensity. It possesses the large soma and expansive dendritic field characteristic of alpha RGCs (Krieger et al., 2017). This cell exhibits a brief, fast-decaying burst of firing at the onset of light increments and contributes to motion detection for luminance increases, forming the ON-branch of the transient magnocellular-like pathway (Krieger et al., 2017; Hahn et al., 2023). Functionally, it corresponds to cluster G19 and aligns transcriptomically with cluster C41 (Krieger et al., 2017; Tran et al., 2019). It is orthologous to the primate ON Parasol RGC (Hahn et al., 2023). Molecularly, it expresses Spp1, Smi32, and Brn3b, but lacks Brn3a, Brn3c, and Calbindin (Krieger et al., 2017). |
+| proliferative fibrochondrocyte (CL:0020018) | A fibrochondrocyte located in fibrocartilage that exhibits active proliferation capacity and is in S phase of the cell cycle. It functions as a progenitor cell positioned at the root of developmental trajectories alongside fibrochondrocyte progenitors (FCP), with the capacity to diverge toward one of two developmental fates: (1) fibrochondrocytes and prehypertrophic chondrocytes, or (2) regulatory chondrocytes and prehypertrophic chondrocytes. It is characterised by co-expression of COL1A1, the growth factors FGF7 and CTGF, and the cell-cycle genes STMN1, KIAA0101, and MCM3 in humans. During early progenitor differentiation, FGF7 and COL1A1 expression increases and then declines as the cell commits to terminal fates. |
+| effector chondrocyte (CL:0020023) | A metabolically highly active chondrocyte that is identified in the cartilaginous tissues, including articular cartilage and intervertebral disc cartilage. In the human articular cartilage, this cell is marked by genes such as CYTL1, FRZB, CLEC3A, and S100B (Ji et al., 2018; Raut et al.,2025). This cell demonstrates strong metabolic activity and is implicated in extracellular matrix regulation and adaptive responses (Ji et al., 2018; Gan et al., 2021; Raut et al.,2025). |
+| fibrochondrocyte progenitor cell (CL:0020021) | A mesenchymal progenitor cell located in fibrocartilaginous tissues, along the fibrochondrocytic differentiation pathway that co-expresses both fibrochondrocyte markers (COL1A1, COL3A1) and mesenchymal stem cell markers (MCAM/CD146, MYLK) in humans. This cell serves as a progenitor for mature fibrochondrocytes and other meniscal cell types, with differentiation regulated by TGF-β signaling, focal adhesion, and extracellular matrix-receptor interaction pathways. |
+| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | An alpha retinal ganglion cell subtype found in the mouse retina that responds selectively and transiently to decreases in light intensity. It is characterized by a large soma, a broad dendritic arbor that stratifies within sublamina a of the inner plexiform layer, and rapid OFF-transient firing kinetics that decay even during sustained stimulation (Krieger et al., 2017). Functionally, it corresponds to G8 in the Baden functional classification (Baden et al., 2016; Goetz et al., 2022) and C45 in the Tran transcriptomic atlas (Tran et al., 2019), and it is considered the evolutionary ortholog of the primate OFF Parasol RGC (Hahn et al., 2023). This cell type acts as a detector of rapidly approaching dark objects and contributes to innate defensive responses by encoding looming stimuli (Münch et al., 2009). It exhibits a distinctive molecular signature by its expression of Brn3c (Krieger et al., 2017). |
+| osteochondral skeletal stem cell (CL:0020016) | A tissue-specific stem cell with long-term self-renewal capacity that is restricted to generating bone, cartilage, and stromal cell lineages. This cell is primarily located in the growth plate (resting zone), periosteum, and subchondral bone regions, and is marked by high clonogenicity and robust multipotent differentiation potential in both osteogenic and chondrogenic lineages. Distinctively, ocSSC lacks adipogenic capacity, distinguishing it from other mesenchymal stem cell populations. |
+| M0 macrophage (CL:0020017) | A macrophage that has not yet undergone polarization into a specific macrophage subtype. These cells are non-activated and have the potential to differentiate into inflammatory (M1) or alternatively activated (M2) macrophage subtypes in response to appropriate stimuli. |
 
 </details>
 
@@ -455,29 +263,59 @@
 
 | Subject| Predicate| Object|
 ----|----|----|
-| hair follicle dermal papilla cell (CL:0000346) | RO:0002202 |                migratory neural crest cell (CL:0000333) |
-| CD8-positive, CXCR3-positive, alpha-beta regulatory T cell (CL:0001041) | BFO:0000051 |                PR:000001207 |
-| hair follicle dermal papilla cell (CL:0000346) | subClassOf (rdfs:subClassOf) |                progenitor cell (CL:0011026) |
-| hair follicle dermal papilla cell (CL:0000346) | subClassOf (rdfs:subClassOf) |                mesenchymal stem cell (CL:0000134) |
-| pvalb chandelier GABAergic interneuron (Homo sapiens) (CL:4072046) | RO:0015004 |                CLM:1000063 |
+| IgD-negative CD38-positive IgG memory B cell (CL:0002107) | subClassOf (rdfs:subClassOf) |                IgD-negative memory B cell (CL:0001053) |
+| IgA memory B cell (CL:0000973) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
+| IgE memory B cell (CL:0000948) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
+| CD38-negative IgG memory B cell (CL:0002108) | subClassOf (rdfs:subClassOf) |                IgD-negative memory B cell (CL:0001053) |
+| IgG-negative class switched memory B cell (CL:0002117) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
 
 </details>
 
 <details>
-<summary>Nodes removed from subset: 1</summary>
+<summary>Nodes removed from subset: 6</summary>
 
 | Term | Subset |
 ----|----|
-| Islands of Calleja granule cell (CL:4030053) | human_reference_atlas |
+| obsolete CNS interneuron (CL:0000402) | cellxgene_subset |
+| obsolete neuronal brush cell (CL:0000555) | cellxgene_subset |
+| obsolete mucous neck cell (CL:0000651) | cellxgene_subset |
+| obsolete absorptive cell (CL:0000212) | cellxgene_subset |
+| obsolete non-terminally differentiated cell (CL:0000055) | cellxgene_subset |
+| obsolete epithelial cell of alveolus of lung (CL:0010003) | cellxgene_subset |
 
 </details>
 
 <details>
-<summary>Nodes renamed: 1</summary>
+<summary>Text definitions changed: 4</summary>
+
+| Term | Old Text Definition | New Text Definition |
+----|----|----|
+| hypertrophic chondrocyte (CL:0000743) | Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification). |                  A chondrocyte that is part of the hypertrophic cartilage zone. This cell is significantly enlarged and characterised by high expression of type X collagen (COL10A1) in both humans and mice. It actively coordinates endochondral ossification by mineralising the extracellular matrix, attracting blood vessels via angiogenic signalling, and mediating the transition from cartilage to bone - often by transdifferentiating into an osteoblast rather than undergoing apoptosis. |
+| indirect pathway medium spiny neuron (CL:4023029) | A medium spiny neuron that expresses dopamine type 2 receptors and projects to the external globus pallidus. |                  A GABAergic medium spiny neuron located in the striatum that gives rise to the indirect basal ganglia pathway. It projects to the GPe, where its axon typically ramifies in two regions but does not extend beyond this nucleus (Gerfen et al., 2022). It selectively expresses the D2 dopamine receptor (DRD2), which couples to inhibitory G-proteins (Gi/o) to decrease cAMP and suppress PKA-mediated signaling (Gerfen et al., 2022). Morphologically, this cell displays fewer and shorter dendrites than the MSN-D1 and receives fewer glutamatergic inputs, yet it exhibits significantly higher intrinsic excitability (Gertler et al., 2022). Functionally, activation of this cell suppresses competing or alternative motor actions by inhibiting GPe neurons, leading through STN and other GPe circuits to increased GPi/SNr output and stronger inhibition of thalamic and brainstem targets (Mink, 1996; Tecuapetla et al., 2016). |
+| chondrocyte (CL:0000138) | Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell. |                  A skeletogenic cell that secretes a specialized, avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell. |
+| direct pathway medium spiny neuron (CL:4023026) | A medium spiny neuron that expresses dopamine type 1 receptors and projects to the globus pallidus internus or the substantia nigra pars reticulata. |                  A GABAergic medium spiny neuron located in the striatum that gives rise to the direct basal ganglia pathway. It projects directly to the GPi and SNr, where it inhibits tonically active GABAergic output neurons to disinhibit thalamic and brainstem motor targets (Gerfen. 2023). In mice and humans, this cell selectively expresses the D1 dopamine receptor (DRD1), which couples to stimulatory G-proteins (Gs/Gαolf) to increase cAMP and activate PKA-dependent signaling cascades (Gerfen et al., 1990; Kebabian & Calne, 1979). Functionally, activation of this cell promotes selected motor actions by disinhibiting thalamic and midbrain motor centers (Mink, 1996; Cui et al., 2013). |
+
+</details>
+
+<details>
+<summary>Synonyms removed: 4</summary>
+
+| Term | Removed Synonym |
+----|----|
+| direct pathway medium spiny neuron (CL:4023026) | D1-MSN |
+| M2 macrophage (CL:0000890) | M2 macrophage |
+| direct pathway medium spiny neuron (CL:4023026) | dSPN |
+| M1 macrophage (CL:0000863) | M1 macrophage |
+
+</details>
+
+<details>
+<summary>Nodes renamed: 2</summary>
 
 | ID | Old Label | New Label |
 ----|----|----|
-| CL:4030053 | Island of Calleja granule cell | Islands of Calleja granule cell |
+| CL:0000863 | inflammatory macrophage | M1 macrophage |
+| CL:0000890 | alternatively activated macrophage | M2 macrophage |
 
 </details>
 
