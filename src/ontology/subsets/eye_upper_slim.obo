@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2025-11-25/subsets/eye_upper_slim.owl
+data-version: cl/releases/2025-12-17/subsets/eye_upper_slim.owl
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: foaf http://xmlns.com/foaf/0.1/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
@@ -7,7 +7,7 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 idspace: sssom https://w3id.org/sssom/ 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: cl/subsets/eye_upper_slim
-property_value: owl:versionInfo "2025-11-25" xsd:string
+property_value: owl:versionInfo "2025-12-17" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -908,6 +908,7 @@ property_value: terms:description "Mesodermal cells are pluripotent and the most
 id: CL:0000223
 name: endodermal cell
 def: "A cell of the inner of the three germ layers of the embryo." [MESH:D004707]
+subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 synonym: "endoderm cell" EXACT []
@@ -1045,6 +1046,7 @@ property_value: skos:prefLabel "migratory neural crest cell" xsd:string
 id: CL:0000335
 name: mesenchyme condensation cell
 def: "A mesenchymal cell in embryonic development found in a contracting mass and that gives rise to osteoprogenitors." [GOC:tfm, PMID:5025404]
+subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: ZFA:0009166 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
@@ -1055,6 +1057,7 @@ property_value: skos:prefLabel "mesenchyme condensation cell" xsd:string
 id: CL:0000339
 name: glioblast (sensu Vertebrata)
 def: "An early neural cell developing from the early ependymal cell of the neural tube." [GOC:tfm, ISBN:0618947256]
+subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 synonym: "spongioblast" EXACT []
@@ -1194,6 +1197,7 @@ property_value: terms:description "A precursor to the smooth muscle cell, the sm
 id: CL:0000526
 name: afferent neuron
 def: "A neuron which conveys sensory information centrally from the periphery." [GOC:tfm, MESH:D009475]
+subset: cellxgene_subset
 subset: human_reference_atlas
 subset: human_subset
 subset: mouse_subset
@@ -1693,6 +1697,7 @@ property_value: skos:prefLabel "neurecto-epithelial cell" xsd:string
 id: CL:0000723
 name: somatic stem cell
 def: "A stem cell that can give rise to cell types of the body other than those of the germ-line." [GO:0048103]
+subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: CALOHA:TS-2086
@@ -2414,6 +2419,7 @@ creation_date: 2017-07-09T19:12:36Z
 id: CL:0009004
 name: retinal cell
 def: "Any cell in the retina, the innermost layer or coating at the back of the eyeball, which is sensitive to light and in which the optic nerve terminates." [GOC:pr]
+subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: PMID:10702418
@@ -7101,11 +7107,12 @@ property_value: skos:prefLabel "Myomorpha" xsd:string
 id: NCBITaxon:2
 name: Bacteria
 namespace: ncbi_taxonomy
+synonym: "bacteria" EXACT genbank_common_name []
 synonym: "bacteria" RELATED blast_name []
 synonym: "Bacteria (ex Cavalier-Smith 1987)" RELATED synonym []
 synonym: "Bacteria Woese et al. 2024" RELATED synonym []
 synonym: "Bacteriobiota" RELATED synonym []
-synonym: "eubacteria" EXACT genbank_common_name []
+synonym: "eubacteria" EXACT OMO:0003003 []
 synonym: "Monera" RELATED in_part []
 synonym: "Procaryotae" RELATED in_part []
 synonym: "Prokaryota" RELATED in_part []
@@ -10876,6 +10883,7 @@ subset: uberon_slim
 synonym: "systema cardiovasculare" RELATED OMO:0003011 [Wikipedia:Circulatory_system]
 xref: AAO:0000959
 xref: CALOHA:TS-2103
+xref: MESH:D002319 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: VHOG:0001248
 xref: Wikipedia:Circulatory_system
 is_a: UBERON:0000467 ! anatomical system
@@ -11493,6 +11501,7 @@ xref: FBbt:00003125 {sssom:mapping_justification="https://w3id.org/semapv/vocab/
 xref: FMA:45615
 xref: galen:AlimentaryTract
 xref: MA:0000917
+xref: MESH:D041981 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: NCIT:C34082
 xref: TAO:0000112
 xref: TGMA:0001819
@@ -12483,6 +12492,7 @@ xref: ENVO:02000032
 xref: EV:0100344
 xref: FMA:58822
 xref: MA:0001286
+xref: MESH:D014822 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: NCIT:C13323
 xref: UMLS:C0229096 {source="ncithesaurus:Vitreous_Humor"}
 xref: VHOG:0000795
@@ -12738,6 +12748,7 @@ id: UBERON:0001894
 name: diencephalon
 def: "The division of the forebrain that develops from the foremost primary cerebral vesicle." [Wikipedia:Diencephalon]
 subset: efo_slim
+subset: human_reference_atlas
 subset: pheno_slim
 subset: uberon_slim
 subset: vertebrate_core
@@ -12793,6 +12804,7 @@ relationship: RO:0002254 UBERON:0003851 {evidence="definitional"} ! has developm
 relationship: RO:0002433 UBERON:0001890 ! contributes to morphology of forebrain
 relationship: RO:0002495 UBERON:0006222 {evidence="definitional"} ! immediate transformation of future diencephalon
 property_value: foaf:depiction "http://upload.wikimedia.org/wikipedia/commons/5/54/EmbryonicBrain.svg" xsd:anyURI
+property_value: RO:0002175 NCBITaxon:9606
 property_value: skos:prefLabel "diencephalon" xsd:string
 
 [Term]
@@ -12925,6 +12937,7 @@ xref: FMA:62393
 xref: HBA:9002
 xref: MA:0000212
 xref: MAT:0000452
+xref: MESH:D013681 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: neuronames:491 {source="BIRNLEX:1200"}
 xref: SCTID:362392007
 xref: TAO:0000160
@@ -13384,6 +13397,7 @@ xref: EMAPA:37721 {source="MA:th"}
 xref: FMA:71221
 xref: MA:0002986
 xref: MAT:0000148
+xref: MESH:D013131 {sssom:mapping_justification="https://w3id.org/semapv/vocab/LexicalMatching"}
 xref: MIAA:0000148
 xref: TAO:0000317
 xref: VHOG:0000317
