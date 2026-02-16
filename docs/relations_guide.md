@@ -235,6 +235,19 @@ neuronal), e.g.
 
 ‘Betz cell’ subClassOf ‘has characteristic’ some ‘standard pyramidal morphology’
 
+
+### Recording cell shape
+
+Cell shape is an important characteristic for classifying certain cell types, particularly epithelial cells. Use the [**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) relation with appropriate PATO shape terms.
+
+For flattened (squamous) cells:
+
+['squamous epithelial cell'](http://purl.obolibrary.org/obo/CL_0000076) equivalentTo ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) and ([**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) *some* [flattened](http://purl.obolibrary.org/obo/PATO_0002254))
+
+For cuboidal cells:
+
+['cuboidal epithelial cell'](http://purl.obolibrary.org/obo/CL_9900001) equivalentTo ['epithelial cell'](http://purl.obolibrary.org/obo/CL_0000066) and ([**'has characteristic'**](http://purl.obolibrary.org/obo/RO_0000053) *some* [cuboidal](http://purl.obolibrary.org/obo/PATO_0002312))
+
 ### Recording nuclear number 
 
 To record the number of nuclei in a cell, use a PATO subclass
