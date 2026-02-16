@@ -2284,6 +2284,11 @@ Declaration(Class(obo:CL_0020024))
 Declaration(Class(obo:CL_0020025))
 Declaration(Class(obo:CL_0020026))
 Declaration(Class(obo:CL_0020027))
+Declaration(Class(obo:CL_0020028))
+Declaration(Class(obo:CL_0020029))
+Declaration(Class(obo:CL_0020030))
+Declaration(Class(obo:CL_0020031))
+Declaration(Class(obo:CL_0020032))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -3357,6 +3362,8 @@ Declaration(Class(obo:PATO_0001870))
 Declaration(Class(obo:PATO_0001872))
 Declaration(Class(obo:PATO_0001979))
 Declaration(Class(obo:PATO_0002064))
+Declaration(Class(obo:PATO_0002254))
+Declaration(Class(obo:PATO_0002312))
 Declaration(Class(obo:PATO_0010007))
 Declaration(Class(obo:PATO_0070002))
 Declaration(Class(obo:PATO_0070003))
@@ -3449,6 +3456,7 @@ Declaration(Class(obo:UBERON_0002162))
 Declaration(Class(obo:UBERON_0002197))
 Declaration(Class(obo:UBERON_0002219))
 Declaration(Class(obo:UBERON_0002222))
+Declaration(Class(obo:UBERON_0002282))
 Declaration(Class(obo:UBERON_0002283))
 Declaration(Class(obo:UBERON_0002339))
 Declaration(Class(obo:UBERON_0002439))
@@ -3476,6 +3484,7 @@ Declaration(Class(obo:UBERON_0005378))
 Declaration(Class(obo:UBERON_0005382))
 Declaration(Class(obo:UBERON_0005403))
 Declaration(Class(obo:UBERON_0006005))
+Declaration(Class(obo:UBERON_0006725))
 Declaration(Class(obo:UBERON_0006841))
 Declaration(Class(obo:UBERON_0008187))
 Declaration(Class(obo:UBERON_0008198))
@@ -3662,6 +3671,30 @@ AnnotationAssertion(rdfs:label oboInOwl:SubsetProperty "subset_property")
 # Annotation Property: oboInOwl:consider (consider)
 
 AnnotationAssertion(rdfs:label oboInOwl:consider "consider")
+
+# Annotation Property: oboInOwl:hasBroadSynonym (has_broad_synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasBroadSynonym "has_broad_synonym")
+
+# Annotation Property: oboInOwl:hasDbXref (database_cross_reference)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasDbXref "database_cross_reference")
+
+# Annotation Property: oboInOwl:hasExactSynonym (has_exact_synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasExactSynonym "has_exact_synonym")
+
+# Annotation Property: oboInOwl:hasNarrowSynonym (has_narrow_synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasNarrowSynonym "has_narrow_synonym")
+
+# Annotation Property: oboInOwl:hasRelatedSynonym (has_related_synonym)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasRelatedSynonym "has_related_synonym")
+
+# Annotation Property: oboInOwl:hasSynonymType (has_synonym_type)
+
+AnnotationAssertion(rdfs:label oboInOwl:hasSynonymType "has_synonym_type")
 
 # Annotation Property: oboInOwl:inSubset (in_subset)
 
@@ -4498,9 +4531,11 @@ SubClassOf(obo:CL_0000075 obo:CL_0000066)
 
 # Class: obo:CL_0000076 (squamous epithelial cell)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000076 "An epithelial cell that has a flattened morphology.")
+AnnotationAssertion(terms:date obo:CL_0000076 "2025-12-16T15:56:39Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000076 "CALOHA:TS-1249")
 AnnotationAssertion(rdfs:label obo:CL_0000076 "squamous epithelial cell")
-SubClassOf(obo:CL_0000076 obo:CL_0000066)
+EquivalentClasses(obo:CL_0000076 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254)))
 
 # Class: obo:CL_0000077 (mesothelial cell)
 
@@ -4522,6 +4557,7 @@ EquivalentClasses(obo:CL_0000078 ObjectIntersectionOf(obo:CL_0000076 ObjectSomeV
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "Wikipedia:Epithelium") Annotation(oboInOwl:hasDbXref "doi:/10.1016/B978-0-12-410424-2.00003-2") Annotation(oboInOwl:hasDbXref "https://www.biologyonline.com/dictionary/stratified-epithelium") obo:IAO_0000115 obo:CL_0000079 "An epithelial cell, organized into multiple layers, with only the basal layer being in contact with the basement membrane.")
 AnnotationAssertion(rdfs:label obo:CL_0000079 "stratified epithelial cell")
+EquivalentClasses(obo:CL_0000079 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000486)))
 SubClassOf(obo:CL_0000079 obo:CL_0000066)
 SubClassOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000357))
 
@@ -6045,8 +6081,9 @@ SubClassOf(obo:CL_0000236 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000826))
 # Class: obo:CL_0000237 (keratinizing barrier epithelial cell)
 
 AnnotationAssertion(rdfs:label obo:CL_0000237 "keratinizing barrier epithelial cell")
-SubClassOf(obo:CL_0000237 obo:CL_0000240)
+SubClassOf(obo:CL_0000237 obo:CL_0000066)
 SubClassOf(obo:CL_0000237 obo:CL_0000311)
+SubClassOf(obo:CL_0000237 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000486))
 SubClassOf(obo:CL_0000237 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000114))
 
 # Class: obo:CL_0000238 (non keratinizing barrier epithelial cell)
@@ -6068,8 +6105,7 @@ SubClassOf(obo:CL_0000239 obo:CL_0000075)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30422572") Annotation(oboInOwl:hasDbXref "Wikipedia:Epithelium") Annotation(oboInOwl:hasDbXref "Wikipedia:Stratified_squamous_epithelium") obo:IAO_0000115 obo:CL_0000240 "A stratified epithelial cell that is part of squamous epithelium, characterized by multiple layers of cells. The basal layer is directly attached to the basement membrane and the apical layer consists of flattened squamous cells. This provides a protective barrier, commonly found in areas subject to abrasion, such as the skin, oral cavity, and esophagus.")
 AnnotationAssertion(rdfs:label obo:CL_0000240 "stratified squamous epithelial cell")
-EquivalentClasses(obo:CL_0000240 ObjectIntersectionOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006915)))
-SubClassOf(obo:CL_0000240 obo:CL_0000076)
+EquivalentClasses(obo:CL_0000240 ObjectIntersectionOf(obo:CL_0000079 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000486) ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254)))
 
 # Class: obo:CL_0000241 (stratified cuboidal epithelial cell)
 
@@ -9251,6 +9287,7 @@ AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000634 "cell of Claudius")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000634 "external supporting cell of Claudius")
 AnnotationAssertion(rdfs:label obo:CL_0000634 "Claudius cell")
 SubClassOf(obo:CL_0000634 obo:CL_0002315)
+SubClassOf(obo:CL_0000634 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 
 # Class: obo:CL_0000635 (Deiter's cell)
 
@@ -10119,6 +10156,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000738 "CALOHA:TS-0549")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000738 "FMA:62852")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000738 "MESH:D007962")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000738 "NCIT:C12529")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:40794848") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasExactSynonym obo:CL_0000738 "WBC")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000738 "leucocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000738 "white blood cell")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000738 "immune cell")
@@ -13574,20 +13612,20 @@ SubClassOf(obo:CL_0001056 obo:CL_0000451)
 
 # Class: obo:CL_0001057 (myeloid dendritic cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001057 "A myeloid dendritic cell with the phenotype HLA-DRA-positive.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") Annotation(oboInOwl:hasDbXref "PMID:34260151") Annotation(oboInOwl:hasDbXref "PMID:36470845") Annotation(oboInOwl:hasDbXref "PMID:37254600") Annotation(oboInOwl:hasDbXref "PMID:38343094") Annotation(oboInOwl:hasDbXref "PMID:40095400") obo:IAO_0000115 obo:CL_0001057 "A myeloid dendritic cell with the phenotype HLA-DRA-positive and CD14-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001057 "myeloid dendritic cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001057 "This cell type is compatible with the HIPC Lyoplate markers for 'myeloid dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human myeloid dendritic cells.")
 AnnotationAssertion(rdfs:label obo:CL_0001057 "myeloid dendritic cell, human")
-EquivalentClasses(obo:CL_0001057 ObjectIntersectionOf(obo:CL_0000782 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
+EquivalentClasses(obo:CL_0001057 ObjectIntersectionOf(obo:CL_0000782 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001889) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001057 obo:CL_0000782)
 
 # Class: obo:CL_0001058 (plasmacytoid dendritic cell, human)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") obo:IAO_0000115 obo:CL_0001058 "A plasmacytoid dendritic cell with the phenotype HLA-DRA-positive, CD123-positive, and CD11c-negative.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "PMID:22343568") Annotation(oboInOwl:hasDbXref "PMID:34260151") Annotation(oboInOwl:hasDbXref "PMID:36470845") Annotation(oboInOwl:hasDbXref "PMID:37254600") Annotation(oboInOwl:hasDbXref "PMID:38343094") Annotation(oboInOwl:hasDbXref "PMID:40095400") obo:IAO_0000115 obo:CL_0001058 "A plasmacytoid dendritic cell with the phenotype HLA-DRA-positive, CD123-positive, CD11c-negative, and CD14-negative.")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22343568") oboInOwl:hasBroadSynonym obo:CL_0001058 "plasmacytoid dendritic cell")
 AnnotationAssertion(rdfs:comment obo:CL_0001058 "This cell type is compatible with the HIPC Lyoplate markers for 'plasmacytoid dendritic cell'. The inclusion of HLA-DRA in the definition restricts this definition to human plasmacytoid dendritic cells.")
 AnnotationAssertion(rdfs:label obo:CL_0001058 "plasmacytoid dendritic cell, human")
-EquivalentClasses(obo:CL_0001058 ObjectIntersectionOf(obo:CL_0000784 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001013) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001865) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
+EquivalentClasses(obo:CL_0001058 ObjectIntersectionOf(obo:CL_0000784 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001013) ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001889) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001865) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000002015) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606)))
 SubClassOf(obo:CL_0001058 obo:CL_0000784)
 
 # Class: obo:CL_0001059 (common myeloid progenitor, CD34-positive)
@@ -13867,23 +13905,23 @@ SubClassOf(obo:CL_0001202 obo:CL_0000980)
 
 # Class: obo:CL_0001203 (CD8-positive, alpha-beta memory T cell, CD45RO-positive)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000031") Annotation(oboInOwl:hasDbXref "PMID:20146720") obo:IAO_0000115 obo:CL_0001203 "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000031") Annotation(oboInOwl:hasDbXref "PMID:20146720") Annotation(oboInOwl:hasDbXref "PMID:21926977") Annotation(oboInOwl:hasDbXref "PMID:24258910") obo:IAO_0000115 obo:CL_0001203 "A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T lymphocyte, CD45RO-positive")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T-cell, CD45RO-positive")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001203 "CD8-positive, alpha-beta memory T-lymphocyte, CD45RO-positive")
 AnnotationAssertion(rdfs:label obo:CL_0001203 "CD8-positive, alpha-beta memory T cell, CD45RO-positive")
-EquivalentClasses(obo:CL_0001203 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001380) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381)))
+EquivalentClasses(obo:CL_0001203 ObjectIntersectionOf(obo:CL_0000909 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001380) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0001203 obo:CL_0000909)
 SubClassOf(obo:CL_0001203 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000906))
 
 # Class: obo:CL_0001204 (CD4-positive, alpha-beta memory T cell, CD45RO-positive)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000031") Annotation(oboInOwl:hasDbXref "ISBN:0781735149") Annotation(oboInOwl:hasDbXref "http://www.immgen.org/index_content.html") obo:IAO_0000115 obo:CL_0001204 "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:add") Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "GO_REF:0000031") Annotation(oboInOwl:hasDbXref "ISBN:0781735149") Annotation(oboInOwl:hasDbXref "PMID:21926977") Annotation(oboInOwl:hasDbXref "PMID:24258910") Annotation(oboInOwl:hasDbXref "http://www.immgen.org/index_content.html") obo:IAO_0000115 obo:CL_0001204 "CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T lymphocyte, CD45RO-positive")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T-cell, CD45RO-positive")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0001204 "CD4-positive, alpha-beta memory T-lymphocyte, CD45RO-positive")
 AnnotationAssertion(rdfs:label obo:CL_0001204 "CD4-positive, alpha-beta memory T cell, CD45RO-positive")
-EquivalentClasses(obo:CL_0001204 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001380) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001307) ObjectSomeValuesFrom(obo:RO_0015015 obo:PR_000001381)))
+EquivalentClasses(obo:CL_0001204 ObjectIntersectionOf(obo:CL_0000897 ObjectSomeValuesFrom(obo:CL_4030046 obo:PR_000001380) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001017) ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001869) ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_9606) ObjectSomeValuesFrom(obo:RO_0002353 obo:GO_0043379)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0001204 obo:CL_0000897)
 SubClassOf(obo:CL_0001204 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_0000896))
 
@@ -14617,7 +14655,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:29463737") Annotation(ob
 AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002062 "ATI")
 AnnotationAssertion(rdfs:label obo:CL_0002062 "pulmonary alveolar type 1 cell")
 EquivalentClasses(obo:CL_0002062 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0007585)))
-SubClassOf(obo:CL_0002062 obo:CL_0000076)
+SubClassOf(obo:CL_0002062 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002063 (pulmonary alveolar type 2 cell)
 
@@ -14642,9 +14680,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "TII")
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0002063 "lung type II cell")
 AnnotationAssertion(rdfs:label obo:CL_0002063 "pulmonary alveolar type 2 cell")
-EquivalentClasses(obo:CL_0002063 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0032940) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
-SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097208))
-SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
+EquivalentClasses(obo:CL_0002063 ObjectIntersectionOf(obo:CL_0000322 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0097208) ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0043129)))
 SubClassOf(obo:CL_0002063 ObjectSomeValuesFrom(obo:RO_0002202 obo:CL_4040003))
 
 # Class: obo:CL_0002064 (pancreatic acinar cell)
@@ -16025,6 +16061,7 @@ AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002190 "FMA:86925")
 AnnotationAssertion(rdfs:label obo:CL_0002190 "squamous cell of epidermis")
 SubClassOf(obo:CL_0002190 obo:CL_0000312)
 SubClassOf(obo:CL_0002190 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001003))
+SubClassOf(obo:CL_0002190 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002191 (granulocytopoietic cell)
 
@@ -16367,6 +16404,7 @@ AnnotationAssertion(rdfs:label obo:CL_0002221 "keratinized squamous cell of esop
 SubClassOf(obo:CL_0002221 obo:CL_0000237)
 SubClassOf(obo:CL_0002221 obo:CL_0002252)
 SubClassOf(obo:CL_0002221 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001976))
+SubClassOf(obo:CL_0002221 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002222 (vertebrate lens cell)
 
@@ -16387,6 +16425,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002223 "2010-09-07T10:45:45Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002223 "FMA:63181")
 AnnotationAssertion(rdfs:label obo:CL_0002223 "anterior lens cell")
 SubClassOf(obo:CL_0002223 obo:CL_0002224)
+SubClassOf(obo:CL_0002223 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 
 # Class: obo:CL_0002224 (lens epithelial cell)
 
@@ -20107,6 +20146,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002586 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002586 "2011-03-06T03:37:09Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002586 "BTO:0004910")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002586 "FMA:75802")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35835183") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasExactSynonym obo:CL_0002586 "RPE")
 AnnotationAssertion(rdfs:label obo:CL_0002586 "retinal pigment epithelial cell")
 EquivalentClasses(obo:CL_0002586 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001782)))
 SubClassOf(obo:CL_0002586 obo:CL_0000149)
@@ -20741,6 +20781,7 @@ AnnotationAssertion(terms:contributor obo:CL_0002653 <https://orcid.org/0000-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002653 "2011-07-08T03:31:25Z"^^xsd:dateTime)
 AnnotationAssertion(rdfs:label obo:CL_0002653 "squamous endothelial cell")
 SubClassOf(obo:CL_0002653 obo:CL_0000115)
+SubClassOf(obo:CL_0002653 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_0002654 (epithelial cell of stratum corneum of esophageal epithelium)
 
@@ -20830,6 +20871,7 @@ AnnotationAssertion(oboInOwl:creation_date obo:CL_0002662 "2011-07-11T01:44:48Z"
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0002662 "FMA:74504")
 AnnotationAssertion(rdfs:label obo:CL_0002662 "luminal cell of lactiferous duct")
 SubClassOf(obo:CL_0002662 obo:CL_0002326)
+SubClassOf(obo:CL_0002662 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 
 # Class: obo:CL_0002663 (myocardial endocrine cell of atrium)
 
@@ -20862,55 +20904,67 @@ AnnotationAssertion(rdfs:label obo:CL_0002665 "otic fibrocyte")
 SubClassOf(obo:CL_0002665 obo:CL_0008019)
 SubClassOf(obo:CL_0002665 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001846))
 
-# Class: obo:CL_0002666 (type 2 otic fibrocyte)
+# Class: obo:CL_0002666 (type II spiral ligament fibrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") obo:IAO_0000115 obo:CL_0002666 "An otic fibrocyte that underlies the spiral prominence and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") Annotation(oboInOwl:hasDbXref "PMID:19080786") Annotation(oboInOwl:hasDbXref "PMID:33193034") obo:IAO_0000115 obo:CL_0002666 "A spiral ligament fibrocyte that is located near the spiral prominence between the basilar crest and the stria and plays an important role in potassium recycling by actively pumping K+ from the extracellular space and facilitating transcellular K+ transport through gap junctions toward Type I fibrocytes. In mice, Type II fibrocytes express connexin 26 (Gjb2) and connexin 30 (Gjb6) as part of the mesenchymal gap junction system, as well as the Na‑K‑2Cl cotransporter NKCC1.")
 AnnotationAssertion(terms:contributor obo:CL_0002666 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002666 "2011-07-11T03:40:40Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002666 "type II otic fibrocyte")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0004488") oboInOwl:hasExactSynonym obo:CL_0002666 "type II spiral ligament fibrocyte")
-AnnotationAssertion(rdfs:label obo:CL_0002666 "type 2 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002666 "type 2 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002666 "type 2 spiral ligament fibrocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002666 "type II SLF")
+AnnotationAssertion(rdfs:label obo:CL_0002666 "type II spiral ligament fibrocyte")
 SubClassOf(obo:CL_0002666 obo:CL_0002665)
+SubClassOf(obo:CL_0002666 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
 
-# Class: obo:CL_0002667 (type 5 otic fibrocyte)
+# Class: obo:CL_0002667 (type V spiral ligament fibrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") obo:IAO_0000115 obo:CL_0002667 "An otic fibrocyte that resides above the stria vasularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") Annotation(oboInOwl:hasDbXref "PMID:21673815") Annotation(oboInOwl:hasDbXref "PMID:33193034") obo:IAO_0000115 obo:CL_0002667 "A spiral ligament fibrocyte located in the suprastrial region above the stria vascularis, distinguished from other fibrocytes by their unique expression of COX-1 in guinea pigs and end-foot structures that directly contact capillaries (Dai and Shi, 2011). This fibro-vascular coupling enables type V fibrocytes to regulate cochlear blood flow by translating Ca²⁺ signals into capillary vasodilation via COX-1-derived prostaglandins. This cell also participates in K⁺ recycling, expressing Na,K-ATPase (ATP1A1, ATP1B1) in mice and humans, and connexin 26/30 gap junctions enabling intercellular K⁺ transport within the spiral ligament syncytium (Peeleman et al., 2020).")
 AnnotationAssertion(terms:contributor obo:CL_0002667 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002667 "2011-07-11T03:40:42Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002667 "type 5 otic fibrocyte")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002667 "type V otic fibrocyte")
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002667 "type V spiral ligament fibrocyte")
-AnnotationAssertion(rdfs:label obo:CL_0002667 "type 5 otic fibrocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002667 "type V SLF")
+AnnotationAssertion(rdfs:label obo:CL_0002667 "type V spiral ligament fibrocyte")
 SubClassOf(obo:CL_0002667 obo:CL_0002665)
+SubClassOf(obo:CL_0002667 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
 
-# Class: obo:CL_0002668 (type 4 otic fibrocyte)
+# Class: obo:CL_0002668 (type IV spiral ligament fibrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") obo:IAO_0000115 obo:CL_0002668 "An otic fibrocyte that is lateral to the basilar membrane and anchoris it to the lateral wall.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") Annotation(oboInOwl:hasDbXref "PMID:19277783") Annotation(oboInOwl:hasDbXref "PMID:33193034") obo:IAO_0000115 obo:CL_0002668 "A spiral ligament fibrocyte that is located in the triangular space inferior to the crista basilaris (basilar crest). This cell is spindle-shaped and expresses NKCC1 but minimal to no Na,K-ATPase (ATP1A1, ATP1B1) in mice and humans, and lacks connexin 26/30 in mice, indicating it does not participate in K⁺ recycling, unlike type II fibrocytes. Type IV fibrocyte is uniquely characterised by strong expression of connective tissue growth factor (CTGF) in mice, suggesting roles in tissue remodelling and paracrine signalling to other cochlear cells.")
 AnnotationAssertion(terms:contributor obo:CL_0002668 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002668 "2011-07-11T03:40:46Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002668 "type IV otic fibrocyte")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0004490") oboInOwl:hasExactSynonym obo:CL_0002668 "type IV spiral ligament fibrocyte")
-AnnotationAssertion(rdfs:label obo:CL_0002668 "type 4 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002668 "type 4 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002668 "type 4 spiral ligament fibrocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002668 "type IV SLF")
+AnnotationAssertion(rdfs:label obo:CL_0002668 "type IV spiral ligament fibrocyte")
 SubClassOf(obo:CL_0002668 obo:CL_0002665)
+SubClassOf(obo:CL_0002668 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
 
-# Class: obo:CL_0002669 (type 3 otic fibrocyte)
+# Class: obo:CL_0002669 (type III spiral ligament fibrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") obo:IAO_0000115 obo:CL_0002669 "An otic fibrocyte that lines the otic capsule.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") Annotation(oboInOwl:hasDbXref "PMID:22043022") Annotation(oboInOwl:hasDbXref "PMID:22476723") Annotation(oboInOwl:hasDbXref "PMID:33193034") obo:IAO_0000115 obo:CL_0002669 "A spiral ligament fibrocyte that is located in the deepest part of the inferior spiral ligament, directly lining the bony otic capsule. Distinguished from ion-transporting Type I and II fibrocytes, it utilises actin-myosin stress fibres and anchoring interactions to regulate basilar membrane tension. It has an elongated morphology, is most numerous in the basal, high-frequency cochlea, and expresses contractile and cytoskeletal proteins in mice, including α‑smooth muscle actin, non‑muscle myosin II, caldesmon, and the water channel Aquaporin‑1(Mahendrasingam et al., 2011; Kelly et al., 2012).")
 AnnotationAssertion(terms:contributor obo:CL_0002669 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002669 "2011-07-11T03:40:50Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002669 "type III otic fibrocyte")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0004489") oboInOwl:hasExactSynonym obo:CL_0002669 "type III spiral ligament fibrocyte")
-AnnotationAssertion(rdfs:label obo:CL_0002669 "type 3 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002669 "type 3 otic fibrocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") oboInOwl:hasExactSynonym obo:CL_0002669 "tension fibroblast")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002669 "type 3 spiral ligament fibrocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002669 "type III SLF")
+AnnotationAssertion(rdfs:label obo:CL_0002669 "type III spiral ligament fibrocyte")
 SubClassOf(obo:CL_0002669 obo:CL_0002665)
+SubClassOf(obo:CL_0002669 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
 
-# Class: obo:CL_0002670 (type 1 otic fibrocyte)
+# Class: obo:CL_0002670 (type I spiral ligament fibrocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") obo:IAO_0000115 obo:CL_0002670 "An otic fibrocyte that underlies the stria vascularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:18353863") Annotation(oboInOwl:hasDbXref "PMID:18581144") Annotation(oboInOwl:hasDbXref "PMID:33193034") obo:IAO_0000115 obo:CL_0002670 "A spiral ligament fibrocyte that underlies the stria vascularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph. In mice, expression of connexin 26 (Gjb2) and connexin 30 (Gjb6) serves as a distinguishing molecular signature.")
 AnnotationAssertion(terms:contributor obo:CL_0002670 <https://orcid.org/0000-0003-1980-3228>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0002670 "2011-07-11T03:39:27Z"^^xsd:dateTime)
-AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002670 "type I otic fibrocyte")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0004487") oboInOwl:hasExactSynonym obo:CL_0002670 "type I spiral ligament fibrocyte")
-AnnotationAssertion(rdfs:label obo:CL_0002670 "type 1 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0002670 "type 1 otic fibrocyte")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0002670 "type 1 spiral ligament fibrocyte")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0002670 "type I SLF")
+AnnotationAssertion(rdfs:label obo:CL_0002670 "type I spiral ligament fibrocyte")
 SubClassOf(obo:CL_0002670 obo:CL_0002665)
+SubClassOf(obo:CL_0002670 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
+SubClassOf(obo:CL_0002670 ObjectSomeValuesFrom(obo:RO_0002220 obo:UBERON_0002282))
 
 # Class: obo:CL_0002671 (endothelial stalk cell)
 
@@ -25440,8 +25494,7 @@ AnnotationAssertion(terms:contributor obo:CL_0020005 <https://orcid.org/0009-000
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0020005 "2025-10-27T15:56:54Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33193034") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020005 "SLF")
 AnnotationAssertion(rdfs:label obo:CL_0020005 "spiral ligament fibrocyte")
-SubClassOf(obo:CL_0020005 obo:CL_0002665)
-SubClassOf(obo:CL_0020005 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725))
+EquivalentClasses(obo:CL_0020005 ObjectIntersectionOf(obo:CL_0002665 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0006725)))
 
 # Class: obo:CL_0020006 (OB-Dopa-GABA)
 
@@ -25706,6 +25759,68 @@ AnnotationAssertion(rdfs:label obo:CL_0020027 "alpha retinal ganglion cell ON-tr
 SubClassOf(obo:CL_0020027 obo:CL_0004117)
 SubClassOf(obo:CL_0020027 obo:CL_4023032)
 SubClassOf(obo:CL_0020027 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090))
+
+# Class: obo:CL_0020028 (hybrid osteochondral skeletal cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:30983567") obo:IAO_0000115 obo:CL_0020028 "A skeletal cell at the periosteal surface of the murine rib that displays hybrid osteochondral properties, emerging within the large callus that bridges segmental rib defects. It derives from a Sox9-expressing periosteal skeletal stem/progenitor subpopulation that constitutes only a small fraction of uninjured rib periosteum. After injury, these cells populate the callus and co-express cartilage and bone regulators Sox9 and Runx2, as well as matrix genes Col2a1 and Col1a1, while exhibiting dual chondrocyte/osteoblast properties.")
+AnnotationAssertion(obo:RO_0002175 obo:CL_0020028 obo:NCBITaxon_10090)
+AnnotationAssertion(terms:contributor obo:CL_0020028 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:creator obo:CL_0020028 "GitHub Copilot")
+AnnotationAssertion(terms:date obo:CL_0020028 "2025-12-16T14:37:04Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_0020028 "hybrid osteochondral skeletal cell")
+SubClassOf(obo:CL_0020028 obo:CL_0007001)
+SubClassOf(obo:CL_0020028 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002515))
+SubClassOf(obo:CL_0020028 ObjectSomeValuesFrom(obo:RO_0002162 obo:NCBITaxon_10090))
+
+# Class: obo:CL_0020029 (cuboidal epithelial cell)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0020029 "An epithelial cell that has a cuboidal morphology.")
+AnnotationAssertion(terms:contributor obo:CL_0020029 <https://orcid.org/0009-0006-9765-6788>)
+AnnotationAssertion(terms:creator obo:CL_0020029 "GitHub Copilot")
+AnnotationAssertion(terms:date obo:CL_0020029 "2025-12-16T15:56:39Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_0020029 "cuboidal epithelial cell")
+EquivalentClasses(obo:CL_0020029 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872)))
+SubClassOf(obo:CL_0020029 obo:CL_0000075)
+
+# Class: obo:CL_0020030 (CD4-positive exhausted alpha-beta T cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31207603") Annotation(oboInOwl:hasDbXref "PMID:31390978") Annotation(oboInOwl:hasDbXref "PMID:36907685") Annotation(oboInOwl:hasDbXref "PMID:38166256") obo:IAO_0000115 obo:CL_0020030 "A CD4-positive alpha-beta T cell that displays impaired function and altered differentiation as a result of chronic antigenic stimulation (e.g., chronic infection, tumors, or persistent inflammation). This state is characterised by sustained expression of PD-1 as a shared feature. Additional exhaustion-associated molecules, including the transcription factor TOX, and context- or stage-dependent changes in markers such as LAG-3, TIM-3, CD39, and T-bet, may also be observed; however, the expression levels of these molecules vary depending on exhaustion stage and tissue environment.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020030 <https://github.com/obophenotype/cell-ontology/issues/3453>)
+AnnotationAssertion(terms:contributor obo:CL_0020030 <https://orcid.org/0000-0001-5742-4697>)
+AnnotationAssertion(terms:contributor obo:CL_0020030 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:creator obo:CL_0020030 "GitHub Copilot")
+AnnotationAssertion(terms:date obo:CL_0020030 "2026-01-13T15:30:05Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020030 "CD4+ exhausted T lymphocyte")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020030 "exhausted CD4 T cell")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020030 "exhausted CD4-positive T cell")
+AnnotationAssertion(rdfs:label obo:CL_0020030 "CD4-positive exhausted alpha-beta T cell")
+EquivalentClasses(obo:CL_0020030 ObjectIntersectionOf(obo:CL_0000624 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001919)))
+SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0020030 obo:CL_0000624)
+SubClassOf(obo:CL_0020030 obo:CL_0011025)
+
+# Class: obo:CL_0020031 (CD8-positive exhausted alpha-beta T cell)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31207603") Annotation(oboInOwl:hasDbXref "PMID:36907685") Annotation(oboInOwl:hasDbXref "PMID:38166256") obo:IAO_0000115 obo:CL_0020031 "A CD8-positive alpha-beta T cell that displays impaired function and altered differentiation as a result of chronic antigenic stimulation (e.g., chronic infection, tumours, or persistent inflammation). This state is characterised by sustained expression of PD-1 as a shared feature. Additional exhaustion-associated molecules, including expression of the transcription factor TOX and reduced T-bet, and context- or stage-dependent changes in markers such as LAG-3, TIM-3, CD39, and EOMES, may also be observed; however, the expression levels of these molecules vary depending on exhaustion stage and disease context.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020031 <https://github.com/obophenotype/cell-ontology/issues/3453>)
+AnnotationAssertion(terms:contributor obo:CL_0020031 <https://orcid.org/0000-0001-5742-4697>)
+AnnotationAssertion(terms:contributor obo:CL_0020031 <https://orcid.org/0009-0000-8480-9277>)
+AnnotationAssertion(terms:creator obo:CL_0020031 "GitHub Copilot")
+AnnotationAssertion(terms:date obo:CL_0020031 "2026-01-13T15:30:05Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020031 "CD8+ exhausted T lymphocyte")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020031 "exhausted CD8 T cell")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020031 "exhausted CD8-positive T cell")
+AnnotationAssertion(rdfs:label obo:CL_0020031 "CD8-positive exhausted alpha-beta T cell")
+EquivalentClasses(obo:CL_0020031 ObjectIntersectionOf(obo:CL_0000625 ObjectSomeValuesFrom(obo:RO_0002104 obo:PR_000001919)))
+SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0020031 obo:CL_0000625)
+SubClassOf(obo:CL_0020031 obo:CL_0011025)
+
+# Class: obo:CL_0020032 (oRGC2)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:31784286") Annotation(oboInOwl:hasDbXref "PMID:37066415") obo:IAO_0000115 obo:CL_0020032 "A conserved retinal ganglion cell orthotype whose transcriptomic profile groups together ON parasol RGCs from primate foveal and peripheral retina with their molecularly homologous mouse α RGC subtype (ON-transient α RGC, C41) (Hahn et al., 2023; Tran et al., 2019).")
+AnnotationAssertion(terms:contributor obo:CL_0020032 <https://orcid.org/0000-0002-5507-2103>)
+AnnotationAssertion(oboInOwl:id obo:CL_0020032 "CL:9900000")
+AnnotationAssertion(rdfs:label obo:CL_0020032 "oRGC2")
+SubClassOf(obo:CL_0020032 obo:CL_0000740)
 
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
@@ -29056,6 +29171,7 @@ EquivalentClasses(obo:CL_2000000 ObjectIntersectionOf(obo:CL_0000148 ObjectSomeV
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:TermGenie") obo:IAO_0000115 obo:CL_2000001 "A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.")
 AnnotationAssertion(terms:contributor obo:CL_2000001 <http://www.wikidata.org/entity/Q35563349>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_2000001 "2014-02-11T17:29:04Z"^^xsd:dateTime)
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:27696124") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasExactSynonym obo:CL_2000001 "PBMC")
 AnnotationAssertion(oboInOwl:id obo:CL_2000001 "CL:2000001")
 AnnotationAssertion(rdfs:label obo:CL_2000001 "peripheral blood mononuclear cell")
 EquivalentClasses(obo:CL_2000001 ObjectIntersectionOf(obo:CL_0000842 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000178)))
@@ -30758,11 +30874,13 @@ EquivalentClasses(obo:CL_4023062 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_4023063 (medial ganglionic eminence derived interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023063 "MGE interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") obo:IAO_0000115 obo:CL_4023063 "An interneuron that is derived from the medial ganglionic eminence.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2022.10.12.511898") Annotation(oboInOwl:hasDbXref "PMID:19709629") obo:IAO_0000115 obo:CL_4023063 "An interneuron that is derived from the medial ganglionic eminence. In mice and humans, it expresses LHX6 and SOX6.")
 AnnotationAssertion(terms:contributor obo:CL_4023063 <http://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023063 "MGE interneuron")
 AnnotationAssertion(rdfs:label obo:CL_4023063 "medial ganglionic eminence derived interneuron")
 EquivalentClasses(obo:CL_4023063 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024)))
+SubClassOf(obo:CL_4023063 ObjectSomeValuesFrom(obo:RO_0002292 <http://identifiers.org/ncbigene/26468>))
+SubClassOf(obo:CL_4023063 ObjectSomeValuesFrom(obo:RO_0002292 <http://identifiers.org/ncbigene/55553>))
 
 # Class: obo:CL_4023064 (caudal ganglionic eminence derived interneuron)
 
@@ -32880,6 +32998,7 @@ AnnotationAssertion(terms:date obo:CL_4033056 "2023-10-03T12:49:46Z"^^xsd:dateTi
 AnnotationAssertion(rdfs:label obo:CL_4033056 "onychocyte")
 SubClassOf(obo:CL_4033056 obo:CL_0000312)
 SubClassOf(obo:CL_4033056 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0008198))
+SubClassOf(obo:CL_4033056 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 
 # Class: obo:CL_4033057 (luminal adaptive secretory precursor cell of mammary gland)
 
@@ -33045,6 +33164,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0001-6
 AnnotationAssertion(rdfs:label obo:CL_4033083 "squamous granulosa cell")
 SubClassOf(obo:CL_4033083 obo:CL_0000501)
 SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0003981))
+SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0002254))
 SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_4033066))
 SubClassOf(obo:CL_4033083 ObjectSomeValuesFrom(obo:RO_0002210 obo:CL_4033084))
 
@@ -33060,6 +33180,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33914868") Annotation(ob
 AnnotationAssertion(rdfs:label obo:CL_4033084 "cuboidal granulosa cell")
 SubClassOf(obo:CL_4033084 obo:CL_0000501)
 SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001305))
+SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0001872))
 SubClassOf(obo:CL_4033084 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_4033083))
 
 # Class: obo:CL_4033085 (diffuse bipolar 5 cell)
