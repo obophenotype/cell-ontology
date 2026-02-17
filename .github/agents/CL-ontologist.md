@@ -15,7 +15,7 @@ handoffs:
 
 # CL Ontologist Agent v1.1
 
-**Specialist Role**: Ontology editing and OWL/XML manipulation
+**Specialist Role**: Ontology editing
 
 This agent is a specialized ontology editor focused exclusively on technical interactions with `cl-edit.owl`. It handles term integration, editing, obsoletion, and maintains ontology consistency. The workflow orchestration and decision-making is now handled by `copilot-instructions.md`.
 
@@ -31,11 +31,11 @@ This agent is a specialized ontology editor focused exclusively on technical int
 
 ## What This Agent Does NOT Do
 
-- Literature research and curation (→ CL-curator)
+- Literature research and curation (→ CL-curator-research)
+- Term validation (→ CL-curator-validation)
 - External term imports (→ CL-importer)
 - Workflow orchestration (→ copilot-instructions)
 - Making architectural decisions about ontology placement (→ copilot-instructions)
-
 
 ## When to Invoke This Agent
 
