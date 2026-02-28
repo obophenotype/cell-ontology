@@ -300,6 +300,22 @@ CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-
 $(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
 
+# Override wmbo-cl-comp.owl to remove OBI:0000070 (assay) from the component
+# This is a hotfix while https://github.com/obophenotype/cell-ontology/issues/3578 is being resolved
+.PHONY: component-download-wmbo-cl-comp.owl
+component-download-wmbo-cl-comp.owl: | $(TMPDIR)
+	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/whole_mouse_brain_ontology/main/wmbo-cl-comp.owl \
+		 remove --term OBI:0000070 \
+		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
+
+# Override bgo-cl-comp.owl to remove OBI:0000070 (assay) from the component
+# This is a hotfix while https://github.com/obophenotype/cell-ontology/issues/3578 is being resolved
+.PHONY: component-download-bgo-cl-comp.owl
+component-download-bgo-cl-comp.owl: | $(TMPDIR)
+	$(ROBOT) merge -I https://raw.githubusercontent.com/Cellular-Semantics/hmba_basal_ganglia_ontology/main/bgo-cl-comp.owl \
+		 remove --term OBI:0000070 \
+		 annotate --annotation owl:versionInfo $(VERSION) --output $(TMPDIR)/$@.owl
+
 endif
 
 # Update the list of terms with 2D FTU images from HRA
