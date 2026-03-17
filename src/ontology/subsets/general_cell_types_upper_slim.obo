@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2025-12-17/subsets/general_cell_types_upper_slim.owl
+data-version: cl/releases/2026-03-17/subsets/general_cell_types_upper_slim.owl
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: foaf http://xmlns.com/foaf/0.1/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
@@ -7,7 +7,7 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 idspace: sssom https://w3id.org/sssom/ 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: cl/subsets/general_cell_types_upper_slim
-property_value: owl:versionInfo "2025-12-17" xsd:string
+property_value: owl:versionInfo "2026-03-17" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -78,21 +78,18 @@ property_value: skos:prefLabel "early embryonic cell (metazoa)" xsd:string
 id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
-comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
 subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 subset: human_subset
 subset: mouse_subset
-synonym: "animal stem cell" EXACT []
+synonym: "animal stem cell" NARROW []
 xref: CALOHA:TS-2086
 xref: FMA:63368
 xref: ZFA:0005957 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
-is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000000 ! cell
 intersection_of: RO:0002215 GO:0017145 ! capable of stem cell division
-relationship: RO:0002162 NCBITaxon:33208 ! in taxon Metazoa
 relationship: RO:0002215 GO:0017145 ! capable of stem cell division
 property_value: RO:0002175 NCBITaxon:9606
 property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000034" xsd:string {name="stem cell on CELLxGENE CellGuide"}
@@ -119,6 +116,7 @@ xref: FMA:86475
 xref: MESH:D006412
 xref: VHOG:0001485
 xref: ZFA:0009014 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0000723 ! somatic stem cell
 is_a: CL:0008001 ! hematopoietic precursor cell
 is_a: CL:0011026 ! progenitor cell
@@ -360,13 +358,18 @@ property_value: terms:description "Blood vessel endothelial cells, also known as
 [Term]
 id: CL:0000076
 name: squamous epithelial cell
+def: "An epithelial cell that has a flattened morphology." []
 subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: CALOHA:TS-1249
 xref: ZFA:0009039 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: RO:0000053 PATO:0002254 ! has characteristic flattened
+relationship: RO:0000053 PATO:0002254 ! has characteristic flattened
 property_value: skos:prefLabel "squamous epithelial cell" xsd:string
+property_value: terms:date "2025-12-16T15:56:39Z" xsd:dateTime
 
 [Term]
 id: CL:0000077
@@ -547,6 +550,7 @@ name: muscle cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." [MESH:D032342]
 subset: cellxgene_subset
 subset: general_cell_types_upper_slim
+subset: human_reference_atlas
 subset: human_subset
 subset: mouse_subset
 synonym: "muscle fiber" EXACT []
@@ -564,6 +568,7 @@ is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0000393 ! electrically responsive cell
 relationship: RO:0002202 CL:0000056 ! develops from myoblast
 property_value: foaf:depiction "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
+property_value: RO:0002175 NCBITaxon:9606
 property_value: skos:prefLabel "muscle cell" xsd:string
 
 [Term]
@@ -738,6 +743,7 @@ subset: mouse_subset
 xref: FMA:86667
 xref: ZFA:0007086 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000219 ! motile cell
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011012 ! neural crest cell
 is_a: CL:0011026 ! progenitor cell
 relationship: RO:0002202 CL:0007004 ! develops from premigratory neural crest cell
@@ -869,6 +875,7 @@ subset: mouse_subset
 xref: BTO:0003217
 xref: FMA:83377
 xref: ZFA:0009249 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011026 ! progenitor cell
 relationship: RO:0002202 CL:0000333 ! develops from migratory neural crest cell
 
@@ -1145,6 +1152,7 @@ subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: ZFA:0009291 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
@@ -1575,6 +1583,7 @@ subset: human_subset
 subset: mouse_subset
 xref: ZFA:0007084 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: BFO:0000002
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011012 ! neural crest cell
 relationship: BFO:0000050 UBERON:0002342 ! part of neural crest
 relationship: RO:0002202 CL:0000133 ! develops from neurectodermal cell
@@ -1641,7 +1650,6 @@ subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 is_a: BFO:0000002
-is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002202 CL:0000034 ! develops from stem cell
@@ -1713,6 +1721,7 @@ is_a: GO:0140096 ! catalytic activity, acting on a protein
 is_a: GO:0140101 ! catalytic activity, acting on a tRNA
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22192" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/25493" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0000262
@@ -2024,6 +2033,7 @@ subset: goslim_yeast
 synonym: "molecular function" EXACT []
 disjoint_from: GO:0005575 ! cellular_component
 disjoint_from: GO:0008150 ! biological_process
+property_value: IAO:0000116 "This is the same as GO molecular function" xsd:string
 
 [Term]
 id: GO:0003824
@@ -2060,6 +2070,9 @@ synonym: "cell or subcellular entity" EXACT []
 synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
 xref: NIF_Subcellular:sao1337158144
+union_of: GO:0032991 ! protein-containing complex
+union_of: GO:0044423 ! virion component
+union_of: GO:0110165 ! cellular anatomical structure
 disjoint_from: GO:0008150 ! biological_process
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/17729" xsd:anyURI
 
@@ -2108,7 +2121,8 @@ namespace: cellular_component
 def: "A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures." [GOC:dos, GOC:mah, PMID:19693541, PMID:21421911]
 xref: Wikipedia:Collagen
 is_a: GO:0032991 ! protein-containing complex
-relationship: RO:0002162 NCBITaxon:33208 ! in taxon Metazoa
+relationship: RO:0002160 NCBITaxon:33208 ! only in taxon Metazoa
+relationship: RO:0002162 NCBITaxon:33208 {all_only="true"} ! in taxon Metazoa
 
 [Term]
 id: GO:0005587
@@ -2836,6 +2850,7 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
+relationship: BFO:0000051 GO:0003674 ! has part molecular_function
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24968" xsd:anyURI
 creation_date: 2012-09-19T15:05:24Z
 
@@ -3264,10 +3279,10 @@ subset: goslim_yeast
 xref: EC:2.-.-.-
 xref: Reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
 xref: Reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
-xref: Reactome:R-HSA-5333607 "GSSeH combines with bGalNAc derivative to form GSSebGalNac"
 xref: Reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
 xref: Reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
 is_a: GO:0003824 ! catalytic activity
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0016746
@@ -3284,6 +3299,7 @@ xref: Reactome:R-HSA-193491 "Chenodeoxycholoyl CoA reacts with glycine or taurin
 xref: Reactome:R-HSA-8858298 "HRASLS transfer acyl group from PC to PE to form NAPE"
 is_a: GO:0016740 ! transferase activity
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/20486" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0016755
@@ -3293,6 +3309,7 @@ def: "Catalysis of the transfer of an amino-acyl group from one compound (donor)
 synonym: "transferase activity, transferring amino-acyl groups" EXACT []
 xref: EC:2.3.2.-
 is_a: GO:0016746 ! acyltransferase activity
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0017145
@@ -3496,6 +3513,7 @@ id: GO:0030030
 name: cell projection organization
 namespace: biological_process
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, GOC:mah, PMID:16318917]
+subset: gocheck_do_not_annotate
 subset: goslim_prokaryote
 synonym: "cell projection organisation" EXACT []
 synonym: "cell projection organization and biogenesis" RELATED [GOC:mah]
@@ -3504,6 +3522,7 @@ is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: RO:0002592 GO:0042995 ! results in organization of cell projection
 relationship: RO:0002592 GO:0042995 ! results in organization of cell projection
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23013" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/26279" xsd:anyURI
 
 [Term]
@@ -3511,6 +3530,7 @@ id: GO:0030031
 name: cell projection assembly
 namespace: biological_process
 def: "Formation of a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, GOC:mah, PMID:18391171]
+subset: gocheck_do_not_annotate
 synonym: "cell projection biogenesis" RELATED [GOC:mah]
 synonym: "formation of a cell surface projection" EXACT []
 is_a: GO:0022607 ! cellular component assembly
@@ -3518,6 +3538,7 @@ is_a: GO:0030030 ! cell projection organization
 intersection_of: GO:0022607 ! cellular component assembly
 intersection_of: RO:0002588 GO:0042995 ! results in assembly of cell projection
 relationship: RO:0002588 GO:0042995 ! results in assembly of cell projection
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23013" xsd:anyURI
 
 [Term]
 id: GO:0030054
@@ -3835,6 +3856,7 @@ is_a: GO:0005575 ! cellular_component
 disjoint_from: GO:0044423 ! virion component
 disjoint_from: GO:0110165 ! cellular anatomical structure
 relationship: BFO:0000051 PR:000000001 ! has part protein
+property_value: IAO:0000116 "This is not covalently bonded, which conflicts with changes to the parent definition." xsd:string
 
 [Term]
 id: GO:0034101
@@ -3943,12 +3965,13 @@ def: "A tissue-specific, membrane-bounded cytoplasmic organelle within which mel
 xref: Wikipedia:Melanosome
 is_a: GO:0048770 ! pigment granule
 relationship: BFO:0000050 CL:0000148 ! part of melanocyte
+property_value: RO:0002161 NCBITaxon:6237
 
 [Term]
 id: GO:0042592
 name: homeostatic process
 namespace: biological_process
-def: "Any biological process involved in the maintenance of an internal steady state." [GOC:jl, ISBN:0395825172]
+def: "Any biological process involved in the maintenance of an internal steady state. Homeostasis allows cells and organisms to maintain stable internal conditions despite varying external conditions." [PMID:26265027]
 subset: goslim_agr
 subset: goslim_chembl
 subset: goslim_mouse
@@ -3959,6 +3982,7 @@ synonym: "negative regulation of homeostatic process" RELATED []
 synonym: "positive regulation of homeostatic process" RELATED []
 synonym: "regulation of homeostatic process" RELATED []
 is_a: GO:0008150 ! biological_process
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/31175" xsd:anyURI
 
 [Term]
 id: GO:0042644
@@ -4025,6 +4049,7 @@ id: GO:0042995
 name: cell projection
 namespace: cellular_component
 def: "A prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, PMID:16318917]
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
@@ -4037,6 +4062,7 @@ synonym: "cellular process" BROAD []
 synonym: "cellular projection" EXACT []
 is_a: GO:0110165 ! cellular anatomical structure
 relationship: BFO:0000050 CL:0000000 ! part of cell
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23013" xsd:anyURI
 property_value: skos:prefLabel "cell projection" xsd:string
 
 [Term]
@@ -4976,15 +5002,16 @@ def: "A collagen trimer that forms networks." [PMID:21421911]
 is_a: BFO:0000004
 is_a: GO:0005581 ! collagen trimer
 intersection_of: GO:0005581 ! collagen trimer
-intersection_of: BFO:0000050 GO:0098645 ! part of collagen network
-relationship: BFO:0000050 GO:0098645 ! part of collagen network
+intersection_of: BFO:0000050 GO:0098645 ! part of complex of network-forming collagens
+relationship: BFO:0000050 GO:0098645 ! part of complex of network-forming collagens
 
 [Term]
 id: GO:0098643
-name: fibrillar collagen
+name: fibrillar collagen complex
 namespace: cellular_component
 def: "A supramolecular assembly of fibrillar collagen complexes in the form of a long fiber (fibril) with transverse striations (bands)." [GOC:dos, PMID:20386646, PMID:21421911, PMID:29853175]
 synonym: "banded collagen fibril" EXACT []
+synonym: "fibrillar collagen" EXACT []
 is_a: GO:0098644 ! complex of collagen trimers
 relationship: BFO:0000050 GO:0140152 ! part of collagenous component of interstitial matrix
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/29474" xsd:anyURI
@@ -5005,10 +5032,12 @@ property_value: skos:prefLabel "complex of collagen trimers" xsd:string
 
 [Term]
 id: GO:0098645
-name: collagen network
+name: complex of network-forming collagens
 namespace: cellular_component
 def: "A supramolecular complex that consists of collagen triple helices associated to form a network." [GOC:dos, PMID:21421911]
+synonym: "collagen network" EXACT []
 is_a: GO:0098644 ! complex of collagen trimers
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30938" xsd:anyURI
 
 [Term]
 id: GO:0098793
@@ -5084,6 +5113,8 @@ subset: goslim_pir
 synonym: "cellular anatomical entity" EXACT []
 is_a: GO:0005575 ! cellular_component
 is_a: UBERON:0000061 ! anatomical structure
+property_value: IAO:0000116 "Components are larger than individual macromolecular entities. It is tricky to define distinction between 'cell component' and 'macromolecular entity', e.g. ribosome. We would like to exclude most protein complexes." xsd:string
+property_value: IAO:0000116 "Overlaps with some cellular components from GO" xsd:string
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24200" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/28978" xsd:anyURI
@@ -5238,7 +5269,7 @@ id: GO:0140154
 name: chicken-wire-like collagen network
 namespace: cellular_component
 def: "Network-forming collagens can either form a chicken-wire-like network or a hexagonal network. Collagen type IV forms a chicken-wire-like structure and is found in the basement membrane." [PMID:21421911, PMID:21421915, PMID:31387942]
-is_a: GO:0098645 ! collagen network
+is_a: GO:0098645 ! complex of network-forming collagens
 relationship: BFO:0000050 GO:0140143 ! part of collagenous component of basement membrane
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/29401" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30149" xsd:anyURI
@@ -5384,6 +5415,21 @@ is_a: NCBITaxon:117570 ! Teleostomi
 property_value: skos:prefLabel "Euteleostomi" xsd:string
 
 [Term]
+id: NCBITaxon:119089
+name: Chromadorea
+namespace: ncbi_taxonomy
+synonym: "Adenophorea" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:6231 ! Nematoda
+
+[Term]
+id: NCBITaxon:1206794
+name: Ecdysozoa
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33317 ! Protostomia
+
+[Term]
 id: NCBITaxon:131567
 name: cellular organisms
 namespace: ncbi_taxonomy
@@ -5476,6 +5522,20 @@ is_a: NCBITaxon:131567 ! cellular organisms
 disjoint_from: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: NCBITaxon:2301116
+name: Rhabditina
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6236 ! Rhabditida
+
+[Term]
+id: NCBITaxon:2301119
+name: Rhabditomorpha
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:2301116 ! Rhabditina
+
+[Term]
 id: NCBITaxon:2759
 name: Eukaryota
 namespace: ncbi_taxonomy
@@ -5490,6 +5550,22 @@ xref: PMID:23020233
 xref: PMID:30257078
 is_a: NCBITaxon:131567 ! cellular organisms
 property_value: skos:prefLabel "Eukaryota" xsd:string
+
+[Term]
+id: NCBITaxon:28009
+name: Choanoflagellata
+namespace: ncbi_taxonomy
+synonym: "Choanoflagellatea" RELATED synonym []
+synonym: "choanoflagellates" EXACT genbank_common_name []
+synonym: "choanoflagellates" RELATED blast_name []
+synonym: "Choanoflagellida" RELATED synonym []
+synonym: "Choanomonada" RELATED synonym []
+synonym: "Choanozoa" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:27765632
+is_a: NCBITaxon:33154 ! Opisthokonta
+disjoint_from: NCBITaxon:33208 ! Metazoa
+disjoint_from: NCBITaxon:4751 ! Fungi
 
 [Term]
 id: NCBITaxon:314146
@@ -5574,6 +5650,14 @@ namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:6072 ! Eumetazoa
 property_value: skos:prefLabel "Bilateria" xsd:string
+
+[Term]
+id: NCBITaxon:33317
+name: Protostomia
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:33213 ! Bilateria
+disjoint_from: NCBITaxon:33511 ! Deuterostomia
 
 [Term]
 id: NCBITaxon:33511
@@ -5695,12 +5779,61 @@ xref: PMID:30257078
 is_a: NCBITaxon:2759 ! Eukaryota
 
 [Term]
+id: NCBITaxon:55879
+name: Rhabditoidea
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:2301119 ! Rhabditomorpha
+
+[Term]
+id: NCBITaxon:55885
+name: Peloderinae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:6243 ! Rhabditidae
+
+[Term]
 id: NCBITaxon:6072
 name: Eumetazoa
 namespace: ncbi_taxonomy
 xref: GC_ID:1
 is_a: NCBITaxon:33208 ! Metazoa
 property_value: skos:prefLabel "Eumetazoa" xsd:string
+
+[Term]
+id: NCBITaxon:6231
+name: Nematoda
+namespace: ncbi_taxonomy
+synonym: "Nemata" RELATED synonym []
+synonym: "nematode" EXACT OMO:0003003 []
+synonym: "nematodes" EXACT genbank_common_name []
+synonym: "nematodes" RELATED blast_name []
+synonym: "roundworm" EXACT OMO:0003003 []
+synonym: "roundworms" EXACT OMO:0003003 []
+xref: GC_ID:1
+is_a: NCBITaxon:1206794 ! Ecdysozoa
+
+[Term]
+id: NCBITaxon:6236
+name: Rhabditida
+namespace: ncbi_taxonomy
+synonym: "Strongylida" RELATED synonym []
+xref: GC_ID:1
+is_a: NCBITaxon:119089 ! Chromadorea
+
+[Term]
+id: NCBITaxon:6237
+name: Caenorhabditis
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:55885 ! Peloderinae
+
+[Term]
+id: NCBITaxon:6243
+name: Rhabditidae
+namespace: ncbi_taxonomy
+xref: GC_ID:1
+is_a: NCBITaxon:55879 ! Rhabditoidea
 
 [Term]
 id: NCBITaxon:7711
@@ -5977,6 +6110,14 @@ subset: scalar_slim
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001591
+name: curvature
+namespace: quality
+def: "A surface shape quality inhering in a bearer by virtue of the bearer's exhibiting a degree of bending." [WordNet:WordNet]
+subset: attribute_slim
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001690
 name: contractile
 namespace: quality
@@ -6130,6 +6271,18 @@ subset: attribute_slim
 is_a: PATO:0001018 ! physical quality
 property_value: terms:contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2010-03-15T04:35:27Z
+
+[Term]
+id: PATO:0002254
+name: flattened
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the bearer's surface becoming more extended in a plane." [PATOC:CVS]
+comment: Becoming flat but not necessarily completely flat.
+subset: value_slim
+synonym: "compressed" RELATED []
+is_a: PATO:0001591 ! curvature
+property_value: terms:contributor https://orcid.org/0000-0002-2061-091X
+creation_date: 2010-08-16T03:59:34Z
 
 [Term]
 id: PATO:0002266
@@ -12001,7 +12154,7 @@ xref: NCIT:C32339
 xref: NIF_Subcellular:sao7547390221
 is_a: UBERON:0000476 {source="ZFA"} ! acellular anatomical structure
 relationship: RO:0002473 GO:0005581 ! composed primarily of collagen trimer
-relationship: RO:0002473 GO:0098643 ! composed primarily of fibrillar collagen
+relationship: RO:0002473 GO:0098643 ! composed primarily of fibrillar collagen complex
 property_value: seeAlso UBERON:0007377
 property_value: skos:prefLabel "collection of collagen fibrils" xsd:string
 
