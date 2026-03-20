@@ -14,8 +14,8 @@
      xmlns:terms="http://purl.org/dc/terms/"
      xmlns:oboInOwl="http://www.geneontology.org/formats/oboInOwl#">
     <owl:Ontology rdf:about="http://purl.obolibrary.org/obo/cl/subsets/blood_and_immune_upper_slim.owl">
-        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2025-12-17/subsets/blood_and_immune_upper_slim.owl"/>
-        <owl:versionInfo>2025-12-17</owl:versionInfo>
+        <owl:versionIRI rdf:resource="http://purl.obolibrary.org/obo/cl/releases/2026-03-17/subsets/blood_and_immune_upper_slim.owl"/>
+        <owl:versionInfo>2026-03-17</owl:versionInfo>
     </owl:Ontology>
     
 
@@ -257,7 +257,6 @@ WHERE {
         <obo:IAO_0000115>An alternative label for a class or property which has a more specific meaning than the preferred name/primary label.</obo:IAO_0000115>
         <obo:IAO_0000233>https://github.com/information-artifact-ontology/ontology-metadata/issues/19</obo:IAO_0000233>
         <rdfs:label xml:lang="en">has narrow synonym</rdfs:label>
-        <rdfs:label>has_narrow_synonym</rdfs:label>
         <rdfs:seeAlso>https://github.com/information-artifact-ontology/ontology-metadata/issues/19</rdfs:seeAlso>
     </owl:AnnotationProperty>
     
@@ -2715,14 +2714,7 @@ Each of these 3 primitives can be composed to yield a cross-product of different
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000255"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011115"/>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002215"/>
@@ -2739,13 +2731,12 @@ Stem cells have numerous potential applications in medicine, including the treat
         <oboInOwl:hasDbXref>CALOHA:TS-2086</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>FMA:63368</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0005957</oboInOwl:hasDbXref>
-        <oboInOwl:hasExactSynonym>animal stem cell</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasNarrowSynonym>animal stem cell</oboInOwl:hasNarrowSynonym>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#human_subset"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#mouse_subset"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
-        <rdfs:comment>This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.</rdfs:comment>
         <rdfs:label>stem cell</rdfs:label>
         <rdfs:seeAlso>https://cellxgene.cziscience.com/cellguide/CL_0000034</rdfs:seeAlso>
         <skos:prefLabel>stem cell</skos:prefLabel>
@@ -2852,6 +2843,7 @@ Stem cells have numerous potential applications in medicine, including the treat
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000255"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000723"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0008001"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011026"/>
@@ -3827,7 +3819,26 @@ Blood vessel endothelial cells are sensitive to various stimuli, including shear
     <!-- http://purl.obolibrary.org/obo/CL_0000076 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000076">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/CL_0000066"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002254"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000066"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000053"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/PATO_0002254"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <obo:IAO_0000115>An epithelial cell that has a flattened morphology.</obo:IAO_0000115>
+        <terms:date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2025-12-16T15:56:39Z</terms:date>
         <oboInOwl:hasDbXref>CALOHA:TS-1249</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0009039</oboInOwl:hasDbXref>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
@@ -5054,6 +5065,7 @@ APCs are responsible for stimulating an appropriate immune response. Following a
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns.</obo:IAO_0000115>
+        <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <oboInOwl:hasDbXref>BTO:0000888</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0000902</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>CALOHA:TS-2032</oboInOwl:hasDbXref>
@@ -5067,6 +5079,7 @@ APCs are responsible for stimulating an appropriate immune response. Following a
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#general_cell_types_upper_slim"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#human_subset"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#mouse_subset"/>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/uberon/core#human_reference_atlas"/>
         <rdfs:label>muscle cell</rdfs:label>
         <skos:prefLabel>muscle cell</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://www.swissbiopics.org/api/image/Muscle_cells.svg</foaf:depiction>
@@ -6024,6 +6037,7 @@ Tissue-resident macrophages are diverse and heterogenous, likely as a result of 
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0000333">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000219"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000255"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011012"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011026"/>
         <rdfs:subClassOf>
@@ -8275,6 +8289,7 @@ Beyond their role in fighting infections, monocytes play an important role in th
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000255"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011026"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -8460,6 +8475,7 @@ Somatic stem cells respond to environmental signals that regulate their quiescen
         <oboInOwl:hasDbXref>MESH:D007962</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>NCIT:C12529</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0009309</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>WBC</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>leucocyte</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>white blood cell</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>immune cell</oboInOwl:hasRelatedSynonym>
@@ -8488,6 +8504,13 @@ Somatic stem cells respond to environmental signals that regulate their quiescen
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>ZFA:0009309</owl:annotatedTarget>
         <sssom:mapping_justification rdf:resource="https://w3id.org/semapv/vocab/UnspecifiedMatching"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_0000738"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>WBC</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:40794848</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003000"/>
     </owl:Axiom>
     
 
@@ -13665,6 +13688,7 @@ The balance between cell proliferation and differentiation in embryonic cells is
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/CL_0007004">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000255"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011012"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -13855,7 +13879,6 @@ Disorders or aberrations in the development or migration of the neural crest cel
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
-        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0000255"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/CL_0011115"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -14237,6 +14260,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <obo:IAO_0000115>A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.</obo:IAO_0000115>
         <terms:contributor rdf:resource="http://www.wikidata.org/entity/Q35563349"/>
         <oboInOwl:creation_date rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2014-02-11T17:29:04Z</oboInOwl:creation_date>
+        <oboInOwl:hasExactSynonym>PBMC</oboInOwl:hasExactSynonym>
         <oboInOwl:id>CL:2000001</oboInOwl:id>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#cellxgene_subset"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/cl#human_subset"/>
@@ -14248,6 +14272,13 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A leukocyte with a single non-segmented nucleus in the mature form found in the circulatory pool of blood.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>GOC:TermGenie</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/CL_2000001"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>PBMC</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:27696124</oboInOwl:hasDbXref>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/OMO_0003000"/>
     </owl:Axiom>
     
 
@@ -14352,6 +14383,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <obo:IAO_0000115>Catalysis of the reaction: peptidyl-tRNA(1) + aminoacyl-tRNA(2) = tRNA(1) + peptidylaminoacyl-tRNA(2). This reaction is catalyzed by a ribozyme.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/22192</obo:IAO_0000233>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/25493</obo:IAO_0000233>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/30193</obo:IAO_0000233>
         <oboInOwl:hasDbXref>EC:2.3.2.12</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>MetaCyc:PEPTIDYLTRANSFERASE-RXN</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-156912</oboInOwl:hasDbXref>
@@ -17515,6 +17547,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
         <obo:IAO_0000115>A molecular process that can be carried out by the action of a single macromolecular machine, usually via direct physical interactions with other molecular entities. Function in this sense denotes an action, or activity, that a gene product (or a complex) performs.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This is the same as GO molecular function</obo:IAO_0000116>
         <oboInOwl:hasExactSynonym>molecular function</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0003674</oboInOwl:id>
@@ -17698,6 +17731,15 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <!-- http://purl.obolibrary.org/obo/GO_0005575 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0005575">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032991"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0044423"/>
+                    <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0110165"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
         <owl:disjointUnionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/GO_0032991"/>
@@ -17817,8 +17859,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0032991"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002160"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:allValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures.</obo:IAO_0000115>
@@ -18314,6 +18362,12 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A closed structure, found only in eukaryotic cells, that is completely surrounded by unit membrane and contains liquid material. Cells contain one or several vacuoles, that may have different functions from each other. Vacuoles have a diverse array of functions. They can act as a storage organelle for nutrients or waste products, as a degradative compartment, as a cost-effective way of increasing cell size, and as a homeostatic regulator controlling both turgor pressure and pH of the cytosol.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>Wikipedia:Vacuole</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
@@ -18357,12 +18411,6 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0012505"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
-                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A membrane-bound cytoplasmic organelle of the endomembrane system that further processes the core oligosaccharides (e.g. N-glycans) added to proteins in the endoplasmic reticulum and packages them into membrane-bound vesicles. The Golgi apparatus operates at the intersection of the secretory, lysosomal, and endocytic pathways.</obo:IAO_0000115>
@@ -20473,6 +20521,12 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <!-- http://purl.obolibrary.org/obo/GO_0008150 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0008150">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0003674"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <obo:IAO_0000115>A biological process is the execution of a genetically-encoded biological module or program. It consists of all the steps required to achieve the specific biological objective of the module. A biological process is accomplished by a particular set of molecular functions carried out by specific gene products (or macromolecular complexes), often in a highly regulated manner and in a particular temporal sequence.</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24968</obo:IAO_0000233>
         <oboInOwl:creation_date>2012-09-19T15:05:24Z</oboInOwl:creation_date>
@@ -20711,6 +20765,30 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0009507">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0009536"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_554915"/>
+            </owl:Restriction>
+        </owl:disjointWith>
         <obo:IAO_0000115>A chlorophyll-containing plastid with thylakoids organized into grana and frets, or stroma thylakoids, and embedded in a stroma.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2157"/>
@@ -20755,6 +20833,16 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
                     </owl:Restriction>
                 </owl:complementOf>
             </owl:Class>
@@ -20834,6 +20922,16 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:complementOf>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -20904,6 +21002,16 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:complementOf>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -20935,6 +21043,70 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005737"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_554915"/>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_554915"/>
+            </owl:Restriction>
+        </owl:disjointWith>
         <obo:IAO_0000115>Any member of a family of organelles found in the cytoplasm of plants and some protists, which are membrane-bounded and contain DNA. Plant plastids develop from a common type, the proplastid.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2157"/>
@@ -21997,10 +22169,10 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016740">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0003824"/>
         <obo:IAO_0000115>Catalysis of the transfer of a group, e.g. a methyl group, glycosyl group, acyl group, phosphorus-containing, or other groups, from one compound (generally regarded as the donor) to another compound (generally regarded as the acceptor). Transferase is the systematic name for any enzyme of EC class 2.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/30193</obo:IAO_0000233>
         <oboInOwl:hasDbXref>EC:2.-.-.-</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-1483089</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-1483186</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>Reactome:R-HSA-5333607</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-5668414</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-8868783</oboInOwl:hasDbXref>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
@@ -22038,12 +22210,6 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0016740"/>
         <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
-        <owl:annotatedTarget>Reactome:R-HSA-5333607</owl:annotatedTarget>
-        <rdfs:label>GSSeH combines with bGalNAc derivative to form GSSebGalNac</rdfs:label>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0016740"/>
-        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasDbXref"/>
         <owl:annotatedTarget>Reactome:R-HSA-5668414</owl:annotatedTarget>
         <rdfs:label>TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK</rdfs:label>
     </owl:Axiom>
@@ -22062,6 +22228,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016740"/>
         <obo:IAO_0000115>Catalysis of the transfer of an acyl group from one compound (donor) to another (acceptor).</obo:IAO_0000115>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/20486</obo:IAO_0000233>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/30193</obo:IAO_0000233>
         <oboInOwl:hasDbXref>EC:2.3.-.-</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-159431</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>Reactome:R-HSA-192312</oboInOwl:hasDbXref>
@@ -22112,6 +22279,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0016755">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0016746"/>
         <obo:IAO_0000115>Catalysis of the transfer of an amino-acyl group from one compound (donor) to another (acceptor).</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/30193</obo:IAO_0000233>
         <oboInOwl:hasDbXref>EC:2.3.2.-</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>transferase activity, transferring amino-acyl groups</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>molecular_function</oboInOwl:hasOBONamespace>
@@ -22859,12 +23027,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a prolongation or process extending from a cell, e.g. a flagellum or axon.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/23013</obo:IAO_0000233>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/26279</obo:IAO_0000233>
         <oboInOwl:hasExactSynonym>cell projection organisation</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>cell projection organization and biogenesis</oboInOwl:hasRelatedSynonym>
         <oboInOwl:hasRelatedSynonym>cell surface structure organization and biogenesis</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>GO:0030030</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_prokaryote"/>
         <rdfs:label>cell projection organization</rdfs:label>
     </owl:Class>
@@ -22914,10 +23084,12 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>Formation of a prolongation or process extending from a cell, e.g. a flagellum or axon.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/23013</obo:IAO_0000233>
         <oboInOwl:hasExactSynonym>formation of a cell surface projection</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>biological_process</oboInOwl:hasOBONamespace>
         <oboInOwl:hasRelatedSynonym>cell projection biogenesis</oboInOwl:hasRelatedSynonym>
         <oboInOwl:id>GO:0030031</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
         <rdfs:label>cell projection assembly</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -24585,6 +24757,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0044423"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/GO_0110165"/>
         <obo:IAO_0000115>A stable assembly of two or more macromolecules, i.e. proteins, nucleic acids, carbohydrates or lipids, in which at least one component is a protein and the constituent parts function together.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">This is not covalently bonded, which conflicts with changes to the parent definition.</obo:IAO_0000116>
         <oboInOwl:hasExactSynonym>macromolecular complex</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>macromolecule complex</oboInOwl:hasExactSynonym>
         <oboInOwl:hasExactSynonym>protein containing complex</oboInOwl:hasExactSynonym>
@@ -25688,7 +25861,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0042592">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0008150"/>
-        <obo:IAO_0000115>Any biological process involved in the maintenance of an internal steady state.</obo:IAO_0000115>
+        <obo:IAO_0000115>Any biological process involved in the maintenance of an internal steady state. Homeostasis allows cells and organisms to maintain stable internal conditions despite varying external conditions.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/31175</obo:IAO_0000233>
         <oboInOwl:hasExactSynonym>homeostasis</oboInOwl:hasExactSynonym>
         <oboInOwl:hasNarrowSynonym>activation of homeostatic process</oboInOwl:hasNarrowSynonym>
         <oboInOwl:hasNarrowSynonym>inhibition of homeostatic process</oboInOwl:hasNarrowSynonym>
@@ -25705,9 +25879,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0042592"/>
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
-        <owl:annotatedTarget>Any biological process involved in the maintenance of an internal steady state.</owl:annotatedTarget>
-        <oboInOwl:hasDbXref>GOC:jl</oboInOwl:hasDbXref>
-        <oboInOwl:hasDbXref>ISBN:0395825172</oboInOwl:hasDbXref>
+        <owl:annotatedTarget>Any biological process involved in the maintenance of an internal steady state. Homeostasis allows cells and organisms to maintain stable internal conditions despite varying external conditions.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PMID:26265027</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -25864,6 +26037,16 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:complementOf>
                     <owl:Restriction>
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+                    </owl:Restriction>
+                </owl:complementOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:complementOf>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
                     </owl:Restriction>
                 </owl:complementOf>
@@ -25967,11 +26150,13 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             </owl:Restriction>
         </rdfs:subClassOf>
         <obo:IAO_0000115>A prolongation or process extending from a cell, e.g. a flagellum or axon.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/23013</obo:IAO_0000233>
         <oboInOwl:hasBroadSynonym>cell process</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasBroadSynonym>cellular process</oboInOwl:hasBroadSynonym>
         <oboInOwl:hasExactSynonym>cellular projection</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0042995</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#gocheck_do_not_annotate"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_agr"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_euk_cellular_processes_ribbon"/>
         <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/go#goslim_flybase_ribbon"/>
@@ -30666,9 +30851,10 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/29474</obo:IAO_0000233>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/30146</obo:IAO_0000233>
         <oboInOwl:hasExactSynonym>banded collagen fibril</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasExactSynonym>fibrillar collagen</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0098643</oboInOwl:id>
-        <rdfs:label>fibrillar collagen</rdfs:label>
+        <rdfs:label>fibrillar collagen complex</rdfs:label>
         <skos:prefLabel>fibrillar collagen</skos:prefLabel>
     </owl:Class>
     <owl:Axiom>
@@ -30733,9 +30919,11 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/GO_0098645">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0098644"/>
         <obo:IAO_0000115>A supramolecular complex that consists of collagen triple helices associated to form a network.</obo:IAO_0000115>
+        <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/30938</obo:IAO_0000233>
+        <oboInOwl:hasExactSynonym>collagen network</oboInOwl:hasExactSynonym>
         <oboInOwl:hasOBONamespace>cellular_component</oboInOwl:hasOBONamespace>
         <oboInOwl:id>GO:0098645</oboInOwl:id>
-        <rdfs:label>collagen network</rdfs:label>
+        <rdfs:label>complex of network-forming collagens</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/GO_0098645"/>
@@ -31197,6 +31385,9 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/GO_0005575"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000061"/>
         <obo:IAO_0000115>A part of a cellular organism consisting of a material entity with granularity above the level of a protein complex but below that of an anatomical system. Note that cellular organisms exclude viruses.</obo:IAO_0000115>
+        <obo:IAO_0000115>A part of a cellular organism that is either an immaterial entity or a material entity with granularity above the level of a protein complex but below that of an anatomical system. Or, a substance produced by a cellular organism with granularity above the level of a protein complex.</obo:IAO_0000115>
+        <obo:IAO_0000116 xml:lang="en">Components are larger than individual macromolecular entities. It is tricky to define distinction between &apos;cell component&apos; and &apos;macromolecular entity&apos;, e.g. ribosome. We would like to exclude most protein complexes.</obo:IAO_0000116>
+        <obo:IAO_0000116 xml:lang="en">Overlaps with some cellular components from GO</obo:IAO_0000116>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/24200</obo:IAO_0000233>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/26424</obo:IAO_0000233>
         <obo:IAO_0000233 rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://github.com/geneontology/go-ontology/issues/28978</obo:IAO_0000233>
@@ -32787,6 +32978,63 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     
 
 
+    <!-- http://purl.obolibrary.org/obo/NCBITaxon_28009 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_28009">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33154"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+        <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+        <oboInOwl:hasDbXref>GC_ID:1</oboInOwl:hasDbXref>
+        <oboInOwl:hasDbXref>PMID:27765632</oboInOwl:hasDbXref>
+        <oboInOwl:hasExactSynonym>choanoflagellates</oboInOwl:hasExactSynonym>
+        <oboInOwl:hasOBONamespace>ncbi_taxonomy</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>Choanoflagellatea</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Choanoflagellida</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Choanomonada</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>Choanozoa</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:hasRelatedSynonym>choanoflagellates</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>NCBITaxon:28009</oboInOwl:id>
+        <rdfs:label>Choanoflagellata</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasExactSynonym"/>
+        <owl:annotatedTarget>choanoflagellates</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#genbank_common_name"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Choanoflagellatea</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Choanoflagellida</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Choanomonada</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>Choanozoa</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#synonym"/>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:annotatedProperty rdf:resource="http://www.geneontology.org/formats/oboInOwl#hasRelatedSynonym"/>
+        <owl:annotatedTarget>choanoflagellates</owl:annotatedTarget>
+        <oboInOwl:hasSynonymType rdf:resource="http://purl.obolibrary.org/obo/ncbitaxon#blast_name"/>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/NCBITaxon_314146 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/NCBITaxon_314146">
@@ -33958,6 +34206,25 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     
 
 
+    <!-- http://purl.obolibrary.org/obo/PATO_0001591 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001591">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0000052"/>
+        <obo:IAO_0000115>A surface shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a degree of bending.</obo:IAO_0000115>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:id>PATO:0001591</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/pato#attribute_slim"/>
+        <rdfs:label>curvature</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0001591"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A surface shape quality inhering in a bearer by virtue of the bearer&apos;s exhibiting a degree of bending.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>WordNet:WordNet</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.obolibrary.org/obo/PATO_0001690 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0001690">
@@ -34337,6 +34604,29 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
         <owl:annotatedTarget>A quality inhering in a bearer by virtue of its constitution.</owl:annotatedTarget>
         <oboInOwl:hasDbXref>PATOC:GVG</oboInOwl:hasDbXref>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.obolibrary.org/obo/PATO_0002254 -->
+
+    <owl:Class rdf:about="http://purl.obolibrary.org/obo/PATO_0002254">
+        <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/PATO_0001591"/>
+        <obo:IAO_0000115>A quality inhering in a bearer by virtue of the bearer&apos;s surface becoming more extended in a plane.</obo:IAO_0000115>
+        <terms:contributor rdf:resource="https://orcid.org/0000-0002-2061-091X"/>
+        <oboInOwl:creation_date>2010-08-16T03:59:34Z</oboInOwl:creation_date>
+        <oboInOwl:hasOBONamespace>quality</oboInOwl:hasOBONamespace>
+        <oboInOwl:hasRelatedSynonym>compressed</oboInOwl:hasRelatedSynonym>
+        <oboInOwl:id>PATO:0002254</oboInOwl:id>
+        <oboInOwl:inSubset rdf:resource="http://purl.obolibrary.org/obo/pato#value_slim"/>
+        <rdfs:comment>Becoming flat but not necessarily completely flat.</rdfs:comment>
+        <rdfs:label>flattened</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/PATO_0002254"/>
+        <owl:annotatedProperty rdf:resource="http://purl.obolibrary.org/obo/IAO_0000115"/>
+        <owl:annotatedTarget>A quality inhering in a bearer by virtue of the bearer&apos;s surface becoming more extended in a plane.</owl:annotatedTarget>
+        <oboInOwl:hasDbXref>PATOC:CVS</oboInOwl:hasDbXref>
     </owl:Axiom>
     
 
@@ -39175,7 +39465,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0000094">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
-        <rdfs:subClassOf rdf:nodeID="genid4619"/>
+        <rdfs:subClassOf rdf:nodeID="genid4662"/>
         <obo:IAO_0000115>Nonparenchymatous organ that primarily consists of dense connective tissue organized into a sheet which interconnects two or more organs, separates two or more body spaces from one another, or surrounds an organ or body part. Examples: interosseous membrane of forearm, obturator membrane, tympanic membrane, fibrous pericardium, fascia lata, dura mater. [FMA].</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:creation_date>2009-07-30T05:19:13Z</oboInOwl:creation_date>
@@ -39186,14 +39476,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>membrane organ</rdfs:label>
         <skos:prefLabel>membrane organ</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4619">
+    <owl:Restriction rdf:nodeID="genid4662">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011823"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000094"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4619"/>
+        <owl:annotatedTarget rdf:nodeID="genid4662"/>
         <oboInOwl:source>FMA-def</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -39962,7 +40252,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000068"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4714"/>
+        <rdfs:subClassOf rdf:nodeID="genid4757"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002082"/>
@@ -40004,14 +40294,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>gastrula stage</rdfs:label>
         <skos:prefLabel>gastrula stage</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4714">
+    <owl:Restriction rdf:nodeID="genid4757">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000062"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000108"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4714"/>
+        <owl:annotatedTarget rdf:nodeID="genid4757"/>
         <oboInOwl:source>BILS</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -40496,15 +40786,15 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4778"/>
+        <rdfs:subClassOf rdf:nodeID="genid4821"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001969"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4781"/>
-        <rdfs:subClassOf rdf:nodeID="genid4783"/>
+        <rdfs:subClassOf rdf:nodeID="genid4824"/>
+        <rdfs:subClassOf rdf:nodeID="genid4826"/>
         <obo:IAO_0000115>A fluid that is composed of blood plasma and erythrocytes.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
         <terms:contributor rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
@@ -40543,34 +40833,34 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>blood</rdfs:label>
         <skos:prefLabel>blood</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4778">
+    <owl:Restriction rdf:nodeID="genid4821">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000232"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4781">
+    <owl:Restriction rdf:nodeID="genid4824">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0001025"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002049"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid4783">
+    <owl:Restriction rdf:nodeID="genid4826">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006596"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4778"/>
+        <owl:annotatedTarget rdf:nodeID="genid4821"/>
         <oboInOwl:source>CL:tm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4781"/>
+        <owl:annotatedTarget rdf:nodeID="genid4824"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1330</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4783"/>
+        <owl:annotatedTarget rdf:nodeID="genid4826"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42301,7 +42591,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000221"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4957"/>
+        <rdfs:subClassOf rdf:nodeID="genid5000"/>
         <obo:IAO_0000115>Primary germ layer that is the outer of the embryo&apos;s three germ layers and gives rise to epidermis and neural tissue.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0000137</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BILA:0000036</oboInOwl:hasDbXref>
@@ -42336,14 +42626,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>ectoderm</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/1/19/Gray32.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4957">
+    <owl:Restriction rdf:nodeID="genid5000">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006601"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4957"/>
+        <owl:annotatedTarget rdf:nodeID="genid5000"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42383,7 +42673,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000223"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4964"/>
+        <rdfs:subClassOf rdf:nodeID="genid5007"/>
         <obo:IAO_0000115>Primary germ layer that lies remote from the surface of the embryo and gives rise to internal tissues such as gut.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0000139</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BILA:0000038</oboInOwl:hasDbXref>
@@ -42418,14 +42708,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/c/c0/Endoderm2.png</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/d/df/Gray10.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4964">
+    <owl:Restriction rdf:nodeID="genid5007">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006595"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000925"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4964"/>
+        <owl:annotatedTarget rdf:nodeID="genid5007"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42466,7 +42756,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000222"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid4971"/>
+        <rdfs:subClassOf rdf:nodeID="genid5014"/>
         <obo:IAO_0000115>The middle germ layer of the embryo, between the endoderm and ectoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_6040"/>
         <oboInOwl:hasDbXref>AAO:0000304</oboInOwl:hasDbXref>
@@ -42506,14 +42796,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>mesoderm</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/e/e8/Mesoderm.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4971">
+    <owl:Restriction rdf:nodeID="genid5014">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006603"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4971"/>
+        <owl:annotatedTarget rdf:nodeID="genid5014"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -42681,7 +42971,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005181"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007100"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010314"/>
-        <rdfs:subClassOf rdf:nodeID="genid4994"/>
+        <rdfs:subClassOf rdf:nodeID="genid5037"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
@@ -42746,14 +43036,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cdn.humanatlas.io/digital-objects/ref-organ/heart-female/v1.3/assets/3d-vh-f-heart.glb</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://cdn.humanatlas.io/digital-objects/ref-organ/heart-male/v1.3/assets/3d-vh-m-heart.glb</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid4994">
+    <owl:Restriction rdf:nodeID="genid5037">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0015410"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000948"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid4994"/>
+        <owl:annotatedTarget rdf:nodeID="genid5037"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43167,7 +43457,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000066"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5041"/>
+        <rdfs:subClassOf rdf:nodeID="genid5084"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002204"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002330"/>
@@ -43218,14 +43508,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/b2/TE-Nervous_system_diagram.svg</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/b/ba/Nervous_system_diagram.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5041">
+    <owl:Restriction rdf:nodeID="genid5084">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016880"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5041"/>
+        <owl:annotatedTarget rdf:nodeID="genid5084"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43285,7 +43575,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001016"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5051"/>
+        <rdfs:subClassOf rdf:nodeID="genid5094"/>
         <obo:IAO_0000115>The central nervous system is the core nervous system that serves an integrating and coordinating function. In vertebrates it consists of the neural tube derivatives: the brain and spinal cord. In invertebrates it includes central ganglia plus nerve cord.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -43330,7 +43620,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>central nervous system</rdfs:label>
         <skos:prefLabel>central nervous system</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5051">
+    <owl:Restriction rdf:nodeID="genid5094">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
     </owl:Restriction>
@@ -43344,7 +43634,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001017"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5051"/>
+        <owl:annotatedTarget rdf:nodeID="genid5094"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43715,7 +44005,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000042"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5094"/>
+        <rdfs:subClassOf rdf:nodeID="genid5137"/>
         <obo:IAO_0000115>Simple squamous epithelium of mesodermal origin which lines serous membranes. Examples: mesothelium of pleura, mesothelium of peritoneum[FMA]. Wikipedia: The mesothelium is a membrane that forms the lining of several body cavities: the pleura (thoracal cavity), peritoneum (abdominal cavity including the mesentery) and pericardium (heart sac). Mesothelial tissue also surrounds the male internal reproductive organs (the tunica vaginalis testis) and covers the internal reproductive organs of women (the tunica serosa uteri).</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000111</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0002422</oboInOwl:hasDbXref>
@@ -43740,14 +44030,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>mesothelium</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/25/Mesothelium_peritoneal_wash_high_mag.jpg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5094">
+    <owl:Restriction rdf:nodeID="genid5137">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000077"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001136"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5094"/>
+        <owl:annotatedTarget rdf:nodeID="genid5137"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -43880,13 +44170,13 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             <owl:Class>
                 <owl:intersectionOf rdf:parseType="Collection">
                     <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0004765"/>
-                    <rdf:Description rdf:nodeID="genid5114"/>
+                    <rdf:Description rdf:nodeID="genid5157"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
-        <rdfs:subClassOf rdf:nodeID="genid5114"/>
+        <rdfs:subClassOf rdf:nodeID="genid5157"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001630"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005090"/>
         <obo:IAO_0000115>Skeletal element that is composed of bone tissue.</obo:IAO_0000115>
@@ -43928,14 +44218,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>bone element</rdfs:label>
         <skos:prefLabel>bone element</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5114">
+    <owl:Restriction rdf:nodeID="genid5157">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002481"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5114"/>
+        <owl:annotatedTarget rdf:nodeID="genid5157"/>
         <oboInOwl:source>VSAO-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44089,7 +44379,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000165"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5137"/>
+        <rdfs:subClassOf rdf:nodeID="genid5180"/>
         <obo:IAO_0000115>A tube extending from the mouth to the anus.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_147099"/>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_41324"/>
@@ -44127,14 +44417,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>digestive tract</rdfs:label>
         <skos:prefLabel>digestive tract</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5137">
+    <owl:Restriction rdf:nodeID="genid5180">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007026"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001555"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5137"/>
+        <owl:annotatedTarget rdf:nodeID="genid5180"/>
         <oboInOwl:source>NCBIBook:NBK10107</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -44692,8 +44982,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004537"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5207"/>
-        <rdfs:subClassOf rdf:nodeID="genid5209"/>
+        <rdfs:subClassOf rdf:nodeID="genid5250"/>
+        <rdfs:subClassOf rdf:nodeID="genid5252"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0000086"/>
@@ -44706,7 +44996,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004872"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5213"/>
+        <rdfs:subClassOf rdf:nodeID="genid5256"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002216"/>
@@ -44760,34 +45050,34 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>blood vessel</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/2/29/Circulatory_System_en.svg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5207">
+    <owl:Restriction rdf:nodeID="genid5250">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000071"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5209">
+    <owl:Restriction rdf:nodeID="genid5252">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007500"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5213">
+    <owl:Restriction rdf:nodeID="genid5256">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006965"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5207"/>
+        <owl:annotatedTarget rdf:nodeID="genid5250"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5209"/>
+        <owl:annotatedTarget rdf:nodeID="genid5252"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001981"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5213"/>
+        <owl:annotatedTarget rdf:nodeID="genid5256"/>
         <oboInOwl:source>GO:0072360</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45660,7 +45950,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002323">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002553"/>
-        <rdfs:subClassOf rdf:nodeID="genid5313"/>
+        <rdfs:subClassOf rdf:nodeID="genid5356"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002572"/>
@@ -45696,14 +45986,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>coelemic cavity lumen</rdfs:label>
         <skos:prefLabel>coelemic cavity lumen</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5313">
+    <owl:Restriction rdf:nodeID="genid5356">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002494"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003886"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002323"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5313"/>
+        <owl:annotatedTarget rdf:nodeID="genid5356"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -45799,8 +46089,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001049"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5332"/>
-        <rdfs:subClassOf rdf:nodeID="genid5334"/>
+        <rdfs:subClassOf rdf:nodeID="genid5375"/>
+        <rdfs:subClassOf rdf:nodeID="genid5377"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
@@ -45850,11 +46140,11 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>notochord</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5332">
+    <owl:Restriction rdf:nodeID="genid5375">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004880"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5334">
+    <owl:Restriction rdf:nodeID="genid5377">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
     </owl:Restriction>
@@ -45873,13 +46163,13 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5332"/>
+        <owl:annotatedTarget rdf:nodeID="genid5375"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5334"/>
+        <owl:annotatedTarget rdf:nodeID="genid5377"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -45920,7 +46210,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005423"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007503"/>
-        <rdfs:subClassOf rdf:nodeID="genid5343"/>
+        <rdfs:subClassOf rdf:nodeID="genid5386"/>
         <obo:IAO_0000115>Somites are spheres of epithelial cells that form sequentially along the anterior-posterior axis of the embryo through mesenchymal to epithelial transition of the presomitic mesoderm.</obo:IAO_0000115>
         <obo:RO_0002161 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7712"/>
         <oboInOwl:hasBroadSynonym>mesodermal cluster</oboInOwl:hasBroadSynonym>
@@ -45958,7 +46248,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>somite</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5343">
+    <owl:Restriction rdf:nodeID="genid5386">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
     </owl:Restriction>
@@ -45971,7 +46261,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5343"/>
+        <owl:annotatedTarget rdf:nodeID="genid5386"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46090,16 +46380,16 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002342">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004121"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010316"/>
-        <rdfs:subClassOf rdf:nodeID="genid5358"/>
-        <rdfs:subClassOf rdf:nodeID="genid5360"/>
-        <rdfs:subClassOf rdf:nodeID="genid5362"/>
+        <rdfs:subClassOf rdf:nodeID="genid5401"/>
+        <rdfs:subClassOf rdf:nodeID="genid5403"/>
+        <rdfs:subClassOf rdf:nodeID="genid5405"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000333"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5365"/>
+        <rdfs:subClassOf rdf:nodeID="genid5408"/>
         <obo:IAO_0000115>A specialized region of ectoderm found between the neural ectoderm (neural plate) and non-neural ectoderm and composed of highly migratory pluripotent cells that delaminate in early embryonic development from the dorsal neural tube and give rise to an astounding variety of differentiated cell types[MP].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010578</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0001764</oboInOwl:hasDbXref>
@@ -46132,45 +46422,45 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/5/5f/Gray644.png</foaf:depiction>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5358">
+    <owl:Restriction rdf:nodeID="genid5401">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002346"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5360">
+    <owl:Restriction rdf:nodeID="genid5403">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5362">
+    <owl:Restriction rdf:nodeID="genid5405">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005062"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5365">
+    <owl:Restriction rdf:nodeID="genid5408">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002488"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000110"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5358"/>
+        <owl:annotatedTarget rdf:nodeID="genid5401"/>
         <oboInOwl:source>XAO</oboInOwl:source>
         <oboInOwl:source>https://github.com/obophenotype/uberon/wiki/The-neural-crest</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5360"/>
+        <owl:annotatedTarget rdf:nodeID="genid5403"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5362"/>
+        <owl:annotatedTarget rdf:nodeID="genid5405"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002342"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5365"/>
+        <owl:annotatedTarget rdf:nodeID="genid5408"/>
         <oboInOwl:source>PMID:11523831</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -46389,7 +46679,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001474"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5395"/>
+        <rdfs:subClassOf rdf:nodeID="genid5438"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
@@ -46444,14 +46734,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>bone marrow</rdfs:label>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/7/74/Gray72-en.svg</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5395">
+    <owl:Restriction rdf:nodeID="genid5438">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002371"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5395"/>
+        <owl:annotatedTarget rdf:nodeID="genid5438"/>
         <oboInOwl:source>FMA</oboInOwl:source>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
@@ -46659,8 +46949,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0002390">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
-        <rdfs:subClassOf rdf:nodeID="genid5421"/>
-        <rdfs:subClassOf rdf:nodeID="genid5423"/>
+        <rdfs:subClassOf rdf:nodeID="genid5464"/>
+        <rdfs:subClassOf rdf:nodeID="genid5466"/>
         <owl:disjointWith rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002405"/>
         <obo:IAO_0000115>Anatomical system that is involved in the production of hematopoietic cells.</obo:IAO_0000115>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -46701,24 +46991,24 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>hematopoietic system</rdfs:label>
         <skos:prefLabel>hematopoietic system</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5421">
+    <owl:Restriction rdf:nodeID="genid5464">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002193"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5423">
+    <owl:Restriction rdf:nodeID="genid5466">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003061"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5421"/>
+        <owl:annotatedTarget rdf:nodeID="genid5464"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5423"/>
+        <owl:annotatedTarget rdf:nodeID="genid5466"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
     <owl:Axiom>
@@ -47102,7 +47392,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002387"/>
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
                     </owl:Restriction>
-                    <rdf:Description rdf:nodeID="genid5461"/>
+                    <rdf:Description rdf:nodeID="genid5504"/>
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -47121,7 +47411,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5461"/>
+        <rdfs:subClassOf rdf:nodeID="genid5504"/>
         <obo:IAO_0000115>Unsegmented field of paraxial mesoderm present posterior to the most recently formed somite pair, from which somites will form.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0011086</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0001982</oboInOwl:hasDbXref>
@@ -47144,14 +47434,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>presomitic mesoderm</rdfs:label>
         <skos:prefLabel>presomitic mesoderm</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5461">
+    <owl:Restriction rdf:nodeID="genid5504">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007282"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003059"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5461"/>
+        <owl:annotatedTarget rdf:nodeID="genid5504"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47307,8 +47597,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016879"/>
-        <rdfs:subClassOf rdf:nodeID="genid5482"/>
-        <rdfs:subClassOf rdf:nodeID="genid5484"/>
+        <rdfs:subClassOf rdf:nodeID="genid5525"/>
+        <rdfs:subClassOf rdf:nodeID="genid5527"/>
         <obo:IAO_0000115>A region of embryonic ectodermal cells that lie directly above the notochord. During neurulation, they change shape and produce an infolding of the neural plate (the neural fold) that then seals to form the neural tube[XAO]. The earliest recognizable dorsal ectodermal primordium of the central nervous system present near the end of gastrulation before infolding to form the neural keel; consists of a thickened pseudostratified epithelium[ZFA].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0011072</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>BTO:0001765</oboInOwl:hasDbXref>
@@ -47337,24 +47627,24 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>neural plate</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">https://upload.wikimedia.org/wikipedia/commons/8/8f/Neural_Crest.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5482">
+    <owl:Restriction rdf:nodeID="genid5525">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002256"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002328"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5484">
+    <owl:Restriction rdf:nodeID="genid5527">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007284"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5482"/>
+        <owl:annotatedTarget rdf:nodeID="genid5525"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003075"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5484"/>
+        <owl:annotatedTarget rdf:nodeID="genid5527"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47400,7 +47690,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000109"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5492"/>
+        <rdfs:subClassOf rdf:nodeID="genid5535"/>
         <obo:IAO_0000115>The paraxial mesoderm is the mesoderm located bilaterally adjacent to the notochord and neural tube[GO].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010568</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0003515</oboInOwl:hasDbXref>
@@ -47426,7 +47716,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>paraxial mesoderm</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5492">
+    <owl:Restriction rdf:nodeID="genid5535">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
     </owl:Restriction>
@@ -47439,7 +47729,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5492"/>
+        <owl:annotatedTarget rdf:nodeID="genid5535"/>
         <oboInOwl:source>Bgee:AN</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47486,7 +47776,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004120"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
-        <rdfs:subClassOf rdf:nodeID="genid5500"/>
+        <rdfs:subClassOf rdf:nodeID="genid5543"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
@@ -47525,7 +47815,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>lateral plate mesoderm</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/6/64/Gray19_with_color.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5500">
+    <owl:Restriction rdf:nodeID="genid5543">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
@@ -47538,7 +47828,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5500"/>
+        <owl:annotatedTarget rdf:nodeID="genid5543"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
         <oboInOwl:source>VHOG</oboInOwl:source>
     </owl:Axiom>
@@ -47589,15 +47879,15 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003084">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001048"/>
-        <rdfs:subClassOf rdf:nodeID="genid5511"/>
-        <rdfs:subClassOf rdf:nodeID="genid5513"/>
+        <rdfs:subClassOf rdf:nodeID="genid5554"/>
+        <rdfs:subClassOf rdf:nodeID="genid5556"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5516"/>
+        <rdfs:subClassOf rdf:nodeID="genid5559"/>
         <obo:IAO_0000115>Bilateral groups of cells consisting of three rows: one row of endocardial precursors medially and two rows of myocardical precursors laterally. The two populations fuse at the midline to form the heart rudiment or cone.</obo:IAO_0000115>
         <obo:IAO_0000116>should probably be merged with heart rudiment.</obo:IAO_0000116>
         <oboInOwl:hasDbXref>AAO:0011044</oboInOwl:hasDbXref>
@@ -47614,15 +47904,15 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>heart primordium</rdfs:label>
         <skos:prefLabel>heart primordium</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5511">
+    <owl:Restriction rdf:nodeID="genid5554">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5513">
+    <owl:Restriction rdf:nodeID="genid5556">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5516">
+    <owl:Restriction rdf:nodeID="genid5559">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007005"/>
     </owl:Restriction>
@@ -47635,19 +47925,19 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5511"/>
+        <owl:annotatedTarget rdf:nodeID="genid5554"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5513"/>
+        <owl:annotatedTarget rdf:nodeID="genid5556"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003084"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5516"/>
+        <owl:annotatedTarget rdf:nodeID="genid5559"/>
         <oboInOwl:source>XAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47676,8 +47966,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0003089">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007530"/>
-        <rdfs:subClassOf rdf:nodeID="genid5523"/>
-        <rdfs:subClassOf rdf:nodeID="genid5525"/>
+        <rdfs:subClassOf rdf:nodeID="genid5566"/>
+        <rdfs:subClassOf rdf:nodeID="genid5568"/>
         <obo:IAO_0000115>Ventral somitic compartment that is a precursor of the axial skeleton[XAO]. Sclerotomes eventually differentiate into the vertebrae and most of the skull. The caudal (posterior) half of one sclerotome fuses with the rostral (anterior) half of the adjacent one to form each vertebra. From their initial location within the somite, the sclerotome cells migrate medially towards the notochord. These cells meet the sclerotome cells from the other side to form the vertebral body. From this vertebral body, sclerotome cells move dorsally and surround the developing spinal cord, forming the vertebral arch[WP].</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010571</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>AEO:0000212</oboInOwl:hasDbXref>
@@ -47701,11 +47991,11 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <skos:prefLabel>sclerotome</skos:prefLabel>
         <foaf:depiction rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://upload.wikimedia.org/wikipedia/commons/9/96/Gray65.png</foaf:depiction>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5523">
+    <owl:Restriction rdf:nodeID="genid5566">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5525">
+    <owl:Restriction rdf:nodeID="genid5568">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002329"/>
     </owl:Restriction>
@@ -47724,13 +48014,13 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5523"/>
+        <owl:annotatedTarget rdf:nodeID="genid5566"/>
         <oboInOwl:source>VHOG:0000680</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5525"/>
+        <owl:annotatedTarget rdf:nodeID="genid5568"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -47983,7 +48273,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011997"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5557"/>
+        <rdfs:subClassOf rdf:nodeID="genid5600"/>
         <obo:IAO_0000115>The part of the coelom in the embryo between the somatopleuric and splanchnopleuric mesoderm; the principal body cavities of the trunk (thoracic, abdominal, and pelvic) arise from this embryonic part of the coelom.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with coelom. TODO - add spatial relationships to halves of LPM. Note the OG places XAO and ZFA coelem terms here. editor note: TODO check ZFA, which appears to be a structure present in adults</obo:IAO_0000116>
         <oboInOwl:hasDbXref>EHDAA:251</oboInOwl:hasDbXref>
@@ -47998,14 +48288,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>intraembryonic coelom</rdfs:label>
         <skos:prefLabel>intraembryonic coelom</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5557">
+    <owl:Restriction rdf:nodeID="genid5600">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5557"/>
+        <owl:annotatedTarget rdf:nodeID="genid5600"/>
         <oboInOwl:source>Wikipedia</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48363,8 +48653,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007688"/>
-        <rdfs:subClassOf rdf:nodeID="genid5609"/>
-        <rdfs:subClassOf rdf:nodeID="genid5611"/>
+        <rdfs:subClassOf rdf:nodeID="genid5652"/>
+        <rdfs:subClassOf rdf:nodeID="genid5654"/>
         <obo:IAO_0000115>A specific region of the lateral mesoderm that will form the primary beating heart tube. In mammals the primary heart field gives rise to the left ventricle.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>XAO:0004185</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>first heart field</oboInOwl:hasExactSynonym>
@@ -48376,24 +48666,24 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>primary heart field</rdfs:label>
         <skos:prefLabel>primary heart field</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5609">
+    <owl:Restriction rdf:nodeID="genid5652">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid5611">
+    <owl:Restriction rdf:nodeID="genid5654">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0036146"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5609"/>
+        <owl:annotatedTarget rdf:nodeID="genid5652"/>
         <oboInOwl:source>GO:0003128</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004140"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5611"/>
+        <owl:annotatedTarget rdf:nodeID="genid5654"/>
         <oboInOwl:source>https://orcid.org/0000-0003-3308-6245</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -48446,7 +48736,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003914"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012275"/>
-        <rdfs:subClassOf rdf:nodeID="genid5619"/>
+        <rdfs:subClassOf rdf:nodeID="genid5662"/>
         <obo:IAO_0000115>An epithelial tube that will give rise to the mature heart.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0010411</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EFO:0003526</oboInOwl:hasDbXref>
@@ -48465,14 +48755,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>heart tube</rdfs:label>
         <skos:prefLabel>heart tube</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5619">
+    <owl:Restriction rdf:nodeID="genid5662">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002495"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004141"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5619"/>
+        <owl:annotatedTarget rdf:nodeID="genid5662"/>
         <oboInOwl:source>ZFA-modified</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49187,7 +49477,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0004765">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000062"/>
-        <rdfs:subClassOf rdf:nodeID="genid5701"/>
+        <rdfs:subClassOf rdf:nodeID="genid5744"/>
         <obo:IAO_0000115>Organ consisting of skeletal tissue. Encompasses whole bones, fused bones, cartilaginious elements, teeth, dermal denticles.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AAO:0011129</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0001890</oboInOwl:hasDbXref>
@@ -49201,14 +49491,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>skeletal element</rdfs:label>
         <skos:prefLabel>skeletal element</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5701">
+    <owl:Restriction rdf:nodeID="genid5744">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004765"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5701"/>
+        <owl:annotatedTarget rdf:nodeID="genid5744"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49236,7 +49526,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000004"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034925"/>
-        <rdfs:subClassOf rdf:nodeID="genid5708"/>
+        <rdfs:subClassOf rdf:nodeID="genid5751"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002328"/>
@@ -49269,14 +49559,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>articular system</rdfs:label>
         <skos:prefLabel>articular system</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5708">
+    <owl:Restriction rdf:nodeID="genid5751">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001434"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004770"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5708"/>
+        <owl:annotatedTarget rdf:nodeID="genid5751"/>
         <oboInOwl:source>FMA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -49974,7 +50264,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002100"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5796"/>
+        <rdfs:subClassOf rdf:nodeID="genid5839"/>
         <obo:IAO_0000115>Mesenchyme that is part of a developing trunk.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EFO:0003485</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0002092</oboInOwl:hasDbXref>
@@ -49990,14 +50280,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>trunk mesenchyme</rdfs:label>
         <skos:prefLabel>trunk mesenchyme</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5796">
+    <owl:Restriction rdf:nodeID="genid5839">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5796"/>
+        <owl:annotatedTarget rdf:nodeID="genid5839"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50115,7 +50405,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5811"/>
+        <rdfs:subClassOf rdf:nodeID="genid5854"/>
         <obo:IAO_0000115>Multi-tissue structure that arises from the heart rudiment and will become the heart tube.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001512</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:424</oboInOwl:hasDbXref>
@@ -50133,14 +50423,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>primitive heart tube</rdfs:label>
         <skos:prefLabel>primitive heart tube</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5811">
+    <owl:Restriction rdf:nodeID="genid5854">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004291"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005498"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5811"/>
+        <owl:annotatedTarget rdf:nodeID="genid5854"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50300,7 +50590,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0005856">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011585"/>
-        <rdfs:subClassOf rdf:nodeID="genid5835"/>
+        <rdfs:subClassOf rdf:nodeID="genid5878"/>
         <obo:IAO_0000115>A delimited region of dense mesenchyme within looser mesenchyme.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000148</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2_RETIRED:0003148</oboInOwl:hasDbXref>
@@ -50310,7 +50600,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>developing mesenchymal condensation</rdfs:label>
         <skos:prefLabel>developing mesenchymal condensation</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5835">
+    <owl:Restriction rdf:nodeID="genid5878">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000335"/>
     </owl:Restriction>
@@ -50329,7 +50619,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005856"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5835"/>
+        <owl:annotatedTarget rdf:nodeID="genid5878"/>
         <oboInOwl:source>AEO-modified-relation</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50425,7 +50715,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002050"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010371"/>
-        <rdfs:subClassOf rdf:nodeID="genid5846"/>
+        <rdfs:subClassOf rdf:nodeID="genid5889"/>
         <obo:IAO_0000115>The notochordal plate is the dorsal part of the notochordal process when the ventral portion breaks down. It is continuous laterally with the endoderm that composes the roof of the primitive foregut and is in contact dorsally with the neural tube. The folding off of the notochordal plate gives rise to the notochord.</obo:IAO_0000115>
         <obo:IAO_0000116>TODO - check ordering; awaiting confirmation from JB</obo:IAO_0000116>
         <oboInOwl:hasDbXref>EHDAA2:0001278</oboInOwl:hasDbXref>
@@ -50439,7 +50729,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>notochordal plate</rdfs:label>
         <skos:prefLabel>notochordal plate</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5846">
+    <owl:Restriction rdf:nodeID="genid5889">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
     </owl:Restriction>
@@ -50452,7 +50742,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006267"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5846"/>
+        <owl:annotatedTarget rdf:nodeID="genid5889"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -50481,7 +50771,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7711"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid5851"/>
+        <rdfs:subClassOf rdf:nodeID="genid5894"/>
         <obo:IAO_0000115>A midline cellular cord formed from the migration of mesenchymal cells from the primitive knot.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>EHDAA2:0001279</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA:224</oboInOwl:hasDbXref>
@@ -50498,14 +50788,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>notochordal process</rdfs:label>
         <skos:prefLabel>notochordal process</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5851">
+    <owl:Restriction rdf:nodeID="genid5894">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000924"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006268"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5851"/>
+        <owl:annotatedTarget rdf:nodeID="genid5894"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51379,7 +51669,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <!-- http://purl.obolibrary.org/obo/UBERON_0007285 -->
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007285">
-        <owl:equivalentClass rdf:nodeID="genid5978"/>
+        <owl:equivalentClass rdf:nodeID="genid6021"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0006598"/>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -51405,7 +51695,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>presumptive paraxial mesoderm</rdfs:label>
         <skos:prefLabel>presumptive paraxial mesoderm</skos:prefLabel>
     </owl:Class>
-    <owl:Class rdf:nodeID="genid5978">
+    <owl:Class rdf:nodeID="genid6021">
         <owl:intersectionOf rdf:parseType="Collection">
             <rdf:Description rdf:about="http://purl.obolibrary.org/obo/UBERON_0006598"/>
             <owl:Restriction>
@@ -51421,7 +51711,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007285"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2002/07/owl#equivalentClass"/>
-        <owl:annotatedTarget rdf:nodeID="genid5978"/>
+        <owl:annotatedTarget rdf:nodeID="genid6021"/>
         <oboInOwl:source>https://github.com/obophenotype/uberon/issues/1277</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51498,7 +51788,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007524">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003104"/>
-        <rdfs:subClassOf rdf:nodeID="genid5994"/>
+        <rdfs:subClassOf rdf:nodeID="genid6037"/>
         <obo:IAO_0000115>Mesenchyme with little extracellular matrix.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>AEO:0000146</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>EHDAA2:0003146</oboInOwl:hasDbXref>
@@ -51506,7 +51796,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>dense mesenchyme tissue</rdfs:label>
         <skos:prefLabel>dense mesenchyme tissue</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid5994">
+    <owl:Restriction rdf:nodeID="genid6037">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000051"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/CL_0000057"/>
     </owl:Restriction>
@@ -51519,7 +51809,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007524"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid5994"/>
+        <owl:annotatedTarget rdf:nodeID="genid6037"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51585,7 +51875,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000042"/>
-        <rdfs:subClassOf rdf:nodeID="genid6007"/>
+        <rdfs:subClassOf rdf:nodeID="genid6050"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0003000"/>
@@ -51605,14 +51895,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>layer of synovial tissue</rdfs:label>
         <skos:prefLabel>layer of synovial tissue</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6007">
+    <owl:Restriction rdf:nodeID="genid6050">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002384"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007616"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6007"/>
+        <owl:annotatedTarget rdf:nodeID="genid6050"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51886,7 +52176,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0007798">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000467"/>
-        <rdfs:subClassOf rdf:nodeID="genid6050"/>
+        <rdfs:subClassOf rdf:nodeID="genid6093"/>
         <obo:IAO_0000115>Anatomical system that consists of all blood and lymph vessels.</obo:IAO_0000115>
         <obo:IAO_0000116>consider merging with vasculature</obo:IAO_0000116>
         <obo:RO_0002175 rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_9606"/>
@@ -51903,14 +52193,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>vascular system</rdfs:label>
         <skos:prefLabel>vascular system</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6050">
+    <owl:Restriction rdf:nodeID="genid6093">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004535"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0007798"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6050"/>
+        <owl:annotatedTarget rdf:nodeID="genid6093"/>
         <oboInOwl:source>MA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -51940,7 +52230,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000922"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid6055"/>
+        <rdfs:subClassOf rdf:nodeID="genid6098"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002473"/>
@@ -51956,14 +52246,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>entire embryonic mesenchyme</rdfs:label>
         <skos:prefLabel>entire embryonic mesenchyme</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6055">
+    <owl:Restriction rdf:nodeID="genid6098">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002254"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000926"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009142"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6055"/>
+        <owl:annotatedTarget rdf:nodeID="genid6098"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52019,7 +52309,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003077"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid6063"/>
+        <rdfs:subClassOf rdf:nodeID="genid6106"/>
         <oboInOwl:hasDbXref>EHDAA2:0002094</oboInOwl:hasDbXref>
         <oboInOwl:hasExactSynonym>trunk and cervical paraxial mesenchyme</oboInOwl:hasExactSynonym>
         <oboInOwl:hasRelatedSynonym>trunk paraxial mesenchyme</oboInOwl:hasRelatedSynonym>
@@ -52027,14 +52317,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>trunk paraxial mesoderm</rdfs:label>
         <skos:prefLabel>trunk paraxial mesoderm</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6063">
+    <owl:Restriction rdf:nodeID="genid6106">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005256"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009618"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6063"/>
+        <owl:annotatedTarget rdf:nodeID="genid6106"/>
         <oboInOwl:source>EHDAA2</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52129,7 +52419,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0009881">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0005291"/>
-        <rdfs:subClassOf rdf:nodeID="genid6081"/>
+        <rdfs:subClassOf rdf:nodeID="genid6124"/>
         <oboInOwl:hasDbXref>EFO:0003704</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0005041</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>ZFA:0005041</oboInOwl:hasDbXref>
@@ -52139,14 +52429,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>anterior lateral plate mesoderm</rdfs:label>
         <skos:prefLabel>anterior lateral plate mesoderm</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6081">
+    <owl:Restriction rdf:nodeID="genid6124">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003081"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0009881"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6081"/>
+        <owl:annotatedTarget rdf:nodeID="genid6124"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52286,7 +52576,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/GO_0005577"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf rdf:nodeID="genid6103"/>
+        <rdfs:subClassOf rdf:nodeID="genid6146"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002353"/>
@@ -52305,14 +52595,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <oboInOwl:id>UBERON:0010210</oboInOwl:id>
         <rdfs:label>blood clot</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6103">
+    <owl:Restriction rdf:nodeID="genid6146">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000178"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010210"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6103"/>
+        <owl:annotatedTarget rdf:nodeID="genid6146"/>
         <oboInOwl:source>BTO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52435,7 +52725,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010523">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000055"/>
-        <rdfs:subClassOf rdf:nodeID="genid6122"/>
+        <rdfs:subClassOf rdf:nodeID="genid6165"/>
         <obo:IAO_0000115>A vessel of the microcirculature, lying between the arterioles and venules; includes capillaries (blood and lymphatic), metarterioles and arteriovenous anastomoses.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>MESH:D055806</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>TAO:0005251</oboInOwl:hasDbXref>
@@ -52445,14 +52735,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>microcirculatory vessel</rdfs:label>
         <skos:prefLabel>microcirculatory vessel</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6122">
+    <owl:Restriction rdf:nodeID="genid6165">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002049"/>
     </owl:Restriction>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010523"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6122"/>
+        <owl:annotatedTarget rdf:nodeID="genid6165"/>
         <oboInOwl:source>ZFA</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52477,8 +52767,8 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0010912">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011216"/>
-        <rdfs:subClassOf rdf:nodeID="genid6127"/>
-        <rdfs:subClassOf rdf:nodeID="genid6129"/>
+        <rdfs:subClassOf rdf:nodeID="genid6170"/>
+        <rdfs:subClassOf rdf:nodeID="genid6172"/>
         <obo:IAO_0000115>Anatomical cluster consisting of the skeletal elements (i.e. bone elements, cartilage elements, cartilage condensations) that are part of an individual subdivision of the organism. Excludes joints.</obo:IAO_0000115>
         <oboInOwl:hasDbXref>FMA:23879</oboInOwl:hasDbXref>
         <oboInOwl:hasDbXref>SCTID:129140006</oboInOwl:hasDbXref>
@@ -52490,11 +52780,11 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>subdivision of skeleton</rdfs:label>
         <skos:prefLabel>subdivision of skeleton</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6127">
+    <owl:Restriction rdf:nodeID="genid6170">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
     </owl:Restriction>
-    <owl:Restriction rdf:nodeID="genid6129">
+    <owl:Restriction rdf:nodeID="genid6172">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004288"/>
     </owl:Restriction>
@@ -52507,13 +52797,13 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6127"/>
+        <owl:annotatedTarget rdf:nodeID="genid6170"/>
         <oboInOwl:source>UBERONREF:0000003</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0010912"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6129"/>
+        <owl:annotatedTarget rdf:nodeID="genid6172"/>
         <oboInOwl:source>VSAO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -52607,7 +52897,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0011138">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/BFO_0000002"/>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000075"/>
-        <rdfs:subClassOf rdf:nodeID="genid6141"/>
+        <rdfs:subClassOf rdf:nodeID="genid6184"/>
         <obo:IAO_0000115>Subdivision of the skeletal system which consists of the postcranial axial skeleton plus associated joints.</obo:IAO_0000115>
         <terms:contributor rdf:resource="https://orcid.org/0000-0002-6601-2165"/>
         <oboInOwl:hasBroadSynonym>axial skeletal system</oboInOwl:hasBroadSynonym>
@@ -52618,7 +52908,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:seeAlso rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/uberon/docs/The-axial-skeleton</rdfs:seeAlso>
         <skos:prefLabel>postcranial axial skeletal system</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6141">
+    <owl:Restriction rdf:nodeID="genid6184">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0003089"/>
     </owl:Restriction>
@@ -52631,7 +52921,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0011138"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6141"/>
+        <owl:annotatedTarget rdf:nodeID="genid6184"/>
         <oboInOwl:source>cjm</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -53027,7 +53317,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0034769"/>
-        <rdfs:subClassOf rdf:nodeID="genid6192"/>
+        <rdfs:subClassOf rdf:nodeID="genid6235"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/uberon/core#site_of"/>
@@ -53047,7 +53337,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <oboInOwl:id>UBERON:0012429</oboInOwl:id>
         <rdfs:label>hematopoietic tissue</rdfs:label>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6192">
+    <owl:Restriction rdf:nodeID="genid6235">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0002390"/>
     </owl:Restriction>
@@ -53060,7 +53350,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0012429"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6192"/>
+        <owl:annotatedTarget rdf:nodeID="genid6235"/>
         <oboInOwl:source>defitional</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -53733,7 +54023,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
 
     <owl:Class rdf:about="http://purl.obolibrary.org/obo/UBERON_0016887">
         <rdfs:subClassOf rdf:resource="http://purl.obolibrary.org/obo/UBERON_0000481"/>
-        <rdfs:subClassOf rdf:nodeID="genid6280"/>
+        <rdfs:subClassOf rdf:nodeID="genid6323"/>
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002220"/>
@@ -53756,7 +54046,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
         <rdfs:label>entire extraembryonic component</rdfs:label>
         <skos:prefLabel>entire extraembryonic component</skos:prefLabel>
     </owl:Class>
-    <owl:Restriction rdf:nodeID="genid6280">
+    <owl:Restriction rdf:nodeID="genid6323">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/BFO_0000050"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0004716"/>
     </owl:Restriction>
@@ -53769,7 +54059,7 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.obolibrary.org/obo/UBERON_0016887"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6280"/>
+        <owl:annotatedTarget rdf:nodeID="genid6323"/>
         <oboInOwl:source>AEO</oboInOwl:source>
     </owl:Axiom>
     <owl:Axiom>
@@ -54310,14 +54600,14 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_7742"/>
                     </owl:Restriction>
                 </owl:intersectionOf>
-                <rdfs:subClassOf rdf:nodeID="genid6384"/>
+                <rdfs:subClassOf rdf:nodeID="genid6427"/>
             </owl:Class>
         </owl:annotatedSource>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget rdf:nodeID="genid6384"/>
+        <owl:annotatedTarget rdf:nodeID="genid6427"/>
         <oboInOwl:evidence>definitional</oboInOwl:evidence>
     </owl:Axiom>
-    <owl:Restriction rdf:nodeID="genid6384">
+    <owl:Restriction rdf:nodeID="genid6427">
         <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002202"/>
         <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/UBERON_0001049"/>
     </owl:Restriction>
@@ -54608,6 +54898,40 @@ Furthermore, the bone marrow hematopoietic cells have a unique ability to replac
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_2759"/>
+                    </owl:Class>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_33208"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_4751"/>
+            </owl:Restriction>
+        </owl:disjointWith>
+    </owl:Restriction>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+        <owl:someValuesFrom rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
+        <owl:disjointWith>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.obolibrary.org/obo/RO_0002162"/>
+                <owl:someValuesFrom>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://purl.obolibrary.org/obo/NCBITaxon_28009"/>
                     </owl:Class>
                 </owl:someValuesFrom>
             </owl:Restriction>
