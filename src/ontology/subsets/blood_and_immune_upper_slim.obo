@@ -1,5 +1,5 @@
 format-version: 1.2
-data-version: cl/releases/2025-12-17/subsets/blood_and_immune_upper_slim.owl
+data-version: cl/releases/2026-03-26/subsets/blood_and_immune_upper_slim.owl
 idspace: dc http://purl.org/dc/elements/1.1/ 
 idspace: foaf http://xmlns.com/foaf/0.1/ 
 idspace: oboInOwl http://www.geneontology.org/formats/oboInOwl# 
@@ -7,7 +7,7 @@ idspace: skos http://www.w3.org/2004/02/skos/core#
 idspace: sssom https://w3id.org/sssom/ 
 idspace: terms http://purl.org/dc/terms/ 
 ontology: cl/subsets/blood_and_immune_upper_slim
-property_value: owl:versionInfo "2025-12-17" xsd:string
+property_value: owl:versionInfo "2026-03-26" xsd:string
 
 [Term]
 id: BFO:0000002
@@ -78,21 +78,18 @@ property_value: skos:prefLabel "early embryonic cell (metazoa)" xsd:string
 id: CL:0000034
 name: stem cell
 def: "A relatively undifferentiated cell that retains the ability to divide and proliferate throughout life to provide progenitor cells that can differentiate into specialized cells." [GOC:tfm, MESH:D013234]
-comment: This term applies to metazoan. For plant stem cells, consider using PO:0004011 ‘initial cell’ or its parent PO:0004010 ‘meristematic cell’.
 subset: cellxgene_subset
 subset: general_cell_types_upper_slim
 subset: human_reference_atlas
 subset: human_subset
 subset: mouse_subset
-synonym: "animal stem cell" EXACT []
+synonym: "animal stem cell" NARROW []
 xref: CALOHA:TS-2086
 xref: FMA:63368
 xref: ZFA:0005957 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
-is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0000000 ! cell
 intersection_of: RO:0002215 GO:0017145 ! capable of stem cell division
-relationship: RO:0002162 NCBITaxon:33208 ! in taxon Metazoa
 relationship: RO:0002215 GO:0017145 ! capable of stem cell division
 property_value: RO:0002175 NCBITaxon:9606
 property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000034" xsd:string {name="stem cell on CELLxGENE CellGuide"}
@@ -119,6 +116,7 @@ xref: FMA:86475
 xref: MESH:D006412
 xref: VHOG:0001485
 xref: ZFA:0009014 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0000723 ! somatic stem cell
 is_a: CL:0008001 ! hematopoietic precursor cell
 is_a: CL:0011026 ! progenitor cell
@@ -407,13 +405,18 @@ property_value: terms:description "Blood vessel endothelial cells, also known as
 [Term]
 id: CL:0000076
 name: squamous epithelial cell
+def: "An epithelial cell that has a flattened morphology." []
 subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: CALOHA:TS-1249
 xref: ZFA:0009039 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000066 ! epithelial cell
+intersection_of: CL:0000066 ! epithelial cell
+intersection_of: RO:0000053 PATO:0002254 ! has characteristic flattened
+relationship: RO:0000053 PATO:0002254 ! has characteristic flattened
 property_value: skos:prefLabel "squamous epithelial cell" xsd:string
+property_value: terms:date "2025-12-16T15:56:39Z" xsd:dateTime
 
 [Term]
 id: CL:0000077
@@ -672,6 +675,7 @@ name: mesenchymal stem cell
 def: "A connective tissue cell that normally gives rise to other cells that are organized as three-dimensional masses. In humans, this cell type is CD73-positive, CD90-positive, CD105-positive, CD45-negative, CD34-negative, and MHCII-negative. They may further differentiate into osteoblasts, adipocytes, myocytes, neurons, or chondroblasts in vitro. Originally described as residing in the bone marrow, this cell type is now known to reside in many, if not all, adult organs." [FB:ma, GOC:dsd, http://en.wikipedia.org/wiki/Mesenchymal_stem_cell, http://www.copewithcytokines.de/cope.cgi?key=mesenchymal%20stem%20cells, PMCID:PMC2613570, PMID:10102814, PMID:16923606, PMID:17986482, PMID:19960544]
 comment: Many but not all mesenchymal cells derive from the mesoderm. MSCs are reportedly CD3-negative, CD4-negative, CD5-negative, CD8-negative, CD11a-negative, CD11b-negative, CD14-negative, CD19-negative, CD29-positive, CD31-negative, CD34-negative, CD38-negative, CD40-negative, CD44-positive, CD45-negative, CD49-positive, CD54-positive, CD66b-negative, CD79a-negative, CD80-negative, CD102-positive, CD106-positive, CD117-positive, CD121a-positive, CD121b-positive, CD123-positive, CD124-positive, CD133-negative, CD146-positive, CD166-positive, CD271-positive, B220-negative, Gr1-negative, MHCI-positive, MHCII-negative, SSEA4-negative, sca1-positive, Ter119-negative, and glycophorin A-negative. Cultured MSCs are capable of producing stem cell factor, IL7, IL8, IL11, TGF-beta, cofilin, galectin-1, laminin-receptor 1, cyclophilin A, and MMP-2.
 subset: cellxgene_subset
+subset: human_reference_atlas
 subset: human_subset
 subset: mouse_subset
 synonym: "BMSC" RELATED OMO:0003000 []
@@ -692,6 +696,7 @@ xref: FMA:70546
 xref: ZFA:0009081 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000048 ! multi fate stem cell
 is_a: CL:0002320 {is_inferred="true"} ! connective tissue cell
+property_value: RO:0002175 NCBITaxon:9606
 property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000134" xsd:string {name="mesenchymal stem cell on CELLxGENE CellGuide"}
 property_value: seeAlso "https://github.com/obophenotype/cell-ontology/issues/474" xsd:string
 property_value: skos:prefLabel "mesenchymal stem cell" xsd:string
@@ -754,6 +759,7 @@ name: muscle cell
 def: "A mature contractile cell, commonly known as a myocyte. This cell has as part of its cytoplasm myofibrils organized in various patterns." [MESH:D032342]
 subset: cellxgene_subset
 subset: general_cell_types_upper_slim
+subset: human_reference_atlas
 subset: human_subset
 subset: mouse_subset
 synonym: "muscle fiber" EXACT []
@@ -771,6 +777,7 @@ is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0000393 ! electrically responsive cell
 relationship: RO:0002202 CL:0000056 ! develops from myoblast
 property_value: foaf:depiction "https://www.swissbiopics.org/api/image/Muscle_cells.svg" xsd:anyURI
+property_value: RO:0002175 NCBITaxon:9606
 property_value: skos:prefLabel "muscle cell" xsd:string
 
 [Term]
@@ -928,6 +935,7 @@ property_value: RO:0002175 NCBITaxon:9606
 property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000232" xsd:string {name="erythrocyte on CELLxGENE CellGuide"}
 property_value: skos:prefLabel "erythrocyte" xsd:string
 property_value: terms:description "Erythrocytes, also known as red blood cells, are a type of specialized cell that make up the largest percentage of cells in the human body. Erythrocytes are biconcave in shape and lack nuclei and organelles, allowing them to carry oxygen and carbon dioxide through the bloodstream more efficiently. The main function of erythrocytes is to transport oxygen from the lungs to the body's tissues and organs, and to transport carbon dioxide from the body's tissues to the lungs, where it can be exhaled out of the body. Hemoglobin, a protein located inside erythrocytes, is responsible for binding to oxygen. \nErythrocytes are produced in the bone marrow and have a lifespan of approximately 120 days before they are broken down and recycled by the body. Erythrocytes are regulated by the hormone erythropoietin, which is produced by the kidneys and liver in response to low oxygen levels in the body, thereby stimulating erythrocyte production .\nIn addition to their role in oxygen transport, erythrocytes also play a key role in regulating the body's pH levels. Without erythrocytes, oxygen would not be able to be transported efficiently throughout the body and tissues would not receive the necessary oxygen to function properly. Overall, erythrocytes are essential for maintaining the health and homeostasis of the body.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1016/j.blre.2012.12.003", xref="DOI:10.1056/NEJM199801223380407", xref="DOI:10.3389/fphys.2021.655393"}
+property_value: terms:description "Erythrocytes, also known as red blood cells, are a type of specialized cell whose main function it is to transport oxygen from the lungs to the body's tissues and organs, and to transport carbon dioxide from the body's tissues to the lungs, where it can be exhaled out of the body. In humans, erythrocytes make up the largest percentage of cells in the body. Human erythrocytes are biconcave in shape and lack nuclei and organelles, allowing them to carry oxygen and carbon dioxide through the bloodstream more efficiently. Most mammals have enucleated erythrocytes, while other animals such as birds and reptiles have nucleated erythrocytes.\nHemoglobin, a protein located inside erythrocytes, is responsible for binding to oxygen. Erythrocytes are produced in the bone marrow and have a lifespan of approximately 120 days before they are broken down and recycled by the body. Erythrocytes are regulated by the hormone erythropoietin, which is produced by the kidneys and liver in response to low oxygen levels in the body, thereby stimulating erythrocyte production . In addition to their role in oxygen transport, erythrocytes also play a key role in regulating the body's pH levels. Without erythrocytes, oxygen would not be able to be transported efficiently throughout the body and tissues would not receive the necessary oxygen to function properly. Overall, erythrocytes are essential for maintaining the health and homeostasis of the body.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1016/j.blre.2012.12.003", xref="DOI:10.1056/NEJM199801223380407", xref="DOI:10.3389/fphys.2021.655393"}
 
 [Term]
 id: CL:0000233
@@ -1086,6 +1094,7 @@ subset: mouse_subset
 xref: FMA:86667
 xref: ZFA:0007086 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: CL:0000219 ! motile cell
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011012 ! neural crest cell
 is_a: CL:0011026 ! progenitor cell
 relationship: RO:0002202 CL:0007004 ! develops from premigratory neural crest cell
@@ -1691,6 +1700,7 @@ subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 xref: ZFA:0009291 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011026 ! progenitor cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002203 CL:0000187 ! develops into muscle cell
@@ -1728,6 +1738,7 @@ subset: human_subset
 subset: mouse_subset
 synonym: "immune cell" RELATED []
 synonym: "leucocyte" EXACT []
+synonym: "WBC" EXACT OMO:0003000 [PMID:40794848]
 synonym: "white blood cell" EXACT []
 xref: BTO:0000751
 xref: CALOHA:TS-0549
@@ -2043,6 +2054,8 @@ disjoint_from: CL:0000818 ! transitional stage B cell
 relationship: RO:0002202 CL:0000818 ! develops from transitional stage B cell
 relationship: RO:0002215 GO:0042113 ! capable of B cell activation
 relationship: RO:0002353 GO:0002335 ! output of mature B cell differentiation
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000785" xsd:string {name="mature B cell on CELLxGENE CellGuide"}
+property_value: terms:description "A mature B cell is a critical component of the body's immune system, with different mature B cell subsets providing distinct functions in both adaptive and innate humoral immune responses. The primary role of these cells in the immune function is to produce antibodies or immunoglobulins which serve to neutralize or aid in the destruction of pathogens – microbes, viruses or any toxin that is harmful to the body. \nMature B cells develop from immature B cells that have migrated from the bone marrow to the spleen where they differentiate through transitional B cell stages (called T1 and T2). Following antigen activation, mature B cells then undergo further developmental stages.   \nBefore encountering a specific antigen, mature B cells are called ‘naïve’ B cells. Due to the high variability of B cell receptors (BCR) even within the same individual, each naive B cell is capable of recognizing a unique molecular structure, leading to an immensely diverse repertoire of these cells ready to react against a wide array of pathogenic threats.\nMature B cell subsets include follicular and marginal zone B cells, so named because they are enriched in the follicles and marginal zones of the spleen, respectively, although they are not confined to these compartments. Follicular B cells depend upon T cells for activation against specific antigens, and this reaction forms germinal centers in which the follicular B cells differentiate into germinal center B cells. Following class switch recombination and somatic hypermutation, these cells can differentiate into plasma cells, which secrete high-affinity antibodies, or memory B cells, which contribute to immunological memory when re-challenged by the same antigen. Marginal zone B cells can function as antigen-presenting cells and can also rapidly respond to blood-borne antigens by differentiating into antibody-secreting plasma cells with short half-lives.\nIn addition to follicular and marginal zone B cells, there is a third population of mature B cells, known as B1 cells, which have have a distinct haematopoietic origin in the fetal liver and are located in a number of tissues including the spleen, intestine, and the pleural and peritoneal cavities.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1007/978-981-15-3532-1_1", xref="DOI:10.1016/B978-0-12-397933-9.00007-2", xref="DOI:10.1186/s12967-020-02289-w"}
 
 [Term]
 id: CL:0000786
@@ -2150,6 +2163,8 @@ relationship: RO:0002104 GO:0071753 ! has plasma membrane part IgM immunoglobuli
 relationship: RO:0002104 PR:000001289 ! has plasma membrane part membrane-spanning 4-domains subfamily A member 1
 relationship: RO:0002202 CL:0000954 ! develops from small pre-B-II cell
 property_value: RO:0002175 NCBITaxon:9606
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000816" xsd:string {name="immature B cell on CELLxGENE CellGuide"}
+property_value: terms:description "Immature B cells, also known as Hardy fraction E, represent an intermediate stage in B cell development.\nBy this stage, the B cell precursors have undergone both heavy and light chain rearrangement, resulting in a diverse pool of B cell receptors (BCR). At this stage, the immature B cells undergo a stringent selection process to maintain B cell central tolerance. If an immature B cell is found to express self-reactive BCR, it can undergo receptor editing, in which rearrangement of its light chain genes is reinitiated, in an attempt to create a new, non-self-reactive BCR. If this editing process is unsuccessful and the BCR remains self-reactive, the cell can then be forced to undergo apoptosis, a process termed clonal deletion, thus preventing the production of auto-reactive, potentially harmful B cells. If the BCR recognizes self-antigen with low affinity, it may become anergic or unresponsive. Immature B cells that successfully pass these selection processes are then released from the bone marrow as transitional B cells and will complete their maturation process in secondary lymphoid organs.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1007/978-981-15-3532-1_1", xref="DOI:10.1038/80816", xref="DOI:10.1038/s41467-021-27232-5"}
 
 [Term]
 id: CL:0000817
@@ -2171,6 +2186,8 @@ disjoint_from: CL:0000826 ! pro-B cell
 relationship: CL:4030046 GO:0071753 ! lacks_plasma_membrane_part IgM immunoglobulin complex
 relationship: RO:0002104 PR:000001898 ! has plasma membrane part neprilysin
 property_value: RO:0002175 NCBITaxon:9606
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000817" xsd:string {name="precursor B cell on CELLxGENE CellGuide"}
+property_value: terms:description "Precursor B cells, often abbreviated as pre-B cells, represent an intermediary stage in the development of B cells, the white blood cells that play a crucial role in the body’s adaptive immunity system. They arise from early lymphoid progenitors in the bone marrow, representing a critical point in B cell development between a pro-B cell and an immature B cell. They differ from mature B cells as they still populate the bone marrow and have yet to fully develop the distinctive B cell receptor complex.\nThe primary function of precursor B cells is to undergo proliferation and rearrange their immunoglobulin light chain gene regions which ultimately forms part of the B cell receptor (BCR), an event crucial to B lymphocyte development. This process is closely monitored by the body's quality control mechanisms, ensuring all newly produced B cells have functional (and not self-reactive) receptors. This receptor editing and checking system helps to prevent autoimmune diseases, triggered when immune cells mistakenly attack the body's own cells.\nCritical mutations required for the maturation of the BCR happen in stages while the cell is a pre-B cell. Pre-B cells are initially characterized as stage called \"large pre-B cells,\" during which proliferation occurs. Additionally, heavy chain recombination is completed and the cell undergoes a checkpoint in which only cells with a functional heavy chain continue to develop. Afterwards, they transition into a \"small pre-B cell\" phase, where heavy chain rearrangement ends, and light-chain rearrangement begins. Once the B cell receptor is fully formed following heavy and light chain rearrangement, the cell is considered an immature B cell and leaves the bone marrow.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1007/978-981-15-3532-1_1", xref="DOI:10.1016/C2009-0-62217-0", xref="DOI:10.1016/j.febslet.2010.04.057", xref="DOI:10.1172/JCI78083"}
 
 [Term]
 id: CL:0000818
@@ -2203,6 +2220,8 @@ relationship: RO:0002202 CL:0000816 ! develops from immature B cell
 relationship: RO:0015015 PR:000001408 ! has high plasma membrane amount ADP-ribosyl cyclase/cyclic ADP-ribose hydrolase 1
 relationship: RO:0015015 PR:000001932 ! has high plasma membrane amount signal transducer CD24
 property_value: RO:0002175 NCBITaxon:9606
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000818" xsd:string {name="transitional stage B cell on CELLxGENE CellGuide"}
+property_value: terms:description "Transitional stage B cells represent an intermediary stage in B cell development between immature B cells, which are produced within the bone marrow, and mature B cells, which circulate in the blood and peripheral lymphoid tissues. Transitional B cells migrate from the bone marrow to secondary lymphoid organs, usually the spleen. Transitional B cells may still undergo negative and positive selection processes to remove self-reactive B cells and to enhance survival and clonal expansion of antigen-specific cells, respectively. Transitional B cells can mature into either follicular B cells in the splenic follicles following tonic or strong B cell receptor (BCR) signaling and BAFF signaling, or marginal zone B cells between the red and white pulp of the spleen following weak BCR signaling and Notch2 signaling. Some transitional B cells themselves also possess regulatory B cell functions.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1007/978-981-15-3532-1_1", xref="DOI:10.1016/j.jaci.2013.01.046", xref="DOI:10.1186/s12967-020-02289-w"}
 
 [Term]
 id: CL:0000826
@@ -2253,6 +2272,8 @@ intersection_of: CL:0000838 ! lymphoid lineage restricted progenitor cell
 intersection_of: RO:0002215 GO:0030217 ! capable of T cell differentiation
 relationship: RO:0002202 CL:0000051 ! develops from common lymphoid progenitor
 relationship: RO:0002215 GO:0030217 ! capable of T cell differentiation
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0000827" xsd:string {name="pro-T cell on CELLxGENE CellGuide"}
+property_value: terms:description "The pro-T cell is a T cell progenitor that will develop into cells of the T lymphocyte lineage. These cells derive from the bone marrow, originally differentiating from hematopoietic stem cells, and are found in the thymus, where T cell development takes place. Pro-T cells represent the stage in T cell development prior to T cell-specific gene rearrangement. Their primary function is to proliferate and differentiate into mature T cells, which play a critical role in adaptive immunity, helping the body respond efficiently to foreign pathogens.\nIn the bone marrow, hematopoietic stem cells can differentiate into common lymphoid progenitor cells. These cells are able to enter circulation and enter the thymus as thymus-seeding progenitor cells. These cells then differentiate into early thymic progenitors which proceed with T cell specification, developing from double negative (DN) to double positive (DP) to single positive (SP) T cells. Over the course of these developmental phases, the cells will commit to the T cell lineage and rearrange T cell receptor genes. In this pathway, pro-T cells can give rise to both alpha-beta and gamma-delta T cells and natural killer T (NKT) cells.\nPro-T cells are a key constituent of the immune system, presenting a critical stage in the T cell developmental process. T cells are important players in adaptive immunity and help to initiate and orchestrate the immune response and eliminate pathogens and tumor cells. Pro-T cells are also an area of interest in the context of regenerative medicine to reconstitute T cells and adoptive T cell therapies as a potential source of T cells.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1002/JLB.1MR1217-496R", xref="DOI:10.1016/j.it.2020.12.004", xref="DOI:10.1093/intimm/dxy051"}
 
 [Term]
 id: CL:0000828
@@ -3085,7 +3106,9 @@ is_a: CL:0000839 {is_inferred="true"} ! myeloid lineage restricted progenitor ce
 intersection_of: CL:0000839 ! myeloid lineage restricted progenitor cell
 intersection_of: RO:0002215 GO:0030851 ! capable of granulocyte differentiation
 relationship: RO:0002215 GO:0030851 ! capable of granulocyte differentiation
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0002191" xsd:string {name="granulocytopoietic cell on CELLxGENE CellGuide"}
 property_value: terms:contributor https://orcid.org/0000-0003-1980-3228
+property_value: terms:description "Granulocytopoietic cells represent a heterogeneous group of progenitor cells that give rise to the different types of granulocytes through a process called granulocytopoiesis. Granulocytopoietic cells include myeloblasts, myelocytes, basophil mast progenitors and other precursors, which develop into the variegated subtypes of granulocytes: neutrophils, eosinophils, and basophils, all of which perform distinct functions in immune responses. \nThe primary function of granulocytopoietic cells is regeneration and development of granulocytes. They actively participate in hematopoiesis, the intricate process of blood cell production. Typically, these cells derive from multipotent hematopoietic stem cells (HSCs). Over time and under specific hereditary and environmental influences, they differentiate and mature into granulocyte cells. Spurred by physiological triggers, these precursor cells undergo a series of mitotic divisions and maturation processes, eventually turning into fully functional granulocytes, which play an instrumental role in the body's immune system: \nNeutrophils provide a crucial line of defense against bacterial and fungal infections, racing to the scene of an infection where they perform phagocytosis- consuming invading organisms. Eosinophils are vital in tackling multicellular parasites and are involved in allergic reactions. Basophils, while less abundant, are involved in inflammatory reactions, particularly allergic responses, by releasing histamine and heparin.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1016/B978-0-12-802900-8.00019-1", xref="DOI:10.1016/B978-0-323-35775-3.00013-8", xref="https://www.sciencedirect.com/topics/medicine-and-dentistry/granulopoiesis"}
 creation_date: 2010-08-30T12:54:27Z
 
 [Term]
@@ -3278,6 +3301,7 @@ subset: human_subset
 subset: mouse_subset
 xref: ZFA:0007084 {sssom:mapping_justification="https://w3id.org/semapv/vocab/UnspecifiedMatching"}
 is_a: BFO:0000002
+is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011012 ! neural crest cell
 relationship: BFO:0000050 UBERON:0002342 ! part of neural crest
 relationship: RO:0002202 CL:0000133 ! develops from neurectodermal cell
@@ -3344,13 +3368,14 @@ subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
 is_a: BFO:0000002
-is_a: CL:0000255 ! eukaryotic cell
 is_a: CL:0011115 ! precursor cell
 intersection_of: CL:0011115 ! precursor cell
 intersection_of: RO:0002202 CL:0000034 ! develops from stem cell
 relationship: RO:0002202 CL:0000034 ! develops from stem cell
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0011026" xsd:string {name="progenitor cell on CELLxGENE CellGuide"}
 property_value: skos:prefLabel "progenitor cell" xsd:string
 property_value: terms:contributor https://orcid.org/0000-0001-5208-3432
+property_value: terms:description "Progenitor cells are a specialized type of biological cell that can differentiate into specific cell types. While akin to stem cells in their differentiation capacity, progenitor cells are more limited in divisions and are already somewhat specialized. They can divide a restricted number of times and differentiate into a few closely related cell types, unlike stem cells with broader differentiation potential.\nPrimarily, progenitor cells play key roles in repairing and maintaining body tissues. During embryonic development, they significantly contribute to organogenesis, forming major organs. In adults, progenitor cells function as a repair system, replenishing lost cells in tissues like skin, blood, or the gut lining. Various types of progenitor cells have distinct roles; for instance, neuronal progenitor cells specialize into different brain cells, while myeloid progenitor cells develop into red and white blood cells and platelets.\nDisruptions to progenitor cells can lead to diseases, emphasizing their vital role in tissue homeostasis. Their unique properties also make them valuable in therapeutic approaches like tissue engineering and regenerative medicine. Researchers are exploring methods to direct these cells towards specific types to replace cells lost or damaged in conditions like spinal cord injuries, diabetes, and heart disease.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1038/s42003-023-04893-0", xref="DOI:10.1155/2017/5217967", xref="DOI:10.15171/jcvtr.2017.22", xref="DOI:10.1900/RDS.2010.7.105", xref="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/progenitor-cell"}
 
 [Term]
 id: CL:0011115
@@ -3364,7 +3389,9 @@ is_a: CL:0000000 ! cell
 intersection_of: CL:0000000 ! cell
 intersection_of: RO:0002215 GO:0030154 ! capable of cell differentiation
 relationship: RO:0002215 GO:0030154 ! capable of cell differentiation
+property_value: seeAlso "https://cellxgene.cziscience.com/cellguide/CL_0011115" xsd:string {name="precursor cell on CELLxGENE CellGuide"}
 property_value: skos:prefLabel "precursor cell" xsd:string
+property_value: terms:description "Precursor cells represent an intermediate stage between an undifferentiated stem cell and a fully specialized cell. \nPossessing the ability to differentiate into one or multiple specialized cell types, precursor cells exhibit partial stem cell characteristics. This differentiation is vital for various aspects of biological development and maintenance. Neural precursor cells, for example, can give rise to neurons, astrocytes, and oligodendrocytes, while hematopoietic precursor cells can transform into different blood cell types. This orchestrated process aligns with the body's metabolic activities, ensuring the production of the right cell types in response to physiological needs.\nMoreover, the study of precursor cells has become a promising field in regenerative medicine and cellular therapies. However, it's essential to note that precursor cells have a more limited self-renewal capacity compared to stem cells, and once they start differentiating along a specific cell lineage, the process is often irreversible.\n\n(This extended description was generated by ChatGPT and reviewed by the CellGuide team, who added references, and by the CL editors, who approved it for inclusion in CL. It may contain information that applies only to some subtypes and species, and so should not be considered definitional.)" xsd:string {xref="DOI:10.1006/nbdi.1997.0137", xref="DOI:10.1016/S0076-6879(06)19007-2", xref="https://www.sciencedirect.com/topics/agricultural-and-biological-sciences/precursor-cell"}
 
 [Term]
 id: CL:0017005
@@ -3475,6 +3502,7 @@ def: "A leukocyte with a single non-segmented nucleus in the mature form found i
 subset: cellxgene_subset
 subset: human_subset
 subset: mouse_subset
+synonym: "PBMC" EXACT OMO:0003000 [PMID:27696124]
 is_a: CL:0000080 ! circulating cell
 is_a: CL:0000842 ! mononuclear leukocyte
 intersection_of: CL:0000842 ! mononuclear leukocyte
@@ -3527,6 +3555,7 @@ is_a: GO:0140096 ! catalytic activity, acting on a protein
 is_a: GO:0140101 ! catalytic activity, acting on a tRNA
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/22192" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/25493" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0000262
@@ -4628,6 +4657,7 @@ subset: goslim_yeast
 synonym: "molecular function" EXACT []
 disjoint_from: GO:0005575 ! cellular_component
 disjoint_from: GO:0008150 ! biological_process
+property_value: IAO:0000116 "This is the same as GO molecular function" xsd:string
 
 [Term]
 id: GO:0003824
@@ -4707,6 +4737,9 @@ synonym: "cell or subcellular entity" EXACT []
 synonym: "cellular component" EXACT []
 synonym: "subcellular entity" RELATED [NIF_Subcellular:nlx_subcell_100315]
 xref: NIF_Subcellular:sao1337158144
+union_of: GO:0032991 ! protein-containing complex
+union_of: GO:0044423 ! virion component
+union_of: GO:0110165 ! cellular anatomical structure
 disjoint_from: GO:0008150 ! biological_process
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/17729" xsd:anyURI
 
@@ -4755,7 +4788,8 @@ namespace: cellular_component
 def: "A protein complex consisting of three collagen chains assembled into a left-handed triple helix. These trimers typically assemble into higher order structures." [GOC:dos, GOC:mah, PMID:19693541, PMID:21421911]
 xref: Wikipedia:Collagen
 is_a: GO:0032991 ! protein-containing complex
-relationship: RO:0002162 NCBITaxon:33208 ! in taxon Metazoa
+relationship: RO:0002160 NCBITaxon:33208 ! only in taxon Metazoa
+relationship: RO:0002162 NCBITaxon:33208 {all_only="true"} ! in taxon Metazoa
 
 [Term]
 id: GO:0005587
@@ -4993,6 +5027,7 @@ synonym: "vacuolar carboxypeptidase Y" RELATED []
 xref: Wikipedia:Vacuole
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
 relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
+relationship: RO:0002162 NCBITaxon:2759 ! in taxon Eukaryota
 
 [Term]
 id: GO:0005794
@@ -5019,7 +5054,6 @@ xref: Wikipedia:Golgi_apparatus
 is_a: GO:0043231 ! intracellular membrane-bounded organelle
 relationship: BFO:0000050 GO:0005737 ! part of cytoplasm
 relationship: BFO:0000050 GO:0012505 ! part of endomembrane system
-relationship: RO:0002162 NCBITaxon:2759 ! in taxon Eukaryota
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/14798" xsd:anyURI
 
 [Term]
@@ -5829,6 +5863,7 @@ synonym: "physiological process" EXACT []
 synonym: "single organism process" RELATED []
 synonym: "single-organism process" RELATED []
 xref: Wikipedia:Biological_process
+relationship: BFO:0000051 GO:0003674 ! has part molecular_function
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24968" xsd:anyURI
 creation_date: 2012-09-19T15:05:24Z
 
@@ -6445,10 +6480,10 @@ subset: goslim_yeast
 xref: EC:2.-.-.-
 xref: Reactome:R-HSA-1483089 "PE is converted to PS by PTDSS2"
 xref: Reactome:R-HSA-1483186 "PC is converted to PS by PTDSS1"
-xref: Reactome:R-HSA-5333607 "GSSeH combines with bGalNAc derivative to form GSSebGalNac"
 xref: Reactome:R-HSA-5668414 "TRAF2 ubiquitinates cIAP1,2 in cIAP1,2:TRAF1:TRAF2:TRAF3:NIK"
 xref: Reactome:R-HSA-8868783 "TSR3 transfers aminocarboxypropyl group from S-adenosylmethionine to N(1)-methylpseudouridine-1248 of 18SE rRNA yielding N(1)-methyl-N(3)-aminocarboxypropylpseudouridine-1248"
 is_a: GO:0003824 ! catalytic activity
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0016746
@@ -6465,6 +6500,7 @@ xref: Reactome:R-HSA-193491 "Chenodeoxycholoyl CoA reacts with glycine or taurin
 xref: Reactome:R-HSA-8858298 "HRASLS transfer acyl group from PC to PE to form NAPE"
 is_a: GO:0016740 ! transferase activity
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/20486" xsd:anyURI
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0016755
@@ -6474,6 +6510,7 @@ def: "Catalysis of the transfer of an amino-acyl group from one compound (donor)
 synonym: "transferase activity, transferring amino-acyl groups" EXACT []
 xref: EC:2.3.2.-
 is_a: GO:0016746 ! acyltransferase activity
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30193" xsd:anyURI
 
 [Term]
 id: GO:0017145
@@ -6744,6 +6781,7 @@ id: GO:0030030
 name: cell projection organization
 namespace: biological_process
 def: "A process that is carried out at the cellular level which results in the assembly, arrangement of constituent parts, or disassembly of a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, GOC:mah, PMID:16318917]
+subset: gocheck_do_not_annotate
 subset: goslim_prokaryote
 synonym: "cell projection organisation" EXACT []
 synonym: "cell projection organization and biogenesis" RELATED [GOC:mah]
@@ -6752,6 +6790,7 @@ is_a: GO:0016043 ! cellular component organization
 intersection_of: GO:0016043 ! cellular component organization
 intersection_of: RO:0002592 GO:0042995 ! results in organization of cell projection
 relationship: RO:0002592 GO:0042995 ! results in organization of cell projection
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23013" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/26279" xsd:anyURI
 
 [Term]
@@ -6759,6 +6798,7 @@ id: GO:0030031
 name: cell projection assembly
 namespace: biological_process
 def: "Formation of a prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, GOC:mah, PMID:18391171]
+subset: gocheck_do_not_annotate
 synonym: "cell projection biogenesis" RELATED [GOC:mah]
 synonym: "formation of a cell surface projection" EXACT []
 is_a: GO:0022607 ! cellular component assembly
@@ -6766,6 +6806,7 @@ is_a: GO:0030030 ! cell projection organization
 intersection_of: GO:0022607 ! cellular component assembly
 intersection_of: RO:0002588 GO:0042995 ! results in assembly of cell projection
 relationship: RO:0002588 GO:0042995 ! results in assembly of cell projection
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23013" xsd:anyURI
 
 [Term]
 id: GO:0030054
@@ -7375,6 +7416,7 @@ is_a: GO:0005575 ! cellular_component
 disjoint_from: GO:0044423 ! virion component
 disjoint_from: GO:0110165 ! cellular anatomical structure
 relationship: BFO:0000051 PR:000000001 ! has part protein
+property_value: IAO:0000116 "This is not covalently bonded, which conflicts with changes to the parent definition." xsd:string
 
 [Term]
 id: GO:0033151
@@ -7739,7 +7781,7 @@ property_value: RO:0002161 NCBITaxon:4751
 id: GO:0042592
 name: homeostatic process
 namespace: biological_process
-def: "Any biological process involved in the maintenance of an internal steady state." [GOC:jl, ISBN:0395825172]
+def: "Any biological process involved in the maintenance of an internal steady state. Homeostasis allows cells and organisms to maintain stable internal conditions despite varying external conditions." [PMID:26265027]
 subset: goslim_agr
 subset: goslim_chembl
 subset: goslim_mouse
@@ -7750,6 +7792,7 @@ synonym: "negative regulation of homeostatic process" RELATED []
 synonym: "positive regulation of homeostatic process" RELATED []
 synonym: "regulation of homeostatic process" RELATED []
 is_a: GO:0008150 ! biological_process
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/31175" xsd:anyURI
 
 [Term]
 id: GO:0042611
@@ -7831,6 +7874,7 @@ id: GO:0042995
 name: cell projection
 namespace: cellular_component
 def: "A prolongation or process extending from a cell, e.g. a flagellum or axon." [GOC:jl, PMID:16318917]
+subset: gocheck_do_not_annotate
 subset: goslim_agr
 subset: goslim_euk_cellular_processes_ribbon
 subset: goslim_flybase_ribbon
@@ -7843,6 +7887,7 @@ synonym: "cellular process" BROAD []
 synonym: "cellular projection" EXACT []
 is_a: GO:0110165 ! cellular anatomical structure
 relationship: BFO:0000050 CL:0000000 ! part of cell
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/23013" xsd:anyURI
 property_value: skos:prefLabel "cell projection" xsd:string
 
 [Term]
@@ -9532,15 +9577,16 @@ def: "A collagen trimer that forms networks." [PMID:21421911]
 is_a: BFO:0000004
 is_a: GO:0005581 ! collagen trimer
 intersection_of: GO:0005581 ! collagen trimer
-intersection_of: BFO:0000050 GO:0098645 ! part of collagen network
-relationship: BFO:0000050 GO:0098645 ! part of collagen network
+intersection_of: BFO:0000050 GO:0098645 ! part of complex of network-forming collagens
+relationship: BFO:0000050 GO:0098645 ! part of complex of network-forming collagens
 
 [Term]
 id: GO:0098643
-name: fibrillar collagen
+name: fibrillar collagen complex
 namespace: cellular_component
 def: "A supramolecular assembly of fibrillar collagen complexes in the form of a long fiber (fibril) with transverse striations (bands)." [GOC:dos, PMID:20386646, PMID:21421911, PMID:29853175]
 synonym: "banded collagen fibril" EXACT []
+synonym: "fibrillar collagen" EXACT []
 is_a: GO:0098644 ! complex of collagen trimers
 relationship: BFO:0000050 GO:0140152 ! part of collagenous component of interstitial matrix
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/29474" xsd:anyURI
@@ -9561,10 +9607,12 @@ property_value: skos:prefLabel "complex of collagen trimers" xsd:string
 
 [Term]
 id: GO:0098645
-name: collagen network
+name: complex of network-forming collagens
 namespace: cellular_component
 def: "A supramolecular complex that consists of collagen triple helices associated to form a network." [GOC:dos, PMID:21421911]
+synonym: "collagen network" EXACT []
 is_a: GO:0098644 ! complex of collagen trimers
+property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30938" xsd:anyURI
 
 [Term]
 id: GO:0098657
@@ -9715,6 +9763,8 @@ subset: goslim_pir
 synonym: "cellular anatomical entity" EXACT []
 is_a: GO:0005575 ! cellular_component
 is_a: UBERON:0000061 ! anatomical structure
+property_value: IAO:0000116 "Components are larger than individual macromolecular entities. It is tricky to define distinction between 'cell component' and 'macromolecular entity', e.g. ribosome. We would like to exclude most protein complexes." xsd:string
+property_value: IAO:0000116 "Overlaps with some cellular components from GO" xsd:string
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/24200" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/26424" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/28978" xsd:anyURI
@@ -9881,7 +9931,7 @@ id: GO:0140154
 name: chicken-wire-like collagen network
 namespace: cellular_component
 def: "Network-forming collagens can either form a chicken-wire-like network or a hexagonal network. Collagen type IV forms a chicken-wire-like structure and is found in the basement membrane." [PMID:21421911, PMID:21421915, PMID:31387942]
-is_a: GO:0098645 ! collagen network
+is_a: GO:0098645 ! complex of network-forming collagens
 relationship: BFO:0000050 GO:0140143 ! part of collagenous component of basement membrane
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/29401" xsd:anyURI
 property_value: IAO:0000233 "https://github.com/geneontology/go-ontology/issues/30149" xsd:anyURI
@@ -10286,6 +10336,22 @@ xref: PMID:23020233
 xref: PMID:30257078
 is_a: NCBITaxon:131567 ! cellular organisms
 property_value: skos:prefLabel "Eukaryota" xsd:string
+
+[Term]
+id: NCBITaxon:28009
+name: Choanoflagellata
+namespace: ncbi_taxonomy
+synonym: "Choanoflagellatea" RELATED synonym []
+synonym: "choanoflagellates" EXACT genbank_common_name []
+synonym: "choanoflagellates" RELATED blast_name []
+synonym: "Choanoflagellida" RELATED synonym []
+synonym: "Choanomonada" RELATED synonym []
+synonym: "Choanozoa" RELATED synonym []
+xref: GC_ID:1
+xref: PMID:27765632
+is_a: NCBITaxon:33154 ! Opisthokonta
+disjoint_from: NCBITaxon:33208 ! Metazoa
+disjoint_from: NCBITaxon:4751 ! Fungi
 
 [Term]
 id: NCBITaxon:314146
@@ -10810,6 +10876,14 @@ subset: scalar_slim
 is_a: PATO:0001018 ! physical quality
 
 [Term]
+id: PATO:0001591
+name: curvature
+namespace: quality
+def: "A surface shape quality inhering in a bearer by virtue of the bearer's exhibiting a degree of bending." [WordNet:WordNet]
+subset: attribute_slim
+is_a: PATO:0000052 ! shape
+
+[Term]
 id: PATO:0001690
 name: contractile
 namespace: quality
@@ -10983,6 +11057,18 @@ subset: attribute_slim
 is_a: PATO:0001018 ! physical quality
 property_value: terms:contributor https://orcid.org/0000-0002-2061-091X
 creation_date: 2010-03-15T04:35:27Z
+
+[Term]
+id: PATO:0002254
+name: flattened
+namespace: quality
+def: "A quality inhering in a bearer by virtue of the bearer's surface becoming more extended in a plane." [PATOC:CVS]
+comment: Becoming flat but not necessarily completely flat.
+subset: value_slim
+synonym: "compressed" RELATED []
+is_a: PATO:0001591 ! curvature
+property_value: terms:contributor https://orcid.org/0000-0002-2061-091X
+creation_date: 2010-08-16T03:59:34Z
 
 [Term]
 id: PATO:0002266
@@ -17833,7 +17919,7 @@ xref: NCIT:C32339
 xref: NIF_Subcellular:sao7547390221
 is_a: UBERON:0000476 {source="ZFA"} ! acellular anatomical structure
 relationship: RO:0002473 GO:0005581 ! composed primarily of collagen trimer
-relationship: RO:0002473 GO:0098643 ! composed primarily of fibrillar collagen
+relationship: RO:0002473 GO:0098643 ! composed primarily of fibrillar collagen complex
 property_value: seeAlso UBERON:0007377
 property_value: skos:prefLabel "collection of collagen fibrils" xsd:string
 

@@ -1,321 +1,124 @@
-# Release Notes 2025-12-17
+# Release Notes 2026-03-26
 ## Ontology content summary
 | Metric                                          |   Value |
 |:------------------------------------------------|--------:|
-| Number of subclasses of root                    |    3228 |
-| Number of annotations on CL terms               |   16661 |
-| Number of synonyms                              |    6859 |
+| Number of subclasses of root                    |    3314 |
+| Number of annotations on CL terms               |   17396 |
+| Number of synonyms                              |    7125 |
 | Number of unique references                     |    1960 |
-| Number of unique references in definitions      |    2015 |
-| Number of relationships with CL term as subject |    4826 |
+| Number of unique references in definitions      |    2079 |
+| Number of relationships with CL term as subject |    5109 |
 | Number of cellxgene classes                     |    1026 |
-| Number of HRA classes                           |     515 |
+| Number of HRA classes                           |     616 |
 <details>
-<summary>Nodes added to subset: 77</summary>
+<summary>Nodes added to subset: 4</summary>
 
 | Term | Subset |
 ----|----|
-| epithelial cell of early distal convoluted tubule (CL:4030016) | cellxgene_subset |
-| TREM2-positive macrophage (CL:4047053) | cellxgene_subset |
-| cycling stromal cell (CL:4047001) | cellxgene_subset |
-| pre-theca cell (CL:4052010) | cellxgene_subset |
-| diffuse bipolar 5 cell (CL:4033085) | cellxgene_subset |
-| immature microglial cell (CL:0002628) | cellxgene_subset |
-| epithelial cell of proximal tubule segment 2 (CL:4030010) | cellxgene_subset |
-| glioblast (sensu Vertebrata) (CL:0000339) | cellxgene_subset |
-| mesothelial cell of dura mater (CL:1000298) | cellxgene_subset |
-| afferent neuron (CL:0000526) | cellxgene_subset |
-| L6b glutamatergic neuron of the primary motor cortex (CL:4023046) | cellxgene_subset |
-| memory CCR4-positive regulatory T cell (CL:0001046) | cellxgene_subset |
-| mucosa-associated lymphoid tissue macrophage (CL:0000884) | cellxgene_subset |
-| TAC3-positive striatal interneuron (CL:4042001) | cellxgene_subset |
-| metamyelocyte (CL:0002192) | cellxgene_subset |
-| adventitial fibroblast (CL:4052030) | cellxgene_subset |
-| type X enteroendocrine cell (CL:0002284) | cellxgene_subset |
-| cycling myeloid cell (CL:4033081) | cellxgene_subset |
-| granzyme K-associated CD8 T cell (CL:4052021) | cellxgene_subset |
-| retinal cell (CL:0009004) | cellxgene_subset |
-| gastrointestinal tract (lamina propria) macrophage (CL:0000865) | cellxgene_subset |
-| CD8aa(I) thymocyte (CL:0009068) | cellxgene_subset |
-| mesenchyme condensation cell (CL:0000335) | cellxgene_subset |
-| angiogenic pericyte (CL:4047012) | cellxgene_subset |
-| metanephric nephron tubule epithelial cell (CL:1000123) | cellxgene_subset |
-| neuromuscular junction nucleus (CL:4052025) | cellxgene_subset |
-| mucous neck cell of gastric gland (CL:0002181) | cellxgene_subset |
-| BEST4+ colonocyte (CL:4047052) | cellxgene_subset |
-| neuroendocrine cell of epithelium of lobar bronchus (CL:4033010) | cellxgene_subset |
-| kidney collecting duct alpha-intercalated cell (CL:4030015) | cellxgene_subset |
-| Be cell (CL:0000968) | cellxgene_subset |
-| fibroblast of gingiva (CL:0002552) | cellxgene_subset |
-| Axl+ dendritic cell, human (CL:0017009) | cellxgene_subset |
-| cycling plasma cell (CL:4047003) | cellxgene_subset |
-| immature pericyte (CL:4047007) | cellxgene_subset |
-| trabecular meshwork cell (CL:0002367) | cellxgene_subset |
-| germinal center T cell (CL:0009062) | cellxgene_subset |
-| cycling pulmonary alveolar type 2 cell (CL:4033080) | cellxgene_subset |
-| medial ganglionic eminence derived interneuron (CL:4023063) | cellxgene_subset |
-| CD34-negative, CD117-positive innate lymphoid cell, human (CL:0001072) | cellxgene_subset |
-| intratelencephalic-projecting glutamatergic cortical neuron (CL:4023008) | cellxgene_subset |
-| arachnoid barrier cell (CL:4023097) | cellxgene_subset |
-| choroid plexus macrophage (CL:0000880) | cellxgene_subset |
-| diffuse bipolar 4b cell (CL:4033096) | cellxgene_subset |
-| endodermal cell (CL:0000223) | cellxgene_subset |
-| glycinergic neuron (CL:1001509) | cellxgene_subset |
-| mechanoreceptor cell (CL:0000199) | cellxgene_subset |
-| myotendinous junction nucleus (CL:4052024) | cellxgene_subset |
-| club-like cell of the urethral epithelium (CL:4032000) | cellxgene_subset |
-| early colonocyte (CL:4047018) | cellxgene_subset |
-| striated cell of salivary gland (CL:4052049) | cellxgene_subset |
-| intermediate muscle cell (CL:0002216) | cellxgene_subset |
-| CD4-positive, CD25-positive, CCR4-positive, alpha-beta regulatory T cell (CL:0001047) | cellxgene_subset |
-| L3 intratelencephalic projecting glutamatergic neuron (CL:4030061) | cellxgene_subset |
-| tip cell (CL:0000423) | cellxgene_subset |
-| intercalated cell of salivary gland (CL:4052048) | cellxgene_subset |
-| cycling basal cell (CL:4033082) | cellxgene_subset |
-| migratory dendritic cell (CL:4047054) | cellxgene_subset |
-| somatic stem cell (CL:0000723) | cellxgene_subset |
-| kidney outer medulla collecting duct intercalated cell (CL:1000717) | cellxgene_subset |
-| fibroblastic reticular cell (CL:0009101) | cellxgene_subset |
-| diffuse bipolar 4a cell (CL:4033095) | cellxgene_subset |
-| prostate neuroendocrine cell (CL:0017002) | cellxgene_subset |
-| cardiac ventricle fibroblast (CL:2000066) | cellxgene_subset |
-| type IIx muscle cell (CL:4052026) | cellxgene_subset |
-| effector T cell (CL:0000911) | cellxgene_subset |
-| interstitial cell (CL:4030031) | cellxgene_subset |
-| spinal cord radial glial cell (CL:1000073) | cellxgene_subset |
-| fetal pre-type II pulmonary alveolar epithelial cell (CL:4040003) | cellxgene_subset |
-| neuronal-restricted precursor (CL:4042021) | cellxgene_subset |
-| cycling T cell (CL:4033069) | cellxgene_subset |
-| paraxial cell (CL:0011007) | cellxgene_subset |
-| stromal cell of pancreas (CL:0002574) | cellxgene_subset |
-| serotonergic neuron (CL:0000850) | cellxgene_subset |
-| endothelial cell of high endothelial venule (CL:0002652) | cellxgene_subset |
-| luminal endometrial multiciliated epithelial cell (CL:4030041) | cellxgene_subset |
-| cycling macrophage (CL:4033076) | cellxgene_subset |
+| osteoblast (CL:0000062) | human_reference_atlas |
+| chondrocyte (CL:0000138) | human_reference_atlas |
+| obsolete female germ line stem cell (sensu Vertebrata) (CL:0000090) | human_reference_atlas |
+| mesenchymal stem cell (CL:0000134) | human_reference_atlas |
 
 </details>
 
 <details>
-<summary>Relationships added: 75</summary>
-
-| Subject | Predicate | Object|
-----|----|----|
-| giant bipolar cell (CL:4033035) | RO:0015004 |                CLM:1001265 |
-| cone retinal bipolar cell (CL:0000752) | RO:0015004 |                CLM:1001261 |
-| IgA memory B cell (CL:0000973) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
-| diffuse bipolar 4a cell (CL:4033095) | RO:0015004 |                CLM:1001246 |
-| IgD-negative class switched memory B cell (CL:4052108) | subClassOf (rdfs:subClassOf) |                IgD-negative memory B cell (CL:0001053) |
-| OFFx cell (CL:4033036) | RO:0015004 |                CLM:1001240 |
-| osteochondral skeletal stem cell (CL:0020016) | subClassOf (rdfs:subClassOf) |                stem cell (CL:0000034) |
-| IgD-negative CD38-positive IgG memory B cell (CL:0002107) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
-| fibrochondrocyte (CL:4072104) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
-| homeostatic chondrocyte (CL:0020020) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
-| fibrochondrocyte progenitor cell (CL:0020021) | subClassOf (rdfs:subClassOf) |                mesenchymal cell (CL:0008019) |
-| fibrochondrocyte (CL:4072104) | RO:0002292 |                PR:000003353 |
-| fibrochondrocyte progenitor cell (CL:0020021) | subClassOf (rdfs:subClassOf) |                progenitor cell (CL:0011026) |
-| ON-blue cone bipolar cell (CL:4033019) | RO:0015004 |                CLM:1001250 |
-| flat midget bipolar cell (CL:4033033) | RO:0015004 |                CLM:1001262 |
-| effector chondrocyte (CL:0020023) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
-| osteochondral skeletal stem cell (CL:0020016) | RO:0002215 |                GO:0001649 |
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | subClassOf (rdfs:subClassOf) |                ON retinal ganglion cell (CL:4023032) |
-| rod bipolar cell (CL:0000751) | RO:0015004 |                CLM:1001251 |
-| ON-blue cone bipolar cell (CL:4033019) | RO:0015004 |                CLM:1001259 |
-| chondrocyte (CL:0000138) | subClassOf (rdfs:subClassOf) |                skeletogenic cell (CL:0007001) |
-| M2 macrophage (CL:0000890) | RO:0002202 |                M0 macrophage (CL:0020017) |
-| diffuse bipolar 6 cell (CL:4033032) | RO:0015004 |                CLM:1001257 |
-| fibrochondrocyte (CL:4072104) | RO:0002292 |                PR:000003264 |
-| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | subClassOf (rdfs:subClassOf) |                OFF retinal ganglion cell (CL:4023033) |
-| giant bipolar cell (CL:4033035) | RO:0015004 |                CLM:1001248 |
-| M0 macrophage (CL:0020017) | subClassOf (rdfs:subClassOf) |                macrophage (CL:0000235) |
-| diffuse bipolar 3b cell (CL:4033030) | RO:0015004 |                CLM:1001253 |
-| hypertrophic chondrocyte (CL:0000743) | RO:0002292 |                PR:000005693 |
-| hypertrophic chondrocyte (CL:0000743) | BFO:0000050 |                UBERON:0008187 |
-| proliferative fibrochondrocyte (CL:0020018) | subClassOf (rdfs:subClassOf) |                fibrochondrocyte (CL:4072104) |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | subClassOf (rdfs:subClassOf) |                ON retinal ganglion cell (CL:4023032) |
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
-| diffuse bipolar 4a cell (CL:4033095) | RO:0015004 |                CLM:1001239 |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
-| cone retinal bipolar cell (CL:0000752) | RO:0015004 |                CLM:1001241 |
-| homeostatic chondrocyte (CL:0020020) | RO:0002215 |                GO:1990079 |
-| hypertrophic chondrocyte (CL:0000743) | RO:0002215 |                GO:0001958 |
-| fibrochondrocyte (CL:4072104) | BFO:0000050 |                UBERON:0001995 |
-| diffuse bipolar 2 cell (CL:4033028) | RO:0015004 |                CLM:1001245 |
-| regulatory chondrocyte (CL:0020019) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
-| flat midget bipolar cell (CL:4033033) | RO:0015004 |                CLM:1001247 |
-| fibrochondrocyte (CL:4072104) | RO:0002202 |                fibrochondrocyte progenitor cell (CL:0020021) |
-| fibrochondrocyte progenitor cell (CL:0020021) | BFO:0000050 |                UBERON:0001995 |
-| fibrochondrocyte progenitor cell (CL:0020021) | subClassOf (rdfs:subClassOf) |                connective tissue cell (CL:0002320) |
-| diffuse bipolar 3a cell (CL:4033029) | RO:0015004 |                CLM:1001260 |
-| prehypertrophic chondrocyte (CL:0020022) | subClassOf (rdfs:subClassOf) |                chondrocyte (CL:0000138) |
-| diffuse bipolar 1 cell (CL:4033027) | RO:0015004 |                CLM:1001254 |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | subClassOf (rdfs:subClassOf) |                OFF retinal ganglion cell (CL:4023033) |
-| fibrochondrocyte (CL:4072104) | RO:0002292 |                PR:000003328 |
-| diffuse bipolar 4a cell (CL:4033095) | RO:0015004 |                CLM:1001263 |
-| invaginating midget bipolar cell (CL:4033034) | RO:0015004 |                CLM:1001264 |
-| IgG-negative class switched memory B cell (CL:0002117) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
-| diffuse bipolar 2 cell (CL:4033028) | RO:0015004 |                CLM:1001258 |
-| IgD-negative class switched memory B cell (CL:4052108) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
-| osteochondral skeletal stem cell (CL:0020016) | RO:0002215 |                GO:0051216 |
-| prehypertrophic chondrocyte (CL:0020022) | RO:0002207 |                hypertrophic chondrocyte (CL:0000743) |
-| invaginating midget bipolar cell (CL:4033034) | RO:0015004 |                CLM:1001252 |
-| diffuse bipolar 4b cell (CL:4033096) | RO:0015004 |                CLM:1001256 |
-| diffuse bipolar 3b cell (CL:4033030) | RO:0015004 |                CLM:1001242 |
-| hypertrophic chondrocyte (CL:0000743) | subClassOf (rdfs:subClassOf) |                bone cell (CL:0001035) |
-| proliferative fibrochondrocyte (CL:0020018) | RO:0002292 |                PR:000007498 |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
-| OFFx cell (CL:4033036) | RO:0015004 |                CLM:1001255 |
-| M1 macrophage (CL:0000863) | RO:0002202 |                M0 macrophage (CL:0020017) |
-| homeostatic chondrocyte (CL:0020020) | RO:0002215 |                GO:0070278 |
-| rod bipolar cell (CL:0000751) | RO:0015004 |                CLM:1001266 |
-| osteochondral skeletal stem cell (CL:0020016) | BFO:0000050 |                UBERON:0001434 |
-| IgE memory B cell (CL:0000948) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
-| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell A (CL:0004117) |
-| diffuse bipolar 3a cell (CL:4033029) | RO:0015004 |                CLM:1001249 |
-| CD38-negative IgG memory B cell (CL:0002108) | subClassOf (rdfs:subClassOf) |                IgD-negative class switched memory B cell (CL:4052108) |
-| proliferative fibrochondrocyte (CL:0020018) | RO:0000056 |                GO:0022402 |
-| diffuse bipolar 6 cell (CL:4033032) | RO:0015004 |                CLM:1001244 |
-| diffuse bipolar 1 cell (CL:4033027) | RO:0015004 |                CLM:1001243 |
-
-</details>
-
-<details>
-<summary>Classes added: 14</summary>
+<summary>Classes added: 8</summary>
 
 | Term |
 ----|
-| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) |
-| regulatory chondrocyte (CL:0020019) |
-| homeostatic chondrocyte (CL:0020020) |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) |
-| effector chondrocyte (CL:0020023) |
-| prehypertrophic chondrocyte (CL:0020022) |
-| proliferative fibrochondrocyte (CL:0020018) |
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) |
-| IgD-negative class switched memory B cell (CL:4052108) |
-| fibrochondrocyte (CL:4072104) |
-| M0 macrophage (CL:0020017) |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) |
-| osteochondral skeletal stem cell (CL:0020016) |
-| fibrochondrocyte progenitor cell (CL:0020021) |
+| tuft cell of parotid gland (CL:0020063) |
+| serous demilune cell of salivary gland (CL:0020059) |
+| basal duct cell of salivary gland (CL:0020060) |
+| ionocyte of salivary gland (CL:0020065) |
+| junctional epithelial cell (CL:0020062) |
+| tuft cell of sublingual gland (CL:0020064) |
+| periductal fibroblast of salivary gland (CL:0020061) |
+| myoepithelial cell of salivary gland (CL:0020066) |
 
 </details>
 
 <details>
-<summary>Synonyms added: 28</summary>
+<summary>Relationships added: 25</summary>
+
+| Subject | Predicate | Object|
+----|----|----|
+| junctional epithelial cell (CL:0020062) | subClassOf (rdfs:subClassOf) |                stratified epithelial cell (CL:0000079) |
+| serous acinar cell of salivary gland (CL:4052065) | subClassOf (rdfs:subClassOf) |                serous demilune cell of salivary gland (CL:0020059) |
+| junctional epithelial cell (CL:0020062) | RO:0002215 |                GO:0002227 |
+| serous demilune cell of salivary gland (CL:0020059) | subClassOf (rdfs:subClassOf) |                exocrine cell (CL:0000152) |
+| junctional epithelial cell (CL:0020062) | BFO:0000050 |                UBERON:0001949 |
+| ionocyte of salivary gland (CL:0020065) | RO:0002215 |                GO:0050801 |
+| tuft cell of sublingual gland (CL:0020064) | subClassOf (rdfs:subClassOf) |                tuft cell (CL:0002204) |
+| myoepithelial cell of salivary gland (CL:0020066) | RO:0002215 |                GO:0006939 |
+| basal duct cell of salivary gland (CL:0020060) | BFO:0000050 |                UBERON:0001837 |
+| myoepithelial cell of salivary gland (CL:0020066) | subClassOf (rdfs:subClassOf) |                myoepithelial cell (CL:0000185) |
+| ionocyte of salivary gland (CL:0020065) | BFO:0000050 |                UBERON:0001044 |
+| myoepithelial cell of salivary gland (CL:0020066) | BFO:0000050 |                UBERON:0001044 |
+| periductal fibroblast of salivary gland (CL:0020061) | subClassOf (rdfs:subClassOf) |                fibroblast (CL:0000057) |
+| periductal fibroblast of salivary gland (CL:0020061) | BFO:0000050 |                UBERON:0001044 |
+| basal duct cell of salivary gland (CL:0020060) | subClassOf (rdfs:subClassOf) |                basal cell (CL:0000646) |
+| tuft cell of parotid gland (CL:0020063) | BFO:0000050 |                UBERON:0001831 |
+| junctional epithelial cell (CL:0020062) | subClassOf (rdfs:subClassOf) |                ecto-epithelial cell (CL:0002077) |
+| junctional epithelial cell (CL:0020062) | subClassOf (rdfs:subClassOf) |                epithelial cell of alimentary canal (CL:0002251) |
+| ionocyte of salivary gland (CL:0020065) | subClassOf (rdfs:subClassOf) |                ionocyte (CL:0005006) |
+| tuft cell of sublingual gland (CL:0020064) | BFO:0000050 |                UBERON:0001832 |
+| serous demilune cell of salivary gland (CL:0020059) | BFO:0000050 |                UBERON:0001044 |
+| serous demilune cell of salivary gland (CL:0020059) | subClassOf (rdfs:subClassOf) |                serous secreting cell (CL:0000313) |
+| serous demilune cell of salivary gland (CL:0020059) | RO:0002215 |                GO:0046541 |
+| tuft cell of sublingual gland (CL:0020064) | subClassOf (rdfs:subClassOf) |                epithelial cell of alimentary canal (CL:0002251) |
+| tuft cell of parotid gland (CL:0020063) | subClassOf (rdfs:subClassOf) |                tuft cell (CL:0002204) |
+
+</details>
+
+<details>
+<summary>Synonyms added: 18</summary>
 
 | Term | New Synonym | Predicate |
 ----|----|----|
-| regulatory chondrocyte (CL:0020019) | RegC | oio:hasRelatedSynonym |
-| proliferative fibrochondrocyte (CL:0020018) | ProFC | oio:hasRelatedSynonym |
-| direct pathway medium spiny neuron (CL:4023026) | dSPN | oio:hasRelatedSynonym |
-| homeostatic chondrocyte (CL:0020020) | HomC | oio:hasRelatedSynonym |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | G19 | oio:hasExactSynonym |
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | alpha retinal ganglion cell ON-s | oio:hasRelatedSynonym |
-| M0 macrophage (CL:0020017) | naive macrophage | oio:hasExactSynonym |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | alpha retinal ganglion cell OFF-s | oio:hasRelatedSynonym |
-| effector chondrocyte (CL:0020023) | EC | oio:hasRelatedSynonym |
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | G24 | oio:hasExactSynonym |
-| fibrochondrocyte (CL:4072104) | meniscus fibrochondrocyte | oio:hasNarrowSynonym |
-| M2 macrophage (CL:0000890) | alternatively activated macrophage | oio:hasExactSynonym |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | C42 | oio:hasExactSynonym |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | G5 | oio:hasExactSynonym |
-| fibrochondrocyte (CL:4072104) | fibrocartilage chondrocyte | oio:hasExactSynonym |
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | C43 | oio:hasExactSynonym |
-| M0 macrophage (CL:0020017) | resting-state macrophages | oio:hasExactSynonym |
-| M0 macrophage (CL:0020017) | non-activated macrophage | oio:hasExactSynonym |
-| fibrochondrocyte progenitor cell (CL:0020021) | FCP | oio:hasRelatedSynonym |
-| M1 macrophage (CL:0000863) | inflammatory macrophage | oio:hasExactSynonym |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | C41 | oio:hasExactSynonym |
-| osteochondral skeletal stem cell (CL:0020016) | ocSSC | oio:hasRelatedSynonym |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | alpha retinal ganglion cell ON-t | oio:hasRelatedSynonym |
-| fibrochondrocyte (CL:4072104) | FC | oio:hasRelatedSynonym |
-| direct pathway medium spiny neuron (CL:4023026) | D1-MSN | oio:hasRelatedSynonym |
-| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | alpha retinal ganglion cell OFF-t | oio:hasRelatedSynonym |
-| prehypertrophic chondrocyte (CL:0020022) | preHTC | oio:hasRelatedSynonym |
-| M2 macrophage (CL:0000890) | anti-inflammatory macrophage | oio:hasRelatedSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | demilune cell of salivary gland | oio:hasRelatedSynonym |
+| periductal fibroblast of salivary gland (CL:0020061) | immunofibroblast of salivary gland | oio:hasRelatedSynonym |
+| myoepithelial cell of salivary gland (CL:0020066) | salivary gland myoepithelial cell | oio:hasExactSynonym |
+| myoepithelial cell of salivary gland (CL:0020066) | salivary myoepithelial cell | oio:hasExactSynonym |
+| junctional epithelial cell (CL:0020062) | JE cell | oio:hasExactSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | Crescents of Giannuzzi | oio:hasRelatedSynonym |
+| tuft cell of sublingual gland (CL:0020064) | sublingual gland tuft cell | oio:hasExactSynonym |
+| tuft cell of parotid gland (CL:0020063) | brush cell of parotid gland | oio:hasRelatedSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | serous crescent cell | oio:hasRelatedSynonym |
+| periductal fibroblast of salivary gland (CL:0020061) | salivary gland fibroblast | oio:hasBroadSynonym |
+| junctional epithelial cell (CL:0020062) | gingival junctional epithelial cell | oio:hasRelatedSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | serous demilune cell | oio:hasExactSynonym |
+| myoepithelial cell of salivary gland (CL:0020066) | basket cell of salivary gland | oio:hasRelatedSynonym |
+| tuft cell of parotid gland (CL:0020063) | parotid gland tuft cell | oio:hasExactSynonym |
+| basal duct cell of salivary gland (CL:0020060) | basal ductal cell of salivary gland | oio:hasExactSynonym |
+| junctional epithelial cell (CL:0020062) | DAT cell | oio:hasNarrowSynonym |
+| tuft cell of sublingual gland (CL:0020064) | brush cell of sublingual gland | oio:hasRelatedSynonym |
+| junctional epithelial cell (CL:0020062) | cell of junctional epithelium | oio:hasExactSynonym |
 
 </details>
 
 <details>
-<summary>Text definitions added: 14</summary>
+<summary>Text definitions added: 8</summary>
 
 | Term | New Text Definition |
 ----|----|
-| alpha retinal ganglion cell ON-sustained (Mmus) (CL:0020025) | A retinal ganglion cell type that has a large soma and a wide, monostratified dendritic arbor that stratifies in the inner sublamina of the inner plexiform layer, with dendrites located just proximal to the inner ChAT band (Krieger et al., 2017). It shows a sustained increase in firing rate to ON stimuli (Krieger et al., 2017). It corresponds to the G24 functional type (Baden et al., 2016; Goetz et al., 2022), the C43 transcriptomic cluster (Tran et al., 2019), and is considered the mouse ortholog of the primate ON midget retinal ganglion cell (Hahn et al., 2023). It is molecularly defined by expression of Spp1, Smi32, Brn3b, Calbindin, and Tbr2 (Krieger et al., 2017; Tran et al., 2019). |
-| fibrochondrocyte (CL:4072104) | A chondrocyte with hybrid fibroblastic-chondrogenic characteristics found in fibrocartilage, particularly in the avascular inner zone and transitional middle zone of the meniscus. In humans, fibrochondrocytes are marked by predominant expression of type I collagen (COL1A1) and fibril-associated collagens (COL3A1, COL6A1), while retaining type II collagen (COL2A1) expression and exhibiting lower SOX9 than hyaline chondrocytes. This molecular profile underlies the synthesis of abundant type I collagen essential for fibrocartilage matrix and reflects an intermediate phenotype between fibroblast and chondrocyte. |
-| regulatory chondrocyte (CL:0020019) | A chondrocyte located mainly in the superficial zone of articular cartilage. In healthy human cartilage, regulatory chondrocytes are characterized by expression of EIF5A, PGK1, ANXA1, and TUBA1A. During osteoarthritis, a distinct subpopulation expands, marked by high expression of CHI3L1, CHI3L2, CRTAC1, and AEBP1, with enrichment for signaling pathway regulation (including Toll-like receptor, mTOR, and TGF-beta signaling) and antigen-processing gene expression, with a small proportion expressing MHC class II genes, suggesting potential immune cell-like regulatory functions during osteoarthritis progression. |
-| prehypertrophic chondrocyte (CL:0020022) | A post-proliferative chondrocyte in the prehypertrophic zone of the cartilage tissue, located between the proliferative and hypertrophic zones. This cell is characterised by increased cell volume and expression of Indian Hedgehog (Ihh), PTH1R, and Runx2/3 in both humans and mice (Hallett et al., 2021). It coordinates the PTHrP-Ihh feedback loop that regulates chondrocyte differentiation and functions as a signalling hub for communication between proliferative chondrocytes, hypertrophic chondrocytes, and periosteal osteoblasts (Hallett et al., 2021). |
-| IgD-negative class switched memory B cell (CL:4052108) | A class switched memory B cell that lacks IgD on the cell surface. |
-| homeostatic chondrocyte (CL:0020020) | A chondrocyte identified in both healthy and osteoarthritic human articular cartilage, and in intervertebral disc tissue. In healthy articular cartilage, a homeostatic chondrocyte is characterised by the expression of TXNIP, IFITM3, GDF15, and TIMP1 (Wang et al., 2021), among other extracellular matrix and regulatory molecules. This cell maintains cartilage integrity by producing key ECM components and supporting baseline tissue homeostasis. In OA cartilage, this cell is enriched for genes related to cellular homeostasis modulation, including regulation of the cell cycle, development, and RNA metabolism (Ji et al., 2018). |
-| alpha retinal ganglion cell OFF-sustained (Mmus) (CL:0020024) | A mouse retinal ganglion cell type defined by a large soma and a wide, monostratified dendritic arbor that stratifies just distal to the outer ChAT band of the inner plexiform layer (Krieger et al., 2017). It corresponds to the G5 physiological type (Baden et al., 2016; Goetz et al., 2022) and the C42 transcriptomic cluster (Tran et al., 2019), and is considered the evolutionary ortholog of the primate OFF midget RGC (Hahn et al., 2023). The cell projects a thick, fast-conducting axon to the dorsal lateral geniculate nucleus and superior colliculus. It shows a sustained increase in firing to light decrements with a slow decay time constant of roughly 250 ms and a large receptive field center with weak surround antagonism (Krieger et al., 2017). Its molecular profile includes expression of Spp1 and Neurofilament (Smi32) together with Brn3a (Pou4f1) and Brn3b (Pou4f2), absence of Brn3c (Pou4f3) and Calbindin (Calb1), and strong enrichment of Fes (Krieger et al., 2017; Tran et al., 2019). |
-| alpha retinal ganglion cell ON-transient (Mmus) (CL:0020027) | An alpha retinal ganglion cell subtype in the mouse retina that responds selectively and transiently to increases in light intensity. It possesses the large soma and expansive dendritic field characteristic of alpha RGCs (Krieger et al., 2017). This cell exhibits a brief, fast-decaying burst of firing at the onset of light increments and contributes to motion detection for luminance increases, forming the ON-branch of the transient magnocellular-like pathway (Krieger et al., 2017; Hahn et al., 2023). Functionally, it corresponds to cluster G19 and aligns transcriptomically with cluster C41 (Krieger et al., 2017; Tran et al., 2019). It is orthologous to the primate ON Parasol RGC (Hahn et al., 2023). Molecularly, it expresses Spp1, Smi32, and Brn3b, but lacks Brn3a, Brn3c, and Calbindin (Krieger et al., 2017). |
-| proliferative fibrochondrocyte (CL:0020018) | A fibrochondrocyte located in fibrocartilage that exhibits active proliferation capacity and is in S phase of the cell cycle. It functions as a progenitor cell positioned at the root of developmental trajectories alongside fibrochondrocyte progenitors (FCP), with the capacity to diverge toward one of two developmental fates: (1) fibrochondrocytes and prehypertrophic chondrocytes, or (2) regulatory chondrocytes and prehypertrophic chondrocytes. It is characterised by co-expression of COL1A1, the growth factors FGF7 and CTGF, and the cell-cycle genes STMN1, KIAA0101, and MCM3 in humans. During early progenitor differentiation, FGF7 and COL1A1 expression increases and then declines as the cell commits to terminal fates. |
-| effector chondrocyte (CL:0020023) | A metabolically highly active chondrocyte that is identified in the cartilaginous tissues, including articular cartilage and intervertebral disc cartilage. In the human articular cartilage, this cell is marked by genes such as CYTL1, FRZB, CLEC3A, and S100B (Ji et al., 2018; Raut et al.,2025). This cell demonstrates strong metabolic activity and is implicated in extracellular matrix regulation and adaptive responses (Ji et al., 2018; Gan et al., 2021; Raut et al.,2025). |
-| fibrochondrocyte progenitor cell (CL:0020021) | A mesenchymal progenitor cell located in fibrocartilaginous tissues, along the fibrochondrocytic differentiation pathway that co-expresses both fibrochondrocyte markers (COL1A1, COL3A1) and mesenchymal stem cell markers (MCAM/CD146, MYLK) in humans. This cell serves as a progenitor for mature fibrochondrocytes and other meniscal cell types, with differentiation regulated by TGF-β signaling, focal adhesion, and extracellular matrix-receptor interaction pathways. |
-| alpha retinal ganglion cell OFF-transient (Mmus) (CL:0020026) | An alpha retinal ganglion cell subtype found in the mouse retina that responds selectively and transiently to decreases in light intensity. It is characterized by a large soma, a broad dendritic arbor that stratifies within sublamina a of the inner plexiform layer, and rapid OFF-transient firing kinetics that decay even during sustained stimulation (Krieger et al., 2017). Functionally, it corresponds to G8 in the Baden functional classification (Baden et al., 2016; Goetz et al., 2022) and C45 in the Tran transcriptomic atlas (Tran et al., 2019), and it is considered the evolutionary ortholog of the primate OFF Parasol RGC (Hahn et al., 2023). This cell type acts as a detector of rapidly approaching dark objects and contributes to innate defensive responses by encoding looming stimuli (Münch et al., 2009). It exhibits a distinctive molecular signature by its expression of Brn3c (Krieger et al., 2017). |
-| osteochondral skeletal stem cell (CL:0020016) | A tissue-specific stem cell with long-term self-renewal capacity that is restricted to generating bone, cartilage, and stromal cell lineages. This cell is primarily located in the growth plate (resting zone), periosteum, and subchondral bone regions, and is marked by high clonogenicity and robust multipotent differentiation potential in both osteogenic and chondrogenic lineages. Distinctively, ocSSC lacks adipogenic capacity, distinguishing it from other mesenchymal stem cell populations. |
-| M0 macrophage (CL:0020017) | A macrophage that has not yet undergone polarization into a specific macrophage subtype. These cells are non-activated and have the potential to differentiate into inflammatory (M1) or alternatively activated (M2) macrophage subtypes in response to appropriate stimuli. |
+| tuft cell of parotid gland (CL:0020063) | A tuft cell that is part of the epithelium of the parotid gland, localized to the striated ducts and never observed in acini. This cell is characterized by expression of POU2F3 and is expected to possess chemosensory function consistent with tuft cells in other tissues. Immunohistochemical analysis of normal human parotid gland tissue detected POU2F3-positive cells as a very rare population within the ductal compartment, positioned on the luminal side (Hoki et al., 2024). |
+| tuft cell of sublingual gland (CL:0020064) | A tuft cell that is part of the epithelium of the sublingual gland, localized to the ductal compartment. This cell is characterized by expression of POU2F3, consistent with tuft cell identity. Immunohistochemical analysis detected POU2F3-positive cells in normal human sublingual gland tissue (Hoki et al., 2024). |
+| ionocyte of salivary gland (CL:0020065) | An ionocyte that is part of a salivary gland, localized to the ductal compartment on the luminal side. This specialized epithelial cell is characterized by expression of FOXI1 and is involved in regulating and maintaining osmotic pressure within the glandular environment (Dong et al., 2024). In normal human salivary glands, FOXI1-positive cells constitute less than 5% of ductal epithelial cells and are found exclusively in ducts, never in acini, across all major gland types including parotid, submandibular, sublingual, and minor salivary glands (Hoki et al., 2024). Like ionocytes in other tissues, this cell is expected to express high levels of CFTR and possess abundant mitochondria and ion transporters. |
+| myoepithelial cell of salivary gland (CL:0020066) | A myoepithelial cell that is part of a salivary gland, positioned between the basal lamina and the secretory or ductal epithelial cells surrounding acini and intercalated ducts. This cell adopts a stellate morphology with four to eight cellular processes around acini and an elongated form parallel to the ductal axis around intercalated ducts (Amano et al., 2012). It expresses alpha-smooth muscle actin (ACTA2/alpha-SMA) as a primary marker, along with p63 and aquaporin 1 (AQP1), and contracts rhythmically in response to neural stimulation to facilitate saliva expulsion from secretory acini into the ductal system (Amano et al., 2012). This cell also produces FGF7, which activates FGFR2b-dependent transcriptional programs essential for seromucous acinar cell differentiation (Aure et al., 2023). In mice, myoepithelial cells express SOX2 and possess regenerative capacity, contributing to acinar cell restoration during tissue repair after severe injury. |
+| junctional epithelial cell (CL:0020062) | An epithelial cell that is part of the junctional epithelium of the gingiva, forming a collar-like band around the cervix of the tooth. This cell attaches to the tooth surface via hemidesmosomes and an internal basal lamina rich in laminin-332 and ODAM (Gavriiloglou et al., 2024). The junctional epithelium is a stratified squamous non-keratinized epithelium ranging from 15-30 cell layers coronally to 1-3 cell layers apically. This cell expresses cytokeratin 19 (CK19) as a specific marker, along with ODAM and FDC-SP, and participates in innate immune defense by producing IL-8, IL-1alpha, and MMP-7, facilitating the transmigration of polymorphonuclear leukocytes through the epithelium (Gavriiloglou et al., 2024). This cell has a high turnover rate, with complete renewal occurring every 4-6 days (Lin et al., 2025), and develops from the reduced enamel epithelium during tooth eruption, although it can regenerate de novo without this precursor. |
+| basal duct cell of salivary gland (CL:0020060) | A basal cell that is part of the duct of a salivary gland, characterized by an undifferentiated phenotype, expression of KRT5, and a position surrounding the striated ductal epithelium. This cell is presumed to function as a salivary gland stem/progenitor cell capable of regenerating ductal and potentially acinar cell populations (Yura and Hamada, 2023). In mice, Lgr5-expressing cells within this compartment demonstrate tripotent capacity, able to generate acinar, ductal, and myoepithelial cell lineages. |
+| serous demilune cell of salivary gland (CL:0020059) | A serous secreting cell that is part of a salivary gland, forming crescent-shaped (demilune) caps at the distal ends of mucous acini in mixed glands. Prominent in human submandibular and sublingual glands, this cell delivers its watery, enzyme-rich secretions including alpha-amylase through intercellular canaliculi that run between adjacent mucous cells to reach the acinar lumen (Amano et al., 2012). In rodents, these cells also express neuronal nitric oxide synthase (nNOS). |
+| periductal fibroblast of salivary gland (CL:0020061) | A fibroblast that is part of the stroma of a salivary gland, positioned in the periductal connective tissue surrounding the ductal system. This cell maintains the extracellular matrix framework around salivary gland ducts and participates in immunomodulatory signaling. In the context of Sjögren's syndrome, periductal fibroblasts respond to IL-13 stimulation by upregulating VCAM-1, PDPN, and ICAM-1, contributing to the formation of tertiary lymphoid structures (Nayar et al., 2019). |
 
 </details>
 
 <details>
-<summary>Relationships removed: 5</summary>
+<summary>Relationships removed: 1</summary>
 
 | Subject| Predicate| Object|
 ----|----|----|
-| IgD-negative CD38-positive IgG memory B cell (CL:0002107) | subClassOf (rdfs:subClassOf) |                IgD-negative memory B cell (CL:0001053) |
-| IgA memory B cell (CL:0000973) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
-| IgE memory B cell (CL:0000948) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
-| CD38-negative IgG memory B cell (CL:0002108) | subClassOf (rdfs:subClassOf) |                IgD-negative memory B cell (CL:0001053) |
-| IgG-negative class switched memory B cell (CL:0002117) | subClassOf (rdfs:subClassOf) |                class switched memory B cell (CL:0000972) |
-
-</details>
-
-<details>
-<summary>Nodes removed from subset: 6</summary>
-
-| Term | Subset |
-----|----|
-| obsolete CNS interneuron (CL:0000402) | cellxgene_subset |
-| obsolete neuronal brush cell (CL:0000555) | cellxgene_subset |
-| obsolete mucous neck cell (CL:0000651) | cellxgene_subset |
-| obsolete absorptive cell (CL:0000212) | cellxgene_subset |
-| obsolete non-terminally differentiated cell (CL:0000055) | cellxgene_subset |
-| obsolete epithelial cell of alveolus of lung (CL:0010003) | cellxgene_subset |
-
-</details>
-
-<details>
-<summary>Text definitions changed: 4</summary>
-
-| Term | Old Text Definition | New Text Definition |
-----|----|----|
-| hypertrophic chondrocyte (CL:0000743) | Chondrocyte that is terminally differentiated, produces type X collagen, is large in size, and often associated with the replacement of cartilage by bone (endochondral ossification). |                  A chondrocyte that is part of the hypertrophic cartilage zone. This cell is significantly enlarged and characterised by high expression of type X collagen (COL10A1) in both humans and mice. It actively coordinates endochondral ossification by mineralising the extracellular matrix, attracting blood vessels via angiogenic signalling, and mediating the transition from cartilage to bone - often by transdifferentiating into an osteoblast rather than undergoing apoptosis. |
-| indirect pathway medium spiny neuron (CL:4023029) | A medium spiny neuron that expresses dopamine type 2 receptors and projects to the external globus pallidus. |                  A GABAergic medium spiny neuron located in the striatum that gives rise to the indirect basal ganglia pathway. It projects to the GPe, where its axon typically ramifies in two regions but does not extend beyond this nucleus (Gerfen et al., 2022). It selectively expresses the D2 dopamine receptor (DRD2), which couples to inhibitory G-proteins (Gi/o) to decrease cAMP and suppress PKA-mediated signaling (Gerfen et al., 2022). Morphologically, this cell displays fewer and shorter dendrites than the MSN-D1 and receives fewer glutamatergic inputs, yet it exhibits significantly higher intrinsic excitability (Gertler et al., 2022). Functionally, activation of this cell suppresses competing or alternative motor actions by inhibiting GPe neurons, leading through STN and other GPe circuits to increased GPi/SNr output and stronger inhibition of thalamic and brainstem targets (Mink, 1996; Tecuapetla et al., 2016). |
-| chondrocyte (CL:0000138) | Skeletogenic cell that is terminally differentiated, secretes an avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell. |                  A skeletogenic cell that secretes a specialized, avascular, GAG-rich matrix, is embedded in cartilage tissue matrix, retains the ability to divide, and develops from a chondroblast cell. |
-| direct pathway medium spiny neuron (CL:4023026) | A medium spiny neuron that expresses dopamine type 1 receptors and projects to the globus pallidus internus or the substantia nigra pars reticulata. |                  A GABAergic medium spiny neuron located in the striatum that gives rise to the direct basal ganglia pathway. It projects directly to the GPi and SNr, where it inhibits tonically active GABAergic output neurons to disinhibit thalamic and brainstem motor targets (Gerfen. 2023). In mice and humans, this cell selectively expresses the D1 dopamine receptor (DRD1), which couples to stimulatory G-proteins (Gs/Gαolf) to increase cAMP and activate PKA-dependent signaling cascades (Gerfen et al., 1990; Kebabian & Calne, 1979). Functionally, activation of this cell promotes selected motor actions by disinhibiting thalamic and midbrain motor centers (Mink, 1996; Cui et al., 2013). |
-
-</details>
-
-<details>
-<summary>Synonyms removed: 4</summary>
-
-| Term | Removed Synonym |
-----|----|
-| direct pathway medium spiny neuron (CL:4023026) | D1-MSN |
-| M2 macrophage (CL:0000890) | M2 macrophage |
-| direct pathway medium spiny neuron (CL:4023026) | dSPN |
-| M1 macrophage (CL:0000863) | M1 macrophage |
-
-</details>
-
-<details>
-<summary>Nodes renamed: 2</summary>
-
-| ID | Old Label | New Label |
-----|----|----|
-| CL:0000863 | inflammatory macrophage | M1 macrophage |
-| CL:0000890 | alternatively activated macrophage | M2 macrophage |
+| serous acinar cell of salivary gland (CL:4052065) | subClassOf (rdfs:subClassOf) |                serous secreting cell (CL:0000313) |
 
 </details>
 
@@ -326,7 +129,7 @@
 ## CL Links to External Ontologies
 
 <details>
-<summary>UBERON → CL (count: 1388)</summary>
+<summary>UBERON → CL (count: 1391)</summary>
 
 | UBERON ID      | UBERON label                                                     | relation                                       | CL ID      | CL label                                                                                  |
 |:---------------|:-----------------------------------------------------------------|:-----------------------------------------------|:-----------|:------------------------------------------------------------------------------------------|
@@ -1646,6 +1449,9 @@
 | UBERON:1000010 | mole                                                             | has developmental contribution from            | CL:0007004 | premigratory neural crest cell                                                            |
 | UBERON:1000010 | mole                                                             | has part                                       | CL:0000148 | melanocyte                                                                                |
 | UBERON:1000010 | mole                                                             | has_part                                       | CL:0000148 | melanocyte                                                                                |
+| UBERON:1200002 | carotid artery intima-media region                               | has developmental contribution from            | CL:0000034 | stem cell                                                                                 |
+| UBERON:1200002 | carotid artery intima-media region                               | has developmental contribution from            | CL:0000222 | mesodermal cell                                                                           |
+| UBERON:1200002 | carotid artery intima-media region                               | has developmental contribution from            | CL:0000514 | smooth muscle myoblast                                                                    |
 | UBERON:2001248 | dorsal scute series                                              | has developmental contribution from            | CL:0007001 | skeletogenic cell                                                                         |
 | UBERON:2001254 | abdominal scute series                                           | has developmental contribution from            | CL:0007001 | skeletogenic cell                                                                         |
 | UBERON:2001709 | infraorbital series                                              | has developmental contribution from            | CL:0007001 | skeletogenic cell                                                                         |
@@ -1722,7 +1528,7 @@
 </details>
 
 <details>
-<summary>GO → CL (count: 2099)</summary>
+<summary>GO → CL (count: 2093)</summary>
 
 | GO ID      | GO label                                                                                                                 | relation                                  | CL ID      | CL label                                                     |
 |:-----------|:-------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|:-----------|:-------------------------------------------------------------|
@@ -2838,7 +2644,6 @@
 | GO:0048934 | peripheral nervous system neuron differentiation                                                                         | results in acquisition of features of     | CL:2000032 | peripheral nervous system neuron                             |
 | GO:0048935 | peripheral nervous system neuron development                                                                             | results in development of                 | CL:2000032 | peripheral nervous system neuron                             |
 | GO:0048937 | lateral line nerve glial cell development                                                                                | results in development of                 | CL:1000050 | lateral line nerve glial cell                                |
-| GO:0048938 | lateral line nerve glial cell morphogenesis involved in differentiation                                                  | results in morphogenesis of               | CL:1000050 | lateral line nerve glial cell                                |
 | GO:0048939 | anterior lateral line nerve glial cell development                                                                       | results in development of                 | CL:1000239 | anterior lateral line nerve glial cell                       |
 | GO:0048941 | posterior lateral line nerve glial cell development                                                                      | results in development of                 | CL:1000236 | posterior lateral line nerve glial cell                      |
 | GO:0050673 | epithelial cell proliferation                                                                                            | acts on population of                     | CL:0000066 | epithelial cell                                              |
@@ -2858,6 +2663,7 @@
 | GO:0051168 | nuclear export                                                                                                           | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0051170 | import into nucleus                                                                                                      | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0051170 | import into nucleus                                                                                                      | has target start location                 | CL:0000000 | cell                                                         |
+| GO:0051204 | protein insertion into mitochondrial membrane                                                                            | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0051209 | release of sequestered calcium ion into cytosol                                                                          | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0051305 | chromosome movement towards spindle pole                                                                                 | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0051402 | neuron apoptotic process                                                                                                 | occurs in                                 | CL:0000540 | neuron                                                       |
@@ -2882,8 +2688,6 @@
 | GO:0055057 | neuroblast division                                                                                                      | has primary input                         | CL:0000031 | neuroblast (sensu Vertebrata)                                |
 | GO:0055107 | Golgi to secretory granule transport                                                                                     | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0055107 | Golgi to secretory granule transport                                                                                     | has target start location                 | CL:0000000 | cell                                                         |
-| GO:0055108 | Golgi to transport vesicle transport                                                                                     | has target end location                   | CL:0000000 | cell                                                         |
-| GO:0055108 | Golgi to transport vesicle transport                                                                                     | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0055120 | striated muscle dense body                                                                                               | develops from                             | CL:0000056 | myoblast                                                     |
 | GO:0055120 | striated muscle dense body                                                                                               | develops_from                             | CL:0000056 | myoblast                                                     |
 | GO:0060008 | Sertoli cell differentiation                                                                                             | results in acquisition of features of     | CL:0000216 | Sertoli cell                                                 |
@@ -2958,7 +2762,6 @@
 | GO:0060708 | spongiotrophoblast differentiation                                                                                       | results in acquisition of features of     | CL:0002499 | spongiotrophoblast cell                                      |
 | GO:0060718 | chorionic trophoblast cell differentiation                                                                               | results in acquisition of features of     | CL:0011101 | chorionic trophoblast cell                                   |
 | GO:0060719 | chorionic trophoblast cell development                                                                                   | results in development of                 | CL:0011101 | chorionic trophoblast cell                                   |
-| GO:0060830 | ciliary receptor clustering involved in smoothened signaling pathway                                                     | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0060836 | lymphatic endothelial cell differentiation                                                                               | results in acquisition of features of     | CL:0002138 | endothelial cell of lymphatic vessel                         |
 | GO:0060837 | blood vessel endothelial cell differentiation                                                                            | results in acquisition of features of     | CL:0000071 | blood vessel endothelial cell                                |
 | GO:0060839 | endothelial cell fate commitment                                                                                         | results in commitment to                  | CL:0000115 | endothelial cell                                             |
@@ -3138,11 +2941,11 @@
 | GO:0072538 | T-helper 17 type immune response                                                                                         | has participant                           | CL:0000899 | T-helper 17 cell                                             |
 | GO:0072539 | T-helper 17 cell differentiation                                                                                         | results in acquisition of features of     | CL:0000899 | T-helper 17 cell                                             |
 | GO:0072560 | type B pancreatic cell maturation                                                                                        | results in maturation of                  | CL:0000169 | type B pancreatic cell                                       |
+| GO:0072574 | hepatocyte proliferation                                                                                                 | acts on population of                     | CL:0000182 | hepatocyte                                                   |
 | GO:0072577 | endothelial cell apoptotic process                                                                                       | occurs in                                 | CL:0000115 | endothelial cell                                             |
 | GO:0072596 | establishment of protein localization to chloroplast                                                                     | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072598 | protein localization to chloroplast                                                                                      | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072599 | establishment of protein localization to endoplasmic reticulum                                                           | has target end location                   | CL:0000000 | cell                                                         |
-| GO:0072655 | establishment of protein localization to mitochondrion                                                                   | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072659 | protein localization to plasma membrane                                                                                  | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0072662 | protein localization to peroxisome                                                                                       | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072663 | establishment of protein localization to peroxisome                                                                      | has target end location                   | CL:0000000 | cell                                                         |
@@ -3185,15 +2988,12 @@
 | GO:0086052 | membrane repolarization during SA node cell action potential                                                             | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
 | GO:0086056 | voltage-gated calcium channel activity involved in AV node cell action potential                                         | occurs in                                 | CL:1000410 | myocyte of atrioventricular node                             |
 | GO:0086057 | voltage-gated calcium channel activity involved in bundle of His cell action potential                                   | occurs in                                 | CL:0010005 | atrioventricular bundle cell                                 |
-| GO:0086058 | voltage-gated calcium channel activity involved in Purkinje myocyte cell action potential                                | occurs in                                 | CL:0002068 | Purkinje myocyte                                             |
 | GO:0086059 | voltage-gated calcium channel activity involved SA node cell action potential                                            | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
 | GO:0086060 | voltage-gated sodium channel activity involved in AV node cell action potential                                          | occurs in                                 | CL:1000410 | myocyte of atrioventricular node                             |
 | GO:0086061 | voltage-gated sodium channel activity involved in bundle of His cell action potential                                    | occurs in                                 | CL:0010005 | atrioventricular bundle cell                                 |
 | GO:0086062 | voltage-gated sodium channel activity involved in Purkinje myocyte action potential                                      | occurs in                                 | CL:0002068 | Purkinje myocyte                                             |
 | GO:0086063 | voltage-gated sodium channel activity involved in SA node cell action potential                                          | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
-| GO:0086086 | voltage-gated potassium channel activity involved in AV node cell action potential repolarization                        | occurs in                                 | CL:1000410 | myocyte of atrioventricular node                             |
 | GO:0086087 | voltage-gated potassium channel activity involved in bundle of His cell action potential repolarization                  | occurs in                                 | CL:0010005 | atrioventricular bundle cell                                 |
-| GO:0086088 | voltage-gated potassium channel activity involved in Purkinje myocyte action potential repolarization                    | occurs in                                 | CL:0002068 | Purkinje myocyte                                             |
 | GO:0086089 | voltage-gated potassium channel activity involved in atrial cardiac muscle cell action potential repolarization          | occurs in                                 | CL:0002129 | regular atrial cardiac myocyte                               |
 | GO:0086090 | voltage-gated potassium channel activity involved in SA node cell action potential repolarization                        | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
 | GO:0089703 | L-aspartate transmembrane export from vacuole                                                                            | has target end location                   | CL:0000000 | cell                                                         |
@@ -3404,7 +3204,6 @@
 | GO:0098723 | skeletal muscle myofibril                                                                                                | part_of                                   | CL:0008002 | skeletal muscle fiber                                        |
 | GO:0098726 | symmetric division of skeletal muscle satellite stem cell                                                                | has primary input                         | CL:0008011 | skeletal muscle satellite stem cell                          |
 | GO:0098730 | male germline stem cell symmetric division                                                                               | has primary input                         | CL:0000016 | male germ line stem cell                                     |
-| GO:0098731 | skeletal muscle satellite stem cell maintenance involved in skeletal muscle regeneration                                 | acts on population of                     | CL:0008011 | skeletal muscle satellite stem cell                          |
 | GO:0098749 | cerebellar neuron development                                                                                            | results in development of                 | CL:1001611 | cerebellar neuron                                            |
 | GO:0098751 | bone cell development                                                                                                    | results in development of                 | CL:0001035 | bone cell                                                    |
 | GO:0098788 | dendritic knob                                                                                                           | part of                                   | CL:0000847 | ciliated olfactory receptor neuron                           |
@@ -3468,19 +3267,13 @@
 | GO:0099504 | synaptic vesicle cycle                                                                                                   | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099507 | ligand-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential                    | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099508 | voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential                   | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:0099510 | calcium ion binding involved in regulation of cytosolic calcium ion concentration                                        | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0099511 | voltage-gated calcium channel activity involved in regulation of cytosolic calcium levels                                | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0099519 | dense core granule cytoskeletal transport                                                                                | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:0099520 | monoatomic ion antiporter activity involved in regulation of presynaptic membrane potential                              | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:0099521 | ATPase coupled ion transmembrane transporter activity involved in regulation of presynaptic membrane potential           | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099530 | G protein-coupled receptor activity involved in regulation of postsynaptic membrane potential                            | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099531 | presynaptic process involved in chemical synaptic transmission                                                           | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099533 | positive regulation of presynaptic cytosolic calcium concentration                                                       | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099534 | calcium ion binding involved in regulation of presynaptic cytosolic calcium ion concentration                            | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099565 | chemical synaptic transmission, postsynaptic                                                                             | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099580 | monoatomic ion antiporter activity involved in regulation of postsynaptic membrane potential                             | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099581 | ATPase coupled ion transmembrane transporter activity involved in regulation of postsynaptic membrane potential          | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099582 | neurotransmitter receptor activity involved in regulation of presynaptic cytosolic calcium ion concentration             | occurs in                                 | CL:0000540 | neuron                                                       |
+| GO:0099567 | calcium ion binding involved in regulation of postsynaptic cytosolic calcium ion concentration                           | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0099585 | release of sequestered calcium ion into presynaptic cytosol                                                              | has target end location                   | CL:0000540 | neuron                                                       |
 | GO:0099585 | release of sequestered calcium ion into presynaptic cytosol                                                              | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099588 | positive regulation of postsynaptic cytosolic calcium concentration                                                      | occurs in                                 | CL:0000000 | cell                                                         |
@@ -3619,7 +3412,6 @@
 | GO:0140917 | zinc ion import into mitochondrion                                                                                       | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0141013 | purine nucleotide import into lysosome                                                                                   | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0141013 | purine nucleotide import into lysosome                                                                                   | has target start location                 | CL:0000000 | cell                                                         |
-| GO:0150047 | G protein-coupled neurotransmitter receptor activity involved in regulation of presynaptic membrane potential            | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0150048 | cerebellar granule cell to Purkinje cell synapse                                                                         | overlaps                                  | CL:0000121 | Purkinje cell                                                |
 | GO:0150048 | cerebellar granule cell to Purkinje cell synapse                                                                         | overlaps                                  | CL:0001031 | cerebellar granule cell                                      |
 | GO:0150053 | cerebellar climbing fiber to Purkinje cell synapse                                                                       | overlaps                                  | CL:0000121 | Purkinje cell                                                |
@@ -3690,7 +3482,6 @@
 | GO:1903513 | endoplasmic reticulum to cytosol transport                                                                               | has target start location                 | CL:0000000 | cell                                                         |
 | GO:1903540 | establishment of protein localization to postsynaptic membrane                                                           | has target end location                   | CL:0000000 | cell                                                         |
 | GO:1903546 | protein localization to photoreceptor outer segment                                                                      | has target end location                   | CL:0000210 | photoreceptor cell                                           |
-| GO:1903563 | microtubule bundle formation involved in horsetail-astral microtubule organization                                       | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:1903608 | protein localization to cytoplasmic stress granule                                                                       | has target end location                   | CL:0000000 | cell                                                         |
 | GO:1903621 | protein localization to photoreceptor connecting cilium                                                                  | has target end location                   | CL:0000210 | photoreceptor cell                                           |
 | GO:1903680 | acinar cell of sebaceous gland differentiation                                                                           | results in acquisition of features of     | CL:0002140 | skin sebocyte                                                |
@@ -3727,8 +3518,6 @@
 | GO:1904977 | lymphatic endothelial cell migration                                                                                     | results in movement of                    | CL:0002138 | endothelial cell of lymphatic vessel                         |
 | GO:1905011 | transmembrane phosphate ion transport from cytosol to vacuole                                                            | has target end location                   | CL:0000000 | cell                                                         |
 | GO:1905011 | transmembrane phosphate ion transport from cytosol to vacuole                                                            | has target start location                 | CL:0000000 | cell                                                         |
-| GO:1905054 | calcium-induced calcium release activity involved in regulation of presynaptic cytosolic calcium ion concentration       | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:1905055 | calcium:monoatomic cation antiporter activity involved in regulation of presynaptic cytosolic calcium ion concentration  | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:1905056 | P-type calcium transporter activity involved in regulation of presynaptic cytosolic calcium ion concentration            | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:1905059 | P-type calcium transporter activity involved in regulation of postsynaptic cytosolic calcium ion concentration           | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:1905060 | calcium:monoatomic cation antiporter activity involved in regulation of postsynaptic cytosolic calcium ion concentration | occurs in                                 | CL:0000000 | cell                                                         |
@@ -3746,8 +3535,6 @@
 | GO:1905517 | macrophage migration                                                                                                     | results in movement of                    | CL:0000235 | macrophage                                                   |
 | GO:1905584 | outer hair cell apoptotic process                                                                                        | occurs in                                 | CL:0000601 | cochlear outer hair cell                                     |
 | GO:1905719 | protein localization to perinuclear region of cytoplasm                                                                  | has target end location                   | CL:0000000 | cell                                                         |
-| GO:1905741 | calcium export from the mitochondrion involved in positive regulation of presynaptic cytosolic calcium concentration     | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:1905743 | calcium import into the mitochondrion involved in negative regulation of presynaptic cytosolic calcium concentration     | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:1905962 | glutamatergic neuron differentiation                                                                                     | results in acquisition of features of     | CL:0000679 | glutamatergic neuron                                         |
 | GO:1990008 | neurosecretory vesicle                                                                                                   | develops from                             | CL:0000133 | neurectodermal cell                                          |
 | GO:1990008 | neurosecretory vesicle                                                                                                   | develops_from                             | CL:0000133 | neurectodermal cell                                          |
@@ -3825,6 +3612,19 @@
 | GO:1990953 | intramanchette transport                                                                                                 | occurs in                                 | CL:0000018 | spermatid                                                    |
 | GO:1990959 | eosinophil homeostasis                                                                                                   | acts on population of                     | CL:0000771 | eosinophil                                                   |
 | GO:1990960 | basophil homeostasis                                                                                                     | acts on population of                     | CL:0000767 | basophil                                                     |
+| GO:7770014 | spermatid mitochondrial nucleoid elimination                                                                             | occurs in                                 | CL:0000019 | sperm                                                        |
+| GO:7770020 | intestinal enterochromaffin enteroendocrine cell differentiation                                                         | results in acquisition of features of     | CL:0000577 | type EC enteroendocrine cell                                 |
+| GO:7770021 | intestinal type G enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0000508 | type G enteroendocrine cell                                  |
+| GO:7770022 | intestinal type I enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0002277 | type I enteroendocrine cell                                  |
+| GO:7770023 | intestinal type L enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0002279 | type L enteroendocrine cell                                  |
+| GO:7770024 | intestinal type N enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0002280 | type N enteroendocrine cell                                  |
+| GO:7770025 | intestinal type D enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0000502 | type D enteroendocrine cell                                  |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops from                             | CL:0000031 | neuroblast (sensu Vertebrata)                                |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops from                             | CL:0002672 | retinal progenitor cell                                      |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops_from                             | CL:0000031 | neuroblast (sensu Vertebrata)                                |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops_from                             | CL:0002672 | retinal progenitor cell                                      |
+| GO:7770037 | glial scar formation                                                                                                     | has participant                           | CL:0000127 | astrocyte                                                    |
+| GO:7770037 | glial scar formation                                                                                                     | has participant                           | CL:0002453 | oligodendrocyte precursor cell                               |
 
 </details>
 

@@ -185,8 +185,14 @@ obocheck: $(SRC) | all_robot_plugins
 test_obsolete: $(ONT).obo
 	! grep "! obsolete" $<
 
+# Crude and (hopefully) temporary fix for
+# <https://github.com/obophenotype/cell-ontology/issues/3588>.
+no_relabeling_imported_ap: $(SRC)
+	! grep "^AnnotationAssertion(rdfs:label oboInOwl:has" $<
+
 test: obocheck \
-      test_obsolete
+      test_obsolete \
+      no_relabeling_imported_ap
 
 
 # ----------------------------------------
