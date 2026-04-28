@@ -4,8 +4,7 @@
 # and runs Claude Code to respond.
 #
 # Required secrets:
-# - AI4C_AGENT_APP_ID
-# - AI4C_AGENT_PRIVATE_KEY
+# - PAT_FOR_PR
 # - CLAUDE_CODE_OAUTH_TOKEN
 #
 # Configuration:
@@ -56,24 +55,17 @@ jobs:
     outputs:
       result: ${{ steps.check.outputs.result }}
     steps:
-      - name: Generate ai4c-agent token
-        id: app-token
-        uses: actions/create-github-app-token@v3
-        with:
-          app-id: ${{ secrets.AI4C_AGENT_APP_ID }}
-          private-key: ${{ secrets.AI4C_AGENT_PRIVATE_KEY }}
-
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
-          token: ${{ steps.app-token.outputs.token }}
+          token: ${{ secrets.PAT_FOR_PR }}
 
       - name: Check for qualifying mention
         id: check
         uses: actions/github-script@v8
         with:
-          github-token: ${{ steps.app-token.outputs.token }}
+          github-token: ${{ secrets.PAT_FOR_PR }}
           script: |
             const fs = require("fs");
 
@@ -250,22 +242,14 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-      id-token: write
     runs-on: ubuntu-latest
     container: ${{ fromJSON(needs.check-mention.outputs.result).useOdkContainer && 'obolibrary/odkfull:v1.6' || null }}
     steps:
-      - name: Generate ai4c-agent token
-        id: app-token
-        uses: actions/create-github-app-token@v3
-        with:
-          app-id: ${{ secrets.AI4C_AGENT_APP_ID }}
-          private-key: ${{ secrets.AI4C_AGENT_PRIVATE_KEY }}
-
       - name: Checkout repository
         uses: actions/checkout@v6
         with:
           fetch-depth: 1
-          token: ${{ steps.app-token.outputs.token }}
+          token: ${{ secrets.PAT_FOR_PR }}
 
       - name: Configure Git
         run: |
@@ -294,13 +278,13 @@ jobs:
           echo "${{ github.workspace }}/.venv/bin" >> "$GITHUB_PATH"
 
       - name: Export GitHub token for gh CLI
-        run: echo "GH_TOKEN=${{ steps.app-token.outputs.token }}" >> "$GITHUB_ENV"
+        run: echo "GH_TOKEN=${{ secrets.PAT_FOR_PR }}" >> "$GITHUB_ENV"
 
       - name: Run Claude Code
         uses: anthropics/claude-code-action@v1
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
-          github_token: ${{ steps.app-token.outputs.token }}
+          github_token: ${{ secrets.PAT_FOR_PR }}
           allowed_bots: "claude,github-actions"
           show_full_output: true
           claude_args: |
