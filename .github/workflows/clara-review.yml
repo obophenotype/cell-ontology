@@ -99,7 +99,19 @@ jobs:
           name: clara-changes-pr-${{ steps.pr.outputs.num }}
           path: changes.json
 
-      - name: Build stage 1 summary comment
+      - name: Select CLARA routing targets
+        run: |
+          python src/scripts/clara_select_targets.py \
+            --input changes.json \
+            --output routing.json
+
+      - name: Upload routing.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clara-routing-pr-${{ steps.pr.outputs.num }}
+          path: routing.json
+
+      - name: Build stage 1 and routing summary comment
         env:
           PR_NUMBER: ${{ steps.pr.outputs.num }}
         run: |
@@ -109,13 +121,16 @@ jobs:
 
           with open("changes.json", encoding="utf-8") as handle:
               data = json.load(handle)
+          with open("routing.json", encoding="utf-8") as handle:
+              routing = json.load(handle)
 
           reviewable = data["reviewable"]
           by_term = data["by_term"]
+          route_counts = routing["summary"]["route_counts"]
           lines = [
               f"### CLARA review for PR #{os.environ['PR_NUMBER']}",
               "",
-              "_Stage 1 only: change extraction and routing preview. Atomic assertion validation is not wired up yet._",
+              "_Phase 1/2 preview only: stage-1 extraction and ticket-specific routing. Atomic assertion validation is not wired up yet._",
               "",
               f"- Base SHA: `{data['left']['ref']}`",
               f"- Head SHA: `{data['right']['ref']}`",
@@ -123,6 +138,10 @@ jobs:
               f"- Total extracted changes: `{len(data['changes'])}`",
               f"- Reviewable changes: `{len(reviewable)}`",
               f"- Decomposable changes: `{len(data['decomposable'])}`",
+              f"- Routed validation targets: `{routing['summary']['selected_targets']}`",
+              f"- Routed NTR bundles: `{route_counts['ntr']}`",
+              f"- Routed relationship targets: `{route_counts['relationship']}`",
+              f"- Routed synonym targets with refs: `{route_counts['synonym']}`",
               "",
               "#### Terms flagged for downstream CLARA routing",
           ]
@@ -145,6 +164,18 @@ jobs:
                       f"- `{term_id}` — {entry['term_label']}{tag_text}: "
                       f"{len(entry['changes'])} extracted change(s)"
                   )
+
+          if routing["summary"]["ignored_changes"]:
+              ignored_counts = routing["summary"]["ignored_reason_counts"]
+              lines.extend(
+                  [
+                      "",
+                      "#### Currently ignored by routing",
+                      "",
+                      f"- Existing-term text changes not yet routed: `{ignored_counts.get('existing_term_text_not_yet_routed', 0)}`",
+                      f"- Synonym changes without refs: `{ignored_counts.get('synonym_without_refs', 0)}`",
+                  ]
+              )
 
           print("\n".join(lines))
           PY
