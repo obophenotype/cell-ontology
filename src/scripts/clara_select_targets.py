@@ -46,10 +46,15 @@ def _stable_unique(values: list[str]) -> list[str]:
     return ordered
 
 
+def _is_searchable_ref(value: str) -> bool:
+    upper = value.upper()
+    return upper.startswith("PMID:") or upper.startswith("DOI:")
+
+
 def _refs_for_changes(changes: list[dict]) -> list[str]:
     refs: list[str] = []
     for change in changes:
-        refs.extend(change.get("refs", []))
+        refs.extend(ref for ref in change.get("refs", []) if _is_searchable_ref(ref))
     return _stable_unique(refs)
 
 
@@ -72,7 +77,7 @@ def _change_target(
         "term_label": term_label,
         "term_is_new": term_is_new,
         "change": change,
-        "candidate_refs": list(change.get("refs", [])),
+        "candidate_refs": _refs_for_changes([change]),
         "term_level_candidate_refs": term_level_candidate_refs,
     }
 
@@ -117,6 +122,7 @@ def select_targets(payload: dict) -> dict:
                         "term_id": term_id,
                         "term_label": term_label,
                         "term_is_new": True,
+                        "textual_changes": ntr_textual,
                         "definition_changes": ntr_textual,
                         "relationship_changes": ntr_structural,
                         "candidate_refs": _refs_for_changes(ntr_textual + ntr_structural),
