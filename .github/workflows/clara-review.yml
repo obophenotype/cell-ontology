@@ -1,0 +1,158 @@
+name: CLARA Review
+
+on:
+  issue_comment:
+    types: [created]
+  workflow_dispatch:
+    inputs:
+      pr:
+        description: PR number to review
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: clara-review-${{ github.event.issue.number || github.event.inputs.pr || github.run_id }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    # issue_comment also fires for plain issues; only honor /clara on PRs.
+    if: >
+      github.event_name == 'workflow_dispatch' ||
+      (github.event.issue.pull_request != null &&
+       startsWith(github.event.comment.body, '/clara'))
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Resolve PR number
+        id: pr
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "num=${{ inputs.pr }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "num=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Acknowledge trigger comment
+        if: github.event_name == 'issue_comment'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api --method POST \
+            /repos/${{ github.repository }}/issues/comments/${{ github.event.comment.id }}/reactions \
+            -f content=eyes
+
+      - name: Look up PR refs
+        id: refs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          data=$(gh pr view "${{ steps.pr.outputs.num }}" \
+            --repo "${{ github.repository }}" \
+            --json baseRefOid,headRefOid,headRefName,baseRefName)
+          echo "base=$(echo "$data" | jq -r .baseRefOid)" >> "$GITHUB_OUTPUT"
+          echo "base_name=$(echo "$data" | jq -r .baseRefName)" >> "$GITHUB_OUTPUT"
+          echo "head=$(echo "$data" | jq -r .headRefOid)" >> "$GITHUB_OUTPUT"
+          echo "head_name=$(echo "$data" | jq -r .headRefName)" >> "$GITHUB_OUTPUT"
+
+      - name: Checkout PR head with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ steps.refs.outputs.head }}
+
+      - name: Install ROBOT
+        run: |
+          mkdir -p "$HOME/.robot"
+          curl -fsSL -o "$HOME/.robot/robot.jar" \
+            https://github.com/ontodev/robot/releases/latest/download/robot.jar
+          printf '#!/bin/bash\nexec java -jar "%s/.robot/robot.jar" "$@"\n' "$HOME" \
+            > "$HOME/.robot/robot"
+          chmod +x "$HOME/.robot/robot"
+          echo "$HOME/.robot" >> "$GITHUB_PATH"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install clara_workflow
+        # Pin this once the workflow contract stabilizes.
+        run: pip install "git+https://github.com/dosumis/clara_workflow.git@main"
+
+      - name: Run CLARA stage 1 extractor
+        run: |
+          python -m clara_workflow.stage1.extract \
+            --repo . \
+            --left "${{ steps.refs.outputs.base }}" \
+            --right "${{ steps.refs.outputs.head }}" \
+            --edit-file src/ontology/cl-edit.owl \
+            --output changes.json
+
+      - name: Upload changes.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clara-changes-pr-${{ steps.pr.outputs.num }}
+          path: changes.json
+
+      - name: Build stage 1 summary comment
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.num }}
+        run: |
+          python - <<'PY' > comment.md
+          import json
+          import os
+
+          with open("changes.json", encoding="utf-8") as handle:
+              data = json.load(handle)
+
+          reviewable = data["reviewable"]
+          by_term = data["by_term"]
+          lines = [
+              f"### CLARA review for PR #{os.environ['PR_NUMBER']}",
+              "",
+              "_Stage 1 only: change extraction and routing preview. Atomic assertion validation is not wired up yet._",
+              "",
+              f"- Base SHA: `{data['left']['ref']}`",
+              f"- Head SHA: `{data['right']['ref']}`",
+              f"- Terms touched: `{len(by_term)}`",
+              f"- Total extracted changes: `{len(data['changes'])}`",
+              f"- Reviewable changes: `{len(reviewable)}`",
+              f"- Decomposable changes: `{len(data['decomposable'])}`",
+              "",
+              "#### Terms flagged for downstream CLARA routing",
+          ]
+
+          if not by_term:
+              lines.append("")
+              lines.append("- No term-level changes were detected in `src/ontology/cl-edit.owl`.")
+          else:
+              lines.append("")
+              for term_id, entry in sorted(by_term.items()):
+                  tags = []
+                  if entry["is_new_term"]:
+                      tags.append("new term")
+                  if entry["is_reviewable"]:
+                      tags.append("reviewable")
+                  if entry["is_obsoleted"]:
+                      tags.append("obsoleted")
+                  tag_text = f" ({', '.join(tags)})" if tags else ""
+                  lines.append(
+                      f"- `{term_id}` — {entry['term_label']}{tag_text}: "
+                      f"{len(entry['changes'])} extracted change(s)"
+                  )
+
+          print("\n".join(lines))
+          PY
+
+      - name: Post stage 1 summary to PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh pr comment "${{ steps.pr.outputs.num }}" \
+            --repo "${{ github.repository }}" \
+            --body-file comment.md
