@@ -1,5 +1,9 @@
 name: CLARA Review
 
+env:
+  CLARA_WORKFLOW_REPO: ubyndr/clara_workflow
+  CLARA_WORKFLOW_REF: main
+
 on:
   issue_comment:
     types: [created]
@@ -13,6 +17,8 @@ on:
 permissions:
   contents: read
   pull-requests: write
+  issues: write
+  id-token: write
 
 concurrency:
   group: clara-review-${{ github.event.issue.number || github.event.inputs.pr || github.run_id }}
@@ -26,7 +32,6 @@ jobs:
       (github.event.issue.pull_request != null &&
        startsWith(github.event.comment.body, '/clara'))
     runs-on: ubuntu-latest
-
     steps:
       - name: Resolve PR number
         id: pr
@@ -80,9 +85,18 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Check out clara_workflow reference
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.CLARA_WORKFLOW_REPO }}
+          ref: ${{ env.CLARA_WORKFLOW_REF }}
+          path: clara_workflow_ref
+
       - name: Install clara_workflow
-        # Pin this once the workflow contract stabilizes.
-        run: pip install "git+https://github.com/dosumis/clara_workflow.git@main"
+        run: pip install -e ./clara_workflow_ref
 
       - name: Run CLARA stage 1 extractor
         run: |
@@ -99,57 +113,199 @@ jobs:
           name: clara-changes-pr-${{ steps.pr.outputs.num }}
           path: changes.json
 
-      - name: Build stage 1 summary comment
+      - name: Select CLARA routing targets
+        run: |
+          python src/scripts/clara_select_targets.py \
+            --input changes.json \
+            --output routing.json
+
+      - name: Upload routing.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: clara-routing-pr-${{ steps.pr.outputs.num }}
+          path: routing.json
+
+      - name: Extract routed target summary
+        id: routing_meta
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          routing = json.loads(Path("routing.json").read_text(encoding="utf-8"))
+          term_ids = sorted({target["term_id"].replace(":", "_", 1) for target in routing["targets"]})
+
+          Path("/tmp/routing_outputs.txt").write_text(
+              f"target_count={len(routing['targets'])}\nterm_count={len(term_ids)}\nterms={' '.join(term_ids)}\n",
+              encoding="utf-8",
+          )
+          PY
+          cat /tmp/routing_outputs.txt >> "$GITHUB_OUTPUT"
+
+      - name: Write MCP config for CLARA verification
+        if: steps.routing_meta.outputs.target_count != '0'
+        run: |
+          cp clara_workflow_ref/.mcp.json .mcp.json
+
+      - name: Run CLARA stage 2/3 verification for routed targets
+        id: claude
+        if: steps.routing_meta.outputs.target_count != '0'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        env:
+          ASTA_API_KEY: ${{ secrets.ASTA_API_KEY }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          track_progress: ${{ github.event_name == 'issue_comment' }}
+          prompt: |
+            REPO: ${{ github.repository }}
+            PR NUMBER: ${{ steps.pr.outputs.num }}
+            BASE SHA: ${{ steps.refs.outputs.base }}
+            HEAD SHA: ${{ steps.refs.outputs.head }}
+
+            Work in the checked out ontology repository root.
+
+            Read and follow `clara_workflow_ref/clara_workflow/agent_instructions.md`.
+
+            Use `routing.json` in the repository root as the verification input.
+            Treat `routing.json` as the stable consumer contract for routed CLARA review.
+            Group targets by `term_id` and process one term-group at a time.
+            Write one `runs/<TERM_ID>/...` bundle per processed term.
+
+            Requirements:
+            - Follow repository guidance in `CLAUDE.md` when useful, but do not edit ontology source files.
+            - Do not modify `changes.json` or `routing.json`.
+
+      - name: Upload CLARA runs artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: clara-runs-pr-${{ steps.pr.outputs.num }}
+          path: runs
+          if-no-files-found: warn
+
+      - name: Build CLARA summary comment
         env:
           PR_NUMBER: ${{ steps.pr.outputs.num }}
+          CLAUDE_STEP_OUTCOME: ${{ steps.claude.outcome }}
+          TARGET_COUNT: ${{ steps.routing_meta.outputs.target_count }}
         run: |
           python - <<'PY' > comment.md
           import json
           import os
+          from pathlib import Path
 
-          with open("changes.json", encoding="utf-8") as handle:
-              data = json.load(handle)
+          def load_json(path):
+              with open(path, encoding="utf-8") as handle:
+                  return json.load(handle)
 
-          reviewable = data["reviewable"]
-          by_term = data["by_term"]
+          def summarize_verdict(path):
+              data = load_json(path)
+              assertions = data.get("assertions", [])
+              core = [a for a in assertions if a.get("category") == "core"]
+              background = [a for a in assertions if a.get("category") == "background"]
+              core_fail = [a for a in core if a.get("final_verdict") == "fail"]
+              core_uncertain = [a for a in core if a.get("final_verdict") == "uncertain"]
+              if core_fail:
+                  status = "FAIL"
+              elif core_uncertain:
+                  status = "UNCERTAIN"
+              else:
+                  status = "PASS"
+              return {
+                  "cell_id": data["cell_id"],
+                  "name": data["name"],
+                  "status": status,
+                  "core_total": len(core),
+                  "core_fail": len(core_fail),
+                  "core_uncertain": len(core_uncertain),
+                  "background_warn": sum(1 for a in background if a.get("warn_background")),
+                  "failed_texts": [a["text"] for a in core_fail[:3]],
+              }
+
+          data = load_json("changes.json")
+          routing = load_json("routing.json")
+
+          route_counts = routing["summary"]["route_counts"]
+          target_count = int(os.environ["TARGET_COUNT"])
+          claude_outcome = os.environ.get("CLAUDE_STEP_OUTCOME", "")
+          runs_dir = Path("runs")
+          verdict_files = sorted(runs_dir.glob("*/verdicts.json")) if runs_dir.exists() else []
+          verdict_summaries = [summarize_verdict(path) for path in verdict_files]
+
           lines = [
               f"### CLARA review for PR #{os.environ['PR_NUMBER']}",
               "",
-              "_Stage 1 only: change extraction and routing preview. Atomic assertion validation is not wired up yet._",
-              "",
               f"- Base SHA: `{data['left']['ref']}`",
               f"- Head SHA: `{data['right']['ref']}`",
-              f"- Terms touched: `{len(by_term)}`",
+              f"- Terms touched: `{len(data['by_term'])}`",
               f"- Total extracted changes: `{len(data['changes'])}`",
-              f"- Reviewable changes: `{len(reviewable)}`",
+              f"- Reviewable changes: `{len(data['reviewable'])}`",
               f"- Decomposable changes: `{len(data['decomposable'])}`",
-              "",
-              "#### Terms flagged for downstream CLARA routing",
+              f"- Routed validation targets: `{routing['summary']['selected_targets']}`",
+              f"- Routed NTR bundles: `{route_counts['ntr']}`",
+              f"- Routed relationship targets: `{route_counts['relationship']}`",
+              f"- Routed synonym targets with refs: `{route_counts['synonym']}`",
           ]
 
-          if not by_term:
-              lines.append("")
-              lines.append("- No term-level changes were detected in `src/ontology/cl-edit.owl`.")
+          if target_count == 0:
+              lines.extend([
+                  "",
+                  "_No routed CLARA targets were found, so stage 2/3 verification did not run._",
+              ])
+          elif claude_outcome == "failure":
+              lines.extend([
+                  "",
+                  "_Stage 2/3 verification was invoked for routed CLARA targets, but the Claude step did not complete successfully. Check the workflow logs and uploaded artifacts._",
+              ])
           else:
-              lines.append("")
-              for term_id, entry in sorted(by_term.items()):
-                  tags = []
-                  if entry["is_new_term"]:
-                      tags.append("new term")
-                  if entry["is_reviewable"]:
-                      tags.append("reviewable")
-                  if entry["is_obsoleted"]:
-                      tags.append("obsoleted")
-                  tag_text = f" ({', '.join(tags)})" if tags else ""
+              lines.extend([
+                  "",
+                  f"_Stage 2/3 verification ran for `{len(verdict_summaries)}` routed term(s)._",
+              ])
+
+          if verdict_summaries:
+              lines.extend([
+                  "",
+                  "#### Routed verification results",
+                  "",
+              ])
+              for item in verdict_summaries:
                   lines.append(
-                      f"- `{term_id}` — {entry['term_label']}{tag_text}: "
-                      f"{len(entry['changes'])} extracted change(s)"
+                      f"- `{item['cell_id']}` — {item['name']}: **{item['status']}** "
+                      f"(core: {item['core_total']}, fail: {item['core_fail']}, "
+                      f"uncertain: {item['core_uncertain']}, background warnings: {item['background_warn']})"
                   )
+                  for failed in item["failed_texts"]:
+                      lines.append(f"  - Failed core assertion: {failed}")
+
+          if routing["summary"]["ignored_changes"]:
+              ignored_counts = routing["summary"]["ignored_reason_counts"]
+              lines.extend(
+                  [
+                      "",
+                      "#### Currently ignored by routing",
+                      "",
+                      f"- Existing-term text changes not yet routed: `{ignored_counts.get('existing_term_text_not_yet_routed', 0)}`",
+                      f"- Synonym changes without refs: `{ignored_counts.get('synonym_without_refs', 0)}`",
+                  ]
+              )
+
+          lines.extend(
+              [
+                  "",
+                  "Artifacts uploaded:",
+                  "- `changes.json`",
+                  "- `routing.json`",
+                  "- `runs/`",
+              ]
+          )
 
           print("\n".join(lines))
           PY
 
-      - name: Post stage 1 summary to PR
+      - name: Post CLARA summary to PR
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
