@@ -168,8 +168,10 @@ jobs:
           track_progress: ${{ github.event_name == 'issue_comment' }}
           claude_args: >-
             --mcp-config .mcp.json
+            --allowedTools
+            "mcp__Asta_semanticscholar__snippet_search,mcp__artl-mcp__get_europepmc_full_text"
             --disallowedTools
-            "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*),Bash(gh pr comment:*),Bash(gh issue comment:*)"
+            "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ steps.pr.outputs.num }}
@@ -187,7 +189,7 @@ jobs:
 
             Requirements:
             - Only produce the required `runs/<TERM_ID>/verdicts.json`, `runs/<TERM_ID>/tool_calls.jsonl`, and `runs/<TERM_ID>/report.md` outputs.
-            - Do not create commits, push branches, open PRs, or post GitHub comments. The workflow itself will publish the final PR comment from the generated files.
+            - Do not create commits, push branches, or open PRs.
             - Ignore any `CLAUDE.md` guidance about committing, pushing, or opening PRs for this run.
             - Follow other repository guidance in `CLAUDE.md` when useful, but do not edit ontology source files.
             - Do not modify `changes.json` or `routing.json`.
