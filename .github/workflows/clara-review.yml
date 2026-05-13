@@ -169,14 +169,17 @@ jobs:
             Read and follow `clara_workflow_ref/clara_workflow/agent_instructions.md`.
 
             Use `routing.json` in the repository root as the verification input.
-            Process every routed target in that file according to its route.
-            Group outputs by term, writing one `runs/<TERM_ID>/...` bundle per term.
+            Treat `routing.json` as the stable consumer contract for routed CLARA review.
+            Group targets by `term_id` and process one term-group at a time.
+            Write one `runs/<TERM_ID>/...` bundle per processed term.
 
             Requirements:
             - Handle `ntr`, `relationship`, and `synonym` routed targets according to the issue routing rules.
+            - Use `textual_changes` as the canonical prose field for `ntr` targets; `definition_changes` may appear only as a compatibility alias.
             - For new terms, decompose routed text and convert routed structural changes into atomic assertions.
             - For routed `relationship` targets, check the atomic structural claim against refs with the core workflow.
             - For routed `synonym` targets with refs, check the synonym claim against refs.
+            - Treat `candidate_refs` and `term_level_candidate_refs` as already filtered to searchable literature ids; do not broaden the ref set.
             - Write `runs/<TERM_ID>/verdicts.json`, `runs/<TERM_ID>/tool_calls.jsonl`, and `runs/<TERM_ID>/report.md` for each processed term.
             - Follow repository guidance in `CLAUDE.md` when useful, but do not edit ontology source files.
             - Do not modify `changes.json` or `routing.json`.

@@ -6,6 +6,21 @@ Phase 2 is still a routing preview. This script reads `changes.json` from
 `clara_workflow.stage1.extract` and emits a normalized `routing.json` payload
 that identifies which downstream CLARA checks should run for the current PR.
 
+This file is the producer-side contract for routed CLARA review. The consumer
+is `clara_workflow/clara_workflow/agent_instructions.md`, which expects:
+
+- processing grouped by `term_id`
+- `ntr` targets with canonical prose in `textual_changes`
+- `relationship` / `synonym` targets with a single `change`
+- `candidate_refs` and `term_level_candidate_refs` already filtered to
+  searchable literature ids (`PMID:...` / `DOI:...`)
+
+Notes on compatibility:
+
+- `textual_changes` is the canonical field for decomposable prose
+- `definition_changes` is still emitted as a temporary alias so the current
+  consumer can tolerate older payload samples during cleanup
+
 Current routing policy mirrors the ticket scope:
 
 - New terms (NTRs): route added definitions/comments plus added structural
@@ -47,11 +62,18 @@ def _stable_unique(values: list[str]) -> list[str]:
 
 
 def _is_searchable_ref(value: str) -> bool:
+    """Return whether a ref is usable by the downstream literature tools."""
     upper = value.upper()
     return upper.startswith("PMID:") or upper.startswith("DOI:")
 
 
 def _refs_for_changes(changes: list[dict]) -> list[str]:
+    """Collect unique searchable refs from staged ontology changes.
+
+    This is the upstream filtering point for the routed-target contract.
+    Downstream agentic stages should treat these lists as already curated and
+    should not broaden them beyond formatting normalization for tool calls.
+    """
     refs: list[str] = []
     for change in changes:
         refs.extend(ref for ref in change.get("refs", []) if _is_searchable_ref(ref))
@@ -83,6 +105,20 @@ def _change_target(
 
 
 def select_targets(payload: dict) -> dict:
+    """Transform stage-1 output into routed targets for CLARA verification.
+
+    Output contract:
+
+    - one `ntr` target per new term containing:
+      - `textual_changes` (canonical prose field)
+      - `definition_changes` (compatibility alias only)
+      - `relationship_changes`
+    - one `relationship` target per existing-term structural assertion
+    - one `synonym` target per synonym assertion that carries attached refs
+
+    The resulting `routing.json` is consumed term-grouped: every target with the
+    same `term_id` is expected to be processed together downstream.
+    """
     targets: list[dict] = []
     ignored: list[dict] = []
     route_counts = {"ntr": 0, "relationship": 0, "synonym": 0}
@@ -122,7 +158,9 @@ def select_targets(payload: dict) -> dict:
                         "term_id": term_id,
                         "term_label": term_label,
                         "term_is_new": True,
+                        # Canonical field consumed by clara_workflow.
                         "textual_changes": ntr_textual,
+                        # Temporary alias kept during producer/consumer cleanup.
                         "definition_changes": ntr_textual,
                         "relationship_changes": ntr_structural,
                         "candidate_refs": _refs_for_changes(ntr_textual + ntr_structural),
