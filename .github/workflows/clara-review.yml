@@ -167,9 +167,9 @@ jobs:
           github_token: ${{ github.token }}
           track_progress: ${{ github.event_name == 'issue_comment' }}
           claude_args: >-
-            --mcp-config .mcp.json
+            --mcp-config ${{ github.workspace }}/.mcp.json
             --allowedTools
-            "mcp__Asta_semanticscholar__snippet_search,mcp__artl-mcp__get_europepmc_full_text"
+            "mcp__Asta_semanticscholar__*,mcp__artl-mcp__*"
             --disallowedTools
             "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
