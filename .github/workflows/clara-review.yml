@@ -145,7 +145,10 @@ jobs:
       - name: Write MCP config for CLARA verification
         if: steps.routing_meta.outputs.target_count != '0'
         run: |
-          cp clara_workflow_ref/.mcp.json .mcp.json
+          # Write to RUNNER_TEMP, not workspace root: the action restores .mcp.json
+          # from the PR base branch before Claude starts (security measure), which
+          # would delete a workspace-root copy since master has no .mcp.json.
+          cp clara_workflow_ref/.mcp.json "$RUNNER_TEMP/clara-mcp.json"
 
       - name: Install local MCP server dependencies
         if: steps.routing_meta.outputs.target_count != '0'
@@ -173,7 +176,7 @@ jobs:
           github_token: ${{ github.token }}
           track_progress: ${{ github.event_name == 'issue_comment' }}
           claude_args: |
-            --mcp-config ${{ github.workspace }}/.mcp.json
+            --mcp-config ${{ runner.temp }}/clara-mcp.json
             --allowedTools "mcp__Asta_semanticscholar__*,mcp__artl-mcp__*"
             --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
