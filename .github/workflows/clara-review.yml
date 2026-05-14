@@ -167,6 +167,8 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
           track_progress: ${{ github.event_name == 'issue_comment' }}
+          settings: |
+            {"permissions":{"allow":["mcp__Asta_semanticscholar__*","mcp__artl-mcp__*"]}}
           claude_args: |
             --mcp-config ${{ github.workspace }}/.mcp.json
             --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
