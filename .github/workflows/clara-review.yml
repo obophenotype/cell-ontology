@@ -169,7 +169,6 @@ jobs:
           track_progress: ${{ github.event_name == 'issue_comment' }}
           claude_args: |
             --mcp-config ${{ github.workspace }}/.mcp.json
-            --allowedTools "mcp__Asta_semanticscholar__*,mcp__artl-mcp__*"
             --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
             REPO: ${{ github.repository }}
