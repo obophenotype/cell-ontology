@@ -154,6 +154,12 @@ jobs:
         # on the GitHub runner.
         run: |
           uv tool install artl-mcp
+          # Ensure uv tool bin directory is in PATH so Claude's MCP subprocess can find artl-mcp
+          echo "$(uv tool dir)/bin" >> "$GITHUB_PATH"
+
+      - name: Verify artl-mcp is runnable
+        if: steps.routing_meta.outputs.target_count != '0'
+        run: uv tool run artl-mcp --help 2>&1 | head -5
 
       - name: Run CLARA stage 2/3 verification for routed targets
         id: claude
@@ -166,12 +172,10 @@ jobs:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
           track_progress: ${{ github.event_name == 'issue_comment' }}
-          claude_args: >-
+          claude_args: |
             --mcp-config ${{ github.workspace }}/.mcp.json
-            --allowedTools
-            "mcp__Asta_semanticscholar__*,mcp__artl-mcp__*"
-            --disallowedTools
-            "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
+            --allowedTools "mcp__Asta_semanticscholar__*,mcp__artl-mcp__*"
+            --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
             REPO: ${{ github.repository }}
             PR NUMBER: ${{ steps.pr.outputs.num }}
