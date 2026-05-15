@@ -1,62 +1,335 @@
-name: Dragon AI Agent GitHub Mentions
+# AI Agent triggered by @mentions in issues/PRs
+#
+# Listens for @<agent-name> please <request> mentions from authorized users
+# and runs Claude Code to respond.
+#
+# Required secrets:
+# - PAT_FOR_PR
+# - CLAUDE_CODE_OAUTH_TOKEN
+#
+# Configuration:
+# - .github/ai-controllers.json (list of authorized usernames)
+#
+name: AI Agent GitHub Mentions
+
+env:
+  AGENT_NAME: dragon-ai-agent
+  MODEL: claude-opus-4-7
+  TOOLS_DIR: ${{ github.workspace }}/tools
+  TIMEOUT_MINUTES: 30
 
 on:
+  workflow_dispatch:
+    inputs:
+      issue_number:
+        description: "Issue or PR number to respond to"
+        required: true
+      item_type:
+        description: "Type of item (issue or pull_request)"
+        required: true
+        type: choice
+        options:
+          - issue
+          - pull_request
+      prompt:
+        description: "The request/prompt for the agent"
+        required: true
+  # `assigned` lets authorized controllers dispatch work by assigning
+  # `dragon-ai-agent` directly.
   issues:
-    types: [opened, edited]
+    types: [opened, edited, assigned]
   issue_comment:
     types: [created, edited]
   pull_request:
-    types: [opened, edited]
+    types: [opened, edited, assigned, synchronize]
   pull_request_review_comment:
     types: [created, edited]
 
 jobs:
   check-mention:
     runs-on: ubuntu-latest
-    outputs:
-      qualified-mention: ${{ steps.detect.outputs.qualified-mention }}
-      prompt: ${{ steps.detect.outputs.prompt }}
-      user: ${{ steps.detect.outputs.user }}
-      item-type: ${{ steps.detect.outputs.item-type }}
-      item-number: ${{ steps.detect.outputs.item-number }}
-      controllers: ${{ steps.detect.outputs.controllers }}
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        
-      - name: Detect AI mention
-        id: detect
-        uses: dragon-ai-agent/github-mention-detector@v1.0.0
-        with:
-          github-token: ${{ secrets.PAT_FOR_PR }}
-          fallback-controllers: 'cmungall'
-
-  respond-to-mention:
-    needs: check-mention
-    if: needs.check-mention.outputs.qualified-mention == 'true'
     permissions:
-      contents: write
-      pull-requests: write
+      contents: read
       issues: write
-    runs-on: ubuntu-latest
+      pull-requests: write
+    outputs:
+      result: ${{ steps.check.outputs.result }}
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           fetch-depth: 1
           token: ${{ secrets.PAT_FOR_PR }}
 
-      - name: Respond with AI Agent
-        uses: dragon-ai-agent/run-goose-obo@v1.0.4
+      - name: Check for qualifying mention
+        id: check
+        uses: actions/github-script@v8
         with:
-          anthropic-api-key: ${{ secrets.ANTHROPIC_API_KEY }}
-          openai-api-key: ${{ secrets.CBORG_API_KEY }}
           github-token: ${{ secrets.PAT_FOR_PR }}
-          prompt: ${{ needs.check-mention.outputs.prompt }}
-          user: ${{ needs.check-mention.outputs.user }}
-          item-type: ${{ needs.check-mention.outputs.item-type }}
-          item-number: ${{ needs.check-mention.outputs.item-number }}
-          controllers: ${{ needs.check-mention.outputs.controllers }}
-          agent-name: 'Dragon-AI Agent'
-          branch-prefix: 'dragon_ai_agent'
-          robot-version: 'v1.9.7'
+          script: |
+            const fs = require("fs");
+
+            let allowedUsers = [];
+            try {
+              const configContent = fs.readFileSync(".github/ai-controllers.json", "utf8");
+              allowedUsers = JSON.parse(configContent);
+            } catch (error) {
+              console.log("Error loading allowed users:", error);
+              allowedUsers = ["cmungall"];
+            }
+
+            const agentName = process.env.AGENT_NAME || "dragon-ai-agent";
+
+            if (context.eventName === "workflow_dispatch") {
+              const inputs = context.payload.inputs;
+              const itemType = inputs.item_type;
+              const itemNumber = parseInt(inputs.issue_number, 10);
+              const prompt = inputs.prompt;
+              const combined = `${prompt}`.toLowerCase();
+              const skipOdk = combined.includes("skip_odk") || combined.includes("quick question");
+
+              return {
+                qualifiedMention: true,
+                itemType,
+                itemNumber,
+                user: context.actor,
+                prompt,
+                branchName: `${agentName}-${itemType}-${itemNumber}-run${context.runNumber}`,
+                useOdkContainer: !skipOdk,
+                skipOdkNote: skipOdk
+                  ? "NOTE: This is NOT running in the ODK container (SKIP_ODK or quick question was specified), so ODK tools like ROBOT may be unavailable."
+                  : "",
+              };
+            }
+
+            let content = "";
+            let userLogin = "";
+            let itemType = "";
+            let itemNumber = 0;
+            let commentId = null;
+            let reactionTarget = "issue";
+
+            if (context.eventName === "issues") {
+              content = context.payload.issue.body || "";
+              userLogin = context.payload.action === "assigned"
+                ? (context.payload.sender?.login || context.payload.issue.user.login)
+                : context.payload.issue.user.login;
+              itemType = "issue";
+              itemNumber = context.payload.issue.number;
+            } else if (context.eventName === "pull_request") {
+              content = context.payload.pull_request.body || "";
+              userLogin = context.payload.action === "assigned"
+                ? (context.payload.sender?.login || context.payload.pull_request.user.login)
+                : context.payload.pull_request.user.login;
+              itemType = "pull_request";
+              itemNumber = context.payload.pull_request.number;
+            } else if (context.eventName === "issue_comment") {
+              content = context.payload.comment.body || "";
+              userLogin = context.payload.comment.user.login;
+              itemType = context.payload.issue.pull_request ? "pull_request" : "issue";
+              itemNumber = context.payload.issue.number;
+              commentId = context.payload.comment.id;
+              reactionTarget = "issue_comment";
+            } else if (context.eventName === "pull_request_review_comment") {
+              content = context.payload.comment.body || "";
+              userLogin = context.payload.comment.user.login;
+              itemType = "pull_request";
+              itemNumber = context.payload.pull_request.number;
+              commentId = context.payload.comment.id;
+              reactionTarget = "pull_request_review_comment";
+            }
+
+            const isAllowed = allowedUsers.includes(userLogin);
+            const mentionRegex = new RegExp(`@${agentName}\\s+please\\s+([\\s\\S]*)`, "i");
+            const mentionMatch = content.match(mentionRegex);
+            // On synchronize we want this workflow to revalidate on push without
+            // re-dispatching the agent from a stale PR body mention.
+            const shouldHonorBodyMention =
+              (context.eventName === "issues" && ["opened", "edited"].includes(context.payload.action)) ||
+              (context.eventName === "pull_request" && ["opened", "edited"].includes(context.payload.action)) ||
+              context.eventName === "issue_comment" ||
+              context.eventName === "pull_request_review_comment";
+            const isAgentAssignment =
+              (context.eventName === "issues" || context.eventName === "pull_request") &&
+              context.payload.action === "assigned" &&
+              context.payload.assignee?.login === agentName;
+            const hasQualifiedBodyMention =
+              isAllowed && shouldHonorBodyMention && mentionMatch !== null;
+            const qualifiedMention =
+              hasQualifiedBodyMention || (isAllowed && isAgentAssignment);
+            const prompt = hasQualifiedBodyMention
+              ? mentionMatch[1].trim()
+              : (isAgentAssignment
+                ? "You were assigned to this item. Read the full GitHub context, identify the next concrete action, and carry it through."
+                : "");
+
+            console.log(
+              `User: ${userLogin}, Allowed: ${isAllowed}, Has mention: ${mentionMatch !== null}, ` +
+              `Honor body mention: ${shouldHonorBodyMention}, ` +
+              `Agent assignment: ${isAgentAssignment}`
+            );
+
+            if (!qualifiedMention) {
+              return { qualifiedMention: false };
+            }
+
+            try {
+              if (reactionTarget === "issue_comment") {
+                await github.rest.reactions.createForIssueComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: commentId,
+                  content: "eyes",
+                });
+              } else if (reactionTarget === "pull_request_review_comment") {
+                await github.rest.reactions.createForPullRequestReviewComment({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  comment_id: commentId,
+                  content: "eyes",
+                });
+              } else {
+                await github.rest.reactions.createForIssue({
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                  issue_number: itemNumber,
+                  content: "eyes",
+                });
+              }
+            } catch (error) {
+              console.log("Could not add reaction:", error.message);
+            }
+
+            try {
+              const runUrl = `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`;
+              const commentBody = `🤖 Working on it...\n\nFollow along: [View workflow run](${runUrl})\n\n*— @${agentName}*`;
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: itemNumber,
+                body: commentBody,
+              });
+            } catch (error) {
+              console.log("Could not post comment:", error.message);
+            }
+
+            const baseBody =
+              context.payload.issue?.body ||
+              context.payload.pull_request?.body ||
+              "";
+            const combined = `${baseBody}\n${content}`.toLowerCase();
+            const skipOdk = combined.includes("skip_odk") || combined.includes("quick question");
+
+            return {
+              qualifiedMention: true,
+              itemType,
+              itemNumber,
+              user: userLogin,
+              prompt,
+              branchName: `${agentName}-${itemType}-${itemNumber}-run${context.runNumber}`,
+              useOdkContainer: !skipOdk,
+              skipOdkNote: skipOdk
+                ? "NOTE: This is NOT running in the ODK container (SKIP_ODK or quick question was specified), so ODK tools like ROBOT may be unavailable."
+                : "",
+            };
+
+  respond-to-mention:
+    needs: check-mention
+    if: fromJSON(needs.check-mention.outputs.result).qualifiedMention == true
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    container: ${{ fromJSON(needs.check-mention.outputs.result).useOdkContainer && 'obolibrary/odkfull:v1.6' || null }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 1
+          token: ${{ secrets.PAT_FOR_PR }}
+
+      - name: Configure Git
+        run: |
+          git config --global user.name "${{ env.AGENT_NAME }}[bot]"
+          git config --global user.email "${{ env.AGENT_NAME }}[bot]@users.noreply.github.com"
+
+      - name: Create tools directory
+        run: mkdir -p "${{ env.TOOLS_DIR }}"
+
+      - name: Add tools to PATH
+        run: echo "${{ env.TOOLS_DIR }}" >> "$GITHUB_PATH"
+
+      - name: Add obo-scripts to PATH
+        run: |
+          git clone --depth 1 https://github.com/cmungall/obo-scripts.git "${{ env.TOOLS_DIR }}/obo-scripts"
+          echo "${{ env.TOOLS_DIR }}/obo-scripts" >> "$GITHUB_PATH"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Install Python tools
+        run: |
+          uv venv
+          . .venv/bin/activate
+          uv pip install aurelian jinja2-cli "wrapt>=1.17.2"
+          echo "${{ github.workspace }}/.venv/bin" >> "$GITHUB_PATH"
+
+      - name: Export GitHub token for gh CLI
+        run: echo "GH_TOKEN=${{ secrets.PAT_FOR_PR }}" >> "$GITHUB_ENV"
+
+      - name: Run Claude Code
+        uses: anthropics/claude-code-action@v1
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ secrets.PAT_FOR_PR }}
+          allowed_bots: "claude,github-actions"
+          show_full_output: true
+          claude_args: |
+            --allowedTools "Bash,Read,Write,Edit,Glob,Grep,LS,MultiEdit,NotebookEdit,TodoRead,TodoWrite,WebFetch,WebSearch"
+            --model "${{ env.MODEL }}"
+          prompt: |
+            You are @${{ env.AGENT_NAME }}, responding to a request from @${{ fromJSON(needs.check-mention.outputs.result).user }} on GitHub ${{ fromJSON(needs.check-mention.outputs.result).itemType }} #${{ fromJSON(needs.check-mention.outputs.result).itemNumber }}.
+
+            Follow the repository instructions in `CLAUDE.md`.
+
+            ${{ fromJSON(needs.check-mention.outputs.result).skipOdkNote }}
+
+            THE REQUEST:
+            ```
+            ${{ fromJSON(needs.check-mention.outputs.result).prompt }}
+            ```
+
+            GETTING CONTEXT:
+            Use `gh` to read the full context. Examples:
+            - `gh issue view ${{ fromJSON(needs.check-mention.outputs.result).itemNumber }} --json title,body,comments`
+            - `gh pr view ${{ fromJSON(needs.check-mention.outputs.result).itemNumber }} --json title,body,comments,reviews`
+            - Check for linked issues or PRs mentioned in the body
+
+            MAKING CHANGES:
+            If you need to modify files:
+            1. Create a branch: `git checkout -b ${{ fromJSON(needs.check-mention.outputs.result).branchName }}`
+               (unless requested to update an existing branch or PR, in which case check out and work on that branch)
+            2. Make your changes and commit with descriptive messages
+            3. Push the branch: `git push -u origin ${{ fromJSON(needs.check-mention.outputs.result).branchName }}`
+            4. Create a PR using `gh pr create` with a clear title and description
+
+            COMMUNICATING:
+            - Use `gh` CLI directly to interact with the user on GitHub
+            - Use `gh issue comment` or `gh pr comment` to post updates
+            - Always inform the user what you did (or could not do)
+            - If you created a PR, reference it in your comment on the original issue or PR
+            - If the request is ambiguous, ask a clarifying question via `gh`
+
+            SIGNATURE:
+            Always include the following signature block in commit messages and GitHub comments:
+            ```
+            ---
+            🤖 **Generated by @${{ env.AGENT_NAME }}**
+            - Model: `${{ env.MODEL }}`
+            - Agent harness: claude-code
+            - Triggered by: @${{ fromJSON(needs.check-mention.outputs.result).user }}
+            - Run: [View workflow run](https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }})
+            ```
