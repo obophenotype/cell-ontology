@@ -1,0 +1,17 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+
+SELECT DISTINCT ?entity ?property ?value
+WHERE {
+  VALUES ?value { "true"^^xsd:boolean "false"^^xsd:boolean }
+  VALUES ?property {
+    <http://purl.obolibrary.org/obo/IAO_0000600>
+    <http://purl.obolibrary.org/obo/IAO_0000118>
+    <http://www.geneontology.org/formats/oboInOwl#consider>
+    <http://www.w3.org/2000/01/rdf-schema#comment>
+    <http://purl.obolibrary.org/obo/IAO_0100001>
+    <http://purl.obolibrary.org/obo/IAO_0000112>
+    <http://purl.obolibrary.org/obo/IAO_0000116>
+  }
+  ?entity ?property ?value .
+}
