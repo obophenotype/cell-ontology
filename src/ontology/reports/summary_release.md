@@ -1,984 +1,124 @@
-# Release Notes 2026-03-17
+# Release Notes 2026-03-26
 ## Ontology content summary
 | Metric                                          |   Value |
 |:------------------------------------------------|--------:|
-| Number of subclasses of root                    |    3306 |
-| Number of annotations on CL terms               |   17273 |
-| Number of synonyms                              |    7099 |
+| Number of subclasses of root                    |    3314 |
+| Number of annotations on CL terms               |   17396 |
+| Number of synonyms                              |    7125 |
 | Number of unique references                     |    1960 |
-| Number of unique references in definitions      |    2065 |
-| Number of relationships with CL term as subject |    5092 |
+| Number of unique references in definitions      |    2079 |
+| Number of relationships with CL term as subject |    5109 |
 | Number of cellxgene classes                     |    1026 |
-| Number of HRA classes                           |     612 |
+| Number of HRA classes                           |     616 |
 <details>
-<summary>Classes added: 78</summary>
+<summary>Nodes added to subset: 4</summary>
+
+| Term | Subset |
+----|----|
+| osteoblast (CL:0000062) | human_reference_atlas |
+| chondrocyte (CL:0000138) | human_reference_atlas |
+| obsolete female germ line stem cell (sensu Vertebrata) (CL:0000090) | human_reference_atlas |
+| mesenchymal stem cell (CL:0000134) | human_reference_atlas |
+
+</details>
+
+<details>
+<summary>Classes added: 8</summary>
 
 | Term |
 ----|
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) |
-| intrinsic cardiac ganglion TH neuron (CL:4079010) |
-| dorsal root ganglion Nav1.7 neuron (CL:4033178) |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) |
-| intestinofugal neuron (CL:0020049) |
-| oRGC2 (CL:0020032) |
-| middle zone articular chondrocyte (CL:0020038) |
-| cervical dorsal root ganglion Nav1.9 neuron (CL:4079003) |
-| secretomotor/vasodilator neuron of myenteric plexus (CL:0020048) |
-| dorsal root ganglion EDN1 neuron (CL:4033177) |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) |
-| dorsal root ganglion Nav1.9 neuron (CL:4033179) |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) |
-| oRGC1 (CL:0020036) |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) |
-| calcified zone articular chondrocyte (CL:0020040) |
-| oRGC5 (CL:0020042) |
-| sacral dorsal root ganglion RET neuron (CL:4079026) |
-| stubby Dogiel type I neuron of myenteric plexus (CL:0020052) |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) |
-| cuboidal epithelial cell (CL:0020029) |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) |
-| cervical dorsal root ganglion RET neuron (CL:4079006) |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) |
-| intestinal intraepithelial lymphocyte (CL:0020035) |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) |
-| calretinin-positive intrinsic primary afferent neuron of myenteric plexus (CL:0020055) |
-| cervical dorsal root ganglion Nav1.7 neuron (CL:4079002) |
-| spiny Dogiel type I neuron of myenteric plexus (CL:0020053) |
-| dorsal root ganglion RET neuron (CL:4033182) |
-| ascending interneuron of myenteric plexus (CL:0020050) |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) |
-| Dogiel type II neuron (CL:0020045) |
-| dorsal root ganglion peripherin neuron (CL:4033180) |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) |
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) |
-| sacral dorsal root ganglion Nav1.9 neuron (CL:4079023) |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) |
-| migratory muscle precursor (CL:0020044) |
-| interneuron of myenteric plexus (CL:0020047) |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) |
-| hybrid osteochondral skeletal cell (CL:0020028) |
-| thoracic dorsal root ganglion Nav1.9 neuron (CL:4079032) |
-| lumbar dorsal root ganglion Nav1.9 neuron (CL:4079014) |
-| calretinin-negative intrinsic primary afferent neuron of myenteric plexus (CL:0020056) |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) |
-| dorsal root ganglion SP neuron (CL:4033183) |
-| fasciacyte (CL:0020043) |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) |
-| dorsal root ganglion Piezo2 neuron (CL:4033181) |
-| dorsal root ganglion BRN3A neuron (CL:4033175) |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) |
-| thoracic dorsal root ganglion Nav1.7 neuron (CL:4079031) |
-| nitrergic neuron of myenteric plexus (CL:0020058) |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) |
-| lumbar dorsal root ganglion Nav1.7 neuron (CL:4079013) |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) |
-| sacral dorsal root ganglion Nav1.7 neuron (CL:4079022) |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) |
-| superficial zone articular chondrocyte (CL:0020037) |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) |
-| dorsal root ganglion TRPV1 neuron (CL:4033184) |
-| cholinergic neuron of myenteric plexus (CL:0020057) |
-| descending interneuron of myenteric plexus (CL:0020051) |
-| deep zone articular chondrocyte (CL:0020039) |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) |
-| oRGC4 (CL:0020041) |
-| dorsal root ganglion CGRP neuron (CL:4033176) |
+| tuft cell of parotid gland (CL:0020063) |
+| serous demilune cell of salivary gland (CL:0020059) |
+| basal duct cell of salivary gland (CL:0020060) |
+| ionocyte of salivary gland (CL:0020065) |
+| junctional epithelial cell (CL:0020062) |
+| tuft cell of sublingual gland (CL:0020064) |
+| periductal fibroblast of salivary gland (CL:0020061) |
+| myoepithelial cell of salivary gland (CL:0020066) |
 
 </details>
 
 <details>
-<summary>Text definitions added: 79</summary>
-
-| Term | New Text Definition |
-----|----|
-| migratory muscle precursor (CL:0020044) | Muscle precursor cells that delaminate from the dermomyotome after epithelial-to-mesenchymal transition (EMT) and undergo long-range migration while retaining proliferative capacity. |
-| dorsal root ganglion RET neuron (CL:4033182) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker proto-oncogene tyrosine-protein kinase receptor Ret (RET). RET is present in approximately 46% of TrkA-positive human DRG neurons and marks the non-peptidergic nociceptor population. |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) | A non-peptidergic nociceptor whose soma is located in the thoracic dorsal root ganglion and that expresses the receptor tyrosine kinase RET (encoded by RET). This neuron is distinguished from peptidergic nociceptors by its dependence on glial cell-derived neurotrophic factor family ligands rather than nerve growth factor, and in rodents it characteristically binds isolectin B4. In human DRG, RET-immunoreactive neurons constitute approximately 46% of TrkA-positive neurons, a significantly higher proportion than the 23% observed in mouse (Rostock et al. 2018, PMID:29229553), indicating an expanded non-peptidergic nociceptor compartment in humans. |
-| Dogiel type II neuron (CL:0020045) | A neuron characterised by Dogiel type II morphology: a large, smooth, oval soma bearing multiple long axon-like processes (multiaxonal) that extend without branching until they reach their targets. The soma lacks the short lamellar or spiny dendrites characteristic of Dogiel type I neurons. Dogiel type II neurons were first described by Alexander Dogiel in 1899 based on methylene blue staining in gastrointestinal ganglia. In the enteric nervous system, Dogiel type II neurons correspond to intrinsic primary afferent neurons (IPANs) and exhibit AH-type electrophysiology (prolonged afterhyperpolarization following an action potential). |
-| dorsal root ganglion Nav1.7 neuron (CL:4033178) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker sodium channel protein type 9 subunit alpha (Nav1.7/SCN9A). Nav1.7 accounts for approximately 50% of total sodium channel expression in human DRG and is present in 54-57% of TrkA-positive nociceptors. |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | A sensory neuron whose soma is located in the thoracic dorsal root ganglion and that expresses endothelin-1 (EDN1). In rat DRG, EDN1 immunoreactivity has been detected in a subset of neuron somata (Giaid et al. 1989, PMID:2678100). Endothelin-1 acts as an endogenous pain mediator, sensitizing nociceptors through activation of ETA and ETB receptors, and these neurons are implicated in vascular pain signalling. EDN1-expressing DRG neurons have been characterized in rat; their prevalence and properties in human DRG remain to be systematically determined, as EDN1 is not yet represented in human DRG single-cell transcriptomic datasets. |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | A small-diameter sensory neuron whose soma is located in the lumbar dorsal root ganglion and that expresses peripherin (encoded by PRPH), a type III intermediate filament protein. This neuron is unmyelinated, conducts action potentials as a C-fiber, and encompasses nociceptive and thermoceptive functional subpopulations. In human DRG, peripherin-immunoreactive neurons are predominantly of small diameter (Chang et al. 2018, PMID:28424991), distinguishing them from large-diameter myelinated A-fiber neurons that instead express neurofilament heavy chain (Haberberger et al. 2019, PMID:31293388). In mice, peripherin similarly marks unmyelinated primary afferent neurons. |
-| dorsal root ganglion EDN1 neuron (CL:4033177) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker endothelin-1 (EDN1). Endothelin signaling in DRG neurons has been demonstrated in rat tissue. |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) | An intrinsic primary afferent neuron of the myenteric plexus characterised by Dogiel type II morphology: a large, smooth, oval soma bearing multiple long axon-like processes that extend without branching until they reach their targets in both the myenteric and submucosal plexuses and the mucosa. The soma lacks the dendrites characteristic of Dogiel type I neurons and is larger in cross-sectional area than either motor neuron type. This neuron is immunopositive for choline acetyltransferase (ChAT) and immunonegative for neuronal nitric oxide synthase (NOS1). It exhibits AH-type electrophysiology, characterised by a prolonged afterhyperpolarization (AHP) following an action potential. Substance P (encoded by TAC1) expression has been reported in subsets across species. |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) | A peptidergic nociceptor whose soma is located in the cervical dorsal root ganglion, characterized by expression of calcitonin gene-related peptide (CGRP, encoded by CALCA). This small- to medium-diameter neuron belongs to the TrkA-positive peptidergic subpopulation and typically co-expresses substance P. It innervates peripheral tissues including skin and viscera, where it mediates neurogenic inflammation and nociceptive signalling through release of CGRP from peripheral terminals during tissue injury (Haberberger et al. 2019, PMID:31293388). In human DRG, CGRP-immunoreactive neurons represent a substantial proportion of nociceptors, comparable to the pattern observed in rodents (Rostock et al. 2018, PMID:29229553). |
-| stubby Dogiel type I neuron of myenteric plexus (CL:0020052) | A Dogiel type I neuron of the myenteric plexus characterised by stubby (lamellar) dendrite morphology with broad, flattened dendritic expansions. This neuron is immunopositive for choline acetyltransferase (ChAT) and immunonegative for neuronal nitric oxide synthase (NOS1), corresponding to excitatory motor neurons of the enteric nervous system. |
-| thoracic dorsal root ganglion Nav1.7 neuron (CL:4079031) | A nociceptor whose soma is located in the thoracic dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.7 (encoded by SCN9A). This neuron is characterized by Nav1.7-dependent action potential initiation and amplification, which is essential for normal pain sensation in humans. Nav1.7 contributes approximately 50% of total sodium channel current in human DRG nociceptors (Chang et al. 2018, PMID:28424991). In human DRG, Nav1.7 immunoreactivity is detected in 54-57% of TrkA-positive neurons (Rostock et al. 2018, PMID:29229553). Human genetic evidence confirms Nav1.7 as necessary and sufficient for nociceptive function in these neurons. |
-| spiny Dogiel type I neuron of myenteric plexus (CL:0020053) | A Dogiel type I neuron of the myenteric plexus characterised by spiny (spine-like) dendrite morphology with numerous short projections along the dendrites. This neuron is immunopositive for neuronal nitric oxide synthase (NOS1) and immunonegative for choline acetyltransferase (ChAT), corresponding to inhibitory motor neurons of the enteric nervous system. |
-| ascending interneuron of myenteric plexus (CL:0020050) | An interneuron of the myenteric plexus whose axon projects orally (in the ascending direction) along the gut axis. This neuron is immunopositive for choline acetyltransferase (ChAT) and enkephalin (ENK), and forms the excitatory limb of ascending reflex pathways that coordinate peristalsis. |
-| middle zone articular chondrocyte (CL:0020038) | An articular chondrocyte located in the middle (transitional) zone of articular cartilage, characterized by round morphology and relatively random spatial organization, and residing in a matrix enriched in proteoglycans and thicker collagen fibrils oriented obliquely to the articular surface. This cell contributes to the largest volume fraction of articular cartilage and functions primarily in distributing and absorbing compressive loads between the superficial and deep zones. |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | A peptidergic nociceptor whose soma is located in the cervical dorsal root ganglion and that expresses substance P, an 11-amino-acid neuropeptide cleaved from protachykinin-1 (encoded by TAC1). This small-diameter neuron frequently co-expresses CGRP and belongs to the TrkA-positive peptidergic population. Upon nociceptive activation, it releases substance P both centrally in the spinal cord dorsal horn and peripherally at sensory nerve terminals, mediating neurogenic inflammation through NK1 receptor signalling (Haberberger et al. 2019, PMID:31293388). Substance P-immunoreactive neurons have been consistently identified in human DRG by immunohistochemistry across multiple studies. |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) | A peptidergic nociceptor whose soma is located in the lumbar dorsal root ganglion, characterized by expression of calcitonin gene-related peptide (CGRP, encoded by CALCA). This small- to medium-diameter neuron belongs to the TrkA-positive peptidergic subpopulation and typically co-expresses substance P. It innervates peripheral tissues including skin and viscera, where it mediates neurogenic inflammation and nociceptive signalling through release of CGRP from peripheral terminals during tissue injury (Haberberger et al. 2019, PMID:31293388). In human DRG, CGRP-immunoreactive neurons represent a substantial proportion of nociceptors, comparable to the pattern observed in rodents (Rostock et al. 2018, PMID:29229553). |
-| oRGC2 (CL:0020032) | A conserved retinal ganglion cell orthotype whose transcriptomic profile groups together ON parasol RGCs from primate foveal and peripheral retina with their molecularly homologous mouse α RGC subtype (ON-transient α RGC, C41) (Hahn et al., 2023; Tran et al., 2019). Reference to the transcriptomic evidence is found at: GSE237215. |
-| calcified zone articular chondrocyte (CL:0020040) | An articular chondrocyte located in the calcified cartilage zone below the tidemark at the interface between articular cartilage and subchondral bone, embedded within a mineralized extracellular matrix. In humans, this cell exhibits a hypertrophic-like phenotype and typically expresses collagen type X (COL10A1). Together with the surrounding calcified matrix, it forms a transitional region that mechanically couples the deep articular cartilage to the underlying subchondral bone. |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | A peptidergic nociceptor whose soma is located in the sacral dorsal root ganglion and that expresses substance P, an 11-amino-acid neuropeptide cleaved from protachykinin-1 (encoded by TAC1). This small-diameter neuron frequently co-expresses CGRP and belongs to the TrkA-positive peptidergic population. Upon nociceptive activation, it releases substance P both centrally in the spinal cord dorsal horn and peripherally at sensory nerve terminals, mediating neurogenic inflammation through NK1 receptor signalling (Haberberger et al. 2019, PMID:31293388). Substance P-immunoreactive neurons have been consistently identified in human DRG by immunohistochemistry across multiple studies. |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) | A mechanosensitive sensory neuron whose soma is located in the cervical dorsal root ganglion and that expresses the mechanically activated ion channel Piezo2 (encoded by PIEZO2). This neuron transduces mechanical stimuli and is involved in light touch perception and proprioception. In human DRG, Piezo2-immunoreactive neurons constitute approximately 35% of TrkA-positive neurons, compared to 26% in mouse (Rostock et al. 2018, PMID:29229553). This subpopulation includes both low-threshold mechanoreceptors mediating innocuous touch and a subset of mechanically sensitive nociceptors, reflecting the dual role of Piezo2 in somatosensation across species. |
-| intestinofugal neuron (CL:0020049) | An enteric neuron whose soma resides in the myenteric plexus of the intestine and whose axon projects outside the gut wall to synapse on neurons in prevertebral sympathetic ganglia (celiac, superior mesenteric, or inferior mesenteric ganglia). This neuron provides a pathway for gut-to-brain communication via sympathetic prevertebral ganglia. In humans, 89% are immunopositive for choline acetyltransferase (ChAT); CART (cocaine- and amphetamine-regulated transcript) is NOT a human marker (0% CART+) but is present in rodent viscerofugal neurons. |
-| thoracic dorsal root ganglion Nav1.9 neuron (CL:4079032) | A nociceptor whose soma is located in the thoracic dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.9 (encoded by SCN11A). This neuron is characterized by a persistent, tetrodotoxin-resistant sodium current that modulates resting membrane potential and amplifies subthreshold depolarizations, contributing to enhanced excitability during inflammation (Dib-Hajj et al. 2002, PMID:11972962). In human DRG, Nav1.9-immunoreactive neurons constitute approximately 26% of TrkA-positive neurons, a significantly higher proportion than the 12% observed in mouse (Rostock et al. 2018, PMID:29229553), suggesting species differences in inflammatory pain processing. |
-| dorsal root ganglion Nav1.9 neuron (CL:4033179) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker sodium channel protein type 11 subunit alpha (Nav1.9/SCN11A). Nav1.9 is present in approximately 26% of TrkA-positive human DRG neurons and defines a nociceptor subpopulation. |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | A CD8-positive memory alpha-beta T cell with stem-like properties that is long-lived, retains a naïve-like phenotype, and exhibits self-renewal and multipotent differentiation capacity. This cell acts as a stem-like reservoir capable of regenerating central and effector memory T cell subsets. |
-| sacral dorsal root ganglion Nav1.7 neuron (CL:4079022) | A nociceptor whose soma is located in the sacral dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.7 (encoded by SCN9A). This neuron is characterized by Nav1.7-dependent action potential initiation and amplification, which is essential for normal pain sensation in humans. Nav1.7 contributes approximately 50% of total sodium channel current in human DRG nociceptors (Chang et al. 2018, PMID:28424991). In human DRG, Nav1.7 immunoreactivity is detected in 54-57% of TrkA-positive neurons (Rostock et al. 2018, PMID:29229553). Human genetic evidence confirms Nav1.7 as necessary and sufficient for nociceptive function in these neurons. |
-| cholinergic neuron of myenteric plexus (CL:0020057) | An enteric neuron whose soma resides in the myenteric plexus and which is capable of acetylcholine secretion, neurotransmission. This is a defined grouping class that autoclassifies stubby Dogiel type I neurons, intrinsic primary afferent neurons, ascending interneurons, and their morphological/chemical subterms. |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | A CD8-positive alpha-beta T cell that displays impaired function and altered differentiation as a result of chronic antigenic stimulation (e.g., chronic infection, tumours, or persistent inflammation). This state is characterised by sustained expression of PD-1 as a shared feature. Additional exhaustion-associated molecules, including expression of the transcription factor TOX and reduced T-bet, and context- or stage-dependent changes in markers such as LAG-3, TIM-3, CD39, and EOMES, may also be observed; however, the expression levels of these molecules vary depending on exhaustion stage and disease context. |
-| secretomotor/vasodilator neuron of myenteric plexus (CL:0020048) | An enteric neuron whose soma resides in the myenteric plexus and which controls mucosal secretion and blood flow by innervating secretory epithelia and submucosal blood vessels. This neuron is characterised by expression of vasoactive intestinal peptide (VIP). In mouse, two Glp2r+ subtypes have been identified: PSVN1 (VIP+, non-cholinergic) and PSVN2 (ChAT+, cholinergic). In human, only the VIP+ non-cholinergic subtype has been detected. |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | A sensory neuron whose soma is located in the lumbar dorsal root ganglion and that expresses endothelin-1 (EDN1). In rat DRG, EDN1 immunoreactivity has been detected in a subset of neuron somata (Giaid et al. 1989, PMID:2678100). Endothelin-1 acts as an endogenous pain mediator, sensitizing nociceptors through activation of ETA and ETB receptors, and these neurons are implicated in vascular pain signalling. EDN1-expressing DRG neurons have been characterized in rat; their prevalence and properties in human DRG remain to be systematically determined, as EDN1 is not yet represented in human DRG single-cell transcriptomic datasets. |
-| nitrergic neuron of myenteric plexus (CL:0020058) | An enteric neuron whose soma resides in the myenteric plexus and which is capable of nitric oxide biosynthetic process. This is a defined grouping class that autoclassifies spiny Dogiel type I neurons (the nitrergic motor neuron morphotype). |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) | A polymodal nociceptor whose soma is located in the cervical dorsal root ganglion and that expresses the transient receptor potential vanilloid 1 channel (TRPV1, encoded by TRPV1). This neuron detects noxious heat above 43 degrees Celsius, protons, and endogenous lipid mediators, and is activated by capsaicin. In human DRG, TRPV1-immunoreactive neurons constitute approximately 54% of TrkA-positive neurons, significantly higher than the 35% observed in mouse (Rostock et al. 2018, PMID:29229553). These neurons are predominantly small-diameter nociceptors that innervate skin and visceral organs, where they function as primary detectors of thermal and chemical noxious stimuli. |
-| intestinal intraepithelial lymphocyte (CL:0020035) | A T cell that is located in the intestinal epithelium and is capable of a mucosal immune response. |
-| cervical dorsal root ganglion Nav1.7 neuron (CL:4079002) | A nociceptor whose soma is located in the cervical dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.7 (encoded by SCN9A). This neuron is characterized by Nav1.7-dependent action potential initiation and amplification, which is essential for normal pain sensation in humans. Nav1.7 contributes approximately 50% of total sodium channel current in human DRG nociceptors (Chang et al. 2018, PMID:28424991). In human DRG, Nav1.7 immunoreactivity is detected in 54-57% of TrkA-positive neurons (Rostock et al. 2018, PMID:29229553). Human genetic evidence confirms Nav1.7 as necessary and sufficient for nociceptive function in these neurons. |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) | A peptidergic nociceptor whose soma is located in the thoracic dorsal root ganglion, characterized by expression of calcitonin gene-related peptide (CGRP, encoded by CALCA). This small- to medium-diameter neuron belongs to the TrkA-positive peptidergic subpopulation and typically co-expresses substance P. It innervates peripheral tissues including skin and viscera, where it mediates neurogenic inflammation and nociceptive signalling through release of CGRP from peripheral terminals during tissue injury (Haberberger et al. 2019, PMID:31293388). In human DRG, CGRP-immunoreactive neurons represent a substantial proportion of nociceptors, comparable to the pattern observed in rodents (Rostock et al. 2018, PMID:29229553). |
-| lumbar dorsal root ganglion Nav1.7 neuron (CL:4079013) | A nociceptor whose soma is located in the lumbar dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.7 (encoded by SCN9A). This neuron is characterized by Nav1.7-dependent action potential initiation and amplification, which is essential for normal pain sensation in humans. Nav1.7 contributes approximately 50% of total sodium channel current in human DRG nociceptors (Chang et al. 2018, PMID:28424991). In human DRG, Nav1.7 immunoreactivity is detected in 54-57% of TrkA-positive neurons (Rostock et al. 2018, PMID:29229553). Human genetic evidence confirms Nav1.7 as necessary and sufficient for nociceptive function in these neurons. |
-| dorsal root ganglion BRN3A neuron (CL:4033175) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the pan-sensory transcription factor POU domain, class 4, transcription factor 1 (BRN3A/POU4F1). In humans, BRN3A is expressed by approximately 98% of DRG neurons and serves as a broad marker for the sensory neuron population. |
-| dorsal root ganglion peripherin neuron (CL:4033180) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the intermediate filament protein peripherin (PRPH). Peripherin marks small-diameter unmyelinated C-fiber neurons in the DRG. |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | A small-diameter sensory neuron whose soma is located in the thoracic dorsal root ganglion and that expresses peripherin (encoded by PRPH), a type III intermediate filament protein. This neuron is unmyelinated, conducts action potentials as a C-fiber, and encompasses nociceptive and thermoceptive functional subpopulations. In human DRG, peripherin-immunoreactive neurons are predominantly of small diameter (Chang et al. 2018, PMID:28424991), distinguishing them from large-diameter myelinated A-fiber neurons that instead express neurofilament heavy chain (Haberberger et al. 2019, PMID:31293388). In mice, peripherin similarly marks unmyelinated primary afferent neurons. |
-| deep zone articular chondrocyte (CL:0020039) | An articular chondrocyte located in the deep (radial) zone of articular cartilage, characterized by columnar arrangement perpendicular to the joint surface and residence within a matrix containing the highest proteoglycan concentration and large-diameter collagen fibrils oriented radially. In humans, this cell expresses collagen type X (COL10A1) and provides maximal resistance to compressive forces. It is positioned adjacent to the tidemark, where collagen fibrils extend into the calcified cartilage to anchor the articular cartilage to subchondral bone. |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | A CD4-positive alpha-beta T cell that displays impaired function and altered differentiation as a result of chronic antigenic stimulation (e.g., chronic infection, tumors, or persistent inflammation). This state is characterised by sustained expression of PD-1 as a shared feature. Additional exhaustion-associated molecules, including the transcription factor TOX, and context- or stage-dependent changes in markers such as LAG-3, TIM-3, CD39, and T-bet, may also be observed; however, the expression levels of these molecules vary depending on exhaustion stage and tissue environment. |
-| cervical dorsal root ganglion Nav1.9 neuron (CL:4079003) | A nociceptor whose soma is located in the cervical dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.9 (encoded by SCN11A). This neuron is characterized by a persistent, tetrodotoxin-resistant sodium current that modulates resting membrane potential and amplifies subthreshold depolarizations, contributing to enhanced excitability during inflammation (Dib-Hajj et al. 2002, PMID:11972962). In human DRG, Nav1.9-immunoreactive neurons constitute approximately 26% of TrkA-positive neurons, a significantly higher proportion than the 12% observed in mouse (Rostock et al. 2018, PMID:29229553), suggesting species differences in inflammatory pain processing. |
-| intrinsic cardiac ganglion TH neuron (CL:4079010) | A catecholaminergic neuron whose soma is located in an intrinsic cardiac ganglion and that expresses tyrosine hydroxylase (TH, encoded by TH), the rate-limiting enzyme in catecholamine biosynthesis. This neuron constitutes a minor subpopulation within the predominantly cholinergic parasympathetic intrinsic cardiac nervous system, identified in adult human cardiac ganglia by immunohistochemistry (Singh et al. 1999, PMID:9918529; Kawano et al. 2003, DOI:10.1007/s003800300005). It participates in local cardiac autonomic regulation, including modulation of heart rate and contractility. Its catecholaminergic phenotype distinguishes it from the majority cholinergic neurons of the same ganglia. |
-| fasciacyte (CL:0020043) | A mesenchymal stromal cell of the deep fascia (e.g., fascia lata) that is vimentin-positive, CD68-negative, and S-100A4-positive, organized in small clusters at the interface between fibrous fascial sublayers and loose connective tissue. It is specialized for hyaluronan-rich ECM biosynthesis, as evidenced by HAS2 mRNA expression, Alcian Blue staining, and anti-HABP immunoreactivity, and functions to regulate fascial gliding and viscoelasticity. |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) | A polymodal nociceptor whose soma is located in the sacral dorsal root ganglion and that expresses the transient receptor potential vanilloid 1 channel (TRPV1, encoded by TRPV1). This neuron detects noxious heat above 43 degrees Celsius, protons, and endogenous lipid mediators, and is activated by capsaicin. In human DRG, TRPV1-immunoreactive neurons constitute approximately 54% of TrkA-positive neurons, significantly higher than the 35% observed in mouse (Rostock et al. 2018, PMID:29229553). These neurons are predominantly small-diameter nociceptors that innervate skin and visceral organs, where they function as primary detectors of thermal and chemical noxious stimuli. |
-| sacral dorsal root ganglion RET neuron (CL:4079026) | A non-peptidergic nociceptor whose soma is located in the sacral dorsal root ganglion and that expresses the receptor tyrosine kinase RET (encoded by RET). This neuron is distinguished from peptidergic nociceptors by its dependence on glial cell-derived neurotrophic factor family ligands rather than nerve growth factor, and in rodents it characteristically binds isolectin B4. In human DRG, RET-immunoreactive neurons constitute approximately 46% of TrkA-positive neurons, a significantly higher proportion than the 23% observed in mouse (Rostock et al. 2018, PMID:29229553), indicating an expanded non-peptidergic nociceptor compartment in humans. |
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) | A mechanosensitive sensory neuron whose soma is located in the lumbar dorsal root ganglion and that expresses the mechanically activated ion channel Piezo2 (encoded by PIEZO2). This neuron transduces mechanical stimuli and is involved in light touch perception and proprioception. In human DRG, Piezo2-immunoreactive neurons constitute approximately 35% of TrkA-positive neurons, compared to 26% in mouse (Rostock et al. 2018, PMID:29229553). This subpopulation includes both low-threshold mechanoreceptors mediating innocuous touch and a subset of mechanically sensitive nociceptors, reflecting the dual role of Piezo2 in somatosensation across species. |
-| dorsal root ganglion Piezo2 neuron (CL:4033181) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker piezo-type mechanosensitive ion channel component 2 (Piezo2). Piezo2 is the primary mechanotransduction channel and is present in approximately 35% of TrkA-positive human DRG neurons. |
-| cuboidal epithelial cell (CL:0020029) | An epithelial cell that has a cuboidal morphology. |
-| dorsal root ganglion SP neuron (CL:4033183) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker protachykinin-1 (substance P). This peptidergic nociceptor subpopulation is involved in pain signaling and neurogenic inflammation. |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) | A peptidergic nociceptor whose soma is located in the sacral dorsal root ganglion, characterized by expression of calcitonin gene-related peptide (CGRP, encoded by CALCA). This small- to medium-diameter neuron belongs to the TrkA-positive peptidergic subpopulation and typically co-expresses substance P. It innervates peripheral tissues including skin and viscera, where it mediates neurogenic inflammation and nociceptive signalling through release of CGRP from peripheral terminals during tissue injury (Haberberger et al. 2019, PMID:31293388). In human DRG, CGRP-immunoreactive neurons represent a substantial proportion of nociceptors, comparable to the pattern observed in rodents (Rostock et al. 2018, PMID:29229553). |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | A sensory neuron of the enteric nervous system whose soma resides in the myenteric plexus and which functions as the afferent limb of intrinsic reflex circuits controlling motility, secretion, and blood flow. This neuron is characterised by Dogiel type II morphology (large smooth soma with multiple long axon-like processes), AH-type electrophysiology (prolonged afterhyperpolarization following an action potential), and is immunopositive for choline acetyltransferase (ChAT) and immunonegative for neuronal nitric oxide synthase (NOS1). |
-| interneuron of myenteric plexus (CL:0020047) | An interneuron of the enteric nervous system whose soma resides in the myenteric plexus. Interneurons of the myenteric plexus integrate sensory input from intrinsic primary afferent neurons (IPANs) and modulate motor output to smooth muscle and secretory epithelia by synapsing onto motor neurons and other interneurons within the plexus. |
-| lumbar dorsal root ganglion Nav1.9 neuron (CL:4079014) | A nociceptor whose soma is located in the lumbar dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.9 (encoded by SCN11A). This neuron is characterized by a persistent, tetrodotoxin-resistant sodium current that modulates resting membrane potential and amplifies subthreshold depolarizations, contributing to enhanced excitability during inflammation (Dib-Hajj et al. 2002, PMID:11972962). In human DRG, Nav1.9-immunoreactive neurons constitute approximately 26% of TrkA-positive neurons, a significantly higher proportion than the 12% observed in mouse (Rostock et al. 2018, PMID:29229553), suggesting species differences in inflammatory pain processing. |
-| squamous epithelial cell (CL:0000076) | An epithelial cell that has a flattened morphology. |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | A small-diameter sensory neuron whose soma is located in the cervical dorsal root ganglion and that expresses peripherin (encoded by PRPH), a type III intermediate filament protein. This neuron is unmyelinated, conducts action potentials as a C-fiber, and encompasses nociceptive and thermoceptive functional subpopulations. In human DRG, peripherin-immunoreactive neurons are predominantly of small diameter (Chang et al. 2018, PMID:28424991), distinguishing them from large-diameter myelinated A-fiber neurons that instead express neurofilament heavy chain (Haberberger et al. 2019, PMID:31293388). In mice, peripherin similarly marks unmyelinated primary afferent neurons. |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | A sensory neuron whose soma is located in the sacral dorsal root ganglion and that expresses endothelin-1 (EDN1). In rat DRG, EDN1 immunoreactivity has been detected in a subset of neuron somata (Giaid et al. 1989, PMID:2678100). Endothelin-1 acts as an endogenous pain mediator, sensitizing nociceptors through activation of ETA and ETB receptors, and these neurons are implicated in vascular pain signalling. EDN1-expressing DRG neurons have been characterized in rat; their prevalence and properties in human DRG remain to be systematically determined, as EDN1 is not yet represented in human DRG single-cell transcriptomic datasets. |
-| sacral dorsal root ganglion Nav1.9 neuron (CL:4079023) | A nociceptor whose soma is located in the sacral dorsal root ganglion and that expresses the voltage-gated sodium channel Nav1.9 (encoded by SCN11A). This neuron is characterized by a persistent, tetrodotoxin-resistant sodium current that modulates resting membrane potential and amplifies subthreshold depolarizations, contributing to enhanced excitability during inflammation (Dib-Hajj et al. 2002, PMID:11972962). In human DRG, Nav1.9-immunoreactive neurons constitute approximately 26% of TrkA-positive neurons, a significantly higher proportion than the 12% observed in mouse (Rostock et al. 2018, PMID:29229553), suggesting species differences in inflammatory pain processing. |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | A small-diameter sensory neuron whose soma is located in the sacral dorsal root ganglion and that expresses peripherin (encoded by PRPH), a type III intermediate filament protein. This neuron is unmyelinated, conducts action potentials as a C-fiber, and encompasses nociceptive and thermoceptive functional subpopulations. In human DRG, peripherin-immunoreactive neurons are predominantly of small diameter (Chang et al. 2018, PMID:28424991), distinguishing them from large-diameter myelinated A-fiber neurons that instead express neurofilament heavy chain (Haberberger et al. 2019, PMID:31293388). In mice, peripherin similarly marks unmyelinated primary afferent neurons. |
-| oRGC4 (CL:0020041) | A conserved retinal ganglion cell orthotype whose transcriptomic profile groups together ON midget RGCs from primate foveal and peripheral retina with their molecularly homologous mouse alpha RGC subtype (ON-sustained α RGC, C43) (Hahn et al., 2023; Tran et al., 2019). Reference to the transcriptomic evidence is found at: GSE237215. |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | A peptidergic nociceptor whose soma is located in the thoracic dorsal root ganglion and that expresses substance P, an 11-amino-acid neuropeptide cleaved from protachykinin-1 (encoded by TAC1). This small-diameter neuron frequently co-expresses CGRP and belongs to the TrkA-positive peptidergic population. Upon nociceptive activation, it releases substance P both centrally in the spinal cord dorsal horn and peripherally at sensory nerve terminals, mediating neurogenic inflammation through NK1 receptor signalling (Haberberger et al. 2019, PMID:31293388). Substance P-immunoreactive neurons have been consistently identified in human DRG by immunohistochemistry across multiple studies. |
-| oRGC1 (CL:0020036) | A conserved retinal ganglion cell orthotype whose transcriptomic profile groups together OFF midget RGCs from primate foveal and peripheral retina with their molecularly homologous mouse alpha RGC subtype (OFF-sustained alpha-RGC, C42) (Hahn et al., 2023; Tran et al., 2019). Reference to the transcriptomic evidence is found at: GSE237215. |
-| dorsal root ganglion TRPV1 neuron (CL:4033184) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker transient receptor potential cation channel subfamily V member 1 (TRPV1). TRPV1 is the canonical heat and capsaicin nociceptor marker and is present in approximately 54% of TrkA-positive human DRG neurons. |
-| descending interneuron of myenteric plexus (CL:0020051) | An interneuron of the myenteric plexus whose axon projects aborally (in the descending direction) along the gut axis. This neuron class encompasses multiple chemically diverse subtypes including serotonergic (5-HT+), nitrergic (NOS1+), and other populations, forming the inhibitory limb of descending reflex pathways. |
-| oRGC5 (CL:0020042) | A conserved retinal ganglion cell orthotype whose transcriptomic profile groups together OFF parasol RGCs from primate foveal and peripheral retina with their molecularly homologous mouse α RGC subtype (OFF-transient α RGC, C45) (Hahn et al., 2023; Tran et al., 2019). Reference to transcriptomic evidence can be found at: GSE237215. |
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) | A polymodal nociceptor whose soma is located in the lumbar dorsal root ganglion and that expresses the transient receptor potential vanilloid 1 channel (TRPV1, encoded by TRPV1). This neuron detects noxious heat above 43 degrees Celsius, protons, and endogenous lipid mediators, and is activated by capsaicin. In human DRG, TRPV1-immunoreactive neurons constitute approximately 54% of TrkA-positive neurons, significantly higher than the 35% observed in mouse (Rostock et al. 2018, PMID:29229553). These neurons are predominantly small-diameter nociceptors that innervate skin and visceral organs, where they function as primary detectors of thermal and chemical noxious stimuli. |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) | A non-peptidergic nociceptor whose soma is located in the lumbar dorsal root ganglion and that expresses the receptor tyrosine kinase RET (encoded by RET). This neuron is distinguished from peptidergic nociceptors by its dependence on glial cell-derived neurotrophic factor family ligands rather than nerve growth factor, and in rodents it characteristically binds isolectin B4. In human DRG, RET-immunoreactive neurons constitute approximately 46% of TrkA-positive neurons, a significantly higher proportion than the 23% observed in mouse (Rostock et al. 2018, PMID:29229553), indicating an expanded non-peptidergic nociceptor compartment in humans. |
-| cervical dorsal root ganglion RET neuron (CL:4079006) | A non-peptidergic nociceptor whose soma is located in the cervical dorsal root ganglion and that expresses the receptor tyrosine kinase RET (encoded by RET). This neuron is distinguished from peptidergic nociceptors by its dependence on glial cell-derived neurotrophic factor family ligands rather than nerve growth factor, and in rodents it characteristically binds isolectin B4. In human DRG, RET-immunoreactive neurons constitute approximately 46% of TrkA-positive neurons, a significantly higher proportion than the 23% observed in mouse (Rostock et al. 2018, PMID:29229553), indicating an expanded non-peptidergic nociceptor compartment in humans. |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) | A mechanosensitive sensory neuron whose soma is located in the thoracic dorsal root ganglion and that expresses the mechanically activated ion channel Piezo2 (encoded by PIEZO2). This neuron transduces mechanical stimuli and is involved in light touch perception and proprioception. In human DRG, Piezo2-immunoreactive neurons constitute approximately 35% of TrkA-positive neurons, compared to 26% in mouse (Rostock et al. 2018, PMID:29229553). This subpopulation includes both low-threshold mechanoreceptors mediating innocuous touch and a subset of mechanically sensitive nociceptors, reflecting the dual role of Piezo2 in somatosensation across species. |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | A CD4-positive memory alpha-beta T cell with stem-like properties that is long-lived, retains a naïve-like phenotype, and exhibits self-renewal and multipotent differentiation capacity. This cell acts as a stem-like reservoir capable of regenerating central and effector memory T cell subsets. |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) | A mechanosensitive sensory neuron whose soma is located in the sacral dorsal root ganglion and that expresses the mechanically activated ion channel Piezo2 (encoded by PIEZO2). This neuron transduces mechanical stimuli and is involved in light touch perception and proprioception. In human DRG, Piezo2-immunoreactive neurons constitute approximately 35% of TrkA-positive neurons, compared to 26% in mouse (Rostock et al. 2018, PMID:29229553). This subpopulation includes both low-threshold mechanoreceptors mediating innocuous touch and a subset of mechanically sensitive nociceptors, reflecting the dual role of Piezo2 in somatosensation across species. |
-| superficial zone articular chondrocyte (CL:0020037) | An articular chondrocyte located in the most superficial zone of articular cartilage, characterized by flattened morphology and tangential alignment parallel to the joint surface, and residing within a matrix of fine collagen fibrils and relatively low proteoglycan content. In mice and humans, this cell typically expresses lubricin (PRG4) and contributes to lubrication and resistance to shear and tensile forces at the cartilage surface. |
-| dorsal root ganglion CGRP neuron (CL:4033176) | A sensory neuron that has the soma located in the dorsal root ganglion and expresses the marker calcitonin gene-related peptide (CGRP). This peptidergic nociceptor subpopulation is involved in neurogenic inflammation and pain signaling. |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) | A polymodal nociceptor whose soma is located in the thoracic dorsal root ganglion and that expresses the transient receptor potential vanilloid 1 channel (TRPV1, encoded by TRPV1). This neuron detects noxious heat above 43 degrees Celsius, protons, and endogenous lipid mediators, and is activated by capsaicin. In human DRG, TRPV1-immunoreactive neurons constitute approximately 54% of TrkA-positive neurons, significantly higher than the 35% observed in mouse (Rostock et al. 2018, PMID:29229553). These neurons are predominantly small-diameter nociceptors that innervate skin and visceral organs, where they function as primary detectors of thermal and chemical noxious stimuli. |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | A peptidergic nociceptor whose soma is located in the lumbar dorsal root ganglion and that expresses substance P, an 11-amino-acid neuropeptide cleaved from protachykinin-1 (encoded by TAC1). This small-diameter neuron frequently co-expresses CGRP and belongs to the TrkA-positive peptidergic population. Upon nociceptive activation, it releases substance P both centrally in the spinal cord dorsal horn and peripherally at sensory nerve terminals, mediating neurogenic inflammation through NK1 receptor signalling (Haberberger et al. 2019, PMID:31293388). Substance P-immunoreactive neurons have been consistently identified in human DRG by immunohistochemistry across multiple studies. |
-| calretinin-negative intrinsic primary afferent neuron of myenteric plexus (CL:0020056) | An intrinsic primary afferent neuron of the myenteric plexus that lacks calretinin expression. This neuron shares the Dogiel type II morphology and AH-type electrophysiology of all myenteric IPANs, and is immunopositive for choline acetyltransferase (ChAT) and immunonegative for neuronal nitric oxide synthase (NOS1). |
-| hybrid osteochondral skeletal cell (CL:0020028) | A skeletal cell at the periosteal surface of the murine rib that displays hybrid osteochondral properties, emerging within the large callus that bridges segmental rib defects. It derives from a Sox9-expressing periosteal skeletal stem/progenitor subpopulation that constitutes only a small fraction of uninjured rib periosteum. After injury, these cells populate the callus and co-express cartilage and bone regulators Sox9 and Runx2, as well as matrix genes Col2a1 and Col1a1, while exhibiting dual chondrocyte/osteoblast properties. |
-| calretinin-positive intrinsic primary afferent neuron of myenteric plexus (CL:0020055) | An intrinsic primary afferent neuron of the myenteric plexus that is immunopositive for calretinin. This neuron shares the Dogiel type II morphology and AH-type electrophysiology of all myenteric IPANs, and is immunopositive for choline acetyltransferase (ChAT) and immunonegative for neuronal nitric oxide synthase (NOS1). |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | A sensory neuron whose soma is located in the cervical dorsal root ganglion and that expresses endothelin-1 (EDN1). In rat DRG, EDN1 immunoreactivity has been detected in a subset of neuron somata (Giaid et al. 1989, PMID:2678100). Endothelin-1 acts as an endogenous pain mediator, sensitizing nociceptors through activation of ETA and ETB receptors, and these neurons are implicated in vascular pain signalling. EDN1-expressing DRG neurons have been characterized in rat; their prevalence and properties in human DRG remain to be systematically determined, as EDN1 is not yet represented in human DRG single-cell transcriptomic datasets. |
-
-</details>
-
-<details>
-<summary>Relationships added: 343</summary>
+<summary>Relationships added: 25</summary>
 
 | Subject | Predicate | Object|
 ----|----|----|
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) | RO:0002292 |                PR:000032708 |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) | subClassOf (rdfs:subClassOf) |                intrinsic primary afferent neuron of myenteric plexus (CL:0020046) |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | RO:0002100 |                UBERON:0002834 |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| oRGC5 (CL:0020042) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell (CL:0000740) |
-| celiac ganglion SP neuron (CL:4033131) | RO:0002292 |                PR:000016003 |
-| dorsal root ganglion BRN3A neuron (CL:4033175) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) | RO:0002292 |                PR:000027226 |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | RO:0002104 |                PR:000001919 |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | RO:0002292 |                PR:000013289 |
-| cervical dorsal root ganglion Nav1.7 neuron (CL:4079002) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| superficial zone articular chondrocyte (CL:0020037) | subClassOf (rdfs:subClassOf) |                articular chondrocyte (CL:1001607) |
-| dorsal root ganglion Nav1.7 neuron (CL:4033178) | RO:0002292 |                PR:000002104 |
-| ciliary ganglion VIP/PHI neuron (CL:4033139) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | RO:0002292 |                PR:000013289 |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | RO:0002100 |                UBERON:0002837 |
-| nitrergic neuron of myenteric plexus (CL:0020058) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| preameloblast (CL:0007000) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) | RO:0002292 |                PR:000001065 |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| muscle precursor cell (CL:0000680) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) | subClassOf (rdfs:subClassOf) |                D1/D2-hybrid medium spiny neuron (CL:4030050) |
-| interneuron of myenteric plexus (CL:0020047) | RO:0002100 |                UBERON:0002439 |
-| T follicular helper cell (CL:0002038) | subClassOf (rdfs:subClassOf) |                CD4-positive exhausted alpha-beta T cell (CL:0020030) |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) | RO:0002292 |                PR:000027226 |
-| pelvic ganglion VAChT neuron (CL:4033169) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| cholinergic neuron of myenteric plexus (CL:0020057) | RO:0002100 |                UBERON:0002439 |
-| squamous cell of epidermis (CL:0002190) | subClassOf (rdfs:subClassOf) |                stratified squamous epithelial cell (CL:0000240) |
-| calcified zone articular chondrocyte (CL:0020040) | subClassOf (rdfs:subClassOf) |                articular chondrocyte (CL:1001607) |
-| lumbar dorsal root ganglion Nav1.9 neuron (CL:4079014) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | RO:0002292 |                PR:000013289 |
-| lumbar dorsal root ganglion Nav1.7 neuron (CL:4079013) | RO:0002292 |                PR:000002104 |
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) | RO:0002292 |                PR:000001065 |
-| leucoblast (CL:0005003) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| migratory muscle precursor (CL:0020044) | subClassOf (rdfs:subClassOf) |                muscle precursor cell (CL:0000680) |
-| lumbar dorsal root ganglion Nav1.7 neuron (CL:4079013) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| spiny Dogiel type I neuron of myenteric plexus (CL:0020053) | subClassOf (rdfs:subClassOf) |                dogiel type I neuron (CL:4047038) |
-| hematopoietic stem cell (CL:0000037) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| lower airway ganglion ChAT/VIP neuron (CL:4033127) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| transit amplifying cell (CL:0009010) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| pelvic ganglion nNOS neuron (CL:4033170) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | RO:0002292 |                PR:000016003 |
-| urothelial cell (CL:0000731) | subClassOf (rdfs:subClassOf) |                stratified epithelial cell (CL:0000079) |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| myeloid dendritic cell, human (CL:0001057) | lacks_plasma_membrane_part (CL:4030046) |                PR:000001889 |
-| stubby Dogiel type I neuron of myenteric plexus (CL:0020052) | subClassOf (rdfs:subClassOf) |                motor neuron (CL:0000100) |
-| dorsal root ganglion EDN1 neuron (CL:4033177) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| conjunctiva goblet cell (CL:2000084) | subClassOf (rdfs:subClassOf) |                stratified epithelial cell (CL:0000079) |
-| pelvic ganglion nNOS/VAChT neuron (CL:4033173) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| dorsal root ganglion CGRP neuron (CL:4033176) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) | RO:0002292 |                PR:000027226 |
-| sacral dorsal root ganglion RET neuron (CL:4079026) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| superficial zone articular chondrocyte (CL:0020037) | RO:0002292 |                PR:000013208 |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | subClassOf (rdfs:subClassOf) |                CD8-positive, alpha-beta memory T cell (CL:0000909) |
-| keratinized squamous cell of esophagus (CL:0002221) | subClassOf (rdfs:subClassOf) |                stratified squamous epithelial cell (CL:0000240) |
-| dorsal root ganglion BRN3A neuron (CL:4033175) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| intestinal intraepithelial lymphocyte (CL:0020035) | RO:0001025 |                UBERON:0001277 |
-| thoracic dorsal root ganglion Nav1.7 neuron (CL:4079031) | RO:0002292 |                PR:000002104 |
-| jugular ganglion SP neuron (CL:4033154) | RO:0002292 |                PR:000016003 |
-| dorsal root ganglion Nav1.9 neuron (CL:4033179) | RO:0002292 |                PR:000002097 |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| preodontoblast (CL:0007003) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| pterygopalatine ganglion VIP/PHI neuron (CL:4033144) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) | RO:0002292 |                PR:000027226 |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | RO:0002292 |                PR:000016003 |
-| medial ganglionic eminence derived interneuron (CL:4023063) | RO:0002292 |                http://identifiers.org/ncbigene/55553 |
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | RO:0002100 |                UBERON:0002837 |
-| SN SOX6 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310115) | subClassOf (rdfs:subClassOf) |                substantia nigra dopaminergic neuron (CL:4042025) |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | RO:0002100 |                UBERON:0002439 |
-| intestinal intraepithelial lymphocyte (CL:0020035) | subClassOf (rdfs:subClassOf) |                intraepithelial lymphocyte (CL:0002496) |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| osteochondral skeletal stem cell (CL:0020016) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| ciliary ganglion TH neuron (CL:4033140) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| calretinin-positive intrinsic primary afferent neuron of myenteric plexus (CL:0020055) | subClassOf (rdfs:subClassOf) |                intrinsic primary afferent neuron of myenteric plexus (CL:0020046) |
-| fasciacyte (CL:0020043) | BFO:0000050 |                UBERON:0011236 |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | RO:0002100 |                UBERON:0002836 |
-| intrinsic cardiac ganglion TH neuron (CL:4079010) | RO:0002292 |                PR:000016301 |
-| lumbar dorsal root ganglion Nav1.7 neuron (CL:4079013) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion Nav1.9 neuron (CL:4079032) | RO:0002292 |                PR:000002097 |
-| precementoblast (CL:0007002) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) | RO:0002100 |                UBERON:0002836 |
-| intrinsic cardiac ganglion TH neuron (CL:4079010) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | RO:0002292 |                PR:000006897 |
-| squamous endothelial cell (CL:0002653) | RO:0000053 |                PATO:0002254 |
-| dorsal root ganglion TRPV1 neuron (CL:4033184) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| progenitor cell of mammary luminal epithelium (CL:0009116) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) | RO:0002100 |                UBERON:0002837 |
-| secretomotor/vasodilator neuron of myenteric plexus (CL:0020048) | RO:0002100 |                UBERON:0002439 |
-| otic ganglion nNOS neuron (CL:4033137) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| hybrid osteochondral skeletal cell (CL:0020028) | RO:0002162 |                NCBITaxon:10090 |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | RO:0002100 |                UBERON:0002835 |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| myenteric ganglion of small intestine ChAT/CALR/SOM/SP neuron (CL:4033165) | RO:0002292 |                PR:000016003 |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| pigment erythroblast (CL:0005004) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| sacral dorsal root ganglion Nav1.7 neuron (CL:4079022) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| inferior mesenteric ganglion SP neuron (CL:4033136) | RO:0002292 |                PR:000016003 |
-| dorsal root ganglion EDN1 neuron (CL:4033177) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| stem cell of epidermis (CL:1000428) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | subClassOf (rdfs:subClassOf) |                peripheral sensory neuron (CL:3000004) |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| pelvic ganglion NPY/VAChT neuron (CL:4033172) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| pterygopalatine ganglion nNOS neuron (CL:4033146) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| cervical dorsal root ganglion RET neuron (CL:4079006) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| dorsal root ganglion EDN1 neuron (CL:4033177) | RO:0002292 |                PR:000006897 |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) | subClassOf (rdfs:subClassOf) |                Dogiel type II neuron (CL:0020045) |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| Claudius cell (CL:0000634) | subClassOf (rdfs:subClassOf) |                cuboidal epithelial cell (CL:0020029) |
-| basal cell of urothelium (CL:1000486) | subClassOf (rdfs:subClassOf) |                progenitor cell (CL:0011026) |
-| cervical dorsal root ganglion Nav1.9 neuron (CL:4079003) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| deep zone articular chondrocyte (CL:0020039) | subClassOf (rdfs:subClassOf) |                articular chondrocyte (CL:1001607) |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | RO:0002292 |                PR:000006897 |
-| pterygopalatine ganglion VIP neuron (CL:4033145) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| calcified zone articular chondrocyte (CL:0020040) | RO:0002292 |                PR:000005693 |
-| stratified epithelial cell (CL:0000079) | BFO:0000050 |                UBERON:0000486 |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | RO:0002100 |                UBERON:0002835 |
-| submandibular ganglion VIP/PHI neuron (CL:4033142) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| epithelial fate stem cell (CL:0000036) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| cervical dorsal root ganglion Nav1.7 neuron (CL:4079002) | RO:0002292 |                PR:000002104 |
-| histoblast (CL:0000373) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) | RO:0002100 |                UBERON:0002834 |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| dorsal root ganglion TRPV1 neuron (CL:4033184) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| SN-VTR CALB1 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310109) | subClassOf (rdfs:subClassOf) |                substantia nigra dopaminergic neuron (CL:4042025) |
-| sacral dorsal root ganglion Nav1.9 neuron (CL:4079023) | RO:0002292 |                PR:000002097 |
-| squamous granulosa cell (CL:4033083) | RO:0000053 |                PATO:0002254 |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | RO:0002100 |                UBERON:0002835 |
-| cholinergic neuron of myenteric plexus (CL:0020057) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| vagina squamous cell (CL:1001578) | subClassOf (rdfs:subClassOf) |                stratified squamous epithelial cell (CL:0000240) |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | subClassOf (rdfs:subClassOf) |                CD4-positive, alpha-beta memory T cell (CL:0000897) |
-| BF SKOR1 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310088) | subClassOf (rdfs:subClassOf) |                dopaminergic neuron (CL:0000700) |
-| lumbar dorsal root ganglion Nav1.9 neuron (CL:4079014) | RO:0002100 |                UBERON:0002836 |
-| dorsal root ganglion Piezo2 neuron (CL:4033181) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | subClassOf (rdfs:subClassOf) |                CD8-positive, alpha-beta T cell (CL:0000625) |
-| cuboidal granulosa cell (CL:4033084) | RO:0000053 |                PATO:0001872 |
-| dorsal root ganglion RET neuron (CL:4033182) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| STRv D1-NUDAP medium spiny neuron (Primate) (CL:4310137) | subClassOf (rdfs:subClassOf) |                D1/D2-hybrid medium spiny neuron (CL:4030050) |
-| sacral dorsal root ganglion Nav1.7 neuron (CL:4079022) | RO:0002100 |                UBERON:0002837 |
-| dorsal root ganglion peripherin neuron (CL:4033180) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| dorsal root ganglion peripherin neuron (CL:4033180) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| medial ganglionic eminence derived interneuron (CL:4023063) | RO:0002292 |                http://identifiers.org/ncbigene/26468 |
-| neuromast hair cell (CL:0000856) | subClassOf (rdfs:subClassOf) |                gravity sensitive cell (CL:0000203) |
-| keratinizing barrier epithelial cell (CL:0000237) | subClassOf (rdfs:subClassOf) |                stratified epithelial cell (CL:0000079) |
-| dorsal root ganglion Nav1.9 neuron (CL:4033179) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) | RO:0002100 |                UBERON:0002834 |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | RO:0002100 |                UBERON:0002836 |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| pulmonary alveolar type 2 cell (CL:0002063) | RO:0002215 |                GO:0043129 |
-| hybrid osteochondral skeletal cell (CL:0020028) | BFO:0000050 |                UBERON:0002515 |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | subClassOf (rdfs:subClassOf) |                exhausted T cell (CL:0011025) |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | RO:0002292 |                PR:000006897 |
-| alpha-beta intraepithelial T cell (CL:0000797) | subClassOf (rdfs:subClassOf) |                intestinal intraepithelial lymphocyte (CL:0020035) |
-| oRGC2 (CL:0020032) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell (CL:0000740) |
-| sacral dorsal root ganglion RET neuron (CL:4079026) | RO:0002292 |                PR:000013895 |
-| luminal cell of lactiferous duct (CL:0002662) | subClassOf (rdfs:subClassOf) |                cuboidal epithelial cell (CL:0020029) |
-| sacral dorsal root ganglion Nav1.9 neuron (CL:4079023) | RO:0002100 |                UBERON:0002837 |
-| otic ganglion VIP neuron (CL:4033138) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| dorsal root ganglion Piezo2 neuron (CL:4033181) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| tuft cell of urethra (CL:4052042) | RO:0002215 |                GO:0060083 |
-| oRGC4 (CL:0020041) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell (CL:0000740) |
-| thoracic dorsal root ganglion Nav1.9 neuron (CL:4079032) | RO:0002100 |                UBERON:0002835 |
-| nitrergic neuron of myenteric plexus (CL:0020058) | RO:0002100 |                UBERON:0002439 |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | subClassOf (rdfs:subClassOf) |                exhausted T cell (CL:0011025) |
-| cervical dorsal root ganglion Nav1.7 neuron (CL:4079002) | RO:0002100 |                UBERON:0002834 |
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| myenteric ganglion of small intestine ChAT/CALR/SOM/SP neuron (CL:4033165) | RO:0002292 |                PR:000004968 |
-| intestinofugal neuron (CL:0020049) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) | RO:0002100 |                UBERON:0002837 |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | RO:0002100 |                UBERON:0002837 |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| xanthoblast (CL:0005002) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) | RO:0002292 |                PR:000032708 |
-| iridoblast (CL:0005001) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| thoracic dorsal root ganglion Nav1.9 neuron (CL:4079032) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| pulmonary alveolar type 2 cell (CL:0002063) | subClassOf (rdfs:subClassOf) |                cuboidal epithelial cell (CL:0020029) |
-| VTR-HTH Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310144) | subClassOf (rdfs:subClassOf) |                dopaminergic neuron (CL:0000700) |
-| sacral dorsal root ganglion Nav1.9 neuron (CL:4079023) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| ear hair cell (CL:0002374) | subClassOf (rdfs:subClassOf) |                gravity sensitive cell (CL:0000203) |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| pelvic ganglion TH neuron (CL:4033167) | subClassOf (rdfs:subClassOf) |                sympathetic neuron (CL:0011103) |
-| neuroblast (sensu Vertebrata) (CL:0000031) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| thoracic dorsal root ganglion Nav1.7 neuron (CL:4079031) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| dorsal root ganglion RET neuron (CL:4033182) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| Dogiel type II neuron (CL:0020045) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| dorsal root ganglion peripherin neuron (CL:4033180) | RO:0002292 |                PR:000013289 |
-| anterior lens cell (CL:0002223) | subClassOf (rdfs:subClassOf) |                cuboidal epithelial cell (CL:0020029) |
-| calretinin-negative intrinsic primary afferent neuron of myenteric plexus (CL:0020056) | subClassOf (rdfs:subClassOf) |                intrinsic primary afferent neuron of myenteric plexus (CL:0020046) |
-| intraepithelial lymphocyte (CL:0002496) | RO:0001025 |                UBERON:0000483 |
-| type I spiral ligament fibrocyte (CL:0002670) | subClassOf (rdfs:subClassOf) |                spiral ligament fibrocyte (CL:0020005) |
-| Schwann cell precursor (CL:0002375) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) | RO:0002292 |                PR:000001065 |
-| dorsal root ganglion Piezo2 neuron (CL:4033181) | RO:0002292 |                PR:000032708 |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| sacral dorsal root ganglion Nav1.7 neuron (CL:4079022) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| vestibular ganglion SP neuron (CL:4033147) | RO:0002292 |                PR:000016003 |
-| type II NK T cell (CL:0000922) | RO:0002215 |                GO:0051132 |
-| migratory neural crest cell (CL:0000333) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| fasciacyte (CL:0020043) | subClassOf (rdfs:subClassOf) |                stromal cell (CL:0000499) |
-| gamma-delta intraepithelial T cell (CL:0000801) | subClassOf (rdfs:subClassOf) |                intestinal intraepithelial lymphocyte (CL:0020035) |
-| nitrergic neuron of myenteric plexus (CL:0020058) | RO:0002215 |                GO:0006809 |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) | RO:0002100 |                UBERON:0002836 |
-| pelvic ganglion nNOS/VIP neuron (CL:4033171) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| sacral dorsal root ganglion RET neuron (CL:4079026) | RO:0002100 |                UBERON:0002837 |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | RO:0002100 |                UBERON:0002834 |
-| hybrid osteochondral skeletal cell (CL:0020028) | subClassOf (rdfs:subClassOf) |                skeletogenic cell (CL:0007001) |
-| intestinofugal neuron (CL:0020049) | RO:0002100 |                UBERON:0002439 |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| type III spiral ligament fibrocyte (CL:0002669) | subClassOf (rdfs:subClassOf) |                spiral ligament fibrocyte (CL:0020005) |
-| dorsal root ganglion Nav1.7 neuron (CL:4033178) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| submandibular ganglion nNOS neuron (CL:4033143) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| cuboidal epithelial cell (CL:0020029) | RO:0000053 |                PATO:0001872 |
-| cholinergic neuron of myenteric plexus (CL:0020057) | subClassOf (rdfs:subClassOf) |                cholinergic neuron (CL:0000108) |
-| myenteric ganglion of small intestine ChAT neuron (CL:4033160) | subClassOf (rdfs:subClassOf) |                cholinergic neuron of myenteric plexus (CL:0020057) |
-| submandibular ganglion TH cholinergic neuron (CL:4033141) | subClassOf (rdfs:subClassOf) |                parasympathetic neuron (CL:0011102) |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion Nav1.9 neuron (CL:4079003) | RO:0002292 |                PR:000002097 |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| dorsal root ganglion SP neuron (CL:4033183) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | RO:0002292 |                PR:000016003 |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) | RO:0002100 |                UBERON:0002835 |
-| stubby Dogiel type I neuron of myenteric plexus (CL:0020052) | subClassOf (rdfs:subClassOf) |                dogiel type I neuron (CL:4047038) |
-| dorsal root ganglion CGRP neuron (CL:4033176) | RO:0002292 |                PR:000027226 |
-| cyanoblast (CL:0005005) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| type II spiral ligament fibrocyte (CL:0002666) | subClassOf (rdfs:subClassOf) |                spiral ligament fibrocyte (CL:0020005) |
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| deep zone articular chondrocyte (CL:0020039) | RO:0002292 |                PR:000005693 |
-| dorsal root ganglion SP neuron (CL:4033183) | RO:0002292 |                PR:000016003 |
-| dorsal root ganglion TRPV1 neuron (CL:4033184) | RO:0002292 |                PR:000001065 |
-| pelvic ganglion TH/DBH neuron (CL:4033168) | subClassOf (rdfs:subClassOf) |                sympathetic neuron (CL:0011103) |
-| dorsal root ganglion Nav1.7 neuron (CL:4033178) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| vestibular ganglion SP neuron (CL:4033147) | subClassOf (rdfs:subClassOf) |                sensory neuron (CL:0000101) |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| plasmacytoid dendritic cell, human (CL:0001058) | lacks_plasma_membrane_part (CL:4030046) |                PR:000001889 |
-| dorsal root ganglion RET neuron (CL:4033182) | RO:0002292 |                PR:000013895 |
-| premigratory neural crest cell (CL:0007004) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| migratory muscle precursor (CL:0020044) | RO:0002353 |                GO:0001837 |
-| type I spiral ligament fibrocyte (CL:0002670) | RO:0002220 |                UBERON:0002282 |
-| secretomotor/vasodilator neuron of myenteric plexus (CL:0020048) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| dual-feature fallopian tube progenitor cell (CL:4052070) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| oRGC1 (CL:0020036) | subClassOf (rdfs:subClassOf) |                retinal ganglion cell (CL:0000740) |
-| melanoblast (CL:0000541) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) | RO:0002292 |                PR:000032708 |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) | RO:0002292 |                PR:000001065 |
-| thoracic dorsal root ganglion Nav1.7 neuron (CL:4079031) | RO:0002100 |                UBERON:0002835 |
-| dorsal root ganglion SP neuron (CL:4033183) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| cervical dorsal root ganglion Nav1.7 neuron (CL:4079002) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | RO:0002292 |                PR:000006897 |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) | RO:0002100 |                UBERON:0002836 |
-| cervical dorsal root ganglion RET neuron (CL:4079006) | RO:0002292 |                PR:000013895 |
-| ascending interneuron of myenteric plexus (CL:0020050) | subClassOf (rdfs:subClassOf) |                interneuron of myenteric plexus (CL:0020047) |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| neural progenitor cell (CL:0011020) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| sacral dorsal root ganglion Nav1.7 neuron (CL:4079022) | RO:0002292 |                PR:000002104 |
-| celiac ganglion PHI neuron (CL:4033129) | RO:0002292 |                PR:000017299 |
-| superior mesenteric ganglion SP neuron (CL:4033134) | RO:0002292 |                PR:000016003 |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| fetal hepatobiliary progenitor cell (CL:0009013) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) | RO:0002100 |                UBERON:0002837 |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) | RO:0002100 |                UBERON:0002834 |
-| dorsal root ganglion Nav1.9 neuron (CL:4033179) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cervical dorsal root ganglion RET neuron (CL:4079006) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| SN-VTR GAD2 Dopa dopaminergic neuron (Primate) (CL:4310111) | subClassOf (rdfs:subClassOf) |                substantia nigra dopaminergic neuron (CL:4042025) |
-| type V spiral ligament fibrocyte (CL:0002667) | subClassOf (rdfs:subClassOf) |                spiral ligament fibrocyte (CL:0020005) |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | subClassOf (rdfs:subClassOf) |                CD4-positive, alpha-beta T cell (CL:0000624) |
-| glioblast (CL:0000030) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| ovarian nerve plexus ganglion TH neuron (CL:4033174) | subClassOf (rdfs:subClassOf) |                sympathetic neuron (CL:0011103) |
-| interneuron of myenteric plexus (CL:0020047) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| squamous epithelial cell (CL:0000076) | RO:0000053 |                PATO:0002254 |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | RO:0002100 |                UBERON:0002834 |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | RO:0002292 |                PR:000016003 |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) | RO:0002100 |                UBERON:0002835 |
-| migratory muscle precursor (CL:0020044) | RO:0002202 |                UBERON:0004290 |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | RO:0002100 |                UBERON:0002836 |
-| type IV spiral ligament fibrocyte (CL:0002668) | subClassOf (rdfs:subClassOf) |                spiral ligament fibrocyte (CL:0020005) |
-| STRv D2 medium spiny neuron (Primate) (CL:4310138) | subClassOf (rdfs:subClassOf) |                indirect pathway medium spiny neuron (CL:4023029) |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| STRd D2 Striomat hybrid medium spiny neuron (Primate) (CL:4310133) | subClassOf (rdfs:subClassOf) |                indirect pathway medium spiny neuron (CL:4023029) |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | RO:0002292 |                PR:000013289 |
-| onychocyte (CL:4033056) | subClassOf (rdfs:subClassOf) |                stratified squamous epithelial cell (CL:0000240) |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| Lugaro cell (CL:0011006) | subClassOf (rdfs:subClassOf) |                Purkinje layer interneuron (CL:4072102) |
-| cervical dorsal root ganglion Nav1.9 neuron (CL:4079003) | RO:0002100 |                UBERON:0002834 |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) | RO:0002292 |                PR:000013895 |
-| lumbar dorsal root ganglion Nav1.9 neuron (CL:4079014) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | RO:0002104 |                PR:000001919 |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| cervical dorsal root ganglion RET neuron (CL:4079006) | RO:0002100 |                UBERON:0002834 |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| sacral dorsal root ganglion RET neuron (CL:4079026) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| OB FRMD7 GABA GABAergic neuron (Primate) (CL:4310148) | subClassOf (rdfs:subClassOf) |                GABAergic neuron (CL:0000617) |
-| descending interneuron of myenteric plexus (CL:0020051) | subClassOf (rdfs:subClassOf) |                interneuron of myenteric plexus (CL:0020047) |
-| dorsal root ganglion CGRP neuron (CL:4033176) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| intrinsic cardiac ganglion TH neuron (CL:4079010) | RO:0002100 |                UBERON:0014463 |
-| DN2a thymocyte (CL:0002423) | RO:0002162 |                NCBITaxon:10090 |
-| retinal progenitor cell (CL:0002672) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| lumbar dorsal root ganglion Nav1.7 neuron (CL:4079013) | RO:0002100 |                UBERON:0002836 |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) | RO:0002100 |                UBERON:0002835 |
-| T follicular helper cell (CL:0002038) | subClassOf (rdfs:subClassOf) |                helper T cell (CL:0000912) |
-| sacral dorsal root ganglion Nav1.9 neuron (CL:4079023) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| cuboidal epithelial cell (CL:0020029) | subClassOf (rdfs:subClassOf) |                columnar/cuboidal epithelial cell (CL:0000075) |
-| middle zone articular chondrocyte (CL:0020038) | subClassOf (rdfs:subClassOf) |                articular chondrocyte (CL:1001607) |
-| chief cell of parathyroid gland (CL:0000446) | subClassOf (rdfs:subClassOf) |                stratified epithelial cell (CL:0000079) |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) | RO:0002100 |                UBERON:0002835 |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) | RO:0002292 |                PR:000013895 |
-| lumbar dorsal root ganglion Nav1.9 neuron (CL:4079014) | RO:0002292 |                PR:000002097 |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| dorsal root ganglion BRN3A neuron (CL:4033175) | RO:0002292 |                PR:000013041 |
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) | RO:0002100 |                UBERON:0002836 |
-| STH PVALB-PITX2 Glut glutamatergic neuron of the basal ganglia (Primate) (CL:4310118) | subClassOf (rdfs:subClassOf) |                dopaminergic neuron (CL:0000700) |
-| hybrid osteochondral skeletal cell (CL:0020028) | subClassOf (rdfs:subClassOf) |                bone cell (CL:0001035) |
-| hepatic stem cell (CL:0002195) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| hepatic oval stem cell (CL:0002196) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) | RO:0002292 |                PR:000032708 |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| cervical dorsal root ganglion Nav1.9 neuron (CL:4079003) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) | subClassOf (rdfs:subClassOf) |                GABAergic neuron (CL:0000617) |
-| thoracic dorsal root ganglion Nav1.7 neuron (CL:4079031) | subClassOf (rdfs:subClassOf) |                sensory neuron of dorsal root ganglion (CL:1001451) |
-| thoracic dorsal root ganglion Nav1.9 neuron (CL:4079032) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
+| junctional epithelial cell (CL:0020062) | subClassOf (rdfs:subClassOf) |                stratified epithelial cell (CL:0000079) |
+| serous acinar cell of salivary gland (CL:4052065) | subClassOf (rdfs:subClassOf) |                serous demilune cell of salivary gland (CL:0020059) |
+| junctional epithelial cell (CL:0020062) | RO:0002215 |                GO:0002227 |
+| serous demilune cell of salivary gland (CL:0020059) | subClassOf (rdfs:subClassOf) |                exocrine cell (CL:0000152) |
+| junctional epithelial cell (CL:0020062) | BFO:0000050 |                UBERON:0001949 |
+| ionocyte of salivary gland (CL:0020065) | RO:0002215 |                GO:0050801 |
+| tuft cell of sublingual gland (CL:0020064) | subClassOf (rdfs:subClassOf) |                tuft cell (CL:0002204) |
+| myoepithelial cell of salivary gland (CL:0020066) | RO:0002215 |                GO:0006939 |
+| basal duct cell of salivary gland (CL:0020060) | BFO:0000050 |                UBERON:0001837 |
+| myoepithelial cell of salivary gland (CL:0020066) | subClassOf (rdfs:subClassOf) |                myoepithelial cell (CL:0000185) |
+| ionocyte of salivary gland (CL:0020065) | BFO:0000050 |                UBERON:0001044 |
+| myoepithelial cell of salivary gland (CL:0020066) | BFO:0000050 |                UBERON:0001044 |
+| periductal fibroblast of salivary gland (CL:0020061) | subClassOf (rdfs:subClassOf) |                fibroblast (CL:0000057) |
+| periductal fibroblast of salivary gland (CL:0020061) | BFO:0000050 |                UBERON:0001044 |
+| basal duct cell of salivary gland (CL:0020060) | subClassOf (rdfs:subClassOf) |                basal cell (CL:0000646) |
+| tuft cell of parotid gland (CL:0020063) | BFO:0000050 |                UBERON:0001831 |
+| junctional epithelial cell (CL:0020062) | subClassOf (rdfs:subClassOf) |                ecto-epithelial cell (CL:0002077) |
+| junctional epithelial cell (CL:0020062) | subClassOf (rdfs:subClassOf) |                epithelial cell of alimentary canal (CL:0002251) |
+| ionocyte of salivary gland (CL:0020065) | subClassOf (rdfs:subClassOf) |                ionocyte (CL:0005006) |
+| tuft cell of sublingual gland (CL:0020064) | BFO:0000050 |                UBERON:0001832 |
+| serous demilune cell of salivary gland (CL:0020059) | BFO:0000050 |                UBERON:0001044 |
+| serous demilune cell of salivary gland (CL:0020059) | subClassOf (rdfs:subClassOf) |                serous secreting cell (CL:0000313) |
+| serous demilune cell of salivary gland (CL:0020059) | RO:0002215 |                GO:0046541 |
+| tuft cell of sublingual gland (CL:0020064) | subClassOf (rdfs:subClassOf) |                epithelial cell of alimentary canal (CL:0002251) |
+| tuft cell of parotid gland (CL:0020063) | subClassOf (rdfs:subClassOf) |                tuft cell (CL:0002204) |
 
 </details>
 
 <details>
-<summary>Synonyms added: 172</summary>
+<summary>Synonyms added: 18</summary>
 
 | Term | New Synonym | Predicate |
 ----|----|----|
-| calretinin-positive intrinsic primary afferent neuron of myenteric plexus (CL:0020055) | SN1 | oio:hasRelatedSynonym |
-| type II spiral ligament fibrocyte (CL:0002666) | type 2 otic fibrocyte | oio:hasBroadSynonym |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | exhausted CD8-positive T cell | oio:hasExactSynonym |
-| dorsal root ganglion BRN3A neuron (CL:4033175) | DRG BRN3A neuron | oio:hasExactSynonym |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | C-fiber neuron | oio:hasRelatedSynonym |
-| lumbar dorsal root ganglion RET neuron (CL:4079017) | non-peptidergic nociceptor | oio:hasRelatedSynonym |
-| cholinergic neuron of myenteric plexus (CL:0020057) | ChAT-positive myenteric neuron | oio:hasExactSynonym |
-| type III spiral ligament fibrocyte (CL:0002669) | type 3 spiral ligament fibrocyte | oio:hasExactSynonym |
-| superior cervical ganglion TH neuron (CL:4033102) | SCG TH neuron | oio:hasExactSynonym |
-| spiny Dogiel type I neuron of myenteric plexus (CL:0020053) | spiny Dogiel I neuron | oio:hasExactSynonym |
-| middle cervical ganglion TH/NPY neuron (CL:4033110) | MCG TH/NPY neuron | oio:hasExactSynonym |
-| type I spiral ligament fibrocyte (CL:0002670) | type 1 spiral ligament fibrocyte | oio:hasExactSynonym |
-| dorsal root ganglion RET neuron (CL:4033182) | DRG RET neuron | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | stem cell–like memory CD4+ T cell | oio:hasExactSynonym |
-| lumbar dorsal root ganglion Piezo2 neuron (CL:4079016) | mechanosensitive DRG neuron | oio:hasRelatedSynonym |
-| dorsal root ganglion Piezo2 neuron (CL:4033181) | DRG Piezo2 neuron | oio:hasExactSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | CD8+ TSCM cell | oio:hasExactSynonym |
-| cervical dorsal root ganglion CGRP neuron (CL:4079000) | peptidergic nociceptor | oio:hasRelatedSynonym |
-| celiac ganglion SOM/CGRP neuron (CL:4033133) | CG SOM/CGRP neuron | oio:hasExactSynonym |
-| superior cervical ganglion NPY neuron (CL:4033103) | SCG NPY neuron | oio:hasExactSynonym |
-| intestinofugal neuron (CL:0020049) | cholinergic viscerofugal neuron | oio:hasExactSynonym |
-| interneuron of myenteric plexus (CL:0020047) | enteric interneuron of myenteric plexus | oio:hasExactSynonym |
-| dorsal root ganglion TRPV1 neuron (CL:4033184) | DRG TRPV1 neuron | oio:hasExactSynonym |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | exhausted CD4 T cell | oio:hasExactSynonym |
-| superior cervical ganglion TH/NPY neuron (CL:4033104) | SCG TH/NPY neuron | oio:hasExactSynonym |
-| calretinin-negative intrinsic primary afferent neuron of myenteric plexus (CL:0020056) | SN2 | oio:hasRelatedSynonym |
-| vestibular ganglion SP neuron (CL:4033147) | Scarpa's ganglion SP neuron | oio:hasExactSynonym |
-| nitrergic neuron of myenteric plexus (CL:0020058) | nNOS-positive myenteric neuron | oio:hasExactSynonym |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | thoracic dorsal root ganglion SP neuron | oio:hasExactSynonym |
-| thoracic dorsal root ganglion TRPV1 neuron (CL:4079037) | capsaicin-sensitive nociceptor | oio:hasRelatedSynonym |
-| celiac ganglion PHI neuron (CL:4033129) | CG PHI neuron | oio:hasExactSynonym |
-| superior cervical ganglion TH/DBH neuron (CL:4033101) | SCG TH/DBH neuron | oio:hasExactSynonym |
-| calretinin-negative intrinsic primary afferent neuron of myenteric plexus (CL:0020056) | calretinin-negative myenteric sensory neuron | oio:hasExactSynonym |
-| nodose ganglion P2X3 neuron (CL:4033149) | inferior vagus X ganglion P2X3 neuron | oio:hasExactSynonym |
-| sacral dorsal root ganglion CGRP neuron (CL:4079020) | peptidergic nociceptor | oio:hasRelatedSynonym |
-| myenteric ganglion of small intestine nNOS/VIP neuron (CL:4033163) | spiny type I neuron of small intestinal myenteric ganglion | oio:hasRelatedSynonym |
-| type III spiral ligament fibrocyte (CL:0002669) | type III SLF | oio:hasRelatedSynonym |
-| cervical dorsal root ganglion RET neuron (CL:4079006) | non-peptidergic nociceptor | oio:hasRelatedSynonym |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | EDN1 neuron | oio:hasRelatedSynonym |
-| dorsal root ganglion SP neuron (CL:4033183) | DRG SP neuron | oio:hasExactSynonym |
-| celiac ganglion SOM neuron (CL:4033132) | CG SOM neuron | oio:hasExactSynonym |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | C-fiber neuron | oio:hasRelatedSynonym |
-| cervical dorsal root ganglion endothelin-1 neuron (CL:4079001) | cervical dorsal root ganglion Endothelin 1 neuron | oio:hasExactSynonym |
-| celiac ganglion VIP neuron (CL:4033128) | CG VIP neuron | oio:hasExactSynonym |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | SP neuron | oio:hasRelatedSynonym |
-| type IV spiral ligament fibrocyte (CL:0002668) | type IV SLF | oio:hasRelatedSynonym |
-| cervicothoracic ganglion VAChT neuron (CL:4033117) | stellate ganglion VAChT neuron | oio:hasExactSynonym |
-| deep zone articular chondrocyte (CL:0020039) | radial zone articular chondrocyte | oio:hasRelatedSynonym |
-| jugular ganglion SPARCL1 neuron (CL:4033156) | superior vagus X ganglion SPARCL1 neuron | oio:hasExactSynonym |
-| type IV spiral ligament fibrocyte (CL:0002668) | type 4 otic fibrocyte | oio:hasBroadSynonym |
-| nodose ganglion PVALB neuron (CL:4033151) | inferior vagus X ganglion PVALB neuron | oio:hasExactSynonym |
-| nodose ganglion TRPV2 neuron (CL:4033150) | inferior vagus X ganglion TRPV2 neuron | oio:hasExactSynonym |
-| cervicothoracic ganglion enkephalin neuron (CL:4033113) | stellate ganglion enkephalin neuron | oio:hasExactSynonym |
-| retinal pigment epithelial cell (CL:0002586) | RPE | oio:hasExactSynonym |
-| cervical dorsal root ganglion peripherin neuron (CL:4079004) | cervical dorsal root ganglion Peripherin neuron | oio:hasExactSynonym |
-| superior cervical ganglion VIP neuron (CL:4033106) | SCG VIP neuron | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | CD4+ TSCM cell | oio:hasExactSynonym |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) | multiaxonal myenteric sensory neuron | oio:hasExactSynonym |
-| lumbar dorsal root ganglion CGRP neuron (CL:4079011) | peptidergic nociceptor | oio:hasRelatedSynonym |
-| stem cell (CL:0000034) | animal stem cell | oio:hasNarrowSynonym |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | EDN1 neuron | oio:hasRelatedSynonym |
-| leukocyte (CL:0000738) | WBC | oio:hasExactSynonym |
-| Dogiel type II neuron (CL:0020045) | AH neuron | oio:hasRelatedSynonym |
-| cervicothoracic ganglion VIP neuron (CL:4033116) | stellate ganglion VIP neuron | oio:hasExactSynonym |
-| sacral dorsal root ganglion endothelin-1 neuron (CL:4079021) | sacral dorsal root ganglion Endothelin 1 neuron | oio:hasExactSynonym |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) | AH-type myenteric neuron | oio:hasExactSynonym |
-| sacral dorsal root ganglion TRPV1 neuron (CL:4079028) | capsaicin-sensitive nociceptor | oio:hasRelatedSynonym |
-| type V spiral ligament fibrocyte (CL:0002667) | type V SLF | oio:hasRelatedSynonym |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | SP neuron | oio:hasRelatedSynonym |
-| dorsal root ganglion peripherin neuron (CL:4033180) | DRG peripherin neuron | oio:hasExactSynonym |
-| thoracic dorsal root ganglion substance P neuron (CL:4079036) | SP neuron | oio:hasRelatedSynonym |
-| alpha retinal ganglion cell (Mmus) (CL:0004117) | retinal ganglion cell A | oio:hasExactSynonym |
-| middle zone articular chondrocyte (CL:0020038) | transitional zone articular chondrocyte | oio:hasRelatedSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | stem cell memory CD8-positive, alpha-beta T lymphocyte | oio:hasExactSynonym |
-| middle cervical ganglion TH neuron (CL:4033109) | MCG TH neuron | oio:hasExactSynonym |
-| myenteric ganglion of small intestine nNOS neuron (CL:4033161) | nitrergic myenteric neuron of small intestine | oio:hasRelatedSynonym |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | exhausted CD8 T cell | oio:hasExactSynonym |
-| thoracic dorsal root ganglion CGRP neuron (CL:4079029) | peptidergic nociceptor | oio:hasRelatedSynonym |
-| type I spiral ligament fibrocyte (CL:0002670) | type I SLF | oio:hasRelatedSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | stem cell–like memory CD4-positive, alpha-beta T cell | oio:hasExactSynonym |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | EDN1 neuron | oio:hasRelatedSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | stem cell–like memory CD8-positive, alpha-beta T cell | oio:hasExactSynonym |
-| secretomotor/vasodilator neuron of myenteric plexus (CL:0020048) | VIP-positive secretomotor neuron | oio:hasExactSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | stem cell memory CD8+ alpha-beta T cell | oio:hasExactSynonym |
-| stubby Dogiel type I neuron of myenteric plexus (CL:0020052) | stubby Dogiel I neuron | oio:hasExactSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | CD8+ T memory stem cell | oio:hasExactSynonym |
-| cervical dorsal root ganglion Piezo2 neuron (CL:4079005) | mechanosensitive DRG neuron | oio:hasRelatedSynonym |
-| lumbar dorsal root ganglion TRPV1 neuron (CL:4079019) | capsaicin-sensitive nociceptor | oio:hasRelatedSynonym |
-| thoracic dorsal root ganglion endothelin-1 neuron (CL:4079030) | thoracic dorsal root ganglion Endothelin 1 neuron | oio:hasExactSynonym |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | CD4+ exhausted T lymphocyte | oio:hasExactSynonym |
-| middle cervical ganglion DBH neuron (CL:4033108) | MCG DBH neuron | oio:hasExactSynonym |
-| Dogiel type II neuron (CL:0020045) | type II enteric neuron | oio:hasExactSynonym |
-| type I spiral ligament fibrocyte (CL:0002670) | type 1 otic fibrocyte | oio:hasBroadSynonym |
-| jugular ganglion TRPV1 neuron (CL:4033152) | superior vagus X ganglion TRPV1 neuron | oio:hasExactSynonym |
-| type III spiral ligament fibrocyte (CL:0002669) | type 3 otic fibrocyte | oio:hasBroadSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | CD8-positive TSCM cell | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | stem cell memory CD4-positive, alpha-beta T lymphocyte | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | stem cell memory CD4+ T-lymphocyte | oio:hasExactSynonym |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | EDN1 neuron | oio:hasRelatedSynonym |
-| CD4-positive exhausted alpha-beta T cell (CL:0020030) | exhausted CD4-positive T cell | oio:hasExactSynonym |
-| middle cervical ganglion VIP neuron (CL:4033112) | MCG VIP neuron | oio:hasExactSynonym |
-| cervicothoracic ganglion TH neuron (CL:4033114) | stellate ganglion TH neuron | oio:hasExactSynonym |
-| cervical dorsal root ganglion substance P neuron (CL:4079007) | cervical dorsal root ganglion SP neuron | oio:hasExactSynonym |
-| descending interneuron of myenteric plexus (CL:0020051) | descending myenteric interneuron | oio:hasExactSynonym |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | thoracic dorsal root ganglion Peripherin neuron | oio:hasExactSynonym |
-| sacral dorsal root ganglion Piezo2 neuron (CL:4079025) | mechanosensitive DRG neuron | oio:hasRelatedSynonym |
-| thoracic dorsal root ganglion peripherin neuron (CL:4079033) | C-fiber neuron | oio:hasRelatedSynonym |
-| peripheral blood mononuclear cell (CL:2000001) | PBMC | oio:hasExactSynonym |
-| intestinofugal neuron (CL:0020049) | VFN | oio:hasRelatedSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | stem cell memory CD8+ T-lymphocyte | oio:hasExactSynonym |
-| myenteric ganglion of small intestine ChAT/CALR/SOM/SP neuron (CL:4033165) | Dogiel type II neuron of small intestinal myenteric ganglion | oio:hasRelatedSynonym |
-| dorsal root ganglion Nav1.7 neuron (CL:4033178) | DRG Nav1.7 neuron | oio:hasExactSynonym |
-| stubby Dogiel type I neuron of myenteric plexus (CL:0020052) | lamellar Dogiel type I neuron | oio:hasExactSynonym |
-| CD8-positive exhausted alpha-beta T cell (CL:0020031) | CD8+ exhausted T lymphocyte | oio:hasExactSynonym |
-| jugular ganglion CGRP neuron (CL:4033155) | superior vagus X ganglion CGRP neuron | oio:hasExactSynonym |
-| thoracic dorsal root ganglion Piezo2 neuron (CL:4079034) | mechanosensitive DRG neuron | oio:hasRelatedSynonym |
-| jugular ganglion SP neuron (CL:4033154) | superior vagus X ganglion SP neuron | oio:hasExactSynonym |
-| intrinsic cardiac ganglion TH neuron (CL:4079010) | catecholaminergic intrinsic cardiac neuron | oio:hasRelatedSynonym |
-| type II spiral ligament fibrocyte (CL:0002666) | type II SLF | oio:hasRelatedSynonym |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | C-fiber neuron | oio:hasRelatedSynonym |
-| sacral dorsal root ganglion peripherin neuron (CL:4079024) | sacral dorsal root ganglion Peripherin neuron | oio:hasExactSynonym |
-| calretinin-positive intrinsic primary afferent neuron of myenteric plexus (CL:0020055) | calretinin-positive myenteric sensory neuron | oio:hasExactSynonym |
-| jugular ganglion TRPV2 neuron (CL:4033153) | superior vagus X ganglion TRPV2 neuron | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | CD4+ T memory stem cell | oio:hasExactSynonym |
-| inferior mesenteric ganglion TH neuron (CL:4033135) | IMG TH neuron | oio:hasExactSynonym |
-| ascending interneuron of myenteric plexus (CL:0020050) | ascending myenteric interneuron | oio:hasExactSynonym |
-| dorsal root ganglion CGRP neuron (CL:4033176) | DRG CGRP neuron | oio:hasExactSynonym |
-| nitrergic neuron of myenteric plexus (CL:0020058) | NOS1-positive myenteric neuron | oio:hasExactSynonym |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | multiaxonal cholinergic myenteric sensory neuron | oio:hasExactSynonym |
-| celiac ganglion SP neuron (CL:4033131) | CG SP neuron | oio:hasExactSynonym |
-| myenteric ganglion of small intestine ChAT/CALR/SOM/SP neuron (CL:4033165) | myenteric IPAN of small intestine | oio:hasRelatedSynonym |
-| type IV spiral ligament fibrocyte (CL:0002668) | type 4 spiral ligament fibrocyte | oio:hasExactSynonym |
-| lumbar dorsal root ganglion peripherin neuron (CL:4079015) | lumbar dorsal root ganglion Peripherin neuron | oio:hasExactSynonym |
-| type III spiral ligament fibrocyte (CL:0002669) | tension fibroblast | oio:hasExactSynonym |
-| type V spiral ligament fibrocyte (CL:0002667) | type 5 otic fibrocyte | oio:hasBroadSynonym |
-| middle cervical ganglion NPY neuron (CL:4033111) | MCG NPY neuron | oio:hasExactSynonym |
-| secretomotor/vasodilator neuron of myenteric plexus (CL:0020048) | PSVN | oio:hasRelatedSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | stem cell memory CD8+ T-cell | oio:hasExactSynonym |
-| ascending interneuron of myenteric plexus (CL:0020050) | cholinergic enkephalinergic myenteric interneuron | oio:hasExactSynonym |
-| dorsal root ganglion Nav1.9 neuron (CL:4033179) | DRG Nav1.9 neuron | oio:hasExactSynonym |
-| intestinofugal neuron (CL:0020049) | viscerofugal neuron | oio:hasExactSynonym |
-| stem cell memory CD8-positive, alpha-beta T cell (CL:0020034) | stem cell–like memory CD8+ T cell | oio:hasExactSynonym |
-| cervicothoracic ganglion TH/NPY neuron (CL:4033115) | stellate ganglion TH/NPY neuron | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | stem cell memory CD4+ alpha-beta T cell | oio:hasExactSynonym |
-| sacral dorsal root ganglion substance P neuron (CL:4079027) | sacral dorsal root ganglion SP neuron | oio:hasExactSynonym |
-| sacral dorsal root ganglion RET neuron (CL:4079026) | non-peptidergic nociceptor | oio:hasRelatedSynonym |
-| ciliary ganglion VIP/PHI neuron (CL:4033139) | ciliary ganglion VIP-PHI neuron | oio:hasExactSynonym |
-| pterygopalatine ganglion nNOS neuron (CL:4033146) | sphenopalatine ganglion nNOS neuron | oio:hasExactSynonym |
-| celiac ganglion CGRP neuron (CL:4033130) | CG CGRP neuron | oio:hasExactSynonym |
-| nodose ganglion TRPV1 neuron (CL:4033148) | inferior vagus X ganglion TRPV1 neuron | oio:hasExactSynonym |
-| thoracic dorsal root ganglion RET neuron (CL:4079035) | non-peptidergic nociceptor | oio:hasRelatedSynonym |
-| pterygopalatine ganglion VIP neuron (CL:4033145) | sphenopalatine ganglion VIP neuron | oio:hasExactSynonym |
-| myenteric ganglion of small intestine ChAT neuron (CL:4033160) | cholinergic myenteric neuron of small intestine | oio:hasRelatedSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | CD4-positive TSCM cell | oio:hasExactSynonym |
-| superior cervical ganglion CGRP neuron (CL:4033107) | SCG CGRP neuron | oio:hasExactSynonym |
-| pterygopalatine ganglion VIP/PHI neuron (CL:4033144) | sphenopalatine ganglion VIP/PHI neuron | oio:hasExactSynonym |
-| dorsal root ganglion EDN1 neuron (CL:4033177) | DRG EDN1 neuron | oio:hasExactSynonym |
-| stem cell memory CD4-positive, alpha-beta T cell (CL:0020033) | stem cell memory CD4+ T-cell | oio:hasExactSynonym |
-| type II spiral ligament fibrocyte (CL:0002666) | type 2 spiral ligament fibrocyte | oio:hasExactSynonym |
-| Dogiel type II neuron (CL:0020045) | multiaxonal enteric neuron | oio:hasExactSynonym |
-| migratory muscle precursor (CL:0020044) | MMP | oio:hasExactSynonym |
-| lumbar dorsal root ganglion endothelin-1 neuron (CL:4079012) | lumbar dorsal root ganglion Endothelin 1 neuron | oio:hasExactSynonym |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | lumbar dorsal root ganglion SP neuron | oio:hasExactSynonym |
-| lumbar dorsal root ganglion substance P neuron (CL:4079018) | SP neuron | oio:hasRelatedSynonym |
-| cervical dorsal root ganglion TRPV1 neuron (CL:4079008) | capsaicin-sensitive nociceptor | oio:hasRelatedSynonym |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | myenteric sensory neuron | oio:hasExactSynonym |
-| inferior mesenteric ganglion SP neuron (CL:4033136) | IMG SP neuron | oio:hasExactSynonym |
-| Dogiel type II neuron of myenteric plexus (CL:0020054) | type II myenteric neuron | oio:hasExactSynonym |
-| superior mesenteric ganglion SP neuron (CL:4033134) | SMG SP neuron | oio:hasExactSynonym |
-| superior cervical ganglion SST neuron (CL:4033105) | SCG SST neuron | oio:hasExactSynonym |
-| Dogiel type II neuron (CL:0020045) | Dogiel II neuron | oio:hasRelatedSynonym |
-| intrinsic primary afferent neuron of myenteric plexus (CL:0020046) | IPAN | oio:hasRelatedSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | demilune cell of salivary gland | oio:hasRelatedSynonym |
+| periductal fibroblast of salivary gland (CL:0020061) | immunofibroblast of salivary gland | oio:hasRelatedSynonym |
+| myoepithelial cell of salivary gland (CL:0020066) | salivary gland myoepithelial cell | oio:hasExactSynonym |
+| myoepithelial cell of salivary gland (CL:0020066) | salivary myoepithelial cell | oio:hasExactSynonym |
+| junctional epithelial cell (CL:0020062) | JE cell | oio:hasExactSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | Crescents of Giannuzzi | oio:hasRelatedSynonym |
+| tuft cell of sublingual gland (CL:0020064) | sublingual gland tuft cell | oio:hasExactSynonym |
+| tuft cell of parotid gland (CL:0020063) | brush cell of parotid gland | oio:hasRelatedSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | serous crescent cell | oio:hasRelatedSynonym |
+| periductal fibroblast of salivary gland (CL:0020061) | salivary gland fibroblast | oio:hasBroadSynonym |
+| junctional epithelial cell (CL:0020062) | gingival junctional epithelial cell | oio:hasRelatedSynonym |
+| serous demilune cell of salivary gland (CL:0020059) | serous demilune cell | oio:hasExactSynonym |
+| myoepithelial cell of salivary gland (CL:0020066) | basket cell of salivary gland | oio:hasRelatedSynonym |
+| tuft cell of parotid gland (CL:0020063) | parotid gland tuft cell | oio:hasExactSynonym |
+| basal duct cell of salivary gland (CL:0020060) | basal ductal cell of salivary gland | oio:hasExactSynonym |
+| junctional epithelial cell (CL:0020062) | DAT cell | oio:hasNarrowSynonym |
+| tuft cell of sublingual gland (CL:0020064) | brush cell of sublingual gland | oio:hasRelatedSynonym |
+| junctional epithelial cell (CL:0020062) | cell of junctional epithelium | oio:hasExactSynonym |
 
 </details>
 
 <details>
-<summary>Relationships removed: 62</summary>
+<summary>Text definitions added: 8</summary>
+
+| Term | New Text Definition |
+----|----|
+| tuft cell of parotid gland (CL:0020063) | A tuft cell that is part of the epithelium of the parotid gland, localized to the striated ducts and never observed in acini. This cell is characterized by expression of POU2F3 and is expected to possess chemosensory function consistent with tuft cells in other tissues. Immunohistochemical analysis of normal human parotid gland tissue detected POU2F3-positive cells as a very rare population within the ductal compartment, positioned on the luminal side (Hoki et al., 2024). |
+| tuft cell of sublingual gland (CL:0020064) | A tuft cell that is part of the epithelium of the sublingual gland, localized to the ductal compartment. This cell is characterized by expression of POU2F3, consistent with tuft cell identity. Immunohistochemical analysis detected POU2F3-positive cells in normal human sublingual gland tissue (Hoki et al., 2024). |
+| ionocyte of salivary gland (CL:0020065) | An ionocyte that is part of a salivary gland, localized to the ductal compartment on the luminal side. This specialized epithelial cell is characterized by expression of FOXI1 and is involved in regulating and maintaining osmotic pressure within the glandular environment (Dong et al., 2024). In normal human salivary glands, FOXI1-positive cells constitute less than 5% of ductal epithelial cells and are found exclusively in ducts, never in acini, across all major gland types including parotid, submandibular, sublingual, and minor salivary glands (Hoki et al., 2024). Like ionocytes in other tissues, this cell is expected to express high levels of CFTR and possess abundant mitochondria and ion transporters. |
+| myoepithelial cell of salivary gland (CL:0020066) | A myoepithelial cell that is part of a salivary gland, positioned between the basal lamina and the secretory or ductal epithelial cells surrounding acini and intercalated ducts. This cell adopts a stellate morphology with four to eight cellular processes around acini and an elongated form parallel to the ductal axis around intercalated ducts (Amano et al., 2012). It expresses alpha-smooth muscle actin (ACTA2/alpha-SMA) as a primary marker, along with p63 and aquaporin 1 (AQP1), and contracts rhythmically in response to neural stimulation to facilitate saliva expulsion from secretory acini into the ductal system (Amano et al., 2012). This cell also produces FGF7, which activates FGFR2b-dependent transcriptional programs essential for seromucous acinar cell differentiation (Aure et al., 2023). In mice, myoepithelial cells express SOX2 and possess regenerative capacity, contributing to acinar cell restoration during tissue repair after severe injury. |
+| junctional epithelial cell (CL:0020062) | An epithelial cell that is part of the junctional epithelium of the gingiva, forming a collar-like band around the cervix of the tooth. This cell attaches to the tooth surface via hemidesmosomes and an internal basal lamina rich in laminin-332 and ODAM (Gavriiloglou et al., 2024). The junctional epithelium is a stratified squamous non-keratinized epithelium ranging from 15-30 cell layers coronally to 1-3 cell layers apically. This cell expresses cytokeratin 19 (CK19) as a specific marker, along with ODAM and FDC-SP, and participates in innate immune defense by producing IL-8, IL-1alpha, and MMP-7, facilitating the transmigration of polymorphonuclear leukocytes through the epithelium (Gavriiloglou et al., 2024). This cell has a high turnover rate, with complete renewal occurring every 4-6 days (Lin et al., 2025), and develops from the reduced enamel epithelium during tooth eruption, although it can regenerate de novo without this precursor. |
+| basal duct cell of salivary gland (CL:0020060) | A basal cell that is part of the duct of a salivary gland, characterized by an undifferentiated phenotype, expression of KRT5, and a position surrounding the striated ductal epithelium. This cell is presumed to function as a salivary gland stem/progenitor cell capable of regenerating ductal and potentially acinar cell populations (Yura and Hamada, 2023). In mice, Lgr5-expressing cells within this compartment demonstrate tripotent capacity, able to generate acinar, ductal, and myoepithelial cell lineages. |
+| serous demilune cell of salivary gland (CL:0020059) | A serous secreting cell that is part of a salivary gland, forming crescent-shaped (demilune) caps at the distal ends of mucous acini in mixed glands. Prominent in human submandibular and sublingual glands, this cell delivers its watery, enzyme-rich secretions including alpha-amylase through intercellular canaliculi that run between adjacent mucous cells to reach the acinar lumen (Amano et al., 2012). In rodents, these cells also express neuronal nitric oxide synthase (nNOS). |
+| periductal fibroblast of salivary gland (CL:0020061) | A fibroblast that is part of the stroma of a salivary gland, positioned in the periductal connective tissue surrounding the ductal system. This cell maintains the extracellular matrix framework around salivary gland ducts and participates in immunomodulatory signaling. In the context of Sjögren's syndrome, periductal fibroblasts respond to IL-13 stimulation by upregulating VCAM-1, PDPN, and ICAM-1, contributing to the formation of tertiary lymphoid structures (Nayar et al., 2019). |
+
+</details>
+
+<details>
+<summary>Relationships removed: 1</summary>
 
 | Subject| Predicate| Object|
 ----|----|----|
-| SN GATA3-PVALB GABA GABAergic neuron (Primate) (CL:4310113) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| CD8-positive, alpha-beta memory T cell, CD45RO-positive (CL:0001203) | RO:0015015 |                PR:000001381 |
-| pelvic ganglion NPY/VAChT neuron (CL:4033172) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| type II spiral ligament fibrocyte (CL:0002666) | subClassOf (rdfs:subClassOf) |                otic fibrocyte (CL:0002665) |
-| pelvic ganglion nNOS/VAChT neuron (CL:4033173) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| myenteric ganglion of small intestine ChAT/CALR/SOM/SP neuron (CL:4033165) | RO:0002292 |                PR:000004984 |
-| pulmonary alveolar type 2 cell (CL:0002063) | subClassOf (rdfs:subClassOf) |                lung secretory cell (CL:1000272) |
-| keratinizing barrier epithelial cell (CL:0000237) | subClassOf (rdfs:subClassOf) |                stratified squamous epithelial cell (CL:0000240) |
-| GPi Shell neuron (Primate) (CL:4310096) | RO:0002162 |                NCBITaxon:9443 |
-| otic ganglion VIP neuron (CL:4033138) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| STRd D2 Striomat hybrid medium spiny neuron (Primate) (CL:4310133) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| pelvic ganglion VAChT neuron (CL:4033169) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| stratified squamous epithelial cell (CL:0000240) | BFO:0000050 |                UBERON:0006915 |
-| Lugaro cell (CL:0011006) | subClassOf (rdfs:subClassOf) |                cerebellar inhibitory GABAergic interneuron (CL:4023057) |
-| gamma-delta intraepithelial T cell (CL:0000801) | subClassOf (rdfs:subClassOf) |                intraepithelial lymphocyte (CL:0002496) |
-| SN-VTR CALB1 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310109) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| SN-VTR GAD2 Dopa dopaminergic neuron (Primate) (CL:4310111) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| submandibular ganglion VIP/PHI neuron (CL:4033142) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| stem cell (CL:0000034) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| pelvic ganglion nNOS/VIP neuron (CL:4033171) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| submandibular ganglion TH cholinergic neuron (CL:4033141) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| OB FRMD7 GABA GABAergic neuron (Primate) (CL:4310148) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| pulmonary alveolar type 2 cell (CL:0002063) | subClassOf (rdfs:subClassOf) |                surfactant secreting cell (CL:0000157) |
-| type IV spiral ligament fibrocyte (CL:0002668) | subClassOf (rdfs:subClassOf) |                otic fibrocyte (CL:0002665) |
-| type I spiral ligament fibrocyte (CL:0002670) | subClassOf (rdfs:subClassOf) |                otic fibrocyte (CL:0002665) |
-| ovarian nerve plexus ganglion TH neuron (CL:4033174) | subClassOf (rdfs:subClassOf) |                peripheral nervous system neuron (CL:2000032) |
-| CD8-positive, alpha-beta memory T cell, CD45RO-positive (CL:0001203) | RO:0015015 |                PR:000001307 |
-| ovarian nerve plexus ganglion TH neuron (CL:4033174) | subClassOf (rdfs:subClassOf) |                BFO:0000002 |
-| ciliary ganglion VIP/PHI neuron (CL:4033139) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| neuromast hair cell (CL:0000856) | subClassOf (rdfs:subClassOf) |                neuronal receptor cell (CL:0000006) |
-| CD4-positive, alpha-beta memory T cell, CD45RO-positive (CL:0001204) | RO:0015015 |                PR:000001307 |
-| type III spiral ligament fibrocyte (CL:0002669) | subClassOf (rdfs:subClassOf) |                otic fibrocyte (CL:0002665) |
-| pelvic ganglion TH/DBH neuron (CL:4033168) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| STRd D1/D2-hybrid medium spiny neuron (Primate) (CL:4310131) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| pelvic ganglion TH neuron (CL:4033167) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| intraepithelial lymphocyte (CL:0002496) | RO:0001025 |                UBERON:0001277 |
-| pterygopalatine ganglion nNOS neuron (CL:4033146) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| ciliary ganglion TH neuron (CL:4033140) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| transit amplifying cell (CL:0009010) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| pulmonary alveolar type 2 cell (CL:0002063) | subClassOf (rdfs:subClassOf) |                respiratory tract secretory epithelial cell (CL:0008055) |
-| progenitor cell (CL:0011026) | subClassOf (rdfs:subClassOf) |                eukaryotic cell (CL:0000255) |
-| vestibular ganglion SP neuron (CL:4033147) | subClassOf (rdfs:subClassOf) |                peripheral nervous system neuron (CL:2000032) |
-| pulmonary alveolar type 2 cell (CL:0002063) | RO:0000053 |                PATO:0001872 |
-| myenteric ganglion of small intestine ChAT neuron (CL:4033160) | subClassOf (rdfs:subClassOf) |                enteric neuron (CL:0007011) |
-| alpha-beta intraepithelial T cell (CL:0000797) | subClassOf (rdfs:subClassOf) |                intraepithelial lymphocyte (CL:0002496) |
-| ear hair cell (CL:0002374) | subClassOf (rdfs:subClassOf) |                neuronal receptor cell (CL:0000006) |
-| type II NK T cell (CL:0000922) | RO:0002215 |                GO:0002288 |
-| vagina squamous cell (CL:1001578) | subClassOf (rdfs:subClassOf) |                squamous epithelial cell (CL:0000076) |
-| lower airway ganglion ChAT/VIP neuron (CL:4033127) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| type V spiral ligament fibrocyte (CL:0002667) | subClassOf (rdfs:subClassOf) |                otic fibrocyte (CL:0002665) |
-| pelvic ganglion nNOS neuron (CL:4033170) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| T follicular helper cell (CL:0002038) | RO:0002104 |                PR:000001919 |
-| tuft cell of urethra (CL:4052042) | RO:0002215 |                GO:1904320 |
-| gravity sensitive cell (CL:0000203) | RO:0002215 |                GO:0070999 |
-| CD4-positive, alpha-beta memory T cell, CD45RO-positive (CL:0001204) | RO:0015015 |                PR:000001381 |
-| stem cell (CL:0000034) | RO:0002162 |                NCBITaxon:33208 |
-| submandibular ganglion nNOS neuron (CL:4033143) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| pterygopalatine ganglion VIP neuron (CL:4033145) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| pterygopalatine ganglion VIP/PHI neuron (CL:4033144) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-| SN SOX6 Dopa substantia nigra dopaminergic neuron (Primate) (CL:4310115) | subClassOf (rdfs:subClassOf) |                cell (CL:0000000) |
-| Lugaro cell (CL:0011006) | RO:0002100 |                UBERON:0002956 |
-| otic ganglion nNOS neuron (CL:4033137) | subClassOf (rdfs:subClassOf) |                autonomic neuron (CL:0000107) |
-
-</details>
-
-<details>
-<summary>Nodes added to subset: 99</summary>
-
-| Term | Subset |
-----|----|
-| jugular ganglion TRPV1 neuron (CL:4033152) | human_reference_atlas |
-| lumbar ganglion VIP neuron (CL:4033121) | human_reference_atlas |
-| L6 corticothalamic-projecting glutamatergic cortical neuron (CL:4023042) | human_reference_atlas |
-| jugular ganglion SP neuron (CL:4033154) | human_reference_atlas |
-| geniculate ganglion VGLUT2 neuron (CL:4033159) | human_reference_atlas |
-| limbal epithelial stem cell of cornea (CL:4033093) | human_reference_atlas |
-| tuft cell (CL:0002204) | human_reference_atlas |
-| submandibular ganglion nNOS neuron (CL:4033143) | human_reference_atlas |
-| superior cervical ganglion TH/NPY neuron (CL:4033104) | human_reference_atlas |
-| otic ganglion VIP neuron (CL:4033138) | human_reference_atlas |
-| middle cervical ganglion VIP neuron (CL:4033112) | human_reference_atlas |
-| vascular leptomeningeal cell (CL:4023051) | human_reference_atlas |
-| otic ganglion nNOS neuron (CL:4033137) | human_reference_atlas |
-| lumbar ganglion SST/TH neuron (CL:4033122) | human_reference_atlas |
-| L5 extratelencephalic projecting glutamatergic cortical neuron (CL:4023041) | human_reference_atlas |
-| cervicothoracic ganglion TH/NPY neuron (CL:4033115) | human_reference_atlas |
-| pterygopalatine ganglion VIP neuron (CL:4033145) | human_reference_atlas |
-| cycling B cell (CL:4033068) | human_reference_atlas |
-| pvalb GABAergic interneuron (CL:4023018) | human_reference_atlas |
-| sncg GABAergic interneuron (CL:4023015) | human_reference_atlas |
-| superior mesenteric ganglion SP neuron (CL:4033134) | human_reference_atlas |
-| ciliary ganglion TH neuron (CL:4033140) | human_reference_atlas |
-| serous acinar cell of salivary gland (CL:4052065) | human_reference_atlas |
-| seromucous acinar cell of salivary gland (CL:4052067) | human_reference_atlas |
-| Islands of Calleja granule cell (CL:4030053) | human_reference_atlas |
-| pelvic ganglion TH/DBH neuron (CL:4033168) | human_reference_atlas |
-| thoracic ganglion TH neuron (CL:4033119) | human_reference_atlas |
-| submandibular ganglion VIP/PHI neuron (CL:4033142) | human_reference_atlas |
-| myoepithelial cell (CL:0000185) | human_reference_atlas |
-| internal globus pallidus core projecting neuron (CL:0020003) | human_reference_atlas |
-| middle cervical ganglion TH/NPY neuron (CL:4033110) | human_reference_atlas |
-| cervicothoracic ganglion TH neuron (CL:4033114) | human_reference_atlas |
-| middle cervical ganglion DBH neuron (CL:4033108) | human_reference_atlas |
-| inferior mesenteric ganglion SP neuron (CL:4033136) | human_reference_atlas |
-| uterine natural killer cell (CL:4052028) | human_reference_atlas |
-| superior cervical ganglion TH neuron (CL:4033102) | human_reference_atlas |
-| ciliated epithelial cell (CL:0000067) | human_reference_atlas |
-| inferior mesenteric ganglion TH neuron (CL:4033135) | human_reference_atlas |
-| helper T cell (CL:0000912) | human_reference_atlas |
-| OB-Dopa-GABA (CL:0020006) | human_reference_atlas |
-| ovarian nerve plexus ganglion TH neuron (CL:4033174) | human_reference_atlas |
-| nodose ganglion TRPV1 neuron (CL:4033148) | human_reference_atlas |
-| nodose ganglion TRPV2 neuron (CL:4033150) | human_reference_atlas |
-| striatal cholinergic-GABAergic neuron (CL:0020008) | human_reference_atlas |
-| cervicothoracic ganglion enkephalin neuron (CL:4033113) | human_reference_atlas |
-| pterygopalatine ganglion VIP/PHI neuron (CL:4033144) | human_reference_atlas |
-| celiac ganglion CGRP neuron (CL:4033130) | human_reference_atlas |
-| cervicothoracic ganglion VAChT neuron (CL:4033117) | human_reference_atlas |
-| lumbar ganglion TH neuron (CL:4033124) | human_reference_atlas |
-| geniculate ganglion SPARCL1 neuron (CL:4033158) | human_reference_atlas |
-| L2/3 intratelencephalic projecting glutamatergic neuron (CL:4030059) | human_reference_atlas |
-| thoracic ganglion TH/NPY neuron (CL:4033120) | human_reference_atlas |
-| jugular ganglion TRPV2 neuron (CL:4033153) | human_reference_atlas |
-| prototypic neuron (CL:0020009) | human_reference_atlas |
-| geniculate ganglion TRPV1 neuron (CL:4033157) | human_reference_atlas |
-| arkypallidal neuron (CL:0020010) | human_reference_atlas |
-| mural granulosa cell (CL:4033067) | human_reference_atlas |
-| celiac ganglion VIP neuron (CL:4033128) | human_reference_atlas |
-| celiac ganglion SOM neuron (CL:4033132) | human_reference_atlas |
-| celiac ganglion SOM/CGRP neuron (CL:4033133) | human_reference_atlas |
-| pvalb chandelier GABAergic interneuron (CL:4023036) | human_reference_atlas |
-| superior cervical ganglion SST neuron (CL:4033105) | human_reference_atlas |
-| L5/6 near-projecting glutamatergic neuron (CL:4030067) | human_reference_atlas |
-| muscle cell (CL:0000187) | human_reference_atlas |
-| dorso-striatal cholinergic-GABAergic neuron (CL:0020007) | human_reference_atlas |
-| pelvic ganglion nNOS neuron (CL:4033170) | human_reference_atlas |
-| pterygopalatine ganglion nNOS neuron (CL:4033146) | human_reference_atlas |
-| superior cervical ganglion VIP neuron (CL:4033106) | human_reference_atlas |
-| vestibular ganglion SP neuron (CL:4033147) | human_reference_atlas |
-| celiac ganglion SP neuron (CL:4033131) | human_reference_atlas |
-| middle cervical ganglion TH neuron (CL:4033109) | human_reference_atlas |
-| celiac ganglion PHI neuron (CL:4033129) | human_reference_atlas |
-| L4 intratelencephalic projecting glutamatergic neuron (CL:4030063) | human_reference_atlas |
-| lumbar ganglion TH/NPY neuron (CL:4033123) | human_reference_atlas |
-| pelvic ganglion NPY/VAChT neuron (CL:4033172) | human_reference_atlas |
-| pelvic ganglion TH neuron (CL:4033167) | human_reference_atlas |
-| jugular ganglion SPARCL1 neuron (CL:4033156) | human_reference_atlas |
-| lower airway ganglion ChAT/VIP neuron (CL:4033127) | human_reference_atlas |
-| middle cervical ganglion NPY neuron (CL:4033111) | human_reference_atlas |
-| pelvic ganglion nNOS/VAChT neuron (CL:4033173) | human_reference_atlas |
-| superior cervical ganglion CGRP neuron (CL:4033107) | human_reference_atlas |
-| superior cervical ganglion TH/DBH neuron (CL:4033101) | human_reference_atlas |
-| internal globus pallidus shell projection neuron (CL:0020004) | human_reference_atlas |
-| L6 intratelencephalic projecting glutamatergic neuron (CL:4030065) | human_reference_atlas |
-| L5 intratelencephalic projecting glutamatergic neuron (CL:4030064) | human_reference_atlas |
-| jugular ganglion CGRP neuron (CL:4033155) | human_reference_atlas |
-| pelvic ganglion VAChT neuron (CL:4033169) | human_reference_atlas |
-| nodose ganglion PVALB neuron (CL:4033151) | human_reference_atlas |
-| submandibular ganglion TH cholinergic neuron (CL:4033141) | human_reference_atlas |
-| nodose ganglion P2X3 neuron (CL:4033149) | human_reference_atlas |
-| lumbar ganglion NPY neuron (CL:4033125) | human_reference_atlas |
-| superior cervical ganglion NPY neuron (CL:4033103) | human_reference_atlas |
-| thoracic ganglion enkephalin neuron (CL:4033118) | human_reference_atlas |
-| sacral ganglion TH neuron (CL:4033126) | human_reference_atlas |
-| cervicothoracic ganglion VIP neuron (CL:4033116) | human_reference_atlas |
-| intestinal villus goblet cell (CL:1000317) | human_reference_atlas |
-| smooth muscle cell of the brain vasculature (CL:0002590) | human_reference_atlas |
-| pelvic ganglion nNOS/VIP neuron (CL:4033171) | human_reference_atlas |
-| PAX6 GABAergic interneuron (CL:4042032) | human_reference_atlas |
-
-</details>
-
-<details>
-<summary>Text definitions changed: 41</summary>
-
-| Term | Old Text Definition | New Text Definition |
-----|----|----|
-| type III spiral ligament fibrocyte (CL:0002669) | An otic fibrocyte that lines the otic capsule. |                  A spiral ligament fibrocyte that is located in the deepest part of the inferior spiral ligament, directly lining the bony otic capsule. Distinguished from ion-transporting Type I and II fibrocytes, it utilises actin-myosin stress fibres and anchoring interactions to regulate basilar membrane tension. It has an elongated morphology, is most numerous in the basal, high-frequency cochlea, and expresses contractile and cytoskeletal proteins in mice, including α‑smooth muscle actin, non‑muscle myosin II, caldesmon, and the water channel Aquaporin‑1(Mahendrasingam et al., 2011; Kelly et al., 2012). |
-| gravity sensitive cell (CL:0000203) | Any neuronal receptor cell that is capable of some detection of mechanical stimulus involved in sensory perception of gravity. |                  Any neuronal receptor cell that is capable of some detection of mechanical stimulus involved in sensory perception. |
-| myenteric ganglion of small intestine ChAT/CALR/SOM/SP neuron (CL:4033165) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker choline acetyltransferase (ChAT), calreticulin (CALR), somatostatin (SOM), and substance P (SP). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker choline acetyltransferase (ChAT), calretinin (CALR), somatostatin (SOM), and substance P (SP). |
-| medial ganglionic eminence derived interneuron (CL:4023063) | An interneuron that is derived from the medial ganglionic eminence. |                  An interneuron that is derived from the medial ganglionic eminence. In mice and humans, it expresses LHX6 and SOX6. |
-| myeloid dendritic cell, human (CL:0001057) | A myeloid dendritic cell with the phenotype HLA-DRA-positive. |                  A myeloid dendritic cell with the phenotype HLA-DRA-positive and CD14-negative. |
-| pelvic ganglion nNOS neuron (CL:4033170) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |                  A parasympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |
-| otic ganglion nNOS neuron (CL:4033137) | A peripheral nervous system neuron that has the soma located in the otic ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |                  A parasympathetic neuron that has the soma located in the otic ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |
-| type I spiral ligament fibrocyte (CL:0002670) | An otic fibrocyte that underlies the stria vascularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph. |                  A spiral ligament fibrocyte that underlies the stria vascularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph. In mice, expression of connexin 26 (Gjb2) and connexin 30 (Gjb6) serves as a distinguishing molecular signature. |
-| ciliary ganglion TH neuron (CL:4033140) | A peripheral nervous system neuron that has the soma located in the ciliary ganglion and expresses the marker tyrosine hydroxylase (TH). |                  A parasympathetic neuron that has the soma located in the ciliary ganglion and expresses the marker tyrosine hydroxylase (TH). |
-| otic ganglion VIP neuron (CL:4033138) | A peripheral nervous system neuron that has the soma located in the otic ganglion and expresses the marker vasoactive intestinal peptide (VIP). |                  A parasympathetic neuron that has the soma located in the otic ganglion and expresses the marker vasoactive intestinal peptide (VIP). |
-| ovarian nerve plexus ganglion TH neuron (CL:4033174) | A peripheral nervous system neuron that has the soma located in the ovarian nerve plexus ganglion and expresses the marker tyrosine hydroxylase (TH). |                  A sympathetic neuron that has the soma located in the ovarian nerve plexus ganglion and expresses the marker tyrosine hydroxylase (TH). |
-| pelvic ganglion VAChT neuron (CL:4033169) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker vesicular acetylcholine transporter (VAChT). |                  A parasympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker vesicular acetylcholine transporter (VAChT). |
-| myenteric ganglion of small intestine nNOS/ChAT neuron (CL:4033164) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker neuronal nitric oxide synthase 1 (nNOS) and choline O-acetyltransferase (ChAT). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker neuronal nitric oxide synthase 1 (nNOS) and choline O-acetyltransferase (ChAT). |
-| submandibular ganglion nNOS neuron (CL:4033143) | A peripheral nervous system neuron that has the soma located in the submandibular ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |                  A parasympathetic neuron that has the soma located in the submandibular ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |
-| ciliary ganglion VIP/PHI neuron (CL:4033139) | A peripheral nervous system neuron that has the soma located in the ciliary ganglion and expresses the marker vasoactive intestinal peptide (VIP) and peptide histidine isoleucine (PHI). |                  A parasympathetic postganglionic neuron whose soma is located in the ciliary ganglion and that co-expresses vasoactive intestinal peptide (VIP) and peptide histidine isoleucine (PHI, both encoded by the VIP gene). This neuron provides parasympathetic innervation to the eye, contributing to regulation of pupillary constriction and ciliary muscle accommodation. It has been identified in human ciliary ganglia by immunohistochemistry (Kiyokawa et al. 2012, PMID:22095632). VIP/PHI co-expression distinguishes this subpopulation from other cholinergic parasympathetic neurons in the ciliary ganglion and is characteristic of a subset of cranial parasympathetic neurons in humans and other mammals. |
-| pelvic ganglion TH/DBH neuron (CL:4033168) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker tyrosine hydroxylase (TH) and dopamine beta-hydroxylase (DBH). |                  A sympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker tyrosine hydroxylase (TH) and dopamine beta-hydroxylase (DBH). |
-| CD4-positive, alpha-beta memory T cell, CD45RO-positive (CL:0001204) | CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high. |                  CD4-positive, alpha-beta long-lived T cell with the phenotype CD45RO-positive and CD127-positive. This cell type is also described as being CD25-negative. |
-| pelvic ganglion nNOS/VIP neuron (CL:4033171) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker neuronal nitric oxide synthase (nNOS) 1 and vasoactive intestinal peptide (VIP). |                  A parasympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker neuronal nitric oxide synthase (nNOS) 1 and vasoactive intestinal peptide (VIP). |
-| type II spiral ligament fibrocyte (CL:0002666) | An otic fibrocyte that underlies the spiral prominence and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph. |                  A spiral ligament fibrocyte that is located near the spiral prominence between the basilar crest and the stria and plays an important role in potassium recycling by actively pumping K+ from the extracellular space and facilitating transcellular K+ transport through gap junctions toward Type I fibrocytes. In mice, Type II fibrocytes express connexin 26 (Gjb2) and connexin 30 (Gjb6) as part of the mesenchymal gap junction system, as well as the Na‑K‑2Cl cotransporter NKCC1. |
-| submandibular ganglion VIP/PHI neuron (CL:4033142) | A peripheral nervous system neuron that has the soma located in the submandibular ganglion and expresses the marker vasoactive intestinal peptide (VIP) and peptide histidine isoleucine (PHI). |                  A parasympathetic neuron that has the soma located in the submandibular ganglion and expresses the marker vasoactive intestinal peptide (VIP) and peptide histidine isoleucine (PHI). |
-| type IV spiral ligament fibrocyte (CL:0002668) | An otic fibrocyte that is lateral to the basilar membrane and anchoris it to the lateral wall. |                  A spiral ligament fibrocyte that is located in the triangular space inferior to the crista basilaris (basilar crest). This cell is spindle-shaped and expresses NKCC1 but minimal to no Na,K-ATPase (ATP1A1, ATP1B1) in mice and humans, and lacks connexin 26/30 in mice, indicating it does not participate in K⁺ recycling, unlike type II fibrocytes. Type IV fibrocyte is uniquely characterised by strong expression of connective tissue growth factor (CTGF) in mice, suggesting roles in tissue remodelling and paracrine signalling to other cochlear cells. |
-| lower airway ganglion ChAT/VIP neuron (CL:4033127) | A peripheral nervous system neuron that has the soma located in the lower airway ganglion and expresses the marker choline O-acetyltransferase (ChAT) and vasoactive intestinal peptide (VIP). |                  A parasympathetic neuron that has the soma located in the lower airway ganglion and expresses the marker choline O-acetyltransferase (ChAT) and vasoactive intestinal peptide (VIP). |
-| pelvic ganglion nNOS/VAChT neuron (CL:4033173) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker neuronal nitric oxide synthase 1(nNOS) and vesicular acetylcholine transporter (VAChT). |                  A parasympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker neuronal nitric oxide synthase 1(nNOS) and vesicular acetylcholine transporter (VAChT). |
-| Islands of Calleja granule cell (Primate) (CL:4310104) | A Island of Calleja granule cell of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:OT D1 ICj. |                  A Islands of Calleja granule cell of the Primates brain. These cells are located in the striatum . Reference transcriptomic data for this type can be found in the dataset/taxonomy - HMBA Basal Ganglia Consensus Taxonomy in cell set Group:OT D1 ICj. |
-| alpha retinal ganglion cell (Mmus) (CL:0004117) | A monostratified retinal ganglion cell with large soma and large dendritic field. |                  A large-bodied retinal projection neuron with wide monostratified dendritic arbors in defined IPL strata, high neurofilament and osteopontin expression, and a thick, fast-conducting axon. It shows short-latency, non-direction-selective responses with large receptive fields and a distinctive rapid action potential waveform. In mammals it forms about five percent of RGCs and includes four conserved ON and OFF sustained and transient subtypes. |
-| pterygopalatine ganglion VIP neuron (CL:4033145) | A peripheral nervous system neuron that has the soma located in the pterygopalatine ganglion and expresses the marker vasoactive intestinal peptide (VIP). |                  A parasympathetic neuron that has the soma located in the pterygopalatine ganglion and expresses the marker vasoactive intestinal peptide (VIP). |
-| pelvic ganglion TH neuron (CL:4033167) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker tyrosine hydroxylase (TH). |                  A sympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker tyrosine hydroxylase (TH). |
-| myenteric ganglion of small intestine VIP neuron (CL:4033162) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker vasoactive intestinal peptide (VIP). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker vasoactive intestinal peptide (VIP). |
-| type V spiral ligament fibrocyte (CL:0002667) | An otic fibrocyte that resides above the stria vasularis and is part of a mesenchymal gap junction network that regulates ionic homeostasis of the endolymph. |                  A spiral ligament fibrocyte located in the suprastrial region above the stria vascularis, distinguished from other fibrocytes by their unique expression of COX-1 in guinea pigs and end-foot structures that directly contact capillaries (Dai and Shi, 2011). This fibro-vascular coupling enables type V fibrocytes to regulate cochlear blood flow by translating Ca²⁺ signals into capillary vasodilation via COX-1-derived prostaglandins. This cell also participates in K⁺ recycling, expressing Na,K-ATPase (ATP1A1, ATP1B1) in mice and humans, and connexin 26/30 gap junctions enabling intercellular K⁺ transport within the spiral ligament syncytium (Peeleman et al., 2020). |
-| CD8-positive, alpha-beta memory T cell, CD45RO-positive (CL:0001203) | A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative, CD44-high, and CD122-high. |                  A CD8-positive, alpha-beta T cell with memory phenotype indicated by being CD45RO and CD127-positive. This cell type is also described as being CD25-negative. |
-| myenteric ganglion of small intestine ChAT neuron (CL:4033160) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker choline O-acetyltransferase (ChAT). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker choline O-acetyltransferase (ChAT). |
-| pterygopalatine ganglion VIP/PHI neuron (CL:4033144) | A peripheral nervous system neuron that has the soma located in the pterygopalatine ganglion and expresses the marker vasoactive intestinal peptide (VIP) and peptide histidine isoleucine (PHI). |                  A parasympathetic neuron that has the soma located in the pterygopalatine ganglion and expresses the marker vasoactive intestinal peptide (VIP) and peptide histidine isoleucine (PHI). |
-| plasmacytoid dendritic cell, human (CL:0001058) | A plasmacytoid dendritic cell with the phenotype HLA-DRA-positive, CD123-positive, and CD11c-negative. |                  A plasmacytoid dendritic cell with the phenotype HLA-DRA-positive, CD123-positive, CD11c-negative, and CD14-negative. |
-| vestibular ganglion SP neuron (CL:4033147) | A peripheral nervous system neuron that has the soma located in the vestibular ganglion and expresses the marker substance P (SP). |                  A sensory neuron that has the soma located in the vestibular ganglion and expresses the marker substance P (SP). |
-| pterygopalatine ganglion nNOS neuron (CL:4033146) | A peripheral nervous system neuron that has the soma located in the pterygopalatine ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |                  A parasympathetic neuron that has the soma located in the pterygopalatine ganglion and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |
-| submandibular ganglion TH cholinergic neuron (CL:4033141) | A peripheral nervous system neuron that has the soma located in the submandibular ganglion and expresses the marker tyrosine hydroxylase (TH). |                  A parasympathetic neuron that has the soma located in the submandibular ganglion and expresses the marker tyrosine hydroxylase (TH). |
-| myenteric ganglion of small intestine nNOS/VIP neuron (CL:4033163) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker neuronal nitric oxide synthase 1 (nNOS) and vasoactive intestinal peptide (VIP). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker neuronal nitric oxide synthase 1 (nNOS) and vasoactive intestinal peptide (VIP). |
-| intraepithelial lymphocyte (CL:0002496) | A T cell that is located in the intestinal epithelium and is capable of a mucosal immune response. |                  A tissue-resident lymphocyte located within the epithelial layer of mucosal tissues, particularly within the gastrointestinal, respiratory, and reproductive tracts. Characterised by permanent residency, this cell typically expresses CD103 (integrin alpha-E), which binds to E-cadherin on epithelial cells, enabling epithelial retention in both mice and humans. Phenotypically, IEL displays an activated, antigen-experienced state characterised by the constitutive expression of cytotoxic molecules (granzyme B, perforin) and innate-like receptors (such as NKG2D), enabling rapid, localised surveillance and immediate response to epithelial stress. |
-| myenteric ganglion of small intestine nNOS neuron (CL:4033161) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker neuronal nitric oxide synthase 1 (nNOS). |
-| pelvic ganglion NPY/VAChT neuron (CL:4033172) | A peripheral nervous system neuron that has the soma located in the pelvic ganglion and expresses the marker neuropeptide Y (NPY) and vesicular acetylcholine transporter (VAChT). |                  A parasympathetic neuron that has the soma located in the pelvic ganglion and expresses the marker neuropeptide Y (NPY) and vesicular acetylcholine transporter (VAChT). |
-| myenteric ganglion of small intestine VIP/GAL neuron (CL:4033166) | A peripheral nervous system neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker vasoactive intestinal peptide (VIP) and galanin (GAL). |                  An enteric neuron that has the soma located in the myenteric ganglion of the small intestine and expresses the marker vasoactive intestinal peptide (VIP) and galanin (GAL). |
-
-</details>
-
-<details>
-<summary>Nodes removed from subset: 2</summary>
-
-| Term | Subset |
-----|----|
-| immature NK T cell (CL:0000914) | human_reference_atlas |
-| lateral ganglionic eminence derived neuron (CL:4023035) | human_reference_atlas |
-
-</details>
-
-<details>
-<summary>Nodes renamed: 6</summary>
-
-| ID | Old Label | New Label |
-----|----|----|
-| CL:0002666 | type 2 otic fibrocyte | type II spiral ligament fibrocyte |
-| CL:0002667 | type 5 otic fibrocyte | type V spiral ligament fibrocyte |
-| CL:0002670 | type 1 otic fibrocyte | type I spiral ligament fibrocyte |
-| CL:0002669 | type 3 otic fibrocyte | type III spiral ligament fibrocyte |
-| CL:0002668 | type 4 otic fibrocyte | type IV spiral ligament fibrocyte |
-| CL:0004117 | retinal ganglion cell A | alpha retinal ganglion cell (Mmus) |
-
-</details>
-
-<details>
-<summary>Synonyms removed: 10</summary>
-
-| Term | Removed Synonym |
-----|----|
-| type III spiral ligament fibrocyte (CL:0002669) | type III otic fibrocyte |
-| type I spiral ligament fibrocyte (CL:0002670) | type I spiral ligament fibrocyte |
-| type IV spiral ligament fibrocyte (CL:0002668) | type IV otic fibrocyte |
-| type IV spiral ligament fibrocyte (CL:0002668) | type IV spiral ligament fibrocyte |
-| type I spiral ligament fibrocyte (CL:0002670) | type I otic fibrocyte |
-| stem cell (CL:0000034) | animal stem cell |
-| type III spiral ligament fibrocyte (CL:0002669) | type III spiral ligament fibrocyte |
-| type II spiral ligament fibrocyte (CL:0002666) | type II otic fibrocyte |
-| type II spiral ligament fibrocyte (CL:0002666) | type II spiral ligament fibrocyte |
-| type V spiral ligament fibrocyte (CL:0002667) | type V spiral ligament fibrocyte |
+| serous acinar cell of salivary gland (CL:4052065) | subClassOf (rdfs:subClassOf) |                serous secreting cell (CL:0000313) |
 
 </details>
 
@@ -989,7 +129,7 @@
 ## CL Links to External Ontologies
 
 <details>
-<summary>UBERON → CL (count: 1388)</summary>
+<summary>UBERON → CL (count: 1391)</summary>
 
 | UBERON ID      | UBERON label                                                     | relation                                       | CL ID      | CL label                                                                                  |
 |:---------------|:-----------------------------------------------------------------|:-----------------------------------------------|:-----------|:------------------------------------------------------------------------------------------|
@@ -2309,6 +1449,9 @@
 | UBERON:1000010 | mole                                                             | has developmental contribution from            | CL:0007004 | premigratory neural crest cell                                                            |
 | UBERON:1000010 | mole                                                             | has part                                       | CL:0000148 | melanocyte                                                                                |
 | UBERON:1000010 | mole                                                             | has_part                                       | CL:0000148 | melanocyte                                                                                |
+| UBERON:1200002 | carotid artery intima-media region                               | has developmental contribution from            | CL:0000034 | stem cell                                                                                 |
+| UBERON:1200002 | carotid artery intima-media region                               | has developmental contribution from            | CL:0000222 | mesodermal cell                                                                           |
+| UBERON:1200002 | carotid artery intima-media region                               | has developmental contribution from            | CL:0000514 | smooth muscle myoblast                                                                    |
 | UBERON:2001248 | dorsal scute series                                              | has developmental contribution from            | CL:0007001 | skeletogenic cell                                                                         |
 | UBERON:2001254 | abdominal scute series                                           | has developmental contribution from            | CL:0007001 | skeletogenic cell                                                                         |
 | UBERON:2001709 | infraorbital series                                              | has developmental contribution from            | CL:0007001 | skeletogenic cell                                                                         |
@@ -2385,7 +1528,7 @@
 </details>
 
 <details>
-<summary>GO → CL (count: 2099)</summary>
+<summary>GO → CL (count: 2093)</summary>
 
 | GO ID      | GO label                                                                                                                 | relation                                  | CL ID      | CL label                                                     |
 |:-----------|:-------------------------------------------------------------------------------------------------------------------------|:------------------------------------------|:-----------|:-------------------------------------------------------------|
@@ -3501,7 +2644,6 @@
 | GO:0048934 | peripheral nervous system neuron differentiation                                                                         | results in acquisition of features of     | CL:2000032 | peripheral nervous system neuron                             |
 | GO:0048935 | peripheral nervous system neuron development                                                                             | results in development of                 | CL:2000032 | peripheral nervous system neuron                             |
 | GO:0048937 | lateral line nerve glial cell development                                                                                | results in development of                 | CL:1000050 | lateral line nerve glial cell                                |
-| GO:0048938 | lateral line nerve glial cell morphogenesis involved in differentiation                                                  | results in morphogenesis of               | CL:1000050 | lateral line nerve glial cell                                |
 | GO:0048939 | anterior lateral line nerve glial cell development                                                                       | results in development of                 | CL:1000239 | anterior lateral line nerve glial cell                       |
 | GO:0048941 | posterior lateral line nerve glial cell development                                                                      | results in development of                 | CL:1000236 | posterior lateral line nerve glial cell                      |
 | GO:0050673 | epithelial cell proliferation                                                                                            | acts on population of                     | CL:0000066 | epithelial cell                                              |
@@ -3521,6 +2663,7 @@
 | GO:0051168 | nuclear export                                                                                                           | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0051170 | import into nucleus                                                                                                      | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0051170 | import into nucleus                                                                                                      | has target start location                 | CL:0000000 | cell                                                         |
+| GO:0051204 | protein insertion into mitochondrial membrane                                                                            | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0051209 | release of sequestered calcium ion into cytosol                                                                          | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0051305 | chromosome movement towards spindle pole                                                                                 | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0051402 | neuron apoptotic process                                                                                                 | occurs in                                 | CL:0000540 | neuron                                                       |
@@ -3545,8 +2688,6 @@
 | GO:0055057 | neuroblast division                                                                                                      | has primary input                         | CL:0000031 | neuroblast (sensu Vertebrata)                                |
 | GO:0055107 | Golgi to secretory granule transport                                                                                     | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0055107 | Golgi to secretory granule transport                                                                                     | has target start location                 | CL:0000000 | cell                                                         |
-| GO:0055108 | Golgi to transport vesicle transport                                                                                     | has target end location                   | CL:0000000 | cell                                                         |
-| GO:0055108 | Golgi to transport vesicle transport                                                                                     | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0055120 | striated muscle dense body                                                                                               | develops from                             | CL:0000056 | myoblast                                                     |
 | GO:0055120 | striated muscle dense body                                                                                               | develops_from                             | CL:0000056 | myoblast                                                     |
 | GO:0060008 | Sertoli cell differentiation                                                                                             | results in acquisition of features of     | CL:0000216 | Sertoli cell                                                 |
@@ -3621,7 +2762,6 @@
 | GO:0060708 | spongiotrophoblast differentiation                                                                                       | results in acquisition of features of     | CL:0002499 | spongiotrophoblast cell                                      |
 | GO:0060718 | chorionic trophoblast cell differentiation                                                                               | results in acquisition of features of     | CL:0011101 | chorionic trophoblast cell                                   |
 | GO:0060719 | chorionic trophoblast cell development                                                                                   | results in development of                 | CL:0011101 | chorionic trophoblast cell                                   |
-| GO:0060830 | ciliary receptor clustering involved in smoothened signaling pathway                                                     | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0060836 | lymphatic endothelial cell differentiation                                                                               | results in acquisition of features of     | CL:0002138 | endothelial cell of lymphatic vessel                         |
 | GO:0060837 | blood vessel endothelial cell differentiation                                                                            | results in acquisition of features of     | CL:0000071 | blood vessel endothelial cell                                |
 | GO:0060839 | endothelial cell fate commitment                                                                                         | results in commitment to                  | CL:0000115 | endothelial cell                                             |
@@ -3801,11 +2941,11 @@
 | GO:0072538 | T-helper 17 type immune response                                                                                         | has participant                           | CL:0000899 | T-helper 17 cell                                             |
 | GO:0072539 | T-helper 17 cell differentiation                                                                                         | results in acquisition of features of     | CL:0000899 | T-helper 17 cell                                             |
 | GO:0072560 | type B pancreatic cell maturation                                                                                        | results in maturation of                  | CL:0000169 | type B pancreatic cell                                       |
+| GO:0072574 | hepatocyte proliferation                                                                                                 | acts on population of                     | CL:0000182 | hepatocyte                                                   |
 | GO:0072577 | endothelial cell apoptotic process                                                                                       | occurs in                                 | CL:0000115 | endothelial cell                                             |
 | GO:0072596 | establishment of protein localization to chloroplast                                                                     | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072598 | protein localization to chloroplast                                                                                      | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072599 | establishment of protein localization to endoplasmic reticulum                                                           | has target end location                   | CL:0000000 | cell                                                         |
-| GO:0072655 | establishment of protein localization to mitochondrion                                                                   | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072659 | protein localization to plasma membrane                                                                                  | has target start location                 | CL:0000000 | cell                                                         |
 | GO:0072662 | protein localization to peroxisome                                                                                       | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0072663 | establishment of protein localization to peroxisome                                                                      | has target end location                   | CL:0000000 | cell                                                         |
@@ -3848,15 +2988,12 @@
 | GO:0086052 | membrane repolarization during SA node cell action potential                                                             | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
 | GO:0086056 | voltage-gated calcium channel activity involved in AV node cell action potential                                         | occurs in                                 | CL:1000410 | myocyte of atrioventricular node                             |
 | GO:0086057 | voltage-gated calcium channel activity involved in bundle of His cell action potential                                   | occurs in                                 | CL:0010005 | atrioventricular bundle cell                                 |
-| GO:0086058 | voltage-gated calcium channel activity involved in Purkinje myocyte cell action potential                                | occurs in                                 | CL:0002068 | Purkinje myocyte                                             |
 | GO:0086059 | voltage-gated calcium channel activity involved SA node cell action potential                                            | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
 | GO:0086060 | voltage-gated sodium channel activity involved in AV node cell action potential                                          | occurs in                                 | CL:1000410 | myocyte of atrioventricular node                             |
 | GO:0086061 | voltage-gated sodium channel activity involved in bundle of His cell action potential                                    | occurs in                                 | CL:0010005 | atrioventricular bundle cell                                 |
 | GO:0086062 | voltage-gated sodium channel activity involved in Purkinje myocyte action potential                                      | occurs in                                 | CL:0002068 | Purkinje myocyte                                             |
 | GO:0086063 | voltage-gated sodium channel activity involved in SA node cell action potential                                          | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
-| GO:0086086 | voltage-gated potassium channel activity involved in AV node cell action potential repolarization                        | occurs in                                 | CL:1000410 | myocyte of atrioventricular node                             |
 | GO:0086087 | voltage-gated potassium channel activity involved in bundle of His cell action potential repolarization                  | occurs in                                 | CL:0010005 | atrioventricular bundle cell                                 |
-| GO:0086088 | voltage-gated potassium channel activity involved in Purkinje myocyte action potential repolarization                    | occurs in                                 | CL:0002068 | Purkinje myocyte                                             |
 | GO:0086089 | voltage-gated potassium channel activity involved in atrial cardiac muscle cell action potential repolarization          | occurs in                                 | CL:0002129 | regular atrial cardiac myocyte                               |
 | GO:0086090 | voltage-gated potassium channel activity involved in SA node cell action potential repolarization                        | occurs in                                 | CL:1000409 | myocyte of sinoatrial node                                   |
 | GO:0089703 | L-aspartate transmembrane export from vacuole                                                                            | has target end location                   | CL:0000000 | cell                                                         |
@@ -4067,7 +3204,6 @@
 | GO:0098723 | skeletal muscle myofibril                                                                                                | part_of                                   | CL:0008002 | skeletal muscle fiber                                        |
 | GO:0098726 | symmetric division of skeletal muscle satellite stem cell                                                                | has primary input                         | CL:0008011 | skeletal muscle satellite stem cell                          |
 | GO:0098730 | male germline stem cell symmetric division                                                                               | has primary input                         | CL:0000016 | male germ line stem cell                                     |
-| GO:0098731 | skeletal muscle satellite stem cell maintenance involved in skeletal muscle regeneration                                 | acts on population of                     | CL:0008011 | skeletal muscle satellite stem cell                          |
 | GO:0098749 | cerebellar neuron development                                                                                            | results in development of                 | CL:1001611 | cerebellar neuron                                            |
 | GO:0098751 | bone cell development                                                                                                    | results in development of                 | CL:0001035 | bone cell                                                    |
 | GO:0098788 | dendritic knob                                                                                                           | part of                                   | CL:0000847 | ciliated olfactory receptor neuron                           |
@@ -4131,19 +3267,13 @@
 | GO:0099504 | synaptic vesicle cycle                                                                                                   | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099507 | ligand-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential                    | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099508 | voltage-gated monoatomic ion channel activity involved in regulation of presynaptic membrane potential                   | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:0099510 | calcium ion binding involved in regulation of cytosolic calcium ion concentration                                        | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0099511 | voltage-gated calcium channel activity involved in regulation of cytosolic calcium levels                                | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0099519 | dense core granule cytoskeletal transport                                                                                | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:0099520 | monoatomic ion antiporter activity involved in regulation of presynaptic membrane potential                              | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:0099521 | ATPase coupled ion transmembrane transporter activity involved in regulation of presynaptic membrane potential           | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099530 | G protein-coupled receptor activity involved in regulation of postsynaptic membrane potential                            | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099531 | presynaptic process involved in chemical synaptic transmission                                                           | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099533 | positive regulation of presynaptic cytosolic calcium concentration                                                       | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099534 | calcium ion binding involved in regulation of presynaptic cytosolic calcium ion concentration                            | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099565 | chemical synaptic transmission, postsynaptic                                                                             | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099580 | monoatomic ion antiporter activity involved in regulation of postsynaptic membrane potential                             | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099581 | ATPase coupled ion transmembrane transporter activity involved in regulation of postsynaptic membrane potential          | occurs in                                 | CL:0000000 | cell                                                         |
-| GO:0099582 | neurotransmitter receptor activity involved in regulation of presynaptic cytosolic calcium ion concentration             | occurs in                                 | CL:0000540 | neuron                                                       |
+| GO:0099567 | calcium ion binding involved in regulation of postsynaptic cytosolic calcium ion concentration                           | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:0099585 | release of sequestered calcium ion into presynaptic cytosol                                                              | has target end location                   | CL:0000540 | neuron                                                       |
 | GO:0099585 | release of sequestered calcium ion into presynaptic cytosol                                                              | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0099588 | positive regulation of postsynaptic cytosolic calcium concentration                                                      | occurs in                                 | CL:0000000 | cell                                                         |
@@ -4282,7 +3412,6 @@
 | GO:0140917 | zinc ion import into mitochondrion                                                                                       | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0141013 | purine nucleotide import into lysosome                                                                                   | has target end location                   | CL:0000000 | cell                                                         |
 | GO:0141013 | purine nucleotide import into lysosome                                                                                   | has target start location                 | CL:0000000 | cell                                                         |
-| GO:0150047 | G protein-coupled neurotransmitter receptor activity involved in regulation of presynaptic membrane potential            | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:0150048 | cerebellar granule cell to Purkinje cell synapse                                                                         | overlaps                                  | CL:0000121 | Purkinje cell                                                |
 | GO:0150048 | cerebellar granule cell to Purkinje cell synapse                                                                         | overlaps                                  | CL:0001031 | cerebellar granule cell                                      |
 | GO:0150053 | cerebellar climbing fiber to Purkinje cell synapse                                                                       | overlaps                                  | CL:0000121 | Purkinje cell                                                |
@@ -4353,7 +3482,6 @@
 | GO:1903513 | endoplasmic reticulum to cytosol transport                                                                               | has target start location                 | CL:0000000 | cell                                                         |
 | GO:1903540 | establishment of protein localization to postsynaptic membrane                                                           | has target end location                   | CL:0000000 | cell                                                         |
 | GO:1903546 | protein localization to photoreceptor outer segment                                                                      | has target end location                   | CL:0000210 | photoreceptor cell                                           |
-| GO:1903563 | microtubule bundle formation involved in horsetail-astral microtubule organization                                       | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:1903608 | protein localization to cytoplasmic stress granule                                                                       | has target end location                   | CL:0000000 | cell                                                         |
 | GO:1903621 | protein localization to photoreceptor connecting cilium                                                                  | has target end location                   | CL:0000210 | photoreceptor cell                                           |
 | GO:1903680 | acinar cell of sebaceous gland differentiation                                                                           | results in acquisition of features of     | CL:0002140 | skin sebocyte                                                |
@@ -4390,8 +3518,6 @@
 | GO:1904977 | lymphatic endothelial cell migration                                                                                     | results in movement of                    | CL:0002138 | endothelial cell of lymphatic vessel                         |
 | GO:1905011 | transmembrane phosphate ion transport from cytosol to vacuole                                                            | has target end location                   | CL:0000000 | cell                                                         |
 | GO:1905011 | transmembrane phosphate ion transport from cytosol to vacuole                                                            | has target start location                 | CL:0000000 | cell                                                         |
-| GO:1905054 | calcium-induced calcium release activity involved in regulation of presynaptic cytosolic calcium ion concentration       | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:1905055 | calcium:monoatomic cation antiporter activity involved in regulation of presynaptic cytosolic calcium ion concentration  | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:1905056 | P-type calcium transporter activity involved in regulation of presynaptic cytosolic calcium ion concentration            | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:1905059 | P-type calcium transporter activity involved in regulation of postsynaptic cytosolic calcium ion concentration           | occurs in                                 | CL:0000000 | cell                                                         |
 | GO:1905060 | calcium:monoatomic cation antiporter activity involved in regulation of postsynaptic cytosolic calcium ion concentration | occurs in                                 | CL:0000000 | cell                                                         |
@@ -4409,8 +3535,6 @@
 | GO:1905517 | macrophage migration                                                                                                     | results in movement of                    | CL:0000235 | macrophage                                                   |
 | GO:1905584 | outer hair cell apoptotic process                                                                                        | occurs in                                 | CL:0000601 | cochlear outer hair cell                                     |
 | GO:1905719 | protein localization to perinuclear region of cytoplasm                                                                  | has target end location                   | CL:0000000 | cell                                                         |
-| GO:1905741 | calcium export from the mitochondrion involved in positive regulation of presynaptic cytosolic calcium concentration     | occurs in                                 | CL:0000540 | neuron                                                       |
-| GO:1905743 | calcium import into the mitochondrion involved in negative regulation of presynaptic cytosolic calcium concentration     | occurs in                                 | CL:0000540 | neuron                                                       |
 | GO:1905962 | glutamatergic neuron differentiation                                                                                     | results in acquisition of features of     | CL:0000679 | glutamatergic neuron                                         |
 | GO:1990008 | neurosecretory vesicle                                                                                                   | develops from                             | CL:0000133 | neurectodermal cell                                          |
 | GO:1990008 | neurosecretory vesicle                                                                                                   | develops_from                             | CL:0000133 | neurectodermal cell                                          |
@@ -4488,6 +3612,19 @@
 | GO:1990953 | intramanchette transport                                                                                                 | occurs in                                 | CL:0000018 | spermatid                                                    |
 | GO:1990959 | eosinophil homeostasis                                                                                                   | acts on population of                     | CL:0000771 | eosinophil                                                   |
 | GO:1990960 | basophil homeostasis                                                                                                     | acts on population of                     | CL:0000767 | basophil                                                     |
+| GO:7770014 | spermatid mitochondrial nucleoid elimination                                                                             | occurs in                                 | CL:0000019 | sperm                                                        |
+| GO:7770020 | intestinal enterochromaffin enteroendocrine cell differentiation                                                         | results in acquisition of features of     | CL:0000577 | type EC enteroendocrine cell                                 |
+| GO:7770021 | intestinal type G enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0000508 | type G enteroendocrine cell                                  |
+| GO:7770022 | intestinal type I enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0002277 | type I enteroendocrine cell                                  |
+| GO:7770023 | intestinal type L enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0002279 | type L enteroendocrine cell                                  |
+| GO:7770024 | intestinal type N enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0002280 | type N enteroendocrine cell                                  |
+| GO:7770025 | intestinal type D enteroendocrine cell differentiation                                                                   | results in acquisition of features of     | CL:0000502 | type D enteroendocrine cell                                  |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops from                             | CL:0000031 | neuroblast (sensu Vertebrata)                                |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops from                             | CL:0002672 | retinal progenitor cell                                      |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops_from                             | CL:0000031 | neuroblast (sensu Vertebrata)                                |
+| GO:7770030 | rod photoreceptor phosphodiesterase 6 complex                                                                            | develops_from                             | CL:0002672 | retinal progenitor cell                                      |
+| GO:7770037 | glial scar formation                                                                                                     | has participant                           | CL:0000127 | astrocyte                                                    |
+| GO:7770037 | glial scar formation                                                                                                     | has participant                           | CL:0002453 | oligodendrocyte precursor cell                               |
 
 </details>
 

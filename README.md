@@ -48,7 +48,10 @@ Third Monday of the month, 8am PT/11am ET (Uberon)
 
 ## Cite
 
-Diehl,A.D., Meehan,T.F., Bradford,Y.M., Brush,M.H., Dahdul,W.M., Dougall,D.S., He,Y., Osumi-Sutherland,D., Ruttenberg,A., Sarntivijai,S., et al. (2016) The Cell Ontology 2016: enhanced content, modularization, and ontology interoperability. J. Biomed. Semantics, 7, 44.
+The Cell Ontology in the age of single-cell omics.
+Shawn Zheng Kai Tan, Aleix Puig-Barbe, Damien Goutte-Gattat, Caroline Eastwood, Brian Aevermann, Alida Avola, James P Balhoff, Ismail Ugur Bayindir, Jasmine Belfiore, Anita Reane Caron, David S Fischer, Nancy George, Benjamin M Gyori, Melissa A Haendel, Charles Tapley Hoyt, Huseyin Kir, Tiago Lubiana, Nicolas Matentzoglu, James A Overton, Beverly Peng, Bjoern Peters, Ellen M Quardokus, Patrick L Ray, Paola Roncaglia, Andrea D Rivera, Ray Stefancsik, Wei Kheng Teh, Sabrina Toro, Nicole Vasilevsky, Chuan Xu, Yun Zhang, Richard H Scheuermann, Christopher J Mungall, Alexander D Diehl, David Osumi-Sutherland.
+Scientific Data. 2026 Apr 24.
+DOI:[10.1038/s41597-026-07173-8](https://doi.org/10.1038/s41597-026-07173-8)
 
 ## GitHub Actions Triggers
 
