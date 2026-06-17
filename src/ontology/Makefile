@@ -549,7 +549,7 @@ $(COMPONENTSDIR)/hra_subset.owl: component-download-hra_subset.owl $(TMPDIR)/sta
 	else \
 	        echo "Component different, updating." && \
 	        cp $(TMPDIR)/component-download-hra_subset.owl.owl $(TMPDIR)/component-download-hra_subset.owl.tmp.owl && \
-	        $(ROBOT) annotate --input $(TMPDIR)/component-download-hra_subset.owl.owl \
+	        $(ROBOT) --add-prefix "obo: http://purl.obolibrary.org/obo/" annotate --input $(TMPDIR)/component-download-hra_subset.owl.owl \
 	                          --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) \
 	                          --output $@ ; \
 	fi
