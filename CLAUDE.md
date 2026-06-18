@@ -53,13 +53,13 @@ This includes instructions for editing the cl ontology.
 - always commit in a branch, e.g. issue-NNN
 - if there is an existing PR which you started then checkout that branch and continue, rather than starting a new PR (unless you explicitly want to abandon the original PR, e.g. it was on completely the wrong tracks)
 - always make clear detailed commit messages, saying what you did and why
-- always sign your commits `GitHub Copilot`
+- always sign your commits `Claude`
 - create PRs using `gh pr create ...`
 - File PRs with clear descriptions, and sign your PR
 
 ## Handling GitHub issues and requests
 - Use `gh` to read and write issues/PRs
-- Sign all commits and PRs as `GitHub Copilot`
+- Sign all commits and PRs as `Claude`
 
 ## TROUBLESHOOTING
 
@@ -86,7 +86,7 @@ terms to "skip" the obsoleted term.
 - All terms should have definitions, with at least one definition xref, ideally a PMID
 - All new terms MUST have a timestamp using Dublin Core terms date, e.g.
   `AnnotationAssertion(terms:date obo:CL_4072102 "2025-04-29T13:06:36Z"^^xsd:dateTime)` (where terms: is a prefix for http://purl.org/dc/terms/)
-- You can sign terms as `dc:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms.
+- You can sign terms as `dc:creator "Claude"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms.
 - If one or more ORCID are provided these MUST be added as Dublin Core Terms contributor axioms, e.g. `AnnotationAssertion(terms:contributor obo:CL_0000118 <https://orcid.org/0000-0002-2825-0621>)`
 
 ```
@@ -107,7 +107,7 @@ terms to "skip" the obsoleted term.
 
 - Link back to the issue you are dealing with using the `term_tracker_item`
 - All terms should have definitions, with at least one definition xref, ideally a PMID
-- You can sign terms as `terms:creator "GitHub Copilot"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms. (Note: terms: is the prefix for http://purl.org/dc/terms/)
+- You can sign terms as `terms:creator "Claude"` only when creating new terms. You should not add yourself as a creator if you are editing existing terms. (Note: terms: is the prefix for http://purl.org/dc/terms/)
 
 
 ## Relationships
