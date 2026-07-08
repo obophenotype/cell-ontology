@@ -2331,6 +2331,7 @@ Declaration(Class(obo:CL_0020071))
 Declaration(Class(obo:CL_0020072))
 Declaration(Class(obo:CL_0020073))
 Declaration(Class(obo:CL_0020074))
+Declaration(Class(obo:CL_0020075))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -6309,8 +6310,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0000260 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000261 (obsolete anterior cell)
 
-AnnotationAssertion(oboInOwl:consider obo:CL_0000261 "http://purl.obolibrary.org/obo/DDANAT_0000002"^^xsd:anyURI)
-AnnotationAssertion(oboInOwl:consider obo:CL_0000261 "false"^^xsd:boolean)
+AnnotationAssertion(oboInOwl:consider obo:CL_0000261 "DDANAT:0000002")
 AnnotationAssertion(rdfs:comment obo:CL_0000261 "Obsoleted because this term has an overly general name, no definition, and by it's classification appears to refer to a very specific cell type in dictystelium.  If needed, the term should be in DDANAT - probably as a subclass of http://purl.obolibrary.org/obo/DDANAT_0000002")
 AnnotationAssertion(rdfs:label obo:CL_0000261 "obsolete anterior cell")
 AnnotationAssertion(owl:deprecated obo:CL_0000261 "true"^^xsd:boolean)
@@ -22402,6 +22402,7 @@ EquivalentClasses(obo:CL_0004246 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeV
 # Class: obo:CL_0004247 (bistratified cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:9620701") Annotation(oboInOwl:hasDbXref "https://orcid.org/0000-0002-5260-9315") obo:IAO_0000115 obo:CL_0004247 "A neuron that stratifies dendrites at two and only two locations.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23162426") Annotation(oboInOwl:hasDbXref "PMID:33404500") Annotation(oboInOwl:hasDbXref "PMID:39401246") obo:IAO_0000116 obo:CL_0004247 "Editorial note: the label 'bistratified cell' is used in different communities for either dendritic bistratification or axonal bistratification. In hippocampus, bistratified interneurons are typically defined by bilaminar axonal arborization in CA1 strata oriens and radiatum.")
 AnnotationAssertion(terms:contributor obo:CL_0004247 "https://orcid.org/0000-0001-7258-9596")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0004247 "cell")
 AnnotationAssertion(oboInOwl:id obo:CL_0004247 "CL:0004247")
@@ -24696,7 +24697,7 @@ SubClassOf(obo:CL_0010010 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:dos") obo:IAO_0000115 obo:CL_0010011 "A GABAergic interneuron whose soma is located in the cerebral cortex.")
 AnnotationAssertion(rdfs:label obo:CL_0010011 "cerebral cortex GABAergic interneuron")
-EquivalentClasses(obo:CL_0010011 ObjectIntersectionOf(obo:CL_0011005 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956)))
+EquivalentClasses(obo:CL_0010011 ObjectIntersectionOf(obo:CL_0011005 ObjectSomeValuesFrom(obo:RO_0002100 <https://purl.brain-bican.org/ontology/dhbao/DHBA_10160>)))
 
 # Class: obo:CL_0010012 (cerebral cortex neuron)
 
@@ -26446,6 +26447,24 @@ AnnotationAssertion(rdfs:label obo:CL_0020074 "Oriens-Lacunosum Moleculare neuro
 SubClassOf(obo:CL_0020074 obo:CL_1001569)
 SubClassOf(obo:CL_0020074 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0014552))
 SubClassOf(obo:CL_0020074 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
+
+# Class: obo:CL_0020075 (hippocampal bistratified interneuron)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23162426") Annotation(oboInOwl:hasDbXref "PMID:29321728") Annotation(oboInOwl:hasDbXref "PMID:33150866") Annotation(oboInOwl:hasDbXref "PMID:33398060") Annotation(oboInOwl:hasDbXref "PMID:33404500") Annotation(oboInOwl:hasDbXref "PMID:37162922") Annotation(oboInOwl:hasDbXref "PMID:37467748") Annotation(oboInOwl:hasDbXref "PMID:38640347") Annotation(oboInOwl:hasDbXref "PMID:39401246") obo:IAO_0000115 obo:CL_0020075 "A hippocampal interneuron with a soma in or near the CA1 pyramidal layer whose axon ramifies in a bilaminar pattern in CA1 stratum oriens and CA1 stratum radiatum, providing GABAergic dendritic inhibition to CA1 pyramidal cells. In mouse, it co-expresses parvalbumin with somatostatin and Tac1, distinguishing it from PV basket cells and somatostatin-only oriens-lacunosum moleculare cells.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020075 <https://github.com/obophenotype/cell-ontology/issues/3636>)
+AnnotationAssertion(terms:contributor obo:CL_0020075 <https://orcid.org/0000-0002-7073-9172>)
+AnnotationAssertion(terms:date obo:CL_0020075 "2026-05-13T14:03:35Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020075 "bistratified cell of hippocampus")
+AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0020075 "cell")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:23162426") oboInOwl:hasRelatedSynonym obo:CL_0020075 "CA1 bistratified cell")
+AnnotationAssertion(oboInOwl:id obo:CL_0020075 "CL:9900000")
+AnnotationAssertion(rdfs:comment obo:CL_0020075 "This term uses “bistratified” in the hippocampal sense (bilaminar axonal distribution in CA1 strata oriens and radiatum), which is distinct from the dendritic bistratification intended to define a bistratified cell.")
+AnnotationAssertion(rdfs:label obo:CL_0020075 "hippocampal bistratified interneuron")
+SubClassOf(obo:CL_0020075 obo:CL_0000099)
+SubClassOf(obo:CL_0020075 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0014548))
+SubClassOf(obo:CL_0020075 ObjectSomeValuesFrom(obo:RO_0002131 obo:UBERON_0014552))
+SubClassOf(obo:CL_0020075 ObjectSomeValuesFrom(obo:RO_0002131 obo:UBERON_0014554))
+SubClassOf(obo:CL_0020075 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
@@ -31884,7 +31903,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.1101/2020.03.31.016972
 AnnotationAssertion(obo:IAO_0100001 obo:CL_4023106 obo:CL_4023065)
 AnnotationAssertion(terms:contributor obo:CL_4023106 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4023106 "Meis2 (Marmoset)")
-AnnotationAssertion(rdfs:comment obo:CL_4023106 "false"^^xsd:boolean)
 AnnotationAssertion(rdfs:label obo:CL_4023106 "obsolete meis2 expressing cortical GABAergic cell (Callithrix jacchus)")
 AnnotationAssertion(owl:deprecated obo:CL_4023106 "true"^^xsd:boolean)
 
