@@ -27,12 +27,16 @@ Current routing policy mirrors the ticket scope:
   axioms as one NTR validation bundle.
 - Existing terms: route added structural axioms (`subclass`, `relationship`,
   `equivalent_class`) as direct atomic checks.
+- Existing terms: route text changes from stage-1 `text_deltas`, split by what
+  actually changed — `text_revision` for new prose, `refs_added` for prose that
+  is unchanged but has gained a reference. The second exists because ROBOT
+  reports an annotated axiom as a removed/added pair, so attaching a dbxref to
+  an untouched definition otherwise looks identical to a rewrite.
 - Any term: route added synonym axioms only when the synonym axiom itself has
   attached refs.
 
 Intentionally not routed yet:
 
-- Existing-term text definition revisions
 - Reviewable removals
 - Synonyms without refs
 """
@@ -104,6 +108,41 @@ def _change_target(
     }
 
 
+def _text_target(
+    *,
+    route: str,
+    validation_mode: str,
+    ordinal: int,
+    change: dict,
+    term_id: str,
+    term_label: str,
+    term_level_candidate_refs: list[str],
+    candidate_refs: list[str] | None = None,
+    extra: dict | None = None,
+) -> dict:
+    """Build a text target for an existing term.
+
+    Prose is carried in `textual_changes` (a one-element list) so the consumer
+    can reuse the same decomposition path it already applies to NTR bundles.
+    """
+    target = {
+        "target_id": f"{route}:{term_id}:{ordinal}",
+        "route": route,
+        "validation_mode": validation_mode,
+        "term_id": term_id,
+        "term_label": term_label,
+        "term_is_new": False,
+        "textual_changes": [change],
+        "candidate_refs": (
+            _refs_for_changes([change]) if candidate_refs is None else candidate_refs
+        ),
+        "term_level_candidate_refs": term_level_candidate_refs,
+    }
+    if extra:
+        target.update(extra)
+    return target
+
+
 def select_targets(payload: dict) -> dict:
     """Transform stage-1 output into routed targets for CLARA verification.
 
@@ -121,7 +160,19 @@ def select_targets(payload: dict) -> dict:
     """
     targets: list[dict] = []
     ignored: list[dict] = []
-    route_counts = {"ntr": 0, "relationship": 0, "synonym": 0}
+    route_counts = {
+        "ntr": 0,
+        "text_revision": 0,
+        "refs_added": 0,
+        "relationship": 0,
+        "synonym": 0,
+    }
+    # Stage-1 pairs removed/added text axioms; absent on payloads produced
+    # before that landed, in which case existing-term text stays unrouted.
+    deltas_by_term: dict[str, list[dict]] = {}
+    for delta in payload.get("text_deltas", []):
+        deltas_by_term.setdefault(delta["term_id"], []).append(delta)
+    have_text_deltas = "text_deltas" in payload
     ignored_reason_counts: dict[str, int] = {}
     reviewable_terms = 0
     obsoleted_terms_skipped = 0
@@ -169,6 +220,85 @@ def select_targets(payload: dict) -> dict:
                 )
                 route_counts["ntr"] += 1
 
+        if not term_is_new and have_text_deltas:
+            text_ordinal = 0
+            refs_ordinal = 0
+            for delta in deltas_by_term.get(term_id, []):
+                status = delta["status"]
+                if status == "removed":
+                    ignored.append(
+                        {
+                            "term_id": term_id,
+                            "term_label": term_label,
+                            "reason": "text_removal_not_reviewable",
+                            "change": delta,
+                        }
+                    )
+                    continue
+
+                # Prefer the parsed change (it carries the predicate) and fall
+                # back to the delta itself if stage 1 didn't surface a match.
+                change = next(
+                    (
+                        c
+                        for c in added_reviewable
+                        if c["kind"] == delta["kind"] and c["value"] == delta["value"]
+                    ),
+                    None,
+                )
+                if change is None:
+                    continue
+                change = {**change, "prior_value": delta.get("prior_value")}
+
+                if status == "refs_only":
+                    new_refs = [
+                        ref for ref in delta.get("refs_added", []) if _is_searchable_ref(ref)
+                    ]
+                    if not new_refs:
+                        # Nothing a literature tool can check; routing it would
+                        # only manufacture an `uncertain` verdict.
+                        ignored.append(
+                            {
+                                "term_id": term_id,
+                                "term_label": term_label,
+                                "reason": "refs_added_not_searchable",
+                                "change": delta,
+                            }
+                        )
+                        continue
+                    refs_ordinal += 1
+                    targets.append(
+                        _text_target(
+                            route="refs_added",
+                            validation_mode="validate_new_refs_against_existing_text",
+                            ordinal=refs_ordinal,
+                            change=change,
+                            term_id=term_id,
+                            term_label=term_label,
+                            term_level_candidate_refs=term_level_candidate_refs,
+                            # Only the newly attached refs are under review; the
+                            # pre-existing ones were justified when they landed.
+                            candidate_refs=new_refs,
+                            extra={"refs_added": new_refs},
+                        )
+                    )
+                    route_counts["refs_added"] += 1
+                    continue
+
+                text_ordinal += 1
+                targets.append(
+                    _text_target(
+                        route="text_revision",
+                        validation_mode="decompose_revised_text",
+                        ordinal=text_ordinal,
+                        change=change,
+                        term_id=term_id,
+                        term_label=term_label,
+                        term_level_candidate_refs=term_level_candidate_refs,
+                    )
+                )
+                route_counts["text_revision"] += 1
+
         structural_ordinal = 0
         synonym_ordinal = 0
         for change in added_reviewable:
@@ -180,7 +310,13 @@ def select_targets(payload: dict) -> dict:
                 targets.append(
                     _change_target(
                         route="relationship",
-                        validation_mode="validate_atomic_relationship",
+                        # An equivalence axiom asserts necessary AND sufficient
+                        # conditions, so it is not an atomic relationship check.
+                        validation_mode=(
+                            "validate_equivalent_class_axiom"
+                            if kind == "equivalent_class"
+                            else "validate_atomic_relationship"
+                        ),
                         ordinal=structural_ordinal,
                         change=change,
                         term_id=term_id,
@@ -219,7 +355,9 @@ def select_targets(payload: dict) -> dict:
                     )
                 continue
 
-            if kind in TEXTUAL_KINDS and not term_is_new:
+            if kind in TEXTUAL_KINDS and not term_is_new and not have_text_deltas:
+                # Pre-text_deltas payload: no way to tell a rewrite from a
+                # ref-only edit, so leave it unrouted rather than guess.
                 ignored.append(
                     {
                         "term_id": term_id,
