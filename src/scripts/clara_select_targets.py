@@ -95,6 +95,12 @@ def _change_target(
     term_is_new: bool,
     term_level_candidate_refs: list[str],
 ) -> dict:
+    axiom_refs = _refs_for_changes([change])
+    # Logical axioms never carry dbxrefs of their own, so an empty axiom-level
+    # list is the normal case, not a missing-data case: scope them to the
+    # definition's refs instead of handing the agent an empty list.
+    if not axiom_refs and change["kind"] in STRUCTURAL_KINDS:
+        axiom_refs = list(term_level_candidate_refs)
     return {
         "target_id": f"{route}:{term_id}:{ordinal}",
         "route": route,
@@ -103,7 +109,7 @@ def _change_target(
         "term_label": term_label,
         "term_is_new": term_is_new,
         "change": change,
-        "candidate_refs": _refs_for_changes([change]),
+        "candidate_refs": axiom_refs,
         "term_level_candidate_refs": term_level_candidate_refs,
     }
 
@@ -193,8 +199,17 @@ def select_targets(payload: dict) -> dict:
             for change in entry["changes"]
             if change["side"] == "added" and change["kind"] in (TEXTUAL_KINDS | STRUCTURAL_KINDS | SYNONYM_KINDS)
         ]
-        term_level_candidate_refs = _refs_for_changes(
-            [change for change in added_reviewable if change["kind"] in TEXTUAL_KINDS]
+        # Refs on definitions touched by this PR, falling back to the refs on
+        # the term's definition as it stands at the head ref. The fallback is
+        # what makes a logical definition checkable: `robot diff` reports only
+        # changed axioms, so a PR that adds an EquivalentTo to an untouched term
+        # carries no definition axiom, yet the text definition it formalises is
+        # exactly what justifies it.
+        term_level_candidate_refs = _stable_unique(
+            _refs_for_changes(
+                [change for change in added_reviewable if change["kind"] in TEXTUAL_KINDS]
+            )
+            + [ref for ref in entry.get("definition_refs", []) if _is_searchable_ref(ref)]
         )
 
         if term_is_new:
