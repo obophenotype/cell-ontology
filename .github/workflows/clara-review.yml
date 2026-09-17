@@ -262,6 +262,8 @@ jobs:
               f"- Decomposable changes: `{len(data['decomposable'])}`",
               f"- Routed validation targets: `{routing['summary']['selected_targets']}`",
               f"- Routed NTR bundles: `{route_counts['ntr']}`",
+              f"- Routed revised-text targets: `{route_counts.get('text_revision', 0)}`",
+              f"- Routed ref-only-addition targets: `{route_counts.get('refs_added', 0)}`",
               f"- Routed relationship targets: `{route_counts['relationship']}`",
               f"- Routed synonym targets with refs: `{route_counts['synonym']}`",
           ]
@@ -298,16 +300,18 @@ jobs:
                       lines.append(f"  - Failed core assertion: {failed}")
 
           if routing["summary"]["ignored_changes"]:
-              ignored_counts = routing["summary"]["ignored_reason_counts"]
-              lines.extend(
-                  [
-                      "",
-                      "#### Currently ignored by routing",
-                      "",
-                      f"- Existing-term text changes not yet routed: `{ignored_counts.get('existing_term_text_not_yet_routed', 0)}`",
-                      f"- Synonym changes without refs: `{ignored_counts.get('synonym_without_refs', 0)}`",
-                  ]
-              )
+              # Labels are cosmetic; unknown reasons still surface, so a new
+              # ignore reason can never go silently unreported.
+              reason_labels = {
+                  "existing_term_text_not_yet_routed": "Existing-term text changes not yet routed",
+                  "synonym_without_refs": "Synonym changes without refs",
+                  "text_removal_not_reviewable": "Text removals (not justified by refs)",
+                  "refs_added_not_searchable": "Ref-only edits whose new refs are not searchable",
+              }
+              lines.extend(["", "#### Currently ignored by routing", ""])
+              for reason, count in sorted(routing["summary"]["ignored_reason_counts"].items()):
+                  label = reason_labels.get(reason, reason.replace("_", " ").capitalize())
+                  lines.append(f"- {label}: `{count}`")
 
           lines.extend(
               [
