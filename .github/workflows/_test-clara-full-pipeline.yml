@@ -1,0 +1,177 @@
+name: TEST clara-review full pipeline (temporary, delete before merge)
+
+# Mirrors clara-review.yml's `review` job steps exactly (catalog-based
+# extractor, routing, stage 2/3 verification), but triggered by `push` with
+# hardcoded refs (HEAD~1 -> HEAD) instead of via a PR lookup, so it can run
+# against a real commit on this branch without needing clara-review.yml
+# merged to master first. See obophenotype/cell-ontology#3764.
+#
+# Does NOT post to the real PR -- artifacts + job logs only.
+#
+# DELETE THIS FILE before merging #3764.
+
+env:
+  CLARA_WORKFLOW_REPO: Cellular-Semantics/clara_workflow
+  CLARA_WORKFLOW_REF: 232e9b4796306101eadc159183981adfff7ff185
+
+on:
+  push:
+    branches: [pin-clara-workflow-and-catalog]
+
+jobs:
+  test-pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository with full history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Resolve test refs (HEAD~1 -> HEAD)
+        id: refs
+        run: |
+          echo "base=$(git rev-parse HEAD~1)" >> "$GITHUB_OUTPUT"
+          echo "head=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+
+      - name: Install ROBOT
+        run: |
+          mkdir -p "$HOME/.robot"
+          curl -fsSL -o "$HOME/.robot/robot.jar" \
+            https://github.com/ontodev/robot/releases/latest/download/robot.jar
+          printf '#!/bin/bash\nexec java -jar "%s/.robot/robot.jar" "$@"\n' "$HOME" \
+            > "$HOME/.robot/robot"
+          chmod +x "$HOME/.robot/robot"
+          echo "$HOME/.robot" >> "$GITHUB_PATH"
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Check out clara_workflow reference
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ env.CLARA_WORKFLOW_REPO }}
+          ref: ${{ env.CLARA_WORKFLOW_REF }}
+          path: clara_workflow_ref
+
+      - name: Install clara_workflow
+        run: pip install -e ./clara_workflow_ref
+
+      - name: Run CLARA stage 1 extractor
+        run: |
+          python -m clara_workflow.stage1.extract \
+            --repo . \
+            --left "${{ steps.refs.outputs.base }}" \
+            --right "${{ steps.refs.outputs.head }}" \
+            --edit-file src/ontology/cl-edit.owl \
+            --catalog src/ontology/catalog-v001.xml \
+            --output changes.json
+
+      - name: Show changes.json for CL:0002336
+        run: python -c "import json; d=json.load(open('changes.json')); print(json.dumps(d['by_term'].get('CL:0002336', 'NOT FOUND'), indent=2))"
+
+      - name: Upload changes.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-clara-changes
+          path: changes.json
+
+      - name: Select CLARA routing targets
+        run: |
+          python src/scripts/clara_select_targets.py \
+            --input changes.json \
+            --output routing.json
+
+      - name: Show routing.json
+        run: cat routing.json
+
+      - name: Upload routing.json artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-clara-routing
+          path: routing.json
+
+      - name: Extract routed target summary
+        id: routing_meta
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          routing = json.loads(Path("routing.json").read_text(encoding="utf-8"))
+          term_ids = sorted({target["term_id"].replace(":", "_", 1) for target in routing["targets"]})
+
+          Path("/tmp/routing_outputs.txt").write_text(
+              f"target_count={len(routing['targets'])}\nterm_count={len(term_ids)}\nterms={' '.join(term_ids)}\n",
+              encoding="utf-8",
+          )
+          PY
+          cat /tmp/routing_outputs.txt >> "$GITHUB_OUTPUT"
+
+      - name: Install local MCP server dependencies
+        if: steps.routing_meta.outputs.target_count != '0'
+        run: |
+          uv tool install artl-mcp
+          echo "$(uv tool dir --bin)" >> "$GITHUB_PATH"
+
+      - name: Verify artl-mcp is runnable
+        if: steps.routing_meta.outputs.target_count != '0'
+        run: uv tool run artl-mcp --help 2>&1 | head -5
+
+      - name: Run CLARA stage 2/3 verification for routed targets
+        id: claude
+        if: steps.routing_meta.outputs.target_count != '0'
+        continue-on-error: true
+        uses: anthropics/claude-code-action@v1
+        env:
+          ASTA_API_KEY: ${{ secrets.ASTA_API_KEY }}
+        with:
+          claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          github_token: ${{ github.token }}
+          track_progress: false
+          settings: |
+            {"permissions":{"allow":["mcp__Asta_semanticscholar__*","mcp__artl-mcp__*"]}}
+          claude_args: |
+            --mcp-config ${{ github.workspace }}/.mcp.json
+            --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*),Bash(gh pr comment:*)"
+          prompt: |
+            REPO: ${{ github.repository }}
+            THIS IS A TEST RUN -- not a real PR review. Do not comment on any PR or issue.
+            BASE SHA: ${{ steps.refs.outputs.base }}
+            HEAD SHA: ${{ steps.refs.outputs.head }}
+
+            Work in the checked out ontology repository root.
+
+            Read and follow `clara_workflow_ref/clara_workflow/agent_instructions.md`.
+
+            Use `routing.json` in the repository root as the verification input.
+            Group targets by `term_id` and process one term-group at a time.
+            Write one `runs/<TERM_ID>/...` bundle per processed term.
+
+            Requirements:
+            - Only produce the required `runs/<TERM_ID>/verdicts.json`, `runs/<TERM_ID>/tool_calls.jsonl`, and `runs/<TERM_ID>/report.md` outputs.
+            - Do not create commits, push branches, or open PRs.
+            - Do not comment on any GitHub issue or PR.
+            - Do not edit ontology source files.
+            - Do not modify `changes.json` or `routing.json`.
+
+      - name: Show verdicts.json if produced
+        if: always()
+        run: |
+          if [ -d runs ]; then
+            find runs -type f -exec echo "=== {} ===" \; -exec cat {} \;
+          else
+            echo "No runs/ directory produced."
+          fi
+
+      - name: Upload CLARA runs artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-clara-runs
+          path: runs
+          if-no-files-found: warn
