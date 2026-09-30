@@ -1,8 +1,13 @@
 name: CLARA Review
 
+# CLARA_WORKFLOW_REF is pinned to a commit (not `main`) for reproducibility,
+# per that repo's own adoption guidance -- tracking `main` meant this workflow
+# silently picked up #8's term_id-only verdicts.json schema (cell_id was
+# dropped) without the summary-comment step below being updated to match.
+
 env:
   CLARA_WORKFLOW_REPO: Cellular-Semantics/clara_workflow
-  CLARA_WORKFLOW_REF: main
+  CLARA_WORKFLOW_REF: 232e9b4796306101eadc159183981adfff7ff185
 
 on:
   issue_comment:
@@ -105,6 +110,7 @@ jobs:
             --left "${{ steps.refs.outputs.base }}" \
             --right "${{ steps.refs.outputs.head }}" \
             --edit-file src/ontology/cl-edit.owl \
+            --catalog src/ontology/catalog-v001.xml \
             --output changes.json
 
       - name: Upload changes.json artifact
@@ -231,7 +237,7 @@ jobs:
               else:
                   status = "PASS"
               return {
-                  "cell_id": data["cell_id"],
+                  "term_id": data["term_id"],
                   "name": data["name"],
                   "status": status,
                   "core_total": len(core),
@@ -292,7 +298,7 @@ jobs:
               ])
               for item in verdict_summaries:
                   lines.append(
-                      f"- `{item['cell_id']}` — {item['name']}: **{item['status']}** "
+                      f"- `{item['term_id']}` — {item['name']}: **{item['status']}** "
                       f"(core: {item['core_total']}, fail: {item['core_fail']}, "
                       f"uncertain: {item['core_uncertain']}, background warnings: {item['background_warn']})"
                   )
