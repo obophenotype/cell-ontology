@@ -1,8 +1,13 @@
 name: CLARA Review
 
+# CLARA_WORKFLOW_REF is pinned to a commit (not `main`) for reproducibility,
+# per that repo's own adoption guidance -- tracking `main` meant this workflow
+# silently picked up #8's term_id-only verdicts.json schema (cell_id was
+# dropped) without the summary-comment step below being updated to match.
+
 env:
   CLARA_WORKFLOW_REPO: Cellular-Semantics/clara_workflow
-  CLARA_WORKFLOW_REF: main
+  CLARA_WORKFLOW_REF: 232e9b4796306101eadc159183981adfff7ff185
 
 on:
   issue_comment:
@@ -20,28 +25,98 @@ permissions:
   issues: write
   id-token: write
 
-concurrency:
-  group: clara-review-${{ github.event.issue.number || github.event.inputs.pr || github.run_id }}
-  cancel-in-progress: true
-
 jobs:
-  review:
-    # issue_comment also fires for plain issues; only honor /clara on PRs.
+  # Gates the review job on two independent things: who triggered it, and
+  # what content it would review. A trusted commenter doesn't make a fork
+  # PR's own CLAUDE.md / ontology text trustworthy once it's checked out and
+  # handed to Claude, so both checks are required, not either/or.
+  check-authorization:
+    # issue_comment also fires for plain issues; only consider /clara on PRs.
     if: >
       github.event_name == 'workflow_dispatch' ||
       (github.event.issue.pull_request != null &&
        startsWith(github.event.comment.body, '/clara'))
     runs-on: ubuntu-latest
+    outputs:
+      allowed: ${{ steps.check.outputs.allowed }}
+      pr_num: ${{ steps.pr.outputs.num }}
     steps:
       - name: Resolve PR number
         id: pr
+        env:
+          INPUT_PR: ${{ inputs.pr }}
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "num=${{ inputs.pr }}" >> "$GITHUB_OUTPUT"
+            if ! [[ "$INPUT_PR" =~ ^[0-9]+$ ]]; then
+              echo "::error::pr input must be a plain integer, got: $INPUT_PR"
+              exit 1
+            fi
+            echo "num=$INPUT_PR" >> "$GITHUB_OUTPUT"
           else
             echo "num=${{ github.event.issue.number }}" >> "$GITHUB_OUTPUT"
           fi
 
+      - name: Checkout repository (default branch only -- never untrusted PR content)
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Check commenter is a trusted controller, and PR is not from a fork
+        id: check
+        env:
+          PR_NUMBER: ${{ steps.pr.outputs.num }}
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require("fs");
+
+            let allowedUsers = [];
+            try {
+              allowedUsers = JSON.parse(fs.readFileSync(".github/ai-controllers.json", "utf8"));
+            } catch (e) {
+              core.setFailed(`Could not read .github/ai-controllers.json: ${e}`);
+              return;
+            }
+
+            // workflow_dispatch already requires write access, enforced by
+            // GitHub itself before the workflow even starts; only the
+            // issue_comment path (anyone who can comment on the PR) needs
+            // the allowlist.
+            let commenterAllowed = true;
+            if (context.eventName === "issue_comment") {
+              const userLogin = context.payload.comment.user.login;
+              commenterAllowed = allowedUsers.includes(userLogin);
+              if (!commenterAllowed) {
+                console.log(`/clara comment from non-controller: ${userLogin}`);
+              }
+            }
+
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: Number(process.env.PR_NUMBER),
+            });
+            const isFork = pr.head.repo.full_name !== pr.base.repo.full_name;
+            if (isFork) {
+              console.log(`Refusing to review a fork PR: ${pr.head.repo.full_name}`);
+            }
+
+            core.setOutput("allowed", commenterAllowed && !isFork);
+
+  review:
+    needs: check-authorization
+    if: needs.check-authorization.outputs.allowed == 'true'
+    # Scoped to this job, not the workflow: check-authorization's own job-level
+    # `if:` already skips (never runs, never queues) for any comment that
+    # isn't a qualifying /clara -- so only an actual /clara run ever reaches
+    # this group. A workflow-level group would be computed for every comment
+    # on the PR regardless of content, and cancel-in-progress would cancel a
+    # real review over an unrelated "LGTM".
+    concurrency:
+      group: clara-review-${{ needs.check-authorization.outputs.pr_num }}
+      cancel-in-progress: true
+    runs-on: ubuntu-latest
+    steps:
       - name: Acknowledge trigger comment
         if: github.event_name == 'issue_comment'
         env:
@@ -55,13 +130,23 @@ jobs:
         id: refs
         env:
           GH_TOKEN: ${{ github.token }}
+          PR_NUM: ${{ needs.check-authorization.outputs.pr_num }}
         run: |
-          data=$(gh pr view "${{ steps.pr.outputs.num }}" \
+          data=$(gh pr view "$PR_NUM" \
             --repo "${{ github.repository }}" \
             --json baseRefOid,headRefOid,headRefName,baseRefName)
-          echo "base=$(echo "$data" | jq -r .baseRefOid)" >> "$GITHUB_OUTPUT"
+          base_tip=$(echo "$data" | jq -r .baseRefOid)
+          head_sha=$(echo "$data" | jq -r .headRefOid)
+          # Use the merge-base, not the base branch's current tip: if this
+          # branch is behind the base, diffing against the live tip pulls in
+          # every base-branch change since the branch diverged as spurious
+          # reverse-edits. merge_base_commit is the same value `git merge-base`
+          # would give, from the API so no local checkout is needed yet.
+          merge_base=$(gh api "repos/${{ github.repository }}/compare/${base_tip}...${head_sha}" \
+            --jq .merge_base_commit.sha)
+          echo "base=$merge_base" >> "$GITHUB_OUTPUT"
           echo "base_name=$(echo "$data" | jq -r .baseRefName)" >> "$GITHUB_OUTPUT"
-          echo "head=$(echo "$data" | jq -r .headRefOid)" >> "$GITHUB_OUTPUT"
+          echo "head=$head_sha" >> "$GITHUB_OUTPUT"
           echo "head_name=$(echo "$data" | jq -r .headRefName)" >> "$GITHUB_OUTPUT"
 
       - name: Checkout PR head with full history
@@ -105,12 +190,13 @@ jobs:
             --left "${{ steps.refs.outputs.base }}" \
             --right "${{ steps.refs.outputs.head }}" \
             --edit-file src/ontology/cl-edit.owl \
+            --catalog src/ontology/catalog-v001.xml \
             --output changes.json
 
       - name: Upload changes.json artifact
         uses: actions/upload-artifact@v4
         with:
-          name: clara-changes-pr-${{ steps.pr.outputs.num }}
+          name: clara-changes-pr-${{ needs.check-authorization.outputs.pr_num }}
           path: changes.json
 
       - name: Select CLARA routing targets
@@ -122,7 +208,7 @@ jobs:
       - name: Upload routing.json artifact
         uses: actions/upload-artifact@v4
         with:
-          name: clara-routing-pr-${{ steps.pr.outputs.num }}
+          name: clara-routing-pr-${{ needs.check-authorization.outputs.pr_num }}
           path: routing.json
 
       - name: Extract routed target summary
@@ -150,7 +236,7 @@ jobs:
         run: |
           uv tool install artl-mcp
           # Ensure uv tool bin directory is in PATH so Claude's MCP subprocess can find artl-mcp
-          echo "$(uv tool dir)/bin" >> "$GITHUB_PATH"
+          echo "$(uv tool dir --bin)" >> "$GITHUB_PATH"
 
       - name: Verify artl-mcp is runnable
         if: steps.routing_meta.outputs.target_count != '0'
@@ -174,7 +260,7 @@ jobs:
             --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
             REPO: ${{ github.repository }}
-            PR NUMBER: ${{ steps.pr.outputs.num }}
+            PR NUMBER: ${{ needs.check-authorization.outputs.pr_num }}
             BASE SHA: ${{ steps.refs.outputs.base }}
             HEAD SHA: ${{ steps.refs.outputs.head }}
 
@@ -198,13 +284,13 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: clara-runs-pr-${{ steps.pr.outputs.num }}
+          name: clara-runs-pr-${{ needs.check-authorization.outputs.pr_num }}
           path: runs
           if-no-files-found: warn
 
       - name: Build CLARA summary comment
         env:
-          PR_NUMBER: ${{ steps.pr.outputs.num }}
+          PR_NUMBER: ${{ needs.check-authorization.outputs.pr_num }}
           CLAUDE_STEP_OUTCOME: ${{ steps.claude.outcome }}
           TARGET_COUNT: ${{ steps.routing_meta.outputs.target_count }}
         run: |
@@ -231,7 +317,7 @@ jobs:
               else:
                   status = "PASS"
               return {
-                  "cell_id": data["cell_id"],
+                  "term_id": data["term_id"],
                   "name": data["name"],
                   "status": status,
                   "core_total": len(core),
@@ -292,7 +378,7 @@ jobs:
               ])
               for item in verdict_summaries:
                   lines.append(
-                      f"- `{item['cell_id']}` — {item['name']}: **{item['status']}** "
+                      f"- `{item['term_id']}` — {item['name']}: **{item['status']}** "
                       f"(core: {item['core_total']}, fail: {item['core_fail']}, "
                       f"uncertain: {item['core_uncertain']}, background warnings: {item['background_warn']})"
                   )
@@ -329,7 +415,8 @@ jobs:
       - name: Post CLARA summary to PR
         env:
           GH_TOKEN: ${{ github.token }}
+          PR_NUM: ${{ needs.check-authorization.outputs.pr_num }}
         run: |
-          gh pr comment "${{ steps.pr.outputs.num }}" \
+          gh pr comment "$PR_NUM" \
             --repo "${{ github.repository }}" \
             --body-file comment.md
