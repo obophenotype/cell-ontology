@@ -252,7 +252,16 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
-          track_progress: ${{ github.event_name == 'issue_comment' }}
+          # Must be false: claude-code-action's mode detector forces "tag"
+          # mode (an interactive @mention comment-responder) whenever
+          # track_progress is true on an issue_comment event, regardless of
+          # whether a custom prompt is supplied. That's the wrong mode for
+          # this batch, file-writing task -- leaving it true made every
+          # issue_comment-triggered run build @claude-mention scaffolding
+          # instead of running our actual prompt, and fail immediately.
+          # false lets the detector's "prompt provided on a comment event"
+          # rule select agent mode instead, which is what this needs.
+          track_progress: false
           settings: |
             {"permissions":{"allow":["mcp__Asta_semanticscholar__*","mcp__artl-mcp__*"]}}
           claude_args: |
