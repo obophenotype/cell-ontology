@@ -1,0 +1,86 @@
+name: TEST clara-review check-authorization logic (temporary, delete before merge)
+
+# Exercises the new check-authorization logic (ai-controllers.json allowlist,
+# fork detection, merge-base computation) added to clara-review.yml, without
+# needing that workflow merged to master first -- issue_comment and
+# workflow_dispatch both require a workflow to already exist on the default
+# branch before GitHub will let them trigger it, but `push` has no such
+# restriction: it always runs the workflow file as it exists at that commit,
+# on any branch. See obophenotype/cell-ontology#3764.
+#
+# DELETE THIS FILE before merging #3764. It's here only to prove the new
+# script logic on a real push, without waiting for a merge.
+
+on:
+  push:
+    branches: [pin-clara-workflow-and-catalog]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Test ai-controllers.json allowlist logic
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const fs = require("fs");
+            const allowedUsers = JSON.parse(fs.readFileSync(".github/ai-controllers.json", "utf8"));
+
+            const trusted = "cmungall";
+            const untrusted = "definitely-not-a-real-controller-xyz";
+
+            const trustedResult = allowedUsers.includes(trusted);
+            const untrustedResult = allowedUsers.includes(untrusted);
+
+            console.log(`allowedUsers: ${JSON.stringify(allowedUsers)}`);
+            console.log(`"${trusted}" allowed: ${trustedResult} (expected true)`);
+            console.log(`"${untrusted}" allowed: ${untrustedResult} (expected false)`);
+
+            if (!trustedResult) core.setFailed(`Expected "${trusted}" to be allowed`);
+            if (untrustedResult) core.setFailed(`Expected "${untrusted}" to be blocked`);
+
+      - name: Test fork detection against a real, non-fork PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        uses: actions/github-script@v8
+        with:
+          script: |
+            const { data: pr } = await github.rest.pulls.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              pull_number: 3764,
+            });
+            const isFork = pr.head.repo.full_name !== pr.base.repo.full_name;
+            console.log(`PR #3764 head repo: ${pr.head.repo.full_name}`);
+            console.log(`PR #3764 base repo: ${pr.base.repo.full_name}`);
+            console.log(`isFork: ${isFork} (expected false -- this is a same-repo branch, not a fork)`);
+            if (isFork) core.setFailed("Expected PR #3764 to not be a fork");
+            // NOTE: this only exercises the "not a fork" path, since there's
+            // no ready fork PR against this repo to test the "is a fork"
+            // path against. The check itself is a plain string comparison
+            // (pr.head.repo.full_name !== pr.base.repo.full_name), reviewed
+            // by hand rather than exercised live here.
+
+      - name: Test merge-base computation against a real PR
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          data=$(gh pr view 3764 --repo obophenotype/cell-ontology --json baseRefOid,headRefOid)
+          base_tip=$(echo "$data" | jq -r .baseRefOid)
+          head_sha=$(echo "$data" | jq -r .headRefOid)
+          merge_base=$(gh api "repos/obophenotype/cell-ontology/compare/${base_tip}...${head_sha}" --jq .merge_base_commit.sha)
+          local_merge_base=$(git merge-base "$base_tip" "$head_sha")
+          echo "base_tip=$base_tip"
+          echo "head_sha=$head_sha"
+          echo "merge_base (via GitHub compare API)=$merge_base"
+          echo "merge_base (local git merge-base)=$local_merge_base"
+          if [ "$merge_base" != "$local_merge_base" ]; then
+            echo "::error::API merge-base ($merge_base) does not match local git merge-base ($local_merge_base)"
+            exit 1
+          fi
+          echo "OK: API merge-base matches local git merge-base"
