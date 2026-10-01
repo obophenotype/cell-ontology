@@ -264,10 +264,6 @@ jobs:
           # chasing that misdiagnosis, and agent mode's default toolset
           # doesn't include Write, which is why that looked necessary.
           track_progress: ${{ github.event_name == 'issue_comment' }}
-          # TEMP DEBUG: the action hides the real error behind "result
-          # is_error:true" unless this is set. Remove once stage 2/3 is
-          # confirmed working end-to-end.
-          show_full_output: true
           settings: |
             {"permissions":{"allow":["mcp__Asta_semanticscholar__*","mcp__artl-mcp__*"]}}
           claude_args: |
