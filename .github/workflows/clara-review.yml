@@ -7,7 +7,7 @@ name: CLARA Review
 
 env:
   CLARA_WORKFLOW_REPO: Cellular-Semantics/clara_workflow
-  CLARA_WORKFLOW_REF: 5c61100b0875f47e2b68de1631d2f531dd52aabe
+  CLARA_WORKFLOW_REF: 234ac67ca82b577c5dedf851a17e57ed2b044478
 
 on:
   issue_comment:
@@ -266,9 +266,13 @@ jobs:
           track_progress: ${{ github.event_name == 'issue_comment' }}
           settings: |
             {"permissions":{"allow":["mcp__Asta_semanticscholar__*","mcp__artl-mcp__*"]}}
+          # MCP servers come from clara_workflow's .mcp.json at the pinned ref,
+          # so tool wiring is versioned with agent_instructions.md. The root
+          # .mcp.json is kept for other uses and still auto-loads as a project
+          # config, but --mcp-config wins for same-named servers.
           claude_args: |
             --model claude-sonnet-5
-            --mcp-config ${{ github.workspace }}/.mcp.json
+            --mcp-config ${{ github.workspace }}/clara_workflow_ref/.mcp.json
             --disallowedTools "Bash(git add:*),Bash(git commit:*),Bash(git push:*),Bash(git checkout:*),Bash(git switch:*),Bash(git branch:*),Bash(gh pr create:*)"
           prompt: |
             REPO: ${{ github.repository }}
