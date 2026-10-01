@@ -252,16 +252,18 @@ jobs:
         with:
           claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           github_token: ${{ github.token }}
-          # Must be false: claude-code-action's mode detector forces "tag"
-          # mode (an interactive @mention comment-responder) whenever
-          # track_progress is true on an issue_comment event, regardless of
-          # whether a custom prompt is supplied. That's the wrong mode for
-          # this batch, file-writing task -- leaving it true made every
-          # issue_comment-triggered run build @claude-mention scaffolding
-          # instead of running our actual prompt, and fail immediately.
-          # false lets the detector's "prompt provided on a comment event"
-          # rule select agent mode instead, which is what this needs.
-          track_progress: false
+          # Reverted a prior "always false" change here. true forces "tag"
+          # mode on issue_comment events (an interactive @mention responder,
+          # with its own scaffolding our prompt doesn't need) -- but a real
+          # historical run (cell-ontology#3745, run 35205839595) proves tag
+          # mode actually completes this task fine, Write included; Claude
+          # just follows our prompt and ignores the irrelevant scaffolding.
+          # The instant failures seen while diagnosing this were
+          # model_not_found (fixed via --model below), not a mode problem --
+          # forcing agent mode here was an unnecessary side effect of
+          # chasing that misdiagnosis, and agent mode's default toolset
+          # doesn't include Write, which is why that looked necessary.
+          track_progress: ${{ github.event_name == 'issue_comment' }}
           # TEMP DEBUG: the action hides the real error behind "result
           # is_error:true" unless this is set. Remove once stage 2/3 is
           # confirmed working end-to-end.
