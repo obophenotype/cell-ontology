@@ -1,0 +1,38 @@
+name: Allocate definitive IDs
+
+on:
+  push:
+    branches: [ master ]
+    paths:
+      - 'src/ontology/cl-edit.owl'
+  workflow_dispatch:
+
+jobs:
+  assign_ids:
+    runs-on: ubuntu-latest
+    container: obolibrary/odkfull:v1.6
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+
+      # Reallocate all temporary IDs as definitive IDs and rewrite
+      # axioms accordingly; this will have the side-effect of forcing a
+      # reserialisation of the -edit file if needed.
+      - name: Allocate definitive IDs
+        run: |
+          cd src/ontology
+          make allocate-definitive-ids
+
+      # Commit the changes; the 'push' action takes care of checking
+      # whether there are changes to commit at all, so if no IDs were
+      # reallocated (and no reserialisation was needed), nothing will
+      # happen here.
+      - name: Commit and push changes
+        uses: actions-js/push@v1.5
+        with:
+          github_token: ${{ secrets.ID_ALLOCATION_TOKEN }}
+          message: "Replace temporary IDs by definitive IDs and reserialize."
+          branch: ${{ github.ref }}
