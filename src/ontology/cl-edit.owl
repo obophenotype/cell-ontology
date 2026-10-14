@@ -2247,6 +2247,7 @@ Declaration(Class(obo:CL_0019032))
 Declaration(Class(obo:CL_0019033))
 Declaration(Class(obo:CL_0019034))
 Declaration(Class(obo:CL_0019035))
+Declaration(Class(obo:CL_0019036))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -25067,6 +25068,14 @@ AnnotationAssertion(rdfs:label obo:CL_0019035 "small intestine enterocyte"@en)
 SubClassOf(obo:CL_0019035 obo:CL_0019033)
 SubClassOf(obo:CL_0019035 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001902))
 
+# Class: obo:CL_0019036 (colonocyte)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0019036 "An enterocyte that is part of the colonic epithelium.")
+AnnotationAssertion(terms:contributor obo:CL_0019036 "https://orcid.org/0000-0003-2034-601X")
+AnnotationAssertion(rdfs:label obo:CL_0019036 "colonocyte"@en)
+SubClassOf(obo:CL_0019036 obo:CL_0019033)
+SubClassOf(obo:CL_0019036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000397))
+
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24051376") Annotation(oboInOwl:hasDbXref "PMID:31300091") Annotation(oboInOwl:hasDbXref "PMID:32016094") obo:IAO_0000115 obo:CL_0700009 "OBSOLETE. A renal beta-intercalated cell that is part of the cortical collecting duct. The medullary collecting duct does not contain the renal beta-intercalated cell type.")
@@ -25842,14 +25851,15 @@ AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CL_1000346 "vacuolar absorptiv
 AnnotationAssertion(rdfs:label obo:CL_1000346 "enterocyte of epithelium proper of large intestine")
 SubClassOf(obo:CL_1000346 obo:CL_0002071)
 
-# Class: obo:CL_1000347 (colonocyte)
+# Class: obo:CL_1000347 (mature colonocyte)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "PMID:16870803") Annotation(oboInOwl:hasDbXref "PMID:23821742") Annotation(oboInOwl:hasDbXref "PMID:34497389") obo:IAO_0000115 obo:CL_1000347 "An enterocyte (absorptive epithelial cell) of the colonic epithelium, characterized by a columnar shape. This cell is responsible for the absorption, transport, and metabolization of short-chain fatty acids (SCFAs) produced by gut bacteria, as well as the transport and absorption of water and electrolytes.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1000347 "FMA:263114")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_1000347 "enterocyte of colon")
 AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CL_1000347 "vacuolar absorptive cell of epithelium of colon")
-AnnotationAssertion(rdfs:label obo:CL_1000347 "colonocyte")
+AnnotationAssertion(rdfs:label obo:CL_1000347 "mature colonocyte")
 EquivalentClasses(obo:CL_1000347 ObjectIntersectionOf(obo:CL_0002071 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0000397)))
+SubClassOf(obo:CL_1000347 obo:CL_0019036)
 SubClassOf(obo:CL_1000347 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0019626))
 SubClassOf(obo:CL_1000347 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0035377))
 
@@ -33137,7 +33147,8 @@ AnnotationAssertion(terms:date obo:CL_4047018 "2024-09-24T11:50:13Z"^^xsd:dateTi
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4047018 "early colonocyte")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2021.01.13.426602") oboInOwl:hasExactSynonym obo:CL_4047018 "early enterocyte of colon")
 AnnotationAssertion(rdfs:label obo:CL_4047018 "immature colonocyte"@en)
-SubClassOf(obo:CL_4047018 obo:CL_1000347)
+SubClassOf(obo:CL_4047018 obo:CL_0019034)
+SubClassOf(obo:CL_4047018 obo:CL_0019036)
 
 # Class: obo:CL_4047019 (immature small intestine enterocyte)
 
