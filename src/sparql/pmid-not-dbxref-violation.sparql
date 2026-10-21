@@ -4,4 +4,5 @@ WHERE {
 	?subject ?annotation ?pmid .
   FILTER (STRSTARTS(str(?pmid), "PMID:"))
   MINUS {?subject oboInOwl:hasDbXref ?pmid}
+  FILTER(isIRI(?subject) && (STRSTARTS(str(?subject), "http://purl.obolibrary.org/obo/CL_") || STRSTARTS(str(?subject), "http://purl.obolibrary.org/obo/cl#")))
 }

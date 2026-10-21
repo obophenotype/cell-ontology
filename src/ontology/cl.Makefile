@@ -178,14 +178,21 @@ test: $(REPORTDIR)/taxon-constraint-check.txt
 obocheck: $(SRC) | all_robot_plugins
 	$(ROBOT) merge -i $(SRC) \
 		 remove --base-iri $(URIBASE)/CL_ --axioms external --trim false \
-		 uberon:obo-export --merge-comments --obo-output $(TMPDIR)/cl-check.obo
+		 convert --check false -f obo $(OBO_FORMAT_OPTIONS) \
+		         --output $(TMPDIR)/cl-check.obo
 	fastobo-validator $(TMPDIR)/cl-check.obo
 
 test_obsolete: $(ONT).obo
 	! grep "! obsolete" $<
 
+# Crude and (hopefully) temporary fix for
+# <https://github.com/obophenotype/cell-ontology/issues/3588>.
+no_relabeling_imported_ap: $(SRC)
+	! grep "^AnnotationAssertion(rdfs:label oboInOwl:has" $<
+
 test: obocheck \
-      test_obsolete
+      test_obsolete \
+      no_relabeling_imported_ap
 
 
 # ----------------------------------------
@@ -259,36 +266,6 @@ pattern_docs: $(ALL_PATTERN_FILES)
 
 
 # ----------------------------------------
-# CUSTOM OBO OUTPUT
-# ----------------------------------------
-OBO_EXPORT_OPTIONS = --merge-comments --strip-gci-axioms --strip-owl-axioms
-
-$(SUBSETDIR)/%.obo: $(SUBSETDIR)/%.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT).obo: $(ONT).owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-base.obo: $(ONT)-base.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-full.obo: $(ONT)-full.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-simple.obo: $(ONT)-simple.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-basic.obo: $(ONT)-basic.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-$(ONT)-non-classified.obo: $(ONT)-non-classified.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-cl-plus.obo: cl-plus.owl | all_robot_plugins
-	$(ROBOT) uberon:obo-export --input $< $(OBO_EXPORT_OPTIONS) --obo-output $@
-
-
-# ----------------------------------------
 # UTILITY COMMANDS
 # ----------------------------------------
 
@@ -309,6 +286,14 @@ add-replacedby:
 		       --collapse-import-closure false \
 		 convert -f ofn -o $(SRC)
 
+# Allocating definitive IDs
+.PHONY: allocate-definitive-ids
+allocate-definitive-ids: | all_robot_plugins
+	$(ROBOT) kgcl:mint -i $(SRC) \
+		           --temp-id-prefix http://purl.obolibrary.org/obo/CL_99 \
+		           --id-range-name Automation \
+		 convert -f ofn -o $(SRC)
+
 
 # ----------------------------------------
 # EXTERNAL RESOURCES
@@ -316,29 +301,37 @@ add-replacedby:
 
 ifeq ($(strip $(MIR)),true)
 
-# Human reference atlas subset
-HRA_SUBSET_URL="https://raw.githubusercontent.com/hubmapconsortium/ccf-validation-tools/master/owl/CL_ASCTB_subset.owl"
-$(TMPDIR)/hra_subset.owl:
-	wget $(HRA_SUBSET_URL) -O $@
-
-$(COMPONENTSDIR)/hra_subset.owl: $(TMPDIR)/hra_subset.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 # CellXGene reference subset
 CELLXGENE_SUBSET_URL="https://raw.githubusercontent.com/hkir-dev/cellxgene-cell-reporter/main/templates/cellxgene_subset.tsv"
 $(TEMPLATEDIR)/cellxgene_subset.tsv: .FORCE
 	wget $(CELLXGENE_SUBSET_URL) -O $@
 
-# CellMark reference subset
-CLM_CL_URL="https://raw.githubusercontent.com/Cellular-Semantics/CellMark/main/clm-cl.owl"
-$(TMPDIR)/clm-cl.owl:
-	wget $(CLM_CL_URL) -O $@
-
-$(COMPONENTSDIR)/clm-cl.owl: $(TMPDIR)/clm-cl.owl
-	$(ROBOT) merge -i $< annotate --ontology-iri $(ONTBASE)/$@ --output $@
-
 endif
 
+# Update the list of terms with 2D FTU images from HRA
+.PHONY: update-HRA-illustrations
+
+update-HRA-illustrations:
+	python3 ./$(SCRIPTSDIR)/2D_FTU_images.py
+
+
+# ----------------------------------------
+# SemSQL release artefacts
+# ----------------------------------------
+# We do _not_ use the ODK builtin feature for now because it only
+# creates _uncompressed_ DB files, which are way too large to be
+# practical.
+
+DB_FILES = cl.db.gz $(foreach f, $(RELEASE_ARTEFACTS), $f.db.gz)
+RELEASE_ASSETS += $(DB_FILES)
+all_assets: $(DB_FILES)
+
+%.db.gz: %.owl
+	@rm -f $*.db $*.db.gz $*-relation-graph.tsv.gz .template.db .template.db.tmp
+	semsql make $*.db
+	@test -f $*.db || (echo "SQLite/SemSQL generation failed" && exit 1)
+	gzip $*.db
+	@rm -f $*-relation-graph.tsv.gz .template.db .template.db.tmp
 
 # ----------------------------------------
 # RELEASE DEPLOYMENT
@@ -351,9 +344,10 @@ cl:
 	$(MAKE) prepare_release IMP=false PAT=false MIR=false
 	$(MAKE) release-base-diff
 	$(MAKE) prepare_content_summary
-	if [ $(DEPLOY_GH) = true ]; then 	$(MAKE) deploy_release GHVERSION="v$(TODAY)"; fi
+	if [ $(DEPLOY_GH) = true ]; then $(MAKE) public_release GHVERSION="v$(TODAY)"; fi
 
 CURRENT_BASE_RELEASE=$(ONTBASE)/cl-base.obo
+CROSSLINKS_MD=$(REPORTDIR)/crosslinks_release.md
 
 .PHONY: $(TMPDIR)/current-base-release.obo
 $(TMPDIR)/current-base-release.obo:
@@ -364,20 +358,20 @@ release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
 	$(ROBOT) diff --labels True -f markdown --left $(TMPDIR)/current-base-release.obo --right $(RELEASEDIR)/cl-base.obo --output reports/$(ONT)-base-diff.md
 
 .PHONY: prepare_content_summary
-prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports
+prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports crosslinks_report
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
+	@printf "\n\n---\n\n" >> $(REPORTDIR)/summary_release.md
+	cat $(CROSSLINKS_MD) >> $(REPORTDIR)/summary_release.md
 		
-FILTER_OUT=../patterns/definitions.owl ../patterns/pattern.owl reports/cl-edit.owl-obo-report.tsv
-MAIN_FILES_RELEASE = $(foreach n, $(filter-out $(FILTER_OUT), $(RELEASE_ASSETS)), ../../$(n)) \
-		     $(MAPPINGDIR)/cl.sssom.tsv
-
-deploy_release:
-	@test $(GHVERSION)
-	ls -alt $(MAIN_FILES_RELEASE)
-	gh release create $(GHVERSION) --notes "TBD." --title "$(GHVERSION)" --draft $(MAIN_FILES_RELEASE)  --generate-notes
-
+.PHONY: crosslinks_report
+crosslinks_report:
+	@echo "Building CL cross-ontology tables (HP/GO/MONDO/UBERON → CL)…"
+	python ./$(SCRIPTSDIR)/build_cl_crosslinks.py \
+		--outdir $(REPORTDIR) \
+		--markdown \
+		--markdown-file $(notdir $(CROSSLINKS_MD))
 
 # -------------------------------------------
 # UPPER SLIM VALIDATION AND COVERAGE REPORTS

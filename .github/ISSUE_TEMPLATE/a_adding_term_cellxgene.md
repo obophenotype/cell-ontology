@@ -29,5 +29,5 @@ https://www.ebi.ac.uk/ols4/ontologies/cl
 
 **Additional notes or concerns** If there are markers that uniquely identify the cell type in a particular species, they can be added here.
 
-
-
+---
+> **Automated editing:** An authorized editor can trigger `@dragon-ai-agent` to handle this request by commenting `@dragon-ai-agent please handle this NTR`.

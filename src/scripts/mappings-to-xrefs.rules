@@ -6,7 +6,7 @@ object==CL:* -> invert();
 !subject==CL:* -> stop();
 
 # Ignore any mapping to an inexistent or obsolete CL class.
-predicate==* -> check_subject_existence();
+!exists(%{subject_id}) -> stop();
 
 # Ignore any mapping where the same foreign term is mapped to more than one CL class.
 !cardinality==1:* -> stop();

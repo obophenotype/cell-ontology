@@ -8,5 +8,6 @@ SELECT DISTINCT ?term ?property ?value WHERE
   ?term ?property ?value .
   FILTER (datatype(?value) != xsd:date || !regex(str(?value), '^\\d{4}-\\d\\d-\\d\\d$'))
   FILTER (datatype(?value) != xsd:dateTime || !regex(str(?value), '^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}Z'))
+  FILTER (isIRI(?term) && STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CL_"))
 }
 

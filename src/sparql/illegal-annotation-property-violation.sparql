@@ -31,6 +31,8 @@ SELECT DISTINCT ?term ?annotation WHERE {
     <http://purl.org/dc/terms/description>,
     <http://purl.org/dc/terms/source>,
     <http://purl.org/dc/terms/contributor>,
+    <http://purl.org/dc/terms/creator>,
+    <http://purl.org/dc/elements/1.1/creator>,
     <http://purl.org/spar/cito/citesAsAuthority>,
     <http://www.geneontology.org/formats/oboInOwl#consider>,
     <http://www.geneontology.org/formats/oboInOwl#creation_date>,
@@ -52,7 +54,12 @@ SELECT DISTINCT ?term ?annotation WHERE {
     <http://www.w3.org/2004/02/skos/core#narrowMatch>,
     <http://www.w3.org/2004/02/skos/core#relatedMatch>,
     <http://www.w3.org/2002/07/owl#deprecated>,
-    <http://xmlns.com/foaf/0.1/depiction>
+    <http://xmlns.com/foaf/0.1/depiction>,
+    <http://purl.obolibrary.org/obo/CLM_0010001>,
+    <http://purl.obolibrary.org/obo/CLM_0010002>,
+    <http://purl.obolibrary.org/obo/CLM_0010003>,
+    <http://purl.obolibrary.org/obo/CLM_0010004>,
+    <http://www.w3.org/2004/02/skos/core#prefLabel>
   ))
   FILTER (isIRI(?term) && STRSTARTS(str(?term), "http://purl.obolibrary.org/obo/CL_"))
 } 
