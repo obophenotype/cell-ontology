@@ -27,6 +27,8 @@ These are the current imports in CL
 | mbao | https://raw.githubusercontent.com/brain-bican/mouse_brain_atlas_ontology/main/mbao-base.owl | slme |
 | dhbao | https://raw.githubusercontent.com/brain-bican/developing_human_brain_atlas_ontology/main/dhbao-base.owl | slme |
 | stato | http://purl.obolibrary.org/obo/stato.owl | slme |
+| cob | http://purl.obolibrary.org/obo/cob.owl | slme |
+| bfo | http://purl.obolibrary.org/obo/bfo.owl | slme |
 ## Components
 Components, in contrast to imports, are considered full members of the ontology. This means that any axiom in a component is also included in the ontology base - which means it is considered _native_ to the ontology. While this sounds complicated, consider this: conceptually, no component should be part of more than one ontology. If that seems to be the case, we are most likely talking about an import. Components are often not needed for ontologies, but there are some use cases:
 
