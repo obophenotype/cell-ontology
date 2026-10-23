@@ -49,7 +49,15 @@ jobs:
           behind=$(gh api "repos/$REPO/compare/$DEFAULT_BRANCH...$HEAD_SHA" -q .behind_by)
           echo "Branch is $behind commit(s) behind $DEFAULT_BRANCH"
           if [ "$behind" -ge 1 ]; then
-            gh pr comment "$PR" -R "$REPO" --body "Your branch is $behind commit/s behind, please update your branch and comment \`#gogoeditdiff\` again."
+            # Use the same marker as the diff report so the PR keeps a single, updated comment.
+            printf '<!-- GOGOEDITDIFF -->\nYour branch is %s commit/s behind, please update your branch and comment `#gogoeditdiff` again.\n' "$behind" > comment.md
+            id=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+              -q '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- GOGOEDITDIFF -->"))) | .id' | head -n1)
+            if [ -n "$id" ]; then
+              gh api -X PATCH "repos/$REPO/issues/comments/$id" -F body=@comment.md > /dev/null
+            else
+              gh pr comment "$PR" -R "$REPO" --body-file comment.md
+            fi
             exit 1
           fi
 
@@ -144,29 +152,42 @@ jobs:
           name: edit-diff
       - name: Post diffs
         run: |
-          # Replace (delete + re-post) the previous diff comment so the new one shows up at the
-          # bottom of the thread. Markers match the ones used by the old comment-pr action.
-          post() {
-            marker="$1"; summary="$2"; diff="$3"
-            {
-              echo "<!-- $marker -->"
-              echo "<details>"
-              echo "<summary>$summary (for ${HEAD_SHA:0:7})</summary>"
+          # Keep a single report comment per PR: edit the existing one in place if there is one,
+          # otherwise create it.
+          section() {
+            summary="$1"; diff="$2"
+            echo "<details>"
+            echo "<summary>$summary</summary>"
+            echo
+            # GitHub caps comment bodies at 65536 chars; leave room for both sections.
+            if [ "$(wc -c < "$diff")" -gt 30000 ]; then
+              head -c 30000 "$diff" | iconv -f utf-8 -t utf-8 -c
               echo
-              if [ "$(wc -c < "$diff")" -gt 60000 ]; then
-                head -c 60000 "$diff" | iconv -f utf-8 -t utf-8 -c
-                echo
-                echo "**Diff truncated** – download the full file from the [workflow run]($RUN_URL)."
-              else
-                cat "$diff"
-              fi
-              echo
-              echo "</details>"
-            } > comment.md
-            gh api --paginate "repos/$REPO/issues/$PR/comments" \
-              -q ".[] | select(.user.login == \"github-actions[bot]\" and (.body | startswith(\"<!-- $marker -->\"))) | .id" |
-              while read -r id; do gh api -X DELETE "repos/$REPO/issues/comments/$id"; done
-            gh pr comment "$PR" -R "$REPO" --body-file comment.md
+              echo "**Diff truncated** – download the full file from the [workflow run]($RUN_URL)."
+            else
+              cat "$diff"
+            fi
+            echo
+            echo "</details>"
+            echo
           }
-          post REASONED "Here's a diff of how these changes impact the classified ontology (on -base file)" classification-diff.md
-          post UNREASONED "Here's a diff of your edit file (unreasoned)" edit-diff.md
+          {
+            echo "<!-- GOGOEDITDIFF -->"
+            echo "### ROBOT diff report for ${HEAD_SHA:0:7}"
+            echo
+            section "Here's a diff of how these changes impact the classified ontology (on -base file)" classification-diff.md
+            section "Here's a diff of your edit file (unreasoned)" edit-diff.md
+            echo "_Last updated by [workflow run]($RUN_URL)._"
+          } > comment.md
+
+          ids=$(gh api --paginate "repos/$REPO/issues/$PR/comments" \
+            -q '.[] | select(.user.login == "github-actions[bot]" and (.body | test("^<!-- (GOGOEDITDIFF|REASONED|UNREASONED) -->"))) | "\(.id) \(.body | startswith("<!-- GOGOEDITDIFF -->"))"')
+          id=$(echo "$ids" | awk '$2 == "true" {print $1; exit}')
+          if [ -n "$id" ]; then
+            gh api -X PATCH "repos/$REPO/issues/comments/$id" -F body=@comment.md > /dev/null
+          else
+            gh pr comment "$PR" -R "$REPO" --body-file comment.md
+          fi
+          # Remove comments left by the older two-comment format.
+          echo "$ids" | awk '$2 == "false" {print $1}' |
+            while read -r old; do gh api -X DELETE "repos/$REPO/issues/comments/$old"; done
