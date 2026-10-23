@@ -159,9 +159,8 @@ jobs:
             echo "<details>"
             echo "<summary>$summary</summary>"
             echo
-            # GitHub caps comment bodies at 65536 chars; leave room for both sections.
-            if [ "$(wc -c < "$diff")" -gt 30000 ]; then
-              head -c 30000 "$diff" | iconv -f utf-8 -t utf-8 -c
+            if [ "$(wc -c < "$diff")" -gt 60000 ]; then
+              head -c 60000 "$diff" | iconv -f utf-8 -t utf-8 -c
               echo
               echo "**Diff truncated** – download the full file from the [workflow run]($RUN_URL)."
             else
