@@ -3426,6 +3426,8 @@ Declaration(Class(obo:CL_7770003))
 Declaration(Class(obo:CL_7770004))
 Declaration(Class(obo:CL_7770005))
 Declaration(Class(obo:CL_7770006))
+Declaration(Class(obo:CL_9900000))
+Declaration(Class(obo:CL_9900001))
 Declaration(Class(obo:CP_0000000))
 Declaration(Class(obo:CP_0000025))
 Declaration(Class(obo:CP_0000027))
@@ -4897,16 +4899,20 @@ AnnotationAssertion(rdfs:label obo:CL_0000098 "sensory epithelial cell")
 EquivalentClasses(obo:CL_0000098 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0050906)))
 SubClassOf(obo:CL_0000098 obo:CL_0000197)
 
-# Class: obo:CL_0000099 (interneuron)
+# Class: obo:CL_0000099 (interneuron (sensu lato))
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "MESH:D007395") obo:IAO_0000115 obo:CL_0000099 "Most generally any neuron which is not motor or sensory. Interneurons may also refer to neurons whose axons remain within a particular brain region as contrasted with projection neurons which have axons projecting to other brain regions.")
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000099 "A neuron that is neither a sensory neuron nor an efferent (motor or neurosecretory) neuron: it receives synaptic input mainly from other neurons and makes synaptic output mainly onto other neurons within the nervous system. Interneurons include local interneurons and projection neurons.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000099 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "BTO:0003811")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "FMA:67313")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000099 "WBbt:0005113")
-AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0000099 "CNS interneuron")
-AnnotationAssertion(rdfs:label obo:CL_0000099 "interneuron")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000099 "association neuron")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000099 "internuncial neuron")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0000099 "interneuron")
+AnnotationAssertion(rdfs:comment obo:CL_0000099 "'Sensu lato' means 'in the broad sense'; it is not a taxon restriction. Elsewhere in CL, 'sensu' is used only with taxa (e.g. 'CNS neuron (sensu Vertebrata)'). Usage of 'interneuron' differs between fields. (1) In invertebrate neurobiology and in general textbooks, an interneuron is any neuron that is neither sensory nor motor; this includes projection neurons (e.g. insect antennal lobe projection neurons, 'projection/relay interneurons') as well as local neurons. (2) In the vertebrate spinal cord, interneurons are neurons whose axons stay within the spinal cord, including long-range commissural and propriospinal neurons, as opposed to motor neurons and ascending tract (projection) neurons. (3) In the enteric nervous system, interneurons are neurons that are neither intrinsic primary afferent neurons nor motor neurons; many project long distances along the gut. Similar usage ('local circuit neuron') applies to intrinsic cardiac and other intramural ganglia. (4) In the vertebrate brain and retina, 'interneuron' usually means a local circuit neuron whose axon stays within the region that contains its soma, as opposed to that region's projection (principal) neurons; for this sense use 'local interneuron' (CL:0004001). All four usages follow one pattern: an interneuron of a structure has its soma and axon within that structure. They differ in which structure is meant: the whole nervous system, the spinal cord, the enteric nervous system, or a brain region. This class covers all of these senses; 'local interneuron' and 'projection neuron' are subclasses of it.")
+AnnotationAssertion(rdfs:label obo:CL_0000099 "interneuron (sensu lato)")
 SubClassOf(obo:CL_0000099 obo:CL_0000540)
-SubClassOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001017))
+SubClassOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001016))
 
 # Class: obo:CL_0000100 (motor neuron)
 
@@ -4938,11 +4944,12 @@ SubClassOf(obo:CL_0000102 obo:CL_2000032)
 
 # Class: obo:CL_0000103 (bipolar neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0444009442") obo:IAO_0000115 obo:CL_0000103 "A type of interneuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl:hasDbXref "ISBN:0444009442") obo:IAO_0000115 obo:CL_0000103 "A type of neuron that has two neurites, usually an axon and a dendrite, extending from opposite poles of an ovoid cell body.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000103 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000103 "FMA:67282")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_0000103 cl:BDS_subset)
 AnnotationAssertion(rdfs:label obo:CL_0000103 "bipolar neuron")
-EquivalentClasses(obo:CL_0000103 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070006)))
+EquivalentClasses(obo:CL_0000103 ObjectIntersectionOf(obo:CL_0000540 ObjectSomeValuesFrom(obo:RO_0000053 obo:PATO_0070006)))
 
 # Class: obo:CL_0000104 (multipolar neuron)
 
@@ -5107,12 +5114,12 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.pro
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38168772") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0000121 "PC")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28821816") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0000121 "PN")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:17535929") Annotation(oboInOwl:hasDbXref "PMID:27215193") Annotation(oboInOwl:hasDbXref "PMID:37426070") Annotation(oboInOwl:hasDbXref "https://doi.org/10.1016/j.stem.2023.11.013") rdfs:comment obo:CL_0000121 "Neurodegenerative disorders affecting Purkinje cells disrupt motor functions. Some of the neurodegenerative disorders that causes loss and degeration of Purkinje cells are Spinocerebellar ataxias (SCAs) (Josef P Kapfhammer and Etsuko Shimobayashi 2023), Friedreich's ataxia (FRDA) (Kevin C Kemp et al., 2016), Fetal alcohol syndrome (Laurent Servais et al., 2016), Dandy-Walker malformation (Alexander Atamian et al., 2024).")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000121 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_0000121 "Purkinje cell")
 AnnotationAssertion(Annotation(dc:license <https://creativecommons.org/licenses/by-nc-nd/4.0/>) Annotation(oboInOwl:hasDbXref "doi:10.1016/j.cnp.2022.11.002") foaf:depiction obo:CL_0000121 <http://purl.obolibrary.org/obo/cl/images/CB_circuits_PMID3650468_f2.png>)
 AnnotationAssertion(Annotation(dc:license <https://creativecommons.org/licenses/by-nc-nd/4.0/>) Annotation(oboInOwl:hasDbXref "doi:10.3389/fnins.2020.00293") foaf:depiction obo:CL_0000121 <http://purl.obolibrary.org/obo/cl/images/Candelabrum_cell.jpg>)
-SubClassOf(obo:CL_0000121 obo:CL_0000540)
+SubClassOf(obo:CL_0000121 obo:CL_9900001)
 SubClassOf(obo:CL_0000121 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979))
-SubClassOf(obo:CL_0000121 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_0000122 (stellate neuron)
 
@@ -6281,8 +6288,9 @@ AnnotationAssertion(owl:deprecated obo:CL_0000245 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000246 (Mauthner neuron)
 
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000246 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_0000246 "Mauthner neuron")
-SubClassOf(obo:CL_0000246 obo:CL_0000099)
+SubClassOf(obo:CL_0000246 obo:CL_9900000)
 
 # Class: obo:CL_0000247 (Rohon-Beard neuron)
 
@@ -7360,6 +7368,9 @@ SubClassOf(obo:CL_0000396 obo:CL_0000387)
 
 # Class: obo:CL_0000397 (ganglion interneuron)
 
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000397 "An interneuron whose soma is located in a ganglion.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000397 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(rdfs:comment obo:CL_0000397 "Vertebrate paravertebral and sensory ganglia are classically thought to lack interneurons. The term covers both the broad sense of interneuron (invertebrate ganglia, enteric and intracardiac ganglia) and local circuit neurons where present.")
 AnnotationAssertion(rdfs:label obo:CL_0000397 "ganglion interneuron")
 EquivalentClasses(obo:CL_0000397 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000045)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0000397 obo:CL_0000099)
@@ -7421,10 +7432,14 @@ AnnotationAssertion(rdfs:comment obo:CL_0000405 "Obsoleted as the term seems com
 AnnotationAssertion(rdfs:label obo:CL_0000405 "obsolete neuroepidermoblast")
 AnnotationAssertion(owl:deprecated obo:CL_0000405 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000406 (CNS short range interneuron)
+# Class: obo:CL_0000406 (obsolete CNS short range interneuron)
 
-AnnotationAssertion(rdfs:label obo:CL_0000406 "CNS short range interneuron")
-SubClassOf(obo:CL_0000406 obo:CL_0000099)
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000406 "OBSOLETE. A short-range interneuron of the central nervous system.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000406 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000406 obo:CL_0004001)
+AnnotationAssertion(rdfs:comment obo:CL_0000406 "Obsoleted in favour of 'local interneuron' (CL:0004001), which captures the intended short-range sense in a general and taxon-neutral way.")
+AnnotationAssertion(rdfs:label obo:CL_0000406 "obsolete CNS short range interneuron")
+AnnotationAssertion(owl:deprecated obo:CL_0000406 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000407 (scolopidial ligament cell)
 
@@ -7449,10 +7464,14 @@ AnnotationAssertion(rdfs:comment obo:CL_0000409 "Obsoleted as this refers to the
 AnnotationAssertion(rdfs:label obo:CL_0000409 "obsolete scolopidial sheath cell")
 AnnotationAssertion(owl:deprecated obo:CL_0000409 "true"^^xsd:boolean)
 
-# Class: obo:CL_0000410 (CNS long range interneuron)
+# Class: obo:CL_0000410 (obsolete CNS long range interneuron)
 
-AnnotationAssertion(rdfs:label obo:CL_0000410 "CNS long range interneuron")
-SubClassOf(obo:CL_0000410 obo:CL_0000099)
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0000410 "OBSOLETE. A long-range interneuron of the central nervous system.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0000410 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(obo:IAO_0100001 obo:CL_0000410 obo:CL_9900000)
+AnnotationAssertion(rdfs:comment obo:CL_0000410 "Obsoleted in favour of 'projection neuron' (CL:9900000), which captures the intended long-range sense in a general and taxon-neutral way.")
+AnnotationAssertion(rdfs:label obo:CL_0000410 "obsolete CNS long range interneuron")
+AnnotationAssertion(owl:deprecated obo:CL_0000410 "true"^^xsd:boolean)
 
 # Class: obo:CL_0000411 (Caenorhabditis hypodermal cell)
 
@@ -21860,14 +21879,18 @@ SubClassOf(obo:CL_0003051 obo:CL_0000573)
 
 # Class: obo:CL_0004001 (local interneuron)
 
-AnnotationAssertion(obo:IAO_0000115 obo:CL_0004001 "An interneuron whose axon stays entirely within the gray matter region where the cell body resides.")
+AnnotationAssertion(obo:IAO_0000115 obo:CL_0004001 "An interneuron whose axon (if present) arborizes only within the anatomical region that contains its soma, such as a cortical area, a nucleus, a layered structure such as the retina or cerebellar cortex, or a neuropil. Contrasts with the projection neurons of that region.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0004001 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_0004001 "interneuron")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0004001 "BAMS:1002")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0004001 "intrinsic neuron")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0004001 "local circuit neuron")
 AnnotationAssertion(oboInOwl:hasOBONamespace obo:CL_0004001 "cell")
+AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0004001 "CNS interneuron")
 AnnotationAssertion(oboInOwl:id obo:CL_0004001 "CL:0004001")
-AnnotationAssertion(rdfs:comment obo:CL_0004001 "Local interneurons form the category of interneurons whose axon stays entirely within the gray matter region where the cell body resides (Swanson, 2003, p. 245; Bota and Swanson, 2007, Fig. 3).")
+AnnotationAssertion(rdfs:comment obo:CL_0004001 "Local interneurons form the category of interneurons whose axon stays entirely within the anatomical region (gray matter, neuropil, retina or other layered structure) that contains the soma (Swanson, 2003, p. 245; Bota and Swanson, 2007, Fig. 3). In vertebrate brain usage 'interneuron' is often used as a synonym for this class, but 'interneuron' is also used in a broader sense (see CL:0000099).")
 AnnotationAssertion(rdfs:label obo:CL_0004001 "local interneuron")
 SubClassOf(obo:CL_0004001 obo:CL_0000099)
-SubClassOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002020))
 
 # Class: obo:CL_0004115 (retinal ganglion cell B)
 
@@ -22539,10 +22562,11 @@ SubClassOf(obo:CL_0004253 obo:CL_0000561)
 
 # Class: obo:CL_0005000 (spinal cord interneuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS") obo:IAO_0000115 obo:CL_0005000 "A CNS interneuron located in the spinal cord.")
-AnnotationAssertion(rdfs:comment obo:CL_0005000 "Is_a interneuron, part_of UBERON:0002240.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "CL:CVS") obo:IAO_0000115 obo:CL_0005000 "A local interneuron whose soma and axon are confined to the spinal cord. This class includes long-range commissural and propriospinal cells that project within the spinal cord but excludes ascending (projection) tract neurons whose axons leave the spinal cord.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0005000 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(rdfs:comment obo:CL_0005000 "Is_a local interneuron, part_of UBERON:0002240 (spinal cord). Here 'local' means within the spinal cord as a whole; it does not require the axon to stay within one spinal segment.")
 AnnotationAssertion(rdfs:label obo:CL_0005000 "spinal cord interneuron")
-EquivalentClasses(obo:CL_0005000 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002240)))
+EquivalentClasses(obo:CL_0005000 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002240)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0005000 obo:CL_0000099)
 
 # Class: obo:CL_0005001 (iridoblast)
@@ -23211,7 +23235,7 @@ AnnotationAssertion(owl:deprecated obo:CL_0008030 "true"^^xsd:boolean)
 AnnotationAssertion(obo:IAO_0000115 obo:CL_0008031 "An interneuron that has its soma located in the cerebral cortex.")
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0008031 "cerebral cortex interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0008031 "cortical interneuron"@en)
-EquivalentClasses(obo:CL_0008031 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956)))
+EquivalentClasses(obo:CL_0008031 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000956)))
 
 # Class: obo:CL_0008032 (rosehip neuron)
 
@@ -24852,10 +24876,11 @@ EquivalentClasses(obo:CL_0010022 ObjectIntersectionOf(obo:CL_2000032 ObjectSomeV
 
 # Class: obo:CL_0011000 (dorsal horn interneuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011000 "A CNS interneuron located in the dorsal horn of the spinal cord.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:nv") obo:IAO_0000115 obo:CL_0011000 "A local interneuron whose soma is located in the dorsal horn of the spinal cord and whose axon stays within the spinal cord. Excludes lamina I projection neurons, whose axons leave the spinal cord to ascend in sensory tracts.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0011000 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(oboInOwl:hasRelatedSynonym obo:CL_0011000 "dorsal spinal cord interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0011000 "dorsal horn interneuron")
-EquivalentClasses(obo:CL_0011000 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002256)))
+EquivalentClasses(obo:CL_0011000 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002256)))
 SubClassOf(Annotation(oboInOwl:is_inferred "true") obo:CL_0011000 obo:CL_0005000)
 
 # Class: obo:CL_0011001 (spinal cord motor neuron)
@@ -24893,11 +24918,12 @@ SubClassOf(obo:CL_0011004 obo:CL_0002222)
 
 # Class: obo:CL_0011005 (GABAergic interneuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "PMID:29724907") obo:IAO_0000115 obo:CL_0011005 "An interneuron that uses GABA as a vesicular neurotransmitter.  These interneurons are inhibitory")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:CellBLAST") Annotation(oboInOwl:hasDbXref "GOC:nv") Annotation(oboInOwl:hasDbXref "PMID:29724907") obo:IAO_0000115 obo:CL_0011005 "A local interneuron that uses GABA as a vesicular neurotransmitter. These interneurons are inhibitory.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0011005 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0011005 "GABAergic inhibitory interneuron")
 AnnotationAssertion(rdfs:comment obo:CL_0011005 "The formal and textual definitions of this term will need to be altered if evidence for non-inhibitory GABA-ergic neurons emerges.")
 AnnotationAssertion(rdfs:label obo:CL_0011005 "GABAergic interneuron")
-EquivalentClasses(obo:CL_0011005 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
+EquivalentClasses(obo:CL_0011005 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
 SubClassOf(obo:CL_0011005 obo:CL_0000498)
 
 # Class: obo:CL_0011006 (Lugaro cell)
@@ -25667,11 +25693,11 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11596046") Annotation(ob
 AnnotationAssertion(terms:contributor obo:CL_0020003 <https://orcid.org/0000-0002-5507-2103>)
 AnnotationAssertion(terms:date obo:CL_0020003 "2025-01-31T00:00:00Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:7127069") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020003 "GPi core")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020003 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_0020003 "internal globus pallidus core projecting neuron")
 AnnotationAssertion(Annotation(dc:license "https://creativecommons.org/licenses/by-nc-nd/4.0/") Annotation(oboInOwl:hasDbXref "PMID:35927027") foaf:depiction obo:CL_0020003 <http://purl.obolibrary.org/obo/cl/images/GPi_core_shell_myamoto.jpg>)
-SubClassOf(obo:CL_0020003 obo:CL_0000617)
+SubClassOf(obo:CL_0020003 obo:CL_9900001)
 SubClassOf(obo:CL_0020003 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002477))
-SubClassOf(obo:CL_0020003 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 SubClassOf(obo:CL_0020003 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000013502))
 
 # Class: obo:CL_0020004 (internal globus pallidus shell projection neuron)
@@ -25680,8 +25706,9 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:11596046") Annotation(ob
 AnnotationAssertion(terms:contributor obo:CL_0020004 <https://orcid.org/0000-0002-5507-2103>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0020004 "2025-09-30T14:21:41Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28384468") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_0020004 "GPi shell")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020004 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_0020004 "internal globus pallidus shell projection neuron")
-SubClassOf(obo:CL_0020004 obo:CL_0000617)
+SubClassOf(obo:CL_0020004 obo:CL_9900001)
 SubClassOf(obo:CL_0020004 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002477))
 SubClassOf(obo:CL_0020004 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000015665))
 
@@ -25736,8 +25763,9 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22726837") Annotation(ob
 AnnotationAssertion(terms:contributor obo:CL_0020009 <https://orcid.org/0000-0002-5507-2103>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22726837") Annotation(oboInOwl:hasDbXref "PMID:25843402") Annotation(oboInOwl:hasDbXref "PMID:25926446") Annotation(oboInOwl:hasDbXref "PMID:37336974") terms:description obo:CL_0020009 "The prototypic neuron projects to downstream basal ganglia nuclei, including the subthalamic nucleus (STN), internal globus pallidus, and substantia nigra pars reticulata (SNr), with some neurons also emitting ascending collaterals that modestly innervate the striatum (Mallet et al., 2012, Abdi et al., 2015). It exhibits longer local axon collaterals with more boutons compared to arkypallidal neurons, supporting extensive local interconnectivity within the GPe (Mallet et al., 2012). The prototypic neuron plays a fundamental role in the indirect pathway of the basal ganglia, coordinating activity across basal ganglia nuclei through its widespread projections (Mallet et al., 2012, Courtney et al., 2023). Decreases in firing during movement are consistent with disinhibiting the STN and output nuclei, thereby facilitating the expression of desired motor patterns (Dodson et al., 2015, Courtney et al., 2023).")
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0020009 "2025-10-17T09:12:54Z"^^xsd:dateTime)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020009 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_0020009 "prototypic neuron")
-SubClassOf(obo:CL_0020009 obo:CL_0000617)
+SubClassOf(obo:CL_0020009 obo:CL_9900001)
 SubClassOf(obo:CL_0020009 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002476))
 SubClassOf(obo:CL_0020009 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024))
 SubClassOf(obo:CL_0020009 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000011241))
@@ -25748,11 +25776,11 @@ AnnotationAssertion(obo:IAO_0000028 obo:CL_0020010 "GPe MEIS2-SOX6 GABA")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22726837") Annotation(oboInOwl:hasDbXref "PMID:25843402") Annotation(oboInOwl:hasDbXref "PMID:25926446") Annotation(oboInOwl:hasDbXref "PMID:27194328") Annotation(oboInOwl:hasDbXref "PMID:37336974") obo:IAO_0000115 obo:CL_0020010 "A GABAergic projection neuron located in the external segment of the globus pallidus (GPe) and defined by its exclusive projection to the dorsal striatum rather than to the subthalamic nucleus or basal ganglia output nuclei. In rodents and primates, it is characterized molecularly by expression of FOXP2, MEIS2, and NPAS1, and lacks expression of canonical pallidal markers NKX2-1 and LHX6 (Dodson et al., 2015; Abdi et al., 2015; Courtney et al., 2023). This neuron is GABAergic (GAD1/2⁺, SLC32A1/VGAT⁺) and typically PV⁻, forming the transcriptionally and developmentally LGE-derived subclass of GPe neurons (Dodson et al., 2015; Mallet et al., 2012).")
 AnnotationAssertion(terms:contributor obo:CL_0020010 <https://orcid.org/0000-0002-5507-2103>)
 AnnotationAssertion(oboInOwl:creation_date obo:CL_0020010 "2025-10-16T10:21:41Z"^^xsd:dateTime)
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020010 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_0020010 "arkypallidal neuron")
-SubClassOf(obo:CL_0020010 obo:CL_0000617)
+SubClassOf(obo:CL_0020010 obo:CL_9900001)
 SubClassOf(obo:CL_0020010 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002476))
 SubClassOf(obo:CL_0020010 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004025))
-SubClassOf(obo:CL_0020010 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_0020011 (hair follicle associated fibroblast)
 
@@ -26192,6 +26220,7 @@ AnnotationAssertion(terms:creator obo:CL_0020047 "GitHub Copilot")
 AnnotationAssertion(terms:date obo:CL_0020047 "2026-03-10T14:42:58Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34170401") oboInOwl:hasExactSynonym obo:CL_0020047 "enteric interneuron of myenteric plexus")
 AnnotationAssertion(rdfs:label obo:CL_0020047 "interneuron of myenteric plexus")
+SubClassOf(obo:CL_0020047 obo:CL_0000099)
 SubClassOf(obo:CL_0020047 obo:CL_0007011)
 SubClassOf(obo:CL_0020047 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002439))
 
@@ -26230,6 +26259,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34170401") oboInOwl:hasE
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34170401") oboInOwl:hasExactSynonym obo:CL_0020050 "cholinergic enkephalinergic myenteric interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0020050 "ascending interneuron of myenteric plexus")
 SubClassOf(obo:CL_0020050 obo:CL_0020047)
+SubClassOf(obo:CL_0020050 obo:CL_9900000)
 
 # Class: obo:CL_0020051 (descending interneuron of myenteric plexus)
 
@@ -26240,6 +26270,7 @@ AnnotationAssertion(terms:date obo:CL_0020051 "2026-03-10T14:42:58Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34170401") oboInOwl:hasExactSynonym obo:CL_0020051 "descending myenteric interneuron")
 AnnotationAssertion(rdfs:label obo:CL_0020051 "descending interneuron of myenteric plexus")
 SubClassOf(obo:CL_0020051 obo:CL_0020047)
+SubClassOf(obo:CL_0020051 obo:CL_9900000)
 
 # Class: obo:CL_0020052 (stubby Dogiel type I neuron of myenteric plexus)
 
@@ -30043,10 +30074,10 @@ EquivalentClasses(obo:CL_1001433 ObjectIntersectionOf(obo:CL_0000066 ObjectSomeV
 
 # Class: obo:CL_1001434 (olfactory bulb interneuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18603310") obo:IAO_0000115 obo:CL_1001434 "A neuron residing in the olfactory bulb that serve to process and refine signals arising from olfactory sensory neurons")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:18603310") obo:IAO_0000115 obo:CL_1001434 "A local interneuron of the olfactory bulb that processes and refines signals arising from olfactory sensory neurons before relay by mitral and tufted cells. Olfactory bulb projection neurons (mitral and tufted cells) are not included in this class.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_1001434 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_1001434 "olfactory bulb interneuron")
-EquivalentClasses(obo:CL_1001434 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002264)))
-SubClassOf(obo:CL_1001434 obo:CL_0000101)
+EquivalentClasses(obo:CL_1001434 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002264)))
 SubClassOf(obo:CL_1001434 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0002264))
 
 # Class: obo:CL_1001435 (periglomerular cell)
@@ -30093,24 +30124,26 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1073/pnas.242428599") 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GO:0021773") oboInOwl:hasExactSynonym obo:CL_1001474 "striatal medium spiny neuron")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "BTO:0004778") oboInOwl:hasRelatedSynonym obo:CL_1001474 "medium-sized densely spiny neuron")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41420-022-01088-0") Annotation(oboInOwl:hasDbXref "doi:10.1523/JNEUROSCI.20-16-06063.2000") rdfs:comment obo:CL_1001474 "Direct genetic lineage tracing in mice, including Dlx-based and Sp9-Cre fate mapping, demonstrates that medium spiny neurons (MSNs) originate from progenitors in the lateral ganglionic eminence (LGE), with labeled cells migrating from LGE to the striatum and expressing MSN markers such as FOXP1 and CTIP2.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_1001474 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_1001474 "medium spiny neuron")
-SubClassOf(obo:CL_1001474 obo:CL_0000540)
+SubClassOf(obo:CL_1001474 obo:CL_9900001)
 SubClassOf(obo:CL_1001474 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0000369))
 SubClassOf(obo:CL_1001474 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004025))
-SubClassOf(obo:CL_1001474 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_1001502 (mitral cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0009954") obo:IAO_0000115 obo:CL_1001502 "The large glutaminergic nerve cells whose dendrites synapse with axons of the olfactory receptor neurons in the glomerular layer of the olfactory bulb, and whose axons pass centrally in the olfactory tract to the olfactory cortex.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_1001502 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_1001502 "mitral cell")
-SubClassOf(obo:CL_1001502 obo:CL_1001434)
+SubClassOf(obo:CL_1001502 obo:CL_9900000)
 SubClassOf(obo:CL_1001502 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0004186))
 
 # Class: obo:CL_1001503 (olfactory bulb tufted cell)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "MP:0009955") obo:IAO_0000115 obo:CL_1001503 "The principal glutaminergic neuron located in the outer third of the external plexiform layer of the olfactory bulb; a single short primary dendrite traverses the outer external plexiform layer and terminates within an olfactory glomerulus in a tuft of branches, where it receives the input from olfactory receptor neuron axon terminals; axons of the tufted cells transfer information to a number of areas in the brain, including the piriform cortex, entorhinal cortex, olfactory tubercle, and amygdala.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_1001503 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(rdfs:label obo:CL_1001503 "olfactory bulb tufted cell")
-SubClassOf(obo:CL_1001503 obo:CL_0000540)
+SubClassOf(obo:CL_1001503 obo:CL_9900000)
 SubClassOf(obo:CL_1001503 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0005376))
 
 # Class: obo:CL_1001505 (parvocellular neurosecretory cell)
@@ -30181,7 +30214,7 @@ SubClassOf(obo:CL_1001568 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_000531
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:pr") obo:IAO_0000115 obo:CL_1001569 "An interneuron with a soma found in the hippocampus.")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_1001569 "FMA:84777")
 AnnotationAssertion(rdfs:label obo:CL_1001569 "hippocampal interneuron")
-EquivalentClasses(obo:CL_1001569 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002421)))
+EquivalentClasses(obo:CL_1001569 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002421)))
 
 # Class: obo:CL_1001571 (hippocampal pyramidal neuron)
 
@@ -32768,15 +32801,16 @@ EquivalentClasses(obo:CL_4023120 ObjectIntersectionOf(obo:CL_0000202 ObjectSomeV
 # Class: obo:CL_4023121 (sst chodl GABAergic interneuron)
 
 AnnotationAssertion(obo:IAO_0000028 obo:CL_4023121 "sst chodl interneuron")
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15845086") Annotation(oboInOwl:hasDbXref "PMID:31209381") Annotation(oboInOwl:hasDbXref "PMID:33372656") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "PMID:40403704") Annotation(oboInOwl:hasDbXref "PMID:42576008") Annotation(oboInOwl:hasDbXref "doi:10.1038/s41586-023-06812-z") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023121 "A transcriptomically distinct sst GABAergic interneuron that also expresses Chodl, found in the cerebral cortex and in the striatum. In the cerebral cortex these neurons are rare and correspond to the only known interneurons with long-range projection.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:15845086") Annotation(oboInOwl:hasDbXref "PMID:31209381") Annotation(oboInOwl:hasDbXref "PMID:33372656") Annotation(oboInOwl:hasDbXref "PMID:37824655") Annotation(oboInOwl:hasDbXref "PMID:40403704") Annotation(oboInOwl:hasDbXref "PMID:42576008") Annotation(oboInOwl:hasDbXref "doi:10.1038/s41586-023-06812-z") Annotation(oboInOwl:hasDbXref "https://cellxgene.cziscience.com/e/9c63201d-bfd9-41a8-bbbc-18d947556f3d.cxg/") obo:IAO_0000115 obo:CL_4023121 "A transcriptomically distinct sst GABAergic neuron that also expresses Chodl, found in the cerebral cortex and in the striatum. In the cerebral cortex these neurons are rare and correspond to the only known cortical GABAergic cells with long-range projection.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_4023121 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(terms:contributor obo:CL_4023121 <https://orcid.org/0000-0001-7258-9596>)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33372656") oboInOwl:hasBroadSynonym obo:CL_4023121 "long-range GABAergic interneuron")
+AnnotationAssertion(rdfs:comment obo:CL_4023121 "Reclassified as a GABAergic projection neuron (CL:9900001) based on the following assumptions: (1) In the cerebral cortex, sst-Chodl cells are the long-range projecting GABAergic cells described in Tasic et al. 2016 and 2018 (PMID:27018410, PMID:30382198) and Yao et al. 2023 (PMID:37824655); their axons leave the local cortical area to reach subcortical and other cortical targets (compare 'long-range projecting sst GABAergic cortical interneuron', CL:4023025), which is the diagnostic criterion for projection neuron (CL:9900000). (2) The class is assumed to be homogeneous with respect to the projection/local axis across cortical and striatal localisations; striatal sst-Chodl cells also show long-range axonal arborisation. (3) The label still uses 'interneuron' for historical reasons and to match the WMB taxonomy (CCN20230722, where Sst-Chodl is a terminal class); the label is retained so that upstream mappings do not silently break, but the content follows the local/projection distinction set up in issue #3837. If future evidence shows a mixed local/projecting population, this classification should be revisited.")
 AnnotationAssertion(rdfs:label obo:CL_4023121 "sst chodl GABAergic interneuron")
-SubClassOf(obo:CL_4023121 obo:CL_0000099)
+SubClassOf(obo:CL_4023121 obo:CL_9900001)
 SubClassOf(obo:CL_4023121 obo:CL_4023063)
 SubClassOf(obo:CL_4023121 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0001893))
 SubClassOf(obo:CL_4023121 ObjectSomeValuesFrom(obo:RO_0002202 obo:UBERON_0004024))
-SubClassOf(obo:CL_4023121 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 SubClassOf(obo:CL_4023121 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000005444))
 SubClassOf(obo:CL_4023121 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_000015665))
 
@@ -35419,7 +35453,7 @@ AnnotationAssertion(terms:contributor obo:CL_4042035 <https://orcid.org/0000-000
 AnnotationAssertion(terms:date obo:CL_4042035 "2024-10-31T15:55:31Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33075461") Annotation(oboInOwl:hasRelatedSynonym obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4042035 "MLI")
 AnnotationAssertion(rdfs:label obo:CL_4042035 "molecular layer interneuron"@en)
-EquivalentClasses(obo:CL_4042035 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002974) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
+EquivalentClasses(obo:CL_4042035 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002974) ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
 
 # Class: obo:CL_4042036 (melanin-concentrating hormone neuron)
 
@@ -36799,12 +36833,13 @@ SubClassOf(obo:CL_4072019 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002034
 
 # Class: obo:CL_4072021 (corticotropin-releasing neuron)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasDbXref "PMID:2785663") Annotation(oboInOwl:hasDbXref "PMID:28790896") Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasDbXref "PMID:9662138") obo:IAO_0000115 obo:CL_4072021 "A specialised type of interneuron defined by the secretion of corticotropin-releasing hormone (CRH), a key peptide in activating the hypothalamic–pituitary–adrenal (HPA) axis during stress. It is primarily located in the paraventricular nucleus (PVN) of the hypothalamus, with additional presence in the hippocampus, piriform area, central amygdalar nucleus, Barrington’s nucleus, and inferior olivary complex (Peng et al., 2017).")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasDbXref "PMID:2785663") Annotation(oboInOwl:hasDbXref "PMID:28790896") Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasDbXref "PMID:9662138") obo:IAO_0000115 obo:CL_4072021 "A specialised type of neurosecretory neuron defined by the secretion of corticotropin-releasing hormone (CRH), a key peptide in activating the hypothalamic–pituitary–adrenal (HPA) axis during stress. It is primarily located in the paraventricular nucleus (PVN) of the hypothalamus, with additional presence in the hippocampus, piriform area, central amygdalar nucleus, Barrington's nucleus, and inferior olivary complex (Peng et al., 2017).")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_4072021 <https://github.com/obophenotype/cell-ontology/issues/3837>)
 AnnotationAssertion(terms:date obo:CL_4072021 "2025-07-14T12:17:35Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:33158870") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRF neuron")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:21871477") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072021 "CRH neuron")
 AnnotationAssertion(rdfs:label obo:CL_4072021 "corticotropin-releasing neuron")
-SubClassOf(obo:CL_4072021 obo:CL_0000099)
+SubClassOf(obo:CL_4072021 obo:CL_0000527)
 SubClassOf(obo:CL_4072021 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0051458))
 
 # Class: obo:CL_4072022 (Lamp5 Lhx6 GABAergic interneuron (Homo sapiens))
@@ -37107,7 +37142,7 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") obo:IAO_00001
 AnnotationAssertion(terms:date obo:CL_4072102 "2025-04-29T13:06:36Z"^^xsd:dateTime)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:35803588") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4072102 "PLI")
 AnnotationAssertion(rdfs:label obo:CL_4072102 "Purkinje layer interneuron")
-EquivalentClasses(obo:CL_4072102 ObjectIntersectionOf(obo:CL_0000099 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979)))
+EquivalentClasses(obo:CL_4072102 ObjectIntersectionOf(obo:CL_0004001 ObjectSomeValuesFrom(obo:RO_0002100 obo:UBERON_0002979)))
 SubClassOf(obo:CL_4072102 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534))
 
 # Class: obo:CL_4072103 (hair follicle dermal stem cell)
@@ -37202,6 +37237,28 @@ AnnotationAssertion(rdfs:label obo:CL_7770006 "beam B cell")
 AnnotationAssertion(Annotation(dc:license <http://creativecommons.org/licenses/by/4.0/>) Annotation(oboInOwl:hasDbXref "PMID:35836364") Annotation(rdfs:comment "Trabecular meshwork (TM) structure. The TM consists of uveal (blue), corneoscleral (red), and juxtacanalicular (green) regions. TM beam cells (blue/red) line the uveal and corneoscleral regions, while JCT cells (green) occupy the juxtacanalicular region.") foaf:depiction obo:CL_7770006 "http://purl.obolibrary.org/obo/cl/images/Trabecular_meshowk_cells_PMID35836364.jpg")
 SubClassOf(obo:CL_7770006 obo:CL_7770005)
 SubClassOf(obo:CL_7770006 ObjectSomeValuesFrom(obo:RO_0002292 obo:PR_Q9UIK5))
+
+# Class: obo:CL_9900000 (projection neuron)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_9900000 "An interneuron whose axon leaves the anatomical region that contains its soma and forms synapses in one or more other regions of the nervous system.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_9900000 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(oboInOwl:hasBroadSynonym obo:CL_9900000 "principal neuron")
+AnnotationAssertion(oboInOwl:hasNarrowSynonym obo:CL_9900000 "relay neuron")
+AnnotationAssertion(terms:creator obo:CL_9900000 "Claude")
+AnnotationAssertion(terms:date obo:CL_9900000 "2026-11-03T19:04:00Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:label obo:CL_9900000 "projection neuron")
+SubClassOf(obo:CL_9900000 obo:CL_0000099)
+
+# Class: obo:CL_9900001 (GABAergic projection neuron)
+
+AnnotationAssertion(obo:IAO_0000115 obo:CL_9900001 "A projection neuron that uses GABA as a vesicular neurotransmitter.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_9900001 <https://github.com/obophenotype/cell-ontology/issues/3837>)
+AnnotationAssertion(terms:creator obo:CL_9900001 "Claude")
+AnnotationAssertion(terms:date obo:CL_9900001 "2026-11-03T19:04:00Z"^^xsd:dateTime)
+AnnotationAssertion(rdfs:comment obo:CL_9900001 "Rare in cerebral cortex and hippocampus; the main GABAergic neuron type of the striatum, pallidum, substantia nigra pars reticulata, zona incerta, extended amygdala, thalamic reticular nucleus and cerebellar cortex.")
+AnnotationAssertion(rdfs:label obo:CL_9900001 "GABAergic projection neuron")
+EquivalentClasses(obo:CL_9900001 ObjectIntersectionOf(obo:CL_9900000 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061534)))
+SubClassOf(obo:CL_9900001 obo:CL_0000617)
 
 # Class: obo:CP_0000000 (obsolete CP:0000000)
 
