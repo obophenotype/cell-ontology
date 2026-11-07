@@ -42,6 +42,33 @@ This includes instructions for editing the cl ontology.
 - Run the command `aurelian fulltext <PMID:nnn>` to fetch full text for a publication. A doi or URL can also be used
 - You should cite publications appropriately, e.g. `def: "...." [PMID:nnnn, doi:mmmm]
 
+## Species and taxon scope
+
+- Marker and mechanism claims MUST name the species they were demonstrated in,
+  e.g. "In mouse, these cells express DLL1; in human, they express TFF3 and CLCA1."
+  Do not state a marker flatly if the evidence is from one species.
+- A definition's generalisations must hold across every taxon the term covers.
+  If a feature is characteristic of only some of them, say so in the definition or
+  in an rdfs:comment — do not let the term imply it is universal.
+- Some groupings are convergent rather than clades (e.g. menstruating mammals) and
+  cannot be expressed as a taxon constraint. Scope these in prose, not in axioms.
+- Do not assert an `in taxon` constraint that is already entailed by the term's
+  parents or its part_of axioms.
+
+## Citing evidence
+
+- Every substantive clause in a definition, synonym, or comment must be
+  supported by at least one of its xrefs. Check the clause against the source
+  text, not the title or abstract.
+- Report what a source actually claims, including its hedging. If a paper says a
+  mechanism "could be" the case, the definition must not state it as established.
+- A check performed on one cited paper says nothing about the others. Verify each
+  source separately before describing the reference set as a whole.
+- Where sources disagree, or a later paper contradicts an earlier one, record the
+  dispute in an rdfs:comment with both xrefs rather than silently choosing a side.
+- Prefer a source that is about the claim over one that mentions it in passing.
+
+
 ## GitHub Contribution Process
 - most requests from users should follow one of two patterns:
     - you are not confident how to proceed, in which case end with asking a clarifying question (via `gh`)
