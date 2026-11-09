@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                79b8a90c3a6b5c9036612262542462f61838f0efc597654ffb11be00ae6ce8c1
+CONFIG_HASH=                11d1d091e02a601263cec45c2cac6b454bd896db34e3fc4792de94ac999a8427
 
 
 # ----------------------------------------
@@ -204,7 +204,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao dhbao stato cob bfo
+IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao dhbao stato cob bfo bspo
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -762,6 +762,14 @@ mirror-cob: | $(TMPDIR)
 mirror-bfo: | $(TMPDIR)
 	curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(TMPDIR)/bfo-download.owl --retry 4 --max-time 200 && \
 	$(ROBOT) convert -i $(TMPDIR)/bfo-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: bspo
+.PHONY: mirror-bspo
+.PRECIOUS: $(MIRRORDIR)/bspo.owl
+mirror-bspo: | $(TMPDIR)
+	curl -L $(OBOBASE)/bspo.owl --create-dirs -o $(TMPDIR)/bspo-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) remove -i $(TMPDIR)/bspo-download.owl --base-iri http://purl.obolibrary.org/obo/BSPO_ --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
