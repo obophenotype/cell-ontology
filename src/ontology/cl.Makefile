@@ -34,8 +34,17 @@ SHARED_ROBOT_COMMANDS = remove $(foreach n,$(BFO_ATS_TERMS),--term BFO:$(n))
 # (thereby causing that step to fail). The proper fix would be for PCL
 # to enforce TC.
 # See <https://github.com/obophenotype/provisional_cell_ontology/issues/59>
-cl-plus.owl: $(ONT)-full.owl
-	$(ROBOT) merge -i $< -I $(OBOBASE)/pcl/pcl-base.owl \
+# PCL's base also carries copies of CL axioms from the CL release it was
+# built against. We remove them, so that CL-plus uses CL's current axioms
+# only; otherwise a changed CL definition can make the old and new
+# versions infer equivalences. .FORCE: always use the latest PCL release.
+$(TMPDIR)/pcl-base-no-cl.owl: .FORCE | $(TMPDIR)
+	$(ROBOT) remove -I $(OBOBASE)/pcl/pcl-base.owl \
+		 --base-iri $(OBOBASE)/CL_ --axioms internal --preserve-structure false \
+		 --output $@
+
+cl-plus.owl: $(ONT)-full.owl $(TMPDIR)/pcl-base-no-cl.owl
+	$(ROBOT) merge -i $< -i $(TMPDIR)/pcl-base-no-cl.owl \
 		 unmerge -I $(OBOBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl \
 		 reason --reasoner WHELK --equivalent-classes-allowed asserted-only \
 		        --exclude-tautologies structural \
