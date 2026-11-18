@@ -10,7 +10,7 @@
 # More information: https://github.com/INCATools/ontology-development-kit/
 
 # Fingerprint of the configuration file when this Makefile was last generated
-CONFIG_HASH=                8cf5d70b39318051e0da5af387cd982f6a10446ce7e5adf9b9074689543d0b7f
+CONFIG_HASH=                11d1d091e02a601263cec45c2cac6b454bd896db34e3fc4792de94ac999a8427
 
 
 # ----------------------------------------
@@ -204,7 +204,7 @@ all_main: $(MAIN_FILES)
 # ----------------------------------------
 
 
-IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao dhbao stato
+IMPORTS =  pr go uberon ro pato ncbitaxon ncbitaxondisjoints omo mbao dhbao stato cob bfo bspo
 
 IMPORT_ROOTS =  $(IMPORTDIR)/merged_import
 IMPORT_OWL_FILES = $(foreach n,$(IMPORT_ROOTS), $(n).owl)
@@ -746,6 +746,30 @@ mirror-dhbao: | $(TMPDIR)
 mirror-stato: | $(TMPDIR)
 	curl -L $(OBOBASE)/stato.owl --create-dirs -o $(TMPDIR)/stato-download.owl --retry 4 --max-time 200 && \
 	$(ROBOT) remove -i $(TMPDIR)/stato-download.owl --base-iri http://purl.obolibrary.org/obo/STATO --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: cob
+.PHONY: mirror-cob
+.PRECIOUS: $(MIRRORDIR)/cob.owl
+mirror-cob: | $(TMPDIR)
+	curl -L $(OBOBASE)/cob.owl --create-dirs -o $(TMPDIR)/cob-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/cob-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: bfo
+.PHONY: mirror-bfo
+.PRECIOUS: $(MIRRORDIR)/bfo.owl
+mirror-bfo: | $(TMPDIR)
+	curl -L $(OBOBASE)/bfo.owl --create-dirs -o $(TMPDIR)/bfo-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) convert -i $(TMPDIR)/bfo-download.owl -o $(TMPDIR)/$@.owl
+
+
+## ONTOLOGY: bspo
+.PHONY: mirror-bspo
+.PRECIOUS: $(MIRRORDIR)/bspo.owl
+mirror-bspo: | $(TMPDIR)
+	curl -L $(OBOBASE)/bspo.owl --create-dirs -o $(TMPDIR)/bspo-download.owl --retry 4 --max-time 200 && \
+	$(ROBOT) remove -i $(TMPDIR)/bspo-download.owl --base-iri http://purl.obolibrary.org/obo/BSPO_ --axioms external --preserve-structure false --trim false -o $(TMPDIR)/$@.owl
 
 ALL_MIRRORS = $(patsubst %, $(MIRRORDIR)/%.owl, $(IMPORTS))
 MERGE_MIRRORS = true
