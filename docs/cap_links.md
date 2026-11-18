@@ -67,9 +67,8 @@ Broader mappings are allowed. Pick the **closest** CL term for each CAP
 label.
 
 If more than one CAP label in the same dataset maps equally well to the
-same CL term, the regeneration script emits a warning on stderr. Review
-those warnings and, where appropriate, narrow or widen the CL target so
-that the mapping is unambiguous.
+same CL term, pick the single best match and note the alternatives in
+the tracker issue so the decision can be revisited.
 
 ## Template format
 
@@ -90,7 +89,6 @@ Columns:
 | `cap_label_name`      | *(empty)*         | CAP label display name                                         |
 | `species`             | *(empty)*         | NCBI taxon or species name                                     |
 | `tissue`              | *(empty)*         | UBERON term or tissue name                                     |
-| `manual_or_generated` | *(empty)*         | `manual` to protect a row from regeneration; otherwise `generated` |
 | `source_issue`        | *(empty)*         | Tracker issue that justified the row                           |
 | `ID`                  | `ID`              | CL term ID (e.g. `CL:0000540`)                                 |
 | `CAP URL`             | `A rdfs:seeAlso`  | CAP label URL                                                  |
@@ -100,13 +98,15 @@ Columns:
 Each row maps to a single CAP label. Do **not** use `SPLIT` because the
 axiom annotation would then apply to every value.
 
-## Workflows
+## Workflow
 
-### Adding a handful of links by hand
+CAP links are curated by hand in `src/templates/cap_links.tsv`.
 
-1. Append rows to `src/templates/cap_links.tsv`. Set
-   `manual_or_generated` to `manual` so the regeneration script leaves
-   the row alone.
+1. Append one row per CAP label. Fill in the bookkeeping columns
+   (`cl_label`, `cap_project_id`, `cap_dataset_id`, `cap_label_id`,
+   `cap_label_name`, `species`, `tissue`, `source_issue`) as well as
+   the ROBOT directive columns (`ID`, `CAP URL`, `Link label`, optional
+   `Link comment`).
 2. Validate locally:
    ```
    python3 src/scripts/validate_cap_links.py \
@@ -117,24 +117,6 @@ axiom annotation would then apply to every value.
    cd src/ontology && make components/cap_links.owl
    ```
 4. Commit the TSV; the component is regenerated on every build.
-
-### Pulling a whole dataset
-
-1. Add the dataset to `src/metadata/cap_datasets.yaml` (project ID,
-   dataset ID, display title, optional species/tissue).
-2. Regenerate:
-   ```
-   cd src/ontology && make update-cap-links
-   ```
-3. Review the diff. Address any "multiple CAP labels map to the same CL
-   term" warnings on stderr by refining mappings in CAP or on the CL
-   side.
-4. Commit both the YAML and the TSV together. The resulting template
-   diff should be the only generated change.
-
-Unlike `cellxgene_subset.tsv`, the TSV is **not** regenerated on every
-build. The explicit `update-cap-links` target produces a reviewable
-diff.
 
 ## Checks
 
@@ -153,20 +135,16 @@ ROBOT would silently mint a stub class for an unknown ID.
 
 ### Release-level SPARQL check
 
-`src/sparql/cap-link-violation.sparql` is the release-level check. It
-flags:
+`src/sparql/cap-link-violation.sparql` is wired into
+`cl-odk.yaml :: custom_sparql_checks` as `cap-link` and runs on every
+release. It flags:
 
 - CAP links on obsolete classes;
 - CAP URLs that fail the production label pattern (including labelset
   URLs and `rc1` staging URLs);
 - CAP links without an `rdfs:label` axiom annotation.
 
-The check is not yet wired into `cl-odk.yaml :: custom_sparql_checks`
-because a handful of pre-existing hand-added CAP links in `cl-edit.owl`
-point to dataset-level URLs and would fail the pattern. Once those are
-migrated to label-level URLs through the template, add `cap-link` to
-`custom_sparql_checks` in `cl-odk.yaml` to enforce the check on every
-release. In the meantime the query can be run on demand:
+The query can also be run on demand:
 
 ```
 cd src/ontology && robot query \

@@ -46,7 +46,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        --clean-obo 'simple merge-comments'
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy illegal-date def-not-only-xref id-format boolean-annotation-value 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy illegal-date def-not-only-xref id-format boolean-annotation-value cap-link
 SPARQL_EXPORTS =            cl_terms cl-edges cl-synonyms cl-xrefs cl-def-xrefs 
 ODK_VERSION_MAKEFILE =      v1.6.1
 RELAX_OPTIONS =             --include-subclass-of true
@@ -868,15 +868,6 @@ pattern_schema_checks dosdp_validation: $(TMPDIR)/pattern_schema_checks
 .PHONY: update_patterns
 update_patterns: download_patterns
 	if [ -n "$$(find $(TMPDIR) -type f -path '$(TMPDIR)/dosdp/*.yaml')" ]; then cp -r $(TMPDIR)/dosdp/*.yaml $(PATTERNDIR)/dosdp-patterns; fi
-
-# Regenerate src/templates/cap_links.tsv from the curated CAP dataset
-# config at src/metadata/cap_datasets.yaml. Runs CAP API calls; not
-# invoked from the normal build. See docs/cap_links.md.
-.PHONY: update-cap-links
-update-cap-links:
-	python3 $(SCRIPTSDIR)/populate_cap_links.py \
-		--template $(TEMPLATEDIR)/cap_links.tsv \
-		--config ../metadata/cap_datasets.yaml
 
 # This command is a workaround for the absence of -N and -i in wget of alpine (the one ODK depend on now).
 # It downloads all patterns specified in external.txt
