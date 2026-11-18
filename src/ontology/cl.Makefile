@@ -34,8 +34,17 @@ SHARED_ROBOT_COMMANDS = remove $(foreach n,$(BFO_ATS_TERMS),--term BFO:$(n))
 # (thereby causing that step to fail). The proper fix would be for PCL
 # to enforce TC.
 # See <https://github.com/obophenotype/provisional_cell_ontology/issues/59>
-cl-plus.owl: $(ONT)-full.owl
-	$(ROBOT) merge -i $< -I $(OBOBASE)/pcl/pcl-base.owl \
+# PCL's base also carries copies of CL axioms from the CL release it was
+# built against. We remove them, so that CL-plus uses CL's current axioms
+# only; otherwise a changed CL definition can make the old and new
+# versions infer equivalences. .FORCE: always use the latest PCL release.
+$(TMPDIR)/pcl-base-no-cl.owl: .FORCE | $(TMPDIR)
+	$(ROBOT) remove -I $(OBOBASE)/pcl/pcl-base.owl \
+		 --base-iri $(OBOBASE)/CL_ --axioms internal --preserve-structure false \
+		 --output $@
+
+cl-plus.owl: $(ONT)-full.owl $(TMPDIR)/pcl-base-no-cl.owl
+	$(ROBOT) merge -i $< -i $(TMPDIR)/pcl-base-no-cl.owl \
 		 unmerge -I $(OBOBASE)/ncbitaxon/subsets/taxslim-disjoint-over-in-taxon.owl \
 		 reason --reasoner WHELK --equivalent-classes-allowed asserted-only \
 		        --exclude-tautologies structural \
@@ -372,6 +381,7 @@ release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
 prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports crosslinks_report
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
+	python ./$(SCRIPTSDIR)/filter_obsoletions_with_consider.py --diff $(REPORTDIR)/diff_release_oak.md --obo $(RELEASEDIR)/cl-base.obo
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
 	@printf "\n\n---\n\n" >> $(REPORTDIR)/summary_release.md
 	cat $(CROSSLINKS_MD) >> $(REPORTDIR)/summary_release.md
