@@ -381,6 +381,7 @@ release-base-diff: $(TMPDIR)/current-base-release.obo $(RELEASEDIR)/cl-base.obo
 prepare_content_summary: $(RELEASEDIR)/cl-base.owl $(RELEASEDIR)/cl-base.obo $(TMPDIR)/current-base-release.obo custom_reports crosslinks_report
 	python ./$(SCRIPTSDIR)/content_summary.py --ontology_iri $< --ont_namespace "CL" > $(REPORTDIR)/ontology_content.md
 	runoak -i simpleobo:$(TMPDIR)/current-base-release.obo diff -X simpleobo:$(RELEASEDIR)/cl-base.obo -o $(REPORTDIR)/diff_release_oak.md --output-type md
+	python ./$(SCRIPTSDIR)/filter_obsoletions_with_consider.py --diff $(REPORTDIR)/diff_release_oak.md --obo $(RELEASEDIR)/cl-base.obo
 	cat $(REPORTDIR)/ontology_content.md $(REPORTDIR)/diff_release_oak.md > $(REPORTDIR)/summary_release.md
 	@printf "\n\n---\n\n" >> $(REPORTDIR)/summary_release.md
 	cat $(CROSSLINKS_MD) >> $(REPORTDIR)/summary_release.md
