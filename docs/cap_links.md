@@ -1,0 +1,189 @@
+# CAP reference-data `rdfs:seeAlso` links
+
+CL terms carry `rdfs:seeAlso` links back to the matching cell type on the
+[Cell Annotation Platform (CAP)](https://celltype.info). These links let
+tooling and portals jump from a CL class to the transcriptomic reference
+data for the same cell type.
+
+This page covers how the links are modelled, how they are managed, and
+the rules that keep them consistent. It mirrors the pattern already in
+place for the Allen Brain Cell (ABC) Atlas links in `wmbo-cl-comp.owl`
+and `bgo-cl-comp.owl`.
+
+## Where to edit
+
+**CAP links are managed only through
+[`src/templates/cap_links.tsv`](https://github.com/obophenotype/cell-ontology/blob/master/src/templates/cap_links.tsv).**
+Do not add `rdfs:seeAlso` links to `celltype.info` URLs directly in
+`cl-edit.owl`. A release-level SPARQL check will flag any CAP links that
+sit outside the component.
+
+The template compiles into `src/ontology/components/cap_links.owl`,
+which is imported by `cl-edit.owl` and therefore reaches `cl.obo`,
+`cl-base.owl`, OLS and every other CL consumer by the same route as the
+ABC links.
+
+## Axiom shape
+
+Each row produces one axiom-annotated `rdfs:seeAlso`:
+
+```
+AnnotationAssertion(
+  Annotation(rdfs:label "Reference data on Cell Annotation Platform: <dataset title>")
+  rdfs:seeAlso obo:CL_XXXXXXX
+  "https://celltype.info/project/P/dataset/D/label/L"
+)
+```
+
+- The URL is a plain string literal, matching the ABC links.
+- The axiom annotation label starts with the fixed prefix
+  `Reference data on Cell Annotation Platform: ` so tools can recognise
+  CAP links. The dataset title distinguishes several CAP links on one
+  term.
+- h5ad download links are **not** modelled on CL terms. CAP exposes
+  h5ad download through its own client; adding it here would duplicate
+  that.
+
+## URL rules
+
+CAP URLs must be label URLs on the production host:
+
+```
+^https://celltype\.info/project/\d+/dataset/\d+/label/\d+$
+```
+
+Labelset URLs (`/labelset/`) and the `rc1.celltype.info` staging host
+are both rejected.
+
+## Which datasets count as "reference"
+
+Reference datasets are the official **Human Cell Atlas (HCA)** datasets
+hosted on CAP. When no HCA dataset exists for a region or tissue, open a
+tracker issue to discuss before adding a non-HCA source.
+
+## Mapping precision
+
+Broader mappings are allowed. Pick the **closest** CL term for each CAP
+label.
+
+If more than one CAP label in the same dataset maps equally well to the
+same CL term, the regeneration script emits a warning on stderr. Review
+those warnings and, where appropriate, narrow or widen the CL target so
+that the mapping is unambiguous.
+
+## Template format
+
+`src/templates/cap_links.tsv` is tab-separated because dataset titles
+contain commas. It uses the usual two-row ROBOT header: the first row
+is the human-readable column names, the second is the ROBOT directive
+row. Bookkeeping columns (for the editor's own notes) carry an empty
+ROBOT directive so ROBOT ignores them.
+
+Columns:
+
+| Column                | ROBOT directive   | Purpose                                                        |
+|-----------------------|-------------------|----------------------------------------------------------------|
+| `cl_label`            | *(empty)*         | CL label, for readability                                      |
+| `cap_project_id`      | *(empty)*         | CAP project ID                                                 |
+| `cap_dataset_id`      | *(empty)*         | CAP dataset ID                                                 |
+| `cap_label_id`        | *(empty)*         | CAP label ID                                                   |
+| `cap_label_name`      | *(empty)*         | CAP label display name                                         |
+| `species`             | *(empty)*         | NCBI taxon or species name                                     |
+| `tissue`              | *(empty)*         | UBERON term or tissue name                                     |
+| `manual_or_generated` | *(empty)*         | `manual` to protect a row from regeneration; otherwise `generated` |
+| `source_issue`        | *(empty)*         | Tracker issue that justified the row                           |
+| `ID`                  | `ID`              | CL term ID (e.g. `CL:0000540`)                                 |
+| `CAP URL`             | `A rdfs:seeAlso`  | CAP label URL                                                  |
+| `Link label`          | `>A rdfs:label`   | Axiom annotation label on the link                             |
+| `Link comment`        | `>A rdfs:comment` | Optional axiom annotation comment                              |
+
+Each row maps to a single CAP label. Do **not** use `SPLIT` because the
+axiom annotation would then apply to every value.
+
+## Workflows
+
+### Adding a handful of links by hand
+
+1. Append rows to `src/templates/cap_links.tsv`. Set
+   `manual_or_generated` to `manual` so the regeneration script leaves
+   the row alone.
+2. Validate locally:
+   ```
+   python3 src/scripts/validate_cap_links.py \
+     src/templates/cap_links.tsv src/ontology/cl-edit.owl
+   ```
+3. Build the component:
+   ```
+   cd src/ontology && make components/cap_links.owl
+   ```
+4. Commit the TSV; the component is regenerated on every build.
+
+### Pulling a whole dataset
+
+1. Add the dataset to `src/metadata/cap_datasets.yaml` (project ID,
+   dataset ID, display title, optional species/tissue).
+2. Regenerate:
+   ```
+   cd src/ontology && make update-cap-links
+   ```
+3. Review the diff. Address any "multiple CAP labels map to the same CL
+   term" warnings on stderr by refining mappings in CAP or on the CL
+   side.
+4. Commit both the YAML and the TSV together. The resulting template
+   diff should be the only generated change.
+
+Unlike `cellxgene_subset.tsv`, the TSV is **not** regenerated on every
+build. The explicit `update-cap-links` target produces a reviewable
+diff.
+
+## Checks
+
+### Template-level, before ROBOT compiles
+
+`src/scripts/validate_cap_links.py` runs as part of
+`components/cap_links.owl`'s Make rule. It verifies that:
+
+- every `ID` exists in `cl-edit.owl` and is not obsolete;
+- no duplicate (ID, URL) pair appears twice;
+- every URL matches the production CAP label pattern above;
+- every row has a non-empty link label.
+
+A failure here aborts the build. This is critical: without the check,
+ROBOT would silently mint a stub class for an unknown ID.
+
+### Release-level SPARQL check
+
+`src/sparql/cap-link-violation.sparql` is the release-level check. It
+flags:
+
+- CAP links on obsolete classes;
+- CAP URLs that fail the production label pattern (including labelset
+  URLs and `rc1` staging URLs);
+- CAP links without an `rdfs:label` axiom annotation.
+
+The check is not yet wired into `cl-odk.yaml :: custom_sparql_checks`
+because a handful of pre-existing hand-added CAP links in `cl-edit.owl`
+point to dataset-level URLs and would fail the pattern. Once those are
+migrated to label-level URLs through the template, add `cap-link` to
+`custom_sparql_checks` in `cl-odk.yaml` to enforce the check on every
+release. In the meantime the query can be run on demand:
+
+```
+cd src/ontology && robot query \
+  --input cl-edit.owl \
+  --query ../sparql/cap-link-violation.sparql \
+  cap-link-violations.tsv
+```
+
+### Optional link-health
+
+A periodic external link-checker that follows each CAP URL would catch
+retired CAP IDs. That is out of scope for this repository's CI; run it
+as a separate cron or routine when ready.
+
+## Related
+
+- `src/ontology/components/wmbo-cl-comp.owl` — ABC atlas links for the
+  whole mouse brain ontology.
+- `src/ontology/components/bgo-cl-comp.owl` — ABC atlas links for the
+  basal ganglia ontology.
