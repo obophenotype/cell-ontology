@@ -29,17 +29,34 @@ Each row produces one axiom-annotated `rdfs:seeAlso`:
 
 ```
 AnnotationAssertion(
-  Annotation(rdfs:label "Reference data on Cell Annotation Platform: <dataset title>")
+  Annotation(rdfs:label "“<CAP label name>” in <dataset title>")
   rdfs:seeAlso obo:CL_XXXXXXX
   "https://celltype.info/project/P/dataset/D/label/L"
 )
 ```
 
+For example, a link to CAP label `214551` in the retinal atlas:
+
+```
+AnnotationAssertion(
+  Annotation(rdfs:label "“retinal bipolar neuron” in Single cell atlas of the human retina - Bipolar cell subclass - scRNA-seq")
+  rdfs:seeAlso obo:CL_0000748
+  "https://celltype.info/project/544/dataset/1157/label/214551"
+)
+```
+
 - The URL is a plain string literal, matching the ABC links.
-- The axiom annotation label starts with the fixed prefix
-  `Reference data on Cell Annotation Platform: ` so tools can recognise
-  CAP links. The dataset title distinguishes several CAP links on one
-  term.
+- The axiom annotation label is `“<CAP label name>” in <dataset title>`
+  — the CAP label's own display name wrapped in Unicode curly double
+  quotes (`U+201C` and `U+201D`), then a literal ` in `, then the
+  dataset title. Quoting the CAP label name surfaces the label verbatim
+  so tools and humans can recognise CAP links without a shared fixed
+  prefix, and makes multiple CAP links on one CL term distinguishable
+  at a glance.
+- **Use curly quotes (`“ ”`), not straight ASCII `"`.** The TSV is
+  parsed as CSV by both ROBOT and the validator, and a straight `"` at
+  the start of a field is treated as a CSV quote delimiter and silently
+  stripped. Curly quotes pass through unchanged.
 - h5ad download links are **not** modelled on CL terms. CAP exposes
   h5ad download through its own client; adding it here would duplicate
   that.
@@ -128,7 +145,8 @@ CAP links are curated by hand in `src/templates/cap_links.tsv`.
 - every `ID` exists in `cl-edit.owl` and is not obsolete;
 - no duplicate (ID, URL) pair appears twice;
 - every URL matches the production CAP label pattern above;
-- every row has a non-empty link label.
+- every row has a link label matching `“<cap label name>” in <dataset title>`
+  (curly quotes `U+201C` / `U+201D`, not straight `"`).
 
 A failure here aborts the build. This is critical: without the check,
 ROBOT would silently mint a stub class for an unknown ID.
@@ -142,7 +160,10 @@ release. It flags:
 - CAP links on obsolete classes;
 - CAP URLs that fail the production label pattern (including labelset
   URLs and `rc1` staging URLs);
-- CAP links without an `rdfs:label` axiom annotation.
+- CAP links without an `rdfs:label` axiom annotation;
+- CAP links whose `rdfs:label` does not match
+  `“<cap label name>” in <dataset title>` (curly quotes `U+201C` /
+  `U+201D`).
 
 The query can also be run on demand:
 
