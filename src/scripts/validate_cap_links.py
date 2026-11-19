@@ -11,10 +11,9 @@ Checks performed (fail fast; prints every failure then exits non-zero):
 * The referenced class is not marked obsolete (``owl:deprecated true``).
 * No duplicate (ID, URL) pair appears twice in the template.
 * Every URL matches the CAP production label pattern.
-* Every row has a link label matching ``“<cap label>” in <dataset title>``
-  (Unicode curly quotes U+201C and U+201D — not straight ASCII ``"``,
-  because the CSV parser used by both this script and ROBOT would
-  silently strip a leading straight quote).
+* Every row has a link label matching ``<cap label name> | <dataset title> | CAP``
+  (three pipe-separated fields; the trailing ``CAP`` segment lets tools
+  recognise CAP links at a glance).
 
 Usage::
 
@@ -31,10 +30,9 @@ from pathlib import Path
 CAP_URL_PATTERN = re.compile(
     r"^https://celltype\.info/project/\d+/dataset/\d+/label/\d+$"
 )
-# ``“<cap label name>” in <dataset title>`` — Unicode curly double
-# quotes (U+201C, U+201D), non-empty name and title, separated by
-# exactly one `` in ``.
-CAP_LABEL_PATTERN = re.compile(r"^“[^“”]+” in .+$")
+# ``<cap label name> | <dataset title> | CAP`` — three fields
+# separated by `` | ``; neither name nor title may contain a ``|``.
+CAP_LABEL_PATTERN = re.compile(r"^[^|]+ \| [^|]+ \| CAP$")
 
 # Match a single-line Functional-Syntax declaration like
 # ``Declaration(Class(obo:CL_0000000))`` or using a full IRI.
@@ -79,10 +77,9 @@ def validate(template: Path, edit_owl: Path) -> list[str]:
     errors: list[str] = []
 
     with template.open("r", encoding="utf-8", newline="") as fh:
-        # QUOTE_NONE because labels contain Unicode curly quotes; we do
-        # not want the csv reader to treat ASCII ``"`` as a field
-        # delimiter either, which would corrupt the raw text we need to
-        # validate against the curly-quote label pattern.
+        # QUOTE_NONE so a stray leading ``"`` in a dataset title or
+        # label is not treated as a CSV quote delimiter and silently
+        # stripped.
         reader = csv.reader(fh, delimiter="\t", quoting=csv.QUOTE_NONE)
         rows = list(reader)
 
@@ -132,9 +129,9 @@ def validate(template: Path, edit_owl: Path) -> list[str]:
         elif not CAP_LABEL_PATTERN.match(label):
             errors.append(
                 f"line {i}: link label '{label}' does not match "
-                "'“<cap label name>” in <dataset title>' "
-                "(use Unicode curly quotes U+201C / U+201D, not "
-                "straight ASCII \")"
+                "'<cap label name> | <dataset title> | CAP' "
+                "(three ' | '-separated fields, trailing field is "
+                "the literal 'CAP')"
             )
 
         pair = (cl_id or raw_id, url)
