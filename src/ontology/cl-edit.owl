@@ -25,6 +25,7 @@ Ontology(<http://purl.obolibrary.org/obo/cl.owl>
 Import(<http://purl.obolibrary.org/obo/cl/components/PNS_neurons.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/bgo-cl-comp.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/blood_and_immune_upper_slim.owl>)
+Import(<http://purl.obolibrary.org/obo/cl/components/cap_links.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/cellxgene_subset.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/clm-cl.owl>)
 Import(<http://purl.obolibrary.org/obo/cl/components/eye_upper_slim.owl>)
@@ -2413,6 +2414,7 @@ Declaration(Class(obo:CL_0020138))
 Declaration(Class(obo:CL_0020139))
 Declaration(Class(obo:CL_0020140))
 Declaration(Class(obo:CL_0020141))
+Declaration(Class(obo:CL_0020142))
 Declaration(Class(obo:CL_0700009))
 Declaration(Class(obo:CL_1000001))
 Declaration(Class(obo:CL_1000022))
@@ -10450,7 +10452,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41598-020-66092-
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1038/s41598-020-66092-9") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) Annotation(oboInOwl:hasSynonymType obo:OMO_0003004) oboInOwl:hasRelatedSynonym obo:CL_0000748 "BCs")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "geo:GSE137537") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) Annotation(oboInOwl:hasSynonymType obo:OMO_0003004) oboInOwl:hasRelatedSynonym obo:CL_0000748 "BPs")
 AnnotationAssertion(rdfs:label obo:CL_0000748 "retinal bipolar neuron")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_0000748 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_0000748 obo:CL_0000540)
 SubClassOf(obo:CL_0000748 obo:CL_0004001)
 SubClassOf(obo:CL_0000748 obo:CL_0009004)
@@ -10476,7 +10477,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "GOC:tfm") Annotation(oboInOwl
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:38627529") obo:RO_0002175 obo:CL_0000751 obo:NCBITaxon_32443)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0000751 "FMA:67750")
 AnnotationAssertion(rdfs:label obo:CL_0000751 "rod bipolar cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_0000751 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_0000751 obo:CL_0000749)
 SubClassOf(obo:CL_0000751 ObjectSomeValuesFrom(obo:RO_0002102 obo:UBERON_0008925))
 SubClassOf(obo:CL_0000751 ObjectSomeValuesFrom(obo:RO_0002102 obo:UBERON_0008926))
@@ -25413,10 +25413,10 @@ SubClassOf(obo:CL_0017004 ObjectSomeValuesFrom(obo:BFO_0000051 obo:GO_0120327))
 # Class: obo:CL_0017005 (lymphoblast)
 
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "NCIT:C13013") Annotation(oboInOwl:hasDbXref "http://orcid.org/0000-0001-9990-8331") obo:IAO_0000115 obo:CL_0017005 "A lymphocyte that has gotten larger after being stimulated by an antigen.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0017005 <https://github.com/obophenotype/cell-ontology/issues/924>)
 AnnotationAssertion(terms:contributor obo:CL_0017005 <http://orcid.org/0000-0003-2473-2313>)
 AnnotationAssertion(terms:contributor obo:CL_0017005 <https://orcid.org/0000-0003-2034-601X>)
 AnnotationAssertion(terms:date obo:CL_0017005 "2022-08-17T14:20:01Z"^^xsd:dateTime)
-AnnotationAssertion(obo:IAO_0000233 obo:CL_0017005 <https://github.com/obophenotype/cell-ontology/issues/924>)
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0017005 "BTO:0000772")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0017005 "EFO:0000572")
 AnnotationAssertion(oboInOwl:hasDbXref obo:CL_0017005 "FMA:83030")
@@ -27497,6 +27497,18 @@ AnnotationAssertion(rdfs:comment obo:CL_0020141 "In the cerebral cortex and hipp
 AnnotationAssertion(rdfs:label obo:CL_0020141 "glutamatergic projection neuron")
 EquivalentClasses(obo:CL_0020141 ObjectIntersectionOf(obo:CL_0020139 ObjectSomeValuesFrom(obo:RO_0002215 obo:GO_0061535)))
 SubClassOf(obo:CL_0020141 obo:CL_0000679)
+
+# Class: obo:CL_0020142 (stromal cell of endometrial functionalis)
+
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34857954") Annotation(oboInOwl:hasDbXref "PMID:36304009") Annotation(oboInOwl:hasDbXref "PMID:39198675") obo:IAO_0000115 obo:CL_0020142 "A stromal cell of the endometrium that is part of the functional layer (stratum functionalis) of the endometrium. This stromal population includes proliferative and decidualized stromal cells of the functionalis, which are shed during menstruation and regenerated each cycle from stromal progenitors residing in the basal layer. In human endometrium, functionalis stromal cells are distinguished from basalis fibroblasts by low expression of C7. Additionally, low MCAM expression further distinguishes them from perivascular cells.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_0020142 <https://github.com/obophenotype/cell-ontology/issues/3833>)
+AnnotationAssertion(terms:contributor obo:CL_0020142 <https://orcid.org/0009-0003-5092-2089>)
+AnnotationAssertion(terms:creator obo:CL_0020142 "Claude")
+AnnotationAssertion(terms:date obo:CL_0020142 "2026-11-02T12:49:53Z"^^xsd:dateTime)
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020142 "endometrial functionalis stromal cell")
+AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_0020142 "stromal cell of stratum functionalis of endometrium")
+AnnotationAssertion(rdfs:label obo:CL_0020142 "stromal cell of endometrial functionalis")
+EquivalentClasses(obo:CL_0020142 ObjectIntersectionOf(obo:CL_0002255 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0022356)))
 
 # Class: obo:CL_0700009 (obsolete kidney collecting duct beta-intercalated cell)
 
@@ -34387,7 +34399,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(ob
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033019 cl:added_by_HRA)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033019 "The axons of a blue cone bipolar cell terminate close to the ganglion cell layer, where they transfer the S-cone ON signal to small bistratified ganglion cells. Other targets of a blue cone bipolar cell include amacrine cells and possibly large bistratified ganglion cells.")
 AnnotationAssertion(rdfs:label obo:CL_4033019 "ON-blue cone bipolar cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033019 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033019 obo:CL_0000749)
 
 # Class: obo:CL_4033020 (mucus secreting cell of trachea gland)
@@ -34477,7 +34488,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(ob
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033027 cl:added_by_HRA)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:22006647") Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033027 "In primates, a diffuse bipolar 1 cell on average makes 81 ribbon (output) synapses, 13 contacts are with OFF parasol cells and 47 contacts are with OFF midget cells. This cell might make flat contacts at both triad-associated and non-triad-associated positions on the cone pedicle.")
 AnnotationAssertion(rdfs:label obo:CL_4033027 "diffuse bipolar 1 cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033027 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033027 obo:CL_0000750)
 
 # Class: obo:CL_4033028 (diffuse bipolar 2 cell)
@@ -34489,7 +34499,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(ob
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033028 cl:added_by_HRA)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033028 "In primates, a diffuse bipolar 2 cell makes an average of 133 ribbon synapses, 47 contacts are with OFF parasol cells and 4 contacts are with OFF midget cells.")
 AnnotationAssertion(rdfs:label obo:CL_4033028 "diffuse bipolar 2 cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033028 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033028 obo:CL_0000750)
 
 # Class: obo:CL_4033029 (diffuse bipolar 3a cell)
@@ -34502,7 +34511,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(ob
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033029 cl:added_by_HRA)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "DOI:10.3389/fnana.2015.00122") Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033029 "Originally, DB3a cells were termed diffuse bipolar 3 (DB3) cells. When an additional bipolar type which stratifies slightly more vitread and is calbindin negative was detected, this cell was renamed diffuse bipolar 3a cell. The axons of neighboring DB3a cells make homologous gap junctions. The DB3a cells provide the majority of their output to OFF parasol cells.")
 AnnotationAssertion(rdfs:label obo:CL_4033029 "diffuse bipolar 3a cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033029 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033029 obo:CL_0000750)
 
 # Class: obo:CL_4033030 (diffuse bipolar 3b cell)
@@ -34514,7 +34522,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(ob
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033030 cl:added_by_HRA)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:24107939") Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasDbXref "PMID:33009001") rdfs:comment obo:CL_4033030 "In humans, a DB3b cell is CD15 positive. A DB3b cell might make sparse contacts to rod photoreceptors.")
 AnnotationAssertion(rdfs:label obo:CL_4033030 "diffuse bipolar 3b cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033030 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033030 obo:CL_0000750)
 
 # Class: obo:CL_4033031 (diffuse bipolar 4 cell)
@@ -34525,7 +34532,6 @@ AnnotationAssertion(terms:date obo:CL_4033031 "2023-04-04T09:51:10Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033031 "DB4 cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033031 cl:added_by_HRA)
 AnnotationAssertion(rdfs:label obo:CL_4033031 "diffuse bipolar 4 cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033031 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033031 obo:CL_0000749)
 
 # Class: obo:CL_4033032 (diffuse bipolar 6 cell)
@@ -34536,7 +34542,6 @@ AnnotationAssertion(terms:date obo:CL_4033032 "2023-04-04T09:51:22Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033032 "DB6 cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033032 cl:added_by_HRA)
 AnnotationAssertion(rdfs:label obo:CL_4033032 "diffuse bipolar 6 cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033032 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033032 obo:CL_0000749)
 
 # Class: obo:CL_4033033 (flat midget bipolar cell)
@@ -34547,7 +34552,6 @@ AnnotationAssertion(terms:date obo:CL_4033033 "2023-04-04T10:54:00Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033033 "FMB cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033033 cl:added_by_HRA)
 AnnotationAssertion(rdfs:label obo:CL_4033033 "flat midget bipolar cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033033 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033033 obo:CL_0000750)
 
 # Class: obo:CL_4033034 (invaginating midget bipolar cell)
@@ -34558,7 +34562,6 @@ AnnotationAssertion(terms:date obo:CL_4033034 "2023-04-04T09:51:44Z"^^xsd:dateTi
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(oboInOwl:hasSynonymType obo:OMO_0003000) oboInOwl:hasRelatedSynonym obo:CL_4033034 "IMB cell")
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033034 cl:added_by_HRA)
 AnnotationAssertion(rdfs:label obo:CL_4033034 "invaginating midget bipolar cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033034 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033034 obo:CL_0000749)
 
 # Class: obo:CL_4033035 (giant bipolar cell)
@@ -34570,7 +34573,6 @@ AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") Annotation(ob
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033035 cl:added_by_HRA)
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:32032773") rdfs:comment obo:CL_4033035 "A giant bipolar cell is usually monostratified, although, very rarely, it can be bistratified.")
 AnnotationAssertion(rdfs:label obo:CL_4033035 "giant bipolar cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033035 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033035 obo:CL_0000749)
 
 # Class: obo:CL_4033036 (OFFx cell)
@@ -34581,7 +34583,6 @@ AnnotationAssertion(terms:contributor obo:CL_4033036 <https://orcid.org/0000-000
 AnnotationAssertion(terms:date obo:CL_4033036 "2023-04-04T10:54:15Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:inSubset obo:CL_4033036 cl:added_by_HRA)
 AnnotationAssertion(rdfs:label obo:CL_4033036 "OFFx cell")
-AnnotationAssertion(Annotation(rdfs:label "reference transcriptomic data on Cell Annotation Platform") rdfs:seeAlso obo:CL_4033036 <https://celltype.info/project/544/dataset/1157>)
 SubClassOf(obo:CL_4033036 obo:CL_0000750)
 SubClassOf(obo:CL_4033036 ObjectSomeValuesFrom(obo:BFO_0000050 obo:UBERON_0001786))
 
@@ -35913,11 +35914,13 @@ SubClassOf(obo:CL_4047017 ObjectSomeValuesFrom(obo:RO_0002207 obo:CL_0002250))
 
 # Class: obo:CL_4047018 (lower crypt colonocyte)
 
-AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28049136") Annotation(oboInOwl:hasDbXref "PMID:36060223") obo:IAO_0000115 obo:CL_4047018 "A colonocyte located in the lower part of the colonic crypt of Lieberkuhn, which has withdrawn from the cell cycle but has not yet acquired the apical microvilli and absorptive transporter expression characteristic of the mature state.")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:28049136") Annotation(oboInOwl:hasDbXref "PMID:36060223") Annotation(oboInOwl:hasDbXref "PMID:39169060") Annotation(oboInOwl:hasDbXref "PMID:41539438") obo:IAO_0000115 obo:CL_4047018 "A colonocyte located in the lower part of the colonic crypt of Lieberkuhn, which has withdrawn from the cell cycle but has not yet acquired the apical microvilli and absorptive transporter expression characteristic of the mature state. In human, these cells express ADH1C.")
+AnnotationAssertion(obo:IAO_0000233 obo:CL_4047018 <https://github.com/obophenotype/cell-ontology/issues/3845>)
 AnnotationAssertion(terms:contributor obo:CL_4047018 <https://orcid.org/0009-0005-7919-4905>)
 AnnotationAssertion(terms:date obo:CL_4047018 "2024-09-24T11:50:13Z"^^xsd:dateTime)
 AnnotationAssertion(oboInOwl:hasExactSynonym obo:CL_4047018 "early colonocyte")
 AnnotationAssertion(Annotation(oboInOwl:hasDbXref "doi:10.1101/2021.01.13.426602") oboInOwl:hasExactSynonym obo:CL_4047018 "early enterocyte of colon")
+AnnotationAssertion(Annotation(oboInOwl:hasDbXref "PMID:34680872") Annotation(oboInOwl:hasDbXref "PMID:39169060") Annotation(oboInOwl:hasDbXref "PMID:41539438") rdfs:comment obo:CL_4047018 "Single-cell studies of the human colon place ADH1C at the crypt base, with highest expression in transit-amplifying and absorptive progenitor cells (Zeineldin et al. 2026, PMID:41539438), and use ADH1C alongside B3GNT7 and ABR to define early colonocytes (Li et al. 2024, PMID:39169060). LEFTY1 has also been reported as a marker for this population by the Human Gut Cell Atlas authors, with only indirect literature support as a basal-crypt transcript (Skok et al. 2021, PMID:34680872). Neither marker is specific to lower crypt colonocytes versus colonocyte progenitors or mid crypt colonocytes; the population is additionally distinguished by the absence of the mature surface-colonocyte marker AQP8.")
 AnnotationAssertion(rdfs:label obo:CL_4047018 "lower crypt colonocyte"@en)
 SubClassOf(obo:CL_4047018 obo:CL_0019034)
 SubClassOf(obo:CL_4047018 obo:CL_0019036)
