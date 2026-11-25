@@ -46,7 +46,7 @@ REPORT_FAIL_ON =            ERROR
 REPORT_LABEL =              
 REPORT_PROFILE_OPTS =       
 OBO_FORMAT_OPTIONS =        --clean-obo 'simple merge-comments'
-SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy illegal-date def-not-only-xref id-format boolean-annotation-value 
+SPARQL_VALIDATION_CHECKS =  equivalent-classes owldef-self-reference nolabels pmid-not-dbxref obsolete-replaced_by obsolete-alt-id orcid-contributor illegal-annotation-property label-synonym-polysemy illegal-date def-not-only-xref id-format boolean-annotation-value cap-link
 SPARQL_EXPORTS =            cl_terms cl-edges cl-synonyms cl-xrefs cl-def-xrefs 
 ODK_VERSION_MAKEFILE =      v1.6.1
 RELAX_OPTIONS =             --include-subclass-of true
@@ -57,7 +57,7 @@ OBODATE ?=                  $(shell date +'%d:%m:%Y %H:%M')
 VERSION=                    $(TODAY)
 ANNOTATE_ONTOLOGY_VERSION = annotate -V $(ONTBASE)/releases/$(VERSION)/$@ --annotation owl:versionInfo $(VERSION)
 ANNOTATE_CONVERT_FILE =     annotate --ontology-iri $(ONTBASE)/$@ $(ANNOTATE_ONTOLOGY_VERSION) convert -f ofn --output $@.tmp.owl && mv $@.tmp.owl $@
-OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl $(COMPONENTSDIR)/bgo-cl-comp.owl 
+OTHER_SRC =                 $(PATTERNDIR)/definitions.owl $(COMPONENTSDIR)/hra_subset.owl $(COMPONENTSDIR)/mappings.owl $(COMPONENTSDIR)/blood_and_immune_upper_slim.owl $(COMPONENTSDIR)/eye_upper_slim.owl $(COMPONENTSDIR)/general_cell_types_upper_slim.owl $(COMPONENTSDIR)/kidney_upper_slim.owl $(COMPONENTSDIR)/cellxgene_subset.owl $(COMPONENTSDIR)/PNS_neurons.owl $(COMPONENTSDIR)/clm-cl.owl $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl $(COMPONENTSDIR)/cap_links.owl $(COMPONENTSDIR)/wmbo-cl-comp.owl $(COMPONENTSDIR)/bgo-cl-comp.owl
 ONTOLOGYTERMS =             $(TMPDIR)/ontologyterms.txt
 EDIT_PREPROCESSED =         $(TMPDIR)/$(ONT)-preprocess.owl
 
@@ -499,6 +499,7 @@ recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-PNS_neurons.owl \
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
 		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
+		--assume-new=$(TMPDIR)/stamp-component-cap_links.owl \
 		--assume-new=$(TMPDIR)/stamp-component-wmbo-cl-comp.owl \
 		--assume-new=$(TMPDIR)/stamp-component-bgo-cl-comp.owl \
 		COMP=true IMP=false MIR=true PAT=true all_components
@@ -515,6 +516,7 @@ no-mirror-recreate-components:
 		--assume-new=$(TMPDIR)/stamp-component-PNS_neurons.owl \
 		--assume-new=$(TMPDIR)/stamp-component-clm-cl.owl \
 		--assume-new=$(TMPDIR)/stamp-component-2DFTU_HRA_illustrations.owl \
+		--assume-new=$(TMPDIR)/stamp-component-cap_links.owl \
 		--assume-new=$(TMPDIR)/stamp-component-wmbo-cl-comp.owl \
 		--assume-new=$(TMPDIR)/stamp-component-bgo-cl-comp.owl \
 		COMP=true IMP=false MIR=false PAT=true all_components
@@ -616,6 +618,13 @@ $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl: $(TEMPLATEDIR)/2DFTU_HRA_illustrat
 		 --template $(TEMPLATEDIR)/2DFTU_HRA_illustrations.csv \
 		 $(ANNOTATE_CONVERT_FILE)
 .PRECIOUS: $(COMPONENTSDIR)/2DFTU_HRA_illustrations.owl
+
+$(COMPONENTSDIR)/cap_links.owl: $(TEMPLATEDIR)/cap_links.tsv $(TMPDIR)/stamp-component-cap_links.owl
+	python3 $(SCRIPTSDIR)/validate_cap_links.py $(TEMPLATEDIR)/cap_links.tsv $(SRC)
+	$(ROBOT) template  \
+		 --template $(TEMPLATEDIR)/cap_links.tsv \
+		 $(ANNOTATE_CONVERT_FILE)
+.PRECIOUS: $(COMPONENTSDIR)/cap_links.owl
 
 ifeq ($(MIR),true)
 .PHONY: component-download-wmbo-cl-comp.owl
