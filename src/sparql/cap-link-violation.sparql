@@ -1,0 +1,43 @@
+PREFIX owl: <http://www.w3.org/2002/07/owl#>
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+# Flags CAP seeAlso links that are either on an obsolete class, use a
+# non-production URL shape (labelset or rc1 staging), lack an rdfs:label
+# on their axiom annotation, or have a label that does not match the
+# `<cap label name> | <dataset title> | CAP` pattern (three ` | `-
+# separated fields, trailing field is the literal `CAP`).
+# CAP label URLs follow:
+#   https://celltype.info/project/<project>/dataset/<dataset>/label/<label>
+
+SELECT DISTINCT ?entity ?url ?issue
+WHERE {
+  ?entity rdfs:seeAlso ?url .
+  FILTER(isIRI(?entity))
+  FILTER(STRSTARTS(STR(?url), "https://celltype.info/") ||
+         STRSTARTS(STR(?url), "https://rc1.celltype.info/"))
+
+  OPTIONAL { ?entity owl:deprecated ?dep . }
+  OPTIONAL {
+    ?ax a owl:Axiom ;
+        owl:annotatedSource ?entity ;
+        owl:annotatedProperty rdfs:seeAlso ;
+        owl:annotatedTarget ?url ;
+        rdfs:label ?lbl .
+  }
+
+  BIND(BOUND(?dep) && ?dep = true AS ?isObsolete)
+  BIND(!REGEX(STR(?url), "^https://celltype\\.info/project/[0-9]+/dataset/[0-9]+/label/[0-9]+$") AS ?badUrl)
+  BIND(!BOUND(?lbl) AS ?noLabel)
+  BIND(BOUND(?lbl) && !REGEX(STR(?lbl), "^[^|]+ \\| [^|]+ \\| CAP$") AS ?badLabel)
+
+  FILTER(?isObsolete || ?badUrl || ?noLabel || ?badLabel)
+
+  BIND(
+    IF(?isObsolete, "CAP seeAlso link on an obsolete class",
+    IF(?badUrl,     "CAP seeAlso URL does not match the production label pattern",
+    IF(?noLabel,    "CAP seeAlso link lacks an rdfs:label annotation",
+                    "CAP seeAlso rdfs:label does not match '<cap label name> | <dataset title> | CAP'")))
+    AS ?issue)
+}
+ORDER BY ?entity ?url
