@@ -11,9 +11,11 @@ Checks performed (fail fast; prints every failure then exits non-zero):
 * The referenced class is not marked obsolete (``owl:deprecated true``).
 * No duplicate (ID, URL) pair appears twice in the template.
 * Every URL matches the CAP production label pattern.
-* Every row has a link label matching ``<cap label name> | <dataset title> | CAP``
-  (three pipe-separated fields; the trailing ``CAP`` segment lets tools
-  recognise CAP links at a glance).
+* Every row has a link label matching
+  ``Transcriptomic reference data: <cap label name> | HCA dataset on CAP``
+  (the fixed prefix and suffix let tools recognise CAP links at a glance).
+* Every row has a link comment holding the dataset title, which OLS shows
+  on mouseover of the link.
 
 Usage::
 
@@ -30,9 +32,11 @@ from pathlib import Path
 CAP_URL_PATTERN = re.compile(
     r"^https://celltype\.info/project/\d+/dataset/\d+/label/\d+$"
 )
-# ``<cap label name> | <dataset title> | CAP`` — three fields
-# separated by `` | ``; neither name nor title may contain a ``|``.
-CAP_LABEL_PATTERN = re.compile(r"^[^|]+ \| [^|]+ \| CAP$")
+# ``Transcriptomic reference data: <cap label name> | HCA dataset on CAP``;
+# the CAP label name may not contain a ``|``.
+CAP_LABEL_PATTERN = re.compile(
+    r"^Transcriptomic reference data: [^|]+ \| HCA dataset on CAP$"
+)
 
 # Match a single-line Functional-Syntax declaration like
 # ``Declaration(Class(obo:CL_0000000))`` or using a full IRI.
@@ -94,6 +98,7 @@ def validate(template: Path, edit_owl: Path) -> list[str]:
         id_col = robot_header.index("ID")
         url_col = robot_header.index("A rdfs:seeAlso")
         label_col = robot_header.index(">A rdfs:label")
+        comment_col = robot_header.index(">A rdfs:comment")
     except ValueError as exc:
         return [f"required ROBOT header column missing: {exc}"]
 
@@ -101,11 +106,12 @@ def validate(template: Path, edit_owl: Path) -> list[str]:
 
     for i, row in enumerate(data_rows, start=3):  # line numbers are 1-based, +2 for headers
         # Allow a short row (ROBOT would too) by padding empty cells.
-        padded = row + [""] * (max(id_col, url_col, label_col) + 1 - len(row))
+        padded = row + [""] * (max(id_col, url_col, label_col, comment_col) + 1 - len(row))
 
         raw_id = padded[id_col]
         url = padded[url_col].strip()
         label = padded[label_col].strip()
+        comment = padded[comment_col].strip()
 
         cl_id = _normalise_id(raw_id)
         if cl_id is None:
@@ -129,10 +135,12 @@ def validate(template: Path, edit_owl: Path) -> list[str]:
         elif not CAP_LABEL_PATTERN.match(label):
             errors.append(
                 f"line {i}: link label '{label}' does not match "
-                "'<cap label name> | <dataset title> | CAP' "
-                "(three ' | '-separated fields, trailing field is "
-                "the literal 'CAP')"
+                "'Transcriptomic reference data: <cap label name> | "
+                "HCA dataset on CAP'"
             )
+
+        if not comment:
+            errors.append(f"line {i}: missing rdfs:comment (dataset title) on the link")
 
         pair = (cl_id or raw_id, url)
         if pair in seen_pairs:
